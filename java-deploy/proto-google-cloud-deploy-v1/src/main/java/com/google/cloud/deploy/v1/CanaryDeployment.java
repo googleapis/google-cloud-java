@@ -133,10 +133,10 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Whether to run verify tests after each percentage deployment.
+   * Optional. Whether to run verify tests after each percentage deployment.
    * </pre>
    *
-   * <code>bool verify = 2;</code>
+   * <code>bool verify = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The verify.
    */
@@ -901,10 +901,10 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Whether to run verify tests after each percentage deployment.
+     * Optional. Whether to run verify tests after each percentage deployment.
      * </pre>
      *
-     * <code>bool verify = 2;</code>
+     * <code>bool verify = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The verify.
      */
@@ -916,10 +916,10 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Whether to run verify tests after each percentage deployment.
+     * Optional. Whether to run verify tests after each percentage deployment.
      * </pre>
      *
-     * <code>bool verify = 2;</code>
+     * <code>bool verify = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The verify to set.
      * @return This builder for chaining.
@@ -935,10 +935,10 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Whether to run verify tests after each percentage deployment.
+     * Optional. Whether to run verify tests after each percentage deployment.
      * </pre>
      *
-     * <code>bool verify = 2;</code>
+     * <code>bool verify = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

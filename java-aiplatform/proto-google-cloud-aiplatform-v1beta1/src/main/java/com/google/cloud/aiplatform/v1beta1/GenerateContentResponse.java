@@ -41,6 +41,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
   private GenerateContentResponse() {
     candidates_ = java.util.Collections.emptyList();
     modelVersion_ = "";
+    responseId_ = "";
   }
 
   @java.lang.Override
@@ -4714,6 +4715,108 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     }
   }
 
+  public static final int CREATE_TIME_FIELD_NUMBER = 12;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when the request is made to the server.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when the request is made to the server.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when the request is made to the server.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+
+  public static final int RESPONSE_ID_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object responseId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. response_id is used to identify each response. It is the
+   * encoding of the event_id.
+   * </pre>
+   *
+   * <code>string response_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The responseId.
+   */
+  @java.lang.Override
+  public java.lang.String getResponseId() {
+    java.lang.Object ref = responseId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      responseId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. response_id is used to identify each response. It is the
+   * encoding of the event_id.
+   * </pre>
+   *
+   * <code>string response_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for responseId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getResponseIdBytes() {
+    java.lang.Object ref = responseId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      responseId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PROMPT_FEEDBACK_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.PromptFeedback
       promptFeedback_;
@@ -4734,7 +4837,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasPromptFeedback() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -4798,7 +4901,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasUsageMetadata() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -4858,14 +4961,20 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     for (int i = 0; i < candidates_.size(); i++) {
       output.writeMessage(2, candidates_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(3, getPromptFeedback());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getUsageMetadata());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, modelVersion_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(12, getCreateTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(responseId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, responseId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4879,14 +4988,20 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     for (int i = 0; i < candidates_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, candidates_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getPromptFeedback());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUsageMetadata());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, modelVersion_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getCreateTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(responseId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, responseId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -4906,6 +5021,11 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
     if (!getCandidatesList().equals(other.getCandidatesList())) return false;
     if (!getModelVersion().equals(other.getModelVersion())) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (!getResponseId().equals(other.getResponseId())) return false;
     if (hasPromptFeedback() != other.hasPromptFeedback()) return false;
     if (hasPromptFeedback()) {
       if (!getPromptFeedback().equals(other.getPromptFeedback())) return false;
@@ -4931,6 +5051,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     }
     hash = (37 * hash) + MODEL_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getModelVersion().hashCode();
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    hash = (37 * hash) + RESPONSE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getResponseId().hashCode();
     if (hasPromptFeedback()) {
       hash = (37 * hash) + PROMPT_FEEDBACK_FIELD_NUMBER;
       hash = (53 * hash) + getPromptFeedback().hashCode();
@@ -5081,6 +5207,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCandidatesFieldBuilder();
+        getCreateTimeFieldBuilder();
         getPromptFeedbackFieldBuilder();
         getUsageMetadataFieldBuilder();
       }
@@ -5098,6 +5225,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       modelVersion_ = "";
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      responseId_ = "";
       promptFeedback_ = null;
       if (promptFeedbackBuilder_ != null) {
         promptFeedbackBuilder_.dispose();
@@ -5163,14 +5296,21 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.promptFeedback_ =
-            promptFeedbackBuilder_ == null ? promptFeedback_ : promptFeedbackBuilder_.build();
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.responseId_ = responseId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.promptFeedback_ =
+            promptFeedbackBuilder_ == null ? promptFeedback_ : promptFeedbackBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.usageMetadata_ =
             usageMetadataBuilder_ == null ? usageMetadata_ : usageMetadataBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5253,6 +5393,14 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
+      if (!other.getResponseId().isEmpty()) {
+        responseId_ = other.responseId_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       if (other.hasPromptFeedback()) {
         mergePromptFeedback(other.getPromptFeedback());
       }
@@ -5301,13 +5449,13 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
             case 26:
               {
                 input.readMessage(getPromptFeedbackFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getUsageMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 90:
@@ -5316,6 +5464,18 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000002;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 98
+            case 106:
+              {
+                responseId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5829,6 +5989,320 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       return this;
     }
 
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the request is made to the server.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the request is made to the server.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the request is made to the server.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the request is made to the server.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the request is made to the server.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
+        } else {
+          createTime_ = value;
+        }
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+      if (createTime_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the request is made to the server.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateTime() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the request is made to the server.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the request is made to the server.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the request is made to the server.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
+    }
+
+    private java.lang.Object responseId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. response_id is used to identify each response. It is the
+     * encoding of the event_id.
+     * </pre>
+     *
+     * <code>string response_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The responseId.
+     */
+    public java.lang.String getResponseId() {
+      java.lang.Object ref = responseId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        responseId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. response_id is used to identify each response. It is the
+     * encoding of the event_id.
+     * </pre>
+     *
+     * <code>string response_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for responseId.
+     */
+    public com.google.protobuf.ByteString getResponseIdBytes() {
+      java.lang.Object ref = responseId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        responseId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. response_id is used to identify each response. It is the
+     * encoding of the event_id.
+     * </pre>
+     *
+     * <code>string response_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The responseId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResponseId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      responseId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. response_id is used to identify each response. It is the
+     * encoding of the event_id.
+     * </pre>
+     *
+     * <code>string response_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResponseId() {
+      responseId_ = getDefaultInstance().getResponseId();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. response_id is used to identify each response. It is the
+     * encoding of the event_id.
+     * </pre>
+     *
+     * <code>string response_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for responseId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResponseIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      responseId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.PromptFeedback
         promptFeedback_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -5852,7 +6326,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      * @return Whether the promptFeedback field is set.
      */
     public boolean hasPromptFeedback() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -5903,7 +6377,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       } else {
         promptFeedbackBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5928,7 +6402,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       } else {
         promptFeedbackBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5948,7 +6422,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     public Builder mergePromptFeedback(
         com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.PromptFeedback value) {
       if (promptFeedbackBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && promptFeedback_ != null
             && promptFeedback_
                 != com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.PromptFeedback
@@ -5961,7 +6435,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         promptFeedbackBuilder_.mergeFrom(value);
       }
       if (promptFeedback_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -5980,7 +6454,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearPromptFeedback() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       promptFeedback_ = null;
       if (promptFeedbackBuilder_ != null) {
         promptFeedbackBuilder_.dispose();
@@ -6004,7 +6478,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      */
     public com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.PromptFeedback.Builder
         getPromptFeedbackBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getPromptFeedbackFieldBuilder().getBuilder();
     }
@@ -6084,7 +6558,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      * @return Whether the usageMetadata field is set.
      */
     public boolean hasUsageMetadata() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -6131,7 +6605,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       } else {
         usageMetadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6154,7 +6628,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       } else {
         usageMetadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6172,7 +6646,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     public Builder mergeUsageMetadata(
         com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.UsageMetadata value) {
       if (usageMetadataBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && usageMetadata_ != null
             && usageMetadata_
                 != com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.UsageMetadata
@@ -6185,7 +6659,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         usageMetadataBuilder_.mergeFrom(value);
       }
       if (usageMetadata_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -6202,7 +6676,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearUsageMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       usageMetadata_ = null;
       if (usageMetadataBuilder_ != null) {
         usageMetadataBuilder_.dispose();
@@ -6224,7 +6698,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      */
     public com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.UsageMetadata.Builder
         getUsageMetadataBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getUsageMetadataFieldBuilder().getBuilder();
     }

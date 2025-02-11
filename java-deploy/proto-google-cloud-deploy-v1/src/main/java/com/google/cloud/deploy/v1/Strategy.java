@@ -115,11 +115,12 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Standard deployment strategy executes a single deploy and allows
-   * verifying the deployment.
+   * Optional. Standard deployment strategy executes a single deploy and
+   * allows verifying the deployment.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.Standard standard = 1;</code>
+   * <code>.google.cloud.deploy.v1.Standard standard = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the standard field is set.
    */
@@ -131,11 +132,12 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Standard deployment strategy executes a single deploy and allows
-   * verifying the deployment.
+   * Optional. Standard deployment strategy executes a single deploy and
+   * allows verifying the deployment.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.Standard standard = 1;</code>
+   * <code>.google.cloud.deploy.v1.Standard standard = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The standard.
    */
@@ -150,11 +152,12 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Standard deployment strategy executes a single deploy and allows
-   * verifying the deployment.
+   * Optional. Standard deployment strategy executes a single deploy and
+   * allows verifying the deployment.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.Standard standard = 1;</code>
+   * <code>.google.cloud.deploy.v1.Standard standard = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.StandardOrBuilder getStandardOrBuilder() {
@@ -169,11 +172,12 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Canary deployment strategy provides progressive percentage based
-   * deployments to a Target.
+   * Optional. Canary deployment strategy provides progressive percentage
+   * based deployments to a Target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+   * <code>.google.cloud.deploy.v1.Canary canary = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the canary field is set.
    */
@@ -185,11 +189,12 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Canary deployment strategy provides progressive percentage based
-   * deployments to a Target.
+   * Optional. Canary deployment strategy provides progressive percentage
+   * based deployments to a Target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+   * <code>.google.cloud.deploy.v1.Canary canary = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The canary.
    */
@@ -204,11 +209,12 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Canary deployment strategy provides progressive percentage based
-   * deployments to a Target.
+   * Optional. Canary deployment strategy provides progressive percentage
+   * based deployments to a Target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+   * <code>.google.cloud.deploy.v1.Canary canary = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.CanaryOrBuilder getCanaryOrBuilder() {
@@ -642,11 +648,13 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Standard deployment strategy executes a single deploy and allows
-     * verifying the deployment.
+     * Optional. Standard deployment strategy executes a single deploy and
+     * allows verifying the deployment.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.Standard standard = 1;</code>
+     * <code>
+     * .google.cloud.deploy.v1.Standard standard = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the standard field is set.
      */
@@ -658,11 +666,13 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Standard deployment strategy executes a single deploy and allows
-     * verifying the deployment.
+     * Optional. Standard deployment strategy executes a single deploy and
+     * allows verifying the deployment.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.Standard standard = 1;</code>
+     * <code>
+     * .google.cloud.deploy.v1.Standard standard = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The standard.
      */
@@ -684,11 +694,13 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Standard deployment strategy executes a single deploy and allows
-     * verifying the deployment.
+     * Optional. Standard deployment strategy executes a single deploy and
+     * allows verifying the deployment.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.Standard standard = 1;</code>
+     * <code>
+     * .google.cloud.deploy.v1.Standard standard = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setStandard(com.google.cloud.deploy.v1.Standard value) {
       if (standardBuilder_ == null) {
@@ -707,11 +719,13 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Standard deployment strategy executes a single deploy and allows
-     * verifying the deployment.
+     * Optional. Standard deployment strategy executes a single deploy and
+     * allows verifying the deployment.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.Standard standard = 1;</code>
+     * <code>
+     * .google.cloud.deploy.v1.Standard standard = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setStandard(com.google.cloud.deploy.v1.Standard.Builder builderForValue) {
       if (standardBuilder_ == null) {
@@ -727,11 +741,13 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Standard deployment strategy executes a single deploy and allows
-     * verifying the deployment.
+     * Optional. Standard deployment strategy executes a single deploy and
+     * allows verifying the deployment.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.Standard standard = 1;</code>
+     * <code>
+     * .google.cloud.deploy.v1.Standard standard = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeStandard(com.google.cloud.deploy.v1.Standard value) {
       if (standardBuilder_ == null) {
@@ -760,11 +776,13 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Standard deployment strategy executes a single deploy and allows
-     * verifying the deployment.
+     * Optional. Standard deployment strategy executes a single deploy and
+     * allows verifying the deployment.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.Standard standard = 1;</code>
+     * <code>
+     * .google.cloud.deploy.v1.Standard standard = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearStandard() {
       if (standardBuilder_ == null) {
@@ -786,11 +804,13 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Standard deployment strategy executes a single deploy and allows
-     * verifying the deployment.
+     * Optional. Standard deployment strategy executes a single deploy and
+     * allows verifying the deployment.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.Standard standard = 1;</code>
+     * <code>
+     * .google.cloud.deploy.v1.Standard standard = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.Standard.Builder getStandardBuilder() {
       return getStandardFieldBuilder().getBuilder();
@@ -799,11 +819,13 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Standard deployment strategy executes a single deploy and allows
-     * verifying the deployment.
+     * Optional. Standard deployment strategy executes a single deploy and
+     * allows verifying the deployment.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.Standard standard = 1;</code>
+     * <code>
+     * .google.cloud.deploy.v1.Standard standard = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.StandardOrBuilder getStandardOrBuilder() {
@@ -820,11 +842,13 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Standard deployment strategy executes a single deploy and allows
-     * verifying the deployment.
+     * Optional. Standard deployment strategy executes a single deploy and
+     * allows verifying the deployment.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.Standard standard = 1;</code>
+     * <code>
+     * .google.cloud.deploy.v1.Standard standard = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.Standard,
@@ -859,11 +883,12 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Canary deployment strategy provides progressive percentage based
-     * deployments to a Target.
+     * Optional. Canary deployment strategy provides progressive percentage
+     * based deployments to a Target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+     * <code>.google.cloud.deploy.v1.Canary canary = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the canary field is set.
      */
@@ -875,11 +900,12 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Canary deployment strategy provides progressive percentage based
-     * deployments to a Target.
+     * Optional. Canary deployment strategy provides progressive percentage
+     * based deployments to a Target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+     * <code>.google.cloud.deploy.v1.Canary canary = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The canary.
      */
@@ -901,11 +927,12 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Canary deployment strategy provides progressive percentage based
-     * deployments to a Target.
+     * Optional. Canary deployment strategy provides progressive percentage
+     * based deployments to a Target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+     * <code>.google.cloud.deploy.v1.Canary canary = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setCanary(com.google.cloud.deploy.v1.Canary value) {
       if (canaryBuilder_ == null) {
@@ -924,11 +951,12 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Canary deployment strategy provides progressive percentage based
-     * deployments to a Target.
+     * Optional. Canary deployment strategy provides progressive percentage
+     * based deployments to a Target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+     * <code>.google.cloud.deploy.v1.Canary canary = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setCanary(com.google.cloud.deploy.v1.Canary.Builder builderForValue) {
       if (canaryBuilder_ == null) {
@@ -944,11 +972,12 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Canary deployment strategy provides progressive percentage based
-     * deployments to a Target.
+     * Optional. Canary deployment strategy provides progressive percentage
+     * based deployments to a Target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+     * <code>.google.cloud.deploy.v1.Canary canary = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeCanary(com.google.cloud.deploy.v1.Canary value) {
       if (canaryBuilder_ == null) {
@@ -977,11 +1006,12 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Canary deployment strategy provides progressive percentage based
-     * deployments to a Target.
+     * Optional. Canary deployment strategy provides progressive percentage
+     * based deployments to a Target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+     * <code>.google.cloud.deploy.v1.Canary canary = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearCanary() {
       if (canaryBuilder_ == null) {
@@ -1003,11 +1033,12 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Canary deployment strategy provides progressive percentage based
-     * deployments to a Target.
+     * Optional. Canary deployment strategy provides progressive percentage
+     * based deployments to a Target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+     * <code>.google.cloud.deploy.v1.Canary canary = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.Canary.Builder getCanaryBuilder() {
       return getCanaryFieldBuilder().getBuilder();
@@ -1016,11 +1047,12 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Canary deployment strategy provides progressive percentage based
-     * deployments to a Target.
+     * Optional. Canary deployment strategy provides progressive percentage
+     * based deployments to a Target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+     * <code>.google.cloud.deploy.v1.Canary canary = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.CanaryOrBuilder getCanaryOrBuilder() {
@@ -1037,11 +1069,12 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Canary deployment strategy provides progressive percentage based
-     * deployments to a Target.
+     * Optional. Canary deployment strategy provides progressive percentage
+     * based deployments to a Target.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+     * <code>.google.cloud.deploy.v1.Canary canary = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.Canary,

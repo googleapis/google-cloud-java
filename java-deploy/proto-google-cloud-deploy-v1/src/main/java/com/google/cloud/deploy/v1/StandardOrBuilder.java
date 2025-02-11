@@ -28,10 +28,10 @@ public interface StandardOrBuilder
    *
    *
    * <pre>
-   * Whether to verify a deployment.
+   * Optional. Whether to verify a deployment.
    * </pre>
    *
-   * <code>bool verify = 1;</code>
+   * <code>bool verify = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The verify.
    */

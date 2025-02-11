@@ -132,6 +132,26 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CancelJob</td>
+ *      <td><p> Cancel a Job.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> cancelJobAsync(CancelJobRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> cancelJobAsync(JobName name)
+ *           <li><p> cancelJobAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> cancelJobOperationCallable()
+ *           <li><p> cancelJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListJobs</td>
  *      <td><p> List all Jobs for a project within a region.</td>
  *      <td>
@@ -707,6 +727,147 @@ public class BatchServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteJobRequest, Operation> deleteJobCallable() {
     return stub.deleteJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancel a Job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   CancelJobResponse response = batchServiceClient.cancelJobAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Job name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CancelJobResponse, OperationMetadata> cancelJobAsync(JobName name) {
+    CancelJobRequest request =
+        CancelJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return cancelJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancel a Job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   String name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString();
+   *   CancelJobResponse response = batchServiceClient.cancelJobAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Job name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CancelJobResponse, OperationMetadata> cancelJobAsync(String name) {
+    CancelJobRequest request = CancelJobRequest.newBuilder().setName(name).build();
+    return cancelJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancel a Job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   CancelJobRequest request =
+   *       CancelJobRequest.newBuilder()
+   *           .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   CancelJobResponse response = batchServiceClient.cancelJobAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CancelJobResponse, OperationMetadata> cancelJobAsync(
+      CancelJobRequest request) {
+    return cancelJobOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancel a Job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   CancelJobRequest request =
+   *       CancelJobRequest.newBuilder()
+   *           .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<CancelJobResponse, OperationMetadata> future =
+   *       batchServiceClient.cancelJobOperationCallable().futureCall(request);
+   *   // Do something.
+   *   CancelJobResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CancelJobRequest, CancelJobResponse, OperationMetadata>
+      cancelJobOperationCallable() {
+    return stub.cancelJobOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancel a Job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   CancelJobRequest request =
+   *       CancelJobRequest.newBuilder()
+   *           .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = batchServiceClient.cancelJobCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CancelJobRequest, Operation> cancelJobCallable() {
+    return stub.cancelJobCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

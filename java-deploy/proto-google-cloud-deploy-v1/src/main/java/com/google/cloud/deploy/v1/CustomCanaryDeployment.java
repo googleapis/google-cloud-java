@@ -119,12 +119,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Skaffold profiles to use when rendering the manifest for this phase.
-     * These are in addition to the profiles list specified in the
+     * Optional. Skaffold profiles to use when rendering the manifest for this
+     * phase. These are in addition to the profiles list specified in the
      * `DeliveryPipeline` stage.
      * </pre>
      *
-     * <code>repeated string profiles = 3;</code>
+     * <code>repeated string profiles = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the profiles.
      */
@@ -133,12 +133,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Skaffold profiles to use when rendering the manifest for this phase.
-     * These are in addition to the profiles list specified in the
+     * Optional. Skaffold profiles to use when rendering the manifest for this
+     * phase. These are in addition to the profiles list specified in the
      * `DeliveryPipeline` stage.
      * </pre>
      *
-     * <code>repeated string profiles = 3;</code>
+     * <code>repeated string profiles = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of profiles.
      */
@@ -147,12 +147,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Skaffold profiles to use when rendering the manifest for this phase.
-     * These are in addition to the profiles list specified in the
+     * Optional. Skaffold profiles to use when rendering the manifest for this
+     * phase. These are in addition to the profiles list specified in the
      * `DeliveryPipeline` stage.
      * </pre>
      *
-     * <code>repeated string profiles = 3;</code>
+     * <code>repeated string profiles = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The profiles at the given index.
@@ -162,12 +162,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Skaffold profiles to use when rendering the manifest for this phase.
-     * These are in addition to the profiles list specified in the
+     * Optional. Skaffold profiles to use when rendering the manifest for this
+     * phase. These are in addition to the profiles list specified in the
      * `DeliveryPipeline` stage.
      * </pre>
      *
-     * <code>repeated string profiles = 3;</code>
+     * <code>repeated string profiles = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the profiles at the given index.
@@ -178,10 +178,10 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Whether to run verify tests after the deployment.
+     * Optional. Whether to run verify tests after the deployment.
      * </pre>
      *
-     * <code>bool verify = 4;</code>
+     * <code>bool verify = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The verify.
      */
@@ -408,12 +408,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Skaffold profiles to use when rendering the manifest for this phase.
-     * These are in addition to the profiles list specified in the
+     * Optional. Skaffold profiles to use when rendering the manifest for this
+     * phase. These are in addition to the profiles list specified in the
      * `DeliveryPipeline` stage.
      * </pre>
      *
-     * <code>repeated string profiles = 3;</code>
+     * <code>repeated string profiles = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the profiles.
      */
@@ -424,12 +424,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Skaffold profiles to use when rendering the manifest for this phase.
-     * These are in addition to the profiles list specified in the
+     * Optional. Skaffold profiles to use when rendering the manifest for this
+     * phase. These are in addition to the profiles list specified in the
      * `DeliveryPipeline` stage.
      * </pre>
      *
-     * <code>repeated string profiles = 3;</code>
+     * <code>repeated string profiles = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of profiles.
      */
@@ -440,12 +440,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Skaffold profiles to use when rendering the manifest for this phase.
-     * These are in addition to the profiles list specified in the
+     * Optional. Skaffold profiles to use when rendering the manifest for this
+     * phase. These are in addition to the profiles list specified in the
      * `DeliveryPipeline` stage.
      * </pre>
      *
-     * <code>repeated string profiles = 3;</code>
+     * <code>repeated string profiles = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The profiles at the given index.
@@ -457,12 +457,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Skaffold profiles to use when rendering the manifest for this phase.
-     * These are in addition to the profiles list specified in the
+     * Optional. Skaffold profiles to use when rendering the manifest for this
+     * phase. These are in addition to the profiles list specified in the
      * `DeliveryPipeline` stage.
      * </pre>
      *
-     * <code>repeated string profiles = 3;</code>
+     * <code>repeated string profiles = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the profiles at the given index.
@@ -477,10 +477,10 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Whether to run verify tests after the deployment.
+     * Optional. Whether to run verify tests after the deployment.
      * </pre>
      *
-     * <code>bool verify = 4;</code>
+     * <code>bool verify = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The verify.
      */
@@ -1310,12 +1310,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Skaffold profiles to use when rendering the manifest for this phase.
-       * These are in addition to the profiles list specified in the
+       * Optional. Skaffold profiles to use when rendering the manifest for this
+       * phase. These are in addition to the profiles list specified in the
        * `DeliveryPipeline` stage.
        * </pre>
        *
-       * <code>repeated string profiles = 3;</code>
+       * <code>repeated string profiles = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return A list containing the profiles.
        */
@@ -1327,12 +1327,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Skaffold profiles to use when rendering the manifest for this phase.
-       * These are in addition to the profiles list specified in the
+       * Optional. Skaffold profiles to use when rendering the manifest for this
+       * phase. These are in addition to the profiles list specified in the
        * `DeliveryPipeline` stage.
        * </pre>
        *
-       * <code>repeated string profiles = 3;</code>
+       * <code>repeated string profiles = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The count of profiles.
        */
@@ -1343,12 +1343,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Skaffold profiles to use when rendering the manifest for this phase.
-       * These are in addition to the profiles list specified in the
+       * Optional. Skaffold profiles to use when rendering the manifest for this
+       * phase. These are in addition to the profiles list specified in the
        * `DeliveryPipeline` stage.
        * </pre>
        *
-       * <code>repeated string profiles = 3;</code>
+       * <code>repeated string profiles = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the element to return.
        * @return The profiles at the given index.
@@ -1360,12 +1360,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Skaffold profiles to use when rendering the manifest for this phase.
-       * These are in addition to the profiles list specified in the
+       * Optional. Skaffold profiles to use when rendering the manifest for this
+       * phase. These are in addition to the profiles list specified in the
        * `DeliveryPipeline` stage.
        * </pre>
        *
-       * <code>repeated string profiles = 3;</code>
+       * <code>repeated string profiles = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the profiles at the given index.
@@ -1377,12 +1377,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Skaffold profiles to use when rendering the manifest for this phase.
-       * These are in addition to the profiles list specified in the
+       * Optional. Skaffold profiles to use when rendering the manifest for this
+       * phase. These are in addition to the profiles list specified in the
        * `DeliveryPipeline` stage.
        * </pre>
        *
-       * <code>repeated string profiles = 3;</code>
+       * <code>repeated string profiles = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index to set the value at.
        * @param value The profiles to set.
@@ -1402,12 +1402,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Skaffold profiles to use when rendering the manifest for this phase.
-       * These are in addition to the profiles list specified in the
+       * Optional. Skaffold profiles to use when rendering the manifest for this
+       * phase. These are in addition to the profiles list specified in the
        * `DeliveryPipeline` stage.
        * </pre>
        *
-       * <code>repeated string profiles = 3;</code>
+       * <code>repeated string profiles = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The profiles to add.
        * @return This builder for chaining.
@@ -1426,12 +1426,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Skaffold profiles to use when rendering the manifest for this phase.
-       * These are in addition to the profiles list specified in the
+       * Optional. Skaffold profiles to use when rendering the manifest for this
+       * phase. These are in addition to the profiles list specified in the
        * `DeliveryPipeline` stage.
        * </pre>
        *
-       * <code>repeated string profiles = 3;</code>
+       * <code>repeated string profiles = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param values The profiles to add.
        * @return This builder for chaining.
@@ -1447,12 +1447,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Skaffold profiles to use when rendering the manifest for this phase.
-       * These are in addition to the profiles list specified in the
+       * Optional. Skaffold profiles to use when rendering the manifest for this
+       * phase. These are in addition to the profiles list specified in the
        * `DeliveryPipeline` stage.
        * </pre>
        *
-       * <code>repeated string profiles = 3;</code>
+       * <code>repeated string profiles = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1467,12 +1467,12 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Skaffold profiles to use when rendering the manifest for this phase.
-       * These are in addition to the profiles list specified in the
+       * Optional. Skaffold profiles to use when rendering the manifest for this
+       * phase. These are in addition to the profiles list specified in the
        * `DeliveryPipeline` stage.
        * </pre>
        *
-       * <code>repeated string profiles = 3;</code>
+       * <code>repeated string profiles = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes of the profiles to add.
        * @return This builder for chaining.
@@ -1494,10 +1494,10 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Whether to run verify tests after the deployment.
+       * Optional. Whether to run verify tests after the deployment.
        * </pre>
        *
-       * <code>bool verify = 4;</code>
+       * <code>bool verify = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The verify.
        */
@@ -1509,10 +1509,10 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Whether to run verify tests after the deployment.
+       * Optional. Whether to run verify tests after the deployment.
        * </pre>
        *
-       * <code>bool verify = 4;</code>
+       * <code>bool verify = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The verify to set.
        * @return This builder for chaining.
@@ -1528,10 +1528,10 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Whether to run verify tests after the deployment.
+       * Optional. Whether to run verify tests after the deployment.
        * </pre>
        *
-       * <code>bool verify = 4;</code>
+       * <code>bool verify = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */

@@ -142,6 +142,17 @@ public class BatchServiceSettings extends ClientSettings<BatchServiceSettings> {
     return ((BatchServiceStubSettings) getStubSettings()).deleteJobOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to cancelJob. */
+  public UnaryCallSettings<CancelJobRequest, Operation> cancelJobSettings() {
+    return ((BatchServiceStubSettings) getStubSettings()).cancelJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelJob. */
+  public OperationCallSettings<CancelJobRequest, CancelJobResponse, OperationMetadata>
+      cancelJobOperationSettings() {
+    return ((BatchServiceStubSettings) getStubSettings()).cancelJobOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listJobs. */
   public PagedCallSettings<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
       listJobsSettings() {
@@ -301,6 +312,17 @@ public class BatchServiceSettings extends ClientSettings<BatchServiceSettings> {
     public OperationCallSettings.Builder<DeleteJobRequest, Empty, OperationMetadata>
         deleteJobOperationSettings() {
       return getStubSettingsBuilder().deleteJobOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelJob. */
+    public UnaryCallSettings.Builder<CancelJobRequest, Operation> cancelJobSettings() {
+      return getStubSettingsBuilder().cancelJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelJob. */
+    public OperationCallSettings.Builder<CancelJobRequest, CancelJobResponse, OperationMetadata>
+        cancelJobOperationSettings() {
+      return getStubSettingsBuilder().cancelJobOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listJobs. */

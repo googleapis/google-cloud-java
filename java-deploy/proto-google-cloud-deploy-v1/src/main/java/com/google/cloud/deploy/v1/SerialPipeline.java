@@ -71,11 +71,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Each stage specifies configuration for a `Target`. The ordering
+   * Optional. Each stage specifies configuration for a `Target`. The ordering
    * of this list defines the promotion flow.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.deploy.v1.Stage> getStagesList() {
@@ -85,11 +87,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Each stage specifies configuration for a `Target`. The ordering
+   * Optional. Each stage specifies configuration for a `Target`. The ordering
    * of this list defines the promotion flow.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.deploy.v1.StageOrBuilder>
@@ -100,11 +104,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Each stage specifies configuration for a `Target`. The ordering
+   * Optional. Each stage specifies configuration for a `Target`. The ordering
    * of this list defines the promotion flow.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getStagesCount() {
@@ -114,11 +120,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Each stage specifies configuration for a `Target`. The ordering
+   * Optional. Each stage specifies configuration for a `Target`. The ordering
    * of this list defines the promotion flow.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.Stage getStages(int index) {
@@ -128,11 +136,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Each stage specifies configuration for a `Target`. The ordering
+   * Optional. Each stage specifies configuration for a `Target`. The ordering
    * of this list defines the promotion flow.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.StageOrBuilder getStagesOrBuilder(int index) {
@@ -546,11 +556,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each stage specifies configuration for a `Target`. The ordering
+     * Optional. Each stage specifies configuration for a `Target`. The ordering
      * of this list defines the promotion flow.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.deploy.v1.Stage> getStagesList() {
       if (stagesBuilder_ == null) {
@@ -563,11 +575,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each stage specifies configuration for a `Target`. The ordering
+     * Optional. Each stage specifies configuration for a `Target`. The ordering
      * of this list defines the promotion flow.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getStagesCount() {
       if (stagesBuilder_ == null) {
@@ -580,11 +594,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each stage specifies configuration for a `Target`. The ordering
+     * Optional. Each stage specifies configuration for a `Target`. The ordering
      * of this list defines the promotion flow.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.Stage getStages(int index) {
       if (stagesBuilder_ == null) {
@@ -597,11 +613,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each stage specifies configuration for a `Target`. The ordering
+     * Optional. Each stage specifies configuration for a `Target`. The ordering
      * of this list defines the promotion flow.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setStages(int index, com.google.cloud.deploy.v1.Stage value) {
       if (stagesBuilder_ == null) {
@@ -620,11 +638,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each stage specifies configuration for a `Target`. The ordering
+     * Optional. Each stage specifies configuration for a `Target`. The ordering
      * of this list defines the promotion flow.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setStages(int index, com.google.cloud.deploy.v1.Stage.Builder builderForValue) {
       if (stagesBuilder_ == null) {
@@ -640,11 +660,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each stage specifies configuration for a `Target`. The ordering
+     * Optional. Each stage specifies configuration for a `Target`. The ordering
      * of this list defines the promotion flow.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addStages(com.google.cloud.deploy.v1.Stage value) {
       if (stagesBuilder_ == null) {
@@ -663,11 +685,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each stage specifies configuration for a `Target`. The ordering
+     * Optional. Each stage specifies configuration for a `Target`. The ordering
      * of this list defines the promotion flow.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addStages(int index, com.google.cloud.deploy.v1.Stage value) {
       if (stagesBuilder_ == null) {
@@ -686,11 +710,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each stage specifies configuration for a `Target`. The ordering
+     * Optional. Each stage specifies configuration for a `Target`. The ordering
      * of this list defines the promotion flow.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addStages(com.google.cloud.deploy.v1.Stage.Builder builderForValue) {
       if (stagesBuilder_ == null) {
@@ -706,11 +732,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each stage specifies configuration for a `Target`. The ordering
+     * Optional. Each stage specifies configuration for a `Target`. The ordering
      * of this list defines the promotion flow.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addStages(int index, com.google.cloud.deploy.v1.Stage.Builder builderForValue) {
       if (stagesBuilder_ == null) {
@@ -726,11 +754,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each stage specifies configuration for a `Target`. The ordering
+     * Optional. Each stage specifies configuration for a `Target`. The ordering
      * of this list defines the promotion flow.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllStages(
         java.lang.Iterable<? extends com.google.cloud.deploy.v1.Stage> values) {
@@ -747,11 +777,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each stage specifies configuration for a `Target`. The ordering
+     * Optional. Each stage specifies configuration for a `Target`. The ordering
      * of this list defines the promotion flow.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearStages() {
       if (stagesBuilder_ == null) {
@@ -767,11 +799,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each stage specifies configuration for a `Target`. The ordering
+     * Optional. Each stage specifies configuration for a `Target`. The ordering
      * of this list defines the promotion flow.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeStages(int index) {
       if (stagesBuilder_ == null) {
@@ -787,11 +821,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each stage specifies configuration for a `Target`. The ordering
+     * Optional. Each stage specifies configuration for a `Target`. The ordering
      * of this list defines the promotion flow.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.Stage.Builder getStagesBuilder(int index) {
       return getStagesFieldBuilder().getBuilder(index);
@@ -800,11 +836,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each stage specifies configuration for a `Target`. The ordering
+     * Optional. Each stage specifies configuration for a `Target`. The ordering
      * of this list defines the promotion flow.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.StageOrBuilder getStagesOrBuilder(int index) {
       if (stagesBuilder_ == null) {
@@ -817,11 +855,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each stage specifies configuration for a `Target`. The ordering
+     * Optional. Each stage specifies configuration for a `Target`. The ordering
      * of this list defines the promotion flow.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.deploy.v1.StageOrBuilder>
         getStagesOrBuilderList() {
@@ -835,11 +875,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each stage specifies configuration for a `Target`. The ordering
+     * Optional. Each stage specifies configuration for a `Target`. The ordering
      * of this list defines the promotion flow.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.Stage.Builder addStagesBuilder() {
       return getStagesFieldBuilder()
@@ -849,11 +891,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each stage specifies configuration for a `Target`. The ordering
+     * Optional. Each stage specifies configuration for a `Target`. The ordering
      * of this list defines the promotion flow.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.Stage.Builder addStagesBuilder(int index) {
       return getStagesFieldBuilder()
@@ -863,11 +907,13 @@ public final class SerialPipeline extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each stage specifies configuration for a `Target`. The ordering
+     * Optional. Each stage specifies configuration for a `Target`. The ordering
      * of this list defines the promotion flow.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.deploy.v1.Stage.Builder> getStagesBuilderList() {
       return getStagesFieldBuilder().getBuilderList();

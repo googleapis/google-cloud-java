@@ -360,10 +360,10 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Description of the `DeployPolicy`. Max length is 255 characters.
+   * Optional. Description of the `DeployPolicy`. Max length is 255 characters.
    * </pre>
    *
-   * <code>string description = 3;</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -383,10 +383,10 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Description of the `DeployPolicy`. Max length is 255 characters.
+   * Optional. Description of the `DeployPolicy`. Max length is 255 characters.
    * </pre>
    *
-   * <code>string description = 3;</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -434,8 +434,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. Annotations must meet the following
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. Annotations must meet the following
    * constraints:
    *
    * * Annotations are key/value pairs.
@@ -453,7 +453,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
    * for more details.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public boolean containsAnnotations(java.lang.String key) {
@@ -472,8 +473,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. Annotations must meet the following
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. Annotations must meet the following
    * constraints:
    *
    * * Annotations are key/value pairs.
@@ -491,7 +492,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
    * for more details.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -501,8 +503,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. Annotations must meet the following
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. Annotations must meet the following
    * constraints:
    *
    * * Annotations are key/value pairs.
@@ -520,7 +522,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
    * for more details.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -537,8 +540,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. Annotations must meet the following
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. Annotations must meet the following
    * constraints:
    *
    * * Annotations are key/value pairs.
@@ -556,7 +559,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
    * for more details.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -816,11 +820,11 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When suspended, the policy will not prevent actions from occurring, even
-   * if the action violates the policy.
+   * Optional. When suspended, the policy will not prevent actions from
+   * occurring, even if the action violates the policy.
    * </pre>
    *
-   * <code>bool suspended = 8;</code>
+   * <code>bool suspended = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The suspended.
    */
@@ -2044,10 +2048,10 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the `DeployPolicy`. Max length is 255 characters.
+     * Optional. Description of the `DeployPolicy`. Max length is 255 characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -2066,10 +2070,10 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the `DeployPolicy`. Max length is 255 characters.
+     * Optional. Description of the `DeployPolicy`. Max length is 255 characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -2088,10 +2092,10 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the `DeployPolicy`. Max length is 255 characters.
+     * Optional. Description of the `DeployPolicy`. Max length is 255 characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2109,10 +2113,10 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the `DeployPolicy`. Max length is 255 characters.
+     * Optional. Description of the `DeployPolicy`. Max length is 255 characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2126,10 +2130,10 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the `DeployPolicy`. Max length is 255 characters.
+     * Optional. Description of the `DeployPolicy`. Max length is 255 characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2177,8 +2181,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. Annotations must meet the following
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. Annotations must meet the following
      * constraints:
      *
      * * Annotations are key/value pairs.
@@ -2196,7 +2200,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      * for more details.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsAnnotations(java.lang.String key) {
@@ -2215,8 +2220,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. Annotations must meet the following
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. Annotations must meet the following
      * constraints:
      *
      * * Annotations are key/value pairs.
@@ -2234,7 +2239,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      * for more details.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -2244,8 +2250,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. Annotations must meet the following
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. Annotations must meet the following
      * constraints:
      *
      * * Annotations are key/value pairs.
@@ -2263,7 +2269,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      * for more details.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -2280,8 +2287,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. Annotations must meet the following
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. Annotations must meet the following
      * constraints:
      *
      * * Annotations are key/value pairs.
@@ -2299,7 +2306,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      * for more details.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -2322,8 +2330,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. Annotations must meet the following
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. Annotations must meet the following
      * constraints:
      *
      * * Annotations are key/value pairs.
@@ -2341,7 +2349,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      * for more details.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeAnnotations(java.lang.String key) {
       if (key == null) {
@@ -2360,8 +2369,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. Annotations must meet the following
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. Annotations must meet the following
      * constraints:
      *
      * * Annotations are key/value pairs.
@@ -2379,7 +2388,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      * for more details.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAnnotations(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -2396,8 +2406,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. Annotations must meet the following
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. Annotations must meet the following
      * constraints:
      *
      * * Annotations are key/value pairs.
@@ -2415,7 +2425,8 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      * for more details.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
@@ -3067,11 +3078,11 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When suspended, the policy will not prevent actions from occurring, even
-     * if the action violates the policy.
+     * Optional. When suspended, the policy will not prevent actions from
+     * occurring, even if the action violates the policy.
      * </pre>
      *
-     * <code>bool suspended = 8;</code>
+     * <code>bool suspended = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The suspended.
      */
@@ -3083,11 +3094,11 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When suspended, the policy will not prevent actions from occurring, even
-     * if the action violates the policy.
+     * Optional. When suspended, the policy will not prevent actions from
+     * occurring, even if the action violates the policy.
      * </pre>
      *
-     * <code>bool suspended = 8;</code>
+     * <code>bool suspended = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The suspended to set.
      * @return This builder for chaining.
@@ -3103,11 +3114,11 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When suspended, the policy will not prevent actions from occurring, even
-     * if the action violates the policy.
+     * Optional. When suspended, the policy will not prevent actions from
+     * occurring, even if the action violates the policy.
      * </pre>
      *
-     * <code>bool suspended = 8;</code>
+     * <code>bool suspended = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

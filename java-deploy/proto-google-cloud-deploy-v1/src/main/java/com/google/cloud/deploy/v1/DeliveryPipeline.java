@@ -138,13 +138,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Name of the `DeliveryPipeline`. Format is
+   * Identifier. Name of the `DeliveryPipeline`. Format is
    * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}`.
    * The `deliveryPipeline` component must match
    * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -164,13 +164,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Name of the `DeliveryPipeline`. Format is
+   * Identifier. Name of the `DeliveryPipeline`. Format is
    * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}`.
    * The `deliveryPipeline` component must match
    * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -246,10 +246,11 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Description of the `DeliveryPipeline`. Max length is 255 characters.
+   * Optional. Description of the `DeliveryPipeline`. Max length is 255
+   * characters.
    * </pre>
    *
-   * <code>string description = 3;</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -269,10 +270,11 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Description of the `DeliveryPipeline`. Max length is 255 characters.
+   * Optional. Description of the `DeliveryPipeline`. Max length is 255
+   * characters.
    * </pre>
    *
-   * <code>string description = 3;</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -320,11 +322,12 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public boolean containsAnnotations(java.lang.String key) {
@@ -343,11 +346,12 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -357,11 +361,12 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -378,11 +383,12 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -641,11 +647,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * SerialPipeline defines a sequential set of stages for a
+   * Optional. SerialPipeline defines a sequential set of stages for a
    * `DeliveryPipeline`.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8;</code>
+   * <code>
+   * .google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the serialPipeline field is set.
    */
@@ -657,11 +665,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * SerialPipeline defines a sequential set of stages for a
+   * Optional. SerialPipeline defines a sequential set of stages for a
    * `DeliveryPipeline`.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8;</code>
+   * <code>
+   * .google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The serialPipeline.
    */
@@ -676,11 +686,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * SerialPipeline defines a sequential set of stages for a
+   * Optional. SerialPipeline defines a sequential set of stages for a
    * `DeliveryPipeline`.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8;</code>
+   * <code>
+   * .google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.SerialPipelineOrBuilder getSerialPipelineOrBuilder() {
@@ -807,11 +819,11 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * When suspended, no new releases or rollouts can be created,
+   * Optional. When suspended, no new releases or rollouts can be created,
    * but in-progress ones will complete.
    * </pre>
    *
-   * <code>bool suspended = 12;</code>
+   * <code>bool suspended = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The suspended.
    */
@@ -1539,13 +1551,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Name of the `DeliveryPipeline`. Format is
+     * Identifier. Name of the `DeliveryPipeline`. Format is
      * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}`.
      * The `deliveryPipeline` component must match
      * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1564,13 +1576,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Name of the `DeliveryPipeline`. Format is
+     * Identifier. Name of the `DeliveryPipeline`. Format is
      * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}`.
      * The `deliveryPipeline` component must match
      * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1589,13 +1601,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Name of the `DeliveryPipeline`. Format is
+     * Identifier. Name of the `DeliveryPipeline`. Format is
      * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}`.
      * The `deliveryPipeline` component must match
      * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1613,13 +1625,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Name of the `DeliveryPipeline`. Format is
+     * Identifier. Name of the `DeliveryPipeline`. Format is
      * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}`.
      * The `deliveryPipeline` component must match
      * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1633,13 +1645,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Name of the `DeliveryPipeline`. Format is
+     * Identifier. Name of the `DeliveryPipeline`. Format is
      * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}`.
      * The `deliveryPipeline` component must match
      * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1766,10 +1778,11 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Description of the `DeliveryPipeline`. Max length is 255 characters.
+     * Optional. Description of the `DeliveryPipeline`. Max length is 255
+     * characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -1788,10 +1801,11 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Description of the `DeliveryPipeline`. Max length is 255 characters.
+     * Optional. Description of the `DeliveryPipeline`. Max length is 255
+     * characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -1810,10 +1824,11 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Description of the `DeliveryPipeline`. Max length is 255 characters.
+     * Optional. Description of the `DeliveryPipeline`. Max length is 255
+     * characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1831,10 +1846,11 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Description of the `DeliveryPipeline`. Max length is 255 characters.
+     * Optional. Description of the `DeliveryPipeline`. Max length is 255
+     * characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1848,10 +1864,11 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Description of the `DeliveryPipeline`. Max length is 255 characters.
+     * Optional. Description of the `DeliveryPipeline`. Max length is 255
+     * characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1899,11 +1916,12 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsAnnotations(java.lang.String key) {
@@ -1922,11 +1940,12 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -1936,11 +1955,12 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -1957,11 +1977,12 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -1984,11 +2005,12 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeAnnotations(java.lang.String key) {
       if (key == null) {
@@ -2007,11 +2029,12 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAnnotations(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -2028,11 +2051,12 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
@@ -2688,11 +2712,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * SerialPipeline defines a sequential set of stages for a
+     * Optional. SerialPipeline defines a sequential set of stages for a
      * `DeliveryPipeline`.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8;</code>
+     * <code>
+     * .google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the serialPipeline field is set.
      */
@@ -2704,11 +2730,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * SerialPipeline defines a sequential set of stages for a
+     * Optional. SerialPipeline defines a sequential set of stages for a
      * `DeliveryPipeline`.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8;</code>
+     * <code>
+     * .google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The serialPipeline.
      */
@@ -2730,11 +2758,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * SerialPipeline defines a sequential set of stages for a
+     * Optional. SerialPipeline defines a sequential set of stages for a
      * `DeliveryPipeline`.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8;</code>
+     * <code>
+     * .google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSerialPipeline(com.google.cloud.deploy.v1.SerialPipeline value) {
       if (serialPipelineBuilder_ == null) {
@@ -2753,11 +2783,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * SerialPipeline defines a sequential set of stages for a
+     * Optional. SerialPipeline defines a sequential set of stages for a
      * `DeliveryPipeline`.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8;</code>
+     * <code>
+     * .google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSerialPipeline(
         com.google.cloud.deploy.v1.SerialPipeline.Builder builderForValue) {
@@ -2774,11 +2806,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * SerialPipeline defines a sequential set of stages for a
+     * Optional. SerialPipeline defines a sequential set of stages for a
      * `DeliveryPipeline`.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8;</code>
+     * <code>
+     * .google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeSerialPipeline(com.google.cloud.deploy.v1.SerialPipeline value) {
       if (serialPipelineBuilder_ == null) {
@@ -2807,11 +2841,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * SerialPipeline defines a sequential set of stages for a
+     * Optional. SerialPipeline defines a sequential set of stages for a
      * `DeliveryPipeline`.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8;</code>
+     * <code>
+     * .google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearSerialPipeline() {
       if (serialPipelineBuilder_ == null) {
@@ -2833,11 +2869,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * SerialPipeline defines a sequential set of stages for a
+     * Optional. SerialPipeline defines a sequential set of stages for a
      * `DeliveryPipeline`.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8;</code>
+     * <code>
+     * .google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.SerialPipeline.Builder getSerialPipelineBuilder() {
       return getSerialPipelineFieldBuilder().getBuilder();
@@ -2846,11 +2884,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * SerialPipeline defines a sequential set of stages for a
+     * Optional. SerialPipeline defines a sequential set of stages for a
      * `DeliveryPipeline`.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8;</code>
+     * <code>
+     * .google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.SerialPipelineOrBuilder getSerialPipelineOrBuilder() {
@@ -2867,11 +2907,13 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * SerialPipeline defines a sequential set of stages for a
+     * Optional. SerialPipeline defines a sequential set of stages for a
      * `DeliveryPipeline`.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8;</code>
+     * <code>
+     * .google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.SerialPipeline,
@@ -3222,11 +3264,11 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * When suspended, no new releases or rollouts can be created,
+     * Optional. When suspended, no new releases or rollouts can be created,
      * but in-progress ones will complete.
      * </pre>
      *
-     * <code>bool suspended = 12;</code>
+     * <code>bool suspended = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The suspended.
      */
@@ -3238,11 +3280,11 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * When suspended, no new releases or rollouts can be created,
+     * Optional. When suspended, no new releases or rollouts can be created,
      * but in-progress ones will complete.
      * </pre>
      *
-     * <code>bool suspended = 12;</code>
+     * <code>bool suspended = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The suspended to set.
      * @return This builder for chaining.
@@ -3258,11 +3300,11 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * When suspended, no new releases or rollouts can be created,
+     * Optional. When suspended, no new releases or rollouts can be created,
      * but in-progress ones will complete.
      * </pre>
      *
-     * <code>bool suspended = 12;</code>
+     * <code>bool suspended = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

@@ -28,40 +28,48 @@ public interface AutomationResourceSelectorOrBuilder
    *
    *
    * <pre>
-   * Contains attributes about a target.
+   * Optional. Contains attributes about a target.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.TargetAttribute> getTargetsList();
   /**
    *
    *
    * <pre>
-   * Contains attributes about a target.
+   * Optional. Contains attributes about a target.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.TargetAttribute getTargets(int index);
   /**
    *
    *
    * <pre>
-   * Contains attributes about a target.
+   * Optional. Contains attributes about a target.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getTargetsCount();
   /**
    *
    *
    * <pre>
-   * Contains attributes about a target.
+   * Optional. Contains attributes about a target.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.deploy.v1.TargetAttributeOrBuilder>
       getTargetsOrBuilderList();
@@ -69,10 +77,12 @@ public interface AutomationResourceSelectorOrBuilder
    *
    *
    * <pre>
-   * Contains attributes about a target.
+   * Optional. Contains attributes about a target.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.TargetAttributeOrBuilder getTargetsOrBuilder(int index);
 }

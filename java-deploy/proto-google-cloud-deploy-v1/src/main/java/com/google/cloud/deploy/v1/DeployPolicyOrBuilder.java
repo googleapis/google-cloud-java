@@ -82,10 +82,10 @@ public interface DeployPolicyOrBuilder
    *
    *
    * <pre>
-   * Description of the `DeployPolicy`. Max length is 255 characters.
+   * Optional. Description of the `DeployPolicy`. Max length is 255 characters.
    * </pre>
    *
-   * <code>string description = 3;</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -94,10 +94,10 @@ public interface DeployPolicyOrBuilder
    *
    *
    * <pre>
-   * Description of the `DeployPolicy`. Max length is 255 characters.
+   * Optional. Description of the `DeployPolicy`. Max length is 255 characters.
    * </pre>
    *
-   * <code>string description = 3;</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -107,8 +107,8 @@ public interface DeployPolicyOrBuilder
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. Annotations must meet the following
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. Annotations must meet the following
    * constraints:
    *
    * * Annotations are key/value pairs.
@@ -126,15 +126,16 @@ public interface DeployPolicyOrBuilder
    * for more details.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getAnnotationsCount();
   /**
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. Annotations must meet the following
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. Annotations must meet the following
    * constraints:
    *
    * * Annotations are key/value pairs.
@@ -152,7 +153,8 @@ public interface DeployPolicyOrBuilder
    * for more details.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsAnnotations(java.lang.String key);
   /** Use {@link #getAnnotationsMap()} instead. */
@@ -162,8 +164,8 @@ public interface DeployPolicyOrBuilder
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. Annotations must meet the following
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. Annotations must meet the following
    * constraints:
    *
    * * Annotations are key/value pairs.
@@ -181,15 +183,16 @@ public interface DeployPolicyOrBuilder
    * for more details.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
   /**
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. Annotations must meet the following
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. Annotations must meet the following
    * constraints:
    *
    * * Annotations are key/value pairs.
@@ -207,7 +210,8 @@ public interface DeployPolicyOrBuilder
    * for more details.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
@@ -218,8 +222,8 @@ public interface DeployPolicyOrBuilder
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. Annotations must meet the following
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. Annotations must meet the following
    * constraints:
    *
    * * Annotations are key/value pairs.
@@ -237,7 +241,8 @@ public interface DeployPolicyOrBuilder
    * for more details.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getAnnotationsOrThrow(java.lang.String key);
 
@@ -429,11 +434,11 @@ public interface DeployPolicyOrBuilder
    *
    *
    * <pre>
-   * When suspended, the policy will not prevent actions from occurring, even
-   * if the action violates the policy.
+   * Optional. When suspended, the policy will not prevent actions from
+   * occurring, even if the action violates the policy.
    * </pre>
    *
-   * <code>bool suspended = 8;</code>
+   * <code>bool suspended = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The suspended.
    */

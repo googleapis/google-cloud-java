@@ -112,10 +112,12 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Rollout restrictions.
+   * Optional. Rollout restrictions.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the rolloutRestriction field is set.
    */
@@ -127,10 +129,12 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Rollout restrictions.
+   * Optional. Rollout restrictions.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The rolloutRestriction.
    */
@@ -145,10 +149,12 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Rollout restrictions.
+   * Optional. Rollout restrictions.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.RolloutRestrictionOrBuilder getRolloutRestrictionOrBuilder() {
@@ -552,10 +558,12 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Rollout restrictions.
+     * Optional. Rollout restrictions.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the rolloutRestriction field is set.
      */
@@ -567,10 +575,12 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Rollout restrictions.
+     * Optional. Rollout restrictions.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The rolloutRestriction.
      */
@@ -592,10 +602,12 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Rollout restrictions.
+     * Optional. Rollout restrictions.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setRolloutRestriction(com.google.cloud.deploy.v1.RolloutRestriction value) {
       if (rolloutRestrictionBuilder_ == null) {
@@ -614,10 +626,12 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Rollout restrictions.
+     * Optional. Rollout restrictions.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setRolloutRestriction(
         com.google.cloud.deploy.v1.RolloutRestriction.Builder builderForValue) {
@@ -634,10 +648,12 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Rollout restrictions.
+     * Optional. Rollout restrictions.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeRolloutRestriction(com.google.cloud.deploy.v1.RolloutRestriction value) {
       if (rolloutRestrictionBuilder_ == null) {
@@ -666,10 +682,12 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Rollout restrictions.
+     * Optional. Rollout restrictions.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearRolloutRestriction() {
       if (rolloutRestrictionBuilder_ == null) {
@@ -691,10 +709,12 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Rollout restrictions.
+     * Optional. Rollout restrictions.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.RolloutRestriction.Builder getRolloutRestrictionBuilder() {
       return getRolloutRestrictionFieldBuilder().getBuilder();
@@ -703,10 +723,12 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Rollout restrictions.
+     * Optional. Rollout restrictions.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.RolloutRestrictionOrBuilder getRolloutRestrictionOrBuilder() {
@@ -723,10 +745,12 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Rollout restrictions.
+     * Optional. Rollout restrictions.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.RolloutRestriction,

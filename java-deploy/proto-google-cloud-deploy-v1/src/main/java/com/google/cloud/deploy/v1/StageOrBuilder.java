@@ -28,15 +28,15 @@ public interface StageOrBuilder
    *
    *
    * <pre>
-   * The target_id to which this stage points. This field refers exclusively to
-   * the last segment of a target name. For example, this field would just be
-   * `my-target` (rather than
+   * Optional. The target_id to which this stage points. This field refers
+   * exclusively to the last segment of a target name. For example, this field
+   * would just be `my-target` (rather than
    * `projects/project/locations/location/targets/my-target`). The location of
    * the `Target` is inferred to be the same as the location of the
    * `DeliveryPipeline` that contains this `Stage`.
    * </pre>
    *
-   * <code>string target_id = 1;</code>
+   * <code>string target_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The targetId.
    */
@@ -45,15 +45,15 @@ public interface StageOrBuilder
    *
    *
    * <pre>
-   * The target_id to which this stage points. This field refers exclusively to
-   * the last segment of a target name. For example, this field would just be
-   * `my-target` (rather than
+   * Optional. The target_id to which this stage points. This field refers
+   * exclusively to the last segment of a target name. For example, this field
+   * would just be `my-target` (rather than
    * `projects/project/locations/location/targets/my-target`). The location of
    * the `Target` is inferred to be the same as the location of the
    * `DeliveryPipeline` that contains this `Stage`.
    * </pre>
    *
-   * <code>string target_id = 1;</code>
+   * <code>string target_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for targetId.
    */
@@ -63,11 +63,11 @@ public interface StageOrBuilder
    *
    *
    * <pre>
-   * Skaffold profiles to use when rendering the manifest for this stage's
-   * `Target`.
+   * Optional. Skaffold profiles to use when rendering the manifest for this
+   * stage's `Target`.
    * </pre>
    *
-   * <code>repeated string profiles = 2;</code>
+   * <code>repeated string profiles = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the profiles.
    */
@@ -76,11 +76,11 @@ public interface StageOrBuilder
    *
    *
    * <pre>
-   * Skaffold profiles to use when rendering the manifest for this stage's
-   * `Target`.
+   * Optional. Skaffold profiles to use when rendering the manifest for this
+   * stage's `Target`.
    * </pre>
    *
-   * <code>repeated string profiles = 2;</code>
+   * <code>repeated string profiles = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of profiles.
    */
@@ -89,11 +89,11 @@ public interface StageOrBuilder
    *
    *
    * <pre>
-   * Skaffold profiles to use when rendering the manifest for this stage's
-   * `Target`.
+   * Optional. Skaffold profiles to use when rendering the manifest for this
+   * stage's `Target`.
    * </pre>
    *
-   * <code>repeated string profiles = 2;</code>
+   * <code>repeated string profiles = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The profiles at the given index.
@@ -103,11 +103,11 @@ public interface StageOrBuilder
    *
    *
    * <pre>
-   * Skaffold profiles to use when rendering the manifest for this stage's
-   * `Target`.
+   * Optional. Skaffold profiles to use when rendering the manifest for this
+   * stage's `Target`.
    * </pre>
    *
-   * <code>repeated string profiles = 2;</code>
+   * <code>repeated string profiles = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the profiles at the given index.

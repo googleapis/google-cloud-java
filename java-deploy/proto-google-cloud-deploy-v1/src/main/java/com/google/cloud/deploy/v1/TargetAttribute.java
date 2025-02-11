@@ -84,14 +84,14 @@ public final class TargetAttribute extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ID of the `Target`. The value of this field could be one of the
+   * Optional. ID of the `Target`. The value of this field could be one of the
    * following:
    *
    * * The last segment of a target name
    * * "*", all targets in a location
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The id.
    */
@@ -111,14 +111,14 @@ public final class TargetAttribute extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ID of the `Target`. The value of this field could be one of the
+   * Optional. ID of the `Target`. The value of this field could be one of the
    * following:
    *
    * * The last segment of a target name
    * * "*", all targets in a location
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for id.
    */
@@ -642,14 +642,14 @@ public final class TargetAttribute extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ID of the `Target`. The value of this field could be one of the
+     * Optional. ID of the `Target`. The value of this field could be one of the
      * following:
      *
      * * The last segment of a target name
      * * "*", all targets in a location
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The id.
      */
@@ -668,14 +668,14 @@ public final class TargetAttribute extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ID of the `Target`. The value of this field could be one of the
+     * Optional. ID of the `Target`. The value of this field could be one of the
      * following:
      *
      * * The last segment of a target name
      * * "*", all targets in a location
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for id.
      */
@@ -694,14 +694,14 @@ public final class TargetAttribute extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ID of the `Target`. The value of this field could be one of the
+     * Optional. ID of the `Target`. The value of this field could be one of the
      * following:
      *
      * * The last segment of a target name
      * * "*", all targets in a location
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -719,14 +719,14 @@ public final class TargetAttribute extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ID of the `Target`. The value of this field could be one of the
+     * Optional. ID of the `Target`. The value of this field could be one of the
      * following:
      *
      * * The last segment of a target name
      * * "*", all targets in a location
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -740,14 +740,14 @@ public final class TargetAttribute extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * ID of the `Target`. The value of this field could be one of the
+     * Optional. ID of the `Target`. The value of this field could be one of the
      * following:
      *
      * * The last segment of a target name
      * * "*", all targets in a location
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for id to set.
      * @return This builder for chaining.

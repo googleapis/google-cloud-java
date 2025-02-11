@@ -116,10 +116,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kubernetes runtime configuration.
+   * Optional. Kubernetes runtime configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.KubernetesConfig kubernetes = 1;</code>
+   * <code>
+   * .google.cloud.deploy.v1.KubernetesConfig kubernetes = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the kubernetes field is set.
    */
@@ -131,10 +133,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kubernetes runtime configuration.
+   * Optional. Kubernetes runtime configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.KubernetesConfig kubernetes = 1;</code>
+   * <code>
+   * .google.cloud.deploy.v1.KubernetesConfig kubernetes = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The kubernetes.
    */
@@ -149,10 +153,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kubernetes runtime configuration.
+   * Optional. Kubernetes runtime configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.KubernetesConfig kubernetes = 1;</code>
+   * <code>
+   * .google.cloud.deploy.v1.KubernetesConfig kubernetes = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.KubernetesConfigOrBuilder getKubernetesOrBuilder() {
@@ -167,10 +173,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Run runtime configuration.
+   * Optional. Cloud Run runtime configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CloudRunConfig cloud_run = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CloudRunConfig cloud_run = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the cloudRun field is set.
    */
@@ -182,10 +190,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Run runtime configuration.
+   * Optional. Cloud Run runtime configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CloudRunConfig cloud_run = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CloudRunConfig cloud_run = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The cloudRun.
    */
@@ -200,10 +210,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Run runtime configuration.
+   * Optional. Cloud Run runtime configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CloudRunConfig cloud_run = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CloudRunConfig cloud_run = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.CloudRunConfigOrBuilder getCloudRunOrBuilder() {
@@ -640,10 +652,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes runtime configuration.
+     * Optional. Kubernetes runtime configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig kubernetes = 1;</code>
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig kubernetes = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the kubernetes field is set.
      */
@@ -655,10 +669,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes runtime configuration.
+     * Optional. Kubernetes runtime configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig kubernetes = 1;</code>
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig kubernetes = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The kubernetes.
      */
@@ -680,10 +696,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes runtime configuration.
+     * Optional. Kubernetes runtime configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig kubernetes = 1;</code>
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig kubernetes = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setKubernetes(com.google.cloud.deploy.v1.KubernetesConfig value) {
       if (kubernetesBuilder_ == null) {
@@ -702,10 +720,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes runtime configuration.
+     * Optional. Kubernetes runtime configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig kubernetes = 1;</code>
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig kubernetes = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setKubernetes(
         com.google.cloud.deploy.v1.KubernetesConfig.Builder builderForValue) {
@@ -722,10 +742,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes runtime configuration.
+     * Optional. Kubernetes runtime configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig kubernetes = 1;</code>
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig kubernetes = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeKubernetes(com.google.cloud.deploy.v1.KubernetesConfig value) {
       if (kubernetesBuilder_ == null) {
@@ -754,10 +776,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes runtime configuration.
+     * Optional. Kubernetes runtime configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig kubernetes = 1;</code>
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig kubernetes = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearKubernetes() {
       if (kubernetesBuilder_ == null) {
@@ -779,10 +803,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes runtime configuration.
+     * Optional. Kubernetes runtime configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig kubernetes = 1;</code>
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig kubernetes = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.KubernetesConfig.Builder getKubernetesBuilder() {
       return getKubernetesFieldBuilder().getBuilder();
@@ -791,10 +817,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes runtime configuration.
+     * Optional. Kubernetes runtime configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig kubernetes = 1;</code>
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig kubernetes = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.KubernetesConfigOrBuilder getKubernetesOrBuilder() {
@@ -811,10 +839,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kubernetes runtime configuration.
+     * Optional. Kubernetes runtime configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig kubernetes = 1;</code>
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig kubernetes = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.KubernetesConfig,
@@ -849,10 +879,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Run runtime configuration.
+     * Optional. Cloud Run runtime configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunConfig cloud_run = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunConfig cloud_run = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the cloudRun field is set.
      */
@@ -864,10 +896,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Run runtime configuration.
+     * Optional. Cloud Run runtime configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunConfig cloud_run = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunConfig cloud_run = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The cloudRun.
      */
@@ -889,10 +923,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Run runtime configuration.
+     * Optional. Cloud Run runtime configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunConfig cloud_run = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunConfig cloud_run = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setCloudRun(com.google.cloud.deploy.v1.CloudRunConfig value) {
       if (cloudRunBuilder_ == null) {
@@ -911,10 +947,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Run runtime configuration.
+     * Optional. Cloud Run runtime configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunConfig cloud_run = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunConfig cloud_run = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setCloudRun(com.google.cloud.deploy.v1.CloudRunConfig.Builder builderForValue) {
       if (cloudRunBuilder_ == null) {
@@ -930,10 +968,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Run runtime configuration.
+     * Optional. Cloud Run runtime configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunConfig cloud_run = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunConfig cloud_run = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeCloudRun(com.google.cloud.deploy.v1.CloudRunConfig value) {
       if (cloudRunBuilder_ == null) {
@@ -962,10 +1002,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Run runtime configuration.
+     * Optional. Cloud Run runtime configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunConfig cloud_run = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunConfig cloud_run = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearCloudRun() {
       if (cloudRunBuilder_ == null) {
@@ -987,10 +1029,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Run runtime configuration.
+     * Optional. Cloud Run runtime configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunConfig cloud_run = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunConfig cloud_run = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.CloudRunConfig.Builder getCloudRunBuilder() {
       return getCloudRunFieldBuilder().getBuilder();
@@ -999,10 +1043,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Run runtime configuration.
+     * Optional. Cloud Run runtime configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunConfig cloud_run = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunConfig cloud_run = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.CloudRunConfigOrBuilder getCloudRunOrBuilder() {
@@ -1019,10 +1065,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Run runtime configuration.
+     * Optional. Cloud Run runtime configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.CloudRunConfig cloud_run = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.CloudRunConfig cloud_run = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.CloudRunConfig,

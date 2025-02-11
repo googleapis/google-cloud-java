@@ -110,7 +110,7 @@ public interface GkeClusterOrBuilder
    *
    * <pre>
    * Optional. If set, the cluster will be accessed using the DNS endpoint. Note
-   * that `dns_endpoint` and `internal_ip` cannot both be set to true.
+   * that both `dns_endpoint` and `internal_ip` cannot be set to true.
    * </pre>
    *
    * <code>bool dns_endpoint = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

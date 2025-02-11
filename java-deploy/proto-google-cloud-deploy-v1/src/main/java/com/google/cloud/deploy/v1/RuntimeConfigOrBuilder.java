@@ -28,10 +28,12 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
-   * Kubernetes runtime configuration.
+   * Optional. Kubernetes runtime configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.KubernetesConfig kubernetes = 1;</code>
+   * <code>
+   * .google.cloud.deploy.v1.KubernetesConfig kubernetes = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the kubernetes field is set.
    */
@@ -40,10 +42,12 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
-   * Kubernetes runtime configuration.
+   * Optional. Kubernetes runtime configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.KubernetesConfig kubernetes = 1;</code>
+   * <code>
+   * .google.cloud.deploy.v1.KubernetesConfig kubernetes = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The kubernetes.
    */
@@ -52,10 +56,12 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
-   * Kubernetes runtime configuration.
+   * Optional. Kubernetes runtime configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.KubernetesConfig kubernetes = 1;</code>
+   * <code>
+   * .google.cloud.deploy.v1.KubernetesConfig kubernetes = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.KubernetesConfigOrBuilder getKubernetesOrBuilder();
 
@@ -63,10 +69,12 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
-   * Cloud Run runtime configuration.
+   * Optional. Cloud Run runtime configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CloudRunConfig cloud_run = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CloudRunConfig cloud_run = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the cloudRun field is set.
    */
@@ -75,10 +83,12 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
-   * Cloud Run runtime configuration.
+   * Optional. Cloud Run runtime configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CloudRunConfig cloud_run = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CloudRunConfig cloud_run = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The cloudRun.
    */
@@ -87,10 +97,12 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
-   * Cloud Run runtime configuration.
+   * Optional. Cloud Run runtime configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CloudRunConfig cloud_run = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CloudRunConfig cloud_run = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.CloudRunConfigOrBuilder getCloudRunOrBuilder();
 

@@ -78,10 +78,10 @@ public interface CanaryDeploymentOrBuilder
    *
    *
    * <pre>
-   * Whether to run verify tests after each percentage deployment.
+   * Optional. Whether to run verify tests after each percentage deployment.
    * </pre>
    *
-   * <code>bool verify = 2;</code>
+   * <code>bool verify = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The verify.
    */

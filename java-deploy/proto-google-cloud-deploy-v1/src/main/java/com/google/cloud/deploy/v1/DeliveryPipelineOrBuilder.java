@@ -28,13 +28,13 @@ public interface DeliveryPipelineOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `DeliveryPipeline`. Format is
+   * Identifier. Name of the `DeliveryPipeline`. Format is
    * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}`.
    * The `deliveryPipeline` component must match
    * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -43,13 +43,13 @@ public interface DeliveryPipelineOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `DeliveryPipeline`. Format is
+   * Identifier. Name of the `DeliveryPipeline`. Format is
    * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}`.
    * The `deliveryPipeline` component must match
    * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -84,10 +84,11 @@ public interface DeliveryPipelineOrBuilder
    *
    *
    * <pre>
-   * Description of the `DeliveryPipeline`. Max length is 255 characters.
+   * Optional. Description of the `DeliveryPipeline`. Max length is 255
+   * characters.
    * </pre>
    *
-   * <code>string description = 3;</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -96,10 +97,11 @@ public interface DeliveryPipelineOrBuilder
    *
    *
    * <pre>
-   * Description of the `DeliveryPipeline`. Max length is 255 characters.
+   * Optional. Description of the `DeliveryPipeline`. Max length is 255
+   * characters.
    * </pre>
    *
-   * <code>string description = 3;</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -109,22 +111,24 @@ public interface DeliveryPipelineOrBuilder
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getAnnotationsCount();
   /**
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsAnnotations(java.lang.String key);
   /** Use {@link #getAnnotationsMap()} instead. */
@@ -134,22 +138,24 @@ public interface DeliveryPipelineOrBuilder
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
   /**
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
@@ -160,11 +166,12 @@ public interface DeliveryPipelineOrBuilder
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getAnnotationsOrThrow(java.lang.String key);
 
@@ -356,11 +363,13 @@ public interface DeliveryPipelineOrBuilder
    *
    *
    * <pre>
-   * SerialPipeline defines a sequential set of stages for a
+   * Optional. SerialPipeline defines a sequential set of stages for a
    * `DeliveryPipeline`.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8;</code>
+   * <code>
+   * .google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the serialPipeline field is set.
    */
@@ -369,11 +378,13 @@ public interface DeliveryPipelineOrBuilder
    *
    *
    * <pre>
-   * SerialPipeline defines a sequential set of stages for a
+   * Optional. SerialPipeline defines a sequential set of stages for a
    * `DeliveryPipeline`.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8;</code>
+   * <code>
+   * .google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The serialPipeline.
    */
@@ -382,11 +393,13 @@ public interface DeliveryPipelineOrBuilder
    *
    *
    * <pre>
-   * SerialPipeline defines a sequential set of stages for a
+   * Optional. SerialPipeline defines a sequential set of stages for a
    * `DeliveryPipeline`.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8;</code>
+   * <code>
+   * .google.cloud.deploy.v1.SerialPipeline serial_pipeline = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.SerialPipelineOrBuilder getSerialPipelineOrBuilder();
 
@@ -464,11 +477,11 @@ public interface DeliveryPipelineOrBuilder
    *
    *
    * <pre>
-   * When suspended, no new releases or rollouts can be created,
+   * Optional. When suspended, no new releases or rollouts can be created,
    * but in-progress ones will complete.
    * </pre>
    *
-   * <code>bool suspended = 12;</code>
+   * <code>bool suspended = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The suspended.
    */

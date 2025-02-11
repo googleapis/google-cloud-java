@@ -28,10 +28,11 @@ public interface KubernetesConfigOrBuilder
    *
    *
    * <pre>
-   * Kubernetes Gateway API service mesh configuration.
+   * Optional. Kubernetes Gateway API service mesh configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1;
+   * <code>
+   * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the gatewayServiceMesh field is set.
@@ -41,10 +42,11 @@ public interface KubernetesConfigOrBuilder
    *
    *
    * <pre>
-   * Kubernetes Gateway API service mesh configuration.
+   * Optional. Kubernetes Gateway API service mesh configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1;
+   * <code>
+   * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The gatewayServiceMesh.
@@ -54,10 +56,11 @@ public interface KubernetesConfigOrBuilder
    *
    *
    * <pre>
-   * Kubernetes Gateway API service mesh configuration.
+   * Optional. Kubernetes Gateway API service mesh configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1;
+   * <code>
+   * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMeshOrBuilder
@@ -67,10 +70,12 @@ public interface KubernetesConfigOrBuilder
    *
    *
    * <pre>
-   * Kubernetes Service networking configuration.
+   * Optional. Kubernetes Service networking configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the serviceNetworking field is set.
    */
@@ -79,10 +84,12 @@ public interface KubernetesConfigOrBuilder
    *
    *
    * <pre>
-   * Kubernetes Service networking configuration.
+   * Optional. Kubernetes Service networking configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The serviceNetworking.
    */
@@ -91,10 +98,12 @@ public interface KubernetesConfigOrBuilder
    *
    *
    * <pre>
-   * Kubernetes Service networking configuration.
+   * Optional. Kubernetes Service networking configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworkingOrBuilder
       getServiceNetworkingOrBuilder();

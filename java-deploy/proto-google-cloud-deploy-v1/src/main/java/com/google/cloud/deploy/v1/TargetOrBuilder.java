@@ -28,12 +28,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `Target`. Format is
+   * Identifier. Name of the `Target`. Format is
    * `projects/{project}/locations/{location}/targets/{target}`.
    * The `target` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -42,12 +42,12 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `Target`. Format is
+   * Identifier. Name of the `Target`. Format is
    * `projects/{project}/locations/{location}/targets/{target}`.
    * The `target` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -743,7 +743,7 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Configurations for all execution that relates to this `Target`.
+   * Optional. Configurations for all execution that relates to this `Target`.
    * Each `ExecutionEnvironmentUsage` value may only be used in a single
    * configuration; using the same value multiple times is an error.
    * When one or more configurations are specified, they must include the
@@ -752,14 +752,16 @@ public interface TargetOrBuilder
    * specified in `DefaultPool`.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.ExecutionConfig execution_configs = 16;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.ExecutionConfig execution_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.ExecutionConfig> getExecutionConfigsList();
   /**
    *
    *
    * <pre>
-   * Configurations for all execution that relates to this `Target`.
+   * Optional. Configurations for all execution that relates to this `Target`.
    * Each `ExecutionEnvironmentUsage` value may only be used in a single
    * configuration; using the same value multiple times is an error.
    * When one or more configurations are specified, they must include the
@@ -768,14 +770,16 @@ public interface TargetOrBuilder
    * specified in `DefaultPool`.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.ExecutionConfig execution_configs = 16;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.ExecutionConfig execution_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.ExecutionConfig getExecutionConfigs(int index);
   /**
    *
    *
    * <pre>
-   * Configurations for all execution that relates to this `Target`.
+   * Optional. Configurations for all execution that relates to this `Target`.
    * Each `ExecutionEnvironmentUsage` value may only be used in a single
    * configuration; using the same value multiple times is an error.
    * When one or more configurations are specified, they must include the
@@ -784,14 +788,16 @@ public interface TargetOrBuilder
    * specified in `DefaultPool`.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.ExecutionConfig execution_configs = 16;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.ExecutionConfig execution_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getExecutionConfigsCount();
   /**
    *
    *
    * <pre>
-   * Configurations for all execution that relates to this `Target`.
+   * Optional. Configurations for all execution that relates to this `Target`.
    * Each `ExecutionEnvironmentUsage` value may only be used in a single
    * configuration; using the same value multiple times is an error.
    * When one or more configurations are specified, they must include the
@@ -800,7 +806,9 @@ public interface TargetOrBuilder
    * specified in `DefaultPool`.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.ExecutionConfig execution_configs = 16;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.ExecutionConfig execution_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.deploy.v1.ExecutionConfigOrBuilder>
       getExecutionConfigsOrBuilderList();
@@ -808,7 +816,7 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Configurations for all execution that relates to this `Target`.
+   * Optional. Configurations for all execution that relates to this `Target`.
    * Each `ExecutionEnvironmentUsage` value may only be used in a single
    * configuration; using the same value multiple times is an error.
    * When one or more configurations are specified, they must include the
@@ -817,7 +825,9 @@ public interface TargetOrBuilder
    * specified in `DefaultPool`.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.ExecutionConfig execution_configs = 16;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.ExecutionConfig execution_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.ExecutionConfigOrBuilder getExecutionConfigsOrBuilder(int index);
 

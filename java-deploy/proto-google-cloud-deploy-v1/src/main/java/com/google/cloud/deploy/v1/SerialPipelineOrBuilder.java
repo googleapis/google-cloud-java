@@ -28,55 +28,65 @@ public interface SerialPipelineOrBuilder
    *
    *
    * <pre>
-   * Each stage specifies configuration for a `Target`. The ordering
+   * Optional. Each stage specifies configuration for a `Target`. The ordering
    * of this list defines the promotion flow.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.Stage> getStagesList();
   /**
    *
    *
    * <pre>
-   * Each stage specifies configuration for a `Target`. The ordering
+   * Optional. Each stage specifies configuration for a `Target`. The ordering
    * of this list defines the promotion flow.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.Stage getStages(int index);
   /**
    *
    *
    * <pre>
-   * Each stage specifies configuration for a `Target`. The ordering
+   * Optional. Each stage specifies configuration for a `Target`. The ordering
    * of this list defines the promotion flow.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getStagesCount();
   /**
    *
    *
    * <pre>
-   * Each stage specifies configuration for a `Target`. The ordering
+   * Optional. Each stage specifies configuration for a `Target`. The ordering
    * of this list defines the promotion flow.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.deploy.v1.StageOrBuilder> getStagesOrBuilderList();
   /**
    *
    *
    * <pre>
-   * Each stage specifies configuration for a `Target`. The ordering
+   * Optional. Each stage specifies configuration for a `Target`. The ordering
    * of this list defines the promotion flow.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.Stage stages = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.Stage stages = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.StageOrBuilder getStagesOrBuilder(int index);
 }

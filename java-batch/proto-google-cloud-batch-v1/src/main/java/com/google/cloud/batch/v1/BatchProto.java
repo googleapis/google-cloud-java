@@ -41,6 +41,14 @@ public final class BatchProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_batch_v1_DeleteJobRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_batch_v1_CancelJobRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_batch_v1_CancelJobRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_batch_v1_CancelJobResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_batch_v1_CancelJobResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_batch_v1_ListJobsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_batch_v1_ListJobsRequest_fieldAccessorTable;
@@ -89,59 +97,68 @@ public final class BatchProto {
           + "\tB\003\340A\001\"?\n\rGetJobRequest\022.\n\004name\030\001 \001(\tB \340"
           + "A\002\372A\032\n\030batch.googleapis.com/Job\"N\n\020Delet"
           + "eJobRequest\022\014\n\004name\030\001 \001(\t\022\023\n\006reason\030\002 \001("
-          + "\tB\003\340A\001\022\027\n\nrequest_id\030\004 \001(\tB\003\340A\001\"o\n\017ListJ"
-          + "obsRequest\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030\004 \001"
-          + "(\t\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\022\021\n\tpage_size\030\002"
-          + " \001(\005\022\022\n\npage_token\030\003 \001(\t\"j\n\020ListJobsResp"
-          + "onse\022(\n\004jobs\030\001 \003(\0132\032.google.cloud.batch."
-          + "v1.Job\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unrea"
-          + "chable\030\003 \003(\t\"\201\001\n\020ListTasksRequest\0226\n\006par"
-          + "ent\030\001 \001(\tB&\340A\002\372A \n\036batch.googleapis.com/"
-          + "TaskGroup\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003"
-          + " \001(\005\022\022\n\npage_token\030\004 \001(\t\"m\n\021ListTasksRes"
-          + "ponse\022*\n\005tasks\030\001 \003(\0132\033.google.cloud.batc"
-          + "h.v1.Task\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013un"
-          + "reachable\030\003 \003(\t\"A\n\016GetTaskRequest\022/\n\004nam"
-          + "e\030\001 \001(\tB!\340A\002\372A\033\n\031batch.googleapis.com/Ta"
-          + "sk\"\200\002\n\021OperationMetadata\0224\n\013create_time\030"
-          + "\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221"
-          + "\n\010end_time\030\002 \001(\0132\032.google.protobuf.Times"
-          + "tampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004"
-          + " \001(\tB\003\340A\003\022\033\n\016status_message\030\005 \001(\tB\003\340A\003\022#"
-          + "\n\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n\013a"
-          + "pi_version\030\007 \001(\tB\003\340A\0032\266\010\n\014BatchService\022\233"
-          + "\001\n\tCreateJob\022\'.google.cloud.batch.v1.Cre"
-          + "ateJobRequest\032\032.google.cloud.batch.v1.Jo"
-          + "b\"I\332A\021parent,job,job_id\202\323\344\223\002/\"(/v1/{pare"
-          + "nt=projects/*/locations/*}/jobs:\003job\022\203\001\n"
-          + "\006GetJob\022$.google.cloud.batch.v1.GetJobRe"
-          + "quest\032\032.google.cloud.batch.v1.Job\"7\332A\004na"
-          + "me\202\323\344\223\002*\022(/v1/{name=projects/*/locations"
-          + "/*/jobs/*}\022\317\001\n\tDeleteJob\022\'.google.cloud."
-          + "batch.v1.DeleteJobRequest\032\035.google.longr"
-          + "unning.Operation\"z\312A@\n\025google.protobuf.E"
-          + "mpty\022\'google.cloud.batch.v1.OperationMet"
-          + "adata\332A\004name\202\323\344\223\002**(/v1/{name=projects/*"
-          + "/locations/*/jobs/*}\022\226\001\n\010ListJobs\022&.goog"
-          + "le.cloud.batch.v1.ListJobsRequest\032\'.goog"
-          + "le.cloud.batch.v1.ListJobsResponse\"9\332A\006p"
-          + "arent\202\323\344\223\002*\022(/v1/{parent=projects/*/loca"
-          + "tions/*}/jobs\022\233\001\n\007GetTask\022%.google.cloud"
-          + ".batch.v1.GetTaskRequest\032\033.google.cloud."
-          + "batch.v1.Task\"L\332A\004name\202\323\344\223\002?\022=/v1/{name="
-          + "projects/*/locations/*/jobs/*/taskGroups"
-          + "/*/tasks/*}\022\256\001\n\tListTasks\022\'.google.cloud"
-          + ".batch.v1.ListTasksRequest\032(.google.clou"
-          + "d.batch.v1.ListTasksResponse\"N\332A\006parent\202"
-          + "\323\344\223\002?\022=/v1/{parent=projects/*/locations/"
-          + "*/jobs/*/taskGroups/*}/tasks\032H\312A\024batch.g"
-          + "oogleapis.com\322A.https://www.googleapis.c"
-          + "om/auth/cloud-platformB\253\001\n\031com.google.cl"
-          + "oud.batch.v1B\nBatchProtoP\001Z/cloud.google"
-          + ".com/go/batch/apiv1/batchpb;batchpb\242\002\003GC"
-          + "B\252\002\025Google.Cloud.Batch.V1\312\002\025Google\\Cloud"
-          + "\\Batch\\V1\352\002\030Google::Cloud::Batch::V1b\006pr"
-          + "oto3"
+          + "\tB\003\340A\001\022\027\n\nrequest_id\030\004 \001(\tB\003\340A\001\"c\n\020Cance"
+          + "lJobRequest\022.\n\004name\030\001 \001(\tB \340A\002\372A\032\n\030batch"
+          + ".googleapis.com/Job\022\037\n\nrequest_id\030\004 \001(\tB"
+          + "\013\340A\001\342\214\317\327\010\002\010\001\"\023\n\021CancelJobResponse\"o\n\017Lis"
+          + "tJobsRequest\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030\004"
+          + " \001(\t\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\022\021\n\tpage_size"
+          + "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"j\n\020ListJobsRe"
+          + "sponse\022(\n\004jobs\030\001 \003(\0132\032.google.cloud.batc"
+          + "h.v1.Job\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unr"
+          + "eachable\030\003 \003(\t\"\201\001\n\020ListTasksRequest\0226\n\006p"
+          + "arent\030\001 \001(\tB&\340A\002\372A \n\036batch.googleapis.co"
+          + "m/TaskGroup\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size"
+          + "\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"m\n\021ListTasksR"
+          + "esponse\022*\n\005tasks\030\001 \003(\0132\033.google.cloud.ba"
+          + "tch.v1.Task\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013"
+          + "unreachable\030\003 \003(\t\"A\n\016GetTaskRequest\022/\n\004n"
+          + "ame\030\001 \001(\tB!\340A\002\372A\033\n\031batch.googleapis.com/"
+          + "Task\"\200\002\n\021OperationMetadata\0224\n\013create_tim"
+          + "e\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
+          + "\0221\n\010end_time\030\002 \001(\0132\032.google.protobuf.Tim"
+          + "estampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004verb"
+          + "\030\004 \001(\tB\003\340A\003\022\033\n\016status_message\030\005 \001(\tB\003\340A\003"
+          + "\022#\n\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
+          + "\013api_version\030\007 \001(\tB\003\340A\0032\245\n\n\014BatchService"
+          + "\022\233\001\n\tCreateJob\022\'.google.cloud.batch.v1.C"
+          + "reateJobRequest\032\032.google.cloud.batch.v1."
+          + "Job\"I\332A\021parent,job,job_id\202\323\344\223\002/\"(/v1/{pa"
+          + "rent=projects/*/locations/*}/jobs:\003job\022\203"
+          + "\001\n\006GetJob\022$.google.cloud.batch.v1.GetJob"
+          + "Request\032\032.google.cloud.batch.v1.Job\"7\332A\004"
+          + "name\202\323\344\223\002*\022(/v1/{name=projects/*/locatio"
+          + "ns/*/jobs/*}\022\317\001\n\tDeleteJob\022\'.google.clou"
+          + "d.batch.v1.DeleteJobRequest\032\035.google.lon"
+          + "grunning.Operation\"z\312A@\n\025google.protobuf"
+          + ".Empty\022\'google.cloud.batch.v1.OperationM"
+          + "etadata\332A\004name\202\323\344\223\002**(/v1/{name=projects"
+          + "/*/locations/*/jobs/*}\022\354\001\n\tCancelJob\022\'.g"
+          + "oogle.cloud.batch.v1.CancelJobRequest\032\035."
+          + "google.longrunning.Operation\"\226\001\312AR\n\'goog"
+          + "le.cloud.batch.v1.CancelJobResponse\022\'goo"
+          + "gle.cloud.batch.v1.OperationMetadata\332A\004n"
+          + "ame\202\323\344\223\0024\"//v1/{name=projects/*/location"
+          + "s/*/jobs/*}:cancel:\001*\022\226\001\n\010ListJobs\022&.goo"
+          + "gle.cloud.batch.v1.ListJobsRequest\032\'.goo"
+          + "gle.cloud.batch.v1.ListJobsResponse\"9\332A\006"
+          + "parent\202\323\344\223\002*\022(/v1/{parent=projects/*/loc"
+          + "ations/*}/jobs\022\233\001\n\007GetTask\022%.google.clou"
+          + "d.batch.v1.GetTaskRequest\032\033.google.cloud"
+          + ".batch.v1.Task\"L\332A\004name\202\323\344\223\002?\022=/v1/{name"
+          + "=projects/*/locations/*/jobs/*/taskGroup"
+          + "s/*/tasks/*}\022\256\001\n\tListTasks\022\'.google.clou"
+          + "d.batch.v1.ListTasksRequest\032(.google.clo"
+          + "ud.batch.v1.ListTasksResponse\"N\332A\006parent"
+          + "\202\323\344\223\002?\022=/v1/{parent=projects/*/locations"
+          + "/*/jobs/*/taskGroups/*}/tasks\032H\312A\024batch."
+          + "googleapis.com\322A.https://www.googleapis."
+          + "com/auth/cloud-platformB\253\001\n\031com.google.c"
+          + "loud.batch.v1B\nBatchProtoP\001Z/cloud.googl"
+          + "e.com/go/batch/apiv1/batchpb;batchpb\242\002\003G"
+          + "CB\252\002\025Google.Cloud.Batch.V1\312\002\025Google\\Clou"
+          + "d\\Batch\\V1\352\002\030Google::Cloud::Batch::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -182,8 +199,22 @@ public final class BatchProto {
             new java.lang.String[] {
               "Name", "Reason", "RequestId",
             });
-    internal_static_google_cloud_batch_v1_ListJobsRequest_descriptor =
+    internal_static_google_cloud_batch_v1_CancelJobRequest_descriptor =
         getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_batch_v1_CancelJobRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_batch_v1_CancelJobRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId",
+            });
+    internal_static_google_cloud_batch_v1_CancelJobResponse_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_batch_v1_CancelJobResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_batch_v1_CancelJobResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_batch_v1_ListJobsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_batch_v1_ListJobsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_batch_v1_ListJobsRequest_descriptor,
@@ -191,7 +222,7 @@ public final class BatchProto {
               "Parent", "Filter", "OrderBy", "PageSize", "PageToken",
             });
     internal_static_google_cloud_batch_v1_ListJobsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_batch_v1_ListJobsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_batch_v1_ListJobsResponse_descriptor,
@@ -199,7 +230,7 @@ public final class BatchProto {
               "Jobs", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_batch_v1_ListTasksRequest_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_batch_v1_ListTasksRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_batch_v1_ListTasksRequest_descriptor,
@@ -207,7 +238,7 @@ public final class BatchProto {
               "Parent", "Filter", "PageSize", "PageToken",
             });
     internal_static_google_cloud_batch_v1_ListTasksResponse_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_batch_v1_ListTasksResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_batch_v1_ListTasksResponse_descriptor,
@@ -215,7 +246,7 @@ public final class BatchProto {
               "Tasks", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_batch_v1_GetTaskRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_batch_v1_GetTaskRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_batch_v1_GetTaskRequest_descriptor,
@@ -223,7 +254,7 @@ public final class BatchProto {
               "Name",
             });
     internal_static_google_cloud_batch_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_batch_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_batch_v1_OperationMetadata_descriptor,
@@ -240,6 +271,7 @@ public final class BatchProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.FieldInfoProto.fieldInfo);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);

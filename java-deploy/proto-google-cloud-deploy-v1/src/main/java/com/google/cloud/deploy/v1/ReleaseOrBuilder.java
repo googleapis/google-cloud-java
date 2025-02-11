@@ -28,12 +28,12 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `Release`. Format is
+   * Identifier. Name of the `Release`. Format is
    * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
    * The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -42,12 +42,12 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `Release`. Format is
+   * Identifier. Name of the `Release`. Format is
    * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
    * The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -82,10 +82,10 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Description of the `Release`. Max length is 255 characters.
+   * Optional. Description of the `Release`. Max length is 255 characters.
    * </pre>
    *
-   * <code>string description = 3;</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -94,10 +94,10 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Description of the `Release`. Max length is 255 characters.
+   * Optional. Description of the `Release`. Max length is 255 characters.
    * </pre>
    *
-   * <code>string description = 3;</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -107,24 +107,28 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-   * for more details such as format and size limitations.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. See
+   * https://google.aip.dev/128#annotations for more details such as format and
+   * size limitations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getAnnotationsCount();
   /**
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-   * for more details such as format and size limitations.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. See
+   * https://google.aip.dev/128#annotations for more details such as format and
+   * size limitations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsAnnotations(java.lang.String key);
   /** Use {@link #getAnnotationsMap()} instead. */
@@ -134,24 +138,28 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-   * for more details such as format and size limitations.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. See
+   * https://google.aip.dev/128#annotations for more details such as format and
+   * size limitations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
   /**
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-   * for more details such as format and size limitations.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. See
+   * https://google.aip.dev/128#annotations for more details such as format and
+   * size limitations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
@@ -162,12 +170,14 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-   * for more details such as format and size limitations.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. See
+   * https://google.aip.dev/128#annotations for more details such as format and
+   * size limitations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getAnnotationsOrThrow(java.lang.String key);
 
@@ -416,10 +426,11 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Cloud Storage URI of tar.gz archive containing Skaffold configuration.
+   * Optional. Cloud Storage URI of tar.gz archive containing Skaffold
+   * configuration.
    * </pre>
    *
-   * <code>string skaffold_config_uri = 17;</code>
+   * <code>string skaffold_config_uri = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The skaffoldConfigUri.
    */
@@ -428,10 +439,11 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Cloud Storage URI of tar.gz archive containing Skaffold configuration.
+   * Optional. Cloud Storage URI of tar.gz archive containing Skaffold
+   * configuration.
    * </pre>
    *
-   * <code>string skaffold_config_uri = 17;</code>
+   * <code>string skaffold_config_uri = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for skaffoldConfigUri.
    */
@@ -441,10 +453,10 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Filepath of the Skaffold config inside of the config URI.
+   * Optional. Filepath of the Skaffold config inside of the config URI.
    * </pre>
    *
-   * <code>string skaffold_config_path = 9;</code>
+   * <code>string skaffold_config_path = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The skaffoldConfigPath.
    */
@@ -453,10 +465,10 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Filepath of the Skaffold config inside of the config URI.
+   * Optional. Filepath of the Skaffold config inside of the config URI.
    * </pre>
    *
-   * <code>string skaffold_config_path = 9;</code>
+   * <code>string skaffold_config_path = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for skaffoldConfigPath.
    */
@@ -466,40 +478,48 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * List of artifacts to pass through to Skaffold command.
+   * Optional. List of artifacts to pass through to Skaffold command.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.BuildArtifact> getBuildArtifactsList();
   /**
    *
    *
    * <pre>
-   * List of artifacts to pass through to Skaffold command.
+   * Optional. List of artifacts to pass through to Skaffold command.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.BuildArtifact getBuildArtifacts(int index);
   /**
    *
    *
    * <pre>
-   * List of artifacts to pass through to Skaffold command.
+   * Optional. List of artifacts to pass through to Skaffold command.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getBuildArtifactsCount();
   /**
    *
    *
    * <pre>
-   * List of artifacts to pass through to Skaffold command.
+   * Optional. List of artifacts to pass through to Skaffold command.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.deploy.v1.BuildArtifactOrBuilder>
       getBuildArtifactsOrBuilderList();
@@ -507,10 +527,12 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * List of artifacts to pass through to Skaffold command.
+   * Optional. List of artifacts to pass through to Skaffold command.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.BuildArtifactOrBuilder getBuildArtifactsOrBuilder(int index);
 
