@@ -73,6 +73,9 @@ public class StreamWriter implements AutoCloseable {
    */
   private final String streamName;
 
+  /** This is the library version may or may not include library version id. */
+  private final String fullTraceId;
+
   /** Every writer has a fixed proto schema. */
   private final ProtoSchema writerSchema;
 
@@ -233,6 +236,7 @@ public class StreamWriter implements AutoCloseable {
     BigQueryWriteSettings clientSettings = getBigQueryWriteSettings(builder);
     this.requestProfilerHook =
         new RequestProfiler.RequestProfilerHook(builder.enableRequestProfiler);
+    this.fullTraceId = builder.getFullTraceId();
     if (builder.enableRequestProfiler) {
       // Request profiler is enabled on singleton level, from now on a periodical flush will be
       // started
@@ -320,7 +324,6 @@ public class StreamWriter implements AutoCloseable {
                         builder.maxInflightBytes,
                         builder.maxRetryDuration,
                         builder.limitExceededBehavior,
-                        builder.getFullTraceId(),
                         builder.compressorName,
                         client.getSettings(),
                         builder.retrySettings,
@@ -357,6 +360,10 @@ public class StreamWriter implements AutoCloseable {
   static boolean isDefaultStream(String streamName) {
     Matcher streamMatcher = streamPatternDefaultStream.matcher(streamName);
     return streamMatcher.find();
+  }
+
+  String getFullTraceId() {
+    return fullTraceId;
   }
 
   AppendRowsRequest.MissingValueInterpretation getDefaultValueInterpretation() {
@@ -401,15 +408,6 @@ public class StreamWriter implements AutoCloseable {
 
   // Validate whether the fetched connection pool matched certain properties.
   private void validateFetchedConnectonPool(StreamWriter.Builder builder) {
-    String storedTraceId =
-        this.singleConnectionOrConnectionPool.connectionWorkerPool().getTraceId();
-    if (!Objects.equals(storedTraceId, builder.getFullTraceId())) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Trace id used for the same connection pool for the same location must be the same, "
-                  + "however stored trace id is %s, and expected trace id is %s.",
-              storedTraceId, builder.getFullTraceId()));
-    }
     FlowController.LimitExceededBehavior storedLimitExceededBehavior =
         singleConnectionOrConnectionPool.connectionWorkerPool().limitExceededBehavior();
     if (!Objects.equals(storedLimitExceededBehavior, builder.limitExceededBehavior)) {

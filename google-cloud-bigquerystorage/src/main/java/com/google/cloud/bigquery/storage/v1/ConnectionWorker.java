@@ -868,9 +868,7 @@ class ConnectionWorker implements AutoCloseable {
           // If we are at the first request for every table switch, including the first request in
           // the connection, we will attach both stream name and table schema to the request.
           destinationSet.add(streamName);
-          if (this.traceId != null) {
-            originalRequestBuilder.setTraceId(this.traceId);
-          }
+          originalRequestBuilder.setTraceId(wrapper.streamWriter.getFullTraceId());
         } else if (!isMultiplexing) {
           // If we are not in multiplexing and not in the first request, clear the stream name.
           originalRequestBuilder.clearWriteStream();

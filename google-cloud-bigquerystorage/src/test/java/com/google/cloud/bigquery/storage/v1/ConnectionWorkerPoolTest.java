@@ -561,7 +561,6 @@ public class ConnectionWorkerPoolTest {
         maxBytes,
         maxRetryDuration,
         FlowController.LimitExceededBehavior.Block,
-        TEST_TRACE_ID,
         null,
         clientSettings,
         retrySettings,

@@ -86,23 +86,50 @@ public class ConnectionWorkerTest {
   }
 
   @Test
-  public void testMultiplexedAppendSuccess() throws Exception {
+  public void testMultiplexedAppendSuccess_NonNullTraceId() throws Exception {
+    testMultiplexedIngestion(
+        /*sw1TraceId=*/ "header_1:trailer_1",
+        /*sw2TraceId=*/ "header_2:trailer_2",
+        /*expectedSW1TraceId=*/ "java-streamwriter header_1:trailer_1",
+        /*expectedSW2TraceId=*/ "java-streamwriter header_2:trailer_2");
+  }
+
+  @Test
+  public void testMultiplexedAppendSuccess_EmptyTraceId() throws Exception {
+    testMultiplexedIngestion(
+        /*sw1TraceId=*/ "header_1:trailer_1",
+        /*sw2TraceId=*/ "",
+        /*expectedSW1TraceId=*/ "java-streamwriter header_1:trailer_1",
+        /*expectedSW2TraceId=*/ "java-streamwriter");
+  }
+
+  private void testMultiplexedIngestion(
+      String sw1TraceId, String sw2TraceId, String expectedSW1TraceId, String expectedSW2TraceId)
+      throws Exception {
     try (ConnectionWorker connectionWorker = createMultiplexedConnectionWorker()) {
       long appendCount = 20;
       for (long i = 0; i < appendCount; i++) {
         testBigQueryWrite.addResponse(createAppendResponse(i));
       }
       List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
-      StreamWriter sw1 =
+      // SW1 has not trace id, SW2 does
+      StreamWriter.Builder sw1Builder =
           StreamWriter.newBuilder(TEST_STREAM_1, client)
               .setWriterSchema(createProtoSchema("foo"))
-              .setLocation("us")
-              .build();
-      StreamWriter sw2 =
+              .setLocation("us");
+      StreamWriter.Builder sw2Builder =
           StreamWriter.newBuilder(TEST_STREAM_2, client)
               .setWriterSchema(createProtoSchema("complicate"))
-              .setLocation("us")
-              .build();
+              .setLocation("us");
+      if (!sw1TraceId.isEmpty()) {
+        sw1Builder.setTraceId(sw1TraceId);
+      }
+      if (!sw2TraceId.isEmpty()) {
+        sw2Builder.setTraceId(sw2TraceId);
+      }
+      StreamWriter sw1 = sw1Builder.build();
+      StreamWriter sw2 = sw2Builder.build();
+
       // We do a pattern of:
       // send to stream1, string1
       // send to stream1, string2
@@ -161,12 +188,14 @@ public class ConnectionWorkerTest {
             assertThat(
                     serverRequest.getProtoRows().getWriterSchema().getProtoDescriptor().getName())
                 .isEqualTo("foo");
+            assertThat(serverRequest.getTraceId()).isEqualTo(expectedSW1TraceId);
             break;
           case 1:
             // The write stream is empty until we enter multiplexing.
             assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
             // Schema is empty if not at the first request after table switch.
             assertThat(serverRequest.getProtoRows().hasWriterSchema()).isFalse();
+            assertThat(serverRequest.getTraceId()).isEmpty();
             break;
           case 2:
             // Stream name is always populated after multiplexing.
@@ -175,12 +204,14 @@ public class ConnectionWorkerTest {
             assertThat(
                     serverRequest.getProtoRows().getWriterSchema().getProtoDescriptor().getName())
                 .isEqualTo("complicate");
+            assertThat(serverRequest.getTraceId()).isEqualTo(expectedSW2TraceId);
             break;
           case 3:
             // Schema is empty if not at the first request after table switch.
             assertThat(serverRequest.getProtoRows().hasWriterSchema()).isFalse();
             // Stream name is always populated after multiplexing.
             assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_2);
+            assertThat(serverRequest.getTraceId()).isEmpty();
             break;
           default: // fall out
             break;
@@ -191,6 +222,9 @@ public class ConnectionWorkerTest {
       assertThat(connectionWorker.getLoad().inFlightRequestsBytes()).isEqualTo(0);
     }
   }
+
+  @Test
+  public void testMultiplexedAppendSuccess_MixEmptyAndNonEmptyTraceId() throws Exception {}
 
   @Test
   public void testAppendInSameStream_switchSchema() throws Exception {
