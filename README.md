@@ -26,7 +26,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-bom</artifactId>
-      <version>1.46.0</version>
+      <version>1.47.0</version>
       <type>pom</type>
       <scope>import</scope>
      </dependency>
