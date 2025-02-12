@@ -34,7 +34,7 @@ import static com.google.cloud.firestore.telemetry.TelemetryConstants.METHOD_NAM
 import static com.google.cloud.firestore.telemetry.TelemetryConstants.METHOD_NAME_TRANSACTION_GET_QUERY;
 import static com.google.cloud.firestore.telemetry.TelemetryConstants.METHOD_NAME_TRANSACTION_ROLLBACK;
 import static com.google.cloud.firestore.telemetry.TelemetryConstants.METHOD_NAME_TRANSACTION_RUN;
-import static io.opentelemetry.semconv.resource.attributes.ResourceAttributes.SERVICE_NAME;
+import static io.opentelemetry.semconv.ResourceAttributes.SERVICE_NAME;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
