@@ -115,6 +115,71 @@ public interface GenerateContentResponseOrBuilder
    *
    *
    * <pre>
+   * Output only. Timestamp when the request is made to the server.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  boolean hasCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when the request is made to the server.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when the request is made to the server.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. response_id is used to identify each response. It is the
+   * encoding of the event_id.
+   * </pre>
+   *
+   * <code>string response_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The responseId.
+   */
+  java.lang.String getResponseId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. response_id is used to identify each response. It is the
+   * encoding of the event_id.
+   * </pre>
+   *
+   * <code>string response_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for responseId.
+   */
+  com.google.protobuf.ByteString getResponseIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Content filter results for a prompt sent in the request.
    * Note: Sent only in the first stream chunk.
    * Only happens when no candidates were generated due to content violations.

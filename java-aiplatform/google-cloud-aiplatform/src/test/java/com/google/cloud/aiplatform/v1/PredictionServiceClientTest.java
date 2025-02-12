@@ -48,6 +48,7 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import com.google.protobuf.Value;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -878,6 +879,8 @@ public class PredictionServiceClientTest {
         GenerateContentResponse.newBuilder()
             .addAllCandidates(new ArrayList<Candidate>())
             .setModelVersion("modelVersion212437359")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setResponseId("responseId-633138884")
             .setPromptFeedback(GenerateContentResponse.PromptFeedback.newBuilder().build())
             .setUsageMetadata(GenerateContentResponse.UsageMetadata.newBuilder().build())
             .build();
@@ -922,6 +925,8 @@ public class PredictionServiceClientTest {
         GenerateContentResponse.newBuilder()
             .addAllCandidates(new ArrayList<Candidate>())
             .setModelVersion("modelVersion212437359")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setResponseId("responseId-633138884")
             .setPromptFeedback(GenerateContentResponse.PromptFeedback.newBuilder().build())
             .setUsageMetadata(GenerateContentResponse.UsageMetadata.newBuilder().build())
             .build();
