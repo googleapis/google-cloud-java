@@ -1,5 +1,24 @@
 # Changelog
 
+## [3.11.3](https://github.com/googleapis/java-bigquerystorage/compare/v3.11.2...v3.11.3) (2025-02-12)
+
+
+### Bug Fixes
+
+* Allow trace id to switch within the same connection ([#2852](https://github.com/googleapis/java-bigquerystorage/issues/2852)) ([850eaea](https://github.com/googleapis/java-bigquerystorage/commit/850eaea9eaba2f6a43055fa8319d7342901ea21d))
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.53.0 ([c757440](https://github.com/googleapis/java-bigquerystorage/commit/c75744088a32598644d4924b7d2dfdcef37ff0d1))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.47.0 ([#2845](https://github.com/googleapis/java-bigquerystorage/issues/2845)) ([b089788](https://github.com/googleapis/java-bigquerystorage/commit/b08978808987dbb4b317d492e2306d24b6427669))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.43.0 ([#2859](https://github.com/googleapis/java-bigquerystorage/issues/2859)) ([ceb926a](https://github.com/googleapis/java-bigquerystorage/commit/ceb926ad9515dfc15ed5f6c7ea15506351d7d37d))
+* Update dependency com.google.http-client:google-http-client to v1.46.1 ([#2854](https://github.com/googleapis/java-bigquerystorage/issues/2854)) ([037ca78](https://github.com/googleapis/java-bigquerystorage/commit/037ca78f20d1ae0d86c1acaf2a48d75418207501))
+* Update dependency io.opentelemetry:opentelemetry-bom to v1.47.0 ([#2856](https://github.com/googleapis/java-bigquerystorage/issues/2856)) ([14d12ba](https://github.com/googleapis/java-bigquerystorage/commit/14d12ba859f5af961c5b382bba47e118bcb69d3b))
+* Update dependency io.opentelemetry:opentelemetry-exporter-logging to v1.47.0 ([#2857](https://github.com/googleapis/java-bigquerystorage/issues/2857)) ([1839051](https://github.com/googleapis/java-bigquerystorage/commit/183905176cbedfc9e1bfcf744907fd624d99c8a5))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.10.5 ([#2851](https://github.com/googleapis/java-bigquerystorage/issues/2851)) ([2ff6112](https://github.com/googleapis/java-bigquerystorage/commit/2ff6112a7f7d7a938d2267e60a4fdfe1fb5baaea))
+* Update googleapis/sdk-platform-java action to v2.53.0 ([#2858](https://github.com/googleapis/java-bigquerystorage/issues/2858)) ([2412f62](https://github.com/googleapis/java-bigquerystorage/commit/2412f629bd7a305d8b19685ef5b8067702187aec))
+
 ## [3.11.2](https://github.com/googleapis/java-bigquerystorage/compare/v3.11.1...v3.11.2) (2025-01-28)
 
 
