@@ -32,8 +32,10 @@ import com.google.cloud.logging.MetricInfo;
 import com.google.common.collect.Sets;
 import java.util.Iterator;
 import java.util.Set;
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore("Preventing temporary RESOURCE_EXHAUSTED problems")
 public class ITMetricsTest extends BaseSystemTest {
 
   @Test
