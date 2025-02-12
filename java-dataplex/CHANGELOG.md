@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.56.0 (2025-02-11)
+
+### Features
+
+* Added value `NONE` to  the `SyncMode` enum ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.43.0 ([#11426](https://github.com/googleapis/google-cloud-java/issues/11426)) ([afdc294](https://github.com/googleapis/google-cloud-java/commit/afdc2944304a077ce4cbdd8c7675f1ca707b2be0))
+
+
 ## 1.55.0 (2025-01-29)
 
 ### Dependencies

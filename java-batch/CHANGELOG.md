@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.58.0 (2025-02-11)
+
+### Features
+
+* promote cancel job API to GA ([8791ef3](https://github.com/googleapis/google-cloud-java/commit/8791ef355f3fa958841aa43e6c5c55db062f7688))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.43.0 ([#11426](https://github.com/googleapis/google-cloud-java/issues/11426)) ([afdc294](https://github.com/googleapis/google-cloud-java/commit/afdc2944304a077ce4cbdd8c7675f1ca707b2be0))
+
+
 ## 0.57.0 (2025-01-29)
 
 ### Dependencies
