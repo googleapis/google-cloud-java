@@ -24,7 +24,7 @@ package com.google.chat.v1;
  *
  * <pre>
  * A [slash
- * command](https://developers.google.com/workspace/chat/slash-commands) in
+ * command](https://developers.google.com/workspace/chat/commands) in
  * Google Chat.
  * </pre>
  *
@@ -242,7 +242,7 @@ public final class SlashCommand extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A [slash
-   * command](https://developers.google.com/workspace/chat/slash-commands) in
+   * command](https://developers.google.com/workspace/chat/commands) in
    * Google Chat.
    * </pre>
    *
