@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.30.8](https://github.com/googleapis/java-firestore/compare/v3.30.7...v3.30.8) (2025-02-13)
+
+
+### Dependencies
+
+* Migrate to io.opentelemetry.semconv:opentelemetry-semconv dep ([#2014](https://github.com/googleapis/java-firestore/issues/2014)) ([b3df19e](https://github.com/googleapis/java-firestore/commit/b3df19e8ce2d11cc351e74e6155f30a7f947145c))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.43.0 ([#2011](https://github.com/googleapis/java-firestore/issues/2011)) ([b8c050e](https://github.com/googleapis/java-firestore/commit/b8c050e33e348daebf536e8cd6c25abe0280fc34))
+* Update googleapis/sdk-platform-java action to v2.53.0 ([#2012](https://github.com/googleapis/java-firestore/issues/2012)) ([04cc429](https://github.com/googleapis/java-firestore/commit/04cc429320cddef716d71f2b94ff710c1bcfa37a))
+* Update opentelemetry.version to v1.47.0 ([#2009](https://github.com/googleapis/java-firestore/issues/2009)) ([a832829](https://github.com/googleapis/java-firestore/commit/a8328297b2af87fe445cbd88e80ae7cbb87abdc6))
+
 ## [3.30.7](https://github.com/googleapis/java-firestore/compare/v3.30.6...v3.30.7) (2025-02-04)
 
 
