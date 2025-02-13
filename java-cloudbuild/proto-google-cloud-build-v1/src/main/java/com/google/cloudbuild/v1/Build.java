@@ -71,6 +71,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     secrets_ = java.util.Collections.emptyList();
     serviceAccount_ = "";
     warnings_ = java.util.Collections.emptyList();
+    dependencies_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -4257,6 +4258,62 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     return warnings_.get(index);
   }
 
+  public static final int GIT_CONFIG_FIELD_NUMBER = 48;
+  private com.google.cloudbuild.v1.GitConfig gitConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for git operations.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.GitConfig git_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the gitConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGitConfig() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for git operations.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.GitConfig git_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gitConfig.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.GitConfig getGitConfig() {
+    return gitConfig_ == null
+        ? com.google.cloudbuild.v1.GitConfig.getDefaultInstance()
+        : gitConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for git operations.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.GitConfig git_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.GitConfigOrBuilder getGitConfigOrBuilder() {
+    return gitConfig_ == null
+        ? com.google.cloudbuild.v1.GitConfig.getDefaultInstance()
+        : gitConfig_;
+  }
+
   public static final int FAILURE_INFO_FIELD_NUMBER = 51;
   private com.google.cloudbuild.v1.Build.FailureInfo failureInfo_;
   /**
@@ -4274,7 +4331,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasFailureInfo() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -4311,6 +4368,92 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     return failureInfo_ == null
         ? com.google.cloudbuild.v1.Build.FailureInfo.getDefaultInstance()
         : failureInfo_;
+  }
+
+  public static final int DEPENDENCIES_FIELD_NUMBER = 56;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloudbuild.v1.Dependency> dependencies_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dependencies that the Cloud Build worker will fetch before
+   * executing user steps.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloudbuild.v1.Dependency> getDependenciesList() {
+    return dependencies_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dependencies that the Cloud Build worker will fetch before
+   * executing user steps.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloudbuild.v1.DependencyOrBuilder>
+      getDependenciesOrBuilderList() {
+    return dependencies_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dependencies that the Cloud Build worker will fetch before
+   * executing user steps.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getDependenciesCount() {
+    return dependencies_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dependencies that the Cloud Build worker will fetch before
+   * executing user steps.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.Dependency getDependencies(int index) {
+    return dependencies_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dependencies that the Cloud Build worker will fetch before
+   * executing user steps.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.DependencyOrBuilder getDependenciesOrBuilder(int index) {
+    return dependencies_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -4406,11 +4549,17 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(47, getAvailableSecrets());
     }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeMessage(48, getGitConfig());
+    }
     for (int i = 0; i < warnings_.size(); i++) {
       output.writeMessage(49, warnings_.get(i));
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeMessage(51, getFailureInfo());
+    }
+    for (int i = 0; i < dependencies_.size(); i++) {
+      output.writeMessage(56, dependencies_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -4526,11 +4675,17 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(47, getAvailableSecrets());
     }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(48, getGitConfig());
+    }
     for (int i = 0; i < warnings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(49, warnings_.get(i));
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(51, getFailureInfo());
+    }
+    for (int i = 0; i < dependencies_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(56, dependencies_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -4611,10 +4766,15 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       if (!getAvailableSecrets().equals(other.getAvailableSecrets())) return false;
     }
     if (!getWarningsList().equals(other.getWarningsList())) return false;
+    if (hasGitConfig() != other.hasGitConfig()) return false;
+    if (hasGitConfig()) {
+      if (!getGitConfig().equals(other.getGitConfig())) return false;
+    }
     if (hasFailureInfo() != other.hasFailureInfo()) return false;
     if (hasFailureInfo()) {
       if (!getFailureInfo().equals(other.getFailureInfo())) return false;
     }
+    if (!getDependenciesList().equals(other.getDependenciesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4720,9 +4880,17 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + WARNINGS_FIELD_NUMBER;
       hash = (53 * hash) + getWarningsList().hashCode();
     }
+    if (hasGitConfig()) {
+      hash = (37 * hash) + GIT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGitConfig().hashCode();
+    }
     if (hasFailureInfo()) {
       hash = (37 * hash) + FAILURE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getFailureInfo().hashCode();
+    }
+    if (getDependenciesCount() > 0) {
+      hash = (37 * hash) + DEPENDENCIES_FIELD_NUMBER;
+      hash = (53 * hash) + getDependenciesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4921,7 +5089,9 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         getApprovalFieldBuilder();
         getAvailableSecretsFieldBuilder();
         getWarningsFieldBuilder();
+        getGitConfigFieldBuilder();
         getFailureInfoFieldBuilder();
+        getDependenciesFieldBuilder();
       }
     }
 
@@ -5023,11 +5193,23 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         warningsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x08000000);
+      gitConfig_ = null;
+      if (gitConfigBuilder_ != null) {
+        gitConfigBuilder_.dispose();
+        gitConfigBuilder_ = null;
+      }
       failureInfo_ = null;
       if (failureInfoBuilder_ != null) {
         failureInfoBuilder_.dispose();
         failureInfoBuilder_ = null;
       }
+      if (dependenciesBuilder_ == null) {
+        dependencies_ = java.util.Collections.emptyList();
+      } else {
+        dependencies_ = null;
+        dependenciesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x40000000);
       return this;
     }
 
@@ -5089,6 +5271,15 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         result.warnings_ = warnings_;
       } else {
         result.warnings_ = warningsBuilder_.build();
+      }
+      if (dependenciesBuilder_ == null) {
+        if (((bitField0_ & 0x40000000) != 0)) {
+          dependencies_ = java.util.Collections.unmodifiableList(dependencies_);
+          bitField0_ = (bitField0_ & ~0x40000000);
+        }
+        result.dependencies_ = dependencies_;
+      } else {
+        result.dependencies_ = dependenciesBuilder_.build();
       }
     }
 
@@ -5188,9 +5379,13 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.gitConfig_ = gitConfigBuilder_ == null ? gitConfig_ : gitConfigBuilder_.build();
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.failureInfo_ =
             failureInfoBuilder_ == null ? failureInfo_ : failureInfoBuilder_.build();
-        to_bitField0_ |= 0x00001000;
+        to_bitField0_ |= 0x00002000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5424,8 +5619,38 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasGitConfig()) {
+        mergeGitConfig(other.getGitConfig());
+      }
       if (other.hasFailureInfo()) {
         mergeFailureInfo(other.getFailureInfo());
+      }
+      if (dependenciesBuilder_ == null) {
+        if (!other.dependencies_.isEmpty()) {
+          if (dependencies_.isEmpty()) {
+            dependencies_ = other.dependencies_;
+            bitField0_ = (bitField0_ & ~0x40000000);
+          } else {
+            ensureDependenciesIsMutable();
+            dependencies_.addAll(other.dependencies_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.dependencies_.isEmpty()) {
+          if (dependenciesBuilder_.isEmpty()) {
+            dependenciesBuilder_.dispose();
+            dependenciesBuilder_ = null;
+            dependencies_ = other.dependencies_;
+            bitField0_ = (bitField0_ & ~0x40000000);
+            dependenciesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDependenciesFieldBuilder()
+                    : null;
+          } else {
+            dependenciesBuilder_.addAllMessages(other.dependencies_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5645,6 +5870,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x04000000;
                 break;
               } // case 378
+            case 386:
+              {
+                input.readMessage(getGitConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 386
             case 394:
               {
                 com.google.cloudbuild.v1.Build.Warning m =
@@ -5661,9 +5892,22 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
             case 410:
               {
                 input.readMessage(getFailureInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 410
+            case 450:
+              {
+                com.google.cloudbuild.v1.Dependency m =
+                    input.readMessage(
+                        com.google.cloudbuild.v1.Dependency.parser(), extensionRegistry);
+                if (dependenciesBuilder_ == null) {
+                  ensureDependenciesIsMutable();
+                  dependencies_.add(m);
+                } else {
+                  dependenciesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 450
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11194,6 +11438,209 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       return warningsBuilder_;
     }
 
+    private com.google.cloudbuild.v1.GitConfig gitConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.GitConfig,
+            com.google.cloudbuild.v1.GitConfig.Builder,
+            com.google.cloudbuild.v1.GitConfigOrBuilder>
+        gitConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for git operations.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitConfig git_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the gitConfig field is set.
+     */
+    public boolean hasGitConfig() {
+      return ((bitField0_ & 0x10000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for git operations.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitConfig git_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The gitConfig.
+     */
+    public com.google.cloudbuild.v1.GitConfig getGitConfig() {
+      if (gitConfigBuilder_ == null) {
+        return gitConfig_ == null
+            ? com.google.cloudbuild.v1.GitConfig.getDefaultInstance()
+            : gitConfig_;
+      } else {
+        return gitConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for git operations.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitConfig git_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGitConfig(com.google.cloudbuild.v1.GitConfig value) {
+      if (gitConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gitConfig_ = value;
+      } else {
+        gitConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for git operations.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitConfig git_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGitConfig(com.google.cloudbuild.v1.GitConfig.Builder builderForValue) {
+      if (gitConfigBuilder_ == null) {
+        gitConfig_ = builderForValue.build();
+      } else {
+        gitConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for git operations.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitConfig git_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGitConfig(com.google.cloudbuild.v1.GitConfig value) {
+      if (gitConfigBuilder_ == null) {
+        if (((bitField0_ & 0x10000000) != 0)
+            && gitConfig_ != null
+            && gitConfig_ != com.google.cloudbuild.v1.GitConfig.getDefaultInstance()) {
+          getGitConfigBuilder().mergeFrom(value);
+        } else {
+          gitConfig_ = value;
+        }
+      } else {
+        gitConfigBuilder_.mergeFrom(value);
+      }
+      if (gitConfig_ != null) {
+        bitField0_ |= 0x10000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for git operations.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitConfig git_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGitConfig() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      gitConfig_ = null;
+      if (gitConfigBuilder_ != null) {
+        gitConfigBuilder_.dispose();
+        gitConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for git operations.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitConfig git_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.GitConfig.Builder getGitConfigBuilder() {
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return getGitConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for git operations.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitConfig git_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.GitConfigOrBuilder getGitConfigOrBuilder() {
+      if (gitConfigBuilder_ != null) {
+        return gitConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gitConfig_ == null
+            ? com.google.cloudbuild.v1.GitConfig.getDefaultInstance()
+            : gitConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for git operations.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitConfig git_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.GitConfig,
+            com.google.cloudbuild.v1.GitConfig.Builder,
+            com.google.cloudbuild.v1.GitConfigOrBuilder>
+        getGitConfigFieldBuilder() {
+      if (gitConfigBuilder_ == null) {
+        gitConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v1.GitConfig,
+                com.google.cloudbuild.v1.GitConfig.Builder,
+                com.google.cloudbuild.v1.GitConfigOrBuilder>(
+                getGitConfig(), getParentForChildren(), isClean());
+        gitConfig_ = null;
+      }
+      return gitConfigBuilder_;
+    }
+
     private com.google.cloudbuild.v1.Build.FailureInfo failureInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloudbuild.v1.Build.FailureInfo,
@@ -11214,7 +11661,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the failureInfo field is set.
      */
     public boolean hasFailureInfo() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
     /**
      *
@@ -11258,7 +11705,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       } else {
         failureInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -11280,7 +11727,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       } else {
         failureInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -11297,7 +11744,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeFailureInfo(com.google.cloudbuild.v1.Build.FailureInfo value) {
       if (failureInfoBuilder_ == null) {
-        if (((bitField0_ & 0x10000000) != 0)
+        if (((bitField0_ & 0x20000000) != 0)
             && failureInfo_ != null
             && failureInfo_ != com.google.cloudbuild.v1.Build.FailureInfo.getDefaultInstance()) {
           getFailureInfoBuilder().mergeFrom(value);
@@ -11308,7 +11755,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         failureInfoBuilder_.mergeFrom(value);
       }
       if (failureInfo_ != null) {
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       return this;
@@ -11325,7 +11772,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearFailureInfo() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       failureInfo_ = null;
       if (failureInfoBuilder_ != null) {
         failureInfoBuilder_.dispose();
@@ -11346,7 +11793,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloudbuild.v1.Build.FailureInfo.Builder getFailureInfoBuilder() {
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return getFailureInfoFieldBuilder().getBuilder();
     }
@@ -11396,6 +11843,409 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         failureInfo_ = null;
       }
       return failureInfoBuilder_;
+    }
+
+    private java.util.List<com.google.cloudbuild.v1.Dependency> dependencies_ =
+        java.util.Collections.emptyList();
+
+    private void ensureDependenciesIsMutable() {
+      if (!((bitField0_ & 0x40000000) != 0)) {
+        dependencies_ = new java.util.ArrayList<com.google.cloudbuild.v1.Dependency>(dependencies_);
+        bitField0_ |= 0x40000000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloudbuild.v1.Dependency,
+            com.google.cloudbuild.v1.Dependency.Builder,
+            com.google.cloudbuild.v1.DependencyOrBuilder>
+        dependenciesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dependencies that the Cloud Build worker will fetch before
+     * executing user steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloudbuild.v1.Dependency> getDependenciesList() {
+      if (dependenciesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(dependencies_);
+      } else {
+        return dependenciesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dependencies that the Cloud Build worker will fetch before
+     * executing user steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getDependenciesCount() {
+      if (dependenciesBuilder_ == null) {
+        return dependencies_.size();
+      } else {
+        return dependenciesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dependencies that the Cloud Build worker will fetch before
+     * executing user steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.Dependency getDependencies(int index) {
+      if (dependenciesBuilder_ == null) {
+        return dependencies_.get(index);
+      } else {
+        return dependenciesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dependencies that the Cloud Build worker will fetch before
+     * executing user steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDependencies(int index, com.google.cloudbuild.v1.Dependency value) {
+      if (dependenciesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDependenciesIsMutable();
+        dependencies_.set(index, value);
+        onChanged();
+      } else {
+        dependenciesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dependencies that the Cloud Build worker will fetch before
+     * executing user steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDependencies(
+        int index, com.google.cloudbuild.v1.Dependency.Builder builderForValue) {
+      if (dependenciesBuilder_ == null) {
+        ensureDependenciesIsMutable();
+        dependencies_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        dependenciesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dependencies that the Cloud Build worker will fetch before
+     * executing user steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDependencies(com.google.cloudbuild.v1.Dependency value) {
+      if (dependenciesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDependenciesIsMutable();
+        dependencies_.add(value);
+        onChanged();
+      } else {
+        dependenciesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dependencies that the Cloud Build worker will fetch before
+     * executing user steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDependencies(int index, com.google.cloudbuild.v1.Dependency value) {
+      if (dependenciesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDependenciesIsMutable();
+        dependencies_.add(index, value);
+        onChanged();
+      } else {
+        dependenciesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dependencies that the Cloud Build worker will fetch before
+     * executing user steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDependencies(com.google.cloudbuild.v1.Dependency.Builder builderForValue) {
+      if (dependenciesBuilder_ == null) {
+        ensureDependenciesIsMutable();
+        dependencies_.add(builderForValue.build());
+        onChanged();
+      } else {
+        dependenciesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dependencies that the Cloud Build worker will fetch before
+     * executing user steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDependencies(
+        int index, com.google.cloudbuild.v1.Dependency.Builder builderForValue) {
+      if (dependenciesBuilder_ == null) {
+        ensureDependenciesIsMutable();
+        dependencies_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        dependenciesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dependencies that the Cloud Build worker will fetch before
+     * executing user steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllDependencies(
+        java.lang.Iterable<? extends com.google.cloudbuild.v1.Dependency> values) {
+      if (dependenciesBuilder_ == null) {
+        ensureDependenciesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dependencies_);
+        onChanged();
+      } else {
+        dependenciesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dependencies that the Cloud Build worker will fetch before
+     * executing user steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDependencies() {
+      if (dependenciesBuilder_ == null) {
+        dependencies_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x40000000);
+        onChanged();
+      } else {
+        dependenciesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dependencies that the Cloud Build worker will fetch before
+     * executing user steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeDependencies(int index) {
+      if (dependenciesBuilder_ == null) {
+        ensureDependenciesIsMutable();
+        dependencies_.remove(index);
+        onChanged();
+      } else {
+        dependenciesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dependencies that the Cloud Build worker will fetch before
+     * executing user steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.Dependency.Builder getDependenciesBuilder(int index) {
+      return getDependenciesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dependencies that the Cloud Build worker will fetch before
+     * executing user steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.DependencyOrBuilder getDependenciesOrBuilder(int index) {
+      if (dependenciesBuilder_ == null) {
+        return dependencies_.get(index);
+      } else {
+        return dependenciesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dependencies that the Cloud Build worker will fetch before
+     * executing user steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloudbuild.v1.DependencyOrBuilder>
+        getDependenciesOrBuilderList() {
+      if (dependenciesBuilder_ != null) {
+        return dependenciesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(dependencies_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dependencies that the Cloud Build worker will fetch before
+     * executing user steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.Dependency.Builder addDependenciesBuilder() {
+      return getDependenciesFieldBuilder()
+          .addBuilder(com.google.cloudbuild.v1.Dependency.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dependencies that the Cloud Build worker will fetch before
+     * executing user steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.Dependency.Builder addDependenciesBuilder(int index) {
+      return getDependenciesFieldBuilder()
+          .addBuilder(index, com.google.cloudbuild.v1.Dependency.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dependencies that the Cloud Build worker will fetch before
+     * executing user steps.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloudbuild.v1.Dependency.Builder>
+        getDependenciesBuilderList() {
+      return getDependenciesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloudbuild.v1.Dependency,
+            com.google.cloudbuild.v1.Dependency.Builder,
+            com.google.cloudbuild.v1.DependencyOrBuilder>
+        getDependenciesFieldBuilder() {
+      if (dependenciesBuilder_ == null) {
+        dependenciesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloudbuild.v1.Dependency,
+                com.google.cloudbuild.v1.Dependency.Builder,
+                com.google.cloudbuild.v1.DependencyOrBuilder>(
+                dependencies_, ((bitField0_ & 0x40000000) != 0), getParentForChildren(), isClean());
+        dependencies_ = null;
+      }
+      return dependenciesBuilder_;
     }
 
     @java.lang.Override
