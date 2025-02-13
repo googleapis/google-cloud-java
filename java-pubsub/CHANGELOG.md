@@ -1,5 +1,31 @@
 # Changelog
 
+## [1.137.0](https://github.com/googleapis/java-pubsub/compare/v1.136.1...v1.137.0) (2025-02-12)
+
+
+### Features
+
+* Add support for message transforms to Topic and Subscription ([3889a05](https://github.com/googleapis/java-pubsub/commit/3889a05a5c5d7479d3cc6b6dc0b0c425d41efd5d))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.53.0 ([b952e58](https://github.com/googleapis/java-pubsub/commit/b952e5826748bc680936a79b14d75f5873e6db06))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.47.0 ([#2331](https://github.com/googleapis/java-pubsub/issues/2331)) ([216feef](https://github.com/googleapis/java-pubsub/commit/216feef976595cd03e282f8d8effa2ac8430c419))
+* Update dependency com.google.cloud:google-cloud-core to v2.51.0 ([#2338](https://github.com/googleapis/java-pubsub/issues/2338)) ([ac2403e](https://github.com/googleapis/java-pubsub/commit/ac2403ecd21aad0d44c5b06fce2853f9a433adbd))
+* Update dependency com.google.cloud:google-cloud-storage to v2.48.1 ([#2332](https://github.com/googleapis/java-pubsub/issues/2332)) ([23fd7a8](https://github.com/googleapis/java-pubsub/commit/23fd7a8f4ab2438b72f3a6da5613f5deb0ac307e))
+* Update dependency com.google.cloud:google-cloud-storage to v2.48.2 ([#2341](https://github.com/googleapis/java-pubsub/issues/2341)) ([eeb99a9](https://github.com/googleapis/java-pubsub/commit/eeb99a997fa2e7154dcc228b964ff47867738122))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.43.0 ([#2336](https://github.com/googleapis/java-pubsub/issues/2336)) ([996f4eb](https://github.com/googleapis/java-pubsub/commit/996f4ebdfa6b5cb38dbe37d4be981ca7d941bc0d))
+
+
+### Documentation
+
+* A comment for field `code` in message `.google.pubsub.v1.JavaScriptUDF` is changed ([3889a05](https://github.com/googleapis/java-pubsub/commit/3889a05a5c5d7479d3cc6b6dc0b0c425d41efd5d))
+
 ## [1.136.1](https://github.com/googleapis/java-pubsub/compare/v1.136.0...v1.136.1) (2025-01-28)
 
 

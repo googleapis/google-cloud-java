@@ -16,7 +16,10 @@ deep-remove-regex:
 - "/proto-google-.*/src"
 - "/google-.*/src"
 
+#Args=--initialize-at-build-time=org.junit.runners.model.FrameworkField
 deep-preserve-regex:
+- "/google-cloud-pubsub/src/test/resources/META-INF/native-image/.*"
+- "/google-cloud-pubsub/src/main/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/DeletedTopic.java"
 - "/proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ProjectSnapshotName.java"
