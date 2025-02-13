@@ -24,7 +24,7 @@
     <dependency>
       <groupId>com.android.tools.metalava</groupId>
       <artifactId>metalava</artifactId>
-      <version>1.0.0-alpha11</version>
+      <version>1.0.0-alpha12</version>
       <scope>runtime</scope>
     </dependency>
   </dependencies>
