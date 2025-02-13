@@ -1,6 +1,16 @@
 # Changelog
 
 
+## [0.132.3-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.132.2-alpha...v0.132.3-alpha) (2025-02-13)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-logging to v3.21.3 ([#1437](https://github.com/googleapis/java-logging-logback/issues/1437)) ([254f896](https://github.com/googleapis/java-logging-logback/commit/254f896906892bbc30194735f161862ea0048915))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.43.0 ([#1435](https://github.com/googleapis/java-logging-logback/issues/1435)) ([d0e0366](https://github.com/googleapis/java-logging-logback/commit/d0e0366f958e24b69674ceef12826f049b1e3a14))
+* Update dependency io.opentelemetry:opentelemetry-api to v1.47.0 ([#1432](https://github.com/googleapis/java-logging-logback/issues/1432)) ([4041f04](https://github.com/googleapis/java-logging-logback/commit/4041f04b1ee7e2854d0a0babc6363501c97cbef5))
+* Update dependency io.opentelemetry:opentelemetry-context to v1.47.0 ([#1433](https://github.com/googleapis/java-logging-logback/issues/1433)) ([40e073a](https://github.com/googleapis/java-logging-logback/commit/40e073aaf21cea3fe82e74cb1cc8e80c060be610))
+
 ## [0.132.2-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.132.1-alpha...v0.132.2-alpha) (2025-01-30)
 
 
