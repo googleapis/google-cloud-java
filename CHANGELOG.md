@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.48.0](https://github.com/googleapis/java-bigquery/compare/v2.47.0...v2.48.0) (2025-02-13)
+
+
+### Features
+
+* Implement wasNull for BigQueryResultSet ([#3650](https://github.com/googleapis/java-bigquery/issues/3650)) ([c7ef94b](https://github.com/googleapis/java-bigquery/commit/c7ef94be115cd572df589385f9be801033d72d6d))
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.59.0 ([#3660](https://github.com/googleapis/java-bigquery/issues/3660)) ([3a6228b](https://github.com/googleapis/java-bigquery/commit/3a6228b4adc638759d3b2725c612e97e1a3b9cec))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20250128-2.0.0 ([#3667](https://github.com/googleapis/java-bigquery/issues/3667)) ([0b92af6](https://github.com/googleapis/java-bigquery/commit/0b92af6eba4a633bb514089c24b7dd19cf286789))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.63.0 ([#3661](https://github.com/googleapis/java-bigquery/issues/3661)) ([9bc8c01](https://github.com/googleapis/java-bigquery/commit/9bc8c0115dc16fb950567cd85cc7dfaa9df50d7d))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.43.0 ([#3669](https://github.com/googleapis/java-bigquery/issues/3669)) ([4d9e0ff](https://github.com/googleapis/java-bigquery/commit/4d9e0ff30269127f47484910e71fa7a21a735492))
+
+
+### Documentation
+
+* Update CONTRIBUTING.md for users without branch permissions ([#3670](https://github.com/googleapis/java-bigquery/issues/3670)) ([009b9a2](https://github.com/googleapis/java-bigquery/commit/009b9a2b3940ab66220e68ddd565710b8552cc45))
+
 ## [2.47.0](https://github.com/googleapis/java-bigquery/compare/v2.46.0...v2.47.0) (2025-01-29)
 
 
