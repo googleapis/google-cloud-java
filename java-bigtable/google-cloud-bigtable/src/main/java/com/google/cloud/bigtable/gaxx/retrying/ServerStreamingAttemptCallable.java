@@ -25,6 +25,7 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StateCheckingResponseObserver;
 import com.google.api.gax.rpc.StreamController;
+import com.google.cloud.bigtable.data.v2.stub.BigtableStreamResumptionStrategy;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
@@ -343,6 +344,10 @@ public final class ServerStreamingAttemptCallable<RequestT, ResponseT> implement
     Throwable localCancellationCause;
     synchronized (lock) {
       localCancellationCause = cancellationCause;
+    }
+
+    if (resumptionStrategy instanceof BigtableStreamResumptionStrategy) {
+      throwable = ((BigtableStreamResumptionStrategy) resumptionStrategy).processError(throwable);
     }
 
     if (localCancellationCause != null) {

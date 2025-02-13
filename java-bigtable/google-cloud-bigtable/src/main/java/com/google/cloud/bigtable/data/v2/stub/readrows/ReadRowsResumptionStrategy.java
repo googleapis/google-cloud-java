@@ -22,20 +22,21 @@ import com.google.bigtable.v2.ReadRowsRequest.Builder;
 import com.google.bigtable.v2.RowSet;
 import com.google.cloud.bigtable.data.v2.internal.RowSetUtil;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
+import com.google.cloud.bigtable.data.v2.stub.BigtableStreamResumptionStrategy;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 
 /**
- * An implementation of a {@link StreamResumptionStrategy} for merged rows. This class tracks the
- * last complete row seen and upon retry can build a request to resume the stream from where it left
- * off.
+ * An implementation of a {@link BigtableStreamResumptionStrategy} for merged rows. This class
+ * tracks the last complete row seen and upon retry can build a request to resume the stream from
+ * where it left off.
  *
  * <p>This class is considered an internal implementation detail and not meant to be used by
  * applications.
  */
 @InternalApi
 public class ReadRowsResumptionStrategy<RowT>
-    implements StreamResumptionStrategy<ReadRowsRequest, RowT> {
+    extends BigtableStreamResumptionStrategy<ReadRowsRequest, RowT> {
   private final RowAdapter<RowT> rowAdapter;
   private ByteString lastKey = ByteString.EMPTY;
   // Number of rows processed excluding Marker row.
@@ -67,6 +68,12 @@ public class ReadRowsResumptionStrategy<RowT>
       numProcessed++;
     }
     return response;
+  }
+
+  @Override
+  public Throwable processError(Throwable throwable) {
+    // Noop
+    return throwable;
   }
 
   /**
