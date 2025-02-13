@@ -79,7 +79,7 @@
       	<!-- remove this dependency after google-cloud-java is released after the cycle of Jan 31st 2025 -->
       	<groupId>io.opentelemetry</groupId>
       	<artifactId>opentelemetry-api</artifactId>
-      	<version>1.46.0</version>
+      	<version>1.47.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
