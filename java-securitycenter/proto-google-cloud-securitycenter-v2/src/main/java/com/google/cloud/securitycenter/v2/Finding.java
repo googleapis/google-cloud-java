@@ -70,6 +70,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     logEntries_ = java.util.Collections.emptyList();
     loadBalancers_ = java.util.Collections.emptyList();
     groupMemberships_ = java.util.Collections.emptyList();
+    dataAccessEvents_ = java.util.Collections.emptyList();
+    dataFlowEvents_ = java.util.Collections.emptyList();
+    dataRetentionDeletionEvents_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -826,6 +829,17 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>TOXIC_COMBINATION = 7;</code>
      */
     TOXIC_COMBINATION(7),
+    /**
+     *
+     *
+     * <pre>
+     * Describes a potential security risk to data assets that contain sensitive
+     * data.
+     * </pre>
+     *
+     * <code>SENSITIVE_DATA_RISK = 8;</code>
+     */
+    SENSITIVE_DATA_RISK(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -913,6 +927,17 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>TOXIC_COMBINATION = 7;</code>
      */
     public static final int TOXIC_COMBINATION_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Describes a potential security risk to data assets that contain sensitive
+     * data.
+     * </pre>
+     *
+     * <code>SENSITIVE_DATA_RISK = 8;</code>
+     */
+    public static final int SENSITIVE_DATA_RISK_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -954,6 +979,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           return POSTURE_VIOLATION;
         case 7:
           return TOXIC_COMBINATION;
+        case 8:
+          return SENSITIVE_DATA_RISK;
         default:
           return null;
       }
@@ -7555,6 +7582,283 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     return groupMemberships_.get(index);
   }
 
+  public static final int DISK_FIELD_NUMBER = 58;
+  private com.google.cloud.securitycenter.v2.Disk disk_;
+  /**
+   *
+   *
+   * <pre>
+   * Disk associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.Disk disk = 58;</code>
+   *
+   * @return Whether the disk field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisk() {
+    return ((bitField0_ & 0x00400000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Disk associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.Disk disk = 58;</code>
+   *
+   * @return The disk.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v2.Disk getDisk() {
+    return disk_ == null ? com.google.cloud.securitycenter.v2.Disk.getDefaultInstance() : disk_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Disk associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.Disk disk = 58;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v2.DiskOrBuilder getDiskOrBuilder() {
+    return disk_ == null ? com.google.cloud.securitycenter.v2.Disk.getDefaultInstance() : disk_;
+  }
+
+  public static final int DATA_ACCESS_EVENTS_FIELD_NUMBER = 61;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.securitycenter.v2.DataAccessEvent> dataAccessEvents_;
+  /**
+   *
+   *
+   * <pre>
+   * Data access events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.securitycenter.v2.DataAccessEvent>
+      getDataAccessEventsList() {
+    return dataAccessEvents_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Data access events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.securitycenter.v2.DataAccessEventOrBuilder>
+      getDataAccessEventsOrBuilderList() {
+    return dataAccessEvents_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Data access events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;</code>
+   */
+  @java.lang.Override
+  public int getDataAccessEventsCount() {
+    return dataAccessEvents_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Data access events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v2.DataAccessEvent getDataAccessEvents(int index) {
+    return dataAccessEvents_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Data access events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v2.DataAccessEventOrBuilder getDataAccessEventsOrBuilder(
+      int index) {
+    return dataAccessEvents_.get(index);
+  }
+
+  public static final int DATA_FLOW_EVENTS_FIELD_NUMBER = 62;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.securitycenter.v2.DataFlowEvent> dataFlowEvents_;
+  /**
+   *
+   *
+   * <pre>
+   * Data flow events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.securitycenter.v2.DataFlowEvent> getDataFlowEventsList() {
+    return dataFlowEvents_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Data flow events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.securitycenter.v2.DataFlowEventOrBuilder>
+      getDataFlowEventsOrBuilderList() {
+    return dataFlowEvents_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Data flow events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+   */
+  @java.lang.Override
+  public int getDataFlowEventsCount() {
+    return dataFlowEvents_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Data flow events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v2.DataFlowEvent getDataFlowEvents(int index) {
+    return dataFlowEvents_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Data flow events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v2.DataFlowEventOrBuilder getDataFlowEventsOrBuilder(
+      int index) {
+    return dataFlowEvents_.get(index);
+  }
+
+  public static final int DATA_RETENTION_DELETION_EVENTS_FIELD_NUMBER = 64;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent>
+      dataRetentionDeletionEvents_;
+  /**
+   *
+   *
+   * <pre>
+   * Data retention deletion events associated with the finding.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent>
+      getDataRetentionDeletionEventsList() {
+    return dataRetentionDeletionEvents_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Data retention deletion events associated with the finding.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.securitycenter.v2.DataRetentionDeletionEventOrBuilder>
+      getDataRetentionDeletionEventsOrBuilderList() {
+    return dataRetentionDeletionEvents_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Data retention deletion events associated with the finding.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+   * </code>
+   */
+  @java.lang.Override
+  public int getDataRetentionDeletionEventsCount() {
+    return dataRetentionDeletionEvents_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Data retention deletion events associated with the finding.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent
+      getDataRetentionDeletionEvents(int index) {
+    return dataRetentionDeletionEvents_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Data retention deletion events associated with the finding.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v2.DataRetentionDeletionEventOrBuilder
+      getDataRetentionDeletionEventsOrBuilder(int index) {
+    return dataRetentionDeletionEvents_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -7718,6 +8022,18 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < groupMemberships_.size(); i++) {
       output.writeMessage(57, groupMemberships_.get(i));
+    }
+    if (((bitField0_ & 0x00400000) != 0)) {
+      output.writeMessage(58, getDisk());
+    }
+    for (int i = 0; i < dataAccessEvents_.size(); i++) {
+      output.writeMessage(61, dataAccessEvents_.get(i));
+    }
+    for (int i = 0; i < dataFlowEvents_.size(); i++) {
+      output.writeMessage(62, dataFlowEvents_.get(i));
+    }
+    for (int i = 0; i < dataRetentionDeletionEvents_.size(); i++) {
+      output.writeMessage(64, dataRetentionDeletionEvents_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -7909,6 +8225,21 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(57, groupMemberships_.get(i));
     }
+    if (((bitField0_ & 0x00400000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(58, getDisk());
+    }
+    for (int i = 0; i < dataAccessEvents_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(61, dataAccessEvents_.get(i));
+    }
+    for (int i = 0; i < dataFlowEvents_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(62, dataFlowEvents_.get(i));
+    }
+    for (int i = 0; i < dataRetentionDeletionEvents_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              64, dataRetentionDeletionEvents_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8041,6 +8372,14 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (!getToxicCombination().equals(other.getToxicCombination())) return false;
     }
     if (!getGroupMembershipsList().equals(other.getGroupMembershipsList())) return false;
+    if (hasDisk() != other.hasDisk()) return false;
+    if (hasDisk()) {
+      if (!getDisk().equals(other.getDisk())) return false;
+    }
+    if (!getDataAccessEventsList().equals(other.getDataAccessEventsList())) return false;
+    if (!getDataFlowEventsList().equals(other.getDataFlowEventsList())) return false;
+    if (!getDataRetentionDeletionEventsList().equals(other.getDataRetentionDeletionEventsList()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -8221,6 +8560,22 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (getGroupMembershipsCount() > 0) {
       hash = (37 * hash) + GROUP_MEMBERSHIPS_FIELD_NUMBER;
       hash = (53 * hash) + getGroupMembershipsList().hashCode();
+    }
+    if (hasDisk()) {
+      hash = (37 * hash) + DISK_FIELD_NUMBER;
+      hash = (53 * hash) + getDisk().hashCode();
+    }
+    if (getDataAccessEventsCount() > 0) {
+      hash = (37 * hash) + DATA_ACCESS_EVENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getDataAccessEventsList().hashCode();
+    }
+    if (getDataFlowEventsCount() > 0) {
+      hash = (37 * hash) + DATA_FLOW_EVENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getDataFlowEventsList().hashCode();
+    }
+    if (getDataRetentionDeletionEventsCount() > 0) {
+      hash = (37 * hash) + DATA_RETENTION_DELETION_EVENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getDataRetentionDeletionEventsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -8430,6 +8785,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         getNotebookFieldBuilder();
         getToxicCombinationFieldBuilder();
         getGroupMembershipsFieldBuilder();
+        getDiskFieldBuilder();
+        getDataAccessEventsFieldBuilder();
+        getDataFlowEventsFieldBuilder();
+        getDataRetentionDeletionEventsFieldBuilder();
       }
     }
 
@@ -8636,6 +8995,32 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         groupMembershipsBuilder_.clear();
       }
       bitField1_ = (bitField1_ & ~0x00020000);
+      disk_ = null;
+      if (diskBuilder_ != null) {
+        diskBuilder_.dispose();
+        diskBuilder_ = null;
+      }
+      if (dataAccessEventsBuilder_ == null) {
+        dataAccessEvents_ = java.util.Collections.emptyList();
+      } else {
+        dataAccessEvents_ = null;
+        dataAccessEventsBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00080000);
+      if (dataFlowEventsBuilder_ == null) {
+        dataFlowEvents_ = java.util.Collections.emptyList();
+      } else {
+        dataFlowEvents_ = null;
+        dataFlowEventsBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00100000);
+      if (dataRetentionDeletionEventsBuilder_ == null) {
+        dataRetentionDeletionEvents_ = java.util.Collections.emptyList();
+      } else {
+        dataRetentionDeletionEvents_ = null;
+        dataRetentionDeletionEventsBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00200000);
       return this;
     }
 
@@ -8764,6 +9149,34 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.groupMemberships_ = groupMemberships_;
       } else {
         result.groupMemberships_ = groupMembershipsBuilder_.build();
+      }
+      if (dataAccessEventsBuilder_ == null) {
+        if (((bitField1_ & 0x00080000) != 0)) {
+          dataAccessEvents_ = java.util.Collections.unmodifiableList(dataAccessEvents_);
+          bitField1_ = (bitField1_ & ~0x00080000);
+        }
+        result.dataAccessEvents_ = dataAccessEvents_;
+      } else {
+        result.dataAccessEvents_ = dataAccessEventsBuilder_.build();
+      }
+      if (dataFlowEventsBuilder_ == null) {
+        if (((bitField1_ & 0x00100000) != 0)) {
+          dataFlowEvents_ = java.util.Collections.unmodifiableList(dataFlowEvents_);
+          bitField1_ = (bitField1_ & ~0x00100000);
+        }
+        result.dataFlowEvents_ = dataFlowEvents_;
+      } else {
+        result.dataFlowEvents_ = dataFlowEventsBuilder_.build();
+      }
+      if (dataRetentionDeletionEventsBuilder_ == null) {
+        if (((bitField1_ & 0x00200000) != 0)) {
+          dataRetentionDeletionEvents_ =
+              java.util.Collections.unmodifiableList(dataRetentionDeletionEvents_);
+          bitField1_ = (bitField1_ & ~0x00200000);
+        }
+        result.dataRetentionDeletionEvents_ = dataRetentionDeletionEvents_;
+      } else {
+        result.dataRetentionDeletionEvents_ = dataRetentionDeletionEventsBuilder_.build();
       }
     }
 
@@ -8938,6 +9351,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.toxicCombination_ =
             toxicCombinationBuilder_ == null ? toxicCombination_ : toxicCombinationBuilder_.build();
         to_bitField0_ |= 0x00200000;
+      }
+      if (((from_bitField1_ & 0x00040000) != 0)) {
+        result.disk_ = diskBuilder_ == null ? disk_ : diskBuilder_.build();
+        to_bitField0_ |= 0x00400000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -9396,6 +9813,90 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasDisk()) {
+        mergeDisk(other.getDisk());
+      }
+      if (dataAccessEventsBuilder_ == null) {
+        if (!other.dataAccessEvents_.isEmpty()) {
+          if (dataAccessEvents_.isEmpty()) {
+            dataAccessEvents_ = other.dataAccessEvents_;
+            bitField1_ = (bitField1_ & ~0x00080000);
+          } else {
+            ensureDataAccessEventsIsMutable();
+            dataAccessEvents_.addAll(other.dataAccessEvents_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.dataAccessEvents_.isEmpty()) {
+          if (dataAccessEventsBuilder_.isEmpty()) {
+            dataAccessEventsBuilder_.dispose();
+            dataAccessEventsBuilder_ = null;
+            dataAccessEvents_ = other.dataAccessEvents_;
+            bitField1_ = (bitField1_ & ~0x00080000);
+            dataAccessEventsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDataAccessEventsFieldBuilder()
+                    : null;
+          } else {
+            dataAccessEventsBuilder_.addAllMessages(other.dataAccessEvents_);
+          }
+        }
+      }
+      if (dataFlowEventsBuilder_ == null) {
+        if (!other.dataFlowEvents_.isEmpty()) {
+          if (dataFlowEvents_.isEmpty()) {
+            dataFlowEvents_ = other.dataFlowEvents_;
+            bitField1_ = (bitField1_ & ~0x00100000);
+          } else {
+            ensureDataFlowEventsIsMutable();
+            dataFlowEvents_.addAll(other.dataFlowEvents_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.dataFlowEvents_.isEmpty()) {
+          if (dataFlowEventsBuilder_.isEmpty()) {
+            dataFlowEventsBuilder_.dispose();
+            dataFlowEventsBuilder_ = null;
+            dataFlowEvents_ = other.dataFlowEvents_;
+            bitField1_ = (bitField1_ & ~0x00100000);
+            dataFlowEventsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDataFlowEventsFieldBuilder()
+                    : null;
+          } else {
+            dataFlowEventsBuilder_.addAllMessages(other.dataFlowEvents_);
+          }
+        }
+      }
+      if (dataRetentionDeletionEventsBuilder_ == null) {
+        if (!other.dataRetentionDeletionEvents_.isEmpty()) {
+          if (dataRetentionDeletionEvents_.isEmpty()) {
+            dataRetentionDeletionEvents_ = other.dataRetentionDeletionEvents_;
+            bitField1_ = (bitField1_ & ~0x00200000);
+          } else {
+            ensureDataRetentionDeletionEventsIsMutable();
+            dataRetentionDeletionEvents_.addAll(other.dataRetentionDeletionEvents_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.dataRetentionDeletionEvents_.isEmpty()) {
+          if (dataRetentionDeletionEventsBuilder_.isEmpty()) {
+            dataRetentionDeletionEventsBuilder_.dispose();
+            dataRetentionDeletionEventsBuilder_ = null;
+            dataRetentionDeletionEvents_ = other.dataRetentionDeletionEvents_;
+            bitField1_ = (bitField1_ & ~0x00200000);
+            dataRetentionDeletionEventsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDataRetentionDeletionEventsFieldBuilder()
+                    : null;
+          } else {
+            dataRetentionDeletionEventsBuilder_.addAllMessages(other.dataRetentionDeletionEvents_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -9821,6 +10322,54 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 458
+            case 466:
+              {
+                input.readMessage(getDiskFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00040000;
+                break;
+              } // case 466
+            case 490:
+              {
+                com.google.cloud.securitycenter.v2.DataAccessEvent m =
+                    input.readMessage(
+                        com.google.cloud.securitycenter.v2.DataAccessEvent.parser(),
+                        extensionRegistry);
+                if (dataAccessEventsBuilder_ == null) {
+                  ensureDataAccessEventsIsMutable();
+                  dataAccessEvents_.add(m);
+                } else {
+                  dataAccessEventsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 490
+            case 498:
+              {
+                com.google.cloud.securitycenter.v2.DataFlowEvent m =
+                    input.readMessage(
+                        com.google.cloud.securitycenter.v2.DataFlowEvent.parser(),
+                        extensionRegistry);
+                if (dataFlowEventsBuilder_ == null) {
+                  ensureDataFlowEventsIsMutable();
+                  dataFlowEvents_.add(m);
+                } else {
+                  dataFlowEventsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 498
+            case 514:
+              {
+                com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent m =
+                    input.readMessage(
+                        com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent.parser(),
+                        extensionRegistry);
+                if (dataRetentionDeletionEventsBuilder_ == null) {
+                  ensureDataRetentionDeletionEventsIsMutable();
+                  dataRetentionDeletionEvents_.add(m);
+                } else {
+                  dataRetentionDeletionEventsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 514
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -20549,6 +21098,1336 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         groupMemberships_ = null;
       }
       return groupMembershipsBuilder_;
+    }
+
+    private com.google.cloud.securitycenter.v2.Disk disk_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v2.Disk,
+            com.google.cloud.securitycenter.v2.Disk.Builder,
+            com.google.cloud.securitycenter.v2.DiskOrBuilder>
+        diskBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Disk associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.Disk disk = 58;</code>
+     *
+     * @return Whether the disk field is set.
+     */
+    public boolean hasDisk() {
+      return ((bitField1_ & 0x00040000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Disk associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.Disk disk = 58;</code>
+     *
+     * @return The disk.
+     */
+    public com.google.cloud.securitycenter.v2.Disk getDisk() {
+      if (diskBuilder_ == null) {
+        return disk_ == null ? com.google.cloud.securitycenter.v2.Disk.getDefaultInstance() : disk_;
+      } else {
+        return diskBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Disk associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.Disk disk = 58;</code>
+     */
+    public Builder setDisk(com.google.cloud.securitycenter.v2.Disk value) {
+      if (diskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        disk_ = value;
+      } else {
+        diskBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Disk associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.Disk disk = 58;</code>
+     */
+    public Builder setDisk(com.google.cloud.securitycenter.v2.Disk.Builder builderForValue) {
+      if (diskBuilder_ == null) {
+        disk_ = builderForValue.build();
+      } else {
+        diskBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Disk associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.Disk disk = 58;</code>
+     */
+    public Builder mergeDisk(com.google.cloud.securitycenter.v2.Disk value) {
+      if (diskBuilder_ == null) {
+        if (((bitField1_ & 0x00040000) != 0)
+            && disk_ != null
+            && disk_ != com.google.cloud.securitycenter.v2.Disk.getDefaultInstance()) {
+          getDiskBuilder().mergeFrom(value);
+        } else {
+          disk_ = value;
+        }
+      } else {
+        diskBuilder_.mergeFrom(value);
+      }
+      if (disk_ != null) {
+        bitField1_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Disk associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.Disk disk = 58;</code>
+     */
+    public Builder clearDisk() {
+      bitField1_ = (bitField1_ & ~0x00040000);
+      disk_ = null;
+      if (diskBuilder_ != null) {
+        diskBuilder_.dispose();
+        diskBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Disk associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.Disk disk = 58;</code>
+     */
+    public com.google.cloud.securitycenter.v2.Disk.Builder getDiskBuilder() {
+      bitField1_ |= 0x00040000;
+      onChanged();
+      return getDiskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Disk associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.Disk disk = 58;</code>
+     */
+    public com.google.cloud.securitycenter.v2.DiskOrBuilder getDiskOrBuilder() {
+      if (diskBuilder_ != null) {
+        return diskBuilder_.getMessageOrBuilder();
+      } else {
+        return disk_ == null ? com.google.cloud.securitycenter.v2.Disk.getDefaultInstance() : disk_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Disk associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.Disk disk = 58;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v2.Disk,
+            com.google.cloud.securitycenter.v2.Disk.Builder,
+            com.google.cloud.securitycenter.v2.DiskOrBuilder>
+        getDiskFieldBuilder() {
+      if (diskBuilder_ == null) {
+        diskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v2.Disk,
+                com.google.cloud.securitycenter.v2.Disk.Builder,
+                com.google.cloud.securitycenter.v2.DiskOrBuilder>(
+                getDisk(), getParentForChildren(), isClean());
+        disk_ = null;
+      }
+      return diskBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.securitycenter.v2.DataAccessEvent> dataAccessEvents_ =
+        java.util.Collections.emptyList();
+
+    private void ensureDataAccessEventsIsMutable() {
+      if (!((bitField1_ & 0x00080000) != 0)) {
+        dataAccessEvents_ =
+            new java.util.ArrayList<com.google.cloud.securitycenter.v2.DataAccessEvent>(
+                dataAccessEvents_);
+        bitField1_ |= 0x00080000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v2.DataAccessEvent,
+            com.google.cloud.securitycenter.v2.DataAccessEvent.Builder,
+            com.google.cloud.securitycenter.v2.DataAccessEventOrBuilder>
+        dataAccessEventsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Data access events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v2.DataAccessEvent>
+        getDataAccessEventsList() {
+      if (dataAccessEventsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(dataAccessEvents_);
+      } else {
+        return dataAccessEventsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data access events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;
+     * </code>
+     */
+    public int getDataAccessEventsCount() {
+      if (dataAccessEventsBuilder_ == null) {
+        return dataAccessEvents_.size();
+      } else {
+        return dataAccessEventsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data access events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v2.DataAccessEvent getDataAccessEvents(int index) {
+      if (dataAccessEventsBuilder_ == null) {
+        return dataAccessEvents_.get(index);
+      } else {
+        return dataAccessEventsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data access events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;
+     * </code>
+     */
+    public Builder setDataAccessEvents(
+        int index, com.google.cloud.securitycenter.v2.DataAccessEvent value) {
+      if (dataAccessEventsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDataAccessEventsIsMutable();
+        dataAccessEvents_.set(index, value);
+        onChanged();
+      } else {
+        dataAccessEventsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data access events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;
+     * </code>
+     */
+    public Builder setDataAccessEvents(
+        int index, com.google.cloud.securitycenter.v2.DataAccessEvent.Builder builderForValue) {
+      if (dataAccessEventsBuilder_ == null) {
+        ensureDataAccessEventsIsMutable();
+        dataAccessEvents_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        dataAccessEventsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data access events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;
+     * </code>
+     */
+    public Builder addDataAccessEvents(com.google.cloud.securitycenter.v2.DataAccessEvent value) {
+      if (dataAccessEventsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDataAccessEventsIsMutable();
+        dataAccessEvents_.add(value);
+        onChanged();
+      } else {
+        dataAccessEventsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data access events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;
+     * </code>
+     */
+    public Builder addDataAccessEvents(
+        int index, com.google.cloud.securitycenter.v2.DataAccessEvent value) {
+      if (dataAccessEventsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDataAccessEventsIsMutable();
+        dataAccessEvents_.add(index, value);
+        onChanged();
+      } else {
+        dataAccessEventsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data access events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;
+     * </code>
+     */
+    public Builder addDataAccessEvents(
+        com.google.cloud.securitycenter.v2.DataAccessEvent.Builder builderForValue) {
+      if (dataAccessEventsBuilder_ == null) {
+        ensureDataAccessEventsIsMutable();
+        dataAccessEvents_.add(builderForValue.build());
+        onChanged();
+      } else {
+        dataAccessEventsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data access events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;
+     * </code>
+     */
+    public Builder addDataAccessEvents(
+        int index, com.google.cloud.securitycenter.v2.DataAccessEvent.Builder builderForValue) {
+      if (dataAccessEventsBuilder_ == null) {
+        ensureDataAccessEventsIsMutable();
+        dataAccessEvents_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        dataAccessEventsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data access events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;
+     * </code>
+     */
+    public Builder addAllDataAccessEvents(
+        java.lang.Iterable<? extends com.google.cloud.securitycenter.v2.DataAccessEvent> values) {
+      if (dataAccessEventsBuilder_ == null) {
+        ensureDataAccessEventsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dataAccessEvents_);
+        onChanged();
+      } else {
+        dataAccessEventsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data access events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;
+     * </code>
+     */
+    public Builder clearDataAccessEvents() {
+      if (dataAccessEventsBuilder_ == null) {
+        dataAccessEvents_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00080000);
+        onChanged();
+      } else {
+        dataAccessEventsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data access events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;
+     * </code>
+     */
+    public Builder removeDataAccessEvents(int index) {
+      if (dataAccessEventsBuilder_ == null) {
+        ensureDataAccessEventsIsMutable();
+        dataAccessEvents_.remove(index);
+        onChanged();
+      } else {
+        dataAccessEventsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data access events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v2.DataAccessEvent.Builder getDataAccessEventsBuilder(
+        int index) {
+      return getDataAccessEventsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data access events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v2.DataAccessEventOrBuilder getDataAccessEventsOrBuilder(
+        int index) {
+      if (dataAccessEventsBuilder_ == null) {
+        return dataAccessEvents_.get(index);
+      } else {
+        return dataAccessEventsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data access events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.securitycenter.v2.DataAccessEventOrBuilder>
+        getDataAccessEventsOrBuilderList() {
+      if (dataAccessEventsBuilder_ != null) {
+        return dataAccessEventsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(dataAccessEvents_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data access events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v2.DataAccessEvent.Builder addDataAccessEventsBuilder() {
+      return getDataAccessEventsFieldBuilder()
+          .addBuilder(com.google.cloud.securitycenter.v2.DataAccessEvent.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data access events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v2.DataAccessEvent.Builder addDataAccessEventsBuilder(
+        int index) {
+      return getDataAccessEventsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.securitycenter.v2.DataAccessEvent.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data access events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v2.DataAccessEvent.Builder>
+        getDataAccessEventsBuilderList() {
+      return getDataAccessEventsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v2.DataAccessEvent,
+            com.google.cloud.securitycenter.v2.DataAccessEvent.Builder,
+            com.google.cloud.securitycenter.v2.DataAccessEventOrBuilder>
+        getDataAccessEventsFieldBuilder() {
+      if (dataAccessEventsBuilder_ == null) {
+        dataAccessEventsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.securitycenter.v2.DataAccessEvent,
+                com.google.cloud.securitycenter.v2.DataAccessEvent.Builder,
+                com.google.cloud.securitycenter.v2.DataAccessEventOrBuilder>(
+                dataAccessEvents_,
+                ((bitField1_ & 0x00080000) != 0),
+                getParentForChildren(),
+                isClean());
+        dataAccessEvents_ = null;
+      }
+      return dataAccessEventsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.securitycenter.v2.DataFlowEvent> dataFlowEvents_ =
+        java.util.Collections.emptyList();
+
+    private void ensureDataFlowEventsIsMutable() {
+      if (!((bitField1_ & 0x00100000) != 0)) {
+        dataFlowEvents_ =
+            new java.util.ArrayList<com.google.cloud.securitycenter.v2.DataFlowEvent>(
+                dataFlowEvents_);
+        bitField1_ |= 0x00100000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v2.DataFlowEvent,
+            com.google.cloud.securitycenter.v2.DataFlowEvent.Builder,
+            com.google.cloud.securitycenter.v2.DataFlowEventOrBuilder>
+        dataFlowEventsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Data flow events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v2.DataFlowEvent>
+        getDataFlowEventsList() {
+      if (dataFlowEventsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(dataFlowEvents_);
+      } else {
+        return dataFlowEventsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data flow events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+     */
+    public int getDataFlowEventsCount() {
+      if (dataFlowEventsBuilder_ == null) {
+        return dataFlowEvents_.size();
+      } else {
+        return dataFlowEventsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data flow events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+     */
+    public com.google.cloud.securitycenter.v2.DataFlowEvent getDataFlowEvents(int index) {
+      if (dataFlowEventsBuilder_ == null) {
+        return dataFlowEvents_.get(index);
+      } else {
+        return dataFlowEventsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data flow events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+     */
+    public Builder setDataFlowEvents(
+        int index, com.google.cloud.securitycenter.v2.DataFlowEvent value) {
+      if (dataFlowEventsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDataFlowEventsIsMutable();
+        dataFlowEvents_.set(index, value);
+        onChanged();
+      } else {
+        dataFlowEventsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data flow events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+     */
+    public Builder setDataFlowEvents(
+        int index, com.google.cloud.securitycenter.v2.DataFlowEvent.Builder builderForValue) {
+      if (dataFlowEventsBuilder_ == null) {
+        ensureDataFlowEventsIsMutable();
+        dataFlowEvents_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        dataFlowEventsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data flow events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+     */
+    public Builder addDataFlowEvents(com.google.cloud.securitycenter.v2.DataFlowEvent value) {
+      if (dataFlowEventsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDataFlowEventsIsMutable();
+        dataFlowEvents_.add(value);
+        onChanged();
+      } else {
+        dataFlowEventsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data flow events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+     */
+    public Builder addDataFlowEvents(
+        int index, com.google.cloud.securitycenter.v2.DataFlowEvent value) {
+      if (dataFlowEventsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDataFlowEventsIsMutable();
+        dataFlowEvents_.add(index, value);
+        onChanged();
+      } else {
+        dataFlowEventsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data flow events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+     */
+    public Builder addDataFlowEvents(
+        com.google.cloud.securitycenter.v2.DataFlowEvent.Builder builderForValue) {
+      if (dataFlowEventsBuilder_ == null) {
+        ensureDataFlowEventsIsMutable();
+        dataFlowEvents_.add(builderForValue.build());
+        onChanged();
+      } else {
+        dataFlowEventsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data flow events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+     */
+    public Builder addDataFlowEvents(
+        int index, com.google.cloud.securitycenter.v2.DataFlowEvent.Builder builderForValue) {
+      if (dataFlowEventsBuilder_ == null) {
+        ensureDataFlowEventsIsMutable();
+        dataFlowEvents_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        dataFlowEventsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data flow events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+     */
+    public Builder addAllDataFlowEvents(
+        java.lang.Iterable<? extends com.google.cloud.securitycenter.v2.DataFlowEvent> values) {
+      if (dataFlowEventsBuilder_ == null) {
+        ensureDataFlowEventsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dataFlowEvents_);
+        onChanged();
+      } else {
+        dataFlowEventsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data flow events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+     */
+    public Builder clearDataFlowEvents() {
+      if (dataFlowEventsBuilder_ == null) {
+        dataFlowEvents_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00100000);
+        onChanged();
+      } else {
+        dataFlowEventsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data flow events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+     */
+    public Builder removeDataFlowEvents(int index) {
+      if (dataFlowEventsBuilder_ == null) {
+        ensureDataFlowEventsIsMutable();
+        dataFlowEvents_.remove(index);
+        onChanged();
+      } else {
+        dataFlowEventsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data flow events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+     */
+    public com.google.cloud.securitycenter.v2.DataFlowEvent.Builder getDataFlowEventsBuilder(
+        int index) {
+      return getDataFlowEventsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data flow events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+     */
+    public com.google.cloud.securitycenter.v2.DataFlowEventOrBuilder getDataFlowEventsOrBuilder(
+        int index) {
+      if (dataFlowEventsBuilder_ == null) {
+        return dataFlowEvents_.get(index);
+      } else {
+        return dataFlowEventsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data flow events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+     */
+    public java.util.List<? extends com.google.cloud.securitycenter.v2.DataFlowEventOrBuilder>
+        getDataFlowEventsOrBuilderList() {
+      if (dataFlowEventsBuilder_ != null) {
+        return dataFlowEventsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(dataFlowEvents_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data flow events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+     */
+    public com.google.cloud.securitycenter.v2.DataFlowEvent.Builder addDataFlowEventsBuilder() {
+      return getDataFlowEventsFieldBuilder()
+          .addBuilder(com.google.cloud.securitycenter.v2.DataFlowEvent.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data flow events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+     */
+    public com.google.cloud.securitycenter.v2.DataFlowEvent.Builder addDataFlowEventsBuilder(
+        int index) {
+      return getDataFlowEventsFieldBuilder()
+          .addBuilder(index, com.google.cloud.securitycenter.v2.DataFlowEvent.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data flow events associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v2.DataFlowEvent.Builder>
+        getDataFlowEventsBuilderList() {
+      return getDataFlowEventsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v2.DataFlowEvent,
+            com.google.cloud.securitycenter.v2.DataFlowEvent.Builder,
+            com.google.cloud.securitycenter.v2.DataFlowEventOrBuilder>
+        getDataFlowEventsFieldBuilder() {
+      if (dataFlowEventsBuilder_ == null) {
+        dataFlowEventsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.securitycenter.v2.DataFlowEvent,
+                com.google.cloud.securitycenter.v2.DataFlowEvent.Builder,
+                com.google.cloud.securitycenter.v2.DataFlowEventOrBuilder>(
+                dataFlowEvents_,
+                ((bitField1_ & 0x00100000) != 0),
+                getParentForChildren(),
+                isClean());
+        dataFlowEvents_ = null;
+      }
+      return dataFlowEventsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent>
+        dataRetentionDeletionEvents_ = java.util.Collections.emptyList();
+
+    private void ensureDataRetentionDeletionEventsIsMutable() {
+      if (!((bitField1_ & 0x00200000) != 0)) {
+        dataRetentionDeletionEvents_ =
+            new java.util.ArrayList<com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent>(
+                dataRetentionDeletionEvents_);
+        bitField1_ |= 0x00200000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent,
+            com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent.Builder,
+            com.google.cloud.securitycenter.v2.DataRetentionDeletionEventOrBuilder>
+        dataRetentionDeletionEventsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Data retention deletion events associated with the finding.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent>
+        getDataRetentionDeletionEventsList() {
+      if (dataRetentionDeletionEventsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(dataRetentionDeletionEvents_);
+      } else {
+        return dataRetentionDeletionEventsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data retention deletion events associated with the finding.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+     * </code>
+     */
+    public int getDataRetentionDeletionEventsCount() {
+      if (dataRetentionDeletionEventsBuilder_ == null) {
+        return dataRetentionDeletionEvents_.size();
+      } else {
+        return dataRetentionDeletionEventsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data retention deletion events associated with the finding.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent
+        getDataRetentionDeletionEvents(int index) {
+      if (dataRetentionDeletionEventsBuilder_ == null) {
+        return dataRetentionDeletionEvents_.get(index);
+      } else {
+        return dataRetentionDeletionEventsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data retention deletion events associated with the finding.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+     * </code>
+     */
+    public Builder setDataRetentionDeletionEvents(
+        int index, com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent value) {
+      if (dataRetentionDeletionEventsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDataRetentionDeletionEventsIsMutable();
+        dataRetentionDeletionEvents_.set(index, value);
+        onChanged();
+      } else {
+        dataRetentionDeletionEventsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data retention deletion events associated with the finding.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+     * </code>
+     */
+    public Builder setDataRetentionDeletionEvents(
+        int index,
+        com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent.Builder builderForValue) {
+      if (dataRetentionDeletionEventsBuilder_ == null) {
+        ensureDataRetentionDeletionEventsIsMutable();
+        dataRetentionDeletionEvents_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        dataRetentionDeletionEventsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data retention deletion events associated with the finding.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+     * </code>
+     */
+    public Builder addDataRetentionDeletionEvents(
+        com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent value) {
+      if (dataRetentionDeletionEventsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDataRetentionDeletionEventsIsMutable();
+        dataRetentionDeletionEvents_.add(value);
+        onChanged();
+      } else {
+        dataRetentionDeletionEventsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data retention deletion events associated with the finding.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+     * </code>
+     */
+    public Builder addDataRetentionDeletionEvents(
+        int index, com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent value) {
+      if (dataRetentionDeletionEventsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDataRetentionDeletionEventsIsMutable();
+        dataRetentionDeletionEvents_.add(index, value);
+        onChanged();
+      } else {
+        dataRetentionDeletionEventsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data retention deletion events associated with the finding.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+     * </code>
+     */
+    public Builder addDataRetentionDeletionEvents(
+        com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent.Builder builderForValue) {
+      if (dataRetentionDeletionEventsBuilder_ == null) {
+        ensureDataRetentionDeletionEventsIsMutable();
+        dataRetentionDeletionEvents_.add(builderForValue.build());
+        onChanged();
+      } else {
+        dataRetentionDeletionEventsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data retention deletion events associated with the finding.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+     * </code>
+     */
+    public Builder addDataRetentionDeletionEvents(
+        int index,
+        com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent.Builder builderForValue) {
+      if (dataRetentionDeletionEventsBuilder_ == null) {
+        ensureDataRetentionDeletionEventsIsMutable();
+        dataRetentionDeletionEvents_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        dataRetentionDeletionEventsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data retention deletion events associated with the finding.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+     * </code>
+     */
+    public Builder addAllDataRetentionDeletionEvents(
+        java.lang.Iterable<? extends com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent>
+            values) {
+      if (dataRetentionDeletionEventsBuilder_ == null) {
+        ensureDataRetentionDeletionEventsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, dataRetentionDeletionEvents_);
+        onChanged();
+      } else {
+        dataRetentionDeletionEventsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data retention deletion events associated with the finding.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+     * </code>
+     */
+    public Builder clearDataRetentionDeletionEvents() {
+      if (dataRetentionDeletionEventsBuilder_ == null) {
+        dataRetentionDeletionEvents_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00200000);
+        onChanged();
+      } else {
+        dataRetentionDeletionEventsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data retention deletion events associated with the finding.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+     * </code>
+     */
+    public Builder removeDataRetentionDeletionEvents(int index) {
+      if (dataRetentionDeletionEventsBuilder_ == null) {
+        ensureDataRetentionDeletionEventsIsMutable();
+        dataRetentionDeletionEvents_.remove(index);
+        onChanged();
+      } else {
+        dataRetentionDeletionEventsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data retention deletion events associated with the finding.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent.Builder
+        getDataRetentionDeletionEventsBuilder(int index) {
+      return getDataRetentionDeletionEventsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data retention deletion events associated with the finding.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v2.DataRetentionDeletionEventOrBuilder
+        getDataRetentionDeletionEventsOrBuilder(int index) {
+      if (dataRetentionDeletionEventsBuilder_ == null) {
+        return dataRetentionDeletionEvents_.get(index);
+      } else {
+        return dataRetentionDeletionEventsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data retention deletion events associated with the finding.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.securitycenter.v2.DataRetentionDeletionEventOrBuilder>
+        getDataRetentionDeletionEventsOrBuilderList() {
+      if (dataRetentionDeletionEventsBuilder_ != null) {
+        return dataRetentionDeletionEventsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(dataRetentionDeletionEvents_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data retention deletion events associated with the finding.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent.Builder
+        addDataRetentionDeletionEventsBuilder() {
+      return getDataRetentionDeletionEventsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data retention deletion events associated with the finding.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent.Builder
+        addDataRetentionDeletionEventsBuilder(int index) {
+      return getDataRetentionDeletionEventsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data retention deletion events associated with the finding.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent.Builder>
+        getDataRetentionDeletionEventsBuilderList() {
+      return getDataRetentionDeletionEventsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent,
+            com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent.Builder,
+            com.google.cloud.securitycenter.v2.DataRetentionDeletionEventOrBuilder>
+        getDataRetentionDeletionEventsFieldBuilder() {
+      if (dataRetentionDeletionEventsBuilder_ == null) {
+        dataRetentionDeletionEventsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent,
+                com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent.Builder,
+                com.google.cloud.securitycenter.v2.DataRetentionDeletionEventOrBuilder>(
+                dataRetentionDeletionEvents_,
+                ((bitField1_ & 0x00200000) != 0),
+                getParentForChildren(),
+                isClean());
+        dataRetentionDeletionEvents_ = null;
+      }
+      return dataRetentionDeletionEventsBuilder_;
     }
 
     @java.lang.Override

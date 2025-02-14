@@ -936,6 +936,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             return fields;
                           })
                       .setAdditionalPaths(
+                          "/v2/{parent=organizations/*}/attackPaths",
                           "/v2/{parent=organizations/*/simulations/*/valuedResources/*}/attackPaths",
                           "/v2/{parent=organizations/*/locations/*/simulations/*/valuedResources/*}/attackPaths",
                           "/v2/{parent=organizations/*/simulations/*/attackExposureResults/*}/attackPaths",
@@ -1227,7 +1228,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v2/{parent=organizations/*/simulations/*/attackExposureResults/*}/valuedResources")
+                          "/v2/{parent=organizations/*/simulations/*/attackExposureResults/*}/valuedResources",
+                          "/v2/{parent=organizations/*}/valuedResources")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

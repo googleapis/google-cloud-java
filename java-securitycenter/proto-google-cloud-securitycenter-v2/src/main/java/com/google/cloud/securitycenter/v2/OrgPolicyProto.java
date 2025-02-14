@@ -43,24 +43,26 @@ public final class OrgPolicyProto {
     java.lang.String[] descriptorData = {
       "\n/google/cloud/securitycenter/v2/org_pol"
           + "icy.proto\022\036google.cloud.securitycenter.v"
-          + "2\032\031google/api/resource.proto\"\326\001\n\tOrgPoli"
-          + "cy\022\014\n\004name\030\001 \001(\t:\272\001\352A\266\001\n\037orgpolicy.googl"
-          + "eapis.com/Policy\0227organizations/{organiz"
-          + "ation}/policies/{constraint_name}\022+folde"
-          + "rs/{folder}/policies/{constraint_name}\022-"
-          + "projects/{project}/policies/{constraint_"
-          + "name}B\350\001\n\"com.google.cloud.securitycente"
-          + "r.v2B\016OrgPolicyProtoP\001ZJcloud.google.com"
-          + "/go/securitycenter/apiv2/securitycenterp"
-          + "b;securitycenterpb\252\002\036Google.Cloud.Securi"
-          + "tyCenter.V2\312\002\036Google\\Cloud\\SecurityCente"
-          + "r\\V2\352\002!Google::Cloud::SecurityCenter::V2"
-          + "b\006proto3"
+          + "2\032\037google/api/field_behavior.proto\032\031goog"
+          + "le/api/resource.proto\"\333\001\n\tOrgPolicy\022\021\n\004n"
+          + "ame\030\001 \001(\tB\003\340A\010:\272\001\352A\266\001\n\037orgpolicy.googlea"
+          + "pis.com/Policy\0227organizations/{organizat"
+          + "ion}/policies/{constraint_name}\022+folders"
+          + "/{folder}/policies/{constraint_name}\022-pr"
+          + "ojects/{project}/policies/{constraint_na"
+          + "me}B\350\001\n\"com.google.cloud.securitycenter."
+          + "v2B\016OrgPolicyProtoP\001ZJcloud.google.com/g"
+          + "o/securitycenter/apiv2/securitycenterpb;"
+          + "securitycenterpb\252\002\036Google.Cloud.Security"
+          + "Center.V2\312\002\036Google\\Cloud\\SecurityCenter\\"
+          + "V2\352\002!Google::Cloud::SecurityCenter::V2b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v2_OrgPolicy_descriptor =
@@ -73,9 +75,11 @@ public final class OrgPolicyProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
   }
 
