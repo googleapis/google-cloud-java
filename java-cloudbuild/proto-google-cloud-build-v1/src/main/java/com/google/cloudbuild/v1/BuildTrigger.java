@@ -1370,8 +1370,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The service account used for all user-controlled operations including
    * UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
-   * If no service account is set, then the standard Cloud Build service account
-   * ([PROJECT_NUM]&#64;system.gserviceaccount.com) will be used instead.
+   * If no service account is set and the legacy Cloud Build service account
+   * (`[PROJECT_NUM]&#64;cloudbuild.gserviceaccount.com`) is the default for the
+   * project then it will be used instead.
    * Format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}`
    * </pre>
    *
@@ -1397,8 +1398,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The service account used for all user-controlled operations including
    * UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
-   * If no service account is set, then the standard Cloud Build service account
-   * ([PROJECT_NUM]&#64;system.gserviceaccount.com) will be used instead.
+   * If no service account is set and the legacy Cloud Build service account
+   * (`[PROJECT_NUM]&#64;cloudbuild.gserviceaccount.com`) is the default for the
+   * project then it will be used instead.
    * Format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}`
    * </pre>
    *
@@ -5917,8 +5919,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The service account used for all user-controlled operations including
      * UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
-     * If no service account is set, then the standard Cloud Build service account
-     * ([PROJECT_NUM]&#64;system.gserviceaccount.com) will be used instead.
+     * If no service account is set and the legacy Cloud Build service account
+     * (`[PROJECT_NUM]&#64;cloudbuild.gserviceaccount.com`) is the default for the
+     * project then it will be used instead.
      * Format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}`
      * </pre>
      *
@@ -5943,8 +5946,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The service account used for all user-controlled operations including
      * UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
-     * If no service account is set, then the standard Cloud Build service account
-     * ([PROJECT_NUM]&#64;system.gserviceaccount.com) will be used instead.
+     * If no service account is set and the legacy Cloud Build service account
+     * (`[PROJECT_NUM]&#64;cloudbuild.gserviceaccount.com`) is the default for the
+     * project then it will be used instead.
      * Format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}`
      * </pre>
      *
@@ -5969,8 +5973,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The service account used for all user-controlled operations including
      * UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
-     * If no service account is set, then the standard Cloud Build service account
-     * ([PROJECT_NUM]&#64;system.gserviceaccount.com) will be used instead.
+     * If no service account is set and the legacy Cloud Build service account
+     * (`[PROJECT_NUM]&#64;cloudbuild.gserviceaccount.com`) is the default for the
+     * project then it will be used instead.
      * Format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}`
      * </pre>
      *
@@ -5994,8 +5999,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The service account used for all user-controlled operations including
      * UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
-     * If no service account is set, then the standard Cloud Build service account
-     * ([PROJECT_NUM]&#64;system.gserviceaccount.com) will be used instead.
+     * If no service account is set and the legacy Cloud Build service account
+     * (`[PROJECT_NUM]&#64;cloudbuild.gserviceaccount.com`) is the default for the
+     * project then it will be used instead.
      * Format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}`
      * </pre>
      *
@@ -6015,8 +6021,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The service account used for all user-controlled operations including
      * UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
-     * If no service account is set, then the standard Cloud Build service account
-     * ([PROJECT_NUM]&#64;system.gserviceaccount.com) will be used instead.
+     * If no service account is set and the legacy Cloud Build service account
+     * (`[PROJECT_NUM]&#64;cloudbuild.gserviceaccount.com`) is the default for the
+     * project then it will be used instead.
      * Format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}`
      * </pre>
      *

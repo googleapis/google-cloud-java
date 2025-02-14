@@ -74,8 +74,14 @@ public interface PullRequestFilterOrBuilder
    *
    *
    * <pre>
-   * Configure builds to run whether a repository owner or collaborator need to
-   * comment `/gcbrun`.
+   * If CommentControl is enabled, depending on the setting, builds may not
+   * fire until a repository writer comments `/gcbrun` on a pull
+   * request or `/gcbrun` is in the pull request description.
+   * Only PR comments that contain `/gcbrun` will trigger builds.
+   *
+   * If CommentControl is set to disabled, comments with `/gcbrun` from a user
+   * with repository write permission or above will
+   * still trigger builds to run.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl comment_control = 5;
@@ -88,8 +94,14 @@ public interface PullRequestFilterOrBuilder
    *
    *
    * <pre>
-   * Configure builds to run whether a repository owner or collaborator need to
-   * comment `/gcbrun`.
+   * If CommentControl is enabled, depending on the setting, builds may not
+   * fire until a repository writer comments `/gcbrun` on a pull
+   * request or `/gcbrun` is in the pull request description.
+   * Only PR comments that contain `/gcbrun` will trigger builds.
+   *
+   * If CommentControl is set to disabled, comments with `/gcbrun` from a user
+   * with repository write permission or above will
+   * still trigger builds to run.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl comment_control = 5;

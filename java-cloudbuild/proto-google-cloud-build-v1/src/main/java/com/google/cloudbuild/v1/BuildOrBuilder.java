@@ -1268,6 +1268,47 @@ public interface BuildOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for git operations.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.GitConfig git_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the gitConfig field is set.
+   */
+  boolean hasGitConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for git operations.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.GitConfig git_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gitConfig.
+   */
+  com.google.cloudbuild.v1.GitConfig getGitConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for git operations.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.GitConfig git_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloudbuild.v1.GitConfigOrBuilder getGitConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Contains information about the build when status=FAILURE.
    * </pre>
    *
@@ -1304,4 +1345,71 @@ public interface BuildOrBuilder
    * </code>
    */
   com.google.cloudbuild.v1.Build.FailureInfoOrBuilder getFailureInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dependencies that the Cloud Build worker will fetch before
+   * executing user steps.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloudbuild.v1.Dependency> getDependenciesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dependencies that the Cloud Build worker will fetch before
+   * executing user steps.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloudbuild.v1.Dependency getDependencies(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dependencies that the Cloud Build worker will fetch before
+   * executing user steps.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getDependenciesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dependencies that the Cloud Build worker will fetch before
+   * executing user steps.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloudbuild.v1.DependencyOrBuilder>
+      getDependenciesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dependencies that the Cloud Build worker will fetch before
+   * executing user steps.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.cloudbuild.v1.Dependency dependencies = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloudbuild.v1.DependencyOrBuilder getDependenciesOrBuilder(int index);
 }
