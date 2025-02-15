@@ -286,6 +286,31 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Maximum number of VMs that can be created for this node type.
+   * </pre>
+   *
+   * <code>optional int32 max_vms = 307579713;</code>
+   *
+   * @return Whether the maxVms field is set.
+   */
+  boolean hasMaxVms();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Maximum number of VMs that can be created for this node type.
+   * </pre>
+   *
+   * <code>optional int32 max_vms = 307579713;</code>
+   *
+   * @return The maxVms.
+   */
+  int getMaxVms();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The amount of physical memory available to the node type, defined in MB.
    * </pre>
    *

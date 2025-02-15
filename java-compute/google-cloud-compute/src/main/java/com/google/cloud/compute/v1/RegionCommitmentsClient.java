@@ -144,7 +144,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Update</td>
- *      <td><p> Updates the specified commitment with the data included in the request. Update is performed only on selected fields included as part of update-mask. Only the following fields can be modified: auto_renew.</td>
+ *      <td><p> Updates the specified commitment with the data included in the request. Update is performed only on selected fields included as part of update-mask. Only the following fields can be updated: auto_renew and plan.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -784,7 +784,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
   /**
    * Updates the specified commitment with the data included in the request. Update is performed
    * only on selected fields included as part of update-mask. Only the following fields can be
-   * modified: auto_renew.
+   * updated: auto_renew and plan.
    *
    * <p>Sample code:
    *
@@ -808,7 +808,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
-   * @param commitment Name of the commitment for which auto renew is being updated.
+   * @param commitment Name of the commitment that you want to update.
    * @param commitmentResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -828,7 +828,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
   /**
    * Updates the specified commitment with the data included in the request. Update is performed
    * only on selected fields included as part of update-mask. Only the following fields can be
-   * modified: auto_renew.
+   * updated: auto_renew and plan.
    *
    * <p>Sample code:
    *
@@ -865,7 +865,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
   /**
    * Updates the specified commitment with the data included in the request. Update is performed
    * only on selected fields included as part of update-mask. Only the following fields can be
-   * modified: auto_renew.
+   * updated: auto_renew and plan.
    *
    * <p>Sample code:
    *
@@ -902,7 +902,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
   /**
    * Updates the specified commitment with the data included in the request. Update is performed
    * only on selected fields included as part of update-mask. Only the following fields can be
-   * modified: auto_renew.
+   * updated: auto_renew and plan.
    *
    * <p>Sample code:
    *

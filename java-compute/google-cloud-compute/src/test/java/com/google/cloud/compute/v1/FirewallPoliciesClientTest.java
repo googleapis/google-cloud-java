@@ -378,6 +378,7 @@ public class FirewallPoliciesClientTest {
             .setId(3355)
             .setKind("kind3292052")
             .setName("name3373707")
+            .addAllPacketMirroringRules(new ArrayList<FirewallPolicyRule>())
             .setParent("parent-995424086")
             .setRegion("region-934795532")
             .setRuleTupleCount(388342037)

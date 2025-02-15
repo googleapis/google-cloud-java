@@ -46,6 +46,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddAssociationNetworkFirewallPolicyRequest;
+import com.google.cloud.compute.v1.AddPacketMirroringRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.AddRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.AggregatedListNetworkFirewallPoliciesRequest;
 import com.google.cloud.compute.v1.CloneRulesNetworkFirewallPolicyRequest;
@@ -58,15 +59,18 @@ import com.google.cloud.compute.v1.FirewallPolicyRule;
 import com.google.cloud.compute.v1.GetAssociationNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.GetIamPolicyNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.GetNetworkFirewallPolicyRequest;
+import com.google.cloud.compute.v1.GetPacketMirroringRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.GetRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.InsertNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.ListNetworkFirewallPoliciesRequest;
 import com.google.cloud.compute.v1.NetworkFirewallPolicyAggregatedList;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchNetworkFirewallPolicyRequest;
+import com.google.cloud.compute.v1.PatchPacketMirroringRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.PatchRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.RemoveAssociationNetworkFirewallPolicyRequest;
+import com.google.cloud.compute.v1.RemovePacketMirroringRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.RemoveRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.SetIamPolicyNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsNetworkFirewallPolicyRequest;
@@ -173,6 +177,11 @@ public class NetworkFirewallPoliciesStubSettings
   private final OperationCallSettings<
           AddAssociationNetworkFirewallPolicyRequest, Operation, Operation>
       addAssociationOperationSettings;
+  private final UnaryCallSettings<AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      addPacketMirroringRuleSettings;
+  private final OperationCallSettings<
+          AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+      addPacketMirroringRuleOperationSettings;
   private final UnaryCallSettings<AddRuleNetworkFirewallPolicyRequest, Operation> addRuleSettings;
   private final OperationCallSettings<AddRuleNetworkFirewallPolicyRequest, Operation, Operation>
       addRuleOperationSettings;
@@ -194,6 +203,9 @@ public class NetworkFirewallPoliciesStubSettings
       getAssociationSettings;
   private final UnaryCallSettings<GetIamPolicyNetworkFirewallPolicyRequest, Policy>
       getIamPolicySettings;
+  private final UnaryCallSettings<
+          GetPacketMirroringRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
+      getPacketMirroringRuleSettings;
   private final UnaryCallSettings<GetRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
       getRuleSettings;
   private final UnaryCallSettings<InsertNetworkFirewallPolicyRequest, Operation> insertSettings;
@@ -205,6 +217,11 @@ public class NetworkFirewallPoliciesStubSettings
   private final UnaryCallSettings<PatchNetworkFirewallPolicyRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchNetworkFirewallPolicyRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      patchPacketMirroringRuleSettings;
+  private final OperationCallSettings<
+          PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+      patchPacketMirroringRuleOperationSettings;
   private final UnaryCallSettings<PatchRuleNetworkFirewallPolicyRequest, Operation>
       patchRuleSettings;
   private final OperationCallSettings<PatchRuleNetworkFirewallPolicyRequest, Operation, Operation>
@@ -214,6 +231,11 @@ public class NetworkFirewallPoliciesStubSettings
   private final OperationCallSettings<
           RemoveAssociationNetworkFirewallPolicyRequest, Operation, Operation>
       removeAssociationOperationSettings;
+  private final UnaryCallSettings<RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      removePacketMirroringRuleSettings;
+  private final OperationCallSettings<
+          RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+      removePacketMirroringRuleOperationSettings;
   private final UnaryCallSettings<RemoveRuleNetworkFirewallPolicyRequest, Operation>
       removeRuleSettings;
   private final OperationCallSettings<RemoveRuleNetworkFirewallPolicyRequest, Operation, Operation>
@@ -370,6 +392,19 @@ public class NetworkFirewallPoliciesStubSettings
     return addAssociationOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to addPacketMirroringRule. */
+  public UnaryCallSettings<AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      addPacketMirroringRuleSettings() {
+    return addPacketMirroringRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to addPacketMirroringRule. */
+  public OperationCallSettings<
+          AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+      addPacketMirroringRuleOperationSettings() {
+    return addPacketMirroringRuleOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to addRule. */
   public UnaryCallSettings<AddRuleNetworkFirewallPolicyRequest, Operation> addRuleSettings() {
     return addRuleSettings;
@@ -429,6 +464,12 @@ public class NetworkFirewallPoliciesStubSettings
     return getIamPolicySettings;
   }
 
+  /** Returns the object with the settings used for calls to getPacketMirroringRule. */
+  public UnaryCallSettings<GetPacketMirroringRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
+      getPacketMirroringRuleSettings() {
+    return getPacketMirroringRuleSettings;
+  }
+
   /** Returns the object with the settings used for calls to getRule. */
   public UnaryCallSettings<GetRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
       getRuleSettings() {
@@ -464,6 +505,19 @@ public class NetworkFirewallPoliciesStubSettings
     return patchOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to patchPacketMirroringRule. */
+  public UnaryCallSettings<PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      patchPacketMirroringRuleSettings() {
+    return patchPacketMirroringRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to patchPacketMirroringRule. */
+  public OperationCallSettings<
+          PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+      patchPacketMirroringRuleOperationSettings() {
+    return patchPacketMirroringRuleOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to patchRule. */
   public UnaryCallSettings<PatchRuleNetworkFirewallPolicyRequest, Operation> patchRuleSettings() {
     return patchRuleSettings;
@@ -485,6 +539,19 @@ public class NetworkFirewallPoliciesStubSettings
   public OperationCallSettings<RemoveAssociationNetworkFirewallPolicyRequest, Operation, Operation>
       removeAssociationOperationSettings() {
     return removeAssociationOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to removePacketMirroringRule. */
+  public UnaryCallSettings<RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      removePacketMirroringRuleSettings() {
+    return removePacketMirroringRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to removePacketMirroringRule. */
+  public OperationCallSettings<
+          RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+      removePacketMirroringRuleOperationSettings() {
+    return removePacketMirroringRuleOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to removeRule. */
@@ -594,6 +661,9 @@ public class NetworkFirewallPoliciesStubSettings
 
     addAssociationSettings = settingsBuilder.addAssociationSettings().build();
     addAssociationOperationSettings = settingsBuilder.addAssociationOperationSettings().build();
+    addPacketMirroringRuleSettings = settingsBuilder.addPacketMirroringRuleSettings().build();
+    addPacketMirroringRuleOperationSettings =
+        settingsBuilder.addPacketMirroringRuleOperationSettings().build();
     addRuleSettings = settingsBuilder.addRuleSettings().build();
     addRuleOperationSettings = settingsBuilder.addRuleOperationSettings().build();
     aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
@@ -604,17 +674,24 @@ public class NetworkFirewallPoliciesStubSettings
     getSettings = settingsBuilder.getSettings().build();
     getAssociationSettings = settingsBuilder.getAssociationSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    getPacketMirroringRuleSettings = settingsBuilder.getPacketMirroringRuleSettings().build();
     getRuleSettings = settingsBuilder.getRuleSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    patchPacketMirroringRuleSettings = settingsBuilder.patchPacketMirroringRuleSettings().build();
+    patchPacketMirroringRuleOperationSettings =
+        settingsBuilder.patchPacketMirroringRuleOperationSettings().build();
     patchRuleSettings = settingsBuilder.patchRuleSettings().build();
     patchRuleOperationSettings = settingsBuilder.patchRuleOperationSettings().build();
     removeAssociationSettings = settingsBuilder.removeAssociationSettings().build();
     removeAssociationOperationSettings =
         settingsBuilder.removeAssociationOperationSettings().build();
+    removePacketMirroringRuleSettings = settingsBuilder.removePacketMirroringRuleSettings().build();
+    removePacketMirroringRuleOperationSettings =
+        settingsBuilder.removePacketMirroringRuleOperationSettings().build();
     removeRuleSettings = settingsBuilder.removeRuleSettings().build();
     removeRuleOperationSettings = settingsBuilder.removeRuleOperationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -630,6 +707,12 @@ public class NetworkFirewallPoliciesStubSettings
     private final OperationCallSettings.Builder<
             AddAssociationNetworkFirewallPolicyRequest, Operation, Operation>
         addAssociationOperationSettings;
+    private final UnaryCallSettings.Builder<
+            AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+        addPacketMirroringRuleSettings;
+    private final OperationCallSettings.Builder<
+            AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+        addPacketMirroringRuleOperationSettings;
     private final UnaryCallSettings.Builder<AddRuleNetworkFirewallPolicyRequest, Operation>
         addRuleSettings;
     private final OperationCallSettings.Builder<
@@ -657,6 +740,9 @@ public class NetworkFirewallPoliciesStubSettings
         getAssociationSettings;
     private final UnaryCallSettings.Builder<GetIamPolicyNetworkFirewallPolicyRequest, Policy>
         getIamPolicySettings;
+    private final UnaryCallSettings.Builder<
+            GetPacketMirroringRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
+        getPacketMirroringRuleSettings;
     private final UnaryCallSettings.Builder<GetRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
         getRuleSettings;
     private final UnaryCallSettings.Builder<InsertNetworkFirewallPolicyRequest, Operation>
@@ -672,6 +758,12 @@ public class NetworkFirewallPoliciesStubSettings
     private final OperationCallSettings.Builder<
             PatchNetworkFirewallPolicyRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<
+            PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+        patchPacketMirroringRuleSettings;
+    private final OperationCallSettings.Builder<
+            PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+        patchPacketMirroringRuleOperationSettings;
     private final UnaryCallSettings.Builder<PatchRuleNetworkFirewallPolicyRequest, Operation>
         patchRuleSettings;
     private final OperationCallSettings.Builder<
@@ -683,6 +775,12 @@ public class NetworkFirewallPoliciesStubSettings
     private final OperationCallSettings.Builder<
             RemoveAssociationNetworkFirewallPolicyRequest, Operation, Operation>
         removeAssociationOperationSettings;
+    private final UnaryCallSettings.Builder<
+            RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+        removePacketMirroringRuleSettings;
+    private final OperationCallSettings.Builder<
+            RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+        removePacketMirroringRuleOperationSettings;
     private final UnaryCallSettings.Builder<RemoveRuleNetworkFirewallPolicyRequest, Operation>
         removeRuleSettings;
     private final OperationCallSettings.Builder<
@@ -745,6 +843,8 @@ public class NetworkFirewallPoliciesStubSettings
 
       addAssociationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       addAssociationOperationSettings = OperationCallSettings.newBuilder();
+      addPacketMirroringRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addPacketMirroringRuleOperationSettings = OperationCallSettings.newBuilder();
       addRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       addRuleOperationSettings = OperationCallSettings.newBuilder();
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
@@ -755,16 +855,21 @@ public class NetworkFirewallPoliciesStubSettings
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getAssociationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getPacketMirroringRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      patchPacketMirroringRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      patchPacketMirroringRuleOperationSettings = OperationCallSettings.newBuilder();
       patchRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchRuleOperationSettings = OperationCallSettings.newBuilder();
       removeAssociationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       removeAssociationOperationSettings = OperationCallSettings.newBuilder();
+      removePacketMirroringRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      removePacketMirroringRuleOperationSettings = OperationCallSettings.newBuilder();
       removeRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       removeRuleOperationSettings = OperationCallSettings.newBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -773,6 +878,7 @@ public class NetworkFirewallPoliciesStubSettings
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addAssociationSettings,
+              addPacketMirroringRuleSettings,
               addRuleSettings,
               aggregatedListSettings,
               cloneRulesSettings,
@@ -780,12 +886,15 @@ public class NetworkFirewallPoliciesStubSettings
               getSettings,
               getAssociationSettings,
               getIamPolicySettings,
+              getPacketMirroringRuleSettings,
               getRuleSettings,
               insertSettings,
               listSettings,
               patchSettings,
+              patchPacketMirroringRuleSettings,
               patchRuleSettings,
               removeAssociationSettings,
+              removePacketMirroringRuleSettings,
               removeRuleSettings,
               setIamPolicySettings,
               testIamPermissionsSettings);
@@ -797,6 +906,9 @@ public class NetworkFirewallPoliciesStubSettings
 
       addAssociationSettings = settings.addAssociationSettings.toBuilder();
       addAssociationOperationSettings = settings.addAssociationOperationSettings.toBuilder();
+      addPacketMirroringRuleSettings = settings.addPacketMirroringRuleSettings.toBuilder();
+      addPacketMirroringRuleOperationSettings =
+          settings.addPacketMirroringRuleOperationSettings.toBuilder();
       addRuleSettings = settings.addRuleSettings.toBuilder();
       addRuleOperationSettings = settings.addRuleOperationSettings.toBuilder();
       aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
@@ -807,16 +919,23 @@ public class NetworkFirewallPoliciesStubSettings
       getSettings = settings.getSettings.toBuilder();
       getAssociationSettings = settings.getAssociationSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      getPacketMirroringRuleSettings = settings.getPacketMirroringRuleSettings.toBuilder();
       getRuleSettings = settings.getRuleSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      patchPacketMirroringRuleSettings = settings.patchPacketMirroringRuleSettings.toBuilder();
+      patchPacketMirroringRuleOperationSettings =
+          settings.patchPacketMirroringRuleOperationSettings.toBuilder();
       patchRuleSettings = settings.patchRuleSettings.toBuilder();
       patchRuleOperationSettings = settings.patchRuleOperationSettings.toBuilder();
       removeAssociationSettings = settings.removeAssociationSettings.toBuilder();
       removeAssociationOperationSettings = settings.removeAssociationOperationSettings.toBuilder();
+      removePacketMirroringRuleSettings = settings.removePacketMirroringRuleSettings.toBuilder();
+      removePacketMirroringRuleOperationSettings =
+          settings.removePacketMirroringRuleOperationSettings.toBuilder();
       removeRuleSettings = settings.removeRuleSettings.toBuilder();
       removeRuleOperationSettings = settings.removeRuleOperationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -825,6 +944,7 @@ public class NetworkFirewallPoliciesStubSettings
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addAssociationSettings,
+              addPacketMirroringRuleSettings,
               addRuleSettings,
               aggregatedListSettings,
               cloneRulesSettings,
@@ -832,12 +952,15 @@ public class NetworkFirewallPoliciesStubSettings
               getSettings,
               getAssociationSettings,
               getIamPolicySettings,
+              getPacketMirroringRuleSettings,
               getRuleSettings,
               insertSettings,
               listSettings,
               patchSettings,
+              patchPacketMirroringRuleSettings,
               patchRuleSettings,
               removeAssociationSettings,
+              removePacketMirroringRuleSettings,
               removeRuleSettings,
               setIamPolicySettings,
               testIamPermissionsSettings);
@@ -858,6 +981,11 @@ public class NetworkFirewallPoliciesStubSettings
     private static Builder initDefaults(Builder builder) {
       builder
           .addAssociationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .addPacketMirroringRuleSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -897,6 +1025,11 @@ public class NetworkFirewallPoliciesStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .getPacketMirroringRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .getRuleSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -917,12 +1050,22 @@ public class NetworkFirewallPoliciesStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .patchPacketMirroringRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .patchRuleSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .removeAssociationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .removePacketMirroringRuleSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -946,6 +1089,31 @@ public class NetworkFirewallPoliciesStubSettings
           .setInitialCallSettings(
               UnaryCallSettings
                   .<AddAssociationNetworkFirewallPolicyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .addPacketMirroringRuleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AddPacketMirroringRuleNetworkFirewallPolicyRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
@@ -1092,6 +1260,31 @@ public class NetworkFirewallPoliciesStubSettings
                       .build()));
 
       builder
+          .patchPacketMirroringRuleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PatchPacketMirroringRuleNetworkFirewallPolicyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
           .patchRuleOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -1121,6 +1314,31 @@ public class NetworkFirewallPoliciesStubSettings
           .setInitialCallSettings(
               UnaryCallSettings
                   .<RemoveAssociationNetworkFirewallPolicyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .removePacketMirroringRuleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RemovePacketMirroringRuleNetworkFirewallPolicyRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
@@ -1197,6 +1415,19 @@ public class NetworkFirewallPoliciesStubSettings
       return addAssociationOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to addPacketMirroringRule. */
+    public UnaryCallSettings.Builder<AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+        addPacketMirroringRuleSettings() {
+      return addPacketMirroringRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addPacketMirroringRule. */
+    public OperationCallSettings.Builder<
+            AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+        addPacketMirroringRuleOperationSettings() {
+      return addPacketMirroringRuleOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to addRule. */
     public UnaryCallSettings.Builder<AddRuleNetworkFirewallPolicyRequest, Operation>
         addRuleSettings() {
@@ -1262,6 +1493,13 @@ public class NetworkFirewallPoliciesStubSettings
       return getIamPolicySettings;
     }
 
+    /** Returns the builder for the settings used for calls to getPacketMirroringRule. */
+    public UnaryCallSettings.Builder<
+            GetPacketMirroringRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
+        getPacketMirroringRuleSettings() {
+      return getPacketMirroringRuleSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getRule. */
     public UnaryCallSettings.Builder<GetRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
         getRuleSettings() {
@@ -1298,6 +1536,20 @@ public class NetworkFirewallPoliciesStubSettings
       return patchOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to patchPacketMirroringRule. */
+    public UnaryCallSettings.Builder<
+            PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+        patchPacketMirroringRuleSettings() {
+      return patchPacketMirroringRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patchPacketMirroringRule. */
+    public OperationCallSettings.Builder<
+            PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+        patchPacketMirroringRuleOperationSettings() {
+      return patchPacketMirroringRuleOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to patchRule. */
     public UnaryCallSettings.Builder<PatchRuleNetworkFirewallPolicyRequest, Operation>
         patchRuleSettings() {
@@ -1322,6 +1574,20 @@ public class NetworkFirewallPoliciesStubSettings
             RemoveAssociationNetworkFirewallPolicyRequest, Operation, Operation>
         removeAssociationOperationSettings() {
       return removeAssociationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to removePacketMirroringRule. */
+    public UnaryCallSettings.Builder<
+            RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+        removePacketMirroringRuleSettings() {
+      return removePacketMirroringRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to removePacketMirroringRule. */
+    public OperationCallSettings.Builder<
+            RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+        removePacketMirroringRuleOperationSettings() {
+      return removePacketMirroringRuleOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to removeRule. */

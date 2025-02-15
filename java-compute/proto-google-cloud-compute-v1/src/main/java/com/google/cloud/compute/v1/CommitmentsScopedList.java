@@ -71,7 +71,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] A list of commitments contained in this scope.
+   * [Output Only] The list of commitments contained in this scope.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -84,7 +84,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] A list of commitments contained in this scope.
+   * [Output Only] The list of commitments contained in this scope.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -98,7 +98,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] A list of commitments contained in this scope.
+   * [Output Only] The list of commitments contained in this scope.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -111,7 +111,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] A list of commitments contained in this scope.
+   * [Output Only] The list of commitments contained in this scope.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -124,7 +124,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] A list of commitments contained in this scope.
+   * [Output Only] The list of commitments contained in this scope.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -635,7 +635,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] A list of commitments contained in this scope.
+     * [Output Only] The list of commitments contained in this scope.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -651,7 +651,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] A list of commitments contained in this scope.
+     * [Output Only] The list of commitments contained in this scope.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -667,7 +667,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] A list of commitments contained in this scope.
+     * [Output Only] The list of commitments contained in this scope.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -683,7 +683,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] A list of commitments contained in this scope.
+     * [Output Only] The list of commitments contained in this scope.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -705,7 +705,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] A list of commitments contained in this scope.
+     * [Output Only] The list of commitments contained in this scope.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -725,7 +725,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] A list of commitments contained in this scope.
+     * [Output Only] The list of commitments contained in this scope.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -747,7 +747,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] A list of commitments contained in this scope.
+     * [Output Only] The list of commitments contained in this scope.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -769,7 +769,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] A list of commitments contained in this scope.
+     * [Output Only] The list of commitments contained in this scope.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -788,7 +788,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] A list of commitments contained in this scope.
+     * [Output Only] The list of commitments contained in this scope.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -808,7 +808,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] A list of commitments contained in this scope.
+     * [Output Only] The list of commitments contained in this scope.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -828,7 +828,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] A list of commitments contained in this scope.
+     * [Output Only] The list of commitments contained in this scope.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -847,7 +847,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] A list of commitments contained in this scope.
+     * [Output Only] The list of commitments contained in this scope.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -866,7 +866,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] A list of commitments contained in this scope.
+     * [Output Only] The list of commitments contained in this scope.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -878,7 +878,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] A list of commitments contained in this scope.
+     * [Output Only] The list of commitments contained in this scope.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -894,7 +894,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] A list of commitments contained in this scope.
+     * [Output Only] The list of commitments contained in this scope.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -911,7 +911,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] A list of commitments contained in this scope.
+     * [Output Only] The list of commitments contained in this scope.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -924,7 +924,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] A list of commitments contained in this scope.
+     * [Output Only] The list of commitments contained in this scope.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
@@ -937,7 +937,7 @@ public final class CommitmentsScopedList extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] A list of commitments contained in this scope.
+     * [Output Only] The list of commitments contained in this scope.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>

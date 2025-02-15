@@ -1321,6 +1321,9 @@
             "AddAssociation": {
               "methods": ["addAssociationAsync", "addAssociationAsync", "addAssociationOperationCallable", "addAssociationCallable"]
             },
+            "AddPacketMirroringRule": {
+              "methods": ["addPacketMirroringRuleAsync", "addPacketMirroringRuleAsync", "addPacketMirroringRuleOperationCallable", "addPacketMirroringRuleCallable"]
+            },
             "AddRule": {
               "methods": ["addRuleAsync", "addRuleAsync", "addRuleOperationCallable", "addRuleCallable"]
             },
@@ -1342,6 +1345,9 @@
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
+            "GetPacketMirroringRule": {
+              "methods": ["getPacketMirroringRule", "getPacketMirroringRule", "getPacketMirroringRuleCallable"]
+            },
             "GetRule": {
               "methods": ["getRule", "getRule", "getRuleCallable"]
             },
@@ -1354,11 +1360,17 @@
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
+            "PatchPacketMirroringRule": {
+              "methods": ["patchPacketMirroringRuleAsync", "patchPacketMirroringRuleAsync", "patchPacketMirroringRuleOperationCallable", "patchPacketMirroringRuleCallable"]
+            },
             "PatchRule": {
               "methods": ["patchRuleAsync", "patchRuleAsync", "patchRuleOperationCallable", "patchRuleCallable"]
             },
             "RemoveAssociation": {
               "methods": ["removeAssociationAsync", "removeAssociationAsync", "removeAssociationOperationCallable", "removeAssociationCallable"]
+            },
+            "RemovePacketMirroringRule": {
+              "methods": ["removePacketMirroringRuleAsync", "removePacketMirroringRuleAsync", "removePacketMirroringRuleOperationCallable", "removePacketMirroringRuleCallable"]
             },
             "RemoveRule": {
               "methods": ["removeRuleAsync", "removeRuleAsync", "removeRuleOperationCallable", "removeRuleCallable"]
