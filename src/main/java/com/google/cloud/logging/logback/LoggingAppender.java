@@ -62,7 +62,7 @@ import java.util.Set;
  *         &lt;!-- Optional: defaults to {@code "java.log"} --&gt;
  *         &lt;log&gt;application.log&lt;/log&gt;
  *
- *         &lt;!-- Optional: defaults to {@code "ERROR"} --&gt;
+ *         &lt;!-- Optional: defaults to {@code "OFF"} --&gt;
  *         &lt;flushLevel&gt;WARN&lt;/flushLevel&gt;
  *
  *         &lt;!-- Optional: defaults to {@code ASYNC} --&gt;
@@ -150,7 +150,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   /**
    * Sets a threshold for log severity level to flush all log entries that were batched so far.
    *
-   * <p>Defaults to Error.
+   * <p>Defaults to OFF.
    *
    * @param flushLevel Logback log level
    */
@@ -298,7 +298,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   private Level getFlushLevel() {
-    return (flushLevel != null) ? flushLevel : Level.ERROR;
+    return (flushLevel != null) ? flushLevel : Level.OFF;
   }
 
   private String getLogName() {

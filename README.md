@@ -89,7 +89,7 @@ See [Logback filters](https://logback.qos.ch/manual/filters.html#thresholdFilter
     <!-- Optional: defaults to "java.log" -->
     <log>application.log</log>
 
-    <!-- Optional: defaults to "ERROR" -->
+    <!-- Optional: defaults to "OFF" -->
     <flushLevel>WARN</flushLevel>
 
     <!-- Optional: defaults to ASYNC -->

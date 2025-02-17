@@ -194,8 +194,14 @@ public class LoggingAppenderTest {
   }
 
   @Test
+  public void testDefaultFlushLevelOff() {
+    loggingAppender.start();
+    Severity foundSeverity = logging.getFlushSeverity();
+    assertThat(foundSeverity).isEqualTo(null);
+  }
+
+  @Test
   public void testFilterLogsOnlyLogsAtOrAboveLogLevel() {
-    logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(
         capture(capturedArgument),
@@ -223,7 +229,6 @@ public class LoggingAppenderTest {
 
   @Test
   public void testPartialSuccessOverrideHasExpectedValue() {
-    logging.setFlushSeverity(Severity.ERROR);
     Capture<WriteOption> logNameArg = Capture.newInstance();
     Capture<WriteOption> resourceArg = Capture.newInstance();
     Capture<WriteOption> partialSuccessArg = Capture.newInstance();
@@ -247,7 +252,6 @@ public class LoggingAppenderTest {
 
   @Test
   public void testDefaultWriteOptionsHasExpectedDefaults() {
-    logging.setFlushSeverity(Severity.ERROR);
     Capture<WriteOption> partialSuccessArg = Capture.newInstance();
     logging.write(
         EasyMock.<Iterable<LogEntry>>anyObject(),
@@ -266,7 +270,6 @@ public class LoggingAppenderTest {
 
   @Test
   public void testMdcValuesAreConvertedToLabels() {
-    logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(
         capture(capturedArgument),
@@ -325,7 +328,6 @@ public class LoggingAppenderTest {
     MDC.put("mdc1", "value1");
     MDC.put("mdc2", null);
     MDC.put("mdc3", "value3");
-    logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(
         capture(capturedArgument),
@@ -351,7 +353,6 @@ public class LoggingAppenderTest {
   @Test
   public void testAddCustomLoggingEventEnhancers() {
     MDC.put("mdc1", "value1");
-    logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(
         capture(capturedArgument),
@@ -375,7 +376,6 @@ public class LoggingAppenderTest {
 
   @Test
   public void testAddCustomLoggingEnhancer() {
-    logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(
         capture(capturedArgument),
@@ -398,7 +398,6 @@ public class LoggingAppenderTest {
   @Test
   @SuppressWarnings("deprecation")
   public void testFlush() {
-    logging.setFlushSeverity(Severity.ERROR);
     logging.write(
         EasyMock.<Iterable<LogEntry>>anyObject(),
         anyObject(WriteOption.class),
@@ -419,7 +418,6 @@ public class LoggingAppenderTest {
 
   @Test
   public void testAutoPopulationEnabled() {
-    logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedLogEntries = Capture.newInstance();
     EasyMock.expect(
             logging.populateMetadata(
@@ -458,7 +456,6 @@ public class LoggingAppenderTest {
 
   @Test
   public void testRedirectToStdoutEnabled() {
-    logging.setFlushSeverity(Severity.ERROR);
     EasyMock.expect(
             logging.populateMetadata(
                 EasyMock.<Iterable<LogEntry>>anyObject(),
@@ -503,7 +500,6 @@ public class LoggingAppenderTest {
   public void testFDiagnosticInfoAdded() {
     LoggingAppender.setInstrumentationStatus(false);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
-    logging.setFlushSeverity(Severity.ERROR);
     logging.write(
         capture(capturedArgument),
         anyObject(WriteOption.class),
@@ -547,7 +543,6 @@ public class LoggingAppenderTest {
 
   @Test
   public void testFDiagnosticInfoNotAdded() {
-    logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(
         capture(capturedArgument),
