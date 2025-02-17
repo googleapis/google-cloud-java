@@ -234,7 +234,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-trace-v1</artifactId>
-      <version>2.57.0</version>
+      <version>2.58.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
