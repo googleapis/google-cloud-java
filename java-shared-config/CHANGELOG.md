@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.3](https://github.com/googleapis/java-shared-config/compare/v1.14.2...v1.14.3) (2025-02-18)
+
+
+### Bug Fixes
+
+* Introducing "flatten" profile to use the plugin ([#984](https://github.com/googleapis/java-shared-config/issues/984)) ([436aa7c](https://github.com/googleapis/java-shared-config/commit/436aa7c9e9914a830e3172ae0ee93131bb641e07))
+
 ## [1.14.2](https://github.com/googleapis/java-shared-config/compare/v1.14.1...v1.14.2) (2025-02-05)
 
 
