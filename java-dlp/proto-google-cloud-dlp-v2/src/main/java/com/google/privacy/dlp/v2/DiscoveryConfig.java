@@ -279,7 +279,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The project that will run the scan. The DLP service
      * account that exists within this project must have access to all resources
-     * that are profiled, and the Cloud DLP API must be enabled.
+     * that are profiled, and the DLP API must be enabled.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -293,7 +293,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The project that will run the scan. The DLP service
      * account that exists within this project must have access to all resources
-     * that are profiled, and the Cloud DLP API must be enabled.
+     * that are profiled, and the DLP API must be enabled.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -407,7 +407,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The project that will run the scan. The DLP service
      * account that exists within this project must have access to all resources
-     * that are profiled, and the Cloud DLP API must be enabled.
+     * that are profiled, and the DLP API must be enabled.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -432,7 +432,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The project that will run the scan. The DLP service
      * account that exists within this project must have access to all resources
-     * that are profiled, and the Cloud DLP API must be enabled.
+     * that are profiled, and the DLP API must be enabled.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -1036,7 +1036,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * The project that will run the scan. The DLP service
        * account that exists within this project must have access to all resources
-       * that are profiled, and the Cloud DLP API must be enabled.
+       * that are profiled, and the DLP API must be enabled.
        * </pre>
        *
        * <code>string project_id = 2;</code>
@@ -1060,7 +1060,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * The project that will run the scan. The DLP service
        * account that exists within this project must have access to all resources
-       * that are profiled, and the Cloud DLP API must be enabled.
+       * that are profiled, and the DLP API must be enabled.
        * </pre>
        *
        * <code>string project_id = 2;</code>
@@ -1084,7 +1084,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * The project that will run the scan. The DLP service
        * account that exists within this project must have access to all resources
-       * that are profiled, and the Cloud DLP API must be enabled.
+       * that are profiled, and the DLP API must be enabled.
        * </pre>
        *
        * <code>string project_id = 2;</code>
@@ -1107,7 +1107,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * The project that will run the scan. The DLP service
        * account that exists within this project must have access to all resources
-       * that are profiled, and the Cloud DLP API must be enabled.
+       * that are profiled, and the DLP API must be enabled.
        * </pre>
        *
        * <code>string project_id = 2;</code>
@@ -1126,7 +1126,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * The project that will run the scan. The DLP service
        * account that exists within this project must have access to all resources
-       * that are profiled, and the Cloud DLP API must be enabled.
+       * that are profiled, and the DLP API must be enabled.
        * </pre>
        *
        * <code>string project_id = 2;</code>
@@ -1975,6 +1975,68 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     return result == null ? com.google.privacy.dlp.v2.DiscoveryConfig.Status.UNRECOGNIZED : result;
   }
 
+  public static final int PROCESSING_LOCATION_FIELD_NUMBER = 13;
+  private com.google.privacy.dlp.v2.ProcessingLocation processingLocation_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Processing location configuration. Vertex AI dataset scanning
+   * will set processing_location.image_fallback_type to MultiRegionProcessing
+   * by default.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.ProcessingLocation processing_location = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the processingLocation field is set.
+   */
+  @java.lang.Override
+  public boolean hasProcessingLocation() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Processing location configuration. Vertex AI dataset scanning
+   * will set processing_location.image_fallback_type to MultiRegionProcessing
+   * by default.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.ProcessingLocation processing_location = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The processingLocation.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ProcessingLocation getProcessingLocation() {
+    return processingLocation_ == null
+        ? com.google.privacy.dlp.v2.ProcessingLocation.getDefaultInstance()
+        : processingLocation_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Processing location configuration. Vertex AI dataset scanning
+   * will set processing_location.image_fallback_type to MultiRegionProcessing
+   * by default.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.ProcessingLocation processing_location = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ProcessingLocationOrBuilder getProcessingLocationOrBuilder() {
+    return processingLocation_ == null
+        ? com.google.privacy.dlp.v2.ProcessingLocation.getDefaultInstance()
+        : processingLocation_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2025,6 +2087,9 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(12, getOtherCloudStartingLocation());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(13, getProcessingLocation());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2079,6 +2144,9 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               12, getOtherCloudStartingLocation());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getProcessingLocation());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2123,6 +2191,10 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       if (!getLastRunTime().equals(other.getLastRunTime())) return false;
     }
     if (status_ != other.status_) return false;
+    if (hasProcessingLocation() != other.hasProcessingLocation()) return false;
+    if (hasProcessingLocation()) {
+      if (!getProcessingLocation().equals(other.getProcessingLocation())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2176,6 +2248,10 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
     }
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + status_;
+    if (hasProcessingLocation()) {
+      hash = (37 * hash) + PROCESSING_LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getProcessingLocation().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2330,6 +2406,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getLastRunTimeFieldBuilder();
+        getProcessingLocationFieldBuilder();
       }
     }
 
@@ -2387,6 +2464,11 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
         lastRunTimeBuilder_ = null;
       }
       status_ = 0;
+      processingLocation_ = null;
+      if (processingLocationBuilder_ != null) {
+        processingLocationBuilder_.dispose();
+        processingLocationBuilder_ = null;
+      }
       return this;
     }
 
@@ -2491,6 +2573,13 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.status_ = status_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.processingLocation_ =
+            processingLocationBuilder_ == null
+                ? processingLocation_
+                : processingLocationBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2659,6 +2748,9 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       if (other.status_ != 0) {
         setStatusValue(other.getStatusValue());
       }
+      if (other.hasProcessingLocation()) {
+        mergeProcessingLocation(other.getProcessingLocation());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2779,6 +2871,13 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000008;
                 break;
               } // case 98
+            case 106:
+              {
+                input.readMessage(
+                    getProcessingLocationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5571,6 +5670,229 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
       status_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.privacy.dlp.v2.ProcessingLocation processingLocation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.ProcessingLocation,
+            com.google.privacy.dlp.v2.ProcessingLocation.Builder,
+            com.google.privacy.dlp.v2.ProcessingLocationOrBuilder>
+        processingLocationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Processing location configuration. Vertex AI dataset scanning
+     * will set processing_location.image_fallback_type to MultiRegionProcessing
+     * by default.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation processing_location = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the processingLocation field is set.
+     */
+    public boolean hasProcessingLocation() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Processing location configuration. Vertex AI dataset scanning
+     * will set processing_location.image_fallback_type to MultiRegionProcessing
+     * by default.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation processing_location = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The processingLocation.
+     */
+    public com.google.privacy.dlp.v2.ProcessingLocation getProcessingLocation() {
+      if (processingLocationBuilder_ == null) {
+        return processingLocation_ == null
+            ? com.google.privacy.dlp.v2.ProcessingLocation.getDefaultInstance()
+            : processingLocation_;
+      } else {
+        return processingLocationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Processing location configuration. Vertex AI dataset scanning
+     * will set processing_location.image_fallback_type to MultiRegionProcessing
+     * by default.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation processing_location = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setProcessingLocation(com.google.privacy.dlp.v2.ProcessingLocation value) {
+      if (processingLocationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        processingLocation_ = value;
+      } else {
+        processingLocationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Processing location configuration. Vertex AI dataset scanning
+     * will set processing_location.image_fallback_type to MultiRegionProcessing
+     * by default.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation processing_location = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setProcessingLocation(
+        com.google.privacy.dlp.v2.ProcessingLocation.Builder builderForValue) {
+      if (processingLocationBuilder_ == null) {
+        processingLocation_ = builderForValue.build();
+      } else {
+        processingLocationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Processing location configuration. Vertex AI dataset scanning
+     * will set processing_location.image_fallback_type to MultiRegionProcessing
+     * by default.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation processing_location = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeProcessingLocation(com.google.privacy.dlp.v2.ProcessingLocation value) {
+      if (processingLocationBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && processingLocation_ != null
+            && processingLocation_
+                != com.google.privacy.dlp.v2.ProcessingLocation.getDefaultInstance()) {
+          getProcessingLocationBuilder().mergeFrom(value);
+        } else {
+          processingLocation_ = value;
+        }
+      } else {
+        processingLocationBuilder_.mergeFrom(value);
+      }
+      if (processingLocation_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Processing location configuration. Vertex AI dataset scanning
+     * will set processing_location.image_fallback_type to MultiRegionProcessing
+     * by default.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation processing_location = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearProcessingLocation() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      processingLocation_ = null;
+      if (processingLocationBuilder_ != null) {
+        processingLocationBuilder_.dispose();
+        processingLocationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Processing location configuration. Vertex AI dataset scanning
+     * will set processing_location.image_fallback_type to MultiRegionProcessing
+     * by default.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation processing_location = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.ProcessingLocation.Builder getProcessingLocationBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getProcessingLocationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Processing location configuration. Vertex AI dataset scanning
+     * will set processing_location.image_fallback_type to MultiRegionProcessing
+     * by default.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation processing_location = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.ProcessingLocationOrBuilder getProcessingLocationOrBuilder() {
+      if (processingLocationBuilder_ != null) {
+        return processingLocationBuilder_.getMessageOrBuilder();
+      } else {
+        return processingLocation_ == null
+            ? com.google.privacy.dlp.v2.ProcessingLocation.getDefaultInstance()
+            : processingLocation_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Processing location configuration. Vertex AI dataset scanning
+     * will set processing_location.image_fallback_type to MultiRegionProcessing
+     * by default.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation processing_location = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.ProcessingLocation,
+            com.google.privacy.dlp.v2.ProcessingLocation.Builder,
+            com.google.privacy.dlp.v2.ProcessingLocationOrBuilder>
+        getProcessingLocationFieldBuilder() {
+      if (processingLocationBuilder_ == null) {
+        processingLocationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.ProcessingLocation,
+                com.google.privacy.dlp.v2.ProcessingLocation.Builder,
+                com.google.privacy.dlp.v2.ProcessingLocationOrBuilder>(
+                getProcessingLocation(), getParentForChildren(), isClean());
+        processingLocation_ = null;
+      }
+      return processingLocationBuilder_;
     }
 
     @java.lang.Override

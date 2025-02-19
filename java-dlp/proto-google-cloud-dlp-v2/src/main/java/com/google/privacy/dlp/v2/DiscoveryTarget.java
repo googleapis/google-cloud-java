@@ -75,6 +75,7 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     SECRETS_TARGET(3),
     CLOUD_STORAGE_TARGET(4),
     OTHER_CLOUD_TARGET(5),
+    VERTEX_DATASET_TARGET(7),
     TARGET_NOT_SET(0);
     private final int value;
 
@@ -103,6 +104,8 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
           return CLOUD_STORAGE_TARGET;
         case 5:
           return OTHER_CLOUD_TARGET;
+        case 7:
+          return VERTEX_DATASET_TARGET;
         case 0:
           return TARGET_NOT_SET;
         default:
@@ -394,6 +397,79 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     return com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget.getDefaultInstance();
   }
 
+  public static final int VERTEX_DATASET_TARGET_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Vertex AI dataset target for Discovery. The first target to match a
+   * dataset will be the one applied. Note that discovery for Vertex AI can
+   * incur Cloud Storage Class B operation charges for storage.objects.get
+   * operations and retrieval fees. For more information, see [Cloud Storage
+   * pricing](https://cloud.google.com/storage/pricing#price-tables).
+   * Note that discovery for Vertex AI dataset will not be able to scan images
+   * unless DiscoveryConfig.processing_location.image_fallback_location has
+   * multi_region_processing or global_processing configured.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget vertex_dataset_target = 7;</code>
+   *
+   * @return Whether the vertexDatasetTarget field is set.
+   */
+  @java.lang.Override
+  public boolean hasVertexDatasetTarget() {
+    return targetCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Vertex AI dataset target for Discovery. The first target to match a
+   * dataset will be the one applied. Note that discovery for Vertex AI can
+   * incur Cloud Storage Class B operation charges for storage.objects.get
+   * operations and retrieval fees. For more information, see [Cloud Storage
+   * pricing](https://cloud.google.com/storage/pricing#price-tables).
+   * Note that discovery for Vertex AI dataset will not be able to scan images
+   * unless DiscoveryConfig.processing_location.image_fallback_location has
+   * multi_region_processing or global_processing configured.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget vertex_dataset_target = 7;</code>
+   *
+   * @return The vertexDatasetTarget.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget getVertexDatasetTarget() {
+    if (targetCase_ == 7) {
+      return (com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget) target_;
+    }
+    return com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Vertex AI dataset target for Discovery. The first target to match a
+   * dataset will be the one applied. Note that discovery for Vertex AI can
+   * incur Cloud Storage Class B operation charges for storage.objects.get
+   * operations and retrieval fees. For more information, see [Cloud Storage
+   * pricing](https://cloud.google.com/storage/pricing#price-tables).
+   * Note that discovery for Vertex AI dataset will not be able to scan images
+   * unless DiscoveryConfig.processing_location.image_fallback_location has
+   * multi_region_processing or global_processing configured.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget vertex_dataset_target = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.VertexDatasetDiscoveryTargetOrBuilder
+      getVertexDatasetTargetOrBuilder() {
+    if (targetCase_ == 7) {
+      return (com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget) target_;
+    }
+    return com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -422,6 +498,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
     }
     if (targetCase_ == 5) {
       output.writeMessage(5, (com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget) target_);
+    }
+    if (targetCase_ == 7) {
+      output.writeMessage(7, (com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget) target_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -457,6 +536,11 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.privacy.dlp.v2.OtherCloudDiscoveryTarget) target_);
     }
+    if (targetCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget) target_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -489,6 +573,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
         break;
       case 5:
         if (!getOtherCloudTarget().equals(other.getOtherCloudTarget())) return false;
+        break;
+      case 7:
+        if (!getVertexDatasetTarget().equals(other.getVertexDatasetTarget())) return false;
         break;
       case 0:
       default:
@@ -524,6 +611,10 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       case 5:
         hash = (37 * hash) + OTHER_CLOUD_TARGET_FIELD_NUMBER;
         hash = (53 * hash) + getOtherCloudTarget().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + VERTEX_DATASET_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getVertexDatasetTarget().hashCode();
         break;
       case 0:
       default:
@@ -682,6 +773,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       if (otherCloudTargetBuilder_ != null) {
         otherCloudTargetBuilder_.clear();
       }
+      if (vertexDatasetTargetBuilder_ != null) {
+        vertexDatasetTargetBuilder_.clear();
+      }
       targetCase_ = 0;
       target_ = null;
       return this;
@@ -740,6 +834,9 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       }
       if (targetCase_ == 5 && otherCloudTargetBuilder_ != null) {
         result.target_ = otherCloudTargetBuilder_.build();
+      }
+      if (targetCase_ == 7 && vertexDatasetTargetBuilder_ != null) {
+        result.target_ = vertexDatasetTargetBuilder_.build();
       }
     }
 
@@ -814,6 +911,11 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
             mergeOtherCloudTarget(other.getOtherCloudTarget());
             break;
           }
+        case VERTEX_DATASET_TARGET:
+          {
+            mergeVertexDatasetTarget(other.getVertexDatasetTarget());
+            break;
+          }
         case TARGET_NOT_SET:
           {
             break;
@@ -877,6 +979,13 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
                 targetCase_ = 5;
                 break;
               } // case 42
+            case 58:
+              {
+                input.readMessage(
+                    getVertexDatasetTargetFieldBuilder().getBuilder(), extensionRegistry);
+                targetCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2016,6 +2125,283 @@ public final class DiscoveryTarget extends com.google.protobuf.GeneratedMessageV
       targetCase_ = 5;
       onChanged();
       return otherCloudTargetBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget,
+            com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget.Builder,
+            com.google.privacy.dlp.v2.VertexDatasetDiscoveryTargetOrBuilder>
+        vertexDatasetTargetBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Vertex AI dataset target for Discovery. The first target to match a
+     * dataset will be the one applied. Note that discovery for Vertex AI can
+     * incur Cloud Storage Class B operation charges for storage.objects.get
+     * operations and retrieval fees. For more information, see [Cloud Storage
+     * pricing](https://cloud.google.com/storage/pricing#price-tables).
+     * Note that discovery for Vertex AI dataset will not be able to scan images
+     * unless DiscoveryConfig.processing_location.image_fallback_location has
+     * multi_region_processing or global_processing configured.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget vertex_dataset_target = 7;</code>
+     *
+     * @return Whether the vertexDatasetTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasVertexDatasetTarget() {
+      return targetCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Vertex AI dataset target for Discovery. The first target to match a
+     * dataset will be the one applied. Note that discovery for Vertex AI can
+     * incur Cloud Storage Class B operation charges for storage.objects.get
+     * operations and retrieval fees. For more information, see [Cloud Storage
+     * pricing](https://cloud.google.com/storage/pricing#price-tables).
+     * Note that discovery for Vertex AI dataset will not be able to scan images
+     * unless DiscoveryConfig.processing_location.image_fallback_location has
+     * multi_region_processing or global_processing configured.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget vertex_dataset_target = 7;</code>
+     *
+     * @return The vertexDatasetTarget.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget getVertexDatasetTarget() {
+      if (vertexDatasetTargetBuilder_ == null) {
+        if (targetCase_ == 7) {
+          return (com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget) target_;
+        }
+        return com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget.getDefaultInstance();
+      } else {
+        if (targetCase_ == 7) {
+          return vertexDatasetTargetBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Vertex AI dataset target for Discovery. The first target to match a
+     * dataset will be the one applied. Note that discovery for Vertex AI can
+     * incur Cloud Storage Class B operation charges for storage.objects.get
+     * operations and retrieval fees. For more information, see [Cloud Storage
+     * pricing](https://cloud.google.com/storage/pricing#price-tables).
+     * Note that discovery for Vertex AI dataset will not be able to scan images
+     * unless DiscoveryConfig.processing_location.image_fallback_location has
+     * multi_region_processing or global_processing configured.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget vertex_dataset_target = 7;</code>
+     */
+    public Builder setVertexDatasetTarget(
+        com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget value) {
+      if (vertexDatasetTargetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        target_ = value;
+        onChanged();
+      } else {
+        vertexDatasetTargetBuilder_.setMessage(value);
+      }
+      targetCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Vertex AI dataset target for Discovery. The first target to match a
+     * dataset will be the one applied. Note that discovery for Vertex AI can
+     * incur Cloud Storage Class B operation charges for storage.objects.get
+     * operations and retrieval fees. For more information, see [Cloud Storage
+     * pricing](https://cloud.google.com/storage/pricing#price-tables).
+     * Note that discovery for Vertex AI dataset will not be able to scan images
+     * unless DiscoveryConfig.processing_location.image_fallback_location has
+     * multi_region_processing or global_processing configured.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget vertex_dataset_target = 7;</code>
+     */
+    public Builder setVertexDatasetTarget(
+        com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget.Builder builderForValue) {
+      if (vertexDatasetTargetBuilder_ == null) {
+        target_ = builderForValue.build();
+        onChanged();
+      } else {
+        vertexDatasetTargetBuilder_.setMessage(builderForValue.build());
+      }
+      targetCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Vertex AI dataset target for Discovery. The first target to match a
+     * dataset will be the one applied. Note that discovery for Vertex AI can
+     * incur Cloud Storage Class B operation charges for storage.objects.get
+     * operations and retrieval fees. For more information, see [Cloud Storage
+     * pricing](https://cloud.google.com/storage/pricing#price-tables).
+     * Note that discovery for Vertex AI dataset will not be able to scan images
+     * unless DiscoveryConfig.processing_location.image_fallback_location has
+     * multi_region_processing or global_processing configured.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget vertex_dataset_target = 7;</code>
+     */
+    public Builder mergeVertexDatasetTarget(
+        com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget value) {
+      if (vertexDatasetTargetBuilder_ == null) {
+        if (targetCase_ == 7
+            && target_
+                != com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget.getDefaultInstance()) {
+          target_ =
+              com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget.newBuilder(
+                      (com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget) target_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          target_ = value;
+        }
+        onChanged();
+      } else {
+        if (targetCase_ == 7) {
+          vertexDatasetTargetBuilder_.mergeFrom(value);
+        } else {
+          vertexDatasetTargetBuilder_.setMessage(value);
+        }
+      }
+      targetCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Vertex AI dataset target for Discovery. The first target to match a
+     * dataset will be the one applied. Note that discovery for Vertex AI can
+     * incur Cloud Storage Class B operation charges for storage.objects.get
+     * operations and retrieval fees. For more information, see [Cloud Storage
+     * pricing](https://cloud.google.com/storage/pricing#price-tables).
+     * Note that discovery for Vertex AI dataset will not be able to scan images
+     * unless DiscoveryConfig.processing_location.image_fallback_location has
+     * multi_region_processing or global_processing configured.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget vertex_dataset_target = 7;</code>
+     */
+    public Builder clearVertexDatasetTarget() {
+      if (vertexDatasetTargetBuilder_ == null) {
+        if (targetCase_ == 7) {
+          targetCase_ = 0;
+          target_ = null;
+          onChanged();
+        }
+      } else {
+        if (targetCase_ == 7) {
+          targetCase_ = 0;
+          target_ = null;
+        }
+        vertexDatasetTargetBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Vertex AI dataset target for Discovery. The first target to match a
+     * dataset will be the one applied. Note that discovery for Vertex AI can
+     * incur Cloud Storage Class B operation charges for storage.objects.get
+     * operations and retrieval fees. For more information, see [Cloud Storage
+     * pricing](https://cloud.google.com/storage/pricing#price-tables).
+     * Note that discovery for Vertex AI dataset will not be able to scan images
+     * unless DiscoveryConfig.processing_location.image_fallback_location has
+     * multi_region_processing or global_processing configured.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget vertex_dataset_target = 7;</code>
+     */
+    public com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget.Builder
+        getVertexDatasetTargetBuilder() {
+      return getVertexDatasetTargetFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Vertex AI dataset target for Discovery. The first target to match a
+     * dataset will be the one applied. Note that discovery for Vertex AI can
+     * incur Cloud Storage Class B operation charges for storage.objects.get
+     * operations and retrieval fees. For more information, see [Cloud Storage
+     * pricing](https://cloud.google.com/storage/pricing#price-tables).
+     * Note that discovery for Vertex AI dataset will not be able to scan images
+     * unless DiscoveryConfig.processing_location.image_fallback_location has
+     * multi_region_processing or global_processing configured.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget vertex_dataset_target = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.VertexDatasetDiscoveryTargetOrBuilder
+        getVertexDatasetTargetOrBuilder() {
+      if ((targetCase_ == 7) && (vertexDatasetTargetBuilder_ != null)) {
+        return vertexDatasetTargetBuilder_.getMessageOrBuilder();
+      } else {
+        if (targetCase_ == 7) {
+          return (com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget) target_;
+        }
+        return com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Vertex AI dataset target for Discovery. The first target to match a
+     * dataset will be the one applied. Note that discovery for Vertex AI can
+     * incur Cloud Storage Class B operation charges for storage.objects.get
+     * operations and retrieval fees. For more information, see [Cloud Storage
+     * pricing](https://cloud.google.com/storage/pricing#price-tables).
+     * Note that discovery for Vertex AI dataset will not be able to scan images
+     * unless DiscoveryConfig.processing_location.image_fallback_location has
+     * multi_region_processing or global_processing configured.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget vertex_dataset_target = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget,
+            com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget.Builder,
+            com.google.privacy.dlp.v2.VertexDatasetDiscoveryTargetOrBuilder>
+        getVertexDatasetTargetFieldBuilder() {
+      if (vertexDatasetTargetBuilder_ == null) {
+        if (!(targetCase_ == 7)) {
+          target_ = com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget.getDefaultInstance();
+        }
+        vertexDatasetTargetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget,
+                com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget.Builder,
+                com.google.privacy.dlp.v2.VertexDatasetDiscoveryTargetOrBuilder>(
+                (com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget) target_,
+                getParentForChildren(),
+                isClean());
+        target_ = null;
+      }
+      targetCase_ = 7;
+      onChanged();
+      return vertexDatasetTargetBuilder_;
     }
 
     @java.lang.Override

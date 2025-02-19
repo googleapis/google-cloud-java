@@ -45,6 +45,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     algorithm_ = 0;
     name_ = "";
     protectionLevel_ = 0;
+    publicKeyFormat_ = 0;
   }
 
   @java.lang.Override
@@ -66,6 +67,195 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.kms.v1.PublicKey.class,
             com.google.cloud.kms.v1.PublicKey.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The supported [PublicKey][google.cloud.kms.v1.PublicKey] formats.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.kms.v1.PublicKey.PublicKeyFormat}
+   */
+  public enum PublicKeyFormat implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * If the
+     * [public_key_format][google.cloud.kms.v1.GetPublicKeyRequest.public_key_format]
+     * field is not specified:
+     * - For PQC algorithms, an error will be returned.
+     * - For non-PQC algorithms, the default format is PEM, and the field
+     *   [pem][google.cloud.kms.v1.PublicKey.pem] will be populated.
+     *
+     * Otherwise, the public key will be exported through the
+     * [public_key][google.cloud.kms.v1.PublicKey.public_key] field in the
+     * requested format.
+     * </pre>
+     *
+     * <code>PUBLIC_KEY_FORMAT_UNSPECIFIED = 0;</code>
+     */
+    PUBLIC_KEY_FORMAT_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The returned public key will be encoded in PEM format.
+     * See the [RFC7468](https://tools.ietf.org/html/rfc7468) sections for
+     * [General Considerations](https://tools.ietf.org/html/rfc7468#section-2)
+     * and [Textual Encoding of Subject Public Key Info]
+     * (https://tools.ietf.org/html/rfc7468#section-13) for more information.
+     * </pre>
+     *
+     * <code>PEM = 1;</code>
+     */
+    PEM(1),
+    /**
+     *
+     *
+     * <pre>
+     * This is supported only for PQC algorithms.
+     * The key material is returned in the format defined by NIST PQC
+     * standards (FIPS 203, FIPS 204, and FIPS 205).
+     * </pre>
+     *
+     * <code>NIST_PQC = 3;</code>
+     */
+    NIST_PQC(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * If the
+     * [public_key_format][google.cloud.kms.v1.GetPublicKeyRequest.public_key_format]
+     * field is not specified:
+     * - For PQC algorithms, an error will be returned.
+     * - For non-PQC algorithms, the default format is PEM, and the field
+     *   [pem][google.cloud.kms.v1.PublicKey.pem] will be populated.
+     *
+     * Otherwise, the public key will be exported through the
+     * [public_key][google.cloud.kms.v1.PublicKey.public_key] field in the
+     * requested format.
+     * </pre>
+     *
+     * <code>PUBLIC_KEY_FORMAT_UNSPECIFIED = 0;</code>
+     */
+    public static final int PUBLIC_KEY_FORMAT_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The returned public key will be encoded in PEM format.
+     * See the [RFC7468](https://tools.ietf.org/html/rfc7468) sections for
+     * [General Considerations](https://tools.ietf.org/html/rfc7468#section-2)
+     * and [Textual Encoding of Subject Public Key Info]
+     * (https://tools.ietf.org/html/rfc7468#section-13) for more information.
+     * </pre>
+     *
+     * <code>PEM = 1;</code>
+     */
+    public static final int PEM_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * This is supported only for PQC algorithms.
+     * The key material is returned in the format defined by NIST PQC
+     * standards (FIPS 203, FIPS 204, and FIPS 205).
+     * </pre>
+     *
+     * <code>NIST_PQC = 3;</code>
+     */
+    public static final int NIST_PQC_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PublicKeyFormat valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PublicKeyFormat forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PUBLIC_KEY_FORMAT_UNSPECIFIED;
+        case 1:
+          return PEM;
+        case 3:
+          return NIST_PQC;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PublicKeyFormat> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<PublicKeyFormat>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PublicKeyFormat>() {
+              public PublicKeyFormat findValueByNumber(int number) {
+                return PublicKeyFormat.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.kms.v1.PublicKey.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final PublicKeyFormat[] VALUES = values();
+
+    public static PublicKeyFormat valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PublicKeyFormat(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.kms.v1.PublicKey.PublicKeyFormat)
   }
 
   private int bitField0_;
@@ -185,8 +375,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    * mismatch may indicate an issue in your computation of the CRC32C checksum.
    * Note: This field is defined as int64 for reasons of compatibility across
    * different languages. However, it is a non-negative integer, which will
-   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-   * that support this type.
+   * never exceed `2^32-1`, and can be safely downconverted to uint32 in
+   * languages that support this type.
    *
    * NOTE: This field is in Beta.
    * </pre>
@@ -213,8 +403,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    * mismatch may indicate an issue in your computation of the CRC32C checksum.
    * Note: This field is defined as int64 for reasons of compatibility across
    * different languages. However, it is a non-negative integer, which will
-   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-   * that support this type.
+   * never exceed `2^32-1`, and can be safely downconverted to uint32 in
+   * languages that support this type.
    *
    * NOTE: This field is in Beta.
    * </pre>
@@ -241,8 +431,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    * mismatch may indicate an issue in your computation of the CRC32C checksum.
    * Note: This field is defined as int64 for reasons of compatibility across
    * different languages. However, it is a non-negative integer, which will
-   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-   * that support this type.
+   * never exceed `2^32-1`, and can be safely downconverted to uint32 in
+   * languages that support this type.
    *
    * NOTE: This field is in Beta.
    * </pre>
@@ -350,6 +540,103 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
   }
 
+  public static final int PUBLIC_KEY_FORMAT_FIELD_NUMBER = 7;
+  private int publicKeyFormat_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The [PublicKey][google.cloud.kms.v1.PublicKey] format specified by the
+   * customer through the
+   * [public_key_format][google.cloud.kms.v1.GetPublicKeyRequest.public_key_format]
+   * field.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 7;</code>
+   *
+   * @return The enum numeric value on the wire for publicKeyFormat.
+   */
+  @java.lang.Override
+  public int getPublicKeyFormatValue() {
+    return publicKeyFormat_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The [PublicKey][google.cloud.kms.v1.PublicKey] format specified by the
+   * customer through the
+   * [public_key_format][google.cloud.kms.v1.GetPublicKeyRequest.public_key_format]
+   * field.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 7;</code>
+   *
+   * @return The publicKeyFormat.
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.v1.PublicKey.PublicKeyFormat getPublicKeyFormat() {
+    com.google.cloud.kms.v1.PublicKey.PublicKeyFormat result =
+        com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.forNumber(publicKeyFormat_);
+    return result == null ? com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.UNRECOGNIZED : result;
+  }
+
+  public static final int PUBLIC_KEY_FIELD_NUMBER = 8;
+  private com.google.cloud.kms.v1.ChecksummedData publicKey_;
+  /**
+   *
+   *
+   * <pre>
+   * This field contains the public key (with integrity verification), formatted
+   * according to the
+   * [public_key_format][google.cloud.kms.v1.PublicKey.public_key_format] field.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ChecksummedData public_key = 8;</code>
+   *
+   * @return Whether the publicKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasPublicKey() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field contains the public key (with integrity verification), formatted
+   * according to the
+   * [public_key_format][google.cloud.kms.v1.PublicKey.public_key_format] field.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ChecksummedData public_key = 8;</code>
+   *
+   * @return The publicKey.
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.v1.ChecksummedData getPublicKey() {
+    return publicKey_ == null
+        ? com.google.cloud.kms.v1.ChecksummedData.getDefaultInstance()
+        : publicKey_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field contains the public key (with integrity verification), formatted
+   * according to the
+   * [public_key_format][google.cloud.kms.v1.PublicKey.public_key_format] field.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ChecksummedData public_key = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.v1.ChecksummedDataOrBuilder getPublicKeyOrBuilder() {
+    return publicKey_ == null
+        ? com.google.cloud.kms.v1.ChecksummedData.getDefaultInstance()
+        : publicKey_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -383,6 +670,14 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.kms.v1.ProtectionLevel.PROTECTION_LEVEL_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, protectionLevel_);
     }
+    if (publicKeyFormat_
+        != com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.PUBLIC_KEY_FORMAT_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(7, publicKeyFormat_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(8, getPublicKey());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -411,6 +706,14 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.kms.v1.ProtectionLevel.PROTECTION_LEVEL_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, protectionLevel_);
     }
+    if (publicKeyFormat_
+        != com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.PUBLIC_KEY_FORMAT_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, publicKeyFormat_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getPublicKey());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -434,6 +737,11 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getName().equals(other.getName())) return false;
     if (protectionLevel_ != other.protectionLevel_) return false;
+    if (publicKeyFormat_ != other.publicKeyFormat_) return false;
+    if (hasPublicKey() != other.hasPublicKey()) return false;
+    if (hasPublicKey()) {
+      if (!getPublicKey().equals(other.getPublicKey())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -457,6 +765,12 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + PROTECTION_LEVEL_FIELD_NUMBER;
     hash = (53 * hash) + protectionLevel_;
+    hash = (37 * hash) + PUBLIC_KEY_FORMAT_FIELD_NUMBER;
+    hash = (53 * hash) + publicKeyFormat_;
+    if (hasPublicKey()) {
+      hash = (37 * hash) + PUBLIC_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getPublicKey().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -599,6 +913,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPemCrc32CFieldBuilder();
+        getPublicKeyFieldBuilder();
       }
     }
 
@@ -615,6 +930,12 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       }
       name_ = "";
       protectionLevel_ = 0;
+      publicKeyFormat_ = 0;
+      publicKey_ = null;
+      if (publicKeyBuilder_ != null) {
+        publicKeyBuilder_.dispose();
+        publicKeyBuilder_ = null;
+      }
       return this;
     }
 
@@ -666,6 +987,13 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.protectionLevel_ = protectionLevel_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.publicKeyFormat_ = publicKeyFormat_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.publicKey_ = publicKeyBuilder_ == null ? publicKey_ : publicKeyBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -734,6 +1062,12 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       if (other.protectionLevel_ != 0) {
         setProtectionLevelValue(other.getProtectionLevelValue());
       }
+      if (other.publicKeyFormat_ != 0) {
+        setPublicKeyFormatValue(other.getPublicKeyFormatValue());
+      }
+      if (other.hasPublicKey()) {
+        mergePublicKey(other.getPublicKey());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -790,6 +1124,18 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
+            case 56:
+              {
+                publicKeyFormat_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
+            case 66:
+              {
+                input.readMessage(getPublicKeyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1058,8 +1404,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * mismatch may indicate an issue in your computation of the CRC32C checksum.
      * Note: This field is defined as int64 for reasons of compatibility across
      * different languages. However, it is a non-negative integer, which will
-     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-     * that support this type.
+     * never exceed `2^32-1`, and can be safely downconverted to uint32 in
+     * languages that support this type.
      *
      * NOTE: This field is in Beta.
      * </pre>
@@ -1085,8 +1431,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * mismatch may indicate an issue in your computation of the CRC32C checksum.
      * Note: This field is defined as int64 for reasons of compatibility across
      * different languages. However, it is a non-negative integer, which will
-     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-     * that support this type.
+     * never exceed `2^32-1`, and can be safely downconverted to uint32 in
+     * languages that support this type.
      *
      * NOTE: This field is in Beta.
      * </pre>
@@ -1118,8 +1464,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * mismatch may indicate an issue in your computation of the CRC32C checksum.
      * Note: This field is defined as int64 for reasons of compatibility across
      * different languages. However, it is a non-negative integer, which will
-     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-     * that support this type.
+     * never exceed `2^32-1`, and can be safely downconverted to uint32 in
+     * languages that support this type.
      *
      * NOTE: This field is in Beta.
      * </pre>
@@ -1153,8 +1499,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * mismatch may indicate an issue in your computation of the CRC32C checksum.
      * Note: This field is defined as int64 for reasons of compatibility across
      * different languages. However, it is a non-negative integer, which will
-     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-     * that support this type.
+     * never exceed `2^32-1`, and can be safely downconverted to uint32 in
+     * languages that support this type.
      *
      * NOTE: This field is in Beta.
      * </pre>
@@ -1185,8 +1531,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * mismatch may indicate an issue in your computation of the CRC32C checksum.
      * Note: This field is defined as int64 for reasons of compatibility across
      * different languages. However, it is a non-negative integer, which will
-     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-     * that support this type.
+     * never exceed `2^32-1`, and can be safely downconverted to uint32 in
+     * languages that support this type.
      *
      * NOTE: This field is in Beta.
      * </pre>
@@ -1225,8 +1571,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * mismatch may indicate an issue in your computation of the CRC32C checksum.
      * Note: This field is defined as int64 for reasons of compatibility across
      * different languages. However, it is a non-negative integer, which will
-     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-     * that support this type.
+     * never exceed `2^32-1`, and can be safely downconverted to uint32 in
+     * languages that support this type.
      *
      * NOTE: This field is in Beta.
      * </pre>
@@ -1257,8 +1603,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * mismatch may indicate an issue in your computation of the CRC32C checksum.
      * Note: This field is defined as int64 for reasons of compatibility across
      * different languages. However, it is a non-negative integer, which will
-     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-     * that support this type.
+     * never exceed `2^32-1`, and can be safely downconverted to uint32 in
+     * languages that support this type.
      *
      * NOTE: This field is in Beta.
      * </pre>
@@ -1284,8 +1630,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * mismatch may indicate an issue in your computation of the CRC32C checksum.
      * Note: This field is defined as int64 for reasons of compatibility across
      * different languages. However, it is a non-negative integer, which will
-     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-     * that support this type.
+     * never exceed `2^32-1`, and can be safely downconverted to uint32 in
+     * languages that support this type.
      *
      * NOTE: This field is in Beta.
      * </pre>
@@ -1315,8 +1661,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * mismatch may indicate an issue in your computation of the CRC32C checksum.
      * Note: This field is defined as int64 for reasons of compatibility across
      * different languages. However, it is a non-negative integer, which will
-     * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-     * that support this type.
+     * never exceed `2^32-1`, and can be safely downconverted to uint32 in
+     * languages that support this type.
      *
      * NOTE: This field is in Beta.
      * </pre>
@@ -1559,6 +1905,316 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       protectionLevel_ = 0;
       onChanged();
       return this;
+    }
+
+    private int publicKeyFormat_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The [PublicKey][google.cloud.kms.v1.PublicKey] format specified by the
+     * customer through the
+     * [public_key_format][google.cloud.kms.v1.GetPublicKeyRequest.public_key_format]
+     * field.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 7;</code>
+     *
+     * @return The enum numeric value on the wire for publicKeyFormat.
+     */
+    @java.lang.Override
+    public int getPublicKeyFormatValue() {
+      return publicKeyFormat_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [PublicKey][google.cloud.kms.v1.PublicKey] format specified by the
+     * customer through the
+     * [public_key_format][google.cloud.kms.v1.GetPublicKeyRequest.public_key_format]
+     * field.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 7;</code>
+     *
+     * @param value The enum numeric value on the wire for publicKeyFormat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublicKeyFormatValue(int value) {
+      publicKeyFormat_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [PublicKey][google.cloud.kms.v1.PublicKey] format specified by the
+     * customer through the
+     * [public_key_format][google.cloud.kms.v1.GetPublicKeyRequest.public_key_format]
+     * field.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 7;</code>
+     *
+     * @return The publicKeyFormat.
+     */
+    @java.lang.Override
+    public com.google.cloud.kms.v1.PublicKey.PublicKeyFormat getPublicKeyFormat() {
+      com.google.cloud.kms.v1.PublicKey.PublicKeyFormat result =
+          com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.forNumber(publicKeyFormat_);
+      return result == null
+          ? com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [PublicKey][google.cloud.kms.v1.PublicKey] format specified by the
+     * customer through the
+     * [public_key_format][google.cloud.kms.v1.GetPublicKeyRequest.public_key_format]
+     * field.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 7;</code>
+     *
+     * @param value The publicKeyFormat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublicKeyFormat(com.google.cloud.kms.v1.PublicKey.PublicKeyFormat value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      publicKeyFormat_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [PublicKey][google.cloud.kms.v1.PublicKey] format specified by the
+     * customer through the
+     * [public_key_format][google.cloud.kms.v1.GetPublicKeyRequest.public_key_format]
+     * field.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPublicKeyFormat() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      publicKeyFormat_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.kms.v1.ChecksummedData publicKey_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.kms.v1.ChecksummedData,
+            com.google.cloud.kms.v1.ChecksummedData.Builder,
+            com.google.cloud.kms.v1.ChecksummedDataOrBuilder>
+        publicKeyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * This field contains the public key (with integrity verification), formatted
+     * according to the
+     * [public_key_format][google.cloud.kms.v1.PublicKey.public_key_format] field.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ChecksummedData public_key = 8;</code>
+     *
+     * @return Whether the publicKey field is set.
+     */
+    public boolean hasPublicKey() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field contains the public key (with integrity verification), formatted
+     * according to the
+     * [public_key_format][google.cloud.kms.v1.PublicKey.public_key_format] field.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ChecksummedData public_key = 8;</code>
+     *
+     * @return The publicKey.
+     */
+    public com.google.cloud.kms.v1.ChecksummedData getPublicKey() {
+      if (publicKeyBuilder_ == null) {
+        return publicKey_ == null
+            ? com.google.cloud.kms.v1.ChecksummedData.getDefaultInstance()
+            : publicKey_;
+      } else {
+        return publicKeyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field contains the public key (with integrity verification), formatted
+     * according to the
+     * [public_key_format][google.cloud.kms.v1.PublicKey.public_key_format] field.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ChecksummedData public_key = 8;</code>
+     */
+    public Builder setPublicKey(com.google.cloud.kms.v1.ChecksummedData value) {
+      if (publicKeyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        publicKey_ = value;
+      } else {
+        publicKeyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field contains the public key (with integrity verification), formatted
+     * according to the
+     * [public_key_format][google.cloud.kms.v1.PublicKey.public_key_format] field.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ChecksummedData public_key = 8;</code>
+     */
+    public Builder setPublicKey(com.google.cloud.kms.v1.ChecksummedData.Builder builderForValue) {
+      if (publicKeyBuilder_ == null) {
+        publicKey_ = builderForValue.build();
+      } else {
+        publicKeyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field contains the public key (with integrity verification), formatted
+     * according to the
+     * [public_key_format][google.cloud.kms.v1.PublicKey.public_key_format] field.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ChecksummedData public_key = 8;</code>
+     */
+    public Builder mergePublicKey(com.google.cloud.kms.v1.ChecksummedData value) {
+      if (publicKeyBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && publicKey_ != null
+            && publicKey_ != com.google.cloud.kms.v1.ChecksummedData.getDefaultInstance()) {
+          getPublicKeyBuilder().mergeFrom(value);
+        } else {
+          publicKey_ = value;
+        }
+      } else {
+        publicKeyBuilder_.mergeFrom(value);
+      }
+      if (publicKey_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field contains the public key (with integrity verification), formatted
+     * according to the
+     * [public_key_format][google.cloud.kms.v1.PublicKey.public_key_format] field.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ChecksummedData public_key = 8;</code>
+     */
+    public Builder clearPublicKey() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      publicKey_ = null;
+      if (publicKeyBuilder_ != null) {
+        publicKeyBuilder_.dispose();
+        publicKeyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field contains the public key (with integrity verification), formatted
+     * according to the
+     * [public_key_format][google.cloud.kms.v1.PublicKey.public_key_format] field.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ChecksummedData public_key = 8;</code>
+     */
+    public com.google.cloud.kms.v1.ChecksummedData.Builder getPublicKeyBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getPublicKeyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field contains the public key (with integrity verification), formatted
+     * according to the
+     * [public_key_format][google.cloud.kms.v1.PublicKey.public_key_format] field.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ChecksummedData public_key = 8;</code>
+     */
+    public com.google.cloud.kms.v1.ChecksummedDataOrBuilder getPublicKeyOrBuilder() {
+      if (publicKeyBuilder_ != null) {
+        return publicKeyBuilder_.getMessageOrBuilder();
+      } else {
+        return publicKey_ == null
+            ? com.google.cloud.kms.v1.ChecksummedData.getDefaultInstance()
+            : publicKey_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field contains the public key (with integrity verification), formatted
+     * according to the
+     * [public_key_format][google.cloud.kms.v1.PublicKey.public_key_format] field.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ChecksummedData public_key = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.kms.v1.ChecksummedData,
+            com.google.cloud.kms.v1.ChecksummedData.Builder,
+            com.google.cloud.kms.v1.ChecksummedDataOrBuilder>
+        getPublicKeyFieldBuilder() {
+      if (publicKeyBuilder_ == null) {
+        publicKeyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.kms.v1.ChecksummedData,
+                com.google.cloud.kms.v1.ChecksummedData.Builder,
+                com.google.cloud.kms.v1.ChecksummedDataOrBuilder>(
+                getPublicKey(), getParentForChildren(), isClean());
+        publicKey_ = null;
+      }
+      return publicKeyBuilder_;
     }
 
     @java.lang.Override

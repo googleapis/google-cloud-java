@@ -1557,6 +1557,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>CONTEXTUAL_INFORMATION = 7;</code>
      */
     CONTEXTUAL_INFORMATION(7),
+    /**
+     *
+     *
+     * <pre>
+     * Category for `CustomInfoType` types.
+     * </pre>
+     *
+     * <code>CUSTOM = 8;</code>
+     */
+    CUSTOM(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -1644,6 +1654,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>CONTEXTUAL_INFORMATION = 7;</code>
      */
     public static final int CONTEXTUAL_INFORMATION_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Category for `CustomInfoType` types.
+     * </pre>
+     *
+     * <code>CUSTOM = 8;</code>
+     */
+    public static final int CUSTOM_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1685,6 +1705,8 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
           return DOCUMENT;
         case 7:
           return CONTEXTUAL_INFORMATION;
+        case 8:
+          return CUSTOM;
         default:
           return null;
       }

@@ -246,6 +246,16 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>EXECUTABLE = 17;</code>
      */
     EXECUTABLE(17),
+    /**
+     *
+     *
+     * <pre>
+     * AI model file types. Only used for profiling.
+     * </pre>
+     *
+     * <code>AI_MODEL = 18;</code>
+     */
+    AI_MODEL(18),
     UNRECOGNIZED(-1),
     ;
 
@@ -419,6 +429,16 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>EXECUTABLE = 17;</code>
      */
     public static final int EXECUTABLE_VALUE = 17;
+    /**
+     *
+     *
+     * <pre>
+     * AI model file types. Only used for profiling.
+     * </pre>
+     *
+     * <code>AI_MODEL = 18;</code>
+     */
+    public static final int AI_MODEL_VALUE = 18;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -478,6 +498,8 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
           return VIDEO;
         case 17:
           return EXECUTABLE;
+        case 18:
+          return AI_MODEL;
         default:
           return null;
       }

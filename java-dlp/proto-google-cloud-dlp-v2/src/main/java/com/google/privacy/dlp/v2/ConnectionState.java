@@ -44,8 +44,8 @@ public enum ConnectionState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * DLP automatically created this connection during an initial scan, and it is
-   * awaiting full configuration by a user.
+   * The DLP API automatically created this connection during an initial scan,
+   * and it is awaiting full configuration by a user.
    * </pre>
    *
    * <code>MISSING_CREDENTIALS = 1;</code>
@@ -94,8 +94,8 @@ public enum ConnectionState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * DLP automatically created this connection during an initial scan, and it is
-   * awaiting full configuration by a user.
+   * The DLP API automatically created this connection during an initial scan,
+   * and it is awaiting full configuration by a user.
    * </pre>
    *
    * <code>MISSING_CREDENTIALS = 1;</code>

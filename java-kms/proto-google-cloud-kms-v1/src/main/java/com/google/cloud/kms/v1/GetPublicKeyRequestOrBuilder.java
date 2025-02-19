@@ -54,4 +54,45 @@ public interface GetPublicKeyRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The [PublicKey][google.cloud.kms.v1.PublicKey] format specified
+   * by the user. This field is required for PQC algorithms. If specified, the
+   * public key will be exported through the
+   * [public_key][google.cloud.kms.v1.PublicKey.public_key] field in the
+   * requested format. Otherwise, the [pem][google.cloud.kms.v1.PublicKey.pem]
+   * field will be populated for non-PQC algorithms, and an error will be
+   * returned for PQC algorithms.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for publicKeyFormat.
+   */
+  int getPublicKeyFormatValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The [PublicKey][google.cloud.kms.v1.PublicKey] format specified
+   * by the user. This field is required for PQC algorithms. If specified, the
+   * public key will be exported through the
+   * [public_key][google.cloud.kms.v1.PublicKey.public_key] field in the
+   * requested format. Otherwise, the [pem][google.cloud.kms.v1.PublicKey.pem]
+   * field will be populated for non-PQC algorithms, and an error will be
+   * returned for PQC algorithms.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The publicKeyFormat.
+   */
+  com.google.cloud.kms.v1.PublicKey.PublicKeyFormat getPublicKeyFormat();
 }

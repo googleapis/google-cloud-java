@@ -2515,6 +2515,9 @@
             "Delete": {
               "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
+            "DeleteRoutePolicy": {
+              "methods": ["deleteRoutePolicyAsync", "deleteRoutePolicyAsync", "deleteRoutePolicyOperationCallable", "deleteRoutePolicyCallable"]
+            },
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
@@ -2523,6 +2526,9 @@
             },
             "GetNatMappingInfo": {
               "methods": ["getNatMappingInfo", "getNatMappingInfo", "getNatMappingInfoPagedCallable", "getNatMappingInfoCallable"]
+            },
+            "GetRoutePolicy": {
+              "methods": ["getRoutePolicy", "getRoutePolicy", "getRoutePolicyCallable"]
             },
             "GetRouterStatus": {
               "methods": ["getRouterStatus", "getRouterStatus", "getRouterStatusCallable"]
@@ -2533,14 +2539,26 @@
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
             },
+            "ListBgpRoutes": {
+              "methods": ["listBgpRoutes", "listBgpRoutes", "listBgpRoutesPagedCallable", "listBgpRoutesCallable"]
+            },
+            "ListRoutePolicies": {
+              "methods": ["listRoutePolicies", "listRoutePolicies", "listRoutePoliciesPagedCallable", "listRoutePoliciesCallable"]
+            },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "PatchRoutePolicy": {
+              "methods": ["patchRoutePolicyAsync", "patchRoutePolicyAsync", "patchRoutePolicyOperationCallable", "patchRoutePolicyCallable"]
             },
             "Preview": {
               "methods": ["preview", "preview", "previewCallable"]
             },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
+            },
+            "UpdateRoutePolicy": {
+              "methods": ["updateRoutePolicyAsync", "updateRoutePolicyAsync", "updateRoutePolicyOperationCallable", "updateRoutePolicyCallable"]
             }
           }
         }

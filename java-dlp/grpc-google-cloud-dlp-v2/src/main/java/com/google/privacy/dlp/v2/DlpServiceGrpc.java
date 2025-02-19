@@ -2707,7 +2707,7 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Returns a list of the sensitive information types that DLP API
+     * Returns a list of the sensitive information types that the DLP API
      * supports. See
      * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference
      * to learn more.
@@ -3682,7 +3682,7 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Returns a list of the sensitive information types that DLP API
+     * Returns a list of the sensitive information types that the DLP API
      * supports. See
      * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference
      * to learn more.
@@ -4725,7 +4725,7 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Returns a list of the sensitive information types that DLP API
+     * Returns a list of the sensitive information types that the DLP API
      * supports. See
      * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference
      * to learn more.
@@ -5600,7 +5600,7 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
-     * Returns a list of the sensitive information types that DLP API
+     * Returns a list of the sensitive information types that the DLP API
      * supports. See
      * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference
      * to learn more.

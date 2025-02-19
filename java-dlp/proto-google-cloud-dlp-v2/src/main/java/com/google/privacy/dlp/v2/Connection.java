@@ -23,8 +23,8 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * A data connection to allow DLP to profile data in locations that require
- * additional configuration.
+ * A data connection to allow the DLP API to profile data in locations that
+ * require additional configuration.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.Connection}
@@ -548,8 +548,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A data connection to allow DLP to profile data in locations that require
-   * additional configuration.
+   * A data connection to allow the DLP API to profile data in locations that
+   * require additional configuration.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.Connection}

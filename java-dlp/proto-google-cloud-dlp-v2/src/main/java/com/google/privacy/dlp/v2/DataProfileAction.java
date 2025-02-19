@@ -275,15 +275,32 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Store all table and column profiles in an existing table or a new table
-     * in an existing dataset. Each re-generation will result in new rows in
-     * BigQuery. Data is inserted using [streaming
-     * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
-     * and so data may be in the buffer for a period of time after the profile
-     * has finished. The Pub/Sub notification is sent before the streaming
-     * buffer is guaranteed to be written, so data may not be instantly
-     * visible to queries by the time your topic receives the Pub/Sub
-     * notification.
+     * Store all profiles to BigQuery.
+     *
+     * * The system will create a new dataset and table for you if none are
+     *   are provided. The dataset will be named
+     *   `sensitive_data_protection_discovery` and table will be named
+     *   `discovery_profiles`. This table will be placed in the same project as
+     *   the container project running the scan. After the first profile is
+     *   generated and the dataset and table are created, the discovery scan
+     *   configuration will be updated with the dataset and table names.
+     * * See [Analyze data profiles stored in
+     * BigQuery](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles).
+     * * See [Sample queries for your BigQuery
+     * table](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#sample_sql_queries).
+     * *  Data is inserted using [streaming
+     *    insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+     *    and so data may be in the buffer for a period of time after the
+     *    profile has finished.
+     *  * The Pub/Sub notification is sent before the streaming buffer is
+     *    guaranteed to be written, so data may not be instantly
+     *    visible to queries by the time your topic receives the Pub/Sub
+     *    notification.
+     *  * The best practice is to use the same table for an entire organization
+     *    so that you can take advantage of the [provided Looker
+     *    reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
+     *    If you use VPC Service Controls to define security perimeters, then
+     *    you must use a separate table for each boundary.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -295,15 +312,32 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Store all table and column profiles in an existing table or a new table
-     * in an existing dataset. Each re-generation will result in new rows in
-     * BigQuery. Data is inserted using [streaming
-     * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
-     * and so data may be in the buffer for a period of time after the profile
-     * has finished. The Pub/Sub notification is sent before the streaming
-     * buffer is guaranteed to be written, so data may not be instantly
-     * visible to queries by the time your topic receives the Pub/Sub
-     * notification.
+     * Store all profiles to BigQuery.
+     *
+     * * The system will create a new dataset and table for you if none are
+     *   are provided. The dataset will be named
+     *   `sensitive_data_protection_discovery` and table will be named
+     *   `discovery_profiles`. This table will be placed in the same project as
+     *   the container project running the scan. After the first profile is
+     *   generated and the dataset and table are created, the discovery scan
+     *   configuration will be updated with the dataset and table names.
+     * * See [Analyze data profiles stored in
+     * BigQuery](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles).
+     * * See [Sample queries for your BigQuery
+     * table](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#sample_sql_queries).
+     * *  Data is inserted using [streaming
+     *    insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+     *    and so data may be in the buffer for a period of time after the
+     *    profile has finished.
+     *  * The Pub/Sub notification is sent before the streaming buffer is
+     *    guaranteed to be written, so data may not be instantly
+     *    visible to queries by the time your topic receives the Pub/Sub
+     *    notification.
+     *  * The best practice is to use the same table for an entire organization
+     *    so that you can take advantage of the [provided Looker
+     *    reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
+     *    If you use VPC Service Controls to define security perimeters, then
+     *    you must use a separate table for each boundary.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -315,15 +349,32 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Store all table and column profiles in an existing table or a new table
-     * in an existing dataset. Each re-generation will result in new rows in
-     * BigQuery. Data is inserted using [streaming
-     * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
-     * and so data may be in the buffer for a period of time after the profile
-     * has finished. The Pub/Sub notification is sent before the streaming
-     * buffer is guaranteed to be written, so data may not be instantly
-     * visible to queries by the time your topic receives the Pub/Sub
-     * notification.
+     * Store all profiles to BigQuery.
+     *
+     * * The system will create a new dataset and table for you if none are
+     *   are provided. The dataset will be named
+     *   `sensitive_data_protection_discovery` and table will be named
+     *   `discovery_profiles`. This table will be placed in the same project as
+     *   the container project running the scan. After the first profile is
+     *   generated and the dataset and table are created, the discovery scan
+     *   configuration will be updated with the dataset and table names.
+     * * See [Analyze data profiles stored in
+     * BigQuery](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles).
+     * * See [Sample queries for your BigQuery
+     * table](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#sample_sql_queries).
+     * *  Data is inserted using [streaming
+     *    insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+     *    and so data may be in the buffer for a period of time after the
+     *    profile has finished.
+     *  * The Pub/Sub notification is sent before the streaming buffer is
+     *    guaranteed to be written, so data may not be instantly
+     *    visible to queries by the time your topic receives the Pub/Sub
+     *    notification.
+     *  * The best practice is to use the same table for an entire organization
+     *    so that you can take advantage of the [provided Looker
+     *    reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
+     *    If you use VPC Service Controls to define security perimeters, then
+     *    you must use a separate table for each boundary.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -380,15 +431,32 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Store all table and column profiles in an existing table or a new table
-     * in an existing dataset. Each re-generation will result in new rows in
-     * BigQuery. Data is inserted using [streaming
-     * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
-     * and so data may be in the buffer for a period of time after the profile
-     * has finished. The Pub/Sub notification is sent before the streaming
-     * buffer is guaranteed to be written, so data may not be instantly
-     * visible to queries by the time your topic receives the Pub/Sub
-     * notification.
+     * Store all profiles to BigQuery.
+     *
+     * * The system will create a new dataset and table for you if none are
+     *   are provided. The dataset will be named
+     *   `sensitive_data_protection_discovery` and table will be named
+     *   `discovery_profiles`. This table will be placed in the same project as
+     *   the container project running the scan. After the first profile is
+     *   generated and the dataset and table are created, the discovery scan
+     *   configuration will be updated with the dataset and table names.
+     * * See [Analyze data profiles stored in
+     * BigQuery](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles).
+     * * See [Sample queries for your BigQuery
+     * table](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#sample_sql_queries).
+     * *  Data is inserted using [streaming
+     *    insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+     *    and so data may be in the buffer for a period of time after the
+     *    profile has finished.
+     *  * The Pub/Sub notification is sent before the streaming buffer is
+     *    guaranteed to be written, so data may not be instantly
+     *    visible to queries by the time your topic receives the Pub/Sub
+     *    notification.
+     *  * The best practice is to use the same table for an entire organization
+     *    so that you can take advantage of the [provided Looker
+     *    reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
+     *    If you use VPC Service Controls to define security perimeters, then
+     *    you must use a separate table for each boundary.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -403,15 +471,32 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Store all table and column profiles in an existing table or a new table
-     * in an existing dataset. Each re-generation will result in new rows in
-     * BigQuery. Data is inserted using [streaming
-     * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
-     * and so data may be in the buffer for a period of time after the profile
-     * has finished. The Pub/Sub notification is sent before the streaming
-     * buffer is guaranteed to be written, so data may not be instantly
-     * visible to queries by the time your topic receives the Pub/Sub
-     * notification.
+     * Store all profiles to BigQuery.
+     *
+     * * The system will create a new dataset and table for you if none are
+     *   are provided. The dataset will be named
+     *   `sensitive_data_protection_discovery` and table will be named
+     *   `discovery_profiles`. This table will be placed in the same project as
+     *   the container project running the scan. After the first profile is
+     *   generated and the dataset and table are created, the discovery scan
+     *   configuration will be updated with the dataset and table names.
+     * * See [Analyze data profiles stored in
+     * BigQuery](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles).
+     * * See [Sample queries for your BigQuery
+     * table](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#sample_sql_queries).
+     * *  Data is inserted using [streaming
+     *    insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+     *    and so data may be in the buffer for a period of time after the
+     *    profile has finished.
+     *  * The Pub/Sub notification is sent before the streaming buffer is
+     *    guaranteed to be written, so data may not be instantly
+     *    visible to queries by the time your topic receives the Pub/Sub
+     *    notification.
+     *  * The best practice is to use the same table for an entire organization
+     *    so that you can take advantage of the [provided Looker
+     *    reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
+     *    If you use VPC Service Controls to define security perimeters, then
+     *    you must use a separate table for each boundary.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -428,15 +513,32 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Store all table and column profiles in an existing table or a new table
-     * in an existing dataset. Each re-generation will result in new rows in
-     * BigQuery. Data is inserted using [streaming
-     * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
-     * and so data may be in the buffer for a period of time after the profile
-     * has finished. The Pub/Sub notification is sent before the streaming
-     * buffer is guaranteed to be written, so data may not be instantly
-     * visible to queries by the time your topic receives the Pub/Sub
-     * notification.
+     * Store all profiles to BigQuery.
+     *
+     * * The system will create a new dataset and table for you if none are
+     *   are provided. The dataset will be named
+     *   `sensitive_data_protection_discovery` and table will be named
+     *   `discovery_profiles`. This table will be placed in the same project as
+     *   the container project running the scan. After the first profile is
+     *   generated and the dataset and table are created, the discovery scan
+     *   configuration will be updated with the dataset and table names.
+     * * See [Analyze data profiles stored in
+     * BigQuery](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles).
+     * * See [Sample queries for your BigQuery
+     * table](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#sample_sql_queries).
+     * *  Data is inserted using [streaming
+     *    insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+     *    and so data may be in the buffer for a period of time after the
+     *    profile has finished.
+     *  * The Pub/Sub notification is sent before the streaming buffer is
+     *    guaranteed to be written, so data may not be instantly
+     *    visible to queries by the time your topic receives the Pub/Sub
+     *    notification.
+     *  * The best practice is to use the same table for an entire organization
+     *    so that you can take advantage of the [provided Looker
+     *    reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
+     *    If you use VPC Service Controls to define security perimeters, then
+     *    you must use a separate table for each boundary.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -825,15 +927,32 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Store all table and column profiles in an existing table or a new table
-       * in an existing dataset. Each re-generation will result in new rows in
-       * BigQuery. Data is inserted using [streaming
-       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
-       * and so data may be in the buffer for a period of time after the profile
-       * has finished. The Pub/Sub notification is sent before the streaming
-       * buffer is guaranteed to be written, so data may not be instantly
-       * visible to queries by the time your topic receives the Pub/Sub
-       * notification.
+       * Store all profiles to BigQuery.
+       *
+       * * The system will create a new dataset and table for you if none are
+       *   are provided. The dataset will be named
+       *   `sensitive_data_protection_discovery` and table will be named
+       *   `discovery_profiles`. This table will be placed in the same project as
+       *   the container project running the scan. After the first profile is
+       *   generated and the dataset and table are created, the discovery scan
+       *   configuration will be updated with the dataset and table names.
+       * * See [Analyze data profiles stored in
+       * BigQuery](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles).
+       * * See [Sample queries for your BigQuery
+       * table](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#sample_sql_queries).
+       * *  Data is inserted using [streaming
+       *    insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       *    and so data may be in the buffer for a period of time after the
+       *    profile has finished.
+       *  * The Pub/Sub notification is sent before the streaming buffer is
+       *    guaranteed to be written, so data may not be instantly
+       *    visible to queries by the time your topic receives the Pub/Sub
+       *    notification.
+       *  * The best practice is to use the same table for an entire organization
+       *    so that you can take advantage of the [provided Looker
+       *    reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
+       *    If you use VPC Service Controls to define security perimeters, then
+       *    you must use a separate table for each boundary.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -847,15 +966,32 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Store all table and column profiles in an existing table or a new table
-       * in an existing dataset. Each re-generation will result in new rows in
-       * BigQuery. Data is inserted using [streaming
-       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
-       * and so data may be in the buffer for a period of time after the profile
-       * has finished. The Pub/Sub notification is sent before the streaming
-       * buffer is guaranteed to be written, so data may not be instantly
-       * visible to queries by the time your topic receives the Pub/Sub
-       * notification.
+       * Store all profiles to BigQuery.
+       *
+       * * The system will create a new dataset and table for you if none are
+       *   are provided. The dataset will be named
+       *   `sensitive_data_protection_discovery` and table will be named
+       *   `discovery_profiles`. This table will be placed in the same project as
+       *   the container project running the scan. After the first profile is
+       *   generated and the dataset and table are created, the discovery scan
+       *   configuration will be updated with the dataset and table names.
+       * * See [Analyze data profiles stored in
+       * BigQuery](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles).
+       * * See [Sample queries for your BigQuery
+       * table](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#sample_sql_queries).
+       * *  Data is inserted using [streaming
+       *    insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       *    and so data may be in the buffer for a period of time after the
+       *    profile has finished.
+       *  * The Pub/Sub notification is sent before the streaming buffer is
+       *    guaranteed to be written, so data may not be instantly
+       *    visible to queries by the time your topic receives the Pub/Sub
+       *    notification.
+       *  * The best practice is to use the same table for an entire organization
+       *    so that you can take advantage of the [provided Looker
+       *    reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
+       *    If you use VPC Service Controls to define security perimeters, then
+       *    you must use a separate table for each boundary.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -875,15 +1011,32 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Store all table and column profiles in an existing table or a new table
-       * in an existing dataset. Each re-generation will result in new rows in
-       * BigQuery. Data is inserted using [streaming
-       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
-       * and so data may be in the buffer for a period of time after the profile
-       * has finished. The Pub/Sub notification is sent before the streaming
-       * buffer is guaranteed to be written, so data may not be instantly
-       * visible to queries by the time your topic receives the Pub/Sub
-       * notification.
+       * Store all profiles to BigQuery.
+       *
+       * * The system will create a new dataset and table for you if none are
+       *   are provided. The dataset will be named
+       *   `sensitive_data_protection_discovery` and table will be named
+       *   `discovery_profiles`. This table will be placed in the same project as
+       *   the container project running the scan. After the first profile is
+       *   generated and the dataset and table are created, the discovery scan
+       *   configuration will be updated with the dataset and table names.
+       * * See [Analyze data profiles stored in
+       * BigQuery](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles).
+       * * See [Sample queries for your BigQuery
+       * table](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#sample_sql_queries).
+       * *  Data is inserted using [streaming
+       *    insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       *    and so data may be in the buffer for a period of time after the
+       *    profile has finished.
+       *  * The Pub/Sub notification is sent before the streaming buffer is
+       *    guaranteed to be written, so data may not be instantly
+       *    visible to queries by the time your topic receives the Pub/Sub
+       *    notification.
+       *  * The best practice is to use the same table for an entire organization
+       *    so that you can take advantage of the [provided Looker
+       *    reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
+       *    If you use VPC Service Controls to define security perimeters, then
+       *    you must use a separate table for each boundary.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -905,15 +1058,32 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Store all table and column profiles in an existing table or a new table
-       * in an existing dataset. Each re-generation will result in new rows in
-       * BigQuery. Data is inserted using [streaming
-       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
-       * and so data may be in the buffer for a period of time after the profile
-       * has finished. The Pub/Sub notification is sent before the streaming
-       * buffer is guaranteed to be written, so data may not be instantly
-       * visible to queries by the time your topic receives the Pub/Sub
-       * notification.
+       * Store all profiles to BigQuery.
+       *
+       * * The system will create a new dataset and table for you if none are
+       *   are provided. The dataset will be named
+       *   `sensitive_data_protection_discovery` and table will be named
+       *   `discovery_profiles`. This table will be placed in the same project as
+       *   the container project running the scan. After the first profile is
+       *   generated and the dataset and table are created, the discovery scan
+       *   configuration will be updated with the dataset and table names.
+       * * See [Analyze data profiles stored in
+       * BigQuery](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles).
+       * * See [Sample queries for your BigQuery
+       * table](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#sample_sql_queries).
+       * *  Data is inserted using [streaming
+       *    insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       *    and so data may be in the buffer for a period of time after the
+       *    profile has finished.
+       *  * The Pub/Sub notification is sent before the streaming buffer is
+       *    guaranteed to be written, so data may not be instantly
+       *    visible to queries by the time your topic receives the Pub/Sub
+       *    notification.
+       *  * The best practice is to use the same table for an entire organization
+       *    so that you can take advantage of the [provided Looker
+       *    reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
+       *    If you use VPC Service Controls to define security perimeters, then
+       *    you must use a separate table for each boundary.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -933,15 +1103,32 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Store all table and column profiles in an existing table or a new table
-       * in an existing dataset. Each re-generation will result in new rows in
-       * BigQuery. Data is inserted using [streaming
-       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
-       * and so data may be in the buffer for a period of time after the profile
-       * has finished. The Pub/Sub notification is sent before the streaming
-       * buffer is guaranteed to be written, so data may not be instantly
-       * visible to queries by the time your topic receives the Pub/Sub
-       * notification.
+       * Store all profiles to BigQuery.
+       *
+       * * The system will create a new dataset and table for you if none are
+       *   are provided. The dataset will be named
+       *   `sensitive_data_protection_discovery` and table will be named
+       *   `discovery_profiles`. This table will be placed in the same project as
+       *   the container project running the scan. After the first profile is
+       *   generated and the dataset and table are created, the discovery scan
+       *   configuration will be updated with the dataset and table names.
+       * * See [Analyze data profiles stored in
+       * BigQuery](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles).
+       * * See [Sample queries for your BigQuery
+       * table](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#sample_sql_queries).
+       * *  Data is inserted using [streaming
+       *    insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       *    and so data may be in the buffer for a period of time after the
+       *    profile has finished.
+       *  * The Pub/Sub notification is sent before the streaming buffer is
+       *    guaranteed to be written, so data may not be instantly
+       *    visible to queries by the time your topic receives the Pub/Sub
+       *    notification.
+       *  * The best practice is to use the same table for an entire organization
+       *    so that you can take advantage of the [provided Looker
+       *    reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
+       *    If you use VPC Service Controls to define security perimeters, then
+       *    you must use a separate table for each boundary.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -968,15 +1155,32 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Store all table and column profiles in an existing table or a new table
-       * in an existing dataset. Each re-generation will result in new rows in
-       * BigQuery. Data is inserted using [streaming
-       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
-       * and so data may be in the buffer for a period of time after the profile
-       * has finished. The Pub/Sub notification is sent before the streaming
-       * buffer is guaranteed to be written, so data may not be instantly
-       * visible to queries by the time your topic receives the Pub/Sub
-       * notification.
+       * Store all profiles to BigQuery.
+       *
+       * * The system will create a new dataset and table for you if none are
+       *   are provided. The dataset will be named
+       *   `sensitive_data_protection_discovery` and table will be named
+       *   `discovery_profiles`. This table will be placed in the same project as
+       *   the container project running the scan. After the first profile is
+       *   generated and the dataset and table are created, the discovery scan
+       *   configuration will be updated with the dataset and table names.
+       * * See [Analyze data profiles stored in
+       * BigQuery](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles).
+       * * See [Sample queries for your BigQuery
+       * table](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#sample_sql_queries).
+       * *  Data is inserted using [streaming
+       *    insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       *    and so data may be in the buffer for a period of time after the
+       *    profile has finished.
+       *  * The Pub/Sub notification is sent before the streaming buffer is
+       *    guaranteed to be written, so data may not be instantly
+       *    visible to queries by the time your topic receives the Pub/Sub
+       *    notification.
+       *  * The best practice is to use the same table for an entire organization
+       *    so that you can take advantage of the [provided Looker
+       *    reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
+       *    If you use VPC Service Controls to define security perimeters, then
+       *    you must use a separate table for each boundary.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -995,15 +1199,32 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Store all table and column profiles in an existing table or a new table
-       * in an existing dataset. Each re-generation will result in new rows in
-       * BigQuery. Data is inserted using [streaming
-       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
-       * and so data may be in the buffer for a period of time after the profile
-       * has finished. The Pub/Sub notification is sent before the streaming
-       * buffer is guaranteed to be written, so data may not be instantly
-       * visible to queries by the time your topic receives the Pub/Sub
-       * notification.
+       * Store all profiles to BigQuery.
+       *
+       * * The system will create a new dataset and table for you if none are
+       *   are provided. The dataset will be named
+       *   `sensitive_data_protection_discovery` and table will be named
+       *   `discovery_profiles`. This table will be placed in the same project as
+       *   the container project running the scan. After the first profile is
+       *   generated and the dataset and table are created, the discovery scan
+       *   configuration will be updated with the dataset and table names.
+       * * See [Analyze data profiles stored in
+       * BigQuery](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles).
+       * * See [Sample queries for your BigQuery
+       * table](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#sample_sql_queries).
+       * *  Data is inserted using [streaming
+       *    insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       *    and so data may be in the buffer for a period of time after the
+       *    profile has finished.
+       *  * The Pub/Sub notification is sent before the streaming buffer is
+       *    guaranteed to be written, so data may not be instantly
+       *    visible to queries by the time your topic receives the Pub/Sub
+       *    notification.
+       *  * The best practice is to use the same table for an entire organization
+       *    so that you can take advantage of the [provided Looker
+       *    reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
+       *    If you use VPC Service Controls to define security perimeters, then
+       *    you must use a separate table for each boundary.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -1017,15 +1238,32 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Store all table and column profiles in an existing table or a new table
-       * in an existing dataset. Each re-generation will result in new rows in
-       * BigQuery. Data is inserted using [streaming
-       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
-       * and so data may be in the buffer for a period of time after the profile
-       * has finished. The Pub/Sub notification is sent before the streaming
-       * buffer is guaranteed to be written, so data may not be instantly
-       * visible to queries by the time your topic receives the Pub/Sub
-       * notification.
+       * Store all profiles to BigQuery.
+       *
+       * * The system will create a new dataset and table for you if none are
+       *   are provided. The dataset will be named
+       *   `sensitive_data_protection_discovery` and table will be named
+       *   `discovery_profiles`. This table will be placed in the same project as
+       *   the container project running the scan. After the first profile is
+       *   generated and the dataset and table are created, the discovery scan
+       *   configuration will be updated with the dataset and table names.
+       * * See [Analyze data profiles stored in
+       * BigQuery](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles).
+       * * See [Sample queries for your BigQuery
+       * table](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#sample_sql_queries).
+       * *  Data is inserted using [streaming
+       *    insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       *    and so data may be in the buffer for a period of time after the
+       *    profile has finished.
+       *  * The Pub/Sub notification is sent before the streaming buffer is
+       *    guaranteed to be written, so data may not be instantly
+       *    visible to queries by the time your topic receives the Pub/Sub
+       *    notification.
+       *  * The best practice is to use the same table for an entire organization
+       *    so that you can take advantage of the [provided Looker
+       *    reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
+       *    If you use VPC Service Controls to define security perimeters, then
+       *    you must use a separate table for each boundary.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -1043,15 +1281,32 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Store all table and column profiles in an existing table or a new table
-       * in an existing dataset. Each re-generation will result in new rows in
-       * BigQuery. Data is inserted using [streaming
-       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
-       * and so data may be in the buffer for a period of time after the profile
-       * has finished. The Pub/Sub notification is sent before the streaming
-       * buffer is guaranteed to be written, so data may not be instantly
-       * visible to queries by the time your topic receives the Pub/Sub
-       * notification.
+       * Store all profiles to BigQuery.
+       *
+       * * The system will create a new dataset and table for you if none are
+       *   are provided. The dataset will be named
+       *   `sensitive_data_protection_discovery` and table will be named
+       *   `discovery_profiles`. This table will be placed in the same project as
+       *   the container project running the scan. After the first profile is
+       *   generated and the dataset and table are created, the discovery scan
+       *   configuration will be updated with the dataset and table names.
+       * * See [Analyze data profiles stored in
+       * BigQuery](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles).
+       * * See [Sample queries for your BigQuery
+       * table](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#sample_sql_queries).
+       * *  Data is inserted using [streaming
+       *    insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       *    and so data may be in the buffer for a period of time after the
+       *    profile has finished.
+       *  * The Pub/Sub notification is sent before the streaming buffer is
+       *    guaranteed to be written, so data may not be instantly
+       *    visible to queries by the time your topic receives the Pub/Sub
+       *    notification.
+       *  * The best practice is to use the same table for an entire organization
+       *    so that you can take advantage of the [provided Looker
+       *    reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
+       *    If you use VPC Service Controls to define security perimeters, then
+       *    you must use a separate table for each boundary.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
@@ -3170,7 +3425,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * If set, a summary finding will be created/updated in SCC for each profile.
+   * If set, a summary finding will be created or updated in Security Command
+   * Center for each profile.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter}
@@ -3374,7 +3630,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If set, a summary finding will be created/updated in SCC for each profile.
+     * If set, a summary finding will be created or updated in Security Command
+     * Center for each profile.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter}
@@ -7693,7 +7950,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Publishes findings to SCC for each data profile.
+   * Publishes findings to Security Command Center for each data profile.
    * </pre>
    *
    * <code>
@@ -7710,7 +7967,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Publishes findings to SCC for each data profile.
+   * Publishes findings to Security Command Center for each data profile.
    * </pre>
    *
    * <code>
@@ -7732,7 +7989,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Publishes findings to SCC for each data profile.
+   * Publishes findings to Security Command Center for each data profile.
    * </pre>
    *
    * <code>
@@ -9016,7 +9273,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Publishes findings to SCC for each data profile.
+     * Publishes findings to Security Command Center for each data profile.
      * </pre>
      *
      * <code>
@@ -9033,7 +9290,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Publishes findings to SCC for each data profile.
+     * Publishes findings to Security Command Center for each data profile.
      * </pre>
      *
      * <code>
@@ -9064,7 +9321,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Publishes findings to SCC for each data profile.
+     * Publishes findings to Security Command Center for each data profile.
      * </pre>
      *
      * <code>
@@ -9089,7 +9346,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Publishes findings to SCC for each data profile.
+     * Publishes findings to Security Command Center for each data profile.
      * </pre>
      *
      * <code>
@@ -9112,7 +9369,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Publishes findings to SCC for each data profile.
+     * Publishes findings to Security Command Center for each data profile.
      * </pre>
      *
      * <code>
@@ -9150,7 +9407,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Publishes findings to SCC for each data profile.
+     * Publishes findings to Security Command Center for each data profile.
      * </pre>
      *
      * <code>
@@ -9177,7 +9434,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Publishes findings to SCC for each data profile.
+     * Publishes findings to Security Command Center for each data profile.
      * </pre>
      *
      * <code>
@@ -9192,7 +9449,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Publishes findings to SCC for each data profile.
+     * Publishes findings to Security Command Center for each data profile.
      * </pre>
      *
      * <code>
@@ -9217,7 +9474,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Publishes findings to SCC for each data profile.
+     * Publishes findings to Security Command Center for each data profile.
      * </pre>
      *
      * <code>

@@ -36,7 +36,7 @@ package com.google.privacy.dlp.v2;
  *
  * Note: We recommend using  CryptoDeterministicConfig for all use cases which
  * do not require preserving the input alphabet space and size, plus warrant
- * referential integrity.
+ * referential integrity. FPE incurs significant latency costs.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig}
@@ -1068,7 +1068,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    *
    * Note: We recommend using  CryptoDeterministicConfig for all use cases which
    * do not require preserving the input alphabet space and size, plus warrant
-   * referential integrity.
+   * referential integrity. FPE incurs significant latency costs.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig}
