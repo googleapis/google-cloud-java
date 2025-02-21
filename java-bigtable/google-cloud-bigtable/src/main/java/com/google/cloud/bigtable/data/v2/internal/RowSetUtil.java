@@ -49,6 +49,36 @@ import javax.annotation.Nullable;
 public final class RowSetUtil {
   private RowSetUtil() {}
 
+  /** Removes the {@code #excludePoint} rowkey from the {@code RowSet} */
+  public static RowSet eraseLargeRow(RowSet rowSet, ByteString excludePoint) {
+
+    RowSet.Builder newRowSet = RowSet.newBuilder();
+
+    if (rowSet.getRowKeysList().isEmpty() && rowSet.getRowRangesList().isEmpty()) {
+      // querying range (, excludePoint) and (excludePoint, )
+      newRowSet.addRowRanges(RowRange.newBuilder().setEndKeyOpen(excludePoint).build());
+      newRowSet.addRowRanges(RowRange.newBuilder().setStartKeyOpen(excludePoint).build());
+    }
+
+    // remove large row key from point reads
+    rowSet.getRowKeysList().stream()
+        .filter(k -> !k.equals(excludePoint))
+        .forEach(newRowSet::addRowKeys);
+
+    // Handle ranges
+    for (RowRange rowRange : rowSet.getRowRangesList()) {
+      List<RowRange> afterSplit = splitOnLargeRowKey(rowRange, excludePoint);
+      if (afterSplit != null && !afterSplit.isEmpty()) {
+        afterSplit.forEach(newRowSet::addRowRanges);
+      }
+    }
+
+    if (newRowSet.getRowKeysList().isEmpty() && newRowSet.getRowRangesList().isEmpty()) {
+      return null;
+    }
+    return newRowSet.build();
+  }
+
   /**
    * Removes all the keys and range parts that fall on or before the splitPoint.
    *
@@ -123,6 +153,40 @@ public final class RowSetUtil {
     }
 
     return newRange.build();
+  }
+
+  /** This method erases the {@code #split} key from the range */
+  private static List<RowRange> splitOnLargeRowKey(RowRange range, ByteString largeRowKey) {
+    List<RowRange> rowRanges = new ArrayList<>();
+
+    ByteString startKey = StartPoint.extract(range).value;
+    ByteString endKey = EndPoint.extract(range).value;
+
+    // if end key is on the left of large row key, don't split
+    if (ByteStringComparator.INSTANCE.compare(endKey, largeRowKey) < 0) {
+      rowRanges.add(range);
+      return rowRanges;
+    }
+
+    // if start key is on the right of the large row key, don't split
+    if (ByteStringComparator.INSTANCE.compare(startKey, largeRowKey) > 0) {
+      rowRanges.add(range);
+      return rowRanges;
+    }
+
+    // if start key is on the left of the large row key, set the end key to be large row key open
+    if (ByteStringComparator.INSTANCE.compare(startKey, largeRowKey) < 0) {
+      RowRange beforeSplit = range.toBuilder().setEndKeyOpen(largeRowKey).build();
+      rowRanges.add(beforeSplit);
+    }
+
+    // if the end key is on the right of the large row key, set the start key to be large row key
+    // open
+    if (ByteStringComparator.INSTANCE.compare(endKey, largeRowKey) > 0) {
+      RowRange afterSplit = range.toBuilder().setStartKeyOpen(largeRowKey).build();
+      rowRanges.add(afterSplit);
+    }
+    return rowRanges;
   }
 
   /**

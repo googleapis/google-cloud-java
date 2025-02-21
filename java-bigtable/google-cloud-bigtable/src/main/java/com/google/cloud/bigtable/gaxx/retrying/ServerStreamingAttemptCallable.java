@@ -345,7 +345,6 @@ public final class ServerStreamingAttemptCallable<RequestT, ResponseT> implement
     synchronized (lock) {
       localCancellationCause = cancellationCause;
     }
-
     if (resumptionStrategy instanceof BigtableStreamResumptionStrategy) {
       throwable = ((BigtableStreamResumptionStrategy) resumptionStrategy).processError(throwable);
     }

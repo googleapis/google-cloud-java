@@ -1280,6 +1280,53 @@ public class BigtableDataClient implements AutoCloseable {
   }
 
   /**
+   * Streams back the results of the read query & omits large rows. The returned callable object
+   * allows for customization of api invocation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *
+   *   Query query = Query.create(tableId)
+   *          .range("[START KEY]", "[END KEY]")
+   *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
+   *
+   *   // Iterator style
+   *   try {
+   *     for(Row row : bigtableDataClient.skipLargeRowsCallable().call(query)) {
+   *       // Do something with row
+   *     }
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to read a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }
+   *
+   *   // Sync style
+   *   try {
+   *     List<Row> rows = bigtableDataClient.skipLargeRowsCallable().all().call(query);
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to read a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }
+   *
+   *   // etc
+   * }
+   * }</pre>
+   *
+   * @see ServerStreamingCallable For call styles.
+   * @see Query For query options.
+   * @see com.google.cloud.bigtable.data.v2.models.Filters For the filter building DSL.
+   */
+  @InternalApi("only to be used by Bigtable beam connector")
+  public ServerStreamingCallable<Query, Row> skipLargeRowsCallable() {
+    return stub.skipLargeRowsCallable();
+  }
+
+  /**
    * Streams back the results of the query. This callable allows for customization of the logical
    * representation of a row. It's meant for advanced use cases.
    *

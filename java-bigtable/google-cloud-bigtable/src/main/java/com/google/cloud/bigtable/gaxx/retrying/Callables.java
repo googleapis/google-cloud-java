@@ -73,4 +73,24 @@ public class Callables {
     return new RetryingServerStreamingCallable<>(
         innerCallable, retryingExecutor, settings.getResumptionStrategy());
   }
+
+  public static <RequestT, ResponseT, RowT>
+      ServerStreamingCallable<RequestT, ResponseT> retryingForLargeRows(
+          ServerStreamingCallable<RequestT, ResponseT> innerCallable,
+          ServerStreamingCallSettings<RequestT, ResponseT> callSettings,
+          ClientContext clientContext) {
+
+    ServerStreamingCallSettings<RequestT, ResponseT> settings = callSettings;
+
+    StreamingRetryAlgorithm<Void> retryAlgorithm =
+        new StreamingRetryAlgorithm<>(
+            new LargeRowRetryAlgorithm<>(),
+            new ExponentialRetryAlgorithm(settings.getRetrySettings(), clientContext.getClock()));
+
+    ScheduledRetryingExecutor<Void> retryingExecutor =
+        new ScheduledRetryingExecutor<>(retryAlgorithm, clientContext.getExecutor());
+
+    return new RetryingServerStreamingCallable<>(
+        innerCallable, retryingExecutor, settings.getResumptionStrategy());
+  }
 }

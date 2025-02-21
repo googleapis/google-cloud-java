@@ -110,6 +110,7 @@ import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescr
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsPartialErrorRetryAlgorithm;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsRetryingCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.FilterMarkerRowsCallable;
+import com.google.cloud.bigtable.data.v2.stub.readrows.LargeReadRowsResumptionStrategy;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsFirstCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsResumptionStrategy;
@@ -176,6 +177,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private final DynamicFlowControlStats bulkMutationDynamicFlowControlStats;
 
   private final ServerStreamingCallable<Query, Row> readRowsCallable;
+
+  private final ServerStreamingCallable<Query, Row> skipLargeRowsCallable;
+
   private final UnaryCallable<Query, Row> readRowCallable;
   private final UnaryCallable<Query, List<Row>> bulkReadRowsCallable;
   @Deprecated private final UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable;
@@ -304,6 +308,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     this.bulkMutationDynamicFlowControlStats = new DynamicFlowControlStats();
 
     readRowsCallable = createReadRowsCallable(new DefaultRowAdapter());
+    skipLargeRowsCallable = createSkipLargeRowsCallable(new DefaultRowAdapter());
     readRowCallable = createReadRowCallable(new DefaultRowAdapter());
     bulkReadRowsCallable = createBulkReadRowsCallable(new DefaultRowAdapter());
     sampleRowKeysCallable = createSampleRowKeysCallable();
@@ -445,6 +450,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return createReadRowsBaseCallable(
         readRowsSettings, rowAdapter, new ReadRowsResumptionStrategy<RowT>(rowAdapter));
   }
+
   /**
    * Creates a callable chain to handle ReadRows RPCs. The chain will:
    *
@@ -513,6 +519,96 @@ public class EnhancedBigtableStub implements AutoCloseable {
         withRetries(retrying1, innerSettings);
 
     return new FilterMarkerRowsCallable<>(retrying2, rowAdapter);
+  }
+
+  /**
+   * Creates a callable chain to handle streaming ReadRows RPCs. This chain skips the large rows
+   * internally. The chain will:
+   *
+   * <ul>
+   *   <li>Convert a {@link Query} into a {@link com.google.bigtable.v2.ReadRowsRequest}.
+   *   <li>Dispatch the RPC with {@link ReadRowsRequest}.
+   *   <li>Upon receiving the response stream, it will merge the {@link
+   *       com.google.bigtable.v2.ReadRowsResponse.CellChunk}s in logical rows. The actual row
+   *       implementation can be configured in by the {@code rowAdapter} parameter.
+   *   <li>Add bigtable tracer for tracking bigtable specific metrics.
+   *   <li>Retry/resume on failure (retries for retryable error codes, connection errors and skip
+   *       large row keys)
+   *   <li>Filter out marker rows.
+   *   <li>Add tracing & metrics.
+   * </ul>
+   */
+  private <ReqT, RowT> ServerStreamingCallable<Query, RowT> createSkipLargeRowsCallable(
+      RowAdapter<RowT> rowAdapter) {
+
+    ServerStreamingCallSettings<ReqT, Row> readRowsSettings =
+        (ServerStreamingCallSettings<ReqT, Row>) settings.readRowsSettings();
+
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> base =
+        GrpcRawCallableFactory.createServerStreamingCallable(
+            GrpcCallSettings.<ReadRowsRequest, ReadRowsResponse>newBuilder()
+                .setMethodDescriptor(BigtableGrpc.getReadRowsMethod())
+                .setParamsExtractor(
+                    r ->
+                        composeRequestParams(
+                            r.getAppProfileId(), r.getTableName(), r.getAuthorizedViewName()))
+                .build(),
+            readRowsSettings.getRetryableCodes());
+
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> withStatsHeaders =
+        new StatsHeadersServerStreamingCallable<>(base);
+
+    // Sometimes ReadRows connections are disconnected via an RST frame. This error is transient and
+    // should be treated similar to UNAVAILABLE. However, this exception has an INTERNAL error code
+    // which by default is not retryable. Convert the exception so it can be retried in the client.
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> convertException =
+        new ConvertExceptionCallable<>(withStatsHeaders);
+
+    ServerStreamingCallable<ReadRowsRequest, RowT> merging =
+        new RowMergingCallable<>(convertException, rowAdapter);
+
+    // Copy settings for the middle ReadRowsRequest -> RowT callable (as opposed to the inner
+    // ReadRowsRequest -> ReadRowsResponse callable).
+    // We override the resumption strategy to use LargeReadRowsResumptionStrategy here (which skips
+    // the large rows) instead of ReadRowResumptionStrategy
+    ServerStreamingCallSettings<ReadRowsRequest, RowT> innerSettings =
+        ServerStreamingCallSettings.<ReadRowsRequest, RowT>newBuilder()
+            .setResumptionStrategy(new LargeReadRowsResumptionStrategy<>(rowAdapter))
+            .setRetryableCodes(readRowsSettings.getRetryableCodes())
+            .setRetrySettings(readRowsSettings.getRetrySettings())
+            .setIdleTimeout(readRowsSettings.getIdleTimeout())
+            .setWaitTimeout(readRowsSettings.getWaitTimeout())
+            .build();
+
+    ServerStreamingCallable<ReadRowsRequest, RowT> watched =
+        Callables.watched(merging, innerSettings, clientContext);
+
+    ServerStreamingCallable<ReadRowsRequest, RowT> withBigtableTracer =
+        new BigtableTracerStreamingCallable<>(watched);
+
+    // Retry logic is split into 2 parts to workaround a rare edge case described in
+    // ReadRowsRetryCompletedCallable
+    ServerStreamingCallable<ReadRowsRequest, RowT> retrying1 =
+        new ReadRowsRetryCompletedCallable<>(withBigtableTracer);
+
+    ServerStreamingCallable<ReadRowsRequest, RowT> retrying2 =
+        largeRowWithRetries(retrying1, innerSettings);
+
+    ServerStreamingCallable<ReadRowsRequest, RowT> readRowsCallable =
+        new FilterMarkerRowsCallable<>(retrying2, rowAdapter);
+
+    ServerStreamingCallable<Query, RowT> readRowsUserCallable =
+        new ReadRowsUserCallable<>(readRowsCallable, requestContext);
+
+    SpanName span = getSpanName("ReadRows");
+    ServerStreamingCallable<Query, RowT> traced =
+        new TracedServerStreamingCallable<>(
+            readRowsUserCallable, clientContext.getTracerFactory(), span);
+
+    return traced.withDefaultCallContext(
+        clientContext
+            .getDefaultCallContext()
+            .withRetrySettings(readRowsSettings.getRetrySettings()));
   }
 
   /**
@@ -1282,12 +1378,33 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return retrying;
   }
 
+  private <RequestT, ResponseT> ServerStreamingCallable<RequestT, ResponseT> largeRowWithRetries(
+      ServerStreamingCallable<RequestT, ResponseT> innerCallable,
+      ServerStreamingCallSettings<RequestT, ResponseT> serverStreamingCallSettings) {
+
+    // Retrying algorithm in retryingForLargeRows also takes RetryInfo into consideration, so we
+    // skip the check for settings.getEnableRetryInfo here
+    ServerStreamingCallable<RequestT, ResponseT> retrying;
+    retrying =
+        com.google.cloud.bigtable.gaxx.retrying.Callables.retryingForLargeRows(
+            innerCallable, serverStreamingCallSettings, clientContext);
+    if (settings.getEnableRoutingCookie()) {
+      return new CookiesServerStreamingCallable<>(retrying);
+    }
+    return retrying;
+  }
+
   // </editor-fold>
 
   // <editor-fold desc="Callable accessors">
   /** Returns a streaming read rows callable */
   public ServerStreamingCallable<Query, Row> readRowsCallable() {
     return readRowsCallable;
+  }
+
+  /** Returns a streaming read rows callable that skips large rows */
+  public ServerStreamingCallable<Query, Row> skipLargeRowsCallable() {
+    return skipLargeRowsCallable;
   }
 
   /** Return a point read callable */
