@@ -47,6 +47,7 @@ public class SyncVerifyAttestation {
               .setTpmAttestation(TpmAttestation.newBuilder().build())
               .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
               .setTokenOptions(TokenOptions.newBuilder().build())
+              .setAttester("attester542920370")
               .build();
       VerifyAttestationResponse response = confidentialComputingClient.verifyAttestation(request);
     }
