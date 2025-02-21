@@ -971,13 +971,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-resource-settings-bom</artifactId>
-        <version>1.59.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-resource-settings:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-resourcemanager-bom</artifactId>
         <version>1.61.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
         <type>pom</type>

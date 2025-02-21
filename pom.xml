@@ -164,7 +164,6 @@
     <module>java-recommender</module>
     <module>java-redis</module>
     <module>java-redis-cluster</module>
-    <module>java-resource-settings</module>
     <module>java-resourcemanager</module>
     <module>java-retail</module>
     <module>java-run</module>
