@@ -645,6 +645,72 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int AUTHENTICATION_CONFIG_FIELD_NUMBER = 11;
+  private com.google.cloud.dataproc.v1.AuthenticationConfig authenticationConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Authentication configuration used to set the default identity for
+   * the workload execution. The config specifies the type of identity
+   * (service account or user) that will be used by workloads to access
+   * resources on the project(s).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.AuthenticationConfig authentication_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the authenticationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAuthenticationConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Authentication configuration used to set the default identity for
+   * the workload execution. The config specifies the type of identity
+   * (service account or user) that will be used by workloads to access
+   * resources on the project(s).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.AuthenticationConfig authentication_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The authenticationConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.AuthenticationConfig getAuthenticationConfig() {
+    return authenticationConfig_ == null
+        ? com.google.cloud.dataproc.v1.AuthenticationConfig.getDefaultInstance()
+        : authenticationConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Authentication configuration used to set the default identity for
+   * the workload execution. The config specifies the type of identity
+   * (service account or user) that will be used by workloads to access
+   * resources on the project(s).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.AuthenticationConfig authentication_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.AuthenticationConfigOrBuilder
+      getAuthenticationConfigOrBuilder() {
+    return authenticationConfig_ == null
+        ? com.google.cloud.dataproc.v1.AuthenticationConfig.getDefaultInstance()
+        : authenticationConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -682,6 +748,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stagingBucket_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, stagingBucket_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(11, getAuthenticationConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -721,6 +790,10 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stagingBucket_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, stagingBucket_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11, getAuthenticationConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -749,6 +822,10 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       if (!getTtl().equals(other.getTtl())) return false;
     }
     if (!getStagingBucket().equals(other.getStagingBucket())) return false;
+    if (hasAuthenticationConfig() != other.hasAuthenticationConfig()) return false;
+    if (hasAuthenticationConfig()) {
+      if (!getAuthenticationConfig().equals(other.getAuthenticationConfig())) return false;
+    }
     if (!getNetworkCase().equals(other.getNetworkCase())) return false;
     switch (networkCase_) {
       case 4:
@@ -789,6 +866,10 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     }
     hash = (37 * hash) + STAGING_BUCKET_FIELD_NUMBER;
     hash = (53 * hash) + getStagingBucket().hashCode();
+    if (hasAuthenticationConfig()) {
+      hash = (37 * hash) + AUTHENTICATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAuthenticationConfig().hashCode();
+    }
     switch (networkCase_) {
       case 4:
         hash = (37 * hash) + NETWORK_URI_FIELD_NUMBER;
@@ -943,6 +1024,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getIdleTtlFieldBuilder();
         getTtlFieldBuilder();
+        getAuthenticationConfigFieldBuilder();
       }
     }
 
@@ -964,6 +1046,11 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
         ttlBuilder_ = null;
       }
       stagingBucket_ = "";
+      authenticationConfig_ = null;
+      if (authenticationConfigBuilder_ != null) {
+        authenticationConfigBuilder_.dispose();
+        authenticationConfigBuilder_ = null;
+      }
       networkCase_ = 0;
       network_ = null;
       return this;
@@ -1024,6 +1111,13 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.stagingBucket_ = stagingBucket_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.authenticationConfig_ =
+            authenticationConfigBuilder_ == null
+                ? authenticationConfig_
+                : authenticationConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1108,6 +1202,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
         stagingBucket_ = other.stagingBucket_;
         bitField0_ |= 0x00000080;
         onChanged();
+      }
+      if (other.hasAuthenticationConfig()) {
+        mergeAuthenticationConfig(other.getAuthenticationConfig());
       }
       switch (other.getNetworkCase()) {
         case NETWORK_URI:
@@ -1206,6 +1303,13 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000080;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    getAuthenticationConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2600,6 +2704,242 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000080;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dataproc.v1.AuthenticationConfig authenticationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.AuthenticationConfig,
+            com.google.cloud.dataproc.v1.AuthenticationConfig.Builder,
+            com.google.cloud.dataproc.v1.AuthenticationConfigOrBuilder>
+        authenticationConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Authentication configuration used to set the default identity for
+     * the workload execution. The config specifies the type of identity
+     * (service account or user) that will be used by workloads to access
+     * resources on the project(s).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AuthenticationConfig authentication_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the authenticationConfig field is set.
+     */
+    public boolean hasAuthenticationConfig() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Authentication configuration used to set the default identity for
+     * the workload execution. The config specifies the type of identity
+     * (service account or user) that will be used by workloads to access
+     * resources on the project(s).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AuthenticationConfig authentication_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The authenticationConfig.
+     */
+    public com.google.cloud.dataproc.v1.AuthenticationConfig getAuthenticationConfig() {
+      if (authenticationConfigBuilder_ == null) {
+        return authenticationConfig_ == null
+            ? com.google.cloud.dataproc.v1.AuthenticationConfig.getDefaultInstance()
+            : authenticationConfig_;
+      } else {
+        return authenticationConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Authentication configuration used to set the default identity for
+     * the workload execution. The config specifies the type of identity
+     * (service account or user) that will be used by workloads to access
+     * resources on the project(s).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AuthenticationConfig authentication_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAuthenticationConfig(
+        com.google.cloud.dataproc.v1.AuthenticationConfig value) {
+      if (authenticationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        authenticationConfig_ = value;
+      } else {
+        authenticationConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Authentication configuration used to set the default identity for
+     * the workload execution. The config specifies the type of identity
+     * (service account or user) that will be used by workloads to access
+     * resources on the project(s).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AuthenticationConfig authentication_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAuthenticationConfig(
+        com.google.cloud.dataproc.v1.AuthenticationConfig.Builder builderForValue) {
+      if (authenticationConfigBuilder_ == null) {
+        authenticationConfig_ = builderForValue.build();
+      } else {
+        authenticationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Authentication configuration used to set the default identity for
+     * the workload execution. The config specifies the type of identity
+     * (service account or user) that will be used by workloads to access
+     * resources on the project(s).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AuthenticationConfig authentication_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAuthenticationConfig(
+        com.google.cloud.dataproc.v1.AuthenticationConfig value) {
+      if (authenticationConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && authenticationConfig_ != null
+            && authenticationConfig_
+                != com.google.cloud.dataproc.v1.AuthenticationConfig.getDefaultInstance()) {
+          getAuthenticationConfigBuilder().mergeFrom(value);
+        } else {
+          authenticationConfig_ = value;
+        }
+      } else {
+        authenticationConfigBuilder_.mergeFrom(value);
+      }
+      if (authenticationConfig_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Authentication configuration used to set the default identity for
+     * the workload execution. The config specifies the type of identity
+     * (service account or user) that will be used by workloads to access
+     * resources on the project(s).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AuthenticationConfig authentication_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAuthenticationConfig() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      authenticationConfig_ = null;
+      if (authenticationConfigBuilder_ != null) {
+        authenticationConfigBuilder_.dispose();
+        authenticationConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Authentication configuration used to set the default identity for
+     * the workload execution. The config specifies the type of identity
+     * (service account or user) that will be used by workloads to access
+     * resources on the project(s).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AuthenticationConfig authentication_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.AuthenticationConfig.Builder
+        getAuthenticationConfigBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getAuthenticationConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Authentication configuration used to set the default identity for
+     * the workload execution. The config specifies the type of identity
+     * (service account or user) that will be used by workloads to access
+     * resources on the project(s).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AuthenticationConfig authentication_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.AuthenticationConfigOrBuilder
+        getAuthenticationConfigOrBuilder() {
+      if (authenticationConfigBuilder_ != null) {
+        return authenticationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return authenticationConfig_ == null
+            ? com.google.cloud.dataproc.v1.AuthenticationConfig.getDefaultInstance()
+            : authenticationConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Authentication configuration used to set the default identity for
+     * the workload execution. The config specifies the type of identity
+     * (service account or user) that will be used by workloads to access
+     * resources on the project(s).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.AuthenticationConfig authentication_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.AuthenticationConfig,
+            com.google.cloud.dataproc.v1.AuthenticationConfig.Builder,
+            com.google.cloud.dataproc.v1.AuthenticationConfigOrBuilder>
+        getAuthenticationConfigFieldBuilder() {
+      if (authenticationConfigBuilder_ == null) {
+        authenticationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.AuthenticationConfig,
+                com.google.cloud.dataproc.v1.AuthenticationConfig.Builder,
+                com.google.cloud.dataproc.v1.AuthenticationConfigOrBuilder>(
+                getAuthenticationConfig(), getParentForChildren(), isClean());
+        authenticationConfig_ = null;
+      }
+      return authenticationConfigBuilder_;
     }
 
     @java.lang.Override
