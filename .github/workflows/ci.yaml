@@ -133,6 +133,30 @@ jobs:
       env:
         library_generation_image_tag: 2.53.0
         workspace_name: /workspace
+  java8-compatibility-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+        java-version: 11
+        distribution: temurin
+        cache: maven
+    - name: Install Maven modules to local Maven repository
+      run: |
+        mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip -Denforcer.skip
+    - name: Check Java 8 compatibility for class files
+      shell: bash
+      run: |
+        find . -type f -name "*.class" -path "*/classes/*" -not -path "*/grpc-*" -not -path "*/proto-*/*" -print |\
+          while IFS= read -r class_file; do
+          version=$(javap -v "${class_file}" | grep "major version" | cut -d ' ' -f 5)
+          if [[ "${version}" != "52" ]]; then
+            echo "${class_file} is not compatible with Java 8."
+            exit 1
+          fi
+        done
+        echo "All class files are compatible with Java 8."
 
 # TODO: Uncomment the needed Github Actions
 #  dependencies:
