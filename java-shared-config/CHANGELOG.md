@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.4](https://github.com/googleapis/java-shared-config/compare/v1.14.3...v1.14.4) (2025-02-24)
+
+
+### Dependencies
+
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.10.5 ([#979](https://github.com/googleapis/java-shared-config/issues/979)) ([06c8547](https://github.com/googleapis/java-shared-config/commit/06c854718c39e658cdead0584cfb1cc698143ffd))
+
 ## [1.14.3](https://github.com/googleapis/java-shared-config/compare/v1.14.2...v1.14.3) (2025-02-18)
 
 
