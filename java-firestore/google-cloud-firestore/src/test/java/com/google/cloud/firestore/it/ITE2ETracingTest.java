@@ -34,7 +34,6 @@ import static com.google.cloud.firestore.telemetry.TelemetryConstants.METHOD_NAM
 import static com.google.cloud.firestore.telemetry.TelemetryConstants.METHOD_NAME_TRANSACTION_GET_QUERY;
 import static com.google.cloud.firestore.telemetry.TelemetryConstants.METHOD_NAME_TRANSACTION_ROLLBACK;
 import static com.google.cloud.firestore.telemetry.TelemetryConstants.METHOD_NAME_TRANSACTION_RUN;
-import static io.opentelemetry.semconv.ResourceAttributes.SERVICE_NAME;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -290,8 +289,7 @@ public abstract class ITE2ETracingTest extends ITBaseTest {
   @Before
   public void before() throws Exception {
     // Set up OTel SDK
-    Resource resource =
-        Resource.getDefault().merge(Resource.builder().put(SERVICE_NAME, "Sparky").build());
+    Resource resource = Resource.getDefault();
 
     if (isUsingGlobalOpenTelemetrySDK()) {
       GlobalOpenTelemetry.resetForTest();
