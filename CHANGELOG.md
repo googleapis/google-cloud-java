@@ -1,6 +1,19 @@
 # Changelog
 
 
+## [0.132.4-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.132.3-alpha...v0.132.4-alpha) (2025-02-26)
+
+
+### Bug Fixes
+
+* Fix Appender default flushlevel to be consistent with java-logging ([#1441](https://github.com/googleapis/java-logging-logback/issues/1441)) ([34a9539](https://github.com/googleapis/java-logging-logback/commit/34a95398682235d87145280cd255498baacfd24b))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-logging to v3.21.4 ([#1445](https://github.com/googleapis/java-logging-logback/issues/1445)) ([2f32d9b](https://github.com/googleapis/java-logging-logback/commit/2f32d9bb814a8b648233ca091cd872f935b5dc6a))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.44.0 ([#1444](https://github.com/googleapis/java-logging-logback/issues/1444)) ([fd5204a](https://github.com/googleapis/java-logging-logback/commit/fd5204a32cc85b5513641f627d17c4a0b2fbd177))
+
 ## [0.132.3-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.132.2-alpha...v0.132.3-alpha) (2025-02-13)
 
 
