@@ -452,7 +452,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. DLP will limit its connections to max_connections.
+   * Required. The DLP API will limit its connections to max_connections.
    * Must be 2 or greater.
    * </pre>
    *
@@ -1586,7 +1586,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. DLP will limit its connections to max_connections.
+     * Required. The DLP API will limit its connections to max_connections.
      * Must be 2 or greater.
      * </pre>
      *
@@ -1602,7 +1602,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. DLP will limit its connections to max_connections.
+     * Required. The DLP API will limit its connections to max_connections.
      * Must be 2 or greater.
      * </pre>
      *
@@ -1622,7 +1622,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. DLP will limit its connections to max_connections.
+     * Required. The DLP API will limit its connections to max_connections.
      * Must be 2 or greater.
      * </pre>
      *

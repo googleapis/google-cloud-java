@@ -28,9 +28,12 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.DeployOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest;
 import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelResponse;
+import com.google.cloud.aiplatform.v1beta1.DeployRequest;
+import com.google.cloud.aiplatform.v1beta1.DeployResponse;
 import com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse;
@@ -83,6 +86,14 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPublisherModelsResponse.getDefaultInstance()))
               .build();
+
+  private static final MethodDescriptor<DeployRequest, Operation> deployMethodDescriptor =
+      MethodDescriptor.<DeployRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelGardenService/Deploy")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeployRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
 
   private static final MethodDescriptor<DeployPublisherModelRequest, Operation>
       deployPublisherModelMethodDescriptor =
@@ -146,6 +157,9 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
       listPublisherModelsCallable;
   private final UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsPagedResponse>
       listPublisherModelsPagedCallable;
+  private final UnaryCallable<DeployRequest, Operation> deployCallable;
+  private final OperationCallable<DeployRequest, DeployResponse, DeployOperationMetadata>
+      deployOperationCallable;
   private final UnaryCallable<DeployPublisherModelRequest, Operation> deployPublisherModelCallable;
   private final OperationCallable<
           DeployPublisherModelRequest,
@@ -226,6 +240,16 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<DeployRequest, Operation> deployTransportSettings =
+        GrpcCallSettings.<DeployRequest, Operation>newBuilder()
+            .setMethodDescriptor(deployMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("destination", String.valueOf(request.getDestination()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<DeployPublisherModelRequest, Operation> deployPublisherModelTransportSettings =
         GrpcCallSettings.<DeployPublisherModelRequest, Operation>newBuilder()
             .setMethodDescriptor(deployPublisherModelMethodDescriptor)
@@ -303,6 +327,15 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
             listPublisherModelsTransportSettings,
             settings.listPublisherModelsSettings(),
             clientContext);
+    this.deployCallable =
+        callableFactory.createUnaryCallable(
+            deployTransportSettings, settings.deploySettings(), clientContext);
+    this.deployOperationCallable =
+        callableFactory.createOperationCallable(
+            deployTransportSettings,
+            settings.deployOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deployPublisherModelCallable =
         callableFactory.createUnaryCallable(
             deployPublisherModelTransportSettings,
@@ -358,6 +391,17 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
   public UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsPagedResponse>
       listPublisherModelsPagedCallable() {
     return listPublisherModelsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeployRequest, Operation> deployCallable() {
+    return deployCallable;
+  }
+
+  @Override
+  public OperationCallable<DeployRequest, DeployResponse, DeployOperationMetadata>
+      deployOperationCallable() {
+    return deployOperationCallable;
   }
 
   @Override

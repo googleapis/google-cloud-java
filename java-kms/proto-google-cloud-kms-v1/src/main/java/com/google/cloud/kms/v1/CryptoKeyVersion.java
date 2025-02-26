@@ -502,6 +502,28 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>EXTERNAL_SYMMETRIC_ENCRYPTION = 18;</code>
      */
     EXTERNAL_SYMMETRIC_ENCRYPTION(18),
+    /**
+     *
+     *
+     * <pre>
+     * The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
+     * security level 3. Randomized version.
+     * </pre>
+     *
+     * <code>PQ_SIGN_ML_DSA_65 = 56;</code>
+     */
+    PQ_SIGN_ML_DSA_65(56),
+    /**
+     *
+     *
+     * <pre>
+     * The post-quantum stateless hash-based digital signature algorithm, at
+     * security level 1. Randomized version.
+     * </pre>
+     *
+     * <code>PQ_SIGN_SLH_DSA_SHA2_128S = 57;</code>
+     */
+    PQ_SIGN_SLH_DSA_SHA2_128S(57),
     UNRECOGNIZED(-1),
     ;
 
@@ -872,6 +894,28 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>EXTERNAL_SYMMETRIC_ENCRYPTION = 18;</code>
      */
     public static final int EXTERNAL_SYMMETRIC_ENCRYPTION_VALUE = 18;
+    /**
+     *
+     *
+     * <pre>
+     * The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
+     * security level 3. Randomized version.
+     * </pre>
+     *
+     * <code>PQ_SIGN_ML_DSA_65 = 56;</code>
+     */
+    public static final int PQ_SIGN_ML_DSA_65_VALUE = 56;
+    /**
+     *
+     *
+     * <pre>
+     * The post-quantum stateless hash-based digital signature algorithm, at
+     * security level 1. Randomized version.
+     * </pre>
+     *
+     * <code>PQ_SIGN_SLH_DSA_SHA2_128S = 57;</code>
+     */
+    public static final int PQ_SIGN_SLH_DSA_SHA2_128S_VALUE = 57;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -969,6 +1013,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           return HMAC_SHA224;
         case 18:
           return EXTERNAL_SYMMETRIC_ENCRYPTION;
+        case 56:
+          return PQ_SIGN_ML_DSA_65;
+        case 57:
+          return PQ_SIGN_SLH_DSA_SHA2_128S;
         default:
           return null;
       }

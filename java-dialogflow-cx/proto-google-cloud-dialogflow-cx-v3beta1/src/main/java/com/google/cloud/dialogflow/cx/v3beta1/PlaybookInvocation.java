@@ -40,6 +40,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
 
   private PlaybookInvocation() {
     playbook_ = "";
+    displayName_ = "";
     playbookState_ = 0;
   }
 
@@ -118,6 +119,57 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       playbook_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The display name of the playbook.
+   * </pre>
+   *
+   * <code>string display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The display name of the playbook.
+   * </pre>
+   *
+   * <code>string display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -306,6 +358,9 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
             .getNumber()) {
       output.writeEnum(4, playbookState_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, displayName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -329,6 +384,9 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, playbookState_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, displayName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -346,6 +404,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
         (com.google.cloud.dialogflow.cx.v3beta1.PlaybookInvocation) obj;
 
     if (!getPlaybook().equals(other.getPlaybook())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (hasPlaybookInput() != other.hasPlaybookInput()) return false;
     if (hasPlaybookInput()) {
       if (!getPlaybookInput().equals(other.getPlaybookInput())) return false;
@@ -368,6 +427,8 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PLAYBOOK_FIELD_NUMBER;
     hash = (53 * hash) + getPlaybook().hashCode();
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
     if (hasPlaybookInput()) {
       hash = (37 * hash) + PLAYBOOK_INPUT_FIELD_NUMBER;
       hash = (53 * hash) + getPlaybookInput().hashCode();
@@ -529,6 +590,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
       super.clear();
       bitField0_ = 0;
       playbook_ = "";
+      displayName_ = "";
       playbookInput_ = null;
       if (playbookInputBuilder_ != null) {
         playbookInputBuilder_.dispose();
@@ -579,18 +641,21 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.playbook_ = playbook_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.playbookInput_ =
             playbookInputBuilder_ == null ? playbookInput_ : playbookInputBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.playbookOutput_ =
             playbookOutputBuilder_ == null ? playbookOutput_ : playbookOutputBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.playbookState_ = playbookState_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -647,6 +712,11 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (other.hasPlaybookInput()) {
         mergePlaybookInput(other.getPlaybookInput());
       }
@@ -691,21 +761,27 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
             case 18:
               {
                 input.readMessage(getPlaybookInputFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getPlaybookOutputFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 32:
               {
                 playbookState_ = input.readEnum();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
+            case 42:
+              {
+                displayName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -851,6 +927,112 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private java.lang.Object displayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The display name of the playbook.
+     * </pre>
+     *
+     * <code>string display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The display name of the playbook.
+     * </pre>
+     *
+     * <code>string display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The display name of the playbook.
+     * </pre>
+     *
+     * <code>string display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      displayName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The display name of the playbook.
+     * </pre>
+     *
+     * <code>string display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+      displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The display name of the playbook.
+     * </pre>
+     *
+     * <code>string display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      displayName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.dialogflow.cx.v3beta1.PlaybookInput playbookInput_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.cx.v3beta1.PlaybookInput,
@@ -871,7 +1053,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
      * @return Whether the playbookInput field is set.
      */
     public boolean hasPlaybookInput() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -915,7 +1097,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
       } else {
         playbookInputBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -937,7 +1119,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
       } else {
         playbookInputBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -954,7 +1136,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergePlaybookInput(com.google.cloud.dialogflow.cx.v3beta1.PlaybookInput value) {
       if (playbookInputBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && playbookInput_ != null
             && playbookInput_
                 != com.google.cloud.dialogflow.cx.v3beta1.PlaybookInput.getDefaultInstance()) {
@@ -966,7 +1148,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
         playbookInputBuilder_.mergeFrom(value);
       }
       if (playbookInput_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -983,7 +1165,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearPlaybookInput() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       playbookInput_ = null;
       if (playbookInputBuilder_ != null) {
         playbookInputBuilder_.dispose();
@@ -1004,7 +1186,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.PlaybookInput.Builder getPlaybookInputBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPlaybookInputFieldBuilder().getBuilder();
     }
@@ -1077,7 +1259,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
      * @return Whether the playbookOutput field is set.
      */
     public boolean hasPlaybookOutput() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1121,7 +1303,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
       } else {
         playbookOutputBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1143,7 +1325,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
       } else {
         playbookOutputBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1161,7 +1343,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
     public Builder mergePlaybookOutput(
         com.google.cloud.dialogflow.cx.v3beta1.PlaybookOutput value) {
       if (playbookOutputBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && playbookOutput_ != null
             && playbookOutput_
                 != com.google.cloud.dialogflow.cx.v3beta1.PlaybookOutput.getDefaultInstance()) {
@@ -1173,7 +1355,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
         playbookOutputBuilder_.mergeFrom(value);
       }
       if (playbookOutput_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1190,7 +1372,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearPlaybookOutput() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       playbookOutput_ = null;
       if (playbookOutputBuilder_ != null) {
         playbookOutputBuilder_.dispose();
@@ -1212,7 +1394,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.dialogflow.cx.v3beta1.PlaybookOutput.Builder
         getPlaybookOutputBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getPlaybookOutputFieldBuilder().getBuilder();
     }
@@ -1299,7 +1481,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
      */
     public Builder setPlaybookStateValue(int value) {
       playbookState_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1342,7 +1524,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       playbookState_ = value.getNumber();
       onChanged();
       return this;
@@ -1361,7 +1543,7 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPlaybookState() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       playbookState_ = 0;
       onChanged();
       return this;

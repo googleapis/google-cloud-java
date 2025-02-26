@@ -620,6 +620,10 @@ public class SecurityCenterClientHttpJsonTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setDisk(Disk.newBuilder().build())
+            .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
+            .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -716,6 +720,10 @@ public class SecurityCenterClientHttpJsonTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setDisk(Disk.newBuilder().build())
+            .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
+            .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4275,6 +4283,10 @@ public class SecurityCenterClientHttpJsonTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setDisk(Disk.newBuilder().build())
+            .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
+            .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4371,6 +4383,10 @@ public class SecurityCenterClientHttpJsonTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setDisk(Disk.newBuilder().build())
+            .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
+            .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4563,6 +4579,10 @@ public class SecurityCenterClientHttpJsonTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setDisk(Disk.newBuilder().build())
+            .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
+            .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4659,6 +4679,10 @@ public class SecurityCenterClientHttpJsonTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setDisk(Disk.newBuilder().build())
+            .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
+            .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5007,6 +5031,10 @@ public class SecurityCenterClientHttpJsonTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setDisk(Disk.newBuilder().build())
+            .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
+            .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5061,6 +5089,10 @@ public class SecurityCenterClientHttpJsonTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setDisk(Disk.newBuilder().build())
+            .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
+            .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -5141,6 +5173,10 @@ public class SecurityCenterClientHttpJsonTest {
               .setNotebook(Notebook.newBuilder().build())
               .setToxicCombination(ToxicCombination.newBuilder().build())
               .addAllGroupMemberships(new ArrayList<GroupMembership>())
+              .setDisk(Disk.newBuilder().build())
+              .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
+              .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+              .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateFinding(finding, updateMask);

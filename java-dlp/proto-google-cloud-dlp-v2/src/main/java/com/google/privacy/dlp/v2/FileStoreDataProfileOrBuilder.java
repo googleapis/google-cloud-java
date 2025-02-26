@@ -246,8 +246,8 @@ public interface FileStoreDataProfileOrBuilder
    *
    *
    * <pre>
-   * The location type of the bucket (region, dual-region, multi-region, etc).
-   * If dual-region, expect data_storage_locations to be populated.
+   * The location type of the file store (region, dual-region, multi-region,
+   * etc). If dual-region, expect data_storage_locations to be populated.
    * </pre>
    *
    * <code>string location_type = 20;</code>
@@ -259,8 +259,8 @@ public interface FileStoreDataProfileOrBuilder
    *
    *
    * <pre>
-   * The location type of the bucket (region, dual-region, multi-region, etc).
-   * If dual-region, expect data_storage_locations to be populated.
+   * The location type of the file store (region, dual-region, multi-region,
+   * etc). If dual-region, expect data_storage_locations to be populated.
    * </pre>
    *
    * <code>string location_type = 20;</code>
@@ -277,6 +277,8 @@ public interface FileStoreDataProfileOrBuilder
    *
    * * Cloud Storage: `gs://{bucket}`
    * * Amazon S3: `s3://{bucket}`
+   * * Vertex AI dataset:
+   * `projects/{project_number}/locations/{location}/datasets/{dataset_id}`
    * </pre>
    *
    * <code>string file_store_path = 6;</code>
@@ -292,6 +294,8 @@ public interface FileStoreDataProfileOrBuilder
    *
    * * Cloud Storage: `gs://{bucket}`
    * * Amazon S3: `s3://{bucket}`
+   * * Vertex AI dataset:
+   * `projects/{project_number}/locations/{location}/datasets/{dataset_id}`
    * </pre>
    *
    * <code>string file_store_path = 6;</code>
@@ -900,4 +904,56 @@ public interface FileStoreDataProfileOrBuilder
    * @return The fileStoreIsEmpty.
    */
   boolean getFileStoreIsEmpty();
+
+  /**
+   *
+   *
+   * <pre>
+   * Resources related to this profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+   */
+  java.util.List<com.google.privacy.dlp.v2.RelatedResource> getRelatedResourcesList();
+  /**
+   *
+   *
+   * <pre>
+   * Resources related to this profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+   */
+  com.google.privacy.dlp.v2.RelatedResource getRelatedResources(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Resources related to this profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+   */
+  int getRelatedResourcesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Resources related to this profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+   */
+  java.util.List<? extends com.google.privacy.dlp.v2.RelatedResourceOrBuilder>
+      getRelatedResourcesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Resources related to this profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+   */
+  com.google.privacy.dlp.v2.RelatedResourceOrBuilder getRelatedResourcesOrBuilder(int index);
 }

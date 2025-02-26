@@ -67,13 +67,7 @@ public interface ReservationOrBuilder
    * Queries using this reservation might use more slots during runtime if
    * ignore_idle_slots is set to false, or autoscaling is enabled.
    *
-   * If edition is EDITION_UNSPECIFIED and total slot_capacity of the
-   * reservation and its siblings exceeds the total slot_count of all capacity
-   * commitments, the request will fail with
-   * `google.rpc.Code.RESOURCE_EXHAUSTED`.
-   *
-   * If edition is any value but EDITION_UNSPECIFIED, then the above requirement
-   * is not needed. The total slot_capacity of the reservation and its siblings
+   * The total slot_capacity of the reservation and its siblings
    * may exceed the total slot_count of capacity commitments. In that case, the
    * exceeding slots will be charged with the autoscale SKU. You can increase
    * the number of baseline slots in a reservation every few minutes. If you
@@ -289,13 +283,13 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Optional. The current location of the reservation's primary replica. This
-   * field is only set for reservations using the managed disaster recovery
+   * Output only. The current location of the reservation's primary replica.
+   * This field is only set for reservations using the managed disaster recovery
    * feature.
    * </pre>
    *
    * <code>
-   * string primary_location = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string primary_location = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The primaryLocation.
@@ -305,13 +299,13 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Optional. The current location of the reservation's primary replica. This
-   * field is only set for reservations using the managed disaster recovery
+   * Output only. The current location of the reservation's primary replica.
+   * This field is only set for reservations using the managed disaster recovery
    * feature.
    * </pre>
    *
    * <code>
-   * string primary_location = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string primary_location = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for primaryLocation.
@@ -359,13 +353,13 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Optional. The location where the reservation was originally created. This
-   * is set only during the failover reservation's creation. All billing charges
-   * for the failover reservation will be applied to this location.
+   * Output only. The location where the reservation was originally created.
+   * This is set only during the failover reservation's creation. All billing
+   * charges for the failover reservation will be applied to this location.
    * </pre>
    *
    * <code>
-   * string original_primary_location = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string original_primary_location = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The originalPrimaryLocation.
@@ -375,16 +369,79 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Optional. The location where the reservation was originally created. This
-   * is set only during the failover reservation's creation. All billing charges
-   * for the failover reservation will be applied to this location.
+   * Output only. The location where the reservation was originally created.
+   * This is set only during the failover reservation's creation. All billing
+   * charges for the failover reservation will be applied to this location.
    * </pre>
    *
    * <code>
-   * string original_primary_location = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string original_primary_location = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for originalPrimaryLocation.
    */
   com.google.protobuf.ByteString getOriginalPrimaryLocationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Disaster Recovery(DR) replication status of the
+   * reservation. This is only available for the primary replicas of DR/failover
+   * reservations and provides information about the both the staleness of the
+   * secondary and the last error encountered while trying to replicate changes
+   * from the primary to the secondary. If this field is blank, it means that
+   * the reservation is either not a DR reservation or the reservation is a DR
+   * secondary or that any replication operations on the reservation have
+   * succeeded.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus replication_status = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the replicationStatus field is set.
+   */
+  boolean hasReplicationStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Disaster Recovery(DR) replication status of the
+   * reservation. This is only available for the primary replicas of DR/failover
+   * reservations and provides information about the both the staleness of the
+   * secondary and the last error encountered while trying to replicate changes
+   * from the primary to the secondary. If this field is blank, it means that
+   * the reservation is either not a DR reservation or the reservation is a DR
+   * secondary or that any replication operations on the reservation have
+   * succeeded.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus replication_status = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The replicationStatus.
+   */
+  com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus getReplicationStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Disaster Recovery(DR) replication status of the
+   * reservation. This is only available for the primary replicas of DR/failover
+   * reservations and provides information about the both the staleness of the
+   * secondary and the last error encountered while trying to replicate changes
+   * from the primary to the secondary. If this field is blank, it means that
+   * the reservation is either not a DR reservation or the reservation is a DR
+   * secondary or that any replication operations on the reservation have
+   * succeeded.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus replication_status = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatusOrBuilder
+      getReplicationStatusOrBuilder();
 }

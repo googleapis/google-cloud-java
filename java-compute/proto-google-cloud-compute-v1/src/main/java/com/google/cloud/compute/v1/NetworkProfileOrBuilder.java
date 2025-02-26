@@ -345,36 +345,18 @@ public interface NetworkProfileOrBuilder
   com.google.protobuf.ByteString getSelfLinkWithIdBytes();
 
   /**
-   *
-   *
-   * <pre>
-   * [Output Only] Zone to which the network is restricted.
-   * </pre>
-   *
    * <code>optional string zone = 3744684;</code>
    *
    * @return Whether the zone field is set.
    */
   boolean hasZone();
   /**
-   *
-   *
-   * <pre>
-   * [Output Only] Zone to which the network is restricted.
-   * </pre>
-   *
    * <code>optional string zone = 3744684;</code>
    *
    * @return The zone.
    */
   java.lang.String getZone();
   /**
-   *
-   *
-   * <pre>
-   * [Output Only] Zone to which the network is restricted.
-   * </pre>
-   *
    * <code>optional string zone = 3744684;</code>
    *
    * @return The bytes for zone.

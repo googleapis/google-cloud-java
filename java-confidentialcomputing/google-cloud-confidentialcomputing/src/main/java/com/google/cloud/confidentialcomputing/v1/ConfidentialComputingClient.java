@@ -386,6 +386,7 @@ public class ConfidentialComputingClient implements BackgroundResource {
    *           .setTpmAttestation(TpmAttestation.newBuilder().build())
    *           .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
    *           .setTokenOptions(TokenOptions.newBuilder().build())
+   *           .setAttester("attester542920370")
    *           .build();
    *   VerifyAttestationResponse response = confidentialComputingClient.verifyAttestation(request);
    * }
@@ -419,6 +420,7 @@ public class ConfidentialComputingClient implements BackgroundResource {
    *           .setTpmAttestation(TpmAttestation.newBuilder().build())
    *           .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
    *           .setTokenOptions(TokenOptions.newBuilder().build())
+   *           .setAttester("attester542920370")
    *           .build();
    *   ApiFuture<VerifyAttestationResponse> future =
    *       confidentialComputingClient.verifyAttestationCallable().futureCall(request);

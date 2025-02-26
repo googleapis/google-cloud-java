@@ -168,6 +168,31 @@ public interface InfoTypeDescriptionOrBuilder
    *
    *
    * <pre>
+   * A sample that is a true positive for this infoType.
+   * </pre>
+   *
+   * <code>string example = 8;</code>
+   *
+   * @return The example.
+   */
+  java.lang.String getExample();
+  /**
+   *
+   *
+   * <pre>
+   * A sample that is a true positive for this infoType.
+   * </pre>
+   *
+   * <code>string example = 8;</code>
+   *
+   * @return The bytes for example.
+   */
+  com.google.protobuf.ByteString getExampleBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * A list of available versions for the infotype.
    * </pre>
    *

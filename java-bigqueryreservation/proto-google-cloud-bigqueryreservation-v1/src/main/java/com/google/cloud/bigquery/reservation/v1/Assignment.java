@@ -129,6 +129,17 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * <code>BACKGROUND = 4;</code>
      */
     BACKGROUND(4),
+    /**
+     *
+     *
+     * <pre>
+     * Continuous SQL jobs will use this reservation. Reservations with
+     * continuous assignments cannot be mixed with non-continuous assignments.
+     * </pre>
+     *
+     * <code>CONTINUOUS = 6;</code>
+     */
+    CONTINUOUS(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -184,6 +195,17 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * <code>BACKGROUND = 4;</code>
      */
     public static final int BACKGROUND_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Continuous SQL jobs will use this reservation. Reservations with
+     * continuous assignments cannot be mixed with non-continuous assignments.
+     * </pre>
+     *
+     * <code>CONTINUOUS = 6;</code>
+     */
+    public static final int CONTINUOUS_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -219,6 +241,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
           return ML_EXTERNAL;
         case 4:
           return BACKGROUND;
+        case 6:
+          return CONTINUOUS;
         default:
           return null;
       }
@@ -625,6 +649,31 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int ENABLE_GEMINI_IN_BIGQUERY_FIELD_NUMBER = 10;
+  private boolean enableGeminiInBigquery_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field controls if "Gemini in BigQuery"
+   * (https://cloud.google.com/gemini/docs/bigquery/overview) features should be
+   * enabled for this reservation assignment, which is not on by default.
+   * "Gemini in BigQuery" has a distinct compliance posture from BigQuery.  If
+   * this field is set to true, the assignment job type is QUERY, and
+   * the parent reservation edition is ENTERPRISE_PLUS, then the assignment will
+   * give the grantee project/organization access to "Gemini in BigQuery"
+   * features.
+   * </pre>
+   *
+   * <code>bool enable_gemini_in_bigquery = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableGeminiInBigquery.
+   */
+  @java.lang.Override
+  public boolean getEnableGeminiInBigquery() {
+    return enableGeminiInBigquery_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -655,6 +704,9 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(6, state_);
     }
+    if (enableGeminiInBigquery_ != false) {
+      output.writeBool(10, enableGeminiInBigquery_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -680,6 +732,9 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, state_);
     }
+    if (enableGeminiInBigquery_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, enableGeminiInBigquery_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -700,6 +755,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
     if (!getAssignee().equals(other.getAssignee())) return false;
     if (jobType_ != other.jobType_) return false;
     if (state_ != other.state_) return false;
+    if (getEnableGeminiInBigquery() != other.getEnableGeminiInBigquery()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -719,6 +775,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + jobType_;
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    hash = (37 * hash) + ENABLE_GEMINI_IN_BIGQUERY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableGeminiInBigquery());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -863,6 +921,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
       assignee_ = "";
       jobType_ = 0;
       state_ = 0;
+      enableGeminiInBigquery_ = false;
       return this;
     }
 
@@ -910,6 +969,9 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.enableGeminiInBigquery_ = enableGeminiInBigquery_;
       }
     }
 
@@ -975,6 +1037,9 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
+      if (other.getEnableGeminiInBigquery() != false) {
+        setEnableGeminiInBigquery(other.getEnableGeminiInBigquery());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1025,6 +1090,12 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 48
+            case 80:
+              {
+                enableGeminiInBigquery_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1466,6 +1537,80 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
     public Builder clearState() {
       bitField0_ = (bitField0_ & ~0x00000008);
       state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableGeminiInBigquery_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field controls if "Gemini in BigQuery"
+     * (https://cloud.google.com/gemini/docs/bigquery/overview) features should be
+     * enabled for this reservation assignment, which is not on by default.
+     * "Gemini in BigQuery" has a distinct compliance posture from BigQuery.  If
+     * this field is set to true, the assignment job type is QUERY, and
+     * the parent reservation edition is ENTERPRISE_PLUS, then the assignment will
+     * give the grantee project/organization access to "Gemini in BigQuery"
+     * features.
+     * </pre>
+     *
+     * <code>bool enable_gemini_in_bigquery = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableGeminiInBigquery.
+     */
+    @java.lang.Override
+    public boolean getEnableGeminiInBigquery() {
+      return enableGeminiInBigquery_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field controls if "Gemini in BigQuery"
+     * (https://cloud.google.com/gemini/docs/bigquery/overview) features should be
+     * enabled for this reservation assignment, which is not on by default.
+     * "Gemini in BigQuery" has a distinct compliance posture from BigQuery.  If
+     * this field is set to true, the assignment job type is QUERY, and
+     * the parent reservation edition is ENTERPRISE_PLUS, then the assignment will
+     * give the grantee project/organization access to "Gemini in BigQuery"
+     * features.
+     * </pre>
+     *
+     * <code>bool enable_gemini_in_bigquery = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableGeminiInBigquery to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableGeminiInBigquery(boolean value) {
+
+      enableGeminiInBigquery_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field controls if "Gemini in BigQuery"
+     * (https://cloud.google.com/gemini/docs/bigquery/overview) features should be
+     * enabled for this reservation assignment, which is not on by default.
+     * "Gemini in BigQuery" has a distinct compliance posture from BigQuery.  If
+     * this field is set to true, the assignment job type is QUERY, and
+     * the parent reservation edition is ENTERPRISE_PLUS, then the assignment will
+     * give the grantee project/organization access to "Gemini in BigQuery"
+     * features.
+     * </pre>
+     *
+     * <code>bool enable_gemini_in_bigquery = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableGeminiInBigquery() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      enableGeminiInBigquery_ = false;
       onChanged();
       return this;
     }

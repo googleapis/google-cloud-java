@@ -597,6 +597,10 @@ public class SecurityCenterClientTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setDisk(Disk.newBuilder().build())
+            .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
+            .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -689,6 +693,10 @@ public class SecurityCenterClientTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setDisk(Disk.newBuilder().build())
+            .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
+            .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3873,6 +3881,10 @@ public class SecurityCenterClientTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setDisk(Disk.newBuilder().build())
+            .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
+            .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3964,6 +3976,10 @@ public class SecurityCenterClientTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setDisk(Disk.newBuilder().build())
+            .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
+            .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4141,6 +4157,10 @@ public class SecurityCenterClientTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setDisk(Disk.newBuilder().build())
+            .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
+            .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4232,6 +4252,10 @@ public class SecurityCenterClientTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setDisk(Disk.newBuilder().build())
+            .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
+            .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4503,6 +4527,10 @@ public class SecurityCenterClientTest {
             .setNotebook(Notebook.newBuilder().build())
             .setToxicCombination(ToxicCombination.newBuilder().build())
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
+            .setDisk(Disk.newBuilder().build())
+            .addAllDataAccessEvents(new ArrayList<DataAccessEvent>())
+            .addAllDataFlowEvents(new ArrayList<DataFlowEvent>())
+            .addAllDataRetentionDeletionEvents(new ArrayList<DataRetentionDeletionEvent>())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 

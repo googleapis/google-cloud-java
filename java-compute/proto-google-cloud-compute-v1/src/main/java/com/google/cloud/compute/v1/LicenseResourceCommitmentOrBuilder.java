@@ -28,7 +28,7 @@ public interface LicenseResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * The number of licenses purchased.
+   * The number of licenses you plan to purchase.
    * </pre>
    *
    * <code>optional int64 amount = 196759640;</code>
@@ -40,7 +40,7 @@ public interface LicenseResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * The number of licenses purchased.
+   * The number of licenses you plan to purchase.
    * </pre>
    *
    * <code>optional int64 amount = 196759640;</code>
@@ -53,7 +53,7 @@ public interface LicenseResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * Specifies the core range of the instance for which this license applies.
+   * The number of cores per license.
    * </pre>
    *
    * <code>optional string cores_per_license = 32482324;</code>
@@ -65,7 +65,7 @@ public interface LicenseResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * Specifies the core range of the instance for which this license applies.
+   * The number of cores per license.
    * </pre>
    *
    * <code>optional string cores_per_license = 32482324;</code>
@@ -77,7 +77,7 @@ public interface LicenseResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * Specifies the core range of the instance for which this license applies.
+   * The number of cores per license.
    * </pre>
    *
    * <code>optional string cores_per_license = 32482324;</code>
@@ -90,7 +90,7 @@ public interface LicenseResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * Any applicable license URI.
+   * The applicable license URI.
    * </pre>
    *
    * <code>optional string license = 166757441;</code>
@@ -102,7 +102,7 @@ public interface LicenseResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * Any applicable license URI.
+   * The applicable license URI.
    * </pre>
    *
    * <code>optional string license = 166757441;</code>
@@ -114,7 +114,7 @@ public interface LicenseResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * Any applicable license URI.
+   * The applicable license URI.
    * </pre>
    *
    * <code>optional string license = 166757441;</code>

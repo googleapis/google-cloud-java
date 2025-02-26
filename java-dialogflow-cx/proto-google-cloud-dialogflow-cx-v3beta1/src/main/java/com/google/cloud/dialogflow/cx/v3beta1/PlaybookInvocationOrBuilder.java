@@ -61,6 +61,31 @@ public interface PlaybookInvocationOrBuilder
    *
    *
    * <pre>
+   * Output only. The display name of the playbook.
+   * </pre>
+   *
+   * <code>string display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The display name of the playbook.
+   * </pre>
+   *
+   * <code>string display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Input of the child playbook invocation.
    * </pre>
    *

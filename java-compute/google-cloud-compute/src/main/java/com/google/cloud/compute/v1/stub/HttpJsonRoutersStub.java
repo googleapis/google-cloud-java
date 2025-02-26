@@ -18,7 +18,9 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RoutersClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.GetNatMappingInfoPagedResponse;
+import static com.google.cloud.compute.v1.RoutersClient.ListBgpRoutesPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.RoutersClient.ListRoutePoliciesPagedResponse;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -35,23 +37,32 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListRoutersRequest;
+import com.google.cloud.compute.v1.DeleteRoutePolicyRouterRequest;
 import com.google.cloud.compute.v1.DeleteRouterRequest;
 import com.google.cloud.compute.v1.GetNatIpInfoRouterRequest;
 import com.google.cloud.compute.v1.GetNatMappingInfoRoutersRequest;
+import com.google.cloud.compute.v1.GetRoutePolicyRouterRequest;
 import com.google.cloud.compute.v1.GetRouterRequest;
 import com.google.cloud.compute.v1.GetRouterStatusRouterRequest;
 import com.google.cloud.compute.v1.InsertRouterRequest;
+import com.google.cloud.compute.v1.ListBgpRoutesRoutersRequest;
+import com.google.cloud.compute.v1.ListRoutePoliciesRoutersRequest;
 import com.google.cloud.compute.v1.ListRoutersRequest;
 import com.google.cloud.compute.v1.NatIpInfoResponse;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
+import com.google.cloud.compute.v1.PatchRoutePolicyRouterRequest;
 import com.google.cloud.compute.v1.PatchRouterRequest;
 import com.google.cloud.compute.v1.PreviewRouterRequest;
 import com.google.cloud.compute.v1.Router;
 import com.google.cloud.compute.v1.RouterAggregatedList;
 import com.google.cloud.compute.v1.RouterList;
 import com.google.cloud.compute.v1.RouterStatusResponse;
+import com.google.cloud.compute.v1.RoutersGetRoutePolicyResponse;
+import com.google.cloud.compute.v1.RoutersListBgpRoutes;
+import com.google.cloud.compute.v1.RoutersListRoutePolicies;
 import com.google.cloud.compute.v1.RoutersPreviewResponse;
+import com.google.cloud.compute.v1.UpdateRoutePolicyRouterRequest;
 import com.google.cloud.compute.v1.UpdateRouterRequest;
 import com.google.cloud.compute.v1.VmEndpointNatMappingsList;
 import com.google.protobuf.TypeRegistry;
@@ -186,6 +197,60 @@ public class HttpJsonRoutersStub extends RoutersStub {
               })
           .build();
 
+  private static final ApiMethodDescriptor<DeleteRoutePolicyRouterRequest, Operation>
+      deleteRoutePolicyMethodDescriptor =
+          ApiMethodDescriptor.<DeleteRoutePolicyRouterRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Routers/DeleteRoutePolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteRoutePolicyRouterRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/routers/{router}/deleteRoutePolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRoutePolicyRouterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "router", request.getRouter());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRoutePolicyRouterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasPolicy()) {
+                              serializer.putQueryParam(fields, "policy", request.getPolicy());
+                            }
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteRoutePolicyRouterRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<GetRouterRequest, Router> getMethodDescriptor =
       ApiMethodDescriptor.<GetRouterRequest, Router>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Routers/Get")
@@ -313,6 +378,46 @@ public class HttpJsonRoutersStub extends RoutersStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<VmEndpointNatMappingsList>newBuilder()
                       .setDefaultInstance(VmEndpointNatMappingsList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetRoutePolicyRouterRequest, RoutersGetRoutePolicyResponse>
+      getRoutePolicyMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetRoutePolicyRouterRequest, RoutersGetRoutePolicyResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Routers/GetRoutePolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetRoutePolicyRouterRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/routers/{router}/getRoutePolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRoutePolicyRouterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "router", request.getRouter());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRoutePolicyRouterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasPolicy()) {
+                              serializer.putQueryParam(fields, "policy", request.getPolicy());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RoutersGetRoutePolicyResponse>newBuilder()
+                      .setDefaultInstance(RoutersGetRoutePolicyResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -453,6 +558,134 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes>
+      listBgpRoutesMethodDescriptor =
+          ApiMethodDescriptor.<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Routers/ListBgpRoutes")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListBgpRoutesRoutersRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/routers/{router}/listBgpRoutes",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBgpRoutesRoutersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "router", request.getRouter());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBgpRoutesRoutersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasAddressFamily()) {
+                              serializer.putQueryParam(
+                                  fields, "addressFamily", request.getAddressFamily());
+                            }
+                            if (request.hasDestinationPrefix()) {
+                              serializer.putQueryParam(
+                                  fields, "destinationPrefix", request.getDestinationPrefix());
+                            }
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
+                            }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasPeer()) {
+                              serializer.putQueryParam(fields, "peer", request.getPeer());
+                            }
+                            if (request.hasPolicyApplied()) {
+                              serializer.putQueryParam(
+                                  fields, "policyApplied", request.getPolicyApplied());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            if (request.hasRouteType()) {
+                              serializer.putQueryParam(fields, "routeType", request.getRouteType());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RoutersListBgpRoutes>newBuilder()
+                      .setDefaultInstance(RoutersListBgpRoutes.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies>
+      listRoutePoliciesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Routers/ListRoutePolicies")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListRoutePoliciesRoutersRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/routers/{router}/listRoutePolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRoutePoliciesRoutersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "router", request.getRouter());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRoutePoliciesRoutersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
+                            }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RoutersListRoutePolicies>newBuilder()
+                      .setDefaultInstance(RoutersListRoutePolicies.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<PatchRouterRequest, Operation> patchMethodDescriptor =
       ApiMethodDescriptor.<PatchRouterRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Routers/Patch")
@@ -505,6 +738,63 @@ public class HttpJsonRoutersStub extends RoutersStub {
                     .build();
               })
           .build();
+
+  private static final ApiMethodDescriptor<PatchRoutePolicyRouterRequest, Operation>
+      patchRoutePolicyMethodDescriptor =
+          ApiMethodDescriptor.<PatchRoutePolicyRouterRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Routers/PatchRoutePolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PatchRoutePolicyRouterRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/routers/{router}/patchRoutePolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchRoutePolicyRouterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "router", request.getRouter());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchRoutePolicyRouterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "routePolicyResource",
+                                      request.getRoutePolicyResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PatchRoutePolicyRouterRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
 
   private static final ApiMethodDescriptor<PreviewRouterRequest, RoutersPreviewResponse>
       previewMethodDescriptor =
@@ -597,6 +887,63 @@ public class HttpJsonRoutersStub extends RoutersStub {
               })
           .build();
 
+  private static final ApiMethodDescriptor<UpdateRoutePolicyRouterRequest, Operation>
+      updateRoutePolicyMethodDescriptor =
+          ApiMethodDescriptor.<UpdateRoutePolicyRouterRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Routers/UpdateRoutePolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateRoutePolicyRouterRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/routers/{router}/updateRoutePolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateRoutePolicyRouterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "router", request.getRouter());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateRoutePolicyRouterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "routePolicyResource",
+                                      request.getRoutePolicyResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateRoutePolicyRouterRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private final UnaryCallable<AggregatedListRoutersRequest, RouterAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListRoutersRequest, AggregatedListPagedResponse>
@@ -604,12 +951,17 @@ public class HttpJsonRoutersStub extends RoutersStub {
   private final UnaryCallable<DeleteRouterRequest, Operation> deleteCallable;
   private final OperationCallable<DeleteRouterRequest, Operation, Operation>
       deleteOperationCallable;
+  private final UnaryCallable<DeleteRoutePolicyRouterRequest, Operation> deleteRoutePolicyCallable;
+  private final OperationCallable<DeleteRoutePolicyRouterRequest, Operation, Operation>
+      deleteRoutePolicyOperationCallable;
   private final UnaryCallable<GetRouterRequest, Router> getCallable;
   private final UnaryCallable<GetNatIpInfoRouterRequest, NatIpInfoResponse> getNatIpInfoCallable;
   private final UnaryCallable<GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList>
       getNatMappingInfoCallable;
   private final UnaryCallable<GetNatMappingInfoRoutersRequest, GetNatMappingInfoPagedResponse>
       getNatMappingInfoPagedCallable;
+  private final UnaryCallable<GetRoutePolicyRouterRequest, RoutersGetRoutePolicyResponse>
+      getRoutePolicyCallable;
   private final UnaryCallable<GetRouterStatusRouterRequest, RouterStatusResponse>
       getRouterStatusCallable;
   private final UnaryCallable<InsertRouterRequest, Operation> insertCallable;
@@ -617,12 +969,26 @@ public class HttpJsonRoutersStub extends RoutersStub {
       insertOperationCallable;
   private final UnaryCallable<ListRoutersRequest, RouterList> listCallable;
   private final UnaryCallable<ListRoutersRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes>
+      listBgpRoutesCallable;
+  private final UnaryCallable<ListBgpRoutesRoutersRequest, ListBgpRoutesPagedResponse>
+      listBgpRoutesPagedCallable;
+  private final UnaryCallable<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies>
+      listRoutePoliciesCallable;
+  private final UnaryCallable<ListRoutePoliciesRoutersRequest, ListRoutePoliciesPagedResponse>
+      listRoutePoliciesPagedCallable;
   private final UnaryCallable<PatchRouterRequest, Operation> patchCallable;
   private final OperationCallable<PatchRouterRequest, Operation, Operation> patchOperationCallable;
+  private final UnaryCallable<PatchRoutePolicyRouterRequest, Operation> patchRoutePolicyCallable;
+  private final OperationCallable<PatchRoutePolicyRouterRequest, Operation, Operation>
+      patchRoutePolicyOperationCallable;
   private final UnaryCallable<PreviewRouterRequest, RoutersPreviewResponse> previewCallable;
   private final UnaryCallable<UpdateRouterRequest, Operation> updateCallable;
   private final OperationCallable<UpdateRouterRequest, Operation, Operation>
       updateOperationCallable;
+  private final UnaryCallable<UpdateRoutePolicyRouterRequest, Operation> updateRoutePolicyCallable;
+  private final OperationCallable<UpdateRoutePolicyRouterRequest, Operation, Operation>
+      updateRoutePolicyOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
@@ -691,6 +1057,20 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<DeleteRoutePolicyRouterRequest, Operation>
+        deleteRoutePolicyTransportSettings =
+            HttpJsonCallSettings.<DeleteRoutePolicyRouterRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteRoutePolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("router", String.valueOf(request.getRouter()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<GetRouterRequest, Router> getTransportSettings =
         HttpJsonCallSettings.<GetRouterRequest, Router>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
@@ -723,6 +1103,21 @@ public class HttpJsonRoutersStub extends RoutersStub {
             HttpJsonCallSettings
                 .<GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList>newBuilder()
                 .setMethodDescriptor(getNatMappingInfoMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("router", String.valueOf(request.getRouter()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetRoutePolicyRouterRequest, RoutersGetRoutePolicyResponse>
+        getRoutePolicyTransportSettings =
+            HttpJsonCallSettings
+                .<GetRoutePolicyRouterRequest, RoutersGetRoutePolicyResponse>newBuilder()
+                .setMethodDescriptor(getRoutePolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -771,6 +1166,35 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes>
+        listBgpRoutesTransportSettings =
+            HttpJsonCallSettings.<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes>newBuilder()
+                .setMethodDescriptor(listBgpRoutesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("router", String.valueOf(request.getRouter()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies>
+        listRoutePoliciesTransportSettings =
+            HttpJsonCallSettings
+                .<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies>newBuilder()
+                .setMethodDescriptor(listRoutePoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("router", String.valueOf(request.getRouter()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<PatchRouterRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRouterRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
@@ -784,6 +1208,20 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<PatchRoutePolicyRouterRequest, Operation>
+        patchRoutePolicyTransportSettings =
+            HttpJsonCallSettings.<PatchRoutePolicyRouterRequest, Operation>newBuilder()
+                .setMethodDescriptor(patchRoutePolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("router", String.valueOf(request.getRouter()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<PreviewRouterRequest, RoutersPreviewResponse> previewTransportSettings =
         HttpJsonCallSettings.<PreviewRouterRequest, RoutersPreviewResponse>newBuilder()
             .setMethodDescriptor(previewMethodDescriptor)
@@ -810,6 +1248,20 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<UpdateRoutePolicyRouterRequest, Operation>
+        updateRoutePolicyTransportSettings =
+            HttpJsonCallSettings.<UpdateRoutePolicyRouterRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateRoutePolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("router", String.valueOf(request.getRouter()));
+                      return builder.build();
+                    })
+                .build();
 
     this.aggregatedListCallable =
         callableFactory.createUnaryCallable(
@@ -824,6 +1276,17 @@ public class HttpJsonRoutersStub extends RoutersStub {
         callableFactory.createOperationCallable(
             deleteTransportSettings,
             settings.deleteOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteRoutePolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteRoutePolicyTransportSettings,
+            settings.deleteRoutePolicySettings(),
+            clientContext);
+    this.deleteRoutePolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteRoutePolicyTransportSettings,
+            settings.deleteRoutePolicyOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.getCallable =
@@ -842,6 +1305,9 @@ public class HttpJsonRoutersStub extends RoutersStub {
             getNatMappingInfoTransportSettings,
             settings.getNatMappingInfoSettings(),
             clientContext);
+    this.getRoutePolicyCallable =
+        callableFactory.createUnaryCallable(
+            getRoutePolicyTransportSettings, settings.getRoutePolicySettings(), clientContext);
     this.getRouterStatusCallable =
         callableFactory.createUnaryCallable(
             getRouterStatusTransportSettings, settings.getRouterStatusSettings(), clientContext);
@@ -860,6 +1326,22 @@ public class HttpJsonRoutersStub extends RoutersStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.listBgpRoutesCallable =
+        callableFactory.createUnaryCallable(
+            listBgpRoutesTransportSettings, settings.listBgpRoutesSettings(), clientContext);
+    this.listBgpRoutesPagedCallable =
+        callableFactory.createPagedCallable(
+            listBgpRoutesTransportSettings, settings.listBgpRoutesSettings(), clientContext);
+    this.listRoutePoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listRoutePoliciesTransportSettings,
+            settings.listRoutePoliciesSettings(),
+            clientContext);
+    this.listRoutePoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listRoutePoliciesTransportSettings,
+            settings.listRoutePoliciesSettings(),
+            clientContext);
     this.patchCallable =
         callableFactory.createUnaryCallable(
             patchTransportSettings, settings.patchSettings(), clientContext);
@@ -867,6 +1349,15 @@ public class HttpJsonRoutersStub extends RoutersStub {
         callableFactory.createOperationCallable(
             patchTransportSettings,
             settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.patchRoutePolicyCallable =
+        callableFactory.createUnaryCallable(
+            patchRoutePolicyTransportSettings, settings.patchRoutePolicySettings(), clientContext);
+    this.patchRoutePolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            patchRoutePolicyTransportSettings,
+            settings.patchRoutePolicyOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.previewCallable =
@@ -881,6 +1372,17 @@ public class HttpJsonRoutersStub extends RoutersStub {
             settings.updateOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.updateRoutePolicyCallable =
+        callableFactory.createUnaryCallable(
+            updateRoutePolicyTransportSettings,
+            settings.updateRoutePolicySettings(),
+            clientContext);
+    this.updateRoutePolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            updateRoutePolicyTransportSettings,
+            settings.updateRoutePolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -891,15 +1393,21 @@ public class HttpJsonRoutersStub extends RoutersStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(aggregatedListMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
+    methodDescriptors.add(deleteRoutePolicyMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(getNatIpInfoMethodDescriptor);
     methodDescriptors.add(getNatMappingInfoMethodDescriptor);
+    methodDescriptors.add(getRoutePolicyMethodDescriptor);
     methodDescriptors.add(getRouterStatusMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(listBgpRoutesMethodDescriptor);
+    methodDescriptors.add(listRoutePoliciesMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(patchRoutePolicyMethodDescriptor);
     methodDescriptors.add(previewMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
+    methodDescriptors.add(updateRoutePolicyMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -926,6 +1434,17 @@ public class HttpJsonRoutersStub extends RoutersStub {
   }
 
   @Override
+  public UnaryCallable<DeleteRoutePolicyRouterRequest, Operation> deleteRoutePolicyCallable() {
+    return deleteRoutePolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteRoutePolicyRouterRequest, Operation, Operation>
+      deleteRoutePolicyOperationCallable() {
+    return deleteRoutePolicyOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetRouterRequest, Router> getCallable() {
     return getCallable;
   }
@@ -945,6 +1464,12 @@ public class HttpJsonRoutersStub extends RoutersStub {
   public UnaryCallable<GetNatMappingInfoRoutersRequest, GetNatMappingInfoPagedResponse>
       getNatMappingInfoPagedCallable() {
     return getNatMappingInfoPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRoutePolicyRouterRequest, RoutersGetRoutePolicyResponse>
+      getRoutePolicyCallable() {
+    return getRoutePolicyCallable;
   }
 
   @Override
@@ -974,6 +1499,29 @@ public class HttpJsonRoutersStub extends RoutersStub {
   }
 
   @Override
+  public UnaryCallable<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes> listBgpRoutesCallable() {
+    return listBgpRoutesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBgpRoutesRoutersRequest, ListBgpRoutesPagedResponse>
+      listBgpRoutesPagedCallable() {
+    return listBgpRoutesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies>
+      listRoutePoliciesCallable() {
+    return listRoutePoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRoutePoliciesRoutersRequest, ListRoutePoliciesPagedResponse>
+      listRoutePoliciesPagedCallable() {
+    return listRoutePoliciesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchRouterRequest, Operation> patchCallable() {
     return patchCallable;
   }
@@ -981,6 +1529,17 @@ public class HttpJsonRoutersStub extends RoutersStub {
   @Override
   public OperationCallable<PatchRouterRequest, Operation, Operation> patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PatchRoutePolicyRouterRequest, Operation> patchRoutePolicyCallable() {
+    return patchRoutePolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<PatchRoutePolicyRouterRequest, Operation, Operation>
+      patchRoutePolicyOperationCallable() {
+    return patchRoutePolicyOperationCallable;
   }
 
   @Override
@@ -996,6 +1555,17 @@ public class HttpJsonRoutersStub extends RoutersStub {
   @Override
   public OperationCallable<UpdateRouterRequest, Operation, Operation> updateOperationCallable() {
     return updateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateRoutePolicyRouterRequest, Operation> updateRoutePolicyCallable() {
+    return updateRoutePolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateRoutePolicyRouterRequest, Operation, Operation>
+      updateRoutePolicyOperationCallable() {
+    return updateRoutePolicyOperationCallable;
   }
 
   @Override

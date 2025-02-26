@@ -77,7 +77,7 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Name of the commitment for which auto renew is being updated.
+   * Name of the commitment that you want to update.
    * </pre>
    *
    * <code>string commitment = 482134805 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -100,7 +100,7 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Name of the commitment for which auto renew is being updated.
+   * Name of the commitment that you want to update.
    * </pre>
    *
    * <code>string commitment = 482134805 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1001,7 +1001,7 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Name of the commitment for which auto renew is being updated.
+     * Name of the commitment that you want to update.
      * </pre>
      *
      * <code>string commitment = 482134805 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1023,7 +1023,7 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Name of the commitment for which auto renew is being updated.
+     * Name of the commitment that you want to update.
      * </pre>
      *
      * <code>string commitment = 482134805 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1045,7 +1045,7 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Name of the commitment for which auto renew is being updated.
+     * Name of the commitment that you want to update.
      * </pre>
      *
      * <code>string commitment = 482134805 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1066,7 +1066,7 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Name of the commitment for which auto renew is being updated.
+     * Name of the commitment that you want to update.
      * </pre>
      *
      * <code>string commitment = 482134805 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1083,7 +1083,7 @@ public final class UpdateRegionCommitmentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Name of the commitment for which auto renew is being updated.
+     * Name of the commitment that you want to update.
      * </pre>
      *
      * <code>string commitment = 482134805 [(.google.api.field_behavior) = REQUIRED];</code>

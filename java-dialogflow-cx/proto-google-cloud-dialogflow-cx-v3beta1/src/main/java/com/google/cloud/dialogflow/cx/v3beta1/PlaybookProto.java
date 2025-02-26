@@ -88,6 +88,18 @@ public final class PlaybookProto {
       internal_static_google_cloud_dialogflow_cx_v3beta1_DeletePlaybookVersionRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_DeletePlaybookVersionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_Handler_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_Handler_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_Handler_EventHandler_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_Handler_EventHandler_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_Handler_LifecycleHandler_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_Handler_LifecycleHandler_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -102,142 +114,162 @@ public final class PlaybookProto {
           + "v3beta1\032\034google/api/annotations.proto\032\027g"
           + "oogle/api/client.proto\032\037google/api/field"
           + "_behavior.proto\032\031google/api/resource.pro"
-          + "to\0320google/cloud/dialogflow/cx/v3beta1/e"
-          + "xample.proto\032<google/cloud/dialogflow/cx"
-          + "/v3beta1/generative_settings.proto\032=goog"
-          + "le/cloud/dialogflow/cx/v3beta1/parameter"
-          + "_definition.proto\032\033google/protobuf/empty"
-          + ".proto\032 google/protobuf/field_mask.proto"
-          + "\032\037google/protobuf/timestamp.proto\"\230\001\n\025Cr"
-          + "eatePlaybookRequest\022:\n\006parent\030\001 \001(\tB*\340A\002"
-          + "\372A$\022\"dialogflow.googleapis.com/Playbook\022"
-          + "C\n\010playbook\030\002 \001(\0132,.google.cloud.dialogf"
-          + "low.cx.v3beta1.PlaybookB\003\340A\002\"Q\n\025DeletePl"
-          + "aybookRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"dia"
-          + "logflow.googleapis.com/Playbook\"y\n\024ListP"
-          + "laybooksRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\022"
-          + "\"dialogflow.googleapis.com/Playbook\022\021\n\tp"
-          + "age_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"q\n\025Li"
-          + "stPlaybooksResponse\022?\n\tplaybooks\030\001 \003(\0132,"
-          + ".google.cloud.dialogflow.cx.v3beta1.Play"
-          + "book\022\027\n\017next_page_token\030\002 \001(\t\"N\n\022GetPlay"
-          + "bookRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"dialo"
-          + "gflow.googleapis.com/Playbook\"\215\001\n\025Update"
-          + "PlaybookRequest\022C\n\010playbook\030\001 \001(\0132,.goog"
-          + "le.cloud.dialogflow.cx.v3beta1.PlaybookB"
-          + "\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.proto"
-          + "buf.FieldMask\"\267\010\n\010Playbook\022\014\n\004name\030\001 \001(\t"
-          + "\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022\021\n\004goal\030\003 \001("
-          + "\tB\003\340A\002\022a\n\033input_parameter_definitions\030\005 "
-          + "\003(\01327.google.cloud.dialogflow.cx.v3beta1"
-          + ".ParameterDefinitionB\003\340A\001\022b\n\034output_para"
-          + "meter_definitions\030\006 \003(\01327.google.cloud.d"
-          + "ialogflow.cx.v3beta1.ParameterDefinition"
-          + "B\003\340A\001\022M\n\013instruction\030\021 \001(\01328.google.clou"
-          + "d.dialogflow.cx.v3beta1.Playbook.Instruc"
-          + "tion\022\030\n\013token_count\030\010 \001(\003B\003\340A\003\0224\n\013create"
-          + "_time\030\t \001(\0132\032.google.protobuf.TimestampB"
-          + "\003\340A\003\0224\n\013update_time\030\n \001(\0132\032.google.proto"
-          + "buf.TimestampB\003\340A\003\022H\n\024referenced_playboo"
-          + "ks\030\013 \003(\tB*\340A\003\372A$\n\"dialogflow.googleapis."
-          + "com/Playbook\022@\n\020referenced_flows\030\014 \003(\tB&"
-          + "\340A\003\372A \n\036dialogflow.googleapis.com/Flow\022@"
-          + "\n\020referenced_tools\030\r \003(\tB&\340A\001\372A \n\036dialog"
-          + "flow.googleapis.com/Tool\022U\n\022llm_model_se"
-          + "ttings\030\016 \001(\01324.google.cloud.dialogflow.c"
-          + "x.v3beta1.LlmModelSettingsB\003\340A\001\032g\n\004Step\022"
-          + "\016\n\004text\030\001 \001(\tH\000\022@\n\005steps\030\002 \003(\01321.google."
-          + "cloud.dialogflow.cx.v3beta1.Playbook.Ste"
-          + "pB\r\n\013instruction\032O\n\013Instruction\022@\n\005steps"
-          + "\030\002 \003(\01321.google.cloud.dialogflow.cx.v3be"
-          + "ta1.Playbook.Step:t\352Aq\n\"dialogflow.googl"
-          + "eapis.com/Playbook\022Kprojects/{project}/l"
-          + "ocations/{location}/agents/{agent}/playb"
-          + "ooks/{playbook}\"\265\001\n\034CreatePlaybookVersio"
-          + "nRequest\022A\n\006parent\030\001 \001(\tB1\340A\002\372A+\022)dialog"
-          + "flow.googleapis.com/PlaybookVersion\022R\n\020p"
-          + "laybook_version\030\002 \001(\01323.google.cloud.dia"
-          + "logflow.cx.v3beta1.PlaybookVersionB\003\340A\002\""
-          + "\255\003\n\017PlaybookVersion\022\014\n\004name\030\001 \001(\t\022\030\n\013des"
-          + "cription\030\002 \001(\tB\003\340A\001\022C\n\010playbook\030\003 \001(\0132,."
-          + "google.cloud.dialogflow.cx.v3beta1.Playb"
-          + "ookB\003\340A\003\022B\n\010examples\030\004 \003(\0132+.google.clou"
-          + "d.dialogflow.cx.v3beta1.ExampleB\003\340A\003\0224\n\013"
-          + "update_time\030\005 \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003:\262\001\352A\256\001\n)dialogflow.googleapis"
-          + ".com/PlaybookVersion\022^projects/{project}"
-          + "/locations/{location}/agents/{agent}/pla"
-          + "ybooks/{playbook}/versions/{version}*\020pl"
-          + "aybookVersions2\017playbookVersion\"\\\n\031GetPl"
-          + "aybookVersionRequest\022?\n\004name\030\001 \001(\tB1\340A\002\372"
-          + "A+\n)dialogflow.googleapis.com/PlaybookVe"
-          + "rsion\"\221\001\n\033ListPlaybookVersionsRequest\022A\n"
-          + "\006parent\030\001 \001(\tB1\340A\002\372A+\022)dialogflow.google"
-          + "apis.com/PlaybookVersion\022\026\n\tpage_size\030\002 "
-          + "\001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"\207\001\n\034Li"
-          + "stPlaybookVersionsResponse\022N\n\021playbook_v"
-          + "ersions\030\001 \003(\01323.google.cloud.dialogflow."
-          + "cx.v3beta1.PlaybookVersion\022\027\n\017next_page_"
-          + "token\030\002 \001(\t\"_\n\034DeletePlaybookVersionRequ"
-          + "est\022?\n\004name\030\001 \001(\tB1\340A\002\372A+\n)dialogflow.go"
-          + "ogleapis.com/PlaybookVersion2\305\020\n\tPlayboo"
-          + "ks\022\332\001\n\016CreatePlaybook\0229.google.cloud.dia"
-          + "logflow.cx.v3beta1.CreatePlaybookRequest"
-          + "\032,.google.cloud.dialogflow.cx.v3beta1.Pl"
-          + "aybook\"_\332A\017parent,playbook\202\323\344\223\002G\";/v3bet"
-          + "a1/{parent=projects/*/locations/*/agents"
-          + "/*}/playbooks:\010playbook\022\257\001\n\016DeletePlaybo"
-          + "ok\0229.google.cloud.dialogflow.cx.v3beta1."
-          + "DeletePlaybookRequest\032\026.google.protobuf."
-          + "Empty\"J\332A\004name\202\323\344\223\002=*;/v3beta1/{name=pro"
-          + "jects/*/locations/*/agents/*/playbooks/*"
-          + "}\022\322\001\n\rListPlaybooks\0228.google.cloud.dialo"
-          + "gflow.cx.v3beta1.ListPlaybooksRequest\0329."
-          + "google.cloud.dialogflow.cx.v3beta1.ListP"
-          + "laybooksResponse\"L\332A\006parent\202\323\344\223\002=\022;/v3be"
-          + "ta1/{parent=projects/*/locations/*/agent"
-          + "s/*}/playbooks\022\277\001\n\013GetPlaybook\0226.google."
-          + "cloud.dialogflow.cx.v3beta1.GetPlaybookR"
-          + "equest\032,.google.cloud.dialogflow.cx.v3be"
-          + "ta1.Playbook\"J\332A\004name\202\323\344\223\002=\022;/v3beta1/{n"
-          + "ame=projects/*/locations/*/agents/*/play"
-          + "books/*}\022\350\001\n\016UpdatePlaybook\0229.google.clo"
-          + "ud.dialogflow.cx.v3beta1.UpdatePlaybookR"
-          + "equest\032,.google.cloud.dialogflow.cx.v3be"
-          + "ta1.Playbook\"m\332A\024playbook,update_mask\202\323\344"
-          + "\223\002P2D/v3beta1/{playbook.name=projects/*/"
-          + "locations/*/agents/*/playbooks/*}:\010playb"
-          + "ook\022\212\002\n\025CreatePlaybookVersion\022@.google.c"
-          + "loud.dialogflow.cx.v3beta1.CreatePlayboo"
-          + "kVersionRequest\0323.google.cloud.dialogflo"
-          + "w.cx.v3beta1.PlaybookVersion\"z\332A\027parent,"
-          + "playbook_version\202\323\344\223\002Z\"F/v3beta1/{parent"
-          + "=projects/*/locations/*/agents/*/playboo"
-          + "ks/*}/versions:\020playbook_version\022\337\001\n\022Get"
-          + "PlaybookVersion\022=.google.cloud.dialogflo"
-          + "w.cx.v3beta1.GetPlaybookVersionRequest\0323"
-          + ".google.cloud.dialogflow.cx.v3beta1.Play"
-          + "bookVersion\"U\332A\004name\202\323\344\223\002H\022F/v3beta1/{na"
-          + "me=projects/*/locations/*/agents/*/playb"
-          + "ooks/*/versions/*}\022\362\001\n\024ListPlaybookVersi"
-          + "ons\022?.google.cloud.dialogflow.cx.v3beta1"
-          + ".ListPlaybookVersionsRequest\032@.google.cl"
-          + "oud.dialogflow.cx.v3beta1.ListPlaybookVe"
-          + "rsionsResponse\"W\332A\006parent\202\323\344\223\002H\022F/v3beta"
-          + "1/{parent=projects/*/locations/*/agents/"
-          + "*/playbooks/*}/versions\022\310\001\n\025DeletePlaybo"
-          + "okVersion\022@.google.cloud.dialogflow.cx.v"
-          + "3beta1.DeletePlaybookVersionRequest\032\026.go"
-          + "ogle.protobuf.Empty\"U\332A\004name\202\323\344\223\002H*F/v3b"
-          + "eta1/{name=projects/*/locations/*/agents"
-          + "/*/playbooks/*/versions/*}\032x\312A\031dialogflo"
-          + "w.googleapis.com\322AYhttps://www.googleapi"
-          + "s.com/auth/cloud-platform,https://www.go"
-          + "ogleapis.com/auth/dialogflowB\236\001\n&com.goo"
-          + "gle.cloud.dialogflow.cx.v3beta1B\rPlayboo"
-          + "kProtoP\001Z6cloud.google.com/go/dialogflow"
-          + "/cx/apiv3beta1/cxpb;cxpb\370\001\001\242\002\002DF\252\002\"Googl"
-          + "e.Cloud.Dialogflow.Cx.V3Beta1b\006proto3"
+          + "to\032:google/cloud/dialogflow/cx/v3beta1/a"
+          + "dvanced_settings.proto\0320google/cloud/dia"
+          + "logflow/cx/v3beta1/example.proto\0324google"
+          + "/cloud/dialogflow/cx/v3beta1/fulfillment"
+          + ".proto\032<google/cloud/dialogflow/cx/v3bet"
+          + "a1/generative_settings.proto\032=google/clo"
+          + "ud/dialogflow/cx/v3beta1/parameter_defin"
+          + "ition.proto\032\033google/protobuf/empty.proto"
+          + "\032 google/protobuf/field_mask.proto\032\037goog"
+          + "le/protobuf/timestamp.proto\"\230\001\n\025CreatePl"
+          + "aybookRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\022\"d"
+          + "ialogflow.googleapis.com/Playbook\022C\n\010pla"
+          + "ybook\030\002 \001(\0132,.google.cloud.dialogflow.cx"
+          + ".v3beta1.PlaybookB\003\340A\002\"Q\n\025DeletePlaybook"
+          + "Request\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"dialogflo"
+          + "w.googleapis.com/Playbook\"y\n\024ListPlayboo"
+          + "ksRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\022\"dialo"
+          + "gflow.googleapis.com/Playbook\022\021\n\tpage_si"
+          + "ze\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"q\n\025ListPlay"
+          + "booksResponse\022?\n\tplaybooks\030\001 \003(\0132,.googl"
+          + "e.cloud.dialogflow.cx.v3beta1.Playbook\022\027"
+          + "\n\017next_page_token\030\002 \001(\t\"N\n\022GetPlaybookRe"
+          + "quest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"dialogflow."
+          + "googleapis.com/Playbook\"\215\001\n\025UpdatePlaybo"
+          + "okRequest\022C\n\010playbook\030\001 \001(\0132,.google.clo"
+          + "ud.dialogflow.cx.v3beta1.PlaybookB\003\340A\002\022/"
+          + "\n\013update_mask\030\002 \001(\0132\032.google.protobuf.Fi"
+          + "eldMask\"\362\t\n\010Playbook\022\014\n\004name\030\001 \001(\t\022\031\n\014di"
+          + "splay_name\030\002 \001(\tB\003\340A\002\022\021\n\004goal\030\003 \001(\tB\003\340A\002"
+          + "\022a\n\033input_parameter_definitions\030\005 \003(\01327."
+          + "google.cloud.dialogflow.cx.v3beta1.Param"
+          + "eterDefinitionB\003\340A\001\022b\n\034output_parameter_"
+          + "definitions\030\006 \003(\01327.google.cloud.dialogf"
+          + "low.cx.v3beta1.ParameterDefinitionB\003\340A\001\022"
+          + "M\n\013instruction\030\021 \001(\01328.google.cloud.dial"
+          + "ogflow.cx.v3beta1.Playbook.Instruction\022\030"
+          + "\n\013token_count\030\010 \001(\003B\003\340A\003\0224\n\013create_time\030"
+          + "\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224"
+          + "\n\013update_time\030\n \001(\0132\032.google.protobuf.Ti"
+          + "mestampB\003\340A\003\022H\n\024referenced_playbooks\030\013 \003"
+          + "(\tB*\340A\003\372A$\n\"dialogflow.googleapis.com/Pl"
+          + "aybook\022@\n\020referenced_flows\030\014 \003(\tB&\340A\003\372A "
+          + "\n\036dialogflow.googleapis.com/Flow\022@\n\020refe"
+          + "renced_tools\030\r \003(\tB&\340A\001\372A \n\036dialogflow.g"
+          + "oogleapis.com/Tool\022U\n\022llm_model_settings"
+          + "\030\016 \001(\01324.google.cloud.dialogflow.cx.v3be"
+          + "ta1.LlmModelSettingsB\003\340A\001\022a\n\017speech_sett"
+          + "ings\030\024 \001(\0132C.google.cloud.dialogflow.cx."
+          + "v3beta1.AdvancedSettings.SpeechSettingsB"
+          + "\003\340A\001\022B\n\010handlers\030\020 \003(\0132+.google.cloud.di"
+          + "alogflow.cx.v3beta1.HandlerB\003\340A\001\032g\n\004Step"
+          + "\022\016\n\004text\030\001 \001(\tH\000\022@\n\005steps\030\002 \003(\01321.google"
+          + ".cloud.dialogflow.cx.v3beta1.Playbook.St"
+          + "epB\r\n\013instruction\032c\n\013Instruction\022\022\n\nguid"
+          + "elines\030\001 \001(\t\022@\n\005steps\030\002 \003(\01321.google.clo"
+          + "ud.dialogflow.cx.v3beta1.Playbook.Step:t"
+          + "\352Aq\n\"dialogflow.googleapis.com/Playbook\022"
+          + "Kprojects/{project}/locations/{location}"
+          + "/agents/{agent}/playbooks/{playbook}\"\265\001\n"
+          + "\034CreatePlaybookVersionRequest\022A\n\006parent\030"
+          + "\001 \001(\tB1\340A\002\372A+\022)dialogflow.googleapis.com"
+          + "/PlaybookVersion\022R\n\020playbook_version\030\002 \001"
+          + "(\01323.google.cloud.dialogflow.cx.v3beta1."
+          + "PlaybookVersionB\003\340A\002\"\255\003\n\017PlaybookVersion"
+          + "\022\014\n\004name\030\001 \001(\t\022\030\n\013description\030\002 \001(\tB\003\340A\001"
+          + "\022C\n\010playbook\030\003 \001(\0132,.google.cloud.dialog"
+          + "flow.cx.v3beta1.PlaybookB\003\340A\003\022B\n\010example"
+          + "s\030\004 \003(\0132+.google.cloud.dialogflow.cx.v3b"
+          + "eta1.ExampleB\003\340A\003\0224\n\013update_time\030\005 \001(\0132\032"
+          + ".google.protobuf.TimestampB\003\340A\003:\262\001\352A\256\001\n)"
+          + "dialogflow.googleapis.com/PlaybookVersio"
+          + "n\022^projects/{project}/locations/{locatio"
+          + "n}/agents/{agent}/playbooks/{playbook}/v"
+          + "ersions/{version}*\020playbookVersions2\017pla"
+          + "ybookVersion\"\\\n\031GetPlaybookVersionReques"
+          + "t\022?\n\004name\030\001 \001(\tB1\340A\002\372A+\n)dialogflow.goog"
+          + "leapis.com/PlaybookVersion\"\221\001\n\033ListPlayb"
+          + "ookVersionsRequest\022A\n\006parent\030\001 \001(\tB1\340A\002\372"
+          + "A+\022)dialogflow.googleapis.com/PlaybookVe"
+          + "rsion\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_to"
+          + "ken\030\003 \001(\tB\003\340A\001\"\207\001\n\034ListPlaybookVersionsR"
+          + "esponse\022N\n\021playbook_versions\030\001 \003(\01323.goo"
+          + "gle.cloud.dialogflow.cx.v3beta1.Playbook"
+          + "Version\022\027\n\017next_page_token\030\002 \001(\t\"_\n\034Dele"
+          + "tePlaybookVersionRequest\022?\n\004name\030\001 \001(\tB1"
+          + "\340A\002\372A+\n)dialogflow.googleapis.com/Playbo"
+          + "okVersion\"\340\003\n\007Handler\022Q\n\revent_handler\030\001"
+          + " \001(\01328.google.cloud.dialogflow.cx.v3beta"
+          + "1.Handler.EventHandlerH\000\022Y\n\021lifecycle_ha"
+          + "ndler\030\003 \001(\0132<.google.cloud.dialogflow.cx"
+          + ".v3beta1.Handler.LifecycleHandlerH\000\032\205\001\n\014"
+          + "EventHandler\022\022\n\005event\030\001 \001(\tB\003\340A\002\022\026\n\tcond"
+          + "ition\030\003 \001(\tB\003\340A\001\022I\n\013fulfillment\030\002 \001(\0132/."
+          + "google.cloud.dialogflow.cx.v3beta1.Fulfi"
+          + "llmentB\003\340A\002\032\223\001\n\020LifecycleHandler\022\034\n\017life"
+          + "cycle_stage\030\001 \001(\tB\003\340A\002\022\026\n\tcondition\030\002 \001("
+          + "\tB\003\340A\001\022I\n\013fulfillment\030\003 \001(\0132/.google.clo"
+          + "ud.dialogflow.cx.v3beta1.FulfillmentB\003\340A"
+          + "\002B\t\n\007handler2\305\020\n\tPlaybooks\022\332\001\n\016CreatePla"
+          + "ybook\0229.google.cloud.dialogflow.cx.v3bet"
+          + "a1.CreatePlaybookRequest\032,.google.cloud."
+          + "dialogflow.cx.v3beta1.Playbook\"_\332A\017paren"
+          + "t,playbook\202\323\344\223\002G\";/v3beta1/{parent=proje"
+          + "cts/*/locations/*/agents/*}/playbooks:\010p"
+          + "laybook\022\257\001\n\016DeletePlaybook\0229.google.clou"
+          + "d.dialogflow.cx.v3beta1.DeletePlaybookRe"
+          + "quest\032\026.google.protobuf.Empty\"J\332A\004name\202\323"
+          + "\344\223\002=*;/v3beta1/{name=projects/*/location"
+          + "s/*/agents/*/playbooks/*}\022\322\001\n\rListPlaybo"
+          + "oks\0228.google.cloud.dialogflow.cx.v3beta1"
+          + ".ListPlaybooksRequest\0329.google.cloud.dia"
+          + "logflow.cx.v3beta1.ListPlaybooksResponse"
+          + "\"L\332A\006parent\202\323\344\223\002=\022;/v3beta1/{parent=proj"
+          + "ects/*/locations/*/agents/*}/playbooks\022\277"
+          + "\001\n\013GetPlaybook\0226.google.cloud.dialogflow"
+          + ".cx.v3beta1.GetPlaybookRequest\032,.google."
+          + "cloud.dialogflow.cx.v3beta1.Playbook\"J\332A"
+          + "\004name\202\323\344\223\002=\022;/v3beta1/{name=projects/*/l"
+          + "ocations/*/agents/*/playbooks/*}\022\350\001\n\016Upd"
+          + "atePlaybook\0229.google.cloud.dialogflow.cx"
+          + ".v3beta1.UpdatePlaybookRequest\032,.google."
+          + "cloud.dialogflow.cx.v3beta1.Playbook\"m\332A"
+          + "\024playbook,update_mask\202\323\344\223\002P2D/v3beta1/{p"
+          + "laybook.name=projects/*/locations/*/agen"
+          + "ts/*/playbooks/*}:\010playbook\022\212\002\n\025CreatePl"
+          + "aybookVersion\022@.google.cloud.dialogflow."
+          + "cx.v3beta1.CreatePlaybookVersionRequest\032"
+          + "3.google.cloud.dialogflow.cx.v3beta1.Pla"
+          + "ybookVersion\"z\332A\027parent,playbook_version"
+          + "\202\323\344\223\002Z\"F/v3beta1/{parent=projects/*/loca"
+          + "tions/*/agents/*/playbooks/*}/versions:\020"
+          + "playbook_version\022\337\001\n\022GetPlaybookVersion\022"
+          + "=.google.cloud.dialogflow.cx.v3beta1.Get"
+          + "PlaybookVersionRequest\0323.google.cloud.di"
+          + "alogflow.cx.v3beta1.PlaybookVersion\"U\332A\004"
+          + "name\202\323\344\223\002H\022F/v3beta1/{name=projects/*/lo"
+          + "cations/*/agents/*/playbooks/*/versions/"
+          + "*}\022\362\001\n\024ListPlaybookVersions\022?.google.clo"
+          + "ud.dialogflow.cx.v3beta1.ListPlaybookVer"
+          + "sionsRequest\032@.google.cloud.dialogflow.c"
+          + "x.v3beta1.ListPlaybookVersionsResponse\"W"
+          + "\332A\006parent\202\323\344\223\002H\022F/v3beta1/{parent=projec"
+          + "ts/*/locations/*/agents/*/playbooks/*}/v"
+          + "ersions\022\310\001\n\025DeletePlaybookVersion\022@.goog"
+          + "le.cloud.dialogflow.cx.v3beta1.DeletePla"
+          + "ybookVersionRequest\032\026.google.protobuf.Em"
+          + "pty\"U\332A\004name\202\323\344\223\002H*F/v3beta1/{name=proje"
+          + "cts/*/locations/*/agents/*/playbooks/*/v"
+          + "ersions/*}\032x\312A\031dialogflow.googleapis.com"
+          + "\322AYhttps://www.googleapis.com/auth/cloud"
+          + "-platform,https://www.googleapis.com/aut"
+          + "h/dialogflowB\233\001\n&com.google.cloud.dialog"
+          + "flow.cx.v3beta1B\rPlaybookProtoP\001Z6cloud."
+          + "google.com/go/dialogflow/cx/apiv3beta1/c"
+          + "xpb;cxpb\242\002\002DF\252\002\"Google.Cloud.Dialogflow."
+          + "Cx.V3Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -247,7 +279,9 @@ public final class PlaybookProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsProto.getDescriptor(),
               com.google.cloud.dialogflow.cx.v3beta1.ExampleProto.getDescriptor(),
+              com.google.cloud.dialogflow.cx.v3beta1.FulfillmentProto.getDescriptor(),
               com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettingsProto.getDescriptor(),
               com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinitionProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
@@ -321,6 +355,8 @@ public final class PlaybookProto {
               "ReferencedFlows",
               "ReferencedTools",
               "LlmModelSettings",
+              "SpeechSettings",
+              "Handlers",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_Playbook_Step_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3beta1_Playbook_descriptor
@@ -340,7 +376,7 @@ public final class PlaybookProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_Playbook_Instruction_descriptor,
             new java.lang.String[] {
-              "Steps",
+              "Guidelines", "Steps",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_CreatePlaybookVersionRequest_descriptor =
         getDescriptor().getMessageTypes().get(7);
@@ -390,6 +426,34 @@ public final class PlaybookProto {
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_Handler_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_Handler_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_Handler_descriptor,
+            new java.lang.String[] {
+              "EventHandler", "LifecycleHandler", "Handler",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_Handler_EventHandler_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3beta1_Handler_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_Handler_EventHandler_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_Handler_EventHandler_descriptor,
+            new java.lang.String[] {
+              "Event", "Condition", "Fulfillment",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_Handler_LifecycleHandler_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3beta1_Handler_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_Handler_LifecycleHandler_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_Handler_LifecycleHandler_descriptor,
+            new java.lang.String[] {
+              "LifecycleStage", "Condition", "Fulfillment",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -405,7 +469,9 @@ public final class PlaybookProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsProto.getDescriptor();
     com.google.cloud.dialogflow.cx.v3beta1.ExampleProto.getDescriptor();
+    com.google.cloud.dialogflow.cx.v3beta1.FulfillmentProto.getDescriptor();
     com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettingsProto.getDescriptor();
     com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinitionProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();

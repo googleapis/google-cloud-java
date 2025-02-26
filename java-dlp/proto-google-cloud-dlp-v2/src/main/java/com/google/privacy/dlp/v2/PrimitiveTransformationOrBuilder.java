@@ -133,7 +133,8 @@ public interface PrimitiveTransformationOrBuilder
    *
    *
    * <pre>
-   * Ffx-Fpe
+   * Ffx-Fpe. Strongly discouraged, consider using CryptoDeterministicConfig
+   * instead. Fpe is computationally expensive incurring latency costs.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;
@@ -146,7 +147,8 @@ public interface PrimitiveTransformationOrBuilder
    *
    *
    * <pre>
-   * Ffx-Fpe
+   * Ffx-Fpe. Strongly discouraged, consider using CryptoDeterministicConfig
+   * instead. Fpe is computationally expensive incurring latency costs.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;
@@ -159,7 +161,8 @@ public interface PrimitiveTransformationOrBuilder
    *
    *
    * <pre>
-   * Ffx-Fpe
+   * Ffx-Fpe. Strongly discouraged, consider using CryptoDeterministicConfig
+   * instead. Fpe is computationally expensive incurring latency costs.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;

@@ -260,6 +260,74 @@ public interface TransferOperationMetadataOrBuilder
    */
   com.google.cloud.parallelstore.v1.TransferType getTransferType();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of files that failed to be transferred. This list will
+   * have a maximum size of 5 elements.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.parallelstore.v1.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.parallelstore.v1.TransferErrorSummary> getErrorSummaryList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of files that failed to be transferred. This list will
+   * have a maximum size of 5 elements.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.parallelstore.v1.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.parallelstore.v1.TransferErrorSummary getErrorSummary(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of files that failed to be transferred. This list will
+   * have a maximum size of 5 elements.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.parallelstore.v1.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getErrorSummaryCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of files that failed to be transferred. This list will
+   * have a maximum size of 5 elements.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.parallelstore.v1.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.parallelstore.v1.TransferErrorSummaryOrBuilder>
+      getErrorSummaryOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of files that failed to be transferred. This list will
+   * have a maximum size of 5 elements.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.parallelstore.v1.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.parallelstore.v1.TransferErrorSummaryOrBuilder getErrorSummaryOrBuilder(
+      int index);
+
   com.google.cloud.parallelstore.v1.TransferOperationMetadata.SourceCase getSourceCase();
 
   com.google.cloud.parallelstore.v1.TransferOperationMetadata.DestinationCase getDestinationCase();

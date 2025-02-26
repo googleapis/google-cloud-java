@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddAssociationNetworkFirewallPolicyRequest;
+import com.google.cloud.compute.v1.AddPacketMirroringRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.AddRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.AggregatedListNetworkFirewallPoliciesRequest;
 import com.google.cloud.compute.v1.CloneRulesNetworkFirewallPolicyRequest;
@@ -34,15 +35,18 @@ import com.google.cloud.compute.v1.FirewallPolicyRule;
 import com.google.cloud.compute.v1.GetAssociationNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.GetIamPolicyNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.GetNetworkFirewallPolicyRequest;
+import com.google.cloud.compute.v1.GetPacketMirroringRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.GetRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.InsertNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.ListNetworkFirewallPoliciesRequest;
 import com.google.cloud.compute.v1.NetworkFirewallPolicyAggregatedList;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchNetworkFirewallPolicyRequest;
+import com.google.cloud.compute.v1.PatchPacketMirroringRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.PatchRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.RemoveAssociationNetworkFirewallPolicyRequest;
+import com.google.cloud.compute.v1.RemovePacketMirroringRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.RemoveRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.SetIamPolicyNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsNetworkFirewallPolicyRequest;
@@ -66,6 +70,17 @@ public abstract class NetworkFirewallPoliciesStub implements BackgroundResource 
   public UnaryCallable<AddAssociationNetworkFirewallPolicyRequest, Operation>
       addAssociationCallable() {
     throw new UnsupportedOperationException("Not implemented: addAssociationCallable()");
+  }
+
+  public OperationCallable<AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+      addPacketMirroringRuleOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: addPacketMirroringRuleOperationCallable()");
+  }
+
+  public UnaryCallable<AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      addPacketMirroringRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: addPacketMirroringRuleCallable()");
   }
 
   public OperationCallable<AddRuleNetworkFirewallPolicyRequest, Operation, Operation>
@@ -119,6 +134,11 @@ public abstract class NetworkFirewallPoliciesStub implements BackgroundResource 
     throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
   }
 
+  public UnaryCallable<GetPacketMirroringRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
+      getPacketMirroringRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: getPacketMirroringRuleCallable()");
+  }
+
   public UnaryCallable<GetRuleNetworkFirewallPolicyRequest, FirewallPolicyRule> getRuleCallable() {
     throw new UnsupportedOperationException("Not implemented: getRuleCallable()");
   }
@@ -149,6 +169,18 @@ public abstract class NetworkFirewallPoliciesStub implements BackgroundResource 
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
   }
 
+  public OperationCallable<
+          PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+      patchPacketMirroringRuleOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: patchPacketMirroringRuleOperationCallable()");
+  }
+
+  public UnaryCallable<PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      patchPacketMirroringRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchPacketMirroringRuleCallable()");
+  }
+
   public OperationCallable<PatchRuleNetworkFirewallPolicyRequest, Operation, Operation>
       patchRuleOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: patchRuleOperationCallable()");
@@ -167,6 +199,18 @@ public abstract class NetworkFirewallPoliciesStub implements BackgroundResource 
   public UnaryCallable<RemoveAssociationNetworkFirewallPolicyRequest, Operation>
       removeAssociationCallable() {
     throw new UnsupportedOperationException("Not implemented: removeAssociationCallable()");
+  }
+
+  public OperationCallable<
+          RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+      removePacketMirroringRuleOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: removePacketMirroringRuleOperationCallable()");
+  }
+
+  public UnaryCallable<RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      removePacketMirroringRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: removePacketMirroringRuleCallable()");
   }
 
   public OperationCallable<RemoveRuleNetworkFirewallPolicyRequest, Operation, Operation>

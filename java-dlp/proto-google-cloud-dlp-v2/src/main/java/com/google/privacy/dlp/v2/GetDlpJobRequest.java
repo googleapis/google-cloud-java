@@ -23,7 +23,8 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * The request message for [DlpJobs.GetDlpJob][].
+ * The request message for
+ * [GetDlpJob][google.privacy.dlp.v2.DlpService.GetDlpJob].
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.GetDlpJobRequest}
@@ -281,7 +282,8 @@ public final class GetDlpJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The request message for [DlpJobs.GetDlpJob][].
+   * The request message for
+   * [GetDlpJob][google.privacy.dlp.v2.DlpService.GetDlpJob].
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.GetDlpJobRequest}

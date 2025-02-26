@@ -46,6 +46,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     fingerprint_ = "";
     kind_ = "";
     name_ = "";
+    packetMirroringRules_ = java.util.Collections.emptyList();
     parent_ = "";
     region_ = "";
     rules_ = java.util.Collections.emptyList();
@@ -583,6 +584,84 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PACKET_MIRRORING_RULES_FIELD_NUMBER = 531644356;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.compute.v1.FirewallPolicyRule> packetMirroringRules_;
+  /**
+   *
+   *
+   * <pre>
+   * A list of packet mirroring rules that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.FirewallPolicyRule>
+      getPacketMirroringRulesList() {
+    return packetMirroringRules_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of packet mirroring rules that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>
+      getPacketMirroringRulesOrBuilderList() {
+    return packetMirroringRules_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of packet mirroring rules that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  @java.lang.Override
+  public int getPacketMirroringRulesCount() {
+    return packetMirroringRules_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of packet mirroring rules that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.FirewallPolicyRule getPacketMirroringRules(int index) {
+    return packetMirroringRules_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of packet mirroring rules that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder getPacketMirroringRulesOrBuilder(
+      int index) {
+    return packetMirroringRules_.get(index);
+  }
+
   public static final int PARENT_FIELD_NUMBER = 78317738;
 
   @SuppressWarnings("serial")
@@ -1076,6 +1155,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < associations_.size(); i++) {
       output.writeMessage(508736530, associations_.get(i));
     }
+    for (int i = 0; i < packetMirroringRules_.size(); i++) {
+      output.writeMessage(531644356, packetMirroringRules_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1132,6 +1214,11 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(508736530, associations_.get(i));
     }
+    for (int i = 0; i < packetMirroringRules_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              531644356, packetMirroringRules_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1177,6 +1264,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
     }
+    if (!getPacketMirroringRulesList().equals(other.getPacketMirroringRulesList())) return false;
     if (hasParent() != other.hasParent()) return false;
     if (hasParent()) {
       if (!getParent().equals(other.getParent())) return false;
@@ -1244,6 +1332,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (getPacketMirroringRulesCount() > 0) {
+      hash = (37 * hash) + PACKET_MIRRORING_RULES_FIELD_NUMBER;
+      hash = (53 * hash) + getPacketMirroringRulesList().hashCode();
     }
     if (hasParent()) {
       hash = (37 * hash) + PARENT_FIELD_NUMBER;
@@ -1426,6 +1518,13 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       id_ = 0L;
       kind_ = "";
       name_ = "";
+      if (packetMirroringRulesBuilder_ == null) {
+        packetMirroringRules_ = java.util.Collections.emptyList();
+      } else {
+        packetMirroringRules_ = null;
+        packetMirroringRulesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000100);
       parent_ = "";
       region_ = "";
       ruleTupleCount_ = 0;
@@ -1435,7 +1534,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         rules_ = null;
         rulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       selfLink_ = "";
       selfLinkWithId_ = "";
       shortName_ = "";
@@ -1484,10 +1583,19 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.associations_ = associationsBuilder_.build();
       }
+      if (packetMirroringRulesBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)) {
+          packetMirroringRules_ = java.util.Collections.unmodifiableList(packetMirroringRules_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.packetMirroringRules_ = packetMirroringRules_;
+      } else {
+        result.packetMirroringRules_ = packetMirroringRulesBuilder_.build();
+      }
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.rules_ = rules_;
       } else {
@@ -1526,27 +1634,27 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         result.name_ = name_;
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.parent_ = parent_;
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.region_ = region_;
         to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.ruleTupleCount_ = ruleTupleCount_;
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.selfLinkWithId_ = selfLinkWithId_;
         to_bitField0_ |= 0x00000800;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.shortName_ = shortName_;
         to_bitField0_ |= 0x00001000;
       }
@@ -1658,14 +1766,41 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (packetMirroringRulesBuilder_ == null) {
+        if (!other.packetMirroringRules_.isEmpty()) {
+          if (packetMirroringRules_.isEmpty()) {
+            packetMirroringRules_ = other.packetMirroringRules_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensurePacketMirroringRulesIsMutable();
+            packetMirroringRules_.addAll(other.packetMirroringRules_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.packetMirroringRules_.isEmpty()) {
+          if (packetMirroringRulesBuilder_.isEmpty()) {
+            packetMirroringRulesBuilder_.dispose();
+            packetMirroringRulesBuilder_ = null;
+            packetMirroringRules_ = other.packetMirroringRules_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            packetMirroringRulesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPacketMirroringRulesFieldBuilder()
+                    : null;
+          } else {
+            packetMirroringRulesBuilder_.addAllMessages(other.packetMirroringRules_);
+          }
+        }
+      }
       if (other.hasParent()) {
         parent_ = other.parent_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasRuleTupleCount()) {
@@ -1675,7 +1810,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -1688,7 +1823,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRulesFieldBuilder()
@@ -1700,17 +1835,17 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasSelfLinkWithId()) {
         selfLinkWithId_ = other.selfLinkWithId_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasShortName()) {
         shortName_ = other.shortName_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1772,13 +1907,13 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
             case 356167698:
               {
                 selfLinkWithId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 356167698
             case 626541906:
               {
                 parent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 626541906
             case 870991802:
@@ -1797,7 +1932,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 1111570338
             case 1877428002:
@@ -1809,7 +1944,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
             case -1188231000:
               {
                 ruleTupleCount_ = input.readInt32();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case -1188231000
             case -911466526:
@@ -1821,13 +1956,13 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case -645248918
             case -358554766:
               {
                 shortName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case -358554766
             case -225075054:
@@ -1844,6 +1979,19 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case -225075054
+            case -41812446:
+              {
+                com.google.cloud.compute.v1.FirewallPolicyRule m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.FirewallPolicyRule.parser(), extensionRegistry);
+                if (packetMirroringRulesBuilder_ == null) {
+                  ensurePacketMirroringRulesIsMutable();
+                  packetMirroringRules_.add(m);
+                } else {
+                  packetMirroringRulesBuilder_.addMessage(m);
+                }
+                break;
+              } // case -41812446
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3029,6 +3177,403 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.util.List<com.google.cloud.compute.v1.FirewallPolicyRule> packetMirroringRules_ =
+        java.util.Collections.emptyList();
+
+    private void ensurePacketMirroringRulesIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        packetMirroringRules_ =
+            new java.util.ArrayList<com.google.cloud.compute.v1.FirewallPolicyRule>(
+                packetMirroringRules_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.FirewallPolicyRule,
+            com.google.cloud.compute.v1.FirewallPolicyRule.Builder,
+            com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>
+        packetMirroringRulesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of packet mirroring rules that belong to this policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.FirewallPolicyRule>
+        getPacketMirroringRulesList() {
+      if (packetMirroringRulesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(packetMirroringRules_);
+      } else {
+        return packetMirroringRulesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of packet mirroring rules that belong to this policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+     * </code>
+     */
+    public int getPacketMirroringRulesCount() {
+      if (packetMirroringRulesBuilder_ == null) {
+        return packetMirroringRules_.size();
+      } else {
+        return packetMirroringRulesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of packet mirroring rules that belong to this policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FirewallPolicyRule getPacketMirroringRules(int index) {
+      if (packetMirroringRulesBuilder_ == null) {
+        return packetMirroringRules_.get(index);
+      } else {
+        return packetMirroringRulesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of packet mirroring rules that belong to this policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+     * </code>
+     */
+    public Builder setPacketMirroringRules(
+        int index, com.google.cloud.compute.v1.FirewallPolicyRule value) {
+      if (packetMirroringRulesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePacketMirroringRulesIsMutable();
+        packetMirroringRules_.set(index, value);
+        onChanged();
+      } else {
+        packetMirroringRulesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of packet mirroring rules that belong to this policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+     * </code>
+     */
+    public Builder setPacketMirroringRules(
+        int index, com.google.cloud.compute.v1.FirewallPolicyRule.Builder builderForValue) {
+      if (packetMirroringRulesBuilder_ == null) {
+        ensurePacketMirroringRulesIsMutable();
+        packetMirroringRules_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        packetMirroringRulesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of packet mirroring rules that belong to this policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+     * </code>
+     */
+    public Builder addPacketMirroringRules(com.google.cloud.compute.v1.FirewallPolicyRule value) {
+      if (packetMirroringRulesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePacketMirroringRulesIsMutable();
+        packetMirroringRules_.add(value);
+        onChanged();
+      } else {
+        packetMirroringRulesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of packet mirroring rules that belong to this policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+     * </code>
+     */
+    public Builder addPacketMirroringRules(
+        int index, com.google.cloud.compute.v1.FirewallPolicyRule value) {
+      if (packetMirroringRulesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePacketMirroringRulesIsMutable();
+        packetMirroringRules_.add(index, value);
+        onChanged();
+      } else {
+        packetMirroringRulesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of packet mirroring rules that belong to this policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+     * </code>
+     */
+    public Builder addPacketMirroringRules(
+        com.google.cloud.compute.v1.FirewallPolicyRule.Builder builderForValue) {
+      if (packetMirroringRulesBuilder_ == null) {
+        ensurePacketMirroringRulesIsMutable();
+        packetMirroringRules_.add(builderForValue.build());
+        onChanged();
+      } else {
+        packetMirroringRulesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of packet mirroring rules that belong to this policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+     * </code>
+     */
+    public Builder addPacketMirroringRules(
+        int index, com.google.cloud.compute.v1.FirewallPolicyRule.Builder builderForValue) {
+      if (packetMirroringRulesBuilder_ == null) {
+        ensurePacketMirroringRulesIsMutable();
+        packetMirroringRules_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        packetMirroringRulesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of packet mirroring rules that belong to this policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+     * </code>
+     */
+    public Builder addAllPacketMirroringRules(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.FirewallPolicyRule> values) {
+      if (packetMirroringRulesBuilder_ == null) {
+        ensurePacketMirroringRulesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, packetMirroringRules_);
+        onChanged();
+      } else {
+        packetMirroringRulesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of packet mirroring rules that belong to this policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+     * </code>
+     */
+    public Builder clearPacketMirroringRules() {
+      if (packetMirroringRulesBuilder_ == null) {
+        packetMirroringRules_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        packetMirroringRulesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of packet mirroring rules that belong to this policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+     * </code>
+     */
+    public Builder removePacketMirroringRules(int index) {
+      if (packetMirroringRulesBuilder_ == null) {
+        ensurePacketMirroringRulesIsMutable();
+        packetMirroringRules_.remove(index);
+        onChanged();
+      } else {
+        packetMirroringRulesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of packet mirroring rules that belong to this policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FirewallPolicyRule.Builder getPacketMirroringRulesBuilder(
+        int index) {
+      return getPacketMirroringRulesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of packet mirroring rules that belong to this policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder getPacketMirroringRulesOrBuilder(
+        int index) {
+      if (packetMirroringRulesBuilder_ == null) {
+        return packetMirroringRules_.get(index);
+      } else {
+        return packetMirroringRulesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of packet mirroring rules that belong to this policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>
+        getPacketMirroringRulesOrBuilderList() {
+      if (packetMirroringRulesBuilder_ != null) {
+        return packetMirroringRulesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(packetMirroringRules_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of packet mirroring rules that belong to this policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FirewallPolicyRule.Builder addPacketMirroringRulesBuilder() {
+      return getPacketMirroringRulesFieldBuilder()
+          .addBuilder(com.google.cloud.compute.v1.FirewallPolicyRule.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of packet mirroring rules that belong to this policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FirewallPolicyRule.Builder addPacketMirroringRulesBuilder(
+        int index) {
+      return getPacketMirroringRulesFieldBuilder()
+          .addBuilder(index, com.google.cloud.compute.v1.FirewallPolicyRule.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of packet mirroring rules that belong to this policy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.FirewallPolicyRule.Builder>
+        getPacketMirroringRulesBuilderList() {
+      return getPacketMirroringRulesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.FirewallPolicyRule,
+            com.google.cloud.compute.v1.FirewallPolicyRule.Builder,
+            com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>
+        getPacketMirroringRulesFieldBuilder() {
+      if (packetMirroringRulesBuilder_ == null) {
+        packetMirroringRulesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.FirewallPolicyRule,
+                com.google.cloud.compute.v1.FirewallPolicyRule.Builder,
+                com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>(
+                packetMirroringRules_,
+                ((bitField0_ & 0x00000100) != 0),
+                getParentForChildren(),
+                isClean());
+        packetMirroringRules_ = null;
+      }
+      return packetMirroringRulesBuilder_;
+    }
+
     private java.lang.Object parent_ = "";
     /**
      *
@@ -3042,7 +3587,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the parent field is set.
      */
     public boolean hasParent() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3105,7 +3650,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       parent_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3122,7 +3667,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearParent() {
       parent_ = getDefaultInstance().getParent();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3144,7 +3689,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       parent_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3162,7 +3707,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3225,7 +3770,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3242,7 +3787,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3264,7 +3809,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3283,7 +3828,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasRuleTupleCount() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3315,7 +3860,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder setRuleTupleCount(int value) {
 
       ruleTupleCount_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3331,7 +3876,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRuleTupleCount() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       ruleTupleCount_ = 0;
       onChanged();
       return this;
@@ -3341,9 +3886,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.FirewallPolicyRule>(rules_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -3559,7 +4104,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -3681,7 +4226,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.FirewallPolicyRule,
                 com.google.cloud.compute.v1.FirewallPolicyRule.Builder,
                 com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>(
-                rules_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;
@@ -3700,7 +4245,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -3763,7 +4308,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3780,7 +4325,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3802,7 +4347,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3820,7 +4365,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLinkWithId field is set.
      */
     public boolean hasSelfLinkWithId() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -3883,7 +4428,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3900,7 +4445,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLinkWithId() {
       selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -3922,7 +4467,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3940,7 +4485,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the shortName field is set.
      */
     public boolean hasShortName() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4003,7 +4548,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       shortName_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4020,7 +4565,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearShortName() {
       shortName_ = getDefaultInstance().getShortName();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4042,7 +4587,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       shortName_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }

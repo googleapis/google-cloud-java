@@ -93,10 +93,14 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
     VM_FAMILY_CLOUD_TPU_LITE_DEVICE_CT5L(108020067),
     /** <code>VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT5LP = 18705267;</code> */
     VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT5LP(18705267),
+    /** <code>VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT6E = 398926997;</code> */
+    VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT6E(398926997),
     /** <code>VM_FAMILY_CLOUD_TPU_POD_SLICE_CT3P = 517384376;</code> */
     VM_FAMILY_CLOUD_TPU_POD_SLICE_CT3P(517384376),
     /** <code>VM_FAMILY_CLOUD_TPU_POD_SLICE_CT4P = 517384407;</code> */
     VM_FAMILY_CLOUD_TPU_POD_SLICE_CT4P(517384407),
+    /** <code>VM_FAMILY_CLOUD_TPU_POD_SLICE_CT5P = 517384438;</code> */
+    VM_FAMILY_CLOUD_TPU_POD_SLICE_CT5P(517384438),
     UNRECOGNIZED(-1),
     ;
 
@@ -116,10 +120,14 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
     public static final int VM_FAMILY_CLOUD_TPU_LITE_DEVICE_CT5L_VALUE = 108020067;
     /** <code>VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT5LP = 18705267;</code> */
     public static final int VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT5LP_VALUE = 18705267;
+    /** <code>VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT6E = 398926997;</code> */
+    public static final int VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT6E_VALUE = 398926997;
     /** <code>VM_FAMILY_CLOUD_TPU_POD_SLICE_CT3P = 517384376;</code> */
     public static final int VM_FAMILY_CLOUD_TPU_POD_SLICE_CT3P_VALUE = 517384376;
     /** <code>VM_FAMILY_CLOUD_TPU_POD_SLICE_CT4P = 517384407;</code> */
     public static final int VM_FAMILY_CLOUD_TPU_POD_SLICE_CT4P_VALUE = 517384407;
+    /** <code>VM_FAMILY_CLOUD_TPU_POD_SLICE_CT5P = 517384438;</code> */
+    public static final int VM_FAMILY_CLOUD_TPU_POD_SLICE_CT5P_VALUE = 517384438;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -153,10 +161,14 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
           return VM_FAMILY_CLOUD_TPU_LITE_DEVICE_CT5L;
         case 18705267:
           return VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT5LP;
+        case 398926997:
+          return VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT6E;
         case 517384376:
           return VM_FAMILY_CLOUD_TPU_POD_SLICE_CT3P;
         case 517384407:
           return VM_FAMILY_CLOUD_TPU_POD_SLICE_CT4P;
+        case 517384438:
+          return VM_FAMILY_CLOUD_TPU_POD_SLICE_CT5P;
         default:
           return null;
       }

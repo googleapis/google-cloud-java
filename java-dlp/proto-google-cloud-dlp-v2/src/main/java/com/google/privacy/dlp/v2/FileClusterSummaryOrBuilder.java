@@ -378,8 +378,8 @@ public interface FileClusterSummaryOrBuilder
    *
    *
    * <pre>
-   * True if no files exist in this cluster. If the bucket had more files than
-   * could be listed, this will be false even if no files for this cluster
+   * True if no files exist in this cluster. If the file store had more files
+   * than could be listed, this will be false even if no files for this cluster
    * were seen and file_extensions_seen is empty.
    * </pre>
    *

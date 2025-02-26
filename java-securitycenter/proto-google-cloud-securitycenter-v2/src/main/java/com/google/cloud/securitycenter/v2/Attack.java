@@ -63,8 +63,8 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v2.Attack.Builder.class);
   }
 
-  public static final int VOLUME_PPS_FIELD_NUMBER = 1;
-  private int volumePps_ = 0;
+  public static final int VOLUME_PPS_LONG_FIELD_NUMBER = 4;
+  private long volumePpsLong_ = 0L;
   /**
    *
    *
@@ -72,17 +72,17 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
    * Total PPS (packets per second) volume of attack.
    * </pre>
    *
-   * <code>int32 volume_pps = 1;</code>
+   * <code>int64 volume_pps_long = 4;</code>
    *
-   * @return The volumePps.
+   * @return The volumePpsLong.
    */
   @java.lang.Override
-  public int getVolumePps() {
-    return volumePps_;
+  public long getVolumePpsLong() {
+    return volumePpsLong_;
   }
 
-  public static final int VOLUME_BPS_FIELD_NUMBER = 2;
-  private int volumeBps_ = 0;
+  public static final int VOLUME_BPS_LONG_FIELD_NUMBER = 5;
+  private long volumeBpsLong_ = 0L;
   /**
    *
    *
@@ -90,13 +90,13 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
    * Total BPS (bytes per second) volume of attack.
    * </pre>
    *
-   * <code>int32 volume_bps = 2;</code>
+   * <code>int64 volume_bps_long = 5;</code>
    *
-   * @return The volumeBps.
+   * @return The volumeBpsLong.
    */
   @java.lang.Override
-  public int getVolumeBps() {
-    return volumeBps_;
+  public long getVolumeBpsLong() {
+    return volumeBpsLong_;
   }
 
   public static final int CLASSIFICATION_FIELD_NUMBER = 3;
@@ -150,6 +150,50 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int VOLUME_PPS_FIELD_NUMBER = 1;
+  private int volumePps_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Total PPS (packets per second) volume of attack. Deprecated - refer to
+   * volume_pps_long instead.
+   * </pre>
+   *
+   * <code>int32 volume_pps = 1 [deprecated = true];</code>
+   *
+   * @deprecated google.cloud.securitycenter.v2.Attack.volume_pps is deprecated. See
+   *     google/cloud/securitycenter/v2/cloud_armor.proto;l=116
+   * @return The volumePps.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public int getVolumePps() {
+    return volumePps_;
+  }
+
+  public static final int VOLUME_BPS_FIELD_NUMBER = 2;
+  private int volumeBps_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Total BPS (bytes per second) volume of attack. Deprecated - refer to
+   * volume_bps_long instead.
+   * </pre>
+   *
+   * <code>int32 volume_bps = 2 [deprecated = true];</code>
+   *
+   * @deprecated google.cloud.securitycenter.v2.Attack.volume_bps is deprecated. See
+   *     google/cloud/securitycenter/v2/cloud_armor.proto;l=120
+   * @return The volumeBps.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public int getVolumeBps() {
+    return volumeBps_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -173,6 +217,12 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(classification_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, classification_);
     }
+    if (volumePpsLong_ != 0L) {
+      output.writeInt64(4, volumePpsLong_);
+    }
+    if (volumeBpsLong_ != 0L) {
+      output.writeInt64(5, volumeBpsLong_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -191,6 +241,12 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(classification_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, classification_);
     }
+    if (volumePpsLong_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, volumePpsLong_);
+    }
+    if (volumeBpsLong_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(5, volumeBpsLong_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -207,9 +263,11 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.securitycenter.v2.Attack other =
         (com.google.cloud.securitycenter.v2.Attack) obj;
 
+    if (getVolumePpsLong() != other.getVolumePpsLong()) return false;
+    if (getVolumeBpsLong() != other.getVolumeBpsLong()) return false;
+    if (!getClassification().equals(other.getClassification())) return false;
     if (getVolumePps() != other.getVolumePps()) return false;
     if (getVolumeBps() != other.getVolumeBps()) return false;
-    if (!getClassification().equals(other.getClassification())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -221,12 +279,16 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + VOLUME_PPS_LONG_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getVolumePpsLong());
+    hash = (37 * hash) + VOLUME_BPS_LONG_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getVolumeBpsLong());
+    hash = (37 * hash) + CLASSIFICATION_FIELD_NUMBER;
+    hash = (53 * hash) + getClassification().hashCode();
     hash = (37 * hash) + VOLUME_PPS_FIELD_NUMBER;
     hash = (53 * hash) + getVolumePps();
     hash = (37 * hash) + VOLUME_BPS_FIELD_NUMBER;
     hash = (53 * hash) + getVolumeBps();
-    hash = (37 * hash) + CLASSIFICATION_FIELD_NUMBER;
-    hash = (53 * hash) + getClassification().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -366,9 +428,11 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      volumePpsLong_ = 0L;
+      volumeBpsLong_ = 0L;
+      classification_ = "";
       volumePps_ = 0;
       volumeBps_ = 0;
-      classification_ = "";
       return this;
     }
 
@@ -406,13 +470,19 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
     private void buildPartial0(com.google.cloud.securitycenter.v2.Attack result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.volumePps_ = volumePps_;
+        result.volumePpsLong_ = volumePpsLong_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.volumeBps_ = volumeBps_;
+        result.volumeBpsLong_ = volumeBpsLong_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.classification_ = classification_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.volumePps_ = volumePps_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.volumeBps_ = volumeBps_;
       }
     }
 
@@ -461,16 +531,22 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.securitycenter.v2.Attack other) {
       if (other == com.google.cloud.securitycenter.v2.Attack.getDefaultInstance()) return this;
-      if (other.getVolumePps() != 0) {
-        setVolumePps(other.getVolumePps());
+      if (other.getVolumePpsLong() != 0L) {
+        setVolumePpsLong(other.getVolumePpsLong());
       }
-      if (other.getVolumeBps() != 0) {
-        setVolumeBps(other.getVolumeBps());
+      if (other.getVolumeBpsLong() != 0L) {
+        setVolumeBpsLong(other.getVolumeBpsLong());
       }
       if (!other.getClassification().isEmpty()) {
         classification_ = other.classification_;
         bitField0_ |= 0x00000004;
         onChanged();
+      }
+      if (other.getVolumePps() != 0) {
+        setVolumePps(other.getVolumePps());
+      }
+      if (other.getVolumeBps() != 0) {
+        setVolumeBps(other.getVolumeBps());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -501,13 +577,13 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 volumePps_ = input.readInt32();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 8
             case 16:
               {
                 volumeBps_ = input.readInt32();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 16
             case 26:
@@ -516,6 +592,18 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 32:
+              {
+                volumePpsLong_ = input.readInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+            case 40:
+              {
+                volumeBpsLong_ = input.readInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -535,7 +623,7 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private int volumePps_;
+    private long volumePpsLong_;
     /**
      *
      *
@@ -543,13 +631,13 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
      * Total PPS (packets per second) volume of attack.
      * </pre>
      *
-     * <code>int32 volume_pps = 1;</code>
+     * <code>int64 volume_pps_long = 4;</code>
      *
-     * @return The volumePps.
+     * @return The volumePpsLong.
      */
     @java.lang.Override
-    public int getVolumePps() {
-      return volumePps_;
+    public long getVolumePpsLong() {
+      return volumePpsLong_;
     }
     /**
      *
@@ -558,14 +646,14 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
      * Total PPS (packets per second) volume of attack.
      * </pre>
      *
-     * <code>int32 volume_pps = 1;</code>
+     * <code>int64 volume_pps_long = 4;</code>
      *
-     * @param value The volumePps to set.
+     * @param value The volumePpsLong to set.
      * @return This builder for chaining.
      */
-    public Builder setVolumePps(int value) {
+    public Builder setVolumePpsLong(long value) {
 
-      volumePps_ = value;
+      volumePpsLong_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -577,18 +665,18 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
      * Total PPS (packets per second) volume of attack.
      * </pre>
      *
-     * <code>int32 volume_pps = 1;</code>
+     * <code>int64 volume_pps_long = 4;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearVolumePps() {
+    public Builder clearVolumePpsLong() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      volumePps_ = 0;
+      volumePpsLong_ = 0L;
       onChanged();
       return this;
     }
 
-    private int volumeBps_;
+    private long volumeBpsLong_;
     /**
      *
      *
@@ -596,13 +684,13 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
      * Total BPS (bytes per second) volume of attack.
      * </pre>
      *
-     * <code>int32 volume_bps = 2;</code>
+     * <code>int64 volume_bps_long = 5;</code>
      *
-     * @return The volumeBps.
+     * @return The volumeBpsLong.
      */
     @java.lang.Override
-    public int getVolumeBps() {
-      return volumeBps_;
+    public long getVolumeBpsLong() {
+      return volumeBpsLong_;
     }
     /**
      *
@@ -611,14 +699,14 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
      * Total BPS (bytes per second) volume of attack.
      * </pre>
      *
-     * <code>int32 volume_bps = 2;</code>
+     * <code>int64 volume_bps_long = 5;</code>
      *
-     * @param value The volumeBps to set.
+     * @param value The volumeBpsLong to set.
      * @return This builder for chaining.
      */
-    public Builder setVolumeBps(int value) {
+    public Builder setVolumeBpsLong(long value) {
 
-      volumeBps_ = value;
+      volumeBpsLong_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
@@ -630,13 +718,13 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
      * Total BPS (bytes per second) volume of attack.
      * </pre>
      *
-     * <code>int32 volume_bps = 2;</code>
+     * <code>int64 volume_bps_long = 5;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearVolumeBps() {
+    public Builder clearVolumeBpsLong() {
       bitField0_ = (bitField0_ & ~0x00000002);
-      volumeBps_ = 0;
+      volumeBpsLong_ = 0L;
       onChanged();
       return this;
     }
@@ -743,6 +831,136 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       classification_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private int volumePps_;
+    /**
+     *
+     *
+     * <pre>
+     * Total PPS (packets per second) volume of attack. Deprecated - refer to
+     * volume_pps_long instead.
+     * </pre>
+     *
+     * <code>int32 volume_pps = 1 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.securitycenter.v2.Attack.volume_pps is deprecated. See
+     *     google/cloud/securitycenter/v2/cloud_armor.proto;l=116
+     * @return The volumePps.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public int getVolumePps() {
+      return volumePps_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Total PPS (packets per second) volume of attack. Deprecated - refer to
+     * volume_pps_long instead.
+     * </pre>
+     *
+     * <code>int32 volume_pps = 1 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.securitycenter.v2.Attack.volume_pps is deprecated. See
+     *     google/cloud/securitycenter/v2/cloud_armor.proto;l=116
+     * @param value The volumePps to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder setVolumePps(int value) {
+
+      volumePps_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Total PPS (packets per second) volume of attack. Deprecated - refer to
+     * volume_pps_long instead.
+     * </pre>
+     *
+     * <code>int32 volume_pps = 1 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.securitycenter.v2.Attack.volume_pps is deprecated. See
+     *     google/cloud/securitycenter/v2/cloud_armor.proto;l=116
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder clearVolumePps() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      volumePps_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int volumeBps_;
+    /**
+     *
+     *
+     * <pre>
+     * Total BPS (bytes per second) volume of attack. Deprecated - refer to
+     * volume_bps_long instead.
+     * </pre>
+     *
+     * <code>int32 volume_bps = 2 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.securitycenter.v2.Attack.volume_bps is deprecated. See
+     *     google/cloud/securitycenter/v2/cloud_armor.proto;l=120
+     * @return The volumeBps.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public int getVolumeBps() {
+      return volumeBps_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Total BPS (bytes per second) volume of attack. Deprecated - refer to
+     * volume_bps_long instead.
+     * </pre>
+     *
+     * <code>int32 volume_bps = 2 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.securitycenter.v2.Attack.volume_bps is deprecated. See
+     *     google/cloud/securitycenter/v2/cloud_armor.proto;l=120
+     * @param value The volumeBps to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder setVolumeBps(int value) {
+
+      volumeBps_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Total BPS (bytes per second) volume of attack. Deprecated - refer to
+     * volume_bps_long instead.
+     * </pre>
+     *
+     * <code>int32 volume_bps = 2 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.securitycenter.v2.Attack.volume_bps is deprecated. See
+     *     google/cloud/securitycenter/v2/cloud_armor.proto;l=120
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder clearVolumeBps() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      volumeBps_ = 0;
       onChanged();
       return this;
     }

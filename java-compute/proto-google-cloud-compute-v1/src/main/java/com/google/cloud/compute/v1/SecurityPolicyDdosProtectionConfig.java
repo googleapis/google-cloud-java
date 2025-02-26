@@ -84,6 +84,8 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
     UNDEFINED_DDOS_PROTECTION(0),
     /** <code>ADVANCED = 63789090;</code> */
     ADVANCED(63789090),
+    /** <code>ADVANCED_PREVIEW = 40905867;</code> */
+    ADVANCED_PREVIEW(40905867),
     /** <code>STANDARD = 484642493;</code> */
     STANDARD(484642493),
     UNRECOGNIZED(-1),
@@ -101,6 +103,8 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
     public static final int UNDEFINED_DDOS_PROTECTION_VALUE = 0;
     /** <code>ADVANCED = 63789090;</code> */
     public static final int ADVANCED_VALUE = 63789090;
+    /** <code>ADVANCED_PREVIEW = 40905867;</code> */
+    public static final int ADVANCED_PREVIEW_VALUE = 40905867;
     /** <code>STANDARD = 484642493;</code> */
     public static final int STANDARD_VALUE = 484642493;
 
@@ -132,6 +136,8 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
           return UNDEFINED_DDOS_PROTECTION;
         case 63789090:
           return ADVANCED;
+        case 40905867:
+          return ADVANCED_PREVIEW;
         case 484642493:
           return STANDARD;
         default:

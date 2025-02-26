@@ -740,6 +740,1504 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ReplicationStatusOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last error encountered while trying to replicate changes
+     * from the primary to the secondary. This field is only available if the
+     * replication has not succeeded since.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the error field is set.
+     */
+    boolean hasError();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last error encountered while trying to replicate changes
+     * from the primary to the secondary. This field is only available if the
+     * replication has not succeeded since.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The error.
+     */
+    com.google.rpc.Status getError();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last error encountered while trying to replicate changes
+     * from the primary to the secondary. This field is only available if the
+     * replication has not succeeded since.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    com.google.rpc.StatusOrBuilder getErrorOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which the last error was encountered while
+     * trying to replicate changes from the primary to the secondary. This field
+     * is only available if the replication has not succeeded since.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_error_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the lastErrorTime field is set.
+     */
+    boolean hasLastErrorTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which the last error was encountered while
+     * trying to replicate changes from the primary to the secondary. This field
+     * is only available if the replication has not succeeded since.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_error_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The lastErrorTime.
+     */
+    com.google.protobuf.Timestamp getLastErrorTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which the last error was encountered while
+     * trying to replicate changes from the primary to the secondary. This field
+     * is only available if the replication has not succeeded since.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_error_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getLastErrorTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A timestamp corresponding to the last change on the primary
+     * that was successfully replicated to the secondary.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_replication_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the lastReplicationTime field is set.
+     */
+    boolean hasLastReplicationTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A timestamp corresponding to the last change on the primary
+     * that was successfully replicated to the secondary.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_replication_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The lastReplicationTime.
+     */
+    com.google.protobuf.Timestamp getLastReplicationTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A timestamp corresponding to the last change on the primary
+     * that was successfully replicated to the secondary.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_replication_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getLastReplicationTimeOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Disaster Recovery(DR) replication status of the reservation.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus}
+   */
+  public static final class ReplicationStatus extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus)
+      ReplicationStatusOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ReplicationStatus.newBuilder() to construct.
+    private ReplicationStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ReplicationStatus() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ReplicationStatus();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.bigquery.reservation.v1.ReservationProto
+          .internal_static_google_cloud_bigquery_reservation_v1_Reservation_ReplicationStatus_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.bigquery.reservation.v1.ReservationProto
+          .internal_static_google_cloud_bigquery_reservation_v1_Reservation_ReplicationStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus.class,
+              com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ERROR_FIELD_NUMBER = 1;
+    private com.google.rpc.Status error_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last error encountered while trying to replicate changes
+     * from the primary to the secondary. This field is only available if the
+     * replication has not succeeded since.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the error field is set.
+     */
+    @java.lang.Override
+    public boolean hasError() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last error encountered while trying to replicate changes
+     * from the primary to the secondary. This field is only available if the
+     * replication has not succeeded since.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The error.
+     */
+    @java.lang.Override
+    public com.google.rpc.Status getError() {
+      return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last error encountered while trying to replicate changes
+     * from the primary to the secondary. This field is only available if the
+     * replication has not succeeded since.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
+      return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+    }
+
+    public static final int LAST_ERROR_TIME_FIELD_NUMBER = 2;
+    private com.google.protobuf.Timestamp lastErrorTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which the last error was encountered while
+     * trying to replicate changes from the primary to the secondary. This field
+     * is only available if the replication has not succeeded since.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_error_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the lastErrorTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasLastErrorTime() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which the last error was encountered while
+     * trying to replicate changes from the primary to the secondary. This field
+     * is only available if the replication has not succeeded since.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_error_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The lastErrorTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getLastErrorTime() {
+      return lastErrorTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : lastErrorTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which the last error was encountered while
+     * trying to replicate changes from the primary to the secondary. This field
+     * is only available if the replication has not succeeded since.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_error_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getLastErrorTimeOrBuilder() {
+      return lastErrorTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : lastErrorTime_;
+    }
+
+    public static final int LAST_REPLICATION_TIME_FIELD_NUMBER = 3;
+    private com.google.protobuf.Timestamp lastReplicationTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A timestamp corresponding to the last change on the primary
+     * that was successfully replicated to the secondary.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_replication_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the lastReplicationTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasLastReplicationTime() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A timestamp corresponding to the last change on the primary
+     * that was successfully replicated to the secondary.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_replication_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The lastReplicationTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getLastReplicationTime() {
+      return lastReplicationTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : lastReplicationTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A timestamp corresponding to the last change on the primary
+     * that was successfully replicated to the secondary.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_replication_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getLastReplicationTimeOrBuilder() {
+      return lastReplicationTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : lastReplicationTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getError());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getLastErrorTime());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(3, getLastReplicationTime());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getError());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getLastErrorTime());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(3, getLastReplicationTime());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus other =
+          (com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus) obj;
+
+      if (hasError() != other.hasError()) return false;
+      if (hasError()) {
+        if (!getError().equals(other.getError())) return false;
+      }
+      if (hasLastErrorTime() != other.hasLastErrorTime()) return false;
+      if (hasLastErrorTime()) {
+        if (!getLastErrorTime().equals(other.getLastErrorTime())) return false;
+      }
+      if (hasLastReplicationTime() != other.hasLastReplicationTime()) return false;
+      if (hasLastReplicationTime()) {
+        if (!getLastReplicationTime().equals(other.getLastReplicationTime())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasError()) {
+        hash = (37 * hash) + ERROR_FIELD_NUMBER;
+        hash = (53 * hash) + getError().hashCode();
+      }
+      if (hasLastErrorTime()) {
+        hash = (37 * hash) + LAST_ERROR_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getLastErrorTime().hashCode();
+      }
+      if (hasLastReplicationTime()) {
+        hash = (37 * hash) + LAST_REPLICATION_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getLastReplicationTime().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Disaster Recovery(DR) replication status of the reservation.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus)
+        com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.bigquery.reservation.v1.ReservationProto
+            .internal_static_google_cloud_bigquery_reservation_v1_Reservation_ReplicationStatus_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.bigquery.reservation.v1.ReservationProto
+            .internal_static_google_cloud_bigquery_reservation_v1_Reservation_ReplicationStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus.class,
+                com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getErrorFieldBuilder();
+          getLastErrorTimeFieldBuilder();
+          getLastReplicationTimeFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        error_ = null;
+        if (errorBuilder_ != null) {
+          errorBuilder_.dispose();
+          errorBuilder_ = null;
+        }
+        lastErrorTime_ = null;
+        if (lastErrorTimeBuilder_ != null) {
+          lastErrorTimeBuilder_.dispose();
+          lastErrorTimeBuilder_ = null;
+        }
+        lastReplicationTime_ = null;
+        if (lastReplicationTimeBuilder_ != null) {
+          lastReplicationTimeBuilder_.dispose();
+          lastReplicationTimeBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.bigquery.reservation.v1.ReservationProto
+            .internal_static_google_cloud_bigquery_reservation_v1_Reservation_ReplicationStatus_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
+          getDefaultInstanceForType() {
+        return com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus build() {
+        com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus buildPartial() {
+        com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus result =
+            new com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.lastErrorTime_ =
+              lastErrorTimeBuilder_ == null ? lastErrorTime_ : lastErrorTimeBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.lastReplicationTime_ =
+              lastReplicationTimeBuilder_ == null
+                  ? lastReplicationTime_
+                  : lastReplicationTimeBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus) {
+          return mergeFrom(
+              (com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus other) {
+        if (other
+            == com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
+                .getDefaultInstance()) return this;
+        if (other.hasError()) {
+          mergeError(other.getError());
+        }
+        if (other.hasLastErrorTime()) {
+          mergeLastErrorTime(other.getLastErrorTime());
+        }
+        if (other.hasLastReplicationTime()) {
+          mergeLastReplicationTime(other.getLastReplicationTime());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getLastErrorTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getLastReplicationTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.rpc.Status error_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+          errorBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The last error encountered while trying to replicate changes
+       * from the primary to the secondary. This field is only available if the
+       * replication has not succeeded since.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return Whether the error field is set.
+       */
+      public boolean hasError() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The last error encountered while trying to replicate changes
+       * from the primary to the secondary. This field is only available if the
+       * replication has not succeeded since.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The error.
+       */
+      public com.google.rpc.Status getError() {
+        if (errorBuilder_ == null) {
+          return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+        } else {
+          return errorBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The last error encountered while trying to replicate changes
+       * from the primary to the secondary. This field is only available if the
+       * replication has not succeeded since.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setError(com.google.rpc.Status value) {
+        if (errorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          error_ = value;
+        } else {
+          errorBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The last error encountered while trying to replicate changes
+       * from the primary to the secondary. This field is only available if the
+       * replication has not succeeded since.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setError(com.google.rpc.Status.Builder builderForValue) {
+        if (errorBuilder_ == null) {
+          error_ = builderForValue.build();
+        } else {
+          errorBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The last error encountered while trying to replicate changes
+       * from the primary to the secondary. This field is only available if the
+       * replication has not succeeded since.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder mergeError(com.google.rpc.Status value) {
+        if (errorBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && error_ != null
+              && error_ != com.google.rpc.Status.getDefaultInstance()) {
+            getErrorBuilder().mergeFrom(value);
+          } else {
+            error_ = value;
+          }
+        } else {
+          errorBuilder_.mergeFrom(value);
+        }
+        if (error_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The last error encountered while trying to replicate changes
+       * from the primary to the secondary. This field is only available if the
+       * replication has not succeeded since.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder clearError() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        error_ = null;
+        if (errorBuilder_ != null) {
+          errorBuilder_.dispose();
+          errorBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The last error encountered while trying to replicate changes
+       * from the primary to the secondary. This field is only available if the
+       * replication has not succeeded since.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.rpc.Status.Builder getErrorBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getErrorFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The last error encountered while trying to replicate changes
+       * from the primary to the secondary. This field is only available if the
+       * replication has not succeeded since.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
+        if (errorBuilder_ != null) {
+          return errorBuilder_.getMessageOrBuilder();
+        } else {
+          return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The last error encountered while trying to replicate changes
+       * from the primary to the secondary. This field is only available if the
+       * replication has not succeeded since.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+          getErrorFieldBuilder() {
+        if (errorBuilder_ == null) {
+          errorBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.rpc.Status,
+                  com.google.rpc.Status.Builder,
+                  com.google.rpc.StatusOrBuilder>(getError(), getParentForChildren(), isClean());
+          error_ = null;
+        }
+        return errorBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp lastErrorTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          lastErrorTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which the last error was encountered while
+       * trying to replicate changes from the primary to the secondary. This field
+       * is only available if the replication has not succeeded since.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_error_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the lastErrorTime field is set.
+       */
+      public boolean hasLastErrorTime() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which the last error was encountered while
+       * trying to replicate changes from the primary to the secondary. This field
+       * is only available if the replication has not succeeded since.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_error_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The lastErrorTime.
+       */
+      public com.google.protobuf.Timestamp getLastErrorTime() {
+        if (lastErrorTimeBuilder_ == null) {
+          return lastErrorTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : lastErrorTime_;
+        } else {
+          return lastErrorTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which the last error was encountered while
+       * trying to replicate changes from the primary to the secondary. This field
+       * is only available if the replication has not succeeded since.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_error_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setLastErrorTime(com.google.protobuf.Timestamp value) {
+        if (lastErrorTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          lastErrorTime_ = value;
+        } else {
+          lastErrorTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which the last error was encountered while
+       * trying to replicate changes from the primary to the secondary. This field
+       * is only available if the replication has not succeeded since.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_error_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setLastErrorTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (lastErrorTimeBuilder_ == null) {
+          lastErrorTime_ = builderForValue.build();
+        } else {
+          lastErrorTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which the last error was encountered while
+       * trying to replicate changes from the primary to the secondary. This field
+       * is only available if the replication has not succeeded since.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_error_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeLastErrorTime(com.google.protobuf.Timestamp value) {
+        if (lastErrorTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && lastErrorTime_ != null
+              && lastErrorTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getLastErrorTimeBuilder().mergeFrom(value);
+          } else {
+            lastErrorTime_ = value;
+          }
+        } else {
+          lastErrorTimeBuilder_.mergeFrom(value);
+        }
+        if (lastErrorTime_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which the last error was encountered while
+       * trying to replicate changes from the primary to the secondary. This field
+       * is only available if the replication has not succeeded since.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_error_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearLastErrorTime() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        lastErrorTime_ = null;
+        if (lastErrorTimeBuilder_ != null) {
+          lastErrorTimeBuilder_.dispose();
+          lastErrorTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which the last error was encountered while
+       * trying to replicate changes from the primary to the secondary. This field
+       * is only available if the replication has not succeeded since.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_error_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getLastErrorTimeBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getLastErrorTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which the last error was encountered while
+       * trying to replicate changes from the primary to the secondary. This field
+       * is only available if the replication has not succeeded since.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_error_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getLastErrorTimeOrBuilder() {
+        if (lastErrorTimeBuilder_ != null) {
+          return lastErrorTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return lastErrorTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : lastErrorTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which the last error was encountered while
+       * trying to replicate changes from the primary to the secondary. This field
+       * is only available if the replication has not succeeded since.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_error_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getLastErrorTimeFieldBuilder() {
+        if (lastErrorTimeBuilder_ == null) {
+          lastErrorTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getLastErrorTime(), getParentForChildren(), isClean());
+          lastErrorTime_ = null;
+        }
+        return lastErrorTimeBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp lastReplicationTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          lastReplicationTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A timestamp corresponding to the last change on the primary
+       * that was successfully replicated to the secondary.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_replication_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the lastReplicationTime field is set.
+       */
+      public boolean hasLastReplicationTime() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A timestamp corresponding to the last change on the primary
+       * that was successfully replicated to the secondary.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_replication_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The lastReplicationTime.
+       */
+      public com.google.protobuf.Timestamp getLastReplicationTime() {
+        if (lastReplicationTimeBuilder_ == null) {
+          return lastReplicationTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : lastReplicationTime_;
+        } else {
+          return lastReplicationTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A timestamp corresponding to the last change on the primary
+       * that was successfully replicated to the secondary.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_replication_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setLastReplicationTime(com.google.protobuf.Timestamp value) {
+        if (lastReplicationTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          lastReplicationTime_ = value;
+        } else {
+          lastReplicationTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A timestamp corresponding to the last change on the primary
+       * that was successfully replicated to the secondary.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_replication_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setLastReplicationTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (lastReplicationTimeBuilder_ == null) {
+          lastReplicationTime_ = builderForValue.build();
+        } else {
+          lastReplicationTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A timestamp corresponding to the last change on the primary
+       * that was successfully replicated to the secondary.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_replication_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeLastReplicationTime(com.google.protobuf.Timestamp value) {
+        if (lastReplicationTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && lastReplicationTime_ != null
+              && lastReplicationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getLastReplicationTimeBuilder().mergeFrom(value);
+          } else {
+            lastReplicationTime_ = value;
+          }
+        } else {
+          lastReplicationTimeBuilder_.mergeFrom(value);
+        }
+        if (lastReplicationTime_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A timestamp corresponding to the last change on the primary
+       * that was successfully replicated to the secondary.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_replication_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearLastReplicationTime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        lastReplicationTime_ = null;
+        if (lastReplicationTimeBuilder_ != null) {
+          lastReplicationTimeBuilder_.dispose();
+          lastReplicationTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A timestamp corresponding to the last change on the primary
+       * that was successfully replicated to the secondary.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_replication_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getLastReplicationTimeBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getLastReplicationTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A timestamp corresponding to the last change on the primary
+       * that was successfully replicated to the secondary.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_replication_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getLastReplicationTimeOrBuilder() {
+        if (lastReplicationTimeBuilder_ != null) {
+          return lastReplicationTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return lastReplicationTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : lastReplicationTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A timestamp corresponding to the last change on the primary
+       * that was successfully replicated to the secondary.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_replication_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getLastReplicationTimeFieldBuilder() {
+        if (lastReplicationTimeBuilder_ == null) {
+          lastReplicationTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getLastReplicationTime(), getParentForChildren(), isClean());
+          lastReplicationTime_ = null;
+        }
+        return lastReplicationTimeBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus)
+    private static final com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus();
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReplicationStatus> PARSER =
+        new com.google.protobuf.AbstractParser<ReplicationStatus>() {
+          @java.lang.Override
+          public ReplicationStatus parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ReplicationStatus> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReplicationStatus> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -812,13 +2310,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * Queries using this reservation might use more slots during runtime if
    * ignore_idle_slots is set to false, or autoscaling is enabled.
    *
-   * If edition is EDITION_UNSPECIFIED and total slot_capacity of the
-   * reservation and its siblings exceeds the total slot_count of all capacity
-   * commitments, the request will fail with
-   * `google.rpc.Code.RESOURCE_EXHAUSTED`.
-   *
-   * If edition is any value but EDITION_UNSPECIFIED, then the above requirement
-   * is not needed. The total slot_capacity of the reservation and its siblings
+   * The total slot_capacity of the reservation and its siblings
    * may exceed the total slot_count of capacity commitments. In that case, the
    * exceeding slots will be charged with the autoscale SKU. You can increase
    * the number of baseline slots in a reservation every few minutes. If you
@@ -1108,13 +2600,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The current location of the reservation's primary replica. This
-   * field is only set for reservations using the managed disaster recovery
+   * Output only. The current location of the reservation's primary replica.
+   * This field is only set for reservations using the managed disaster recovery
    * feature.
    * </pre>
    *
    * <code>
-   * string primary_location = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string primary_location = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The primaryLocation.
@@ -1135,13 +2627,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The current location of the reservation's primary replica. This
-   * field is only set for reservations using the managed disaster recovery
+   * Output only. The current location of the reservation's primary replica.
+   * This field is only set for reservations using the managed disaster recovery
    * feature.
    * </pre>
    *
    * <code>
-   * string primary_location = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string primary_location = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for primaryLocation.
@@ -1230,13 +2722,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The location where the reservation was originally created. This
-   * is set only during the failover reservation's creation. All billing charges
-   * for the failover reservation will be applied to this location.
+   * Output only. The location where the reservation was originally created.
+   * This is set only during the failover reservation's creation. All billing
+   * charges for the failover reservation will be applied to this location.
    * </pre>
    *
    * <code>
-   * string original_primary_location = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string original_primary_location = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The originalPrimaryLocation.
@@ -1257,13 +2749,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The location where the reservation was originally created. This
-   * is set only during the failover reservation's creation. All billing charges
-   * for the failover reservation will be applied to this location.
+   * Output only. The location where the reservation was originally created.
+   * This is set only during the failover reservation's creation. All billing
+   * charges for the failover reservation will be applied to this location.
    * </pre>
    *
    * <code>
-   * string original_primary_location = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string original_primary_location = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for originalPrimaryLocation.
@@ -1279,6 +2771,87 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int REPLICATION_STATUS_FIELD_NUMBER = 24;
+  private com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus replicationStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Disaster Recovery(DR) replication status of the
+   * reservation. This is only available for the primary replicas of DR/failover
+   * reservations and provides information about the both the staleness of the
+   * secondary and the last error encountered while trying to replicate changes
+   * from the primary to the secondary. If this field is blank, it means that
+   * the reservation is either not a DR reservation or the reservation is a DR
+   * secondary or that any replication operations on the reservation have
+   * succeeded.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus replication_status = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the replicationStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasReplicationStatus() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Disaster Recovery(DR) replication status of the
+   * reservation. This is only available for the primary replicas of DR/failover
+   * reservations and provides information about the both the staleness of the
+   * secondary and the last error encountered while trying to replicate changes
+   * from the primary to the secondary. If this field is blank, it means that
+   * the reservation is either not a DR reservation or the reservation is a DR
+   * secondary or that any replication operations on the reservation have
+   * succeeded.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus replication_status = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The replicationStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
+      getReplicationStatus() {
+    return replicationStatus_ == null
+        ? com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
+            .getDefaultInstance()
+        : replicationStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Disaster Recovery(DR) replication status of the
+   * reservation. This is only available for the primary replicas of DR/failover
+   * reservations and provides information about the both the staleness of the
+   * secondary and the last error encountered while trying to replicate changes
+   * from the primary to the secondary. If this field is blank, it means that
+   * the reservation is either not a DR reservation or the reservation is a DR
+   * secondary or that any replication operations on the reservation have
+   * succeeded.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus replication_status = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatusOrBuilder
+      getReplicationStatusOrBuilder() {
+    return replicationStatus_ == null
+        ? com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
+            .getDefaultInstance()
+        : replicationStatus_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1332,6 +2905,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(originalPrimaryLocation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, originalPrimaryLocation_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(24, getReplicationStatus());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1379,6 +2955,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(20, originalPrimaryLocation_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getReplicationStatus());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1416,6 +2995,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (!getPrimaryLocation().equals(other.getPrimaryLocation())) return false;
     if (!getSecondaryLocation().equals(other.getSecondaryLocation())) return false;
     if (!getOriginalPrimaryLocation().equals(other.getOriginalPrimaryLocation())) return false;
+    if (hasReplicationStatus() != other.hasReplicationStatus()) return false;
+    if (hasReplicationStatus()) {
+      if (!getReplicationStatus().equals(other.getReplicationStatus())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1457,6 +3040,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getSecondaryLocation().hashCode();
     hash = (37 * hash) + ORIGINAL_PRIMARY_LOCATION_FIELD_NUMBER;
     hash = (53 * hash) + getOriginalPrimaryLocation().hashCode();
+    if (hasReplicationStatus()) {
+      hash = (37 * hash) + REPLICATION_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getReplicationStatus().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1600,6 +3187,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         getAutoscaleFieldBuilder();
         getCreationTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getReplicationStatusFieldBuilder();
       }
     }
 
@@ -1631,6 +3219,11 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       primaryLocation_ = "";
       secondaryLocation_ = "";
       originalPrimaryLocation_ = "";
+      replicationStatus_ = null;
+      if (replicationStatusBuilder_ != null) {
+        replicationStatusBuilder_.dispose();
+        replicationStatusBuilder_ = null;
+      }
       return this;
     }
 
@@ -1707,6 +3300,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.originalPrimaryLocation_ = originalPrimaryLocation_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.replicationStatus_ =
+            replicationStatusBuilder_ == null
+                ? replicationStatus_
+                : replicationStatusBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1800,6 +3400,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         originalPrimaryLocation_ = other.originalPrimaryLocation_;
         bitField0_ |= 0x00000800;
         onChanged();
+      }
+      if (other.hasReplicationStatus()) {
+        mergeReplicationStatus(other.getReplicationStatus());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1899,6 +3502,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 162
+            case 194:
+              {
+                input.readMessage(
+                    getReplicationStatusFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 194
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2055,13 +3665,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * Queries using this reservation might use more slots during runtime if
      * ignore_idle_slots is set to false, or autoscaling is enabled.
      *
-     * If edition is EDITION_UNSPECIFIED and total slot_capacity of the
-     * reservation and its siblings exceeds the total slot_count of all capacity
-     * commitments, the request will fail with
-     * `google.rpc.Code.RESOURCE_EXHAUSTED`.
-     *
-     * If edition is any value but EDITION_UNSPECIFIED, then the above requirement
-     * is not needed. The total slot_capacity of the reservation and its siblings
+     * The total slot_capacity of the reservation and its siblings
      * may exceed the total slot_count of capacity commitments. In that case, the
      * exceeding slots will be charged with the autoscale SKU. You can increase
      * the number of baseline slots in a reservation every few minutes. If you
@@ -2089,13 +3693,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * Queries using this reservation might use more slots during runtime if
      * ignore_idle_slots is set to false, or autoscaling is enabled.
      *
-     * If edition is EDITION_UNSPECIFIED and total slot_capacity of the
-     * reservation and its siblings exceeds the total slot_count of all capacity
-     * commitments, the request will fail with
-     * `google.rpc.Code.RESOURCE_EXHAUSTED`.
-     *
-     * If edition is any value but EDITION_UNSPECIFIED, then the above requirement
-     * is not needed. The total slot_capacity of the reservation and its siblings
+     * The total slot_capacity of the reservation and its siblings
      * may exceed the total slot_count of capacity commitments. In that case, the
      * exceeding slots will be charged with the autoscale SKU. You can increase
      * the number of baseline slots in a reservation every few minutes. If you
@@ -2127,13 +3725,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * Queries using this reservation might use more slots during runtime if
      * ignore_idle_slots is set to false, or autoscaling is enabled.
      *
-     * If edition is EDITION_UNSPECIFIED and total slot_capacity of the
-     * reservation and its siblings exceeds the total slot_count of all capacity
-     * commitments, the request will fail with
-     * `google.rpc.Code.RESOURCE_EXHAUSTED`.
-     *
-     * If edition is any value but EDITION_UNSPECIFIED, then the above requirement
-     * is not needed. The total slot_capacity of the reservation and its siblings
+     * The total slot_capacity of the reservation and its siblings
      * may exceed the total slot_count of capacity commitments. In that case, the
      * exceeding slots will be charged with the autoscale SKU. You can increase
      * the number of baseline slots in a reservation every few minutes. If you
@@ -3062,13 +4654,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The current location of the reservation's primary replica. This
-     * field is only set for reservations using the managed disaster recovery
+     * Output only. The current location of the reservation's primary replica.
+     * This field is only set for reservations using the managed disaster recovery
      * feature.
      * </pre>
      *
      * <code>
-     * string primary_location = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string primary_location = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The primaryLocation.
@@ -3088,13 +4680,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The current location of the reservation's primary replica. This
-     * field is only set for reservations using the managed disaster recovery
+     * Output only. The current location of the reservation's primary replica.
+     * This field is only set for reservations using the managed disaster recovery
      * feature.
      * </pre>
      *
      * <code>
-     * string primary_location = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string primary_location = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for primaryLocation.
@@ -3114,13 +4706,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The current location of the reservation's primary replica. This
-     * field is only set for reservations using the managed disaster recovery
+     * Output only. The current location of the reservation's primary replica.
+     * This field is only set for reservations using the managed disaster recovery
      * feature.
      * </pre>
      *
      * <code>
-     * string primary_location = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string primary_location = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The primaryLocation to set.
@@ -3139,13 +4731,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The current location of the reservation's primary replica. This
-     * field is only set for reservations using the managed disaster recovery
+     * Output only. The current location of the reservation's primary replica.
+     * This field is only set for reservations using the managed disaster recovery
      * feature.
      * </pre>
      *
      * <code>
-     * string primary_location = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string primary_location = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -3160,13 +4752,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The current location of the reservation's primary replica. This
-     * field is only set for reservations using the managed disaster recovery
+     * Output only. The current location of the reservation's primary replica.
+     * This field is only set for reservations using the managed disaster recovery
      * feature.
      * </pre>
      *
      * <code>
-     * string primary_location = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string primary_location = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for primaryLocation to set.
@@ -3324,13 +4916,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The location where the reservation was originally created. This
-     * is set only during the failover reservation's creation. All billing charges
-     * for the failover reservation will be applied to this location.
+     * Output only. The location where the reservation was originally created.
+     * This is set only during the failover reservation's creation. All billing
+     * charges for the failover reservation will be applied to this location.
      * </pre>
      *
      * <code>
-     * string original_primary_location = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string original_primary_location = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The originalPrimaryLocation.
@@ -3350,13 +4942,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The location where the reservation was originally created. This
-     * is set only during the failover reservation's creation. All billing charges
-     * for the failover reservation will be applied to this location.
+     * Output only. The location where the reservation was originally created.
+     * This is set only during the failover reservation's creation. All billing
+     * charges for the failover reservation will be applied to this location.
      * </pre>
      *
      * <code>
-     * string original_primary_location = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string original_primary_location = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for originalPrimaryLocation.
@@ -3376,13 +4968,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The location where the reservation was originally created. This
-     * is set only during the failover reservation's creation. All billing charges
-     * for the failover reservation will be applied to this location.
+     * Output only. The location where the reservation was originally created.
+     * This is set only during the failover reservation's creation. All billing
+     * charges for the failover reservation will be applied to this location.
      * </pre>
      *
      * <code>
-     * string original_primary_location = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string original_primary_location = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The originalPrimaryLocation to set.
@@ -3401,13 +4993,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The location where the reservation was originally created. This
-     * is set only during the failover reservation's creation. All billing charges
-     * for the failover reservation will be applied to this location.
+     * Output only. The location where the reservation was originally created.
+     * This is set only during the failover reservation's creation. All billing
+     * charges for the failover reservation will be applied to this location.
      * </pre>
      *
      * <code>
-     * string original_primary_location = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string original_primary_location = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -3422,13 +5014,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The location where the reservation was originally created. This
-     * is set only during the failover reservation's creation. All billing charges
-     * for the failover reservation will be applied to this location.
+     * Output only. The location where the reservation was originally created.
+     * This is set only during the failover reservation's creation. All billing
+     * charges for the failover reservation will be applied to this location.
      * </pre>
      *
      * <code>
-     * string original_primary_location = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string original_primary_location = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for originalPrimaryLocation to set.
@@ -3443,6 +5035,284 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000800;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
+        replicationStatus_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus,
+            com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus.Builder,
+            com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatusOrBuilder>
+        replicationStatusBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Disaster Recovery(DR) replication status of the
+     * reservation. This is only available for the primary replicas of DR/failover
+     * reservations and provides information about the both the staleness of the
+     * secondary and the last error encountered while trying to replicate changes
+     * from the primary to the secondary. If this field is blank, it means that
+     * the reservation is either not a DR reservation or the reservation is a DR
+     * secondary or that any replication operations on the reservation have
+     * succeeded.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus replication_status = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the replicationStatus field is set.
+     */
+    public boolean hasReplicationStatus() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Disaster Recovery(DR) replication status of the
+     * reservation. This is only available for the primary replicas of DR/failover
+     * reservations and provides information about the both the staleness of the
+     * secondary and the last error encountered while trying to replicate changes
+     * from the primary to the secondary. If this field is blank, it means that
+     * the reservation is either not a DR reservation or the reservation is a DR
+     * secondary or that any replication operations on the reservation have
+     * succeeded.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus replication_status = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The replicationStatus.
+     */
+    public com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
+        getReplicationStatus() {
+      if (replicationStatusBuilder_ == null) {
+        return replicationStatus_ == null
+            ? com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
+                .getDefaultInstance()
+            : replicationStatus_;
+      } else {
+        return replicationStatusBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Disaster Recovery(DR) replication status of the
+     * reservation. This is only available for the primary replicas of DR/failover
+     * reservations and provides information about the both the staleness of the
+     * secondary and the last error encountered while trying to replicate changes
+     * from the primary to the secondary. If this field is blank, it means that
+     * the reservation is either not a DR reservation or the reservation is a DR
+     * secondary or that any replication operations on the reservation have
+     * succeeded.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus replication_status = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setReplicationStatus(
+        com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus value) {
+      if (replicationStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        replicationStatus_ = value;
+      } else {
+        replicationStatusBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Disaster Recovery(DR) replication status of the
+     * reservation. This is only available for the primary replicas of DR/failover
+     * reservations and provides information about the both the staleness of the
+     * secondary and the last error encountered while trying to replicate changes
+     * from the primary to the secondary. If this field is blank, it means that
+     * the reservation is either not a DR reservation or the reservation is a DR
+     * secondary or that any replication operations on the reservation have
+     * succeeded.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus replication_status = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setReplicationStatus(
+        com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus.Builder
+            builderForValue) {
+      if (replicationStatusBuilder_ == null) {
+        replicationStatus_ = builderForValue.build();
+      } else {
+        replicationStatusBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Disaster Recovery(DR) replication status of the
+     * reservation. This is only available for the primary replicas of DR/failover
+     * reservations and provides information about the both the staleness of the
+     * secondary and the last error encountered while trying to replicate changes
+     * from the primary to the secondary. If this field is blank, it means that
+     * the reservation is either not a DR reservation or the reservation is a DR
+     * secondary or that any replication operations on the reservation have
+     * succeeded.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus replication_status = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeReplicationStatus(
+        com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus value) {
+      if (replicationStatusBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && replicationStatus_ != null
+            && replicationStatus_
+                != com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
+                    .getDefaultInstance()) {
+          getReplicationStatusBuilder().mergeFrom(value);
+        } else {
+          replicationStatus_ = value;
+        }
+      } else {
+        replicationStatusBuilder_.mergeFrom(value);
+      }
+      if (replicationStatus_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Disaster Recovery(DR) replication status of the
+     * reservation. This is only available for the primary replicas of DR/failover
+     * reservations and provides information about the both the staleness of the
+     * secondary and the last error encountered while trying to replicate changes
+     * from the primary to the secondary. If this field is blank, it means that
+     * the reservation is either not a DR reservation or the reservation is a DR
+     * secondary or that any replication operations on the reservation have
+     * succeeded.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus replication_status = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearReplicationStatus() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      replicationStatus_ = null;
+      if (replicationStatusBuilder_ != null) {
+        replicationStatusBuilder_.dispose();
+        replicationStatusBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Disaster Recovery(DR) replication status of the
+     * reservation. This is only available for the primary replicas of DR/failover
+     * reservations and provides information about the both the staleness of the
+     * secondary and the last error encountered while trying to replicate changes
+     * from the primary to the secondary. If this field is blank, it means that
+     * the reservation is either not a DR reservation or the reservation is a DR
+     * secondary or that any replication operations on the reservation have
+     * succeeded.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus replication_status = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus.Builder
+        getReplicationStatusBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getReplicationStatusFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Disaster Recovery(DR) replication status of the
+     * reservation. This is only available for the primary replicas of DR/failover
+     * reservations and provides information about the both the staleness of the
+     * secondary and the last error encountered while trying to replicate changes
+     * from the primary to the secondary. If this field is blank, it means that
+     * the reservation is either not a DR reservation or the reservation is a DR
+     * secondary or that any replication operations on the reservation have
+     * succeeded.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus replication_status = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatusOrBuilder
+        getReplicationStatusOrBuilder() {
+      if (replicationStatusBuilder_ != null) {
+        return replicationStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return replicationStatus_ == null
+            ? com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
+                .getDefaultInstance()
+            : replicationStatus_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Disaster Recovery(DR) replication status of the
+     * reservation. This is only available for the primary replicas of DR/failover
+     * reservations and provides information about the both the staleness of the
+     * secondary and the last error encountered while trying to replicate changes
+     * from the primary to the secondary. If this field is blank, it means that
+     * the reservation is either not a DR reservation or the reservation is a DR
+     * secondary or that any replication operations on the reservation have
+     * succeeded.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus replication_status = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus,
+            com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus.Builder,
+            com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatusOrBuilder>
+        getReplicationStatusFieldBuilder() {
+      if (replicationStatusBuilder_ == null) {
+        replicationStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus,
+                com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus.Builder,
+                com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatusOrBuilder>(
+                getReplicationStatus(), getParentForChildren(), isClean());
+        replicationStatus_ = null;
+      }
+      return replicationStatusBuilder_;
     }
 
     @java.lang.Override

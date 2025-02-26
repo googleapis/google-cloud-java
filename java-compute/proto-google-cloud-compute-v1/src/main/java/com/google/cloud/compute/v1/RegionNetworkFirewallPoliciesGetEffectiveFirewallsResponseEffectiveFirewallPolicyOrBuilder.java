@@ -103,6 +103,89 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
+   * [Output only] The packet mirroring rules that apply to the network.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.FirewallPolicyRule> getPacketMirroringRulesList();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The packet mirroring rules that apply to the network.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  com.google.cloud.compute.v1.FirewallPolicyRule getPacketMirroringRules(int index);
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The packet mirroring rules that apply to the network.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  int getPacketMirroringRulesCount();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The packet mirroring rules that apply to the network.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>
+      getPacketMirroringRulesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The packet mirroring rules that apply to the network.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder getPacketMirroringRulesOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+   * </pre>
+   *
+   * <code>optional int32 priority = 445151652;</code>
+   *
+   * @return Whether the priority field is set.
+   */
+  boolean hasPriority();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+   * </pre>
+   *
+   * <code>optional int32 priority = 445151652;</code>
+   *
+   * @return The priority.
+   */
+  int getPriority();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output only] The rules that apply to the network.
    * </pre>
    *

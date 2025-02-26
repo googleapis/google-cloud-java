@@ -99,7 +99,7 @@ import javax.annotation.Generated;
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
- * configure the RetrySettings for deployPublisherModel:
+ * configure the RetrySettings for deploy:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -137,6 +137,17 @@ public class ModelGardenServiceSettings extends ClientSettings<ModelGardenServic
           ListPublisherModelsRequest, ListPublisherModelsResponse, ListPublisherModelsPagedResponse>
       listPublisherModelsSettings() {
     return ((ModelGardenServiceStubSettings) getStubSettings()).listPublisherModelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deploy. */
+  public UnaryCallSettings<DeployRequest, Operation> deploySettings() {
+    return ((ModelGardenServiceStubSettings) getStubSettings()).deploySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deploy. */
+  public OperationCallSettings<DeployRequest, DeployResponse, DeployOperationMetadata>
+      deployOperationSettings() {
+    return ((ModelGardenServiceStubSettings) getStubSettings()).deployOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to deployPublisherModel. */
@@ -290,6 +301,17 @@ public class ModelGardenServiceSettings extends ClientSettings<ModelGardenServic
             ListPublisherModelsPagedResponse>
         listPublisherModelsSettings() {
       return getStubSettingsBuilder().listPublisherModelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deploy. */
+    public UnaryCallSettings.Builder<DeployRequest, Operation> deploySettings() {
+      return getStubSettingsBuilder().deploySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deploy. */
+    public OperationCallSettings.Builder<DeployRequest, DeployResponse, DeployOperationMetadata>
+        deployOperationSettings() {
+      return getStubSettingsBuilder().deployOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deployPublisherModel. */

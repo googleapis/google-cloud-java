@@ -131,14 +131,14 @@ public final class AudioConfigProto {
           + "UDIO_ENCODING_MP3_64_KBPS\020\004\022\"\n\036OUTPUT_AU"
           + "DIO_ENCODING_OGG_OPUS\020\003\022\037\n\033OUTPUT_AUDIO_"
           + "ENCODING_MULAW\020\005\022\036\n\032OUTPUT_AUDIO_ENCODIN"
-          + "G_ALAW\020\006B\242\002\n&com.google.cloud.dialogflow"
+          + "G_ALAW\020\006B\237\002\n&com.google.cloud.dialogflow"
           + ".cx.v3beta1B\020AudioConfigProtoP\001Z6cloud.g"
           + "oogle.com/go/dialogflow/cx/apiv3beta1/cx"
-          + "pb;cxpb\370\001\001\242\002\002DF\252\002\"Google.Cloud.Dialogflo"
-          + "w.Cx.V3Beta1\352\002&Google::Cloud::Dialogflow"
-          + "::CX::V3beta1\352AU\n\033automl.googleapis.com/"
-          + "Model\0226projects/{project}/locations/{loc"
-          + "ation}/models/{model}b\006proto3"
+          + "pb;cxpb\242\002\002DF\252\002\"Google.Cloud.Dialogflow.C"
+          + "x.V3Beta1\352\002&Google::Cloud::Dialogflow::C"
+          + "X::V3beta1\352AU\n\033automl.googleapis.com/Mod"
+          + "el\0226projects/{project}/locations/{locati"
+          + "on}/models/{model}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

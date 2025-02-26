@@ -275,25 +275,35 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Deprecated 'daos_version' field.
    * Output only. The version of DAOS software running in the instance.
    * </pre>
    *
-   * <code>string daos_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string daos_version = 9 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.parallelstore.v1.Instance.daos_version is deprecated. See
+   *     google/cloud/parallelstore/v1/parallelstore.proto;l=274
    * @return The daosVersion.
    */
+  @java.lang.Deprecated
   java.lang.String getDaosVersion();
   /**
    *
    *
    * <pre>
+   * Deprecated 'daos_version' field.
    * Output only. The version of DAOS software running in the instance.
    * </pre>
    *
-   * <code>string daos_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string daos_version = 9 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.parallelstore.v1.Instance.daos_version is deprecated. See
+   *     google/cloud/parallelstore/v1/parallelstore.proto;l=274
    * @return The bytes for daosVersion.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getDaosVersionBytes();
 
   /**
@@ -452,7 +462,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Stripe level for files. Allowed values are:
+   * Optional. Immutable. Stripe level for files. Allowed values are:
    *
    * * `FILE_STRIPE_LEVEL_MIN`: offers the best performance for small size
    *   files.
@@ -462,7 +472,7 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.parallelstore.v1.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.parallelstore.v1.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for fileStripeLevel.
@@ -472,7 +482,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Stripe level for files. Allowed values are:
+   * Optional. Immutable. Stripe level for files. Allowed values are:
    *
    * * `FILE_STRIPE_LEVEL_MIN`: offers the best performance for small size
    *   files.
@@ -482,7 +492,7 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.parallelstore.v1.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.parallelstore.v1.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The fileStripeLevel.
@@ -493,7 +503,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Stripe level for directories. Allowed values are:
+   * Optional. Immutable. Stripe level for directories. Allowed values are:
    *
    * * `DIRECTORY_STRIPE_LEVEL_MIN`: recommended when directories contain a
    *   small number of files.
@@ -504,7 +514,7 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.parallelstore.v1.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.parallelstore.v1.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for directoryStripeLevel.
@@ -514,7 +524,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Stripe level for directories. Allowed values are:
+   * Optional. Immutable. Stripe level for directories. Allowed values are:
    *
    * * `DIRECTORY_STRIPE_LEVEL_MIN`: recommended when directories contain a
    *   small number of files.
@@ -525,10 +535,47 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.parallelstore.v1.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.parallelstore.v1.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The directoryStripeLevel.
    */
   com.google.cloud.parallelstore.v1.DirectoryStripeLevel getDirectoryStripeLevel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The deployment type of the instance. Allowed values
+   * are:
+   *
+   * * `SCRATCH`: the instance is a scratch instance.
+   * * `PERSISTENT`: the instance is a persistent instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for deploymentType.
+   */
+  int getDeploymentTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The deployment type of the instance. Allowed values
+   * are:
+   *
+   * * `SCRATCH`: the instance is a scratch instance.
+   * * `PERSISTENT`: the instance is a persistent instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The deploymentType.
+   */
+  com.google.cloud.parallelstore.v1.DeploymentType getDeploymentType();
 }

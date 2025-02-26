@@ -14,29 +14,29 @@
  * limitations under the License.
  */
 
-package com.google.cloud.aiplatform.v1beta1.stub.samples;
+package com.google.cloud.aiplatform.v1beta1.samples;
 
-// [START aiplatform_v1beta1_generated_ModelGardenServiceStubSettings_DeployPublisherModel_sync]
+// [START aiplatform_v1beta1_generated_ModelGardenServiceSettings_Deploy_sync]
 import com.google.api.gax.longrunning.OperationalTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.TimedRetryAlgorithm;
-import com.google.cloud.aiplatform.v1beta1.stub.ModelGardenServiceStubSettings;
+import com.google.cloud.aiplatform.v1beta1.ModelGardenServiceSettings;
 import java.time.Duration;
 
-public class SyncDeployPublisherModel {
+public class SyncDeploy {
 
   public static void main(String[] args) throws Exception {
-    syncDeployPublisherModel();
+    syncDeploy();
   }
 
-  public static void syncDeployPublisherModel() throws Exception {
+  public static void syncDeploy() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    ModelGardenServiceStubSettings.Builder modelGardenServiceSettingsBuilder =
-        ModelGardenServiceStubSettings.newBuilder();
+    ModelGardenServiceSettings.Builder modelGardenServiceSettingsBuilder =
+        ModelGardenServiceSettings.newBuilder();
     TimedRetryAlgorithm timedRetryAlgorithm =
         OperationalTimedPollAlgorithm.create(
             RetrySettings.newBuilder()
@@ -51,4 +51,4 @@ public class SyncDeployPublisherModel {
         .build();
   }
 }
-// [END aiplatform_v1beta1_generated_ModelGardenServiceStubSettings_DeployPublisherModel_sync]
+// [END aiplatform_v1beta1_generated_ModelGardenServiceSettings_Deploy_sync]

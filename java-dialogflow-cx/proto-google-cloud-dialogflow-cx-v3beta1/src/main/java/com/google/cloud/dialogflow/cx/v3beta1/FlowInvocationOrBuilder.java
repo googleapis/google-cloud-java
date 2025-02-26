@@ -61,6 +61,31 @@ public interface FlowInvocationOrBuilder
    *
    *
    * <pre>
+   * Output only. The display name of the flow.
+   * </pre>
+   *
+   * <code>string display_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The display name of the flow.
+   * </pre>
+   *
+   * <code>string display_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. A list of input parameters for the flow.
    * </pre>
    *

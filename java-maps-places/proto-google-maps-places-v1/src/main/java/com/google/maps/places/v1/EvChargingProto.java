@@ -58,7 +58,7 @@ public final class EvChargingProto {
           + "vice_count\030\005 \001(\005H\001\210\001\001\022A\n\035availability_la"
           + "st_update_time\030\006 \001(\0132\032.google.protobuf.T"
           + "imestampB\022\n\020_available_countB\027\n\025_out_of_"
-          + "service_count*\345\002\n\017EVConnectorType\022!\n\035EV_"
+          + "service_count*\201\003\n\017EVConnectorType\022!\n\035EV_"
           + "CONNECTOR_TYPE_UNSPECIFIED\020\000\022\033\n\027EV_CONNE"
           + "CTOR_TYPE_OTHER\020\001\022\033\n\027EV_CONNECTOR_TYPE_J"
           + "1772\020\002\022\034\n\030EV_CONNECTOR_TYPE_TYPE_2\020\003\022\035\n\031"
@@ -67,11 +67,12 @@ public final class EvChargingProto {
           + "YPE_CCS_COMBO_2\020\006\022\033\n\027EV_CONNECTOR_TYPE_T"
           + "ESLA\020\007\022&\n\"EV_CONNECTOR_TYPE_UNSPECIFIED_"
           + "GB_T\020\010\022-\n)EV_CONNECTOR_TYPE_UNSPECIFIED_"
-          + "WALL_OUTLET\020\tB\240\001\n\031com.google.maps.places"
-          + ".v1B\017EvChargingProtoP\001Z7cloud.google.com"
-          + "/go/maps/places/apiv1/placespb;placespb\242"
-          + "\002\006GMPSV1\252\002\025Google.Maps.Places.V1\312\002\025Googl"
-          + "e\\Maps\\Places\\V1b\006proto3"
+          + "WALL_OUTLET\020\t\022\032\n\026EV_CONNECTOR_TYPE_NACS\020"
+          + "\nB\240\001\n\031com.google.maps.places.v1B\017EvCharg"
+          + "ingProtoP\001Z7cloud.google.com/go/maps/pla"
+          + "ces/apiv1/placespb;placespb\242\002\006GMPSV1\252\002\025G"
+          + "oogle.Maps.Places.V1\312\002\025Google\\Maps\\Place"
+          + "s\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

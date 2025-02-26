@@ -237,7 +237,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListInfoTypes</td>
- *      <td><p> Returns a list of the sensitive information types that DLP API supports. See https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference to learn more.</td>
+ *      <td><p> Returns a list of the sensitive information types that the DLP API supports. See https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1656,7 +1656,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of the sensitive information types that DLP API supports. See
+   * Returns a list of the sensitive information types that the DLP API supports. See
    * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference to learn more.
    *
    * <p>Sample code:
@@ -1685,7 +1685,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of the sensitive information types that DLP API supports. See
+   * Returns a list of the sensitive information types that the DLP API supports. See
    * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference to learn more.
    *
    * <p>Sample code:
@@ -1717,7 +1717,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of the sensitive information types that DLP API supports. See
+   * Returns a list of the sensitive information types that the DLP API supports. See
    * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference to learn more.
    *
    * <p>Sample code:

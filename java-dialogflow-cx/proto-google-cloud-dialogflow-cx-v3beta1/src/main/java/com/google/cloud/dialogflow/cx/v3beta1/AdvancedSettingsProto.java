@@ -87,13 +87,12 @@ public final class AdvancedSettingsProto {
           + "uf.Duration\032\201\001\n\017LoggingSettings\022\"\n\032enabl"
           + "e_stackdriver_logging\030\002 \001(\010\022\"\n\032enable_in"
           + "teraction_logging\030\003 \001(\010\022&\n\036enable_consen"
-          + "t_based_redaction\030\004 \001(\010B\317\001\n&com.google.c"
+          + "t_based_redaction\030\004 \001(\010B\314\001\n&com.google.c"
           + "loud.dialogflow.cx.v3beta1B\025AdvancedSett"
           + "ingsProtoP\001Z6cloud.google.com/go/dialogf"
-          + "low/cx/apiv3beta1/cxpb;cxpb\370\001\001\242\002\002DF\252\002\"Go"
-          + "ogle.Cloud.Dialogflow.Cx.V3Beta1\352\002&Googl"
-          + "e::Cloud::Dialogflow::CX::V3beta1b\006proto"
-          + "3"
+          + "low/cx/apiv3beta1/cxpb;cxpb\242\002\002DF\252\002\"Googl"
+          + "e.Cloud.Dialogflow.Cx.V3Beta1\352\002&Google::"
+          + "Cloud::Dialogflow::CX::V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

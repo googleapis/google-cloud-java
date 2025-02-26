@@ -252,6 +252,86 @@ public class SpacesServiceClientTest {
   }
 
   @Test
+  public void connectActiveConferenceTest() throws Exception {
+    ConnectActiveConferenceResponse expectedResponse =
+        ConnectActiveConferenceResponse.newBuilder()
+            .setAnswer("answer-1412808770")
+            .setTraceId("traceId-1067401920")
+            .build();
+    mockSpacesService.addResponse(expectedResponse);
+
+    SpaceName name = SpaceName.of("[SPACE]");
+
+    ConnectActiveConferenceResponse actualResponse = client.connectActiveConference(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSpacesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ConnectActiveConferenceRequest actualRequest =
+        ((ConnectActiveConferenceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void connectActiveConferenceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSpacesService.addException(exception);
+
+    try {
+      SpaceName name = SpaceName.of("[SPACE]");
+      client.connectActiveConference(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void connectActiveConferenceTest2() throws Exception {
+    ConnectActiveConferenceResponse expectedResponse =
+        ConnectActiveConferenceResponse.newBuilder()
+            .setAnswer("answer-1412808770")
+            .setTraceId("traceId-1067401920")
+            .build();
+    mockSpacesService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ConnectActiveConferenceResponse actualResponse = client.connectActiveConference(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSpacesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ConnectActiveConferenceRequest actualRequest =
+        ((ConnectActiveConferenceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void connectActiveConferenceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSpacesService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.connectActiveConference(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void endActiveConferenceTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockSpacesService.addResponse(expectedResponse);

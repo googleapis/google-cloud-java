@@ -407,8 +407,8 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Buckets with autoclass disabled
-     * (https://cloud.google.com/storage/docs/autoclass). Only one of
+     * Buckets with [Autoclass](https://cloud.google.com/storage/docs/autoclass)
+     * disabled. Only one of
      * AUTOCLASS_DISABLED or AUTOCLASS_ENABLED should be set.
      * </pre>
      *
@@ -419,8 +419,8 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Buckets with autoclass enabled
-     * (https://cloud.google.com/storage/docs/autoclass). Only one of
+     * Buckets with [Autoclass](https://cloud.google.com/storage/docs/autoclass)
+     * enabled. Only one of
      * AUTOCLASS_DISABLED or AUTOCLASS_ENABLED should be set. Scanning
      * Autoclass-enabled buckets can affect object storage classes.
      * </pre>
@@ -455,8 +455,8 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Buckets with autoclass disabled
-     * (https://cloud.google.com/storage/docs/autoclass). Only one of
+     * Buckets with [Autoclass](https://cloud.google.com/storage/docs/autoclass)
+     * disabled. Only one of
      * AUTOCLASS_DISABLED or AUTOCLASS_ENABLED should be set.
      * </pre>
      *
@@ -467,8 +467,8 @@ public final class DiscoveryCloudStorageConditions extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Buckets with autoclass enabled
-     * (https://cloud.google.com/storage/docs/autoclass). Only one of
+     * Buckets with [Autoclass](https://cloud.google.com/storage/docs/autoclass)
+     * enabled. Only one of
      * AUTOCLASS_DISABLED or AUTOCLASS_ENABLED should be set. Scanning
      * Autoclass-enabled buckets can affect object storage classes.
      * </pre>

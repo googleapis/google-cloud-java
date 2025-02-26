@@ -102,6 +102,7 @@ import com.google.privacy.dlp.v2.OrganizationLocationName;
 import com.google.privacy.dlp.v2.OrganizationName;
 import com.google.privacy.dlp.v2.OtherCloudDiscoveryStartingLocation;
 import com.google.privacy.dlp.v2.OtherInfoTypeSummary;
+import com.google.privacy.dlp.v2.ProcessingLocation;
 import com.google.privacy.dlp.v2.ProfileStatus;
 import com.google.privacy.dlp.v2.ProjectDataProfile;
 import com.google.privacy.dlp.v2.ProjectDataProfileName;
@@ -110,6 +111,7 @@ import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
+import com.google.privacy.dlp.v2.RelatedResource;
 import com.google.privacy.dlp.v2.ResourceVisibility;
 import com.google.privacy.dlp.v2.RiskAnalysisJobConfig;
 import com.google.privacy.dlp.v2.SearchConnectionsResponse;
@@ -2897,6 +2899,7 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLastRunTime(Timestamp.newBuilder().build())
+            .setProcessingLocation(ProcessingLocation.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2954,6 +2957,7 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLastRunTime(Timestamp.newBuilder().build())
+            .setProcessingLocation(ProcessingLocation.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3011,6 +3015,7 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLastRunTime(Timestamp.newBuilder().build())
+            .setProcessingLocation(ProcessingLocation.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3073,6 +3078,7 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLastRunTime(Timestamp.newBuilder().build())
+            .setProcessingLocation(ProcessingLocation.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3135,6 +3141,7 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLastRunTime(Timestamp.newBuilder().build())
+            .setProcessingLocation(ProcessingLocation.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3192,6 +3199,7 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLastRunTime(Timestamp.newBuilder().build())
+            .setProcessingLocation(ProcessingLocation.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5665,6 +5673,7 @@ public class DlpServiceClientHttpJsonTest {
             .putAllResourceLabels(new HashMap<String, String>())
             .addAllFileStoreInfoTypeSummaries(new ArrayList<FileStoreInfoTypeSummary>())
             .setFileStoreIsEmpty(true)
+            .addAllRelatedResources(new ArrayList<RelatedResource>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5737,6 +5746,7 @@ public class DlpServiceClientHttpJsonTest {
             .putAllResourceLabels(new HashMap<String, String>())
             .addAllFileStoreInfoTypeSummaries(new ArrayList<FileStoreInfoTypeSummary>())
             .setFileStoreIsEmpty(true)
+            .addAllRelatedResources(new ArrayList<RelatedResource>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5896,6 +5906,7 @@ public class DlpServiceClientHttpJsonTest {
             .setProfileLastGenerated(Timestamp.newBuilder().build())
             .putAllResourceLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .addAllRelatedResources(new ArrayList<RelatedResource>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5971,6 +5982,7 @@ public class DlpServiceClientHttpJsonTest {
             .setProfileLastGenerated(Timestamp.newBuilder().build())
             .putAllResourceLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .addAllRelatedResources(new ArrayList<RelatedResource>())
             .build();
     mockService.addResponse(expectedResponse);
 

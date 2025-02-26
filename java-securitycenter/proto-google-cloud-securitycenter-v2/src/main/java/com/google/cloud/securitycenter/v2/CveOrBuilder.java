@@ -270,4 +270,39 @@ public interface CveOrBuilder
    * <code>.google.protobuf.Timestamp exploit_release_date = 9;</code>
    */
   com.google.protobuf.TimestampOrBuilder getExploitReleaseDateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Date of the earliest known exploitation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp first_exploitation_date = 10;</code>
+   *
+   * @return Whether the firstExploitationDate field is set.
+   */
+  boolean hasFirstExploitationDate();
+  /**
+   *
+   *
+   * <pre>
+   * Date of the earliest known exploitation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp first_exploitation_date = 10;</code>
+   *
+   * @return The firstExploitationDate.
+   */
+  com.google.protobuf.Timestamp getFirstExploitationDate();
+  /**
+   *
+   *
+   * <pre>
+   * Date of the earliest known exploitation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp first_exploitation_date = 10;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getFirstExploitationDateOrBuilder();
 }

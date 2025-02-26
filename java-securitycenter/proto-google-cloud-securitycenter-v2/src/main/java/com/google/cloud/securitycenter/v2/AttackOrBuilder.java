@@ -31,11 +31,11 @@ public interface AttackOrBuilder
    * Total PPS (packets per second) volume of attack.
    * </pre>
    *
-   * <code>int32 volume_pps = 1;</code>
+   * <code>int64 volume_pps_long = 4;</code>
    *
-   * @return The volumePps.
+   * @return The volumePpsLong.
    */
-  int getVolumePps();
+  long getVolumePpsLong();
 
   /**
    *
@@ -44,11 +44,11 @@ public interface AttackOrBuilder
    * Total BPS (bytes per second) volume of attack.
    * </pre>
    *
-   * <code>int32 volume_bps = 2;</code>
+   * <code>int64 volume_bps_long = 5;</code>
    *
-   * @return The volumeBps.
+   * @return The volumeBpsLong.
    */
-  int getVolumeBps();
+  long getVolumeBpsLong();
 
   /**
    *
@@ -74,4 +74,38 @@ public interface AttackOrBuilder
    * @return The bytes for classification.
    */
   com.google.protobuf.ByteString getClassificationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Total PPS (packets per second) volume of attack. Deprecated - refer to
+   * volume_pps_long instead.
+   * </pre>
+   *
+   * <code>int32 volume_pps = 1 [deprecated = true];</code>
+   *
+   * @deprecated google.cloud.securitycenter.v2.Attack.volume_pps is deprecated. See
+   *     google/cloud/securitycenter/v2/cloud_armor.proto;l=116
+   * @return The volumePps.
+   */
+  @java.lang.Deprecated
+  int getVolumePps();
+
+  /**
+   *
+   *
+   * <pre>
+   * Total BPS (bytes per second) volume of attack. Deprecated - refer to
+   * volume_bps_long instead.
+   * </pre>
+   *
+   * <code>int32 volume_bps = 2 [deprecated = true];</code>
+   *
+   * @deprecated google.cloud.securitycenter.v2.Attack.volume_bps is deprecated. See
+   *     google/cloud/securitycenter/v2/cloud_armor.proto;l=120
+   * @return The volumeBps.
+   */
+  @java.lang.Deprecated
+  int getVolumeBps();
 }

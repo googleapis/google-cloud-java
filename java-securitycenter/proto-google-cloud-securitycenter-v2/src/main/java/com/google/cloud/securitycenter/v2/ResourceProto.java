@@ -69,6 +69,10 @@ public final class ResourceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securitycenter_v2_AzureMetadata_AzureResourceGroup_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v2_AzureMetadata_AzureTenant_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v2_AzureMetadata_AzureTenant_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_securitycenter_v2_ResourcePath_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securitycenter_v2_ResourcePath_fieldAccessorTable;
@@ -116,39 +120,43 @@ public final class ResourceProto {
           + "ount\032\035\n\017AwsOrganization\022\n\n\002id\030\001 \001(\t\0321\n\025A"
           + "wsOrganizationalUnit\022\n\n\002id\030\001 \001(\t\022\014\n\004name"
           + "\030\002 \001(\t\032&\n\nAwsAccount\022\n\n\002id\030\001 \001(\t\022\014\n\004name"
-          + "\030\002 \001(\t\"\264\003\n\rAzureMetadata\022]\n\021management_g"
+          + "\030\002 \001(\t\"\274\004\n\rAzureMetadata\022]\n\021management_g"
           + "roups\030\001 \003(\0132B.google.cloud.securitycente"
           + "r.v2.AzureMetadata.AzureManagementGroup\022"
           + "U\n\014subscription\030\002 \001(\0132?.google.cloud.sec"
           + "uritycenter.v2.AzureMetadata.AzureSubscr"
           + "iption\022X\n\016resource_group\030\003 \001(\0132@.google."
           + "cloud.securitycenter.v2.AzureMetadata.Az"
-          + "ureResourceGroup\0328\n\024AzureManagementGroup"
-          + "\022\n\n\002id\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\0325\n\021Az"
-          + "ureSubscription\022\n\n\002id\030\001 \001(\t\022\024\n\014display_n"
-          + "ame\030\002 \001(\t\032\"\n\022AzureResourceGroup\022\014\n\004name\030"
-          + "\001 \001(\t\"\364\003\n\014ResourcePath\022L\n\005nodes\030\001 \003(\0132=."
-          + "google.cloud.securitycenter.v2.ResourceP"
-          + "ath.ResourcePathNode\032\212\001\n\020ResourcePathNod"
-          + "e\022T\n\tnode_type\030\001 \001(\0162A.google.cloud.secu"
-          + "ritycenter.v2.ResourcePath.ResourcePathN"
-          + "odeType\022\n\n\002id\030\002 \001(\t\022\024\n\014display_name\030\003 \001("
-          + "\t\"\210\002\n\024ResourcePathNodeType\022\'\n#RESOURCE_P"
-          + "ATH_NODE_TYPE_UNSPECIFIED\020\000\022\024\n\020GCP_ORGAN"
-          + "IZATION\020\001\022\016\n\nGCP_FOLDER\020\002\022\017\n\013GCP_PROJECT"
-          + "\020\003\022\024\n\020AWS_ORGANIZATION\020\004\022\033\n\027AWS_ORGANIZA"
-          + "TIONAL_UNIT\020\005\022\017\n\013AWS_ACCOUNT\020\006\022\032\n\026AZURE_"
-          + "MANAGEMENT_GROUP\020\007\022\026\n\022AZURE_SUBSCRIPTION"
-          + "\020\010\022\030\n\024AZURE_RESOURCE_GROUP\020\t*x\n\rCloudPro"
-          + "vider\022\036\n\032CLOUD_PROVIDER_UNSPECIFIED\020\000\022\031\n"
-          + "\025GOOGLE_CLOUD_PLATFORM\020\001\022\027\n\023AMAZON_WEB_S"
-          + "ERVICES\020\002\022\023\n\017MICROSOFT_AZURE\020\003B\347\001\n\"com.g"
-          + "oogle.cloud.securitycenter.v2B\rResourceP"
-          + "rotoP\001ZJcloud.google.com/go/securitycent"
-          + "er/apiv2/securitycenterpb;securitycenter"
-          + "pb\252\002\036Google.Cloud.SecurityCenter.V2\312\002\036Go"
-          + "ogle\\Cloud\\SecurityCenter\\V2\352\002!Google::C"
-          + "loud::SecurityCenter::V2b\006proto3"
+          + "ureResourceGroup\022I\n\006tenant\030\007 \001(\01329.googl"
+          + "e.cloud.securitycenter.v2.AzureMetadata."
+          + "AzureTenant\0328\n\024AzureManagementGroup\022\n\n\002i"
+          + "d\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\0325\n\021AzureSu"
+          + "bscription\022\n\n\002id\030\001 \001(\t\022\024\n\014display_name\030\002"
+          + " \001(\t\032.\n\022AzureResourceGroup\022\n\n\002id\030\002 \001(\t\022\014"
+          + "\n\004name\030\001 \001(\t\032/\n\013AzureTenant\022\n\n\002id\030\001 \001(\t\022"
+          + "\024\n\014display_name\030\002 \001(\t\"\364\003\n\014ResourcePath\022L"
+          + "\n\005nodes\030\001 \003(\0132=.google.cloud.securitycen"
+          + "ter.v2.ResourcePath.ResourcePathNode\032\212\001\n"
+          + "\020ResourcePathNode\022T\n\tnode_type\030\001 \001(\0162A.g"
+          + "oogle.cloud.securitycenter.v2.ResourcePa"
+          + "th.ResourcePathNodeType\022\n\n\002id\030\002 \001(\t\022\024\n\014d"
+          + "isplay_name\030\003 \001(\t\"\210\002\n\024ResourcePathNodeTy"
+          + "pe\022\'\n#RESOURCE_PATH_NODE_TYPE_UNSPECIFIE"
+          + "D\020\000\022\024\n\020GCP_ORGANIZATION\020\001\022\016\n\nGCP_FOLDER\020"
+          + "\002\022\017\n\013GCP_PROJECT\020\003\022\024\n\020AWS_ORGANIZATION\020\004"
+          + "\022\033\n\027AWS_ORGANIZATIONAL_UNIT\020\005\022\017\n\013AWS_ACC"
+          + "OUNT\020\006\022\032\n\026AZURE_MANAGEMENT_GROUP\020\007\022\026\n\022AZ"
+          + "URE_SUBSCRIPTION\020\010\022\030\n\024AZURE_RESOURCE_GRO"
+          + "UP\020\t*x\n\rCloudProvider\022\036\n\032CLOUD_PROVIDER_"
+          + "UNSPECIFIED\020\000\022\031\n\025GOOGLE_CLOUD_PLATFORM\020\001"
+          + "\022\027\n\023AMAZON_WEB_SERVICES\020\002\022\023\n\017MICROSOFT_A"
+          + "ZURE\020\003B\347\001\n\"com.google.cloud.securitycent"
+          + "er.v2B\rResourceProtoP\001ZJcloud.google.com"
+          + "/go/securitycenter/apiv2/securitycenterp"
+          + "b;securitycenterpb\252\002\036Google.Cloud.Securi"
+          + "tyCenter.V2\312\002\036Google\\Cloud\\SecurityCente"
+          + "r\\V2\352\002!Google::Cloud::SecurityCenter::V2"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -233,7 +241,7 @@ public final class ResourceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v2_AzureMetadata_descriptor,
             new java.lang.String[] {
-              "ManagementGroups", "Subscription", "ResourceGroup",
+              "ManagementGroups", "Subscription", "ResourceGroup", "Tenant",
             });
     internal_static_google_cloud_securitycenter_v2_AzureMetadata_AzureManagementGroup_descriptor =
         internal_static_google_cloud_securitycenter_v2_AzureMetadata_descriptor
@@ -263,7 +271,17 @@ public final class ResourceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v2_AzureMetadata_AzureResourceGroup_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Id", "Name",
+            });
+    internal_static_google_cloud_securitycenter_v2_AzureMetadata_AzureTenant_descriptor =
+        internal_static_google_cloud_securitycenter_v2_AzureMetadata_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_securitycenter_v2_AzureMetadata_AzureTenant_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v2_AzureMetadata_AzureTenant_descriptor,
+            new java.lang.String[] {
+              "Id", "DisplayName",
             });
     internal_static_google_cloud_securitycenter_v2_ResourcePath_descriptor =
         getDescriptor().getMessageTypes().get(4);

@@ -54,6 +54,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
     resourceVisibility_ = 0;
     fileClusterSummaries_ = java.util.Collections.emptyList();
     fileStoreInfoTypeSummaries_ = java.util.Collections.emptyList();
+    relatedResources_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -613,8 +614,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The location type of the bucket (region, dual-region, multi-region, etc).
-   * If dual-region, expect data_storage_locations to be populated.
+   * The location type of the file store (region, dual-region, multi-region,
+   * etc). If dual-region, expect data_storage_locations to be populated.
    * </pre>
    *
    * <code>string location_type = 20;</code>
@@ -637,8 +638,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The location type of the bucket (region, dual-region, multi-region, etc).
-   * If dual-region, expect data_storage_locations to be populated.
+   * The location type of the file store (region, dual-region, multi-region,
+   * etc). If dual-region, expect data_storage_locations to be populated.
    * </pre>
    *
    * <code>string location_type = 20;</code>
@@ -670,6 +671,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
    *
    * * Cloud Storage: `gs://{bucket}`
    * * Amazon S3: `s3://{bucket}`
+   * * Vertex AI dataset:
+   * `projects/{project_number}/locations/{location}/datasets/{dataset_id}`
    * </pre>
    *
    * <code>string file_store_path = 6;</code>
@@ -696,6 +699,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
    *
    * * Cloud Storage: `gs://{bucket}`
    * * Amazon S3: `s3://{bucket}`
+   * * Vertex AI dataset:
+   * `projects/{project_number}/locations/{location}/datasets/{dataset_id}`
    * </pre>
    *
    * <code>string file_store_path = 6;</code>
@@ -1605,6 +1610,78 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
     return fileStoreIsEmpty_;
   }
 
+  public static final int RELATED_RESOURCES_FIELD_NUMBER = 26;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.privacy.dlp.v2.RelatedResource> relatedResources_;
+  /**
+   *
+   *
+   * <pre>
+   * Resources related to this profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.privacy.dlp.v2.RelatedResource> getRelatedResourcesList() {
+    return relatedResources_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resources related to this profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.privacy.dlp.v2.RelatedResourceOrBuilder>
+      getRelatedResourcesOrBuilderList() {
+    return relatedResources_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resources related to this profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+   */
+  @java.lang.Override
+  public int getRelatedResourcesCount() {
+    return relatedResources_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resources related to this profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.RelatedResource getRelatedResources(int index) {
+    return relatedResources_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resources related to this profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.RelatedResourceOrBuilder getRelatedResourcesOrBuilder(
+      int index) {
+    return relatedResources_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1692,6 +1769,9 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullResource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 24, fullResource_);
+    }
+    for (int i = 0; i < relatedResources_.size(); i++) {
+      output.writeMessage(26, relatedResources_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1799,6 +1879,10 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullResource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, fullResource_);
     }
+    for (int i = 0; i < relatedResources_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(26, relatedResources_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1864,6 +1948,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
     if (!getFileStoreInfoTypeSummariesList().equals(other.getFileStoreInfoTypeSummariesList()))
       return false;
     if (getFileStoreIsEmpty() != other.getFileStoreIsEmpty()) return false;
+    if (!getRelatedResourcesList().equals(other.getRelatedResourcesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1947,6 +2032,10 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + FILE_STORE_IS_EMPTY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFileStoreIsEmpty());
+    if (getRelatedResourcesCount() > 0) {
+      hash = (37 * hash) + RELATED_RESOURCES_FIELD_NUMBER;
+      hash = (53 * hash) + getRelatedResourcesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2126,6 +2215,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
         getLastModifiedTimeFieldBuilder();
         getFileClusterSummariesFieldBuilder();
         getFileStoreInfoTypeSummariesFieldBuilder();
+        getRelatedResourcesFieldBuilder();
       }
     }
 
@@ -2200,6 +2290,13 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
       }
       bitField0_ = (bitField0_ & ~0x00200000);
       fileStoreIsEmpty_ = false;
+      if (relatedResourcesBuilder_ == null) {
+        relatedResources_ = java.util.Collections.emptyList();
+      } else {
+        relatedResources_ = null;
+        relatedResourcesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00800000);
       return this;
     }
 
@@ -2254,6 +2351,15 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
         result.fileStoreInfoTypeSummaries_ = fileStoreInfoTypeSummaries_;
       } else {
         result.fileStoreInfoTypeSummaries_ = fileStoreInfoTypeSummariesBuilder_.build();
+      }
+      if (relatedResourcesBuilder_ == null) {
+        if (((bitField0_ & 0x00800000) != 0)) {
+          relatedResources_ = java.util.Collections.unmodifiableList(relatedResources_);
+          bitField0_ = (bitField0_ & ~0x00800000);
+        }
+        result.relatedResources_ = relatedResources_;
+      } else {
+        result.relatedResources_ = relatedResourcesBuilder_.build();
       }
     }
 
@@ -2528,6 +2634,33 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
       if (other.getFileStoreIsEmpty() != false) {
         setFileStoreIsEmpty(other.getFileStoreIsEmpty());
       }
+      if (relatedResourcesBuilder_ == null) {
+        if (!other.relatedResources_.isEmpty()) {
+          if (relatedResources_.isEmpty()) {
+            relatedResources_ = other.relatedResources_;
+            bitField0_ = (bitField0_ & ~0x00800000);
+          } else {
+            ensureRelatedResourcesIsMutable();
+            relatedResources_.addAll(other.relatedResources_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.relatedResources_.isEmpty()) {
+          if (relatedResourcesBuilder_.isEmpty()) {
+            relatedResourcesBuilder_.dispose();
+            relatedResourcesBuilder_ = null;
+            relatedResources_ = other.relatedResources_;
+            bitField0_ = (bitField0_ & ~0x00800000);
+            relatedResourcesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getRelatedResourcesFieldBuilder()
+                    : null;
+          } else {
+            relatedResourcesBuilder_.addAllMessages(other.relatedResources_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2724,6 +2857,19 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000100;
                 break;
               } // case 194
+            case 210:
+              {
+                com.google.privacy.dlp.v2.RelatedResource m =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.RelatedResource.parser(), extensionRegistry);
+                if (relatedResourcesBuilder_ == null) {
+                  ensureRelatedResourcesIsMutable();
+                  relatedResources_.add(m);
+                } else {
+                  relatedResourcesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 210
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3607,8 +3753,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The location type of the bucket (region, dual-region, multi-region, etc).
-     * If dual-region, expect data_storage_locations to be populated.
+     * The location type of the file store (region, dual-region, multi-region,
+     * etc). If dual-region, expect data_storage_locations to be populated.
      * </pre>
      *
      * <code>string location_type = 20;</code>
@@ -3630,8 +3776,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The location type of the bucket (region, dual-region, multi-region, etc).
-     * If dual-region, expect data_storage_locations to be populated.
+     * The location type of the file store (region, dual-region, multi-region,
+     * etc). If dual-region, expect data_storage_locations to be populated.
      * </pre>
      *
      * <code>string location_type = 20;</code>
@@ -3653,8 +3799,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The location type of the bucket (region, dual-region, multi-region, etc).
-     * If dual-region, expect data_storage_locations to be populated.
+     * The location type of the file store (region, dual-region, multi-region,
+     * etc). If dual-region, expect data_storage_locations to be populated.
      * </pre>
      *
      * <code>string location_type = 20;</code>
@@ -3675,8 +3821,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The location type of the bucket (region, dual-region, multi-region, etc).
-     * If dual-region, expect data_storage_locations to be populated.
+     * The location type of the file store (region, dual-region, multi-region,
+     * etc). If dual-region, expect data_storage_locations to be populated.
      * </pre>
      *
      * <code>string location_type = 20;</code>
@@ -3693,8 +3839,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The location type of the bucket (region, dual-region, multi-region, etc).
-     * If dual-region, expect data_storage_locations to be populated.
+     * The location type of the file store (region, dual-region, multi-region,
+     * etc). If dual-region, expect data_storage_locations to be populated.
      * </pre>
      *
      * <code>string location_type = 20;</code>
@@ -3722,6 +3868,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      * * Cloud Storage: `gs://{bucket}`
      * * Amazon S3: `s3://{bucket}`
+     * * Vertex AI dataset:
+     * `projects/{project_number}/locations/{location}/datasets/{dataset_id}`
      * </pre>
      *
      * <code>string file_store_path = 6;</code>
@@ -3747,6 +3895,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      * * Cloud Storage: `gs://{bucket}`
      * * Amazon S3: `s3://{bucket}`
+     * * Vertex AI dataset:
+     * `projects/{project_number}/locations/{location}/datasets/{dataset_id}`
      * </pre>
      *
      * <code>string file_store_path = 6;</code>
@@ -3772,6 +3922,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      * * Cloud Storage: `gs://{bucket}`
      * * Amazon S3: `s3://{bucket}`
+     * * Vertex AI dataset:
+     * `projects/{project_number}/locations/{location}/datasets/{dataset_id}`
      * </pre>
      *
      * <code>string file_store_path = 6;</code>
@@ -3796,6 +3948,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      * * Cloud Storage: `gs://{bucket}`
      * * Amazon S3: `s3://{bucket}`
+     * * Vertex AI dataset:
+     * `projects/{project_number}/locations/{location}/datasets/{dataset_id}`
      * </pre>
      *
      * <code>string file_store_path = 6;</code>
@@ -3816,6 +3970,8 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
      *
      * * Cloud Storage: `gs://{bucket}`
      * * Amazon S3: `s3://{bucket}`
+     * * Vertex AI dataset:
+     * `projects/{project_number}/locations/{location}/datasets/{dataset_id}`
      * </pre>
      *
      * <code>string file_store_path = 6;</code>
@@ -6707,6 +6863,361 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
       fileStoreIsEmpty_ = false;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.privacy.dlp.v2.RelatedResource> relatedResources_ =
+        java.util.Collections.emptyList();
+
+    private void ensureRelatedResourcesIsMutable() {
+      if (!((bitField0_ & 0x00800000) != 0)) {
+        relatedResources_ =
+            new java.util.ArrayList<com.google.privacy.dlp.v2.RelatedResource>(relatedResources_);
+        bitField0_ |= 0x00800000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.RelatedResource,
+            com.google.privacy.dlp.v2.RelatedResource.Builder,
+            com.google.privacy.dlp.v2.RelatedResourceOrBuilder>
+        relatedResourcesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Resources related to this profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.RelatedResource> getRelatedResourcesList() {
+      if (relatedResourcesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(relatedResources_);
+      } else {
+        return relatedResourcesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resources related to this profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+     */
+    public int getRelatedResourcesCount() {
+      if (relatedResourcesBuilder_ == null) {
+        return relatedResources_.size();
+      } else {
+        return relatedResourcesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resources related to this profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+     */
+    public com.google.privacy.dlp.v2.RelatedResource getRelatedResources(int index) {
+      if (relatedResourcesBuilder_ == null) {
+        return relatedResources_.get(index);
+      } else {
+        return relatedResourcesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resources related to this profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+     */
+    public Builder setRelatedResources(int index, com.google.privacy.dlp.v2.RelatedResource value) {
+      if (relatedResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRelatedResourcesIsMutable();
+        relatedResources_.set(index, value);
+        onChanged();
+      } else {
+        relatedResourcesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resources related to this profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+     */
+    public Builder setRelatedResources(
+        int index, com.google.privacy.dlp.v2.RelatedResource.Builder builderForValue) {
+      if (relatedResourcesBuilder_ == null) {
+        ensureRelatedResourcesIsMutable();
+        relatedResources_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        relatedResourcesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resources related to this profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+     */
+    public Builder addRelatedResources(com.google.privacy.dlp.v2.RelatedResource value) {
+      if (relatedResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRelatedResourcesIsMutable();
+        relatedResources_.add(value);
+        onChanged();
+      } else {
+        relatedResourcesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resources related to this profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+     */
+    public Builder addRelatedResources(int index, com.google.privacy.dlp.v2.RelatedResource value) {
+      if (relatedResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRelatedResourcesIsMutable();
+        relatedResources_.add(index, value);
+        onChanged();
+      } else {
+        relatedResourcesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resources related to this profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+     */
+    public Builder addRelatedResources(
+        com.google.privacy.dlp.v2.RelatedResource.Builder builderForValue) {
+      if (relatedResourcesBuilder_ == null) {
+        ensureRelatedResourcesIsMutable();
+        relatedResources_.add(builderForValue.build());
+        onChanged();
+      } else {
+        relatedResourcesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resources related to this profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+     */
+    public Builder addRelatedResources(
+        int index, com.google.privacy.dlp.v2.RelatedResource.Builder builderForValue) {
+      if (relatedResourcesBuilder_ == null) {
+        ensureRelatedResourcesIsMutable();
+        relatedResources_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        relatedResourcesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resources related to this profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+     */
+    public Builder addAllRelatedResources(
+        java.lang.Iterable<? extends com.google.privacy.dlp.v2.RelatedResource> values) {
+      if (relatedResourcesBuilder_ == null) {
+        ensureRelatedResourcesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, relatedResources_);
+        onChanged();
+      } else {
+        relatedResourcesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resources related to this profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+     */
+    public Builder clearRelatedResources() {
+      if (relatedResourcesBuilder_ == null) {
+        relatedResources_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00800000);
+        onChanged();
+      } else {
+        relatedResourcesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resources related to this profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+     */
+    public Builder removeRelatedResources(int index) {
+      if (relatedResourcesBuilder_ == null) {
+        ensureRelatedResourcesIsMutable();
+        relatedResources_.remove(index);
+        onChanged();
+      } else {
+        relatedResourcesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resources related to this profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+     */
+    public com.google.privacy.dlp.v2.RelatedResource.Builder getRelatedResourcesBuilder(int index) {
+      return getRelatedResourcesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resources related to this profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+     */
+    public com.google.privacy.dlp.v2.RelatedResourceOrBuilder getRelatedResourcesOrBuilder(
+        int index) {
+      if (relatedResourcesBuilder_ == null) {
+        return relatedResources_.get(index);
+      } else {
+        return relatedResourcesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resources related to this profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+     */
+    public java.util.List<? extends com.google.privacy.dlp.v2.RelatedResourceOrBuilder>
+        getRelatedResourcesOrBuilderList() {
+      if (relatedResourcesBuilder_ != null) {
+        return relatedResourcesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(relatedResources_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resources related to this profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+     */
+    public com.google.privacy.dlp.v2.RelatedResource.Builder addRelatedResourcesBuilder() {
+      return getRelatedResourcesFieldBuilder()
+          .addBuilder(com.google.privacy.dlp.v2.RelatedResource.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resources related to this profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+     */
+    public com.google.privacy.dlp.v2.RelatedResource.Builder addRelatedResourcesBuilder(int index) {
+      return getRelatedResourcesFieldBuilder()
+          .addBuilder(index, com.google.privacy.dlp.v2.RelatedResource.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resources related to this profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.RelatedResource.Builder>
+        getRelatedResourcesBuilderList() {
+      return getRelatedResourcesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.RelatedResource,
+            com.google.privacy.dlp.v2.RelatedResource.Builder,
+            com.google.privacy.dlp.v2.RelatedResourceOrBuilder>
+        getRelatedResourcesFieldBuilder() {
+      if (relatedResourcesBuilder_ == null) {
+        relatedResourcesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.RelatedResource,
+                com.google.privacy.dlp.v2.RelatedResource.Builder,
+                com.google.privacy.dlp.v2.RelatedResourceOrBuilder>(
+                relatedResources_,
+                ((bitField0_ & 0x00800000) != 0),
+                getParentForChildren(),
+                isClean());
+        relatedResources_ = null;
+      }
+      return relatedResourcesBuilder_;
     }
 
     @java.lang.Override
