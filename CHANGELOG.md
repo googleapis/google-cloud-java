@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.21.4](https://github.com/googleapis/java-logging/compare/v3.21.3...v3.21.4) (2025-02-26)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.54.0 ([67fa9fb](https://github.com/googleapis/java-logging/commit/67fa9fbbc48dd8df9c176ba0bb3d1acf6b975bfc))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.44.0 ([#1768](https://github.com/googleapis/java-logging/issues/1768)) ([a69e699](https://github.com/googleapis/java-logging/commit/a69e6990e5cc7ab920382599510bb14f29a12d7d))
+* Update googleapis/sdk-platform-java action to v2.54.0 ([#1762](https://github.com/googleapis/java-logging/issues/1762)) ([d50a8d2](https://github.com/googleapis/java-logging/commit/d50a8d2fbef588138b4d47cbd3440d7217d690b0))
+
 ## [3.21.3](https://github.com/googleapis/java-logging/compare/v3.21.2...v3.21.3) (2025-02-12)
 
 
