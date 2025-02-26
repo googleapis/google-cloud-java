@@ -217,5 +217,61 @@ public interface DiscoveryTargetOrBuilder
    */
   com.google.privacy.dlp.v2.OtherCloudDiscoveryTargetOrBuilder getOtherCloudTargetOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Vertex AI dataset target for Discovery. The first target to match a
+   * dataset will be the one applied. Note that discovery for Vertex AI can
+   * incur Cloud Storage Class B operation charges for storage.objects.get
+   * operations and retrieval fees. For more information, see [Cloud Storage
+   * pricing](https://cloud.google.com/storage/pricing#price-tables).
+   * Note that discovery for Vertex AI dataset will not be able to scan images
+   * unless DiscoveryConfig.processing_location.image_fallback_location has
+   * multi_region_processing or global_processing configured.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget vertex_dataset_target = 7;</code>
+   *
+   * @return Whether the vertexDatasetTarget field is set.
+   */
+  boolean hasVertexDatasetTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Vertex AI dataset target for Discovery. The first target to match a
+   * dataset will be the one applied. Note that discovery for Vertex AI can
+   * incur Cloud Storage Class B operation charges for storage.objects.get
+   * operations and retrieval fees. For more information, see [Cloud Storage
+   * pricing](https://cloud.google.com/storage/pricing#price-tables).
+   * Note that discovery for Vertex AI dataset will not be able to scan images
+   * unless DiscoveryConfig.processing_location.image_fallback_location has
+   * multi_region_processing or global_processing configured.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget vertex_dataset_target = 7;</code>
+   *
+   * @return The vertexDatasetTarget.
+   */
+  com.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget getVertexDatasetTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Vertex AI dataset target for Discovery. The first target to match a
+   * dataset will be the one applied. Note that discovery for Vertex AI can
+   * incur Cloud Storage Class B operation charges for storage.objects.get
+   * operations and retrieval fees. For more information, see [Cloud Storage
+   * pricing](https://cloud.google.com/storage/pricing#price-tables).
+   * Note that discovery for Vertex AI dataset will not be able to scan images
+   * unless DiscoveryConfig.processing_location.image_fallback_location has
+   * multi_region_processing or global_processing configured.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.VertexDatasetDiscoveryTarget vertex_dataset_target = 7;</code>
+   */
+  com.google.privacy.dlp.v2.VertexDatasetDiscoveryTargetOrBuilder getVertexDatasetTargetOrBuilder();
+
   com.google.privacy.dlp.v2.DiscoveryTarget.TargetCase getTargetCase();
 }

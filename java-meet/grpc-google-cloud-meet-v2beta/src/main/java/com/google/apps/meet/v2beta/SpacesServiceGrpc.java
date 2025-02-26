@@ -159,6 +159,56 @@ public final class SpacesServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.apps.meet.v2beta.ConnectActiveConferenceRequest,
+          com.google.apps.meet.v2beta.ConnectActiveConferenceResponse>
+      getConnectActiveConferenceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ConnectActiveConference",
+      requestType = com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.class,
+      responseType = com.google.apps.meet.v2beta.ConnectActiveConferenceResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.apps.meet.v2beta.ConnectActiveConferenceRequest,
+          com.google.apps.meet.v2beta.ConnectActiveConferenceResponse>
+      getConnectActiveConferenceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.apps.meet.v2beta.ConnectActiveConferenceRequest,
+            com.google.apps.meet.v2beta.ConnectActiveConferenceResponse>
+        getConnectActiveConferenceMethod;
+    if ((getConnectActiveConferenceMethod = SpacesServiceGrpc.getConnectActiveConferenceMethod)
+        == null) {
+      synchronized (SpacesServiceGrpc.class) {
+        if ((getConnectActiveConferenceMethod = SpacesServiceGrpc.getConnectActiveConferenceMethod)
+            == null) {
+          SpacesServiceGrpc.getConnectActiveConferenceMethod =
+              getConnectActiveConferenceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.apps.meet.v2beta.ConnectActiveConferenceRequest,
+                          com.google.apps.meet.v2beta.ConnectActiveConferenceResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ConnectActiveConference"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.apps.meet.v2beta.ConnectActiveConferenceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.apps.meet.v2beta.ConnectActiveConferenceResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SpacesServiceMethodDescriptorSupplier("ConnectActiveConference"))
+                      .build();
+        }
+      }
+    }
+    return getConnectActiveConferenceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.apps.meet.v2beta.EndActiveConferenceRequest, com.google.protobuf.Empty>
       getEndActiveConferenceMethod;
 
@@ -470,6 +520,28 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * Broker a WebRTC connection to the active conference of a space.
+     * On success, clients must use the resulting SDP (Session Description
+     * Protocol) answer to establish a WebRTC connection. Once connected,
+     * additional functionality is available across WebRTC data channels.
+     * See [Meet Media API
+     * overview](https://developers.google.com/meet/media-api/guides/overview) for
+     * more details about this connection.
+     * </pre>
+     */
+    default void connectActiveConference(
+        com.google.apps.meet.v2beta.ConnectActiveConferenceRequest request,
+        io.grpc.stub.StreamObserver<com.google.apps.meet.v2beta.ConnectActiveConferenceResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getConnectActiveConferenceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Ends an active conference (if there's one).
      * For an example, see [End active
      * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
@@ -643,6 +715,30 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * Broker a WebRTC connection to the active conference of a space.
+     * On success, clients must use the resulting SDP (Session Description
+     * Protocol) answer to establish a WebRTC connection. Once connected,
+     * additional functionality is available across WebRTC data channels.
+     * See [Meet Media API
+     * overview](https://developers.google.com/meet/media-api/guides/overview) for
+     * more details about this connection.
+     * </pre>
+     */
+    public void connectActiveConference(
+        com.google.apps.meet.v2beta.ConnectActiveConferenceRequest request,
+        io.grpc.stub.StreamObserver<com.google.apps.meet.v2beta.ConnectActiveConferenceResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getConnectActiveConferenceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Ends an active conference (if there's one).
      * For an example, see [End active
      * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
@@ -803,6 +899,26 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * Broker a WebRTC connection to the active conference of a space.
+     * On success, clients must use the resulting SDP (Session Description
+     * Protocol) answer to establish a WebRTC connection. Once connected,
+     * additional functionality is available across WebRTC data channels.
+     * See [Meet Media API
+     * overview](https://developers.google.com/meet/media-api/guides/overview) for
+     * more details about this connection.
+     * </pre>
+     */
+    public com.google.apps.meet.v2beta.ConnectActiveConferenceResponse connectActiveConference(
+        com.google.apps.meet.v2beta.ConnectActiveConferenceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getConnectActiveConferenceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Ends an active conference (if there's one).
      * For an example, see [End active
      * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
@@ -949,6 +1065,28 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * Broker a WebRTC connection to the active conference of a space.
+     * On success, clients must use the resulting SDP (Session Description
+     * Protocol) answer to establish a WebRTC connection. Once connected,
+     * additional functionality is available across WebRTC data channels.
+     * See [Meet Media API
+     * overview](https://developers.google.com/meet/media-api/guides/overview) for
+     * more details about this connection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.apps.meet.v2beta.ConnectActiveConferenceResponse>
+        connectActiveConference(
+            com.google.apps.meet.v2beta.ConnectActiveConferenceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getConnectActiveConferenceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Ends an active conference (if there's one).
      * For an example, see [End active
      * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
@@ -1033,11 +1171,12 @@ public final class SpacesServiceGrpc {
   private static final int METHODID_CREATE_SPACE = 0;
   private static final int METHODID_GET_SPACE = 1;
   private static final int METHODID_UPDATE_SPACE = 2;
-  private static final int METHODID_END_ACTIVE_CONFERENCE = 3;
-  private static final int METHODID_CREATE_MEMBER = 4;
-  private static final int METHODID_GET_MEMBER = 5;
-  private static final int METHODID_LIST_MEMBERS = 6;
-  private static final int METHODID_DELETE_MEMBER = 7;
+  private static final int METHODID_CONNECT_ACTIVE_CONFERENCE = 3;
+  private static final int METHODID_END_ACTIVE_CONFERENCE = 4;
+  private static final int METHODID_CREATE_MEMBER = 5;
+  private static final int METHODID_GET_MEMBER = 6;
+  private static final int METHODID_LIST_MEMBERS = 7;
+  private static final int METHODID_DELETE_MEMBER = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1070,6 +1209,13 @@ public final class SpacesServiceGrpc {
           serviceImpl.updateSpace(
               (com.google.apps.meet.v2beta.UpdateSpaceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.apps.meet.v2beta.Space>) responseObserver);
+          break;
+        case METHODID_CONNECT_ACTIVE_CONFERENCE:
+          serviceImpl.connectActiveConference(
+              (com.google.apps.meet.v2beta.ConnectActiveConferenceRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.apps.meet.v2beta.ConnectActiveConferenceResponse>)
+                  responseObserver);
           break;
         case METHODID_END_ACTIVE_CONFERENCE:
           serviceImpl.endActiveConference(
@@ -1133,6 +1279,13 @@ public final class SpacesServiceGrpc {
                 new MethodHandlers<
                     com.google.apps.meet.v2beta.UpdateSpaceRequest,
                     com.google.apps.meet.v2beta.Space>(service, METHODID_UPDATE_SPACE)))
+        .addMethod(
+            getConnectActiveConferenceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.apps.meet.v2beta.ConnectActiveConferenceRequest,
+                    com.google.apps.meet.v2beta.ConnectActiveConferenceResponse>(
+                    service, METHODID_CONNECT_ACTIVE_CONFERENCE)))
         .addMethod(
             getEndActiveConferenceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1218,6 +1371,7 @@ public final class SpacesServiceGrpc {
                       .addMethod(getCreateSpaceMethod())
                       .addMethod(getGetSpaceMethod())
                       .addMethod(getUpdateSpaceMethod())
+                      .addMethod(getConnectActiveConferenceMethod())
                       .addMethod(getEndActiveConferenceMethod())
                       .addMethod(getCreateMemberMethod())
                       .addMethod(getGetMemberMethod())

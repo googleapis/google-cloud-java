@@ -578,10 +578,10 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Start the session with the specified
-   * [playbook][google.cloud.dialogflow.cx.v3beta1.Playbook]. You can only
-   * specify the playbook at the beginning of the session. Otherwise, an error
-   * will be thrown.
+   * Optional. The unique identifier of the
+   * [playbook][google.cloud.dialogflow.cx.v3beta1.Playbook] to start or
+   * continue the session with. If `current_playbook` is specified, the previous
+   * state of the session will be ignored by Dialogflow.
    *
    * Format:
    * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
@@ -598,10 +598,10 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
-   * Optional. Start the session with the specified
-   * [playbook][google.cloud.dialogflow.cx.v3beta1.Playbook]. You can only
-   * specify the playbook at the beginning of the session. Otherwise, an error
-   * will be thrown.
+   * Optional. The unique identifier of the
+   * [playbook][google.cloud.dialogflow.cx.v3beta1.Playbook] to start or
+   * continue the session with. If `current_playbook` is specified, the previous
+   * state of the session will be ignored by Dialogflow.
    *
    * Format:
    * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
@@ -890,10 +890,14 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>
-   * bool populate_data_store_connection_signals = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * bool populate_data_store_connection_signals = 25 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated
+   *     google.cloud.dialogflow.cx.v3beta1.QueryParameters.populate_data_store_connection_signals
+   *     is deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=753
    * @return The populateDataStoreConnectionSignals.
    */
+  @java.lang.Deprecated
   boolean getPopulateDataStoreConnectionSignals();
 }

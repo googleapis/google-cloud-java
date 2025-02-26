@@ -103,6 +103,8 @@ public class PlaybooksClientHttpJsonTest {
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
+            .addAllHandlers(new ArrayList<Handler>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -161,6 +163,8 @@ public class PlaybooksClientHttpJsonTest {
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
+            .addAllHandlers(new ArrayList<Handler>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -401,6 +405,8 @@ public class PlaybooksClientHttpJsonTest {
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
+            .addAllHandlers(new ArrayList<Handler>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -457,6 +463,8 @@ public class PlaybooksClientHttpJsonTest {
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
+            .addAllHandlers(new ArrayList<Handler>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -515,6 +523,8 @@ public class PlaybooksClientHttpJsonTest {
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
+            .addAllHandlers(new ArrayList<Handler>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -533,6 +543,8 @@ public class PlaybooksClientHttpJsonTest {
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
+            .addAllHandlers(new ArrayList<Handler>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -578,6 +590,8 @@ public class PlaybooksClientHttpJsonTest {
               .addAllReferencedFlows(new ArrayList<String>())
               .addAllReferencedTools(new ArrayList<String>())
               .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+              .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
+              .addAllHandlers(new ArrayList<Handler>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updatePlaybook(playbook, updateMask);

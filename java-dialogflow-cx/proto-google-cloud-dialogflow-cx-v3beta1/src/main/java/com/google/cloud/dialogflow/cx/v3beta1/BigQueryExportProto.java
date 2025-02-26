@@ -45,11 +45,11 @@ public final class BigQueryExportProto {
           + "query_export.proto\022\"google.cloud.dialogf"
           + "low.cx.v3beta1\"A\n\026BigQueryExportSettings"
           + "\022\017\n\007enabled\030\001 \001(\010\022\026\n\016bigquery_table\030\002 \001("
-          + "\tB\244\001\n&com.google.cloud.dialogflow.cx.v3b"
+          + "\tB\241\001\n&com.google.cloud.dialogflow.cx.v3b"
           + "eta1B\023BigQueryExportProtoP\001Z6cloud.googl"
           + "e.com/go/dialogflow/cx/apiv3beta1/cxpb;c"
-          + "xpb\370\001\001\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx"
-          + ".V3Beta1b\006proto3"
+          + "xpb\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3"
+          + "Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

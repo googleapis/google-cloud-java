@@ -773,6 +773,7 @@ public class KeyManagementServiceClientTest {
             .setPemCrc32C(Int64Value.newBuilder().build())
             .setName("name3373707")
             .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .setPublicKey(ChecksummedData.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -818,6 +819,7 @@ public class KeyManagementServiceClientTest {
             .setPemCrc32C(Int64Value.newBuilder().build())
             .setName("name3373707")
             .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .setPublicKey(ChecksummedData.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 

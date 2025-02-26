@@ -103,6 +103,7 @@ public class ReservationServiceClientTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -158,6 +159,7 @@ public class ReservationServiceClientTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -301,6 +303,7 @@ public class ReservationServiceClientTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -350,6 +353,7 @@ public class ReservationServiceClientTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -467,6 +471,7 @@ public class ReservationServiceClientTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -519,6 +524,7 @@ public class ReservationServiceClientTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1174,6 +1180,7 @@ public class ReservationServiceClientTest {
                 AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
                     .toString())
             .setAssignee("assignee-369881649")
+            .setEnableGeminiInBigquery(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1218,6 +1225,7 @@ public class ReservationServiceClientTest {
                 AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
                     .toString())
             .setAssignee("assignee-369881649")
+            .setEnableGeminiInBigquery(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1612,6 +1620,7 @@ public class ReservationServiceClientTest {
                 AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
                     .toString())
             .setAssignee("assignee-369881649")
+            .setEnableGeminiInBigquery(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1659,6 +1668,7 @@ public class ReservationServiceClientTest {
                 AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
                     .toString())
             .setAssignee("assignee-369881649")
+            .setEnableGeminiInBigquery(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1705,6 +1715,7 @@ public class ReservationServiceClientTest {
                 AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
                     .toString())
             .setAssignee("assignee-369881649")
+            .setEnableGeminiInBigquery(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1750,6 +1761,7 @@ public class ReservationServiceClientTest {
                 AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
                     .toString())
             .setAssignee("assignee-369881649")
+            .setEnableGeminiInBigquery(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1794,6 +1806,7 @@ public class ReservationServiceClientTest {
                 AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
                     .toString())
             .setAssignee("assignee-369881649")
+            .setEnableGeminiInBigquery(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 

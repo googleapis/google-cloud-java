@@ -869,6 +869,56 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         : exploitReleaseDate_;
   }
 
+  public static final int FIRST_EXPLOITATION_DATE_FIELD_NUMBER = 10;
+  private com.google.protobuf.Timestamp firstExploitationDate_;
+  /**
+   *
+   *
+   * <pre>
+   * Date of the earliest known exploitation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp first_exploitation_date = 10;</code>
+   *
+   * @return Whether the firstExploitationDate field is set.
+   */
+  @java.lang.Override
+  public boolean hasFirstExploitationDate() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Date of the earliest known exploitation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp first_exploitation_date = 10;</code>
+   *
+   * @return The firstExploitationDate.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getFirstExploitationDate() {
+    return firstExploitationDate_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : firstExploitationDate_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Date of the earliest known exploitation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp first_exploitation_date = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getFirstExploitationDateOrBuilder() {
+    return firstExploitationDate_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : firstExploitationDate_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -914,6 +964,9 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(9, getExploitReleaseDate());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(10, getFirstExploitationDate());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -954,6 +1007,10 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getExploitReleaseDate());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(10, getFirstExploitationDate());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -983,6 +1040,10 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     if (hasExploitReleaseDate() != other.hasExploitReleaseDate()) return false;
     if (hasExploitReleaseDate()) {
       if (!getExploitReleaseDate().equals(other.getExploitReleaseDate())) return false;
+    }
+    if (hasFirstExploitationDate() != other.hasFirstExploitationDate()) return false;
+    if (hasFirstExploitationDate()) {
+      if (!getFirstExploitationDate().equals(other.getFirstExploitationDate())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1018,6 +1079,10 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     if (hasExploitReleaseDate()) {
       hash = (37 * hash) + EXPLOIT_RELEASE_DATE_FIELD_NUMBER;
       hash = (53 * hash) + getExploitReleaseDate().hashCode();
+    }
+    if (hasFirstExploitationDate()) {
+      hash = (37 * hash) + FIRST_EXPLOITATION_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getFirstExploitationDate().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1165,6 +1230,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         getReferencesFieldBuilder();
         getCvssv3FieldBuilder();
         getExploitReleaseDateFieldBuilder();
+        getFirstExploitationDateFieldBuilder();
       }
     }
 
@@ -1194,6 +1260,11 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       if (exploitReleaseDateBuilder_ != null) {
         exploitReleaseDateBuilder_.dispose();
         exploitReleaseDateBuilder_ = null;
+      }
+      firstExploitationDate_ = null;
+      if (firstExploitationDateBuilder_ != null) {
+        firstExploitationDateBuilder_.dispose();
+        firstExploitationDateBuilder_ = null;
       }
       return this;
     }
@@ -1273,6 +1344,13 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
                 ? exploitReleaseDate_
                 : exploitReleaseDateBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.firstExploitationDate_ =
+            firstExploitationDateBuilder_ == null
+                ? firstExploitationDate_
+                : firstExploitationDateBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1375,6 +1453,9 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       if (other.hasExploitReleaseDate()) {
         mergeExploitReleaseDate(other.getExploitReleaseDate());
       }
+      if (other.hasFirstExploitationDate()) {
+        mergeFirstExploitationDate(other.getFirstExploitationDate());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1463,6 +1544,13 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getFirstExploitationDateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2687,6 +2775,191 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         exploitReleaseDate_ = null;
       }
       return exploitReleaseDateBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp firstExploitationDate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        firstExploitationDateBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Date of the earliest known exploitation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp first_exploitation_date = 10;</code>
+     *
+     * @return Whether the firstExploitationDate field is set.
+     */
+    public boolean hasFirstExploitationDate() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date of the earliest known exploitation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp first_exploitation_date = 10;</code>
+     *
+     * @return The firstExploitationDate.
+     */
+    public com.google.protobuf.Timestamp getFirstExploitationDate() {
+      if (firstExploitationDateBuilder_ == null) {
+        return firstExploitationDate_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : firstExploitationDate_;
+      } else {
+        return firstExploitationDateBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date of the earliest known exploitation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp first_exploitation_date = 10;</code>
+     */
+    public Builder setFirstExploitationDate(com.google.protobuf.Timestamp value) {
+      if (firstExploitationDateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        firstExploitationDate_ = value;
+      } else {
+        firstExploitationDateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date of the earliest known exploitation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp first_exploitation_date = 10;</code>
+     */
+    public Builder setFirstExploitationDate(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (firstExploitationDateBuilder_ == null) {
+        firstExploitationDate_ = builderForValue.build();
+      } else {
+        firstExploitationDateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date of the earliest known exploitation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp first_exploitation_date = 10;</code>
+     */
+    public Builder mergeFirstExploitationDate(com.google.protobuf.Timestamp value) {
+      if (firstExploitationDateBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && firstExploitationDate_ != null
+            && firstExploitationDate_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getFirstExploitationDateBuilder().mergeFrom(value);
+        } else {
+          firstExploitationDate_ = value;
+        }
+      } else {
+        firstExploitationDateBuilder_.mergeFrom(value);
+      }
+      if (firstExploitationDate_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date of the earliest known exploitation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp first_exploitation_date = 10;</code>
+     */
+    public Builder clearFirstExploitationDate() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      firstExploitationDate_ = null;
+      if (firstExploitationDateBuilder_ != null) {
+        firstExploitationDateBuilder_.dispose();
+        firstExploitationDateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date of the earliest known exploitation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp first_exploitation_date = 10;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getFirstExploitationDateBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getFirstExploitationDateFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date of the earliest known exploitation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp first_exploitation_date = 10;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getFirstExploitationDateOrBuilder() {
+      if (firstExploitationDateBuilder_ != null) {
+        return firstExploitationDateBuilder_.getMessageOrBuilder();
+      } else {
+        return firstExploitationDate_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : firstExploitationDate_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Date of the earliest known exploitation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp first_exploitation_date = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getFirstExploitationDateFieldBuilder() {
+      if (firstExploitationDateBuilder_ == null) {
+        firstExploitationDateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getFirstExploitationDate(), getParentForChildren(), isClean());
+        firstExploitationDate_ = null;
+      }
+      return firstExploitationDateBuilder_;
     }
 
     @java.lang.Override

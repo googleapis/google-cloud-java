@@ -71,12 +71,12 @@ public final class OrgPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the org policy.
+   * Identifier. The resource name of the org policy.
    * Example:
    * "organizations/{organization_id}/policies/{constraint_name}"
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -96,12 +96,12 @@ public final class OrgPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the org policy.
+   * Identifier. The resource name of the org policy.
    * Example:
    * "organizations/{organization_id}/policies/{constraint_name}"
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -464,12 +464,12 @@ public final class OrgPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the org policy.
+     * Identifier. The resource name of the org policy.
      * Example:
      * "organizations/{organization_id}/policies/{constraint_name}"
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -488,12 +488,12 @@ public final class OrgPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the org policy.
+     * Identifier. The resource name of the org policy.
      * Example:
      * "organizations/{organization_id}/policies/{constraint_name}"
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -512,12 +512,12 @@ public final class OrgPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the org policy.
+     * Identifier. The resource name of the org policy.
      * Example:
      * "organizations/{organization_id}/policies/{constraint_name}"
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -535,12 +535,12 @@ public final class OrgPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the org policy.
+     * Identifier. The resource name of the org policy.
      * Example:
      * "organizations/{organization_id}/policies/{constraint_name}"
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -554,12 +554,12 @@ public final class OrgPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the org policy.
+     * Identifier. The resource name of the org policy.
      * Example:
      * "organizations/{organization_id}/policies/{constraint_name}"
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

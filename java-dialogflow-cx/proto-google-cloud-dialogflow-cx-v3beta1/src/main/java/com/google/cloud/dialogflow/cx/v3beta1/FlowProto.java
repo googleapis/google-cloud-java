@@ -266,12 +266,12 @@ public final class FlowProto {
           + "\001*\032x\312A\031dialogflow.googleapis.com\322AYhttps"
           + "://www.googleapis.com/auth/cloud-platfor"
           + "m,https://www.googleapis.com/auth/dialog"
-          + "flowB\303\001\n&com.google.cloud.dialogflow.cx."
+          + "flowB\300\001\n&com.google.cloud.dialogflow.cx."
           + "v3beta1B\tFlowProtoP\001Z6cloud.google.com/g"
-          + "o/dialogflow/cx/apiv3beta1/cxpb;cxpb\370\001\001\242"
-          + "\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Beta"
-          + "1\352\002&Google::Cloud::Dialogflow::CX::V3bet"
-          + "a1b\006proto3"
+          + "o/dialogflow/cx/apiv3beta1/cxpb;cxpb\242\002\002D"
+          + "F\252\002\"Google.Cloud.Dialogflow.Cx.V3Beta1\352\002"
+          + "&Google::Cloud::Dialogflow::CX::V3beta1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

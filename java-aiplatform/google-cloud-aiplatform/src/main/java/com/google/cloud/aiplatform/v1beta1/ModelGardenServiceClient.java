@@ -115,6 +115,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> Deploy</td>
+ *      <td><p> Deploys a model to a new endpoint.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deployAsync(DeployRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deployOperationCallable()
+ *           <li><p> deployCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeployPublisherModel</td>
  *      <td><p> Deploys publisher models.</td>
  *      <td>
@@ -579,6 +594,100 @@ public class ModelGardenServiceClient implements BackgroundResource {
   public final UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsResponse>
       listPublisherModelsCallable() {
     return stub.listPublisherModelsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys a model to a new endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   DeployRequest request =
+   *       DeployRequest.newBuilder()
+   *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setModelConfig(DeployRequest.ModelConfig.newBuilder().build())
+   *           .setEndpointConfig(DeployRequest.EndpointConfig.newBuilder().build())
+   *           .setDeployConfig(DeployRequest.DeployConfig.newBuilder().build())
+   *           .build();
+   *   DeployResponse response = modelGardenServiceClient.deployAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeployResponse, DeployOperationMetadata> deployAsync(
+      DeployRequest request) {
+    return deployOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys a model to a new endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   DeployRequest request =
+   *       DeployRequest.newBuilder()
+   *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setModelConfig(DeployRequest.ModelConfig.newBuilder().build())
+   *           .setEndpointConfig(DeployRequest.EndpointConfig.newBuilder().build())
+   *           .setDeployConfig(DeployRequest.DeployConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<DeployResponse, DeployOperationMetadata> future =
+   *       modelGardenServiceClient.deployOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DeployResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeployRequest, DeployResponse, DeployOperationMetadata>
+      deployOperationCallable() {
+    return stub.deployOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys a model to a new endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   DeployRequest request =
+   *       DeployRequest.newBuilder()
+   *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setModelConfig(DeployRequest.ModelConfig.newBuilder().build())
+   *           .setEndpointConfig(DeployRequest.EndpointConfig.newBuilder().build())
+   *           .setDeployConfig(DeployRequest.DeployConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = modelGardenServiceClient.deployCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeployRequest, Operation> deployCallable() {
+    return stub.deployCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

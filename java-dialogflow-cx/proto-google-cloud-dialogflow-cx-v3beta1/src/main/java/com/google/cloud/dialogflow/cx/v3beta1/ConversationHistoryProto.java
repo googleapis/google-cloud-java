@@ -69,6 +69,10 @@ public final class ConversationHistoryProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_Interaction_MissingTransition_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_Interaction_StepMetrics_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_Interaction_StepMetrics_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_FlowVersionsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_FlowVersionsEntry_fieldAccessorTable;
@@ -106,7 +110,7 @@ public final class ConversationHistoryProto {
           + "_token\030\004 \001(\tB\003\340A\001\"}\n\031ListConversationsRe"
           + "sponse\022G\n\rconversations\030\001 \003(\01320.google.c"
           + "loud.dialogflow.cx.v3beta1.Conversation\022"
-          + "\027\n\017next_page_token\030\002 \001(\t\"\261\022\n\014Conversatio"
+          + "\027\n\017next_page_token\030\002 \001(\t\"\247\024\n\014Conversatio"
           + "n\022\021\n\004name\030\001 \001(\tB\003\340A\010\022C\n\004type\030\002 \001(\01625.goo"
           + "gle.cloud.dialogflow.cx.v3beta1.Conversa"
           + "tion.Type\022\025\n\rlanguage_code\030\003 \001(\t\022.\n\nstar"
@@ -145,7 +149,7 @@ public final class ConversationHistoryProto {
           + "direct_intent_count\030\003 \001(\005\022\037\n\027parameter_f"
           + "illing_count\030\004 \001(\005\022\026\n\016no_match_count\030\005 \001"
           + "(\005\022\026\n\016no_input_count\030\006 \001(\005\022\023\n\013event_coun"
-          + "t\030\007 \001(\005\032\217\004\n\013Interaction\022H\n\007request\030\001 \001(\013"
+          + "t\030\007 \001(\005\032\205\006\n\013Interaction\022H\n\007request\030\001 \001(\013"
           + "27.google.cloud.dialogflow.cx.v3beta1.De"
           + "tectIntentRequest\022J\n\010response\030\002 \001(\01328.go"
           + "ogle.cloud.dialogflow.cx.v3beta1.DetectI"
@@ -154,43 +158,49 @@ public final class ConversationHistoryProto {
           + "tectIntentResponse\022\032\n\022request_utterances"
           + "\030\004 \001(\t\022\033\n\023response_utterances\030\005 \001(\t\022/\n\013c"
           + "reate_time\030\006 \001(\0132\032.google.protobuf.Times"
-          + "tamp\022j\n\022missing_transition\030\010 \001(\0132N.googl"
-          + "e.cloud.dialogflow.cx.v3beta1.Conversati"
-          + "on.Interaction.MissingTransition\032?\n\021Miss"
-          + "ingTransition\022\033\n\023intent_display_name\030\001 \001"
-          + "(\t\022\r\n\005score\030\002 \001(\002\0323\n\021FlowVersionsEntry\022\013"
-          + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001\"C\n\004Type\022\024"
-          + "\n\020TYPE_UNSPECIFIED\020\000\022\t\n\005AUDIO\020\001\022\010\n\004TEXT\020"
-          + "\002\022\020\n\014UNDETERMINED\020\003:\236\001\352A\232\001\n&dialogflow.g"
-          + "oogleapis.com/Conversation\022Sprojects/{pr"
-          + "oject}/locations/{location}/agents/{agen"
-          + "t}/conversations/{conversation}*\rconvers"
-          + "ations2\014conversation2\204\006\n\023ConversationHis"
-          + "tory\022\342\001\n\021ListConversations\022<.google.clou"
-          + "d.dialogflow.cx.v3beta1.ListConversation"
-          + "sRequest\032=.google.cloud.dialogflow.cx.v3"
-          + "beta1.ListConversationsResponse\"P\332A\006pare"
-          + "nt\202\323\344\223\002A\022?/v3beta1/{parent=projects/*/lo"
-          + "cations/*/agents/*}/conversations\022\317\001\n\017Ge"
-          + "tConversation\022:.google.cloud.dialogflow."
-          + "cx.v3beta1.GetConversationRequest\0320.goog"
-          + "le.cloud.dialogflow.cx.v3beta1.Conversat"
-          + "ion\"N\332A\004name\202\323\344\223\002A\022?/v3beta1/{name=proje"
-          + "cts/*/locations/*/agents/*/conversations"
-          + "/*}\022\273\001\n\022DeleteConversation\022=.google.clou"
-          + "d.dialogflow.cx.v3beta1.DeleteConversati"
-          + "onRequest\032\026.google.protobuf.Empty\"N\332A\004na"
-          + "me\202\323\344\223\002A*?/v3beta1/{name=projects/*/loca"
-          + "tions/*/agents/*/conversations/*}\032x\312A\031di"
-          + "alogflow.googleapis.com\322AYhttps://www.go"
-          + "ogleapis.com/auth/cloud-platform,https:/"
-          + "/www.googleapis.com/auth/dialogflowB\317\001\n&"
-          + "com.google.cloud.dialogflow.cx.v3beta1B\030"
-          + "ConversationHistoryProtoP\001Z6cloud.google"
-          + ".com/go/dialogflow/cx/apiv3beta1/cxpb;cx"
-          + "pb\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3B"
-          + "eta1\352\002&Google::Cloud::Dialogflow::CX::V3"
-          + "beta1b\006proto3"
+          + "tamp\022K\n\017answer_feedback\030\007 \001(\01322.google.c"
+          + "loud.dialogflow.cx.v3beta1.AnswerFeedbac"
+          + "k\022j\n\022missing_transition\030\010 \001(\0132N.google.c"
+          + "loud.dialogflow.cx.v3beta1.Conversation."
+          + "Interaction.MissingTransition\022^\n\014step_me"
+          + "trics\030\t \003(\0132H.google.cloud.dialogflow.cx"
+          + ".v3beta1.Conversation.Interaction.StepMe"
+          + "trics\032?\n\021MissingTransition\022\033\n\023intent_dis"
+          + "play_name\030\001 \001(\t\022\r\n\005score\030\002 \001(\002\032G\n\013StepMe"
+          + "trics\022\014\n\004name\030\001 \001(\t\022*\n\007latency\030\002 \001(\0132\031.g"
+          + "oogle.protobuf.Duration\0323\n\021FlowVersionsE"
+          + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001\"C\n\004"
+          + "Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\t\n\005AUDIO\020\001\022\010\n"
+          + "\004TEXT\020\002\022\020\n\014UNDETERMINED\020\003:\236\001\352A\232\001\n&dialog"
+          + "flow.googleapis.com/Conversation\022Sprojec"
+          + "ts/{project}/locations/{location}/agents"
+          + "/{agent}/conversations/{conversation}*\rc"
+          + "onversations2\014conversation2\204\006\n\023Conversat"
+          + "ionHistory\022\342\001\n\021ListConversations\022<.googl"
+          + "e.cloud.dialogflow.cx.v3beta1.ListConver"
+          + "sationsRequest\032=.google.cloud.dialogflow"
+          + ".cx.v3beta1.ListConversationsResponse\"P\332"
+          + "A\006parent\202\323\344\223\002A\022?/v3beta1/{parent=project"
+          + "s/*/locations/*/agents/*}/conversations\022"
+          + "\317\001\n\017GetConversation\022:.google.cloud.dialo"
+          + "gflow.cx.v3beta1.GetConversationRequest\032"
+          + "0.google.cloud.dialogflow.cx.v3beta1.Con"
+          + "versation\"N\332A\004name\202\323\344\223\002A\022?/v3beta1/{name"
+          + "=projects/*/locations/*/agents/*/convers"
+          + "ations/*}\022\273\001\n\022DeleteConversation\022=.googl"
+          + "e.cloud.dialogflow.cx.v3beta1.DeleteConv"
+          + "ersationRequest\032\026.google.protobuf.Empty\""
+          + "N\332A\004name\202\323\344\223\002A*?/v3beta1/{name=projects/"
+          + "*/locations/*/agents/*/conversations/*}\032"
+          + "x\312A\031dialogflow.googleapis.com\322AYhttps://"
+          + "www.googleapis.com/auth/cloud-platform,h"
+          + "ttps://www.googleapis.com/auth/dialogflo"
+          + "wB\317\001\n&com.google.cloud.dialogflow.cx.v3b"
+          + "eta1B\030ConversationHistoryProtoP\001Z6cloud."
+          + "google.com/go/dialogflow/cx/apiv3beta1/c"
+          + "xpb;cxpb\242\002\002DF\252\002\"Google.Cloud.Dialogflow."
+          + "Cx.V3Beta1\352\002&Google::Cloud::Dialogflow::"
+          + "CX::V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -318,7 +328,9 @@ public final class ConversationHistoryProto {
               "RequestUtterances",
               "ResponseUtterances",
               "CreateTime",
+              "AnswerFeedback",
               "MissingTransition",
+              "StepMetrics",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_Interaction_MissingTransition_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_Interaction_descriptor
@@ -329,6 +341,16 @@ public final class ConversationHistoryProto {
             internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_Interaction_MissingTransition_descriptor,
             new java.lang.String[] {
               "IntentDisplayName", "Score",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_Interaction_StepMetrics_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_Interaction_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_Interaction_StepMetrics_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_Interaction_StepMetrics_descriptor,
+            new java.lang.String[] {
+              "Name", "Latency",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_FlowVersionsEntry_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_descriptor

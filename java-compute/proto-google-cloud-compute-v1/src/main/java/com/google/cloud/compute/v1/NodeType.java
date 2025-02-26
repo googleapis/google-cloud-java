@@ -483,6 +483,39 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     return localSsdGb_;
   }
 
+  public static final int MAX_VMS_FIELD_NUMBER = 307579713;
+  private int maxVms_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Maximum number of VMs that can be created for this node type.
+   * </pre>
+   *
+   * <code>optional int32 max_vms = 307579713;</code>
+   *
+   * @return Whether the maxVms field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxVms() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Maximum number of VMs that can be created for this node type.
+   * </pre>
+   *
+   * <code>optional int32 max_vms = 307579713;</code>
+   *
+   * @return The maxVms.
+   */
+  @java.lang.Override
+  public int getMaxVms() {
+    return maxVms_;
+  }
+
   public static final int MEMORY_MB_FIELD_NUMBER = 116001171;
   private int memoryMb_ = 0;
   /**
@@ -498,7 +531,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMemoryMb() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -533,7 +566,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -599,7 +632,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -665,7 +698,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -734,17 +767,20 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeInt32(116001171, memoryMb_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeInt32(307579713, maxVms_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeInt32(329237578, localSsdGb_);
@@ -758,7 +794,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -779,18 +815,21 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(116001171, memoryMb_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(307579713, maxVms_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(329237578, localSsdGb_);
@@ -804,7 +843,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -856,6 +895,10 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     if (hasLocalSsdGb() != other.hasLocalSsdGb()) return false;
     if (hasLocalSsdGb()) {
       if (getLocalSsdGb() != other.getLocalSsdGb()) return false;
+    }
+    if (hasMaxVms() != other.hasMaxVms()) return false;
+    if (hasMaxVms()) {
+      if (getMaxVms() != other.getMaxVms()) return false;
     }
     if (hasMemoryMb() != other.hasMemoryMb()) return false;
     if (hasMemoryMb()) {
@@ -915,6 +958,10 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     if (hasLocalSsdGb()) {
       hash = (37 * hash) + LOCAL_SSD_GB_FIELD_NUMBER;
       hash = (53 * hash) + getLocalSsdGb();
+    }
+    if (hasMaxVms()) {
+      hash = (37 * hash) + MAX_VMS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxVms();
     }
     if (hasMemoryMb()) {
       hash = (37 * hash) + MEMORY_MB_FIELD_NUMBER;
@@ -1091,6 +1138,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       id_ = 0L;
       kind_ = "";
       localSsdGb_ = 0;
+      maxVms_ = 0;
       memoryMb_ = 0;
       name_ = "";
       selfLink_ = "";
@@ -1164,20 +1212,24 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.memoryMb_ = memoryMb_;
+        result.maxVms_ = maxVms_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.name_ = name_;
+        result.memoryMb_ = memoryMb_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.name_ = name_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.zone_ = zone_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.zone_ = zone_;
+        to_bitField0_ |= 0x00001000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1259,22 +1311,25 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       if (other.hasLocalSsdGb()) {
         setLocalSsdGb(other.getLocalSsdGb());
       }
+      if (other.hasMaxVms()) {
+        setMaxVms(other.getMaxVms());
+      }
       if (other.hasMemoryMb()) {
         setMemoryMb(other.getMemoryMb());
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1318,13 +1373,13 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 26989658
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 29957474
             case 244202930:
@@ -1336,9 +1391,15 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
             case 928009368:
               {
                 memoryMb_ = input.readInt32();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 928009368
+            case -1834329592:
+              {
+                maxVms_ = input.readInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case -1834329592
             case -1661066672:
               {
                 localSsdGb_ = input.readInt32();
@@ -1366,7 +1427,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case -645248918
             case -173855334:
@@ -2264,6 +2325,74 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int maxVms_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Maximum number of VMs that can be created for this node type.
+     * </pre>
+     *
+     * <code>optional int32 max_vms = 307579713;</code>
+     *
+     * @return Whether the maxVms field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxVms() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Maximum number of VMs that can be created for this node type.
+     * </pre>
+     *
+     * <code>optional int32 max_vms = 307579713;</code>
+     *
+     * @return The maxVms.
+     */
+    @java.lang.Override
+    public int getMaxVms() {
+      return maxVms_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Maximum number of VMs that can be created for this node type.
+     * </pre>
+     *
+     * <code>optional int32 max_vms = 307579713;</code>
+     *
+     * @param value The maxVms to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxVms(int value) {
+
+      maxVms_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Maximum number of VMs that can be created for this node type.
+     * </pre>
+     *
+     * <code>optional int32 max_vms = 307579713;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxVms() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      maxVms_ = 0;
+      onChanged();
+      return this;
+    }
+
     private int memoryMb_;
     /**
      *
@@ -2278,7 +2407,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMemoryMb() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2310,7 +2439,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     public Builder setMemoryMb(int value) {
 
       memoryMb_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2326,7 +2455,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMemoryMb() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       memoryMb_ = 0;
       onChanged();
       return this;
@@ -2345,7 +2474,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2408,7 +2537,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2425,7 +2554,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2447,7 +2576,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2465,7 +2594,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -2528,7 +2657,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2545,7 +2674,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -2567,7 +2696,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2585,7 +2714,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -2648,7 +2777,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2665,7 +2794,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -2687,7 +2816,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

@@ -122,6 +122,27 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ConnectActiveConference</td>
+ *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview): Broker a WebRTC connection to the active conference of a space.
+ * <p>  On success, clients must use the resulting SDP (Session Description Protocol) answer to establish a WebRTC connection. Once connected, additional functionality is available across WebRTC data channels.
+ * <p>  See [Meet Media API overview](https://developers.google.com/meet/media-api/guides/overview) for more details about this connection.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> connectActiveConference(ConnectActiveConferenceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> connectActiveConference(SpaceName name)
+ *           <li><p> connectActiveConference(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> connectActiveConferenceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> EndActiveConference</td>
  *      <td><p> Ends an active conference (if there's one).
  * <p>  For an example, see [End active conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).</td>
@@ -639,6 +660,155 @@ public class SpacesServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateSpaceRequest, Space> updateSpaceCallable() {
     return stub.updateSpaceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): Broker a WebRTC
+   * connection to the active conference of a space.
+   *
+   * <p>On success, clients must use the resulting SDP (Session Description Protocol) answer to
+   * establish a WebRTC connection. Once connected, additional functionality is available across
+   * WebRTC data channels.
+   *
+   * <p>See [Meet Media API overview](https://developers.google.com/meet/media-api/guides/overview)
+   * for more details about this connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   SpaceName name = SpaceName.of("[SPACE]");
+   *   ConnectActiveConferenceResponse response = spacesServiceClient.connectActiveConference(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the space. Format: spaces/{spaceId}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ConnectActiveConferenceResponse connectActiveConference(SpaceName name) {
+    ConnectActiveConferenceRequest request =
+        ConnectActiveConferenceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return connectActiveConference(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): Broker a WebRTC
+   * connection to the active conference of a space.
+   *
+   * <p>On success, clients must use the resulting SDP (Session Description Protocol) answer to
+   * establish a WebRTC connection. Once connected, additional functionality is available across
+   * WebRTC data channels.
+   *
+   * <p>See [Meet Media API overview](https://developers.google.com/meet/media-api/guides/overview)
+   * for more details about this connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   String name = SpaceName.of("[SPACE]").toString();
+   *   ConnectActiveConferenceResponse response = spacesServiceClient.connectActiveConference(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the space. Format: spaces/{spaceId}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ConnectActiveConferenceResponse connectActiveConference(String name) {
+    ConnectActiveConferenceRequest request =
+        ConnectActiveConferenceRequest.newBuilder().setName(name).build();
+    return connectActiveConference(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): Broker a WebRTC
+   * connection to the active conference of a space.
+   *
+   * <p>On success, clients must use the resulting SDP (Session Description Protocol) answer to
+   * establish a WebRTC connection. Once connected, additional functionality is available across
+   * WebRTC data channels.
+   *
+   * <p>See [Meet Media API overview](https://developers.google.com/meet/media-api/guides/overview)
+   * for more details about this connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   ConnectActiveConferenceRequest request =
+   *       ConnectActiveConferenceRequest.newBuilder()
+   *           .setName(SpaceName.of("[SPACE]").toString())
+   *           .setOffer("offer105650780")
+   *           .build();
+   *   ConnectActiveConferenceResponse response =
+   *       spacesServiceClient.connectActiveConference(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ConnectActiveConferenceResponse connectActiveConference(
+      ConnectActiveConferenceRequest request) {
+    return connectActiveConferenceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): Broker a WebRTC
+   * connection to the active conference of a space.
+   *
+   * <p>On success, clients must use the resulting SDP (Session Description Protocol) answer to
+   * establish a WebRTC connection. Once connected, additional functionality is available across
+   * WebRTC data channels.
+   *
+   * <p>See [Meet Media API overview](https://developers.google.com/meet/media-api/guides/overview)
+   * for more details about this connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   ConnectActiveConferenceRequest request =
+   *       ConnectActiveConferenceRequest.newBuilder()
+   *           .setName(SpaceName.of("[SPACE]").toString())
+   *           .setOffer("offer105650780")
+   *           .build();
+   *   ApiFuture<ConnectActiveConferenceResponse> future =
+   *       spacesServiceClient.connectActiveConferenceCallable().futureCall(request);
+   *   // Do something.
+   *   ConnectActiveConferenceResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>
+      connectActiveConferenceCallable() {
+    return stub.connectActiveConferenceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

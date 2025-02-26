@@ -43,6 +43,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     displayName_ = "";
     supportedBy_ = java.util.Collections.emptyList();
     description_ = "";
+    example_ = "";
     versions_ = java.util.Collections.emptyList();
     categories_ = java.util.Collections.emptyList();
   }
@@ -324,6 +325,57 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int EXAMPLE_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object example_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * A sample that is a true positive for this infoType.
+   * </pre>
+   *
+   * <code>string example = 8;</code>
+   *
+   * @return The example.
+   */
+  @java.lang.Override
+  public java.lang.String getExample() {
+    java.lang.Object ref = example_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      example_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A sample that is a true positive for this infoType.
+   * </pre>
+   *
+   * <code>string example = 8;</code>
+   *
+   * @return The bytes for example.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getExampleBytes() {
+    java.lang.Object ref = example_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      example_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int VERSIONS_FIELD_NUMBER = 9;
 
   @SuppressWarnings("serial")
@@ -547,6 +599,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(example_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, example_);
+    }
     for (int i = 0; i < versions_.size(); i++) {
       output.writeMessage(9, versions_.get(i));
     }
@@ -586,6 +641,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(example_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, example_);
+    }
     for (int i = 0; i < versions_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, versions_.get(i));
     }
@@ -615,6 +673,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!supportedBy_.equals(other.supportedBy_)) return false;
     if (!getDescription().equals(other.getDescription())) return false;
+    if (!getExample().equals(other.getExample())) return false;
     if (!getVersionsList().equals(other.getVersionsList())) return false;
     if (!getCategoriesList().equals(other.getCategoriesList())) return false;
     if (hasSensitivityScore() != other.hasSensitivityScore()) return false;
@@ -642,6 +701,8 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + EXAMPLE_FIELD_NUMBER;
+    hash = (53 * hash) + getExample().hashCode();
     if (getVersionsCount() > 0) {
       hash = (37 * hash) + VERSIONS_FIELD_NUMBER;
       hash = (53 * hash) + getVersionsList().hashCode();
@@ -809,20 +870,21 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       supportedBy_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
       description_ = "";
+      example_ = "";
       if (versionsBuilder_ == null) {
         versions_ = java.util.Collections.emptyList();
       } else {
         versions_ = null;
         versionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (categoriesBuilder_ == null) {
         categories_ = java.util.Collections.emptyList();
       } else {
         categories_ = null;
         categoriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       sensitivityScore_ = null;
       if (sensitivityScoreBuilder_ != null) {
         sensitivityScoreBuilder_.dispose();
@@ -870,18 +932,18 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       result.supportedBy_ = supportedBy_;
       if (versionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           versions_ = java.util.Collections.unmodifiableList(versions_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.versions_ = versions_;
       } else {
         result.versions_ = versionsBuilder_.build();
       }
       if (categoriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           categories_ = java.util.Collections.unmodifiableList(categories_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.categories_ = categories_;
       } else {
@@ -900,8 +962,11 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.description_ = description_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.example_ = example_;
+      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.sensitivityScore_ =
             sensitivityScoreBuilder_ == null ? sensitivityScore_ : sensitivityScoreBuilder_.build();
         to_bitField0_ |= 0x00000001;
@@ -979,11 +1044,16 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (!other.getExample().isEmpty()) {
+        example_ = other.example_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       if (versionsBuilder_ == null) {
         if (!other.versions_.isEmpty()) {
           if (versions_.isEmpty()) {
             versions_ = other.versions_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureVersionsIsMutable();
             versions_.addAll(other.versions_);
@@ -996,7 +1066,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
             versionsBuilder_.dispose();
             versionsBuilder_ = null;
             versions_ = other.versions_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             versionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVersionsFieldBuilder()
@@ -1010,7 +1080,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         if (!other.categories_.isEmpty()) {
           if (categories_.isEmpty()) {
             categories_ = other.categories_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureCategoriesIsMutable();
             categories_.addAll(other.categories_);
@@ -1023,7 +1093,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
             categoriesBuilder_.dispose();
             categoriesBuilder_ = null;
             categories_ = other.categories_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
             categoriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCategoriesFieldBuilder()
@@ -1099,6 +1169,12 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 66:
+              {
+                example_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 66
             case 74:
               {
                 com.google.privacy.dlp.v2.VersionDescription m =
@@ -1129,7 +1205,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
               {
                 input.readMessage(
                     getSensitivityScoreFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 90
             default:
@@ -1695,14 +1771,120 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private java.lang.Object example_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A sample that is a true positive for this infoType.
+     * </pre>
+     *
+     * <code>string example = 8;</code>
+     *
+     * @return The example.
+     */
+    public java.lang.String getExample() {
+      java.lang.Object ref = example_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        example_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A sample that is a true positive for this infoType.
+     * </pre>
+     *
+     * <code>string example = 8;</code>
+     *
+     * @return The bytes for example.
+     */
+    public com.google.protobuf.ByteString getExampleBytes() {
+      java.lang.Object ref = example_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        example_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A sample that is a true positive for this infoType.
+     * </pre>
+     *
+     * <code>string example = 8;</code>
+     *
+     * @param value The example to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExample(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      example_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A sample that is a true positive for this infoType.
+     * </pre>
+     *
+     * <code>string example = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExample() {
+      example_ = getDefaultInstance().getExample();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A sample that is a true positive for this infoType.
+     * </pre>
+     *
+     * <code>string example = 8;</code>
+     *
+     * @param value The bytes for example to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExampleBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      example_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.privacy.dlp.v2.VersionDescription> versions_ =
         java.util.Collections.emptyList();
 
     private void ensureVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         versions_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.VersionDescription>(versions_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -1918,7 +2100,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public Builder clearVersions() {
       if (versionsBuilder_ == null) {
         versions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         versionsBuilder_.clear();
@@ -2040,7 +2222,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
                 com.google.privacy.dlp.v2.VersionDescription,
                 com.google.privacy.dlp.v2.VersionDescription.Builder,
                 com.google.privacy.dlp.v2.VersionDescriptionOrBuilder>(
-                versions_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                versions_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         versions_ = null;
       }
       return versionsBuilder_;
@@ -2050,10 +2232,10 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         categories_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.InfoTypeCategory>(categories_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -2269,7 +2451,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public Builder clearCategories() {
       if (categoriesBuilder_ == null) {
         categories_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         categoriesBuilder_.clear();
@@ -2391,7 +2573,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
                 com.google.privacy.dlp.v2.InfoTypeCategory,
                 com.google.privacy.dlp.v2.InfoTypeCategory.Builder,
                 com.google.privacy.dlp.v2.InfoTypeCategoryOrBuilder>(
-                categories_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+                categories_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
         categories_ = null;
       }
       return categoriesBuilder_;
@@ -2415,7 +2597,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
      * @return Whether the sensitivityScore field is set.
      */
     public boolean hasSensitivityScore() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2455,7 +2637,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       } else {
         sensitivityScoreBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2475,7 +2657,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       } else {
         sensitivityScoreBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2490,7 +2672,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeSensitivityScore(com.google.privacy.dlp.v2.SensitivityScore value) {
       if (sensitivityScoreBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && sensitivityScore_ != null
             && sensitivityScore_
                 != com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()) {
@@ -2502,7 +2684,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         sensitivityScoreBuilder_.mergeFrom(value);
       }
       if (sensitivityScore_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2517,7 +2699,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
      * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 11;</code>
      */
     public Builder clearSensitivityScore() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       sensitivityScore_ = null;
       if (sensitivityScoreBuilder_ != null) {
         sensitivityScoreBuilder_.dispose();
@@ -2536,7 +2718,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
      * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 11;</code>
      */
     public com.google.privacy.dlp.v2.SensitivityScore.Builder getSensitivityScoreBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getSensitivityScoreFieldBuilder().getBuilder();
     }

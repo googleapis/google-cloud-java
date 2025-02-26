@@ -65,7 +65,7 @@ public interface DataProfileJobConfigOrBuilder
    * <pre>
    * The project that will run the scan. The DLP service
    * account that exists within this project must have access to all resources
-   * that are profiled, and the Cloud DLP API must be enabled.
+   * that are profiled, and the DLP API must be enabled.
    * </pre>
    *
    * <code>string project_id = 5;</code>
@@ -79,7 +79,7 @@ public interface DataProfileJobConfigOrBuilder
    * <pre>
    * The project that will run the scan. The DLP service
    * account that exists within this project must have access to all resources
-   * that are profiled, and the Cloud DLP API must be enabled.
+   * that are profiled, and the DLP API must be enabled.
    * </pre>
    *
    * <code>string project_id = 5;</code>

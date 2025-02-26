@@ -237,6 +237,73 @@ public class ModelGardenServiceClientTest {
   }
 
   @Test
+  public void deployTest() throws Exception {
+    DeployResponse expectedResponse =
+        DeployResponse.newBuilder()
+            .setPublisherModel(PublisherModelName.of("[PUBLISHER]", "[MODEL]").toString())
+            .setEndpoint(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
+            .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deployTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockModelGardenService.addResponse(resultOperation);
+
+    DeployRequest request =
+        DeployRequest.newBuilder()
+            .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setModelConfig(DeployRequest.ModelConfig.newBuilder().build())
+            .setEndpointConfig(DeployRequest.EndpointConfig.newBuilder().build())
+            .setDeployConfig(DeployRequest.DeployConfig.newBuilder().build())
+            .build();
+
+    DeployResponse actualResponse = client.deployAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelGardenService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeployRequest actualRequest = ((DeployRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getPublisherModelName(), actualRequest.getPublisherModelName());
+    Assert.assertEquals(request.getHuggingFaceModelId(), actualRequest.getHuggingFaceModelId());
+    Assert.assertEquals(request.getDestination(), actualRequest.getDestination());
+    Assert.assertEquals(request.getModelConfig(), actualRequest.getModelConfig());
+    Assert.assertEquals(request.getEndpointConfig(), actualRequest.getEndpointConfig());
+    Assert.assertEquals(request.getDeployConfig(), actualRequest.getDeployConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deployExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelGardenService.addException(exception);
+
+    try {
+      DeployRequest request =
+          DeployRequest.newBuilder()
+              .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setModelConfig(DeployRequest.ModelConfig.newBuilder().build())
+              .setEndpointConfig(DeployRequest.EndpointConfig.newBuilder().build())
+              .setDeployConfig(DeployRequest.DeployConfig.newBuilder().build())
+              .build();
+      client.deployAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void deployPublisherModelTest() throws Exception {
     DeployPublisherModelResponse expectedResponse =
         DeployPublisherModelResponse.newBuilder()

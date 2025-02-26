@@ -44,6 +44,8 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.apps.meet.v2beta.ConnectActiveConferenceRequest;
+import com.google.apps.meet.v2beta.ConnectActiveConferenceResponse;
 import com.google.apps.meet.v2beta.CreateMemberRequest;
 import com.google.apps.meet.v2beta.CreateSpaceRequest;
 import com.google.apps.meet.v2beta.DeleteMemberRequest;
@@ -121,6 +123,9 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/meetings.conference.media.audio.readonly")
+          .add("https://www.googleapis.com/auth/meetings.conference.media.readonly")
+          .add("https://www.googleapis.com/auth/meetings.conference.media.video.readonly")
           .add("https://www.googleapis.com/auth/meetings.space.created")
           .add("https://www.googleapis.com/auth/meetings.space.readonly")
           .add("https://www.googleapis.com/auth/meetings.space.settings")
@@ -129,6 +134,8 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
   private final UnaryCallSettings<CreateSpaceRequest, Space> createSpaceSettings;
   private final UnaryCallSettings<GetSpaceRequest, Space> getSpaceSettings;
   private final UnaryCallSettings<UpdateSpaceRequest, Space> updateSpaceSettings;
+  private final UnaryCallSettings<ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>
+      connectActiveConferenceSettings;
   private final UnaryCallSettings<EndActiveConferenceRequest, Empty> endActiveConferenceSettings;
   private final UnaryCallSettings<CreateMemberRequest, Member> createMemberSettings;
   private final UnaryCallSettings<GetMemberRequest, Member> getMemberSettings;
@@ -200,6 +207,12 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
   /** Returns the object with the settings used for calls to updateSpace. */
   public UnaryCallSettings<UpdateSpaceRequest, Space> updateSpaceSettings() {
     return updateSpaceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to connectActiveConference. */
+  public UnaryCallSettings<ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>
+      connectActiveConferenceSettings() {
+    return connectActiveConferenceSettings;
   }
 
   /** Returns the object with the settings used for calls to endActiveConference. */
@@ -342,6 +355,7 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
     createSpaceSettings = settingsBuilder.createSpaceSettings().build();
     getSpaceSettings = settingsBuilder.getSpaceSettings().build();
     updateSpaceSettings = settingsBuilder.updateSpaceSettings().build();
+    connectActiveConferenceSettings = settingsBuilder.connectActiveConferenceSettings().build();
     endActiveConferenceSettings = settingsBuilder.endActiveConferenceSettings().build();
     createMemberSettings = settingsBuilder.createMemberSettings().build();
     getMemberSettings = settingsBuilder.getMemberSettings().build();
@@ -355,6 +369,9 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
     private final UnaryCallSettings.Builder<CreateSpaceRequest, Space> createSpaceSettings;
     private final UnaryCallSettings.Builder<GetSpaceRequest, Space> getSpaceSettings;
     private final UnaryCallSettings.Builder<UpdateSpaceRequest, Space> updateSpaceSettings;
+    private final UnaryCallSettings.Builder<
+            ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>
+        connectActiveConferenceSettings;
     private final UnaryCallSettings.Builder<EndActiveConferenceRequest, Empty>
         endActiveConferenceSettings;
     private final UnaryCallSettings.Builder<CreateMemberRequest, Member> createMemberSettings;
@@ -374,6 +391,7 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -401,6 +419,8 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -414,6 +434,7 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
       createSpaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSpaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSpaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      connectActiveConferenceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       endActiveConferenceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createMemberSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getMemberSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -425,6 +446,7 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
               createSpaceSettings,
               getSpaceSettings,
               updateSpaceSettings,
+              connectActiveConferenceSettings,
               endActiveConferenceSettings,
               createMemberSettings,
               getMemberSettings,
@@ -439,6 +461,7 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
       createSpaceSettings = settings.createSpaceSettings.toBuilder();
       getSpaceSettings = settings.getSpaceSettings.toBuilder();
       updateSpaceSettings = settings.updateSpaceSettings.toBuilder();
+      connectActiveConferenceSettings = settings.connectActiveConferenceSettings.toBuilder();
       endActiveConferenceSettings = settings.endActiveConferenceSettings.toBuilder();
       createMemberSettings = settings.createMemberSettings.toBuilder();
       getMemberSettings = settings.getMemberSettings.toBuilder();
@@ -450,6 +473,7 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
               createSpaceSettings,
               getSpaceSettings,
               updateSpaceSettings,
+              connectActiveConferenceSettings,
               endActiveConferenceSettings,
               createMemberSettings,
               getMemberSettings,
@@ -496,6 +520,11 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
           .updateSpaceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .connectActiveConferenceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .endActiveConferenceSettings()
@@ -553,6 +582,13 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
     /** Returns the builder for the settings used for calls to updateSpace. */
     public UnaryCallSettings.Builder<UpdateSpaceRequest, Space> updateSpaceSettings() {
       return updateSpaceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to connectActiveConference. */
+    public UnaryCallSettings.Builder<
+            ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>
+        connectActiveConferenceSettings() {
+      return connectActiveConferenceSettings;
     }
 
     /** Returns the builder for the settings used for calls to endActiveConference. */

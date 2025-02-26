@@ -200,6 +200,7 @@ public class ParallelstoreClientTest {
             .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
             .setFileStripeLevel(FileStripeLevel.forNumber(0))
             .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     mockParallelstore.addResponse(expectedResponse);
 
@@ -250,6 +251,7 @@ public class ParallelstoreClientTest {
             .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
             .setFileStripeLevel(FileStripeLevel.forNumber(0))
             .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     mockParallelstore.addResponse(expectedResponse);
 
@@ -300,6 +302,7 @@ public class ParallelstoreClientTest {
             .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
             .setFileStripeLevel(FileStripeLevel.forNumber(0))
             .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -364,6 +367,7 @@ public class ParallelstoreClientTest {
             .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
             .setFileStripeLevel(FileStripeLevel.forNumber(0))
             .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -428,6 +432,7 @@ public class ParallelstoreClientTest {
             .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
             .setFileStripeLevel(FileStripeLevel.forNumber(0))
             .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()

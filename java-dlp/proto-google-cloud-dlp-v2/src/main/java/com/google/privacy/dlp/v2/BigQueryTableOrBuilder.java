@@ -28,7 +28,7 @@ public interface BigQueryTableOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Platform project ID of the project containing the table.
+   * The Google Cloud project ID of the project containing the table.
    * If omitted, project ID is inferred from the API call.
    * </pre>
    *
@@ -41,7 +41,7 @@ public interface BigQueryTableOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Platform project ID of the project containing the table.
+   * The Google Cloud project ID of the project containing the table.
    * If omitted, project ID is inferred from the API call.
    * </pre>
    *

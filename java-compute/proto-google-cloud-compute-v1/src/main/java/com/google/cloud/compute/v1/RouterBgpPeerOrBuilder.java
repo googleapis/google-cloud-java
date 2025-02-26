@@ -425,7 +425,7 @@ public interface RouterBgpPeerOrBuilder
    *
    *
    * <pre>
-   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type.
    * </pre>
    *
    * <code>repeated string export_policies = 134084987;</code>
@@ -437,7 +437,7 @@ public interface RouterBgpPeerOrBuilder
    *
    *
    * <pre>
-   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type.
    * </pre>
    *
    * <code>repeated string export_policies = 134084987;</code>
@@ -449,7 +449,7 @@ public interface RouterBgpPeerOrBuilder
    *
    *
    * <pre>
-   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type.
    * </pre>
    *
    * <code>repeated string export_policies = 134084987;</code>
@@ -462,7 +462,7 @@ public interface RouterBgpPeerOrBuilder
    *
    *
    * <pre>
-   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type.
    * </pre>
    *
    * <code>repeated string export_policies = 134084987;</code>
@@ -476,7 +476,7 @@ public interface RouterBgpPeerOrBuilder
    *
    *
    * <pre>
-   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type.
    * </pre>
    *
    * <code>repeated string import_policies = 451147946;</code>
@@ -488,7 +488,7 @@ public interface RouterBgpPeerOrBuilder
    *
    *
    * <pre>
-   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type.
    * </pre>
    *
    * <code>repeated string import_policies = 451147946;</code>
@@ -500,7 +500,7 @@ public interface RouterBgpPeerOrBuilder
    *
    *
    * <pre>
-   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type.
    * </pre>
    *
    * <code>repeated string import_policies = 451147946;</code>
@@ -513,7 +513,7 @@ public interface RouterBgpPeerOrBuilder
    *
    *
    * <pre>
-   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type. Note that Route Policies are currently available in preview. Please use Beta API to use Route Policies.
+   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type.
    * </pre>
    *
    * <code>repeated string import_policies = 451147946;</code>

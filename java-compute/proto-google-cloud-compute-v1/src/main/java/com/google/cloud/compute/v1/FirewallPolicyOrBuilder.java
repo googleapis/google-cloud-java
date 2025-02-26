@@ -333,6 +333,64 @@ public interface FirewallPolicyOrBuilder
    *
    *
    * <pre>
+   * A list of packet mirroring rules that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.FirewallPolicyRule> getPacketMirroringRulesList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of packet mirroring rules that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  com.google.cloud.compute.v1.FirewallPolicyRule getPacketMirroringRules(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of packet mirroring rules that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  int getPacketMirroringRulesCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of packet mirroring rules that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>
+      getPacketMirroringRulesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of packet mirroring rules that belong to this policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder getPacketMirroringRulesOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The parent of the firewall policy. This field is not applicable to network firewall policies.
    * </pre>
    *

@@ -40,6 +40,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
 
   private ToolUse() {
     tool_ = "";
+    displayName_ = "";
     action_ = "";
   }
 
@@ -118,6 +119,57 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       tool_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The display name of the tool.
+   * </pre>
+   *
+   * <code>string display_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The display name of the tool.
+   * </pre>
+   *
+   * <code>string display_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -313,6 +365,9 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(6, getOutputActionParameters());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, displayName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -336,6 +391,9 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(6, getOutputActionParameters());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, displayName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -353,6 +411,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.dialogflow.cx.v3beta1.ToolUse) obj;
 
     if (!getTool().equals(other.getTool())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getAction().equals(other.getAction())) return false;
     if (hasInputActionParameters() != other.hasInputActionParameters()) return false;
     if (hasInputActionParameters()) {
@@ -375,6 +434,8 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TOOL_FIELD_NUMBER;
     hash = (53 * hash) + getTool().hashCode();
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + ACTION_FIELD_NUMBER;
     hash = (53 * hash) + getAction().hashCode();
     if (hasInputActionParameters()) {
@@ -535,6 +596,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       tool_ = "";
+      displayName_ = "";
       action_ = "";
       inputActionParameters_ = null;
       if (inputActionParametersBuilder_ != null) {
@@ -586,17 +648,20 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
         result.tool_ = tool_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.action_ = action_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.inputActionParameters_ =
             inputActionParametersBuilder_ == null
                 ? inputActionParameters_
                 : inputActionParametersBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.outputActionParameters_ =
             outputActionParametersBuilder_ == null
                 ? outputActionParameters_
@@ -656,9 +721,14 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (!other.getAction().isEmpty()) {
         action_ = other.action_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasInputActionParameters()) {
@@ -702,23 +772,29 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 action_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 42:
               {
                 input.readMessage(
                     getInputActionParametersFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getOutputActionParametersFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
+            case 66:
+              {
+                displayName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -864,6 +940,112 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object displayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The display name of the tool.
+     * </pre>
+     *
+     * <code>string display_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The display name of the tool.
+     * </pre>
+     *
+     * <code>string display_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The display name of the tool.
+     * </pre>
+     *
+     * <code>string display_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      displayName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The display name of the tool.
+     * </pre>
+     *
+     * <code>string display_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+      displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The display name of the tool.
+     * </pre>
+     *
+     * <code>string display_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      displayName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object action_ = "";
     /**
      *
@@ -926,7 +1108,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       action_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -943,7 +1125,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAction() {
       action_ = getDefaultInstance().getAction();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -965,7 +1147,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       action_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -990,7 +1172,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the inputActionParameters field is set.
      */
     public boolean hasInputActionParameters() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1034,7 +1216,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       } else {
         inputActionParametersBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1055,7 +1237,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       } else {
         inputActionParametersBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1072,7 +1254,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeInputActionParameters(com.google.protobuf.Struct value) {
       if (inputActionParametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && inputActionParameters_ != null
             && inputActionParameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getInputActionParametersBuilder().mergeFrom(value);
@@ -1083,7 +1265,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
         inputActionParametersBuilder_.mergeFrom(value);
       }
       if (inputActionParameters_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1100,7 +1282,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearInputActionParameters() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       inputActionParameters_ = null;
       if (inputActionParametersBuilder_ != null) {
         inputActionParametersBuilder_.dispose();
@@ -1121,7 +1303,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Struct.Builder getInputActionParametersBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getInputActionParametersFieldBuilder().getBuilder();
     }
@@ -1193,7 +1375,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the outputActionParameters field is set.
      */
     public boolean hasOutputActionParameters() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1237,7 +1419,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       } else {
         outputActionParametersBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1258,7 +1440,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       } else {
         outputActionParametersBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1275,7 +1457,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeOutputActionParameters(com.google.protobuf.Struct value) {
       if (outputActionParametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && outputActionParameters_ != null
             && outputActionParameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getOutputActionParametersBuilder().mergeFrom(value);
@@ -1286,7 +1468,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
         outputActionParametersBuilder_.mergeFrom(value);
       }
       if (outputActionParameters_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1303,7 +1485,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearOutputActionParameters() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       outputActionParameters_ = null;
       if (outputActionParametersBuilder_ != null) {
         outputActionParametersBuilder_.dispose();
@@ -1324,7 +1506,7 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Struct.Builder getOutputActionParametersBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getOutputActionParametersFieldBuilder().getBuilder();
     }

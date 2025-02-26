@@ -814,4 +814,56 @@ public interface TableDataProfileOrBuilder
    * <code>.google.protobuf.Timestamp create_time = 23;</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Resources related to this profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 41;</code>
+   */
+  java.util.List<com.google.privacy.dlp.v2.RelatedResource> getRelatedResourcesList();
+  /**
+   *
+   *
+   * <pre>
+   * Resources related to this profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 41;</code>
+   */
+  com.google.privacy.dlp.v2.RelatedResource getRelatedResources(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Resources related to this profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 41;</code>
+   */
+  int getRelatedResourcesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Resources related to this profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 41;</code>
+   */
+  java.util.List<? extends com.google.privacy.dlp.v2.RelatedResourceOrBuilder>
+      getRelatedResourcesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Resources related to this profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 41;</code>
+   */
+  com.google.privacy.dlp.v2.RelatedResourceOrBuilder getRelatedResourcesOrBuilder(int index);
 }

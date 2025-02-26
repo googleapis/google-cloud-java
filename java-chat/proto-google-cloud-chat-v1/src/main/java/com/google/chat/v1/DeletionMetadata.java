@@ -145,6 +145,17 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      * <code>SPACE_OWNER_VIA_APP = 6;</code>
      */
     SPACE_OWNER_VIA_APP(6),
+    /**
+     *
+     *
+     * <pre>
+     * A member of the space deleted the message. Human users can delete
+     * messages sent by apps.
+     * </pre>
+     *
+     * <code>SPACE_MEMBER = 7;</code>
+     */
+    SPACE_MEMBER(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -218,6 +229,17 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      * <code>SPACE_OWNER_VIA_APP = 6;</code>
      */
     public static final int SPACE_OWNER_VIA_APP_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * A member of the space deleted the message. Human users can delete
+     * messages sent by apps.
+     * </pre>
+     *
+     * <code>SPACE_MEMBER = 7;</code>
+     */
+    public static final int SPACE_MEMBER_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -257,6 +279,8 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
           return CREATOR_VIA_APP;
         case 6:
           return SPACE_OWNER_VIA_APP;
+        case 7:
+          return SPACE_MEMBER;
         default:
           return null;
       }

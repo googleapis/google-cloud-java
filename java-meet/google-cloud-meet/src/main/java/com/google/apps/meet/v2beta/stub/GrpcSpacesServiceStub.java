@@ -26,6 +26,8 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.apps.meet.v2beta.ConnectActiveConferenceRequest;
+import com.google.apps.meet.v2beta.ConnectActiveConferenceResponse;
 import com.google.apps.meet.v2beta.CreateMemberRequest;
 import com.google.apps.meet.v2beta.CreateSpaceRequest;
 import com.google.apps.meet.v2beta.DeleteMemberRequest;
@@ -78,6 +80,19 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Space.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<
+          ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>
+      connectActiveConferenceMethodDescriptor =
+          MethodDescriptor
+              .<ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.apps.meet.v2beta.SpacesService/ConnectActiveConference")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ConnectActiveConferenceRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ConnectActiveConferenceResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<EndActiveConferenceRequest, Empty>
       endActiveConferenceMethodDescriptor =
           MethodDescriptor.<EndActiveConferenceRequest, Empty>newBuilder()
@@ -125,6 +140,8 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
   private final UnaryCallable<CreateSpaceRequest, Space> createSpaceCallable;
   private final UnaryCallable<GetSpaceRequest, Space> getSpaceCallable;
   private final UnaryCallable<UpdateSpaceRequest, Space> updateSpaceCallable;
+  private final UnaryCallable<ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>
+      connectActiveConferenceCallable;
   private final UnaryCallable<EndActiveConferenceRequest, Empty> endActiveConferenceCallable;
   private final UnaryCallable<CreateMemberRequest, Member> createMemberCallable;
   private final UnaryCallable<GetMemberRequest, Member> getMemberCallable;
@@ -199,6 +216,18 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>
+        connectActiveConferenceTransportSettings =
+            GrpcCallSettings
+                .<ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>newBuilder()
+                .setMethodDescriptor(connectActiveConferenceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<EndActiveConferenceRequest, Empty> endActiveConferenceTransportSettings =
         GrpcCallSettings.<EndActiveConferenceRequest, Empty>newBuilder()
             .setMethodDescriptor(endActiveConferenceMethodDescriptor)
@@ -259,6 +288,11 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
     this.updateSpaceCallable =
         callableFactory.createUnaryCallable(
             updateSpaceTransportSettings, settings.updateSpaceSettings(), clientContext);
+    this.connectActiveConferenceCallable =
+        callableFactory.createUnaryCallable(
+            connectActiveConferenceTransportSettings,
+            settings.connectActiveConferenceSettings(),
+            clientContext);
     this.endActiveConferenceCallable =
         callableFactory.createUnaryCallable(
             endActiveConferenceTransportSettings,
@@ -301,6 +335,12 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
   @Override
   public UnaryCallable<UpdateSpaceRequest, Space> updateSpaceCallable() {
     return updateSpaceCallable;
+  }
+
+  @Override
+  public UnaryCallable<ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>
+      connectActiveConferenceCallable() {
+    return connectActiveConferenceCallable;
   }
 
   @Override

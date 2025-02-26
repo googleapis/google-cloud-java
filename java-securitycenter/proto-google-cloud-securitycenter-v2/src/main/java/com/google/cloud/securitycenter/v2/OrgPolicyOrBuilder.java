@@ -28,12 +28,12 @@ public interface OrgPolicyOrBuilder
    *
    *
    * <pre>
-   * The resource name of the org policy.
+   * Identifier. The resource name of the org policy.
    * Example:
    * "organizations/{organization_id}/policies/{constraint_name}"
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -42,12 +42,12 @@ public interface OrgPolicyOrBuilder
    *
    *
    * <pre>
-   * The resource name of the org policy.
+   * Identifier. The resource name of the org policy.
    * Example:
    * "organizations/{organization_id}/policies/{constraint_name}"
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

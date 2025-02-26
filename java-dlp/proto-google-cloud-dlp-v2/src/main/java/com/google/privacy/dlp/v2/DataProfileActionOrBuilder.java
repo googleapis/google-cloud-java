@@ -150,7 +150,7 @@ public interface DataProfileActionOrBuilder
    *
    *
    * <pre>
-   * Publishes findings to SCC for each data profile.
+   * Publishes findings to Security Command Center for each data profile.
    * </pre>
    *
    * <code>
@@ -164,7 +164,7 @@ public interface DataProfileActionOrBuilder
    *
    *
    * <pre>
-   * Publishes findings to SCC for each data profile.
+   * Publishes findings to Security Command Center for each data profile.
    * </pre>
    *
    * <code>
@@ -178,7 +178,7 @@ public interface DataProfileActionOrBuilder
    *
    *
    * <pre>
-   * Publishes findings to SCC for each data profile.
+   * Publishes findings to Security Command Center for each data profile.
    * </pre>
    *
    * <code>

@@ -74,14 +74,16 @@ public final class CloudArmorProto {
           + "\022short_term_allowed\030\002 \001(\005\022\031\n\021long_term_a"
           + "llowed\030\003 \001(\005\022\030\n\020long_term_denied\030\004 \001(\005\"("
           + "\n\022AdaptiveProtection\022\022\n\nconfidence\030\001 \001(\001"
-          + "\"H\n\006Attack\022\022\n\nvolume_pps\030\001 \001(\005\022\022\n\nvolume"
-          + "_bps\030\002 \001(\005\022\026\n\016classification\030\003 \001(\tB\351\001\n\"c"
-          + "om.google.cloud.securitycenter.v2B\017Cloud"
-          + "ArmorProtoP\001ZJcloud.google.com/go/securi"
-          + "tycenter/apiv2/securitycenterpb;security"
-          + "centerpb\252\002\036Google.Cloud.SecurityCenter.V"
-          + "2\312\002\036Google\\Cloud\\SecurityCenter\\V2\352\002!Goo"
-          + "gle::Cloud::SecurityCenter::V2b\006proto3"
+          + "\"\202\001\n\006Attack\022\027\n\017volume_pps_long\030\004 \001(\003\022\027\n\017"
+          + "volume_bps_long\030\005 \001(\003\022\026\n\016classification\030"
+          + "\003 \001(\t\022\026\n\nvolume_pps\030\001 \001(\005B\002\030\001\022\026\n\nvolume_"
+          + "bps\030\002 \001(\005B\002\030\001B\351\001\n\"com.google.cloud.secur"
+          + "itycenter.v2B\017CloudArmorProtoP\001ZJcloud.g"
+          + "oogle.com/go/securitycenter/apiv2/securi"
+          + "tycenterpb;securitycenterpb\252\002\036Google.Clo"
+          + "ud.SecurityCenter.V2\312\002\036Google\\Cloud\\Secu"
+          + "rityCenter\\V2\352\002!Google::Cloud::SecurityC"
+          + "enter::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -132,7 +134,7 @@ public final class CloudArmorProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v2_Attack_descriptor,
             new java.lang.String[] {
-              "VolumePps", "VolumeBps", "Classification",
+              "VolumePpsLong", "VolumeBpsLong", "Classification", "VolumePps", "VolumeBps",
             });
     com.google.protobuf.DurationProto.getDescriptor();
   }

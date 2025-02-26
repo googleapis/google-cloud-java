@@ -275,12 +275,12 @@ public final class EnvironmentProto {
           + "ts/*}:deployFlow:\001*\032x\312A\031dialogflow.googl"
           + "eapis.com\322AYhttps://www.googleapis.com/a"
           + "uth/cloud-platform,https://www.googleapi"
-          + "s.com/auth/dialogflowB\312\001\n&com.google.clo"
+          + "s.com/auth/dialogflowB\307\001\n&com.google.clo"
           + "ud.dialogflow.cx.v3beta1B\020EnvironmentPro"
           + "toP\001Z6cloud.google.com/go/dialogflow/cx/"
-          + "apiv3beta1/cxpb;cxpb\370\001\001\242\002\002DF\252\002\"Google.Cl"
-          + "oud.Dialogflow.Cx.V3Beta1\352\002&Google::Clou"
-          + "d::Dialogflow::CX::V3beta1b\006proto3"
+          + "apiv3beta1/cxpb;cxpb\242\002\002DF\252\002\"Google.Cloud"
+          + ".Dialogflow.Cx.V3Beta1\352\002&Google::Cloud::"
+          + "Dialogflow::CX::V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

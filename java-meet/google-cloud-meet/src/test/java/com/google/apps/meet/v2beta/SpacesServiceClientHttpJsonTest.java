@@ -286,6 +286,96 @@ public class SpacesServiceClientHttpJsonTest {
   }
 
   @Test
+  public void connectActiveConferenceTest() throws Exception {
+    ConnectActiveConferenceResponse expectedResponse =
+        ConnectActiveConferenceResponse.newBuilder()
+            .setAnswer("answer-1412808770")
+            .setTraceId("traceId-1067401920")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SpaceName name = SpaceName.of("[SPACE]");
+
+    ConnectActiveConferenceResponse actualResponse = client.connectActiveConference(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void connectActiveConferenceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SpaceName name = SpaceName.of("[SPACE]");
+      client.connectActiveConference(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void connectActiveConferenceTest2() throws Exception {
+    ConnectActiveConferenceResponse expectedResponse =
+        ConnectActiveConferenceResponse.newBuilder()
+            .setAnswer("answer-1412808770")
+            .setTraceId("traceId-1067401920")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "spaces/space-5469";
+
+    ConnectActiveConferenceResponse actualResponse = client.connectActiveConference(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void connectActiveConferenceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "spaces/space-5469";
+      client.connectActiveConference(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void endActiveConferenceTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockService.addResponse(expectedResponse);

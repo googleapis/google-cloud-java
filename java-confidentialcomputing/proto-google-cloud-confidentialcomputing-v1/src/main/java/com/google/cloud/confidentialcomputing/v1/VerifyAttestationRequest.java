@@ -24,7 +24,7 @@ package com.google.cloud.confidentialcomputing.v1;
  *
  * <pre>
  * A request for an OIDC token, providing all the necessary information needed
- * for this service to verify the plaform state of the requestor.
+ * for this service to verify the platform state of the requestor.
  * </pre>
  *
  * Protobuf type {@code google.cloud.confidentialcomputing.v1.VerifyAttestationRequest}
@@ -41,6 +41,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
 
   private VerifyAttestationRequest() {
     challenge_ = "";
+    attester_ = "";
   }
 
   @java.lang.Override
@@ -527,6 +528,59 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         : tokenOptions_;
   }
 
+  public static final int ATTESTER_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object attester_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional indicator of the attester, only applies to certain
+   * products.
+   * </pre>
+   *
+   * <code>string attester = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The attester.
+   */
+  @java.lang.Override
+  public java.lang.String getAttester() {
+    java.lang.Object ref = attester_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      attester_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional indicator of the attester, only applies to certain
+   * products.
+   * </pre>
+   *
+   * <code>string attester = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for attester.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAttesterBytes() {
+    java.lang.Object ref = attester_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      attester_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -564,6 +618,9 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       output.writeMessage(
           7, (com.google.cloud.confidentialcomputing.v1.SevSnpAttestation) teeAttestation_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attester_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, attester_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -599,6 +656,9 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, (com.google.cloud.confidentialcomputing.v1.SevSnpAttestation) teeAttestation_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attester_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, attester_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -632,6 +692,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     if (hasTokenOptions()) {
       if (!getTokenOptions().equals(other.getTokenOptions())) return false;
     }
+    if (!getAttester().equals(other.getAttester())) return false;
     if (!getTeeAttestationCase().equals(other.getTeeAttestationCase())) return false;
     switch (teeAttestationCase_) {
       case 6:
@@ -672,6 +733,8 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       hash = (37 * hash) + TOKEN_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getTokenOptions().hashCode();
     }
+    hash = (37 * hash) + ATTESTER_FIELD_NUMBER;
+    hash = (53 * hash) + getAttester().hashCode();
     switch (teeAttestationCase_) {
       case 6:
         hash = (37 * hash) + TD_CCEL_FIELD_NUMBER;
@@ -791,7 +854,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * A request for an OIDC token, providing all the necessary information needed
-   * for this service to verify the plaform state of the requestor.
+   * for this service to verify the platform state of the requestor.
    * </pre>
    *
    * Protobuf type {@code google.cloud.confidentialcomputing.v1.VerifyAttestationRequest}
@@ -866,6 +929,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         tokenOptionsBuilder_.dispose();
         tokenOptionsBuilder_ = null;
       }
+      attester_ = "";
       teeAttestationCase_ = 0;
       teeAttestation_ = null;
       return this;
@@ -933,6 +997,9 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         result.tokenOptions_ =
             tokenOptionsBuilder_ == null ? tokenOptions_ : tokenOptionsBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.attester_ = attester_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1014,6 +1081,11 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       }
       if (other.hasTokenOptions()) {
         mergeTokenOptions(other.getTokenOptions());
+      }
+      if (!other.getAttester().isEmpty()) {
+        attester_ = other.attester_;
+        bitField0_ |= 0x00000080;
+        onChanged();
       }
       switch (other.getTeeAttestationCase()) {
         case TD_CCEL:
@@ -1101,6 +1173,12 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
                 teeAttestationCase_ = 7;
                 break;
               } // case 58
+            case 66:
+              {
+                attester_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2586,6 +2664,117 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         tokenOptions_ = null;
       }
       return tokenOptionsBuilder_;
+    }
+
+    private java.lang.Object attester_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional indicator of the attester, only applies to certain
+     * products.
+     * </pre>
+     *
+     * <code>string attester = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The attester.
+     */
+    public java.lang.String getAttester() {
+      java.lang.Object ref = attester_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        attester_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional indicator of the attester, only applies to certain
+     * products.
+     * </pre>
+     *
+     * <code>string attester = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for attester.
+     */
+    public com.google.protobuf.ByteString getAttesterBytes() {
+      java.lang.Object ref = attester_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        attester_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional indicator of the attester, only applies to certain
+     * products.
+     * </pre>
+     *
+     * <code>string attester = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The attester to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAttester(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      attester_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional indicator of the attester, only applies to certain
+     * products.
+     * </pre>
+     *
+     * <code>string attester = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAttester() {
+      attester_ = getDefaultInstance().getAttester();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional indicator of the attester, only applies to certain
+     * products.
+     * </pre>
+     *
+     * <code>string attester = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for attester to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAttesterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      attester_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

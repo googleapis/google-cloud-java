@@ -374,5 +374,55 @@ public interface ExecutionConfigOrBuilder
    */
   com.google.protobuf.ByteString getStagingBucketBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Authentication configuration used to set the default identity for
+   * the workload execution. The config specifies the type of identity
+   * (service account or user) that will be used by workloads to access
+   * resources on the project(s).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.AuthenticationConfig authentication_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the authenticationConfig field is set.
+   */
+  boolean hasAuthenticationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Authentication configuration used to set the default identity for
+   * the workload execution. The config specifies the type of identity
+   * (service account or user) that will be used by workloads to access
+   * resources on the project(s).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.AuthenticationConfig authentication_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The authenticationConfig.
+   */
+  com.google.cloud.dataproc.v1.AuthenticationConfig getAuthenticationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Authentication configuration used to set the default identity for
+   * the workload execution. The config specifies the type of identity
+   * (service account or user) that will be used by workloads to access
+   * resources on the project(s).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.AuthenticationConfig authentication_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.AuthenticationConfigOrBuilder getAuthenticationConfigOrBuilder();
+
   com.google.cloud.dataproc.v1.ExecutionConfig.NetworkCase getNetworkCase();
 }

@@ -54,6 +54,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     referencedPlaybooks_ = com.google.protobuf.LazyStringArrayList.emptyList();
     referencedFlows_ = com.google.protobuf.LazyStringArrayList.emptyList();
     referencedTools_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    handlers_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -1430,6 +1431,35 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * General guidelines for the playbook. These are unstructured instructions
+     * that are not directly part of the goal, e.g. "Always be polite". It's
+     * valid for this text to be long and used instead of steps altogether.
+     * </pre>
+     *
+     * <code>string guidelines = 1;</code>
+     *
+     * @return The guidelines.
+     */
+    java.lang.String getGuidelines();
+    /**
+     *
+     *
+     * <pre>
+     * General guidelines for the playbook. These are unstructured instructions
+     * that are not directly part of the goal, e.g. "Always be polite". It's
+     * valid for this text to be long and used instead of steps altogether.
+     * </pre>
+     *
+     * <code>string guidelines = 1;</code>
+     *
+     * @return The bytes for guidelines.
+     */
+    com.google.protobuf.ByteString getGuidelinesBytes();
+
+    /**
+     *
+     *
+     * <pre>
      * Ordered list of step by step execution instructions to accomplish
      * target goal.
      * </pre>
@@ -1503,6 +1533,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     }
 
     private Instruction() {
+      guidelines_ = "";
       steps_ = java.util.Collections.emptyList();
     }
 
@@ -1525,6 +1556,61 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.class,
               com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.Builder.class);
+    }
+
+    public static final int GUIDELINES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object guidelines_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * General guidelines for the playbook. These are unstructured instructions
+     * that are not directly part of the goal, e.g. "Always be polite". It's
+     * valid for this text to be long and used instead of steps altogether.
+     * </pre>
+     *
+     * <code>string guidelines = 1;</code>
+     *
+     * @return The guidelines.
+     */
+    @java.lang.Override
+    public java.lang.String getGuidelines() {
+      java.lang.Object ref = guidelines_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        guidelines_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * General guidelines for the playbook. These are unstructured instructions
+     * that are not directly part of the goal, e.g. "Always be polite". It's
+     * valid for this text to be long and used instead of steps altogether.
+     * </pre>
+     *
+     * <code>string guidelines = 1;</code>
+     *
+     * @return The bytes for guidelines.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getGuidelinesBytes() {
+      java.lang.Object ref = guidelines_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        guidelines_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int STEPS_FIELD_NUMBER = 2;
@@ -1618,6 +1704,9 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(guidelines_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, guidelines_);
+      }
       for (int i = 0; i < steps_.size(); i++) {
         output.writeMessage(2, steps_.get(i));
       }
@@ -1630,6 +1719,9 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(guidelines_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, guidelines_);
+      }
       for (int i = 0; i < steps_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, steps_.get(i));
       }
@@ -1649,6 +1741,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction other =
           (com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction) obj;
 
+      if (!getGuidelines().equals(other.getGuidelines())) return false;
       if (!getStepsList().equals(other.getStepsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -1661,6 +1754,8 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + GUIDELINES_FIELD_NUMBER;
+      hash = (53 * hash) + getGuidelines().hashCode();
       if (getStepsCount() > 0) {
         hash = (37 * hash) + STEPS_FIELD_NUMBER;
         hash = (53 * hash) + getStepsList().hashCode();
@@ -1807,13 +1902,14 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        guidelines_ = "";
         if (stepsBuilder_ == null) {
           steps_ = java.util.Collections.emptyList();
         } else {
           steps_ = null;
           stepsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1853,9 +1949,9 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       private void buildPartialRepeatedFields(
           com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction result) {
         if (stepsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             steps_ = java.util.Collections.unmodifiableList(steps_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.steps_ = steps_;
         } else {
@@ -1866,6 +1962,9 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       private void buildPartial0(
           com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.guidelines_ = guidelines_;
+        }
       }
 
       @java.lang.Override
@@ -1917,11 +2016,16 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         if (other
             == com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction.getDefaultInstance())
           return this;
+        if (!other.getGuidelines().isEmpty()) {
+          guidelines_ = other.guidelines_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
         if (stepsBuilder_ == null) {
           if (!other.steps_.isEmpty()) {
             if (steps_.isEmpty()) {
               steps_ = other.steps_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureStepsIsMutable();
               steps_.addAll(other.steps_);
@@ -1934,7 +2038,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
               stepsBuilder_.dispose();
               stepsBuilder_ = null;
               steps_ = other.steps_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               stepsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getStepsFieldBuilder()
@@ -1970,6 +2074,12 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
               case 0:
                 done = true;
                 break;
+              case 10:
+                {
+                  guidelines_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
               case 18:
                 {
                   com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step m =
@@ -2003,14 +2113,130 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
+      private java.lang.Object guidelines_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * General guidelines for the playbook. These are unstructured instructions
+       * that are not directly part of the goal, e.g. "Always be polite". It's
+       * valid for this text to be long and used instead of steps altogether.
+       * </pre>
+       *
+       * <code>string guidelines = 1;</code>
+       *
+       * @return The guidelines.
+       */
+      public java.lang.String getGuidelines() {
+        java.lang.Object ref = guidelines_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          guidelines_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * General guidelines for the playbook. These are unstructured instructions
+       * that are not directly part of the goal, e.g. "Always be polite". It's
+       * valid for this text to be long and used instead of steps altogether.
+       * </pre>
+       *
+       * <code>string guidelines = 1;</code>
+       *
+       * @return The bytes for guidelines.
+       */
+      public com.google.protobuf.ByteString getGuidelinesBytes() {
+        java.lang.Object ref = guidelines_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          guidelines_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * General guidelines for the playbook. These are unstructured instructions
+       * that are not directly part of the goal, e.g. "Always be polite". It's
+       * valid for this text to be long and used instead of steps altogether.
+       * </pre>
+       *
+       * <code>string guidelines = 1;</code>
+       *
+       * @param value The guidelines to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGuidelines(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        guidelines_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * General guidelines for the playbook. These are unstructured instructions
+       * that are not directly part of the goal, e.g. "Always be polite". It's
+       * valid for this text to be long and used instead of steps altogether.
+       * </pre>
+       *
+       * <code>string guidelines = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGuidelines() {
+        guidelines_ = getDefaultInstance().getGuidelines();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * General guidelines for the playbook. These are unstructured instructions
+       * that are not directly part of the goal, e.g. "Always be polite". It's
+       * valid for this text to be long and used instead of steps altogether.
+       * </pre>
+       *
+       * <code>string guidelines = 1;</code>
+       *
+       * @param value The bytes for guidelines to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGuidelinesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        guidelines_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step> steps_ =
           java.util.Collections.emptyList();
 
       private void ensureStepsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           steps_ =
               new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step>(steps_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -2240,7 +2466,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       public Builder clearSteps() {
         if (stepsBuilder_ == null) {
           steps_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           stepsBuilder_.clear();
@@ -2373,7 +2599,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step,
                   com.google.cloud.dialogflow.cx.v3beta1.Playbook.Step.Builder,
                   com.google.cloud.dialogflow.cx.v3beta1.Playbook.StepOrBuilder>(
-                  steps_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  steps_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
           steps_ = null;
         }
         return stepsBuilder_;
@@ -2560,7 +2786,8 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. High level description of the goal the playbook intend to
-   * accomplish.
+   * accomplish. A goal should be concise since it's visible to other playbooks
+   * that may reference this playbook.
    * </pre>
    *
    * <code>string goal = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2584,7 +2811,8 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. High level description of the goal the playbook intend to
-   * accomplish.
+   * accomplish. A goal should be concise since it's visible to other playbooks
+   * that may reference this playbook.
    * </pre>
    *
    * <code>string goal = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3233,6 +3461,152 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         : llmModelSettings_;
   }
 
+  public static final int SPEECH_SETTINGS_FIELD_NUMBER = 20;
+  private com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speechSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Playbook level Settings for speech to text detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the speechSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpeechSettings() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Playbook level Settings for speech to text detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speechSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+      getSpeechSettings() {
+    return speechSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+            .getDefaultInstance()
+        : speechSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Playbook level Settings for speech to text detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettingsOrBuilder
+      getSpeechSettingsOrBuilder() {
+    return speechSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+            .getDefaultInstance()
+        : speechSettings_;
+  }
+
+  public static final int HANDLERS_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Handler> handlers_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of registered handlers to execute based on the specified
+   * triggers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Handler> getHandlersList() {
+    return handlers_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of registered handlers to execute based on the specified
+   * triggers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.HandlerOrBuilder>
+      getHandlersOrBuilderList() {
+    return handlers_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of registered handlers to execute based on the specified
+   * triggers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getHandlersCount() {
+    return handlers_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of registered handlers to execute based on the specified
+   * triggers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Handler getHandlers(int index) {
+    return handlers_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of registered handlers to execute based on the specified
+   * triggers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.HandlerOrBuilder getHandlersOrBuilder(int index) {
+    return handlers_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3284,8 +3658,14 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(14, getLlmModelSettings());
     }
+    for (int i = 0; i < handlers_.size(); i++) {
+      output.writeMessage(16, handlers_.get(i));
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(17, getInstruction());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(20, getSpeechSettings());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3351,8 +3731,14 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getLlmModelSettings());
     }
+    for (int i = 0; i < handlers_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, handlers_.get(i));
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getInstruction());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getSpeechSettings());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3397,6 +3783,11 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     if (hasLlmModelSettings()) {
       if (!getLlmModelSettings().equals(other.getLlmModelSettings())) return false;
     }
+    if (hasSpeechSettings() != other.hasSpeechSettings()) return false;
+    if (hasSpeechSettings()) {
+      if (!getSpeechSettings().equals(other.getSpeechSettings())) return false;
+    }
+    if (!getHandlersList().equals(other.getHandlersList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3451,6 +3842,14 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     if (hasLlmModelSettings()) {
       hash = (37 * hash) + LLM_MODEL_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getLlmModelSettings().hashCode();
+    }
+    if (hasSpeechSettings()) {
+      hash = (37 * hash) + SPEECH_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeechSettings().hashCode();
+    }
+    if (getHandlersCount() > 0) {
+      hash = (37 * hash) + HANDLERS_FIELD_NUMBER;
+      hash = (53 * hash) + getHandlersList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3605,6 +4004,8 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getLlmModelSettingsFieldBuilder();
+        getSpeechSettingsFieldBuilder();
+        getHandlersFieldBuilder();
       }
     }
 
@@ -3653,6 +4054,18 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         llmModelSettingsBuilder_.dispose();
         llmModelSettingsBuilder_ = null;
       }
+      speechSettings_ = null;
+      if (speechSettingsBuilder_ != null) {
+        speechSettingsBuilder_.dispose();
+        speechSettingsBuilder_ = null;
+      }
+      if (handlersBuilder_ == null) {
+        handlers_ = java.util.Collections.emptyList();
+      } else {
+        handlers_ = null;
+        handlersBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00004000);
       return this;
     }
 
@@ -3710,6 +4123,15 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.outputParameterDefinitions_ = outputParameterDefinitionsBuilder_.build();
       }
+      if (handlersBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)) {
+          handlers_ = java.util.Collections.unmodifiableList(handlers_);
+          bitField0_ = (bitField0_ & ~0x00004000);
+        }
+        result.handlers_ = handlers_;
+      } else {
+        result.handlers_ = handlersBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.Playbook result) {
@@ -3756,6 +4178,11 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         result.llmModelSettings_ =
             llmModelSettingsBuilder_ == null ? llmModelSettings_ : llmModelSettingsBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.speechSettings_ =
+            speechSettingsBuilder_ == null ? speechSettings_ : speechSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3920,6 +4347,36 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       if (other.hasLlmModelSettings()) {
         mergeLlmModelSettings(other.getLlmModelSettings());
       }
+      if (other.hasSpeechSettings()) {
+        mergeSpeechSettings(other.getSpeechSettings());
+      }
+      if (handlersBuilder_ == null) {
+        if (!other.handlers_.isEmpty()) {
+          if (handlers_.isEmpty()) {
+            handlers_ = other.handlers_;
+            bitField0_ = (bitField0_ & ~0x00004000);
+          } else {
+            ensureHandlersIsMutable();
+            handlers_.addAll(other.handlers_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.handlers_.isEmpty()) {
+          if (handlersBuilder_.isEmpty()) {
+            handlersBuilder_.dispose();
+            handlersBuilder_ = null;
+            handlers_ = other.handlers_;
+            bitField0_ = (bitField0_ & ~0x00004000);
+            handlersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getHandlersFieldBuilder()
+                    : null;
+          } else {
+            handlersBuilder_.addAllMessages(other.handlers_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4038,12 +4495,31 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 114
+            case 130:
+              {
+                com.google.cloud.dialogflow.cx.v3beta1.Handler m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.cx.v3beta1.Handler.parser(), extensionRegistry);
+                if (handlersBuilder_ == null) {
+                  ensureHandlersIsMutable();
+                  handlers_.add(m);
+                } else {
+                  handlersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 130
             case 138:
               {
                 input.readMessage(getInstructionFieldBuilder().getBuilder(), extensionRegistry);
                 bitField0_ |= 0x00000020;
                 break;
               } // case 138
+            case 162:
+              {
+                input.readMessage(getSpeechSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4291,7 +4767,8 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. High level description of the goal the playbook intend to
-     * accomplish.
+     * accomplish. A goal should be concise since it's visible to other playbooks
+     * that may reference this playbook.
      * </pre>
      *
      * <code>string goal = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4314,7 +4791,8 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. High level description of the goal the playbook intend to
-     * accomplish.
+     * accomplish. A goal should be concise since it's visible to other playbooks
+     * that may reference this playbook.
      * </pre>
      *
      * <code>string goal = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4337,7 +4815,8 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. High level description of the goal the playbook intend to
-     * accomplish.
+     * accomplish. A goal should be concise since it's visible to other playbooks
+     * that may reference this playbook.
      * </pre>
      *
      * <code>string goal = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4359,7 +4838,8 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. High level description of the goal the playbook intend to
-     * accomplish.
+     * accomplish. A goal should be concise since it's visible to other playbooks
+     * that may reference this playbook.
      * </pre>
      *
      * <code>string goal = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4377,7 +4857,8 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. High level description of the goal the playbook intend to
-     * accomplish.
+     * accomplish. A goal should be concise since it's visible to other playbooks
+     * that may reference this playbook.
      * </pre>
      *
      * <code>string goal = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6683,6 +7164,625 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         llmModelSettings_ = null;
       }
       return llmModelSettingsBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speechSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettingsOrBuilder>
+        speechSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Playbook level Settings for speech to text detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the speechSettings field is set.
+     */
+    public boolean hasSpeechSettings() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Playbook level Settings for speech to text detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The speechSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+        getSpeechSettings() {
+      if (speechSettingsBuilder_ == null) {
+        return speechSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+                .getDefaultInstance()
+            : speechSettings_;
+      } else {
+        return speechSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Playbook level Settings for speech to text detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSpeechSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings value) {
+      if (speechSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        speechSettings_ = value;
+      } else {
+        speechSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Playbook level Settings for speech to text detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSpeechSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings.Builder
+            builderForValue) {
+      if (speechSettingsBuilder_ == null) {
+        speechSettings_ = builderForValue.build();
+      } else {
+        speechSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Playbook level Settings for speech to text detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSpeechSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings value) {
+      if (speechSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && speechSettings_ != null
+            && speechSettings_
+                != com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+                    .getDefaultInstance()) {
+          getSpeechSettingsBuilder().mergeFrom(value);
+        } else {
+          speechSettings_ = value;
+        }
+      } else {
+        speechSettingsBuilder_.mergeFrom(value);
+      }
+      if (speechSettings_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Playbook level Settings for speech to text detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSpeechSettings() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      speechSettings_ = null;
+      if (speechSettingsBuilder_ != null) {
+        speechSettingsBuilder_.dispose();
+        speechSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Playbook level Settings for speech to text detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings.Builder
+        getSpeechSettingsBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getSpeechSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Playbook level Settings for speech to text detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettingsOrBuilder
+        getSpeechSettingsOrBuilder() {
+      if (speechSettingsBuilder_ != null) {
+        return speechSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return speechSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+                .getDefaultInstance()
+            : speechSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Playbook level Settings for speech to text detection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettingsOrBuilder>
+        getSpeechSettingsFieldBuilder() {
+      if (speechSettingsBuilder_ == null) {
+        speechSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings,
+                com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettingsOrBuilder>(
+                getSpeechSettings(), getParentForChildren(), isClean());
+        speechSettings_ = null;
+      }
+      return speechSettingsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Handler> handlers_ =
+        java.util.Collections.emptyList();
+
+    private void ensureHandlersIsMutable() {
+      if (!((bitField0_ & 0x00004000) != 0)) {
+        handlers_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3beta1.Handler>(handlers_);
+        bitField0_ |= 0x00004000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Handler,
+            com.google.cloud.dialogflow.cx.v3beta1.Handler.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.HandlerOrBuilder>
+        handlersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of registered handlers to execute based on the specified
+     * triggers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Handler> getHandlersList() {
+      if (handlersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(handlers_);
+      } else {
+        return handlersBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of registered handlers to execute based on the specified
+     * triggers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getHandlersCount() {
+      if (handlersBuilder_ == null) {
+        return handlers_.size();
+      } else {
+        return handlersBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of registered handlers to execute based on the specified
+     * triggers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Handler getHandlers(int index) {
+      if (handlersBuilder_ == null) {
+        return handlers_.get(index);
+      } else {
+        return handlersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of registered handlers to execute based on the specified
+     * triggers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setHandlers(int index, com.google.cloud.dialogflow.cx.v3beta1.Handler value) {
+      if (handlersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHandlersIsMutable();
+        handlers_.set(index, value);
+        onChanged();
+      } else {
+        handlersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of registered handlers to execute based on the specified
+     * triggers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setHandlers(
+        int index, com.google.cloud.dialogflow.cx.v3beta1.Handler.Builder builderForValue) {
+      if (handlersBuilder_ == null) {
+        ensureHandlersIsMutable();
+        handlers_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        handlersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of registered handlers to execute based on the specified
+     * triggers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addHandlers(com.google.cloud.dialogflow.cx.v3beta1.Handler value) {
+      if (handlersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHandlersIsMutable();
+        handlers_.add(value);
+        onChanged();
+      } else {
+        handlersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of registered handlers to execute based on the specified
+     * triggers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addHandlers(int index, com.google.cloud.dialogflow.cx.v3beta1.Handler value) {
+      if (handlersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHandlersIsMutable();
+        handlers_.add(index, value);
+        onChanged();
+      } else {
+        handlersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of registered handlers to execute based on the specified
+     * triggers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addHandlers(
+        com.google.cloud.dialogflow.cx.v3beta1.Handler.Builder builderForValue) {
+      if (handlersBuilder_ == null) {
+        ensureHandlersIsMutable();
+        handlers_.add(builderForValue.build());
+        onChanged();
+      } else {
+        handlersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of registered handlers to execute based on the specified
+     * triggers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addHandlers(
+        int index, com.google.cloud.dialogflow.cx.v3beta1.Handler.Builder builderForValue) {
+      if (handlersBuilder_ == null) {
+        ensureHandlersIsMutable();
+        handlers_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        handlersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of registered handlers to execute based on the specified
+     * triggers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllHandlers(
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.cx.v3beta1.Handler> values) {
+      if (handlersBuilder_ == null) {
+        ensureHandlersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, handlers_);
+        onChanged();
+      } else {
+        handlersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of registered handlers to execute based on the specified
+     * triggers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearHandlers() {
+      if (handlersBuilder_ == null) {
+        handlers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00004000);
+        onChanged();
+      } else {
+        handlersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of registered handlers to execute based on the specified
+     * triggers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeHandlers(int index) {
+      if (handlersBuilder_ == null) {
+        ensureHandlersIsMutable();
+        handlers_.remove(index);
+        onChanged();
+      } else {
+        handlersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of registered handlers to execute based on the specified
+     * triggers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Handler.Builder getHandlersBuilder(int index) {
+      return getHandlersFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of registered handlers to execute based on the specified
+     * triggers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.HandlerOrBuilder getHandlersOrBuilder(int index) {
+      if (handlersBuilder_ == null) {
+        return handlers_.get(index);
+      } else {
+        return handlersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of registered handlers to execute based on the specified
+     * triggers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.HandlerOrBuilder>
+        getHandlersOrBuilderList() {
+      if (handlersBuilder_ != null) {
+        return handlersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(handlers_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of registered handlers to execute based on the specified
+     * triggers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Handler.Builder addHandlersBuilder() {
+      return getHandlersFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.cx.v3beta1.Handler.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of registered handlers to execute based on the specified
+     * triggers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Handler.Builder addHandlersBuilder(int index) {
+      return getHandlersFieldBuilder()
+          .addBuilder(index, com.google.cloud.dialogflow.cx.v3beta1.Handler.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of registered handlers to execute based on the specified
+     * triggers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Handler.Builder>
+        getHandlersBuilderList() {
+      return getHandlersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Handler,
+            com.google.cloud.dialogflow.cx.v3beta1.Handler.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.HandlerOrBuilder>
+        getHandlersFieldBuilder() {
+      if (handlersBuilder_ == null) {
+        handlersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.Handler,
+                com.google.cloud.dialogflow.cx.v3beta1.Handler.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.HandlerOrBuilder>(
+                handlers_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
+        handlers_ = null;
+      }
+      return handlersBuilder_;
     }
 
     @java.lang.Override

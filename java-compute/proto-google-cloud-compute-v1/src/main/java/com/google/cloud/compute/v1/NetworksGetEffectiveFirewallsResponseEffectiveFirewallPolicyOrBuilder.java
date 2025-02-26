@@ -102,6 +102,64 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    *
    *
    * <pre>
+   * [Output Only] The packet mirroring rules that apply to the network.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.FirewallPolicyRule> getPacketMirroringRulesList();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The packet mirroring rules that apply to the network.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  com.google.cloud.compute.v1.FirewallPolicyRule getPacketMirroringRules(int index);
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The packet mirroring rules that apply to the network.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  int getPacketMirroringRulesCount();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The packet mirroring rules that apply to the network.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>
+      getPacketMirroringRulesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The packet mirroring rules that apply to the network.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
+   * </code>
+   */
+  com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder getPacketMirroringRulesOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
    * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
    * </pre>
    *

@@ -137,6 +137,16 @@ public enum EVConnectorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EV_CONNECTOR_TYPE_UNSPECIFIED_WALL_OUTLET = 9;</code>
    */
   EV_CONNECTOR_TYPE_UNSPECIFIED_WALL_OUTLET(9),
+  /**
+   *
+   *
+   * <pre>
+   * The North American Charging System (NACS), standardized as SAE J3400.
+   * </pre>
+   *
+   * <code>EV_CONNECTOR_TYPE_NACS = 10;</code>
+   */
+  EV_CONNECTOR_TYPE_NACS(10),
   UNRECOGNIZED(-1),
   ;
 
@@ -247,6 +257,16 @@ public enum EVConnectorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EV_CONNECTOR_TYPE_UNSPECIFIED_WALL_OUTLET = 9;</code>
    */
   public static final int EV_CONNECTOR_TYPE_UNSPECIFIED_WALL_OUTLET_VALUE = 9;
+  /**
+   *
+   *
+   * <pre>
+   * The North American Charging System (NACS), standardized as SAE J3400.
+   * </pre>
+   *
+   * <code>EV_CONNECTOR_TYPE_NACS = 10;</code>
+   */
+  public static final int EV_CONNECTOR_TYPE_NACS_VALUE = 10;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -292,6 +312,8 @@ public enum EVConnectorType implements com.google.protobuf.ProtocolMessageEnum {
         return EV_CONNECTOR_TYPE_UNSPECIFIED_GB_T;
       case 9:
         return EV_CONNECTOR_TYPE_UNSPECIFIED_WALL_OUTLET;
+      case 10:
+        return EV_CONNECTOR_TYPE_NACS;
       default:
         return null;
     }

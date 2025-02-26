@@ -141,6 +141,7 @@ public class NodeTypesClientTest {
             .setId(3355)
             .setKind("kind3292052")
             .setLocalSsdGb(-1281375158)
+            .setMaxVms(844450625)
             .setMemoryMb(1726613907)
             .setName("name3373707")
             .setSelfLink("selfLink1191800166")

@@ -161,6 +161,83 @@ public class NetworkFirewallPoliciesClientTest {
   }
 
   @Test
+  public void addPacketMirroringRuleTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String firewallPolicy = "firewallPolicy-6600";
+    FirewallPolicyRule firewallPolicyRuleResource = FirewallPolicyRule.newBuilder().build();
+
+    Operation actualResponse =
+        client
+            .addPacketMirroringRuleAsync(project, firewallPolicy, firewallPolicyRuleResource)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void addPacketMirroringRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String firewallPolicy = "firewallPolicy-6600";
+      FirewallPolicyRule firewallPolicyRuleResource = FirewallPolicyRule.newBuilder().build();
+      client.addPacketMirroringRuleAsync(project, firewallPolicy, firewallPolicyRuleResource).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void addRuleTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
@@ -443,6 +520,7 @@ public class NetworkFirewallPoliciesClientTest {
             .setId(3355)
             .setKind("kind3292052")
             .setName("name3373707")
+            .addAllPacketMirroringRules(new ArrayList<FirewallPolicyRule>())
             .setParent("parent-995424086")
             .setRegion("region-934795532")
             .setRuleTupleCount(388342037)
@@ -585,6 +663,66 @@ public class NetworkFirewallPoliciesClientTest {
       String project = "project-6911";
       String resource = "resource-756";
       client.getIamPolicy(project, resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPacketMirroringRuleTest() throws Exception {
+    FirewallPolicyRule expectedResponse =
+        FirewallPolicyRule.newBuilder()
+            .setAction("action-1422950858")
+            .setDescription("description-1724546052")
+            .setDirection("direction-962590849")
+            .setDisabled(true)
+            .setEnableLogging(true)
+            .setKind("kind3292052")
+            .setMatch(FirewallPolicyRuleMatcher.newBuilder().build())
+            .setPriority(-1165461084)
+            .setRuleName("ruleName763275175")
+            .setRuleTupleCount(388342037)
+            .setSecurityProfileGroup("securityProfileGroup-943388234")
+            .addAllTargetResources(new ArrayList<String>())
+            .addAllTargetSecureTags(new ArrayList<FirewallPolicyRuleSecureTag>())
+            .addAllTargetServiceAccounts(new ArrayList<String>())
+            .setTlsInspect(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String firewallPolicy = "firewallPolicy-6600";
+
+    FirewallPolicyRule actualResponse = client.getPacketMirroringRule(project, firewallPolicy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getPacketMirroringRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String firewallPolicy = "firewallPolicy-6600";
+      client.getPacketMirroringRule(project, firewallPolicy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -849,6 +987,85 @@ public class NetworkFirewallPoliciesClientTest {
   }
 
   @Test
+  public void patchPacketMirroringRuleTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String firewallPolicy = "firewallPolicy-6600";
+    FirewallPolicyRule firewallPolicyRuleResource = FirewallPolicyRule.newBuilder().build();
+
+    Operation actualResponse =
+        client
+            .patchPacketMirroringRuleAsync(project, firewallPolicy, firewallPolicyRuleResource)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void patchPacketMirroringRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String firewallPolicy = "firewallPolicy-6600";
+      FirewallPolicyRule firewallPolicyRuleResource = FirewallPolicyRule.newBuilder().build();
+      client
+          .patchPacketMirroringRuleAsync(project, firewallPolicy, firewallPolicyRuleResource)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void patchRuleTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
@@ -990,6 +1207,78 @@ public class NetworkFirewallPoliciesClientTest {
       String project = "project-6911";
       String firewallPolicy = "firewallPolicy-6600";
       client.removeAssociationAsync(project, firewallPolicy).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void removePacketMirroringRuleTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String firewallPolicy = "firewallPolicy-6600";
+
+    Operation actualResponse = client.removePacketMirroringRuleAsync(project, firewallPolicy).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void removePacketMirroringRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String firewallPolicy = "firewallPolicy-6600";
+      client.removePacketMirroringRuleAsync(project, firewallPolicy).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

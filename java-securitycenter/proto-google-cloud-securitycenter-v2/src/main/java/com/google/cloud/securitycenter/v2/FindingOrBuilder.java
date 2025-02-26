@@ -2213,4 +2213,209 @@ public interface FindingOrBuilder
    */
   com.google.cloud.securitycenter.v2.GroupMembershipOrBuilder getGroupMembershipsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Disk associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.Disk disk = 58;</code>
+   *
+   * @return Whether the disk field is set.
+   */
+  boolean hasDisk();
+  /**
+   *
+   *
+   * <pre>
+   * Disk associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.Disk disk = 58;</code>
+   *
+   * @return The disk.
+   */
+  com.google.cloud.securitycenter.v2.Disk getDisk();
+  /**
+   *
+   *
+   * <pre>
+   * Disk associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.Disk disk = 58;</code>
+   */
+  com.google.cloud.securitycenter.v2.DiskOrBuilder getDiskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data access events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;</code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v2.DataAccessEvent> getDataAccessEventsList();
+  /**
+   *
+   *
+   * <pre>
+   * Data access events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;</code>
+   */
+  com.google.cloud.securitycenter.v2.DataAccessEvent getDataAccessEvents(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Data access events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;</code>
+   */
+  int getDataAccessEventsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Data access events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;</code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v2.DataAccessEventOrBuilder>
+      getDataAccessEventsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Data access events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;</code>
+   */
+  com.google.cloud.securitycenter.v2.DataAccessEventOrBuilder getDataAccessEventsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Data flow events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v2.DataFlowEvent> getDataFlowEventsList();
+  /**
+   *
+   *
+   * <pre>
+   * Data flow events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+   */
+  com.google.cloud.securitycenter.v2.DataFlowEvent getDataFlowEvents(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Data flow events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+   */
+  int getDataFlowEventsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Data flow events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v2.DataFlowEventOrBuilder>
+      getDataFlowEventsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Data flow events associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
+   */
+  com.google.cloud.securitycenter.v2.DataFlowEventOrBuilder getDataFlowEventsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Data retention deletion events associated with the finding.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+   * </code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent>
+      getDataRetentionDeletionEventsList();
+  /**
+   *
+   *
+   * <pre>
+   * Data retention deletion events associated with the finding.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+   * </code>
+   */
+  com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent getDataRetentionDeletionEvents(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Data retention deletion events associated with the finding.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+   * </code>
+   */
+  int getDataRetentionDeletionEventsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Data retention deletion events associated with the finding.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v2.DataRetentionDeletionEventOrBuilder>
+      getDataRetentionDeletionEventsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Data retention deletion events associated with the finding.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v2.DataRetentionDeletionEvent data_retention_deletion_events = 64;
+   * </code>
+   */
+  com.google.cloud.securitycenter.v2.DataRetentionDeletionEventOrBuilder
+      getDataRetentionDeletionEventsOrBuilder(int index);
 }

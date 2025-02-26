@@ -496,7 +496,6 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * MITRE ATT&amp;CK techniques that can be referenced by SCC findings.
    * See: https://attack.mitre.org/techniques/enterprise/
-   * Next ID: 65
    * </pre>
    *
    * Protobuf enum {@code google.cloud.securitycenter.v2.MitreAttack.Technique}
@@ -966,6 +965,16 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1546
+     * </pre>
+     *
+     * <code>EVENT_TRIGGERED_EXECUTION = 65;</code>
+     */
+    EVENT_TRIGGERED_EXECUTION(65),
+    /**
+     *
+     *
+     * <pre>
      * T1548
      * </pre>
      *
@@ -1122,6 +1131,16 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>CONTAINER_ADMINISTRATION_COMMAND = 60;</code>
      */
     CONTAINER_ADMINISTRATION_COMMAND(60),
+    /**
+     *
+     *
+     * <pre>
+     * T1610
+     * </pre>
+     *
+     * <code>DEPLOY_CONTAINER = 66;</code>
+     */
+    DEPLOY_CONTAINER(66),
     /**
      *
      *
@@ -1619,6 +1638,16 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1546
+     * </pre>
+     *
+     * <code>EVENT_TRIGGERED_EXECUTION = 65;</code>
+     */
+    public static final int EVENT_TRIGGERED_EXECUTION_VALUE = 65;
+    /**
+     *
+     *
+     * <pre>
      * T1548
      * </pre>
      *
@@ -1779,6 +1808,16 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * T1610
+     * </pre>
+     *
+     * <code>DEPLOY_CONTAINER = 66;</code>
+     */
+    public static final int DEPLOY_CONTAINER_VALUE = 66;
+    /**
+     *
+     *
+     * <pre>
      * T1611
      * </pre>
      *
@@ -1922,6 +1961,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           return STEAL_WEB_SESSION_COOKIE;
         case 24:
           return CREATE_OR_MODIFY_SYSTEM_PROCESS;
+        case 65:
+          return EVENT_TRIGGERED_EXECUTION;
         case 34:
           return ABUSE_ELEVATION_CONTROL_MECHANISM;
         case 13:
@@ -1954,6 +1995,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           return SCANNING_IP_BLOCKS;
         case 60:
           return CONTAINER_ADMINISTRATION_COMMAND;
+        case 66:
+          return DEPLOY_CONTAINER;
         case 61:
           return ESCAPE_TO_HOST;
         case 57:

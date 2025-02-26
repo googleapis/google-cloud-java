@@ -5389,6 +5389,41 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Answer feedback for the final response.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback answer_feedback = 7;</code>
+     *
+     * @return Whether the answerFeedback field is set.
+     */
+    boolean hasAnswerFeedback();
+    /**
+     *
+     *
+     * <pre>
+     * Answer feedback for the final response.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback answer_feedback = 7;</code>
+     *
+     * @return The answerFeedback.
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback getAnswerFeedback();
+    /**
+     *
+     *
+     * <pre>
+     * Answer feedback for the final response.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback answer_feedback = 7;</code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedbackOrBuilder getAnswerFeedbackOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Missing transition predicted for the interaction. This field is set only
      * if the interaction match type was no-match.
      * </pre>
@@ -5430,6 +5465,79 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.MissingTransitionOrBuilder
         getMissingTransitionOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Metrics associated with different processing steps. Names and number of
+     * steps depend on the request and can change without a notice.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+     * </code>
+     */
+    java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics>
+        getStepMetricsList();
+    /**
+     *
+     *
+     * <pre>
+     * Metrics associated with different processing steps. Names and number of
+     * steps depend on the request and can change without a notice.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+     * </code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics getStepMetrics(
+        int index);
+    /**
+     *
+     *
+     * <pre>
+     * Metrics associated with different processing steps. Names and number of
+     * steps depend on the request and can change without a notice.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+     * </code>
+     */
+    int getStepMetricsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Metrics associated with different processing steps. Names and number of
+     * steps depend on the request and can change without a notice.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction
+                    .StepMetricsOrBuilder>
+        getStepMetricsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Metrics associated with different processing steps. Names and number of
+     * steps depend on the request and can change without a notice.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+     * </code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetricsOrBuilder
+        getStepMetricsOrBuilder(int index);
   }
   /**
    *
@@ -5456,6 +5564,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       partialResponses_ = java.util.Collections.emptyList();
       requestUtterances_ = "";
       responseUtterances_ = "";
+      stepMetrics_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -6289,6 +6398,984 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface StepMetricsOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Name of the request processing step.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return The name.
+       */
+      java.lang.String getName();
+      /**
+       *
+       *
+       * <pre>
+       * Name of the request processing step.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return The bytes for name.
+       */
+      com.google.protobuf.ByteString getNameBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing latency of the step.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration latency = 2;</code>
+       *
+       * @return Whether the latency field is set.
+       */
+      boolean hasLatency();
+      /**
+       *
+       *
+       * <pre>
+       * Processing latency of the step.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration latency = 2;</code>
+       *
+       * @return The latency.
+       */
+      com.google.protobuf.Duration getLatency();
+      /**
+       *
+       *
+       * <pre>
+       * Processing latency of the step.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration latency = 2;</code>
+       */
+      com.google.protobuf.DurationOrBuilder getLatencyOrBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metrics of each processing step.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics}
+     */
+    public static final class StepMetrics extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics)
+        StepMetricsOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use StepMetrics.newBuilder() to construct.
+      private StepMetrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private StepMetrics() {
+        name_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new StepMetrics();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ConversationHistoryProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_Interaction_StepMetrics_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ConversationHistoryProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_Interaction_StepMetrics_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics.class,
+                com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics.Builder
+                    .class);
+      }
+
+      private int bitField0_;
+      public static final int NAME_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Name of the request processing step.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return The name.
+       */
+      @java.lang.Override
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Name of the request processing step.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return The bytes for name.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int LATENCY_FIELD_NUMBER = 2;
+      private com.google.protobuf.Duration latency_;
+      /**
+       *
+       *
+       * <pre>
+       * Processing latency of the step.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration latency = 2;</code>
+       *
+       * @return Whether the latency field is set.
+       */
+      @java.lang.Override
+      public boolean hasLatency() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Processing latency of the step.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration latency = 2;</code>
+       *
+       * @return The latency.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Duration getLatency() {
+        return latency_ == null ? com.google.protobuf.Duration.getDefaultInstance() : latency_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Processing latency of the step.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration latency = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.DurationOrBuilder getLatencyOrBuilder() {
+        return latency_ == null ? com.google.protobuf.Duration.getDefaultInstance() : latency_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(2, getLatency());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getLatency());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics other =
+            (com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics) obj;
+
+        if (!getName().equals(other.getName())) return false;
+        if (hasLatency() != other.hasLatency()) return false;
+        if (hasLatency()) {
+          if (!getLatency().equals(other.getLatency())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+        if (hasLatency()) {
+          hash = (37 * hash) + LATENCY_FIELD_NUMBER;
+          hash = (53 * hash) + getLatency().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metrics of each processing step.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics)
+          com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetricsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ConversationHistoryProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_Interaction_StepMetrics_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ConversationHistoryProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_Interaction_StepMetrics_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics.class,
+                  com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getLatencyFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          name_ = "";
+          latency_ = null;
+          if (latencyBuilder_ != null) {
+            latencyBuilder_.dispose();
+            latencyBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ConversationHistoryProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Conversation_Interaction_StepMetrics_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics build() {
+          com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+            buildPartial() {
+          com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics result =
+              new com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.name_ = name_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.latency_ = latencyBuilder_ == null ? latency_ : latencyBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics other) {
+          if (other
+              == com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+                  .getDefaultInstance()) return this;
+          if (!other.getName().isEmpty()) {
+            name_ = other.name_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (other.hasLatency()) {
+            mergeLatency(other.getLatency());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    name_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(getLatencyFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object name_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Name of the request processing step.
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         *
+         * @return The name.
+         */
+        public java.lang.String getName() {
+          java.lang.Object ref = name_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            name_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Name of the request processing step.
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         *
+         * @return The bytes for name.
+         */
+        public com.google.protobuf.ByteString getNameBytes() {
+          java.lang.Object ref = name_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            name_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Name of the request processing step.
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         *
+         * @param value The name to set.
+         * @return This builder for chaining.
+         */
+        public Builder setName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          name_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Name of the request processing step.
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearName() {
+          name_ = getDefaultInstance().getName();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Name of the request processing step.
+         * </pre>
+         *
+         * <code>string name = 1;</code>
+         *
+         * @param value The bytes for name to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          name_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.Duration latency_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>
+            latencyBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Processing latency of the step.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration latency = 2;</code>
+         *
+         * @return Whether the latency field is set.
+         */
+        public boolean hasLatency() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Processing latency of the step.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration latency = 2;</code>
+         *
+         * @return The latency.
+         */
+        public com.google.protobuf.Duration getLatency() {
+          if (latencyBuilder_ == null) {
+            return latency_ == null ? com.google.protobuf.Duration.getDefaultInstance() : latency_;
+          } else {
+            return latencyBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Processing latency of the step.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration latency = 2;</code>
+         */
+        public Builder setLatency(com.google.protobuf.Duration value) {
+          if (latencyBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            latency_ = value;
+          } else {
+            latencyBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Processing latency of the step.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration latency = 2;</code>
+         */
+        public Builder setLatency(com.google.protobuf.Duration.Builder builderForValue) {
+          if (latencyBuilder_ == null) {
+            latency_ = builderForValue.build();
+          } else {
+            latencyBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Processing latency of the step.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration latency = 2;</code>
+         */
+        public Builder mergeLatency(com.google.protobuf.Duration value) {
+          if (latencyBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)
+                && latency_ != null
+                && latency_ != com.google.protobuf.Duration.getDefaultInstance()) {
+              getLatencyBuilder().mergeFrom(value);
+            } else {
+              latency_ = value;
+            }
+          } else {
+            latencyBuilder_.mergeFrom(value);
+          }
+          if (latency_ != null) {
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Processing latency of the step.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration latency = 2;</code>
+         */
+        public Builder clearLatency() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          latency_ = null;
+          if (latencyBuilder_ != null) {
+            latencyBuilder_.dispose();
+            latencyBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Processing latency of the step.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration latency = 2;</code>
+         */
+        public com.google.protobuf.Duration.Builder getLatencyBuilder() {
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return getLatencyFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Processing latency of the step.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration latency = 2;</code>
+         */
+        public com.google.protobuf.DurationOrBuilder getLatencyOrBuilder() {
+          if (latencyBuilder_ != null) {
+            return latencyBuilder_.getMessageOrBuilder();
+          } else {
+            return latency_ == null ? com.google.protobuf.Duration.getDefaultInstance() : latency_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Processing latency of the step.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration latency = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>
+            getLatencyFieldBuilder() {
+          if (latencyBuilder_ == null) {
+            latencyBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.Duration,
+                    com.google.protobuf.Duration.Builder,
+                    com.google.protobuf.DurationOrBuilder>(
+                    getLatency(), getParentForChildren(), isClean());
+            latency_ = null;
+          }
+          return latencyBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics)
+      private static final com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction
+              .StepMetrics
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics();
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<StepMetrics> PARSER =
+          new com.google.protobuf.AbstractParser<StepMetrics>() {
+            @java.lang.Override
+            public StepMetrics parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<StepMetrics> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<StepMetrics> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int bitField0_;
     public static final int REQUEST_FIELD_NUMBER = 1;
     private com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest request_;
@@ -6650,6 +7737,57 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
     }
 
+    public static final int ANSWER_FEEDBACK_FIELD_NUMBER = 7;
+    private com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback answerFeedback_;
+    /**
+     *
+     *
+     * <pre>
+     * Answer feedback for the final response.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback answer_feedback = 7;</code>
+     *
+     * @return Whether the answerFeedback field is set.
+     */
+    @java.lang.Override
+    public boolean hasAnswerFeedback() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Answer feedback for the final response.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback answer_feedback = 7;</code>
+     *
+     * @return The answerFeedback.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback getAnswerFeedback() {
+      return answerFeedback_ == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback.getDefaultInstance()
+          : answerFeedback_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Answer feedback for the final response.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback answer_feedback = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedbackOrBuilder
+        getAnswerFeedbackOrBuilder() {
+      return answerFeedback_ == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback.getDefaultInstance()
+          : answerFeedback_;
+    }
+
     public static final int MISSING_TRANSITION_FIELD_NUMBER = 8;
     private com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.MissingTransition
         missingTransition_;
@@ -6669,7 +7807,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMissingTransition() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -6715,6 +7853,101 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           : missingTransition_;
     }
 
+    public static final int STEP_METRICS_FIELD_NUMBER = 9;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics>
+        stepMetrics_;
+    /**
+     *
+     *
+     * <pre>
+     * Metrics associated with different processing steps. Names and number of
+     * steps depend on the request and can change without a notice.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics>
+        getStepMetricsList() {
+      return stepMetrics_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metrics associated with different processing steps. Names and number of
+     * steps depend on the request and can change without a notice.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction
+                    .StepMetricsOrBuilder>
+        getStepMetricsOrBuilderList() {
+      return stepMetrics_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metrics associated with different processing steps. Names and number of
+     * steps depend on the request and can change without a notice.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+     * </code>
+     */
+    @java.lang.Override
+    public int getStepMetricsCount() {
+      return stepMetrics_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metrics associated with different processing steps. Names and number of
+     * steps depend on the request and can change without a notice.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+        getStepMetrics(int index) {
+      return stepMetrics_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metrics associated with different processing steps. Names and number of
+     * steps depend on the request and can change without a notice.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetricsOrBuilder
+        getStepMetricsOrBuilder(int index) {
+      return stepMetrics_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -6748,7 +7981,13 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         output.writeMessage(6, getCreateTime());
       }
       if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeMessage(7, getAnswerFeedback());
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
         output.writeMessage(8, getMissingTransition());
+      }
+      for (int i = 0; i < stepMetrics_.size(); i++) {
+        output.writeMessage(9, stepMetrics_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -6779,7 +8018,13 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getCreateTime());
       }
       if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getAnswerFeedback());
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getMissingTransition());
+      }
+      for (int i = 0; i < stepMetrics_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, stepMetrics_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -6812,10 +8057,15 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       if (hasCreateTime()) {
         if (!getCreateTime().equals(other.getCreateTime())) return false;
       }
+      if (hasAnswerFeedback() != other.hasAnswerFeedback()) return false;
+      if (hasAnswerFeedback()) {
+        if (!getAnswerFeedback().equals(other.getAnswerFeedback())) return false;
+      }
       if (hasMissingTransition() != other.hasMissingTransition()) return false;
       if (hasMissingTransition()) {
         if (!getMissingTransition().equals(other.getMissingTransition())) return false;
       }
+      if (!getStepMetricsList().equals(other.getStepMetricsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -6847,9 +8097,17 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getCreateTime().hashCode();
       }
+      if (hasAnswerFeedback()) {
+        hash = (37 * hash) + ANSWER_FEEDBACK_FIELD_NUMBER;
+        hash = (53 * hash) + getAnswerFeedback().hashCode();
+      }
       if (hasMissingTransition()) {
         hash = (37 * hash) + MISSING_TRANSITION_FIELD_NUMBER;
         hash = (53 * hash) + getMissingTransition().hashCode();
+      }
+      if (getStepMetricsCount() > 0) {
+        hash = (37 * hash) + STEP_METRICS_FIELD_NUMBER;
+        hash = (53 * hash) + getStepMetricsList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -7002,7 +8260,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           getResponseFieldBuilder();
           getPartialResponsesFieldBuilder();
           getCreateTimeFieldBuilder();
+          getAnswerFeedbackFieldBuilder();
           getMissingTransitionFieldBuilder();
+          getStepMetricsFieldBuilder();
         }
       }
 
@@ -7034,11 +8294,23 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           createTimeBuilder_.dispose();
           createTimeBuilder_ = null;
         }
+        answerFeedback_ = null;
+        if (answerFeedbackBuilder_ != null) {
+          answerFeedbackBuilder_.dispose();
+          answerFeedbackBuilder_ = null;
+        }
         missingTransition_ = null;
         if (missingTransitionBuilder_ != null) {
           missingTransitionBuilder_.dispose();
           missingTransitionBuilder_ = null;
         }
+        if (stepMetricsBuilder_ == null) {
+          stepMetrics_ = java.util.Collections.emptyList();
+        } else {
+          stepMetrics_ = null;
+          stepMetricsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
 
@@ -7086,6 +8358,15 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.partialResponses_ = partialResponsesBuilder_.build();
         }
+        if (stepMetricsBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) != 0)) {
+            stepMetrics_ = java.util.Collections.unmodifiableList(stepMetrics_);
+            bitField0_ = (bitField0_ & ~0x00000100);
+          }
+          result.stepMetrics_ = stepMetrics_;
+        } else {
+          result.stepMetrics_ = stepMetricsBuilder_.build();
+        }
       }
 
       private void buildPartial0(
@@ -7112,11 +8393,16 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           to_bitField0_ |= 0x00000004;
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.answerFeedback_ =
+              answerFeedbackBuilder_ == null ? answerFeedback_ : answerFeedbackBuilder_.build();
+          to_bitField0_ |= 0x00000008;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
           result.missingTransition_ =
               missingTransitionBuilder_ == null
                   ? missingTransition_
                   : missingTransitionBuilder_.build();
-          to_bitField0_ |= 0x00000008;
+          to_bitField0_ |= 0x00000010;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -7217,8 +8503,38 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         if (other.hasCreateTime()) {
           mergeCreateTime(other.getCreateTime());
         }
+        if (other.hasAnswerFeedback()) {
+          mergeAnswerFeedback(other.getAnswerFeedback());
+        }
         if (other.hasMissingTransition()) {
           mergeMissingTransition(other.getMissingTransition());
+        }
+        if (stepMetricsBuilder_ == null) {
+          if (!other.stepMetrics_.isEmpty()) {
+            if (stepMetrics_.isEmpty()) {
+              stepMetrics_ = other.stepMetrics_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+            } else {
+              ensureStepMetricsIsMutable();
+              stepMetrics_.addAll(other.stepMetrics_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.stepMetrics_.isEmpty()) {
+            if (stepMetricsBuilder_.isEmpty()) {
+              stepMetricsBuilder_.dispose();
+              stepMetricsBuilder_ = null;
+              stepMetrics_ = other.stepMetrics_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+              stepMetricsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getStepMetricsFieldBuilder()
+                      : null;
+            } else {
+              stepMetricsBuilder_.addAllMessages(other.stepMetrics_);
+            }
+          }
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -7290,13 +8606,35 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000020;
                   break;
                 } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      getAnswerFeedbackFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 58
               case 66:
                 {
                   input.readMessage(
                       getMissingTransitionFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000040;
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 66
+              case 74:
+                {
+                  com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics m =
+                      input.readMessage(
+                          com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction
+                              .StepMetrics.parser(),
+                          extensionRegistry);
+                  if (stepMetricsBuilder_ == null) {
+                    ensureStepMetricsIsMutable();
+                    stepMetrics_.add(m);
+                  } else {
+                    stepMetricsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 74
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8585,6 +9923,197 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_;
       }
 
+      private com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback answerFeedback_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback,
+              com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedbackOrBuilder>
+          answerFeedbackBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Answer feedback for the final response.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback answer_feedback = 7;</code>
+       *
+       * @return Whether the answerFeedback field is set.
+       */
+      public boolean hasAnswerFeedback() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Answer feedback for the final response.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback answer_feedback = 7;</code>
+       *
+       * @return The answerFeedback.
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback getAnswerFeedback() {
+        if (answerFeedbackBuilder_ == null) {
+          return answerFeedback_ == null
+              ? com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback.getDefaultInstance()
+              : answerFeedback_;
+        } else {
+          return answerFeedbackBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Answer feedback for the final response.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback answer_feedback = 7;</code>
+       */
+      public Builder setAnswerFeedback(
+          com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback value) {
+        if (answerFeedbackBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          answerFeedback_ = value;
+        } else {
+          answerFeedbackBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Answer feedback for the final response.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback answer_feedback = 7;</code>
+       */
+      public Builder setAnswerFeedback(
+          com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback.Builder builderForValue) {
+        if (answerFeedbackBuilder_ == null) {
+          answerFeedback_ = builderForValue.build();
+        } else {
+          answerFeedbackBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Answer feedback for the final response.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback answer_feedback = 7;</code>
+       */
+      public Builder mergeAnswerFeedback(
+          com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback value) {
+        if (answerFeedbackBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0)
+              && answerFeedback_ != null
+              && answerFeedback_
+                  != com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback.getDefaultInstance()) {
+            getAnswerFeedbackBuilder().mergeFrom(value);
+          } else {
+            answerFeedback_ = value;
+          }
+        } else {
+          answerFeedbackBuilder_.mergeFrom(value);
+        }
+        if (answerFeedback_ != null) {
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Answer feedback for the final response.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback answer_feedback = 7;</code>
+       */
+      public Builder clearAnswerFeedback() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        answerFeedback_ = null;
+        if (answerFeedbackBuilder_ != null) {
+          answerFeedbackBuilder_.dispose();
+          answerFeedbackBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Answer feedback for the final response.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback answer_feedback = 7;</code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback.Builder
+          getAnswerFeedbackBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getAnswerFeedbackFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Answer feedback for the final response.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback answer_feedback = 7;</code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedbackOrBuilder
+          getAnswerFeedbackOrBuilder() {
+        if (answerFeedbackBuilder_ != null) {
+          return answerFeedbackBuilder_.getMessageOrBuilder();
+        } else {
+          return answerFeedback_ == null
+              ? com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback.getDefaultInstance()
+              : answerFeedback_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Answer feedback for the final response.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback answer_feedback = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback,
+              com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedbackOrBuilder>
+          getAnswerFeedbackFieldBuilder() {
+        if (answerFeedbackBuilder_ == null) {
+          answerFeedbackBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback,
+                  com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback.Builder,
+                  com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedbackOrBuilder>(
+                  getAnswerFeedback(), getParentForChildren(), isClean());
+          answerFeedback_ = null;
+        }
+        return answerFeedbackBuilder_;
+      }
+
       private com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.MissingTransition
           missingTransition_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -8609,7 +10138,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the missingTransition field is set.
        */
       public boolean hasMissingTransition() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
        *
@@ -8658,7 +10187,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         } else {
           missingTransitionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -8682,7 +10211,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         } else {
           missingTransitionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -8701,7 +10230,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeMissingTransition(
           com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.MissingTransition value) {
         if (missingTransitionBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0)
+          if (((bitField0_ & 0x00000080) != 0)
               && missingTransition_ != null
               && missingTransition_
                   != com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction
@@ -8714,7 +10243,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           missingTransitionBuilder_.mergeFrom(value);
         }
         if (missingTransition_ != null) {
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
           onChanged();
         }
         return this;
@@ -8732,7 +10261,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearMissingTransition() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         missingTransition_ = null;
         if (missingTransitionBuilder_ != null) {
           missingTransitionBuilder_.dispose();
@@ -8756,7 +10285,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.MissingTransition
               .Builder
           getMissingTransitionBuilder() {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return getMissingTransitionFieldBuilder().getBuilder();
       }
@@ -8815,6 +10344,448 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           missingTransition_ = null;
         }
         return missingTransitionBuilder_;
+      }
+
+      private java.util.List<
+              com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics>
+          stepMetrics_ = java.util.Collections.emptyList();
+
+      private void ensureStepMetricsIsMutable() {
+        if (!((bitField0_ & 0x00000100) != 0)) {
+          stepMetrics_ =
+              new java.util.ArrayList<
+                  com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics>(
+                  stepMetrics_);
+          bitField0_ |= 0x00000100;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics,
+              com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetricsOrBuilder>
+          stepMetricsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Metrics associated with different processing steps. Names and number of
+       * steps depend on the request and can change without a notice.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics>
+          getStepMetricsList() {
+        if (stepMetricsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(stepMetrics_);
+        } else {
+          return stepMetricsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metrics associated with different processing steps. Names and number of
+       * steps depend on the request and can change without a notice.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+       * </code>
+       */
+      public int getStepMetricsCount() {
+        if (stepMetricsBuilder_ == null) {
+          return stepMetrics_.size();
+        } else {
+          return stepMetricsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metrics associated with different processing steps. Names and number of
+       * steps depend on the request and can change without a notice.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+          getStepMetrics(int index) {
+        if (stepMetricsBuilder_ == null) {
+          return stepMetrics_.get(index);
+        } else {
+          return stepMetricsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metrics associated with different processing steps. Names and number of
+       * steps depend on the request and can change without a notice.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+       * </code>
+       */
+      public Builder setStepMetrics(
+          int index,
+          com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics value) {
+        if (stepMetricsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStepMetricsIsMutable();
+          stepMetrics_.set(index, value);
+          onChanged();
+        } else {
+          stepMetricsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metrics associated with different processing steps. Names and number of
+       * steps depend on the request and can change without a notice.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+       * </code>
+       */
+      public Builder setStepMetrics(
+          int index,
+          com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics.Builder
+              builderForValue) {
+        if (stepMetricsBuilder_ == null) {
+          ensureStepMetricsIsMutable();
+          stepMetrics_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          stepMetricsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metrics associated with different processing steps. Names and number of
+       * steps depend on the request and can change without a notice.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+       * </code>
+       */
+      public Builder addStepMetrics(
+          com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics value) {
+        if (stepMetricsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStepMetricsIsMutable();
+          stepMetrics_.add(value);
+          onChanged();
+        } else {
+          stepMetricsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metrics associated with different processing steps. Names and number of
+       * steps depend on the request and can change without a notice.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+       * </code>
+       */
+      public Builder addStepMetrics(
+          int index,
+          com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics value) {
+        if (stepMetricsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStepMetricsIsMutable();
+          stepMetrics_.add(index, value);
+          onChanged();
+        } else {
+          stepMetricsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metrics associated with different processing steps. Names and number of
+       * steps depend on the request and can change without a notice.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+       * </code>
+       */
+      public Builder addStepMetrics(
+          com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics.Builder
+              builderForValue) {
+        if (stepMetricsBuilder_ == null) {
+          ensureStepMetricsIsMutable();
+          stepMetrics_.add(builderForValue.build());
+          onChanged();
+        } else {
+          stepMetricsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metrics associated with different processing steps. Names and number of
+       * steps depend on the request and can change without a notice.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+       * </code>
+       */
+      public Builder addStepMetrics(
+          int index,
+          com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics.Builder
+              builderForValue) {
+        if (stepMetricsBuilder_ == null) {
+          ensureStepMetricsIsMutable();
+          stepMetrics_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          stepMetricsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metrics associated with different processing steps. Names and number of
+       * steps depend on the request and can change without a notice.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+       * </code>
+       */
+      public Builder addAllStepMetrics(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics>
+              values) {
+        if (stepMetricsBuilder_ == null) {
+          ensureStepMetricsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, stepMetrics_);
+          onChanged();
+        } else {
+          stepMetricsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metrics associated with different processing steps. Names and number of
+       * steps depend on the request and can change without a notice.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+       * </code>
+       */
+      public Builder clearStepMetrics() {
+        if (stepMetricsBuilder_ == null) {
+          stepMetrics_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+          onChanged();
+        } else {
+          stepMetricsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metrics associated with different processing steps. Names and number of
+       * steps depend on the request and can change without a notice.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+       * </code>
+       */
+      public Builder removeStepMetrics(int index) {
+        if (stepMetricsBuilder_ == null) {
+          ensureStepMetricsIsMutable();
+          stepMetrics_.remove(index);
+          onChanged();
+        } else {
+          stepMetricsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metrics associated with different processing steps. Names and number of
+       * steps depend on the request and can change without a notice.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics.Builder
+          getStepMetricsBuilder(int index) {
+        return getStepMetricsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metrics associated with different processing steps. Names and number of
+       * steps depend on the request and can change without a notice.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetricsOrBuilder
+          getStepMetricsOrBuilder(int index) {
+        if (stepMetricsBuilder_ == null) {
+          return stepMetrics_.get(index);
+        } else {
+          return stepMetricsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metrics associated with different processing steps. Names and number of
+       * steps depend on the request and can change without a notice.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction
+                      .StepMetricsOrBuilder>
+          getStepMetricsOrBuilderList() {
+        if (stepMetricsBuilder_ != null) {
+          return stepMetricsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(stepMetrics_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metrics associated with different processing steps. Names and number of
+       * steps depend on the request and can change without a notice.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics.Builder
+          addStepMetricsBuilder() {
+        return getStepMetricsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metrics associated with different processing steps. Names and number of
+       * steps depend on the request and can change without a notice.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics.Builder
+          addStepMetricsBuilder(int index) {
+        return getStepMetricsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Metrics associated with different processing steps. Names and number of
+       * steps depend on the request and can change without a notice.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics step_metrics = 9;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics.Builder>
+          getStepMetricsBuilderList() {
+        return getStepMetricsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics,
+              com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetricsOrBuilder>
+          getStepMetricsFieldBuilder() {
+        if (stepMetricsBuilder_ == null) {
+          stepMetricsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics,
+                  com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction.StepMetrics
+                      .Builder,
+                  com.google.cloud.dialogflow.cx.v3beta1.Conversation.Interaction
+                      .StepMetricsOrBuilder>(
+                  stepMetrics_,
+                  ((bitField0_ & 0x00000100) != 0),
+                  getParentForChildren(),
+                  isClean());
+          stepMetrics_ = null;
+        }
+        return stepMetricsBuilder_;
       }
 
       @java.lang.Override

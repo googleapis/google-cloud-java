@@ -196,6 +196,7 @@ public class ConfidentialComputingClientTest {
             .setTpmAttestation(TpmAttestation.newBuilder().build())
             .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
             .setTokenOptions(TokenOptions.newBuilder().build())
+            .setAttester("attester542920370")
             .build();
 
     VerifyAttestationResponse actualResponse = client.verifyAttestation(request);
@@ -213,6 +214,7 @@ public class ConfidentialComputingClientTest {
     Assert.assertEquals(
         request.getConfidentialSpaceInfo(), actualRequest.getConfidentialSpaceInfo());
     Assert.assertEquals(request.getTokenOptions(), actualRequest.getTokenOptions());
+    Assert.assertEquals(request.getAttester(), actualRequest.getAttester());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -232,6 +234,7 @@ public class ConfidentialComputingClientTest {
               .setTpmAttestation(TpmAttestation.newBuilder().build())
               .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
               .setTokenOptions(TokenOptions.newBuilder().build())
+              .setAttester("attester542920370")
               .build();
       client.verifyAttestation(request);
       Assert.fail("No exception raised");

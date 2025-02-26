@@ -23,9 +23,12 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.DeployOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest;
 import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelResponse;
+import com.google.cloud.aiplatform.v1beta1.DeployRequest;
+import com.google.cloud.aiplatform.v1beta1.DeployResponse;
 import com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse;
@@ -69,6 +72,15 @@ public abstract class ModelGardenServiceStub implements BackgroundResource {
   public UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsResponse>
       listPublisherModelsCallable() {
     throw new UnsupportedOperationException("Not implemented: listPublisherModelsCallable()");
+  }
+
+  public OperationCallable<DeployRequest, DeployResponse, DeployOperationMetadata>
+      deployOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deployOperationCallable()");
+  }
+
+  public UnaryCallable<DeployRequest, Operation> deployCallable() {
+    throw new UnsupportedOperationException("Not implemented: deployCallable()");
   }
 
   public OperationCallable<

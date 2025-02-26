@@ -465,7 +465,7 @@ public interface AgentOrBuilder
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is deprecated.
-   *     See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=387
+   *     See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=386
    * @return The enableStackdriverLogging.
    */
   @java.lang.Deprecated
@@ -858,6 +858,68 @@ public interface AgentOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.Agent.ClientCertificateSettingsOrBuilder
       getClientCertificateSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. A read only boolean field reflecting Zone Separation
+   * status of the agent.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzs = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. A read only boolean field reflecting Zone Separation
+   * status of the agent.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzs = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. A read only boolean field reflecting Zone Isolation
+   * status of the agent.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzi = 46 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  boolean hasSatisfiesPzi();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. A read only boolean field reflecting Zone Isolation
+   * status of the agent.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzi = 46 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
 
   com.google.cloud.dialogflow.cx.v3beta1.Agent.SessionEntryResourceCase
       getSessionEntryResourceCase();

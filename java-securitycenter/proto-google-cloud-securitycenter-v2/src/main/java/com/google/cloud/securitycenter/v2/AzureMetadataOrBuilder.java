@@ -169,4 +169,39 @@ public interface AzureMetadataOrBuilder
    */
   com.google.cloud.securitycenter.v2.AzureMetadata.AzureResourceGroupOrBuilder
       getResourceGroupOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Azure Entra tenant associated with the resource.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant tenant = 7;</code>
+   *
+   * @return Whether the tenant field is set.
+   */
+  boolean hasTenant();
+  /**
+   *
+   *
+   * <pre>
+   * The Azure Entra tenant associated with the resource.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant tenant = 7;</code>
+   *
+   * @return The tenant.
+   */
+  com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant getTenant();
+  /**
+   *
+   *
+   * <pre>
+   * The Azure Entra tenant associated with the resource.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant tenant = 7;</code>
+   */
+  com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenantOrBuilder getTenantOrBuilder();
 }

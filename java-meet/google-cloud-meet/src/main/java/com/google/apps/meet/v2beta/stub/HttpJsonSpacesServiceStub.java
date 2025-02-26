@@ -31,6 +31,8 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.apps.meet.v2beta.ConnectActiveConferenceRequest;
+import com.google.apps.meet.v2beta.ConnectActiveConferenceResponse;
 import com.google.apps.meet.v2beta.CreateMemberRequest;
 import com.google.apps.meet.v2beta.CreateSpaceRequest;
 import com.google.apps.meet.v2beta.DeleteMemberRequest;
@@ -165,6 +167,45 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
                   .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
+
+  private static final ApiMethodDescriptor<
+          ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>
+      connectActiveConferenceMethodDescriptor =
+          ApiMethodDescriptor
+              .<ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>newBuilder()
+              .setFullMethodName("google.apps.meet.v2beta.SpacesService/ConnectActiveConference")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ConnectActiveConferenceRequest>newBuilder()
+                      .setPath(
+                          "/v2beta/{name=spaces/*}:connectActiveConference",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ConnectActiveConferenceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ConnectActiveConferenceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ConnectActiveConferenceResponse>newBuilder()
+                      .setDefaultInstance(ConnectActiveConferenceResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<EndActiveConferenceRequest, Empty>
       endActiveConferenceMethodDescriptor =
@@ -346,6 +387,8 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
   private final UnaryCallable<CreateSpaceRequest, Space> createSpaceCallable;
   private final UnaryCallable<GetSpaceRequest, Space> getSpaceCallable;
   private final UnaryCallable<UpdateSpaceRequest, Space> updateSpaceCallable;
+  private final UnaryCallable<ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>
+      connectActiveConferenceCallable;
   private final UnaryCallable<EndActiveConferenceRequest, Empty> endActiveConferenceCallable;
   private final UnaryCallable<CreateMemberRequest, Member> createMemberCallable;
   private final UnaryCallable<GetMemberRequest, Member> getMemberCallable;
@@ -423,6 +466,19 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>
+        connectActiveConferenceTransportSettings =
+            HttpJsonCallSettings
+                .<ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>newBuilder()
+                .setMethodDescriptor(connectActiveConferenceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<EndActiveConferenceRequest, Empty> endActiveConferenceTransportSettings =
         HttpJsonCallSettings.<EndActiveConferenceRequest, Empty>newBuilder()
             .setMethodDescriptor(endActiveConferenceMethodDescriptor)
@@ -488,6 +544,11 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
     this.updateSpaceCallable =
         callableFactory.createUnaryCallable(
             updateSpaceTransportSettings, settings.updateSpaceSettings(), clientContext);
+    this.connectActiveConferenceCallable =
+        callableFactory.createUnaryCallable(
+            connectActiveConferenceTransportSettings,
+            settings.connectActiveConferenceSettings(),
+            clientContext);
     this.endActiveConferenceCallable =
         callableFactory.createUnaryCallable(
             endActiveConferenceTransportSettings,
@@ -519,6 +580,7 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
     methodDescriptors.add(createSpaceMethodDescriptor);
     methodDescriptors.add(getSpaceMethodDescriptor);
     methodDescriptors.add(updateSpaceMethodDescriptor);
+    methodDescriptors.add(connectActiveConferenceMethodDescriptor);
     methodDescriptors.add(endActiveConferenceMethodDescriptor);
     methodDescriptors.add(createMemberMethodDescriptor);
     methodDescriptors.add(getMemberMethodDescriptor);
@@ -540,6 +602,12 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
   @Override
   public UnaryCallable<UpdateSpaceRequest, Space> updateSpaceCallable() {
     return updateSpaceCallable;
+  }
+
+  @Override
+  public UnaryCallable<ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>
+      connectActiveConferenceCallable() {
+    return connectActiveConferenceCallable;
   }
 
   @Override

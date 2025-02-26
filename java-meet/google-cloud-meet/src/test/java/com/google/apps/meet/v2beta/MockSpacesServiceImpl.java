@@ -120,6 +120,28 @@ public class MockSpacesServiceImpl extends SpacesServiceImplBase {
   }
 
   @Override
+  public void connectActiveConference(
+      ConnectActiveConferenceRequest request,
+      StreamObserver<ConnectActiveConferenceResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ConnectActiveConferenceResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ConnectActiveConferenceResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ConnectActiveConference, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ConnectActiveConferenceResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void endActiveConference(
       EndActiveConferenceRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.poll();

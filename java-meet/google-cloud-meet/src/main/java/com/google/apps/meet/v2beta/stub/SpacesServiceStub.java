@@ -21,6 +21,8 @@ import static com.google.apps.meet.v2beta.SpacesServiceClient.ListMembersPagedRe
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.apps.meet.v2beta.ConnectActiveConferenceRequest;
+import com.google.apps.meet.v2beta.ConnectActiveConferenceResponse;
 import com.google.apps.meet.v2beta.CreateMemberRequest;
 import com.google.apps.meet.v2beta.CreateSpaceRequest;
 import com.google.apps.meet.v2beta.DeleteMemberRequest;
@@ -55,6 +57,11 @@ public abstract class SpacesServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateSpaceRequest, Space> updateSpaceCallable() {
     throw new UnsupportedOperationException("Not implemented: updateSpaceCallable()");
+  }
+
+  public UnaryCallable<ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>
+      connectActiveConferenceCallable() {
+    throw new UnsupportedOperationException("Not implemented: connectActiveConferenceCallable()");
   }
 
   public UnaryCallable<EndActiveConferenceRequest, Empty> endActiveConferenceCallable() {

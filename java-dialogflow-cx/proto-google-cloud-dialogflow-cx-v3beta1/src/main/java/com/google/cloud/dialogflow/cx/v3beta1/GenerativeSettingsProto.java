@@ -87,13 +87,13 @@ public final class GenerativeSettingsProto {
           + "/AgentGenerativeSettings\022Iprojects/{proj"
           + "ect}/locations/{location}/agents/{agent}"
           + "/generativeSettings\"6\n\020LlmModelSettings\022"
-          + "\r\n\005model\030\001 \001(\t\022\023\n\013prompt_text\030\002 \001(\tB\321\001\n&"
+          + "\r\n\005model\030\001 \001(\t\022\023\n\013prompt_text\030\002 \001(\tB\316\001\n&"
           + "com.google.cloud.dialogflow.cx.v3beta1B\027"
           + "GenerativeSettingsProtoP\001Z6cloud.google."
           + "com/go/dialogflow/cx/apiv3beta1/cxpb;cxp"
-          + "b\370\001\001\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V"
-          + "3Beta1\352\002&Google::Cloud::Dialogflow::CX::"
-          + "V3beta1b\006proto3"
+          + "b\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Be"
+          + "ta1\352\002&Google::Cloud::Dialogflow::CX::V3b"
+          + "eta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

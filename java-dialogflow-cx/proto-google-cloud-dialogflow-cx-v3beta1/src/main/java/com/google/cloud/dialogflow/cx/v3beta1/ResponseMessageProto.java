@@ -128,13 +128,13 @@ public final class ResponseMessageProto {
           + "ri\030\002 \001(\tH\000\022(\n\033allow_playback_interruptio"
           + "n\030\003 \001(\010B\003\340A\003B\t\n\007content\032;\n\025TelephonyTran"
           + "sferCall\022\026\n\014phone_number\030\001 \001(\tH\000B\n\n\010endp"
-          + "oint\032\023\n\021KnowledgeInfoCardB\t\n\007messageB\316\001\n"
+          + "oint\032\023\n\021KnowledgeInfoCardB\t\n\007messageB\313\001\n"
           + "&com.google.cloud.dialogflow.cx.v3beta1B"
           + "\024ResponseMessageProtoP\001Z6cloud.google.co"
-          + "m/go/dialogflow/cx/apiv3beta1/cxpb;cxpb\370"
-          + "\001\001\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3B"
-          + "eta1\352\002&Google::Cloud::Dialogflow::CX::V3"
-          + "beta1b\006proto3"
+          + "m/go/dialogflow/cx/apiv3beta1/cxpb;cxpb\242"
+          + "\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Beta"
+          + "1\352\002&Google::Cloud::Dialogflow::CX::V3bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

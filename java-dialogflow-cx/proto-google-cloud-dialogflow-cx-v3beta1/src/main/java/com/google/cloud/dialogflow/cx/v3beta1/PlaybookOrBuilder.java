@@ -83,7 +83,8 @@ public interface PlaybookOrBuilder
    *
    * <pre>
    * Required. High level description of the goal the playbook intend to
-   * accomplish.
+   * accomplish. A goal should be concise since it's visible to other playbooks
+   * that may reference this playbook.
    * </pre>
    *
    * <code>string goal = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -96,7 +97,8 @@ public interface PlaybookOrBuilder
    *
    * <pre>
    * Required. High level description of the goal the playbook intend to
-   * accomplish.
+   * accomplish. A goal should be concise since it's visible to other playbooks
+   * that may reference this playbook.
    * </pre>
    *
    * <code>string goal = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -593,4 +595,113 @@ public interface PlaybookOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettingsOrBuilder getLlmModelSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Playbook level Settings for speech to text detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the speechSettings field is set.
+   */
+  boolean hasSpeechSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Playbook level Settings for speech to text detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speechSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings getSpeechSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Playbook level Settings for speech to text detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettingsOrBuilder
+      getSpeechSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of registered handlers to execute based on the specified
+   * triggers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Handler> getHandlersList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of registered handlers to execute based on the specified
+   * triggers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.Handler getHandlers(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of registered handlers to execute based on the specified
+   * triggers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getHandlersCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of registered handlers to execute based on the specified
+   * triggers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.HandlerOrBuilder>
+      getHandlersOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of registered handlers to execute based on the specified
+   * triggers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3beta1.Handler handlers = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.HandlerOrBuilder getHandlersOrBuilder(int index);
 }

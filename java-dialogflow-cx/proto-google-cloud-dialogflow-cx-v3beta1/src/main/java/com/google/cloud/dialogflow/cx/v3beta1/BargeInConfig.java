@@ -43,7 +43,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  * The client provides this configuration in terms of the durations of those
  * two phases. The durations are measured in terms of the audio length from the
- * the start of the input audio.
+ * start of the input audio.
  *
  * No-speech event is a response with END_OF_UTTERANCE without any transcript
  * following up.
@@ -390,7 +390,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * The client provides this configuration in terms of the durations of those
    * two phases. The durations are measured in terms of the audio length from the
-   * the start of the input audio.
+   * start of the input audio.
    *
    * No-speech event is a response with END_OF_UTTERANCE without any transcript
    * following up.

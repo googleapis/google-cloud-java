@@ -100,8 +100,8 @@ public interface PublicKeyOrBuilder
    * mismatch may indicate an issue in your computation of the CRC32C checksum.
    * Note: This field is defined as int64 for reasons of compatibility across
    * different languages. However, it is a non-negative integer, which will
-   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-   * that support this type.
+   * never exceed `2^32-1`, and can be safely downconverted to uint32 in
+   * languages that support this type.
    *
    * NOTE: This field is in Beta.
    * </pre>
@@ -125,8 +125,8 @@ public interface PublicKeyOrBuilder
    * mismatch may indicate an issue in your computation of the CRC32C checksum.
    * Note: This field is defined as int64 for reasons of compatibility across
    * different languages. However, it is a non-negative integer, which will
-   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-   * that support this type.
+   * never exceed `2^32-1`, and can be safely downconverted to uint32 in
+   * languages that support this type.
    *
    * NOTE: This field is in Beta.
    * </pre>
@@ -150,8 +150,8 @@ public interface PublicKeyOrBuilder
    * mismatch may indicate an issue in your computation of the CRC32C checksum.
    * Note: This field is defined as int64 for reasons of compatibility across
    * different languages. However, it is a non-negative integer, which will
-   * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
-   * that support this type.
+   * never exceed `2^32-1`, and can be safely downconverted to uint32 in
+   * languages that support this type.
    *
    * NOTE: This field is in Beta.
    * </pre>
@@ -219,4 +219,76 @@ public interface PublicKeyOrBuilder
    * @return The protectionLevel.
    */
   com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [PublicKey][google.cloud.kms.v1.PublicKey] format specified by the
+   * customer through the
+   * [public_key_format][google.cloud.kms.v1.GetPublicKeyRequest.public_key_format]
+   * field.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 7;</code>
+   *
+   * @return The enum numeric value on the wire for publicKeyFormat.
+   */
+  int getPublicKeyFormatValue();
+  /**
+   *
+   *
+   * <pre>
+   * The [PublicKey][google.cloud.kms.v1.PublicKey] format specified by the
+   * customer through the
+   * [public_key_format][google.cloud.kms.v1.GetPublicKeyRequest.public_key_format]
+   * field.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 7;</code>
+   *
+   * @return The publicKeyFormat.
+   */
+  com.google.cloud.kms.v1.PublicKey.PublicKeyFormat getPublicKeyFormat();
+
+  /**
+   *
+   *
+   * <pre>
+   * This field contains the public key (with integrity verification), formatted
+   * according to the
+   * [public_key_format][google.cloud.kms.v1.PublicKey.public_key_format] field.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ChecksummedData public_key = 8;</code>
+   *
+   * @return Whether the publicKey field is set.
+   */
+  boolean hasPublicKey();
+  /**
+   *
+   *
+   * <pre>
+   * This field contains the public key (with integrity verification), formatted
+   * according to the
+   * [public_key_format][google.cloud.kms.v1.PublicKey.public_key_format] field.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ChecksummedData public_key = 8;</code>
+   *
+   * @return The publicKey.
+   */
+  com.google.cloud.kms.v1.ChecksummedData getPublicKey();
+  /**
+   *
+   *
+   * <pre>
+   * This field contains the public key (with integrity verification), formatted
+   * according to the
+   * [public_key_format][google.cloud.kms.v1.PublicKey.public_key_format] field.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ChecksummedData public_key = 8;</code>
+   */
+  com.google.cloud.kms.v1.ChecksummedDataOrBuilder getPublicKeyOrBuilder();
 }

@@ -104,6 +104,12 @@ public class SpacesServiceSettings extends ClientSettings<SpacesServiceSettings>
     return ((SpacesServiceStubSettings) getStubSettings()).updateSpaceSettings();
   }
 
+  /** Returns the object with the settings used for calls to connectActiveConference. */
+  public UnaryCallSettings<ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>
+      connectActiveConferenceSettings() {
+    return ((SpacesServiceStubSettings) getStubSettings()).connectActiveConferenceSettings();
+  }
+
   /** Returns the object with the settings used for calls to endActiveConference. */
   public UnaryCallSettings<EndActiveConferenceRequest, Empty> endActiveConferenceSettings() {
     return ((SpacesServiceStubSettings) getStubSettings()).endActiveConferenceSettings();
@@ -255,6 +261,13 @@ public class SpacesServiceSettings extends ClientSettings<SpacesServiceSettings>
     /** Returns the builder for the settings used for calls to updateSpace. */
     public UnaryCallSettings.Builder<UpdateSpaceRequest, Space> updateSpaceSettings() {
       return getStubSettingsBuilder().updateSpaceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to connectActiveConference. */
+    public UnaryCallSettings.Builder<
+            ConnectActiveConferenceRequest, ConnectActiveConferenceResponse>
+        connectActiveConferenceSettings() {
+      return getStubSettingsBuilder().connectActiveConferenceSettings();
     }
 
     /** Returns the builder for the settings used for calls to endActiveConference. */

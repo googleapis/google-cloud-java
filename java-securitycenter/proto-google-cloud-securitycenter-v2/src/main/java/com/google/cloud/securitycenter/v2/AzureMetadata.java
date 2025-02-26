@@ -1815,6 +1815,31 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The ID of the Azure resource group.
+     * </pre>
+     *
+     * <code>string id = 2;</code>
+     *
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the Azure resource group.
+     * </pre>
+     *
+     * <code>string id = 2;</code>
+     *
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString getIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
      * The name of the Azure resource group. This is not a UUID.
      * </pre>
      *
@@ -1856,6 +1881,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private AzureResourceGroup() {
+      id_ = "";
       name_ = "";
     }
 
@@ -1878,6 +1904,57 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.cloud.securitycenter.v2.AzureMetadata.AzureResourceGroup.class,
               com.google.cloud.securitycenter.v2.AzureMetadata.AzureResourceGroup.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the Azure resource group.
+     * </pre>
+     *
+     * <code>string id = 2;</code>
+     *
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the Azure resource group.
+     * </pre>
+     *
+     * <code>string id = 2;</code>
+     *
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
@@ -1948,6 +2025,9 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1959,6 +2039,9 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1976,6 +2059,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.securitycenter.v2.AzureMetadata.AzureResourceGroup other =
           (com.google.cloud.securitycenter.v2.AzureMetadata.AzureResourceGroup) obj;
 
+      if (!getId().equals(other.getId())) return false;
       if (!getName().equals(other.getName())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -1988,6 +2072,8 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
@@ -2134,6 +2220,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        id_ = "";
         name_ = "";
         return this;
       }
@@ -2175,6 +2262,9 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.securitycenter.v2.AzureMetadata.AzureResourceGroup result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           result.name_ = name_;
         }
       }
@@ -2230,9 +2320,14 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         if (other
             == com.google.cloud.securitycenter.v2.AzureMetadata.AzureResourceGroup
                 .getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2264,9 +2359,15 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000001;
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 10
+              case 18:
+                {
+                  id_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2285,6 +2386,112 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int bitField0_;
+
+      private java.lang.Object id_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the Azure resource group.
+       * </pre>
+       *
+       * <code>string id = 2;</code>
+       *
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the Azure resource group.
+       * </pre>
+       *
+       * <code>string id = 2;</code>
+       *
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the Azure resource group.
+       * </pre>
+       *
+       * <code>string id = 2;</code>
+       *
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the Azure resource group.
+       * </pre>
+       *
+       * <code>string id = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the Azure resource group.
+       * </pre>
+       *
+       * <code>string id = 2;</code>
+       *
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
 
       private java.lang.Object name_ = "";
       /**
@@ -2348,7 +2555,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         name_ = value;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2365,7 +2572,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearName() {
         name_ = getDefaultInstance().getName();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2387,7 +2594,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         name_ = value;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2454,6 +2661,870 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.cloud.securitycenter.v2.AzureMetadata.AzureResourceGroup
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface AzureTenantOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v2.AzureMetadata.AzureTenant)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the Microsoft Entra tenant, for example,
+     * "a11aaa11-aa11-1aa1-11aa-1aaa11a".
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     *
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the Microsoft Entra tenant, for example,
+     * "a11aaa11-aa11-1aa1-11aa-1aaa11a".
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     *
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString getIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the Azure tenant.
+     * </pre>
+     *
+     * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
+     */
+    java.lang.String getDisplayName();
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the Azure tenant.
+     * </pre>
+     *
+     * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
+     */
+    com.google.protobuf.ByteString getDisplayNameBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents a Microsoft Entra tenant.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.securitycenter.v2.AzureMetadata.AzureTenant}
+   */
+  public static final class AzureTenant extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.AzureMetadata.AzureTenant)
+      AzureTenantOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use AzureTenant.newBuilder() to construct.
+    private AzureTenant(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AzureTenant() {
+      id_ = "";
+      displayName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AzureTenant();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v2.ResourceProto
+          .internal_static_google_cloud_securitycenter_v2_AzureMetadata_AzureTenant_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.securitycenter.v2.ResourceProto
+          .internal_static_google_cloud_securitycenter_v2_AzureMetadata_AzureTenant_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant.class,
+              com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the Microsoft Entra tenant, for example,
+     * "a11aaa11-aa11-1aa1-11aa-1aaa11a".
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     *
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the Microsoft Entra tenant, for example,
+     * "a11aaa11-aa11-1aa1-11aa-1aaa11a".
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     *
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the Azure tenant.
+     * </pre>
+     *
+     * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
+     */
+    @java.lang.Override
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the Azure tenant.
+     * </pre>
+     *
+     * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant other =
+          (com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant) obj;
+
+      if (!getId().equals(other.getId())) return false;
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a Microsoft Entra tenant.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.securitycenter.v2.AzureMetadata.AzureTenant}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v2.AzureMetadata.AzureTenant)
+        com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenantOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.securitycenter.v2.ResourceProto
+            .internal_static_google_cloud_securitycenter_v2_AzureMetadata_AzureTenant_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.securitycenter.v2.ResourceProto
+            .internal_static_google_cloud_securitycenter_v2_AzureMetadata_AzureTenant_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant.class,
+                com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant.Builder.class);
+      }
+
+      // Construct using com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = "";
+        displayName_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.securitycenter.v2.ResourceProto
+            .internal_static_google_cloud_securitycenter_v2_AzureMetadata_AzureTenant_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant
+          getDefaultInstanceForType() {
+        return com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant build() {
+        com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant buildPartial() {
+        com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant result =
+            new com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.displayName_ = displayName_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant) {
+          return mergeFrom((com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant other) {
+        if (other
+            == com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant.getDefaultInstance())
+          return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getDisplayName().isEmpty()) {
+          displayName_ = other.displayName_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  id_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  displayName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object id_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the Microsoft Entra tenant, for example,
+       * "a11aaa11-aa11-1aa1-11aa-1aaa11a".
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       *
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the Microsoft Entra tenant, for example,
+       * "a11aaa11-aa11-1aa1-11aa-1aaa11a".
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       *
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the Microsoft Entra tenant, for example,
+       * "a11aaa11-aa11-1aa1-11aa-1aaa11a".
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       *
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the Microsoft Entra tenant, for example,
+       * "a11aaa11-aa11-1aa1-11aa-1aaa11a".
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The ID of the Microsoft Entra tenant, for example,
+       * "a11aaa11-aa11-1aa1-11aa-1aaa11a".
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       *
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object displayName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The display name of the Azure tenant.
+       * </pre>
+       *
+       * <code>string display_name = 2;</code>
+       *
+       * @return The displayName.
+       */
+      public java.lang.String getDisplayName() {
+        java.lang.Object ref = displayName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          displayName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The display name of the Azure tenant.
+       * </pre>
+       *
+       * <code>string display_name = 2;</code>
+       *
+       * @return The bytes for displayName.
+       */
+      public com.google.protobuf.ByteString getDisplayNameBytes() {
+        java.lang.Object ref = displayName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          displayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The display name of the Azure tenant.
+       * </pre>
+       *
+       * <code>string display_name = 2;</code>
+       *
+       * @param value The displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        displayName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The display name of the Azure tenant.
+       * </pre>
+       *
+       * <code>string display_name = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisplayName() {
+        displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The display name of the Azure tenant.
+       * </pre>
+       *
+       * <code>string display_name = 2;</code>
+       *
+       * @param value The bytes for displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        displayName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v2.AzureMetadata.AzureTenant)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v2.AzureMetadata.AzureTenant)
+    private static final com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant();
+    }
+
+    public static com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AzureTenant> PARSER =
+        new com.google.protobuf.AbstractParser<AzureTenant>() {
+          @java.lang.Override
+          public AzureTenant parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AzureTenant> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AzureTenant> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant
         getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2656,6 +3727,57 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         : resourceGroup_;
   }
 
+  public static final int TENANT_FIELD_NUMBER = 7;
+  private com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant tenant_;
+  /**
+   *
+   *
+   * <pre>
+   * The Azure Entra tenant associated with the resource.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant tenant = 7;</code>
+   *
+   * @return Whether the tenant field is set.
+   */
+  @java.lang.Override
+  public boolean hasTenant() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Azure Entra tenant associated with the resource.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant tenant = 7;</code>
+   *
+   * @return The tenant.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant getTenant() {
+    return tenant_ == null
+        ? com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant.getDefaultInstance()
+        : tenant_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Azure Entra tenant associated with the resource.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant tenant = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenantOrBuilder
+      getTenantOrBuilder() {
+    return tenant_ == null
+        ? com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant.getDefaultInstance()
+        : tenant_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2679,6 +3801,9 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(3, getResourceGroup());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(7, getTenant());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2696,6 +3821,9 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getResourceGroup());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getTenant());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2722,6 +3850,10 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
     if (hasResourceGroup()) {
       if (!getResourceGroup().equals(other.getResourceGroup())) return false;
     }
+    if (hasTenant() != other.hasTenant()) return false;
+    if (hasTenant()) {
+      if (!getTenant().equals(other.getTenant())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2744,6 +3876,10 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
     if (hasResourceGroup()) {
       hash = (37 * hash) + RESOURCE_GROUP_FIELD_NUMBER;
       hash = (53 * hash) + getResourceGroup().hashCode();
+    }
+    if (hasTenant()) {
+      hash = (37 * hash) + TENANT_FIELD_NUMBER;
+      hash = (53 * hash) + getTenant().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2889,6 +4025,7 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         getManagementGroupsFieldBuilder();
         getSubscriptionFieldBuilder();
         getResourceGroupFieldBuilder();
+        getTenantFieldBuilder();
       }
     }
 
@@ -2912,6 +4049,11 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       if (resourceGroupBuilder_ != null) {
         resourceGroupBuilder_.dispose();
         resourceGroupBuilder_ = null;
+      }
+      tenant_ = null;
+      if (tenantBuilder_ != null) {
+        tenantBuilder_.dispose();
+        tenantBuilder_ = null;
       }
       return this;
     }
@@ -2973,6 +4115,10 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         result.resourceGroup_ =
             resourceGroupBuilder_ == null ? resourceGroup_ : resourceGroupBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.tenant_ = tenantBuilder_ == null ? tenant_ : tenantBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3056,6 +4202,9 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
       if (other.hasResourceGroup()) {
         mergeResourceGroup(other.getResourceGroup());
       }
+      if (other.hasTenant()) {
+        mergeTenant(other.getTenant());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3109,6 +4258,12 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 58:
+              {
+                input.readMessage(getTenantFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3968,6 +5123,195 @@ public final class AzureMetadata extends com.google.protobuf.GeneratedMessageV3
         resourceGroup_ = null;
       }
       return resourceGroupBuilder_;
+    }
+
+    private com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant tenant_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant,
+            com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant.Builder,
+            com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenantOrBuilder>
+        tenantBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The Azure Entra tenant associated with the resource.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant tenant = 7;</code>
+     *
+     * @return Whether the tenant field is set.
+     */
+    public boolean hasTenant() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Azure Entra tenant associated with the resource.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant tenant = 7;</code>
+     *
+     * @return The tenant.
+     */
+    public com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant getTenant() {
+      if (tenantBuilder_ == null) {
+        return tenant_ == null
+            ? com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant.getDefaultInstance()
+            : tenant_;
+      } else {
+        return tenantBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Azure Entra tenant associated with the resource.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant tenant = 7;</code>
+     */
+    public Builder setTenant(com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant value) {
+      if (tenantBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tenant_ = value;
+      } else {
+        tenantBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Azure Entra tenant associated with the resource.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant tenant = 7;</code>
+     */
+    public Builder setTenant(
+        com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant.Builder builderForValue) {
+      if (tenantBuilder_ == null) {
+        tenant_ = builderForValue.build();
+      } else {
+        tenantBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Azure Entra tenant associated with the resource.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant tenant = 7;</code>
+     */
+    public Builder mergeTenant(com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant value) {
+      if (tenantBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && tenant_ != null
+            && tenant_
+                != com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant
+                    .getDefaultInstance()) {
+          getTenantBuilder().mergeFrom(value);
+        } else {
+          tenant_ = value;
+        }
+      } else {
+        tenantBuilder_.mergeFrom(value);
+      }
+      if (tenant_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Azure Entra tenant associated with the resource.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant tenant = 7;</code>
+     */
+    public Builder clearTenant() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      tenant_ = null;
+      if (tenantBuilder_ != null) {
+        tenantBuilder_.dispose();
+        tenantBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Azure Entra tenant associated with the resource.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant tenant = 7;</code>
+     */
+    public com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant.Builder getTenantBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getTenantFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Azure Entra tenant associated with the resource.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant tenant = 7;</code>
+     */
+    public com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenantOrBuilder
+        getTenantOrBuilder() {
+      if (tenantBuilder_ != null) {
+        return tenantBuilder_.getMessageOrBuilder();
+      } else {
+        return tenant_ == null
+            ? com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant.getDefaultInstance()
+            : tenant_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Azure Entra tenant associated with the resource.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant tenant = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant,
+            com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant.Builder,
+            com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenantOrBuilder>
+        getTenantFieldBuilder() {
+      if (tenantBuilder_ == null) {
+        tenantBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant,
+                com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenant.Builder,
+                com.google.cloud.securitycenter.v2.AzureMetadata.AzureTenantOrBuilder>(
+                getTenant(), getParentForChildren(), isClean());
+        tenant_ = null;
+      }
+      return tenantBuilder_;
     }
 
     @java.lang.Override

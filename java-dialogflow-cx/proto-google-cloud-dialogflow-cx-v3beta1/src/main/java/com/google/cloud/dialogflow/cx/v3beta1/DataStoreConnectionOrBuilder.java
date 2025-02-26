@@ -79,4 +79,35 @@ public interface DataStoreConnectionOrBuilder
    * @return The bytes for dataStore.
    */
   com.google.protobuf.ByteString getDataStoreBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The document processing mode for the data store connection. Should only be
+   * set for PUBLIC_WEB and UNSTRUCTURED data stores. If not set it is
+   * considered as DOCUMENTS, as this is the legacy mode.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.DocumentProcessingMode document_processing_mode = 4;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for documentProcessingMode.
+   */
+  int getDocumentProcessingModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * The document processing mode for the data store connection. Should only be
+   * set for PUBLIC_WEB and UNSTRUCTURED data stores. If not set it is
+   * considered as DOCUMENTS, as this is the legacy mode.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.DocumentProcessingMode document_processing_mode = 4;
+   * </code>
+   *
+   * @return The documentProcessingMode.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.DocumentProcessingMode getDocumentProcessingMode();
 }

@@ -172,6 +172,16 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
      * <code>CLUSTER_EXECUTABLE = 9;</code>
      */
     CLUSTER_EXECUTABLE(9),
+    /**
+     *
+     *
+     * <pre>
+     * AI models like .tflite etc.
+     * </pre>
+     *
+     * <code>CLUSTER_AI_MODEL = 10;</code>
+     */
+    CLUSTER_AI_MODEL(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -275,6 +285,16 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
      * <code>CLUSTER_EXECUTABLE = 9;</code>
      */
     public static final int CLUSTER_EXECUTABLE_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * AI models like .tflite etc.
+     * </pre>
+     *
+     * <code>CLUSTER_AI_MODEL = 10;</code>
+     */
+    public static final int CLUSTER_AI_MODEL_VALUE = 10;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -320,6 +340,8 @@ public final class FileClusterType extends com.google.protobuf.GeneratedMessageV
           return CLUSTER_MULTIMEDIA;
         case 9:
           return CLUSTER_EXECUTABLE;
+        case 10:
+          return CLUSTER_AI_MODEL;
         default:
           return null;
       }

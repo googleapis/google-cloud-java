@@ -314,6 +314,33 @@ public interface VerifyAttestationRequestOrBuilder
    */
   com.google.cloud.confidentialcomputing.v1.TokenOptionsOrBuilder getTokenOptionsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional indicator of the attester, only applies to certain
+   * products.
+   * </pre>
+   *
+   * <code>string attester = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The attester.
+   */
+  java.lang.String getAttester();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional indicator of the attester, only applies to certain
+   * products.
+   * </pre>
+   *
+   * <code>string attester = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for attester.
+   */
+  com.google.protobuf.ByteString getAttesterBytes();
+
   com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest.TeeAttestationCase
       getTeeAttestationCase();
 }

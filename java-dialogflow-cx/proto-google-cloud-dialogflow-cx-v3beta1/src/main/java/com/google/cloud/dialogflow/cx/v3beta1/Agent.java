@@ -6743,7 +6743,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is deprecated.
-   *     See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=387
+   *     See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=386
    * @return The enableStackdriverLogging.
    */
   @java.lang.Override
@@ -7286,6 +7286,84 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         : clientCertificateSettings_;
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 45;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. A read only boolean field reflecting Zone Separation
+   * status of the agent.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzs = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzs() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. A read only boolean field reflecting Zone Separation
+   * status of the agent.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzs = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 46;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. A read only boolean field reflecting Zone Isolation
+   * status of the agent.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzi = 46 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzi() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. A read only boolean field reflecting Zone Isolation
+   * status of the agent.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzi = 46 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -7369,6 +7447,12 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(43, getClientCertificateSettings());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeBool(45, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeBool(46, satisfiesPzi_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -7464,6 +7548,12 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               43, getClientCertificateSettings());
     }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(45, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(46, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -7529,6 +7619,14 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (hasClientCertificateSettings()) {
       if (!getClientCertificateSettings().equals(other.getClientCertificateSettings()))
         return false;
+    }
+    if (hasSatisfiesPzs() != other.hasSatisfiesPzs()) return false;
+    if (hasSatisfiesPzs()) {
+      if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    }
+    if (hasSatisfiesPzi() != other.hasSatisfiesPzi()) return false;
+    if (hasSatisfiesPzi()) {
+      if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     }
     if (!getSessionEntryResourceCase().equals(other.getSessionEntryResourceCase())) return false;
     switch (sessionEntryResourceCase_) {
@@ -7613,6 +7711,14 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (hasClientCertificateSettings()) {
       hash = (37 * hash) + CLIENT_CERTIFICATE_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getClientCertificateSettings().hashCode();
+    }
+    if (hasSatisfiesPzs()) {
+      hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    }
+    if (hasSatisfiesPzi()) {
+      hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     }
     switch (sessionEntryResourceCase_) {
       case 16:
@@ -7851,6 +7957,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         clientCertificateSettingsBuilder_.dispose();
         clientCertificateSettingsBuilder_ = null;
       }
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       sessionEntryResourceCase_ = 0;
       sessionEntryResource_ = null;
       return this;
@@ -7989,6 +8097,14 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
                 : clientCertificateSettingsBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+        to_bitField0_ |= 0x00000400;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -8125,6 +8241,12 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasClientCertificateSettings()) {
         mergeClientCertificateSettings(other.getClientCertificateSettings());
+      }
+      if (other.hasSatisfiesPzs()) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.hasSatisfiesPzi()) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
       }
       switch (other.getSessionEntryResourceCase()) {
         case START_FLOW:
@@ -8322,6 +8444,18 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00400000;
                 break;
               } // case 346
+            case 360:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 360
+            case 368:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 368
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9957,7 +10091,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=387
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=386
      * @return The enableStackdriverLogging.
      */
     @java.lang.Override
@@ -9978,7 +10112,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=387
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=386
      * @param value The enableStackdriverLogging to set.
      * @return This builder for chaining.
      */
@@ -10003,7 +10137,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=387
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=386
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -11915,6 +12049,166 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         clientCertificateSettings_ = null;
       }
       return clientCertificateSettingsBuilder_;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. A read only boolean field reflecting Zone Separation
+     * status of the agent.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzs = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the satisfiesPzs field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzs() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. A read only boolean field reflecting Zone Separation
+     * status of the agent.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzs = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. A read only boolean field reflecting Zone Separation
+     * status of the agent.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzs = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. A read only boolean field reflecting Zone Separation
+     * status of the agent.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzs = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. A read only boolean field reflecting Zone Isolation
+     * status of the agent.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzi = 46 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the satisfiesPzi field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzi() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. A read only boolean field reflecting Zone Isolation
+     * status of the agent.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzi = 46 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. A read only boolean field reflecting Zone Isolation
+     * status of the agent.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzi = 46 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. A read only boolean field reflecting Zone Isolation
+     * status of the agent.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzi = 46 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x01000000);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

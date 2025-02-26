@@ -110,6 +110,8 @@ public class PlaybooksClientTest {
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
+            .addAllHandlers(new ArrayList<Handler>())
             .build();
     mockPlaybooks.addResponse(expectedResponse);
 
@@ -163,6 +165,8 @@ public class PlaybooksClientTest {
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
+            .addAllHandlers(new ArrayList<Handler>())
             .build();
     mockPlaybooks.addResponse(expectedResponse);
 
@@ -372,6 +376,8 @@ public class PlaybooksClientTest {
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
+            .addAllHandlers(new ArrayList<Handler>())
             .build();
     mockPlaybooks.addResponse(expectedResponse);
 
@@ -422,6 +428,8 @@ public class PlaybooksClientTest {
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
+            .addAllHandlers(new ArrayList<Handler>())
             .build();
     mockPlaybooks.addResponse(expectedResponse);
 
@@ -472,6 +480,8 @@ public class PlaybooksClientTest {
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
+            .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
+            .addAllHandlers(new ArrayList<Handler>())
             .build();
     mockPlaybooks.addResponse(expectedResponse);
 

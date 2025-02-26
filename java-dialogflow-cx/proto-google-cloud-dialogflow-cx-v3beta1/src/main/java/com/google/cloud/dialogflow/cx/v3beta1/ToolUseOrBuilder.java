@@ -61,6 +61,31 @@ public interface ToolUseOrBuilder
    *
    *
    * <pre>
+   * Output only. The display name of the tool.
+   * </pre>
+   *
+   * <code>string display_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The display name of the tool.
+   * </pre>
+   *
+   * <code>string display_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Name of the action to be called during the tool use.
    * </pre>
    *

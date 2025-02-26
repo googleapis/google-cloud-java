@@ -89,12 +89,12 @@ public final class ChangelogProto {
           + "x\312A\031dialogflow.googleapis.com\322AYhttps://"
           + "www.googleapis.com/auth/cloud-platform,h"
           + "ttps://www.googleapis.com/auth/dialogflo"
-          + "wB\310\001\n&com.google.cloud.dialogflow.cx.v3b"
+          + "wB\305\001\n&com.google.cloud.dialogflow.cx.v3b"
           + "eta1B\016ChangelogProtoP\001Z6cloud.google.com"
-          + "/go/dialogflow/cx/apiv3beta1/cxpb;cxpb\370\001"
-          + "\001\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Be"
-          + "ta1\352\002&Google::Cloud::Dialogflow::CX::V3b"
-          + "eta1b\006proto3"
+          + "/go/dialogflow/cx/apiv3beta1/cxpb;cxpb\242\002"
+          + "\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Beta1"
+          + "\352\002&Google::Cloud::Dialogflow::CX::V3beta"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

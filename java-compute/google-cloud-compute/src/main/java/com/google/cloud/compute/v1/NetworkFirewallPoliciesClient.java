@@ -87,6 +87,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> AddPacketMirroringRule</td>
+ *      <td><p> Inserts a packet mirroring rule into a firewall policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> addPacketMirroringRuleAsync(AddPacketMirroringRuleNetworkFirewallPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> addPacketMirroringRuleAsync(String project, String firewallPolicy, FirewallPolicyRule firewallPolicyRuleResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> addPacketMirroringRuleOperationCallable()
+ *           <li><p> addPacketMirroringRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> AddRule</td>
  *      <td><p> Inserts a rule into a firewall policy.</td>
  *      <td>
@@ -217,6 +236,24 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetPacketMirroringRule</td>
+ *      <td><p> Gets a packet mirroring rule of the specified priority.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getPacketMirroringRule(GetPacketMirroringRuleNetworkFirewallPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getPacketMirroringRule(String project, String firewallPolicy)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getPacketMirroringRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetRule</td>
  *      <td><p> Gets a rule of the specified priority.</td>
  *      <td>
@@ -292,6 +329,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> PatchPacketMirroringRule</td>
+ *      <td><p> Patches a packet mirroring rule of the specified priority.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> patchPacketMirroringRuleAsync(PatchPacketMirroringRuleNetworkFirewallPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> patchPacketMirroringRuleAsync(String project, String firewallPolicy, FirewallPolicyRule firewallPolicyRuleResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> patchPacketMirroringRuleOperationCallable()
+ *           <li><p> patchPacketMirroringRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> PatchRule</td>
  *      <td><p> Patches a rule of the specified priority.</td>
  *      <td>
@@ -326,6 +382,25 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> removeAssociationOperationCallable()
  *           <li><p> removeAssociationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RemovePacketMirroringRule</td>
+ *      <td><p> Deletes a packet mirroring rule of the specified priority.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> removePacketMirroringRuleAsync(RemovePacketMirroringRuleNetworkFirewallPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> removePacketMirroringRuleAsync(String project, String firewallPolicy)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> removePacketMirroringRuleOperationCallable()
+ *           <li><p> removePacketMirroringRuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -621,6 +696,154 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
   public final UnaryCallable<AddAssociationNetworkFirewallPolicyRequest, Operation>
       addAssociationCallable() {
     return stub.addAssociationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Inserts a packet mirroring rule into a firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   String project = "project-309310695";
+   *   String firewallPolicy = "firewallPolicy1819692626";
+   *   FirewallPolicyRule firewallPolicyRuleResource = FirewallPolicyRule.newBuilder().build();
+   *   Operation response =
+   *       networkFirewallPoliciesClient
+   *           .addPacketMirroringRuleAsync(project, firewallPolicy, firewallPolicyRuleResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param firewallPolicy Name of the firewall policy to update.
+   * @param firewallPolicyRuleResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> addPacketMirroringRuleAsync(
+      String project, String firewallPolicy, FirewallPolicyRule firewallPolicyRuleResource) {
+    AddPacketMirroringRuleNetworkFirewallPolicyRequest request =
+        AddPacketMirroringRuleNetworkFirewallPolicyRequest.newBuilder()
+            .setProject(project)
+            .setFirewallPolicy(firewallPolicy)
+            .setFirewallPolicyRuleResource(firewallPolicyRuleResource)
+            .build();
+    return addPacketMirroringRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Inserts a packet mirroring rule into a firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   AddPacketMirroringRuleNetworkFirewallPolicyRequest request =
+   *       AddPacketMirroringRuleNetworkFirewallPolicyRequest.newBuilder()
+   *           .setFirewallPolicy("firewallPolicy1819692626")
+   *           .setFirewallPolicyRuleResource(FirewallPolicyRule.newBuilder().build())
+   *           .setMaxPriority(-207235553)
+   *           .setMinPriority(267190513)
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response = networkFirewallPoliciesClient.addPacketMirroringRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> addPacketMirroringRuleAsync(
+      AddPacketMirroringRuleNetworkFirewallPolicyRequest request) {
+    return addPacketMirroringRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Inserts a packet mirroring rule into a firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   AddPacketMirroringRuleNetworkFirewallPolicyRequest request =
+   *       AddPacketMirroringRuleNetworkFirewallPolicyRequest.newBuilder()
+   *           .setFirewallPolicy("firewallPolicy1819692626")
+   *           .setFirewallPolicyRuleResource(FirewallPolicyRule.newBuilder().build())
+   *           .setMaxPriority(-207235553)
+   *           .setMinPriority(267190513)
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       networkFirewallPoliciesClient
+   *           .addPacketMirroringRuleOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+      addPacketMirroringRuleOperationCallable() {
+    return stub.addPacketMirroringRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Inserts a packet mirroring rule into a firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   AddPacketMirroringRuleNetworkFirewallPolicyRequest request =
+   *       AddPacketMirroringRuleNetworkFirewallPolicyRequest.newBuilder()
+   *           .setFirewallPolicy("firewallPolicy1819692626")
+   *           .setFirewallPolicyRuleResource(FirewallPolicyRule.newBuilder().build())
+   *           .setMaxPriority(-207235553)
+   *           .setMinPriority(267190513)
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkFirewallPoliciesClient.addPacketMirroringRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      addPacketMirroringRuleCallable() {
+    return stub.addPacketMirroringRuleCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1488,6 +1711,104 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Gets a packet mirroring rule of the specified priority.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   String project = "project-309310695";
+   *   String firewallPolicy = "firewallPolicy1819692626";
+   *   FirewallPolicyRule response =
+   *       networkFirewallPoliciesClient.getPacketMirroringRule(project, firewallPolicy);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param firewallPolicy Name of the firewall policy to which the queried rule belongs.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FirewallPolicyRule getPacketMirroringRule(String project, String firewallPolicy) {
+    GetPacketMirroringRuleNetworkFirewallPolicyRequest request =
+        GetPacketMirroringRuleNetworkFirewallPolicyRequest.newBuilder()
+            .setProject(project)
+            .setFirewallPolicy(firewallPolicy)
+            .build();
+    return getPacketMirroringRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a packet mirroring rule of the specified priority.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   GetPacketMirroringRuleNetworkFirewallPolicyRequest request =
+   *       GetPacketMirroringRuleNetworkFirewallPolicyRequest.newBuilder()
+   *           .setFirewallPolicy("firewallPolicy1819692626")
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .build();
+   *   FirewallPolicyRule response = networkFirewallPoliciesClient.getPacketMirroringRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FirewallPolicyRule getPacketMirroringRule(
+      GetPacketMirroringRuleNetworkFirewallPolicyRequest request) {
+    return getPacketMirroringRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a packet mirroring rule of the specified priority.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   GetPacketMirroringRuleNetworkFirewallPolicyRequest request =
+   *       GetPacketMirroringRuleNetworkFirewallPolicyRequest.newBuilder()
+   *           .setFirewallPolicy("firewallPolicy1819692626")
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<FirewallPolicyRule> future =
+   *       networkFirewallPoliciesClient.getPacketMirroringRuleCallable().futureCall(request);
+   *   // Do something.
+   *   FirewallPolicyRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetPacketMirroringRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
+      getPacketMirroringRuleCallable() {
+    return stub.getPacketMirroringRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets a rule of the specified priority.
    *
    * <p>Sample code:
@@ -1998,6 +2319,152 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Patches a packet mirroring rule of the specified priority.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   String project = "project-309310695";
+   *   String firewallPolicy = "firewallPolicy1819692626";
+   *   FirewallPolicyRule firewallPolicyRuleResource = FirewallPolicyRule.newBuilder().build();
+   *   Operation response =
+   *       networkFirewallPoliciesClient
+   *           .patchPacketMirroringRuleAsync(project, firewallPolicy, firewallPolicyRuleResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param firewallPolicy Name of the firewall policy to update.
+   * @param firewallPolicyRuleResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> patchPacketMirroringRuleAsync(
+      String project, String firewallPolicy, FirewallPolicyRule firewallPolicyRuleResource) {
+    PatchPacketMirroringRuleNetworkFirewallPolicyRequest request =
+        PatchPacketMirroringRuleNetworkFirewallPolicyRequest.newBuilder()
+            .setProject(project)
+            .setFirewallPolicy(firewallPolicy)
+            .setFirewallPolicyRuleResource(firewallPolicyRuleResource)
+            .build();
+    return patchPacketMirroringRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches a packet mirroring rule of the specified priority.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   PatchPacketMirroringRuleNetworkFirewallPolicyRequest request =
+   *       PatchPacketMirroringRuleNetworkFirewallPolicyRequest.newBuilder()
+   *           .setFirewallPolicy("firewallPolicy1819692626")
+   *           .setFirewallPolicyRuleResource(FirewallPolicyRule.newBuilder().build())
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response =
+   *       networkFirewallPoliciesClient.patchPacketMirroringRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> patchPacketMirroringRuleAsync(
+      PatchPacketMirroringRuleNetworkFirewallPolicyRequest request) {
+    return patchPacketMirroringRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches a packet mirroring rule of the specified priority.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   PatchPacketMirroringRuleNetworkFirewallPolicyRequest request =
+   *       PatchPacketMirroringRuleNetworkFirewallPolicyRequest.newBuilder()
+   *           .setFirewallPolicy("firewallPolicy1819692626")
+   *           .setFirewallPolicyRuleResource(FirewallPolicyRule.newBuilder().build())
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       networkFirewallPoliciesClient
+   *           .patchPacketMirroringRuleOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+      patchPacketMirroringRuleOperationCallable() {
+    return stub.patchPacketMirroringRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches a packet mirroring rule of the specified priority.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   PatchPacketMirroringRuleNetworkFirewallPolicyRequest request =
+   *       PatchPacketMirroringRuleNetworkFirewallPolicyRequest.newBuilder()
+   *           .setFirewallPolicy("firewallPolicy1819692626")
+   *           .setFirewallPolicyRuleResource(FirewallPolicyRule.newBuilder().build())
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkFirewallPoliciesClient.patchPacketMirroringRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      patchPacketMirroringRuleCallable() {
+    return stub.patchPacketMirroringRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Patches a rule of the specified priority.
    *
    * <p>Sample code:
@@ -2270,6 +2737,146 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
   public final UnaryCallable<RemoveAssociationNetworkFirewallPolicyRequest, Operation>
       removeAssociationCallable() {
     return stub.removeAssociationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a packet mirroring rule of the specified priority.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   String project = "project-309310695";
+   *   String firewallPolicy = "firewallPolicy1819692626";
+   *   Operation response =
+   *       networkFirewallPoliciesClient
+   *           .removePacketMirroringRuleAsync(project, firewallPolicy)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param firewallPolicy Name of the firewall policy to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> removePacketMirroringRuleAsync(
+      String project, String firewallPolicy) {
+    RemovePacketMirroringRuleNetworkFirewallPolicyRequest request =
+        RemovePacketMirroringRuleNetworkFirewallPolicyRequest.newBuilder()
+            .setProject(project)
+            .setFirewallPolicy(firewallPolicy)
+            .build();
+    return removePacketMirroringRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a packet mirroring rule of the specified priority.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   RemovePacketMirroringRuleNetworkFirewallPolicyRequest request =
+   *       RemovePacketMirroringRuleNetworkFirewallPolicyRequest.newBuilder()
+   *           .setFirewallPolicy("firewallPolicy1819692626")
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response =
+   *       networkFirewallPoliciesClient.removePacketMirroringRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> removePacketMirroringRuleAsync(
+      RemovePacketMirroringRuleNetworkFirewallPolicyRequest request) {
+    return removePacketMirroringRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a packet mirroring rule of the specified priority.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   RemovePacketMirroringRuleNetworkFirewallPolicyRequest request =
+   *       RemovePacketMirroringRuleNetworkFirewallPolicyRequest.newBuilder()
+   *           .setFirewallPolicy("firewallPolicy1819692626")
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       networkFirewallPoliciesClient
+   *           .removePacketMirroringRuleOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+      removePacketMirroringRuleOperationCallable() {
+    return stub.removePacketMirroringRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a packet mirroring rule of the specified priority.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+   *     NetworkFirewallPoliciesClient.create()) {
+   *   RemovePacketMirroringRuleNetworkFirewallPolicyRequest request =
+   *       RemovePacketMirroringRuleNetworkFirewallPolicyRequest.newBuilder()
+   *           .setFirewallPolicy("firewallPolicy1819692626")
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkFirewallPoliciesClient.removePacketMirroringRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      removePacketMirroringRuleCallable() {
+    return stub.removePacketMirroringRuleCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

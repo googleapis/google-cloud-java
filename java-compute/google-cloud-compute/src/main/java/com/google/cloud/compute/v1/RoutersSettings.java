@@ -18,7 +18,9 @@ package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.RoutersClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.GetNatMappingInfoPagedResponse;
+import static com.google.cloud.compute.v1.RoutersClient.ListBgpRoutesPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.RoutersClient.ListRoutePoliciesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -131,6 +133,17 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
     return ((RoutersStubSettings) getStubSettings()).deleteOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to deleteRoutePolicy. */
+  public UnaryCallSettings<DeleteRoutePolicyRouterRequest, Operation> deleteRoutePolicySettings() {
+    return ((RoutersStubSettings) getStubSettings()).deleteRoutePolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteRoutePolicy. */
+  public OperationCallSettings<DeleteRoutePolicyRouterRequest, Operation, Operation>
+      deleteRoutePolicyOperationSettings() {
+    return ((RoutersStubSettings) getStubSettings()).deleteRoutePolicyOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetRouterRequest, Router> getSettings() {
     return ((RoutersStubSettings) getStubSettings()).getSettings();
@@ -148,6 +161,12 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
           GetNatMappingInfoPagedResponse>
       getNatMappingInfoSettings() {
     return ((RoutersStubSettings) getStubSettings()).getNatMappingInfoSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getRoutePolicy. */
+  public UnaryCallSettings<GetRoutePolicyRouterRequest, RoutersGetRoutePolicyResponse>
+      getRoutePolicySettings() {
+    return ((RoutersStubSettings) getStubSettings()).getRoutePolicySettings();
   }
 
   /** Returns the object with the settings used for calls to getRouterStatus. */
@@ -172,6 +191,20 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
     return ((RoutersStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to listBgpRoutes. */
+  public PagedCallSettings<
+          ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, ListBgpRoutesPagedResponse>
+      listBgpRoutesSettings() {
+    return ((RoutersStubSettings) getStubSettings()).listBgpRoutesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listRoutePolicies. */
+  public PagedCallSettings<
+          ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, ListRoutePoliciesPagedResponse>
+      listRoutePoliciesSettings() {
+    return ((RoutersStubSettings) getStubSettings()).listRoutePoliciesSettings();
+  }
+
   /** Returns the object with the settings used for calls to patch. */
   public UnaryCallSettings<PatchRouterRequest, Operation> patchSettings() {
     return ((RoutersStubSettings) getStubSettings()).patchSettings();
@@ -180,6 +213,17 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
   /** Returns the object with the settings used for calls to patch. */
   public OperationCallSettings<PatchRouterRequest, Operation, Operation> patchOperationSettings() {
     return ((RoutersStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patchRoutePolicy. */
+  public UnaryCallSettings<PatchRoutePolicyRouterRequest, Operation> patchRoutePolicySettings() {
+    return ((RoutersStubSettings) getStubSettings()).patchRoutePolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to patchRoutePolicy. */
+  public OperationCallSettings<PatchRoutePolicyRouterRequest, Operation, Operation>
+      patchRoutePolicyOperationSettings() {
+    return ((RoutersStubSettings) getStubSettings()).patchRoutePolicyOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to preview. */
@@ -196,6 +240,17 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
   public OperationCallSettings<UpdateRouterRequest, Operation, Operation>
       updateOperationSettings() {
     return ((RoutersStubSettings) getStubSettings()).updateOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateRoutePolicy. */
+  public UnaryCallSettings<UpdateRoutePolicyRouterRequest, Operation> updateRoutePolicySettings() {
+    return ((RoutersStubSettings) getStubSettings()).updateRoutePolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateRoutePolicy. */
+  public OperationCallSettings<UpdateRoutePolicyRouterRequest, Operation, Operation>
+      updateRoutePolicyOperationSettings() {
+    return ((RoutersStubSettings) getStubSettings()).updateRoutePolicyOperationSettings();
   }
 
   public static final RoutersSettings create(RoutersStubSettings stub) throws IOException {
@@ -312,6 +367,18 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
       return getStubSettingsBuilder().deleteOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to deleteRoutePolicy. */
+    public UnaryCallSettings.Builder<DeleteRoutePolicyRouterRequest, Operation>
+        deleteRoutePolicySettings() {
+      return getStubSettingsBuilder().deleteRoutePolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRoutePolicy. */
+    public OperationCallSettings.Builder<DeleteRoutePolicyRouterRequest, Operation, Operation>
+        deleteRoutePolicyOperationSettings() {
+      return getStubSettingsBuilder().deleteRoutePolicyOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetRouterRequest, Router> getSettings() {
       return getStubSettingsBuilder().getSettings();
@@ -330,6 +397,12 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
             GetNatMappingInfoPagedResponse>
         getNatMappingInfoSettings() {
       return getStubSettingsBuilder().getNatMappingInfoSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getRoutePolicy. */
+    public UnaryCallSettings.Builder<GetRoutePolicyRouterRequest, RoutersGetRoutePolicyResponse>
+        getRoutePolicySettings() {
+      return getStubSettingsBuilder().getRoutePolicySettings();
     }
 
     /** Returns the builder for the settings used for calls to getRouterStatus. */
@@ -355,6 +428,22 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
       return getStubSettingsBuilder().listSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listBgpRoutes. */
+    public PagedCallSettings.Builder<
+            ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, ListBgpRoutesPagedResponse>
+        listBgpRoutesSettings() {
+      return getStubSettingsBuilder().listBgpRoutesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listRoutePolicies. */
+    public PagedCallSettings.Builder<
+            ListRoutePoliciesRoutersRequest,
+            RoutersListRoutePolicies,
+            ListRoutePoliciesPagedResponse>
+        listRoutePoliciesSettings() {
+      return getStubSettingsBuilder().listRoutePoliciesSettings();
+    }
+
     /** Returns the builder for the settings used for calls to patch. */
     public UnaryCallSettings.Builder<PatchRouterRequest, Operation> patchSettings() {
       return getStubSettingsBuilder().patchSettings();
@@ -364,6 +453,18 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
     public OperationCallSettings.Builder<PatchRouterRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchRoutePolicy. */
+    public UnaryCallSettings.Builder<PatchRoutePolicyRouterRequest, Operation>
+        patchRoutePolicySettings() {
+      return getStubSettingsBuilder().patchRoutePolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchRoutePolicy. */
+    public OperationCallSettings.Builder<PatchRoutePolicyRouterRequest, Operation, Operation>
+        patchRoutePolicyOperationSettings() {
+      return getStubSettingsBuilder().patchRoutePolicyOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to preview. */
@@ -381,6 +482,18 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
     public OperationCallSettings.Builder<UpdateRouterRequest, Operation, Operation>
         updateOperationSettings() {
       return getStubSettingsBuilder().updateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateRoutePolicy. */
+    public UnaryCallSettings.Builder<UpdateRoutePolicyRouterRequest, Operation>
+        updateRoutePolicySettings() {
+      return getStubSettingsBuilder().updateRoutePolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateRoutePolicy. */
+    public OperationCallSettings.Builder<UpdateRoutePolicyRouterRequest, Operation, Operation>
+        updateRoutePolicyOperationSettings() {
+      return getStubSettingsBuilder().updateRoutePolicyOperationSettings();
     }
 
     @Override

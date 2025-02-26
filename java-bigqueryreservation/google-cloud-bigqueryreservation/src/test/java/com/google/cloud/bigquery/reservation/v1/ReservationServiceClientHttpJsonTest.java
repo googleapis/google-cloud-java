@@ -100,6 +100,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -159,6 +160,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -318,6 +320,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -373,6 +376,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -508,6 +512,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -525,6 +530,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -568,6 +574,7 @@ public class ReservationServiceClientHttpJsonTest {
               .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateReservation(reservation, updateMask);
@@ -593,6 +600,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1342,6 +1350,7 @@ public class ReservationServiceClientHttpJsonTest {
                 AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
                     .toString())
             .setAssignee("assignee-369881649")
+            .setEnableGeminiInBigquery(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1391,6 +1400,7 @@ public class ReservationServiceClientHttpJsonTest {
                 AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
                     .toString())
             .setAssignee("assignee-369881649")
+            .setEnableGeminiInBigquery(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1834,6 +1844,7 @@ public class ReservationServiceClientHttpJsonTest {
                 AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
                     .toString())
             .setAssignee("assignee-369881649")
+            .setEnableGeminiInBigquery(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1886,6 +1897,7 @@ public class ReservationServiceClientHttpJsonTest {
                 AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
                     .toString())
             .setAssignee("assignee-369881649")
+            .setEnableGeminiInBigquery(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1937,6 +1949,7 @@ public class ReservationServiceClientHttpJsonTest {
                 AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
                     .toString())
             .setAssignee("assignee-369881649")
+            .setEnableGeminiInBigquery(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1989,6 +2002,7 @@ public class ReservationServiceClientHttpJsonTest {
                 AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
                     .toString())
             .setAssignee("assignee-369881649")
+            .setEnableGeminiInBigquery(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2040,6 +2054,7 @@ public class ReservationServiceClientHttpJsonTest {
                 AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
                     .toString())
             .setAssignee("assignee-369881649")
+            .setEnableGeminiInBigquery(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2049,6 +2064,7 @@ public class ReservationServiceClientHttpJsonTest {
                 AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
                     .toString())
             .setAssignee("assignee-369881649")
+            .setEnableGeminiInBigquery(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2084,6 +2100,7 @@ public class ReservationServiceClientHttpJsonTest {
                   AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
                       .toString())
               .setAssignee("assignee-369881649")
+              .setEnableGeminiInBigquery(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAssignment(assignment, updateMask);

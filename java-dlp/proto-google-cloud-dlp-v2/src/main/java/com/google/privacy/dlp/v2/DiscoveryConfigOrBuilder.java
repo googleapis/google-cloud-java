@@ -591,4 +591,51 @@ public interface DiscoveryConfigOrBuilder
    * @return The status.
    */
   com.google.privacy.dlp.v2.DiscoveryConfig.Status getStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Processing location configuration. Vertex AI dataset scanning
+   * will set processing_location.image_fallback_type to MultiRegionProcessing
+   * by default.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.ProcessingLocation processing_location = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the processingLocation field is set.
+   */
+  boolean hasProcessingLocation();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Processing location configuration. Vertex AI dataset scanning
+   * will set processing_location.image_fallback_type to MultiRegionProcessing
+   * by default.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.ProcessingLocation processing_location = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The processingLocation.
+   */
+  com.google.privacy.dlp.v2.ProcessingLocation getProcessingLocation();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Processing location configuration. Vertex AI dataset scanning
+   * will set processing_location.image_fallback_type to MultiRegionProcessing
+   * by default.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.ProcessingLocation processing_location = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.privacy.dlp.v2.ProcessingLocationOrBuilder getProcessingLocationOrBuilder();
 }
