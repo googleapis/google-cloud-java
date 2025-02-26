@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.30.9](https://github.com/googleapis/java-firestore/compare/v3.30.8...v3.30.9) (2025-02-26)
+
+
+### Dependencies
+
+* Update beam.version to v2.63.0 ([#2020](https://github.com/googleapis/java-firestore/issues/2020)) ([dce5a4d](https://github.com/googleapis/java-firestore/commit/dce5a4d7d76c4544ecb408f3f0249f0302a199dd))
+* Update dependency com.android.tools.metalava:metalava to v1.0.0-alpha12 ([#2013](https://github.com/googleapis/java-firestore/issues/2013)) ([929d41c](https://github.com/googleapis/java-firestore/commit/929d41c2587a9836a715cb1488b6c24bdebdf5ba))
+* Update dependency com.diffplug.spotless:spotless-maven-plugin to v2.44.3 ([#2023](https://github.com/googleapis/java-firestore/issues/2023)) ([6123125](https://github.com/googleapis/java-firestore/commit/6123125db23cc8c013498f64d22384669a60365f))
+* Update dependency com.google.api.grpc:proto-google-cloud-trace-v1 to v2.58.0 ([#2018](https://github.com/googleapis/java-firestore/issues/2018)) ([966a471](https://github.com/googleapis/java-firestore/commit/966a4715173b48a37bf8dedd93b957a1165df8a9))
+* Update dependency com.google.cloud:google-cloud-trace to v2.58.0 ([#2019](https://github.com/googleapis/java-firestore/issues/2019)) ([3bd7fdb](https://github.com/googleapis/java-firestore/commit/3bd7fdbf368fb5f94f6150754cb66f987b467492))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.44.0 ([#2025](https://github.com/googleapis/java-firestore/issues/2025)) ([ff9ef43](https://github.com/googleapis/java-firestore/commit/ff9ef43852242c790a2cb78c9a44f4dc45ff8523))
+* Update dependency io.opentelemetry.semconv:opentelemetry-semconv to v1.30.0 ([#2022](https://github.com/googleapis/java-firestore/issues/2022)) ([3767e36](https://github.com/googleapis/java-firestore/commit/3767e36ca109a133a230f586a0253b01730668cb))
+* Update googleapis/sdk-platform-java action to v2.54.0 ([#2026](https://github.com/googleapis/java-firestore/issues/2026)) ([cde290d](https://github.com/googleapis/java-firestore/commit/cde290dec598ed6698ef6d361b52a5864fd28ab8))
+
 ## [3.30.8](https://github.com/googleapis/java-firestore/compare/v3.30.7...v3.30.8) (2025-02-13)
 
 
