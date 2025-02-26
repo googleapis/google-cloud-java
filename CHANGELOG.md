@@ -1,5 +1,42 @@
 # Changelog
 
+## [1.53.0](https://github.com/googleapis/google-cloud-java/compare/v1.52.0...v1.53.0) (2025-02-26)
+
+
+### Features
+
+* [aiplatform] add Model Garden deploy API ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+* [bigqueryreservation] Add a new field `replication_status` to `.google.cloud.bigquery.reservation.v1.Reservation` to provide visibility into errors that could arise during Disaster Recovery(DR) replication ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+* [chat] Add DeletionType.SPACE_MEMBER. This is returned when a message sent by an app is deleted by a human in a space ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+* [cloudbuild] Add option to enable fetching dependencies ([625b447](https://github.com/googleapis/google-cloud-java/commit/625b4471293ed9781a8c07fc4562d0bcdb1a9aae))
+* [cloudbuild] Support for git proxy setup ([625b447](https://github.com/googleapis/google-cloud-java/commit/625b4471293ed9781a8c07fc4562d0bcdb1a9aae))
+* [compute] Update Compute Engine API to revision 20250126 ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+* [compute] Update Compute Engine API to revision 20250211 ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+* [confidentialcomputing] A new field `attester` is added to message `.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest` ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+* [dataproc] Added support for the AuthenticationConfig field to Dataproc serverless workload configurations, allowing specification of the user workload identity as either the end user or a service account ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+* [dialogflow-cx] added support for handlers ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+* [dialogflow-cx] added support for playbook level speech settings ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+* [dlp] discovery of Vertex AI datasets ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+* [kms] Support PQC asymmetric signing algorithms ML_DSA_65 and SLH_DSA_SHA2_128s ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+* [maps-places] add NACS EVCS connector type support ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+* [meet] Add `ConnectActiveConference` method to `SpacesService` ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+* [parallelstore] deprecating `daos_version` field ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+* [securitycenter] added more information about DDoS attack in cloud armor proto ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.137.0 ([#11439](https://github.com/googleapis/google-cloud-java/issues/11439)) ([02c156b](https://github.com/googleapis/google-cloud-java/commit/02c156ba5a89fe96d653348dadf1141c34c1b9fe))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.137.1 ([#11458](https://github.com/googleapis/google-cloud-java/issues/11458)) ([6b21b01](https://github.com/googleapis/google-cloud-java/commit/6b21b01ee9062c9fa742e43553e7c28f47f4e114))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.48.2 ([#11437](https://github.com/googleapis/google-cloud-java/issues/11437)) ([3922435](https://github.com/googleapis/google-cloud-java/commit/39224351a48eb47753fab3e24889c52dd0f392c0))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.54.0 ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.44.0 ([#11456](https://github.com/googleapis/google-cloud-java/issues/11456)) ([6b0ad6f](https://github.com/googleapis/google-cloud-java/commit/6b0ad6f8243cc60de7ee608237fa61445f0b0526))
+
+
+### Documentation
+
+* [dms] fix broken link in comment for field `OperationMetadata.requested_cancellation` ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+
 ## [1.52.0](https://github.com/googleapis/google-cloud-java/compare/v1.51.0...v1.52.0) (2025-02-11)
 
 
