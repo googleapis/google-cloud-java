@@ -312,8 +312,21 @@ public class JsonStreamWriter implements AutoCloseable {
     }
 
     /**
-     * Enable multiplexing for this writer. In multiplexing mode tables will share the same
-     * connection if possible until the connection is overwhelmed.
+     * Enables a static shared bidi-streaming connection pool that would dynamically scale up
+     * connections based on backlog within each individual connection. A single table's traffic
+     * might be splitted into multiple connections if needed. Different tables' traffic can also be
+     * multiplexed within the same connection.
+     *
+     * <pre>
+     * Each connection pool would have a upper limit (default to 20) and lower limit (default to
+     * 2) for the number of active connections. This parameter can be tuned via a static method
+     * exposed on {@link ConnectionWorkerPool}.
+     *
+     * Example:
+     * ConnectionWorkerPool.setOptions(
+     *     Settings.builder().setMinConnectionsPerRegion(4).setMaxConnectionsPerRegion(10).build());
+     *
+     * </pre>
      *
      * @param enableConnectionPool
      * @return Builder
