@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.11.4](https://github.com/googleapis/java-bigquerystorage/compare/v3.11.3...v3.11.4) (2025-02-26)
+
+
+### Bug Fixes
+
+* Clarify connection pool document ([#2877](https://github.com/googleapis/java-bigquerystorage/issues/2877)) ([4a4adbb](https://github.com/googleapis/java-bigquerystorage/commit/4a4adbbe501fe772155f25e9606194a8ed15e044))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.48.0 ([#2865](https://github.com/googleapis/java-bigquerystorage/issues/2865)) ([e934eb6](https://github.com/googleapis/java-bigquerystorage/commit/e934eb680b4a919626e0ca8de2fc97837ccded9b))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.44.0 ([#2879](https://github.com/googleapis/java-bigquerystorage/issues/2879)) ([de93f74](https://github.com/googleapis/java-bigquerystorage/commit/de93f74b737d3ca752ec213a9ea17d994c4419df))
+* Update dependency com.google.http-client:google-http-client to v1.46.2 ([#2874](https://github.com/googleapis/java-bigquerystorage/issues/2874)) ([4ba9010](https://github.com/googleapis/java-bigquerystorage/commit/4ba90103ad8e8a631603942b2fce6741634dcbfd))
+* Update dependency com.google.http-client:google-http-client to v1.46.3 ([#2876](https://github.com/googleapis/java-bigquerystorage/issues/2876)) ([1f5dc49](https://github.com/googleapis/java-bigquerystorage/commit/1f5dc493c49923b2a2f4c3e57b4fe3cb19c81f20))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.12.0 ([#2871](https://github.com/googleapis/java-bigquerystorage/issues/2871)) ([165502a](https://github.com/googleapis/java-bigquerystorage/commit/165502aca0a1fbdef90dffb500ee2500bfc65ae8))
+* Update googleapis/sdk-platform-java action to v2.54.0 ([#2878](https://github.com/googleapis/java-bigquerystorage/issues/2878)) ([5593950](https://github.com/googleapis/java-bigquerystorage/commit/5593950a16618aaa37606cc3d64efdb4da743726))
+
 ## [3.11.3](https://github.com/googleapis/java-bigquerystorage/compare/v3.11.2...v3.11.3) (2025-02-12)
 
 
