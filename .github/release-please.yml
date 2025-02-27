@@ -19,8 +19,7 @@ branches:
     releaseType: java-backport
     manifest: true
     handleGHRelease: true
-  - primaryBranch: main
-    releaseType: java-backport
+  - releaseType: java-backport
     manifest: true
     handleGHRelease: true
     branch: 1.53.x-LTS8
