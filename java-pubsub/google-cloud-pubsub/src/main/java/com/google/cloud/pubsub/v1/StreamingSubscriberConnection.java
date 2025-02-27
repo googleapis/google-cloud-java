@@ -47,6 +47,7 @@ import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.StreamingPullRequest;
 import com.google.pubsub.v1.StreamingPullResponse;
+import com.google.pubsub.v1.SubscriptionName;
 import com.google.rpc.ErrorInfo;
 import io.grpc.Status;
 import io.grpc.protobuf.StatusProto;
@@ -94,6 +95,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   private final SubscriberStub subscriberStub;
   private final int channelAffinity;
   private final String subscription;
+  private final SubscriptionName subscriptionNameObject;
   private final ScheduledExecutorService systemExecutor;
   private final MessageDispatcher messageDispatcher;
 
@@ -124,6 +126,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
   private StreamingSubscriberConnection(Builder builder) {
     subscription = builder.subscription;
+    subscriptionNameObject = SubscriptionName.parse(builder.subscription);
     systemExecutor = builder.systemExecutor;
 
     // We need to set the default stream ack deadline on the initial request, this will be
@@ -454,7 +457,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
         }
       }
       // Creates an Ack span to be passed to the callback
-      Span rpcSpan = tracer.startSubscribeRpcSpan(subscription, "ack", messagesInRequest, 0, false);
+      Span rpcSpan =
+          tracer.startSubscribeRpcSpan(subscriptionNameObject, "ack", messagesInRequest, 0, false);
       ApiFutureCallback<Empty> callback =
           getCallback(ackRequestDataInRequestList, 0, false, currentBackoffMillis, rpcSpan);
       ApiFuture<Empty> ackFuture =
@@ -493,7 +497,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
         // Creates either a ModAck span or a Nack span depending on the given ack deadline
         Span rpcSpan =
             tracer.startSubscribeRpcSpan(
-                subscription,
+                subscriptionNameObject,
                 rpcOperation,
                 messagesInRequest,
                 deadlineExtensionSeconds,

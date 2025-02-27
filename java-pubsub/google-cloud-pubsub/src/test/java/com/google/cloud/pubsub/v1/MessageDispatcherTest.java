@@ -35,6 +35,8 @@ import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
 public class MessageDispatcherTest {
+  private static final String MOCK_SUBSCRIPTION_NAME =
+      "projects/MOCK-PROJECT/subscriptions/MOCK-SUBSCRIPTION";
   private static final ByteString MESSAGE_DATA = ByteString.copyFromUtf8("message-data");
   private static final int DELIVERY_INFO_COUNT = 3;
   private static final String ACK_ID = "ACK-ID";
@@ -462,6 +464,7 @@ public class MessageDispatcherTest {
             .setMinDurationPerAckExtensionDefaultUsed(true)
             .setMaxDurationPerAckExtension(Subscriber.DEFAULT_MAX_ACK_DEADLINE_EXTENSION)
             .setMaxDurationPerAckExtensionDefaultUsed(true)
+            .setSubscriptionName(MOCK_SUBSCRIPTION_NAME)
             .build();
 
     // ExactlyOnceDeliveryEnabled is turned off by default
@@ -494,6 +497,7 @@ public class MessageDispatcherTest {
             .setMinDurationPerAckExtensionDefaultUsed(true)
             .setMaxDurationPerAckExtension(Subscriber.DEFAULT_MIN_ACK_DEADLINE_EXTENSION)
             .setMaxDurationPerAckExtensionDefaultUsed(true)
+            .setSubscriptionName(MOCK_SUBSCRIPTION_NAME)
             .build();
 
     // This would normally be set from the streaming pull response in the
@@ -605,6 +609,7 @@ public class MessageDispatcherTest {
             .setMinDurationPerAckExtensionDefaultUsed(false)
             .setMaxDurationPerAckExtension(Subscriber.DEFAULT_MIN_ACK_DEADLINE_EXTENSION)
             .setMaxDurationPerAckExtensionDefaultUsed(true)
+            .setSubscriptionName(MOCK_SUBSCRIPTION_NAME)
             .build();
 
     // ExactlyOnceDeliveryEnabled is turned off by default
@@ -634,6 +639,7 @@ public class MessageDispatcherTest {
             .setMinDurationPerAckExtensionDefaultUsed(true)
             .setMaxDurationPerAckExtension(Duration.ofSeconds(customMaxSeconds))
             .setMaxDurationPerAckExtensionDefaultUsed(false)
+            .setSubscriptionName(MOCK_SUBSCRIPTION_NAME)
             .build();
 
     // ExactlyOnceDeliveryEnabled is turned off by default
@@ -704,6 +710,7 @@ public class MessageDispatcherTest {
             .setAckLatencyDistribution(mock(Distribution.class))
             .setFlowController(mock(FlowController.class))
             .setExecutor(executor)
+            .setSubscriptionName(MOCK_SUBSCRIPTION_NAME)
             .setSystemExecutor(systemExecutor)
             .setApiClock(clock)
             .build();

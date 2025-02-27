@@ -172,11 +172,10 @@ public class OpenTelemetryPubsubTracer {
    * Creates, starts, and returns a publish RPC span for the given message batch. Bi-directional
    * links with the publisher parent span are created for sampled messages in the batch.
    */
-  Span startPublishRpcSpan(String topic, List<PubsubMessageWrapper> messages) {
+  Span startPublishRpcSpan(TopicName topicName, List<PubsubMessageWrapper> messages) {
     if (!enabled) {
       return null;
     }
-    TopicName topicName = TopicName.parse(topic);
     Attributes attributes =
         createCommonSpanAttributesBuilder(
                 topicName.getTopic(), topicName.getProject(), "publishCall", "publish")
@@ -359,7 +358,7 @@ public class OpenTelemetryPubsubTracer {
    * to parent subscribe span for sampled messages are added.
    */
   Span startSubscribeRpcSpan(
-      String subscription,
+      SubscriptionName subscriptionName,
       String rpcOperation,
       List<PubsubMessageWrapper> messages,
       int ackDeadline,
@@ -368,7 +367,6 @@ public class OpenTelemetryPubsubTracer {
       return null;
     }
     String codeFunction = rpcOperation == "ack" ? "sendAckOperations" : "sendModAckOperations";
-    SubscriptionName subscriptionName = SubscriptionName.parse(subscription);
     AttributesBuilder attributesBuilder =
         createCommonSpanAttributesBuilder(
                 subscriptionName.getSubscription(),

@@ -101,6 +101,7 @@ public class Publisher implements PublisherInterface {
 
   private final String topicName;
   private final int topicNameSize;
+  private final TopicName topicNameObject;
 
   private final BatchingSettings batchingSettings;
   private final boolean enableMessageOrdering;
@@ -149,6 +150,7 @@ public class Publisher implements PublisherInterface {
     topicName = builder.topicName;
     topicNameSize =
         CodedOutputStream.computeStringSize(PublishRequest.TOPIC_FIELD_NUMBER, this.topicName);
+    topicNameObject = TopicName.parse(this.topicName);
 
     this.batchingSettings = builder.batchingSettings;
     FlowControlSettings flowControl = this.batchingSettings.getFlowControlSettings();
@@ -282,7 +284,7 @@ public class Publisher implements PublisherInterface {
             + "setEnableMessageOrdering(true) in the builder.");
 
     PubsubMessageWrapper messageWrapper =
-        PubsubMessageWrapper.newBuilder(messageTransform.apply(message), topicName).build();
+        PubsubMessageWrapper.newBuilder(messageTransform.apply(message), topicNameObject).build();
     tracer.startPublisherSpan(messageWrapper);
 
     final OutstandingPublish outstandingPublish = new OutstandingPublish(messageWrapper);
@@ -490,7 +492,7 @@ public class Publisher implements PublisherInterface {
       pubsubMessagesList.add(messageWrapper.getPubsubMessage());
     }
 
-    outstandingBatch.publishRpcSpan = tracer.startPublishRpcSpan(topicName, messageWrappers);
+    outstandingBatch.publishRpcSpan = tracer.startPublishRpcSpan(topicNameObject, messageWrappers);
 
     return publisherStub
         .publishCallable()

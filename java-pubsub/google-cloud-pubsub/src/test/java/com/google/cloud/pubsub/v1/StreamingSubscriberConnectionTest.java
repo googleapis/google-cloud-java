@@ -52,7 +52,8 @@ public class StreamingSubscriberConnectionTest {
   private FakeClock clock;
   private SubscriberStub mockSubscriberStub;
 
-  private static final String MOCK_SUBSCRIPTION_NAME = "MOCK-SUBSCRIPTION";
+  private static final String MOCK_SUBSCRIPTION_NAME =
+      "projects/MOCK-PROJECT/subscriptions/MOCK-SUBSCRIPTION";
   private static final String MOCK_ACK_ID_SUCCESS = "MOCK-ACK-ID-SUCCESS";
   private static final String MOCK_ACK_ID_SUCCESS_2 = "MOCK-ACK-ID-SUCCESS-2";
   private static final String MOCK_ACK_ID_NACK_SUCCESS = "MOCK-ACK-ID-NACK-SUCCESS";

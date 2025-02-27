@@ -73,12 +73,12 @@ public class PubsubMessageWrapper {
     this.deliveryAttempt = builder.deliveryAttempt;
   }
 
-  static Builder newBuilder(PubsubMessage message, String topicName) {
+  static Builder newBuilder(PubsubMessage message, TopicName topicName) {
     return new Builder(message, topicName);
   }
 
   static Builder newBuilder(
-      PubsubMessage message, String subscriptionName, String ackId, int deliveryAttempt) {
+      PubsubMessage message, SubscriptionName subscriptionName, String ackId, int deliveryAttempt) {
     return new Builder(message, subscriptionName, ackId, deliveryAttempt);
   }
 
@@ -395,21 +395,9 @@ public class PubsubMessageWrapper {
     private String ackId = null;
     private int deliveryAttempt = 0;
 
-    public Builder(PubsubMessage message, String topicName) {
+    public Builder(PubsubMessage message, TopicName topicName) {
       this.message = message;
-      if (topicName != null) {
-        this.topicName = TopicName.parse(topicName);
-      }
-    }
-
-    public Builder(
-        PubsubMessage message, String subscriptionName, String ackId, int deliveryAttempt) {
-      this.message = message;
-      if (subscriptionName != null) {
-        this.subscriptionName = SubscriptionName.parse(subscriptionName);
-      }
-      this.ackId = ackId;
-      this.deliveryAttempt = deliveryAttempt;
+      this.topicName = topicName;
     }
 
     public Builder(
