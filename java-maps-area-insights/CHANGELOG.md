@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.10.0 (2025-02-26)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.44.0 ([#11456](https://github.com/googleapis/google-cloud-java/issues/11456)) ([6b0ad6f](https://github.com/googleapis/google-cloud-java/commit/6b0ad6f8243cc60de7ee608237fa61445f0b0526))
+
+
 ## 0.9.0 (2025-02-11)
 
 ### Dependencies

@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.70.0 (2025-02-26)
+
+### Features
+
+* added support for handlers ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+* added support for playbook level speech settings ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.44.0 ([#11456](https://github.com/googleapis/google-cloud-java/issues/11456)) ([6b0ad6f](https://github.com/googleapis/google-cloud-java/commit/6b0ad6f8243cc60de7ee608237fa61445f0b0526))
+
+
 ## 0.69.0 (2025-02-11)
 
 ### Dependencies
