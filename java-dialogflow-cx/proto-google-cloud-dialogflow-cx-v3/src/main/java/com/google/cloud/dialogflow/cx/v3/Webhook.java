@@ -165,8 +165,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The HTTP request headers to send together with webhook
-     * requests.
+     * The HTTP request headers to send together with webhook requests.
      * </pre>
      *
      * <code>map&lt;string, string&gt; request_headers = 4;</code>
@@ -176,8 +175,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The HTTP request headers to send together with webhook
-     * requests.
+     * The HTTP request headers to send together with webhook requests.
      * </pre>
      *
      * <code>map&lt;string, string&gt; request_headers = 4;</code>
@@ -190,8 +188,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The HTTP request headers to send together with webhook
-     * requests.
+     * The HTTP request headers to send together with webhook requests.
      * </pre>
      *
      * <code>map&lt;string, string&gt; request_headers = 4;</code>
@@ -201,8 +198,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The HTTP request headers to send together with webhook
-     * requests.
+     * The HTTP request headers to send together with webhook requests.
      * </pre>
      *
      * <code>map&lt;string, string&gt; request_headers = 4;</code>
@@ -216,8 +212,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The HTTP request headers to send together with webhook
-     * requests.
+     * The HTTP request headers to send together with webhook requests.
      * </pre>
      *
      * <code>map&lt;string, string&gt; request_headers = 4;</code>
@@ -2864,8 +2859,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The HTTP request headers to send together with webhook
-     * requests.
+     * The HTTP request headers to send together with webhook requests.
      * </pre>
      *
      * <code>map&lt;string, string&gt; request_headers = 4;</code>
@@ -2887,8 +2881,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The HTTP request headers to send together with webhook
-     * requests.
+     * The HTTP request headers to send together with webhook requests.
      * </pre>
      *
      * <code>map&lt;string, string&gt; request_headers = 4;</code>
@@ -2901,8 +2894,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The HTTP request headers to send together with webhook
-     * requests.
+     * The HTTP request headers to send together with webhook requests.
      * </pre>
      *
      * <code>map&lt;string, string&gt; request_headers = 4;</code>
@@ -2922,8 +2914,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The HTTP request headers to send together with webhook
-     * requests.
+     * The HTTP request headers to send together with webhook requests.
      * </pre>
      *
      * <code>map&lt;string, string&gt; request_headers = 4;</code>
@@ -4484,8 +4475,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The HTTP request headers to send together with webhook
-       * requests.
+       * The HTTP request headers to send together with webhook requests.
        * </pre>
        *
        * <code>map&lt;string, string&gt; request_headers = 4;</code>
@@ -4507,8 +4497,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The HTTP request headers to send together with webhook
-       * requests.
+       * The HTTP request headers to send together with webhook requests.
        * </pre>
        *
        * <code>map&lt;string, string&gt; request_headers = 4;</code>
@@ -4521,8 +4510,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The HTTP request headers to send together with webhook
-       * requests.
+       * The HTTP request headers to send together with webhook requests.
        * </pre>
        *
        * <code>map&lt;string, string&gt; request_headers = 4;</code>
@@ -4543,8 +4531,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The HTTP request headers to send together with webhook
-       * requests.
+       * The HTTP request headers to send together with webhook requests.
        * </pre>
        *
        * <code>map&lt;string, string&gt; request_headers = 4;</code>
@@ -4571,8 +4558,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The HTTP request headers to send together with webhook
-       * requests.
+       * The HTTP request headers to send together with webhook requests.
        * </pre>
        *
        * <code>map&lt;string, string&gt; request_headers = 4;</code>
@@ -4594,8 +4580,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The HTTP request headers to send together with webhook
-       * requests.
+       * The HTTP request headers to send together with webhook requests.
        * </pre>
        *
        * <code>map&lt;string, string&gt; request_headers = 4;</code>
@@ -4615,8 +4600,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The HTTP request headers to send together with webhook
-       * requests.
+       * The HTTP request headers to send together with webhook requests.
        * </pre>
        *
        * <code>map&lt;string, string&gt; request_headers = 4;</code>

@@ -102,12 +102,11 @@ public final class DeploymentProto {
           + "ents/*}\032x\312A\031dialogflow.googleapis.com\322AY"
           + "https://www.googleapis.com/auth/cloud-pl"
           + "atform,https://www.googleapis.com/auth/d"
-          + "ialogflowB\265\001\n!com.google.cloud.dialogflo"
+          + "ialogflowB\262\001\n!com.google.cloud.dialogflo"
           + "w.cx.v3B\017DeploymentProtoP\001Z1cloud.google"
-          + ".com/go/dialogflow/cx/apiv3/cxpb;cxpb\370\001\001"
-          + "\242\002\002DF\252\002\035Google.Cloud.Dialogflow.Cx.V3\352\002!"
-          + "Google::Cloud::Dialogflow::CX::V3b\006proto"
-          + "3"
+          + ".com/go/dialogflow/cx/apiv3/cxpb;cxpb\242\002\002"
+          + "DF\252\002\035Google.Cloud.Dialogflow.Cx.V3\352\002!Goo"
+          + "gle::Cloud::Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -136,7 +136,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
    * <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.VehicleLocation.horizontal_accuracy is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=207
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=208
    * @return Whether the horizontalAccuracy field is set.
    */
   @java.lang.Override
@@ -154,7 +154,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
    * <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.VehicleLocation.horizontal_accuracy is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=207
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=208
    * @return The horizontalAccuracy.
    */
   @java.lang.Override
@@ -292,7 +292,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
    * <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.VehicleLocation.bearing_accuracy is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=217
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=218
    * @return Whether the bearingAccuracy field is set.
    */
   @java.lang.Override
@@ -310,7 +310,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
    * <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.VehicleLocation.bearing_accuracy is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=217
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=218
    * @return The bearingAccuracy.
    */
   @java.lang.Override
@@ -445,7 +445,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
    * <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.VehicleLocation.vertical_accuracy is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=226
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=227
    * @return Whether the verticalAccuracy field is set.
    */
   @java.lang.Override
@@ -463,7 +463,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
    * <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.VehicleLocation.vertical_accuracy is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=226
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=227
    * @return The verticalAccuracy.
    */
   @java.lang.Override
@@ -553,7 +553,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
    * <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.VehicleLocation.speed_kmph is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=233
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=234
    * @return Whether the speedKmph field is set.
    */
   @java.lang.Override
@@ -572,7 +572,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
    * <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.VehicleLocation.speed_kmph is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=233
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=234
    * @return The speedKmph.
    */
   @java.lang.Override
@@ -1011,7 +1011,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
    * </code>
    *
    * @deprecated maps.fleetengine.v1.VehicleLocation.num_stale_updates is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=268
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=269
    * @return Whether the numStaleUpdates field is set.
    */
   @java.lang.Override
@@ -1032,7 +1032,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
    * </code>
    *
    * @deprecated maps.fleetengine.v1.VehicleLocation.num_stale_updates is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=268
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=269
    * @return The numStaleUpdates.
    */
   @java.lang.Override
@@ -1442,7 +1442,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
    * <code>bool road_snapped = 26 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.VehicleLocation.road_snapped is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=297
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=298
    * @return The roadSnapped.
    */
   @java.lang.Override
@@ -2937,7 +2937,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.VehicleLocation.horizontal_accuracy is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=207
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=208
      * @return Whether the horizontalAccuracy field is set.
      */
     @java.lang.Deprecated
@@ -2954,7 +2954,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.VehicleLocation.horizontal_accuracy is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=207
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=208
      * @return The horizontalAccuracy.
      */
     @java.lang.Deprecated
@@ -3509,7 +3509,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.VehicleLocation.bearing_accuracy is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=217
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=218
      * @return Whether the bearingAccuracy field is set.
      */
     @java.lang.Deprecated
@@ -3526,7 +3526,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.VehicleLocation.bearing_accuracy is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=217
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=218
      * @return The bearingAccuracy.
      */
     @java.lang.Deprecated
@@ -4072,7 +4072,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.VehicleLocation.vertical_accuracy is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=226
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=227
      * @return Whether the verticalAccuracy field is set.
      */
     @java.lang.Deprecated
@@ -4089,7 +4089,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.VehicleLocation.vertical_accuracy is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=226
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=227
      * @return The verticalAccuracy.
      */
     @java.lang.Deprecated
@@ -4455,7 +4455,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.VehicleLocation.speed_kmph is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=233
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=234
      * @return Whether the speedKmph field is set.
      */
     @java.lang.Deprecated
@@ -4473,7 +4473,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.VehicleLocation.speed_kmph is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=233
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=234
      * @return The speedKmph.
      */
     @java.lang.Deprecated
@@ -6134,7 +6134,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
      * </code>
      *
      * @deprecated maps.fleetengine.v1.VehicleLocation.num_stale_updates is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=268
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=269
      * @return Whether the numStaleUpdates field is set.
      */
     @java.lang.Deprecated
@@ -6154,7 +6154,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
      * </code>
      *
      * @deprecated maps.fleetengine.v1.VehicleLocation.num_stale_updates is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=268
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=269
      * @return The numStaleUpdates.
      */
     @java.lang.Deprecated
@@ -7637,7 +7637,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
      * <code>bool road_snapped = 26 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.VehicleLocation.road_snapped is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=297
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=298
      * @return The roadSnapped.
      */
     @java.lang.Override
@@ -7655,7 +7655,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
      * <code>bool road_snapped = 26 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.VehicleLocation.road_snapped is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=297
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=298
      * @param value The roadSnapped to set.
      * @return This builder for chaining.
      */
@@ -7677,7 +7677,7 @@ public final class VehicleLocation extends com.google.protobuf.GeneratedMessageV
      * <code>bool road_snapped = 26 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.VehicleLocation.road_snapped is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=297
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=298
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

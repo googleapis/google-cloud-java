@@ -801,6 +801,12 @@ public class DeliveryServiceClient implements BackgroundResource {
    *       <li>`planned_location` (optional for `UNAVAILABLE` tasks)
    *       <li>`task_duration`
    *     </ul>
+   *     <p>The following fields can be optionally set:
+   *     <ul>
+   *       <li>`target_time_window`
+   *       <li>`task_tracking_view_config`
+   *       <li>`attributes`
+   *     </ul>
    *     <p>Note: The Task's `name` field is ignored. All other Task fields must not be set;
    *     otherwise, an error is returned.
    * @param taskId Required. The Task ID must be unique, but it should be not a shipment tracking

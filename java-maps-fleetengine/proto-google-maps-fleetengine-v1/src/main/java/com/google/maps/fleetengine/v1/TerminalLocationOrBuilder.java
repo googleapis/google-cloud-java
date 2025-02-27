@@ -69,7 +69,7 @@ public interface TerminalLocationOrBuilder
    * <code>.maps.fleetengine.v1.TerminalPointId terminal_point_id = 2 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalLocation.terminal_point_id is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=58
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=59
    * @return Whether the terminalPointId field is set.
    */
   @java.lang.Deprecated
@@ -84,7 +84,7 @@ public interface TerminalLocationOrBuilder
    * <code>.maps.fleetengine.v1.TerminalPointId terminal_point_id = 2 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalLocation.terminal_point_id is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=58
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=59
    * @return The terminalPointId.
    */
   @java.lang.Deprecated
@@ -111,7 +111,7 @@ public interface TerminalLocationOrBuilder
    * <code>string access_point_id = 3 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalLocation.access_point_id is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=61
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=62
    * @return The accessPointId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface TerminalLocationOrBuilder
    * <code>string access_point_id = 3 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalLocation.access_point_id is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=61
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=62
    * @return The bytes for accessPointId.
    */
   @java.lang.Deprecated
@@ -142,7 +142,7 @@ public interface TerminalLocationOrBuilder
    * <code>string trip_id = 4 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalLocation.trip_id is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=64
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=65
    * @return The tripId.
    */
   @java.lang.Deprecated
@@ -157,7 +157,7 @@ public interface TerminalLocationOrBuilder
    * <code>string trip_id = 4 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalLocation.trip_id is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=64
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=65
    * @return The bytes for tripId.
    */
   @java.lang.Deprecated
@@ -173,7 +173,7 @@ public interface TerminalLocationOrBuilder
    * <code>.maps.fleetengine.v1.WaypointType terminal_location_type = 5 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalLocation.terminal_location_type is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=67
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=68
    * @return The enum numeric value on the wire for terminalLocationType.
    */
   @java.lang.Deprecated
@@ -188,7 +188,7 @@ public interface TerminalLocationOrBuilder
    * <code>.maps.fleetengine.v1.WaypointType terminal_location_type = 5 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalLocation.terminal_location_type is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=67
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=68
    * @return The terminalLocationType.
    */
   @java.lang.Deprecated
