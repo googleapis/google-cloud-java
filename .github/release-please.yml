@@ -19,3 +19,7 @@ branches:
     releaseType: java-backport
     manifest: true
     handleGHRelease: true
+  - branch: 1.50.x
+    releaseType: java-backport
+    manifest: true
+    handleGHRelease: true
