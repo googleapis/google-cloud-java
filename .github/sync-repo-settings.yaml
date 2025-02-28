@@ -81,7 +81,7 @@ branchProtectionRules:
       - 'Kokoro - Test: GraalVM Native Image B'
       - header-check
       - library_generation
-  - pattern: 1.53.x-LTS8
+  - pattern: 1.53.x
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
     requiresCodeOwnerReviews: true
