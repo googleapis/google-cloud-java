@@ -1,5 +1,5 @@
 gapic_generator_version: 2.54.0
-googleapis_commitish: 554575ee8d01d277344ec704e0561e9abc7f57f3
+googleapis_commitish: 68b6376ca75f03094a65ec5bbbc868bd9f058ee3
 libraries_bom_version: 26.55.0
 libraries:
     - api_shortname: bigquerystorage
