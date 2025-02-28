@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.maps.fleetengine.v1.CreateTripRequest;
+import com.google.maps.fleetengine.v1.DeleteTripRequest;
 import com.google.maps.fleetengine.v1.GetTripRequest;
 import com.google.maps.fleetengine.v1.ReportBillableTripRequest;
 import com.google.maps.fleetengine.v1.SearchTripsRequest;
@@ -65,6 +66,14 @@ public class GrpcTripServiceStub extends TripServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Trip.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<DeleteTripRequest, Empty> deleteTripMethodDescriptor =
+      MethodDescriptor.<DeleteTripRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("maps.fleetengine.v1.TripService/DeleteTrip")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteTripRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+
   private static final MethodDescriptor<ReportBillableTripRequest, Empty>
       reportBillableTripMethodDescriptor =
           MethodDescriptor.<ReportBillableTripRequest, Empty>newBuilder()
@@ -95,6 +104,7 @@ public class GrpcTripServiceStub extends TripServiceStub {
 
   private final UnaryCallable<CreateTripRequest, Trip> createTripCallable;
   private final UnaryCallable<GetTripRequest, Trip> getTripCallable;
+  private final UnaryCallable<DeleteTripRequest, Empty> deleteTripCallable;
   private final UnaryCallable<ReportBillableTripRequest, Empty> reportBillableTripCallable;
   private final UnaryCallable<SearchTripsRequest, SearchTripsResponse> searchTripsCallable;
   private final UnaryCallable<SearchTripsRequest, SearchTripsPagedResponse>
@@ -108,6 +118,8 @@ public class GrpcTripServiceStub extends TripServiceStub {
   private static final PathTemplate CREATE_TRIP_0_PATH_TEMPLATE =
       PathTemplate.create("{provider_id=providers/*}");
   private static final PathTemplate GET_TRIP_0_PATH_TEMPLATE =
+      PathTemplate.create("{provider_id=providers/*}");
+  private static final PathTemplate DELETE_TRIP_0_PATH_TEMPLATE =
       PathTemplate.create("{provider_id=providers/*}");
   private static final PathTemplate REPORT_BILLABLE_TRIP_0_PATH_TEMPLATE =
       PathTemplate.create("{provider_id=providers/*}");
@@ -174,6 +186,16 @@ public class GrpcTripServiceStub extends TripServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<DeleteTripRequest, Empty> deleteTripTransportSettings =
+        GrpcCallSettings.<DeleteTripRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTripMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "provider_id", DELETE_TRIP_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ReportBillableTripRequest, Empty> reportBillableTripTransportSettings =
         GrpcCallSettings.<ReportBillableTripRequest, Empty>newBuilder()
             .setMethodDescriptor(reportBillableTripMethodDescriptor)
@@ -212,6 +234,9 @@ public class GrpcTripServiceStub extends TripServiceStub {
     this.getTripCallable =
         callableFactory.createUnaryCallable(
             getTripTransportSettings, settings.getTripSettings(), clientContext);
+    this.deleteTripCallable =
+        callableFactory.createUnaryCallable(
+            deleteTripTransportSettings, settings.deleteTripSettings(), clientContext);
     this.reportBillableTripCallable =
         callableFactory.createUnaryCallable(
             reportBillableTripTransportSettings,
@@ -243,6 +268,11 @@ public class GrpcTripServiceStub extends TripServiceStub {
   @Override
   public UnaryCallable<GetTripRequest, Trip> getTripCallable() {
     return getTripCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteTripRequest, Empty> deleteTripCallable() {
+    return deleteTripCallable;
   }
 
   @Override

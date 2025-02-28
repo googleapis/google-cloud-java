@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.maps.fleetengine.delivery.v1.stub.DeliveryServiceStubSettings;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -101,6 +102,11 @@ public class DeliveryServiceSettings extends ClientSettings<DeliveryServiceSetti
     return ((DeliveryServiceStubSettings) getStubSettings()).getDeliveryVehicleSettings();
   }
 
+  /** Returns the object with the settings used for calls to deleteDeliveryVehicle. */
+  public UnaryCallSettings<DeleteDeliveryVehicleRequest, Empty> deleteDeliveryVehicleSettings() {
+    return ((DeliveryServiceStubSettings) getStubSettings()).deleteDeliveryVehicleSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateDeliveryVehicle. */
   public UnaryCallSettings<UpdateDeliveryVehicleRequest, DeliveryVehicle>
       updateDeliveryVehicleSettings() {
@@ -121,6 +127,11 @@ public class DeliveryServiceSettings extends ClientSettings<DeliveryServiceSetti
   /** Returns the object with the settings used for calls to getTask. */
   public UnaryCallSettings<GetTaskRequest, Task> getTaskSettings() {
     return ((DeliveryServiceStubSettings) getStubSettings()).getTaskSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTask. */
+  public UnaryCallSettings<DeleteTaskRequest, Empty> deleteTaskSettings() {
+    return ((DeliveryServiceStubSettings) getStubSettings()).deleteTaskSettings();
   }
 
   /** Returns the object with the settings used for calls to updateTask. */
@@ -273,6 +284,12 @@ public class DeliveryServiceSettings extends ClientSettings<DeliveryServiceSetti
       return getStubSettingsBuilder().getDeliveryVehicleSettings();
     }
 
+    /** Returns the builder for the settings used for calls to deleteDeliveryVehicle. */
+    public UnaryCallSettings.Builder<DeleteDeliveryVehicleRequest, Empty>
+        deleteDeliveryVehicleSettings() {
+      return getStubSettingsBuilder().deleteDeliveryVehicleSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updateDeliveryVehicle. */
     public UnaryCallSettings.Builder<UpdateDeliveryVehicleRequest, DeliveryVehicle>
         updateDeliveryVehicleSettings() {
@@ -293,6 +310,11 @@ public class DeliveryServiceSettings extends ClientSettings<DeliveryServiceSetti
     /** Returns the builder for the settings used for calls to getTask. */
     public UnaryCallSettings.Builder<GetTaskRequest, Task> getTaskSettings() {
       return getStubSettingsBuilder().getTaskSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTask. */
+    public UnaryCallSettings.Builder<DeleteTaskRequest, Empty> deleteTaskSettings() {
+      return getStubSettingsBuilder().deleteTaskSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateTask. */

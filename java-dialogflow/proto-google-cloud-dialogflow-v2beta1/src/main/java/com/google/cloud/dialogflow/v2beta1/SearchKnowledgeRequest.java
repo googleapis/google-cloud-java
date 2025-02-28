@@ -313,6 +313,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Filter specification for data store queries.
+     *
+     * Maps from datastore name to the filter expression for that datastore. Do
+     * not specify more than one FilterSpecs for each datastore name. If
+     * multiple FilterSpecs are provided for the same datastore name, the
+     * behavior is undefined.
      * </pre>
      *
      * <code>
@@ -327,6 +332,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Filter specification for data store queries.
+     *
+     * Maps from datastore name to the filter expression for that datastore. Do
+     * not specify more than one FilterSpecs for each datastore name. If
+     * multiple FilterSpecs are provided for the same datastore name, the
+     * behavior is undefined.
      * </pre>
      *
      * <code>
@@ -340,6 +350,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Filter specification for data store queries.
+     *
+     * Maps from datastore name to the filter expression for that datastore. Do
+     * not specify more than one FilterSpecs for each datastore name. If
+     * multiple FilterSpecs are provided for the same datastore name, the
+     * behavior is undefined.
      * </pre>
      *
      * <code>
@@ -352,6 +367,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Filter specification for data store queries.
+     *
+     * Maps from datastore name to the filter expression for that datastore. Do
+     * not specify more than one FilterSpecs for each datastore name. If
+     * multiple FilterSpecs are provided for the same datastore name, the
+     * behavior is undefined.
      * </pre>
      *
      * <code>
@@ -368,6 +388,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Filter specification for data store queries.
+     *
+     * Maps from datastore name to the filter expression for that datastore. Do
+     * not specify more than one FilterSpecs for each datastore name. If
+     * multiple FilterSpecs are provided for the same datastore name, the
+     * behavior is undefined.
      * </pre>
      *
      * <code>
@@ -575,6 +600,10 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Boost specifications for data stores.
+     *
+     * Maps from datastore name to their boost configuration. Do not specify
+     * more than one BoostSpecs for each datastore name. If multiple BoostSpecs
+     * are provided for the same datastore name, the behavior is undefined.
      * </pre>
      *
      * Protobuf type {@code
@@ -628,7 +657,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
          *
          * <pre>
          * Optional. Condition boost specifications. If a document matches
-         * multiple conditions in the specifictions, boost scores from these
+         * multiple conditions in the specifications, boost scores from these
          * specifications are all applied and combined in a non-linear way.
          * Maximum number of specifications is 20.
          * </pre>
@@ -646,7 +675,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
          *
          * <pre>
          * Optional. Condition boost specifications. If a document matches
-         * multiple conditions in the specifictions, boost scores from these
+         * multiple conditions in the specifications, boost scores from these
          * specifications are all applied and combined in a non-linear way.
          * Maximum number of specifications is 20.
          * </pre>
@@ -663,7 +692,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
          *
          * <pre>
          * Optional. Condition boost specifications. If a document matches
-         * multiple conditions in the specifictions, boost scores from these
+         * multiple conditions in the specifications, boost scores from these
          * specifications are all applied and combined in a non-linear way.
          * Maximum number of specifications is 20.
          * </pre>
@@ -678,7 +707,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
          *
          * <pre>
          * Optional. Condition boost specifications. If a document matches
-         * multiple conditions in the specifictions, boost scores from these
+         * multiple conditions in the specifications, boost scores from these
          * specifications are all applied and combined in a non-linear way.
          * Maximum number of specifications is 20.
          * </pre>
@@ -697,7 +726,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
          *
          * <pre>
          * Optional. Condition boost specifications. If a document matches
-         * multiple conditions in the specifictions, boost scores from these
+         * multiple conditions in the specifications, boost scores from these
          * specifications are all applied and combined in a non-linear way.
          * Maximum number of specifications is 20.
          * </pre>
@@ -5380,7 +5409,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
          *
          * <pre>
          * Optional. Condition boost specifications. If a document matches
-         * multiple conditions in the specifictions, boost scores from these
+         * multiple conditions in the specifications, boost scores from these
          * specifications are all applied and combined in a non-linear way.
          * Maximum number of specifications is 20.
          * </pre>
@@ -5401,7 +5430,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
          *
          * <pre>
          * Optional. Condition boost specifications. If a document matches
-         * multiple conditions in the specifictions, boost scores from these
+         * multiple conditions in the specifications, boost scores from these
          * specifications are all applied and combined in a non-linear way.
          * Maximum number of specifications is 20.
          * </pre>
@@ -5423,7 +5452,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
          *
          * <pre>
          * Optional. Condition boost specifications. If a document matches
-         * multiple conditions in the specifictions, boost scores from these
+         * multiple conditions in the specifications, boost scores from these
          * specifications are all applied and combined in a non-linear way.
          * Maximum number of specifications is 20.
          * </pre>
@@ -5441,7 +5470,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
          *
          * <pre>
          * Optional. Condition boost specifications. If a document matches
-         * multiple conditions in the specifictions, boost scores from these
+         * multiple conditions in the specifications, boost scores from these
          * specifications are all applied and combined in a non-linear way.
          * Maximum number of specifications is 20.
          * </pre>
@@ -5461,7 +5490,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
          *
          * <pre>
          * Optional. Condition boost specifications. If a document matches
-         * multiple conditions in the specifictions, boost scores from these
+         * multiple conditions in the specifications, boost scores from these
          * specifications are all applied and combined in a non-linear way.
          * Maximum number of specifications is 20.
          * </pre>
@@ -5976,7 +6005,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            *
            * <pre>
            * Optional. Condition boost specifications. If a document matches
-           * multiple conditions in the specifictions, boost scores from these
+           * multiple conditions in the specifications, boost scores from these
            * specifications are all applied and combined in a non-linear way.
            * Maximum number of specifications is 20.
            * </pre>
@@ -6000,7 +6029,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            *
            * <pre>
            * Optional. Condition boost specifications. If a document matches
-           * multiple conditions in the specifictions, boost scores from these
+           * multiple conditions in the specifications, boost scores from these
            * specifications are all applied and combined in a non-linear way.
            * Maximum number of specifications is 20.
            * </pre>
@@ -6021,7 +6050,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            *
            * <pre>
            * Optional. Condition boost specifications. If a document matches
-           * multiple conditions in the specifictions, boost scores from these
+           * multiple conditions in the specifications, boost scores from these
            * specifications are all applied and combined in a non-linear way.
            * Maximum number of specifications is 20.
            * </pre>
@@ -6044,7 +6073,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            *
            * <pre>
            * Optional. Condition boost specifications. If a document matches
-           * multiple conditions in the specifictions, boost scores from these
+           * multiple conditions in the specifications, boost scores from these
            * specifications are all applied and combined in a non-linear way.
            * Maximum number of specifications is 20.
            * </pre>
@@ -6075,7 +6104,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            *
            * <pre>
            * Optional. Condition boost specifications. If a document matches
-           * multiple conditions in the specifictions, boost scores from these
+           * multiple conditions in the specifications, boost scores from these
            * specifications are all applied and combined in a non-linear way.
            * Maximum number of specifications is 20.
            * </pre>
@@ -6103,7 +6132,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            *
            * <pre>
            * Optional. Condition boost specifications. If a document matches
-           * multiple conditions in the specifictions, boost scores from these
+           * multiple conditions in the specifications, boost scores from these
            * specifications are all applied and combined in a non-linear way.
            * Maximum number of specifications is 20.
            * </pre>
@@ -6133,7 +6162,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            *
            * <pre>
            * Optional. Condition boost specifications. If a document matches
-           * multiple conditions in the specifictions, boost scores from these
+           * multiple conditions in the specifications, boost scores from these
            * specifications are all applied and combined in a non-linear way.
            * Maximum number of specifications is 20.
            * </pre>
@@ -6164,7 +6193,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            *
            * <pre>
            * Optional. Condition boost specifications. If a document matches
-           * multiple conditions in the specifictions, boost scores from these
+           * multiple conditions in the specifications, boost scores from these
            * specifications are all applied and combined in a non-linear way.
            * Maximum number of specifications is 20.
            * </pre>
@@ -6191,7 +6220,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            *
            * <pre>
            * Optional. Condition boost specifications. If a document matches
-           * multiple conditions in the specifictions, boost scores from these
+           * multiple conditions in the specifications, boost scores from these
            * specifications are all applied and combined in a non-linear way.
            * Maximum number of specifications is 20.
            * </pre>
@@ -6219,7 +6248,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            *
            * <pre>
            * Optional. Condition boost specifications. If a document matches
-           * multiple conditions in the specifictions, boost scores from these
+           * multiple conditions in the specifications, boost scores from these
            * specifications are all applied and combined in a non-linear way.
            * Maximum number of specifications is 20.
            * </pre>
@@ -6248,7 +6277,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            *
            * <pre>
            * Optional. Condition boost specifications. If a document matches
-           * multiple conditions in the specifictions, boost scores from these
+           * multiple conditions in the specifications, boost scores from these
            * specifications are all applied and combined in a non-linear way.
            * Maximum number of specifications is 20.
            * </pre>
@@ -6272,7 +6301,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            *
            * <pre>
            * Optional. Condition boost specifications. If a document matches
-           * multiple conditions in the specifictions, boost scores from these
+           * multiple conditions in the specifications, boost scores from these
            * specifications are all applied and combined in a non-linear way.
            * Maximum number of specifications is 20.
            * </pre>
@@ -6296,7 +6325,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            *
            * <pre>
            * Optional. Condition boost specifications. If a document matches
-           * multiple conditions in the specifictions, boost scores from these
+           * multiple conditions in the specifications, boost scores from these
            * specifications are all applied and combined in a non-linear way.
            * Maximum number of specifications is 20.
            * </pre>
@@ -6315,7 +6344,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            *
            * <pre>
            * Optional. Condition boost specifications. If a document matches
-           * multiple conditions in the specifictions, boost scores from these
+           * multiple conditions in the specifications, boost scores from these
            * specifications are all applied and combined in a non-linear way.
            * Maximum number of specifications is 20.
            * </pre>
@@ -6338,7 +6367,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            *
            * <pre>
            * Optional. Condition boost specifications. If a document matches
-           * multiple conditions in the specifictions, boost scores from these
+           * multiple conditions in the specifications, boost scores from these
            * specifications are all applied and combined in a non-linear way.
            * Maximum number of specifications is 20.
            * </pre>
@@ -6363,7 +6392,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            *
            * <pre>
            * Optional. Condition boost specifications. If a document matches
-           * multiple conditions in the specifictions, boost scores from these
+           * multiple conditions in the specifications, boost scores from these
            * specifications are all applied and combined in a non-linear way.
            * Maximum number of specifications is 20.
            * </pre>
@@ -6385,7 +6414,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            *
            * <pre>
            * Optional. Condition boost specifications. If a document matches
-           * multiple conditions in the specifictions, boost scores from these
+           * multiple conditions in the specifications, boost scores from these
            * specifications are all applied and combined in a non-linear way.
            * Maximum number of specifications is 20.
            * </pre>
@@ -6408,7 +6437,7 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
            *
            * <pre>
            * Optional. Condition boost specifications. If a document matches
-           * multiple conditions in the specifictions, boost scores from these
+           * multiple conditions in the specifications, boost scores from these
            * specifications are all applied and combined in a non-linear way.
            * Maximum number of specifications is 20.
            * </pre>
@@ -6908,6 +6937,10 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Boost specifications for data stores.
+       *
+       * Maps from datastore name to their boost configuration. Do not specify
+       * more than one BoostSpecs for each datastore name. If multiple BoostSpecs
+       * are provided for the same datastore name, the behavior is undefined.
        * </pre>
        *
        * Protobuf type {@code
@@ -9116,6 +9149,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Filter specification for data store queries.
+     *
+     * Maps from datastore name to the filter expression for that datastore. Do
+     * not specify more than one FilterSpecs for each datastore name. If
+     * multiple FilterSpecs are provided for the same datastore name, the
+     * behavior is undefined.
      * </pre>
      *
      * <code>
@@ -9133,6 +9171,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Filter specification for data store queries.
+     *
+     * Maps from datastore name to the filter expression for that datastore. Do
+     * not specify more than one FilterSpecs for each datastore name. If
+     * multiple FilterSpecs are provided for the same datastore name, the
+     * behavior is undefined.
      * </pre>
      *
      * <code>
@@ -9152,6 +9195,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Filter specification for data store queries.
+     *
+     * Maps from datastore name to the filter expression for that datastore. Do
+     * not specify more than one FilterSpecs for each datastore name. If
+     * multiple FilterSpecs are provided for the same datastore name, the
+     * behavior is undefined.
      * </pre>
      *
      * <code>
@@ -9167,6 +9215,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Filter specification for data store queries.
+     *
+     * Maps from datastore name to the filter expression for that datastore. Do
+     * not specify more than one FilterSpecs for each datastore name. If
+     * multiple FilterSpecs are provided for the same datastore name, the
+     * behavior is undefined.
      * </pre>
      *
      * <code>
@@ -9183,6 +9236,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Filter specification for data store queries.
+     *
+     * Maps from datastore name to the filter expression for that datastore. Do
+     * not specify more than one FilterSpecs for each datastore name. If
+     * multiple FilterSpecs are provided for the same datastore name, the
+     * behavior is undefined.
      * </pre>
      *
      * <code>
@@ -10140,6 +10198,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Filter specification for data store queries.
+       *
+       * Maps from datastore name to the filter expression for that datastore. Do
+       * not specify more than one FilterSpecs for each datastore name. If
+       * multiple FilterSpecs are provided for the same datastore name, the
+       * behavior is undefined.
        * </pre>
        *
        * <code>
@@ -10160,6 +10223,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Filter specification for data store queries.
+       *
+       * Maps from datastore name to the filter expression for that datastore. Do
+       * not specify more than one FilterSpecs for each datastore name. If
+       * multiple FilterSpecs are provided for the same datastore name, the
+       * behavior is undefined.
        * </pre>
        *
        * <code>
@@ -10178,6 +10246,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Filter specification for data store queries.
+       *
+       * Maps from datastore name to the filter expression for that datastore. Do
+       * not specify more than one FilterSpecs for each datastore name. If
+       * multiple FilterSpecs are provided for the same datastore name, the
+       * behavior is undefined.
        * </pre>
        *
        * <code>
@@ -10197,6 +10270,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Filter specification for data store queries.
+       *
+       * Maps from datastore name to the filter expression for that datastore. Do
+       * not specify more than one FilterSpecs for each datastore name. If
+       * multiple FilterSpecs are provided for the same datastore name, the
+       * behavior is undefined.
        * </pre>
        *
        * <code>
@@ -10224,6 +10302,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Filter specification for data store queries.
+       *
+       * Maps from datastore name to the filter expression for that datastore. Do
+       * not specify more than one FilterSpecs for each datastore name. If
+       * multiple FilterSpecs are provided for the same datastore name, the
+       * behavior is undefined.
        * </pre>
        *
        * <code>
@@ -10249,6 +10332,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Filter specification for data store queries.
+       *
+       * Maps from datastore name to the filter expression for that datastore. Do
+       * not specify more than one FilterSpecs for each datastore name. If
+       * multiple FilterSpecs are provided for the same datastore name, the
+       * behavior is undefined.
        * </pre>
        *
        * <code>
@@ -10275,6 +10363,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Filter specification for data store queries.
+       *
+       * Maps from datastore name to the filter expression for that datastore. Do
+       * not specify more than one FilterSpecs for each datastore name. If
+       * multiple FilterSpecs are provided for the same datastore name, the
+       * behavior is undefined.
        * </pre>
        *
        * <code>
@@ -10302,6 +10395,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Filter specification for data store queries.
+       *
+       * Maps from datastore name to the filter expression for that datastore. Do
+       * not specify more than one FilterSpecs for each datastore name. If
+       * multiple FilterSpecs are provided for the same datastore name, the
+       * behavior is undefined.
        * </pre>
        *
        * <code>
@@ -10326,6 +10424,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Filter specification for data store queries.
+       *
+       * Maps from datastore name to the filter expression for that datastore. Do
+       * not specify more than one FilterSpecs for each datastore name. If
+       * multiple FilterSpecs are provided for the same datastore name, the
+       * behavior is undefined.
        * </pre>
        *
        * <code>
@@ -10351,6 +10454,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Filter specification for data store queries.
+       *
+       * Maps from datastore name to the filter expression for that datastore. Do
+       * not specify more than one FilterSpecs for each datastore name. If
+       * multiple FilterSpecs are provided for the same datastore name, the
+       * behavior is undefined.
        * </pre>
        *
        * <code>
@@ -10377,6 +10485,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Filter specification for data store queries.
+       *
+       * Maps from datastore name to the filter expression for that datastore. Do
+       * not specify more than one FilterSpecs for each datastore name. If
+       * multiple FilterSpecs are provided for the same datastore name, the
+       * behavior is undefined.
        * </pre>
        *
        * <code>
@@ -10398,6 +10511,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Filter specification for data store queries.
+       *
+       * Maps from datastore name to the filter expression for that datastore. Do
+       * not specify more than one FilterSpecs for each datastore name. If
+       * multiple FilterSpecs are provided for the same datastore name, the
+       * behavior is undefined.
        * </pre>
        *
        * <code>
@@ -10419,6 +10537,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Filter specification for data store queries.
+       *
+       * Maps from datastore name to the filter expression for that datastore. Do
+       * not specify more than one FilterSpecs for each datastore name. If
+       * multiple FilterSpecs are provided for the same datastore name, the
+       * behavior is undefined.
        * </pre>
        *
        * <code>
@@ -10435,6 +10558,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Filter specification for data store queries.
+       *
+       * Maps from datastore name to the filter expression for that datastore. Do
+       * not specify more than one FilterSpecs for each datastore name. If
+       * multiple FilterSpecs are provided for the same datastore name, the
+       * behavior is undefined.
        * </pre>
        *
        * <code>
@@ -10455,6 +10583,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Filter specification for data store queries.
+       *
+       * Maps from datastore name to the filter expression for that datastore. Do
+       * not specify more than one FilterSpecs for each datastore name. If
+       * multiple FilterSpecs are provided for the same datastore name, the
+       * behavior is undefined.
        * </pre>
        *
        * <code>
@@ -10477,6 +10610,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Filter specification for data store queries.
+       *
+       * Maps from datastore name to the filter expression for that datastore. Do
+       * not specify more than one FilterSpecs for each datastore name. If
+       * multiple FilterSpecs are provided for the same datastore name, the
+       * behavior is undefined.
        * </pre>
        *
        * <code>
@@ -10496,6 +10634,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Filter specification for data store queries.
+       *
+       * Maps from datastore name to the filter expression for that datastore. Do
+       * not specify more than one FilterSpecs for each datastore name. If
+       * multiple FilterSpecs are provided for the same datastore name, the
+       * behavior is undefined.
        * </pre>
        *
        * <code>
@@ -10516,6 +10659,11 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Filter specification for data store queries.
+       *
+       * Maps from datastore name to the filter expression for that datastore. Do
+       * not specify more than one FilterSpecs for each datastore name. If
+       * multiple FilterSpecs are provided for the same datastore name, the
+       * behavior is undefined.
        * </pre>
        *
        * <code>

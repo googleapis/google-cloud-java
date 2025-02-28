@@ -30,6 +30,7 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Int32Value;
 import com.google.protobuf.Timestamp;
@@ -229,6 +230,76 @@ public class DeliveryServiceClientTest {
     try {
       String name = "name3373707";
       client.getDeliveryVehicle(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDeliveryVehicleTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDeliveryService.addResponse(expectedResponse);
+
+    DeliveryVehicleName name = DeliveryVehicleName.of("[PROVIDER]", "[VEHICLE]");
+
+    client.deleteDeliveryVehicle(name);
+
+    List<AbstractMessage> actualRequests = mockDeliveryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDeliveryVehicleRequest actualRequest =
+        ((DeleteDeliveryVehicleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDeliveryVehicleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeliveryService.addException(exception);
+
+    try {
+      DeliveryVehicleName name = DeliveryVehicleName.of("[PROVIDER]", "[VEHICLE]");
+      client.deleteDeliveryVehicle(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDeliveryVehicleTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDeliveryService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteDeliveryVehicle(name);
+
+    List<AbstractMessage> actualRequests = mockDeliveryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDeliveryVehicleRequest actualRequest =
+        ((DeleteDeliveryVehicleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDeliveryVehicleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeliveryService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteDeliveryVehicle(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -478,6 +549,74 @@ public class DeliveryServiceClientTest {
     try {
       String name = "name3373707";
       client.getTask(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteTaskTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDeliveryService.addResponse(expectedResponse);
+
+    TaskName name = TaskName.of("[PROVIDER]", "[TASK]");
+
+    client.deleteTask(name);
+
+    List<AbstractMessage> actualRequests = mockDeliveryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteTaskRequest actualRequest = ((DeleteTaskRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteTaskExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeliveryService.addException(exception);
+
+    try {
+      TaskName name = TaskName.of("[PROVIDER]", "[TASK]");
+      client.deleteTask(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteTaskTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDeliveryService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteTask(name);
+
+    List<AbstractMessage> actualRequests = mockDeliveryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteTaskRequest actualRequest = ((DeleteTaskRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteTaskExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeliveryService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteTask(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

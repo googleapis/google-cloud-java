@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.maps.fleetengine.delivery.v1.stub.DeliveryServiceStub;
 import com.google.maps.fleetengine.delivery.v1.stub.DeliveryServiceStubSettings;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
@@ -104,6 +105,26 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> DeleteDeliveryVehicle</td>
+ *      <td><p> Deletes a DeliveryVehicle from the Fleet Engine.
+ * <p>  Returns FAILED_PRECONDITION if the DeliveryVehicle has OPEN Tasks assigned to it.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteDeliveryVehicle(DeleteDeliveryVehicleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteDeliveryVehicle(DeliveryVehicleName name)
+ *           <li><p> deleteDeliveryVehicle(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteDeliveryVehicleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> UpdateDeliveryVehicle</td>
  *      <td><p> Writes updated `DeliveryVehicle` data to Fleet Engine, and assigns `Tasks` to the `DeliveryVehicle`. You cannot update the name of the `DeliveryVehicle`. You &#42;can&#42; update `remaining_vehicle_journey_segments`, but it must contain all of the `VehicleJourneySegment`s to be persisted on the `DeliveryVehicle`. The `task_id`s are retrieved from `remaining_vehicle_journey_segments`, and their corresponding `Tasks` are assigned to the `DeliveryVehicle` if they have not yet been assigned.</td>
  *      <td>
@@ -169,6 +190,26 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getTaskCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteTask</td>
+ *      <td><p> Deletes a single Task.
+ * <p>  Returns FAILED_PRECONDITION if the Task is OPEN and assigned to a DeliveryVehicle.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteTask(DeleteTaskRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteTask(TaskName name)
+ *           <li><p> deleteTask(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteTaskCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -596,6 +637,132 @@ public class DeliveryServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Deletes a DeliveryVehicle from the Fleet Engine.
+   *
+   * <p>Returns FAILED_PRECONDITION if the DeliveryVehicle has OPEN Tasks assigned to it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeliveryServiceClient deliveryServiceClient = DeliveryServiceClient.create()) {
+   *   DeliveryVehicleName name = DeliveryVehicleName.of("[PROVIDER]", "[VEHICLE]");
+   *   deliveryServiceClient.deleteDeliveryVehicle(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Must be in the format
+   *     `providers/{provider}/deliveryVehicles/{delivery_vehicle}`. The `provider` must be the
+   *     Google Cloud Project ID. For example, `sample-cloud-project`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDeliveryVehicle(DeliveryVehicleName name) {
+    DeleteDeliveryVehicleRequest request =
+        DeleteDeliveryVehicleRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteDeliveryVehicle(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a DeliveryVehicle from the Fleet Engine.
+   *
+   * <p>Returns FAILED_PRECONDITION if the DeliveryVehicle has OPEN Tasks assigned to it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeliveryServiceClient deliveryServiceClient = DeliveryServiceClient.create()) {
+   *   String name = DeliveryVehicleName.of("[PROVIDER]", "[VEHICLE]").toString();
+   *   deliveryServiceClient.deleteDeliveryVehicle(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Must be in the format
+   *     `providers/{provider}/deliveryVehicles/{delivery_vehicle}`. The `provider` must be the
+   *     Google Cloud Project ID. For example, `sample-cloud-project`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDeliveryVehicle(String name) {
+    DeleteDeliveryVehicleRequest request =
+        DeleteDeliveryVehicleRequest.newBuilder().setName(name).build();
+    deleteDeliveryVehicle(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a DeliveryVehicle from the Fleet Engine.
+   *
+   * <p>Returns FAILED_PRECONDITION if the DeliveryVehicle has OPEN Tasks assigned to it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeliveryServiceClient deliveryServiceClient = DeliveryServiceClient.create()) {
+   *   DeleteDeliveryVehicleRequest request =
+   *       DeleteDeliveryVehicleRequest.newBuilder()
+   *           .setHeader(DeliveryRequestHeader.newBuilder().build())
+   *           .setName(DeliveryVehicleName.of("[PROVIDER]", "[VEHICLE]").toString())
+   *           .build();
+   *   deliveryServiceClient.deleteDeliveryVehicle(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDeliveryVehicle(DeleteDeliveryVehicleRequest request) {
+    deleteDeliveryVehicleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a DeliveryVehicle from the Fleet Engine.
+   *
+   * <p>Returns FAILED_PRECONDITION if the DeliveryVehicle has OPEN Tasks assigned to it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeliveryServiceClient deliveryServiceClient = DeliveryServiceClient.create()) {
+   *   DeleteDeliveryVehicleRequest request =
+   *       DeleteDeliveryVehicleRequest.newBuilder()
+   *           .setHeader(DeliveryRequestHeader.newBuilder().build())
+   *           .setName(DeliveryVehicleName.of("[PROVIDER]", "[VEHICLE]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       deliveryServiceClient.deleteDeliveryVehicleCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteDeliveryVehicleRequest, Empty> deleteDeliveryVehicleCallable() {
+    return stub.deleteDeliveryVehicleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Writes updated `DeliveryVehicle` data to Fleet Engine, and assigns `Tasks` to the
    * `DeliveryVehicle`. You cannot update the name of the `DeliveryVehicle`. You &#42;can&#42;
    * update `remaining_vehicle_journey_segments`, but it must contain all of the
@@ -999,6 +1166,126 @@ public class DeliveryServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetTaskRequest, Task> getTaskCallable() {
     return stub.getTaskCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Task.
+   *
+   * <p>Returns FAILED_PRECONDITION if the Task is OPEN and assigned to a DeliveryVehicle.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeliveryServiceClient deliveryServiceClient = DeliveryServiceClient.create()) {
+   *   TaskName name = TaskName.of("[PROVIDER]", "[TASK]");
+   *   deliveryServiceClient.deleteTask(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Must be in the format `providers/{provider}/tasks/{task}`. The `provider`
+   *     must be the Google Cloud Project ID. For example, `sample-cloud-project`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTask(TaskName name) {
+    DeleteTaskRequest request =
+        DeleteTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteTask(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Task.
+   *
+   * <p>Returns FAILED_PRECONDITION if the Task is OPEN and assigned to a DeliveryVehicle.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeliveryServiceClient deliveryServiceClient = DeliveryServiceClient.create()) {
+   *   String name = TaskName.of("[PROVIDER]", "[TASK]").toString();
+   *   deliveryServiceClient.deleteTask(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Must be in the format `providers/{provider}/tasks/{task}`. The `provider`
+   *     must be the Google Cloud Project ID. For example, `sample-cloud-project`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTask(String name) {
+    DeleteTaskRequest request = DeleteTaskRequest.newBuilder().setName(name).build();
+    deleteTask(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Task.
+   *
+   * <p>Returns FAILED_PRECONDITION if the Task is OPEN and assigned to a DeliveryVehicle.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeliveryServiceClient deliveryServiceClient = DeliveryServiceClient.create()) {
+   *   DeleteTaskRequest request =
+   *       DeleteTaskRequest.newBuilder()
+   *           .setHeader(DeliveryRequestHeader.newBuilder().build())
+   *           .setName(TaskName.of("[PROVIDER]", "[TASK]").toString())
+   *           .build();
+   *   deliveryServiceClient.deleteTask(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTask(DeleteTaskRequest request) {
+    deleteTaskCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Task.
+   *
+   * <p>Returns FAILED_PRECONDITION if the Task is OPEN and assigned to a DeliveryVehicle.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeliveryServiceClient deliveryServiceClient = DeliveryServiceClient.create()) {
+   *   DeleteTaskRequest request =
+   *       DeleteTaskRequest.newBuilder()
+   *           .setHeader(DeliveryRequestHeader.newBuilder().build())
+   *           .setName(TaskName.of("[PROVIDER]", "[TASK]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = deliveryServiceClient.deleteTaskCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteTaskRequest, Empty> deleteTaskCallable() {
+    return stub.deleteTaskCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

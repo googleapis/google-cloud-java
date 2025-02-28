@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.maps.fleetengine.v1.stub.VehicleServiceStubSettings;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -94,6 +95,11 @@ public class VehicleServiceSettings extends ClientSettings<VehicleServiceSetting
   /** Returns the object with the settings used for calls to getVehicle. */
   public UnaryCallSettings<GetVehicleRequest, Vehicle> getVehicleSettings() {
     return ((VehicleServiceStubSettings) getStubSettings()).getVehicleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteVehicle. */
+  public UnaryCallSettings<DeleteVehicleRequest, Empty> deleteVehicleSettings() {
+    return ((VehicleServiceStubSettings) getStubSettings()).deleteVehicleSettings();
   }
 
   /** Returns the object with the settings used for calls to updateVehicle. */
@@ -222,6 +228,11 @@ public class VehicleServiceSettings extends ClientSettings<VehicleServiceSetting
     /** Returns the builder for the settings used for calls to getVehicle. */
     public UnaryCallSettings.Builder<GetVehicleRequest, Vehicle> getVehicleSettings() {
       return getStubSettingsBuilder().getVehicleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteVehicle. */
+    public UnaryCallSettings.Builder<DeleteVehicleRequest, Empty> deleteVehicleSettings() {
+      return getStubSettingsBuilder().deleteVehicleSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateVehicle. */

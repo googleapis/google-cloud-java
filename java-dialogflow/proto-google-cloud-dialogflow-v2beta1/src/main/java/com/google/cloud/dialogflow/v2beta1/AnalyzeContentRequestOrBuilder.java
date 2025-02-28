@@ -404,8 +404,8 @@ public interface AnalyzeContentRequestOrBuilder
    *
    *
    * <pre>
-   * The unique identifier of the CX page to override the `current_page` in the
-   * session.
+   * The unique identifier of the Dialogflow CX page to override the
+   * `current_page` in the session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
    *
@@ -429,8 +429,8 @@ public interface AnalyzeContentRequestOrBuilder
    *
    *
    * <pre>
-   * The unique identifier of the CX page to override the `current_page` in the
-   * session.
+   * The unique identifier of the Dialogflow CX page to override the
+   * `current_page` in the session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
    *
