@@ -30,3 +30,7 @@ branches:
     handleGHRelease: true
     releaseType: java-backport
     branch: 3.5.x
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-backport
+    branch: 3.11.x
