@@ -22,4 +22,4 @@ branches:
   - releaseType: java-backport
     manifest: true
     handleGHRelease: true
-    branch: 1.53.x-LTS8
+    branch: 1.53.x
