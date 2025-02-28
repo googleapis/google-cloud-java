@@ -12,8 +12,6 @@ branchProtectionRules:
       - units (11)
       - units (17)
       - cla/google
-      # temp disable, will revert after #11221 gets in
-      # - enforcer
       - lint
       - 'Kokoro - Test: Integration'
       - 'Kokoro - Test: GraalVM Native Image A'
@@ -81,6 +79,23 @@ branchProtectionRules:
       - 'Kokoro - Test: GraalVM Native Image B'
       - header-check
       - library_generation
+  - pattern: 1.53.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - units (8)
+      - units (11)
+      - units (17)
+      - cla/google
+      - lint
+      - 'Kokoro - Test: Integration'
+      - 'Kokoro - Test: GraalVM Native Image A'
+      - 'Kokoro - Test: GraalVM Native Image B'
+      - header-check
+      - library_generation
+      - unmanaged_dependency_check
 permissionRules:
   - team: yoshi-admins
     permission: admin
