@@ -32,6 +32,7 @@ import com.google.common.collect.Lists;
 import com.google.maps.fleetengine.delivery.v1.stub.HttpJsonDeliveryServiceStub;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Int32Value;
 import com.google.protobuf.Timestamp;
@@ -89,6 +90,7 @@ public class DeliveryServiceClientHttpJsonTest {
         DeliveryVehicle.newBuilder()
             .setName(DeliveryVehicleName.of("[PROVIDER]", "[VEHICLE]").toString())
             .setLastLocation(DeliveryVehicleLocation.newBuilder().build())
+            .addAllPastLocations(new ArrayList<DeliveryVehicleLocation>())
             .setNavigationStatus(DeliveryVehicleNavigationStatus.forNumber(0))
             .setCurrentRouteSegment(ByteString.EMPTY)
             .setCurrentRouteSegmentEndPoint(LatLng.newBuilder().build())
@@ -146,6 +148,7 @@ public class DeliveryServiceClientHttpJsonTest {
         DeliveryVehicle.newBuilder()
             .setName(DeliveryVehicleName.of("[PROVIDER]", "[VEHICLE]").toString())
             .setLastLocation(DeliveryVehicleLocation.newBuilder().build())
+            .addAllPastLocations(new ArrayList<DeliveryVehicleLocation>())
             .setNavigationStatus(DeliveryVehicleNavigationStatus.forNumber(0))
             .setCurrentRouteSegment(ByteString.EMPTY)
             .setCurrentRouteSegmentEndPoint(LatLng.newBuilder().build())
@@ -198,6 +201,7 @@ public class DeliveryServiceClientHttpJsonTest {
         DeliveryVehicle.newBuilder()
             .setName(DeliveryVehicleName.of("[PROVIDER]", "[VEHICLE]").toString())
             .setLastLocation(DeliveryVehicleLocation.newBuilder().build())
+            .addAllPastLocations(new ArrayList<DeliveryVehicleLocation>())
             .setNavigationStatus(DeliveryVehicleNavigationStatus.forNumber(0))
             .setCurrentRouteSegment(ByteString.EMPTY)
             .setCurrentRouteSegmentEndPoint(LatLng.newBuilder().build())
@@ -245,11 +249,92 @@ public class DeliveryServiceClientHttpJsonTest {
   }
 
   @Test
+  public void deleteDeliveryVehicleTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    DeliveryVehicleName name = DeliveryVehicleName.of("[PROVIDER]", "[VEHICLE]");
+
+    client.deleteDeliveryVehicle(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDeliveryVehicleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DeliveryVehicleName name = DeliveryVehicleName.of("[PROVIDER]", "[VEHICLE]");
+      client.deleteDeliveryVehicle(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDeliveryVehicleTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "providers/provider-8797/deliveryVehicles/deliveryVehicle-8797";
+
+    client.deleteDeliveryVehicle(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDeliveryVehicleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "providers/provider-8797/deliveryVehicles/deliveryVehicle-8797";
+      client.deleteDeliveryVehicle(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void updateDeliveryVehicleTest() throws Exception {
     DeliveryVehicle expectedResponse =
         DeliveryVehicle.newBuilder()
             .setName(DeliveryVehicleName.of("[PROVIDER]", "[VEHICLE]").toString())
             .setLastLocation(DeliveryVehicleLocation.newBuilder().build())
+            .addAllPastLocations(new ArrayList<DeliveryVehicleLocation>())
             .setNavigationStatus(DeliveryVehicleNavigationStatus.forNumber(0))
             .setCurrentRouteSegment(ByteString.EMPTY)
             .setCurrentRouteSegmentEndPoint(LatLng.newBuilder().build())
@@ -264,6 +349,7 @@ public class DeliveryServiceClientHttpJsonTest {
         DeliveryVehicle.newBuilder()
             .setName(DeliveryVehicleName.of("[PROVIDER]", "[VEHICLE]").toString())
             .setLastLocation(DeliveryVehicleLocation.newBuilder().build())
+            .addAllPastLocations(new ArrayList<DeliveryVehicleLocation>())
             .setNavigationStatus(DeliveryVehicleNavigationStatus.forNumber(0))
             .setCurrentRouteSegment(ByteString.EMPTY)
             .setCurrentRouteSegmentEndPoint(LatLng.newBuilder().build())
@@ -304,6 +390,7 @@ public class DeliveryServiceClientHttpJsonTest {
           DeliveryVehicle.newBuilder()
               .setName(DeliveryVehicleName.of("[PROVIDER]", "[VEHICLE]").toString())
               .setLastLocation(DeliveryVehicleLocation.newBuilder().build())
+              .addAllPastLocations(new ArrayList<DeliveryVehicleLocation>())
               .setNavigationStatus(DeliveryVehicleNavigationStatus.forNumber(0))
               .setCurrentRouteSegment(ByteString.EMPTY)
               .setCurrentRouteSegmentEndPoint(LatLng.newBuilder().build())
@@ -532,6 +619,86 @@ public class DeliveryServiceClientHttpJsonTest {
     try {
       String name = "providers/provider-9052/tasks/task-9052";
       client.getTask(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteTaskTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    TaskName name = TaskName.of("[PROVIDER]", "[TASK]");
+
+    client.deleteTask(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteTaskExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TaskName name = TaskName.of("[PROVIDER]", "[TASK]");
+      client.deleteTask(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteTaskTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "providers/provider-9052/tasks/task-9052";
+
+    client.deleteTask(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteTaskExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "providers/provider-9052/tasks/task-9052";
+      client.deleteTask(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

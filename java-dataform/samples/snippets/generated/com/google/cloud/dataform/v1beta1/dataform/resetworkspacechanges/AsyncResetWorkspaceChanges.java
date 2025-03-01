@@ -20,8 +20,8 @@ package com.google.cloud.dataform.v1beta1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.dataform.v1beta1.DataformClient;
 import com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesRequest;
+import com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesResponse;
 import com.google.cloud.dataform.v1beta1.WorkspaceName;
-import com.google.protobuf.Empty;
 import java.util.ArrayList;
 
 public class AsyncResetWorkspaceChanges {
@@ -45,9 +45,10 @@ public class AsyncResetWorkspaceChanges {
               .addAllPaths(new ArrayList<String>())
               .setClean(true)
               .build();
-      ApiFuture<Empty> future = dataformClient.resetWorkspaceChangesCallable().futureCall(request);
+      ApiFuture<ResetWorkspaceChangesResponse> future =
+          dataformClient.resetWorkspaceChangesCallable().futureCall(request);
       // Do something.
-      future.get();
+      ResetWorkspaceChangesResponse response = future.get();
     }
   }
 }

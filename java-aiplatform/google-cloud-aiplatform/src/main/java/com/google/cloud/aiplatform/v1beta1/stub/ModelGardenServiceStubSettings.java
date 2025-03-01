@@ -316,7 +316,12 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
     return deployOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to deployPublisherModel. */
+  /**
+   * Returns the object with the settings used for calls to deployPublisherModel.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeployPublisherModelRequest, Operation> deployPublisherModelSettings() {
     return deployPublisherModelSettings;
   }
@@ -716,7 +721,12 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
       return deployOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deployPublisherModel. */
+    /**
+     * Returns the builder for the settings used for calls to deployPublisherModel.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeployPublisherModelRequest, Operation>
         deployPublisherModelSettings() {
       return deployPublisherModelSettings;

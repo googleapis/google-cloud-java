@@ -124,7 +124,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
    * <code>.maps.fleetengine.v1.TerminalPointId terminal_point_id = 2 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalLocation.terminal_point_id is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=58
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=59
    * @return Whether the terminalPointId field is set.
    */
   @java.lang.Override
@@ -142,7 +142,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
    * <code>.maps.fleetengine.v1.TerminalPointId terminal_point_id = 2 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalLocation.terminal_point_id is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=58
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=59
    * @return The terminalPointId.
    */
   @java.lang.Override
@@ -183,7 +183,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
    * <code>string access_point_id = 3 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalLocation.access_point_id is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=61
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=62
    * @return The accessPointId.
    */
   @java.lang.Override
@@ -209,7 +209,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
    * <code>string access_point_id = 3 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalLocation.access_point_id is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=61
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=62
    * @return The bytes for accessPointId.
    */
   @java.lang.Override
@@ -240,7 +240,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
    * <code>string trip_id = 4 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalLocation.trip_id is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=64
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=65
    * @return The tripId.
    */
   @java.lang.Override
@@ -266,7 +266,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
    * <code>string trip_id = 4 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalLocation.trip_id is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=64
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=65
    * @return The bytes for tripId.
    */
   @java.lang.Override
@@ -295,7 +295,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
    * <code>.maps.fleetengine.v1.WaypointType terminal_location_type = 5 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalLocation.terminal_location_type is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=67
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=68
    * @return The enum numeric value on the wire for terminalLocationType.
    */
   @java.lang.Override
@@ -313,7 +313,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
    * <code>.maps.fleetengine.v1.WaypointType terminal_location_type = 5 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalLocation.terminal_location_type is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=67
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=68
    * @return The terminalLocationType.
    */
   @java.lang.Override
@@ -983,7 +983,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
      * <code>.maps.fleetengine.v1.TerminalPointId terminal_point_id = 2 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.TerminalLocation.terminal_point_id is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=58
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=59
      * @return Whether the terminalPointId field is set.
      */
     @java.lang.Deprecated
@@ -1000,7 +1000,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
      * <code>.maps.fleetengine.v1.TerminalPointId terminal_point_id = 2 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.TerminalLocation.terminal_point_id is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=58
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=59
      * @return The terminalPointId.
      */
     @java.lang.Deprecated
@@ -1177,7 +1177,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
      * <code>string access_point_id = 3 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.TerminalLocation.access_point_id is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=61
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=62
      * @return The accessPointId.
      */
     @java.lang.Deprecated
@@ -1202,7 +1202,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
      * <code>string access_point_id = 3 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.TerminalLocation.access_point_id is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=61
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=62
      * @return The bytes for accessPointId.
      */
     @java.lang.Deprecated
@@ -1227,7 +1227,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
      * <code>string access_point_id = 3 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.TerminalLocation.access_point_id is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=61
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=62
      * @param value The accessPointId to set.
      * @return This builder for chaining.
      */
@@ -1251,7 +1251,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
      * <code>string access_point_id = 3 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.TerminalLocation.access_point_id is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=61
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=62
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1271,7 +1271,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
      * <code>string access_point_id = 3 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.TerminalLocation.access_point_id is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=61
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=62
      * @param value The bytes for accessPointId to set.
      * @return This builder for chaining.
      */
@@ -1298,7 +1298,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
      * <code>string trip_id = 4 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.TerminalLocation.trip_id is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=64
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=65
      * @return The tripId.
      */
     @java.lang.Deprecated
@@ -1323,7 +1323,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
      * <code>string trip_id = 4 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.TerminalLocation.trip_id is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=64
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=65
      * @return The bytes for tripId.
      */
     @java.lang.Deprecated
@@ -1348,7 +1348,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
      * <code>string trip_id = 4 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.TerminalLocation.trip_id is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=64
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=65
      * @param value The tripId to set.
      * @return This builder for chaining.
      */
@@ -1372,7 +1372,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
      * <code>string trip_id = 4 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.TerminalLocation.trip_id is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=64
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=65
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1392,7 +1392,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
      * <code>string trip_id = 4 [deprecated = true];</code>
      *
      * @deprecated maps.fleetengine.v1.TerminalLocation.trip_id is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=64
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=65
      * @param value The bytes for tripId to set.
      * @return This builder for chaining.
      */
@@ -1420,7 +1420,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated maps.fleetengine.v1.TerminalLocation.terminal_location_type is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=67
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=68
      * @return The enum numeric value on the wire for terminalLocationType.
      */
     @java.lang.Override
@@ -1439,7 +1439,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated maps.fleetengine.v1.TerminalLocation.terminal_location_type is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=67
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=68
      * @param value The enum numeric value on the wire for terminalLocationType to set.
      * @return This builder for chaining.
      */
@@ -1461,7 +1461,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated maps.fleetengine.v1.TerminalLocation.terminal_location_type is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=67
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=68
      * @return The terminalLocationType.
      */
     @java.lang.Override
@@ -1482,7 +1482,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated maps.fleetengine.v1.TerminalLocation.terminal_location_type is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=67
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=68
      * @param value The terminalLocationType to set.
      * @return This builder for chaining.
      */
@@ -1507,7 +1507,7 @@ public final class TerminalLocation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated maps.fleetengine.v1.TerminalLocation.terminal_location_type is deprecated. See
-     *     google/maps/fleetengine/v1/fleetengine.proto;l=67
+     *     google/maps/fleetengine/v1/fleetengine.proto;l=68
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

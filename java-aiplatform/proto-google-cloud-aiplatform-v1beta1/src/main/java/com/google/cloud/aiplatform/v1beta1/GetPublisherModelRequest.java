@@ -290,6 +290,27 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     }
   }
 
+  public static final int INCLUDE_EQUIVALENT_MODEL_GARDEN_MODEL_DEPLOYMENT_CONFIGS_FIELD_NUMBER = 7;
+  private boolean includeEquivalentModelGardenModelDeploymentConfigs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to cnclude the deployment configs from the equivalent
+   * Model Garden model if the requested model is a Hugging Face model.
+   * </pre>
+   *
+   * <code>
+   * bool include_equivalent_model_garden_model_deployment_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The includeEquivalentModelGardenModelDeploymentConfigs.
+   */
+  @java.lang.Override
+  public boolean getIncludeEquivalentModelGardenModelDeploymentConfigs() {
+    return includeEquivalentModelGardenModelDeploymentConfigs_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -321,6 +342,9 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(huggingFaceToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, huggingFaceToken_);
     }
+    if (includeEquivalentModelGardenModelDeploymentConfigs_ != false) {
+      output.writeBool(7, includeEquivalentModelGardenModelDeploymentConfigs_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -347,6 +371,11 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(huggingFaceToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, huggingFaceToken_);
     }
+    if (includeEquivalentModelGardenModelDeploymentConfigs_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              7, includeEquivalentModelGardenModelDeploymentConfigs_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -368,6 +397,8 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     if (view_ != other.view_) return false;
     if (getIsHuggingFaceModel() != other.getIsHuggingFaceModel()) return false;
     if (!getHuggingFaceToken().equals(other.getHuggingFaceToken())) return false;
+    if (getIncludeEquivalentModelGardenModelDeploymentConfigs()
+        != other.getIncludeEquivalentModelGardenModelDeploymentConfigs()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -389,6 +420,11 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsHuggingFaceModel());
     hash = (37 * hash) + HUGGING_FACE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getHuggingFaceToken().hashCode();
+    hash = (37 * hash) + INCLUDE_EQUIVALENT_MODEL_GARDEN_MODEL_DEPLOYMENT_CONFIGS_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashBoolean(
+                getIncludeEquivalentModelGardenModelDeploymentConfigs());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -535,6 +571,7 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       view_ = 0;
       isHuggingFaceModel_ = false;
       huggingFaceToken_ = "";
+      includeEquivalentModelGardenModelDeploymentConfigs_ = false;
       return this;
     }
 
@@ -587,6 +624,10 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.huggingFaceToken_ = huggingFaceToken_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.includeEquivalentModelGardenModelDeploymentConfigs_ =
+            includeEquivalentModelGardenModelDeploymentConfigs_;
       }
     }
 
@@ -658,6 +699,10 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.getIncludeEquivalentModelGardenModelDeploymentConfigs() != false) {
+        setIncludeEquivalentModelGardenModelDeploymentConfigs(
+            other.getIncludeEquivalentModelGardenModelDeploymentConfigs());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -714,6 +759,12 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000010;
                 break;
               } // case 50
+            case 56:
+              {
+                includeEquivalentModelGardenModelDeploymentConfigs_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1230,6 +1281,68 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       huggingFaceToken_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private boolean includeEquivalentModelGardenModelDeploymentConfigs_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to cnclude the deployment configs from the equivalent
+     * Model Garden model if the requested model is a Hugging Face model.
+     * </pre>
+     *
+     * <code>
+     * bool include_equivalent_model_garden_model_deployment_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The includeEquivalentModelGardenModelDeploymentConfigs.
+     */
+    @java.lang.Override
+    public boolean getIncludeEquivalentModelGardenModelDeploymentConfigs() {
+      return includeEquivalentModelGardenModelDeploymentConfigs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to cnclude the deployment configs from the equivalent
+     * Model Garden model if the requested model is a Hugging Face model.
+     * </pre>
+     *
+     * <code>
+     * bool include_equivalent_model_garden_model_deployment_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The includeEquivalentModelGardenModelDeploymentConfigs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludeEquivalentModelGardenModelDeploymentConfigs(boolean value) {
+
+      includeEquivalentModelGardenModelDeploymentConfigs_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to cnclude the deployment configs from the equivalent
+     * Model Garden model if the requested model is a Hugging Face model.
+     * </pre>
+     *
+     * <code>
+     * bool include_equivalent_model_garden_model_deployment_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludeEquivalentModelGardenModelDeploymentConfigs() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      includeEquivalentModelGardenModelDeploymentConfigs_ = false;
       onChanged();
       return this;
     }

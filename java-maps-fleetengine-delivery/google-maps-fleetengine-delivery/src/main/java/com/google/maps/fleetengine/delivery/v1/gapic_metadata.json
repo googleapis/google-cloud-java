@@ -19,6 +19,12 @@
             "CreateTask": {
               "methods": ["createTask", "createTask", "createTaskCallable"]
             },
+            "DeleteDeliveryVehicle": {
+              "methods": ["deleteDeliveryVehicle", "deleteDeliveryVehicle", "deleteDeliveryVehicle", "deleteDeliveryVehicleCallable"]
+            },
+            "DeleteTask": {
+              "methods": ["deleteTask", "deleteTask", "deleteTask", "deleteTaskCallable"]
+            },
             "GetDeliveryVehicle": {
               "methods": ["getDeliveryVehicle", "getDeliveryVehicle", "getDeliveryVehicle", "getDeliveryVehicleCallable"]
             },

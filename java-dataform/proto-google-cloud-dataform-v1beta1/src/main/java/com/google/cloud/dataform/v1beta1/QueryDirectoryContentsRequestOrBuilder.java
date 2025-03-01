@@ -103,8 +103,8 @@ public interface QueryDirectoryContentsRequestOrBuilder
    * call. Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to
-   * `QueryDirectoryContents` must match the call that provided the page
-   * token.
+   * `QueryDirectoryContents`, with the exception of `page_size`, must match the
+   * call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -120,8 +120,8 @@ public interface QueryDirectoryContentsRequestOrBuilder
    * call. Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to
-   * `QueryDirectoryContents` must match the call that provided the page
-   * token.
+   * `QueryDirectoryContents`, with the exception of `page_size`, must match the
+   * call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

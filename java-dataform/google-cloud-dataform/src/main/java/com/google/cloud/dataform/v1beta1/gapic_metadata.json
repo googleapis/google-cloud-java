@@ -73,6 +73,9 @@
             "GetCompilationResult": {
               "methods": ["getCompilationResult", "getCompilationResult", "getCompilationResult", "getCompilationResultCallable"]
             },
+            "GetConfig": {
+              "methods": ["getConfig", "getConfig", "getConfig", "getConfigCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },
@@ -160,11 +163,17 @@
             "ResetWorkspaceChanges": {
               "methods": ["resetWorkspaceChanges", "resetWorkspaceChangesCallable"]
             },
+            "SearchFiles": {
+              "methods": ["searchFiles", "searchFilesPagedCallable", "searchFilesCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateConfig": {
+              "methods": ["updateConfig", "updateConfig", "updateConfigCallable"]
             },
             "UpdateReleaseConfig": {
               "methods": ["updateReleaseConfig", "updateReleaseConfig", "updateReleaseConfigCallable"]

@@ -20,8 +20,8 @@ package com.google.cloud.dataform.v1beta1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.dataform.v1beta1.DataformClient;
 import com.google.cloud.dataform.v1beta1.RemoveDirectoryRequest;
+import com.google.cloud.dataform.v1beta1.RemoveDirectoryResponse;
 import com.google.cloud.dataform.v1beta1.WorkspaceName;
-import com.google.protobuf.Empty;
 
 public class AsyncRemoveDirectory {
 
@@ -43,9 +43,10 @@ public class AsyncRemoveDirectory {
                       .toString())
               .setPath("path3433509")
               .build();
-      ApiFuture<Empty> future = dataformClient.removeDirectoryCallable().futureCall(request);
+      ApiFuture<RemoveDirectoryResponse> future =
+          dataformClient.removeDirectoryCallable().futureCall(request);
       // Do something.
-      future.get();
+      RemoveDirectoryResponse response = future.get();
     }
   }
 }

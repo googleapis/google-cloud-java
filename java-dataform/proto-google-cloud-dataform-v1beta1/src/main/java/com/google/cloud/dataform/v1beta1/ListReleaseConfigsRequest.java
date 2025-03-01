@@ -152,8 +152,9 @@ public final class ListReleaseConfigsRequest extends com.google.protobuf.Generat
    * Optional. Page token received from a previous `ListReleaseConfigs` call.
    * Provide this to retrieve the subsequent page.
    *
-   * When paginating, all other parameters provided to `ListReleaseConfigs`
-   * must match the call that provided the page token.
+   * When paginating, all other parameters provided to `ListReleaseConfigs`,
+   * with the exception of `page_size`, must match the call that provided the
+   * page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -179,8 +180,9 @@ public final class ListReleaseConfigsRequest extends com.google.protobuf.Generat
    * Optional. Page token received from a previous `ListReleaseConfigs` call.
    * Provide this to retrieve the subsequent page.
    *
-   * When paginating, all other parameters provided to `ListReleaseConfigs`
-   * must match the call that provided the page token.
+   * When paginating, all other parameters provided to `ListReleaseConfigs`,
+   * with the exception of `page_size`, must match the call that provided the
+   * page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -777,8 +779,9 @@ public final class ListReleaseConfigsRequest extends com.google.protobuf.Generat
      * Optional. Page token received from a previous `ListReleaseConfigs` call.
      * Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to `ListReleaseConfigs`
-     * must match the call that provided the page token.
+     * When paginating, all other parameters provided to `ListReleaseConfigs`,
+     * with the exception of `page_size`, must match the call that provided the
+     * page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -803,8 +806,9 @@ public final class ListReleaseConfigsRequest extends com.google.protobuf.Generat
      * Optional. Page token received from a previous `ListReleaseConfigs` call.
      * Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to `ListReleaseConfigs`
-     * must match the call that provided the page token.
+     * When paginating, all other parameters provided to `ListReleaseConfigs`,
+     * with the exception of `page_size`, must match the call that provided the
+     * page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -829,8 +833,9 @@ public final class ListReleaseConfigsRequest extends com.google.protobuf.Generat
      * Optional. Page token received from a previous `ListReleaseConfigs` call.
      * Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to `ListReleaseConfigs`
-     * must match the call that provided the page token.
+     * When paginating, all other parameters provided to `ListReleaseConfigs`,
+     * with the exception of `page_size`, must match the call that provided the
+     * page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -854,8 +859,9 @@ public final class ListReleaseConfigsRequest extends com.google.protobuf.Generat
      * Optional. Page token received from a previous `ListReleaseConfigs` call.
      * Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to `ListReleaseConfigs`
-     * must match the call that provided the page token.
+     * When paginating, all other parameters provided to `ListReleaseConfigs`,
+     * with the exception of `page_size`, must match the call that provided the
+     * page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -875,8 +881,9 @@ public final class ListReleaseConfigsRequest extends com.google.protobuf.Generat
      * Optional. Page token received from a previous `ListReleaseConfigs` call.
      * Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to `ListReleaseConfigs`
-     * must match the call that provided the page token.
+     * When paginating, all other parameters provided to `ListReleaseConfigs`,
+     * with the exception of `page_size`, must match the call that provided the
+     * page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

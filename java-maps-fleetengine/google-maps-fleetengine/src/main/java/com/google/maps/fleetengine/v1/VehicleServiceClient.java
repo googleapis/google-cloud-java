@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.maps.fleetengine.v1.stub.VehicleServiceStub;
 import com.google.maps.fleetengine.v1.stub.VehicleServiceStubSettings;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -117,6 +118,26 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getVehicleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteVehicle</td>
+ *      <td><p> Deletes a Vehicle from the Fleet Engine.
+ * <p>  Returns FAILED_PRECONDITION if the Vehicle has active Trips. assigned to it.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteVehicle(DeleteVehicleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteVehicle(VehicleName name)
+ *           <li><p> deleteVehicle(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteVehicleCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -459,6 +480,128 @@ public class VehicleServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetVehicleRequest, Vehicle> getVehicleCallable() {
     return stub.getVehicleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Vehicle from the Fleet Engine.
+   *
+   * <p>Returns FAILED_PRECONDITION if the Vehicle has active Trips. assigned to it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VehicleServiceClient vehicleServiceClient = VehicleServiceClient.create()) {
+   *   VehicleName name = VehicleName.of("[PROVIDER]", "[VEHICLE]");
+   *   vehicleServiceClient.deleteVehicle(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Must be in the format `providers/{provider}/vehicles/{vehicle}`. The
+   *     {provider} must be the Project ID (for example, `sample-cloud-project`) of the Google Cloud
+   *     Project of which the service account making this call is a member.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteVehicle(VehicleName name) {
+    DeleteVehicleRequest request =
+        DeleteVehicleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteVehicle(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Vehicle from the Fleet Engine.
+   *
+   * <p>Returns FAILED_PRECONDITION if the Vehicle has active Trips. assigned to it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VehicleServiceClient vehicleServiceClient = VehicleServiceClient.create()) {
+   *   String name = VehicleName.of("[PROVIDER]", "[VEHICLE]").toString();
+   *   vehicleServiceClient.deleteVehicle(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Must be in the format `providers/{provider}/vehicles/{vehicle}`. The
+   *     {provider} must be the Project ID (for example, `sample-cloud-project`) of the Google Cloud
+   *     Project of which the service account making this call is a member.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteVehicle(String name) {
+    DeleteVehicleRequest request = DeleteVehicleRequest.newBuilder().setName(name).build();
+    deleteVehicle(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Vehicle from the Fleet Engine.
+   *
+   * <p>Returns FAILED_PRECONDITION if the Vehicle has active Trips. assigned to it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VehicleServiceClient vehicleServiceClient = VehicleServiceClient.create()) {
+   *   DeleteVehicleRequest request =
+   *       DeleteVehicleRequest.newBuilder()
+   *           .setHeader(RequestHeader.newBuilder().build())
+   *           .setName(VehicleName.of("[PROVIDER]", "[VEHICLE]").toString())
+   *           .build();
+   *   vehicleServiceClient.deleteVehicle(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteVehicle(DeleteVehicleRequest request) {
+    deleteVehicleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Vehicle from the Fleet Engine.
+   *
+   * <p>Returns FAILED_PRECONDITION if the Vehicle has active Trips. assigned to it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VehicleServiceClient vehicleServiceClient = VehicleServiceClient.create()) {
+   *   DeleteVehicleRequest request =
+   *       DeleteVehicleRequest.newBuilder()
+   *           .setHeader(RequestHeader.newBuilder().build())
+   *           .setName(VehicleName.of("[PROVIDER]", "[VEHICLE]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = vehicleServiceClient.deleteVehicleCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteVehicleRequest, Empty> deleteVehicleCallable() {
+    return stub.deleteVehicleCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -209,6 +209,8 @@ public class AgentsClientTest {
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -269,6 +271,8 @@ public class AgentsClientTest {
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -329,6 +333,8 @@ public class AgentsClientTest {
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -392,6 +398,8 @@ public class AgentsClientTest {
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -455,6 +463,8 @@ public class AgentsClientTest {
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockAgents.addResponse(expectedResponse);
 

@@ -41,6 +41,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
   private WorkflowInvocationAction() {
     state_ = 0;
     failureReason_ = "";
+    internalMetadata_ = "";
   }
 
   @java.lang.Override
@@ -344,6 +345,33 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return The bytes for sqlScript.
      */
     com.google.protobuf.ByteString getSqlScriptBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ID of the BigQuery job that executed the SQL in
+     * sql_script. Only set once the job has started to run.
+     * </pre>
+     *
+     * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The jobId.
+     */
+    java.lang.String getJobId();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ID of the BigQuery job that executed the SQL in
+     * sql_script. Only set once the job has started to run.
+     * </pre>
+     *
+     * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for jobId.
+     */
+    com.google.protobuf.ByteString getJobIdBytes();
   }
   /**
    *
@@ -366,6 +394,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
 
     private BigQueryAction() {
       sqlScript_ = "";
+      jobId_ = "";
     }
 
     @java.lang.Override
@@ -441,6 +470,59 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
     }
 
+    public static final int JOB_ID_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object jobId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ID of the BigQuery job that executed the SQL in
+     * sql_script. Only set once the job has started to run.
+     * </pre>
+     *
+     * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The jobId.
+     */
+    @java.lang.Override
+    public java.lang.String getJobId() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ID of the BigQuery job that executed the SQL in
+     * sql_script. Only set once the job has started to run.
+     * </pre>
+     *
+     * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for jobId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getJobIdBytes() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        jobId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -458,6 +540,9 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sqlScript_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sqlScript_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -469,6 +554,9 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sqlScript_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sqlScript_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -488,6 +576,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
           (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction) obj;
 
       if (!getSqlScript().equals(other.getSqlScript())) return false;
+      if (!getJobId().equals(other.getJobId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -501,6 +590,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SQL_SCRIPT_FIELD_NUMBER;
       hash = (53 * hash) + getSqlScript().hashCode();
+      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getJobId().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -652,6 +743,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         super.clear();
         bitField0_ = 0;
         sqlScript_ = "";
+        jobId_ = "";
         return this;
       }
 
@@ -695,6 +787,9 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.sqlScript_ = sqlScript_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.jobId_ = jobId_;
         }
       }
 
@@ -755,6 +850,11 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (!other.getJobId().isEmpty()) {
+          jobId_ = other.jobId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -787,6 +887,12 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 18:
+                {
+                  jobId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -912,6 +1018,117 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         return this;
       }
 
+      private java.lang.Object jobId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The ID of the BigQuery job that executed the SQL in
+       * sql_script. Only set once the job has started to run.
+       * </pre>
+       *
+       * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The jobId.
+       */
+      public java.lang.String getJobId() {
+        java.lang.Object ref = jobId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          jobId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The ID of the BigQuery job that executed the SQL in
+       * sql_script. Only set once the job has started to run.
+       * </pre>
+       *
+       * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for jobId.
+       */
+      public com.google.protobuf.ByteString getJobIdBytes() {
+        java.lang.Object ref = jobId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          jobId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The ID of the BigQuery job that executed the SQL in
+       * sql_script. Only set once the job has started to run.
+       * </pre>
+       *
+       * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        jobId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The ID of the BigQuery job that executed the SQL in
+       * sql_script. Only set once the job has started to run.
+       * </pre>
+       *
+       * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearJobId() {
+        jobId_ = getDefaultInstance().getJobId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The ID of the BigQuery job that executed the SQL in
+       * sql_script. Only set once the job has started to run.
+       * </pre>
+       *
+       * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        jobId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -980,7 +1197,1068 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     }
   }
 
+  public interface NotebookActionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The code contents of a Notebook to be run.
+     * </pre>
+     *
+     * <code>string contents = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The contents.
+     */
+    java.lang.String getContents();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The code contents of a Notebook to be run.
+     * </pre>
+     *
+     * <code>string contents = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for contents.
+     */
+    com.google.protobuf.ByteString getContentsBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ID of the Vertex job that executed the notebook in
+     * contents and also the ID used for the outputs created in Google Cloud
+     * Storage buckets. Only set once the job has started to run.
+     * </pre>
+     *
+     * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The jobId.
+     */
+    java.lang.String getJobId();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ID of the Vertex job that executed the notebook in
+     * contents and also the ID used for the outputs created in Google Cloud
+     * Storage buckets. Only set once the job has started to run.
+     * </pre>
+     *
+     * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for jobId.
+     */
+    com.google.protobuf.ByteString getJobIdBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents a workflow action that will run against a Notebook runtime.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction}
+   */
+  public static final class NotebookAction extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction)
+      NotebookActionOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use NotebookAction.newBuilder() to construct.
+    private NotebookAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private NotebookAction() {
+      contents_ = "";
+      jobId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new NotebookAction();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataform.v1beta1.DataformProto
+          .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_NotebookAction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataform.v1beta1.DataformProto
+          .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_NotebookAction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction.class,
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction.Builder
+                  .class);
+    }
+
+    public static final int CONTENTS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object contents_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The code contents of a Notebook to be run.
+     * </pre>
+     *
+     * <code>string contents = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The contents.
+     */
+    @java.lang.Override
+    public java.lang.String getContents() {
+      java.lang.Object ref = contents_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contents_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The code contents of a Notebook to be run.
+     * </pre>
+     *
+     * <code>string contents = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for contents.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getContentsBytes() {
+      java.lang.Object ref = contents_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        contents_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int JOB_ID_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object jobId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ID of the Vertex job that executed the notebook in
+     * contents and also the ID used for the outputs created in Google Cloud
+     * Storage buckets. Only set once the job has started to run.
+     * </pre>
+     *
+     * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The jobId.
+     */
+    @java.lang.Override
+    public java.lang.String getJobId() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ID of the Vertex job that executed the notebook in
+     * contents and also the ID used for the outputs created in Google Cloud
+     * Storage buckets. Only set once the job has started to run.
+     * </pre>
+     *
+     * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for jobId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getJobIdBytes() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        jobId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contents_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, contents_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contents_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, contents_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction other =
+          (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction) obj;
+
+      if (!getContents().equals(other.getContents())) return false;
+      if (!getJobId().equals(other.getJobId())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CONTENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getContents().hashCode();
+      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getJobId().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a workflow action that will run against a Notebook runtime.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction)
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookActionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_NotebookAction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_NotebookAction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction.class,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        contents_ = "";
+        jobId_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_NotebookAction_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+          getDefaultInstanceForType() {
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction build() {
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+          buildPartial() {
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction result =
+            new com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.contents_ = contents_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.jobId_ = jobId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction) {
+          return mergeFrom(
+              (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction other) {
+        if (other
+            == com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+                .getDefaultInstance()) return this;
+        if (!other.getContents().isEmpty()) {
+          contents_ = other.contents_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getJobId().isEmpty()) {
+          jobId_ = other.jobId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  contents_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  jobId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object contents_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The code contents of a Notebook to be run.
+       * </pre>
+       *
+       * <code>string contents = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The contents.
+       */
+      public java.lang.String getContents() {
+        java.lang.Object ref = contents_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contents_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The code contents of a Notebook to be run.
+       * </pre>
+       *
+       * <code>string contents = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for contents.
+       */
+      public com.google.protobuf.ByteString getContentsBytes() {
+        java.lang.Object ref = contents_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          contents_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The code contents of a Notebook to be run.
+       * </pre>
+       *
+       * <code>string contents = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The contents to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContents(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        contents_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The code contents of a Notebook to be run.
+       * </pre>
+       *
+       * <code>string contents = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearContents() {
+        contents_ = getDefaultInstance().getContents();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The code contents of a Notebook to be run.
+       * </pre>
+       *
+       * <code>string contents = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for contents to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        contents_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object jobId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The ID of the Vertex job that executed the notebook in
+       * contents and also the ID used for the outputs created in Google Cloud
+       * Storage buckets. Only set once the job has started to run.
+       * </pre>
+       *
+       * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The jobId.
+       */
+      public java.lang.String getJobId() {
+        java.lang.Object ref = jobId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          jobId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The ID of the Vertex job that executed the notebook in
+       * contents and also the ID used for the outputs created in Google Cloud
+       * Storage buckets. Only set once the job has started to run.
+       * </pre>
+       *
+       * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for jobId.
+       */
+      public com.google.protobuf.ByteString getJobIdBytes() {
+        java.lang.Object ref = jobId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          jobId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The ID of the Vertex job that executed the notebook in
+       * contents and also the ID used for the outputs created in Google Cloud
+       * Storage buckets. Only set once the job has started to run.
+       * </pre>
+       *
+       * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        jobId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The ID of the Vertex job that executed the notebook in
+       * contents and also the ID used for the outputs created in Google Cloud
+       * Storage buckets. Only set once the job has started to run.
+       * </pre>
+       *
+       * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearJobId() {
+        jobId_ = getDefaultInstance().getJobId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The ID of the Vertex job that executed the notebook in
+       * contents and also the ID used for the outputs created in Google Cloud
+       * Storage buckets. Only set once the job has started to run.
+       * </pre>
+       *
+       * <code>string job_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        jobId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction)
+    private static final com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction();
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NotebookAction> PARSER =
+        new com.google.protobuf.AbstractParser<NotebookAction>() {
+          @java.lang.Override
+          public NotebookAction parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<NotebookAction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NotebookAction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
+  private int actionCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object action_;
+
+  public enum ActionCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    BIGQUERY_ACTION(6),
+    NOTEBOOK_ACTION(8),
+    ACTION_NOT_SET(0);
+    private final int value;
+
+    private ActionCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ActionCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ActionCase forNumber(int value) {
+      switch (value) {
+        case 6:
+          return BIGQUERY_ACTION;
+        case 8:
+          return NOTEBOOK_ACTION;
+        case 0:
+          return ACTION_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ActionCase getActionCase() {
+    return ActionCase.forNumber(actionCase_);
+  }
+
+  public static final int BIGQUERY_ACTION_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's bigquery action details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the bigqueryAction field is set.
+   */
+  @java.lang.Override
+  public boolean hasBigqueryAction() {
+    return actionCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's bigquery action details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bigqueryAction.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
+      getBigqueryAction() {
+    if (actionCase_ == 6) {
+      return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction) action_;
+    }
+    return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's bigquery action details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryActionOrBuilder
+      getBigqueryActionOrBuilder() {
+    if (actionCase_ == 6) {
+      return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction) action_;
+    }
+    return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
+        .getDefaultInstance();
+  }
+
+  public static final int NOTEBOOK_ACTION_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's notebook action details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction notebook_action = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the notebookAction field is set.
+   */
+  @java.lang.Override
+  public boolean hasNotebookAction() {
+    return actionCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's notebook action details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction notebook_action = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The notebookAction.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+      getNotebookAction() {
+    if (actionCase_ == 8) {
+      return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction) action_;
+    }
+    return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's notebook action details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction notebook_action = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookActionOrBuilder
+      getNotebookActionOrBuilder() {
+    if (actionCase_ == 8) {
+      return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction) action_;
+    }
+    return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        .getDefaultInstance();
+  }
+
   public static final int TARGET_FIELD_NUMBER = 1;
   private com.google.cloud.dataform.v1beta1.Target target_;
   /**
@@ -1258,64 +2536,79 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         : invocationTiming_;
   }
 
-  public static final int BIGQUERY_ACTION_FIELD_NUMBER = 6;
-  private com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigqueryAction_;
+  public static final int INTERNAL_METADATA_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object internalMetadata_ = "";
   /**
    *
    *
    * <pre>
-   * Output only. The workflow action's bigquery action details.
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
    * </pre>
    *
-   * <code>
-   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @return Whether the bigqueryAction field is set.
+   * @return Whether the internalMetadata field is set.
    */
   @java.lang.Override
-  public boolean hasBigqueryAction() {
+  public boolean hasInternalMetadata() {
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
    *
    * <pre>
-   * Output only. The workflow action's bigquery action details.
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
    * </pre>
    *
-   * <code>
-   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @return The bigqueryAction.
+   * @return The internalMetadata.
    */
   @java.lang.Override
-  public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
-      getBigqueryAction() {
-    return bigqueryAction_ == null
-        ? com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
-            .getDefaultInstance()
-        : bigqueryAction_;
+  public java.lang.String getInternalMetadata() {
+    java.lang.Object ref = internalMetadata_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      internalMetadata_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * Output only. The workflow action's bigquery action details.
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
    * </pre>
    *
-   * <code>
-   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The bytes for internalMetadata.
    */
   @java.lang.Override
-  public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryActionOrBuilder
-      getBigqueryActionOrBuilder() {
-    return bigqueryAction_ == null
-        ? com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
-            .getDefaultInstance()
-        : bigqueryAction_;
+  public com.google.protobuf.ByteString getInternalMetadataBytes() {
+    java.lang.Object ref = internalMetadata_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      internalMetadata_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1345,11 +2638,19 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(5, getInvocationTiming());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeMessage(6, getBigqueryAction());
+    if (actionCase_ == 6) {
+      output.writeMessage(
+          6, (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction) action_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(failureReason_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, failureReason_);
+    }
+    if (actionCase_ == 8) {
+      output.writeMessage(
+          8, (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction) action_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, internalMetadata_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1373,11 +2674,23 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getInvocationTiming());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getBigqueryAction());
+    if (actionCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6,
+              (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction) action_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(failureReason_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, failureReason_);
+    }
+    if (actionCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8,
+              (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction) action_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, internalMetadata_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1409,9 +2722,20 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     if (hasInvocationTiming()) {
       if (!getInvocationTiming().equals(other.getInvocationTiming())) return false;
     }
-    if (hasBigqueryAction() != other.hasBigqueryAction()) return false;
-    if (hasBigqueryAction()) {
-      if (!getBigqueryAction().equals(other.getBigqueryAction())) return false;
+    if (hasInternalMetadata() != other.hasInternalMetadata()) return false;
+    if (hasInternalMetadata()) {
+      if (!getInternalMetadata().equals(other.getInternalMetadata())) return false;
+    }
+    if (!getActionCase().equals(other.getActionCase())) return false;
+    switch (actionCase_) {
+      case 6:
+        if (!getBigqueryAction().equals(other.getBigqueryAction())) return false;
+        break;
+      case 8:
+        if (!getNotebookAction().equals(other.getNotebookAction())) return false;
+        break;
+      case 0:
+      default:
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1440,9 +2764,21 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       hash = (37 * hash) + INVOCATION_TIMING_FIELD_NUMBER;
       hash = (53 * hash) + getInvocationTiming().hashCode();
     }
-    if (hasBigqueryAction()) {
-      hash = (37 * hash) + BIGQUERY_ACTION_FIELD_NUMBER;
-      hash = (53 * hash) + getBigqueryAction().hashCode();
+    if (hasInternalMetadata()) {
+      hash = (37 * hash) + INTERNAL_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getInternalMetadata().hashCode();
+    }
+    switch (actionCase_) {
+      case 6:
+        hash = (37 * hash) + BIGQUERY_ACTION_FIELD_NUMBER;
+        hash = (53 * hash) + getBigqueryAction().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + NOTEBOOK_ACTION_FIELD_NUMBER;
+        hash = (53 * hash) + getNotebookAction().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1588,7 +2924,6 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         getTargetFieldBuilder();
         getCanonicalTargetFieldBuilder();
         getInvocationTimingFieldBuilder();
-        getBigqueryActionFieldBuilder();
       }
     }
 
@@ -1596,6 +2931,12 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (bigqueryActionBuilder_ != null) {
+        bigqueryActionBuilder_.clear();
+      }
+      if (notebookActionBuilder_ != null) {
+        notebookActionBuilder_.clear();
+      }
       target_ = null;
       if (targetBuilder_ != null) {
         targetBuilder_.dispose();
@@ -1613,11 +2954,9 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         invocationTimingBuilder_.dispose();
         invocationTimingBuilder_ = null;
       }
-      bigqueryAction_ = null;
-      if (bigqueryActionBuilder_ != null) {
-        bigqueryActionBuilder_.dispose();
-        bigqueryActionBuilder_ = null;
-      }
+      internalMetadata_ = "";
+      actionCase_ = 0;
+      action_ = null;
       return this;
     }
 
@@ -1648,6 +2987,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -1655,32 +2995,43 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     private void buildPartial0(com.google.cloud.dataform.v1beta1.WorkflowInvocationAction result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.target_ = targetBuilder_ == null ? target_ : targetBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.canonicalTarget_ =
             canonicalTargetBuilder_ == null ? canonicalTarget_ : canonicalTargetBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.failureReason_ = failureReason_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.invocationTiming_ =
             invocationTimingBuilder_ == null ? invocationTiming_ : invocationTimingBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.bigqueryAction_ =
-            bigqueryActionBuilder_ == null ? bigqueryAction_ : bigqueryActionBuilder_.build();
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.internalMetadata_ = internalMetadata_;
         to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction result) {
+      result.actionCase_ = actionCase_;
+      result.action_ = this.action_;
+      if (actionCase_ == 6 && bigqueryActionBuilder_ != null) {
+        result.action_ = bigqueryActionBuilder_.build();
+      }
+      if (actionCase_ == 8 && notebookActionBuilder_ != null) {
+        result.action_ = notebookActionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1740,14 +3091,32 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       if (!other.getFailureReason().isEmpty()) {
         failureReason_ = other.failureReason_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasInvocationTiming()) {
         mergeInvocationTiming(other.getInvocationTiming());
       }
-      if (other.hasBigqueryAction()) {
-        mergeBigqueryAction(other.getBigqueryAction());
+      if (other.hasInternalMetadata()) {
+        internalMetadata_ = other.internalMetadata_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      switch (other.getActionCase()) {
+        case BIGQUERY_ACTION:
+          {
+            mergeBigqueryAction(other.getBigqueryAction());
+            break;
+          }
+        case NOTEBOOK_ACTION:
+          {
+            mergeNotebookAction(other.getNotebookAction());
+            break;
+          }
+        case ACTION_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1778,40 +3147,52 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
             case 10:
               {
                 input.readMessage(getTargetFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCanonicalTargetFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 32:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(
                     getInvocationTimingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getBigqueryActionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                actionCase_ = 6;
                 break;
               } // case 50
             case 58:
               {
                 failureReason_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(getNotebookActionFieldBuilder().getBuilder(), extensionRegistry);
+                actionCase_ = 8;
+                break;
+              } // case 66
+            case 82:
+              {
+                internalMetadata_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1829,7 +3210,507 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       return this;
     }
 
+    private int actionCase_ = 0;
+    private java.lang.Object action_;
+
+    public ActionCase getActionCase() {
+      return ActionCase.forNumber(actionCase_);
+    }
+
+    public Builder clearAction() {
+      actionCase_ = 0;
+      action_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction,
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction.Builder,
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryActionOrBuilder>
+        bigqueryActionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's bigquery action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the bigqueryAction field is set.
+     */
+    @java.lang.Override
+    public boolean hasBigqueryAction() {
+      return actionCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's bigquery action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bigqueryAction.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
+        getBigqueryAction() {
+      if (bigqueryActionBuilder_ == null) {
+        if (actionCase_ == 6) {
+          return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction)
+              action_;
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
+            .getDefaultInstance();
+      } else {
+        if (actionCase_ == 6) {
+          return bigqueryActionBuilder_.getMessage();
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's bigquery action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setBigqueryAction(
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction value) {
+      if (bigqueryActionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        action_ = value;
+        onChanged();
+      } else {
+        bigqueryActionBuilder_.setMessage(value);
+      }
+      actionCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's bigquery action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setBigqueryAction(
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction.Builder
+            builderForValue) {
+      if (bigqueryActionBuilder_ == null) {
+        action_ = builderForValue.build();
+        onChanged();
+      } else {
+        bigqueryActionBuilder_.setMessage(builderForValue.build());
+      }
+      actionCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's bigquery action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeBigqueryAction(
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction value) {
+      if (bigqueryActionBuilder_ == null) {
+        if (actionCase_ == 6
+            && action_
+                != com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
+                    .getDefaultInstance()) {
+          action_ =
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction.newBuilder(
+                      (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction)
+                          action_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          action_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionCase_ == 6) {
+          bigqueryActionBuilder_.mergeFrom(value);
+        } else {
+          bigqueryActionBuilder_.setMessage(value);
+        }
+      }
+      actionCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's bigquery action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearBigqueryAction() {
+      if (bigqueryActionBuilder_ == null) {
+        if (actionCase_ == 6) {
+          actionCase_ = 0;
+          action_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionCase_ == 6) {
+          actionCase_ = 0;
+          action_ = null;
+        }
+        bigqueryActionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's bigquery action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction.Builder
+        getBigqueryActionBuilder() {
+      return getBigqueryActionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's bigquery action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryActionOrBuilder
+        getBigqueryActionOrBuilder() {
+      if ((actionCase_ == 6) && (bigqueryActionBuilder_ != null)) {
+        return bigqueryActionBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionCase_ == 6) {
+          return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction)
+              action_;
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's bigquery action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction,
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction.Builder,
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryActionOrBuilder>
+        getBigqueryActionFieldBuilder() {
+      if (bigqueryActionBuilder_ == null) {
+        if (!(actionCase_ == 6)) {
+          action_ =
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
+                  .getDefaultInstance();
+        }
+        bigqueryActionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction.Builder,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryActionOrBuilder>(
+                (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction) action_,
+                getParentForChildren(),
+                isClean());
+        action_ = null;
+      }
+      actionCase_ = 6;
+      onChanged();
+      return bigqueryActionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction,
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction.Builder,
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookActionOrBuilder>
+        notebookActionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's notebook action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction notebook_action = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the notebookAction field is set.
+     */
+    @java.lang.Override
+    public boolean hasNotebookAction() {
+      return actionCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's notebook action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction notebook_action = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The notebookAction.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+        getNotebookAction() {
+      if (notebookActionBuilder_ == null) {
+        if (actionCase_ == 8) {
+          return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction)
+              action_;
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+            .getDefaultInstance();
+      } else {
+        if (actionCase_ == 8) {
+          return notebookActionBuilder_.getMessage();
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's notebook action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction notebook_action = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setNotebookAction(
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction value) {
+      if (notebookActionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        action_ = value;
+        onChanged();
+      } else {
+        notebookActionBuilder_.setMessage(value);
+      }
+      actionCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's notebook action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction notebook_action = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setNotebookAction(
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction.Builder
+            builderForValue) {
+      if (notebookActionBuilder_ == null) {
+        action_ = builderForValue.build();
+        onChanged();
+      } else {
+        notebookActionBuilder_.setMessage(builderForValue.build());
+      }
+      actionCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's notebook action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction notebook_action = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeNotebookAction(
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction value) {
+      if (notebookActionBuilder_ == null) {
+        if (actionCase_ == 8
+            && action_
+                != com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+                    .getDefaultInstance()) {
+          action_ =
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction.newBuilder(
+                      (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction)
+                          action_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          action_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionCase_ == 8) {
+          notebookActionBuilder_.mergeFrom(value);
+        } else {
+          notebookActionBuilder_.setMessage(value);
+        }
+      }
+      actionCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's notebook action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction notebook_action = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearNotebookAction() {
+      if (notebookActionBuilder_ == null) {
+        if (actionCase_ == 8) {
+          actionCase_ = 0;
+          action_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionCase_ == 8) {
+          actionCase_ = 0;
+          action_ = null;
+        }
+        notebookActionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's notebook action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction notebook_action = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction.Builder
+        getNotebookActionBuilder() {
+      return getNotebookActionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's notebook action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction notebook_action = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookActionOrBuilder
+        getNotebookActionOrBuilder() {
+      if ((actionCase_ == 8) && (notebookActionBuilder_ != null)) {
+        return notebookActionBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionCase_ == 8) {
+          return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction)
+              action_;
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's notebook action details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction notebook_action = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction,
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction.Builder,
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookActionOrBuilder>
+        getNotebookActionFieldBuilder() {
+      if (notebookActionBuilder_ == null) {
+        if (!(actionCase_ == 8)) {
+          action_ =
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction
+                  .getDefaultInstance();
+        }
+        notebookActionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction.Builder,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookActionOrBuilder>(
+                (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction) action_,
+                getParentForChildren(),
+                isClean());
+        action_ = null;
+      }
+      actionCase_ = 8;
+      onChanged();
+      return notebookActionBuilder_;
+    }
 
     private com.google.cloud.dataform.v1beta1.Target target_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1852,7 +3733,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return Whether the target field is set.
      */
     public boolean hasTarget() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1898,7 +3779,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } else {
         targetBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1920,7 +3801,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } else {
         targetBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1938,7 +3819,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder mergeTarget(com.google.cloud.dataform.v1beta1.Target value) {
       if (targetBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && target_ != null
             && target_ != com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()) {
           getTargetBuilder().mergeFrom(value);
@@ -1949,7 +3830,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         targetBuilder_.mergeFrom(value);
       }
       if (target_ != null) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -1967,7 +3848,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearTarget() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       target_ = null;
       if (targetBuilder_ != null) {
         targetBuilder_.dispose();
@@ -1989,7 +3870,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.dataform.v1beta1.Target.Builder getTargetBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTargetFieldBuilder().getBuilder();
     }
@@ -2064,7 +3945,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return Whether the canonicalTarget field is set.
      */
     public boolean hasCanonicalTarget() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2110,7 +3991,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } else {
         canonicalTargetBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2133,7 +4014,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } else {
         canonicalTargetBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2151,7 +4032,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder mergeCanonicalTarget(com.google.cloud.dataform.v1beta1.Target value) {
       if (canonicalTargetBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && canonicalTarget_ != null
             && canonicalTarget_ != com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()) {
           getCanonicalTargetBuilder().mergeFrom(value);
@@ -2162,7 +4043,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         canonicalTargetBuilder_.mergeFrom(value);
       }
       if (canonicalTarget_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -2180,7 +4061,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearCanonicalTarget() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       canonicalTarget_ = null;
       if (canonicalTargetBuilder_ != null) {
         canonicalTargetBuilder_.dispose();
@@ -2202,7 +4083,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.dataform.v1beta1.Target.Builder getCanonicalTargetBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCanonicalTargetFieldBuilder().getBuilder();
     }
@@ -2290,7 +4171,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2334,7 +4215,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2353,7 +4234,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       state_ = 0;
       onChanged();
       return this;
@@ -2424,7 +4305,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       failureReason_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2442,7 +4323,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder clearFailureReason() {
       failureReason_ = getDefaultInstance().getFailureReason();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2465,7 +4346,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       failureReason_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2494,7 +4375,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return Whether the invocationTiming field is set.
      */
     public boolean hasInvocationTiming() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2546,7 +4427,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } else {
         invocationTimingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2571,7 +4452,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } else {
         invocationTimingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2592,7 +4473,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder mergeInvocationTiming(com.google.type.Interval value) {
       if (invocationTimingBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && invocationTiming_ != null
             && invocationTiming_ != com.google.type.Interval.getDefaultInstance()) {
           getInvocationTimingBuilder().mergeFrom(value);
@@ -2603,7 +4484,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         invocationTimingBuilder_.mergeFrom(value);
       }
       if (invocationTiming_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2624,7 +4505,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearInvocationTiming() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       invocationTiming_ = null;
       if (invocationTimingBuilder_ != null) {
         invocationTimingBuilder_.dispose();
@@ -2649,7 +4530,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.type.Interval.Builder getInvocationTimingBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getInvocationTimingFieldBuilder().getBuilder();
     }
@@ -2709,75 +4590,95 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       return invocationTimingBuilder_;
     }
 
-    private com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
-        bigqueryAction_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction,
-            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction.Builder,
-            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryActionOrBuilder>
-        bigqueryActionBuilder_;
+    private java.lang.Object internalMetadata_ = "";
     /**
      *
      *
      * <pre>
-     * Output only. The workflow action's bigquery action details.
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
      * </pre>
      *
-     * <code>
-     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @return Whether the bigqueryAction field is set.
+     * @return Whether the internalMetadata field is set.
      */
-    public boolean hasBigqueryAction() {
-      return ((bitField0_ & 0x00000020) != 0);
+    public boolean hasInternalMetadata() {
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. The workflow action's bigquery action details.
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
      * </pre>
      *
-     * <code>
-     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @return The bigqueryAction.
+     * @return The internalMetadata.
      */
-    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
-        getBigqueryAction() {
-      if (bigqueryActionBuilder_ == null) {
-        return bigqueryAction_ == null
-            ? com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
-                .getDefaultInstance()
-            : bigqueryAction_;
+    public java.lang.String getInternalMetadata() {
+      java.lang.Object ref = internalMetadata_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        internalMetadata_ = s;
+        return s;
       } else {
-        return bigqueryActionBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
      *
      *
      * <pre>
-     * Output only. The workflow action's bigquery action details.
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
      * </pre>
      *
-     * <code>
-     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return The bytes for internalMetadata.
      */
-    public Builder setBigqueryAction(
-        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction value) {
-      if (bigqueryActionBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bigqueryAction_ = value;
+    public com.google.protobuf.ByteString getInternalMetadataBytes() {
+      java.lang.Object ref = internalMetadata_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        internalMetadata_ = b;
+        return b;
       } else {
-        bigqueryActionBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-      bitField0_ |= 0x00000020;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The internalMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalMetadata(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      internalMetadata_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2785,22 +4686,19 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The workflow action's bigquery action details.
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
      * </pre>
      *
-     * <code>
-     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @return This builder for chaining.
      */
-    public Builder setBigqueryAction(
-        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction.Builder
-            builderForValue) {
-      if (bigqueryActionBuilder_ == null) {
-        bigqueryAction_ = builderForValue.build();
-      } else {
-        bigqueryActionBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000020;
+    public Builder clearInternalMetadata() {
+      internalMetadata_ = getDefaultInstance().getInternalMetadata();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2808,120 +4706,26 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The workflow action's bigquery action details.
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
      * </pre>
      *
-     * <code>
-     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
+     *
+     * @param value The bytes for internalMetadata to set.
+     * @return This builder for chaining.
      */
-    public Builder mergeBigqueryAction(
-        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction value) {
-      if (bigqueryActionBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
-            && bigqueryAction_ != null
-            && bigqueryAction_
-                != com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
-                    .getDefaultInstance()) {
-          getBigqueryActionBuilder().mergeFrom(value);
-        } else {
-          bigqueryAction_ = value;
-        }
-      } else {
-        bigqueryActionBuilder_.mergeFrom(value);
+    public Builder setInternalMetadataBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
       }
-      if (bigqueryAction_ != null) {
-        bitField0_ |= 0x00000020;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The workflow action's bigquery action details.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder clearBigqueryAction() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      bigqueryAction_ = null;
-      if (bigqueryActionBuilder_ != null) {
-        bigqueryActionBuilder_.dispose();
-        bigqueryActionBuilder_ = null;
-      }
+      checkByteStringIsUtf8(value);
+      internalMetadata_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The workflow action's bigquery action details.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction.Builder
-        getBigqueryActionBuilder() {
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return getBigqueryActionFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The workflow action's bigquery action details.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryActionOrBuilder
-        getBigqueryActionOrBuilder() {
-      if (bigqueryActionBuilder_ != null) {
-        return bigqueryActionBuilder_.getMessageOrBuilder();
-      } else {
-        return bigqueryAction_ == null
-            ? com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction
-                .getDefaultInstance()
-            : bigqueryAction_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The workflow action's bigquery action details.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction,
-            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction.Builder,
-            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryActionOrBuilder>
-        getBigqueryActionFieldBuilder() {
-      if (bigqueryActionBuilder_ == null) {
-        bigqueryActionBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction,
-                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction.Builder,
-                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryActionOrBuilder>(
-                getBigqueryAction(), getParentForChildren(), isClean());
-        bigqueryAction_ = null;
-      }
-      return bigqueryActionBuilder_;
     }
 
     @java.lang.Override

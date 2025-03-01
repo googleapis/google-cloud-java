@@ -1240,6 +1240,66 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         : googleSearchRetrieval_;
   }
 
+  public static final int ENTERPRISE_WEB_SEARCH_FIELD_NUMBER = 6;
+  private com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch enterpriseWebSearch_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool to support searching public web data, powered by Vertex AI
+   * Search and Sec4 compliance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the enterpriseWebSearch field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnterpriseWebSearch() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool to support searching public web data, powered by Vertex AI
+   * Search and Sec4 compliance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enterpriseWebSearch.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch getEnterpriseWebSearch() {
+    return enterpriseWebSearch_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch.getDefaultInstance()
+        : enterpriseWebSearch_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool to support searching public web data, powered by Vertex AI
+   * Search and Sec4 compliance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearchOrBuilder
+      getEnterpriseWebSearchOrBuilder() {
+    return enterpriseWebSearch_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch.getDefaultInstance()
+        : enterpriseWebSearch_;
+  }
+
   public static final int CODE_EXECUTION_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1beta1.Tool.CodeExecution codeExecution_;
   /**
@@ -1248,7 +1308,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. CodeExecution tool type.
    * Enables the model to execute code as part of generation.
-   * This field is only used by the Gemini Developer API services.
    * </pre>
    *
    * <code>
@@ -1259,7 +1318,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCodeExecution() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -1267,7 +1326,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. CodeExecution tool type.
    * Enables the model to execute code as part of generation.
-   * This field is only used by the Gemini Developer API services.
    * </pre>
    *
    * <code>
@@ -1288,7 +1346,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. CodeExecution tool type.
    * Enables the model to execute code as part of generation.
-   * This field is only used by the Gemini Developer API services.
    * </pre>
    *
    * <code>
@@ -1326,8 +1383,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(3, getGoogleSearchRetrieval());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(4, getCodeExecution());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(6, getEnterpriseWebSearch());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(7, getGoogleSearch());
@@ -1352,8 +1412,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, getGoogleSearchRetrieval());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCodeExecution());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getEnterpriseWebSearch());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getGoogleSearch());
@@ -1386,6 +1449,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     if (hasGoogleSearchRetrieval()) {
       if (!getGoogleSearchRetrieval().equals(other.getGoogleSearchRetrieval())) return false;
     }
+    if (hasEnterpriseWebSearch() != other.hasEnterpriseWebSearch()) return false;
+    if (hasEnterpriseWebSearch()) {
+      if (!getEnterpriseWebSearch().equals(other.getEnterpriseWebSearch())) return false;
+    }
     if (hasCodeExecution() != other.hasCodeExecution()) return false;
     if (hasCodeExecution()) {
       if (!getCodeExecution().equals(other.getCodeExecution())) return false;
@@ -1416,6 +1483,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     if (hasGoogleSearchRetrieval()) {
       hash = (37 * hash) + GOOGLE_SEARCH_RETRIEVAL_FIELD_NUMBER;
       hash = (53 * hash) + getGoogleSearchRetrieval().hashCode();
+    }
+    if (hasEnterpriseWebSearch()) {
+      hash = (37 * hash) + ENTERPRISE_WEB_SEARCH_FIELD_NUMBER;
+      hash = (53 * hash) + getEnterpriseWebSearch().hashCode();
     }
     if (hasCodeExecution()) {
       hash = (37 * hash) + CODE_EXECUTION_FIELD_NUMBER;
@@ -1571,6 +1642,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         getRetrievalFieldBuilder();
         getGoogleSearchFieldBuilder();
         getGoogleSearchRetrievalFieldBuilder();
+        getEnterpriseWebSearchFieldBuilder();
         getCodeExecutionFieldBuilder();
       }
     }
@@ -1600,6 +1672,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (googleSearchRetrievalBuilder_ != null) {
         googleSearchRetrievalBuilder_.dispose();
         googleSearchRetrievalBuilder_ = null;
+      }
+      enterpriseWebSearch_ = null;
+      if (enterpriseWebSearchBuilder_ != null) {
+        enterpriseWebSearchBuilder_.dispose();
+        enterpriseWebSearchBuilder_ = null;
       }
       codeExecution_ = null;
       if (codeExecutionBuilder_ != null) {
@@ -1673,9 +1750,16 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.enterpriseWebSearch_ =
+            enterpriseWebSearchBuilder_ == null
+                ? enterpriseWebSearch_
+                : enterpriseWebSearchBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.codeExecution_ =
             codeExecutionBuilder_ == null ? codeExecution_ : codeExecutionBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1761,6 +1845,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (other.hasGoogleSearchRetrieval()) {
         mergeGoogleSearchRetrieval(other.getGoogleSearchRetrieval());
       }
+      if (other.hasEnterpriseWebSearch()) {
+        mergeEnterpriseWebSearch(other.getEnterpriseWebSearch());
+      }
       if (other.hasCodeExecution()) {
         mergeCodeExecution(other.getCodeExecution());
       }
@@ -1820,9 +1907,16 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 input.readMessage(getCodeExecutionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
+            case 50:
+              {
+                input.readMessage(
+                    getEnterpriseWebSearchFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             case 58:
               {
                 input.readMessage(getGoogleSearchFieldBuilder().getBuilder(), extensionRegistry);
@@ -3079,6 +3173,224 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       return googleSearchRetrievalBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch enterpriseWebSearch_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch,
+            com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch.Builder,
+            com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearchOrBuilder>
+        enterpriseWebSearchBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support searching public web data, powered by Vertex AI
+     * Search and Sec4 compliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the enterpriseWebSearch field is set.
+     */
+    public boolean hasEnterpriseWebSearch() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support searching public web data, powered by Vertex AI
+     * Search and Sec4 compliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enterpriseWebSearch.
+     */
+    public com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch getEnterpriseWebSearch() {
+      if (enterpriseWebSearchBuilder_ == null) {
+        return enterpriseWebSearch_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch.getDefaultInstance()
+            : enterpriseWebSearch_;
+      } else {
+        return enterpriseWebSearchBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support searching public web data, powered by Vertex AI
+     * Search and Sec4 compliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEnterpriseWebSearch(
+        com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch value) {
+      if (enterpriseWebSearchBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        enterpriseWebSearch_ = value;
+      } else {
+        enterpriseWebSearchBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support searching public web data, powered by Vertex AI
+     * Search and Sec4 compliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEnterpriseWebSearch(
+        com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch.Builder builderForValue) {
+      if (enterpriseWebSearchBuilder_ == null) {
+        enterpriseWebSearch_ = builderForValue.build();
+      } else {
+        enterpriseWebSearchBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support searching public web data, powered by Vertex AI
+     * Search and Sec4 compliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEnterpriseWebSearch(
+        com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch value) {
+      if (enterpriseWebSearchBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && enterpriseWebSearch_ != null
+            && enterpriseWebSearch_
+                != com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch.getDefaultInstance()) {
+          getEnterpriseWebSearchBuilder().mergeFrom(value);
+        } else {
+          enterpriseWebSearch_ = value;
+        }
+      } else {
+        enterpriseWebSearchBuilder_.mergeFrom(value);
+      }
+      if (enterpriseWebSearch_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support searching public web data, powered by Vertex AI
+     * Search and Sec4 compliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEnterpriseWebSearch() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      enterpriseWebSearch_ = null;
+      if (enterpriseWebSearchBuilder_ != null) {
+        enterpriseWebSearchBuilder_.dispose();
+        enterpriseWebSearchBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support searching public web data, powered by Vertex AI
+     * Search and Sec4 compliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch.Builder
+        getEnterpriseWebSearchBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getEnterpriseWebSearchFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support searching public web data, powered by Vertex AI
+     * Search and Sec4 compliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearchOrBuilder
+        getEnterpriseWebSearchOrBuilder() {
+      if (enterpriseWebSearchBuilder_ != null) {
+        return enterpriseWebSearchBuilder_.getMessageOrBuilder();
+      } else {
+        return enterpriseWebSearch_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch.getDefaultInstance()
+            : enterpriseWebSearch_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support searching public web data, powered by Vertex AI
+     * Search and Sec4 compliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch,
+            com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch.Builder,
+            com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearchOrBuilder>
+        getEnterpriseWebSearchFieldBuilder() {
+      if (enterpriseWebSearchBuilder_ == null) {
+        enterpriseWebSearchBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch,
+                com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearch.Builder,
+                com.google.cloud.aiplatform.v1beta1.EnterpriseWebSearchOrBuilder>(
+                getEnterpriseWebSearch(), getParentForChildren(), isClean());
+        enterpriseWebSearch_ = null;
+      }
+      return enterpriseWebSearchBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.Tool.CodeExecution codeExecution_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.Tool.CodeExecution,
@@ -3091,7 +3403,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. CodeExecution tool type.
      * Enables the model to execute code as part of generation.
-     * This field is only used by the Gemini Developer API services.
      * </pre>
      *
      * <code>
@@ -3101,7 +3412,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the codeExecution field is set.
      */
     public boolean hasCodeExecution() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3109,7 +3420,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. CodeExecution tool type.
      * Enables the model to execute code as part of generation.
-     * This field is only used by the Gemini Developer API services.
      * </pre>
      *
      * <code>
@@ -3133,7 +3443,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. CodeExecution tool type.
      * Enables the model to execute code as part of generation.
-     * This field is only used by the Gemini Developer API services.
      * </pre>
      *
      * <code>
@@ -3149,7 +3458,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       } else {
         codeExecutionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3159,7 +3468,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. CodeExecution tool type.
      * Enables the model to execute code as part of generation.
-     * This field is only used by the Gemini Developer API services.
      * </pre>
      *
      * <code>
@@ -3173,7 +3481,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       } else {
         codeExecutionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3183,7 +3491,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. CodeExecution tool type.
      * Enables the model to execute code as part of generation.
-     * This field is only used by the Gemini Developer API services.
      * </pre>
      *
      * <code>
@@ -3193,7 +3500,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCodeExecution(
         com.google.cloud.aiplatform.v1beta1.Tool.CodeExecution value) {
       if (codeExecutionBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && codeExecution_ != null
             && codeExecution_
                 != com.google.cloud.aiplatform.v1beta1.Tool.CodeExecution.getDefaultInstance()) {
@@ -3205,7 +3512,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         codeExecutionBuilder_.mergeFrom(value);
       }
       if (codeExecution_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -3216,7 +3523,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. CodeExecution tool type.
      * Enables the model to execute code as part of generation.
-     * This field is only used by the Gemini Developer API services.
      * </pre>
      *
      * <code>
@@ -3224,7 +3530,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCodeExecution() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       codeExecution_ = null;
       if (codeExecutionBuilder_ != null) {
         codeExecutionBuilder_.dispose();
@@ -3239,7 +3545,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. CodeExecution tool type.
      * Enables the model to execute code as part of generation.
-     * This field is only used by the Gemini Developer API services.
      * </pre>
      *
      * <code>
@@ -3248,7 +3553,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.Tool.CodeExecution.Builder
         getCodeExecutionBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCodeExecutionFieldBuilder().getBuilder();
     }
@@ -3258,7 +3563,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. CodeExecution tool type.
      * Enables the model to execute code as part of generation.
-     * This field is only used by the Gemini Developer API services.
      * </pre>
      *
      * <code>
@@ -3281,7 +3585,6 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. CodeExecution tool type.
      * Enables the model to execute code as part of generation.
-     * This field is only used by the Gemini Developer API services.
      * </pre>
      *
      * <code>

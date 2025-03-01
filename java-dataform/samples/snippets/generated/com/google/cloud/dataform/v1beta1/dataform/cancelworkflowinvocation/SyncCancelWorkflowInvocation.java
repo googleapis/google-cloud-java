@@ -18,9 +18,9 @@ package com.google.cloud.dataform.v1beta1.samples;
 
 // [START dataform_v1beta1_generated_Dataform_CancelWorkflowInvocation_sync]
 import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationRequest;
+import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationResponse;
 import com.google.cloud.dataform.v1beta1.DataformClient;
 import com.google.cloud.dataform.v1beta1.WorkflowInvocationName;
-import com.google.protobuf.Empty;
 
 public class SyncCancelWorkflowInvocation {
 
@@ -42,7 +42,7 @@ public class SyncCancelWorkflowInvocation {
                           "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKFLOW_INVOCATION]")
                       .toString())
               .build();
-      dataformClient.cancelWorkflowInvocation(request);
+      CancelWorkflowInvocationResponse response = dataformClient.cancelWorkflowInvocation(request);
     }
   }
 }

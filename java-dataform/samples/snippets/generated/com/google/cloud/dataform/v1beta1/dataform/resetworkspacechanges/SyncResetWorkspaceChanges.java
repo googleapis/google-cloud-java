@@ -19,8 +19,8 @@ package com.google.cloud.dataform.v1beta1.samples;
 // [START dataform_v1beta1_generated_Dataform_ResetWorkspaceChanges_sync]
 import com.google.cloud.dataform.v1beta1.DataformClient;
 import com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesRequest;
+import com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesResponse;
 import com.google.cloud.dataform.v1beta1.WorkspaceName;
-import com.google.protobuf.Empty;
 import java.util.ArrayList;
 
 public class SyncResetWorkspaceChanges {
@@ -44,7 +44,7 @@ public class SyncResetWorkspaceChanges {
               .addAllPaths(new ArrayList<String>())
               .setClean(true)
               .build();
-      dataformClient.resetWorkspaceChanges(request);
+      ResetWorkspaceChangesResponse response = dataformClient.resetWorkspaceChanges(request);
     }
   }
 }

@@ -44,6 +44,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
     cronSchedule_ = "";
     timeZone_ = "";
     recentScheduledExecutionRecords_ = java.util.Collections.emptyList();
+    internalMetadata_ = "";
   }
 
   @java.lang.Override
@@ -71,41 +72,6 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dataform.v1beta1.WorkflowConfig.ScheduledExecutionRecord)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * The timestamp of this execution attempt.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp execution_time = 1;</code>
-     *
-     * @return Whether the executionTime field is set.
-     */
-    boolean hasExecutionTime();
-    /**
-     *
-     *
-     * <pre>
-     * The timestamp of this execution attempt.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp execution_time = 1;</code>
-     *
-     * @return The executionTime.
-     */
-    com.google.protobuf.Timestamp getExecutionTime();
-    /**
-     *
-     *
-     * <pre>
-     * The timestamp of this execution attempt.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp execution_time = 1;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getExecutionTimeOrBuilder();
 
     /**
      *
@@ -187,6 +153,47 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error_status = 3;</code>
      */
     com.google.rpc.StatusOrBuilder getErrorStatusOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of this execution attempt.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp execution_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the executionTime field is set.
+     */
+    boolean hasExecutionTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of this execution attempt.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp execution_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The executionTime.
+     */
+    com.google.protobuf.Timestamp getExecutionTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of this execution attempt.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp execution_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getExecutionTimeOrBuilder();
 
     com.google.cloud.dataform.v1beta1.WorkflowConfig.ScheduledExecutionRecord.ResultCase
         getResultCase();
@@ -283,56 +290,6 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
 
     public ResultCase getResultCase() {
       return ResultCase.forNumber(resultCase_);
-    }
-
-    public static final int EXECUTION_TIME_FIELD_NUMBER = 1;
-    private com.google.protobuf.Timestamp executionTime_;
-    /**
-     *
-     *
-     * <pre>
-     * The timestamp of this execution attempt.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp execution_time = 1;</code>
-     *
-     * @return Whether the executionTime field is set.
-     */
-    @java.lang.Override
-    public boolean hasExecutionTime() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The timestamp of this execution attempt.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp execution_time = 1;</code>
-     *
-     * @return The executionTime.
-     */
-    @java.lang.Override
-    public com.google.protobuf.Timestamp getExecutionTime() {
-      return executionTime_ == null
-          ? com.google.protobuf.Timestamp.getDefaultInstance()
-          : executionTime_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The timestamp of this execution attempt.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp execution_time = 1;</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getExecutionTimeOrBuilder() {
-      return executionTime_ == null
-          ? com.google.protobuf.Timestamp.getDefaultInstance()
-          : executionTime_;
     }
 
     public static final int WORKFLOW_INVOCATION_FIELD_NUMBER = 2;
@@ -463,6 +420,62 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.rpc.Status) result_;
       }
       return com.google.rpc.Status.getDefaultInstance();
+    }
+
+    public static final int EXECUTION_TIME_FIELD_NUMBER = 1;
+    private com.google.protobuf.Timestamp executionTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of this execution attempt.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp execution_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the executionTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasExecutionTime() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of this execution attempt.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp execution_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The executionTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getExecutionTime() {
+      return executionTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : executionTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of this execution attempt.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp execution_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getExecutionTimeOrBuilder() {
+      return executionTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : executionTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -727,13 +740,13 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        if (errorStatusBuilder_ != null) {
+          errorStatusBuilder_.clear();
+        }
         executionTime_ = null;
         if (executionTimeBuilder_ != null) {
           executionTimeBuilder_.dispose();
           executionTimeBuilder_ = null;
-        }
-        if (errorStatusBuilder_ != null) {
-          errorStatusBuilder_.clear();
         }
         resultCase_ = 0;
         result_ = null;
@@ -780,7 +793,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dataform.v1beta1.WorkflowConfig.ScheduledExecutionRecord result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.executionTime_ =
               executionTimeBuilder_ == null ? executionTime_ : executionTimeBuilder_.build();
           to_bitField0_ |= 0x00000001;
@@ -899,7 +912,7 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   input.readMessage(getExecutionTimeFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000001;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 10
               case 18:
@@ -947,191 +960,6 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int bitField0_;
-
-      private com.google.protobuf.Timestamp executionTime_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp,
-              com.google.protobuf.Timestamp.Builder,
-              com.google.protobuf.TimestampOrBuilder>
-          executionTimeBuilder_;
-      /**
-       *
-       *
-       * <pre>
-       * The timestamp of this execution attempt.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp execution_time = 1;</code>
-       *
-       * @return Whether the executionTime field is set.
-       */
-      public boolean hasExecutionTime() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The timestamp of this execution attempt.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp execution_time = 1;</code>
-       *
-       * @return The executionTime.
-       */
-      public com.google.protobuf.Timestamp getExecutionTime() {
-        if (executionTimeBuilder_ == null) {
-          return executionTime_ == null
-              ? com.google.protobuf.Timestamp.getDefaultInstance()
-              : executionTime_;
-        } else {
-          return executionTimeBuilder_.getMessage();
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The timestamp of this execution attempt.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp execution_time = 1;</code>
-       */
-      public Builder setExecutionTime(com.google.protobuf.Timestamp value) {
-        if (executionTimeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          executionTime_ = value;
-        } else {
-          executionTimeBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The timestamp of this execution attempt.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp execution_time = 1;</code>
-       */
-      public Builder setExecutionTime(com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (executionTimeBuilder_ == null) {
-          executionTime_ = builderForValue.build();
-        } else {
-          executionTimeBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The timestamp of this execution attempt.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp execution_time = 1;</code>
-       */
-      public Builder mergeExecutionTime(com.google.protobuf.Timestamp value) {
-        if (executionTimeBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)
-              && executionTime_ != null
-              && executionTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-            getExecutionTimeBuilder().mergeFrom(value);
-          } else {
-            executionTime_ = value;
-          }
-        } else {
-          executionTimeBuilder_.mergeFrom(value);
-        }
-        if (executionTime_ != null) {
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The timestamp of this execution attempt.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp execution_time = 1;</code>
-       */
-      public Builder clearExecutionTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        executionTime_ = null;
-        if (executionTimeBuilder_ != null) {
-          executionTimeBuilder_.dispose();
-          executionTimeBuilder_ = null;
-        }
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The timestamp of this execution attempt.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp execution_time = 1;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getExecutionTimeBuilder() {
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return getExecutionTimeFieldBuilder().getBuilder();
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The timestamp of this execution attempt.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp execution_time = 1;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getExecutionTimeOrBuilder() {
-        if (executionTimeBuilder_ != null) {
-          return executionTimeBuilder_.getMessageOrBuilder();
-        } else {
-          return executionTime_ == null
-              ? com.google.protobuf.Timestamp.getDefaultInstance()
-              : executionTime_;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The timestamp of this execution attempt.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp execution_time = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp,
-              com.google.protobuf.Timestamp.Builder,
-              com.google.protobuf.TimestampOrBuilder>
-          getExecutionTimeFieldBuilder() {
-        if (executionTimeBuilder_ == null) {
-          executionTimeBuilder_ =
-              new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.protobuf.Timestamp,
-                  com.google.protobuf.Timestamp.Builder,
-                  com.google.protobuf.TimestampOrBuilder>(
-                  getExecutionTime(), getParentForChildren(), isClean());
-          executionTime_ = null;
-        }
-        return executionTimeBuilder_;
-      }
 
       /**
        *
@@ -1488,6 +1316,209 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
         return errorStatusBuilder_;
       }
 
+      private com.google.protobuf.Timestamp executionTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          executionTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The timestamp of this execution attempt.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp execution_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the executionTime field is set.
+       */
+      public boolean hasExecutionTime() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The timestamp of this execution attempt.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp execution_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The executionTime.
+       */
+      public com.google.protobuf.Timestamp getExecutionTime() {
+        if (executionTimeBuilder_ == null) {
+          return executionTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : executionTime_;
+        } else {
+          return executionTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The timestamp of this execution attempt.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp execution_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setExecutionTime(com.google.protobuf.Timestamp value) {
+        if (executionTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          executionTime_ = value;
+        } else {
+          executionTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The timestamp of this execution attempt.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp execution_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setExecutionTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (executionTimeBuilder_ == null) {
+          executionTime_ = builderForValue.build();
+        } else {
+          executionTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The timestamp of this execution attempt.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp execution_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeExecutionTime(com.google.protobuf.Timestamp value) {
+        if (executionTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && executionTime_ != null
+              && executionTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getExecutionTimeBuilder().mergeFrom(value);
+          } else {
+            executionTime_ = value;
+          }
+        } else {
+          executionTimeBuilder_.mergeFrom(value);
+        }
+        if (executionTime_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The timestamp of this execution attempt.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp execution_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearExecutionTime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        executionTime_ = null;
+        if (executionTimeBuilder_ != null) {
+          executionTimeBuilder_.dispose();
+          executionTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The timestamp of this execution attempt.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp execution_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getExecutionTimeBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getExecutionTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The timestamp of this execution attempt.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp execution_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getExecutionTimeOrBuilder() {
+        if (executionTimeBuilder_ != null) {
+          return executionTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return executionTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : executionTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The timestamp of this execution attempt.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp execution_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getExecutionTimeFieldBuilder() {
+        if (executionTimeBuilder_ == null) {
+          executionTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getExecutionTime(), getParentForChildren(), isClean());
+          executionTime_ = null;
+        }
+        return executionTimeBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1565,10 +1596,10 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The workflow config's name.
+   * Identifier. The workflow config's name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -1588,10 +1619,10 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The workflow config's name.
+   * Identifier. The workflow config's name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1844,8 +1875,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Records of the 10 most recent scheduled execution attempts,
-   * ordered in in descending order of `execution_time`. Updated whenever
-   * automatic creation of a workflow invocation is triggered by cron_schedule.
+   * ordered in descending order of `execution_time`. Updated whenever automatic
+   * creation of a workflow invocation is triggered by cron_schedule.
    * </pre>
    *
    * <code>
@@ -1862,8 +1893,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Records of the 10 most recent scheduled execution attempts,
-   * ordered in in descending order of `execution_time`. Updated whenever
-   * automatic creation of a workflow invocation is triggered by cron_schedule.
+   * ordered in descending order of `execution_time`. Updated whenever automatic
+   * creation of a workflow invocation is triggered by cron_schedule.
    * </pre>
    *
    * <code>
@@ -1882,8 +1913,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Records of the 10 most recent scheduled execution attempts,
-   * ordered in in descending order of `execution_time`. Updated whenever
-   * automatic creation of a workflow invocation is triggered by cron_schedule.
+   * ordered in descending order of `execution_time`. Updated whenever automatic
+   * creation of a workflow invocation is triggered by cron_schedule.
    * </pre>
    *
    * <code>
@@ -1899,8 +1930,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Records of the 10 most recent scheduled execution attempts,
-   * ordered in in descending order of `execution_time`. Updated whenever
-   * automatic creation of a workflow invocation is triggered by cron_schedule.
+   * ordered in descending order of `execution_time`. Updated whenever automatic
+   * creation of a workflow invocation is triggered by cron_schedule.
    * </pre>
    *
    * <code>
@@ -1917,8 +1948,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Records of the 10 most recent scheduled execution attempts,
-   * ordered in in descending order of `execution_time`. Updated whenever
-   * automatic creation of a workflow invocation is triggered by cron_schedule.
+   * ordered in descending order of `execution_time`. Updated whenever automatic
+   * creation of a workflow invocation is triggered by cron_schedule.
    * </pre>
    *
    * <code>
@@ -1929,6 +1960,179 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.dataform.v1beta1.WorkflowConfig.ScheduledExecutionRecordOrBuilder
       getRecentScheduledExecutionRecordsOrBuilder(int index) {
     return recentScheduledExecutionRecords_.get(index);
+  }
+
+  public static final int CREATE_TIME_FIELD_NUMBER = 9;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp of when the WorkflowConfig was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp of when the WorkflowConfig was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp of when the WorkflowConfig was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+
+  public static final int UPDATE_TIME_FIELD_NUMBER = 10;
+  private com.google.protobuf.Timestamp updateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp of when the WorkflowConfig was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp of when the WorkflowConfig was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp of when the WorkflowConfig was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  public static final int INTERNAL_METADATA_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object internalMetadata_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the internalMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasInternalMetadata() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The internalMetadata.
+   */
+  @java.lang.Override
+  public java.lang.String getInternalMetadata() {
+    java.lang.Object ref = internalMetadata_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      internalMetadata_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for internalMetadata.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getInternalMetadataBytes() {
+    java.lang.Object ref = internalMetadata_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      internalMetadata_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1963,6 +2167,15 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, timeZone_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(9, getCreateTime());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(10, getUpdateTime());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, internalMetadata_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1992,6 +2205,15 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, timeZone_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getCreateTime());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getUpdateTime());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, internalMetadata_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2018,6 +2240,18 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getTimeZone().equals(other.getTimeZone())) return false;
     if (!getRecentScheduledExecutionRecordsList()
         .equals(other.getRecentScheduledExecutionRecordsList())) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
+    if (hasInternalMetadata() != other.hasInternalMetadata()) return false;
+    if (hasInternalMetadata()) {
+      if (!getInternalMetadata().equals(other.getInternalMetadata())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2044,6 +2278,18 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
     if (getRecentScheduledExecutionRecordsCount() > 0) {
       hash = (37 * hash) + RECENT_SCHEDULED_EXECUTION_RECORDS_FIELD_NUMBER;
       hash = (53 * hash) + getRecentScheduledExecutionRecordsList().hashCode();
+    }
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (hasInternalMetadata()) {
+      hash = (37 * hash) + INTERNAL_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getInternalMetadata().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2187,6 +2433,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getInvocationConfigFieldBuilder();
         getRecentScheduledExecutionRecordsFieldBuilder();
+        getCreateTimeFieldBuilder();
+        getUpdateTimeFieldBuilder();
       }
     }
 
@@ -2210,6 +2458,17 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
         recentScheduledExecutionRecordsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000020);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      internalMetadata_ = "";
       return this;
     }
 
@@ -2278,6 +2537,18 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.timeZone_ = timeZone_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.internalMetadata_ = internalMetadata_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2379,6 +2650,17 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
+      }
+      if (other.hasInternalMetadata()) {
+        internalMetadata_ = other.internalMetadata_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2451,6 +2733,24 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
+            case 74:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 82
+            case 90:
+              {
+                internalMetadata_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2475,10 +2775,10 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The workflow config's name.
+     * Identifier. The workflow config's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -2497,10 +2797,10 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The workflow config's name.
+     * Identifier. The workflow config's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -2519,10 +2819,10 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The workflow config's name.
+     * Identifier. The workflow config's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2540,10 +2840,10 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The workflow config's name.
+     * Identifier. The workflow config's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -2557,10 +2857,10 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The workflow config's name.
+     * Identifier. The workflow config's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -3165,8 +3465,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled execution attempts,
-     * ordered in in descending order of `execution_time`. Updated whenever
-     * automatic creation of a workflow invocation is triggered by cron_schedule.
+     * ordered in descending order of `execution_time`. Updated whenever automatic
+     * creation of a workflow invocation is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3186,8 +3486,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled execution attempts,
-     * ordered in in descending order of `execution_time`. Updated whenever
-     * automatic creation of a workflow invocation is triggered by cron_schedule.
+     * ordered in descending order of `execution_time`. Updated whenever automatic
+     * creation of a workflow invocation is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3206,8 +3506,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled execution attempts,
-     * ordered in in descending order of `execution_time`. Updated whenever
-     * automatic creation of a workflow invocation is triggered by cron_schedule.
+     * ordered in descending order of `execution_time`. Updated whenever automatic
+     * creation of a workflow invocation is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3227,8 +3527,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled execution attempts,
-     * ordered in in descending order of `execution_time`. Updated whenever
-     * automatic creation of a workflow invocation is triggered by cron_schedule.
+     * ordered in descending order of `execution_time`. Updated whenever automatic
+     * creation of a workflow invocation is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3255,8 +3555,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled execution attempts,
-     * ordered in in descending order of `execution_time`. Updated whenever
-     * automatic creation of a workflow invocation is triggered by cron_schedule.
+     * ordered in descending order of `execution_time`. Updated whenever automatic
+     * creation of a workflow invocation is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3281,8 +3581,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled execution attempts,
-     * ordered in in descending order of `execution_time`. Updated whenever
-     * automatic creation of a workflow invocation is triggered by cron_schedule.
+     * ordered in descending order of `execution_time`. Updated whenever automatic
+     * creation of a workflow invocation is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3308,8 +3608,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled execution attempts,
-     * ordered in in descending order of `execution_time`. Updated whenever
-     * automatic creation of a workflow invocation is triggered by cron_schedule.
+     * ordered in descending order of `execution_time`. Updated whenever automatic
+     * creation of a workflow invocation is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3336,8 +3636,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled execution attempts,
-     * ordered in in descending order of `execution_time`. Updated whenever
-     * automatic creation of a workflow invocation is triggered by cron_schedule.
+     * ordered in descending order of `execution_time`. Updated whenever automatic
+     * creation of a workflow invocation is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3361,8 +3661,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled execution attempts,
-     * ordered in in descending order of `execution_time`. Updated whenever
-     * automatic creation of a workflow invocation is triggered by cron_schedule.
+     * ordered in descending order of `execution_time`. Updated whenever automatic
+     * creation of a workflow invocation is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3387,8 +3687,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled execution attempts,
-     * ordered in in descending order of `execution_time`. Updated whenever
-     * automatic creation of a workflow invocation is triggered by cron_schedule.
+     * ordered in descending order of `execution_time`. Updated whenever automatic
+     * creation of a workflow invocation is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3414,8 +3714,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled execution attempts,
-     * ordered in in descending order of `execution_time`. Updated whenever
-     * automatic creation of a workflow invocation is triggered by cron_schedule.
+     * ordered in descending order of `execution_time`. Updated whenever automatic
+     * creation of a workflow invocation is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3437,8 +3737,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled execution attempts,
-     * ordered in in descending order of `execution_time`. Updated whenever
-     * automatic creation of a workflow invocation is triggered by cron_schedule.
+     * ordered in descending order of `execution_time`. Updated whenever automatic
+     * creation of a workflow invocation is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3460,8 +3760,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled execution attempts,
-     * ordered in in descending order of `execution_time`. Updated whenever
-     * automatic creation of a workflow invocation is triggered by cron_schedule.
+     * ordered in descending order of `execution_time`. Updated whenever automatic
+     * creation of a workflow invocation is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3477,8 +3777,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled execution attempts,
-     * ordered in in descending order of `execution_time`. Updated whenever
-     * automatic creation of a workflow invocation is triggered by cron_schedule.
+     * ordered in descending order of `execution_time`. Updated whenever automatic
+     * creation of a workflow invocation is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3498,8 +3798,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled execution attempts,
-     * ordered in in descending order of `execution_time`. Updated whenever
-     * automatic creation of a workflow invocation is triggered by cron_schedule.
+     * ordered in descending order of `execution_time`. Updated whenever automatic
+     * creation of a workflow invocation is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3521,8 +3821,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled execution attempts,
-     * ordered in in descending order of `execution_time`. Updated whenever
-     * automatic creation of a workflow invocation is triggered by cron_schedule.
+     * ordered in descending order of `execution_time`. Updated whenever automatic
+     * creation of a workflow invocation is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3541,8 +3841,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled execution attempts,
-     * ordered in in descending order of `execution_time`. Updated whenever
-     * automatic creation of a workflow invocation is triggered by cron_schedule.
+     * ordered in descending order of `execution_time`. Updated whenever automatic
+     * creation of a workflow invocation is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3562,8 +3862,8 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled execution attempts,
-     * ordered in in descending order of `execution_time`. Updated whenever
-     * automatic creation of a workflow invocation is triggered by cron_schedule.
+     * ordered in descending order of `execution_time`. Updated whenever automatic
+     * creation of a workflow invocation is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3594,6 +3894,550 @@ public final class WorkflowConfig extends com.google.protobuf.GeneratedMessageV3
         recentScheduledExecutionRecords_ = null;
       }
       return recentScheduledExecutionRecordsBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the WorkflowConfig was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the WorkflowConfig was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the WorkflowConfig was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the WorkflowConfig was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the WorkflowConfig was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
+        } else {
+          createTime_ = value;
+        }
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+      if (createTime_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the WorkflowConfig was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateTime() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the WorkflowConfig was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the WorkflowConfig was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the WorkflowConfig was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the WorkflowConfig was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the WorkflowConfig was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the WorkflowConfig was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the WorkflowConfig was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the WorkflowConfig was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
+        } else {
+          updateTime_ = value;
+        }
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+      if (updateTime_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the WorkflowConfig was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpdateTime() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the WorkflowConfig was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the WorkflowConfig was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the WorkflowConfig was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
+    }
+
+    private java.lang.Object internalMetadata_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the internalMetadata field is set.
+     */
+    public boolean hasInternalMetadata() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The internalMetadata.
+     */
+    public java.lang.String getInternalMetadata() {
+      java.lang.Object ref = internalMetadata_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        internalMetadata_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for internalMetadata.
+     */
+    public com.google.protobuf.ByteString getInternalMetadataBytes() {
+      java.lang.Object ref = internalMetadata_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        internalMetadata_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The internalMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalMetadata(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      internalMetadata_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInternalMetadata() {
+      internalMetadata_ = getDefaultInstance().getInternalMetadata();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for internalMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalMetadataBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      internalMetadata_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -41,6 +41,7 @@ public final class ReadFileRequest extends com.google.protobuf.GeneratedMessageV
   private ReadFileRequest() {
     workspace_ = "";
     path_ = "";
+    revision_ = "";
   }
 
   @java.lang.Override
@@ -172,6 +173,59 @@ public final class ReadFileRequest extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int REVISION_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object revision_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Git revision of the file to return. If left empty, the
+   * current contents of `path` will be returned.
+   * </pre>
+   *
+   * <code>string revision = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The revision.
+   */
+  @java.lang.Override
+  public java.lang.String getRevision() {
+    java.lang.Object ref = revision_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      revision_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Git revision of the file to return. If left empty, the
+   * current contents of `path` will be returned.
+   * </pre>
+   *
+   * <code>string revision = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for revision.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRevisionBytes() {
+    java.lang.Object ref = revision_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      revision_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -192,6 +246,9 @@ public final class ReadFileRequest extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, path_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(revision_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, revision_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -206,6 +263,9 @@ public final class ReadFileRequest extends com.google.protobuf.GeneratedMessageV
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, path_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(revision_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, revision_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -225,6 +285,7 @@ public final class ReadFileRequest extends com.google.protobuf.GeneratedMessageV
 
     if (!getWorkspace().equals(other.getWorkspace())) return false;
     if (!getPath().equals(other.getPath())) return false;
+    if (!getRevision().equals(other.getRevision())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -240,6 +301,8 @@ public final class ReadFileRequest extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getWorkspace().hashCode();
     hash = (37 * hash) + PATH_FIELD_NUMBER;
     hash = (53 * hash) + getPath().hashCode();
+    hash = (37 * hash) + REVISION_FIELD_NUMBER;
+    hash = (53 * hash) + getRevision().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -381,6 +444,7 @@ public final class ReadFileRequest extends com.google.protobuf.GeneratedMessageV
       bitField0_ = 0;
       workspace_ = "";
       path_ = "";
+      revision_ = "";
       return this;
     }
 
@@ -422,6 +486,9 @@ public final class ReadFileRequest extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.path_ = path_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.revision_ = revision_;
       }
     }
 
@@ -481,6 +548,11 @@ public final class ReadFileRequest extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getRevision().isEmpty()) {
+        revision_ = other.revision_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -519,6 +591,12 @@ public final class ReadFileRequest extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                revision_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -761,6 +839,117 @@ public final class ReadFileRequest extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       path_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object revision_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Git revision of the file to return. If left empty, the
+     * current contents of `path` will be returned.
+     * </pre>
+     *
+     * <code>string revision = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The revision.
+     */
+    public java.lang.String getRevision() {
+      java.lang.Object ref = revision_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        revision_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Git revision of the file to return. If left empty, the
+     * current contents of `path` will be returned.
+     * </pre>
+     *
+     * <code>string revision = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for revision.
+     */
+    public com.google.protobuf.ByteString getRevisionBytes() {
+      java.lang.Object ref = revision_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        revision_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Git revision of the file to return. If left empty, the
+     * current contents of `path` will be returned.
+     * </pre>
+     *
+     * <code>string revision = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The revision to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRevision(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      revision_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Git revision of the file to return. If left empty, the
+     * current contents of `path` will be returned.
+     * </pre>
+     *
+     * <code>string revision = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRevision() {
+      revision_ = getDefaultInstance().getRevision();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Git revision of the file to return. If left empty, the
+     * current contents of `path` will be returned.
+     * </pre>
+     *
+     * <code>string revision = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for revision to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRevisionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      revision_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

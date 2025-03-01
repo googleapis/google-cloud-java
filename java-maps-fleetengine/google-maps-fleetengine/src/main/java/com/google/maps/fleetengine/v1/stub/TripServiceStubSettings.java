@@ -45,6 +45,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.maps.fleetengine.v1.CreateTripRequest;
+import com.google.maps.fleetengine.v1.DeleteTripRequest;
 import com.google.maps.fleetengine.v1.GetTripRequest;
 import com.google.maps.fleetengine.v1.ReportBillableTripRequest;
 import com.google.maps.fleetengine.v1.SearchTripsRequest;
@@ -115,6 +116,7 @@ public class TripServiceStubSettings extends StubSettings<TripServiceStubSetting
 
   private final UnaryCallSettings<CreateTripRequest, Trip> createTripSettings;
   private final UnaryCallSettings<GetTripRequest, Trip> getTripSettings;
+  private final UnaryCallSettings<DeleteTripRequest, Empty> deleteTripSettings;
   private final UnaryCallSettings<ReportBillableTripRequest, Empty> reportBillableTripSettings;
   private final PagedCallSettings<SearchTripsRequest, SearchTripsResponse, SearchTripsPagedResponse>
       searchTripsSettings;
@@ -179,6 +181,11 @@ public class TripServiceStubSettings extends StubSettings<TripServiceStubSetting
   /** Returns the object with the settings used for calls to getTrip. */
   public UnaryCallSettings<GetTripRequest, Trip> getTripSettings() {
     return getTripSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTrip. */
+  public UnaryCallSettings<DeleteTripRequest, Empty> deleteTripSettings() {
+    return deleteTripSettings;
   }
 
   /** Returns the object with the settings used for calls to reportBillableTrip. */
@@ -280,6 +287,7 @@ public class TripServiceStubSettings extends StubSettings<TripServiceStubSetting
 
     createTripSettings = settingsBuilder.createTripSettings().build();
     getTripSettings = settingsBuilder.getTripSettings().build();
+    deleteTripSettings = settingsBuilder.deleteTripSettings().build();
     reportBillableTripSettings = settingsBuilder.reportBillableTripSettings().build();
     searchTripsSettings = settingsBuilder.searchTripsSettings().build();
     updateTripSettings = settingsBuilder.updateTripSettings().build();
@@ -290,6 +298,7 @@ public class TripServiceStubSettings extends StubSettings<TripServiceStubSetting
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<CreateTripRequest, Trip> createTripSettings;
     private final UnaryCallSettings.Builder<GetTripRequest, Trip> getTripSettings;
+    private final UnaryCallSettings.Builder<DeleteTripRequest, Empty> deleteTripSettings;
     private final UnaryCallSettings.Builder<ReportBillableTripRequest, Empty>
         reportBillableTripSettings;
     private final PagedCallSettings.Builder<
@@ -339,6 +348,7 @@ public class TripServiceStubSettings extends StubSettings<TripServiceStubSetting
 
       createTripSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getTripSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteTripSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       reportBillableTripSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       searchTripsSettings = PagedCallSettings.newBuilder(SEARCH_TRIPS_PAGE_STR_FACT);
       updateTripSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -347,6 +357,7 @@ public class TripServiceStubSettings extends StubSettings<TripServiceStubSetting
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createTripSettings,
               getTripSettings,
+              deleteTripSettings,
               reportBillableTripSettings,
               searchTripsSettings,
               updateTripSettings);
@@ -358,6 +369,7 @@ public class TripServiceStubSettings extends StubSettings<TripServiceStubSetting
 
       createTripSettings = settings.createTripSettings.toBuilder();
       getTripSettings = settings.getTripSettings.toBuilder();
+      deleteTripSettings = settings.deleteTripSettings.toBuilder();
       reportBillableTripSettings = settings.reportBillableTripSettings.toBuilder();
       searchTripsSettings = settings.searchTripsSettings.toBuilder();
       updateTripSettings = settings.updateTripSettings.toBuilder();
@@ -366,6 +378,7 @@ public class TripServiceStubSettings extends StubSettings<TripServiceStubSetting
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createTripSettings,
               getTripSettings,
+              deleteTripSettings,
               reportBillableTripSettings,
               searchTripsSettings,
               updateTripSettings);
@@ -393,6 +406,11 @@ public class TripServiceStubSettings extends StubSettings<TripServiceStubSetting
           .getTripSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteTripSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .reportBillableTripSettings()
@@ -435,6 +453,11 @@ public class TripServiceStubSettings extends StubSettings<TripServiceStubSetting
     /** Returns the builder for the settings used for calls to getTrip. */
     public UnaryCallSettings.Builder<GetTripRequest, Trip> getTripSettings() {
       return getTripSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTrip. */
+    public UnaryCallSettings.Builder<DeleteTripRequest, Empty> deleteTripSettings() {
+      return deleteTripSettings;
     }
 
     /** Returns the builder for the settings used for calls to reportBillableTrip. */

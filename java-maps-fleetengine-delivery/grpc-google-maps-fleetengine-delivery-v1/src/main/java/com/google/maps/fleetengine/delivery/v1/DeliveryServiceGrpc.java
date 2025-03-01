@@ -135,6 +135,55 @@ public final class DeliveryServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest,
+          com.google.protobuf.Empty>
+      getDeleteDeliveryVehicleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDeliveryVehicle",
+      requestType = com.google.maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest,
+          com.google.protobuf.Empty>
+      getDeleteDeliveryVehicleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest,
+            com.google.protobuf.Empty>
+        getDeleteDeliveryVehicleMethod;
+    if ((getDeleteDeliveryVehicleMethod = DeliveryServiceGrpc.getDeleteDeliveryVehicleMethod)
+        == null) {
+      synchronized (DeliveryServiceGrpc.class) {
+        if ((getDeleteDeliveryVehicleMethod = DeliveryServiceGrpc.getDeleteDeliveryVehicleMethod)
+            == null) {
+          DeliveryServiceGrpc.getDeleteDeliveryVehicleMethod =
+              getDeleteDeliveryVehicleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteDeliveryVehicle"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeliveryServiceMethodDescriptorSupplier("DeleteDeliveryVehicle"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteDeliveryVehicleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.maps.fleetengine.delivery.v1.UpdateDeliveryVehicleRequest,
           com.google.maps.fleetengine.delivery.v1.DeliveryVehicle>
       getUpdateDeliveryVehicleMethod;
@@ -320,6 +369,49 @@ public final class DeliveryServiceGrpc {
       }
     }
     return getGetTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.maps.fleetengine.delivery.v1.DeleteTaskRequest, com.google.protobuf.Empty>
+      getDeleteTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTask",
+      requestType = com.google.maps.fleetengine.delivery.v1.DeleteTaskRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.maps.fleetengine.delivery.v1.DeleteTaskRequest, com.google.protobuf.Empty>
+      getDeleteTaskMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.maps.fleetengine.delivery.v1.DeleteTaskRequest, com.google.protobuf.Empty>
+        getDeleteTaskMethod;
+    if ((getDeleteTaskMethod = DeliveryServiceGrpc.getDeleteTaskMethod) == null) {
+      synchronized (DeliveryServiceGrpc.class) {
+        if ((getDeleteTaskMethod = DeliveryServiceGrpc.getDeleteTaskMethod) == null) {
+          DeliveryServiceGrpc.getDeleteTaskMethod =
+              getDeleteTaskMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.maps.fleetengine.delivery.v1.DeleteTaskRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteTask"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.maps.fleetengine.delivery.v1.DeleteTaskRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeliveryServiceMethodDescriptorSupplier("DeleteTask"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteTaskMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -597,6 +689,22 @@ public final class DeliveryServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a DeliveryVehicle from the Fleet Engine.
+     * Returns FAILED_PRECONDITION if the DeliveryVehicle has OPEN Tasks
+     * assigned to it.
+     * </pre>
+     */
+    default void deleteDeliveryVehicle(
+        com.google.maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteDeliveryVehicleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Writes updated `DeliveryVehicle` data to Fleet Engine, and assigns
      * `Tasks` to the `DeliveryVehicle`. You cannot update the name of the
      * `DeliveryVehicle`. You *can* update `remaining_vehicle_journey_segments`,
@@ -656,6 +764,21 @@ public final class DeliveryServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.maps.fleetengine.delivery.v1.Task>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTaskMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Task.
+     * Returns FAILED_PRECONDITION if the Task is OPEN and assigned to a
+     * DeliveryVehicle.
+     * </pre>
+     */
+    default void deleteTask(
+        com.google.maps.fleetengine.delivery.v1.DeleteTaskRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTaskMethod(), responseObserver);
     }
 
     /**
@@ -790,6 +913,24 @@ public final class DeliveryServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a DeliveryVehicle from the Fleet Engine.
+     * Returns FAILED_PRECONDITION if the DeliveryVehicle has OPEN Tasks
+     * assigned to it.
+     * </pre>
+     */
+    public void deleteDeliveryVehicle(
+        com.google.maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteDeliveryVehicleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Writes updated `DeliveryVehicle` data to Fleet Engine, and assigns
      * `Tasks` to the `DeliveryVehicle`. You cannot update the name of the
      * `DeliveryVehicle`. You *can* update `remaining_vehicle_journey_segments`,
@@ -855,6 +996,22 @@ public final class DeliveryServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetTaskMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Task.
+     * Returns FAILED_PRECONDITION if the Task is OPEN and assigned to a
+     * DeliveryVehicle.
+     * </pre>
+     */
+    public void deleteTask(
+        com.google.maps.fleetengine.delivery.v1.DeleteTaskRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteTaskMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -972,6 +1129,21 @@ public final class DeliveryServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a DeliveryVehicle from the Fleet Engine.
+     * Returns FAILED_PRECONDITION if the DeliveryVehicle has OPEN Tasks
+     * assigned to it.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDeliveryVehicle(
+        com.google.maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDeliveryVehicleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Writes updated `DeliveryVehicle` data to Fleet Engine, and assigns
      * `Tasks` to the `DeliveryVehicle`. You cannot update the name of the
      * `DeliveryVehicle`. You *can* update `remaining_vehicle_journey_segments`,
@@ -1024,6 +1196,21 @@ public final class DeliveryServiceGrpc {
         com.google.maps.fleetengine.delivery.v1.GetTaskRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Task.
+     * Returns FAILED_PRECONDITION if the Task is OPEN and assigned to a
+     * DeliveryVehicle.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTask(
+        com.google.maps.fleetengine.delivery.v1.DeleteTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTaskMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1133,6 +1320,22 @@ public final class DeliveryServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a DeliveryVehicle from the Fleet Engine.
+     * Returns FAILED_PRECONDITION if the DeliveryVehicle has OPEN Tasks
+     * assigned to it.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteDeliveryVehicle(
+            com.google.maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteDeliveryVehicleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Writes updated `DeliveryVehicle` data to Fleet Engine, and assigns
      * `Tasks` to the `DeliveryVehicle`. You cannot update the name of the
      * `DeliveryVehicle`. You *can* update `remaining_vehicle_journey_segments`,
@@ -1196,6 +1399,21 @@ public final class DeliveryServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a single Task.
+     * Returns FAILED_PRECONDITION if the Task is OPEN and assigned to a
+     * DeliveryVehicle.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteTask(
+        com.google.maps.fleetengine.delivery.v1.DeleteTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates `Task` data.
      * </pre>
      */
@@ -1253,14 +1471,16 @@ public final class DeliveryServiceGrpc {
 
   private static final int METHODID_CREATE_DELIVERY_VEHICLE = 0;
   private static final int METHODID_GET_DELIVERY_VEHICLE = 1;
-  private static final int METHODID_UPDATE_DELIVERY_VEHICLE = 2;
-  private static final int METHODID_BATCH_CREATE_TASKS = 3;
-  private static final int METHODID_CREATE_TASK = 4;
-  private static final int METHODID_GET_TASK = 5;
-  private static final int METHODID_UPDATE_TASK = 6;
-  private static final int METHODID_LIST_TASKS = 7;
-  private static final int METHODID_GET_TASK_TRACKING_INFO = 8;
-  private static final int METHODID_LIST_DELIVERY_VEHICLES = 9;
+  private static final int METHODID_DELETE_DELIVERY_VEHICLE = 2;
+  private static final int METHODID_UPDATE_DELIVERY_VEHICLE = 3;
+  private static final int METHODID_BATCH_CREATE_TASKS = 4;
+  private static final int METHODID_CREATE_TASK = 5;
+  private static final int METHODID_GET_TASK = 6;
+  private static final int METHODID_DELETE_TASK = 7;
+  private static final int METHODID_UPDATE_TASK = 8;
+  private static final int METHODID_LIST_TASKS = 9;
+  private static final int METHODID_GET_TASK_TRACKING_INFO = 10;
+  private static final int METHODID_LIST_DELIVERY_VEHICLES = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1291,6 +1511,11 @@ public final class DeliveryServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.maps.fleetengine.delivery.v1.DeliveryVehicle>)
                   responseObserver);
           break;
+        case METHODID_DELETE_DELIVERY_VEHICLE:
+          serviceImpl.deleteDeliveryVehicle(
+              (com.google.maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
         case METHODID_UPDATE_DELIVERY_VEHICLE:
           serviceImpl.updateDeliveryVehicle(
               (com.google.maps.fleetengine.delivery.v1.UpdateDeliveryVehicleRequest) request,
@@ -1315,6 +1540,11 @@ public final class DeliveryServiceGrpc {
               (com.google.maps.fleetengine.delivery.v1.GetTaskRequest) request,
               (io.grpc.stub.StreamObserver<com.google.maps.fleetengine.delivery.v1.Task>)
                   responseObserver);
+          break;
+        case METHODID_DELETE_TASK:
+          serviceImpl.deleteTask(
+              (com.google.maps.fleetengine.delivery.v1.DeleteTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_UPDATE_TASK:
           serviceImpl.updateTask(
@@ -1376,6 +1606,12 @@ public final class DeliveryServiceGrpc {
                     com.google.maps.fleetengine.delivery.v1.DeliveryVehicle>(
                     service, METHODID_GET_DELIVERY_VEHICLE)))
         .addMethod(
+            getDeleteDeliveryVehicleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_DELIVERY_VEHICLE)))
+        .addMethod(
             getUpdateDeliveryVehicleMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1401,6 +1637,12 @@ public final class DeliveryServiceGrpc {
                 new MethodHandlers<
                     com.google.maps.fleetengine.delivery.v1.GetTaskRequest,
                     com.google.maps.fleetengine.delivery.v1.Task>(service, METHODID_GET_TASK)))
+        .addMethod(
+            getDeleteTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.fleetengine.delivery.v1.DeleteTaskRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_TASK)))
         .addMethod(
             getUpdateTaskMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1481,10 +1723,12 @@ public final class DeliveryServiceGrpc {
                       .setSchemaDescriptor(new DeliveryServiceFileDescriptorSupplier())
                       .addMethod(getCreateDeliveryVehicleMethod())
                       .addMethod(getGetDeliveryVehicleMethod())
+                      .addMethod(getDeleteDeliveryVehicleMethod())
                       .addMethod(getUpdateDeliveryVehicleMethod())
                       .addMethod(getBatchCreateTasksMethod())
                       .addMethod(getCreateTaskMethod())
                       .addMethod(getGetTaskMethod())
+                      .addMethod(getDeleteTaskMethod())
                       .addMethod(getUpdateTaskMethod())
                       .addMethod(getListTasksMethod())
                       .addMethod(getGetTaskTrackingInfoMethod())

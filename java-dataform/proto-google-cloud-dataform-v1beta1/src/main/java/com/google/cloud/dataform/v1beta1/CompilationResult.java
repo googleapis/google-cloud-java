@@ -43,6 +43,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     resolvedGitCommitSha_ = "";
     dataformCoreVersion_ = "";
     compilationErrors_ = java.util.Collections.emptyList();
+    internalMetadata_ = "";
   }
 
   @java.lang.Override
@@ -1557,57 +1558,6 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     return SourceCase.forNumber(sourceCase_);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object name_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The compilation result's name.
-   * </pre>
-   *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The compilation result's name.
-   * </pre>
-   *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int GIT_COMMITISH_FIELD_NUMBER = 2;
   /**
    *
@@ -1774,10 +1724,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Immutable. The name of the release config to compile. The release
-   * config's 'current_compilation_result' field will be updated to this
-   * compilation result. Must be in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+   * Immutable. The name of the release config to compile. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
    * </pre>
    *
    * <code>
@@ -1793,10 +1741,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Immutable. The name of the release config to compile. The release
-   * config's 'current_compilation_result' field will be updated to this
-   * compilation result. Must be in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+   * Immutable. The name of the release config to compile. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
    * </pre>
    *
    * <code>
@@ -1825,10 +1771,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Immutable. The name of the release config to compile. The release
-   * config's 'current_compilation_result' field will be updated to this
-   * compilation result. Must be in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+   * Immutable. The name of the release config to compile. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
    * </pre>
    *
    * <code>
@@ -1848,6 +1792,57 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       if (sourceCase_ == 7) {
         source_ = b;
       }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NAME_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The compilation result's name.
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The compilation result's name.
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -2104,6 +2099,187 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     return compilationErrors_.get(index);
   }
 
+  public static final int DATA_ENCRYPTION_STATE_FIELD_NUMBER = 9;
+  private com.google.cloud.dataform.v1beta1.DataEncryptionState dataEncryptionState_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Only set if the repository has a KMS Key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataEncryptionState field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataEncryptionState() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Only set if the repository has a KMS Key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataEncryptionState.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.DataEncryptionState getDataEncryptionState() {
+    return dataEncryptionState_ == null
+        ? com.google.cloud.dataform.v1beta1.DataEncryptionState.getDefaultInstance()
+        : dataEncryptionState_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Only set if the repository has a KMS Key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.DataEncryptionStateOrBuilder
+      getDataEncryptionStateOrBuilder() {
+    return dataEncryptionState_ == null
+        ? com.google.cloud.dataform.v1beta1.DataEncryptionState.getDefaultInstance()
+        : dataEncryptionState_;
+  }
+
+  public static final int CREATE_TIME_FIELD_NUMBER = 10;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp of when the compilation result was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp of when the compilation result was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp of when the compilation result was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+
+  public static final int INTERNAL_METADATA_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object internalMetadata_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the internalMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasInternalMetadata() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The internalMetadata.
+   */
+  @java.lang.Override
+  public java.lang.String getInternalMetadata() {
+    java.lang.Object ref = internalMetadata_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      internalMetadata_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for internalMetadata.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getInternalMetadataBytes() {
+    java.lang.Object ref = internalMetadata_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      internalMetadata_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2142,6 +2318,15 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resolvedGitCommitSha_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, resolvedGitCommitSha_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(9, getDataEncryptionState());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(10, getCreateTime());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, internalMetadata_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2177,6 +2362,15 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resolvedGitCommitSha_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, resolvedGitCommitSha_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getDataEncryptionState());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getCreateTime());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, internalMetadata_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2201,6 +2395,18 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     if (!getResolvedGitCommitSha().equals(other.getResolvedGitCommitSha())) return false;
     if (!getDataformCoreVersion().equals(other.getDataformCoreVersion())) return false;
     if (!getCompilationErrorsList().equals(other.getCompilationErrorsList())) return false;
+    if (hasDataEncryptionState() != other.hasDataEncryptionState()) return false;
+    if (hasDataEncryptionState()) {
+      if (!getDataEncryptionState().equals(other.getDataEncryptionState())) return false;
+    }
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasInternalMetadata() != other.hasInternalMetadata()) return false;
+    if (hasInternalMetadata()) {
+      if (!getInternalMetadata().equals(other.getInternalMetadata())) return false;
+    }
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 2:
@@ -2239,6 +2445,18 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     if (getCompilationErrorsCount() > 0) {
       hash = (37 * hash) + COMPILATION_ERRORS_FIELD_NUMBER;
       hash = (53 * hash) + getCompilationErrorsList().hashCode();
+    }
+    if (hasDataEncryptionState()) {
+      hash = (37 * hash) + DATA_ENCRYPTION_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getDataEncryptionState().hashCode();
+    }
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasInternalMetadata()) {
+      hash = (37 * hash) + INTERNAL_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getInternalMetadata().hashCode();
     }
     switch (sourceCase_) {
       case 2:
@@ -2398,6 +2616,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCodeCompilationConfigFieldBuilder();
         getCompilationErrorsFieldBuilder();
+        getDataEncryptionStateFieldBuilder();
+        getCreateTimeFieldBuilder();
       }
     }
 
@@ -2420,6 +2640,17 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         compilationErrorsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000080);
+      dataEncryptionState_ = null;
+      if (dataEncryptionStateBuilder_ != null) {
+        dataEncryptionStateBuilder_.dispose();
+        dataEncryptionStateBuilder_ = null;
+      }
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      internalMetadata_ = "";
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -2473,7 +2704,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
 
     private void buildPartial0(com.google.cloud.dataform.v1beta1.CompilationResult result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.name_ = name_;
       }
       int to_bitField0_ = 0;
@@ -2489,6 +2720,21 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.dataformCoreVersion_ = dataformCoreVersion_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.dataEncryptionState_ =
+            dataEncryptionStateBuilder_ == null
+                ? dataEncryptionState_
+                : dataEncryptionStateBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.internalMetadata_ = internalMetadata_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2546,7 +2792,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasCodeCompilationConfig()) {
@@ -2588,6 +2834,17 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
             compilationErrorsBuilder_.addAllMessages(other.compilationErrors_);
           }
         }
+      }
+      if (other.hasDataEncryptionState()) {
+        mergeDataEncryptionState(other.getDataEncryptionState());
+      }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasInternalMetadata()) {
+        internalMetadata_ = other.internalMetadata_;
+        bitField0_ |= 0x00000400;
+        onChanged();
       }
       switch (other.getSourceCase()) {
         case GIT_COMMITISH:
@@ -2645,7 +2902,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
@@ -2703,6 +2960,25 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000020;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getDataEncryptionStateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+            case 90:
+              {
+                internalMetadata_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2735,112 +3011,6 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     }
 
     private int bitField0_;
-
-    private java.lang.Object name_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The compilation result's name.
-     * </pre>
-     *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The compilation result's name.
-     * </pre>
-     *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The compilation result's name.
-     * </pre>
-     *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      name_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The compilation result's name.
-     * </pre>
-     *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-      name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The compilation result's name.
-     * </pre>
-     *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      name_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
 
     /**
      *
@@ -3156,10 +3326,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. The name of the release config to compile. The release
-     * config's 'current_compilation_result' field will be updated to this
-     * compilation result. Must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+     * Immutable. The name of the release config to compile. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
      * </pre>
      *
      * <code>
@@ -3176,10 +3344,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. The name of the release config to compile. The release
-     * config's 'current_compilation_result' field will be updated to this
-     * compilation result. Must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+     * Immutable. The name of the release config to compile. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
      * </pre>
      *
      * <code>
@@ -3209,10 +3375,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. The name of the release config to compile. The release
-     * config's 'current_compilation_result' field will be updated to this
-     * compilation result. Must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+     * Immutable. The name of the release config to compile. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
      * </pre>
      *
      * <code>
@@ -3242,10 +3406,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. The name of the release config to compile. The release
-     * config's 'current_compilation_result' field will be updated to this
-     * compilation result. Must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+     * Immutable. The name of the release config to compile. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
      * </pre>
      *
      * <code>
@@ -3268,10 +3430,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. The name of the release config to compile. The release
-     * config's 'current_compilation_result' field will be updated to this
-     * compilation result. Must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+     * Immutable. The name of the release config to compile. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
      * </pre>
      *
      * <code>
@@ -3292,10 +3452,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. The name of the release config to compile. The release
-     * config's 'current_compilation_result' field will be updated to this
-     * compilation result. Must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+     * Immutable. The name of the release config to compile. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
      * </pre>
      *
      * <code>
@@ -3312,6 +3470,112 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       sourceCase_ = 7;
       source_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compilation result's name.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compilation result's name.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compilation result's name.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      name_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compilation result's name.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compilation result's name.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4164,6 +4428,556 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         compilationErrors_ = null;
       }
       return compilationErrorsBuilder_;
+    }
+
+    private com.google.cloud.dataform.v1beta1.DataEncryptionState dataEncryptionState_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.DataEncryptionState,
+            com.google.cloud.dataform.v1beta1.DataEncryptionState.Builder,
+            com.google.cloud.dataform.v1beta1.DataEncryptionStateOrBuilder>
+        dataEncryptionStateBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only set if the repository has a KMS Key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the dataEncryptionState field is set.
+     */
+    public boolean hasDataEncryptionState() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only set if the repository has a KMS Key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dataEncryptionState.
+     */
+    public com.google.cloud.dataform.v1beta1.DataEncryptionState getDataEncryptionState() {
+      if (dataEncryptionStateBuilder_ == null) {
+        return dataEncryptionState_ == null
+            ? com.google.cloud.dataform.v1beta1.DataEncryptionState.getDefaultInstance()
+            : dataEncryptionState_;
+      } else {
+        return dataEncryptionStateBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only set if the repository has a KMS Key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataEncryptionState(
+        com.google.cloud.dataform.v1beta1.DataEncryptionState value) {
+      if (dataEncryptionStateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataEncryptionState_ = value;
+      } else {
+        dataEncryptionStateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only set if the repository has a KMS Key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataEncryptionState(
+        com.google.cloud.dataform.v1beta1.DataEncryptionState.Builder builderForValue) {
+      if (dataEncryptionStateBuilder_ == null) {
+        dataEncryptionState_ = builderForValue.build();
+      } else {
+        dataEncryptionStateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only set if the repository has a KMS Key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDataEncryptionState(
+        com.google.cloud.dataform.v1beta1.DataEncryptionState value) {
+      if (dataEncryptionStateBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && dataEncryptionState_ != null
+            && dataEncryptionState_
+                != com.google.cloud.dataform.v1beta1.DataEncryptionState.getDefaultInstance()) {
+          getDataEncryptionStateBuilder().mergeFrom(value);
+        } else {
+          dataEncryptionState_ = value;
+        }
+      } else {
+        dataEncryptionStateBuilder_.mergeFrom(value);
+      }
+      if (dataEncryptionState_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only set if the repository has a KMS Key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDataEncryptionState() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      dataEncryptionState_ = null;
+      if (dataEncryptionStateBuilder_ != null) {
+        dataEncryptionStateBuilder_.dispose();
+        dataEncryptionStateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only set if the repository has a KMS Key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.DataEncryptionState.Builder
+        getDataEncryptionStateBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getDataEncryptionStateFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only set if the repository has a KMS Key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.DataEncryptionStateOrBuilder
+        getDataEncryptionStateOrBuilder() {
+      if (dataEncryptionStateBuilder_ != null) {
+        return dataEncryptionStateBuilder_.getMessageOrBuilder();
+      } else {
+        return dataEncryptionState_ == null
+            ? com.google.cloud.dataform.v1beta1.DataEncryptionState.getDefaultInstance()
+            : dataEncryptionState_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only set if the repository has a KMS Key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.DataEncryptionState,
+            com.google.cloud.dataform.v1beta1.DataEncryptionState.Builder,
+            com.google.cloud.dataform.v1beta1.DataEncryptionStateOrBuilder>
+        getDataEncryptionStateFieldBuilder() {
+      if (dataEncryptionStateBuilder_ == null) {
+        dataEncryptionStateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.DataEncryptionState,
+                com.google.cloud.dataform.v1beta1.DataEncryptionState.Builder,
+                com.google.cloud.dataform.v1beta1.DataEncryptionStateOrBuilder>(
+                getDataEncryptionState(), getParentForChildren(), isClean());
+        dataEncryptionState_ = null;
+      }
+      return dataEncryptionStateBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the compilation result was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the compilation result was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the compilation result was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the compilation result was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the compilation result was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
+        } else {
+          createTime_ = value;
+        }
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+      if (createTime_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the compilation result was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateTime() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the compilation result was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the compilation result was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the compilation result was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
+    }
+
+    private java.lang.Object internalMetadata_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the internalMetadata field is set.
+     */
+    public boolean hasInternalMetadata() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The internalMetadata.
+     */
+    public java.lang.String getInternalMetadata() {
+      java.lang.Object ref = internalMetadata_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        internalMetadata_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for internalMetadata.
+     */
+    public com.google.protobuf.ByteString getInternalMetadataBytes() {
+      java.lang.Object ref = internalMetadata_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        internalMetadata_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The internalMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalMetadata(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      internalMetadata_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInternalMetadata() {
+      internalMetadata_ = getDefaultInstance().getInternalMetadata();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for internalMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalMetadataBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      internalMetadata_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

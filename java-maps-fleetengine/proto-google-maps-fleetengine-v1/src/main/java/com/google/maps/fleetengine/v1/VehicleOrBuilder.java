@@ -233,6 +233,88 @@ public interface VehicleOrBuilder
    *
    *
    * <pre>
+   * Input only. Locations where this vehicle has been in the past that haven't
+   * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+   * to record locations which were previously unable to be sent to the server.
+   * Typically this happens when the vehicle does not have internet
+   * connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.maps.fleetengine.v1.VehicleLocation> getPastLocationsList();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Locations where this vehicle has been in the past that haven't
+   * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+   * to record locations which were previously unable to be sent to the server.
+   * Typically this happens when the vehicle does not have internet
+   * connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  com.google.maps.fleetengine.v1.VehicleLocation getPastLocations(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Locations where this vehicle has been in the past that haven't
+   * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+   * to record locations which were previously unable to be sent to the server.
+   * Typically this happens when the vehicle does not have internet
+   * connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  int getPastLocationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Locations where this vehicle has been in the past that haven't
+   * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+   * to record locations which were previously unable to be sent to the server.
+   * Typically this happens when the vehicle does not have internet
+   * connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.maps.fleetengine.v1.VehicleLocationOrBuilder>
+      getPastLocationsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Locations where this vehicle has been in the past that haven't
+   * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+   * to record locations which were previously unable to be sent to the server.
+   * Typically this happens when the vehicle does not have internet
+   * connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  com.google.maps.fleetengine.v1.VehicleLocationOrBuilder getPastLocationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * The total numbers of riders this vehicle can carry.  The driver is not
    * considered in this value. This value must be greater than or equal to one.
    * </pre>

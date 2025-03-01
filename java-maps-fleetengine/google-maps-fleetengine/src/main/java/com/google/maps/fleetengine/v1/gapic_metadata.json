@@ -13,6 +13,9 @@
             "CreateTrip": {
               "methods": ["createTrip", "createTripCallable"]
             },
+            "DeleteTrip": {
+              "methods": ["deleteTrip", "deleteTrip", "deleteTrip", "deleteTripCallable"]
+            },
             "GetTrip": {
               "methods": ["getTrip", "getTripCallable"]
             },
@@ -36,6 +39,9 @@
           "rpcs": {
             "CreateVehicle": {
               "methods": ["createVehicle", "createVehicleCallable"]
+            },
+            "DeleteVehicle": {
+              "methods": ["deleteVehicle", "deleteVehicle", "deleteVehicle", "deleteVehicleCallable"]
             },
             "GetVehicle": {
               "methods": ["getVehicle", "getVehicleCallable"]

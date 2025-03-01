@@ -29,6 +29,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeployPublisherModelResponse}
  */
+@java.lang.Deprecated
 public final class DeployPublisherModelResponse extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.DeployPublisherModelResponse)

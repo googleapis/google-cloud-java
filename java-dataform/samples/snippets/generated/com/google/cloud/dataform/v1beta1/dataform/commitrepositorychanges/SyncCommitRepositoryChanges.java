@@ -19,9 +19,9 @@ package com.google.cloud.dataform.v1beta1.samples;
 // [START dataform_v1beta1_generated_Dataform_CommitRepositoryChanges_sync]
 import com.google.cloud.dataform.v1beta1.CommitMetadata;
 import com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest;
+import com.google.cloud.dataform.v1beta1.CommitRepositoryChangesResponse;
 import com.google.cloud.dataform.v1beta1.DataformClient;
 import com.google.cloud.dataform.v1beta1.RepositoryName;
-import com.google.protobuf.Empty;
 import java.util.HashMap;
 
 public class SyncCommitRepositoryChanges {
@@ -45,7 +45,7 @@ public class SyncCommitRepositoryChanges {
               .putAllFileOperations(
                   new HashMap<String, CommitRepositoryChangesRequest.FileOperation>())
               .build();
-      dataformClient.commitRepositoryChanges(request);
+      CommitRepositoryChangesResponse response = dataformClient.commitRepositoryChanges(request);
     }
   }
 }

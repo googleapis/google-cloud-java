@@ -129,12 +129,12 @@ public final class ResponseMessageProto {
           + "geInfoCard\"i\n\014ResponseType\022\035\n\031RESPONSE_T"
           + "YPE_UNSPECIFIED\020\000\022\020\n\014ENTRY_PROMPT\020\001\022\024\n\020P"
           + "ARAMETER_PROMPT\020\002\022\022\n\016HANDLER_PROMPT\020\003B\t\n"
-          + "\007messageB\272\001\n!com.google.cloud.dialogflow"
+          + "\007messageB\267\001\n!com.google.cloud.dialogflow"
           + ".cx.v3B\024ResponseMessageProtoP\001Z1cloud.go"
           + "ogle.com/go/dialogflow/cx/apiv3/cxpb;cxp"
-          + "b\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialogflow.Cx.V"
-          + "3\352\002!Google::Cloud::Dialogflow::CX::V3b\006p"
-          + "roto3"
+          + "b\242\002\002DF\252\002\035Google.Cloud.Dialogflow.Cx.V3\352\002"
+          + "!Google::Cloud::Dialogflow::CX::V3b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

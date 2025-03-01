@@ -803,10 +803,14 @@ public interface QueryParametersOrBuilder
    * </pre>
    *
    * <code>
-   * bool populate_data_store_connection_signals = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * bool populate_data_store_connection_signals = 25 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated
+   *     google.cloud.dialogflow.cx.v3.QueryParameters.populate_data_store_connection_signals is
+   *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=730
    * @return The populateDataStoreConnectionSignals.
    */
+  @java.lang.Deprecated
   boolean getPopulateDataStoreConnectionSignals();
 }

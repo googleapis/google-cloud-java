@@ -166,11 +166,12 @@ public class MockDataformImpl extends DataformImplBase {
 
   @Override
   public void commitRepositoryChanges(
-      CommitRepositoryChangesRequest request, StreamObserver<Empty> responseObserver) {
+      CommitRepositoryChangesRequest request,
+      StreamObserver<CommitRepositoryChangesResponse> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof Empty) {
+    if (response instanceof CommitRepositoryChangesResponse) {
       requests.add(request);
-      responseObserver.onNext(((Empty) response));
+      responseObserver.onNext(((CommitRepositoryChangesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -180,7 +181,7 @@ public class MockDataformImpl extends DataformImplBase {
               String.format(
                   "Unrecognized response type %s for method CommitRepositoryChanges, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
+                  CommitRepositoryChangesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -403,11 +404,11 @@ public class MockDataformImpl extends DataformImplBase {
 
   @Override
   public void pullGitCommits(
-      PullGitCommitsRequest request, StreamObserver<Empty> responseObserver) {
+      PullGitCommitsRequest request, StreamObserver<PullGitCommitsResponse> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof Empty) {
+    if (response instanceof PullGitCommitsResponse) {
       requests.add(request);
-      responseObserver.onNext(((Empty) response));
+      responseObserver.onNext(((PullGitCommitsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -417,18 +418,18 @@ public class MockDataformImpl extends DataformImplBase {
               String.format(
                   "Unrecognized response type %s for method PullGitCommits, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
+                  PullGitCommitsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
 
   @Override
   public void pushGitCommits(
-      PushGitCommitsRequest request, StreamObserver<Empty> responseObserver) {
+      PushGitCommitsRequest request, StreamObserver<PushGitCommitsResponse> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof Empty) {
+    if (response instanceof PushGitCommitsResponse) {
       requests.add(request);
-      responseObserver.onNext(((Empty) response));
+      responseObserver.onNext(((PushGitCommitsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -438,7 +439,7 @@ public class MockDataformImpl extends DataformImplBase {
               String.format(
                   "Unrecognized response type %s for method PushGitCommits, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
+                  PushGitCommitsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -489,11 +490,12 @@ public class MockDataformImpl extends DataformImplBase {
 
   @Override
   public void commitWorkspaceChanges(
-      CommitWorkspaceChangesRequest request, StreamObserver<Empty> responseObserver) {
+      CommitWorkspaceChangesRequest request,
+      StreamObserver<CommitWorkspaceChangesResponse> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof Empty) {
+    if (response instanceof CommitWorkspaceChangesResponse) {
       requests.add(request);
-      responseObserver.onNext(((Empty) response));
+      responseObserver.onNext(((CommitWorkspaceChangesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -503,18 +505,19 @@ public class MockDataformImpl extends DataformImplBase {
               String.format(
                   "Unrecognized response type %s for method CommitWorkspaceChanges, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
+                  CommitWorkspaceChangesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
 
   @Override
   public void resetWorkspaceChanges(
-      ResetWorkspaceChangesRequest request, StreamObserver<Empty> responseObserver) {
+      ResetWorkspaceChangesRequest request,
+      StreamObserver<ResetWorkspaceChangesResponse> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof Empty) {
+    if (response instanceof ResetWorkspaceChangesResponse) {
       requests.add(request);
-      responseObserver.onNext(((Empty) response));
+      responseObserver.onNext(((ResetWorkspaceChangesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -524,7 +527,7 @@ public class MockDataformImpl extends DataformImplBase {
               String.format(
                   "Unrecognized response type %s for method ResetWorkspaceChanges, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
+                  ResetWorkspaceChangesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -573,6 +576,27 @@ public class MockDataformImpl extends DataformImplBase {
   }
 
   @Override
+  public void searchFiles(
+      SearchFilesRequest request, StreamObserver<SearchFilesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchFilesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchFilesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchFiles, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchFilesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void makeDirectory(
       MakeDirectoryRequest request, StreamObserver<MakeDirectoryResponse> responseObserver) {
     Object response = responses.poll();
@@ -595,11 +619,11 @@ public class MockDataformImpl extends DataformImplBase {
 
   @Override
   public void removeDirectory(
-      RemoveDirectoryRequest request, StreamObserver<Empty> responseObserver) {
+      RemoveDirectoryRequest request, StreamObserver<RemoveDirectoryResponse> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof Empty) {
+    if (response instanceof RemoveDirectoryResponse) {
       requests.add(request);
-      responseObserver.onNext(((Empty) response));
+      responseObserver.onNext(((RemoveDirectoryResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -609,7 +633,7 @@ public class MockDataformImpl extends DataformImplBase {
               String.format(
                   "Unrecognized response type %s for method RemoveDirectory, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
+                  RemoveDirectoryResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -656,11 +680,12 @@ public class MockDataformImpl extends DataformImplBase {
   }
 
   @Override
-  public void removeFile(RemoveFileRequest request, StreamObserver<Empty> responseObserver) {
+  public void removeFile(
+      RemoveFileRequest request, StreamObserver<RemoveFileResponse> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof Empty) {
+    if (response instanceof RemoveFileResponse) {
       requests.add(request);
-      responseObserver.onNext(((Empty) response));
+      responseObserver.onNext(((RemoveFileResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -670,7 +695,7 @@ public class MockDataformImpl extends DataformImplBase {
               String.format(
                   "Unrecognized response type %s for method RemoveFile, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
+                  RemoveFileResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -1102,11 +1127,12 @@ public class MockDataformImpl extends DataformImplBase {
 
   @Override
   public void cancelWorkflowInvocation(
-      CancelWorkflowInvocationRequest request, StreamObserver<Empty> responseObserver) {
+      CancelWorkflowInvocationRequest request,
+      StreamObserver<CancelWorkflowInvocationResponse> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof Empty) {
+    if (response instanceof CancelWorkflowInvocationResponse) {
       requests.add(request);
-      responseObserver.onNext(((Empty) response));
+      responseObserver.onNext(((CancelWorkflowInvocationResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -1116,7 +1142,7 @@ public class MockDataformImpl extends DataformImplBase {
               String.format(
                   "Unrecognized response type %s for method CancelWorkflowInvocation, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
+                  CancelWorkflowInvocationResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -1139,6 +1165,46 @@ public class MockDataformImpl extends DataformImplBase {
                   "Unrecognized response type %s for method QueryWorkflowInvocationActions, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   QueryWorkflowInvocationActionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getConfig(GetConfigRequest request, StreamObserver<Config> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Config) {
+      requests.add(request);
+      responseObserver.onNext(((Config) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Config.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateConfig(UpdateConfigRequest request, StreamObserver<Config> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Config) {
+      requests.add(request);
+      responseObserver.onNext(((Config) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Config.class.getName(),
                   Exception.class.getName())));
     }
   }

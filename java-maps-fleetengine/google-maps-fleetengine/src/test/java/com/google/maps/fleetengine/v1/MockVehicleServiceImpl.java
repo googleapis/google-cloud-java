@@ -19,6 +19,7 @@ package com.google.maps.fleetengine.v1;
 import com.google.api.core.BetaApi;
 import com.google.maps.fleetengine.v1.VehicleServiceGrpc.VehicleServiceImplBase;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -95,6 +96,26 @@ public class MockVehicleServiceImpl extends VehicleServiceImplBase {
                   "Unrecognized response type %s for method GetVehicle, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Vehicle.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteVehicle(DeleteVehicleRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteVehicle, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

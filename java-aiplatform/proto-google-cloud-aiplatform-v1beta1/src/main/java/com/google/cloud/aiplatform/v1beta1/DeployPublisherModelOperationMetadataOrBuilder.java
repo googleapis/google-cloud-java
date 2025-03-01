@@ -19,6 +19,7 @@
 // Protobuf Java Version: 3.25.5
 package com.google.cloud.aiplatform.v1beta1;
 
+@java.lang.Deprecated
 public interface DeployPublisherModelOperationMetadataOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.DeployPublisherModelOperationMetadata)

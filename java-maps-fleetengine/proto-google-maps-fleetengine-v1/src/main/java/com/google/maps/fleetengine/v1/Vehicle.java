@@ -43,6 +43,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     vehicleState_ = 0;
     supportedTripTypes_ = java.util.Collections.emptyList();
     currentTrips_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    pastLocations_ = java.util.Collections.emptyList();
     attributes_ = java.util.Collections.emptyList();
     route_ = java.util.Collections.emptyList();
     currentRouteSegment_ = "";
@@ -1239,6 +1240,108 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         : lastLocation_;
   }
 
+  public static final int PAST_LOCATIONS_FIELD_NUMBER = 30;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.maps.fleetengine.v1.VehicleLocation> pastLocations_;
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Locations where this vehicle has been in the past that haven't
+   * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+   * to record locations which were previously unable to be sent to the server.
+   * Typically this happens when the vehicle does not have internet
+   * connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.maps.fleetengine.v1.VehicleLocation> getPastLocationsList() {
+    return pastLocations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Locations where this vehicle has been in the past that haven't
+   * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+   * to record locations which were previously unable to be sent to the server.
+   * Typically this happens when the vehicle does not have internet
+   * connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.maps.fleetengine.v1.VehicleLocationOrBuilder>
+      getPastLocationsOrBuilderList() {
+    return pastLocations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Locations where this vehicle has been in the past that haven't
+   * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+   * to record locations which were previously unable to be sent to the server.
+   * Typically this happens when the vehicle does not have internet
+   * connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPastLocationsCount() {
+    return pastLocations_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Locations where this vehicle has been in the past that haven't
+   * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+   * to record locations which were previously unable to be sent to the server.
+   * Typically this happens when the vehicle does not have internet
+   * connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.maps.fleetengine.v1.VehicleLocation getPastLocations(int index) {
+    return pastLocations_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Locations where this vehicle has been in the past that haven't
+   * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+   * to record locations which were previously unable to be sent to the server.
+   * Typically this happens when the vehicle does not have internet
+   * connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.maps.fleetengine.v1.VehicleLocationOrBuilder getPastLocationsOrBuilder(
+      int index) {
+    return pastLocations_.get(index);
+  }
+
   public static final int MAXIMUM_CAPACITY_FIELD_NUMBER = 6;
   private int maximumCapacity_ = 0;
   /**
@@ -2304,6 +2407,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(28, getCurrentRouteSegmentTraffic());
     }
+    for (int i = 0; i < pastLocations_.size(); i++) {
+      output.writeMessage(30, pastLocations_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2405,6 +2511,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               28, getCurrentRouteSegmentTraffic());
     }
+    for (int i = 0; i < pastLocations_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, pastLocations_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2428,6 +2537,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     if (hasLastLocation()) {
       if (!getLastLocation().equals(other.getLastLocation())) return false;
     }
+    if (!getPastLocationsList().equals(other.getPastLocationsList())) return false;
     if (getMaximumCapacity() != other.getMaximumCapacity()) return false;
     if (!getAttributesList().equals(other.getAttributesList())) return false;
     if (hasVehicleType() != other.hasVehicleType()) return false;
@@ -2504,6 +2614,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     if (hasLastLocation()) {
       hash = (37 * hash) + LAST_LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getLastLocation().hashCode();
+    }
+    if (getPastLocationsCount() > 0) {
+      hash = (37 * hash) + PAST_LOCATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getPastLocationsList().hashCode();
     }
     hash = (37 * hash) + MAXIMUM_CAPACITY_FIELD_NUMBER;
     hash = (53 * hash) + getMaximumCapacity();
@@ -2706,6 +2820,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getLastLocationFieldBuilder();
+        getPastLocationsFieldBuilder();
         getAttributesFieldBuilder();
         getVehicleTypeFieldBuilder();
         getLicensePlateFieldBuilder();
@@ -2736,6 +2851,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         lastLocationBuilder_.dispose();
         lastLocationBuilder_ = null;
       }
+      if (pastLocationsBuilder_ == null) {
+        pastLocations_ = java.util.Collections.emptyList();
+      } else {
+        pastLocations_ = null;
+        pastLocationsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
       maximumCapacity_ = 0;
       if (attributesBuilder_ == null) {
         attributes_ = java.util.Collections.emptyList();
@@ -2743,7 +2865,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         attributes_ = null;
         attributesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       vehicleType_ = null;
       if (vehicleTypeBuilder_ != null) {
         vehicleTypeBuilder_.dispose();
@@ -2760,7 +2882,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         route_ = null;
         routeBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       currentRouteSegment_ = "";
       currentRouteSegmentTraffic_ = null;
       if (currentRouteSegmentTrafficBuilder_ != null) {
@@ -2798,7 +2920,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         waypoints_ = null;
         waypointsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       waypointsVersion_ = null;
       if (waypointsVersionBuilder_ != null) {
         waypointsVersionBuilder_.dispose();
@@ -2852,28 +2974,37 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.supportedTripTypes_ = supportedTripTypes_;
+      if (pastLocationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          pastLocations_ = java.util.Collections.unmodifiableList(pastLocations_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.pastLocations_ = pastLocations_;
+      } else {
+        result.pastLocations_ = pastLocationsBuilder_.build();
+      }
       if (attributesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           attributes_ = java.util.Collections.unmodifiableList(attributes_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.attributes_ = attributes_;
       } else {
         result.attributes_ = attributesBuilder_.build();
       }
       if (routeBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           route_ = java.util.Collections.unmodifiableList(route_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.route_ = route_;
       } else {
         result.route_ = routeBuilder_.build();
       }
       if (waypointsBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)) {
+        if (((bitField0_ & 0x00040000) != 0)) {
           waypoints_ = java.util.Collections.unmodifiableList(waypoints_);
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ = (bitField0_ & ~0x00040000);
         }
         result.waypoints_ = waypoints_;
       } else {
@@ -2899,76 +3030,76 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             lastLocationBuilder_ == null ? lastLocation_ : lastLocationBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.maximumCapacity_ = maximumCapacity_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.vehicleType_ =
             vehicleTypeBuilder_ == null ? vehicleType_ : vehicleTypeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.licensePlate_ =
             licensePlateBuilder_ == null ? licensePlate_ : licensePlateBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.currentRouteSegment_ = currentRouteSegment_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.currentRouteSegmentTraffic_ =
             currentRouteSegmentTrafficBuilder_ == null
                 ? currentRouteSegmentTraffic_
                 : currentRouteSegmentTrafficBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.currentRouteSegmentVersion_ =
             currentRouteSegmentVersionBuilder_ == null
                 ? currentRouteSegmentVersion_
                 : currentRouteSegmentVersionBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.currentRouteSegmentEndPoint_ =
             currentRouteSegmentEndPointBuilder_ == null
                 ? currentRouteSegmentEndPoint_
                 : currentRouteSegmentEndPointBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.remainingDistanceMeters_ =
             remainingDistanceMetersBuilder_ == null
                 ? remainingDistanceMeters_
                 : remainingDistanceMetersBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.etaToFirstWaypoint_ =
             etaToFirstWaypointBuilder_ == null
                 ? etaToFirstWaypoint_
                 : etaToFirstWaypointBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.remainingTimeSeconds_ =
             remainingTimeSecondsBuilder_ == null
                 ? remainingTimeSeconds_
                 : remainingTimeSecondsBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.waypointsVersion_ =
             waypointsVersionBuilder_ == null ? waypointsVersion_ : waypointsVersionBuilder_.build();
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.backToBackEnabled_ = backToBackEnabled_;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.navigationStatus_ = navigationStatus_;
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.deviceSettings_ =
             deviceSettingsBuilder_ == null ? deviceSettings_ : deviceSettingsBuilder_.build();
         to_bitField0_ |= 0x00000400;
@@ -3052,6 +3183,33 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       if (other.hasLastLocation()) {
         mergeLastLocation(other.getLastLocation());
       }
+      if (pastLocationsBuilder_ == null) {
+        if (!other.pastLocations_.isEmpty()) {
+          if (pastLocations_.isEmpty()) {
+            pastLocations_ = other.pastLocations_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensurePastLocationsIsMutable();
+            pastLocations_.addAll(other.pastLocations_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.pastLocations_.isEmpty()) {
+          if (pastLocationsBuilder_.isEmpty()) {
+            pastLocationsBuilder_.dispose();
+            pastLocationsBuilder_ = null;
+            pastLocations_ = other.pastLocations_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            pastLocationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPastLocationsFieldBuilder()
+                    : null;
+          } else {
+            pastLocationsBuilder_.addAllMessages(other.pastLocations_);
+          }
+        }
+      }
       if (other.getMaximumCapacity() != 0) {
         setMaximumCapacity(other.getMaximumCapacity());
       }
@@ -3059,7 +3217,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         if (!other.attributes_.isEmpty()) {
           if (attributes_.isEmpty()) {
             attributes_ = other.attributes_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureAttributesIsMutable();
             attributes_.addAll(other.attributes_);
@@ -3072,7 +3230,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             attributesBuilder_.dispose();
             attributesBuilder_ = null;
             attributes_ = other.attributes_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             attributesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAttributesFieldBuilder()
@@ -3092,7 +3250,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         if (!other.route_.isEmpty()) {
           if (route_.isEmpty()) {
             route_ = other.route_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureRouteIsMutable();
             route_.addAll(other.route_);
@@ -3105,7 +3263,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             routeBuilder_.dispose();
             routeBuilder_ = null;
             route_ = other.route_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
             routeBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRouteFieldBuilder()
@@ -3117,7 +3275,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCurrentRouteSegment().isEmpty()) {
         currentRouteSegment_ = other.currentRouteSegment_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasCurrentRouteSegmentTraffic()) {
@@ -3142,7 +3300,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         if (!other.waypoints_.isEmpty()) {
           if (waypoints_.isEmpty()) {
             waypoints_ = other.waypoints_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00040000);
           } else {
             ensureWaypointsIsMutable();
             waypoints_.addAll(other.waypoints_);
@@ -3155,7 +3313,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             waypointsBuilder_.dispose();
             waypointsBuilder_ = null;
             waypoints_ = other.waypoints_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00040000);
             waypointsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWaypointsFieldBuilder()
@@ -3250,7 +3408,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             case 48:
               {
                 maximumCapacity_ = input.readInt32();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 48
             case 66:
@@ -3270,13 +3428,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             case 74:
               {
                 input.readMessage(getVehicleTypeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getLicensePlateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 98:
@@ -3297,34 +3455,34 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getCurrentRouteSegmentVersionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 122
             case 130:
               {
                 input.readMessage(
                     getWaypointsVersionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 130
             case 146:
               {
                 input.readMessage(
                     getRemainingDistanceMetersFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 146
             case 154:
               {
                 input.readMessage(
                     getEtaToFirstWaypointFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 154
             case 162:
               {
                 currentRouteSegment_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 162
             case 178:
@@ -3343,42 +3501,55 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             case 184:
               {
                 backToBackEnabled_ = input.readBool();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 184
             case 194:
               {
                 input.readMessage(
                     getCurrentRouteSegmentEndPointFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 194
             case 202:
               {
                 input.readMessage(
                     getRemainingTimeSecondsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 202
             case 208:
               {
                 navigationStatus_ = input.readEnum();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 208
             case 218:
               {
                 input.readMessage(getDeviceSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 218
             case 226:
               {
                 input.readMessage(
                     getCurrentRouteSegmentTrafficFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 226
+            case 242:
+              {
+                com.google.maps.fleetengine.v1.VehicleLocation m =
+                    input.readMessage(
+                        com.google.maps.fleetengine.v1.VehicleLocation.parser(), extensionRegistry);
+                if (pastLocationsBuilder_ == null) {
+                  ensurePastLocationsIsMutable();
+                  pastLocations_.add(m);
+                } else {
+                  pastLocationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 242
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4191,6 +4362,473 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       return lastLocationBuilder_;
     }
 
+    private java.util.List<com.google.maps.fleetengine.v1.VehicleLocation> pastLocations_ =
+        java.util.Collections.emptyList();
+
+    private void ensurePastLocationsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        pastLocations_ =
+            new java.util.ArrayList<com.google.maps.fleetengine.v1.VehicleLocation>(pastLocations_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.maps.fleetengine.v1.VehicleLocation,
+            com.google.maps.fleetengine.v1.VehicleLocation.Builder,
+            com.google.maps.fleetengine.v1.VehicleLocationOrBuilder>
+        pastLocationsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this vehicle has been in the past that haven't
+     * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+     * to record locations which were previously unable to be sent to the server.
+     * Typically this happens when the vehicle does not have internet
+     * connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.maps.fleetengine.v1.VehicleLocation> getPastLocationsList() {
+      if (pastLocationsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(pastLocations_);
+      } else {
+        return pastLocationsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this vehicle has been in the past that haven't
+     * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+     * to record locations which were previously unable to be sent to the server.
+     * Typically this happens when the vehicle does not have internet
+     * connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public int getPastLocationsCount() {
+      if (pastLocationsBuilder_ == null) {
+        return pastLocations_.size();
+      } else {
+        return pastLocationsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this vehicle has been in the past that haven't
+     * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+     * to record locations which were previously unable to be sent to the server.
+     * Typically this happens when the vehicle does not have internet
+     * connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.maps.fleetengine.v1.VehicleLocation getPastLocations(int index) {
+      if (pastLocationsBuilder_ == null) {
+        return pastLocations_.get(index);
+      } else {
+        return pastLocationsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this vehicle has been in the past that haven't
+     * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+     * to record locations which were previously unable to be sent to the server.
+     * Typically this happens when the vehicle does not have internet
+     * connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setPastLocations(
+        int index, com.google.maps.fleetengine.v1.VehicleLocation value) {
+      if (pastLocationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePastLocationsIsMutable();
+        pastLocations_.set(index, value);
+        onChanged();
+      } else {
+        pastLocationsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this vehicle has been in the past that haven't
+     * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+     * to record locations which were previously unable to be sent to the server.
+     * Typically this happens when the vehicle does not have internet
+     * connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setPastLocations(
+        int index, com.google.maps.fleetengine.v1.VehicleLocation.Builder builderForValue) {
+      if (pastLocationsBuilder_ == null) {
+        ensurePastLocationsIsMutable();
+        pastLocations_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        pastLocationsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this vehicle has been in the past that haven't
+     * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+     * to record locations which were previously unable to be sent to the server.
+     * Typically this happens when the vehicle does not have internet
+     * connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addPastLocations(com.google.maps.fleetengine.v1.VehicleLocation value) {
+      if (pastLocationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePastLocationsIsMutable();
+        pastLocations_.add(value);
+        onChanged();
+      } else {
+        pastLocationsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this vehicle has been in the past that haven't
+     * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+     * to record locations which were previously unable to be sent to the server.
+     * Typically this happens when the vehicle does not have internet
+     * connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addPastLocations(
+        int index, com.google.maps.fleetengine.v1.VehicleLocation value) {
+      if (pastLocationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePastLocationsIsMutable();
+        pastLocations_.add(index, value);
+        onChanged();
+      } else {
+        pastLocationsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this vehicle has been in the past that haven't
+     * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+     * to record locations which were previously unable to be sent to the server.
+     * Typically this happens when the vehicle does not have internet
+     * connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addPastLocations(
+        com.google.maps.fleetengine.v1.VehicleLocation.Builder builderForValue) {
+      if (pastLocationsBuilder_ == null) {
+        ensurePastLocationsIsMutable();
+        pastLocations_.add(builderForValue.build());
+        onChanged();
+      } else {
+        pastLocationsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this vehicle has been in the past that haven't
+     * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+     * to record locations which were previously unable to be sent to the server.
+     * Typically this happens when the vehicle does not have internet
+     * connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addPastLocations(
+        int index, com.google.maps.fleetengine.v1.VehicleLocation.Builder builderForValue) {
+      if (pastLocationsBuilder_ == null) {
+        ensurePastLocationsIsMutable();
+        pastLocations_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        pastLocationsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this vehicle has been in the past that haven't
+     * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+     * to record locations which were previously unable to be sent to the server.
+     * Typically this happens when the vehicle does not have internet
+     * connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllPastLocations(
+        java.lang.Iterable<? extends com.google.maps.fleetengine.v1.VehicleLocation> values) {
+      if (pastLocationsBuilder_ == null) {
+        ensurePastLocationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pastLocations_);
+        onChanged();
+      } else {
+        pastLocationsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this vehicle has been in the past that haven't
+     * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+     * to record locations which were previously unable to be sent to the server.
+     * Typically this happens when the vehicle does not have internet
+     * connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPastLocations() {
+      if (pastLocationsBuilder_ == null) {
+        pastLocations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        pastLocationsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this vehicle has been in the past that haven't
+     * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+     * to record locations which were previously unable to be sent to the server.
+     * Typically this happens when the vehicle does not have internet
+     * connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder removePastLocations(int index) {
+      if (pastLocationsBuilder_ == null) {
+        ensurePastLocationsIsMutable();
+        pastLocations_.remove(index);
+        onChanged();
+      } else {
+        pastLocationsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this vehicle has been in the past that haven't
+     * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+     * to record locations which were previously unable to be sent to the server.
+     * Typically this happens when the vehicle does not have internet
+     * connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.maps.fleetengine.v1.VehicleLocation.Builder getPastLocationsBuilder(
+        int index) {
+      return getPastLocationsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this vehicle has been in the past that haven't
+     * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+     * to record locations which were previously unable to be sent to the server.
+     * Typically this happens when the vehicle does not have internet
+     * connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.maps.fleetengine.v1.VehicleLocationOrBuilder getPastLocationsOrBuilder(
+        int index) {
+      if (pastLocationsBuilder_ == null) {
+        return pastLocations_.get(index);
+      } else {
+        return pastLocationsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this vehicle has been in the past that haven't
+     * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+     * to record locations which were previously unable to be sent to the server.
+     * Typically this happens when the vehicle does not have internet
+     * connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.maps.fleetengine.v1.VehicleLocationOrBuilder>
+        getPastLocationsOrBuilderList() {
+      if (pastLocationsBuilder_ != null) {
+        return pastLocationsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(pastLocations_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this vehicle has been in the past that haven't
+     * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+     * to record locations which were previously unable to be sent to the server.
+     * Typically this happens when the vehicle does not have internet
+     * connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.maps.fleetengine.v1.VehicleLocation.Builder addPastLocationsBuilder() {
+      return getPastLocationsFieldBuilder()
+          .addBuilder(com.google.maps.fleetengine.v1.VehicleLocation.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this vehicle has been in the past that haven't
+     * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+     * to record locations which were previously unable to be sent to the server.
+     * Typically this happens when the vehicle does not have internet
+     * connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.maps.fleetengine.v1.VehicleLocation.Builder addPastLocationsBuilder(
+        int index) {
+      return getPastLocationsFieldBuilder()
+          .addBuilder(index, com.google.maps.fleetengine.v1.VehicleLocation.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this vehicle has been in the past that haven't
+     * yet been reported to Fleet Engine. This is used in `UpdateVehicleRequest`
+     * to record locations which were previously unable to be sent to the server.
+     * Typically this happens when the vehicle does not have internet
+     * connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.v1.VehicleLocation past_locations = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.maps.fleetengine.v1.VehicleLocation.Builder>
+        getPastLocationsBuilderList() {
+      return getPastLocationsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.maps.fleetengine.v1.VehicleLocation,
+            com.google.maps.fleetengine.v1.VehicleLocation.Builder,
+            com.google.maps.fleetengine.v1.VehicleLocationOrBuilder>
+        getPastLocationsFieldBuilder() {
+      if (pastLocationsBuilder_ == null) {
+        pastLocationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.maps.fleetengine.v1.VehicleLocation,
+                com.google.maps.fleetengine.v1.VehicleLocation.Builder,
+                com.google.maps.fleetengine.v1.VehicleLocationOrBuilder>(
+                pastLocations_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        pastLocations_ = null;
+      }
+      return pastLocationsBuilder_;
+    }
+
     private int maximumCapacity_;
     /**
      *
@@ -4224,7 +4862,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaximumCapacity(int value) {
 
       maximumCapacity_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4241,7 +4879,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaximumCapacity() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       maximumCapacity_ = 0;
       onChanged();
       return this;
@@ -4251,10 +4889,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAttributesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         attributes_ =
             new java.util.ArrayList<com.google.maps.fleetengine.v1.VehicleAttribute>(attributes_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -4481,7 +5119,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAttributes() {
       if (attributesBuilder_ == null) {
         attributes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         attributesBuilder_.clear();
@@ -4611,7 +5249,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.fleetengine.v1.VehicleAttribute,
                 com.google.maps.fleetengine.v1.VehicleAttribute.Builder,
                 com.google.maps.fleetengine.v1.VehicleAttributeOrBuilder>(
-                attributes_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+                attributes_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         attributes_ = null;
       }
       return attributesBuilder_;
@@ -4638,7 +5276,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the vehicleType field is set.
      */
     public boolean hasVehicleType() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -4684,7 +5322,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         vehicleTypeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4707,7 +5345,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         vehicleTypeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4725,7 +5363,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeVehicleType(com.google.maps.fleetengine.v1.Vehicle.VehicleType value) {
       if (vehicleTypeBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && vehicleType_ != null
             && vehicleType_
                 != com.google.maps.fleetengine.v1.Vehicle.VehicleType.getDefaultInstance()) {
@@ -4737,7 +5375,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         vehicleTypeBuilder_.mergeFrom(value);
       }
       if (vehicleType_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -4755,7 +5393,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearVehicleType() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       vehicleType_ = null;
       if (vehicleTypeBuilder_ != null) {
         vehicleTypeBuilder_.dispose();
@@ -4777,7 +5415,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.maps.fleetengine.v1.Vehicle.VehicleType.Builder getVehicleTypeBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getVehicleTypeFieldBuilder().getBuilder();
     }
@@ -4849,7 +5487,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the licensePlate field is set.
      */
     public boolean hasLicensePlate() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -4889,7 +5527,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         licensePlateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4909,7 +5547,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         licensePlateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4924,7 +5562,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLicensePlate(com.google.maps.fleetengine.v1.LicensePlate value) {
       if (licensePlateBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && licensePlate_ != null
             && licensePlate_ != com.google.maps.fleetengine.v1.LicensePlate.getDefaultInstance()) {
           getLicensePlateBuilder().mergeFrom(value);
@@ -4935,7 +5573,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         licensePlateBuilder_.mergeFrom(value);
       }
       if (licensePlate_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -4950,7 +5588,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>.maps.fleetengine.v1.LicensePlate license_plate = 10;</code>
      */
     public Builder clearLicensePlate() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       licensePlate_ = null;
       if (licensePlateBuilder_ != null) {
         licensePlateBuilder_.dispose();
@@ -4969,7 +5607,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>.maps.fleetengine.v1.LicensePlate license_plate = 10;</code>
      */
     public com.google.maps.fleetengine.v1.LicensePlate.Builder getLicensePlateBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getLicensePlateFieldBuilder().getBuilder();
     }
@@ -5021,9 +5659,9 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRouteIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         route_ = new java.util.ArrayList<com.google.maps.fleetengine.v1.TerminalLocation>(route_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -5250,7 +5888,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRoute() {
       if (routeBuilder_ == null) {
         route_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         routeBuilder_.clear();
@@ -5379,7 +6017,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.fleetengine.v1.TerminalLocation,
                 com.google.maps.fleetengine.v1.TerminalLocation.Builder,
                 com.google.maps.fleetengine.v1.TerminalLocationOrBuilder>(
-                route_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
+                route_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
         route_ = null;
       }
       return routeBuilder_;
@@ -5462,7 +6100,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       currentRouteSegment_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5484,7 +6122,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCurrentRouteSegment() {
       currentRouteSegment_ = getDefaultInstance().getCurrentRouteSegment();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -5511,7 +6149,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       currentRouteSegment_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5537,7 +6175,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the currentRouteSegmentTraffic field is set.
      */
     public boolean hasCurrentRouteSegmentTraffic() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -5584,7 +6222,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         currentRouteSegmentTrafficBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5607,7 +6245,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         currentRouteSegmentTrafficBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5626,7 +6264,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCurrentRouteSegmentTraffic(
         com.google.maps.fleetengine.v1.TrafficPolylineData value) {
       if (currentRouteSegmentTrafficBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && currentRouteSegmentTraffic_ != null
             && currentRouteSegmentTraffic_
                 != com.google.maps.fleetengine.v1.TrafficPolylineData.getDefaultInstance()) {
@@ -5638,7 +6276,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         currentRouteSegmentTrafficBuilder_.mergeFrom(value);
       }
       if (currentRouteSegmentTraffic_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -5656,7 +6294,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCurrentRouteSegmentTraffic() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       currentRouteSegmentTraffic_ = null;
       if (currentRouteSegmentTrafficBuilder_ != null) {
         currentRouteSegmentTrafficBuilder_.dispose();
@@ -5679,7 +6317,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.maps.fleetengine.v1.TrafficPolylineData.Builder
         getCurrentRouteSegmentTrafficBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getCurrentRouteSegmentTrafficFieldBuilder().getBuilder();
     }
@@ -5756,7 +6394,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the currentRouteSegmentVersion field is set.
      */
     public boolean hasCurrentRouteSegmentVersion() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -5804,7 +6442,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         currentRouteSegmentVersionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5828,7 +6466,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         currentRouteSegmentVersionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5847,7 +6485,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCurrentRouteSegmentVersion(com.google.protobuf.Timestamp value) {
       if (currentRouteSegmentVersionBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && currentRouteSegmentVersion_ != null
             && currentRouteSegmentVersion_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCurrentRouteSegmentVersionBuilder().mergeFrom(value);
@@ -5858,7 +6496,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         currentRouteSegmentVersionBuilder_.mergeFrom(value);
       }
       if (currentRouteSegmentVersion_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -5877,7 +6515,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCurrentRouteSegmentVersion() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       currentRouteSegmentVersion_ = null;
       if (currentRouteSegmentVersionBuilder_ != null) {
         currentRouteSegmentVersionBuilder_.dispose();
@@ -5900,7 +6538,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCurrentRouteSegmentVersionBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getCurrentRouteSegmentVersionFieldBuilder().getBuilder();
     }
@@ -5979,7 +6617,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the currentRouteSegmentEndPoint field is set.
      */
     public boolean hasCurrentRouteSegmentEndPoint() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -6030,7 +6668,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         currentRouteSegmentEndPointBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6055,7 +6693,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         currentRouteSegmentEndPointBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6076,7 +6714,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCurrentRouteSegmentEndPoint(
         com.google.maps.fleetengine.v1.TripWaypoint value) {
       if (currentRouteSegmentEndPointBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && currentRouteSegmentEndPoint_ != null
             && currentRouteSegmentEndPoint_
                 != com.google.maps.fleetengine.v1.TripWaypoint.getDefaultInstance()) {
@@ -6088,7 +6726,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         currentRouteSegmentEndPointBuilder_.mergeFrom(value);
       }
       if (currentRouteSegmentEndPoint_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -6108,7 +6746,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
      */
     public Builder clearCurrentRouteSegmentEndPoint() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       currentRouteSegmentEndPoint_ = null;
       if (currentRouteSegmentEndPointBuilder_ != null) {
         currentRouteSegmentEndPointBuilder_.dispose();
@@ -6133,7 +6771,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.maps.fleetengine.v1.TripWaypoint.Builder
         getCurrentRouteSegmentEndPointBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getCurrentRouteSegmentEndPointFieldBuilder().getBuilder();
     }
@@ -6213,7 +6851,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the remainingDistanceMeters field is set.
      */
     public boolean hasRemainingDistanceMeters() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -6259,7 +6897,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         remainingDistanceMetersBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6282,7 +6920,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         remainingDistanceMetersBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6300,7 +6938,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRemainingDistanceMeters(com.google.protobuf.Int32Value value) {
       if (remainingDistanceMetersBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && remainingDistanceMeters_ != null
             && remainingDistanceMeters_ != com.google.protobuf.Int32Value.getDefaultInstance()) {
           getRemainingDistanceMetersBuilder().mergeFrom(value);
@@ -6311,7 +6949,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         remainingDistanceMetersBuilder_.mergeFrom(value);
       }
       if (remainingDistanceMeters_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -6329,7 +6967,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Int32Value remaining_distance_meters = 18;</code>
      */
     public Builder clearRemainingDistanceMeters() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       remainingDistanceMeters_ = null;
       if (remainingDistanceMetersBuilder_ != null) {
         remainingDistanceMetersBuilder_.dispose();
@@ -6351,7 +6989,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Int32Value remaining_distance_meters = 18;</code>
      */
     public com.google.protobuf.Int32Value.Builder getRemainingDistanceMetersBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getRemainingDistanceMetersFieldBuilder().getBuilder();
     }
@@ -6428,7 +7066,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the etaToFirstWaypoint field is set.
      */
     public boolean hasEtaToFirstWaypoint() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -6478,7 +7116,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         etaToFirstWaypointBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6502,7 +7140,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         etaToFirstWaypointBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6522,7 +7160,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEtaToFirstWaypoint(com.google.protobuf.Timestamp value) {
       if (etaToFirstWaypointBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && etaToFirstWaypoint_ != null
             && etaToFirstWaypoint_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getEtaToFirstWaypointBuilder().mergeFrom(value);
@@ -6533,7 +7171,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         etaToFirstWaypointBuilder_.mergeFrom(value);
       }
       if (etaToFirstWaypoint_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -6553,7 +7191,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp eta_to_first_waypoint = 19;</code>
      */
     public Builder clearEtaToFirstWaypoint() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       etaToFirstWaypoint_ = null;
       if (etaToFirstWaypointBuilder_ != null) {
         etaToFirstWaypointBuilder_.dispose();
@@ -6577,7 +7215,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp eta_to_first_waypoint = 19;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEtaToFirstWaypointBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getEtaToFirstWaypointFieldBuilder().getBuilder();
     }
@@ -6662,7 +7300,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the remainingTimeSeconds field is set.
      */
     public boolean hasRemainingTimeSeconds() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -6720,7 +7358,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         remainingTimeSecondsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6748,7 +7386,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         remainingTimeSecondsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6772,7 +7410,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRemainingTimeSeconds(com.google.protobuf.Int32Value value) {
       if (remainingTimeSecondsBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && remainingTimeSeconds_ != null
             && remainingTimeSeconds_ != com.google.protobuf.Int32Value.getDefaultInstance()) {
           getRemainingTimeSecondsBuilder().mergeFrom(value);
@@ -6783,7 +7421,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         remainingTimeSecondsBuilder_.mergeFrom(value);
       }
       if (remainingTimeSeconds_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -6807,7 +7445,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRemainingTimeSeconds() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       remainingTimeSeconds_ = null;
       if (remainingTimeSecondsBuilder_ != null) {
         remainingTimeSecondsBuilder_.dispose();
@@ -6835,7 +7473,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Int32Value.Builder getRemainingTimeSecondsBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getRemainingTimeSecondsFieldBuilder().getBuilder();
     }
@@ -6905,10 +7543,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureWaypointsIsMutable() {
-      if (!((bitField0_ & 0x00020000) != 0)) {
+      if (!((bitField0_ & 0x00040000) != 0)) {
         waypoints_ =
             new java.util.ArrayList<com.google.maps.fleetengine.v1.TripWaypoint>(waypoints_);
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
       }
     }
 
@@ -7124,7 +7762,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public Builder clearWaypoints() {
       if (waypointsBuilder_ == null) {
         waypoints_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         onChanged();
       } else {
         waypointsBuilder_.clear();
@@ -7246,7 +7884,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.fleetengine.v1.TripWaypoint,
                 com.google.maps.fleetengine.v1.TripWaypoint.Builder,
                 com.google.maps.fleetengine.v1.TripWaypointOrBuilder>(
-                waypoints_, ((bitField0_ & 0x00020000) != 0), getParentForChildren(), isClean());
+                waypoints_, ((bitField0_ & 0x00040000) != 0), getParentForChildren(), isClean());
         waypoints_ = null;
       }
       return waypointsBuilder_;
@@ -7274,7 +7912,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the waypointsVersion field is set.
      */
     public boolean hasWaypointsVersion() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -7322,7 +7960,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         waypointsVersionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7345,7 +7983,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         waypointsVersionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7364,7 +8002,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeWaypointsVersion(com.google.protobuf.Timestamp value) {
       if (waypointsVersionBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && waypointsVersion_ != null
             && waypointsVersion_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getWaypointsVersionBuilder().mergeFrom(value);
@@ -7375,7 +8013,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         waypointsVersionBuilder_.mergeFrom(value);
       }
       if (waypointsVersion_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -7394,7 +8032,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearWaypointsVersion() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       waypointsVersion_ = null;
       if (waypointsVersionBuilder_ != null) {
         waypointsVersionBuilder_.dispose();
@@ -7417,7 +8055,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getWaypointsVersionBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getWaypointsVersionFieldBuilder().getBuilder();
     }
@@ -7508,7 +8146,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public Builder setBackToBackEnabled(boolean value) {
 
       backToBackEnabled_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7526,7 +8164,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBackToBackEnabled() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       backToBackEnabled_ = false;
       onChanged();
       return this;
@@ -7562,7 +8200,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setNavigationStatusValue(int value) {
       navigationStatus_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7599,7 +8237,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       navigationStatus_ = value.getNumber();
       onChanged();
       return this;
@@ -7616,7 +8254,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNavigationStatus() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       navigationStatus_ = 0;
       onChanged();
       return this;
@@ -7643,7 +8281,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deviceSettings field is set.
      */
     public boolean hasDeviceSettings() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -7689,7 +8327,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         deviceSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7712,7 +8350,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       } else {
         deviceSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7730,7 +8368,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDeviceSettings(com.google.maps.fleetengine.v1.DeviceSettings value) {
       if (deviceSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && deviceSettings_ != null
             && deviceSettings_
                 != com.google.maps.fleetengine.v1.DeviceSettings.getDefaultInstance()) {
@@ -7742,7 +8380,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         deviceSettingsBuilder_.mergeFrom(value);
       }
       if (deviceSettings_ != null) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       return this;
@@ -7760,7 +8398,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDeviceSettings() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       deviceSettings_ = null;
       if (deviceSettingsBuilder_ != null) {
         deviceSettingsBuilder_.dispose();
@@ -7782,7 +8420,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.maps.fleetengine.v1.DeviceSettings.Builder getDeviceSettingsBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return getDeviceSettingsFieldBuilder().getBuilder();
     }

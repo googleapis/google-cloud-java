@@ -19,8 +19,8 @@ package com.google.cloud.dataform.v1beta1.samples;
 // [START dataform_v1beta1_generated_Dataform_RemoveFile_sync]
 import com.google.cloud.dataform.v1beta1.DataformClient;
 import com.google.cloud.dataform.v1beta1.RemoveFileRequest;
+import com.google.cloud.dataform.v1beta1.RemoveFileResponse;
 import com.google.cloud.dataform.v1beta1.WorkspaceName;
-import com.google.protobuf.Empty;
 
 public class SyncRemoveFile {
 
@@ -42,7 +42,7 @@ public class SyncRemoveFile {
                       .toString())
               .setPath("path3433509")
               .build();
-      dataformClient.removeFile(request);
+      RemoveFileResponse response = dataformClient.removeFile(request);
     }
   }
 }

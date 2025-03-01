@@ -150,12 +150,22 @@ public class ModelGardenServiceSettings extends ClientSettings<ModelGardenServic
     return ((ModelGardenServiceStubSettings) getStubSettings()).deployOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to deployPublisherModel. */
+  /**
+   * Returns the object with the settings used for calls to deployPublisherModel.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeployPublisherModelRequest, Operation> deployPublisherModelSettings() {
     return ((ModelGardenServiceStubSettings) getStubSettings()).deployPublisherModelSettings();
   }
 
-  /** Returns the object with the settings used for calls to deployPublisherModel. */
+  /**
+   * Returns the object with the settings used for calls to deployPublisherModel.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public OperationCallSettings<
           DeployPublisherModelRequest,
           DeployPublisherModelResponse,
@@ -314,13 +324,23 @@ public class ModelGardenServiceSettings extends ClientSettings<ModelGardenServic
       return getStubSettingsBuilder().deployOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deployPublisherModel. */
+    /**
+     * Returns the builder for the settings used for calls to deployPublisherModel.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeployPublisherModelRequest, Operation>
         deployPublisherModelSettings() {
       return getStubSettingsBuilder().deployPublisherModelSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deployPublisherModel. */
+    /**
+     * Returns the builder for the settings used for calls to deployPublisherModel.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public OperationCallSettings.Builder<
             DeployPublisherModelRequest,
             DeployPublisherModelResponse,

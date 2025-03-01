@@ -29,6 +29,7 @@ import com.google.common.collect.Lists;
 import com.google.geo.type.Viewport;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Duration;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Int32Value;
 import com.google.protobuf.Timestamp;
@@ -93,6 +94,7 @@ public class VehicleServiceClientTest {
             .addAllSupportedTripTypes(new ArrayList<TripType>())
             .addAllCurrentTrips(new ArrayList<String>())
             .setLastLocation(VehicleLocation.newBuilder().build())
+            .addAllPastLocations(new ArrayList<VehicleLocation>())
             .setMaximumCapacity(582710265)
             .addAllAttributes(new ArrayList<VehicleAttribute>())
             .setVehicleType(Vehicle.VehicleType.newBuilder().build())
@@ -167,6 +169,7 @@ public class VehicleServiceClientTest {
             .addAllSupportedTripTypes(new ArrayList<TripType>())
             .addAllCurrentTrips(new ArrayList<String>())
             .setLastLocation(VehicleLocation.newBuilder().build())
+            .addAllPastLocations(new ArrayList<VehicleLocation>())
             .setMaximumCapacity(582710265)
             .addAllAttributes(new ArrayList<VehicleAttribute>())
             .setVehicleType(Vehicle.VehicleType.newBuilder().build())
@@ -234,6 +237,74 @@ public class VehicleServiceClientTest {
   }
 
   @Test
+  public void deleteVehicleTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockVehicleService.addResponse(expectedResponse);
+
+    VehicleName name = VehicleName.of("[PROVIDER]", "[VEHICLE]");
+
+    client.deleteVehicle(name);
+
+    List<AbstractMessage> actualRequests = mockVehicleService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteVehicleRequest actualRequest = ((DeleteVehicleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteVehicleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVehicleService.addException(exception);
+
+    try {
+      VehicleName name = VehicleName.of("[PROVIDER]", "[VEHICLE]");
+      client.deleteVehicle(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteVehicleTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockVehicleService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteVehicle(name);
+
+    List<AbstractMessage> actualRequests = mockVehicleService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteVehicleRequest actualRequest = ((DeleteVehicleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteVehicleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVehicleService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteVehicle(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void updateVehicleTest() throws Exception {
     Vehicle expectedResponse =
         Vehicle.newBuilder()
@@ -242,6 +313,7 @@ public class VehicleServiceClientTest {
             .addAllSupportedTripTypes(new ArrayList<TripType>())
             .addAllCurrentTrips(new ArrayList<String>())
             .setLastLocation(VehicleLocation.newBuilder().build())
+            .addAllPastLocations(new ArrayList<VehicleLocation>())
             .setMaximumCapacity(582710265)
             .addAllAttributes(new ArrayList<VehicleAttribute>())
             .setVehicleType(Vehicle.VehicleType.newBuilder().build())

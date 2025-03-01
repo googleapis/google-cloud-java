@@ -35,7 +35,7 @@ public interface TerminalPointIdOrBuilder
    * <code>string place_id = 2 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalPointId.place_id is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=42
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=43
    * @return Whether the placeId field is set.
    */
   @java.lang.Deprecated
@@ -50,7 +50,7 @@ public interface TerminalPointIdOrBuilder
    * <code>string place_id = 2 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalPointId.place_id is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=42
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=43
    * @return The placeId.
    */
   @java.lang.Deprecated
@@ -65,7 +65,7 @@ public interface TerminalPointIdOrBuilder
    * <code>string place_id = 2 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalPointId.place_id is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=42
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=43
    * @return The bytes for placeId.
    */
   @java.lang.Deprecated
@@ -81,7 +81,7 @@ public interface TerminalPointIdOrBuilder
    * <code>string generated_id = 3 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalPointId.generated_id is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=45
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=46
    * @return Whether the generatedId field is set.
    */
   @java.lang.Deprecated
@@ -96,7 +96,7 @@ public interface TerminalPointIdOrBuilder
    * <code>string generated_id = 3 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalPointId.generated_id is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=45
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=46
    * @return The generatedId.
    */
   @java.lang.Deprecated
@@ -111,7 +111,7 @@ public interface TerminalPointIdOrBuilder
    * <code>string generated_id = 3 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalPointId.generated_id is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=45
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=46
    * @return The bytes for generatedId.
    */
   @java.lang.Deprecated
@@ -127,7 +127,7 @@ public interface TerminalPointIdOrBuilder
    * <code>string value = 4 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalPointId.value is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=49
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=50
    * @return The value.
    */
   @java.lang.Deprecated
@@ -142,7 +142,7 @@ public interface TerminalPointIdOrBuilder
    * <code>string value = 4 [deprecated = true];</code>
    *
    * @deprecated maps.fleetengine.v1.TerminalPointId.value is deprecated. See
-   *     google/maps/fleetengine/v1/fleetengine.proto;l=49
+   *     google/maps/fleetengine/v1/fleetengine.proto;l=50
    * @return The bytes for value.
    */
   @java.lang.Deprecated

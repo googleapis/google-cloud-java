@@ -53,6 +53,8 @@ import com.google.maps.fleetengine.delivery.v1.BatchCreateTasksRequest;
 import com.google.maps.fleetengine.delivery.v1.BatchCreateTasksResponse;
 import com.google.maps.fleetengine.delivery.v1.CreateDeliveryVehicleRequest;
 import com.google.maps.fleetengine.delivery.v1.CreateTaskRequest;
+import com.google.maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest;
+import com.google.maps.fleetengine.delivery.v1.DeleteTaskRequest;
 import com.google.maps.fleetengine.delivery.v1.DeliveryVehicle;
 import com.google.maps.fleetengine.delivery.v1.GetDeliveryVehicleRequest;
 import com.google.maps.fleetengine.delivery.v1.GetTaskRequest;
@@ -65,6 +67,7 @@ import com.google.maps.fleetengine.delivery.v1.Task;
 import com.google.maps.fleetengine.delivery.v1.TaskTrackingInfo;
 import com.google.maps.fleetengine.delivery.v1.UpdateDeliveryVehicleRequest;
 import com.google.maps.fleetengine.delivery.v1.UpdateTaskRequest;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
@@ -130,12 +133,15 @@ public class DeliveryServiceStubSettings extends StubSettings<DeliveryServiceStu
       createDeliveryVehicleSettings;
   private final UnaryCallSettings<GetDeliveryVehicleRequest, DeliveryVehicle>
       getDeliveryVehicleSettings;
+  private final UnaryCallSettings<DeleteDeliveryVehicleRequest, Empty>
+      deleteDeliveryVehicleSettings;
   private final UnaryCallSettings<UpdateDeliveryVehicleRequest, DeliveryVehicle>
       updateDeliveryVehicleSettings;
   private final UnaryCallSettings<BatchCreateTasksRequest, BatchCreateTasksResponse>
       batchCreateTasksSettings;
   private final UnaryCallSettings<CreateTaskRequest, Task> createTaskSettings;
   private final UnaryCallSettings<GetTaskRequest, Task> getTaskSettings;
+  private final UnaryCallSettings<DeleteTaskRequest, Empty> deleteTaskSettings;
   private final UnaryCallSettings<UpdateTaskRequest, Task> updateTaskSettings;
   private final PagedCallSettings<ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>
       listTasksSettings;
@@ -273,6 +279,11 @@ public class DeliveryServiceStubSettings extends StubSettings<DeliveryServiceStu
     return getDeliveryVehicleSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteDeliveryVehicle. */
+  public UnaryCallSettings<DeleteDeliveryVehicleRequest, Empty> deleteDeliveryVehicleSettings() {
+    return deleteDeliveryVehicleSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateDeliveryVehicle. */
   public UnaryCallSettings<UpdateDeliveryVehicleRequest, DeliveryVehicle>
       updateDeliveryVehicleSettings() {
@@ -293,6 +304,11 @@ public class DeliveryServiceStubSettings extends StubSettings<DeliveryServiceStu
   /** Returns the object with the settings used for calls to getTask. */
   public UnaryCallSettings<GetTaskRequest, Task> getTaskSettings() {
     return getTaskSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTask. */
+  public UnaryCallSettings<DeleteTaskRequest, Empty> deleteTaskSettings() {
+    return deleteTaskSettings;
   }
 
   /** Returns the object with the settings used for calls to updateTask. */
@@ -434,10 +450,12 @@ public class DeliveryServiceStubSettings extends StubSettings<DeliveryServiceStu
 
     createDeliveryVehicleSettings = settingsBuilder.createDeliveryVehicleSettings().build();
     getDeliveryVehicleSettings = settingsBuilder.getDeliveryVehicleSettings().build();
+    deleteDeliveryVehicleSettings = settingsBuilder.deleteDeliveryVehicleSettings().build();
     updateDeliveryVehicleSettings = settingsBuilder.updateDeliveryVehicleSettings().build();
     batchCreateTasksSettings = settingsBuilder.batchCreateTasksSettings().build();
     createTaskSettings = settingsBuilder.createTaskSettings().build();
     getTaskSettings = settingsBuilder.getTaskSettings().build();
+    deleteTaskSettings = settingsBuilder.deleteTaskSettings().build();
     updateTaskSettings = settingsBuilder.updateTaskSettings().build();
     listTasksSettings = settingsBuilder.listTasksSettings().build();
     getTaskTrackingInfoSettings = settingsBuilder.getTaskTrackingInfoSettings().build();
@@ -451,12 +469,15 @@ public class DeliveryServiceStubSettings extends StubSettings<DeliveryServiceStu
         createDeliveryVehicleSettings;
     private final UnaryCallSettings.Builder<GetDeliveryVehicleRequest, DeliveryVehicle>
         getDeliveryVehicleSettings;
+    private final UnaryCallSettings.Builder<DeleteDeliveryVehicleRequest, Empty>
+        deleteDeliveryVehicleSettings;
     private final UnaryCallSettings.Builder<UpdateDeliveryVehicleRequest, DeliveryVehicle>
         updateDeliveryVehicleSettings;
     private final UnaryCallSettings.Builder<BatchCreateTasksRequest, BatchCreateTasksResponse>
         batchCreateTasksSettings;
     private final UnaryCallSettings.Builder<CreateTaskRequest, Task> createTaskSettings;
     private final UnaryCallSettings.Builder<GetTaskRequest, Task> getTaskSettings;
+    private final UnaryCallSettings.Builder<DeleteTaskRequest, Empty> deleteTaskSettings;
     private final UnaryCallSettings.Builder<UpdateTaskRequest, Task> updateTaskSettings;
     private final PagedCallSettings.Builder<
             ListTasksRequest, ListTasksResponse, ListTasksPagedResponse>
@@ -477,6 +498,7 @@ public class DeliveryServiceStubSettings extends StubSettings<DeliveryServiceStu
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -496,6 +518,8 @@ public class DeliveryServiceStubSettings extends StubSettings<DeliveryServiceStu
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -508,10 +532,12 @@ public class DeliveryServiceStubSettings extends StubSettings<DeliveryServiceStu
 
       createDeliveryVehicleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getDeliveryVehicleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteDeliveryVehicleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateDeliveryVehicleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchCreateTasksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listTasksSettings = PagedCallSettings.newBuilder(LIST_TASKS_PAGE_STR_FACT);
       getTaskTrackingInfoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -522,10 +548,12 @@ public class DeliveryServiceStubSettings extends StubSettings<DeliveryServiceStu
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createDeliveryVehicleSettings,
               getDeliveryVehicleSettings,
+              deleteDeliveryVehicleSettings,
               updateDeliveryVehicleSettings,
               batchCreateTasksSettings,
               createTaskSettings,
               getTaskSettings,
+              deleteTaskSettings,
               updateTaskSettings,
               listTasksSettings,
               getTaskTrackingInfoSettings,
@@ -538,10 +566,12 @@ public class DeliveryServiceStubSettings extends StubSettings<DeliveryServiceStu
 
       createDeliveryVehicleSettings = settings.createDeliveryVehicleSettings.toBuilder();
       getDeliveryVehicleSettings = settings.getDeliveryVehicleSettings.toBuilder();
+      deleteDeliveryVehicleSettings = settings.deleteDeliveryVehicleSettings.toBuilder();
       updateDeliveryVehicleSettings = settings.updateDeliveryVehicleSettings.toBuilder();
       batchCreateTasksSettings = settings.batchCreateTasksSettings.toBuilder();
       createTaskSettings = settings.createTaskSettings.toBuilder();
       getTaskSettings = settings.getTaskSettings.toBuilder();
+      deleteTaskSettings = settings.deleteTaskSettings.toBuilder();
       updateTaskSettings = settings.updateTaskSettings.toBuilder();
       listTasksSettings = settings.listTasksSettings.toBuilder();
       getTaskTrackingInfoSettings = settings.getTaskTrackingInfoSettings.toBuilder();
@@ -551,10 +581,12 @@ public class DeliveryServiceStubSettings extends StubSettings<DeliveryServiceStu
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createDeliveryVehicleSettings,
               getDeliveryVehicleSettings,
+              deleteDeliveryVehicleSettings,
               updateDeliveryVehicleSettings,
               batchCreateTasksSettings,
               createTaskSettings,
               getTaskSettings,
+              deleteTaskSettings,
               updateTaskSettings,
               listTasksSettings,
               getTaskTrackingInfoSettings,
@@ -597,6 +629,11 @@ public class DeliveryServiceStubSettings extends StubSettings<DeliveryServiceStu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .deleteDeliveryVehicleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .updateDeliveryVehicleSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -615,6 +652,11 @@ public class DeliveryServiceStubSettings extends StubSettings<DeliveryServiceStu
           .getTaskSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteTaskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .updateTaskSettings()
@@ -666,6 +708,12 @@ public class DeliveryServiceStubSettings extends StubSettings<DeliveryServiceStu
       return getDeliveryVehicleSettings;
     }
 
+    /** Returns the builder for the settings used for calls to deleteDeliveryVehicle. */
+    public UnaryCallSettings.Builder<DeleteDeliveryVehicleRequest, Empty>
+        deleteDeliveryVehicleSettings() {
+      return deleteDeliveryVehicleSettings;
+    }
+
     /** Returns the builder for the settings used for calls to updateDeliveryVehicle. */
     public UnaryCallSettings.Builder<UpdateDeliveryVehicleRequest, DeliveryVehicle>
         updateDeliveryVehicleSettings() {
@@ -686,6 +734,11 @@ public class DeliveryServiceStubSettings extends StubSettings<DeliveryServiceStu
     /** Returns the builder for the settings used for calls to getTask. */
     public UnaryCallSettings.Builder<GetTaskRequest, Task> getTaskSettings() {
       return getTaskSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTask. */
+    public UnaryCallSettings.Builder<DeleteTaskRequest, Empty> deleteTaskSettings() {
+      return deleteTaskSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateTask. */

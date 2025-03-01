@@ -129,14 +129,14 @@ public final class AudioConfigProto {
           + "NCODING_MP3\020\002\022%\n!OUTPUT_AUDIO_ENCODING_M"
           + "P3_64_KBPS\020\004\022\"\n\036OUTPUT_AUDIO_ENCODING_OG"
           + "G_OPUS\020\003\022\037\n\033OUTPUT_AUDIO_ENCODING_MULAW\020"
-          + "\005\022\036\n\032OUTPUT_AUDIO_ENCODING_ALAW\020\006B\216\002\n!co"
+          + "\005\022\036\n\032OUTPUT_AUDIO_ENCODING_ALAW\020\006B\213\002\n!co"
           + "m.google.cloud.dialogflow.cx.v3B\020AudioCo"
           + "nfigProtoP\001Z1cloud.google.com/go/dialogf"
-          + "low/cx/apiv3/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Google."
-          + "Cloud.Dialogflow.Cx.V3\352\002!Google::Cloud::"
-          + "Dialogflow::CX::V3\352AU\n\033automl.googleapis"
-          + ".com/Model\0226projects/{project}/locations"
-          + "/{location}/models/{model}b\006proto3"
+          + "low/cx/apiv3/cxpb;cxpb\242\002\002DF\252\002\035Google.Clo"
+          + "ud.Dialogflow.Cx.V3\352\002!Google::Cloud::Dia"
+          + "logflow::CX::V3\352AU\n\033automl.googleapis.co"
+          + "m/Model\0226projects/{project}/locations/{l"
+          + "ocation}/models/{model}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

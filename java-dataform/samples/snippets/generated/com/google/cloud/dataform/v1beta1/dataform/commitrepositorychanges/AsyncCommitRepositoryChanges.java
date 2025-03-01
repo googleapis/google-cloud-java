@@ -20,9 +20,9 @@ package com.google.cloud.dataform.v1beta1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.dataform.v1beta1.CommitMetadata;
 import com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest;
+import com.google.cloud.dataform.v1beta1.CommitRepositoryChangesResponse;
 import com.google.cloud.dataform.v1beta1.DataformClient;
 import com.google.cloud.dataform.v1beta1.RepositoryName;
-import com.google.protobuf.Empty;
 import java.util.HashMap;
 
 public class AsyncCommitRepositoryChanges {
@@ -46,10 +46,10 @@ public class AsyncCommitRepositoryChanges {
               .putAllFileOperations(
                   new HashMap<String, CommitRepositoryChangesRequest.FileOperation>())
               .build();
-      ApiFuture<Empty> future =
+      ApiFuture<CommitRepositoryChangesResponse> future =
           dataformClient.commitRepositoryChangesCallable().futureCall(request);
       // Do something.
-      future.get();
+      CommitRepositoryChangesResponse response = future.get();
     }
   }
 }

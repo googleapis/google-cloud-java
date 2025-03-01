@@ -19,9 +19,9 @@ package com.google.cloud.dataform.v1beta1.samples;
 // [START dataform_v1beta1_generated_Dataform_CancelWorkflowInvocation_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationRequest;
+import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationResponse;
 import com.google.cloud.dataform.v1beta1.DataformClient;
 import com.google.cloud.dataform.v1beta1.WorkflowInvocationName;
-import com.google.protobuf.Empty;
 
 public class AsyncCancelWorkflowInvocation {
 
@@ -43,10 +43,10 @@ public class AsyncCancelWorkflowInvocation {
                           "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKFLOW_INVOCATION]")
                       .toString())
               .build();
-      ApiFuture<Empty> future =
+      ApiFuture<CancelWorkflowInvocationResponse> future =
           dataformClient.cancelWorkflowInvocationCallable().futureCall(request);
       // Do something.
-      future.get();
+      CancelWorkflowInvocationResponse response = future.get();
     }
   }
 }

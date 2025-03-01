@@ -21,6 +21,7 @@ import static com.google.maps.fleetengine.v1.VehicleServiceClient.ListVehiclesPa
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.maps.fleetengine.v1.CreateVehicleRequest;
+import com.google.maps.fleetengine.v1.DeleteVehicleRequest;
 import com.google.maps.fleetengine.v1.GetVehicleRequest;
 import com.google.maps.fleetengine.v1.ListVehiclesRequest;
 import com.google.maps.fleetengine.v1.ListVehiclesResponse;
@@ -30,6 +31,7 @@ import com.google.maps.fleetengine.v1.UpdateVehicleAttributesRequest;
 import com.google.maps.fleetengine.v1.UpdateVehicleAttributesResponse;
 import com.google.maps.fleetengine.v1.UpdateVehicleRequest;
 import com.google.maps.fleetengine.v1.Vehicle;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -47,6 +49,10 @@ public abstract class VehicleServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetVehicleRequest, Vehicle> getVehicleCallable() {
     throw new UnsupportedOperationException("Not implemented: getVehicleCallable()");
+  }
+
+  public UnaryCallable<DeleteVehicleRequest, Empty> deleteVehicleCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteVehicleCallable()");
   }
 
   public UnaryCallable<UpdateVehicleRequest, Vehicle> updateVehicleCallable() {

@@ -83,6 +83,7 @@ public abstract class ModelGardenServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deployCallable()");
   }
 
+  @Deprecated
   public OperationCallable<
           DeployPublisherModelRequest,
           DeployPublisherModelResponse,
@@ -92,6 +93,7 @@ public abstract class ModelGardenServiceStub implements BackgroundResource {
         "Not implemented: deployPublisherModelOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<DeployPublisherModelRequest, Operation> deployPublisherModelCallable() {
     throw new UnsupportedOperationException("Not implemented: deployPublisherModelCallable()");
   }

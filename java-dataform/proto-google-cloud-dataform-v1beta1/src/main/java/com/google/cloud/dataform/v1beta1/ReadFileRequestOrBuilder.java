@@ -79,4 +79,31 @@ public interface ReadFileRequestOrBuilder
    * @return The bytes for path.
    */
   com.google.protobuf.ByteString getPathBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Git revision of the file to return. If left empty, the
+   * current contents of `path` will be returned.
+   * </pre>
+   *
+   * <code>string revision = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The revision.
+   */
+  java.lang.String getRevision();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Git revision of the file to return. If left empty, the
+   * current contents of `path` will be returned.
+   * </pre>
+   *
+   * <code>string revision = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for revision.
+   */
+  com.google.protobuf.ByteString getRevisionBytes();
 }

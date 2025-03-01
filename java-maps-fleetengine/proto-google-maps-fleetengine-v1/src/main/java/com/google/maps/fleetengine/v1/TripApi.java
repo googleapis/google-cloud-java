@@ -37,6 +37,10 @@ public final class TripApi {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_maps_fleetengine_v1_GetTripRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_maps_fleetengine_v1_DeleteTripRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_maps_fleetengine_v1_DeleteTripRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_maps_fleetengine_v1_ReportBillableTripRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_maps_fleetengine_v1_ReportBillableTripRequest_fieldAccessorTable;
@@ -90,58 +94,66 @@ public final class TripApi {
           + "t_route_segment_traffic_version\030\t \001(\0132\032."
           + "google.protobuf.Timestamp\022E\n!remaining_w"
           + "aypoints_route_version\030\n \001(\0132\032.google.pr"
-          + "otobuf.Timestamp\"\315\002\n\031ReportBillableTripR"
-          + "equest\022\021\n\004name\030\002 \001(\tB\003\340A\002\022\031\n\014country_cod"
-          + "e\030\003 \001(\tB\003\340A\002\022@\n\010platform\030\005 \001(\0162..maps.fl"
-          + "eetengine.v1.BillingPlatformIdentifier\022\023"
-          + "\n\013related_ids\030\006 \003(\t\022R\n\rsolution_type\030\007 \001"
-          + "(\0162;.maps.fleetengine.v1.ReportBillableT"
-          + "ripRequest.SolutionType\"W\n\014SolutionType\022"
-          + "\035\n\031SOLUTION_TYPE_UNSPECIFIED\020\000\022(\n$ON_DEM"
-          + "AND_RIDESHARING_AND_DELIVERIES\020\001\"\276\001\n\021Upd"
-          + "ateTripRequest\0222\n\006header\030\001 \001(\0132\".maps.fl"
-          + "eetengine.v1.RequestHeader\022\021\n\004name\030\003 \001(\t"
-          + "B\003\340A\002\022,\n\004trip\030\004 \001(\0132\031.maps.fleetengine.v"
-          + "1.TripB\003\340A\002\0224\n\013update_mask\030\005 \001(\0132\032.googl"
-          + "e.protobuf.FieldMaskB\003\340A\002\"\351\001\n\022SearchTrip"
-          + "sRequest\0222\n\006header\030\001 \001(\0132\".maps.fleeteng"
-          + "ine.v1.RequestHeader\022\023\n\006parent\030\003 \001(\tB\003\340A"
-          + "\002\022\022\n\nvehicle_id\030\004 \001(\t\022\031\n\021active_trips_on"
-          + "ly\030\005 \001(\010\022\021\n\tpage_size\030\006 \001(\005\022\022\n\npage_toke"
-          + "n\030\007 \001(\t\0224\n\021minimum_staleness\030\010 \001(\0132\031.goo"
-          + "gle.protobuf.Duration\"X\n\023SearchTripsResp"
-          + "onse\022(\n\005trips\030\001 \003(\0132\031.maps.fleetengine.v"
-          + "1.Trip\022\027\n\017next_page_token\030\002 \001(\t2\320\007\n\013Trip"
-          + "Service\022\250\001\n\nCreateTrip\022&.maps.fleetengin"
-          + "e.v1.CreateTripRequest\032\031.maps.fleetengin"
-          + "e.v1.Trip\"W\202\323\344\223\002&\"\036/v1/{parent=providers"
-          + "/*}/trips:\004trip\212\323\344\223\002%\022#\n\006parent\022\031{provid"
-          + "er_id=providers/*}\022\232\001\n\007GetTrip\022#.maps.fl"
-          + "eetengine.v1.GetTripRequest\032\031.maps.fleet"
-          + "engine.v1.Trip\"O\202\323\344\223\002 \022\036/v1/{name=provid"
-          + "ers/*/trips/*}\212\323\344\223\002#\022!\n\004name\022\031{provider_"
-          + "id=providers/*}\022\277\001\n\022ReportBillableTrip\022."
-          + ".maps.fleetengine.v1.ReportBillableTripR"
-          + "equest\032\026.google.protobuf.Empty\"a\202\323\344\223\0022\"-"
-          + "/v1/{name=providers/*/billableTrips/*}:r"
-          + "eport:\001*\212\323\344\223\002#\022!\n\004name\022\031{provider_id=pro"
-          + "viders/*}\022\275\001\n\013SearchTrips\022\'.maps.fleeten"
-          + "gine.v1.SearchTripsRequest\032(.maps.fleete"
-          + "ngine.v1.SearchTripsResponse\"[\202\323\344\223\002*\"%/v"
-          + "1/{parent=providers/*}/trips:search:\001*\212\323"
-          + "\344\223\002%\022#\n\006parent\022\031{provider_id=providers/*"
-          + "}\022\246\001\n\nUpdateTrip\022&.maps.fleetengine.v1.U"
-          + "pdateTripRequest\032\031.maps.fleetengine.v1.T"
-          + "rip\"U\202\323\344\223\002&\032\036/v1/{name=providers/*/trips"
-          + "/*}:\004trip\212\323\344\223\002#\022!\n\004name\022\031{provider_id=pr"
-          + "oviders/*}\032N\312A\032fleetengine.googleapis.co"
-          + "m\322A.https://www.googleapis.com/auth/clou"
-          + "d-platformB\323\001\n\036com.google.maps.fleetengi"
-          + "ne.v1B\007TripApiP\001ZFcloud.google.com/go/ma"
-          + "ps/fleetengine/apiv1/fleetenginepb;fleet"
-          + "enginepb\242\002\003CFE\252\002\032Google.Maps.FleetEngine"
-          + ".V1\312\002\032Google\\Maps\\FleetEngine\\V1\352\002\035Googl"
-          + "e::Maps::FleetEngine::V1b\006proto3"
+          + "otobuf.Timestamp\"\203\001\n\021DeleteTripRequest\0227"
+          + "\n\006header\030\001 \001(\0132\".maps.fleetengine.v1.Req"
+          + "uestHeaderB\003\340A\001\0225\n\004name\030\002 \001(\tB\'\340A\002\372A!\n\037f"
+          + "leetengine.googleapis.com/Trip\"\315\002\n\031Repor"
+          + "tBillableTripRequest\022\021\n\004name\030\002 \001(\tB\003\340A\002\022"
+          + "\031\n\014country_code\030\003 \001(\tB\003\340A\002\022@\n\010platform\030\005"
+          + " \001(\0162..maps.fleetengine.v1.BillingPlatfo"
+          + "rmIdentifier\022\023\n\013related_ids\030\006 \003(\t\022R\n\rsol"
+          + "ution_type\030\007 \001(\0162;.maps.fleetengine.v1.R"
+          + "eportBillableTripRequest.SolutionType\"W\n"
+          + "\014SolutionType\022\035\n\031SOLUTION_TYPE_UNSPECIFI"
+          + "ED\020\000\022(\n$ON_DEMAND_RIDESHARING_AND_DELIVE"
+          + "RIES\020\001\"\276\001\n\021UpdateTripRequest\0222\n\006header\030\001"
+          + " \001(\0132\".maps.fleetengine.v1.RequestHeader"
+          + "\022\021\n\004name\030\003 \001(\tB\003\340A\002\022,\n\004trip\030\004 \001(\0132\031.maps"
+          + ".fleetengine.v1.TripB\003\340A\002\0224\n\013update_mask"
+          + "\030\005 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\""
+          + "\351\001\n\022SearchTripsRequest\0222\n\006header\030\001 \001(\0132\""
+          + ".maps.fleetengine.v1.RequestHeader\022\023\n\006pa"
+          + "rent\030\003 \001(\tB\003\340A\002\022\022\n\nvehicle_id\030\004 \001(\t\022\031\n\021a"
+          + "ctive_trips_only\030\005 \001(\010\022\021\n\tpage_size\030\006 \001("
+          + "\005\022\022\n\npage_token\030\007 \001(\t\0224\n\021minimum_stalene"
+          + "ss\030\010 \001(\0132\031.google.protobuf.Duration\"X\n\023S"
+          + "earchTripsResponse\022(\n\005trips\030\001 \003(\0132\031.maps"
+          + ".fleetengine.v1.Trip\022\027\n\017next_page_token\030"
+          + "\002 \001(\t2\367\010\n\013TripService\022\250\001\n\nCreateTrip\022&.m"
+          + "aps.fleetengine.v1.CreateTripRequest\032\031.m"
+          + "aps.fleetengine.v1.Trip\"W\202\323\344\223\002&\"\036/v1/{pa"
+          + "rent=providers/*}/trips:\004trip\212\323\344\223\002%\022#\n\006p"
+          + "arent\022\031{provider_id=providers/*}\022\232\001\n\007Get"
+          + "Trip\022#.maps.fleetengine.v1.GetTripReques"
+          + "t\032\031.maps.fleetengine.v1.Trip\"O\202\323\344\223\002 \022\036/v"
+          + "1/{name=providers/*/trips/*}\212\323\344\223\002#\022!\n\004na"
+          + "me\022\031{provider_id=providers/*}\022\244\001\n\nDelete"
+          + "Trip\022&.maps.fleetengine.v1.DeleteTripReq"
+          + "uest\032\026.google.protobuf.Empty\"V\332A\004name\202\323\344"
+          + "\223\002 *\036/v1/{name=providers/*/trips/*}\212\323\344\223\002"
+          + "#\022!\n\004name\022\031{provider_id=providers/*}\022\277\001\n"
+          + "\022ReportBillableTrip\022..maps.fleetengine.v"
+          + "1.ReportBillableTripRequest\032\026.google.pro"
+          + "tobuf.Empty\"a\202\323\344\223\0022\"-/v1/{name=providers"
+          + "/*/billableTrips/*}:report:\001*\212\323\344\223\002#\022!\n\004n"
+          + "ame\022\031{provider_id=providers/*}\022\275\001\n\013Searc"
+          + "hTrips\022\'.maps.fleetengine.v1.SearchTrips"
+          + "Request\032(.maps.fleetengine.v1.SearchTrip"
+          + "sResponse\"[\202\323\344\223\002*\"%/v1/{parent=providers"
+          + "/*}/trips:search:\001*\212\323\344\223\002%\022#\n\006parent\022\031{pr"
+          + "ovider_id=providers/*}\022\246\001\n\nUpdateTrip\022&."
+          + "maps.fleetengine.v1.UpdateTripRequest\032\031."
+          + "maps.fleetengine.v1.Trip\"U\202\323\344\223\002&\032\036/v1/{n"
+          + "ame=providers/*/trips/*}:\004trip\212\323\344\223\002#\022!\n\004"
+          + "name\022\031{provider_id=providers/*}\032N\312A\032flee"
+          + "tengine.googleapis.com\322A.https://www.goo"
+          + "gleapis.com/auth/cloud-platformB\323\001\n\036com."
+          + "google.maps.fleetengine.v1B\007TripApiP\001ZFc"
+          + "loud.google.com/go/maps/fleetengine/apiv"
+          + "1/fleetenginepb;fleetenginepb\242\002\003CFE\252\002\032Go"
+          + "ogle.Maps.FleetEngine.V1\312\002\032Google\\Maps\\F"
+          + "leetEngine\\V1\352\002\035Google::Maps::FleetEngin"
+          + "e::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -183,8 +195,16 @@ public final class TripApi {
               "CurrentRouteSegmentTrafficVersion",
               "RemainingWaypointsRouteVersion",
             });
-    internal_static_maps_fleetengine_v1_ReportBillableTripRequest_descriptor =
+    internal_static_maps_fleetengine_v1_DeleteTripRequest_descriptor =
         getDescriptor().getMessageTypes().get(2);
+    internal_static_maps_fleetengine_v1_DeleteTripRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_maps_fleetengine_v1_DeleteTripRequest_descriptor,
+            new java.lang.String[] {
+              "Header", "Name",
+            });
+    internal_static_maps_fleetengine_v1_ReportBillableTripRequest_descriptor =
+        getDescriptor().getMessageTypes().get(3);
     internal_static_maps_fleetengine_v1_ReportBillableTripRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_maps_fleetengine_v1_ReportBillableTripRequest_descriptor,
@@ -192,7 +212,7 @@ public final class TripApi {
               "Name", "CountryCode", "Platform", "RelatedIds", "SolutionType",
             });
     internal_static_maps_fleetengine_v1_UpdateTripRequest_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_maps_fleetengine_v1_UpdateTripRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_maps_fleetengine_v1_UpdateTripRequest_descriptor,
@@ -200,7 +220,7 @@ public final class TripApi {
               "Header", "Name", "Trip", "UpdateMask",
             });
     internal_static_maps_fleetengine_v1_SearchTripsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_maps_fleetengine_v1_SearchTripsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_maps_fleetengine_v1_SearchTripsRequest_descriptor,
@@ -214,7 +234,7 @@ public final class TripApi {
               "MinimumStaleness",
             });
     internal_static_maps_fleetengine_v1_SearchTripsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_maps_fleetengine_v1_SearchTripsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_maps_fleetengine_v1_SearchTripsResponse_descriptor,
@@ -226,6 +246,7 @@ public final class TripApi {
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resourceReference);
     registry.add(com.google.api.RoutingProto.routing);

@@ -21,6 +21,7 @@ import static com.google.maps.fleetengine.v1.TripServiceClient.SearchTripsPagedR
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.maps.fleetengine.v1.CreateTripRequest;
+import com.google.maps.fleetengine.v1.DeleteTripRequest;
 import com.google.maps.fleetengine.v1.GetTripRequest;
 import com.google.maps.fleetengine.v1.ReportBillableTripRequest;
 import com.google.maps.fleetengine.v1.SearchTripsRequest;
@@ -45,6 +46,10 @@ public abstract class TripServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetTripRequest, Trip> getTripCallable() {
     throw new UnsupportedOperationException("Not implemented: getTripCallable()");
+  }
+
+  public UnaryCallable<DeleteTripRequest, Empty> deleteTripCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteTripCallable()");
   }
 
   public UnaryCallable<ReportBillableTripRequest, Empty> reportBillableTripCallable() {

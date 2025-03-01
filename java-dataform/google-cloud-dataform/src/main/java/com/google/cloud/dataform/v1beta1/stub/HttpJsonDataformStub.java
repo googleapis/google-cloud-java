@@ -28,6 +28,7 @@ import static com.google.cloud.dataform.v1beta1.DataformClient.QueryCompilationR
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryDirectoryContentsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryRepositoryDirectoryContentsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryWorkflowInvocationActionsPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.SearchFilesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -43,11 +44,15 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationRequest;
+import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationResponse;
 import com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest;
+import com.google.cloud.dataform.v1beta1.CommitRepositoryChangesResponse;
 import com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesRequest;
+import com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesResponse;
 import com.google.cloud.dataform.v1beta1.CompilationResult;
 import com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest;
 import com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse;
+import com.google.cloud.dataform.v1beta1.Config;
 import com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest;
 import com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest;
 import com.google.cloud.dataform.v1beta1.CreateRepositoryRequest;
@@ -70,6 +75,7 @@ import com.google.cloud.dataform.v1beta1.FetchRemoteBranchesResponse;
 import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest;
 import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse;
 import com.google.cloud.dataform.v1beta1.GetCompilationResultRequest;
+import com.google.cloud.dataform.v1beta1.GetConfigRequest;
 import com.google.cloud.dataform.v1beta1.GetReleaseConfigRequest;
 import com.google.cloud.dataform.v1beta1.GetRepositoryRequest;
 import com.google.cloud.dataform.v1beta1.GetWorkflowConfigRequest;
@@ -96,7 +102,9 @@ import com.google.cloud.dataform.v1beta1.MoveDirectoryResponse;
 import com.google.cloud.dataform.v1beta1.MoveFileRequest;
 import com.google.cloud.dataform.v1beta1.MoveFileResponse;
 import com.google.cloud.dataform.v1beta1.PullGitCommitsRequest;
+import com.google.cloud.dataform.v1beta1.PullGitCommitsResponse;
 import com.google.cloud.dataform.v1beta1.PushGitCommitsRequest;
+import com.google.cloud.dataform.v1beta1.PushGitCommitsResponse;
 import com.google.cloud.dataform.v1beta1.QueryCompilationResultActionsRequest;
 import com.google.cloud.dataform.v1beta1.QueryCompilationResultActionsResponse;
 import com.google.cloud.dataform.v1beta1.QueryDirectoryContentsRequest;
@@ -111,9 +119,15 @@ import com.google.cloud.dataform.v1beta1.ReadRepositoryFileRequest;
 import com.google.cloud.dataform.v1beta1.ReadRepositoryFileResponse;
 import com.google.cloud.dataform.v1beta1.ReleaseConfig;
 import com.google.cloud.dataform.v1beta1.RemoveDirectoryRequest;
+import com.google.cloud.dataform.v1beta1.RemoveDirectoryResponse;
 import com.google.cloud.dataform.v1beta1.RemoveFileRequest;
+import com.google.cloud.dataform.v1beta1.RemoveFileResponse;
 import com.google.cloud.dataform.v1beta1.Repository;
 import com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesRequest;
+import com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesResponse;
+import com.google.cloud.dataform.v1beta1.SearchFilesRequest;
+import com.google.cloud.dataform.v1beta1.SearchFilesResponse;
+import com.google.cloud.dataform.v1beta1.UpdateConfigRequest;
 import com.google.cloud.dataform.v1beta1.UpdateReleaseConfigRequest;
 import com.google.cloud.dataform.v1beta1.UpdateRepositoryRequest;
 import com.google.cloud.dataform.v1beta1.UpdateWorkflowConfigRequest;
@@ -337,9 +351,11 @@ public class HttpJsonDataformStub extends DataformStub {
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<CommitRepositoryChangesRequest, Empty>
+  private static final ApiMethodDescriptor<
+          CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>
       commitRepositoryChangesMethodDescriptor =
-          ApiMethodDescriptor.<CommitRepositoryChangesRequest, Empty>newBuilder()
+          ApiMethodDescriptor
+              .<CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>newBuilder()
               .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/CommitRepositoryChanges")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
@@ -368,8 +384,8 @@ public class HttpJsonDataformStub extends DataformStub {
                                   .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
-                  ProtoMessageResponseParser.<Empty>newBuilder()
-                      .setDefaultInstance(Empty.getDefaultInstance())
+                  ProtoMessageResponseParser.<CommitRepositoryChangesResponse>newBuilder()
+                      .setDefaultInstance(CommitRepositoryChangesResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -749,9 +765,9 @@ public class HttpJsonDataformStub extends DataformStub {
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<PullGitCommitsRequest, Empty>
+  private static final ApiMethodDescriptor<PullGitCommitsRequest, PullGitCommitsResponse>
       pullGitCommitsMethodDescriptor =
-          ApiMethodDescriptor.<PullGitCommitsRequest, Empty>newBuilder()
+          ApiMethodDescriptor.<PullGitCommitsRequest, PullGitCommitsResponse>newBuilder()
               .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/PullGitCommits")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
@@ -780,15 +796,15 @@ public class HttpJsonDataformStub extends DataformStub {
                                   .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
-                  ProtoMessageResponseParser.<Empty>newBuilder()
-                      .setDefaultInstance(Empty.getDefaultInstance())
+                  ProtoMessageResponseParser.<PullGitCommitsResponse>newBuilder()
+                      .setDefaultInstance(PullGitCommitsResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<PushGitCommitsRequest, Empty>
+  private static final ApiMethodDescriptor<PushGitCommitsRequest, PushGitCommitsResponse>
       pushGitCommitsMethodDescriptor =
-          ApiMethodDescriptor.<PushGitCommitsRequest, Empty>newBuilder()
+          ApiMethodDescriptor.<PushGitCommitsRequest, PushGitCommitsResponse>newBuilder()
               .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/PushGitCommits")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
@@ -817,8 +833,8 @@ public class HttpJsonDataformStub extends DataformStub {
                                   .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
-                  ProtoMessageResponseParser.<Empty>newBuilder()
-                      .setDefaultInstance(Empty.getDefaultInstance())
+                  ProtoMessageResponseParser.<PushGitCommitsResponse>newBuilder()
+                      .setDefaultInstance(PushGitCommitsResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -895,9 +911,11 @@ public class HttpJsonDataformStub extends DataformStub {
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<CommitWorkspaceChangesRequest, Empty>
+  private static final ApiMethodDescriptor<
+          CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
       commitWorkspaceChangesMethodDescriptor =
-          ApiMethodDescriptor.<CommitWorkspaceChangesRequest, Empty>newBuilder()
+          ApiMethodDescriptor
+              .<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>newBuilder()
               .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/CommitWorkspaceChanges")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
@@ -926,15 +944,17 @@ public class HttpJsonDataformStub extends DataformStub {
                                   .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
-                  ProtoMessageResponseParser.<Empty>newBuilder()
-                      .setDefaultInstance(Empty.getDefaultInstance())
+                  ProtoMessageResponseParser.<CommitWorkspaceChangesResponse>newBuilder()
+                      .setDefaultInstance(CommitWorkspaceChangesResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<ResetWorkspaceChangesRequest, Empty>
+  private static final ApiMethodDescriptor<
+          ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>
       resetWorkspaceChangesMethodDescriptor =
-          ApiMethodDescriptor.<ResetWorkspaceChangesRequest, Empty>newBuilder()
+          ApiMethodDescriptor
+              .<ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>newBuilder()
               .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/ResetWorkspaceChanges")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
@@ -963,8 +983,8 @@ public class HttpJsonDataformStub extends DataformStub {
                                   .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
-                  ProtoMessageResponseParser.<Empty>newBuilder()
-                      .setDefaultInstance(Empty.getDefaultInstance())
+                  ProtoMessageResponseParser.<ResetWorkspaceChangesResponse>newBuilder()
+                      .setDefaultInstance(ResetWorkspaceChangesResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1043,6 +1063,43 @@ public class HttpJsonDataformStub extends DataformStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<SearchFilesRequest, SearchFilesResponse>
+      searchFilesMethodDescriptor =
+          ApiMethodDescriptor.<SearchFilesRequest, SearchFilesResponse>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/SearchFiles")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SearchFilesRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{workspace=projects/*/locations/*/repositories/*/workspaces/*}:searchFiles",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchFilesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "workspace", request.getWorkspace());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchFilesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SearchFilesResponse>newBuilder()
+                      .setDefaultInstance(SearchFilesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<MakeDirectoryRequest, MakeDirectoryResponse>
       makeDirectoryMethodDescriptor =
           ApiMethodDescriptor.<MakeDirectoryRequest, MakeDirectoryResponse>newBuilder()
@@ -1080,9 +1137,9 @@ public class HttpJsonDataformStub extends DataformStub {
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<RemoveDirectoryRequest, Empty>
+  private static final ApiMethodDescriptor<RemoveDirectoryRequest, RemoveDirectoryResponse>
       removeDirectoryMethodDescriptor =
-          ApiMethodDescriptor.<RemoveDirectoryRequest, Empty>newBuilder()
+          ApiMethodDescriptor.<RemoveDirectoryRequest, RemoveDirectoryResponse>newBuilder()
               .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/RemoveDirectory")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
@@ -1111,8 +1168,8 @@ public class HttpJsonDataformStub extends DataformStub {
                                   .toBody("*", request.toBuilder().clearWorkspace().build(), true))
                       .build())
               .setResponseParser(
-                  ProtoMessageResponseParser.<Empty>newBuilder()
-                      .setDefaultInstance(Empty.getDefaultInstance())
+                  ProtoMessageResponseParser.<RemoveDirectoryResponse>newBuilder()
+                      .setDefaultInstance(RemoveDirectoryResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1177,6 +1234,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             ProtoRestSerializer<ReadFileRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "path", request.getPath());
+                            serializer.putQueryParam(fields, "revision", request.getRevision());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -1189,41 +1247,42 @@ public class HttpJsonDataformStub extends DataformStub {
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<RemoveFileRequest, Empty> removeFileMethodDescriptor =
-      ApiMethodDescriptor.<RemoveFileRequest, Empty>newBuilder()
-          .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/RemoveFile")
-          .setHttpMethod("POST")
-          .setType(ApiMethodDescriptor.MethodType.UNARY)
-          .setRequestFormatter(
-              ProtoMessageRequestFormatter.<RemoveFileRequest>newBuilder()
-                  .setPath(
-                      "/v1beta1/{workspace=projects/*/locations/*/repositories/*/workspaces/*}:removeFile",
-                      request -> {
-                        Map<String, String> fields = new HashMap<>();
-                        ProtoRestSerializer<RemoveFileRequest> serializer =
-                            ProtoRestSerializer.create();
-                        serializer.putPathParam(fields, "workspace", request.getWorkspace());
-                        return fields;
-                      })
-                  .setQueryParamsExtractor(
-                      request -> {
-                        Map<String, List<String>> fields = new HashMap<>();
-                        ProtoRestSerializer<RemoveFileRequest> serializer =
-                            ProtoRestSerializer.create();
-                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                        return fields;
-                      })
-                  .setRequestBodyExtractor(
-                      request ->
-                          ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearWorkspace().build(), true))
-                  .build())
-          .setResponseParser(
-              ProtoMessageResponseParser.<Empty>newBuilder()
-                  .setDefaultInstance(Empty.getDefaultInstance())
-                  .setDefaultTypeRegistry(typeRegistry)
-                  .build())
-          .build();
+  private static final ApiMethodDescriptor<RemoveFileRequest, RemoveFileResponse>
+      removeFileMethodDescriptor =
+          ApiMethodDescriptor.<RemoveFileRequest, RemoveFileResponse>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/RemoveFile")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RemoveFileRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{workspace=projects/*/locations/*/repositories/*/workspaces/*}:removeFile",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveFileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "workspace", request.getWorkspace());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveFileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearWorkspace().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RemoveFileResponse>newBuilder()
+                      .setDefaultInstance(RemoveFileResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<MoveFileRequest, MoveFileResponse>
       moveFileMethodDescriptor =
@@ -1505,6 +1564,8 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListCompilationResultsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
@@ -1963,9 +2024,11 @@ public class HttpJsonDataformStub extends DataformStub {
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<CancelWorkflowInvocationRequest, Empty>
+  private static final ApiMethodDescriptor<
+          CancelWorkflowInvocationRequest, CancelWorkflowInvocationResponse>
       cancelWorkflowInvocationMethodDescriptor =
-          ApiMethodDescriptor.<CancelWorkflowInvocationRequest, Empty>newBuilder()
+          ApiMethodDescriptor
+              .<CancelWorkflowInvocationRequest, CancelWorkflowInvocationResponse>newBuilder()
               .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/CancelWorkflowInvocation")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
@@ -1994,8 +2057,8 @@ public class HttpJsonDataformStub extends DataformStub {
                                   .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
-                  ProtoMessageResponseParser.<Empty>newBuilder()
-                      .setDefaultInstance(Empty.getDefaultInstance())
+                  ProtoMessageResponseParser.<CancelWorkflowInvocationResponse>newBuilder()
+                      .setDefaultInstance(CancelWorkflowInvocationResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -2037,6 +2100,78 @@ public class HttpJsonDataformStub extends DataformStub {
                   ProtoMessageResponseParser.<QueryWorkflowInvocationActionsResponse>newBuilder()
                       .setDefaultInstance(
                           QueryWorkflowInvocationActionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetConfigRequest, Config> getConfigMethodDescriptor =
+      ApiMethodDescriptor.<GetConfigRequest, Config>newBuilder()
+          .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/GetConfig")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetConfigRequest>newBuilder()
+                  .setPath(
+                      "/v1beta1/{name=projects/*/locations/*/config}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetConfigRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetConfigRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Config>newBuilder()
+                  .setDefaultInstance(Config.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<UpdateConfigRequest, Config>
+      updateConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateConfigRequest, Config>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/UpdateConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{config.name=projects/*/locations/*/config}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "config.name", request.getConfig().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("config", request.getConfig(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Config>newBuilder()
+                      .setDefaultInstance(Config.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -2127,8 +2262,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta1/{resource=projects/*/locations/*/repositories/*/workspaces/*}:setIamPolicy",
-                          "/v1beta1/{resource=projects/*/locations/*/collections/*}:setIamPolicy")
+                          "/v1beta1/{resource=projects/*/locations/*/repositories/*/workspaces/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -2167,7 +2301,6 @@ public class HttpJsonDataformStub extends DataformStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta1/{resource=projects/*/locations/*/collections/*}:getIamPolicy",
                           "/v1beta1/{resource=projects/*/locations/*/repositories/*/workspaces/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
@@ -2204,7 +2337,6 @@ public class HttpJsonDataformStub extends DataformStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta1/{resource=projects/*/locations/*/collections/*}:testIamPermissions",
                           "/v1beta1/{resource=projects/*/locations/*/repositories/*/workspaces/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {
@@ -2234,7 +2366,7 @@ public class HttpJsonDataformStub extends DataformStub {
   private final UnaryCallable<CreateRepositoryRequest, Repository> createRepositoryCallable;
   private final UnaryCallable<UpdateRepositoryRequest, Repository> updateRepositoryCallable;
   private final UnaryCallable<DeleteRepositoryRequest, Empty> deleteRepositoryCallable;
-  private final UnaryCallable<CommitRepositoryChangesRequest, Empty>
+  private final UnaryCallable<CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>
       commitRepositoryChangesCallable;
   private final UnaryCallable<ReadRepositoryFileRequest, ReadRepositoryFileResponse>
       readRepositoryFileCallable;
@@ -2261,24 +2393,30 @@ public class HttpJsonDataformStub extends DataformStub {
   private final UnaryCallable<DeleteWorkspaceRequest, Empty> deleteWorkspaceCallable;
   private final UnaryCallable<InstallNpmPackagesRequest, InstallNpmPackagesResponse>
       installNpmPackagesCallable;
-  private final UnaryCallable<PullGitCommitsRequest, Empty> pullGitCommitsCallable;
-  private final UnaryCallable<PushGitCommitsRequest, Empty> pushGitCommitsCallable;
+  private final UnaryCallable<PullGitCommitsRequest, PullGitCommitsResponse> pullGitCommitsCallable;
+  private final UnaryCallable<PushGitCommitsRequest, PushGitCommitsResponse> pushGitCommitsCallable;
   private final UnaryCallable<FetchFileGitStatusesRequest, FetchFileGitStatusesResponse>
       fetchFileGitStatusesCallable;
   private final UnaryCallable<FetchGitAheadBehindRequest, FetchGitAheadBehindResponse>
       fetchGitAheadBehindCallable;
-  private final UnaryCallable<CommitWorkspaceChangesRequest, Empty> commitWorkspaceChangesCallable;
-  private final UnaryCallable<ResetWorkspaceChangesRequest, Empty> resetWorkspaceChangesCallable;
+  private final UnaryCallable<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
+      commitWorkspaceChangesCallable;
+  private final UnaryCallable<ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>
+      resetWorkspaceChangesCallable;
   private final UnaryCallable<FetchFileDiffRequest, FetchFileDiffResponse> fetchFileDiffCallable;
   private final UnaryCallable<QueryDirectoryContentsRequest, QueryDirectoryContentsResponse>
       queryDirectoryContentsCallable;
   private final UnaryCallable<QueryDirectoryContentsRequest, QueryDirectoryContentsPagedResponse>
       queryDirectoryContentsPagedCallable;
+  private final UnaryCallable<SearchFilesRequest, SearchFilesResponse> searchFilesCallable;
+  private final UnaryCallable<SearchFilesRequest, SearchFilesPagedResponse>
+      searchFilesPagedCallable;
   private final UnaryCallable<MakeDirectoryRequest, MakeDirectoryResponse> makeDirectoryCallable;
-  private final UnaryCallable<RemoveDirectoryRequest, Empty> removeDirectoryCallable;
+  private final UnaryCallable<RemoveDirectoryRequest, RemoveDirectoryResponse>
+      removeDirectoryCallable;
   private final UnaryCallable<MoveDirectoryRequest, MoveDirectoryResponse> moveDirectoryCallable;
   private final UnaryCallable<ReadFileRequest, ReadFileResponse> readFileCallable;
-  private final UnaryCallable<RemoveFileRequest, Empty> removeFileCallable;
+  private final UnaryCallable<RemoveFileRequest, RemoveFileResponse> removeFileCallable;
   private final UnaryCallable<MoveFileRequest, MoveFileResponse> moveFileCallable;
   private final UnaryCallable<WriteFileRequest, WriteFileResponse> writeFileCallable;
   private final UnaryCallable<ListReleaseConfigsRequest, ListReleaseConfigsResponse>
@@ -2325,7 +2463,7 @@ public class HttpJsonDataformStub extends DataformStub {
       createWorkflowInvocationCallable;
   private final UnaryCallable<DeleteWorkflowInvocationRequest, Empty>
       deleteWorkflowInvocationCallable;
-  private final UnaryCallable<CancelWorkflowInvocationRequest, Empty>
+  private final UnaryCallable<CancelWorkflowInvocationRequest, CancelWorkflowInvocationResponse>
       cancelWorkflowInvocationCallable;
   private final UnaryCallable<
           QueryWorkflowInvocationActionsRequest, QueryWorkflowInvocationActionsResponse>
@@ -2333,6 +2471,8 @@ public class HttpJsonDataformStub extends DataformStub {
   private final UnaryCallable<
           QueryWorkflowInvocationActionsRequest, QueryWorkflowInvocationActionsPagedResponse>
       queryWorkflowInvocationActionsPagedCallable;
+  private final UnaryCallable<GetConfigRequest, Config> getConfigCallable;
+  private final UnaryCallable<UpdateConfigRequest, Config> updateConfigCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -2439,9 +2579,10 @@ public class HttpJsonDataformStub extends DataformStub {
                   return builder.build();
                 })
             .build();
-    HttpJsonCallSettings<CommitRepositoryChangesRequest, Empty>
+    HttpJsonCallSettings<CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>
         commitRepositoryChangesTransportSettings =
-            HttpJsonCallSettings.<CommitRepositoryChangesRequest, Empty>newBuilder()
+            HttpJsonCallSettings
+                .<CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>newBuilder()
                 .setMethodDescriptor(commitRepositoryChangesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
@@ -2577,28 +2718,30 @@ public class HttpJsonDataformStub extends DataformStub {
                       return builder.build();
                     })
                 .build();
-    HttpJsonCallSettings<PullGitCommitsRequest, Empty> pullGitCommitsTransportSettings =
-        HttpJsonCallSettings.<PullGitCommitsRequest, Empty>newBuilder()
-            .setMethodDescriptor(pullGitCommitsMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
-    HttpJsonCallSettings<PushGitCommitsRequest, Empty> pushGitCommitsTransportSettings =
-        HttpJsonCallSettings.<PushGitCommitsRequest, Empty>newBuilder()
-            .setMethodDescriptor(pushGitCommitsMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
+    HttpJsonCallSettings<PullGitCommitsRequest, PullGitCommitsResponse>
+        pullGitCommitsTransportSettings =
+            HttpJsonCallSettings.<PullGitCommitsRequest, PullGitCommitsResponse>newBuilder()
+                .setMethodDescriptor(pullGitCommitsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<PushGitCommitsRequest, PushGitCommitsResponse>
+        pushGitCommitsTransportSettings =
+            HttpJsonCallSettings.<PushGitCommitsRequest, PushGitCommitsResponse>newBuilder()
+                .setMethodDescriptor(pushGitCommitsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<FetchFileGitStatusesRequest, FetchFileGitStatusesResponse>
         fetchFileGitStatusesTransportSettings =
             HttpJsonCallSettings
@@ -2625,9 +2768,10 @@ public class HttpJsonDataformStub extends DataformStub {
                       return builder.build();
                     })
                 .build();
-    HttpJsonCallSettings<CommitWorkspaceChangesRequest, Empty>
+    HttpJsonCallSettings<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
         commitWorkspaceChangesTransportSettings =
-            HttpJsonCallSettings.<CommitWorkspaceChangesRequest, Empty>newBuilder()
+            HttpJsonCallSettings
+                .<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>newBuilder()
                 .setMethodDescriptor(commitWorkspaceChangesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
@@ -2637,9 +2781,10 @@ public class HttpJsonDataformStub extends DataformStub {
                       return builder.build();
                     })
                 .build();
-    HttpJsonCallSettings<ResetWorkspaceChangesRequest, Empty>
+    HttpJsonCallSettings<ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>
         resetWorkspaceChangesTransportSettings =
-            HttpJsonCallSettings.<ResetWorkspaceChangesRequest, Empty>newBuilder()
+            HttpJsonCallSettings
+                .<ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>newBuilder()
                 .setMethodDescriptor(resetWorkspaceChangesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
@@ -2674,6 +2819,17 @@ public class HttpJsonDataformStub extends DataformStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<SearchFilesRequest, SearchFilesResponse> searchFilesTransportSettings =
+        HttpJsonCallSettings.<SearchFilesRequest, SearchFilesResponse>newBuilder()
+            .setMethodDescriptor(searchFilesMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("workspace", String.valueOf(request.getWorkspace()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<MakeDirectoryRequest, MakeDirectoryResponse>
         makeDirectoryTransportSettings =
             HttpJsonCallSettings.<MakeDirectoryRequest, MakeDirectoryResponse>newBuilder()
@@ -2686,17 +2842,18 @@ public class HttpJsonDataformStub extends DataformStub {
                       return builder.build();
                     })
                 .build();
-    HttpJsonCallSettings<RemoveDirectoryRequest, Empty> removeDirectoryTransportSettings =
-        HttpJsonCallSettings.<RemoveDirectoryRequest, Empty>newBuilder()
-            .setMethodDescriptor(removeDirectoryMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("workspace", String.valueOf(request.getWorkspace()));
-                  return builder.build();
-                })
-            .build();
+    HttpJsonCallSettings<RemoveDirectoryRequest, RemoveDirectoryResponse>
+        removeDirectoryTransportSettings =
+            HttpJsonCallSettings.<RemoveDirectoryRequest, RemoveDirectoryResponse>newBuilder()
+                .setMethodDescriptor(removeDirectoryMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("workspace", String.valueOf(request.getWorkspace()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<MoveDirectoryRequest, MoveDirectoryResponse>
         moveDirectoryTransportSettings =
             HttpJsonCallSettings.<MoveDirectoryRequest, MoveDirectoryResponse>newBuilder()
@@ -2720,8 +2877,8 @@ public class HttpJsonDataformStub extends DataformStub {
                   return builder.build();
                 })
             .build();
-    HttpJsonCallSettings<RemoveFileRequest, Empty> removeFileTransportSettings =
-        HttpJsonCallSettings.<RemoveFileRequest, Empty>newBuilder()
+    HttpJsonCallSettings<RemoveFileRequest, RemoveFileResponse> removeFileTransportSettings =
+        HttpJsonCallSettings.<RemoveFileRequest, RemoveFileResponse>newBuilder()
             .setMethodDescriptor(removeFileMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
@@ -2976,9 +3133,10 @@ public class HttpJsonDataformStub extends DataformStub {
                       return builder.build();
                     })
                 .build();
-    HttpJsonCallSettings<CancelWorkflowInvocationRequest, Empty>
+    HttpJsonCallSettings<CancelWorkflowInvocationRequest, CancelWorkflowInvocationResponse>
         cancelWorkflowInvocationTransportSettings =
-            HttpJsonCallSettings.<CancelWorkflowInvocationRequest, Empty>newBuilder()
+            HttpJsonCallSettings
+                .<CancelWorkflowInvocationRequest, CancelWorkflowInvocationResponse>newBuilder()
                 .setMethodDescriptor(cancelWorkflowInvocationMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
@@ -3003,6 +3161,28 @@ public class HttpJsonDataformStub extends DataformStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GetConfigRequest, Config> getConfigTransportSettings =
+        HttpJsonCallSettings.<GetConfigRequest, Config>newBuilder()
+            .setMethodDescriptor(getConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateConfigRequest, Config> updateConfigTransportSettings =
+        HttpJsonCallSettings.<UpdateConfigRequest, Config>newBuilder()
+            .setMethodDescriptor(updateConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("config.name", String.valueOf(request.getConfig().getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -3178,6 +3358,12 @@ public class HttpJsonDataformStub extends DataformStub {
             queryDirectoryContentsTransportSettings,
             settings.queryDirectoryContentsSettings(),
             clientContext);
+    this.searchFilesCallable =
+        callableFactory.createUnaryCallable(
+            searchFilesTransportSettings, settings.searchFilesSettings(), clientContext);
+    this.searchFilesPagedCallable =
+        callableFactory.createPagedCallable(
+            searchFilesTransportSettings, settings.searchFilesSettings(), clientContext);
     this.makeDirectoryCallable =
         callableFactory.createUnaryCallable(
             makeDirectoryTransportSettings, settings.makeDirectorySettings(), clientContext);
@@ -3327,6 +3513,12 @@ public class HttpJsonDataformStub extends DataformStub {
             queryWorkflowInvocationActionsTransportSettings,
             settings.queryWorkflowInvocationActionsSettings(),
             clientContext);
+    this.getConfigCallable =
+        callableFactory.createUnaryCallable(
+            getConfigTransportSettings, settings.getConfigSettings(), clientContext);
+    this.updateConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateConfigTransportSettings, settings.updateConfigSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -3379,6 +3571,7 @@ public class HttpJsonDataformStub extends DataformStub {
     methodDescriptors.add(resetWorkspaceChangesMethodDescriptor);
     methodDescriptors.add(fetchFileDiffMethodDescriptor);
     methodDescriptors.add(queryDirectoryContentsMethodDescriptor);
+    methodDescriptors.add(searchFilesMethodDescriptor);
     methodDescriptors.add(makeDirectoryMethodDescriptor);
     methodDescriptors.add(removeDirectoryMethodDescriptor);
     methodDescriptors.add(moveDirectoryMethodDescriptor);
@@ -3406,6 +3599,8 @@ public class HttpJsonDataformStub extends DataformStub {
     methodDescriptors.add(deleteWorkflowInvocationMethodDescriptor);
     methodDescriptors.add(cancelWorkflowInvocationMethodDescriptor);
     methodDescriptors.add(queryWorkflowInvocationActionsMethodDescriptor);
+    methodDescriptors.add(getConfigMethodDescriptor);
+    methodDescriptors.add(updateConfigMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -3447,7 +3642,8 @@ public class HttpJsonDataformStub extends DataformStub {
   }
 
   @Override
-  public UnaryCallable<CommitRepositoryChangesRequest, Empty> commitRepositoryChangesCallable() {
+  public UnaryCallable<CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>
+      commitRepositoryChangesCallable() {
     return commitRepositoryChangesCallable;
   }
 
@@ -3529,12 +3725,12 @@ public class HttpJsonDataformStub extends DataformStub {
   }
 
   @Override
-  public UnaryCallable<PullGitCommitsRequest, Empty> pullGitCommitsCallable() {
+  public UnaryCallable<PullGitCommitsRequest, PullGitCommitsResponse> pullGitCommitsCallable() {
     return pullGitCommitsCallable;
   }
 
   @Override
-  public UnaryCallable<PushGitCommitsRequest, Empty> pushGitCommitsCallable() {
+  public UnaryCallable<PushGitCommitsRequest, PushGitCommitsResponse> pushGitCommitsCallable() {
     return pushGitCommitsCallable;
   }
 
@@ -3551,12 +3747,14 @@ public class HttpJsonDataformStub extends DataformStub {
   }
 
   @Override
-  public UnaryCallable<CommitWorkspaceChangesRequest, Empty> commitWorkspaceChangesCallable() {
+  public UnaryCallable<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
+      commitWorkspaceChangesCallable() {
     return commitWorkspaceChangesCallable;
   }
 
   @Override
-  public UnaryCallable<ResetWorkspaceChangesRequest, Empty> resetWorkspaceChangesCallable() {
+  public UnaryCallable<ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>
+      resetWorkspaceChangesCallable() {
     return resetWorkspaceChangesCallable;
   }
 
@@ -3578,12 +3776,22 @@ public class HttpJsonDataformStub extends DataformStub {
   }
 
   @Override
+  public UnaryCallable<SearchFilesRequest, SearchFilesResponse> searchFilesCallable() {
+    return searchFilesCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchFilesRequest, SearchFilesPagedResponse> searchFilesPagedCallable() {
+    return searchFilesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<MakeDirectoryRequest, MakeDirectoryResponse> makeDirectoryCallable() {
     return makeDirectoryCallable;
   }
 
   @Override
-  public UnaryCallable<RemoveDirectoryRequest, Empty> removeDirectoryCallable() {
+  public UnaryCallable<RemoveDirectoryRequest, RemoveDirectoryResponse> removeDirectoryCallable() {
     return removeDirectoryCallable;
   }
 
@@ -3598,7 +3806,7 @@ public class HttpJsonDataformStub extends DataformStub {
   }
 
   @Override
-  public UnaryCallable<RemoveFileRequest, Empty> removeFileCallable() {
+  public UnaryCallable<RemoveFileRequest, RemoveFileResponse> removeFileCallable() {
     return removeFileCallable;
   }
 
@@ -3743,7 +3951,8 @@ public class HttpJsonDataformStub extends DataformStub {
   }
 
   @Override
-  public UnaryCallable<CancelWorkflowInvocationRequest, Empty> cancelWorkflowInvocationCallable() {
+  public UnaryCallable<CancelWorkflowInvocationRequest, CancelWorkflowInvocationResponse>
+      cancelWorkflowInvocationCallable() {
     return cancelWorkflowInvocationCallable;
   }
 
@@ -3759,6 +3968,16 @@ public class HttpJsonDataformStub extends DataformStub {
           QueryWorkflowInvocationActionsRequest, QueryWorkflowInvocationActionsPagedResponse>
       queryWorkflowInvocationActionsPagedCallable() {
     return queryWorkflowInvocationActionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetConfigRequest, Config> getConfigCallable() {
+    return getConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateConfigRequest, Config> updateConfigCallable() {
+    return updateConfigCallable;
   }
 
   @Override

@@ -20,9 +20,9 @@ package com.google.cloud.dataform.v1beta1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.dataform.v1beta1.CommitAuthor;
 import com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesRequest;
+import com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesResponse;
 import com.google.cloud.dataform.v1beta1.DataformClient;
 import com.google.cloud.dataform.v1beta1.WorkspaceName;
-import com.google.protobuf.Empty;
 import java.util.ArrayList;
 
 public class AsyncCommitWorkspaceChanges {
@@ -47,9 +47,10 @@ public class AsyncCommitWorkspaceChanges {
               .setCommitMessage("commitMessage2039804624")
               .addAllPaths(new ArrayList<String>())
               .build();
-      ApiFuture<Empty> future = dataformClient.commitWorkspaceChangesCallable().futureCall(request);
+      ApiFuture<CommitWorkspaceChangesResponse> future =
+          dataformClient.commitWorkspaceChangesCallable().futureCall(request);
       // Do something.
-      future.get();
+      CommitWorkspaceChangesResponse response = future.get();
     }
   }
 }

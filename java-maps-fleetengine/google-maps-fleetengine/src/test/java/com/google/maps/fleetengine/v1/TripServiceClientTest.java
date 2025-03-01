@@ -274,6 +274,74 @@ public class TripServiceClientTest {
   }
 
   @Test
+  public void deleteTripTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockTripService.addResponse(expectedResponse);
+
+    TripName name = TripName.of("[PROVIDER]", "[TRIP]");
+
+    client.deleteTrip(name);
+
+    List<AbstractMessage> actualRequests = mockTripService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteTripRequest actualRequest = ((DeleteTripRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteTripExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTripService.addException(exception);
+
+    try {
+      TripName name = TripName.of("[PROVIDER]", "[TRIP]");
+      client.deleteTrip(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteTripTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockTripService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteTrip(name);
+
+    List<AbstractMessage> actualRequests = mockTripService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteTripRequest actualRequest = ((DeleteTripRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteTripExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTripService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteTrip(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void reportBillableTripTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockTripService.addResponse(expectedResponse);

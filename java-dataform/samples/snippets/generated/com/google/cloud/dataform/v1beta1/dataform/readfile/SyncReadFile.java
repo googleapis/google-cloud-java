@@ -41,6 +41,7 @@ public class SyncReadFile {
                   WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                       .toString())
               .setPath("path3433509")
+              .setRevision("revision-260786213")
               .build();
       ReadFileResponse response = dataformClient.readFile(request);
     }

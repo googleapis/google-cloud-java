@@ -77,8 +77,9 @@ public interface ListCompilationResultsRequestOrBuilder
    * Optional. Page token received from a previous `ListCompilationResults`
    * call. Provide this to retrieve the subsequent page.
    *
-   * When paginating, all other parameters provided to `ListCompilationResults`
-   * must match the call that provided the page token.
+   * When paginating, all other parameters provided to `ListCompilationResults`,
+   * with the exception of `page_size`, must match the call that provided the
+   * page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -93,8 +94,9 @@ public interface ListCompilationResultsRequestOrBuilder
    * Optional. Page token received from a previous `ListCompilationResults`
    * call. Provide this to retrieve the subsequent page.
    *
-   * When paginating, all other parameters provided to `ListCompilationResults`
-   * must match the call that provided the page token.
+   * When paginating, all other parameters provided to `ListCompilationResults`,
+   * with the exception of `page_size`, must match the call that provided the
+   * page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -102,4 +104,58 @@ public interface ListCompilationResultsRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field only supports ordering by `name` and `create_time`.
+   * If unspecified, the server will choose the ordering.
+   * If specified, the default order is ascending for the `name` field.
+   * </pre>
+   *
+   * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field only supports ordering by `name` and `create_time`.
+   * If unspecified, the server will choose the ordering.
+   * If specified, the default order is ascending for the `name` field.
+   * </pre>
+   *
+   * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter for the returned list.
+   * </pre>
+   *
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter for the returned list.
+   * </pre>
+   *
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 }

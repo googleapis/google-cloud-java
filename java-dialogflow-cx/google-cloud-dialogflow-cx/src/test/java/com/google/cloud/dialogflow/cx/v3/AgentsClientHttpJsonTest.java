@@ -213,6 +213,8 @@ public class AgentsClientHttpJsonTest {
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -279,6 +281,8 @@ public class AgentsClientHttpJsonTest {
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -345,6 +349,8 @@ public class AgentsClientHttpJsonTest {
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -413,6 +419,8 @@ public class AgentsClientHttpJsonTest {
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -481,6 +489,8 @@ public class AgentsClientHttpJsonTest {
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -509,6 +519,8 @@ public class AgentsClientHttpJsonTest {
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -563,6 +575,8 @@ public class AgentsClientHttpJsonTest {
               .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
               .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
               .setClientCertificateSettings(Agent.ClientCertificateSettings.newBuilder().build())
+              .setSatisfiesPzs(true)
+              .setSatisfiesPzi(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAgent(agent, updateMask);

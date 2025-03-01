@@ -77,8 +77,8 @@ public interface QueryWorkflowInvocationActionsRequestOrBuilder
    * subsequent page.
    *
    * When paginating, all other parameters provided to
-   * `QueryWorkflowInvocationActions` must match the call that provided the page
-   * token.
+   * `QueryWorkflowInvocationActions`, with the exception of `page_size`, must
+   * match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -95,8 +95,8 @@ public interface QueryWorkflowInvocationActionsRequestOrBuilder
    * subsequent page.
    *
    * When paginating, all other parameters provided to
-   * `QueryWorkflowInvocationActions` must match the call that provided the page
-   * token.
+   * `QueryWorkflowInvocationActions`, with the exception of `page_size`, must
+   * match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

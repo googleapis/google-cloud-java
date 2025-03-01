@@ -42,6 +42,7 @@ public class AsyncReadFile {
                   WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                       .toString())
               .setPath("path3433509")
+              .setRevision("revision-260786213")
               .build();
       ApiFuture<ReadFileResponse> future = dataformClient.readFileCallable().futureCall(request);
       // Do something.

@@ -28,6 +28,7 @@ import static com.google.cloud.dataform.v1beta1.DataformClient.QueryCompilationR
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryDirectoryContentsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryRepositoryDirectoryContentsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryWorkflowInvocationActionsPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.SearchFilesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -54,6 +55,7 @@ import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import com.google.type.Interval;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -206,6 +208,7 @@ public class DataformClientTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
             .setNpmrcEnvironmentVariablesSecretVersion(
@@ -215,6 +218,9 @@ public class DataformClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSetAuthenticatedUserAdmin(true)
             .setServiceAccount("serviceAccount1079137720")
+            .setKmsKeyName("kmsKeyName412586233")
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -253,6 +259,7 @@ public class DataformClientTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
             .setNpmrcEnvironmentVariablesSecretVersion(
@@ -262,6 +269,9 @@ public class DataformClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSetAuthenticatedUserAdmin(true)
             .setServiceAccount("serviceAccount1079137720")
+            .setKmsKeyName("kmsKeyName412586233")
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -300,6 +310,7 @@ public class DataformClientTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
             .setNpmrcEnvironmentVariablesSecretVersion(
@@ -309,6 +320,9 @@ public class DataformClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSetAuthenticatedUserAdmin(true)
             .setServiceAccount("serviceAccount1079137720")
+            .setKmsKeyName("kmsKeyName412586233")
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -353,6 +367,7 @@ public class DataformClientTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
             .setNpmrcEnvironmentVariablesSecretVersion(
@@ -362,6 +377,9 @@ public class DataformClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSetAuthenticatedUserAdmin(true)
             .setServiceAccount("serviceAccount1079137720")
+            .setKmsKeyName("kmsKeyName412586233")
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -406,6 +424,7 @@ public class DataformClientTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
             .setNpmrcEnvironmentVariablesSecretVersion(
@@ -415,6 +434,9 @@ public class DataformClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSetAuthenticatedUserAdmin(true)
             .setServiceAccount("serviceAccount1079137720")
+            .setKmsKeyName("kmsKeyName412586233")
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -521,7 +543,8 @@ public class DataformClientTest {
 
   @Test
   public void commitRepositoryChangesTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    CommitRepositoryChangesResponse expectedResponse =
+        CommitRepositoryChangesResponse.newBuilder().setCommitSha("commitSha-1491174411").build();
     mockDataform.addResponse(expectedResponse);
 
     CommitRepositoryChangesRequest request =
@@ -533,7 +556,8 @@ public class DataformClientTest {
                 new HashMap<String, CommitRepositoryChangesRequest.FileOperation>())
             .build();
 
-    client.commitRepositoryChanges(request);
+    CommitRepositoryChangesResponse actualResponse = client.commitRepositoryChanges(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataform.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -922,6 +946,9 @@ public class DataformClientTest {
             .setName(
                 WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                     .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -963,6 +990,9 @@ public class DataformClientTest {
             .setName(
                 WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                     .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -1003,6 +1033,9 @@ public class DataformClientTest {
             .setName(
                 WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                     .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -1049,6 +1082,9 @@ public class DataformClientTest {
             .setName(
                 WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                     .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -1204,7 +1240,7 @@ public class DataformClientTest {
 
   @Test
   public void pullGitCommitsTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    PullGitCommitsResponse expectedResponse = PullGitCommitsResponse.newBuilder().build();
     mockDataform.addResponse(expectedResponse);
 
     PullGitCommitsRequest request =
@@ -1216,7 +1252,8 @@ public class DataformClientTest {
             .setAuthor(CommitAuthor.newBuilder().build())
             .build();
 
-    client.pullGitCommits(request);
+    PullGitCommitsResponse actualResponse = client.pullGitCommits(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataform.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -1254,7 +1291,7 @@ public class DataformClientTest {
 
   @Test
   public void pushGitCommitsTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    PushGitCommitsResponse expectedResponse = PushGitCommitsResponse.newBuilder().build();
     mockDataform.addResponse(expectedResponse);
 
     PushGitCommitsRequest request =
@@ -1265,7 +1302,8 @@ public class DataformClientTest {
             .setRemoteBranch("remoteBranch-533119608")
             .build();
 
-    client.pushGitCommits(request);
+    PushGitCommitsResponse actualResponse = client.pushGitCommits(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataform.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -1403,7 +1441,8 @@ public class DataformClientTest {
 
   @Test
   public void commitWorkspaceChangesTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    CommitWorkspaceChangesResponse expectedResponse =
+        CommitWorkspaceChangesResponse.newBuilder().build();
     mockDataform.addResponse(expectedResponse);
 
     CommitWorkspaceChangesRequest request =
@@ -1416,7 +1455,8 @@ public class DataformClientTest {
             .addAllPaths(new ArrayList<String>())
             .build();
 
-    client.commitWorkspaceChanges(request);
+    CommitWorkspaceChangesResponse actualResponse = client.commitWorkspaceChanges(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataform.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -1457,7 +1497,8 @@ public class DataformClientTest {
 
   @Test
   public void resetWorkspaceChangesTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    ResetWorkspaceChangesResponse expectedResponse =
+        ResetWorkspaceChangesResponse.newBuilder().build();
     mockDataform.addResponse(expectedResponse);
 
     ResetWorkspaceChangesRequest request =
@@ -1469,7 +1510,8 @@ public class DataformClientTest {
             .setClean(true)
             .build();
 
-    client.resetWorkspaceChanges(request);
+    ResetWorkspaceChangesResponse actualResponse = client.resetWorkspaceChanges(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataform.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -1620,6 +1662,69 @@ public class DataformClientTest {
   }
 
   @Test
+  public void searchFilesTest() throws Exception {
+    SearchResult responsesElement = SearchResult.newBuilder().build();
+    SearchFilesResponse expectedResponse =
+        SearchFilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSearchResults(Arrays.asList(responsesElement))
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    SearchFilesRequest request =
+        SearchFilesRequest.newBuilder()
+            .setWorkspace(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .setFilter("filter-1274492040")
+            .build();
+
+    SearchFilesPagedResponse pagedListResponse = client.searchFiles(request);
+
+    List<SearchResult> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSearchResultsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchFilesRequest actualRequest = ((SearchFilesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getWorkspace(), actualRequest.getWorkspace());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchFilesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      SearchFilesRequest request =
+          SearchFilesRequest.newBuilder()
+              .setWorkspace(
+                  WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                      .toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setFilter("filter-1274492040")
+              .build();
+      client.searchFiles(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void makeDirectoryTest() throws Exception {
     MakeDirectoryResponse expectedResponse = MakeDirectoryResponse.newBuilder().build();
     mockDataform.addResponse(expectedResponse);
@@ -1669,7 +1774,7 @@ public class DataformClientTest {
 
   @Test
   public void removeDirectoryTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    RemoveDirectoryResponse expectedResponse = RemoveDirectoryResponse.newBuilder().build();
     mockDataform.addResponse(expectedResponse);
 
     RemoveDirectoryRequest request =
@@ -1680,7 +1785,8 @@ public class DataformClientTest {
             .setPath("path3433509")
             .build();
 
-    client.removeDirectory(request);
+    RemoveDirectoryResponse actualResponse = client.removeDirectory(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataform.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -1777,6 +1883,7 @@ public class DataformClientTest {
                 WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                     .toString())
             .setPath("path3433509")
+            .setRevision("revision-260786213")
             .build();
 
     ReadFileResponse actualResponse = client.readFile(request);
@@ -1788,6 +1895,7 @@ public class DataformClientTest {
 
     Assert.assertEquals(request.getWorkspace(), actualRequest.getWorkspace());
     Assert.assertEquals(request.getPath(), actualRequest.getPath());
+    Assert.assertEquals(request.getRevision(), actualRequest.getRevision());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1806,6 +1914,7 @@ public class DataformClientTest {
                   WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                       .toString())
               .setPath("path3433509")
+              .setRevision("revision-260786213")
               .build();
       client.readFile(request);
       Assert.fail("No exception raised");
@@ -1816,7 +1925,7 @@ public class DataformClientTest {
 
   @Test
   public void removeFileTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    RemoveFileResponse expectedResponse = RemoveFileResponse.newBuilder().build();
     mockDataform.addResponse(expectedResponse);
 
     RemoveFileRequest request =
@@ -1827,7 +1936,8 @@ public class DataformClientTest {
             .setPath("path3433509")
             .build();
 
-    client.removeFile(request);
+    RemoveFileResponse actualResponse = client.removeFile(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataform.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -2068,6 +2178,8 @@ public class DataformClientTest {
                 CompilationResultName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
                     .toString())
+            .setDisabled(true)
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2120,6 +2232,8 @@ public class DataformClientTest {
                 CompilationResultName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
                     .toString())
+            .setDisabled(true)
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2170,6 +2284,8 @@ public class DataformClientTest {
                 CompilationResultName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
                     .toString())
+            .setDisabled(true)
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2227,6 +2343,8 @@ public class DataformClientTest {
                 CompilationResultName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
                     .toString())
+            .setDisabled(true)
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2284,6 +2402,8 @@ public class DataformClientTest {
                 CompilationResultName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
                     .toString())
+            .setDisabled(true)
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2492,6 +2612,9 @@ public class DataformClientTest {
             .setResolvedGitCommitSha("resolvedGitCommitSha1908380763")
             .setDataformCoreVersion("dataformCoreVersion1859535851")
             .addAllCompilationErrors(new ArrayList<CompilationResult.CompilationError>())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2541,6 +2664,9 @@ public class DataformClientTest {
             .setResolvedGitCommitSha("resolvedGitCommitSha1908380763")
             .setDataformCoreVersion("dataformCoreVersion1859535851")
             .addAllCompilationErrors(new ArrayList<CompilationResult.CompilationError>())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2587,6 +2713,9 @@ public class DataformClientTest {
             .setResolvedGitCommitSha("resolvedGitCommitSha1908380763")
             .setDataformCoreVersion("dataformCoreVersion1859535851")
             .addAllCompilationErrors(new ArrayList<CompilationResult.CompilationError>())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2636,6 +2765,9 @@ public class DataformClientTest {
             .setResolvedGitCommitSha("resolvedGitCommitSha1908380763")
             .setDataformCoreVersion("dataformCoreVersion1859535851")
             .addAllCompilationErrors(new ArrayList<CompilationResult.CompilationError>())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2845,6 +2977,9 @@ public class DataformClientTest {
             .setTimeZone("timeZone-2077180903")
             .addAllRecentScheduledExecutionRecords(
                 new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2896,6 +3031,9 @@ public class DataformClientTest {
             .setTimeZone("timeZone-2077180903")
             .addAllRecentScheduledExecutionRecords(
                 new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2945,6 +3083,9 @@ public class DataformClientTest {
             .setTimeZone("timeZone-2077180903")
             .addAllRecentScheduledExecutionRecords(
                 new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -3002,6 +3143,9 @@ public class DataformClientTest {
             .setTimeZone("timeZone-2077180903")
             .addAllRecentScheduledExecutionRecords(
                 new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -3059,6 +3203,9 @@ public class DataformClientTest {
             .setTimeZone("timeZone-2077180903")
             .addAllRecentScheduledExecutionRecords(
                 new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -3268,6 +3415,12 @@ public class DataformClientTest {
                     .toString())
             .setInvocationConfig(InvocationConfig.newBuilder().build())
             .setInvocationTiming(Interval.newBuilder().build())
+            .setResolvedCompilationResult(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -3316,6 +3469,12 @@ public class DataformClientTest {
                     .toString())
             .setInvocationConfig(InvocationConfig.newBuilder().build())
             .setInvocationTiming(Interval.newBuilder().build())
+            .setResolvedCompilationResult(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -3360,6 +3519,12 @@ public class DataformClientTest {
                     .toString())
             .setInvocationConfig(InvocationConfig.newBuilder().build())
             .setInvocationTiming(Interval.newBuilder().build())
+            .setResolvedCompilationResult(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -3407,6 +3572,12 @@ public class DataformClientTest {
                     .toString())
             .setInvocationConfig(InvocationConfig.newBuilder().build())
             .setInvocationTiming(Interval.newBuilder().build())
+            .setResolvedCompilationResult(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -3520,7 +3691,8 @@ public class DataformClientTest {
 
   @Test
   public void cancelWorkflowInvocationTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+    CancelWorkflowInvocationResponse expectedResponse =
+        CancelWorkflowInvocationResponse.newBuilder().build();
     mockDataform.addResponse(expectedResponse);
 
     CancelWorkflowInvocationRequest request =
@@ -3531,7 +3703,8 @@ public class DataformClientTest {
                     .toString())
             .build();
 
-    client.cancelWorkflowInvocation(request);
+    CancelWorkflowInvocationResponse actualResponse = client.cancelWorkflowInvocation(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataform.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -3624,6 +3797,126 @@ public class DataformClientTest {
               .setPageToken("pageToken873572522")
               .build();
       client.queryWorkflowInvocationActions(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getConfigTest() throws Exception {
+    Config expectedResponse =
+        Config.newBuilder()
+            .setName(ConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setDefaultKmsKeyName("defaultKmsKeyName725296666")
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    ConfigName name = ConfigName.of("[PROJECT]", "[LOCATION]");
+
+    Config actualResponse = client.getConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetConfigRequest actualRequest = ((GetConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      ConfigName name = ConfigName.of("[PROJECT]", "[LOCATION]");
+      client.getConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getConfigTest2() throws Exception {
+    Config expectedResponse =
+        Config.newBuilder()
+            .setName(ConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setDefaultKmsKeyName("defaultKmsKeyName725296666")
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Config actualResponse = client.getConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetConfigRequest actualRequest = ((GetConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateConfigTest() throws Exception {
+    Config expectedResponse =
+        Config.newBuilder()
+            .setName(ConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setDefaultKmsKeyName("defaultKmsKeyName725296666")
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    Config config = Config.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Config actualResponse = client.updateConfig(config, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateConfigRequest actualRequest = ((UpdateConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(config, actualRequest.getConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      Config config = Config.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateConfig(config, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

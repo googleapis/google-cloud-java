@@ -269,4 +269,46 @@ public interface CodeCompilationConfigOrBuilder
    * @return The bytes for tablePrefix.
    */
   com.google.protobuf.ByteString getTablePrefixBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default notebook runtime options.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.NotebookRuntimeOptions default_notebook_runtime_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the defaultNotebookRuntimeOptions field is set.
+   */
+  boolean hasDefaultNotebookRuntimeOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default notebook runtime options.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.NotebookRuntimeOptions default_notebook_runtime_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The defaultNotebookRuntimeOptions.
+   */
+  com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions getDefaultNotebookRuntimeOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default notebook runtime options.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.NotebookRuntimeOptions default_notebook_runtime_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataform.v1beta1.NotebookRuntimeOptionsOrBuilder
+      getDefaultNotebookRuntimeOptionsOrBuilder();
 }
