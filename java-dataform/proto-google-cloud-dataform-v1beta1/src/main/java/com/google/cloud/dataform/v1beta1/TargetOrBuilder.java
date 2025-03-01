@@ -28,10 +28,10 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * The action's database (Google Cloud project ID) .
+   * Optional. The action's database (Google Cloud project ID) .
    * </pre>
    *
-   * <code>string database = 1;</code>
+   * <code>string database = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The database.
    */
@@ -40,10 +40,10 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * The action's database (Google Cloud project ID) .
+   * Optional. The action's database (Google Cloud project ID) .
    * </pre>
    *
-   * <code>string database = 1;</code>
+   * <code>string database = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for database.
    */
@@ -53,10 +53,10 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * The action's schema (BigQuery dataset ID), within `database`.
+   * Optional. The action's schema (BigQuery dataset ID), within `database`.
    * </pre>
    *
-   * <code>string schema = 2;</code>
+   * <code>string schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The schema.
    */
@@ -65,10 +65,10 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * The action's schema (BigQuery dataset ID), within `database`.
+   * Optional. The action's schema (BigQuery dataset ID), within `database`.
    * </pre>
    *
-   * <code>string schema = 2;</code>
+   * <code>string schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for schema.
    */
@@ -78,10 +78,10 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * The action's name, within `database` and `schema`.
+   * Optional. The action's name, within `database` and `schema`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>string name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -90,10 +90,10 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * The action's name, within `database` and `schema`.
+   * Optional. The action's name, within `database` and `schema`.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>string name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */

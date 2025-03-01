@@ -124,12 +124,12 @@ public final class DeleteRepositoryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * If set to true, any child resources of this repository will also be
-   * deleted. (Otherwise, the request will only succeed if the repository has no
-   * child resources.)
+   * Optional. If set to true, any child resources of this repository will also
+   * be deleted. (Otherwise, the request will only succeed if the repository has
+   * no child resources.)
    * </pre>
    *
-   * <code>bool force = 2;</code>
+   * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The force.
    */
@@ -624,12 +624,12 @@ public final class DeleteRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If set to true, any child resources of this repository will also be
-     * deleted. (Otherwise, the request will only succeed if the repository has no
-     * child resources.)
+     * Optional. If set to true, any child resources of this repository will also
+     * be deleted. (Otherwise, the request will only succeed if the repository has
+     * no child resources.)
      * </pre>
      *
-     * <code>bool force = 2;</code>
+     * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The force.
      */
@@ -641,12 +641,12 @@ public final class DeleteRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If set to true, any child resources of this repository will also be
-     * deleted. (Otherwise, the request will only succeed if the repository has no
-     * child resources.)
+     * Optional. If set to true, any child resources of this repository will also
+     * be deleted. (Otherwise, the request will only succeed if the repository has
+     * no child resources.)
      * </pre>
      *
-     * <code>bool force = 2;</code>
+     * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The force to set.
      * @return This builder for chaining.
@@ -662,12 +662,12 @@ public final class DeleteRepositoryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If set to true, any child resources of this repository will also be
-     * deleted. (Otherwise, the request will only succeed if the repository has no
-     * child resources.)
+     * Optional. If set to true, any child resources of this repository will also
+     * be deleted. (Otherwise, the request will only succeed if the repository has
+     * no child resources.)
      * </pre>
      *
-     * <code>bool force = 2;</code>
+     * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

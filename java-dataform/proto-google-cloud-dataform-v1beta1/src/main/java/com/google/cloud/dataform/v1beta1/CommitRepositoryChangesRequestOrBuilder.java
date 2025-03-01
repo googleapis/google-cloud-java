@@ -127,12 +127,12 @@ public interface CommitRepositoryChangesRequestOrBuilder
    *
    *
    * <pre>
-   * A map to the path of the file to the operation. The path is the full file
-   * path including filename, from repository root.
+   * Optional. A map to the path of the file to the operation. The path is the
+   * full file path including filename, from repository root.
    * </pre>
    *
    * <code>
-   * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3;
+   * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getFileOperationsCount();
@@ -140,12 +140,12 @@ public interface CommitRepositoryChangesRequestOrBuilder
    *
    *
    * <pre>
-   * A map to the path of the file to the operation. The path is the full file
-   * path including filename, from repository root.
+   * Optional. A map to the path of the file to the operation. The path is the
+   * full file path including filename, from repository root.
    * </pre>
    *
    * <code>
-   * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3;
+   * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   boolean containsFileOperations(java.lang.String key);
@@ -159,12 +159,12 @@ public interface CommitRepositoryChangesRequestOrBuilder
    *
    *
    * <pre>
-   * A map to the path of the file to the operation. The path is the full file
-   * path including filename, from repository root.
+   * Optional. A map to the path of the file to the operation. The path is the
+   * full file path including filename, from repository root.
    * </pre>
    *
    * <code>
-   * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3;
+   * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.Map<
@@ -175,12 +175,12 @@ public interface CommitRepositoryChangesRequestOrBuilder
    *
    *
    * <pre>
-   * A map to the path of the file to the operation. The path is the full file
-   * path including filename, from repository root.
+   * Optional. A map to the path of the file to the operation. The path is the
+   * full file path including filename, from repository root.
    * </pre>
    *
    * <code>
-   * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3;
+   * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   /* nullable */
@@ -194,12 +194,12 @@ public interface CommitRepositoryChangesRequestOrBuilder
    *
    *
    * <pre>
-   * A map to the path of the file to the operation. The path is the full file
-   * path including filename, from repository root.
+   * Optional. A map to the path of the file to the operation. The path is the
+   * full file path including filename, from repository root.
    * </pre>
    *
    * <code>
-   * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3;
+   * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation

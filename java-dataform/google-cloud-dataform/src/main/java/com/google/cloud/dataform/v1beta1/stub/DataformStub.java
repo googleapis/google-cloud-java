@@ -28,16 +28,21 @@ import static com.google.cloud.dataform.v1beta1.DataformClient.QueryCompilationR
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryDirectoryContentsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryRepositoryDirectoryContentsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryWorkflowInvocationActionsPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.SearchFilesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationRequest;
+import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationResponse;
 import com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest;
+import com.google.cloud.dataform.v1beta1.CommitRepositoryChangesResponse;
 import com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesRequest;
+import com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesResponse;
 import com.google.cloud.dataform.v1beta1.CompilationResult;
 import com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest;
 import com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse;
+import com.google.cloud.dataform.v1beta1.Config;
 import com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest;
 import com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest;
 import com.google.cloud.dataform.v1beta1.CreateRepositoryRequest;
@@ -60,6 +65,7 @@ import com.google.cloud.dataform.v1beta1.FetchRemoteBranchesResponse;
 import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest;
 import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse;
 import com.google.cloud.dataform.v1beta1.GetCompilationResultRequest;
+import com.google.cloud.dataform.v1beta1.GetConfigRequest;
 import com.google.cloud.dataform.v1beta1.GetReleaseConfigRequest;
 import com.google.cloud.dataform.v1beta1.GetRepositoryRequest;
 import com.google.cloud.dataform.v1beta1.GetWorkflowConfigRequest;
@@ -86,7 +92,9 @@ import com.google.cloud.dataform.v1beta1.MoveDirectoryResponse;
 import com.google.cloud.dataform.v1beta1.MoveFileRequest;
 import com.google.cloud.dataform.v1beta1.MoveFileResponse;
 import com.google.cloud.dataform.v1beta1.PullGitCommitsRequest;
+import com.google.cloud.dataform.v1beta1.PullGitCommitsResponse;
 import com.google.cloud.dataform.v1beta1.PushGitCommitsRequest;
+import com.google.cloud.dataform.v1beta1.PushGitCommitsResponse;
 import com.google.cloud.dataform.v1beta1.QueryCompilationResultActionsRequest;
 import com.google.cloud.dataform.v1beta1.QueryCompilationResultActionsResponse;
 import com.google.cloud.dataform.v1beta1.QueryDirectoryContentsRequest;
@@ -101,9 +109,15 @@ import com.google.cloud.dataform.v1beta1.ReadRepositoryFileRequest;
 import com.google.cloud.dataform.v1beta1.ReadRepositoryFileResponse;
 import com.google.cloud.dataform.v1beta1.ReleaseConfig;
 import com.google.cloud.dataform.v1beta1.RemoveDirectoryRequest;
+import com.google.cloud.dataform.v1beta1.RemoveDirectoryResponse;
 import com.google.cloud.dataform.v1beta1.RemoveFileRequest;
+import com.google.cloud.dataform.v1beta1.RemoveFileResponse;
 import com.google.cloud.dataform.v1beta1.Repository;
 import com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesRequest;
+import com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesResponse;
+import com.google.cloud.dataform.v1beta1.SearchFilesRequest;
+import com.google.cloud.dataform.v1beta1.SearchFilesResponse;
+import com.google.cloud.dataform.v1beta1.UpdateConfigRequest;
 import com.google.cloud.dataform.v1beta1.UpdateReleaseConfigRequest;
 import com.google.cloud.dataform.v1beta1.UpdateRepositoryRequest;
 import com.google.cloud.dataform.v1beta1.UpdateWorkflowConfigRequest;
@@ -160,7 +174,8 @@ public abstract class DataformStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteRepositoryCallable()");
   }
 
-  public UnaryCallable<CommitRepositoryChangesRequest, Empty> commitRepositoryChangesCallable() {
+  public UnaryCallable<CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>
+      commitRepositoryChangesCallable() {
     throw new UnsupportedOperationException("Not implemented: commitRepositoryChangesCallable()");
   }
 
@@ -232,11 +247,11 @@ public abstract class DataformStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: installNpmPackagesCallable()");
   }
 
-  public UnaryCallable<PullGitCommitsRequest, Empty> pullGitCommitsCallable() {
+  public UnaryCallable<PullGitCommitsRequest, PullGitCommitsResponse> pullGitCommitsCallable() {
     throw new UnsupportedOperationException("Not implemented: pullGitCommitsCallable()");
   }
 
-  public UnaryCallable<PushGitCommitsRequest, Empty> pushGitCommitsCallable() {
+  public UnaryCallable<PushGitCommitsRequest, PushGitCommitsResponse> pushGitCommitsCallable() {
     throw new UnsupportedOperationException("Not implemented: pushGitCommitsCallable()");
   }
 
@@ -250,11 +265,13 @@ public abstract class DataformStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: fetchGitAheadBehindCallable()");
   }
 
-  public UnaryCallable<CommitWorkspaceChangesRequest, Empty> commitWorkspaceChangesCallable() {
+  public UnaryCallable<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
+      commitWorkspaceChangesCallable() {
     throw new UnsupportedOperationException("Not implemented: commitWorkspaceChangesCallable()");
   }
 
-  public UnaryCallable<ResetWorkspaceChangesRequest, Empty> resetWorkspaceChangesCallable() {
+  public UnaryCallable<ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>
+      resetWorkspaceChangesCallable() {
     throw new UnsupportedOperationException("Not implemented: resetWorkspaceChangesCallable()");
   }
 
@@ -273,11 +290,19 @@ public abstract class DataformStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: queryDirectoryContentsCallable()");
   }
 
+  public UnaryCallable<SearchFilesRequest, SearchFilesPagedResponse> searchFilesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchFilesPagedCallable()");
+  }
+
+  public UnaryCallable<SearchFilesRequest, SearchFilesResponse> searchFilesCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchFilesCallable()");
+  }
+
   public UnaryCallable<MakeDirectoryRequest, MakeDirectoryResponse> makeDirectoryCallable() {
     throw new UnsupportedOperationException("Not implemented: makeDirectoryCallable()");
   }
 
-  public UnaryCallable<RemoveDirectoryRequest, Empty> removeDirectoryCallable() {
+  public UnaryCallable<RemoveDirectoryRequest, RemoveDirectoryResponse> removeDirectoryCallable() {
     throw new UnsupportedOperationException("Not implemented: removeDirectoryCallable()");
   }
 
@@ -289,7 +314,7 @@ public abstract class DataformStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: readFileCallable()");
   }
 
-  public UnaryCallable<RemoveFileRequest, Empty> removeFileCallable() {
+  public UnaryCallable<RemoveFileRequest, RemoveFileResponse> removeFileCallable() {
     throw new UnsupportedOperationException("Not implemented: removeFileCallable()");
   }
 
@@ -412,7 +437,8 @@ public abstract class DataformStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteWorkflowInvocationCallable()");
   }
 
-  public UnaryCallable<CancelWorkflowInvocationRequest, Empty> cancelWorkflowInvocationCallable() {
+  public UnaryCallable<CancelWorkflowInvocationRequest, CancelWorkflowInvocationResponse>
+      cancelWorkflowInvocationCallable() {
     throw new UnsupportedOperationException("Not implemented: cancelWorkflowInvocationCallable()");
   }
 
@@ -428,6 +454,14 @@ public abstract class DataformStub implements BackgroundResource {
       queryWorkflowInvocationActionsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: queryWorkflowInvocationActionsCallable()");
+  }
+
+  public UnaryCallable<GetConfigRequest, Config> getConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getConfigCallable()");
+  }
+
+  public UnaryCallable<UpdateConfigRequest, Config> updateConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateConfigCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

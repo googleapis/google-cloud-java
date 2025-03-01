@@ -131,8 +131,8 @@ public interface QueryRepositoryDirectoryContentsRequestOrBuilder
    * subsequent page.
    *
    * When paginating, all other parameters provided to
-   * `QueryRepositoryDirectoryContents` must match the call that provided the
-   * page token.
+   * `QueryRepositoryDirectoryContents`, with the exception of `page_size`, must
+   * match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -149,8 +149,8 @@ public interface QueryRepositoryDirectoryContentsRequestOrBuilder
    * subsequent page.
    *
    * When paginating, all other parameters provided to
-   * `QueryRepositoryDirectoryContents` must match the call that provided the
-   * page token.
+   * `QueryRepositoryDirectoryContents`, with the exception of `page_size`, must
+   * match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -97,11 +97,11 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Indicates the status of the file.
+     * Output only. Indicates the status of the file.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State state = 2;
+     * .google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The enum numeric value on the wire for state.
@@ -111,11 +111,11 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Indicates the status of the file.
+     * Output only. Indicates the status of the file.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State state = 2;
+     * .google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The state.
@@ -433,11 +433,11 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Indicates the status of the file.
+     * Output only. Indicates the status of the file.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State state = 2;
+     * .google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The enum numeric value on the wire for state.
@@ -450,11 +450,11 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Indicates the status of the file.
+     * Output only. Indicates the status of the file.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State state = 2;
+     * .google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The state.
@@ -1002,11 +1002,11 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Indicates the status of the file.
+       * Output only. Indicates the status of the file.
        * </pre>
        *
        * <code>
-       * .google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State state = 2;
+       * .google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The enum numeric value on the wire for state.
@@ -1019,11 +1019,11 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Indicates the status of the file.
+       * Output only. Indicates the status of the file.
        * </pre>
        *
        * <code>
-       * .google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State state = 2;
+       * .google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @param value The enum numeric value on the wire for state to set.
@@ -1039,11 +1039,11 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Indicates the status of the file.
+       * Output only. Indicates the status of the file.
        * </pre>
        *
        * <code>
-       * .google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State state = 2;
+       * .google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The state.
@@ -1065,11 +1065,11 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Indicates the status of the file.
+       * Output only. Indicates the status of the file.
        * </pre>
        *
        * <code>
-       * .google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State state = 2;
+       * .google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @param value The state to set.
@@ -1090,11 +1090,11 @@ public final class FetchFileGitStatusesResponse extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Indicates the status of the file.
+       * Output only. Indicates the status of the file.
        * </pre>
        *
        * <code>
-       * .google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State state = 2;
+       * .google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse.UncommittedFileChange.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return This builder for chaining.

@@ -28,10 +28,10 @@ public interface ReleaseConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. The release config's name.
+   * Identifier. The release config's name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -40,10 +40,10 @@ public interface ReleaseConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. The release config's name.
+   * Identifier. The release config's name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -190,8 +190,8 @@ public interface ReleaseConfigOrBuilder
    *
    * <pre>
    * Output only. Records of the 10 most recent scheduled release attempts,
-   * ordered in in descending order of `release_time`. Updated whenever
-   * automatic creation of a compilation result is triggered by cron_schedule.
+   * ordered in descending order of `release_time`. Updated whenever automatic
+   * creation of a compilation result is triggered by cron_schedule.
    * </pre>
    *
    * <code>
@@ -205,8 +205,8 @@ public interface ReleaseConfigOrBuilder
    *
    * <pre>
    * Output only. Records of the 10 most recent scheduled release attempts,
-   * ordered in in descending order of `release_time`. Updated whenever
-   * automatic creation of a compilation result is triggered by cron_schedule.
+   * ordered in descending order of `release_time`. Updated whenever automatic
+   * creation of a compilation result is triggered by cron_schedule.
    * </pre>
    *
    * <code>
@@ -220,8 +220,8 @@ public interface ReleaseConfigOrBuilder
    *
    * <pre>
    * Output only. Records of the 10 most recent scheduled release attempts,
-   * ordered in in descending order of `release_time`. Updated whenever
-   * automatic creation of a compilation result is triggered by cron_schedule.
+   * ordered in descending order of `release_time`. Updated whenever automatic
+   * creation of a compilation result is triggered by cron_schedule.
    * </pre>
    *
    * <code>
@@ -234,8 +234,8 @@ public interface ReleaseConfigOrBuilder
    *
    * <pre>
    * Output only. Records of the 10 most recent scheduled release attempts,
-   * ordered in in descending order of `release_time`. Updated whenever
-   * automatic creation of a compilation result is triggered by cron_schedule.
+   * ordered in descending order of `release_time`. Updated whenever automatic
+   * creation of a compilation result is triggered by cron_schedule.
    * </pre>
    *
    * <code>
@@ -250,8 +250,8 @@ public interface ReleaseConfigOrBuilder
    *
    * <pre>
    * Output only. Records of the 10 most recent scheduled release attempts,
-   * ordered in in descending order of `release_time`. Updated whenever
-   * automatic creation of a compilation result is triggered by cron_schedule.
+   * ordered in descending order of `release_time`. Updated whenever automatic
+   * creation of a compilation result is triggered by cron_schedule.
    * </pre>
    *
    * <code>
@@ -266,10 +266,11 @@ public interface ReleaseConfigOrBuilder
    *
    * <pre>
    * Optional. The name of the currently released compilation result for this
-   * release config. This value is updated when a compilation result is created
-   * from this release config, or when this resource is updated by API call
-   * (perhaps to roll back to an earlier release). The compilation result must
-   * have been created using this release config. Must be in the format
+   * release config. This value is updated when a compilation result is
+   * automatically created from this release config (using cron_schedule), or
+   * when this resource is updated by API call (perhaps to roll back to an
+   * earlier release). The compilation result must have been created using this
+   * release config. Must be in the format
    * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
    * </pre>
    *
@@ -285,10 +286,11 @@ public interface ReleaseConfigOrBuilder
    *
    * <pre>
    * Optional. The name of the currently released compilation result for this
-   * release config. This value is updated when a compilation result is created
-   * from this release config, or when this resource is updated by API call
-   * (perhaps to roll back to an earlier release). The compilation result must
-   * have been created using this release config. Must be in the format
+   * release config. This value is updated when a compilation result is
+   * automatically created from this release config (using cron_schedule), or
+   * when this resource is updated by API call (perhaps to roll back to an
+   * earlier release). The compilation result must have been created using this
+   * release config. Must be in the format
    * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
    * </pre>
    *
@@ -299,4 +301,63 @@ public interface ReleaseConfigOrBuilder
    * @return The bytes for releaseCompilationResult.
    */
   com.google.protobuf.ByteString getReleaseCompilationResultBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disables automatic creation of compilation results.
+   * </pre>
+   *
+   * <code>bool disabled = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disabled.
+   */
+  boolean getDisabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the internalMetadata field is set.
+   */
+  boolean hasInternalMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The internalMetadata.
+   */
+  java.lang.String getInternalMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for internalMetadata.
+   */
+  com.google.protobuf.ByteString getInternalMetadataBytes();
 }

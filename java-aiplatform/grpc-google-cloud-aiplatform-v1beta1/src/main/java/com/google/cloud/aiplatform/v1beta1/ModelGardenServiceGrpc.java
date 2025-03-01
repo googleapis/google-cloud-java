@@ -325,6 +325,7 @@ public final class ModelGardenServiceGrpc {
      * Deploys publisher models.
      * </pre>
      */
+    @java.lang.Deprecated
     default void deployPublisherModel(
         com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -423,6 +424,7 @@ public final class ModelGardenServiceGrpc {
      * Deploys publisher models.
      * </pre>
      */
+    @java.lang.Deprecated
     public void deployPublisherModel(
         com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -499,6 +501,7 @@ public final class ModelGardenServiceGrpc {
      * Deploys publisher models.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deployPublisherModel(
         com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -574,6 +577,7 @@ public final class ModelGardenServiceGrpc {
      * Deploys publisher models.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deployPublisherModel(
             com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest request) {

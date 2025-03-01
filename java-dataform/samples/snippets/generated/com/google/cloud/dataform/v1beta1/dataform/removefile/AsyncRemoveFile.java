@@ -20,8 +20,8 @@ package com.google.cloud.dataform.v1beta1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.dataform.v1beta1.DataformClient;
 import com.google.cloud.dataform.v1beta1.RemoveFileRequest;
+import com.google.cloud.dataform.v1beta1.RemoveFileResponse;
 import com.google.cloud.dataform.v1beta1.WorkspaceName;
-import com.google.protobuf.Empty;
 
 public class AsyncRemoveFile {
 
@@ -43,9 +43,10 @@ public class AsyncRemoveFile {
                       .toString())
               .setPath("path3433509")
               .build();
-      ApiFuture<Empty> future = dataformClient.removeFileCallable().futureCall(request);
+      ApiFuture<RemoveFileResponse> future =
+          dataformClient.removeFileCallable().futureCall(request);
       // Do something.
-      future.get();
+      RemoveFileResponse response = future.get();
     }
   }
 }

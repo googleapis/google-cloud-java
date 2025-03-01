@@ -28,6 +28,90 @@ public interface WorkflowInvocationActionOrBuilder
    *
    *
    * <pre>
+   * Output only. The workflow action's bigquery action details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the bigqueryAction field is set.
+   */
+  boolean hasBigqueryAction();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's bigquery action details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bigqueryAction.
+   */
+  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction getBigqueryAction();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's bigquery action details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryActionOrBuilder
+      getBigqueryActionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's notebook action details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction notebook_action = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the notebookAction field is set.
+   */
+  boolean hasNotebookAction();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's notebook action details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction notebook_action = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The notebookAction.
+   */
+  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction getNotebookAction();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's notebook action details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction notebook_action = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookActionOrBuilder
+      getNotebookActionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. This action's identifier. Unique within the workflow
    * invocation.
    * </pre>
@@ -222,41 +306,47 @@ public interface WorkflowInvocationActionOrBuilder
    *
    *
    * <pre>
-   * Output only. The workflow action's bigquery action details.
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
    * </pre>
    *
-   * <code>
-   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @return Whether the bigqueryAction field is set.
+   * @return Whether the internalMetadata field is set.
    */
-  boolean hasBigqueryAction();
+  boolean hasInternalMetadata();
   /**
    *
    *
    * <pre>
-   * Output only. The workflow action's bigquery action details.
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
    * </pre>
    *
-   * <code>
-   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @return The bigqueryAction.
+   * @return The internalMetadata.
    */
-  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction getBigqueryAction();
+  java.lang.String getInternalMetadata();
   /**
    *
    *
    * <pre>
-   * Output only. The workflow action's bigquery action details.
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
    * </pre>
    *
-   * <code>
-   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction bigquery_action = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
+   *
+   * @return The bytes for internalMetadata.
    */
-  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryActionOrBuilder
-      getBigqueryActionOrBuilder();
+  com.google.protobuf.ByteString getInternalMetadataBytes();
+
+  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.ActionCase getActionCase();
 }

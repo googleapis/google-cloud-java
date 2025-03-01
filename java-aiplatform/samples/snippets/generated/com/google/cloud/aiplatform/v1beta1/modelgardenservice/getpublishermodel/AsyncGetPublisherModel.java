@@ -44,6 +44,7 @@ public class AsyncGetPublisherModel {
               .setView(PublisherModelView.forNumber(0))
               .setIsHuggingFaceModel(true)
               .setHuggingFaceToken("huggingFaceToken74062599")
+              .setIncludeEquivalentModelGardenModelDeploymentConfigs(true)
               .build();
       ApiFuture<PublisherModel> future =
           modelGardenServiceClient.getPublisherModelCallable().futureCall(request);

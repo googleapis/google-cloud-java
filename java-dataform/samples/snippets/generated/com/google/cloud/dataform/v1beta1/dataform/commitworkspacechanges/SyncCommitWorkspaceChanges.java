@@ -19,9 +19,9 @@ package com.google.cloud.dataform.v1beta1.samples;
 // [START dataform_v1beta1_generated_Dataform_CommitWorkspaceChanges_sync]
 import com.google.cloud.dataform.v1beta1.CommitAuthor;
 import com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesRequest;
+import com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesResponse;
 import com.google.cloud.dataform.v1beta1.DataformClient;
 import com.google.cloud.dataform.v1beta1.WorkspaceName;
-import com.google.protobuf.Empty;
 import java.util.ArrayList;
 
 public class SyncCommitWorkspaceChanges {
@@ -46,7 +46,7 @@ public class SyncCommitWorkspaceChanges {
               .setCommitMessage("commitMessage2039804624")
               .addAllPaths(new ArrayList<String>())
               .build();
-      dataformClient.commitWorkspaceChanges(request);
+      CommitWorkspaceChangesResponse response = dataformClient.commitWorkspaceChanges(request);
     }
   }
 }

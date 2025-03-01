@@ -20,8 +20,8 @@ package com.google.cloud.dataform.v1beta1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.dataform.v1beta1.DataformClient;
 import com.google.cloud.dataform.v1beta1.PushGitCommitsRequest;
+import com.google.cloud.dataform.v1beta1.PushGitCommitsResponse;
 import com.google.cloud.dataform.v1beta1.WorkspaceName;
-import com.google.protobuf.Empty;
 
 public class AsyncPushGitCommits {
 
@@ -43,9 +43,10 @@ public class AsyncPushGitCommits {
                       .toString())
               .setRemoteBranch("remoteBranch-533119608")
               .build();
-      ApiFuture<Empty> future = dataformClient.pushGitCommitsCallable().futureCall(request);
+      ApiFuture<PushGitCommitsResponse> future =
+          dataformClient.pushGitCommitsCallable().futureCall(request);
       // Do something.
-      future.get();
+      PushGitCommitsResponse response = future.get();
     }
   }
 }

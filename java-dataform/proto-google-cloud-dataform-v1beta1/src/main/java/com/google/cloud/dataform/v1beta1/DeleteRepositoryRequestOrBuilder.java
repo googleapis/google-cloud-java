@@ -57,12 +57,12 @@ public interface DeleteRepositoryRequestOrBuilder
    *
    *
    * <pre>
-   * If set to true, any child resources of this repository will also be
-   * deleted. (Otherwise, the request will only succeed if the repository has no
-   * child resources.)
+   * Optional. If set to true, any child resources of this repository will also
+   * be deleted. (Otherwise, the request will only succeed if the repository has
+   * no child resources.)
    * </pre>
    *
-   * <code>bool force = 2;</code>
+   * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The force.
    */
