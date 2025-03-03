@@ -1169,6 +1169,10 @@ public class ITQueryTest extends ITBaseTest {
         .set(col.document("e"), map("value", "Ｐ"))
         .set(col.document("f"), map("value", "︒"))
         .set(col.document("g"), map("value", "🐵"))
+        .set(col.document("h"), map("value", "你好"))
+        .set(col.document("i"), map("value", "你顥"))
+        .set(col.document("j"), map("value", "😁"))
+        .set(col.document("k"), map("value", "😀"))
         .commit()
         .get();
 
@@ -1192,7 +1196,7 @@ public class ITQueryTest extends ITBaseTest {
     latch.await();
     registration.remove();
 
-    assertEquals(queryOrder, Arrays.asList("b", "a", "c", "f", "e", "d", "g"));
+    assertEquals(queryOrder, Arrays.asList("b", "a", "h", "i", "c", "f", "e", "d", "g", "k", "j"));
     assertEquals(queryOrder, listenerOrder);
   }
 
@@ -1209,6 +1213,10 @@ public class ITQueryTest extends ITBaseTest {
         .set(col.document("e"), map("value", Arrays.asList("Ｐ")))
         .set(col.document("f"), map("value", Arrays.asList("︒")))
         .set(col.document("g"), map("value", Arrays.asList("🐵")))
+        .set(col.document("h"), map("value", Arrays.asList("你好")))
+        .set(col.document("i"), map("value", Arrays.asList("你顥")))
+        .set(col.document("j"), map("value", Arrays.asList("😁")))
+        .set(col.document("k"), map("value", Arrays.asList("😀")))
         .commit()
         .get();
 
@@ -1232,7 +1240,7 @@ public class ITQueryTest extends ITBaseTest {
     latch.await();
     registration.remove();
 
-    assertEquals(queryOrder, Arrays.asList("b", "a", "c", "f", "e", "d", "g"));
+    assertEquals(queryOrder, Arrays.asList("b", "a", "h", "i", "c", "f", "e", "d", "g", "k", "j"));
     assertEquals(queryOrder, listenerOrder);
   }
 
@@ -1249,6 +1257,10 @@ public class ITQueryTest extends ITBaseTest {
         .set(col.document("e"), map("value", map("foo", "Ｐ")))
         .set(col.document("f"), map("value", map("foo", "︒")))
         .set(col.document("g"), map("value", map("foo", "🐵")))
+        .set(col.document("h"), map("value", map("foo", "你好")))
+        .set(col.document("i"), map("value", map("foo", "你顥")))
+        .set(col.document("j"), map("value", map("foo", "😁")))
+        .set(col.document("k"), map("value", map("foo", "😀")))
         .commit()
         .get();
 
@@ -1272,7 +1284,7 @@ public class ITQueryTest extends ITBaseTest {
     latch.await();
     registration.remove();
 
-    assertEquals(queryOrder, Arrays.asList("b", "a", "c", "f", "e", "d", "g"));
+    assertEquals(queryOrder, Arrays.asList("b", "a", "h", "i", "c", "f", "e", "d", "g", "k", "j"));
     assertEquals(queryOrder, listenerOrder);
   }
 
@@ -1289,6 +1301,10 @@ public class ITQueryTest extends ITBaseTest {
         .set(col.document("e"), map("value", map("Ｐ", "foo")))
         .set(col.document("f"), map("value", map("︒", "foo")))
         .set(col.document("g"), map("value", map("🐵", "foo")))
+        .set(col.document("h"), map("value", map("你好", "foo")))
+        .set(col.document("i"), map("value", map("你顥", "foo")))
+        .set(col.document("j"), map("value", map("😁", "foo")))
+        .set(col.document("k"), map("value", map("😀", "foo")))
         .commit()
         .get();
 
@@ -1312,7 +1328,7 @@ public class ITQueryTest extends ITBaseTest {
     latch.await();
     registration.remove();
 
-    assertEquals(queryOrder, Arrays.asList("b", "a", "c", "f", "e", "d", "g"));
+    assertEquals(queryOrder, Arrays.asList("b", "a", "h", "i", "c", "f", "e", "d", "g", "k", "j"));
     assertEquals(queryOrder, listenerOrder);
   }
 
@@ -1329,6 +1345,10 @@ public class ITQueryTest extends ITBaseTest {
         .set(col.document("Ｐ"), map("value", "foo"))
         .set(col.document("︒"), map("value", "foo"))
         .set(col.document("🐵"), map("value", "foo"))
+        .set(col.document("你好"), map("value", "你好"))
+        .set(col.document("你顥"), map("value", "你顥"))
+        .set(col.document("😁"), map("value", "😁"))
+        .set(col.document("😀"), map("value", "😀"))
         .commit()
         .get();
 
@@ -1353,7 +1373,50 @@ public class ITQueryTest extends ITBaseTest {
     registration.remove();
 
     assertEquals(
-        queryOrder, Arrays.asList("Sierpiński", "Łukasiewicz", "岩澤", "︒", "Ｐ", "🄟", "🐵"));
+        queryOrder,
+        Arrays.asList(
+            "Sierpiński", "Łukasiewicz", "你好", "你顥", "岩澤", "︒", "Ｐ", "🄟", "🐵", "😀", "😁"));
+    assertEquals(queryOrder, listenerOrder);
+  }
+
+  @Test
+  public void snapshotListenerSortsInvalidUnicodeStringsSameWayAsServer() throws Exception {
+    CollectionReference col = createEmptyCollection();
+
+    // Note: Protocol Buffer converts any invalid surrogates to "?".
+    firestore
+        .batch()
+        .set(col.document("a"), map("value", "Z"))
+        .set(col.document("b"), map("value", "你好"))
+        .set(col.document("c"), map("value", "😀"))
+        .set(col.document("d"), map("value", "ab\uD800")) // Lone high surrogate
+        .set(col.document("e"), map("value", "ab\uDC00")) // Lone low surrogate
+        .set(col.document("f"), map("value", "ab\uD800\uD800")) // Unpaired high surrogate
+        .set(col.document("g"), map("value", "ab\uDC00\uDC00")) // Unpaired low surrogate
+        .commit()
+        .get();
+
+    Query query = col.orderBy("value", Direction.ASCENDING);
+
+    QuerySnapshot snapshot = query.get().get();
+    List<String> queryOrder =
+        snapshot.getDocuments().stream().map(doc -> doc.getId()).collect(Collectors.toList());
+
+    CountDownLatch latch = new CountDownLatch(1);
+    List<String> listenerOrder = new ArrayList<>();
+    ListenerRegistration registration =
+        query.addSnapshotListener(
+            (value, error) -> {
+              listenerOrder.addAll(
+                  value.getDocuments().stream()
+                      .map(doc -> doc.getId())
+                      .collect(Collectors.toList()));
+              latch.countDown();
+            });
+    latch.await();
+    registration.remove();
+
+    assertEquals(queryOrder, Arrays.asList("a", "d", "e", "f", "g", "b", "c"));
     assertEquals(queryOrder, listenerOrder);
   }
 }

@@ -136,9 +136,44 @@ class Order implements Comparator<Value> {
 
   /** Compare strings in UTF-8 encoded byte order */
   public static int compareUtf8Strings(String left, String right) {
-    ByteString leftBytes = ByteString.copyFromUtf8(left);
-    ByteString rightBytes = ByteString.copyFromUtf8(right);
-    return compareByteStrings(leftBytes, rightBytes);
+    int i = 0;
+    while (i < left.length() && i < right.length()) {
+      int leftCodePoint = left.codePointAt(i);
+      int rightCodePoint = right.codePointAt(i);
+
+      if (leftCodePoint != rightCodePoint) {
+        if (leftCodePoint < 128 && rightCodePoint < 128) {
+          // ASCII comparison
+          return Integer.compare(leftCodePoint, rightCodePoint);
+        } else {
+          // UTF-8 encode the character at index i for byte comparison.
+          ByteString leftBytes = ByteString.copyFromUtf8(getUtf8SafeBytes(left, i));
+          ByteString rightBytes = ByteString.copyFromUtf8(getUtf8SafeBytes(right, i));
+          int comp = compareByteStrings(leftBytes, rightBytes);
+          if (comp != 0) {
+            return comp;
+          } else {
+            // EXTREMELY RARE CASE: Code points differ, but their UTF-8 byte representations are
+            // identical. This can happen with malformed input (invalid surrogate pairs), where
+            // Java's encoding leads to unexpected byte sequences. Meanwhile, any invalid surrogate
+            // inputs get converted to "?" by protocol buffer while round tripping, so we almost
+            // never receive invalid strings from backend.
+            // Fallback to code point comparison for graceful handling.
+            return Integer.compare(leftCodePoint, rightCodePoint);
+          }
+        }
+      }
+      // Increment by 2 for surrogate pairs, 1 otherwise.
+      i += Character.charCount(leftCodePoint);
+    }
+
+    // Compare lengths if all characters are equal
+    return Integer.compare(left.length(), right.length());
+  }
+
+  private static String getUtf8SafeBytes(String str, int index) {
+    int firstCodePoint = str.codePointAt(index);
+    return str.substring(index, index + Character.charCount(firstCodePoint));
   }
 
   private int compareBlobs(Value left, Value right) {
@@ -147,7 +182,7 @@ class Order implements Comparator<Value> {
     return compareByteStrings(leftBytes, rightBytes);
   }
 
-  private static int compareByteStrings(ByteString leftBytes, ByteString rightBytes) {
+  static int compareByteStrings(ByteString leftBytes, ByteString rightBytes) {
     int size = Math.min(leftBytes.size(), rightBytes.size());
     for (int i = 0; i < size; i++) {
       // Make sure the bytes are unsigned
