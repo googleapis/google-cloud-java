@@ -50,7 +50,7 @@
     <dependency>
       <groupId>com.google.oauth-client</groupId>
       <artifactId>google-oauth-client-java6</artifactId>
-      <version>1.38.0</version>
+      <version>1.39.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.oauth-client</groupId>
