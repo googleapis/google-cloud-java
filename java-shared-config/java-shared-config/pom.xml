@@ -28,6 +28,7 @@
     <skipITs>true</skipITs>
     <auto-value.version>1.11.0</auto-value.version>
     <docRoot>/java/docs/reference/</docRoot>
+    <google-java-format.version>1.7</google-java-format.version>
   </properties>
 
   <build>
@@ -179,7 +180,7 @@
             <dependency>
               <groupId>com.google.googlejavaformat</groupId>
               <artifactId>google-java-format</artifactId>
-              <version>1.7</version>
+              <version>${google-java-format.version}</version>
             </dependency>
           </dependencies>
         </plugin>
