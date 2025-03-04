@@ -512,7 +512,7 @@
           "libraryClient": "ParticipantsClient",
           "rpcs": {
             "AnalyzeContent": {
-              "methods": ["analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContentCallable"]
+              "methods": ["analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContentCallable"]
             },
             "CreateParticipant": {
               "methods": ["createParticipant", "createParticipant", "createParticipant", "createParticipantCallable"]

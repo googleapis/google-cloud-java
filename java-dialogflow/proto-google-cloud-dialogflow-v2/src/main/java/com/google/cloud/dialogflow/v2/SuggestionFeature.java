@@ -119,6 +119,16 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * Run conversation summarization model for chat.
+     * </pre>
+     *
+     * <code>CONVERSATION_SUMMARIZATION = 8;</code>
+     */
+    CONVERSATION_SUMMARIZATION(8),
+    /**
+     *
+     *
+     * <pre>
      * Run knowledge search with text input from agent or text generated query.
      * </pre>
      *
@@ -182,6 +192,16 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * Run conversation summarization model for chat.
+     * </pre>
+     *
+     * <code>CONVERSATION_SUMMARIZATION = 8;</code>
+     */
+    public static final int CONVERSATION_SUMMARIZATION_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
      * Run knowledge search with text input from agent or text generated query.
      * </pre>
      *
@@ -231,6 +251,8 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
           return FAQ;
         case 3:
           return SMART_REPLY;
+        case 8:
+          return CONVERSATION_SUMMARIZATION;
         case 14:
           return KNOWLEDGE_SEARCH;
         case 15:

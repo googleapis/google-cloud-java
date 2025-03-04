@@ -299,4 +299,46 @@ public interface ConversationOrBuilder
    * @return The conversationStage.
    */
   com.google.cloud.dialogflow.v2.Conversation.ConversationStage getConversationStage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The telephony connection information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo telephony_connection_info = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the telephonyConnectionInfo field is set.
+   */
+  boolean hasTelephonyConnectionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The telephony connection information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo telephony_connection_info = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The telephonyConnectionInfo.
+   */
+  com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo getTelephonyConnectionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The telephony connection information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo telephony_connection_info = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfoOrBuilder
+      getTelephonyConnectionInfoOrBuilder();
 }

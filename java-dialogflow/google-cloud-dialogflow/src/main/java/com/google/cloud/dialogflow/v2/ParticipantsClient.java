@@ -156,8 +156,10 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> analyzeContent(ParticipantName participant, AudioInput audioInput)
  *           <li><p> analyzeContent(ParticipantName participant, EventInput eventInput)
  *           <li><p> analyzeContent(ParticipantName participant, TextInput textInput)
+ *           <li><p> analyzeContent(String participant, AudioInput audioInput)
  *           <li><p> analyzeContent(String participant, EventInput eventInput)
  *           <li><p> analyzeContent(String participant, TextInput textInput)
  *      </ul>
@@ -922,6 +924,47 @@ public class ParticipantsClient implements BackgroundResource {
    *   ParticipantName participant =
    *       ParticipantName.ofProjectConversationParticipantName(
    *           "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
+   *   AudioInput audioInput = AudioInput.newBuilder().build();
+   *   AnalyzeContentResponse response = participantsClient.analyzeContent(participant, audioInput);
+   * }
+   * }</pre>
+   *
+   * @param participant Required. The name of the participant this text comes from. Format:
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation
+   *     ID&gt;/participants/&lt;Participant ID&gt;`.
+   * @param audioInput The natural language speech audio to be processed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeContentResponse analyzeContent(
+      ParticipantName participant, AudioInput audioInput) {
+    AnalyzeContentRequest request =
+        AnalyzeContentRequest.newBuilder()
+            .setParticipant(participant == null ? null : participant.toString())
+            .setAudioInput(audioInput)
+            .build();
+    return analyzeContent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a text (chat, for example), or audio (phone recording, for example) message from a
+   * participant into the conversation.
+   *
+   * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
+   * and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   ParticipantName participant =
+   *       ParticipantName.ofProjectConversationParticipantName(
+   *           "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
    *   EventInput eventInput = EventInput.newBuilder().build();
    *   AnalyzeContentResponse response = participantsClient.analyzeContent(participant, eventInput);
    * }
@@ -980,6 +1023,47 @@ public class ParticipantsClient implements BackgroundResource {
         AnalyzeContentRequest.newBuilder()
             .setParticipant(participant == null ? null : participant.toString())
             .setTextInput(textInput)
+            .build();
+    return analyzeContent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a text (chat, for example), or audio (phone recording, for example) message from a
+   * participant into the conversation.
+   *
+   * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
+   * and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   String participant =
+   *       ParticipantName.ofProjectConversationParticipantName(
+   *               "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+   *           .toString();
+   *   AudioInput audioInput = AudioInput.newBuilder().build();
+   *   AnalyzeContentResponse response = participantsClient.analyzeContent(participant, audioInput);
+   * }
+   * }</pre>
+   *
+   * @param participant Required. The name of the participant this text comes from. Format:
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation
+   *     ID&gt;/participants/&lt;Participant ID&gt;`.
+   * @param audioInput The natural language speech audio to be processed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeContentResponse analyzeContent(String participant, AudioInput audioInput) {
+    AnalyzeContentRequest request =
+        AnalyzeContentRequest.newBuilder()
+            .setParticipant(participant)
+            .setAudioInput(audioInput)
             .build();
     return analyzeContent(request);
   }

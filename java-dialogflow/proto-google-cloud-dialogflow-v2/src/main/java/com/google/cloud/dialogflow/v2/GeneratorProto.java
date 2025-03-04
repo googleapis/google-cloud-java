@@ -228,11 +228,11 @@ public final class GeneratorProto {
           + "nerator\032x\312A\031dialogflow.googleapis.com\322AY"
           + "https://www.googleapis.com/auth/cloud-pl"
           + "atform,https://www.googleapis.com/auth/d"
-          + "ialogflowB\227\001\n\036com.google.cloud.dialogflo"
+          + "ialogflowB\224\001\n\036com.google.cloud.dialogflo"
           + "w.v2B\016GeneratorProtoP\001Z>cloud.google.com"
           + "/go/dialogflow/apiv2/dialogflowpb;dialog"
-          + "flowpb\370\001\001\242\002\002DF\252\002\032Google.Cloud.Dialogflow"
-          + ".V2b\006proto3"
+          + "flowpb\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

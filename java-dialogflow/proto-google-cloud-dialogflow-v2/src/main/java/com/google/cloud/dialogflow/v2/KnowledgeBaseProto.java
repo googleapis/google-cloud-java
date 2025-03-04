@@ -140,11 +140,11 @@ public final class KnowledgeBaseProto {
           + "edgeBases/*}:\016knowledge_base\032x\312A\031dialogf"
           + "low.googleapis.com\322AYhttps://www.googlea"
           + "pis.com/auth/cloud-platform,https://www."
-          + "googleapis.com/auth/dialogflowB\233\001\n\036com.g"
+          + "googleapis.com/auth/dialogflowB\230\001\n\036com.g"
           + "oogle.cloud.dialogflow.v2B\022KnowledgeBase"
           + "ProtoP\001Z>cloud.google.com/go/dialogflow/"
-          + "apiv2/dialogflowpb;dialogflowpb\370\001\001\242\002\002DF\252"
-          + "\002\032Google.Cloud.Dialogflow.V2b\006proto3"
+          + "apiv2/dialogflowpb;dialogflowpb\242\002\002DF\252\002\032G"
+          + "oogle.Cloud.Dialogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

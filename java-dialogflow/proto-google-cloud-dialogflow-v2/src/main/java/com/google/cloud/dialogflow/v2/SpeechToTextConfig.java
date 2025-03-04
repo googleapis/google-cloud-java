@@ -420,7 +420,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Use timeout based endpointing, interpreting endpointer sensitivy as
+   * Use timeout based endpointing, interpreting endpointer sensitivity as
    * seconds of timeout value.
    * </pre>
    *
@@ -1823,7 +1823,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Use timeout based endpointing, interpreting endpointer sensitivy as
+     * Use timeout based endpointing, interpreting endpointer sensitivity as
      * seconds of timeout value.
      * </pre>
      *
@@ -1839,7 +1839,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Use timeout based endpointing, interpreting endpointer sensitivy as
+     * Use timeout based endpointing, interpreting endpointer sensitivity as
      * seconds of timeout value.
      * </pre>
      *
@@ -1859,7 +1859,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Use timeout based endpointing, interpreting endpointer sensitivy as
+     * Use timeout based endpointing, interpreting endpointer sensitivity as
      * seconds of timeout value.
      * </pre>
      *

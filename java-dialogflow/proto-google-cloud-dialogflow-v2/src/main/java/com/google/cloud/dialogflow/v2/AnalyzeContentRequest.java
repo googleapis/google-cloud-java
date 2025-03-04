@@ -76,6 +76,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TEXT_INPUT(6),
+    AUDIO_INPUT(7),
     EVENT_INPUT(8),
     SUGGESTION_INPUT(12),
     INPUT_NOT_SET(0);
@@ -98,6 +99,8 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       switch (value) {
         case 6:
           return TEXT_INPUT;
+        case 7:
+          return AUDIO_INPUT;
         case 8:
           return EVENT_INPUT;
         case 12:
@@ -226,6 +229,57 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       return (com.google.cloud.dialogflow.v2.TextInput) input_;
     }
     return com.google.cloud.dialogflow.v2.TextInput.getDefaultInstance();
+  }
+
+  public static final int AUDIO_INPUT_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * The natural language speech audio to be processed.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
+   *
+   * @return Whether the audioInput field is set.
+   */
+  @java.lang.Override
+  public boolean hasAudioInput() {
+    return inputCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The natural language speech audio to be processed.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
+   *
+   * @return The audioInput.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.AudioInput getAudioInput() {
+    if (inputCase_ == 7) {
+      return (com.google.cloud.dialogflow.v2.AudioInput) input_;
+    }
+    return com.google.cloud.dialogflow.v2.AudioInput.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The natural language speech audio to be processed.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.AudioInputOrBuilder getAudioInputOrBuilder() {
+    if (inputCase_ == 7) {
+      return (com.google.cloud.dialogflow.v2.AudioInput) input_;
+    }
+    return com.google.cloud.dialogflow.v2.AudioInput.getDefaultInstance();
   }
 
   public static final int EVENT_INPUT_FIELD_NUMBER = 8;
@@ -632,6 +686,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     if (inputCase_ == 6) {
       output.writeMessage(6, (com.google.cloud.dialogflow.v2.TextInput) input_);
     }
+    if (inputCase_ == 7) {
+      output.writeMessage(7, (com.google.cloud.dialogflow.v2.AudioInput) input_);
+    }
     if (inputCase_ == 8) {
       output.writeMessage(8, (com.google.cloud.dialogflow.v2.EventInput) input_);
     }
@@ -669,6 +726,11 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.cloud.dialogflow.v2.TextInput) input_);
+    }
+    if (inputCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.dialogflow.v2.AudioInput) input_);
     }
     if (inputCase_ == 8) {
       size +=
@@ -731,6 +793,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       case 6:
         if (!getTextInput().equals(other.getTextInput())) return false;
         break;
+      case 7:
+        if (!getAudioInput().equals(other.getAudioInput())) return false;
+        break;
       case 8:
         if (!getEventInput().equals(other.getEventInput())) return false;
         break;
@@ -775,6 +840,10 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       case 6:
         hash = (37 * hash) + TEXT_INPUT_FIELD_NUMBER;
         hash = (53 * hash) + getTextInput().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + AUDIO_INPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getAudioInput().hashCode();
         break;
       case 8:
         hash = (37 * hash) + EVENT_INPUT_FIELD_NUMBER;
@@ -943,6 +1012,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       if (textInputBuilder_ != null) {
         textInputBuilder_.clear();
       }
+      if (audioInputBuilder_ != null) {
+        audioInputBuilder_.clear();
+      }
       if (eventInputBuilder_ != null) {
         eventInputBuilder_.clear();
       }
@@ -1013,29 +1085,29 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         result.participant_ = participant_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.replyAudioConfig_ =
             replyAudioConfigBuilder_ == null ? replyAudioConfig_ : replyAudioConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.queryParams_ =
             queryParamsBuilder_ == null ? queryParams_ : queryParamsBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.assistQueryParams_ =
             assistQueryParamsBuilder_ == null
                 ? assistQueryParams_
                 : assistQueryParamsBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.cxParameters_ =
             cxParametersBuilder_ == null ? cxParameters_ : cxParametersBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.requestId_ = requestId_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1046,6 +1118,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       result.input_ = this.input_;
       if (inputCase_ == 6 && textInputBuilder_ != null) {
         result.input_ = textInputBuilder_.build();
+      }
+      if (inputCase_ == 7 && audioInputBuilder_ != null) {
+        result.input_ = audioInputBuilder_.build();
       }
       if (inputCase_ == 8 && eventInputBuilder_ != null) {
         result.input_ = eventInputBuilder_.build();
@@ -1120,13 +1195,18 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       switch (other.getInputCase()) {
         case TEXT_INPUT:
           {
             mergeTextInput(other.getTextInput());
+            break;
+          }
+        case AUDIO_INPUT:
+          {
+            mergeAudioInput(other.getAudioInput());
             break;
           }
         case EVENT_INPUT:
@@ -1180,7 +1260,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
               {
                 input.readMessage(
                     getReplyAudioConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
@@ -1189,6 +1269,12 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
                 inputCase_ = 6;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(getAudioInputFieldBuilder().getBuilder(), extensionRegistry);
+                inputCase_ = 7;
+                break;
+              } // case 58
             case 66:
               {
                 input.readMessage(getEventInputFieldBuilder().getBuilder(), extensionRegistry);
@@ -1198,13 +1284,13 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
             case 74:
               {
                 input.readMessage(getQueryParamsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 74
             case 90:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
             case 98:
@@ -1217,13 +1303,13 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
               {
                 input.readMessage(
                     getAssistQueryParamsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 114
             case 146:
               {
                 input.readMessage(getCxParametersFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 146
             default:
@@ -1591,6 +1677,215 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       inputCase_ = 6;
       onChanged();
       return textInputBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.AudioInput,
+            com.google.cloud.dialogflow.v2.AudioInput.Builder,
+            com.google.cloud.dialogflow.v2.AudioInputOrBuilder>
+        audioInputBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The natural language speech audio to be processed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
+     *
+     * @return Whether the audioInput field is set.
+     */
+    @java.lang.Override
+    public boolean hasAudioInput() {
+      return inputCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The natural language speech audio to be processed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
+     *
+     * @return The audioInput.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.AudioInput getAudioInput() {
+      if (audioInputBuilder_ == null) {
+        if (inputCase_ == 7) {
+          return (com.google.cloud.dialogflow.v2.AudioInput) input_;
+        }
+        return com.google.cloud.dialogflow.v2.AudioInput.getDefaultInstance();
+      } else {
+        if (inputCase_ == 7) {
+          return audioInputBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2.AudioInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The natural language speech audio to be processed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
+     */
+    public Builder setAudioInput(com.google.cloud.dialogflow.v2.AudioInput value) {
+      if (audioInputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        input_ = value;
+        onChanged();
+      } else {
+        audioInputBuilder_.setMessage(value);
+      }
+      inputCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The natural language speech audio to be processed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
+     */
+    public Builder setAudioInput(
+        com.google.cloud.dialogflow.v2.AudioInput.Builder builderForValue) {
+      if (audioInputBuilder_ == null) {
+        input_ = builderForValue.build();
+        onChanged();
+      } else {
+        audioInputBuilder_.setMessage(builderForValue.build());
+      }
+      inputCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The natural language speech audio to be processed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
+     */
+    public Builder mergeAudioInput(com.google.cloud.dialogflow.v2.AudioInput value) {
+      if (audioInputBuilder_ == null) {
+        if (inputCase_ == 7
+            && input_ != com.google.cloud.dialogflow.v2.AudioInput.getDefaultInstance()) {
+          input_ =
+              com.google.cloud.dialogflow.v2.AudioInput.newBuilder(
+                      (com.google.cloud.dialogflow.v2.AudioInput) input_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          input_ = value;
+        }
+        onChanged();
+      } else {
+        if (inputCase_ == 7) {
+          audioInputBuilder_.mergeFrom(value);
+        } else {
+          audioInputBuilder_.setMessage(value);
+        }
+      }
+      inputCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The natural language speech audio to be processed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
+     */
+    public Builder clearAudioInput() {
+      if (audioInputBuilder_ == null) {
+        if (inputCase_ == 7) {
+          inputCase_ = 0;
+          input_ = null;
+          onChanged();
+        }
+      } else {
+        if (inputCase_ == 7) {
+          inputCase_ = 0;
+          input_ = null;
+        }
+        audioInputBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The natural language speech audio to be processed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
+     */
+    public com.google.cloud.dialogflow.v2.AudioInput.Builder getAudioInputBuilder() {
+      return getAudioInputFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The natural language speech audio to be processed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.AudioInputOrBuilder getAudioInputOrBuilder() {
+      if ((inputCase_ == 7) && (audioInputBuilder_ != null)) {
+        return audioInputBuilder_.getMessageOrBuilder();
+      } else {
+        if (inputCase_ == 7) {
+          return (com.google.cloud.dialogflow.v2.AudioInput) input_;
+        }
+        return com.google.cloud.dialogflow.v2.AudioInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The natural language speech audio to be processed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.AudioInput,
+            com.google.cloud.dialogflow.v2.AudioInput.Builder,
+            com.google.cloud.dialogflow.v2.AudioInputOrBuilder>
+        getAudioInputFieldBuilder() {
+      if (audioInputBuilder_ == null) {
+        if (!(inputCase_ == 7)) {
+          input_ = com.google.cloud.dialogflow.v2.AudioInput.getDefaultInstance();
+        }
+        audioInputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.AudioInput,
+                com.google.cloud.dialogflow.v2.AudioInput.Builder,
+                com.google.cloud.dialogflow.v2.AudioInputOrBuilder>(
+                (com.google.cloud.dialogflow.v2.AudioInput) input_,
+                getParentForChildren(),
+                isClean());
+        input_ = null;
+      }
+      inputCase_ = 7;
+      onChanged();
+      return audioInputBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2033,7 +2328,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the replyAudioConfig field is set.
      */
     public boolean hasReplyAudioConfig() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2081,7 +2376,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         replyAudioConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2105,7 +2400,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         replyAudioConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2124,7 +2419,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeReplyAudioConfig(com.google.cloud.dialogflow.v2.OutputAudioConfig value) {
       if (replyAudioConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && replyAudioConfig_ != null
             && replyAudioConfig_
                 != com.google.cloud.dialogflow.v2.OutputAudioConfig.getDefaultInstance()) {
@@ -2136,7 +2431,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         replyAudioConfigBuilder_.mergeFrom(value);
       }
       if (replyAudioConfig_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -2155,7 +2450,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.dialogflow.v2.OutputAudioConfig reply_audio_config = 5;</code>
      */
     public Builder clearReplyAudioConfig() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       replyAudioConfig_ = null;
       if (replyAudioConfigBuilder_ != null) {
         replyAudioConfigBuilder_.dispose();
@@ -2178,7 +2473,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.dialogflow.v2.OutputAudioConfig reply_audio_config = 5;</code>
      */
     public com.google.cloud.dialogflow.v2.OutputAudioConfig.Builder getReplyAudioConfigBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getReplyAudioConfigFieldBuilder().getBuilder();
     }
@@ -2253,7 +2548,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the queryParams field is set.
      */
     public boolean hasQueryParams() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2293,7 +2588,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         queryParamsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2313,7 +2608,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         queryParamsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2328,7 +2623,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeQueryParams(com.google.cloud.dialogflow.v2.QueryParameters value) {
       if (queryParamsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && queryParams_ != null
             && queryParams_
                 != com.google.cloud.dialogflow.v2.QueryParameters.getDefaultInstance()) {
@@ -2340,7 +2635,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         queryParamsBuilder_.mergeFrom(value);
       }
       if (queryParams_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2355,7 +2650,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 9;</code>
      */
     public Builder clearQueryParams() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       queryParams_ = null;
       if (queryParamsBuilder_ != null) {
         queryParamsBuilder_.dispose();
@@ -2374,7 +2669,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 9;</code>
      */
     public com.google.cloud.dialogflow.v2.QueryParameters.Builder getQueryParamsBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getQueryParamsFieldBuilder().getBuilder();
     }
@@ -2440,7 +2735,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the assistQueryParams field is set.
      */
     public boolean hasAssistQueryParams() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2481,7 +2776,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         assistQueryParamsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2501,7 +2796,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         assistQueryParamsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2517,7 +2812,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     public Builder mergeAssistQueryParams(
         com.google.cloud.dialogflow.v2.AssistQueryParameters value) {
       if (assistQueryParamsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && assistQueryParams_ != null
             && assistQueryParams_
                 != com.google.cloud.dialogflow.v2.AssistQueryParameters.getDefaultInstance()) {
@@ -2529,7 +2824,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         assistQueryParamsBuilder_.mergeFrom(value);
       }
       if (assistQueryParams_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2544,7 +2839,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 14;</code>
      */
     public Builder clearAssistQueryParams() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       assistQueryParams_ = null;
       if (assistQueryParamsBuilder_ != null) {
         assistQueryParamsBuilder_.dispose();
@@ -2564,7 +2859,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public com.google.cloud.dialogflow.v2.AssistQueryParameters.Builder
         getAssistQueryParamsBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getAssistQueryParamsFieldBuilder().getBuilder();
     }
@@ -2636,7 +2931,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the cxParameters field is set.
      */
     public boolean hasCxParameters() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2686,7 +2981,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         cxParametersBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2710,7 +3005,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         cxParametersBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2730,7 +3025,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeCxParameters(com.google.protobuf.Struct value) {
       if (cxParametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && cxParameters_ != null
             && cxParameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getCxParametersBuilder().mergeFrom(value);
@@ -2741,7 +3036,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         cxParametersBuilder_.mergeFrom(value);
       }
       if (cxParameters_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2761,7 +3056,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Struct cx_parameters = 18;</code>
      */
     public Builder clearCxParameters() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       cxParameters_ = null;
       if (cxParametersBuilder_ != null) {
         cxParametersBuilder_.dispose();
@@ -2785,7 +3080,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Struct cx_parameters = 18;</code>
      */
     public com.google.protobuf.Struct.Builder getCxParametersBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getCxParametersFieldBuilder().getBuilder();
     }
@@ -2911,7 +3206,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       requestId_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2930,7 +3225,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearRequestId() {
       requestId_ = getDefaultInstance().getRequestId();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2954,7 +3249,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       requestId_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

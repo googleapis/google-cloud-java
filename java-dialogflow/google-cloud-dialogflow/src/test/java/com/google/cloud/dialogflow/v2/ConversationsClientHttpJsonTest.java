@@ -100,6 +100,7 @@ public class ConversationsClientHttpJsonTest {
             .setPhoneNumber(ConversationPhoneNumber.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -155,6 +156,7 @@ public class ConversationsClientHttpJsonTest {
             .setPhoneNumber(ConversationPhoneNumber.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -210,6 +212,7 @@ public class ConversationsClientHttpJsonTest {
             .setPhoneNumber(ConversationPhoneNumber.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -415,6 +418,7 @@ public class ConversationsClientHttpJsonTest {
             .setPhoneNumber(ConversationPhoneNumber.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -470,6 +474,7 @@ public class ConversationsClientHttpJsonTest {
             .setPhoneNumber(ConversationPhoneNumber.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -523,6 +528,7 @@ public class ConversationsClientHttpJsonTest {
             .setPhoneNumber(ConversationPhoneNumber.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -578,6 +584,7 @@ public class ConversationsClientHttpJsonTest {
             .setPhoneNumber(ConversationPhoneNumber.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

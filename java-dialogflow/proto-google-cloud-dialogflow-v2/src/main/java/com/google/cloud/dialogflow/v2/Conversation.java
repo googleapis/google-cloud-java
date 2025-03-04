@@ -232,7 +232,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Enumeration of the different conversation stages a conversation can be in.
    * Reference:
-   * https://cloud.google.com/dialogflow/priv/docs/contact-center/basics#stages
+   * https://cloud.google.com/agent-assist/docs/basics#conversation_stages
    * </pre>
    *
    * Protobuf enum {@code google.cloud.dialogflow.v2.Conversation.ConversationStage}
@@ -392,6 +392,3865 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2.Conversation.ConversationStage)
+  }
+
+  public interface TelephonyConnectionInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number dialed to connect this call in E.164 format.
+     * </pre>
+     *
+     * <code>string dialed_number = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The dialedNumber.
+     */
+    java.lang.String getDialedNumber();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number dialed to connect this call in E.164 format.
+     * </pre>
+     *
+     * <code>string dialed_number = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for dialedNumber.
+     */
+    com.google.protobuf.ByteString getDialedNumberBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDP of the call. It's initially the SDP answer to the endpoint,
+     * but maybe later updated for the purpose of making the link active, etc.
+     * </pre>
+     *
+     * <code>string sdp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sdp.
+     */
+    java.lang.String getSdp();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDP of the call. It's initially the SDP answer to the endpoint,
+     * but maybe later updated for the purpose of making the link active, etc.
+     * </pre>
+     *
+     * <code>string sdp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for sdp.
+     */
+    com.google.protobuf.ByteString getSdpBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP headers from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader>
+        getSipHeadersList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP headers from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader getSipHeaders(
+        int index);
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP headers from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    int getSipHeadersCount();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP headers from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                    .SipHeaderOrBuilder>
+        getSipHeadersOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP headers from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeaderOrBuilder
+        getSipHeadersOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The mime content from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent>
+        getExtraMimeContentsList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The mime content from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+        getExtraMimeContents(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The mime content from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    int getExtraMimeContentsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The mime content from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                    .MimeContentOrBuilder>
+        getExtraMimeContentsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The mime content from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContentOrBuilder
+        getExtraMimeContentsOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The information about phone calls connected via phone gateway to the
+   * conversation.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo}
+   */
+  public static final class TelephonyConnectionInfo extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo)
+      TelephonyConnectionInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use TelephonyConnectionInfo.newBuilder() to construct.
+    private TelephonyConnectionInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TelephonyConnectionInfo() {
+      dialedNumber_ = "";
+      sdp_ = "";
+      sipHeaders_ = java.util.Collections.emptyList();
+      extraMimeContents_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TelephonyConnectionInfo();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2.ConversationProto
+          .internal_static_google_cloud_dialogflow_v2_Conversation_TelephonyConnectionInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.v2.ConversationProto
+          .internal_static_google_cloud_dialogflow_v2_Conversation_TelephonyConnectionInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.class,
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.Builder.class);
+    }
+
+    public interface SipHeaderOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the header.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The name.
+       */
+      java.lang.String getName();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the header.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for name.
+       */
+      com.google.protobuf.ByteString getNameBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The value of the header.
+       * </pre>
+       *
+       * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The value.
+       */
+      java.lang.String getValue();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The value of the header.
+       * </pre>
+       *
+       * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for value.
+       */
+      com.google.protobuf.ByteString getValueBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The SIP headers from the initial SIP INVITE.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader}
+     */
+    public static final class SipHeader extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader)
+        SipHeaderOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use SipHeader.newBuilder() to construct.
+      private SipHeader(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private SipHeader() {
+        name_ = "";
+        value_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new SipHeader();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_Conversation_TelephonyConnectionInfo_SipHeader_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_Conversation_TelephonyConnectionInfo_SipHeader_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader.class,
+                com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+                    .Builder.class);
+      }
+
+      public static final int NAME_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the header.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The name.
+       */
+      @java.lang.Override
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the header.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for name.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int VALUE_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object value_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The value of the header.
+       * </pre>
+       *
+       * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The value.
+       */
+      @java.lang.Override
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The value of the header.
+       * </pre>
+       *
+       * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for value.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader other =
+            (com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader) obj;
+
+        if (!getName().equals(other.getName())) return false;
+        if (!getValue().equals(other.getValue())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+        hash = (37 * hash) + VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getValue().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader)
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeaderOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_Conversation_TelephonyConnectionInfo_SipHeader_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_Conversation_TelephonyConnectionInfo_SipHeader_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+                      .class,
+                  com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          name_ = "";
+          value_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_Conversation_TelephonyConnectionInfo_SipHeader_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+            build() {
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+            buildPartial() {
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader result =
+              new com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.name_ = name_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.value_ = value_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader other) {
+          if (other
+              == com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+                  .getDefaultInstance()) return this;
+          if (!other.getName().isEmpty()) {
+            name_ = other.name_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.getValue().isEmpty()) {
+            value_ = other.value_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    name_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    value_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object name_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the header.
+         * </pre>
+         *
+         * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The name.
+         */
+        public java.lang.String getName() {
+          java.lang.Object ref = name_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            name_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the header.
+         * </pre>
+         *
+         * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for name.
+         */
+        public com.google.protobuf.ByteString getNameBytes() {
+          java.lang.Object ref = name_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            name_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the header.
+         * </pre>
+         *
+         * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The name to set.
+         * @return This builder for chaining.
+         */
+        public Builder setName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          name_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the header.
+         * </pre>
+         *
+         * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearName() {
+          name_ = getDefaultInstance().getName();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the header.
+         * </pre>
+         *
+         * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for name to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          name_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object value_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The value of the header.
+         * </pre>
+         *
+         * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The value.
+         */
+        public java.lang.String getValue() {
+          java.lang.Object ref = value_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            value_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The value of the header.
+         * </pre>
+         *
+         * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for value.
+         */
+        public com.google.protobuf.ByteString getValueBytes() {
+          java.lang.Object ref = value_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            value_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The value of the header.
+         * </pre>
+         *
+         * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The value to set.
+         * @return This builder for chaining.
+         */
+        public Builder setValue(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          value_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The value of the header.
+         * </pre>
+         *
+         * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearValue() {
+          value_ = getDefaultInstance().getValue();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The value of the header.
+         * </pre>
+         *
+         * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for value to set.
+         * @return This builder for chaining.
+         */
+        public Builder setValueBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          value_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader)
+      private static final com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+              .SipHeader
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader();
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SipHeader> PARSER =
+          new com.google.protobuf.AbstractParser<SipHeader>() {
+            @java.lang.Override
+            public SipHeader parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<SipHeader> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SipHeader> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface MimeContentOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The mime type of the content.
+       * </pre>
+       *
+       * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The mimeType.
+       */
+      java.lang.String getMimeType();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The mime type of the content.
+       * </pre>
+       *
+       * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for mimeType.
+       */
+      com.google.protobuf.ByteString getMimeTypeBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The content payload.
+       * </pre>
+       *
+       * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The content.
+       */
+      com.google.protobuf.ByteString getContent();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mime content from the initial SIP INVITE.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent}
+     */
+    public static final class MimeContent extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent)
+        MimeContentOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use MimeContent.newBuilder() to construct.
+      private MimeContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private MimeContent() {
+        mimeType_ = "";
+        content_ = com.google.protobuf.ByteString.EMPTY;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new MimeContent();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_Conversation_TelephonyConnectionInfo_MimeContent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_Conversation_TelephonyConnectionInfo_MimeContent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+                    .class,
+                com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+                    .Builder.class);
+      }
+
+      public static final int MIME_TYPE_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object mimeType_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The mime type of the content.
+       * </pre>
+       *
+       * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The mimeType.
+       */
+      @java.lang.Override
+      public java.lang.String getMimeType() {
+        java.lang.Object ref = mimeType_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mimeType_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The mime type of the content.
+       * </pre>
+       *
+       * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for mimeType.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getMimeTypeBytes() {
+        java.lang.Object ref = mimeType_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          mimeType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int CONTENT_FIELD_NUMBER = 2;
+      private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The content payload.
+       * </pre>
+       *
+       * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The content.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getContent() {
+        return content_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mimeType_);
+        }
+        if (!content_.isEmpty()) {
+          output.writeBytes(2, content_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, mimeType_);
+        }
+        if (!content_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream.computeBytesSize(2, content_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent other =
+            (com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent) obj;
+
+        if (!getMimeType().equals(other.getMimeType())) return false;
+        if (!getContent().equals(other.getContent())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + MIME_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getMimeType().hashCode();
+        hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+        hash = (53 * hash) + getContent().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent)
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContentOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_Conversation_TelephonyConnectionInfo_MimeContent_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_Conversation_TelephonyConnectionInfo_MimeContent_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+                      .class,
+                  com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          mimeType_ = "";
+          content_ = com.google.protobuf.ByteString.EMPTY;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_Conversation_TelephonyConnectionInfo_MimeContent_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+            build() {
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+            buildPartial() {
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent result =
+              new com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.mimeType_ = mimeType_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.content_ = content_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent other) {
+          if (other
+              == com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+                  .getDefaultInstance()) return this;
+          if (!other.getMimeType().isEmpty()) {
+            mimeType_ = other.mimeType_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (other.getContent() != com.google.protobuf.ByteString.EMPTY) {
+            setContent(other.getContent());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    mimeType_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    content_ = input.readBytes();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object mimeType_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The mime type of the content.
+         * </pre>
+         *
+         * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The mimeType.
+         */
+        public java.lang.String getMimeType() {
+          java.lang.Object ref = mimeType_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            mimeType_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The mime type of the content.
+         * </pre>
+         *
+         * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for mimeType.
+         */
+        public com.google.protobuf.ByteString getMimeTypeBytes() {
+          java.lang.Object ref = mimeType_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            mimeType_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The mime type of the content.
+         * </pre>
+         *
+         * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The mimeType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMimeType(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mimeType_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The mime type of the content.
+         * </pre>
+         *
+         * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearMimeType() {
+          mimeType_ = getDefaultInstance().getMimeType();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The mime type of the content.
+         * </pre>
+         *
+         * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for mimeType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          mimeType_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The content payload.
+         * </pre>
+         *
+         * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The content.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getContent() {
+          return content_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The content payload.
+         * </pre>
+         *
+         * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The content to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContent(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          content_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The content payload.
+         * </pre>
+         *
+         * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearContent() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          content_ = getDefaultInstance().getContent();
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent)
+      private static final com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+              .MimeContent
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent();
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<MimeContent> PARSER =
+          new com.google.protobuf.AbstractParser<MimeContent>() {
+            @java.lang.Override
+            public MimeContent parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<MimeContent> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<MimeContent> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int DIALED_NUMBER_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object dialedNumber_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number dialed to connect this call in E.164 format.
+     * </pre>
+     *
+     * <code>string dialed_number = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The dialedNumber.
+     */
+    @java.lang.Override
+    public java.lang.String getDialedNumber() {
+      java.lang.Object ref = dialedNumber_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dialedNumber_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number dialed to connect this call in E.164 format.
+     * </pre>
+     *
+     * <code>string dialed_number = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for dialedNumber.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDialedNumberBytes() {
+      java.lang.Object ref = dialedNumber_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        dialedNumber_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SDP_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sdp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDP of the call. It's initially the SDP answer to the endpoint,
+     * but maybe later updated for the purpose of making the link active, etc.
+     * </pre>
+     *
+     * <code>string sdp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sdp.
+     */
+    @java.lang.Override
+    public java.lang.String getSdp() {
+      java.lang.Object ref = sdp_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sdp_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SDP of the call. It's initially the SDP answer to the endpoint,
+     * but maybe later updated for the purpose of making the link active, etc.
+     * </pre>
+     *
+     * <code>string sdp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for sdp.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSdpBytes() {
+      java.lang.Object ref = sdp_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sdp_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SIP_HEADERS_FIELD_NUMBER = 12;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader>
+        sipHeaders_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP headers from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader>
+        getSipHeadersList() {
+      return sipHeaders_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP headers from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                    .SipHeaderOrBuilder>
+        getSipHeadersOrBuilderList() {
+      return sipHeaders_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP headers from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public int getSipHeadersCount() {
+      return sipHeaders_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP headers from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+        getSipHeaders(int index) {
+      return sipHeaders_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP headers from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeaderOrBuilder
+        getSipHeadersOrBuilder(int index) {
+      return sipHeaders_.get(index);
+    }
+
+    public static final int EXTRA_MIME_CONTENTS_FIELD_NUMBER = 13;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent>
+        extraMimeContents_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The mime content from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent>
+        getExtraMimeContentsList() {
+      return extraMimeContents_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The mime content from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                    .MimeContentOrBuilder>
+        getExtraMimeContentsOrBuilderList() {
+      return extraMimeContents_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The mime content from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public int getExtraMimeContentsCount() {
+      return extraMimeContents_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The mime content from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+        getExtraMimeContents(int index) {
+      return extraMimeContents_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The mime content from the initial SIP INVITE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContentOrBuilder
+        getExtraMimeContentsOrBuilder(int index) {
+      return extraMimeContents_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dialedNumber_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, dialedNumber_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sdp_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, sdp_);
+      }
+      for (int i = 0; i < sipHeaders_.size(); i++) {
+        output.writeMessage(12, sipHeaders_.get(i));
+      }
+      for (int i = 0; i < extraMimeContents_.size(); i++) {
+        output.writeMessage(13, extraMimeContents_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dialedNumber_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, dialedNumber_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sdp_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, sdp_);
+      }
+      for (int i = 0; i < sipHeaders_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, sipHeaders_.get(i));
+      }
+      for (int i = 0; i < extraMimeContents_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(13, extraMimeContents_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo other =
+          (com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo) obj;
+
+      if (!getDialedNumber().equals(other.getDialedNumber())) return false;
+      if (!getSdp().equals(other.getSdp())) return false;
+      if (!getSipHeadersList().equals(other.getSipHeadersList())) return false;
+      if (!getExtraMimeContentsList().equals(other.getExtraMimeContentsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DIALED_NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getDialedNumber().hashCode();
+      hash = (37 * hash) + SDP_FIELD_NUMBER;
+      hash = (53 * hash) + getSdp().hashCode();
+      if (getSipHeadersCount() > 0) {
+        hash = (37 * hash) + SIP_HEADERS_FIELD_NUMBER;
+        hash = (53 * hash) + getSipHeadersList().hashCode();
+      }
+      if (getExtraMimeContentsCount() > 0) {
+        hash = (37 * hash) + EXTRA_MIME_CONTENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getExtraMimeContentsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The information about phone calls connected via phone gateway to the
+     * conversation.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo)
+        com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_Conversation_TelephonyConnectionInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_Conversation_TelephonyConnectionInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.class,
+                com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        dialedNumber_ = "";
+        sdp_ = "";
+        if (sipHeadersBuilder_ == null) {
+          sipHeaders_ = java.util.Collections.emptyList();
+        } else {
+          sipHeaders_ = null;
+          sipHeadersBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        if (extraMimeContentsBuilder_ == null) {
+          extraMimeContents_ = java.util.Collections.emptyList();
+        } else {
+          extraMimeContents_ = null;
+          extraMimeContentsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_Conversation_TelephonyConnectionInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo build() {
+        com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo buildPartial() {
+        com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo result =
+            new com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo result) {
+        if (sipHeadersBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            sipHeaders_ = java.util.Collections.unmodifiableList(sipHeaders_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.sipHeaders_ = sipHeaders_;
+        } else {
+          result.sipHeaders_ = sipHeadersBuilder_.build();
+        }
+        if (extraMimeContentsBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)) {
+            extraMimeContents_ = java.util.Collections.unmodifiableList(extraMimeContents_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.extraMimeContents_ = extraMimeContents_;
+        } else {
+          result.extraMimeContents_ = extraMimeContentsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dialedNumber_ = dialedNumber_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.sdp_ = sdp_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo other) {
+        if (other
+            == com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                .getDefaultInstance()) return this;
+        if (!other.getDialedNumber().isEmpty()) {
+          dialedNumber_ = other.dialedNumber_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getSdp().isEmpty()) {
+          sdp_ = other.sdp_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (sipHeadersBuilder_ == null) {
+          if (!other.sipHeaders_.isEmpty()) {
+            if (sipHeaders_.isEmpty()) {
+              sipHeaders_ = other.sipHeaders_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureSipHeadersIsMutable();
+              sipHeaders_.addAll(other.sipHeaders_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.sipHeaders_.isEmpty()) {
+            if (sipHeadersBuilder_.isEmpty()) {
+              sipHeadersBuilder_.dispose();
+              sipHeadersBuilder_ = null;
+              sipHeaders_ = other.sipHeaders_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              sipHeadersBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getSipHeadersFieldBuilder()
+                      : null;
+            } else {
+              sipHeadersBuilder_.addAllMessages(other.sipHeaders_);
+            }
+          }
+        }
+        if (extraMimeContentsBuilder_ == null) {
+          if (!other.extraMimeContents_.isEmpty()) {
+            if (extraMimeContents_.isEmpty()) {
+              extraMimeContents_ = other.extraMimeContents_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureExtraMimeContentsIsMutable();
+              extraMimeContents_.addAll(other.extraMimeContents_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.extraMimeContents_.isEmpty()) {
+            if (extraMimeContentsBuilder_.isEmpty()) {
+              extraMimeContentsBuilder_.dispose();
+              extraMimeContentsBuilder_ = null;
+              extraMimeContents_ = other.extraMimeContents_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              extraMimeContentsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getExtraMimeContentsFieldBuilder()
+                      : null;
+            } else {
+              extraMimeContentsBuilder_.addAllMessages(other.extraMimeContents_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18:
+                {
+                  dialedNumber_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 18
+              case 42:
+                {
+                  sdp_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 42
+              case 98:
+                {
+                  com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader m =
+                      input.readMessage(
+                          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                              .SipHeader.parser(),
+                          extensionRegistry);
+                  if (sipHeadersBuilder_ == null) {
+                    ensureSipHeadersIsMutable();
+                    sipHeaders_.add(m);
+                  } else {
+                    sipHeadersBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 98
+              case 106:
+                {
+                  com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+                      m =
+                          input.readMessage(
+                              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                                  .MimeContent.parser(),
+                              extensionRegistry);
+                  if (extraMimeContentsBuilder_ == null) {
+                    ensureExtraMimeContentsIsMutable();
+                    extraMimeContents_.add(m);
+                  } else {
+                    extraMimeContentsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 106
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object dialedNumber_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number dialed to connect this call in E.164 format.
+       * </pre>
+       *
+       * <code>string dialed_number = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The dialedNumber.
+       */
+      public java.lang.String getDialedNumber() {
+        java.lang.Object ref = dialedNumber_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          dialedNumber_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number dialed to connect this call in E.164 format.
+       * </pre>
+       *
+       * <code>string dialed_number = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for dialedNumber.
+       */
+      public com.google.protobuf.ByteString getDialedNumberBytes() {
+        java.lang.Object ref = dialedNumber_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          dialedNumber_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number dialed to connect this call in E.164 format.
+       * </pre>
+       *
+       * <code>string dialed_number = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The dialedNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDialedNumber(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dialedNumber_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number dialed to connect this call in E.164 format.
+       * </pre>
+       *
+       * <code>string dialed_number = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDialedNumber() {
+        dialedNumber_ = getDefaultInstance().getDialedNumber();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number dialed to connect this call in E.164 format.
+       * </pre>
+       *
+       * <code>string dialed_number = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for dialedNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDialedNumberBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        dialedNumber_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sdp_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDP of the call. It's initially the SDP answer to the endpoint,
+       * but maybe later updated for the purpose of making the link active, etc.
+       * </pre>
+       *
+       * <code>string sdp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The sdp.
+       */
+      public java.lang.String getSdp() {
+        java.lang.Object ref = sdp_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sdp_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDP of the call. It's initially the SDP answer to the endpoint,
+       * but maybe later updated for the purpose of making the link active, etc.
+       * </pre>
+       *
+       * <code>string sdp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for sdp.
+       */
+      public com.google.protobuf.ByteString getSdpBytes() {
+        java.lang.Object ref = sdp_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          sdp_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDP of the call. It's initially the SDP answer to the endpoint,
+       * but maybe later updated for the purpose of making the link active, etc.
+       * </pre>
+       *
+       * <code>string sdp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The sdp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSdp(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sdp_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDP of the call. It's initially the SDP answer to the endpoint,
+       * but maybe later updated for the purpose of making the link active, etc.
+       * </pre>
+       *
+       * <code>string sdp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSdp() {
+        sdp_ = getDefaultInstance().getSdp();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. SDP of the call. It's initially the SDP answer to the endpoint,
+       * but maybe later updated for the purpose of making the link active, etc.
+       * </pre>
+       *
+       * <code>string sdp = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for sdp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSdpBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        sdp_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader>
+          sipHeaders_ = java.util.Collections.emptyList();
+
+      private void ensureSipHeadersIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          sipHeaders_ =
+              new java.util.ArrayList<
+                  com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader>(
+                  sipHeaders_);
+          bitField0_ |= 0x00000004;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader,
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader.Builder,
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                  .SipHeaderOrBuilder>
+          sipHeadersBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader>
+          getSipHeadersList() {
+        if (sipHeadersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(sipHeaders_);
+        } else {
+          return sipHeadersBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public int getSipHeadersCount() {
+        if (sipHeadersBuilder_ == null) {
+          return sipHeaders_.size();
+        } else {
+          return sipHeadersBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+          getSipHeaders(int index) {
+        if (sipHeadersBuilder_ == null) {
+          return sipHeaders_.get(index);
+        } else {
+          return sipHeadersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setSipHeaders(
+          int index,
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader value) {
+        if (sipHeadersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSipHeadersIsMutable();
+          sipHeaders_.set(index, value);
+          onChanged();
+        } else {
+          sipHeadersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setSipHeaders(
+          int index,
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader.Builder
+              builderForValue) {
+        if (sipHeadersBuilder_ == null) {
+          ensureSipHeadersIsMutable();
+          sipHeaders_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          sipHeadersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addSipHeaders(
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader value) {
+        if (sipHeadersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSipHeadersIsMutable();
+          sipHeaders_.add(value);
+          onChanged();
+        } else {
+          sipHeadersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addSipHeaders(
+          int index,
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader value) {
+        if (sipHeadersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSipHeadersIsMutable();
+          sipHeaders_.add(index, value);
+          onChanged();
+        } else {
+          sipHeadersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addSipHeaders(
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader.Builder
+              builderForValue) {
+        if (sipHeadersBuilder_ == null) {
+          ensureSipHeadersIsMutable();
+          sipHeaders_.add(builderForValue.build());
+          onChanged();
+        } else {
+          sipHeadersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addSipHeaders(
+          int index,
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader.Builder
+              builderForValue) {
+        if (sipHeadersBuilder_ == null) {
+          ensureSipHeadersIsMutable();
+          sipHeaders_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          sipHeadersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addAllSipHeaders(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader>
+              values) {
+        if (sipHeadersBuilder_ == null) {
+          ensureSipHeadersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sipHeaders_);
+          onChanged();
+        } else {
+          sipHeadersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearSipHeaders() {
+        if (sipHeadersBuilder_ == null) {
+          sipHeaders_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          sipHeadersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder removeSipHeaders(int index) {
+        if (sipHeadersBuilder_ == null) {
+          ensureSipHeadersIsMutable();
+          sipHeaders_.remove(index);
+          onChanged();
+        } else {
+          sipHeadersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader.Builder
+          getSipHeadersBuilder(int index) {
+        return getSipHeadersFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeaderOrBuilder
+          getSipHeadersOrBuilder(int index) {
+        if (sipHeadersBuilder_ == null) {
+          return sipHeaders_.get(index);
+        } else {
+          return sipHeadersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                      .SipHeaderOrBuilder>
+          getSipHeadersOrBuilderList() {
+        if (sipHeadersBuilder_ != null) {
+          return sipHeadersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(sipHeaders_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader.Builder
+          addSipHeadersBuilder() {
+        return getSipHeadersFieldBuilder()
+            .addBuilder(
+                com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader.Builder
+          addSipHeadersBuilder(int index) {
+        return getSipHeadersFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The SIP headers from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader sip_headers = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader.Builder>
+          getSipHeadersBuilderList() {
+        return getSipHeadersFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader,
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader.Builder,
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                  .SipHeaderOrBuilder>
+          getSipHeadersFieldBuilder() {
+        if (sipHeadersBuilder_ == null) {
+          sipHeadersBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader,
+                  com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.SipHeader
+                      .Builder,
+                  com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                      .SipHeaderOrBuilder>(
+                  sipHeaders_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+          sipHeaders_ = null;
+        }
+        return sipHeadersBuilder_;
+      }
+
+      private java.util.List<
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent>
+          extraMimeContents_ = java.util.Collections.emptyList();
+
+      private void ensureExtraMimeContentsIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          extraMimeContents_ =
+              new java.util.ArrayList<
+                  com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent>(
+                  extraMimeContents_);
+          bitField0_ |= 0x00000008;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent,
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+                  .Builder,
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                  .MimeContentOrBuilder>
+          extraMimeContentsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent>
+          getExtraMimeContentsList() {
+        if (extraMimeContentsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(extraMimeContents_);
+        } else {
+          return extraMimeContentsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public int getExtraMimeContentsCount() {
+        if (extraMimeContentsBuilder_ == null) {
+          return extraMimeContents_.size();
+        } else {
+          return extraMimeContentsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+          getExtraMimeContents(int index) {
+        if (extraMimeContentsBuilder_ == null) {
+          return extraMimeContents_.get(index);
+        } else {
+          return extraMimeContentsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setExtraMimeContents(
+          int index,
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent value) {
+        if (extraMimeContentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExtraMimeContentsIsMutable();
+          extraMimeContents_.set(index, value);
+          onChanged();
+        } else {
+          extraMimeContentsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setExtraMimeContents(
+          int index,
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent.Builder
+              builderForValue) {
+        if (extraMimeContentsBuilder_ == null) {
+          ensureExtraMimeContentsIsMutable();
+          extraMimeContents_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          extraMimeContentsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addExtraMimeContents(
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent value) {
+        if (extraMimeContentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExtraMimeContentsIsMutable();
+          extraMimeContents_.add(value);
+          onChanged();
+        } else {
+          extraMimeContentsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addExtraMimeContents(
+          int index,
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent value) {
+        if (extraMimeContentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExtraMimeContentsIsMutable();
+          extraMimeContents_.add(index, value);
+          onChanged();
+        } else {
+          extraMimeContentsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addExtraMimeContents(
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent.Builder
+              builderForValue) {
+        if (extraMimeContentsBuilder_ == null) {
+          ensureExtraMimeContentsIsMutable();
+          extraMimeContents_.add(builderForValue.build());
+          onChanged();
+        } else {
+          extraMimeContentsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addExtraMimeContents(
+          int index,
+          com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent.Builder
+              builderForValue) {
+        if (extraMimeContentsBuilder_ == null) {
+          ensureExtraMimeContentsIsMutable();
+          extraMimeContents_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          extraMimeContentsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addAllExtraMimeContents(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                          .MimeContent>
+              values) {
+        if (extraMimeContentsBuilder_ == null) {
+          ensureExtraMimeContentsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, extraMimeContents_);
+          onChanged();
+        } else {
+          extraMimeContentsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearExtraMimeContents() {
+        if (extraMimeContentsBuilder_ == null) {
+          extraMimeContents_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          extraMimeContentsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder removeExtraMimeContents(int index) {
+        if (extraMimeContentsBuilder_ == null) {
+          ensureExtraMimeContentsIsMutable();
+          extraMimeContents_.remove(index);
+          onChanged();
+        } else {
+          extraMimeContentsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent.Builder
+          getExtraMimeContentsBuilder(int index) {
+        return getExtraMimeContentsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+              .MimeContentOrBuilder
+          getExtraMimeContentsOrBuilder(int index) {
+        if (extraMimeContentsBuilder_ == null) {
+          return extraMimeContents_.get(index);
+        } else {
+          return extraMimeContentsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                      .MimeContentOrBuilder>
+          getExtraMimeContentsOrBuilderList() {
+        if (extraMimeContentsBuilder_ != null) {
+          return extraMimeContentsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(extraMimeContents_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent.Builder
+          addExtraMimeContentsBuilder() {
+        return getExtraMimeContentsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent.Builder
+          addExtraMimeContentsBuilder(int index) {
+        return getExtraMimeContentsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The mime content from the initial SIP INVITE.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent extra_mime_contents = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+                  .Builder>
+          getExtraMimeContentsBuilderList() {
+        return getExtraMimeContentsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent,
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+                  .Builder,
+              com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                  .MimeContentOrBuilder>
+          getExtraMimeContentsFieldBuilder() {
+        if (extraMimeContentsBuilder_ == null) {
+          extraMimeContentsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent,
+                  com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.MimeContent
+                      .Builder,
+                  com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                      .MimeContentOrBuilder>(
+                  extraMimeContents_,
+                  ((bitField0_ & 0x00000008) != 0),
+                  getParentForChildren(),
+                  isClean());
+          extraMimeContents_ = null;
+        }
+        return extraMimeContentsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo)
+    private static final com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo();
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TelephonyConnectionInfo> PARSER =
+        new com.google.protobuf.AbstractParser<TelephonyConnectionInfo>() {
+          @java.lang.Override
+          public TelephonyConnectionInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<TelephonyConnectionInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TelephonyConnectionInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   private int bitField0_;
@@ -784,6 +4643,65 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int TELEPHONY_CONNECTION_INFO_FIELD_NUMBER = 10;
+  private com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+      telephonyConnectionInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The telephony connection information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo telephony_connection_info = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the telephonyConnectionInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasTelephonyConnectionInfo() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The telephony connection information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo telephony_connection_info = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The telephonyConnectionInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+      getTelephonyConnectionInfo() {
+    return telephonyConnectionInfo_ == null
+        ? com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.getDefaultInstance()
+        : telephonyConnectionInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The telephony connection information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo telephony_connection_info = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfoOrBuilder
+      getTelephonyConnectionInfoOrBuilder() {
+    return telephonyConnectionInfo_ == null
+        ? com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.getDefaultInstance()
+        : telephonyConnectionInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -824,6 +4742,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(7, conversationStage_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(10, getTelephonyConnectionInfo());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -859,6 +4780,11 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, conversationStage_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, getTelephonyConnectionInfo());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -891,6 +4817,10 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       if (!getEndTime().equals(other.getEndTime())) return false;
     }
     if (conversationStage_ != other.conversationStage_) return false;
+    if (hasTelephonyConnectionInfo() != other.hasTelephonyConnectionInfo()) return false;
+    if (hasTelephonyConnectionInfo()) {
+      if (!getTelephonyConnectionInfo().equals(other.getTelephonyConnectionInfo())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -922,6 +4852,10 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + CONVERSATION_STAGE_FIELD_NUMBER;
     hash = (53 * hash) + conversationStage_;
+    if (hasTelephonyConnectionInfo()) {
+      hash = (37 * hash) + TELEPHONY_CONNECTION_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getTelephonyConnectionInfo().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1068,6 +5002,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         getPhoneNumberFieldBuilder();
         getStartTimeFieldBuilder();
         getEndTimeFieldBuilder();
+        getTelephonyConnectionInfoFieldBuilder();
       }
     }
 
@@ -1094,6 +5029,11 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         endTimeBuilder_ = null;
       }
       conversationStage_ = 0;
+      telephonyConnectionInfo_ = null;
+      if (telephonyConnectionInfoBuilder_ != null) {
+        telephonyConnectionInfoBuilder_.dispose();
+        telephonyConnectionInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -1155,6 +5095,13 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.conversationStage_ = conversationStage_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.telephonyConnectionInfo_ =
+            telephonyConnectionInfoBuilder_ == null
+                ? telephonyConnectionInfo_
+                : telephonyConnectionInfoBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1229,6 +5176,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       if (other.conversationStage_ != 0) {
         setConversationStageValue(other.getConversationStageValue());
       }
+      if (other.hasTelephonyConnectionInfo()) {
+        mergeTelephonyConnectionInfo(other.getTelephonyConnectionInfo());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1297,6 +5247,13 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 56
+            case 82:
+              {
+                input.readMessage(
+                    getTelephonyConnectionInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2448,6 +6405,221 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       conversationStage_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+        telephonyConnectionInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo,
+            com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.Builder,
+            com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfoOrBuilder>
+        telephonyConnectionInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The telephony connection information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo telephony_connection_info = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the telephonyConnectionInfo field is set.
+     */
+    public boolean hasTelephonyConnectionInfo() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The telephony connection information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo telephony_connection_info = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The telephonyConnectionInfo.
+     */
+    public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+        getTelephonyConnectionInfo() {
+      if (telephonyConnectionInfoBuilder_ == null) {
+        return telephonyConnectionInfo_ == null
+            ? com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                .getDefaultInstance()
+            : telephonyConnectionInfo_;
+      } else {
+        return telephonyConnectionInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The telephony connection information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo telephony_connection_info = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setTelephonyConnectionInfo(
+        com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo value) {
+      if (telephonyConnectionInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        telephonyConnectionInfo_ = value;
+      } else {
+        telephonyConnectionInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The telephony connection information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo telephony_connection_info = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setTelephonyConnectionInfo(
+        com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.Builder
+            builderForValue) {
+      if (telephonyConnectionInfoBuilder_ == null) {
+        telephonyConnectionInfo_ = builderForValue.build();
+      } else {
+        telephonyConnectionInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The telephony connection information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo telephony_connection_info = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeTelephonyConnectionInfo(
+        com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo value) {
+      if (telephonyConnectionInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && telephonyConnectionInfo_ != null
+            && telephonyConnectionInfo_
+                != com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                    .getDefaultInstance()) {
+          getTelephonyConnectionInfoBuilder().mergeFrom(value);
+        } else {
+          telephonyConnectionInfo_ = value;
+        }
+      } else {
+        telephonyConnectionInfoBuilder_.mergeFrom(value);
+      }
+      if (telephonyConnectionInfo_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The telephony connection information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo telephony_connection_info = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearTelephonyConnectionInfo() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      telephonyConnectionInfo_ = null;
+      if (telephonyConnectionInfoBuilder_ != null) {
+        telephonyConnectionInfoBuilder_.dispose();
+        telephonyConnectionInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The telephony connection information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo telephony_connection_info = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.Builder
+        getTelephonyConnectionInfoBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getTelephonyConnectionInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The telephony connection information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo telephony_connection_info = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfoOrBuilder
+        getTelephonyConnectionInfoOrBuilder() {
+      if (telephonyConnectionInfoBuilder_ != null) {
+        return telephonyConnectionInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return telephonyConnectionInfo_ == null
+            ? com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo
+                .getDefaultInstance()
+            : telephonyConnectionInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The telephony connection information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo telephony_connection_info = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo,
+            com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.Builder,
+            com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfoOrBuilder>
+        getTelephonyConnectionInfoFieldBuilder() {
+      if (telephonyConnectionInfoBuilder_ == null) {
+        telephonyConnectionInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo,
+                com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo.Builder,
+                com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfoOrBuilder>(
+                getTelephonyConnectionInfo(), getParentForChildren(), isClean());
+        telephonyConnectionInfo_ = null;
+      }
+      return telephonyConnectionInfoBuilder_;
     }
 
     @java.lang.Override

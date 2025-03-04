@@ -61,41 +61,55 @@ public interface ListAnswerRecordsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Filters to restrict results to specific answer records.
+   * Optional. Filters to restrict results to specific answer records. The
+   * expression has the following syntax:
    *
-   * Marked deprecated as it hasn't been, and isn't currently, supported.
+   *     &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
+   *
+   * The following fields and operators are supported:
+   * * conversation_id with equals(=) operator
+   *
+   * Examples:
+   *
+   * * `conversation_id=bar` matches answer records in the
+   *   `projects/foo/locations/global/conversations/bar` conversation
+   *   (assuming the parent is `projects/foo/locations/global`).
    *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
    *
-   * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
-   * @deprecated google.cloud.dialogflow.v2.ListAnswerRecordsRequest.filter is deprecated. See
-   *     google/cloud/dialogflow/v2/answer_record.proto;l=142
    * @return The filter.
    */
-  @java.lang.Deprecated
   java.lang.String getFilter();
   /**
    *
    *
    * <pre>
-   * Optional. Filters to restrict results to specific answer records.
+   * Optional. Filters to restrict results to specific answer records. The
+   * expression has the following syntax:
    *
-   * Marked deprecated as it hasn't been, and isn't currently, supported.
+   *     &lt;field&gt; &lt;operator&gt; &lt;value&gt; [AND &lt;field&gt; &lt;operator&gt; &lt;value&gt;] ...
+   *
+   * The following fields and operators are supported:
+   * * conversation_id with equals(=) operator
+   *
+   * Examples:
+   *
+   * * `conversation_id=bar` matches answer records in the
+   *   `projects/foo/locations/global/conversations/bar` conversation
+   *   (assuming the parent is `projects/foo/locations/global`).
    *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
    *
-   * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
-   * @deprecated google.cloud.dialogflow.v2.ListAnswerRecordsRequest.filter is deprecated. See
-   *     google/cloud/dialogflow/v2/answer_record.proto;l=142
    * @return The bytes for filter.
    */
-  @java.lang.Deprecated
   com.google.protobuf.ByteString getFilterBytes();
 
   /**
