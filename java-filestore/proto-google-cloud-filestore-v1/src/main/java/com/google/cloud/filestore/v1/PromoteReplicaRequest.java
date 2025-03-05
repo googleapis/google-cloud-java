@@ -23,46 +23,45 @@ package com.google.cloud.filestore.v1;
  *
  *
  * <pre>
- * RevertInstanceRequest reverts the given instance's file share to the
- * specified snapshot.
+ * PromoteReplicaRequest promotes a Filestore standby instance (replica).
  * </pre>
  *
- * Protobuf type {@code google.cloud.filestore.v1.RevertInstanceRequest}
+ * Protobuf type {@code google.cloud.filestore.v1.PromoteReplicaRequest}
  */
-public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMessageV3
+public final class PromoteReplicaRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.filestore.v1.RevertInstanceRequest)
-    RevertInstanceRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.filestore.v1.PromoteReplicaRequest)
+    PromoteReplicaRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use RevertInstanceRequest.newBuilder() to construct.
-  private RevertInstanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use PromoteReplicaRequest.newBuilder() to construct.
+  private PromoteReplicaRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private RevertInstanceRequest() {
+  private PromoteReplicaRequest() {
     name_ = "";
-    targetSnapshotId_ = "";
+    peerInstance_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new RevertInstanceRequest();
+    return new PromoteReplicaRequest();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.filestore.v1.CloudFilestoreServiceProto
-        .internal_static_google_cloud_filestore_v1_RevertInstanceRequest_descriptor;
+        .internal_static_google_cloud_filestore_v1_PromoteReplicaRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.filestore.v1.CloudFilestoreServiceProto
-        .internal_static_google_cloud_filestore_v1_RevertInstanceRequest_fieldAccessorTable
+        .internal_static_google_cloud_filestore_v1_PromoteReplicaRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.filestore.v1.RevertInstanceRequest.class,
-            com.google.cloud.filestore.v1.RevertInstanceRequest.Builder.class);
+            com.google.cloud.filestore.v1.PromoteReplicaRequest.class,
+            com.google.cloud.filestore.v1.PromoteReplicaRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -122,32 +121,35 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
     }
   }
 
-  public static final int TARGET_SNAPSHOT_ID_FIELD_NUMBER = 2;
+  public static final int PEER_INSTANCE_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private volatile java.lang.Object targetSnapshotId_ = "";
+  private volatile java.lang.Object peerInstance_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The snapshot resource ID, in the format 'my-snapshot', where the
-   * specified ID is the {snapshot_id} of the fully qualified name like
-   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`
+   * Optional. The resource name of the peer instance to promote, in the format
+   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
+   * The peer instance is required if the operation is called on an active
+   * instance.
    * </pre>
    *
-   * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string peer_instance = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
-   * @return The targetSnapshotId.
+   * @return The peerInstance.
    */
   @java.lang.Override
-  public java.lang.String getTargetSnapshotId() {
-    java.lang.Object ref = targetSnapshotId_;
+  public java.lang.String getPeerInstance() {
+    java.lang.Object ref = peerInstance_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      targetSnapshotId_ = s;
+      peerInstance_ = s;
       return s;
     }
   }
@@ -155,22 +157,25 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The snapshot resource ID, in the format 'my-snapshot', where the
-   * specified ID is the {snapshot_id} of the fully qualified name like
-   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`
+   * Optional. The resource name of the peer instance to promote, in the format
+   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
+   * The peer instance is required if the operation is called on an active
+   * instance.
    * </pre>
    *
-   * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string peer_instance = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
-   * @return The bytes for targetSnapshotId.
+   * @return The bytes for peerInstance.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getTargetSnapshotIdBytes() {
-    java.lang.Object ref = targetSnapshotId_;
+  public com.google.protobuf.ByteString getPeerInstanceBytes() {
+    java.lang.Object ref = peerInstance_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      targetSnapshotId_ = b;
+      peerInstance_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -194,8 +199,8 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetSnapshotId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, targetSnapshotId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(peerInstance_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, peerInstance_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -209,8 +214,8 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetSnapshotId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, targetSnapshotId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(peerInstance_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, peerInstance_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -222,14 +227,14 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.filestore.v1.RevertInstanceRequest)) {
+    if (!(obj instanceof com.google.cloud.filestore.v1.PromoteReplicaRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.filestore.v1.RevertInstanceRequest other =
-        (com.google.cloud.filestore.v1.RevertInstanceRequest) obj;
+    com.google.cloud.filestore.v1.PromoteReplicaRequest other =
+        (com.google.cloud.filestore.v1.PromoteReplicaRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (!getTargetSnapshotId().equals(other.getTargetSnapshotId())) return false;
+    if (!getPeerInstance().equals(other.getPeerInstance())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -243,78 +248,78 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + TARGET_SNAPSHOT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getTargetSnapshotId().hashCode();
+    hash = (37 * hash) + PEER_INSTANCE_FIELD_NUMBER;
+    hash = (53 * hash) + getPeerInstance().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.filestore.v1.RevertInstanceRequest parseFrom(
+  public static com.google.cloud.filestore.v1.PromoteReplicaRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.filestore.v1.RevertInstanceRequest parseFrom(
+  public static com.google.cloud.filestore.v1.PromoteReplicaRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.filestore.v1.RevertInstanceRequest parseFrom(
+  public static com.google.cloud.filestore.v1.PromoteReplicaRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.filestore.v1.RevertInstanceRequest parseFrom(
+  public static com.google.cloud.filestore.v1.PromoteReplicaRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.filestore.v1.RevertInstanceRequest parseFrom(byte[] data)
+  public static com.google.cloud.filestore.v1.PromoteReplicaRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.filestore.v1.RevertInstanceRequest parseFrom(
+  public static com.google.cloud.filestore.v1.PromoteReplicaRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.filestore.v1.RevertInstanceRequest parseFrom(
+  public static com.google.cloud.filestore.v1.PromoteReplicaRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.filestore.v1.RevertInstanceRequest parseFrom(
+  public static com.google.cloud.filestore.v1.PromoteReplicaRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.filestore.v1.RevertInstanceRequest parseDelimitedFrom(
+  public static com.google.cloud.filestore.v1.PromoteReplicaRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.filestore.v1.RevertInstanceRequest parseDelimitedFrom(
+  public static com.google.cloud.filestore.v1.PromoteReplicaRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.filestore.v1.RevertInstanceRequest parseFrom(
+  public static com.google.cloud.filestore.v1.PromoteReplicaRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.filestore.v1.RevertInstanceRequest parseFrom(
+  public static com.google.cloud.filestore.v1.PromoteReplicaRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -331,7 +336,7 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.filestore.v1.RevertInstanceRequest prototype) {
+  public static Builder newBuilder(com.google.cloud.filestore.v1.PromoteReplicaRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -349,32 +354,31 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * RevertInstanceRequest reverts the given instance's file share to the
-   * specified snapshot.
+   * PromoteReplicaRequest promotes a Filestore standby instance (replica).
    * </pre>
    *
-   * Protobuf type {@code google.cloud.filestore.v1.RevertInstanceRequest}
+   * Protobuf type {@code google.cloud.filestore.v1.PromoteReplicaRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.filestore.v1.RevertInstanceRequest)
-      com.google.cloud.filestore.v1.RevertInstanceRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.filestore.v1.PromoteReplicaRequest)
+      com.google.cloud.filestore.v1.PromoteReplicaRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.filestore.v1.CloudFilestoreServiceProto
-          .internal_static_google_cloud_filestore_v1_RevertInstanceRequest_descriptor;
+          .internal_static_google_cloud_filestore_v1_PromoteReplicaRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.filestore.v1.CloudFilestoreServiceProto
-          .internal_static_google_cloud_filestore_v1_RevertInstanceRequest_fieldAccessorTable
+          .internal_static_google_cloud_filestore_v1_PromoteReplicaRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.filestore.v1.RevertInstanceRequest.class,
-              com.google.cloud.filestore.v1.RevertInstanceRequest.Builder.class);
+              com.google.cloud.filestore.v1.PromoteReplicaRequest.class,
+              com.google.cloud.filestore.v1.PromoteReplicaRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.filestore.v1.RevertInstanceRequest.newBuilder()
+    // Construct using com.google.cloud.filestore.v1.PromoteReplicaRequest.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -386,24 +390,24 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      targetSnapshotId_ = "";
+      peerInstance_ = "";
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.filestore.v1.CloudFilestoreServiceProto
-          .internal_static_google_cloud_filestore_v1_RevertInstanceRequest_descriptor;
+          .internal_static_google_cloud_filestore_v1_PromoteReplicaRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.filestore.v1.RevertInstanceRequest getDefaultInstanceForType() {
-      return com.google.cloud.filestore.v1.RevertInstanceRequest.getDefaultInstance();
+    public com.google.cloud.filestore.v1.PromoteReplicaRequest getDefaultInstanceForType() {
+      return com.google.cloud.filestore.v1.PromoteReplicaRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.filestore.v1.RevertInstanceRequest build() {
-      com.google.cloud.filestore.v1.RevertInstanceRequest result = buildPartial();
+    public com.google.cloud.filestore.v1.PromoteReplicaRequest build() {
+      com.google.cloud.filestore.v1.PromoteReplicaRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -411,9 +415,9 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     @java.lang.Override
-    public com.google.cloud.filestore.v1.RevertInstanceRequest buildPartial() {
-      com.google.cloud.filestore.v1.RevertInstanceRequest result =
-          new com.google.cloud.filestore.v1.RevertInstanceRequest(this);
+    public com.google.cloud.filestore.v1.PromoteReplicaRequest buildPartial() {
+      com.google.cloud.filestore.v1.PromoteReplicaRequest result =
+          new com.google.cloud.filestore.v1.PromoteReplicaRequest(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -421,13 +425,13 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
       return result;
     }
 
-    private void buildPartial0(com.google.cloud.filestore.v1.RevertInstanceRequest result) {
+    private void buildPartial0(com.google.cloud.filestore.v1.PromoteReplicaRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.targetSnapshotId_ = targetSnapshotId_;
+        result.peerInstance_ = peerInstance_;
       }
     }
 
@@ -466,24 +470,24 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.filestore.v1.RevertInstanceRequest) {
-        return mergeFrom((com.google.cloud.filestore.v1.RevertInstanceRequest) other);
+      if (other instanceof com.google.cloud.filestore.v1.PromoteReplicaRequest) {
+        return mergeFrom((com.google.cloud.filestore.v1.PromoteReplicaRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.filestore.v1.RevertInstanceRequest other) {
-      if (other == com.google.cloud.filestore.v1.RevertInstanceRequest.getDefaultInstance())
+    public Builder mergeFrom(com.google.cloud.filestore.v1.PromoteReplicaRequest other) {
+      if (other == com.google.cloud.filestore.v1.PromoteReplicaRequest.getDefaultInstance())
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.getTargetSnapshotId().isEmpty()) {
-        targetSnapshotId_ = other.targetSnapshotId_;
+      if (!other.getPeerInstance().isEmpty()) {
+        peerInstance_ = other.peerInstance_;
         bitField0_ |= 0x00000002;
         onChanged();
       }
@@ -521,7 +525,7 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
               } // case 10
             case 18:
               {
-                targetSnapshotId_ = input.readStringRequireUtf8();
+                peerInstance_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
@@ -665,26 +669,29 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private java.lang.Object targetSnapshotId_ = "";
+    private java.lang.Object peerInstance_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The snapshot resource ID, in the format 'my-snapshot', where the
-     * specified ID is the {snapshot_id} of the fully qualified name like
-     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`
+     * Optional. The resource name of the peer instance to promote, in the format
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
+     * The peer instance is required if the operation is called on an active
+     * instance.
      * </pre>
      *
-     * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string peer_instance = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
-     * @return The targetSnapshotId.
+     * @return The peerInstance.
      */
-    public java.lang.String getTargetSnapshotId() {
-      java.lang.Object ref = targetSnapshotId_;
+    public java.lang.String getPeerInstance() {
+      java.lang.Object ref = peerInstance_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        targetSnapshotId_ = s;
+        peerInstance_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -694,21 +701,24 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The snapshot resource ID, in the format 'my-snapshot', where the
-     * specified ID is the {snapshot_id} of the fully qualified name like
-     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`
+     * Optional. The resource name of the peer instance to promote, in the format
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
+     * The peer instance is required if the operation is called on an active
+     * instance.
      * </pre>
      *
-     * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string peer_instance = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
-     * @return The bytes for targetSnapshotId.
+     * @return The bytes for peerInstance.
      */
-    public com.google.protobuf.ByteString getTargetSnapshotIdBytes() {
-      java.lang.Object ref = targetSnapshotId_;
+    public com.google.protobuf.ByteString getPeerInstanceBytes() {
+      java.lang.Object ref = peerInstance_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        targetSnapshotId_ = b;
+        peerInstance_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -718,21 +728,24 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The snapshot resource ID, in the format 'my-snapshot', where the
-     * specified ID is the {snapshot_id} of the fully qualified name like
-     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`
+     * Optional. The resource name of the peer instance to promote, in the format
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
+     * The peer instance is required if the operation is called on an active
+     * instance.
      * </pre>
      *
-     * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string peer_instance = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
-     * @param value The targetSnapshotId to set.
+     * @param value The peerInstance to set.
      * @return This builder for chaining.
      */
-    public Builder setTargetSnapshotId(java.lang.String value) {
+    public Builder setPeerInstance(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      targetSnapshotId_ = value;
+      peerInstance_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
@@ -741,17 +754,20 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The snapshot resource ID, in the format 'my-snapshot', where the
-     * specified ID is the {snapshot_id} of the fully qualified name like
-     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`
+     * Optional. The resource name of the peer instance to promote, in the format
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
+     * The peer instance is required if the operation is called on an active
+     * instance.
      * </pre>
      *
-     * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string peer_instance = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearTargetSnapshotId() {
-      targetSnapshotId_ = getDefaultInstance().getTargetSnapshotId();
+    public Builder clearPeerInstance() {
+      peerInstance_ = getDefaultInstance().getPeerInstance();
       bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
@@ -760,22 +776,25 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The snapshot resource ID, in the format 'my-snapshot', where the
-     * specified ID is the {snapshot_id} of the fully qualified name like
-     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`
+     * Optional. The resource name of the peer instance to promote, in the format
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
+     * The peer instance is required if the operation is called on an active
+     * instance.
      * </pre>
      *
-     * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string peer_instance = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
-     * @param value The bytes for targetSnapshotId to set.
+     * @param value The bytes for peerInstance to set.
      * @return This builder for chaining.
      */
-    public Builder setTargetSnapshotIdBytes(com.google.protobuf.ByteString value) {
+    public Builder setPeerInstanceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      targetSnapshotId_ = value;
+      peerInstance_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
@@ -792,24 +811,24 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.filestore.v1.RevertInstanceRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.filestore.v1.PromoteReplicaRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.filestore.v1.RevertInstanceRequest)
-  private static final com.google.cloud.filestore.v1.RevertInstanceRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.filestore.v1.PromoteReplicaRequest)
+  private static final com.google.cloud.filestore.v1.PromoteReplicaRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.filestore.v1.RevertInstanceRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.filestore.v1.PromoteReplicaRequest();
   }
 
-  public static com.google.cloud.filestore.v1.RevertInstanceRequest getDefaultInstance() {
+  public static com.google.cloud.filestore.v1.PromoteReplicaRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RevertInstanceRequest> PARSER =
-      new com.google.protobuf.AbstractParser<RevertInstanceRequest>() {
+  private static final com.google.protobuf.Parser<PromoteReplicaRequest> PARSER =
+      new com.google.protobuf.AbstractParser<PromoteReplicaRequest>() {
         @java.lang.Override
-        public RevertInstanceRequest parsePartialFrom(
+        public PromoteReplicaRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -828,17 +847,17 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
         }
       };
 
-  public static com.google.protobuf.Parser<RevertInstanceRequest> parser() {
+  public static com.google.protobuf.Parser<PromoteReplicaRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<RevertInstanceRequest> getParserForType() {
+  public com.google.protobuf.Parser<PromoteReplicaRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.filestore.v1.RevertInstanceRequest getDefaultInstanceForType() {
+  public com.google.cloud.filestore.v1.PromoteReplicaRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

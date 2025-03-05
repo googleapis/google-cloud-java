@@ -16,20 +16,20 @@
 
 package com.google.cloud.filestore.v1.samples;
 
-// [START file_v1_generated_CloudFilestoreManager_ListSnapshots_async]
+// [START file_v1_generated_CloudFilestoreManager_PromoteReplica_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.filestore.v1.CloudFilestoreManagerClient;
 import com.google.cloud.filestore.v1.InstanceName;
-import com.google.cloud.filestore.v1.ListSnapshotsRequest;
-import com.google.cloud.filestore.v1.Snapshot;
+import com.google.cloud.filestore.v1.PromoteReplicaRequest;
+import com.google.longrunning.Operation;
 
-public class AsyncListSnapshots {
+public class AsyncPromoteReplica {
 
   public static void main(String[] args) throws Exception {
-    asyncListSnapshots();
+    asyncPromoteReplica();
   }
 
-  public static void asyncListSnapshots() throws Exception {
+  public static void asyncPromoteReplica() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
@@ -37,22 +37,16 @@ public class AsyncListSnapshots {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
         CloudFilestoreManagerClient.create()) {
-      ListSnapshotsRequest request =
-          ListSnapshotsRequest.newBuilder()
-              .setParent(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
-              .setPageSize(883849137)
-              .setPageToken("pageToken873572522")
-              .setOrderBy("orderBy-1207110587")
-              .setFilter("filter-1274492040")
-              .setReturnPartialSuccess(true)
+      PromoteReplicaRequest request =
+          PromoteReplicaRequest.newBuilder()
+              .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .setPeerInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
               .build();
-      ApiFuture<Snapshot> future =
-          cloudFilestoreManagerClient.listSnapshotsPagedCallable().futureCall(request);
+      ApiFuture<Operation> future =
+          cloudFilestoreManagerClient.promoteReplicaCallable().futureCall(request);
       // Do something.
-      for (Snapshot element : future.get().iterateAll()) {
-        // doThingsWith(element);
-      }
+      Operation response = future.get();
     }
   }
 }
-// [END file_v1_generated_CloudFilestoreManager_ListSnapshots_async]
+// [END file_v1_generated_CloudFilestoreManager_PromoteReplica_async]

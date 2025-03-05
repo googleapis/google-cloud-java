@@ -796,6 +796,49 @@ public final class CloudFilestoreManagerGrpc {
     return getUpdateBackupMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.filestore.v1.PromoteReplicaRequest, com.google.longrunning.Operation>
+      getPromoteReplicaMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PromoteReplica",
+      requestType = com.google.cloud.filestore.v1.PromoteReplicaRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.filestore.v1.PromoteReplicaRequest, com.google.longrunning.Operation>
+      getPromoteReplicaMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.filestore.v1.PromoteReplicaRequest, com.google.longrunning.Operation>
+        getPromoteReplicaMethod;
+    if ((getPromoteReplicaMethod = CloudFilestoreManagerGrpc.getPromoteReplicaMethod) == null) {
+      synchronized (CloudFilestoreManagerGrpc.class) {
+        if ((getPromoteReplicaMethod = CloudFilestoreManagerGrpc.getPromoteReplicaMethod) == null) {
+          CloudFilestoreManagerGrpc.getPromoteReplicaMethod =
+              getPromoteReplicaMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.filestore.v1.PromoteReplicaRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PromoteReplica"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.filestore.v1.PromoteReplicaRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudFilestoreManagerMethodDescriptorSupplier("PromoteReplica"))
+                      .build();
+        }
+      }
+    }
+    return getPromoteReplicaMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CloudFilestoreManagerStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CloudFilestoreManagerStub> factory =
@@ -1108,6 +1151,20 @@ public final class CloudFilestoreManagerGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateBackupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promote the standby instance (replica).
+     * </pre>
+     */
+    default void promoteReplica(
+        com.google.cloud.filestore.v1.PromoteReplicaRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPromoteReplicaMethod(), responseObserver);
     }
   }
 
@@ -1457,6 +1514,22 @@ public final class CloudFilestoreManagerGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promote the standby instance (replica).
+     * </pre>
+     */
+    public void promoteReplica(
+        com.google.cloud.filestore.v1.PromoteReplicaRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPromoteReplicaMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1722,6 +1795,19 @@ public final class CloudFilestoreManagerGrpc {
         com.google.cloud.filestore.v1.UpdateBackupRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promote the standby instance (replica).
+     * </pre>
+     */
+    public com.google.longrunning.Operation promoteReplica(
+        com.google.cloud.filestore.v1.PromoteReplicaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPromoteReplicaMethod(), getCallOptions(), request);
     }
   }
 
@@ -1995,6 +2081,19 @@ public final class CloudFilestoreManagerGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateBackupMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promote the standby instance (replica).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        promoteReplica(com.google.cloud.filestore.v1.PromoteReplicaRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPromoteReplicaMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_INSTANCES = 0;
@@ -2014,6 +2113,7 @@ public final class CloudFilestoreManagerGrpc {
   private static final int METHODID_CREATE_BACKUP = 14;
   private static final int METHODID_DELETE_BACKUP = 15;
   private static final int METHODID_UPDATE_BACKUP = 16;
+  private static final int METHODID_PROMOTE_REPLICA = 17;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2120,6 +2220,11 @@ public final class CloudFilestoreManagerGrpc {
         case METHODID_UPDATE_BACKUP:
           serviceImpl.updateBackup(
               (com.google.cloud.filestore.v1.UpdateBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_PROMOTE_REPLICA:
+          serviceImpl.promoteReplica(
+              (com.google.cloud.filestore.v1.PromoteReplicaRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -2245,6 +2350,12 @@ public final class CloudFilestoreManagerGrpc {
                 new MethodHandlers<
                     com.google.cloud.filestore.v1.UpdateBackupRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_BACKUP)))
+        .addMethod(
+            getPromoteReplicaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.filestore.v1.PromoteReplicaRequest,
+                    com.google.longrunning.Operation>(service, METHODID_PROMOTE_REPLICA)))
         .build();
   }
 
@@ -2313,6 +2424,7 @@ public final class CloudFilestoreManagerGrpc {
                       .addMethod(getCreateBackupMethod())
                       .addMethod(getDeleteBackupMethod())
                       .addMethod(getUpdateBackupMethod())
+                      .addMethod(getPromoteReplicaMethod())
                       .build();
         }
       }

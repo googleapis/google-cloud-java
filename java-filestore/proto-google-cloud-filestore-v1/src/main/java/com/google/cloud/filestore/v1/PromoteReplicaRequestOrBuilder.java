@@ -19,9 +19,9 @@
 // Protobuf Java Version: 3.25.5
 package com.google.cloud.filestore.v1;
 
-public interface RevertInstanceRequestOrBuilder
+public interface PromoteReplicaRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.filestore.v1.RevertInstanceRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.filestore.v1.PromoteReplicaRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -59,28 +59,34 @@ public interface RevertInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The snapshot resource ID, in the format 'my-snapshot', where the
-   * specified ID is the {snapshot_id} of the fully qualified name like
-   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`
+   * Optional. The resource name of the peer instance to promote, in the format
+   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
+   * The peer instance is required if the operation is called on an active
+   * instance.
    * </pre>
    *
-   * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string peer_instance = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
-   * @return The targetSnapshotId.
+   * @return The peerInstance.
    */
-  java.lang.String getTargetSnapshotId();
+  java.lang.String getPeerInstance();
   /**
    *
    *
    * <pre>
-   * Required. The snapshot resource ID, in the format 'my-snapshot', where the
-   * specified ID is the {snapshot_id} of the fully qualified name like
-   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`
+   * Optional. The resource name of the peer instance to promote, in the format
+   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
+   * The peer instance is required if the operation is called on an active
+   * instance.
    * </pre>
    *
-   * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string peer_instance = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
-   * @return The bytes for targetSnapshotId.
+   * @return The bytes for peerInstance.
    */
-  com.google.protobuf.ByteString getTargetSnapshotIdBytes();
+  com.google.protobuf.ByteString getPeerInstanceBytes();
 }

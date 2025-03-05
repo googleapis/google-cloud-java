@@ -56,6 +56,10 @@ public final class OnlineReturnPolicyProto {
       internal_static_google_shopping_merchant_accounts_v1beta_OnlineReturnPolicy_Policy_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_accounts_v1beta_OnlineReturnPolicy_Policy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_accounts_v1beta_OnlineReturnPolicy_SeasonalOverride_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_accounts_v1beta_OnlineReturnPolicy_SeasonalOverride_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -71,78 +75,87 @@ public final class OnlineReturnPolicyProto {
           + "api/annotations.proto\032\027google/api/client"
           + ".proto\032\037google/api/field_behavior.proto\032"
           + "\031google/api/resource.proto\032 google/shopp"
-          + "ing/type/types.proto\"c\n\034GetOnlineReturnP"
-          + "olicyRequest\022C\n\004name\030\001 \001(\tB5\340A\002\372A/\n-merc"
-          + "hantapi.googleapis.com/OnlineReturnPolic"
-          + "y\"\231\001\n\037ListOnlineReturnPoliciesRequest\022E\n"
-          + "\006parent\030\001 \001(\tB5\340A\002\372A/\022-merchantapi.googl"
-          + "eapis.com/OnlineReturnPolicy\022\026\n\tpage_siz"
-          + "e\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\"\231\001"
-          + "\n ListOnlineReturnPoliciesResponse\022\\\n\026on"
-          + "line_return_policies\030\001 \003(\0132<.google.shop"
+          + "ing/type/types.proto\032\026google/type/date.p"
+          + "roto\"c\n\034GetOnlineReturnPolicyRequest\022C\n\004"
+          + "name\030\001 \001(\tB5\340A\002\372A/\n-merchantapi.googleap"
+          + "is.com/OnlineReturnPolicy\"\231\001\n\037ListOnline"
+          + "ReturnPoliciesRequest\022E\n\006parent\030\001 \001(\tB5\340"
+          + "A\002\372A/\022-merchantapi.googleapis.com/Online"
+          + "ReturnPolicy\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"\231\001\n ListOnlineRetu"
+          + "rnPoliciesResponse\022\\\n\026online_return_poli"
+          + "cies\030\001 \003(\0132<.google.shopping.merchant.ac"
+          + "counts.v1beta.OnlineReturnPolicy\022\027\n\017next"
+          + "_page_token\030\002 \001(\t\"\341\017\n\022OnlineReturnPolicy"
+          + "\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\035\n\020return_policy_id\030"
+          + "\002 \001(\tB\003\340A\003\022\025\n\005label\030\003 \001(\tB\006\340A\002\340A\005\022\031\n\tcou"
+          + "ntries\030\004 \003(\tB\006\340A\002\340A\005\022S\n\006policy\030\005 \001(\0132C.g"
+          + "oogle.shopping.merchant.accounts.v1beta."
+          + "OnlineReturnPolicy.Policy\022n\n\022seasonal_ov"
+          + "errides\030\016 \003(\0132M.google.shopping.merchant"
+          + ".accounts.v1beta.OnlineReturnPolicy.Seas"
+          + "onalOverrideB\003\340A\001\022b\n\016restocking_fee\030\006 \001("
+          + "\0132J.google.shopping.merchant.accounts.v1"
+          + "beta.OnlineReturnPolicy.RestockingFee\022a\n"
+          + "\016return_methods\030\007 \003(\0162I.google.shopping."
+          + "merchant.accounts.v1beta.OnlineReturnPol"
+          + "icy.ReturnMethod\022c\n\017item_conditions\030\010 \003("
+          + "\0162J.google.shopping.merchant.accounts.v1"
+          + "beta.OnlineReturnPolicy.ItemCondition\022k\n"
+          + "\023return_shipping_fee\030\t \001(\0132N.google.shop"
           + "ping.merchant.accounts.v1beta.OnlineRetu"
-          + "rnPolicy\022\027\n\017next_page_token\030\002 \001(\t\"\200\r\n\022On"
-          + "lineReturnPolicy\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\035\n\020r"
-          + "eturn_policy_id\030\002 \001(\tB\003\340A\003\022\r\n\005label\030\003 \001("
-          + "\t\022\021\n\tcountries\030\004 \003(\t\022S\n\006policy\030\005 \001(\0132C.g"
-          + "oogle.shopping.merchant.accounts.v1beta."
-          + "OnlineReturnPolicy.Policy\022b\n\016restocking_"
-          + "fee\030\006 \001(\0132J.google.shopping.merchant.acc"
-          + "ounts.v1beta.OnlineReturnPolicy.Restocki"
-          + "ngFee\022a\n\016return_methods\030\007 \003(\0162I.google.s"
-          + "hopping.merchant.accounts.v1beta.OnlineR"
-          + "eturnPolicy.ReturnMethod\022c\n\017item_conditi"
-          + "ons\030\010 \003(\0162J.google.shopping.merchant.acc"
-          + "ounts.v1beta.OnlineReturnPolicy.ItemCond"
-          + "ition\022k\n\023return_shipping_fee\030\t \001(\0132N.goo"
+          + "rnPolicy.ReturnShippingFee\022\036\n\021return_pol"
+          + "icy_uri\030\n \001(\tB\003\340A\002\022\"\n\025accept_defective_o"
+          + "nly\030\013 \001(\010H\000\210\001\001\022 \n\023process_refund_days\030\014 "
+          + "\001(\005H\001\210\001\001\022\034\n\017accept_exchange\030\r \001(\010H\002\210\001\001\032\364"
+          + "\001\n\021ReturnShippingFee\022f\n\004type\030\001 \001(\0162S.goo"
           + "gle.shopping.merchant.accounts.v1beta.On"
-          + "lineReturnPolicy.ReturnShippingFee\022\031\n\021re"
-          + "turn_policy_uri\030\n \001(\t\022\"\n\025accept_defectiv"
-          + "e_only\030\013 \001(\010H\000\210\001\001\022 \n\023process_refund_days"
-          + "\030\014 \001(\005H\001\210\001\001\022\034\n\017accept_exchange\030\r \001(\010H\002\210\001"
-          + "\001\032\357\001\n\021ReturnShippingFee\022a\n\004type\030\001 \001(\0162S."
-          + "google.shopping.merchant.accounts.v1beta"
-          + ".OnlineReturnPolicy.ReturnShippingFee.Ty"
-          + "pe\022.\n\tfixed_fee\030\002 \001(\0132\033.google.shopping."
-          + "type.Price\"G\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000"
-          + "\022\t\n\005FIXED\020\001\022\036\n\032CUSTOMER_PAYING_ACTUAL_FE"
-          + "E\020\002\032b\n\rRestockingFee\0220\n\tfixed_fee\030\001 \001(\0132"
-          + "\033.google.shopping.type.PriceH\000\022\027\n\rmicro_"
-          + "percent\030\002 \001(\005H\000B\006\n\004type\032\325\001\n\006Policy\022V\n\004ty"
-          + "pe\030\001 \001(\0162H.google.shopping.merchant.acco"
-          + "unts.v1beta.OnlineReturnPolicy.Policy.Ty"
-          + "pe\022\014\n\004days\030\002 \001(\003\"e\n\004Type\022\024\n\020TYPE_UNSPECI"
-          + "FIED\020\000\022!\n\035NUMBER_OF_DAYS_AFTER_DELIVERY\020"
-          + "\001\022\016\n\nNO_RETURNS\020\002\022\024\n\020LIFETIME_RETURNS\020\003\""
-          + "X\n\014ReturnMethod\022\035\n\031RETURN_METHOD_UNSPECI"
-          + "FIED\020\000\022\013\n\007BY_MAIL\020\001\022\014\n\010IN_STORE\020\002\022\016\n\nAT_"
-          + "A_KIOSK\020\003\"B\n\rItemCondition\022\036\n\032ITEM_CONDI"
-          + "TION_UNSPECIFIED\020\000\022\007\n\003NEW\020\001\022\010\n\004USED\020\002:\226\001"
-          + "\352A\222\001\n-merchantapi.googleapis.com/OnlineR"
-          + "eturnPolicy\0227accounts/{account}/onlineRe"
-          + "turnPolicies/{return_policy}*\024onlineRetu"
-          + "rnPolicies2\022onlineReturnPolicyB\030\n\026_accep"
-          + "t_defective_onlyB\026\n\024_process_refund_days"
-          + "B\022\n\020_accept_exchange2\316\004\n\031OnlineReturnPol"
-          + "icyService\022\347\001\n\025GetOnlineReturnPolicy\022F.g"
-          + "oogle.shopping.merchant.accounts.v1beta."
-          + "GetOnlineReturnPolicyRequest\032<.google.sh"
-          + "opping.merchant.accounts.v1beta.OnlineRe"
-          + "turnPolicy\"H\332A\004name\202\323\344\223\002;\0229/accounts/v1b"
-          + "eta/{name=accounts/*/onlineReturnPolicie"
-          + "s/*}\022\375\001\n\030ListOnlineReturnPolicies\022I.goog"
-          + "le.shopping.merchant.accounts.v1beta.Lis"
-          + "tOnlineReturnPoliciesRequest\032J.google.sh"
-          + "opping.merchant.accounts.v1beta.ListOnli"
-          + "neReturnPoliciesResponse\"J\332A\006parent\202\323\344\223\002"
-          + ";\0229/accounts/v1beta/{parent=accounts/*}/"
-          + "onlineReturnPolicies\032G\312A\032merchantapi.goo"
-          + "gleapis.com\322A\'https://www.googleapis.com"
-          + "/auth/contentB\231\001\n,com.google.shopping.me"
-          + "rchant.accounts.v1betaB\027OnlineReturnPoli"
-          + "cyProtoP\001ZNcloud.google.com/go/shopping/"
-          + "merchant/accounts/apiv1beta/accountspb;a"
-          + "ccountspbb\006proto3"
+          + "lineReturnPolicy.ReturnShippingFee.TypeB"
+          + "\003\340A\002\022.\n\tfixed_fee\030\002 \001(\0132\033.google.shoppin"
+          + "g.type.Price\"G\n\004Type\022\024\n\020TYPE_UNSPECIFIED"
+          + "\020\000\022\t\n\005FIXED\020\001\022\036\n\032CUSTOMER_PAYING_ACTUAL_"
+          + "FEE\020\002\032b\n\rRestockingFee\0220\n\tfixed_fee\030\001 \001("
+          + "\0132\033.google.shopping.type.PriceH\000\022\027\n\rmicr"
+          + "o_percent\030\002 \001(\005H\000B\006\n\004type\032\325\001\n\006Policy\022V\n\004"
+          + "type\030\001 \001(\0162H.google.shopping.merchant.ac"
+          + "counts.v1beta.OnlineReturnPolicy.Policy."
+          + "Type\022\014\n\004days\030\002 \001(\003\"e\n\004Type\022\024\n\020TYPE_UNSPE"
+          + "CIFIED\020\000\022!\n\035NUMBER_OF_DAYS_AFTER_DELIVER"
+          + "Y\020\001\022\016\n\nNO_RETURNS\020\002\022\024\n\020LIFETIME_RETURNS\020"
+          + "\003\032\324\001\n\020SeasonalOverride\022\025\n\013return_days\030\005 "
+          + "\001(\005H\000\022.\n\021return_until_date\030\006 \001(\0132\021.googl"
+          + "e.type.DateH\000\022\022\n\005label\030\001 \001(\tB\003\340A\002\022*\n\nsta"
+          + "rt_date\030\002 \001(\0132\021.google.type.DateB\003\340A\002\022(\n"
+          + "\010end_date\030\003 \001(\0132\021.google.type.DateB\003\340A\002B"
+          + "\017\n\rreturn_window\"X\n\014ReturnMethod\022\035\n\031RETU"
+          + "RN_METHOD_UNSPECIFIED\020\000\022\013\n\007BY_MAIL\020\001\022\014\n\010"
+          + "IN_STORE\020\002\022\016\n\nAT_A_KIOSK\020\003\"B\n\rItemCondit"
+          + "ion\022\036\n\032ITEM_CONDITION_UNSPECIFIED\020\000\022\007\n\003N"
+          + "EW\020\001\022\010\n\004USED\020\002:\226\001\352A\222\001\n-merchantapi.googl"
+          + "eapis.com/OnlineReturnPolicy\0227accounts/{"
+          + "account}/onlineReturnPolicies/{return_po"
+          + "licy}*\024onlineReturnPolicies2\022onlineRetur"
+          + "nPolicyB\030\n\026_accept_defective_onlyB\026\n\024_pr"
+          + "ocess_refund_daysB\022\n\020_accept_exchange2\316\004"
+          + "\n\031OnlineReturnPolicyService\022\347\001\n\025GetOnlin"
+          + "eReturnPolicy\022F.google.shopping.merchant"
+          + ".accounts.v1beta.GetOnlineReturnPolicyRe"
+          + "quest\032<.google.shopping.merchant.account"
+          + "s.v1beta.OnlineReturnPolicy\"H\332A\004name\202\323\344\223"
+          + "\002;\0229/accounts/v1beta/{name=accounts/*/on"
+          + "lineReturnPolicies/*}\022\375\001\n\030ListOnlineRetu"
+          + "rnPolicies\022I.google.shopping.merchant.ac"
+          + "counts.v1beta.ListOnlineReturnPoliciesRe"
+          + "quest\032J.google.shopping.merchant.account"
+          + "s.v1beta.ListOnlineReturnPoliciesRespons"
+          + "e\"J\332A\006parent\202\323\344\223\002;\0229/accounts/v1beta/{pa"
+          + "rent=accounts/*}/onlineReturnPolicies\032G\312"
+          + "A\032merchantapi.googleapis.com\322A\'https://w"
+          + "ww.googleapis.com/auth/contentB\231\001\n,com.g"
+          + "oogle.shopping.merchant.accounts.v1betaB"
+          + "\027OnlineReturnPolicyProtoP\001ZNcloud.google"
+          + ".com/go/shopping/merchant/accounts/apiv1"
+          + "beta/accountspb;accountspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -153,6 +166,7 @@ public final class OnlineReturnPolicyProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.shopping.type.TypesProto.getDescriptor(),
+              com.google.type.DateProto.getDescriptor(),
             });
     internal_static_google_shopping_merchant_accounts_v1beta_GetOnlineReturnPolicyRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -189,6 +203,7 @@ public final class OnlineReturnPolicyProto {
               "Label",
               "Countries",
               "Policy",
+              "SeasonalOverrides",
               "RestockingFee",
               "ReturnMethods",
               "ItemConditions",
@@ -228,6 +243,16 @@ public final class OnlineReturnPolicyProto {
             new java.lang.String[] {
               "Type", "Days",
             });
+    internal_static_google_shopping_merchant_accounts_v1beta_OnlineReturnPolicy_SeasonalOverride_descriptor =
+        internal_static_google_shopping_merchant_accounts_v1beta_OnlineReturnPolicy_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_shopping_merchant_accounts_v1beta_OnlineReturnPolicy_SeasonalOverride_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_accounts_v1beta_OnlineReturnPolicy_SeasonalOverride_descriptor,
+            new java.lang.String[] {
+              "ReturnDays", "ReturnUntilDate", "Label", "StartDate", "EndDate", "ReturnWindow",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -244,6 +269,7 @@ public final class OnlineReturnPolicyProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.shopping.type.TypesProto.getDescriptor();
+    com.google.type.DateProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

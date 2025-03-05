@@ -2754,6 +2754,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy$SeasonalOverride",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy$SeasonalOverride$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.shopping.merchant.accounts.v1beta.PhoneVerificationState",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

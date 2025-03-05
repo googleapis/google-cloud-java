@@ -224,7 +224,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=330
+   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=357
    * @return Whether the partialFailureGcsSink field is set.
    */
   @java.lang.Deprecated
@@ -242,7 +242,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=330
+   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=357
    * @return The partialFailureGcsSink.
    */
   @java.lang.Deprecated
@@ -280,7 +280,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=339
+   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=366
    * @return Whether the partialFailureBigquerySink field is set.
    */
   @java.lang.Deprecated
@@ -303,7 +303,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=339
+   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=366
    * @return The partialFailureBigquerySink.
    */
   @java.lang.Deprecated
@@ -370,6 +370,50 @@ public interface ImportRagFilesConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1.RagFileTransformationConfigOrBuilder
       getRagFileTransformationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the parsing config for RagFiles.
+   * RAG will use the default parser if this field is not set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ragFileParsingConfig field is set.
+   */
+  boolean hasRagFileParsingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the parsing config for RagFiles.
+   * RAG will use the default parser if this field is not set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ragFileParsingConfig.
+   */
+  com.google.cloud.aiplatform.v1.RagFileParsingConfig getRagFileParsingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the parsing config for RagFiles.
+   * RAG will use the default parser if this field is not set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.RagFileParsingConfigOrBuilder getRagFileParsingConfigOrBuilder();
 
   /**
    *

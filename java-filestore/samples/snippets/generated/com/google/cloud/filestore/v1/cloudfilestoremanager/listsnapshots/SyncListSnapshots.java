@@ -43,6 +43,7 @@ public class SyncListSnapshots {
               .setPageToken("pageToken873572522")
               .setOrderBy("orderBy-1207110587")
               .setFilter("filter-1274492040")
+              .setReturnPartialSuccess(true)
               .build();
       for (Snapshot element : cloudFilestoreManagerClient.listSnapshots(request).iterateAll()) {
         // doThingsWith(element);
