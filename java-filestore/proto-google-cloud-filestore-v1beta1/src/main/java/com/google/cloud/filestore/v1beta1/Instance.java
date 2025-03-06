@@ -50,6 +50,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     kmsKeyName_ = "";
     suspensionReasons_ = java.util.Collections.emptyList();
     protocol_ = 0;
+    deletionProtectionReason_ = "";
   }
 
   @java.lang.Override
@@ -70,6 +71,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     switch (number) {
       case 9:
         return internalGetLabels();
+      case 27:
+        return internalGetTags();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -210,6 +213,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>RESUMING = 11;</code>
      */
     RESUMING(11),
+    /**
+     *
+     *
+     * <pre>
+     * The replica instance is being promoted.
+     * </pre>
+     *
+     * <code>PROMOTING = 13;</code>
+     */
+    PROMOTING(13),
     UNRECOGNIZED(-1),
     ;
 
@@ -328,6 +341,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>RESUMING = 11;</code>
      */
     public static final int RESUMING_VALUE = 11;
+    /**
+     *
+     *
+     * <pre>
+     * The replica instance is being promoted.
+     * </pre>
+     *
+     * <code>PROMOTING = 13;</code>
+     */
+    public static final int PROMOTING_VALUE = 13;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -375,6 +398,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return SUSPENDING;
         case 11:
           return RESUMING;
+        case 13:
+          return PROMOTING;
         default:
           return null;
       }
@@ -1027,6 +1052,3537 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.filestore.v1beta1.Instance.FileProtocol)
+  }
+
+  public interface IOPSPerTBOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.filestore.v1beta1.Instance.IOPSPerTB)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Maximum IOPS per TiB.
+     * </pre>
+     *
+     * <code>int64 max_iops_per_tb = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The maxIopsPerTb.
+     */
+    long getMaxIopsPerTb();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * IOPS per TB.
+   * Filestore defines TB as 1024^4 bytes (TiB).
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.filestore.v1beta1.Instance.IOPSPerTB}
+   */
+  public static final class IOPSPerTB extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.filestore.v1beta1.Instance.IOPSPerTB)
+      IOPSPerTBOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use IOPSPerTB.newBuilder() to construct.
+    private IOPSPerTB(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private IOPSPerTB() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new IOPSPerTB();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+          .internal_static_google_cloud_filestore_v1beta1_Instance_IOPSPerTB_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+          .internal_static_google_cloud_filestore_v1beta1_Instance_IOPSPerTB_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.class,
+              com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.Builder.class);
+    }
+
+    public static final int MAX_IOPS_PER_TB_FIELD_NUMBER = 2;
+    private long maxIopsPerTb_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Maximum IOPS per TiB.
+     * </pre>
+     *
+     * <code>int64 max_iops_per_tb = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The maxIopsPerTb.
+     */
+    @java.lang.Override
+    public long getMaxIopsPerTb() {
+      return maxIopsPerTb_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (maxIopsPerTb_ != 0L) {
+        output.writeInt64(2, maxIopsPerTb_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (maxIopsPerTb_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, maxIopsPerTb_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB other =
+          (com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB) obj;
+
+      if (getMaxIopsPerTb() != other.getMaxIopsPerTb()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MAX_IOPS_PER_TB_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxIopsPerTb());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IOPS per TB.
+     * Filestore defines TB as 1024^4 bytes (TiB).
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.filestore.v1beta1.Instance.IOPSPerTB}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.filestore.v1beta1.Instance.IOPSPerTB)
+        com.google.cloud.filestore.v1beta1.Instance.IOPSPerTBOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+            .internal_static_google_cloud_filestore_v1beta1_Instance_IOPSPerTB_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+            .internal_static_google_cloud_filestore_v1beta1_Instance_IOPSPerTB_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.class,
+                com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.Builder.class);
+      }
+
+      // Construct using com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        maxIopsPerTb_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+            .internal_static_google_cloud_filestore_v1beta1_Instance_IOPSPerTB_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB getDefaultInstanceForType() {
+        return com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB build() {
+        com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB buildPartial() {
+        com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB result =
+            new com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.maxIopsPerTb_ = maxIopsPerTb_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB) {
+          return mergeFrom((com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB other) {
+        if (other == com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.getDefaultInstance())
+          return this;
+        if (other.getMaxIopsPerTb() != 0L) {
+          setMaxIopsPerTb(other.getMaxIopsPerTb());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16:
+                {
+                  maxIopsPerTb_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long maxIopsPerTb_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Maximum IOPS per TiB.
+       * </pre>
+       *
+       * <code>int64 max_iops_per_tb = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The maxIopsPerTb.
+       */
+      @java.lang.Override
+      public long getMaxIopsPerTb() {
+        return maxIopsPerTb_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Maximum IOPS per TiB.
+       * </pre>
+       *
+       * <code>int64 max_iops_per_tb = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The maxIopsPerTb to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxIopsPerTb(long value) {
+
+        maxIopsPerTb_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Maximum IOPS per TiB.
+       * </pre>
+       *
+       * <code>int64 max_iops_per_tb = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxIopsPerTb() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        maxIopsPerTb_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.filestore.v1beta1.Instance.IOPSPerTB)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.filestore.v1beta1.Instance.IOPSPerTB)
+    private static final com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB();
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<IOPSPerTB> PARSER =
+        new com.google.protobuf.AbstractParser<IOPSPerTB>() {
+          @java.lang.Override
+          public IOPSPerTB parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<IOPSPerTB> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IOPSPerTB> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface FixedIOPSOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.filestore.v1beta1.Instance.FixedIOPS)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Maximum IOPS.
+     * </pre>
+     *
+     * <code>int64 max_iops = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The maxIops.
+     */
+    long getMaxIops();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fixed IOPS (input/output operations per second) parameters.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.filestore.v1beta1.Instance.FixedIOPS}
+   */
+  public static final class FixedIOPS extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.filestore.v1beta1.Instance.FixedIOPS)
+      FixedIOPSOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use FixedIOPS.newBuilder() to construct.
+    private FixedIOPS(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private FixedIOPS() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FixedIOPS();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+          .internal_static_google_cloud_filestore_v1beta1_Instance_FixedIOPS_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+          .internal_static_google_cloud_filestore_v1beta1_Instance_FixedIOPS_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.class,
+              com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.Builder.class);
+    }
+
+    public static final int MAX_IOPS_FIELD_NUMBER = 2;
+    private long maxIops_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Maximum IOPS.
+     * </pre>
+     *
+     * <code>int64 max_iops = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The maxIops.
+     */
+    @java.lang.Override
+    public long getMaxIops() {
+      return maxIops_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (maxIops_ != 0L) {
+        output.writeInt64(2, maxIops_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (maxIops_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, maxIops_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.filestore.v1beta1.Instance.FixedIOPS)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.filestore.v1beta1.Instance.FixedIOPS other =
+          (com.google.cloud.filestore.v1beta1.Instance.FixedIOPS) obj;
+
+      if (getMaxIops() != other.getMaxIops()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MAX_IOPS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxIops());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.FixedIOPS parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.FixedIOPS parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.FixedIOPS parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.FixedIOPS parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.FixedIOPS parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.FixedIOPS parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.FixedIOPS parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.FixedIOPS parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.FixedIOPS parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.FixedIOPS parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.FixedIOPS parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.FixedIOPS parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.filestore.v1beta1.Instance.FixedIOPS prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fixed IOPS (input/output operations per second) parameters.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.filestore.v1beta1.Instance.FixedIOPS}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.filestore.v1beta1.Instance.FixedIOPS)
+        com.google.cloud.filestore.v1beta1.Instance.FixedIOPSOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+            .internal_static_google_cloud_filestore_v1beta1_Instance_FixedIOPS_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+            .internal_static_google_cloud_filestore_v1beta1_Instance_FixedIOPS_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.class,
+                com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.Builder.class);
+      }
+
+      // Construct using com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        maxIops_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+            .internal_static_google_cloud_filestore_v1beta1_Instance_FixedIOPS_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.filestore.v1beta1.Instance.FixedIOPS getDefaultInstanceForType() {
+        return com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.filestore.v1beta1.Instance.FixedIOPS build() {
+        com.google.cloud.filestore.v1beta1.Instance.FixedIOPS result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.filestore.v1beta1.Instance.FixedIOPS buildPartial() {
+        com.google.cloud.filestore.v1beta1.Instance.FixedIOPS result =
+            new com.google.cloud.filestore.v1beta1.Instance.FixedIOPS(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.filestore.v1beta1.Instance.FixedIOPS result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.maxIops_ = maxIops_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.filestore.v1beta1.Instance.FixedIOPS) {
+          return mergeFrom((com.google.cloud.filestore.v1beta1.Instance.FixedIOPS) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.filestore.v1beta1.Instance.FixedIOPS other) {
+        if (other == com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.getDefaultInstance())
+          return this;
+        if (other.getMaxIops() != 0L) {
+          setMaxIops(other.getMaxIops());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16:
+                {
+                  maxIops_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long maxIops_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Maximum IOPS.
+       * </pre>
+       *
+       * <code>int64 max_iops = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The maxIops.
+       */
+      @java.lang.Override
+      public long getMaxIops() {
+        return maxIops_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Maximum IOPS.
+       * </pre>
+       *
+       * <code>int64 max_iops = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The maxIops to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxIops(long value) {
+
+        maxIops_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Maximum IOPS.
+       * </pre>
+       *
+       * <code>int64 max_iops = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxIops() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        maxIops_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.filestore.v1beta1.Instance.FixedIOPS)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.filestore.v1beta1.Instance.FixedIOPS)
+    private static final com.google.cloud.filestore.v1beta1.Instance.FixedIOPS DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.filestore.v1beta1.Instance.FixedIOPS();
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.FixedIOPS getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FixedIOPS> PARSER =
+        new com.google.protobuf.AbstractParser<FixedIOPS>() {
+          @java.lang.Override
+          public FixedIOPS parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<FixedIOPS> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FixedIOPS> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.filestore.v1beta1.Instance.FixedIOPS getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface PerformanceConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.filestore.v1beta1.Instance.PerformanceConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Provision IOPS dynamically based on the capacity of the instance.
+     * Provisioned IOPS will be calculated by multiplying the capacity of the
+     * instance in TiB by the `iops_per_tb` value. For example, for a 2 TiB
+     * instance with an `iops_per_tb` value of 17000 the provisioned IOPS will
+     * be 34000.
+     *
+     * If the calculated value is outside the supported range for the
+     * instance's capacity during instance creation, instance creation will
+     * fail with an `InvalidArgument` error. Similarly, if an instance
+     * capacity update would result in a value outside the supported range,
+     * the update will fail with an `InvalidArgument` error.
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.Instance.IOPSPerTB iops_per_tb = 4;</code>
+     *
+     * @return Whether the iopsPerTb field is set.
+     */
+    boolean hasIopsPerTb();
+    /**
+     *
+     *
+     * <pre>
+     * Provision IOPS dynamically based on the capacity of the instance.
+     * Provisioned IOPS will be calculated by multiplying the capacity of the
+     * instance in TiB by the `iops_per_tb` value. For example, for a 2 TiB
+     * instance with an `iops_per_tb` value of 17000 the provisioned IOPS will
+     * be 34000.
+     *
+     * If the calculated value is outside the supported range for the
+     * instance's capacity during instance creation, instance creation will
+     * fail with an `InvalidArgument` error. Similarly, if an instance
+     * capacity update would result in a value outside the supported range,
+     * the update will fail with an `InvalidArgument` error.
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.Instance.IOPSPerTB iops_per_tb = 4;</code>
+     *
+     * @return The iopsPerTb.
+     */
+    com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB getIopsPerTb();
+    /**
+     *
+     *
+     * <pre>
+     * Provision IOPS dynamically based on the capacity of the instance.
+     * Provisioned IOPS will be calculated by multiplying the capacity of the
+     * instance in TiB by the `iops_per_tb` value. For example, for a 2 TiB
+     * instance with an `iops_per_tb` value of 17000 the provisioned IOPS will
+     * be 34000.
+     *
+     * If the calculated value is outside the supported range for the
+     * instance's capacity during instance creation, instance creation will
+     * fail with an `InvalidArgument` error. Similarly, if an instance
+     * capacity update would result in a value outside the supported range,
+     * the update will fail with an `InvalidArgument` error.
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.Instance.IOPSPerTB iops_per_tb = 4;</code>
+     */
+    com.google.cloud.filestore.v1beta1.Instance.IOPSPerTBOrBuilder getIopsPerTbOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Choose a fixed provisioned IOPS value for the instance, which will
+     * remain constant regardless of instance capacity. Value must be a
+     * multiple of 1000.
+     *
+     * If the chosen value is outside the supported range for the instance's
+     * capacity during instance creation, instance creation will fail with an
+     * `InvalidArgument` error. Similarly, if an instance capacity update
+     * would result in a value outside the supported range, the update will
+     * fail with an `InvalidArgument` error.
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.Instance.FixedIOPS fixed_iops = 2;</code>
+     *
+     * @return Whether the fixedIops field is set.
+     */
+    boolean hasFixedIops();
+    /**
+     *
+     *
+     * <pre>
+     * Choose a fixed provisioned IOPS value for the instance, which will
+     * remain constant regardless of instance capacity. Value must be a
+     * multiple of 1000.
+     *
+     * If the chosen value is outside the supported range for the instance's
+     * capacity during instance creation, instance creation will fail with an
+     * `InvalidArgument` error. Similarly, if an instance capacity update
+     * would result in a value outside the supported range, the update will
+     * fail with an `InvalidArgument` error.
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.Instance.FixedIOPS fixed_iops = 2;</code>
+     *
+     * @return The fixedIops.
+     */
+    com.google.cloud.filestore.v1beta1.Instance.FixedIOPS getFixedIops();
+    /**
+     *
+     *
+     * <pre>
+     * Choose a fixed provisioned IOPS value for the instance, which will
+     * remain constant regardless of instance capacity. Value must be a
+     * multiple of 1000.
+     *
+     * If the chosen value is outside the supported range for the instance's
+     * capacity during instance creation, instance creation will fail with an
+     * `InvalidArgument` error. Similarly, if an instance capacity update
+     * would result in a value outside the supported range, the update will
+     * fail with an `InvalidArgument` error.
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.Instance.FixedIOPS fixed_iops = 2;</code>
+     */
+    com.google.cloud.filestore.v1beta1.Instance.FixedIOPSOrBuilder getFixedIopsOrBuilder();
+
+    com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig.ModeCase getModeCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Used for setting the performance configuration.
+   * If the user doesn't specify PerformanceConfig, automatically provision
+   * the default performance settings as described in
+   * https://cloud.google.com/filestore/docs/performance. Larger instances will
+   * be linearly set to more IOPS. If the instance's capacity is increased or
+   * decreased, its performance will be automatically adjusted upwards or
+   * downwards accordingly (respectively).
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.filestore.v1beta1.Instance.PerformanceConfig}
+   */
+  public static final class PerformanceConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.filestore.v1beta1.Instance.PerformanceConfig)
+      PerformanceConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PerformanceConfig.newBuilder() to construct.
+    private PerformanceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PerformanceConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PerformanceConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+          .internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+          .internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig.class,
+              com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig.Builder.class);
+    }
+
+    private int modeCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object mode_;
+
+    public enum ModeCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      IOPS_PER_TB(4),
+      FIXED_IOPS(2),
+      MODE_NOT_SET(0);
+      private final int value;
+
+      private ModeCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ModeCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ModeCase forNumber(int value) {
+        switch (value) {
+          case 4:
+            return IOPS_PER_TB;
+          case 2:
+            return FIXED_IOPS;
+          case 0:
+            return MODE_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ModeCase getModeCase() {
+      return ModeCase.forNumber(modeCase_);
+    }
+
+    public static final int IOPS_PER_TB_FIELD_NUMBER = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Provision IOPS dynamically based on the capacity of the instance.
+     * Provisioned IOPS will be calculated by multiplying the capacity of the
+     * instance in TiB by the `iops_per_tb` value. For example, for a 2 TiB
+     * instance with an `iops_per_tb` value of 17000 the provisioned IOPS will
+     * be 34000.
+     *
+     * If the calculated value is outside the supported range for the
+     * instance's capacity during instance creation, instance creation will
+     * fail with an `InvalidArgument` error. Similarly, if an instance
+     * capacity update would result in a value outside the supported range,
+     * the update will fail with an `InvalidArgument` error.
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.Instance.IOPSPerTB iops_per_tb = 4;</code>
+     *
+     * @return Whether the iopsPerTb field is set.
+     */
+    @java.lang.Override
+    public boolean hasIopsPerTb() {
+      return modeCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provision IOPS dynamically based on the capacity of the instance.
+     * Provisioned IOPS will be calculated by multiplying the capacity of the
+     * instance in TiB by the `iops_per_tb` value. For example, for a 2 TiB
+     * instance with an `iops_per_tb` value of 17000 the provisioned IOPS will
+     * be 34000.
+     *
+     * If the calculated value is outside the supported range for the
+     * instance's capacity during instance creation, instance creation will
+     * fail with an `InvalidArgument` error. Similarly, if an instance
+     * capacity update would result in a value outside the supported range,
+     * the update will fail with an `InvalidArgument` error.
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.Instance.IOPSPerTB iops_per_tb = 4;</code>
+     *
+     * @return The iopsPerTb.
+     */
+    @java.lang.Override
+    public com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB getIopsPerTb() {
+      if (modeCase_ == 4) {
+        return (com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB) mode_;
+      }
+      return com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provision IOPS dynamically based on the capacity of the instance.
+     * Provisioned IOPS will be calculated by multiplying the capacity of the
+     * instance in TiB by the `iops_per_tb` value. For example, for a 2 TiB
+     * instance with an `iops_per_tb` value of 17000 the provisioned IOPS will
+     * be 34000.
+     *
+     * If the calculated value is outside the supported range for the
+     * instance's capacity during instance creation, instance creation will
+     * fail with an `InvalidArgument` error. Similarly, if an instance
+     * capacity update would result in a value outside the supported range,
+     * the update will fail with an `InvalidArgument` error.
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.Instance.IOPSPerTB iops_per_tb = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.filestore.v1beta1.Instance.IOPSPerTBOrBuilder getIopsPerTbOrBuilder() {
+      if (modeCase_ == 4) {
+        return (com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB) mode_;
+      }
+      return com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.getDefaultInstance();
+    }
+
+    public static final int FIXED_IOPS_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Choose a fixed provisioned IOPS value for the instance, which will
+     * remain constant regardless of instance capacity. Value must be a
+     * multiple of 1000.
+     *
+     * If the chosen value is outside the supported range for the instance's
+     * capacity during instance creation, instance creation will fail with an
+     * `InvalidArgument` error. Similarly, if an instance capacity update
+     * would result in a value outside the supported range, the update will
+     * fail with an `InvalidArgument` error.
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.Instance.FixedIOPS fixed_iops = 2;</code>
+     *
+     * @return Whether the fixedIops field is set.
+     */
+    @java.lang.Override
+    public boolean hasFixedIops() {
+      return modeCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Choose a fixed provisioned IOPS value for the instance, which will
+     * remain constant regardless of instance capacity. Value must be a
+     * multiple of 1000.
+     *
+     * If the chosen value is outside the supported range for the instance's
+     * capacity during instance creation, instance creation will fail with an
+     * `InvalidArgument` error. Similarly, if an instance capacity update
+     * would result in a value outside the supported range, the update will
+     * fail with an `InvalidArgument` error.
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.Instance.FixedIOPS fixed_iops = 2;</code>
+     *
+     * @return The fixedIops.
+     */
+    @java.lang.Override
+    public com.google.cloud.filestore.v1beta1.Instance.FixedIOPS getFixedIops() {
+      if (modeCase_ == 2) {
+        return (com.google.cloud.filestore.v1beta1.Instance.FixedIOPS) mode_;
+      }
+      return com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Choose a fixed provisioned IOPS value for the instance, which will
+     * remain constant regardless of instance capacity. Value must be a
+     * multiple of 1000.
+     *
+     * If the chosen value is outside the supported range for the instance's
+     * capacity during instance creation, instance creation will fail with an
+     * `InvalidArgument` error. Similarly, if an instance capacity update
+     * would result in a value outside the supported range, the update will
+     * fail with an `InvalidArgument` error.
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.Instance.FixedIOPS fixed_iops = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.filestore.v1beta1.Instance.FixedIOPSOrBuilder getFixedIopsOrBuilder() {
+      if (modeCase_ == 2) {
+        return (com.google.cloud.filestore.v1beta1.Instance.FixedIOPS) mode_;
+      }
+      return com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (modeCase_ == 2) {
+        output.writeMessage(2, (com.google.cloud.filestore.v1beta1.Instance.FixedIOPS) mode_);
+      }
+      if (modeCase_ == 4) {
+        output.writeMessage(4, (com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB) mode_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (modeCase_ == 2) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2, (com.google.cloud.filestore.v1beta1.Instance.FixedIOPS) mode_);
+      }
+      if (modeCase_ == 4) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                4, (com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB) mode_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig other =
+          (com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig) obj;
+
+      if (!getModeCase().equals(other.getModeCase())) return false;
+      switch (modeCase_) {
+        case 4:
+          if (!getIopsPerTb().equals(other.getIopsPerTb())) return false;
+          break;
+        case 2:
+          if (!getFixedIops().equals(other.getFixedIops())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (modeCase_) {
+        case 4:
+          hash = (37 * hash) + IOPS_PER_TB_FIELD_NUMBER;
+          hash = (53 * hash) + getIopsPerTb().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + FIXED_IOPS_FIELD_NUMBER;
+          hash = (53 * hash) + getFixedIops().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used for setting the performance configuration.
+     * If the user doesn't specify PerformanceConfig, automatically provision
+     * the default performance settings as described in
+     * https://cloud.google.com/filestore/docs/performance. Larger instances will
+     * be linearly set to more IOPS. If the instance's capacity is increased or
+     * decreased, its performance will be automatically adjusted upwards or
+     * downwards accordingly (respectively).
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.filestore.v1beta1.Instance.PerformanceConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.filestore.v1beta1.Instance.PerformanceConfig)
+        com.google.cloud.filestore.v1beta1.Instance.PerformanceConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+            .internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+            .internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig.class,
+                com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (iopsPerTbBuilder_ != null) {
+          iopsPerTbBuilder_.clear();
+        }
+        if (fixedIopsBuilder_ != null) {
+          fixedIopsBuilder_.clear();
+        }
+        modeCase_ = 0;
+        mode_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+            .internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig build() {
+        com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig buildPartial() {
+        com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig result =
+            new com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig result) {
+        result.modeCase_ = modeCase_;
+        result.mode_ = this.mode_;
+        if (modeCase_ == 4 && iopsPerTbBuilder_ != null) {
+          result.mode_ = iopsPerTbBuilder_.build();
+        }
+        if (modeCase_ == 2 && fixedIopsBuilder_ != null) {
+          result.mode_ = fixedIopsBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig) {
+          return mergeFrom((com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig other) {
+        if (other
+            == com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig.getDefaultInstance())
+          return this;
+        switch (other.getModeCase()) {
+          case IOPS_PER_TB:
+            {
+              mergeIopsPerTb(other.getIopsPerTb());
+              break;
+            }
+          case FIXED_IOPS:
+            {
+              mergeFixedIops(other.getFixedIops());
+              break;
+            }
+          case MODE_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18:
+                {
+                  input.readMessage(getFixedIopsFieldBuilder().getBuilder(), extensionRegistry);
+                  modeCase_ = 2;
+                  break;
+                } // case 18
+              case 34:
+                {
+                  input.readMessage(getIopsPerTbFieldBuilder().getBuilder(), extensionRegistry);
+                  modeCase_ = 4;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int modeCase_ = 0;
+      private java.lang.Object mode_;
+
+      public ModeCase getModeCase() {
+        return ModeCase.forNumber(modeCase_);
+      }
+
+      public Builder clearMode() {
+        modeCase_ = 0;
+        mode_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB,
+              com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.Builder,
+              com.google.cloud.filestore.v1beta1.Instance.IOPSPerTBOrBuilder>
+          iopsPerTbBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Provision IOPS dynamically based on the capacity of the instance.
+       * Provisioned IOPS will be calculated by multiplying the capacity of the
+       * instance in TiB by the `iops_per_tb` value. For example, for a 2 TiB
+       * instance with an `iops_per_tb` value of 17000 the provisioned IOPS will
+       * be 34000.
+       *
+       * If the calculated value is outside the supported range for the
+       * instance's capacity during instance creation, instance creation will
+       * fail with an `InvalidArgument` error. Similarly, if an instance
+       * capacity update would result in a value outside the supported range,
+       * the update will fail with an `InvalidArgument` error.
+       * </pre>
+       *
+       * <code>.google.cloud.filestore.v1beta1.Instance.IOPSPerTB iops_per_tb = 4;</code>
+       *
+       * @return Whether the iopsPerTb field is set.
+       */
+      @java.lang.Override
+      public boolean hasIopsPerTb() {
+        return modeCase_ == 4;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Provision IOPS dynamically based on the capacity of the instance.
+       * Provisioned IOPS will be calculated by multiplying the capacity of the
+       * instance in TiB by the `iops_per_tb` value. For example, for a 2 TiB
+       * instance with an `iops_per_tb` value of 17000 the provisioned IOPS will
+       * be 34000.
+       *
+       * If the calculated value is outside the supported range for the
+       * instance's capacity during instance creation, instance creation will
+       * fail with an `InvalidArgument` error. Similarly, if an instance
+       * capacity update would result in a value outside the supported range,
+       * the update will fail with an `InvalidArgument` error.
+       * </pre>
+       *
+       * <code>.google.cloud.filestore.v1beta1.Instance.IOPSPerTB iops_per_tb = 4;</code>
+       *
+       * @return The iopsPerTb.
+       */
+      @java.lang.Override
+      public com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB getIopsPerTb() {
+        if (iopsPerTbBuilder_ == null) {
+          if (modeCase_ == 4) {
+            return (com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB) mode_;
+          }
+          return com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.getDefaultInstance();
+        } else {
+          if (modeCase_ == 4) {
+            return iopsPerTbBuilder_.getMessage();
+          }
+          return com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Provision IOPS dynamically based on the capacity of the instance.
+       * Provisioned IOPS will be calculated by multiplying the capacity of the
+       * instance in TiB by the `iops_per_tb` value. For example, for a 2 TiB
+       * instance with an `iops_per_tb` value of 17000 the provisioned IOPS will
+       * be 34000.
+       *
+       * If the calculated value is outside the supported range for the
+       * instance's capacity during instance creation, instance creation will
+       * fail with an `InvalidArgument` error. Similarly, if an instance
+       * capacity update would result in a value outside the supported range,
+       * the update will fail with an `InvalidArgument` error.
+       * </pre>
+       *
+       * <code>.google.cloud.filestore.v1beta1.Instance.IOPSPerTB iops_per_tb = 4;</code>
+       */
+      public Builder setIopsPerTb(com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB value) {
+        if (iopsPerTbBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mode_ = value;
+          onChanged();
+        } else {
+          iopsPerTbBuilder_.setMessage(value);
+        }
+        modeCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Provision IOPS dynamically based on the capacity of the instance.
+       * Provisioned IOPS will be calculated by multiplying the capacity of the
+       * instance in TiB by the `iops_per_tb` value. For example, for a 2 TiB
+       * instance with an `iops_per_tb` value of 17000 the provisioned IOPS will
+       * be 34000.
+       *
+       * If the calculated value is outside the supported range for the
+       * instance's capacity during instance creation, instance creation will
+       * fail with an `InvalidArgument` error. Similarly, if an instance
+       * capacity update would result in a value outside the supported range,
+       * the update will fail with an `InvalidArgument` error.
+       * </pre>
+       *
+       * <code>.google.cloud.filestore.v1beta1.Instance.IOPSPerTB iops_per_tb = 4;</code>
+       */
+      public Builder setIopsPerTb(
+          com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.Builder builderForValue) {
+        if (iopsPerTbBuilder_ == null) {
+          mode_ = builderForValue.build();
+          onChanged();
+        } else {
+          iopsPerTbBuilder_.setMessage(builderForValue.build());
+        }
+        modeCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Provision IOPS dynamically based on the capacity of the instance.
+       * Provisioned IOPS will be calculated by multiplying the capacity of the
+       * instance in TiB by the `iops_per_tb` value. For example, for a 2 TiB
+       * instance with an `iops_per_tb` value of 17000 the provisioned IOPS will
+       * be 34000.
+       *
+       * If the calculated value is outside the supported range for the
+       * instance's capacity during instance creation, instance creation will
+       * fail with an `InvalidArgument` error. Similarly, if an instance
+       * capacity update would result in a value outside the supported range,
+       * the update will fail with an `InvalidArgument` error.
+       * </pre>
+       *
+       * <code>.google.cloud.filestore.v1beta1.Instance.IOPSPerTB iops_per_tb = 4;</code>
+       */
+      public Builder mergeIopsPerTb(com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB value) {
+        if (iopsPerTbBuilder_ == null) {
+          if (modeCase_ == 4
+              && mode_
+                  != com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.getDefaultInstance()) {
+            mode_ =
+                com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.newBuilder(
+                        (com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB) mode_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            mode_ = value;
+          }
+          onChanged();
+        } else {
+          if (modeCase_ == 4) {
+            iopsPerTbBuilder_.mergeFrom(value);
+          } else {
+            iopsPerTbBuilder_.setMessage(value);
+          }
+        }
+        modeCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Provision IOPS dynamically based on the capacity of the instance.
+       * Provisioned IOPS will be calculated by multiplying the capacity of the
+       * instance in TiB by the `iops_per_tb` value. For example, for a 2 TiB
+       * instance with an `iops_per_tb` value of 17000 the provisioned IOPS will
+       * be 34000.
+       *
+       * If the calculated value is outside the supported range for the
+       * instance's capacity during instance creation, instance creation will
+       * fail with an `InvalidArgument` error. Similarly, if an instance
+       * capacity update would result in a value outside the supported range,
+       * the update will fail with an `InvalidArgument` error.
+       * </pre>
+       *
+       * <code>.google.cloud.filestore.v1beta1.Instance.IOPSPerTB iops_per_tb = 4;</code>
+       */
+      public Builder clearIopsPerTb() {
+        if (iopsPerTbBuilder_ == null) {
+          if (modeCase_ == 4) {
+            modeCase_ = 0;
+            mode_ = null;
+            onChanged();
+          }
+        } else {
+          if (modeCase_ == 4) {
+            modeCase_ = 0;
+            mode_ = null;
+          }
+          iopsPerTbBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Provision IOPS dynamically based on the capacity of the instance.
+       * Provisioned IOPS will be calculated by multiplying the capacity of the
+       * instance in TiB by the `iops_per_tb` value. For example, for a 2 TiB
+       * instance with an `iops_per_tb` value of 17000 the provisioned IOPS will
+       * be 34000.
+       *
+       * If the calculated value is outside the supported range for the
+       * instance's capacity during instance creation, instance creation will
+       * fail with an `InvalidArgument` error. Similarly, if an instance
+       * capacity update would result in a value outside the supported range,
+       * the update will fail with an `InvalidArgument` error.
+       * </pre>
+       *
+       * <code>.google.cloud.filestore.v1beta1.Instance.IOPSPerTB iops_per_tb = 4;</code>
+       */
+      public com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.Builder getIopsPerTbBuilder() {
+        return getIopsPerTbFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Provision IOPS dynamically based on the capacity of the instance.
+       * Provisioned IOPS will be calculated by multiplying the capacity of the
+       * instance in TiB by the `iops_per_tb` value. For example, for a 2 TiB
+       * instance with an `iops_per_tb` value of 17000 the provisioned IOPS will
+       * be 34000.
+       *
+       * If the calculated value is outside the supported range for the
+       * instance's capacity during instance creation, instance creation will
+       * fail with an `InvalidArgument` error. Similarly, if an instance
+       * capacity update would result in a value outside the supported range,
+       * the update will fail with an `InvalidArgument` error.
+       * </pre>
+       *
+       * <code>.google.cloud.filestore.v1beta1.Instance.IOPSPerTB iops_per_tb = 4;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.filestore.v1beta1.Instance.IOPSPerTBOrBuilder
+          getIopsPerTbOrBuilder() {
+        if ((modeCase_ == 4) && (iopsPerTbBuilder_ != null)) {
+          return iopsPerTbBuilder_.getMessageOrBuilder();
+        } else {
+          if (modeCase_ == 4) {
+            return (com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB) mode_;
+          }
+          return com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Provision IOPS dynamically based on the capacity of the instance.
+       * Provisioned IOPS will be calculated by multiplying the capacity of the
+       * instance in TiB by the `iops_per_tb` value. For example, for a 2 TiB
+       * instance with an `iops_per_tb` value of 17000 the provisioned IOPS will
+       * be 34000.
+       *
+       * If the calculated value is outside the supported range for the
+       * instance's capacity during instance creation, instance creation will
+       * fail with an `InvalidArgument` error. Similarly, if an instance
+       * capacity update would result in a value outside the supported range,
+       * the update will fail with an `InvalidArgument` error.
+       * </pre>
+       *
+       * <code>.google.cloud.filestore.v1beta1.Instance.IOPSPerTB iops_per_tb = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB,
+              com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.Builder,
+              com.google.cloud.filestore.v1beta1.Instance.IOPSPerTBOrBuilder>
+          getIopsPerTbFieldBuilder() {
+        if (iopsPerTbBuilder_ == null) {
+          if (!(modeCase_ == 4)) {
+            mode_ = com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.getDefaultInstance();
+          }
+          iopsPerTbBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB,
+                  com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB.Builder,
+                  com.google.cloud.filestore.v1beta1.Instance.IOPSPerTBOrBuilder>(
+                  (com.google.cloud.filestore.v1beta1.Instance.IOPSPerTB) mode_,
+                  getParentForChildren(),
+                  isClean());
+          mode_ = null;
+        }
+        modeCase_ = 4;
+        onChanged();
+        return iopsPerTbBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.filestore.v1beta1.Instance.FixedIOPS,
+              com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.Builder,
+              com.google.cloud.filestore.v1beta1.Instance.FixedIOPSOrBuilder>
+          fixedIopsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Choose a fixed provisioned IOPS value for the instance, which will
+       * remain constant regardless of instance capacity. Value must be a
+       * multiple of 1000.
+       *
+       * If the chosen value is outside the supported range for the instance's
+       * capacity during instance creation, instance creation will fail with an
+       * `InvalidArgument` error. Similarly, if an instance capacity update
+       * would result in a value outside the supported range, the update will
+       * fail with an `InvalidArgument` error.
+       * </pre>
+       *
+       * <code>.google.cloud.filestore.v1beta1.Instance.FixedIOPS fixed_iops = 2;</code>
+       *
+       * @return Whether the fixedIops field is set.
+       */
+      @java.lang.Override
+      public boolean hasFixedIops() {
+        return modeCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Choose a fixed provisioned IOPS value for the instance, which will
+       * remain constant regardless of instance capacity. Value must be a
+       * multiple of 1000.
+       *
+       * If the chosen value is outside the supported range for the instance's
+       * capacity during instance creation, instance creation will fail with an
+       * `InvalidArgument` error. Similarly, if an instance capacity update
+       * would result in a value outside the supported range, the update will
+       * fail with an `InvalidArgument` error.
+       * </pre>
+       *
+       * <code>.google.cloud.filestore.v1beta1.Instance.FixedIOPS fixed_iops = 2;</code>
+       *
+       * @return The fixedIops.
+       */
+      @java.lang.Override
+      public com.google.cloud.filestore.v1beta1.Instance.FixedIOPS getFixedIops() {
+        if (fixedIopsBuilder_ == null) {
+          if (modeCase_ == 2) {
+            return (com.google.cloud.filestore.v1beta1.Instance.FixedIOPS) mode_;
+          }
+          return com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.getDefaultInstance();
+        } else {
+          if (modeCase_ == 2) {
+            return fixedIopsBuilder_.getMessage();
+          }
+          return com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Choose a fixed provisioned IOPS value for the instance, which will
+       * remain constant regardless of instance capacity. Value must be a
+       * multiple of 1000.
+       *
+       * If the chosen value is outside the supported range for the instance's
+       * capacity during instance creation, instance creation will fail with an
+       * `InvalidArgument` error. Similarly, if an instance capacity update
+       * would result in a value outside the supported range, the update will
+       * fail with an `InvalidArgument` error.
+       * </pre>
+       *
+       * <code>.google.cloud.filestore.v1beta1.Instance.FixedIOPS fixed_iops = 2;</code>
+       */
+      public Builder setFixedIops(com.google.cloud.filestore.v1beta1.Instance.FixedIOPS value) {
+        if (fixedIopsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mode_ = value;
+          onChanged();
+        } else {
+          fixedIopsBuilder_.setMessage(value);
+        }
+        modeCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Choose a fixed provisioned IOPS value for the instance, which will
+       * remain constant regardless of instance capacity. Value must be a
+       * multiple of 1000.
+       *
+       * If the chosen value is outside the supported range for the instance's
+       * capacity during instance creation, instance creation will fail with an
+       * `InvalidArgument` error. Similarly, if an instance capacity update
+       * would result in a value outside the supported range, the update will
+       * fail with an `InvalidArgument` error.
+       * </pre>
+       *
+       * <code>.google.cloud.filestore.v1beta1.Instance.FixedIOPS fixed_iops = 2;</code>
+       */
+      public Builder setFixedIops(
+          com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.Builder builderForValue) {
+        if (fixedIopsBuilder_ == null) {
+          mode_ = builderForValue.build();
+          onChanged();
+        } else {
+          fixedIopsBuilder_.setMessage(builderForValue.build());
+        }
+        modeCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Choose a fixed provisioned IOPS value for the instance, which will
+       * remain constant regardless of instance capacity. Value must be a
+       * multiple of 1000.
+       *
+       * If the chosen value is outside the supported range for the instance's
+       * capacity during instance creation, instance creation will fail with an
+       * `InvalidArgument` error. Similarly, if an instance capacity update
+       * would result in a value outside the supported range, the update will
+       * fail with an `InvalidArgument` error.
+       * </pre>
+       *
+       * <code>.google.cloud.filestore.v1beta1.Instance.FixedIOPS fixed_iops = 2;</code>
+       */
+      public Builder mergeFixedIops(com.google.cloud.filestore.v1beta1.Instance.FixedIOPS value) {
+        if (fixedIopsBuilder_ == null) {
+          if (modeCase_ == 2
+              && mode_
+                  != com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.getDefaultInstance()) {
+            mode_ =
+                com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.newBuilder(
+                        (com.google.cloud.filestore.v1beta1.Instance.FixedIOPS) mode_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            mode_ = value;
+          }
+          onChanged();
+        } else {
+          if (modeCase_ == 2) {
+            fixedIopsBuilder_.mergeFrom(value);
+          } else {
+            fixedIopsBuilder_.setMessage(value);
+          }
+        }
+        modeCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Choose a fixed provisioned IOPS value for the instance, which will
+       * remain constant regardless of instance capacity. Value must be a
+       * multiple of 1000.
+       *
+       * If the chosen value is outside the supported range for the instance's
+       * capacity during instance creation, instance creation will fail with an
+       * `InvalidArgument` error. Similarly, if an instance capacity update
+       * would result in a value outside the supported range, the update will
+       * fail with an `InvalidArgument` error.
+       * </pre>
+       *
+       * <code>.google.cloud.filestore.v1beta1.Instance.FixedIOPS fixed_iops = 2;</code>
+       */
+      public Builder clearFixedIops() {
+        if (fixedIopsBuilder_ == null) {
+          if (modeCase_ == 2) {
+            modeCase_ = 0;
+            mode_ = null;
+            onChanged();
+          }
+        } else {
+          if (modeCase_ == 2) {
+            modeCase_ = 0;
+            mode_ = null;
+          }
+          fixedIopsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Choose a fixed provisioned IOPS value for the instance, which will
+       * remain constant regardless of instance capacity. Value must be a
+       * multiple of 1000.
+       *
+       * If the chosen value is outside the supported range for the instance's
+       * capacity during instance creation, instance creation will fail with an
+       * `InvalidArgument` error. Similarly, if an instance capacity update
+       * would result in a value outside the supported range, the update will
+       * fail with an `InvalidArgument` error.
+       * </pre>
+       *
+       * <code>.google.cloud.filestore.v1beta1.Instance.FixedIOPS fixed_iops = 2;</code>
+       */
+      public com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.Builder getFixedIopsBuilder() {
+        return getFixedIopsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Choose a fixed provisioned IOPS value for the instance, which will
+       * remain constant regardless of instance capacity. Value must be a
+       * multiple of 1000.
+       *
+       * If the chosen value is outside the supported range for the instance's
+       * capacity during instance creation, instance creation will fail with an
+       * `InvalidArgument` error. Similarly, if an instance capacity update
+       * would result in a value outside the supported range, the update will
+       * fail with an `InvalidArgument` error.
+       * </pre>
+       *
+       * <code>.google.cloud.filestore.v1beta1.Instance.FixedIOPS fixed_iops = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.filestore.v1beta1.Instance.FixedIOPSOrBuilder
+          getFixedIopsOrBuilder() {
+        if ((modeCase_ == 2) && (fixedIopsBuilder_ != null)) {
+          return fixedIopsBuilder_.getMessageOrBuilder();
+        } else {
+          if (modeCase_ == 2) {
+            return (com.google.cloud.filestore.v1beta1.Instance.FixedIOPS) mode_;
+          }
+          return com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Choose a fixed provisioned IOPS value for the instance, which will
+       * remain constant regardless of instance capacity. Value must be a
+       * multiple of 1000.
+       *
+       * If the chosen value is outside the supported range for the instance's
+       * capacity during instance creation, instance creation will fail with an
+       * `InvalidArgument` error. Similarly, if an instance capacity update
+       * would result in a value outside the supported range, the update will
+       * fail with an `InvalidArgument` error.
+       * </pre>
+       *
+       * <code>.google.cloud.filestore.v1beta1.Instance.FixedIOPS fixed_iops = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.filestore.v1beta1.Instance.FixedIOPS,
+              com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.Builder,
+              com.google.cloud.filestore.v1beta1.Instance.FixedIOPSOrBuilder>
+          getFixedIopsFieldBuilder() {
+        if (fixedIopsBuilder_ == null) {
+          if (!(modeCase_ == 2)) {
+            mode_ = com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.getDefaultInstance();
+          }
+          fixedIopsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.filestore.v1beta1.Instance.FixedIOPS,
+                  com.google.cloud.filestore.v1beta1.Instance.FixedIOPS.Builder,
+                  com.google.cloud.filestore.v1beta1.Instance.FixedIOPSOrBuilder>(
+                  (com.google.cloud.filestore.v1beta1.Instance.FixedIOPS) mode_,
+                  getParentForChildren(),
+                  isClean());
+          mode_ = null;
+        }
+        modeCase_ = 2;
+        onChanged();
+        return fixedIopsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.filestore.v1beta1.Instance.PerformanceConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.filestore.v1beta1.Instance.PerformanceConfig)
+    private static final com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig();
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PerformanceConfig> PARSER =
+        new com.google.protobuf.AbstractParser<PerformanceConfig>() {
+          @java.lang.Override
+          public PerformanceConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PerformanceConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PerformanceConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface PerformanceLimitsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.filestore.v1beta1.Instance.PerformanceLimits)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The max IOPS.
+     * </pre>
+     *
+     * <code>int64 max_iops = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The maxIops.
+     */
+    long getMaxIops();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The max read IOPS.
+     * </pre>
+     *
+     * <code>int64 max_read_iops = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The maxReadIops.
+     */
+    long getMaxReadIops();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The max write IOPS.
+     * </pre>
+     *
+     * <code>int64 max_write_iops = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The maxWriteIops.
+     */
+    long getMaxWriteIops();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The max read throughput in bytes per second.
+     * </pre>
+     *
+     * <code>int64 max_read_throughput_bps = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The maxReadThroughputBps.
+     */
+    long getMaxReadThroughputBps();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The max write throughput in bytes per second.
+     * </pre>
+     *
+     * <code>int64 max_write_throughput_bps = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The maxWriteThroughputBps.
+     */
+    long getMaxWriteThroughputBps();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The enforced performance limits, calculated from the instance's performance
+   * configuration.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.filestore.v1beta1.Instance.PerformanceLimits}
+   */
+  public static final class PerformanceLimits extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.filestore.v1beta1.Instance.PerformanceLimits)
+      PerformanceLimitsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PerformanceLimits.newBuilder() to construct.
+    private PerformanceLimits(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PerformanceLimits() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PerformanceLimits();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+          .internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceLimits_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+          .internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceLimits_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits.class,
+              com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits.Builder.class);
+    }
+
+    public static final int MAX_IOPS_FIELD_NUMBER = 7;
+    private long maxIops_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The max IOPS.
+     * </pre>
+     *
+     * <code>int64 max_iops = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The maxIops.
+     */
+    @java.lang.Override
+    public long getMaxIops() {
+      return maxIops_;
+    }
+
+    public static final int MAX_READ_IOPS_FIELD_NUMBER = 1;
+    private long maxReadIops_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The max read IOPS.
+     * </pre>
+     *
+     * <code>int64 max_read_iops = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The maxReadIops.
+     */
+    @java.lang.Override
+    public long getMaxReadIops() {
+      return maxReadIops_;
+    }
+
+    public static final int MAX_WRITE_IOPS_FIELD_NUMBER = 2;
+    private long maxWriteIops_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The max write IOPS.
+     * </pre>
+     *
+     * <code>int64 max_write_iops = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The maxWriteIops.
+     */
+    @java.lang.Override
+    public long getMaxWriteIops() {
+      return maxWriteIops_;
+    }
+
+    public static final int MAX_READ_THROUGHPUT_BPS_FIELD_NUMBER = 5;
+    private long maxReadThroughputBps_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The max read throughput in bytes per second.
+     * </pre>
+     *
+     * <code>int64 max_read_throughput_bps = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The maxReadThroughputBps.
+     */
+    @java.lang.Override
+    public long getMaxReadThroughputBps() {
+      return maxReadThroughputBps_;
+    }
+
+    public static final int MAX_WRITE_THROUGHPUT_BPS_FIELD_NUMBER = 6;
+    private long maxWriteThroughputBps_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The max write throughput in bytes per second.
+     * </pre>
+     *
+     * <code>int64 max_write_throughput_bps = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The maxWriteThroughputBps.
+     */
+    @java.lang.Override
+    public long getMaxWriteThroughputBps() {
+      return maxWriteThroughputBps_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (maxReadIops_ != 0L) {
+        output.writeInt64(1, maxReadIops_);
+      }
+      if (maxWriteIops_ != 0L) {
+        output.writeInt64(2, maxWriteIops_);
+      }
+      if (maxReadThroughputBps_ != 0L) {
+        output.writeInt64(5, maxReadThroughputBps_);
+      }
+      if (maxWriteThroughputBps_ != 0L) {
+        output.writeInt64(6, maxWriteThroughputBps_);
+      }
+      if (maxIops_ != 0L) {
+        output.writeInt64(7, maxIops_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (maxReadIops_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, maxReadIops_);
+      }
+      if (maxWriteIops_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, maxWriteIops_);
+      }
+      if (maxReadThroughputBps_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(5, maxReadThroughputBps_);
+      }
+      if (maxWriteThroughputBps_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, maxWriteThroughputBps_);
+      }
+      if (maxIops_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(7, maxIops_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits other =
+          (com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits) obj;
+
+      if (getMaxIops() != other.getMaxIops()) return false;
+      if (getMaxReadIops() != other.getMaxReadIops()) return false;
+      if (getMaxWriteIops() != other.getMaxWriteIops()) return false;
+      if (getMaxReadThroughputBps() != other.getMaxReadThroughputBps()) return false;
+      if (getMaxWriteThroughputBps() != other.getMaxWriteThroughputBps()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MAX_IOPS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxIops());
+      hash = (37 * hash) + MAX_READ_IOPS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxReadIops());
+      hash = (37 * hash) + MAX_WRITE_IOPS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxWriteIops());
+      hash = (37 * hash) + MAX_READ_THROUGHPUT_BPS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxReadThroughputBps());
+      hash = (37 * hash) + MAX_WRITE_THROUGHPUT_BPS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxWriteThroughputBps());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The enforced performance limits, calculated from the instance's performance
+     * configuration.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.filestore.v1beta1.Instance.PerformanceLimits}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.filestore.v1beta1.Instance.PerformanceLimits)
+        com.google.cloud.filestore.v1beta1.Instance.PerformanceLimitsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+            .internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceLimits_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+            .internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceLimits_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits.class,
+                com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits.Builder.class);
+      }
+
+      // Construct using com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        maxIops_ = 0L;
+        maxReadIops_ = 0L;
+        maxWriteIops_ = 0L;
+        maxReadThroughputBps_ = 0L;
+        maxWriteThroughputBps_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+            .internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceLimits_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits
+          getDefaultInstanceForType() {
+        return com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits build() {
+        com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits buildPartial() {
+        com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits result =
+            new com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.maxIops_ = maxIops_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxReadIops_ = maxReadIops_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.maxWriteIops_ = maxWriteIops_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.maxReadThroughputBps_ = maxReadThroughputBps_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.maxWriteThroughputBps_ = maxWriteThroughputBps_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits) {
+          return mergeFrom((com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits other) {
+        if (other
+            == com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits.getDefaultInstance())
+          return this;
+        if (other.getMaxIops() != 0L) {
+          setMaxIops(other.getMaxIops());
+        }
+        if (other.getMaxReadIops() != 0L) {
+          setMaxReadIops(other.getMaxReadIops());
+        }
+        if (other.getMaxWriteIops() != 0L) {
+          setMaxWriteIops(other.getMaxWriteIops());
+        }
+        if (other.getMaxReadThroughputBps() != 0L) {
+          setMaxReadThroughputBps(other.getMaxReadThroughputBps());
+        }
+        if (other.getMaxWriteThroughputBps() != 0L) {
+          setMaxWriteThroughputBps(other.getMaxWriteThroughputBps());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  maxReadIops_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  maxWriteIops_ = input.readInt64();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 16
+              case 40:
+                {
+                  maxReadThroughputBps_ = input.readInt64();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 40
+              case 48:
+                {
+                  maxWriteThroughputBps_ = input.readInt64();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 48
+              case 56:
+                {
+                  maxIops_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 56
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long maxIops_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The max IOPS.
+       * </pre>
+       *
+       * <code>int64 max_iops = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The maxIops.
+       */
+      @java.lang.Override
+      public long getMaxIops() {
+        return maxIops_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The max IOPS.
+       * </pre>
+       *
+       * <code>int64 max_iops = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The maxIops to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxIops(long value) {
+
+        maxIops_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The max IOPS.
+       * </pre>
+       *
+       * <code>int64 max_iops = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxIops() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        maxIops_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long maxReadIops_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The max read IOPS.
+       * </pre>
+       *
+       * <code>int64 max_read_iops = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The maxReadIops.
+       */
+      @java.lang.Override
+      public long getMaxReadIops() {
+        return maxReadIops_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The max read IOPS.
+       * </pre>
+       *
+       * <code>int64 max_read_iops = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The maxReadIops to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxReadIops(long value) {
+
+        maxReadIops_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The max read IOPS.
+       * </pre>
+       *
+       * <code>int64 max_read_iops = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxReadIops() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maxReadIops_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long maxWriteIops_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The max write IOPS.
+       * </pre>
+       *
+       * <code>int64 max_write_iops = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The maxWriteIops.
+       */
+      @java.lang.Override
+      public long getMaxWriteIops() {
+        return maxWriteIops_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The max write IOPS.
+       * </pre>
+       *
+       * <code>int64 max_write_iops = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The maxWriteIops to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxWriteIops(long value) {
+
+        maxWriteIops_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The max write IOPS.
+       * </pre>
+       *
+       * <code>int64 max_write_iops = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxWriteIops() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        maxWriteIops_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long maxReadThroughputBps_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The max read throughput in bytes per second.
+       * </pre>
+       *
+       * <code>int64 max_read_throughput_bps = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The maxReadThroughputBps.
+       */
+      @java.lang.Override
+      public long getMaxReadThroughputBps() {
+        return maxReadThroughputBps_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The max read throughput in bytes per second.
+       * </pre>
+       *
+       * <code>int64 max_read_throughput_bps = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The maxReadThroughputBps to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxReadThroughputBps(long value) {
+
+        maxReadThroughputBps_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The max read throughput in bytes per second.
+       * </pre>
+       *
+       * <code>int64 max_read_throughput_bps = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxReadThroughputBps() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        maxReadThroughputBps_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long maxWriteThroughputBps_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The max write throughput in bytes per second.
+       * </pre>
+       *
+       * <code>int64 max_write_throughput_bps = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The maxWriteThroughputBps.
+       */
+      @java.lang.Override
+      public long getMaxWriteThroughputBps() {
+        return maxWriteThroughputBps_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The max write throughput in bytes per second.
+       * </pre>
+       *
+       * <code>int64 max_write_throughput_bps = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The maxWriteThroughputBps to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxWriteThroughputBps(long value) {
+
+        maxWriteThroughputBps_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The max write throughput in bytes per second.
+       * </pre>
+       *
+       * <code>int64 max_write_throughput_bps = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxWriteThroughputBps() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        maxWriteThroughputBps_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.filestore.v1beta1.Instance.PerformanceLimits)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.filestore.v1beta1.Instance.PerformanceLimits)
+    private static final com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits();
+    }
+
+    public static com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PerformanceLimits> PARSER =
+        new com.google.protobuf.AbstractParser<PerformanceLimits>() {
+          @java.lang.Override
+          public PerformanceLimits parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PerformanceLimits> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PerformanceLimits> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   private int bitField0_;
@@ -2004,11 +5560,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Directory Services configuration for Kerberos-based authentication.
-   * Should only be set if protocol is "NFS_V4_1".
+   * Optional. Directory Services configuration for Kerberos-based
+   * authentication. Should only be set if protocol is "NFS_V4_1".
    * </pre>
    *
-   * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+   * <code>
+   * .google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the directoryServices field is set.
    */
@@ -2020,11 +5578,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Directory Services configuration for Kerberos-based authentication.
-   * Should only be set if protocol is "NFS_V4_1".
+   * Optional. Directory Services configuration for Kerberos-based
+   * authentication. Should only be set if protocol is "NFS_V4_1".
    * </pre>
    *
-   * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+   * <code>
+   * .google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The directoryServices.
    */
@@ -2038,11 +5598,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Directory Services configuration for Kerberos-based authentication.
-   * Should only be set if protocol is "NFS_V4_1".
+   * Optional. Directory Services configuration for Kerberos-based
+   * authentication. Should only be set if protocol is "NFS_V4_1".
    * </pre>
    *
-   * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+   * <code>
+   * .google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.filestore.v1beta1.DirectoryServicesConfigOrBuilder
@@ -2050,6 +5612,412 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return directoryServices_ == null
         ? com.google.cloud.filestore.v1beta1.DirectoryServicesConfig.getDefaultInstance()
         : directoryServices_;
+  }
+
+  public static final int REPLICATION_FIELD_NUMBER = 25;
+  private com.google.cloud.filestore.v1beta1.Replication replication_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Replication configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Replication replication = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the replication field is set.
+   */
+  @java.lang.Override
+  public boolean hasReplication() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Replication configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Replication replication = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The replication.
+   */
+  @java.lang.Override
+  public com.google.cloud.filestore.v1beta1.Replication getReplication() {
+    return replication_ == null
+        ? com.google.cloud.filestore.v1beta1.Replication.getDefaultInstance()
+        : replication_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Replication configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Replication replication = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.filestore.v1beta1.ReplicationOrBuilder getReplicationOrBuilder() {
+    return replication_ == null
+        ? com.google.cloud.filestore.v1beta1.Replication.getDefaultInstance()
+        : replication_;
+  }
+
+  public static final int TAGS_FIELD_NUMBER = 27;
+
+  private static final class TagsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+                .internal_static_google_cloud_filestore_v1beta1_Instance_TagsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+    if (tags_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+    }
+    return tags_;
+  }
+
+  public int getTagsCount() {
+    return internalGetTags().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag key-value pairs bound to this
+   * resource. Each key must be a namespaced name and each value a short name.
+   * Example:
+   * "123456789012/environment" : "production",
+   * "123456789013/costCenter" : "marketing"
+   * See the documentation for more information:
+   * - Namespaced name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+   * - Short name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsTags(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetTags().getMap().containsKey(key);
+  }
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getTags() {
+    return getTagsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag key-value pairs bound to this
+   * resource. Each key must be a namespaced name and each value a short name.
+   * Example:
+   * "123456789012/environment" : "production",
+   * "123456789013/costCenter" : "marketing"
+   * See the documentation for more information:
+   * - Namespaced name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+   * - Short name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+    return internalGetTags().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag key-value pairs bound to this
+   * resource. Each key must be a namespaced name and each value a short name.
+   * Example:
+   * "123456789012/environment" : "production",
+   * "123456789013/costCenter" : "marketing"
+   * See the documentation for more information:
+   * - Namespaced name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+   * - Short name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag key-value pairs bound to this
+   * resource. Each key must be a namespaced name and each value a short name.
+   * Example:
+   * "123456789012/environment" : "production",
+   * "123456789013/costCenter" : "marketing"
+   * See the documentation for more information:
+   * - Namespaced name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+   * - Short name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getTagsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int CUSTOM_PERFORMANCE_SUPPORTED_FIELD_NUMBER = 28;
+  private boolean customPerformanceSupported_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether this instance supports configuring its
+   * performance. If true, the user can configure the instance's performance by
+   * using the 'performance_config' field.
+   * </pre>
+   *
+   * <code>bool custom_performance_supported = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The customPerformanceSupported.
+   */
+  @java.lang.Override
+  public boolean getCustomPerformanceSupported() {
+    return customPerformanceSupported_;
+  }
+
+  public static final int PERFORMANCE_CONFIG_FIELD_NUMBER = 29;
+  private com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig performanceConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to configure performance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Instance.PerformanceConfig performance_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the performanceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPerformanceConfig() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to configure performance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Instance.PerformanceConfig performance_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The performanceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig getPerformanceConfig() {
+    return performanceConfig_ == null
+        ? com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig.getDefaultInstance()
+        : performanceConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to configure performance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Instance.PerformanceConfig performance_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.filestore.v1beta1.Instance.PerformanceConfigOrBuilder
+      getPerformanceConfigOrBuilder() {
+    return performanceConfig_ == null
+        ? com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig.getDefaultInstance()
+        : performanceConfig_;
+  }
+
+  public static final int PERFORMANCE_LIMITS_FIELD_NUMBER = 30;
+  private com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits performanceLimits_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Used for getting performance limits.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Instance.PerformanceLimits performance_limits = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the performanceLimits field is set.
+   */
+  @java.lang.Override
+  public boolean hasPerformanceLimits() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Used for getting performance limits.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Instance.PerformanceLimits performance_limits = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The performanceLimits.
+   */
+  @java.lang.Override
+  public com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits getPerformanceLimits() {
+    return performanceLimits_ == null
+        ? com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits.getDefaultInstance()
+        : performanceLimits_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Used for getting performance limits.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Instance.PerformanceLimits performance_limits = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.filestore.v1beta1.Instance.PerformanceLimitsOrBuilder
+      getPerformanceLimitsOrBuilder() {
+    return performanceLimits_ == null
+        ? com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits.getDefaultInstance()
+        : performanceLimits_;
+  }
+
+  public static final int DELETION_PROTECTION_ENABLED_FIELD_NUMBER = 31;
+  private boolean deletionProtectionEnabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the instance is protected against deletion.
+   * </pre>
+   *
+   * <code>bool deletion_protection_enabled = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The deletionProtectionEnabled.
+   */
+  @java.lang.Override
+  public boolean getDeletionProtectionEnabled() {
+    return deletionProtectionEnabled_;
+  }
+
+  public static final int DELETION_PROTECTION_REASON_FIELD_NUMBER = 32;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deletionProtectionReason_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The reason for enabling deletion protection.
+   * </pre>
+   *
+   * <code>string deletion_protection_reason = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The deletionProtectionReason.
+   */
+  @java.lang.Override
+  public java.lang.String getDeletionProtectionReason() {
+    java.lang.Object ref = deletionProtectionReason_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      deletionProtectionReason_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The reason for enabling deletion protection.
+   * </pre>
+   *
+   * <code>string deletion_protection_reason = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for deletionProtectionReason.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDeletionProtectionReasonBytes() {
+    java.lang.Object ref = deletionProtectionReason_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      deletionProtectionReason_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2132,8 +6100,28 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(24, getDirectoryServices());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(25, getReplication());
+    }
     if (satisfiesPzi_ != false) {
       output.writeBool(26, satisfiesPzi_);
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 27);
+    if (customPerformanceSupported_ != false) {
+      output.writeBool(28, customPerformanceSupported_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(29, getPerformanceConfig());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(30, getPerformanceLimits());
+    }
+    if (deletionProtectionEnabled_ != false) {
+      output.writeBool(31, deletionProtectionEnabled_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deletionProtectionReason_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 32, deletionProtectionReason_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2223,8 +6211,38 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getDirectoryServices());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getReplication());
+    }
     if (satisfiesPzi_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(26, satisfiesPzi_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetTags().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+          TagsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, tags__);
+    }
+    if (customPerformanceSupported_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(28, customPerformanceSupported_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, getPerformanceConfig());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, getPerformanceLimits());
+    }
+    if (deletionProtectionEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(31, deletionProtectionEnabled_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deletionProtectionReason_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(32, deletionProtectionReason_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2272,6 +6290,22 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasDirectoryServices()) {
       if (!getDirectoryServices().equals(other.getDirectoryServices())) return false;
     }
+    if (hasReplication() != other.hasReplication()) return false;
+    if (hasReplication()) {
+      if (!getReplication().equals(other.getReplication())) return false;
+    }
+    if (!internalGetTags().equals(other.internalGetTags())) return false;
+    if (getCustomPerformanceSupported() != other.getCustomPerformanceSupported()) return false;
+    if (hasPerformanceConfig() != other.hasPerformanceConfig()) return false;
+    if (hasPerformanceConfig()) {
+      if (!getPerformanceConfig().equals(other.getPerformanceConfig())) return false;
+    }
+    if (hasPerformanceLimits() != other.hasPerformanceLimits()) return false;
+    if (hasPerformanceLimits()) {
+      if (!getPerformanceLimits().equals(other.getPerformanceLimits())) return false;
+    }
+    if (getDeletionProtectionEnabled() != other.getDeletionProtectionEnabled()) return false;
+    if (!getDeletionProtectionReason().equals(other.getDeletionProtectionReason())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2339,6 +6373,28 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DIRECTORY_SERVICES_FIELD_NUMBER;
       hash = (53 * hash) + getDirectoryServices().hashCode();
     }
+    if (hasReplication()) {
+      hash = (37 * hash) + REPLICATION_FIELD_NUMBER;
+      hash = (53 * hash) + getReplication().hashCode();
+    }
+    if (!internalGetTags().getMap().isEmpty()) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetTags().hashCode();
+    }
+    hash = (37 * hash) + CUSTOM_PERFORMANCE_SUPPORTED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCustomPerformanceSupported());
+    if (hasPerformanceConfig()) {
+      hash = (37 * hash) + PERFORMANCE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPerformanceConfig().hashCode();
+    }
+    if (hasPerformanceLimits()) {
+      hash = (37 * hash) + PERFORMANCE_LIMITS_FIELD_NUMBER;
+      hash = (53 * hash) + getPerformanceLimits().hashCode();
+    }
+    hash = (37 * hash) + DELETION_PROTECTION_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeletionProtectionEnabled());
+    hash = (37 * hash) + DELETION_PROTECTION_REASON_FIELD_NUMBER;
+    hash = (53 * hash) + getDeletionProtectionReason().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2463,6 +6519,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 9:
           return internalGetLabels();
+        case 27:
+          return internalGetTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2474,6 +6532,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 9:
           return internalGetMutableLabels();
+        case 27:
+          return internalGetMutableTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2506,6 +6566,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         getNetworksFieldBuilder();
         getSatisfiesPzsFieldBuilder();
         getDirectoryServicesFieldBuilder();
+        getReplicationFieldBuilder();
+        getPerformanceConfigFieldBuilder();
+        getPerformanceLimitsFieldBuilder();
       }
     }
 
@@ -2559,6 +6622,25 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         directoryServicesBuilder_.dispose();
         directoryServicesBuilder_ = null;
       }
+      replication_ = null;
+      if (replicationBuilder_ != null) {
+        replicationBuilder_.dispose();
+        replicationBuilder_ = null;
+      }
+      internalGetMutableTags().clear();
+      customPerformanceSupported_ = false;
+      performanceConfig_ = null;
+      if (performanceConfigBuilder_ != null) {
+        performanceConfigBuilder_.dispose();
+        performanceConfigBuilder_ = null;
+      }
+      performanceLimits_ = null;
+      if (performanceLimitsBuilder_ != null) {
+        performanceLimitsBuilder_.dispose();
+        performanceLimitsBuilder_ = null;
+      }
+      deletionProtectionEnabled_ = false;
+      deletionProtectionReason_ = "";
       return this;
     }
 
@@ -2684,6 +6766,38 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 ? directoryServices_
                 : directoryServicesBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.replication_ =
+            replicationBuilder_ == null ? replication_ : replicationBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.tags_ = internalGetTags();
+        result.tags_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.customPerformanceSupported_ = customPerformanceSupported_;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.performanceConfig_ =
+            performanceConfigBuilder_ == null
+                ? performanceConfig_
+                : performanceConfigBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.performanceLimits_ =
+            performanceLimitsBuilder_ == null
+                ? performanceLimits_
+                : performanceLimitsBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.deletionProtectionEnabled_ = deletionProtectionEnabled_;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.deletionProtectionReason_ = deletionProtectionReason_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2859,6 +6973,28 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDirectoryServices()) {
         mergeDirectoryServices(other.getDirectoryServices());
+      }
+      if (other.hasReplication()) {
+        mergeReplication(other.getReplication());
+      }
+      internalGetMutableTags().mergeFrom(other.internalGetTags());
+      bitField0_ |= 0x00400000;
+      if (other.getCustomPerformanceSupported() != false) {
+        setCustomPerformanceSupported(other.getCustomPerformanceSupported());
+      }
+      if (other.hasPerformanceConfig()) {
+        mergePerformanceConfig(other.getPerformanceConfig());
+      }
+      if (other.hasPerformanceLimits()) {
+        mergePerformanceLimits(other.getPerformanceLimits());
+      }
+      if (other.getDeletionProtectionEnabled() != false) {
+        setDeletionProtectionEnabled(other.getDeletionProtectionEnabled());
+      }
+      if (!other.getDeletionProtectionReason().isEmpty()) {
+        deletionProtectionReason_ = other.deletionProtectionReason_;
+        bitField0_ |= 0x08000000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3042,12 +7178,59 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00100000;
                 break;
               } // case 194
+            case 202:
+              {
+                input.readMessage(getReplicationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 202
             case 208:
               {
                 satisfiesPzi_ = input.readBool();
                 bitField0_ |= 0x00000800;
                 break;
               } // case 208
+            case 218:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+                    input.readMessage(
+                        TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 218
+            case 224:
+              {
+                customPerformanceSupported_ = input.readBool();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 224
+            case 234:
+              {
+                input.readMessage(
+                    getPerformanceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 234
+            case 242:
+              {
+                input.readMessage(
+                    getPerformanceLimitsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 242
+            case 248:
+              {
+                deletionProtectionEnabled_ = input.readBool();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 248
+            case 258:
+              {
+                deletionProtectionReason_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 258
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5831,11 +10014,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Directory Services configuration for Kerberos-based authentication.
-     * Should only be set if protocol is "NFS_V4_1".
+     * Optional. Directory Services configuration for Kerberos-based
+     * authentication. Should only be set if protocol is "NFS_V4_1".
      * </pre>
      *
-     * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+     * <code>
+     * .google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the directoryServices field is set.
      */
@@ -5846,11 +10031,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Directory Services configuration for Kerberos-based authentication.
-     * Should only be set if protocol is "NFS_V4_1".
+     * Optional. Directory Services configuration for Kerberos-based
+     * authentication. Should only be set if protocol is "NFS_V4_1".
      * </pre>
      *
-     * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+     * <code>
+     * .google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The directoryServices.
      */
@@ -5867,11 +10054,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Directory Services configuration for Kerberos-based authentication.
-     * Should only be set if protocol is "NFS_V4_1".
+     * Optional. Directory Services configuration for Kerberos-based
+     * authentication. Should only be set if protocol is "NFS_V4_1".
      * </pre>
      *
-     * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+     * <code>
+     * .google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setDirectoryServices(
         com.google.cloud.filestore.v1beta1.DirectoryServicesConfig value) {
@@ -5891,11 +10080,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Directory Services configuration for Kerberos-based authentication.
-     * Should only be set if protocol is "NFS_V4_1".
+     * Optional. Directory Services configuration for Kerberos-based
+     * authentication. Should only be set if protocol is "NFS_V4_1".
      * </pre>
      *
-     * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+     * <code>
+     * .google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setDirectoryServices(
         com.google.cloud.filestore.v1beta1.DirectoryServicesConfig.Builder builderForValue) {
@@ -5912,11 +10103,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Directory Services configuration for Kerberos-based authentication.
-     * Should only be set if protocol is "NFS_V4_1".
+     * Optional. Directory Services configuration for Kerberos-based
+     * authentication. Should only be set if protocol is "NFS_V4_1".
      * </pre>
      *
-     * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+     * <code>
+     * .google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeDirectoryServices(
         com.google.cloud.filestore.v1beta1.DirectoryServicesConfig value) {
@@ -5943,11 +10136,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Directory Services configuration for Kerberos-based authentication.
-     * Should only be set if protocol is "NFS_V4_1".
+     * Optional. Directory Services configuration for Kerberos-based
+     * authentication. Should only be set if protocol is "NFS_V4_1".
      * </pre>
      *
-     * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+     * <code>
+     * .google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearDirectoryServices() {
       bitField0_ = (bitField0_ & ~0x00100000);
@@ -5963,11 +10158,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Directory Services configuration for Kerberos-based authentication.
-     * Should only be set if protocol is "NFS_V4_1".
+     * Optional. Directory Services configuration for Kerberos-based
+     * authentication. Should only be set if protocol is "NFS_V4_1".
      * </pre>
      *
-     * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+     * <code>
+     * .google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.filestore.v1beta1.DirectoryServicesConfig.Builder
         getDirectoryServicesBuilder() {
@@ -5979,11 +10176,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Directory Services configuration for Kerberos-based authentication.
-     * Should only be set if protocol is "NFS_V4_1".
+     * Optional. Directory Services configuration for Kerberos-based
+     * authentication. Should only be set if protocol is "NFS_V4_1".
      * </pre>
      *
-     * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+     * <code>
+     * .google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.filestore.v1beta1.DirectoryServicesConfigOrBuilder
         getDirectoryServicesOrBuilder() {
@@ -5999,11 +10198,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Directory Services configuration for Kerberos-based authentication.
-     * Should only be set if protocol is "NFS_V4_1".
+     * Optional. Directory Services configuration for Kerberos-based
+     * authentication. Should only be set if protocol is "NFS_V4_1".
      * </pre>
      *
-     * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+     * <code>
+     * .google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.filestore.v1beta1.DirectoryServicesConfig,
@@ -6020,6 +10221,1097 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         directoryServices_ = null;
       }
       return directoryServicesBuilder_;
+    }
+
+    private com.google.cloud.filestore.v1beta1.Replication replication_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.filestore.v1beta1.Replication,
+            com.google.cloud.filestore.v1beta1.Replication.Builder,
+            com.google.cloud.filestore.v1beta1.ReplicationOrBuilder>
+        replicationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Replication configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Replication replication = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the replication field is set.
+     */
+    public boolean hasReplication() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Replication configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Replication replication = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The replication.
+     */
+    public com.google.cloud.filestore.v1beta1.Replication getReplication() {
+      if (replicationBuilder_ == null) {
+        return replication_ == null
+            ? com.google.cloud.filestore.v1beta1.Replication.getDefaultInstance()
+            : replication_;
+      } else {
+        return replicationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Replication configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Replication replication = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setReplication(com.google.cloud.filestore.v1beta1.Replication value) {
+      if (replicationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        replication_ = value;
+      } else {
+        replicationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Replication configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Replication replication = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setReplication(
+        com.google.cloud.filestore.v1beta1.Replication.Builder builderForValue) {
+      if (replicationBuilder_ == null) {
+        replication_ = builderForValue.build();
+      } else {
+        replicationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Replication configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Replication replication = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeReplication(com.google.cloud.filestore.v1beta1.Replication value) {
+      if (replicationBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)
+            && replication_ != null
+            && replication_
+                != com.google.cloud.filestore.v1beta1.Replication.getDefaultInstance()) {
+          getReplicationBuilder().mergeFrom(value);
+        } else {
+          replication_ = value;
+        }
+      } else {
+        replicationBuilder_.mergeFrom(value);
+      }
+      if (replication_ != null) {
+        bitField0_ |= 0x00200000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Replication configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Replication replication = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearReplication() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      replication_ = null;
+      if (replicationBuilder_ != null) {
+        replicationBuilder_.dispose();
+        replicationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Replication configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Replication replication = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.filestore.v1beta1.Replication.Builder getReplicationBuilder() {
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return getReplicationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Replication configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Replication replication = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.filestore.v1beta1.ReplicationOrBuilder getReplicationOrBuilder() {
+      if (replicationBuilder_ != null) {
+        return replicationBuilder_.getMessageOrBuilder();
+      } else {
+        return replication_ == null
+            ? com.google.cloud.filestore.v1beta1.Replication.getDefaultInstance()
+            : replication_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Replication configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Replication replication = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.filestore.v1beta1.Replication,
+            com.google.cloud.filestore.v1beta1.Replication.Builder,
+            com.google.cloud.filestore.v1beta1.ReplicationOrBuilder>
+        getReplicationFieldBuilder() {
+      if (replicationBuilder_ == null) {
+        replicationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.filestore.v1beta1.Replication,
+                com.google.cloud.filestore.v1beta1.Replication.Builder,
+                com.google.cloud.filestore.v1beta1.ReplicationOrBuilder>(
+                getReplication(), getParentForChildren(), isClean());
+        replication_ = null;
+      }
+      return replicationBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+      if (tags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      return tags_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableTags() {
+      if (tags_ == null) {
+        tags_ = com.google.protobuf.MapField.newMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      if (!tags_.isMutable()) {
+        tags_ = tags_.copy();
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return tags_;
+    }
+
+    public int getTagsCount() {
+      return internalGetTags().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag key-value pairs bound to this
+     * resource. Each key must be a namespaced name and each value a short name.
+     * Example:
+     * "123456789012/environment" : "production",
+     * "123456789013/costCenter" : "marketing"
+     * See the documentation for more information:
+     * - Namespaced name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+     * - Short name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetTags().getMap().containsKey(key);
+    }
+    /** Use {@link #getTagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getTags() {
+      return getTagsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag key-value pairs bound to this
+     * resource. Each key must be a namespaced name and each value a short name.
+     * Example:
+     * "123456789012/environment" : "production",
+     * "123456789013/costCenter" : "marketing"
+     * See the documentation for more information:
+     * - Namespaced name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+     * - Short name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+      return internalGetTags().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag key-value pairs bound to this
+     * resource. Each key must be a namespaced name and each value a short name.
+     * Example:
+     * "123456789012/environment" : "production",
+     * "123456789013/costCenter" : "marketing"
+     * See the documentation for more information:
+     * - Namespaced name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+     * - Short name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag key-value pairs bound to this
+     * resource. Each key must be a namespaced name and each value a short name.
+     * Example:
+     * "123456789012/environment" : "production",
+     * "123456789013/costCenter" : "marketing"
+     * See the documentation for more information:
+     * - Namespaced name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+     * - Short name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getTagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearTags() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      internalGetMutableTags().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag key-value pairs bound to this
+     * resource. Each key must be a namespaced name and each value a short name.
+     * Example:
+     * "123456789012/environment" : "production",
+     * "123456789013/costCenter" : "marketing"
+     * See the documentation for more information:
+     * - Namespaced name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+     * - Short name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableTags().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
+      bitField0_ |= 0x00400000;
+      return internalGetMutableTags().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag key-value pairs bound to this
+     * resource. Each key must be a namespaced name and each value a short name.
+     * Example:
+     * "123456789012/environment" : "production",
+     * "123456789013/costCenter" : "marketing"
+     * See the documentation for more information:
+     * - Namespaced name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+     * - Short name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putTags(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableTags().getMutableMap().put(key, value);
+      bitField0_ |= 0x00400000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag key-value pairs bound to this
+     * resource. Each key must be a namespaced name and each value a short name.
+     * Example:
+     * "123456789012/environment" : "production",
+     * "123456789013/costCenter" : "marketing"
+     * See the documentation for more information:
+     * - Namespaced name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+     * - Short name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllTags(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableTags().getMutableMap().putAll(values);
+      bitField0_ |= 0x00400000;
+      return this;
+    }
+
+    private boolean customPerformanceSupported_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether this instance supports configuring its
+     * performance. If true, the user can configure the instance's performance by
+     * using the 'performance_config' field.
+     * </pre>
+     *
+     * <code>bool custom_performance_supported = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The customPerformanceSupported.
+     */
+    @java.lang.Override
+    public boolean getCustomPerformanceSupported() {
+      return customPerformanceSupported_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether this instance supports configuring its
+     * performance. If true, the user can configure the instance's performance by
+     * using the 'performance_config' field.
+     * </pre>
+     *
+     * <code>bool custom_performance_supported = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The customPerformanceSupported to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomPerformanceSupported(boolean value) {
+
+      customPerformanceSupported_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether this instance supports configuring its
+     * performance. If true, the user can configure the instance's performance by
+     * using the 'performance_config' field.
+     * </pre>
+     *
+     * <code>bool custom_performance_supported = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCustomPerformanceSupported() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      customPerformanceSupported_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig performanceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig,
+            com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig.Builder,
+            com.google.cloud.filestore.v1beta1.Instance.PerformanceConfigOrBuilder>
+        performanceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to configure performance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.PerformanceConfig performance_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the performanceConfig field is set.
+     */
+    public boolean hasPerformanceConfig() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to configure performance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.PerformanceConfig performance_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The performanceConfig.
+     */
+    public com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig getPerformanceConfig() {
+      if (performanceConfigBuilder_ == null) {
+        return performanceConfig_ == null
+            ? com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig.getDefaultInstance()
+            : performanceConfig_;
+      } else {
+        return performanceConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to configure performance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.PerformanceConfig performance_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPerformanceConfig(
+        com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig value) {
+      if (performanceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        performanceConfig_ = value;
+      } else {
+        performanceConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to configure performance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.PerformanceConfig performance_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPerformanceConfig(
+        com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig.Builder builderForValue) {
+      if (performanceConfigBuilder_ == null) {
+        performanceConfig_ = builderForValue.build();
+      } else {
+        performanceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to configure performance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.PerformanceConfig performance_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePerformanceConfig(
+        com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig value) {
+      if (performanceConfigBuilder_ == null) {
+        if (((bitField0_ & 0x01000000) != 0)
+            && performanceConfig_ != null
+            && performanceConfig_
+                != com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig
+                    .getDefaultInstance()) {
+          getPerformanceConfigBuilder().mergeFrom(value);
+        } else {
+          performanceConfig_ = value;
+        }
+      } else {
+        performanceConfigBuilder_.mergeFrom(value);
+      }
+      if (performanceConfig_ != null) {
+        bitField0_ |= 0x01000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to configure performance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.PerformanceConfig performance_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPerformanceConfig() {
+      bitField0_ = (bitField0_ & ~0x01000000);
+      performanceConfig_ = null;
+      if (performanceConfigBuilder_ != null) {
+        performanceConfigBuilder_.dispose();
+        performanceConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to configure performance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.PerformanceConfig performance_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig.Builder
+        getPerformanceConfigBuilder() {
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return getPerformanceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to configure performance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.PerformanceConfig performance_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.filestore.v1beta1.Instance.PerformanceConfigOrBuilder
+        getPerformanceConfigOrBuilder() {
+      if (performanceConfigBuilder_ != null) {
+        return performanceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return performanceConfig_ == null
+            ? com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig.getDefaultInstance()
+            : performanceConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to configure performance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.PerformanceConfig performance_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig,
+            com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig.Builder,
+            com.google.cloud.filestore.v1beta1.Instance.PerformanceConfigOrBuilder>
+        getPerformanceConfigFieldBuilder() {
+      if (performanceConfigBuilder_ == null) {
+        performanceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig,
+                com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig.Builder,
+                com.google.cloud.filestore.v1beta1.Instance.PerformanceConfigOrBuilder>(
+                getPerformanceConfig(), getParentForChildren(), isClean());
+        performanceConfig_ = null;
+      }
+      return performanceConfigBuilder_;
+    }
+
+    private com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits performanceLimits_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits,
+            com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits.Builder,
+            com.google.cloud.filestore.v1beta1.Instance.PerformanceLimitsOrBuilder>
+        performanceLimitsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Used for getting performance limits.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.PerformanceLimits performance_limits = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the performanceLimits field is set.
+     */
+    public boolean hasPerformanceLimits() {
+      return ((bitField0_ & 0x02000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Used for getting performance limits.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.PerformanceLimits performance_limits = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The performanceLimits.
+     */
+    public com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits getPerformanceLimits() {
+      if (performanceLimitsBuilder_ == null) {
+        return performanceLimits_ == null
+            ? com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits.getDefaultInstance()
+            : performanceLimits_;
+      } else {
+        return performanceLimitsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Used for getting performance limits.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.PerformanceLimits performance_limits = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPerformanceLimits(
+        com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits value) {
+      if (performanceLimitsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        performanceLimits_ = value;
+      } else {
+        performanceLimitsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Used for getting performance limits.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.PerformanceLimits performance_limits = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPerformanceLimits(
+        com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits.Builder builderForValue) {
+      if (performanceLimitsBuilder_ == null) {
+        performanceLimits_ = builderForValue.build();
+      } else {
+        performanceLimitsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Used for getting performance limits.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.PerformanceLimits performance_limits = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergePerformanceLimits(
+        com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits value) {
+      if (performanceLimitsBuilder_ == null) {
+        if (((bitField0_ & 0x02000000) != 0)
+            && performanceLimits_ != null
+            && performanceLimits_
+                != com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits
+                    .getDefaultInstance()) {
+          getPerformanceLimitsBuilder().mergeFrom(value);
+        } else {
+          performanceLimits_ = value;
+        }
+      } else {
+        performanceLimitsBuilder_.mergeFrom(value);
+      }
+      if (performanceLimits_ != null) {
+        bitField0_ |= 0x02000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Used for getting performance limits.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.PerformanceLimits performance_limits = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPerformanceLimits() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      performanceLimits_ = null;
+      if (performanceLimitsBuilder_ != null) {
+        performanceLimitsBuilder_.dispose();
+        performanceLimitsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Used for getting performance limits.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.PerformanceLimits performance_limits = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits.Builder
+        getPerformanceLimitsBuilder() {
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return getPerformanceLimitsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Used for getting performance limits.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.PerformanceLimits performance_limits = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.filestore.v1beta1.Instance.PerformanceLimitsOrBuilder
+        getPerformanceLimitsOrBuilder() {
+      if (performanceLimitsBuilder_ != null) {
+        return performanceLimitsBuilder_.getMessageOrBuilder();
+      } else {
+        return performanceLimits_ == null
+            ? com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits.getDefaultInstance()
+            : performanceLimits_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Used for getting performance limits.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.PerformanceLimits performance_limits = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits,
+            com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits.Builder,
+            com.google.cloud.filestore.v1beta1.Instance.PerformanceLimitsOrBuilder>
+        getPerformanceLimitsFieldBuilder() {
+      if (performanceLimitsBuilder_ == null) {
+        performanceLimitsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits,
+                com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits.Builder,
+                com.google.cloud.filestore.v1beta1.Instance.PerformanceLimitsOrBuilder>(
+                getPerformanceLimits(), getParentForChildren(), isClean());
+        performanceLimits_ = null;
+      }
+      return performanceLimitsBuilder_;
+    }
+
+    private boolean deletionProtectionEnabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the instance is protected against deletion.
+     * </pre>
+     *
+     * <code>bool deletion_protection_enabled = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The deletionProtectionEnabled.
+     */
+    @java.lang.Override
+    public boolean getDeletionProtectionEnabled() {
+      return deletionProtectionEnabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the instance is protected against deletion.
+     * </pre>
+     *
+     * <code>bool deletion_protection_enabled = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The deletionProtectionEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeletionProtectionEnabled(boolean value) {
+
+      deletionProtectionEnabled_ = value;
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the instance is protected against deletion.
+     * </pre>
+     *
+     * <code>bool deletion_protection_enabled = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeletionProtectionEnabled() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      deletionProtectionEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object deletionProtectionReason_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The reason for enabling deletion protection.
+     * </pre>
+     *
+     * <code>string deletion_protection_reason = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The deletionProtectionReason.
+     */
+    public java.lang.String getDeletionProtectionReason() {
+      java.lang.Object ref = deletionProtectionReason_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deletionProtectionReason_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The reason for enabling deletion protection.
+     * </pre>
+     *
+     * <code>string deletion_protection_reason = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for deletionProtectionReason.
+     */
+    public com.google.protobuf.ByteString getDeletionProtectionReasonBytes() {
+      java.lang.Object ref = deletionProtectionReason_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        deletionProtectionReason_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The reason for enabling deletion protection.
+     * </pre>
+     *
+     * <code>string deletion_protection_reason = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The deletionProtectionReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeletionProtectionReason(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      deletionProtectionReason_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The reason for enabling deletion protection.
+     * </pre>
+     *
+     * <code>string deletion_protection_reason = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeletionProtectionReason() {
+      deletionProtectionReason_ = getDefaultInstance().getDeletionProtectionReason();
+      bitField0_ = (bitField0_ & ~0x08000000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The reason for enabling deletion protection.
+     * </pre>
+     *
+     * <code>string deletion_protection_reason = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for deletionProtectionReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeletionProtectionReasonBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      deletionProtectionReason_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

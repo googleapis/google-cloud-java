@@ -137,6 +137,92 @@ public interface GenerateStatelessSuggestionRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. A section of ingested context information. The key is the name of
+   * the context reference and the value contains the contents of the context
+   * reference. The key is used to incorporate ingested context references to
+   * enhance the generator.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2.Conversation.ContextReference&gt; context_references = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getContextReferencesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A section of ingested context information. The key is the name of
+   * the context reference and the value contains the contents of the context
+   * reference. The key is used to incorporate ingested context references to
+   * enhance the generator.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2.Conversation.ContextReference&gt; context_references = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsContextReferences(java.lang.String key);
+  /** Use {@link #getContextReferencesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+      getContextReferences();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A section of ingested context information. The key is the name of
+   * the context reference and the value contains the contents of the context
+   * reference. The key is used to incorporate ingested context references to
+   * enhance the generator.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2.Conversation.ContextReference&gt; context_references = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+      getContextReferencesMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A section of ingested context information. The key is the name of
+   * the context reference and the value contains the contents of the context
+   * reference. The key is used to incorporate ingested context references to
+   * enhance the generator.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2.Conversation.ContextReference&gt; context_references = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.dialogflow.v2.Conversation.ContextReference getContextReferencesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.dialogflow.v2.Conversation.ContextReference defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A section of ingested context information. The key is the name of
+   * the context reference and the value contains the contents of the context
+   * reference. The key is used to incorporate ingested context references to
+   * enhance the generator.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2.Conversation.ContextReference&gt; context_references = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.Conversation.ContextReference getContextReferencesOrThrow(
+      java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Context of the conversation, including transcripts.
    * </pre>
    *

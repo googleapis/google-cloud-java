@@ -45,6 +45,7 @@ public class AsyncListSnapshotsPaged {
               .setPageToken("pageToken873572522")
               .setOrderBy("orderBy-1207110587")
               .setFilter("filter-1274492040")
+              .setReturnPartialSuccess(true)
               .build();
       while (true) {
         ListSnapshotsResponse response =

@@ -42,6 +42,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -107,6 +108,7 @@ public class ConversationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -158,6 +160,7 @@ public class ConversationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -209,6 +212,7 @@ public class ConversationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -392,6 +396,7 @@ public class ConversationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -442,6 +447,7 @@ public class ConversationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -490,6 +496,7 @@ public class ConversationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -541,6 +548,7 @@ public class ConversationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -569,6 +577,96 @@ public class ConversationsClientTest {
     try {
       String name = "name3373707";
       client.completeConversation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void ingestContextReferencesTest() throws Exception {
+    IngestContextReferencesResponse expectedResponse =
+        IngestContextReferencesResponse.newBuilder()
+            .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
+            .build();
+    mockConversations.addResponse(expectedResponse);
+
+    ConversationName conversation =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    Map<String, Conversation.ContextReference> contextReferences = new HashMap<>();
+
+    IngestContextReferencesResponse actualResponse =
+        client.ingestContextReferences(conversation, contextReferences);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConversations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    IngestContextReferencesRequest actualRequest =
+        ((IngestContextReferencesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(conversation.toString(), actualRequest.getConversation());
+    Assert.assertEquals(contextReferences, actualRequest.getContextReferencesMap());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void ingestContextReferencesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConversations.addException(exception);
+
+    try {
+      ConversationName conversation =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      Map<String, Conversation.ContextReference> contextReferences = new HashMap<>();
+      client.ingestContextReferences(conversation, contextReferences);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void ingestContextReferencesTest2() throws Exception {
+    IngestContextReferencesResponse expectedResponse =
+        IngestContextReferencesResponse.newBuilder()
+            .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
+            .build();
+    mockConversations.addResponse(expectedResponse);
+
+    String conversation = "conversation740154499";
+    Map<String, Conversation.ContextReference> contextReferences = new HashMap<>();
+
+    IngestContextReferencesResponse actualResponse =
+        client.ingestContextReferences(conversation, contextReferences);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConversations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    IngestContextReferencesRequest actualRequest =
+        ((IngestContextReferencesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(conversation, actualRequest.getConversation());
+    Assert.assertEquals(contextReferences, actualRequest.getContextReferencesMap());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void ingestContextReferencesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConversations.addException(exception);
+
+    try {
+      String conversation = "conversation740154499";
+      Map<String, Conversation.ContextReference> contextReferences = new HashMap<>();
+      client.ingestContextReferences(conversation, contextReferences);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -836,6 +934,7 @@ public class ConversationsClientTest {
     GenerateStatelessSuggestionRequest request =
         GenerateStatelessSuggestionRequest.newBuilder()
             .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .putAllContextReferences(new HashMap<String, Conversation.ContextReference>())
             .setConversationContext(ConversationContext.newBuilder().build())
             .addAllTriggerEvents(new ArrayList<TriggerEvent>())
             .build();
@@ -852,6 +951,7 @@ public class ConversationsClientTest {
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getGenerator(), actualRequest.getGenerator());
     Assert.assertEquals(request.getGeneratorName(), actualRequest.getGeneratorName());
+    Assert.assertEquals(request.getContextReferencesMap(), actualRequest.getContextReferencesMap());
     Assert.assertEquals(request.getConversationContext(), actualRequest.getConversationContext());
     Assert.assertEquals(request.getTriggerEventsList(), actualRequest.getTriggerEventsList());
     Assert.assertTrue(
@@ -869,6 +969,7 @@ public class ConversationsClientTest {
       GenerateStatelessSuggestionRequest request =
           GenerateStatelessSuggestionRequest.newBuilder()
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .putAllContextReferences(new HashMap<String, Conversation.ContextReference>())
               .setConversationContext(ConversationContext.newBuilder().build())
               .addAllTriggerEvents(new ArrayList<TriggerEvent>())
               .build();
@@ -959,6 +1060,94 @@ public class ConversationsClientTest {
               .setExactSearch(true)
               .build();
       client.searchKnowledge(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateSuggestionsTest() throws Exception {
+    GenerateSuggestionsResponse expectedResponse =
+        GenerateSuggestionsResponse.newBuilder()
+            .addAllGeneratorSuggestionAnswers(
+                new ArrayList<GenerateSuggestionsResponse.GeneratorSuggestionAnswer>())
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
+            .build();
+    mockConversations.addResponse(expectedResponse);
+
+    ConversationName conversation =
+        ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
+
+    GenerateSuggestionsResponse actualResponse = client.generateSuggestions(conversation);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConversations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateSuggestionsRequest actualRequest = ((GenerateSuggestionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(conversation.toString(), actualRequest.getConversation());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateSuggestionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConversations.addException(exception);
+
+    try {
+      ConversationName conversation =
+          ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
+      client.generateSuggestions(conversation);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateSuggestionsTest2() throws Exception {
+    GenerateSuggestionsResponse expectedResponse =
+        GenerateSuggestionsResponse.newBuilder()
+            .addAllGeneratorSuggestionAnswers(
+                new ArrayList<GenerateSuggestionsResponse.GeneratorSuggestionAnswer>())
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
+            .build();
+    mockConversations.addResponse(expectedResponse);
+
+    String conversation = "conversation740154499";
+
+    GenerateSuggestionsResponse actualResponse = client.generateSuggestions(conversation);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConversations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateSuggestionsRequest actualRequest = ((GenerateSuggestionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(conversation, actualRequest.getConversation());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateSuggestionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConversations.addException(exception);
+
+    try {
+      String conversation = "conversation740154499";
+      client.generateSuggestions(conversation);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

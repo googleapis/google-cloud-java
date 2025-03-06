@@ -24,7 +24,7 @@ package com.google.cloud.filestore.v1beta1;
  *
  * <pre>
  * ManagedActiveDirectoryConfig contains all the parameters for connecting
- * to Managed Active Directory.
+ * to Managed Service for Microsoft Active Directory (Managed Microsoft AD).
  * </pre>
  *
  * Protobuf type {@code google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig}
@@ -73,10 +73,13 @@ public final class ManagedActiveDirectoryConfig extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Fully qualified domain name.
+   * Required. The domain resource name, in the format
+   * `projects/{project_id}/locations/global/domains/{domain}`.
    * </pre>
    *
-   * <code>string domain = 1;</code>
+   * <code>
+   * string domain = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The domain.
    */
@@ -96,10 +99,13 @@ public final class ManagedActiveDirectoryConfig extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Fully qualified domain name.
+   * Required. The domain resource name, in the format
+   * `projects/{project_id}/locations/global/domains/{domain}`.
    * </pre>
    *
-   * <code>string domain = 1;</code>
+   * <code>
+   * string domain = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for domain.
    */
@@ -124,13 +130,14 @@ public final class ManagedActiveDirectoryConfig extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The computer name is used as a prefix to the mount remote target.
-   * Example: if the computer_name is `my-computer`, the mount command will
-   * look like: `$mount -o vers=4,sec=krb5
-   * my-computer.filestore.&lt;domain&gt;:&lt;share&gt;`.
+   * Required. The computer name is used as a prefix in the command to mount the
+   * remote target.
+   * For example: if the computer is `my-computer`, the mount command will
+   * look like: `$mount -o vers=4.1,sec=krb5
+   * my-computer.filestore.&lt;domain&gt;:&lt;share&gt; &lt;mount point&gt;`.
    * </pre>
    *
-   * <code>string computer = 2;</code>
+   * <code>string computer = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The computer.
    */
@@ -150,13 +157,14 @@ public final class ManagedActiveDirectoryConfig extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The computer name is used as a prefix to the mount remote target.
-   * Example: if the computer_name is `my-computer`, the mount command will
-   * look like: `$mount -o vers=4,sec=krb5
-   * my-computer.filestore.&lt;domain&gt;:&lt;share&gt;`.
+   * Required. The computer name is used as a prefix in the command to mount the
+   * remote target.
+   * For example: if the computer is `my-computer`, the mount command will
+   * look like: `$mount -o vers=4.1,sec=krb5
+   * my-computer.filestore.&lt;domain&gt;:&lt;share&gt; &lt;mount point&gt;`.
    * </pre>
    *
-   * <code>string computer = 2;</code>
+   * <code>string computer = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for computer.
    */
@@ -347,7 +355,7 @@ public final class ManagedActiveDirectoryConfig extends com.google.protobuf.Gene
    *
    * <pre>
    * ManagedActiveDirectoryConfig contains all the parameters for connecting
-   * to Managed Active Directory.
+   * to Managed Service for Microsoft Active Directory (Managed Microsoft AD).
    * </pre>
    *
    * Protobuf type {@code google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig}
@@ -550,10 +558,13 @@ public final class ManagedActiveDirectoryConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Fully qualified domain name.
+     * Required. The domain resource name, in the format
+     * `projects/{project_id}/locations/global/domains/{domain}`.
      * </pre>
      *
-     * <code>string domain = 1;</code>
+     * <code>
+     * string domain = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The domain.
      */
@@ -572,10 +583,13 @@ public final class ManagedActiveDirectoryConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Fully qualified domain name.
+     * Required. The domain resource name, in the format
+     * `projects/{project_id}/locations/global/domains/{domain}`.
      * </pre>
      *
-     * <code>string domain = 1;</code>
+     * <code>
+     * string domain = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for domain.
      */
@@ -594,10 +608,13 @@ public final class ManagedActiveDirectoryConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Fully qualified domain name.
+     * Required. The domain resource name, in the format
+     * `projects/{project_id}/locations/global/domains/{domain}`.
      * </pre>
      *
-     * <code>string domain = 1;</code>
+     * <code>
+     * string domain = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The domain to set.
      * @return This builder for chaining.
@@ -615,10 +632,13 @@ public final class ManagedActiveDirectoryConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Fully qualified domain name.
+     * Required. The domain resource name, in the format
+     * `projects/{project_id}/locations/global/domains/{domain}`.
      * </pre>
      *
-     * <code>string domain = 1;</code>
+     * <code>
+     * string domain = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -632,10 +652,13 @@ public final class ManagedActiveDirectoryConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Fully qualified domain name.
+     * Required. The domain resource name, in the format
+     * `projects/{project_id}/locations/global/domains/{domain}`.
      * </pre>
      *
-     * <code>string domain = 1;</code>
+     * <code>
+     * string domain = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for domain to set.
      * @return This builder for chaining.
@@ -656,13 +679,14 @@ public final class ManagedActiveDirectoryConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The computer name is used as a prefix to the mount remote target.
-     * Example: if the computer_name is `my-computer`, the mount command will
-     * look like: `$mount -o vers=4,sec=krb5
-     * my-computer.filestore.&lt;domain&gt;:&lt;share&gt;`.
+     * Required. The computer name is used as a prefix in the command to mount the
+     * remote target.
+     * For example: if the computer is `my-computer`, the mount command will
+     * look like: `$mount -o vers=4.1,sec=krb5
+     * my-computer.filestore.&lt;domain&gt;:&lt;share&gt; &lt;mount point&gt;`.
      * </pre>
      *
-     * <code>string computer = 2;</code>
+     * <code>string computer = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The computer.
      */
@@ -681,13 +705,14 @@ public final class ManagedActiveDirectoryConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The computer name is used as a prefix to the mount remote target.
-     * Example: if the computer_name is `my-computer`, the mount command will
-     * look like: `$mount -o vers=4,sec=krb5
-     * my-computer.filestore.&lt;domain&gt;:&lt;share&gt;`.
+     * Required. The computer name is used as a prefix in the command to mount the
+     * remote target.
+     * For example: if the computer is `my-computer`, the mount command will
+     * look like: `$mount -o vers=4.1,sec=krb5
+     * my-computer.filestore.&lt;domain&gt;:&lt;share&gt; &lt;mount point&gt;`.
      * </pre>
      *
-     * <code>string computer = 2;</code>
+     * <code>string computer = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for computer.
      */
@@ -706,13 +731,14 @@ public final class ManagedActiveDirectoryConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The computer name is used as a prefix to the mount remote target.
-     * Example: if the computer_name is `my-computer`, the mount command will
-     * look like: `$mount -o vers=4,sec=krb5
-     * my-computer.filestore.&lt;domain&gt;:&lt;share&gt;`.
+     * Required. The computer name is used as a prefix in the command to mount the
+     * remote target.
+     * For example: if the computer is `my-computer`, the mount command will
+     * look like: `$mount -o vers=4.1,sec=krb5
+     * my-computer.filestore.&lt;domain&gt;:&lt;share&gt; &lt;mount point&gt;`.
      * </pre>
      *
-     * <code>string computer = 2;</code>
+     * <code>string computer = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The computer to set.
      * @return This builder for chaining.
@@ -730,13 +756,14 @@ public final class ManagedActiveDirectoryConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The computer name is used as a prefix to the mount remote target.
-     * Example: if the computer_name is `my-computer`, the mount command will
-     * look like: `$mount -o vers=4,sec=krb5
-     * my-computer.filestore.&lt;domain&gt;:&lt;share&gt;`.
+     * Required. The computer name is used as a prefix in the command to mount the
+     * remote target.
+     * For example: if the computer is `my-computer`, the mount command will
+     * look like: `$mount -o vers=4.1,sec=krb5
+     * my-computer.filestore.&lt;domain&gt;:&lt;share&gt; &lt;mount point&gt;`.
      * </pre>
      *
-     * <code>string computer = 2;</code>
+     * <code>string computer = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -750,13 +777,14 @@ public final class ManagedActiveDirectoryConfig extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The computer name is used as a prefix to the mount remote target.
-     * Example: if the computer_name is `my-computer`, the mount command will
-     * look like: `$mount -o vers=4,sec=krb5
-     * my-computer.filestore.&lt;domain&gt;:&lt;share&gt;`.
+     * Required. The computer name is used as a prefix in the command to mount the
+     * remote target.
+     * For example: if the computer is `my-computer`, the mount command will
+     * look like: `$mount -o vers=4.1,sec=krb5
+     * my-computer.filestore.&lt;domain&gt;:&lt;share&gt; &lt;mount point&gt;`.
      * </pre>
      *
-     * <code>string computer = 2;</code>
+     * <code>string computer = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for computer to set.
      * @return This builder for chaining.

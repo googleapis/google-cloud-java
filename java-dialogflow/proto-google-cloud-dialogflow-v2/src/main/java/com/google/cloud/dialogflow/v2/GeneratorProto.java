@@ -85,9 +85,17 @@ public final class GeneratorProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2_SummarizationContext_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_FreeFormContext_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_FreeFormContext_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_v2_Generator_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2_Generator_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_FreeFormSuggestion_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_FreeFormSuggestion_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_v2_SummarySuggestion_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -162,77 +170,86 @@ public final class GeneratorProto {
           + "ture\030\002 \001(\001B\003\340A\001H\001\210\001\001\022\027\n\005top_k\030\003 \001(\005B\003\340A\001"
           + "H\002\210\001\001\022\027\n\005top_p\030\004 \001(\001B\003\340A\001H\003\210\001\001B\024\n\022_max_o"
           + "utput_tokensB\016\n\014_temperatureB\010\n\006_top_kB\010"
-          + "\n\006_top_p\"\261\002\n\024SummarizationSection\022\020\n\003key"
+          + "\n\006_top_p\"\334\002\n\024SummarizationSection\022\020\n\003key"
           + "\030\001 \001(\tB\003\340A\001\022\027\n\ndefinition\030\002 \001(\tB\003\340A\001\022H\n\004"
           + "type\030\003 \001(\01625.google.cloud.dialogflow.v2."
-          + "SummarizationSection.TypeB\003\340A\001\"\243\001\n\004Type\022"
+          + "SummarizationSection.TypeB\003\340A\001\"\316\001\n\004Type\022"
           + "\024\n\020TYPE_UNSPECIFIED\020\000\022\r\n\tSITUATION\020\001\022\n\n\006"
           + "ACTION\020\002\022\016\n\nRESOLUTION\020\003\022\033\n\027REASON_FOR_C"
           + "ANCELLATION\020\004\022\031\n\025CUSTOMER_SATISFACTION\020\005"
-          + "\022\014\n\010ENTITIES\020\006\022\024\n\020CUSTOMER_DEFINED\020\007\"\362\001\n"
-          + "\024SummarizationContext\022U\n\026summarization_s"
-          + "ections\030\001 \003(\01320.google.cloud.dialogflow."
-          + "v2.SummarizationSectionB\003\340A\001\022J\n\021few_shot"
-          + "_examples\030\002 \003(\0132*.google.cloud.dialogflo"
-          + "w.v2.FewShotExampleB\003\340A\001\022\024\n\007version\030\003 \001("
-          + "\tB\003\340A\001\022!\n\024output_language_code\030\006 \001(\tB\003\340A"
-          + "\001\"\236\004\n\tGenerator\022\024\n\004name\030\001 \001(\tB\006\340A\010\340A\003\022\030\n"
-          + "\013description\030\002 \001(\tB\003\340A\001\022Q\n\025summarization"
-          + "_context\030\r \001(\01320.google.cloud.dialogflow"
-          + ".v2.SummarizationContextH\000\022P\n\023inference_"
-          + "parameter\030\004 \001(\0132..google.cloud.dialogflo"
-          + "w.v2.InferenceParameterB\003\340A\001\022D\n\rtrigger_"
-          + "event\030\005 \001(\0162(.google.cloud.dialogflow.v2"
-          + ".TriggerEventB\003\340A\001\0224\n\013create_time\030\010 \001(\0132"
-          + "\032.google.protobuf.TimestampB\003\340A\003\0224\n\013upda"
-          + "te_time\030\t \001(\0132\032.google.protobuf.Timestam"
-          + "pB\003\340A\003:\177\352A|\n#dialogflow.googleapis.com/G"
-          + "enerator\022>projects/{project}/locations/{"
-          + "location}/generators/{generator}*\ngenera"
-          + "tors2\tgeneratorB\t\n\007context\"\256\001\n\021SummarySu"
-          + "ggestion\022[\n\020summary_sections\030\001 \003(\0132<.goo"
-          + "gle.cloud.dialogflow.v2.SummarySuggestio"
-          + "n.SummarySectionB\003\340A\002\032<\n\016SummarySection\022"
-          + "\024\n\007section\030\001 \001(\tB\003\340A\002\022\024\n\007summary\030\002 \001(\tB\003"
-          + "\340A\002\"u\n\023GeneratorSuggestion\022P\n\022summary_su"
-          + "ggestion\030\002 \001(\0132-.google.cloud.dialogflow"
-          + ".v2.SummarySuggestionB\003\340A\001H\000B\014\n\nsuggesti"
-          + "on*T\n\014TriggerEvent\022\035\n\031TRIGGER_EVENT_UNSP"
-          + "ECIFIED\020\000\022\024\n\020END_OF_UTTERANCE\020\001\022\017\n\013MANUA"
-          + "L_CALL\020\0022\206\t\n\nGenerators\022\201\002\n\017CreateGenera"
-          + "tor\0222.google.cloud.dialogflow.v2.CreateG"
-          + "eneratorRequest\032%.google.cloud.dialogflo"
-          + "w.v2.Generator\"\222\001\332A\035parent,generator,gen"
-          + "erator_id\202\323\344\223\002l\"./v2/{parent=projects/*/"
-          + "locations/*}/generators:\tgeneratorZ/\"\"/v"
-          + "2/{parent=projects/*}/generators:\tgenera"
-          + "tor\022\245\001\n\014GetGenerator\022/.google.cloud.dial"
-          + "ogflow.v2.GetGeneratorRequest\032%.google.c"
-          + "loud.dialogflow.v2.Generator\"=\332A\004name\202\323\344"
-          + "\223\0020\022./v2/{name=projects/*/locations/*/ge"
-          + "nerators/*}\022\336\001\n\016ListGenerators\0221.google."
-          + "cloud.dialogflow.v2.ListGeneratorsReques"
-          + "t\0322.google.cloud.dialogflow.v2.ListGener"
-          + "atorsResponse\"e\332A\006parent\202\323\344\223\002V\022./v2/{par"
-          + "ent=projects/*/locations/*}/generatorsZ$"
-          + "\022\"/v2/{parent=projects/*}/generators\022\234\001\n"
-          + "\017DeleteGenerator\0222.google.cloud.dialogfl"
-          + "ow.v2.DeleteGeneratorRequest\032\026.google.pr"
-          + "otobuf.Empty\"=\332A\004name\202\323\344\223\0020*./v2/{name=p"
-          + "rojects/*/locations/*/generators/*}\022\321\001\n\017"
-          + "UpdateGenerator\0222.google.cloud.dialogflo"
-          + "w.v2.UpdateGeneratorRequest\032%.google.clo"
-          + "ud.dialogflow.v2.Generator\"c\332A\025generator"
-          + ",update_mask\202\323\344\223\002E28/v2/{generator.name="
-          + "projects/*/locations/*/generators/*}:\tge"
-          + "nerator\032x\312A\031dialogflow.googleapis.com\322AY"
-          + "https://www.googleapis.com/auth/cloud-pl"
-          + "atform,https://www.googleapis.com/auth/d"
-          + "ialogflowB\224\001\n\036com.google.cloud.dialogflo"
-          + "w.v2B\016GeneratorProtoP\001Z>cloud.google.com"
-          + "/go/dialogflow/apiv2/dialogflowpb;dialog"
-          + "flowpb\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2"
-          + "b\006proto3"
+          + "\022\014\n\010ENTITIES\020\006\022\024\n\020CUSTOMER_DEFINED\020\007\022\025\n\021"
+          + "SITUATION_CONCISE\020\t\022\022\n\016ACTION_CONCISE\020\n\""
+          + "\362\001\n\024SummarizationContext\022U\n\026summarizatio"
+          + "n_sections\030\001 \003(\01320.google.cloud.dialogfl"
+          + "ow.v2.SummarizationSectionB\003\340A\001\022J\n\021few_s"
+          + "hot_examples\030\002 \003(\0132*.google.cloud.dialog"
+          + "flow.v2.FewShotExampleB\003\340A\001\022\024\n\007version\030\003"
+          + " \001(\tB\003\340A\001\022!\n\024output_language_code\030\006 \001(\tB"
+          + "\003\340A\001\"$\n\017FreeFormContext\022\021\n\004text\030\001 \001(\tB\003\340"
+          + "A\001\"\234\005\n\tGenerator\022\024\n\004name\030\001 \001(\tB\006\340A\010\340A\003\022\030"
+          + "\n\013description\030\002 \001(\tB\003\340A\001\022H\n\021free_form_co"
+          + "ntext\030\013 \001(\0132+.google.cloud.dialogflow.v2"
+          + ".FreeFormContextH\000\022Q\n\025summarization_cont"
+          + "ext\030\r \001(\01320.google.cloud.dialogflow.v2.S"
+          + "ummarizationContextH\000\022P\n\023inference_param"
+          + "eter\030\004 \001(\0132..google.cloud.dialogflow.v2."
+          + "InferenceParameterB\003\340A\001\022D\n\rtrigger_event"
+          + "\030\005 \001(\0162(.google.cloud.dialogflow.v2.Trig"
+          + "gerEventB\003\340A\001\022\036\n\017published_model\030\017 \001(\tB\003"
+          + "\340A\001H\001\0224\n\013create_time\030\010 \001(\0132\032.google.prot"
+          + "obuf.TimestampB\003\340A\003\0224\n\013update_time\030\t \001(\013"
+          + "2\032.google.protobuf.TimestampB\003\340A\003:\177\352A|\n#"
+          + "dialogflow.googleapis.com/Generator\022>pro"
+          + "jects/{project}/locations/{location}/gen"
+          + "erators/{generator}*\ngenerators2\tgenerat"
+          + "orB\t\n\007contextB\022\n\020foundation_model\"+\n\022Fre"
+          + "eFormSuggestion\022\025\n\010response\030\001 \001(\tB\003\340A\002\"\256"
+          + "\001\n\021SummarySuggestion\022[\n\020summary_sections"
+          + "\030\001 \003(\0132<.google.cloud.dialogflow.v2.Summ"
+          + "arySuggestion.SummarySectionB\003\340A\002\032<\n\016Sum"
+          + "marySection\022\024\n\007section\030\001 \001(\tB\003\340A\002\022\024\n\007sum"
+          + "mary\030\002 \001(\tB\003\340A\002\"\312\001\n\023GeneratorSuggestion\022"
+          + "S\n\024free_form_suggestion\030\001 \001(\0132..google.c"
+          + "loud.dialogflow.v2.FreeFormSuggestionB\003\340"
+          + "A\001H\000\022P\n\022summary_suggestion\030\002 \001(\0132-.googl"
+          + "e.cloud.dialogflow.v2.SummarySuggestionB"
+          + "\003\340A\001H\000B\014\n\nsuggestion*}\n\014TriggerEvent\022\035\n\031"
+          + "TRIGGER_EVENT_UNSPECIFIED\020\000\022\024\n\020END_OF_UT"
+          + "TERANCE\020\001\022\017\n\013MANUAL_CALL\020\002\022\024\n\020CUSTOMER_M"
+          + "ESSAGE\020\003\022\021\n\rAGENT_MESSAGE\020\0042\206\t\n\nGenerato"
+          + "rs\022\201\002\n\017CreateGenerator\0222.google.cloud.di"
+          + "alogflow.v2.CreateGeneratorRequest\032%.goo"
+          + "gle.cloud.dialogflow.v2.Generator\"\222\001\332A\035p"
+          + "arent,generator,generator_id\202\323\344\223\002l\"./v2/"
+          + "{parent=projects/*/locations/*}/generato"
+          + "rs:\tgeneratorZ/\"\"/v2/{parent=projects/*}"
+          + "/generators:\tgenerator\022\245\001\n\014GetGenerator\022"
+          + "/.google.cloud.dialogflow.v2.GetGenerato"
+          + "rRequest\032%.google.cloud.dialogflow.v2.Ge"
+          + "nerator\"=\332A\004name\202\323\344\223\0020\022./v2/{name=projec"
+          + "ts/*/locations/*/generators/*}\022\336\001\n\016ListG"
+          + "enerators\0221.google.cloud.dialogflow.v2.L"
+          + "istGeneratorsRequest\0322.google.cloud.dial"
+          + "ogflow.v2.ListGeneratorsResponse\"e\332A\006par"
+          + "ent\202\323\344\223\002V\022./v2/{parent=projects/*/locati"
+          + "ons/*}/generatorsZ$\022\"/v2/{parent=project"
+          + "s/*}/generators\022\234\001\n\017DeleteGenerator\0222.go"
+          + "ogle.cloud.dialogflow.v2.DeleteGenerator"
+          + "Request\032\026.google.protobuf.Empty\"=\332A\004name"
+          + "\202\323\344\223\0020*./v2/{name=projects/*/locations/*"
+          + "/generators/*}\022\321\001\n\017UpdateGenerator\0222.goo"
+          + "gle.cloud.dialogflow.v2.UpdateGeneratorR"
+          + "equest\032%.google.cloud.dialogflow.v2.Gene"
+          + "rator\"c\332A\025generator,update_mask\202\323\344\223\002E28/"
+          + "v2/{generator.name=projects/*/locations/"
+          + "*/generators/*}:\tgenerator\032x\312A\031dialogflo"
+          + "w.googleapis.com\322AYhttps://www.googleapi"
+          + "s.com/auth/cloud-platform,https://www.go"
+          + "ogleapis.com/auth/dialogflowB\224\001\n\036com.goo"
+          + "gle.cloud.dialogflow.v2B\016GeneratorProtoP"
+          + "\001Z>cloud.google.com/go/dialogflow/apiv2/"
+          + "dialogflowpb;dialogflowpb\242\002\002DF\252\002\032Google."
+          + "Cloud.Dialogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -364,23 +381,42 @@ public final class GeneratorProto {
             new java.lang.String[] {
               "SummarizationSections", "FewShotExamples", "Version", "OutputLanguageCode",
             });
-    internal_static_google_cloud_dialogflow_v2_Generator_descriptor =
+    internal_static_google_cloud_dialogflow_v2_FreeFormContext_descriptor =
         getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_dialogflow_v2_FreeFormContext_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_FreeFormContext_descriptor,
+            new java.lang.String[] {
+              "Text",
+            });
+    internal_static_google_cloud_dialogflow_v2_Generator_descriptor =
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_dialogflow_v2_Generator_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_Generator_descriptor,
             new java.lang.String[] {
               "Name",
               "Description",
+              "FreeFormContext",
               "SummarizationContext",
               "InferenceParameter",
               "TriggerEvent",
+              "PublishedModel",
               "CreateTime",
               "UpdateTime",
               "Context",
+              "FoundationModel",
+            });
+    internal_static_google_cloud_dialogflow_v2_FreeFormSuggestion_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_dialogflow_v2_FreeFormSuggestion_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_FreeFormSuggestion_descriptor,
+            new java.lang.String[] {
+              "Response",
             });
     internal_static_google_cloud_dialogflow_v2_SummarySuggestion_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_dialogflow_v2_SummarySuggestion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_SummarySuggestion_descriptor,
@@ -398,12 +434,12 @@ public final class GeneratorProto {
               "Section", "Summary",
             });
     internal_static_google_cloud_dialogflow_v2_GeneratorSuggestion_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_dialogflow_v2_GeneratorSuggestion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_GeneratorSuggestion_descriptor,
             new java.lang.String[] {
-              "SummarySuggestion", "Suggestion",
+              "FreeFormSuggestion", "SummarySuggestion", "Suggestion",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

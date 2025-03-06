@@ -59,6 +59,18 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_cloud_dialogflow_v2_Conversation_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 17:
+        return internalGetIngestedContextReferences();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -4253,6 +4265,3440 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ContextReferenceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.Conversation.ContextReference)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of content updates for a context reference.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    java.util.List<com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent>
+        getContextContentsList();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of content updates for a context reference.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent getContextContents(
+        int index);
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of content updates for a context reference.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    int getContextContentsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of content updates for a context reference.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.v2.Conversation.ContextReference
+                    .ContextContentOrBuilder>
+        getContextContentsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of content updates for a context reference.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContentOrBuilder
+        getContextContentsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The mode in which context reference contents are updated.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode update_mode = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for updateMode.
+     */
+    int getUpdateModeValue();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The mode in which context reference contents are updated.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode update_mode = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The updateMode.
+     */
+    com.google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode getUpdateMode();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language of the information ingested, defaults to "en-US"
+     * if not set.
+     * </pre>
+     *
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The languageCode.
+     */
+    java.lang.String getLanguageCode();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language of the information ingested, defaults to "en-US"
+     * if not set.
+     * </pre>
+     *
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    com.google.protobuf.ByteString getLanguageCodeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the context reference was first created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    boolean hasCreateTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the context reference was first created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    com.google.protobuf.Timestamp getCreateTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the context reference was first created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents a section of ingested context information.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.v2.Conversation.ContextReference}
+   */
+  public static final class ContextReference extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.Conversation.ContextReference)
+      ContextReferenceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ContextReference.newBuilder() to construct.
+    private ContextReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ContextReference() {
+      contextContents_ = java.util.Collections.emptyList();
+      updateMode_ = 0;
+      languageCode_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ContextReference();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2.ConversationProto
+          .internal_static_google_cloud_dialogflow_v2_Conversation_ContextReference_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.v2.ConversationProto
+          .internal_static_google_cloud_dialogflow_v2_Conversation_ContextReference_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.v2.Conversation.ContextReference.class,
+              com.google.cloud.dialogflow.v2.Conversation.ContextReference.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents the mode in which context reference contents are updated.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode}
+     */
+    public enum UpdateMode implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified update mode.
+       * </pre>
+       *
+       * <code>UPDATE_MODE_UNSPECIFIED = 0;</code>
+       */
+      UPDATE_MODE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Context content updates are applied in append mode.
+       * </pre>
+       *
+       * <code>APPEND = 1;</code>
+       */
+      APPEND(1),
+      /**
+       *
+       *
+       * <pre>
+       * Context content updates are applied in overwrite mode.
+       * </pre>
+       *
+       * <code>OVERWRITE = 2;</code>
+       */
+      OVERWRITE(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified update mode.
+       * </pre>
+       *
+       * <code>UPDATE_MODE_UNSPECIFIED = 0;</code>
+       */
+      public static final int UPDATE_MODE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Context content updates are applied in append mode.
+       * </pre>
+       *
+       * <code>APPEND = 1;</code>
+       */
+      public static final int APPEND_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Context content updates are applied in overwrite mode.
+       * </pre>
+       *
+       * <code>OVERWRITE = 2;</code>
+       */
+      public static final int OVERWRITE_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static UpdateMode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static UpdateMode forNumber(int value) {
+        switch (value) {
+          case 0:
+            return UPDATE_MODE_UNSPECIFIED;
+          case 1:
+            return APPEND;
+          case 2:
+            return OVERWRITE;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<UpdateMode> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<UpdateMode> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<UpdateMode>() {
+            public UpdateMode findValueByNumber(int number) {
+              return UpdateMode.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.Conversation.ContextReference.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final UpdateMode[] VALUES = values();
+
+      public static UpdateMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private UpdateMode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode)
+    }
+
+    public interface ContextContentOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The information ingested in a single request.
+       * </pre>
+       *
+       * <code>string content = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The content.
+       */
+      java.lang.String getContent();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The information ingested in a single request.
+       * </pre>
+       *
+       * <code>string content = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for content.
+       */
+      com.google.protobuf.ByteString getContentBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The format of the ingested string.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.ContentFormat content_format = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for contentFormat.
+       */
+      int getContentFormatValue();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The format of the ingested string.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.ContentFormat content_format = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The contentFormat.
+       */
+      com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.ContentFormat
+          getContentFormat();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time when this information was incorporated into the
+       * relevant context reference.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp ingestion_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the ingestionTime field is set.
+       */
+      boolean hasIngestionTime();
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time when this information was incorporated into the
+       * relevant context reference.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp ingestion_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The ingestionTime.
+       */
+      com.google.protobuf.Timestamp getIngestionTime();
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time when this information was incorporated into the
+       * relevant context reference.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp ingestion_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      com.google.protobuf.TimestampOrBuilder getIngestionTimeOrBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contents ingested.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent}
+     */
+    public static final class ContextContent extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent)
+        ContextContentOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use ContextContent.newBuilder() to construct.
+      private ContextContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ContextContent() {
+        content_ = "";
+        contentFormat_ = 0;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ContextContent();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_Conversation_ContextReference_ContextContent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_Conversation_ContextReference_ContextContent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.class,
+                com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.Builder
+                    .class);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Represents the format of the ingested string.
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.ContentFormat}
+       */
+      public enum ContentFormat implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * Unspecified content format.
+         * </pre>
+         *
+         * <code>CONTENT_FORMAT_UNSPECIFIED = 0;</code>
+         */
+        CONTENT_FORMAT_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * Content was provided in JSON format.
+         * </pre>
+         *
+         * <code>JSON = 1;</code>
+         */
+        JSON(1),
+        /**
+         *
+         *
+         * <pre>
+         * Content was provided as plain text.
+         * </pre>
+         *
+         * <code>PLAIN_TEXT = 2;</code>
+         */
+        PLAIN_TEXT(2),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * Unspecified content format.
+         * </pre>
+         *
+         * <code>CONTENT_FORMAT_UNSPECIFIED = 0;</code>
+         */
+        public static final int CONTENT_FORMAT_UNSPECIFIED_VALUE = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Content was provided in JSON format.
+         * </pre>
+         *
+         * <code>JSON = 1;</code>
+         */
+        public static final int JSON_VALUE = 1;
+        /**
+         *
+         *
+         * <pre>
+         * Content was provided as plain text.
+         * </pre>
+         *
+         * <code>PLAIN_TEXT = 2;</code>
+         */
+        public static final int PLAIN_TEXT_VALUE = 2;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static ContentFormat valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static ContentFormat forNumber(int value) {
+          switch (value) {
+            case 0:
+              return CONTENT_FORMAT_UNSPECIFIED;
+            case 1:
+              return JSON;
+            case 2:
+              return PLAIN_TEXT;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<ContentFormat>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<ContentFormat>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<ContentFormat>() {
+                  public ContentFormat findValueByNumber(int number) {
+                    return ContentFormat.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+              .getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final ContentFormat[] VALUES = values();
+
+        public static ContentFormat valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private ContentFormat(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.ContentFormat)
+      }
+
+      private int bitField0_;
+      public static final int CONTENT_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object content_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The information ingested in a single request.
+       * </pre>
+       *
+       * <code>string content = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The content.
+       */
+      @java.lang.Override
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          content_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The information ingested in a single request.
+       * </pre>
+       *
+       * <code>string content = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for content.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getContentBytes() {
+        java.lang.Object ref = content_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          content_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int CONTENT_FORMAT_FIELD_NUMBER = 2;
+      private int contentFormat_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Required. The format of the ingested string.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.ContentFormat content_format = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for contentFormat.
+       */
+      @java.lang.Override
+      public int getContentFormatValue() {
+        return contentFormat_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The format of the ingested string.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.ContentFormat content_format = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The contentFormat.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+              .ContentFormat
+          getContentFormat() {
+        com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.ContentFormat
+            result =
+                com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+                    .ContentFormat.forNumber(contentFormat_);
+        return result == null
+            ? com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+                .ContentFormat.UNRECOGNIZED
+            : result;
+      }
+
+      public static final int INGESTION_TIME_FIELD_NUMBER = 3;
+      private com.google.protobuf.Timestamp ingestionTime_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time when this information was incorporated into the
+       * relevant context reference.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp ingestion_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the ingestionTime field is set.
+       */
+      @java.lang.Override
+      public boolean hasIngestionTime() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time when this information was incorporated into the
+       * relevant context reference.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp ingestion_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The ingestionTime.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Timestamp getIngestionTime() {
+        return ingestionTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : ingestionTime_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time when this information was incorporated into the
+       * relevant context reference.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp ingestion_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.TimestampOrBuilder getIngestionTimeOrBuilder() {
+        return ingestionTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : ingestionTime_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, content_);
+        }
+        if (contentFormat_
+            != com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+                .ContentFormat.CONTENT_FORMAT_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(2, contentFormat_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(3, getIngestionTime());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, content_);
+        }
+        if (contentFormat_
+            != com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+                .ContentFormat.CONTENT_FORMAT_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, contentFormat_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getIngestionTime());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent other =
+            (com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent) obj;
+
+        if (!getContent().equals(other.getContent())) return false;
+        if (contentFormat_ != other.contentFormat_) return false;
+        if (hasIngestionTime() != other.hasIngestionTime()) return false;
+        if (hasIngestionTime()) {
+          if (!getIngestionTime().equals(other.getIngestionTime())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+        hash = (53 * hash) + getContent().hashCode();
+        hash = (37 * hash) + CONTENT_FORMAT_FIELD_NUMBER;
+        hash = (53 * hash) + contentFormat_;
+        if (hasIngestionTime()) {
+          hash = (37 * hash) + INGESTION_TIME_FIELD_NUMBER;
+          hash = (53 * hash) + getIngestionTime().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Contents ingested.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent)
+          com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContentOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_Conversation_ContextReference_ContextContent_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_Conversation_ContextReference_ContextContent_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.class,
+                  com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getIngestionTimeFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          content_ = "";
+          contentFormat_ = 0;
+          ingestionTime_ = null;
+          if (ingestionTimeBuilder_ != null) {
+            ingestionTimeBuilder_.dispose();
+            ingestionTimeBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2.ConversationProto
+              .internal_static_google_cloud_dialogflow_v2_Conversation_ContextReference_ContextContent_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent build() {
+          com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+            buildPartial() {
+          com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent result =
+              new com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.content_ = content_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.contentFormat_ = contentFormat_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.ingestionTime_ =
+                ingestionTimeBuilder_ == null ? ingestionTime_ : ingestionTimeBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent other) {
+          if (other
+              == com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+                  .getDefaultInstance()) return this;
+          if (!other.getContent().isEmpty()) {
+            content_ = other.content_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (other.contentFormat_ != 0) {
+            setContentFormatValue(other.getContentFormatValue());
+          }
+          if (other.hasIngestionTime()) {
+            mergeIngestionTime(other.getIngestionTime());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    content_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 16:
+                  {
+                    contentFormat_ = input.readEnum();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                case 26:
+                  {
+                    input.readMessage(
+                        getIngestionTimeFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object content_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Required. The information ingested in a single request.
+         * </pre>
+         *
+         * <code>string content = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The content.
+         */
+        public java.lang.String getContent() {
+          java.lang.Object ref = content_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            content_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The information ingested in a single request.
+         * </pre>
+         *
+         * <code>string content = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for content.
+         */
+        public com.google.protobuf.ByteString getContentBytes() {
+          java.lang.Object ref = content_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            content_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The information ingested in a single request.
+         * </pre>
+         *
+         * <code>string content = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The content to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContent(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          content_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The information ingested in a single request.
+         * </pre>
+         *
+         * <code>string content = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearContent() {
+          content_ = getDefaultInstance().getContent();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The information ingested in a single request.
+         * </pre>
+         *
+         * <code>string content = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for content to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContentBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          content_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private int contentFormat_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Required. The format of the ingested string.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.ContentFormat content_format = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for contentFormat.
+         */
+        @java.lang.Override
+        public int getContentFormatValue() {
+          return contentFormat_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The format of the ingested string.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.ContentFormat content_format = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for contentFormat to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContentFormatValue(int value) {
+          contentFormat_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The format of the ingested string.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.ContentFormat content_format = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The contentFormat.
+         */
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+                .ContentFormat
+            getContentFormat() {
+          com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.ContentFormat
+              result =
+                  com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+                      .ContentFormat.forNumber(contentFormat_);
+          return result == null
+              ? com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+                  .ContentFormat.UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The format of the ingested string.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.ContentFormat content_format = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param value The contentFormat to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContentFormat(
+            com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+                    .ContentFormat
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000002;
+          contentFormat_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The format of the ingested string.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.ContentFormat content_format = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearContentFormat() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          contentFormat_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.Timestamp ingestionTime_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>
+            ingestionTimeBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The time when this information was incorporated into the
+         * relevant context reference.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Timestamp ingestion_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return Whether the ingestionTime field is set.
+         */
+        public boolean hasIngestionTime() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The time when this information was incorporated into the
+         * relevant context reference.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Timestamp ingestion_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The ingestionTime.
+         */
+        public com.google.protobuf.Timestamp getIngestionTime() {
+          if (ingestionTimeBuilder_ == null) {
+            return ingestionTime_ == null
+                ? com.google.protobuf.Timestamp.getDefaultInstance()
+                : ingestionTime_;
+          } else {
+            return ingestionTimeBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The time when this information was incorporated into the
+         * relevant context reference.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Timestamp ingestion_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder setIngestionTime(com.google.protobuf.Timestamp value) {
+          if (ingestionTimeBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ingestionTime_ = value;
+          } else {
+            ingestionTimeBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The time when this information was incorporated into the
+         * relevant context reference.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Timestamp ingestion_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder setIngestionTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+          if (ingestionTimeBuilder_ == null) {
+            ingestionTime_ = builderForValue.build();
+          } else {
+            ingestionTimeBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The time when this information was incorporated into the
+         * relevant context reference.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Timestamp ingestion_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder mergeIngestionTime(com.google.protobuf.Timestamp value) {
+          if (ingestionTimeBuilder_ == null) {
+            if (((bitField0_ & 0x00000004) != 0)
+                && ingestionTime_ != null
+                && ingestionTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+              getIngestionTimeBuilder().mergeFrom(value);
+            } else {
+              ingestionTime_ = value;
+            }
+          } else {
+            ingestionTimeBuilder_.mergeFrom(value);
+          }
+          if (ingestionTime_ != null) {
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The time when this information was incorporated into the
+         * relevant context reference.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Timestamp ingestion_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder clearIngestionTime() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          ingestionTime_ = null;
+          if (ingestionTimeBuilder_ != null) {
+            ingestionTimeBuilder_.dispose();
+            ingestionTimeBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The time when this information was incorporated into the
+         * relevant context reference.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Timestamp ingestion_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public com.google.protobuf.Timestamp.Builder getIngestionTimeBuilder() {
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return getIngestionTimeFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The time when this information was incorporated into the
+         * relevant context reference.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Timestamp ingestion_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public com.google.protobuf.TimestampOrBuilder getIngestionTimeOrBuilder() {
+          if (ingestionTimeBuilder_ != null) {
+            return ingestionTimeBuilder_.getMessageOrBuilder();
+          } else {
+            return ingestionTime_ == null
+                ? com.google.protobuf.Timestamp.getDefaultInstance()
+                : ingestionTime_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The time when this information was incorporated into the
+         * relevant context reference.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Timestamp ingestion_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>
+            getIngestionTimeFieldBuilder() {
+          if (ingestionTimeBuilder_ == null) {
+            ingestionTimeBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.Timestamp,
+                    com.google.protobuf.Timestamp.Builder,
+                    com.google.protobuf.TimestampOrBuilder>(
+                    getIngestionTime(), getParentForChildren(), isClean());
+            ingestionTime_ = null;
+          }
+          return ingestionTimeBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent)
+      private static final com.google.cloud.dialogflow.v2.Conversation.ContextReference
+              .ContextContent
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent();
+      }
+
+      public static com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ContextContent> PARSER =
+          new com.google.protobuf.AbstractParser<ContextContent>() {
+            @java.lang.Override
+            public ContextContent parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ContextContent> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ContextContent> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int CONTEXT_CONTENTS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent>
+        contextContents_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of content updates for a context reference.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent>
+        getContextContentsList() {
+      return contextContents_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of content updates for a context reference.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.v2.Conversation.ContextReference
+                    .ContextContentOrBuilder>
+        getContextContentsOrBuilderList() {
+      return contextContents_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of content updates for a context reference.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public int getContextContentsCount() {
+      return contextContents_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of content updates for a context reference.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+        getContextContents(int index) {
+      return contextContents_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The list of content updates for a context reference.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContentOrBuilder
+        getContextContentsOrBuilder(int index) {
+      return contextContents_.get(index);
+    }
+
+    public static final int UPDATE_MODE_FIELD_NUMBER = 2;
+    private int updateMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The mode in which context reference contents are updated.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode update_mode = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for updateMode.
+     */
+    @java.lang.Override
+    public int getUpdateModeValue() {
+      return updateMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The mode in which context reference contents are updated.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode update_mode = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The updateMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode getUpdateMode() {
+      com.google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode result =
+          com.google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode.forNumber(
+              updateMode_);
+      return result == null
+          ? com.google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int LANGUAGE_CODE_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object languageCode_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language of the information ingested, defaults to "en-US"
+     * if not set.
+     * </pre>
+     *
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The languageCode.
+     */
+    @java.lang.Override
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language of the information ingested, defaults to "en-US"
+     * if not set.
+     * </pre>
+     *
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATE_TIME_FIELD_NUMBER = 4;
+    private com.google.protobuf.Timestamp createTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the context reference was first created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreateTime() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the context reference was first created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getCreateTime() {
+      return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the context reference was first created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < contextContents_.size(); i++) {
+        output.writeMessage(1, contextContents_.get(i));
+      }
+      if (updateMode_
+          != com.google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode
+              .UPDATE_MODE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, updateMode_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, languageCode_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(4, getCreateTime());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < contextContents_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, contextContents_.get(i));
+      }
+      if (updateMode_
+          != com.google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode
+              .UPDATE_MODE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, updateMode_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, languageCode_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCreateTime());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.v2.Conversation.ContextReference)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.v2.Conversation.ContextReference other =
+          (com.google.cloud.dialogflow.v2.Conversation.ContextReference) obj;
+
+      if (!getContextContentsList().equals(other.getContextContentsList())) return false;
+      if (updateMode_ != other.updateMode_) return false;
+      if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+      if (hasCreateTime() != other.hasCreateTime()) return false;
+      if (hasCreateTime()) {
+        if (!getCreateTime().equals(other.getCreateTime())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getContextContentsCount() > 0) {
+        hash = (37 * hash) + CONTEXT_CONTENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getContextContentsList().hashCode();
+      }
+      hash = (37 * hash) + UPDATE_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + updateMode_;
+      hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getLanguageCode().hashCode();
+      if (hasCreateTime()) {
+        hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateTime().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.ContextReference parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.ContextReference parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.ContextReference parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.ContextReference parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.ContextReference parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.ContextReference parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.ContextReference parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.ContextReference parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.ContextReference parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.ContextReference parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.ContextReference parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.ContextReference parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.v2.Conversation.ContextReference prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a section of ingested context information.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2.Conversation.ContextReference}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.Conversation.ContextReference)
+        com.google.cloud.dialogflow.v2.Conversation.ContextReferenceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_Conversation_ContextReference_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_Conversation_ContextReference_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2.Conversation.ContextReference.class,
+                com.google.cloud.dialogflow.v2.Conversation.ContextReference.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dialogflow.v2.Conversation.ContextReference.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getContextContentsFieldBuilder();
+          getCreateTimeFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (contextContentsBuilder_ == null) {
+          contextContents_ = java.util.Collections.emptyList();
+        } else {
+          contextContents_ = null;
+          contextContentsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        updateMode_ = 0;
+        languageCode_ = "";
+        createTime_ = null;
+        if (createTimeBuilder_ != null) {
+          createTimeBuilder_.dispose();
+          createTimeBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.v2.ConversationProto
+            .internal_static_google_cloud_dialogflow_v2_Conversation_ContextReference_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.Conversation.ContextReference
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.v2.Conversation.ContextReference.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.Conversation.ContextReference build() {
+        com.google.cloud.dialogflow.v2.Conversation.ContextReference result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.Conversation.ContextReference buildPartial() {
+        com.google.cloud.dialogflow.v2.Conversation.ContextReference result =
+            new com.google.cloud.dialogflow.v2.Conversation.ContextReference(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.v2.Conversation.ContextReference result) {
+        if (contextContentsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            contextContents_ = java.util.Collections.unmodifiableList(contextContents_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.contextContents_ = contextContents_;
+        } else {
+          result.contextContents_ = contextContentsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2.Conversation.ContextReference result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.updateMode_ = updateMode_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.languageCode_ = languageCode_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.createTime_ =
+              createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.v2.Conversation.ContextReference) {
+          return mergeFrom((com.google.cloud.dialogflow.v2.Conversation.ContextReference) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.dialogflow.v2.Conversation.ContextReference other) {
+        if (other
+            == com.google.cloud.dialogflow.v2.Conversation.ContextReference.getDefaultInstance())
+          return this;
+        if (contextContentsBuilder_ == null) {
+          if (!other.contextContents_.isEmpty()) {
+            if (contextContents_.isEmpty()) {
+              contextContents_ = other.contextContents_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureContextContentsIsMutable();
+              contextContents_.addAll(other.contextContents_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.contextContents_.isEmpty()) {
+            if (contextContentsBuilder_.isEmpty()) {
+              contextContentsBuilder_.dispose();
+              contextContentsBuilder_ = null;
+              contextContents_ = other.contextContents_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              contextContentsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getContextContentsFieldBuilder()
+                      : null;
+            } else {
+              contextContentsBuilder_.addAllMessages(other.contextContents_);
+            }
+          }
+        }
+        if (other.updateMode_ != 0) {
+          setUpdateModeValue(other.getUpdateModeValue());
+        }
+        if (!other.getLanguageCode().isEmpty()) {
+          languageCode_ = other.languageCode_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.hasCreateTime()) {
+          mergeCreateTime(other.getCreateTime());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent m =
+                      input.readMessage(
+                          com.google.cloud.dialogflow.v2.Conversation.ContextReference
+                              .ContextContent.parser(),
+                          extensionRegistry);
+                  if (contextContentsBuilder_ == null) {
+                    ensureContextContentsIsMutable();
+                    contextContents_.add(m);
+                  } else {
+                    contextContentsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 16:
+                {
+                  updateMode_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 26:
+                {
+                  languageCode_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<
+              com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent>
+          contextContents_ = java.util.Collections.emptyList();
+
+      private void ensureContextContentsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          contextContents_ =
+              new java.util.ArrayList<
+                  com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent>(
+                  contextContents_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent,
+              com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.Builder,
+              com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContentOrBuilder>
+          contextContentsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of content updates for a context reference.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent>
+          getContextContentsList() {
+        if (contextContentsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(contextContents_);
+        } else {
+          return contextContentsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of content updates for a context reference.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public int getContextContentsCount() {
+        if (contextContentsBuilder_ == null) {
+          return contextContents_.size();
+        } else {
+          return contextContentsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of content updates for a context reference.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+          getContextContents(int index) {
+        if (contextContentsBuilder_ == null) {
+          return contextContents_.get(index);
+        } else {
+          return contextContentsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of content updates for a context reference.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setContextContents(
+          int index,
+          com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent value) {
+        if (contextContentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureContextContentsIsMutable();
+          contextContents_.set(index, value);
+          onChanged();
+        } else {
+          contextContentsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of content updates for a context reference.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setContextContents(
+          int index,
+          com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.Builder
+              builderForValue) {
+        if (contextContentsBuilder_ == null) {
+          ensureContextContentsIsMutable();
+          contextContents_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          contextContentsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of content updates for a context reference.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addContextContents(
+          com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent value) {
+        if (contextContentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureContextContentsIsMutable();
+          contextContents_.add(value);
+          onChanged();
+        } else {
+          contextContentsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of content updates for a context reference.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addContextContents(
+          int index,
+          com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent value) {
+        if (contextContentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureContextContentsIsMutable();
+          contextContents_.add(index, value);
+          onChanged();
+        } else {
+          contextContentsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of content updates for a context reference.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addContextContents(
+          com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.Builder
+              builderForValue) {
+        if (contextContentsBuilder_ == null) {
+          ensureContextContentsIsMutable();
+          contextContents_.add(builderForValue.build());
+          onChanged();
+        } else {
+          contextContentsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of content updates for a context reference.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addContextContents(
+          int index,
+          com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.Builder
+              builderForValue) {
+        if (contextContentsBuilder_ == null) {
+          ensureContextContentsIsMutable();
+          contextContents_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          contextContentsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of content updates for a context reference.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addAllContextContents(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent>
+              values) {
+        if (contextContentsBuilder_ == null) {
+          ensureContextContentsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, contextContents_);
+          onChanged();
+        } else {
+          contextContentsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of content updates for a context reference.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearContextContents() {
+        if (contextContentsBuilder_ == null) {
+          contextContents_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          contextContentsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of content updates for a context reference.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder removeContextContents(int index) {
+        if (contextContentsBuilder_ == null) {
+          ensureContextContentsIsMutable();
+          contextContents_.remove(index);
+          onChanged();
+        } else {
+          contextContentsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of content updates for a context reference.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.Builder
+          getContextContentsBuilder(int index) {
+        return getContextContentsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of content updates for a context reference.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContentOrBuilder
+          getContextContentsOrBuilder(int index) {
+        if (contextContentsBuilder_ == null) {
+          return contextContents_.get(index);
+        } else {
+          return contextContentsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of content updates for a context reference.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.dialogflow.v2.Conversation.ContextReference
+                      .ContextContentOrBuilder>
+          getContextContentsOrBuilderList() {
+        if (contextContentsBuilder_ != null) {
+          return contextContentsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(contextContents_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of content updates for a context reference.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.Builder
+          addContextContentsBuilder() {
+        return getContextContentsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of content updates for a context reference.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.Builder
+          addContextContentsBuilder(int index) {
+        return getContextContentsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of content updates for a context reference.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent context_contents = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.Builder>
+          getContextContentsBuilderList() {
+        return getContextContentsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent,
+              com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent.Builder,
+              com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContentOrBuilder>
+          getContextContentsFieldBuilder() {
+        if (contextContentsBuilder_ == null) {
+          contextContentsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent,
+                  com.google.cloud.dialogflow.v2.Conversation.ContextReference.ContextContent
+                      .Builder,
+                  com.google.cloud.dialogflow.v2.Conversation.ContextReference
+                      .ContextContentOrBuilder>(
+                  contextContents_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          contextContents_ = null;
+        }
+        return contextContentsBuilder_;
+      }
+
+      private int updateMode_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Required. The mode in which context reference contents are updated.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode update_mode = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for updateMode.
+       */
+      @java.lang.Override
+      public int getUpdateModeValue() {
+        return updateMode_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The mode in which context reference contents are updated.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode update_mode = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for updateMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdateModeValue(int value) {
+        updateMode_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The mode in which context reference contents are updated.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode update_mode = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The updateMode.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode
+          getUpdateMode() {
+        com.google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode result =
+            com.google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode.forNumber(
+                updateMode_);
+        return result == null
+            ? com.google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The mode in which context reference contents are updated.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode update_mode = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The updateMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdateMode(
+          com.google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        updateMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The mode in which context reference contents are updated.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.Conversation.ContextReference.UpdateMode update_mode = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUpdateMode() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        updateMode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object languageCode_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The language of the information ingested, defaults to "en-US"
+       * if not set.
+       * </pre>
+       *
+       * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The languageCode.
+       */
+      public java.lang.String getLanguageCode() {
+        java.lang.Object ref = languageCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          languageCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The language of the information ingested, defaults to "en-US"
+       * if not set.
+       * </pre>
+       *
+       * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for languageCode.
+       */
+      public com.google.protobuf.ByteString getLanguageCodeBytes() {
+        java.lang.Object ref = languageCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          languageCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The language of the information ingested, defaults to "en-US"
+       * if not set.
+       * </pre>
+       *
+       * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The languageCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLanguageCode(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        languageCode_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The language of the information ingested, defaults to "en-US"
+       * if not set.
+       * </pre>
+       *
+       * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLanguageCode() {
+        languageCode_ = getDefaultInstance().getLanguageCode();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The language of the information ingested, defaults to "en-US"
+       * if not set.
+       * </pre>
+       *
+       * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for languageCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        languageCode_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp createTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          createTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time the context reference was first created.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the createTime field is set.
+       */
+      public boolean hasCreateTime() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time the context reference was first created.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The createTime.
+       */
+      public com.google.protobuf.Timestamp getCreateTime() {
+        if (createTimeBuilder_ == null) {
+          return createTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : createTime_;
+        } else {
+          return createTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time the context reference was first created.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+        if (createTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          createTime_ = value;
+        } else {
+          createTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time the context reference was first created.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (createTimeBuilder_ == null) {
+          createTime_ = builderForValue.build();
+        } else {
+          createTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time the context reference was first created.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+        if (createTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && createTime_ != null
+              && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCreateTimeBuilder().mergeFrom(value);
+          } else {
+            createTime_ = value;
+          }
+        } else {
+          createTimeBuilder_.mergeFrom(value);
+        }
+        if (createTime_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time the context reference was first created.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearCreateTime() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        createTime_ = null;
+        if (createTimeBuilder_ != null) {
+          createTimeBuilder_.dispose();
+          createTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time the context reference was first created.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getCreateTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time the context reference was first created.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+        if (createTimeBuilder_ != null) {
+          return createTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return createTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : createTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time the context reference was first created.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getCreateTimeFieldBuilder() {
+        if (createTimeBuilder_ == null) {
+          createTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getCreateTime(), getParentForChildren(), isClean());
+          createTime_ = null;
+        }
+        return createTimeBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.Conversation.ContextReference)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.Conversation.ContextReference)
+    private static final com.google.cloud.dialogflow.v2.Conversation.ContextReference
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2.Conversation.ContextReference();
+    }
+
+    public static com.google.cloud.dialogflow.v2.Conversation.ContextReference
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ContextReference> PARSER =
+        new com.google.protobuf.AbstractParser<ContextReference>() {
+          @java.lang.Override
+          public ContextReference parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ContextReference> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ContextReference> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.Conversation.ContextReference
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -4702,6 +8148,134 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         : telephonyConnectionInfo_;
   }
 
+  public static final int INGESTED_CONTEXT_REFERENCES_FIELD_NUMBER = 17;
+
+  private static final class IngestedContextReferencesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+                    newDefaultInstance(
+                        com.google.cloud.dialogflow.v2.ConversationProto
+                            .internal_static_google_cloud_dialogflow_v2_Conversation_IngestedContextReferencesEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.dialogflow.v2.Conversation.ContextReference
+                            .getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+      ingestedContextReferences_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+      internalGetIngestedContextReferences() {
+    if (ingestedContextReferences_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          IngestedContextReferencesDefaultEntryHolder.defaultEntry);
+    }
+    return ingestedContextReferences_;
+  }
+
+  public int getIngestedContextReferencesCount() {
+    return internalGetIngestedContextReferences().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The context reference updates provided by external systems.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2.Conversation.ContextReference&gt; ingested_context_references = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsIngestedContextReferences(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetIngestedContextReferences().getMap().containsKey(key);
+  }
+  /** Use {@link #getIngestedContextReferencesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<
+          java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+      getIngestedContextReferences() {
+    return getIngestedContextReferencesMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The context reference updates provided by external systems.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2.Conversation.ContextReference&gt; ingested_context_references = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<
+          java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+      getIngestedContextReferencesMap() {
+    return internalGetIngestedContextReferences().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The context reference updates provided by external systems.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2.Conversation.ContextReference&gt; ingested_context_references = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.dialogflow.v2.Conversation.ContextReference
+      getIngestedContextReferencesOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.dialogflow.v2.Conversation.ContextReference defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+        map = internalGetIngestedContextReferences().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The context reference updates provided by external systems.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2.Conversation.ContextReference&gt; ingested_context_references = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.Conversation.ContextReference
+      getIngestedContextReferencesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+        map = internalGetIngestedContextReferences().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4745,6 +8319,11 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(10, getTelephonyConnectionInfo());
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetIngestedContextReferences(),
+        IngestedContextReferencesDefaultEntryHolder.defaultEntry,
+        17);
     getUnknownFields().writeTo(output);
   }
 
@@ -4785,6 +8364,20 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, getTelephonyConnectionInfo());
     }
+    for (java.util.Map.Entry<
+            java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+        entry : internalGetIngestedContextReferences().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+          ingestedContextReferences__ =
+              IngestedContextReferencesDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(17, ingestedContextReferences__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4821,6 +8414,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     if (hasTelephonyConnectionInfo()) {
       if (!getTelephonyConnectionInfo().equals(other.getTelephonyConnectionInfo())) return false;
     }
+    if (!internalGetIngestedContextReferences()
+        .equals(other.internalGetIngestedContextReferences())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4855,6 +8450,10 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     if (hasTelephonyConnectionInfo()) {
       hash = (37 * hash) + TELEPHONY_CONNECTION_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getTelephonyConnectionInfo().hashCode();
+    }
+    if (!internalGetIngestedContextReferences().getMap().isEmpty()) {
+      hash = (37 * hash) + INGESTED_CONTEXT_REFERENCES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetIngestedContextReferences().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4977,6 +8576,28 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_dialogflow_v2_Conversation_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 17:
+          return internalGetIngestedContextReferences();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 17:
+          return internalGetMutableIngestedContextReferences();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -5034,6 +8655,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         telephonyConnectionInfoBuilder_.dispose();
         telephonyConnectionInfoBuilder_ = null;
       }
+      internalGetMutableIngestedContextReferences().clear();
       return this;
     }
 
@@ -5102,6 +8724,11 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                 ? telephonyConnectionInfo_
                 : telephonyConnectionInfoBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.ingestedContextReferences_ =
+            internalGetIngestedContextReferences()
+                .build(IngestedContextReferencesDefaultEntryHolder.defaultEntry);
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5179,6 +8806,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       if (other.hasTelephonyConnectionInfo()) {
         mergeTelephonyConnectionInfo(other.getTelephonyConnectionInfo());
       }
+      internalGetMutableIngestedContextReferences()
+          .mergeFrom(other.internalGetIngestedContextReferences());
+      bitField0_ |= 0x00000100;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -5254,6 +8884,24 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 82
+            case 138:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String,
+                        com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+                    ingestedContextReferences__ =
+                        input.readMessage(
+                            IngestedContextReferencesDefaultEntryHolder.defaultEntry
+                                .getParserForType(),
+                            extensionRegistry);
+                internalGetMutableIngestedContextReferences()
+                    .ensureBuilderMap()
+                    .put(
+                        ingestedContextReferences__.getKey(),
+                        ingestedContextReferences__.getValue());
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6620,6 +10268,276 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         telephonyConnectionInfo_ = null;
       }
       return telephonyConnectionInfoBuilder_;
+    }
+
+    private static final class IngestedContextReferencesConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.cloud.dialogflow.v2.Conversation.ContextReferenceOrBuilder,
+            com.google.cloud.dialogflow.v2.Conversation.ContextReference> {
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.Conversation.ContextReference build(
+          com.google.cloud.dialogflow.v2.Conversation.ContextReferenceOrBuilder val) {
+        if (val instanceof com.google.cloud.dialogflow.v2.Conversation.ContextReference) {
+          return (com.google.cloud.dialogflow.v2.Conversation.ContextReference) val;
+        }
+        return ((com.google.cloud.dialogflow.v2.Conversation.ContextReference.Builder) val).build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+          defaultEntry() {
+        return IngestedContextReferencesDefaultEntryHolder.defaultEntry;
+      }
+    };
+
+    private static final IngestedContextReferencesConverter ingestedContextReferencesConverter =
+        new IngestedContextReferencesConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.dialogflow.v2.Conversation.ContextReferenceOrBuilder,
+            com.google.cloud.dialogflow.v2.Conversation.ContextReference,
+            com.google.cloud.dialogflow.v2.Conversation.ContextReference.Builder>
+        ingestedContextReferences_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.dialogflow.v2.Conversation.ContextReferenceOrBuilder,
+            com.google.cloud.dialogflow.v2.Conversation.ContextReference,
+            com.google.cloud.dialogflow.v2.Conversation.ContextReference.Builder>
+        internalGetIngestedContextReferences() {
+      if (ingestedContextReferences_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(ingestedContextReferencesConverter);
+      }
+      return ingestedContextReferences_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.dialogflow.v2.Conversation.ContextReferenceOrBuilder,
+            com.google.cloud.dialogflow.v2.Conversation.ContextReference,
+            com.google.cloud.dialogflow.v2.Conversation.ContextReference.Builder>
+        internalGetMutableIngestedContextReferences() {
+      if (ingestedContextReferences_ == null) {
+        ingestedContextReferences_ =
+            new com.google.protobuf.MapFieldBuilder<>(ingestedContextReferencesConverter);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return ingestedContextReferences_;
+    }
+
+    public int getIngestedContextReferencesCount() {
+      return internalGetIngestedContextReferences().ensureBuilderMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The context reference updates provided by external systems.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2.Conversation.ContextReference&gt; ingested_context_references = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsIngestedContextReferences(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetIngestedContextReferences().ensureBuilderMap().containsKey(key);
+    }
+    /** Use {@link #getIngestedContextReferencesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+        getIngestedContextReferences() {
+      return getIngestedContextReferencesMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The context reference updates provided by external systems.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2.Conversation.ContextReference&gt; ingested_context_references = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+        getIngestedContextReferencesMap() {
+      return internalGetIngestedContextReferences().getImmutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The context reference updates provided by external systems.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2.Conversation.ContextReference&gt; ingested_context_references = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.dialogflow.v2.Conversation.ContextReference
+        getIngestedContextReferencesOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.dialogflow.v2.Conversation.ContextReference defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.dialogflow.v2.Conversation.ContextReferenceOrBuilder>
+          map = internalGetMutableIngestedContextReferences().ensureBuilderMap();
+      return map.containsKey(key)
+          ? ingestedContextReferencesConverter.build(map.get(key))
+          : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The context reference updates provided by external systems.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2.Conversation.ContextReference&gt; ingested_context_references = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.Conversation.ContextReference
+        getIngestedContextReferencesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.dialogflow.v2.Conversation.ContextReferenceOrBuilder>
+          map = internalGetMutableIngestedContextReferences().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return ingestedContextReferencesConverter.build(map.get(key));
+    }
+
+    public Builder clearIngestedContextReferences() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      internalGetMutableIngestedContextReferences().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The context reference updates provided by external systems.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2.Conversation.ContextReference&gt; ingested_context_references = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeIngestedContextReferences(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableIngestedContextReferences().ensureBuilderMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+        getMutableIngestedContextReferences() {
+      bitField0_ |= 0x00000100;
+      return internalGetMutableIngestedContextReferences().ensureMessageMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The context reference updates provided by external systems.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2.Conversation.ContextReference&gt; ingested_context_references = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putIngestedContextReferences(
+        java.lang.String key, com.google.cloud.dialogflow.v2.Conversation.ContextReference value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableIngestedContextReferences().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00000100;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The context reference updates provided by external systems.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2.Conversation.ContextReference&gt; ingested_context_references = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putAllIngestedContextReferences(
+        java.util.Map<
+                java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+            values) {
+      for (java.util.Map.Entry<
+              java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
+          e : values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableIngestedContextReferences().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00000100;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The context reference updates provided by external systems.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2.Conversation.ContextReference&gt; ingested_context_references = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.Conversation.ContextReference.Builder
+        putIngestedContextReferencesBuilderIfAbsent(java.lang.String key) {
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.dialogflow.v2.Conversation.ContextReferenceOrBuilder>
+          builderMap = internalGetMutableIngestedContextReferences().ensureBuilderMap();
+      com.google.cloud.dialogflow.v2.Conversation.ContextReferenceOrBuilder entry =
+          builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.cloud.dialogflow.v2.Conversation.ContextReference.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.cloud.dialogflow.v2.Conversation.ContextReference) {
+        entry = ((com.google.cloud.dialogflow.v2.Conversation.ContextReference) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.cloud.dialogflow.v2.Conversation.ContextReference.Builder) entry;
     }
 
     @java.lang.Override

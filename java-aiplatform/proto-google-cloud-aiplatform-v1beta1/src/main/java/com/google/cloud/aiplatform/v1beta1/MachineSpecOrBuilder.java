@@ -150,6 +150,22 @@ public interface MachineSpecOrBuilder
    *
    *
    * <pre>
+   * Optional. Immutable. The number of nodes per replica for multihost GPU
+   * deployments.
+   * </pre>
+   *
+   * <code>
+   * int32 multihost_gpu_node_count = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The multihostGpuNodeCount.
+   */
+  int getMultihostGpuNodeCount();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Immutable. Configuration controlling how this resource pool
    * consumes reservation.
    * </pre>

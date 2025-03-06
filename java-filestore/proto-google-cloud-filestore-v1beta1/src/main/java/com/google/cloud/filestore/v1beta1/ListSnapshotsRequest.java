@@ -298,6 +298,25 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 6;
+  private boolean returnPartialSuccess_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, allow partial responses for multi-regional Aggregated
+   * List requests.
+   * </pre>
+   *
+   * <code>bool return_partial_success = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The returnPartialSuccess.
+   */
+  @java.lang.Override
+  public boolean getReturnPartialSuccess() {
+    return returnPartialSuccess_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -327,6 +346,9 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filter_);
     }
+    if (returnPartialSuccess_ != false) {
+      output.writeBool(6, returnPartialSuccess_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -351,6 +373,9 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filter_);
     }
+    if (returnPartialSuccess_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, returnPartialSuccess_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -372,6 +397,7 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
+    if (getReturnPartialSuccess() != other.getReturnPartialSuccess()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -393,6 +419,8 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getOrderBy().hashCode();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + RETURN_PARTIAL_SUCCESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialSuccess());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -538,6 +566,7 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
       pageToken_ = "";
       orderBy_ = "";
       filter_ = "";
+      returnPartialSuccess_ = false;
       return this;
     }
 
@@ -588,6 +617,9 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.returnPartialSuccess_ = returnPartialSuccess_;
       }
     }
 
@@ -660,6 +692,9 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.getReturnPartialSuccess() != false) {
+        setReturnPartialSuccess(other.getReturnPartialSuccess());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -716,6 +751,12 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 48:
+              {
+                returnPartialSuccess_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1233,6 +1274,62 @@ public final class ListSnapshotsRequest extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       filter_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private boolean returnPartialSuccess_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, allow partial responses for multi-regional Aggregated
+     * List requests.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The returnPartialSuccess.
+     */
+    @java.lang.Override
+    public boolean getReturnPartialSuccess() {
+      return returnPartialSuccess_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, allow partial responses for multi-regional Aggregated
+     * List requests.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The returnPartialSuccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReturnPartialSuccess(boolean value) {
+
+      returnPartialSuccess_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, allow partial responses for multi-regional Aggregated
+     * List requests.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReturnPartialSuccess() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      returnPartialSuccess_ = false;
       onChanged();
       return this;
     }

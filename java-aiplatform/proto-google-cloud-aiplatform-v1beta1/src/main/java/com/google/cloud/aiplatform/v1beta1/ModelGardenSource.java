@@ -41,6 +41,7 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
 
   private ModelGardenSource() {
     publicModelName_ = "";
+    versionId_ = "";
   }
 
   @java.lang.Override
@@ -115,6 +116,75 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int VERSION_ID_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object versionId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model garden source model version ID.
+   * </pre>
+   *
+   * <code>string version_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The versionId.
+   */
+  @java.lang.Override
+  public java.lang.String getVersionId() {
+    java.lang.Object ref = versionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      versionId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model garden source model version ID.
+   * </pre>
+   *
+   * <code>string version_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for versionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVersionIdBytes() {
+    java.lang.Object ref = versionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      versionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SKIP_HF_MODEL_CACHE_FIELD_NUMBER = 4;
+  private boolean skipHfModelCache_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to avoid pulling the model from the HF cache.
+   * </pre>
+   *
+   * <code>bool skip_hf_model_cache = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The skipHfModelCache.
+   */
+  @java.lang.Override
+  public boolean getSkipHfModelCache() {
+    return skipHfModelCache_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -132,6 +202,12 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicModelName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, publicModelName_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, versionId_);
+    }
+    if (skipHfModelCache_ != false) {
+      output.writeBool(4, skipHfModelCache_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -143,6 +219,12 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicModelName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, publicModelName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, versionId_);
+    }
+    if (skipHfModelCache_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, skipHfModelCache_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -161,6 +243,8 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
         (com.google.cloud.aiplatform.v1beta1.ModelGardenSource) obj;
 
     if (!getPublicModelName().equals(other.getPublicModelName())) return false;
+    if (!getVersionId().equals(other.getVersionId())) return false;
+    if (getSkipHfModelCache() != other.getSkipHfModelCache()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -174,6 +258,10 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PUBLIC_MODEL_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getPublicModelName().hashCode();
+    hash = (37 * hash) + VERSION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getVersionId().hashCode();
+    hash = (37 * hash) + SKIP_HF_MODEL_CACHE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipHfModelCache());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -316,6 +404,8 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
       super.clear();
       bitField0_ = 0;
       publicModelName_ = "";
+      versionId_ = "";
+      skipHfModelCache_ = false;
       return this;
     }
 
@@ -354,6 +444,12 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.publicModelName_ = publicModelName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.versionId_ = versionId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.skipHfModelCache_ = skipHfModelCache_;
       }
     }
 
@@ -408,6 +504,14 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getVersionId().isEmpty()) {
+        versionId_ = other.versionId_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.getSkipHfModelCache() != false) {
+        setSkipHfModelCache(other.getSkipHfModelCache());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -440,6 +544,18 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 26:
+              {
+                versionId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
+            case 32:
+              {
+                skipHfModelCache_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -561,6 +677,165 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       publicModelName_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object versionId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model garden source model version ID.
+     * </pre>
+     *
+     * <code>string version_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The versionId.
+     */
+    public java.lang.String getVersionId() {
+      java.lang.Object ref = versionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        versionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model garden source model version ID.
+     * </pre>
+     *
+     * <code>string version_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for versionId.
+     */
+    public com.google.protobuf.ByteString getVersionIdBytes() {
+      java.lang.Object ref = versionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        versionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model garden source model version ID.
+     * </pre>
+     *
+     * <code>string version_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The versionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      versionId_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model garden source model version ID.
+     * </pre>
+     *
+     * <code>string version_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVersionId() {
+      versionId_ = getDefaultInstance().getVersionId();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model garden source model version ID.
+     * </pre>
+     *
+     * <code>string version_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for versionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      versionId_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private boolean skipHfModelCache_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to avoid pulling the model from the HF cache.
+     * </pre>
+     *
+     * <code>bool skip_hf_model_cache = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The skipHfModelCache.
+     */
+    @java.lang.Override
+    public boolean getSkipHfModelCache() {
+      return skipHfModelCache_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to avoid pulling the model from the HF cache.
+     * </pre>
+     *
+     * <code>bool skip_hf_model_cache = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The skipHfModelCache to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkipHfModelCache(boolean value) {
+
+      skipHfModelCache_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to avoid pulling the model from the HF cache.
+     * </pre>
+     *
+     * <code>bool skip_hf_model_cache = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkipHfModelCache() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      skipHfModelCache_ = false;
       onChanged();
       return this;
     }

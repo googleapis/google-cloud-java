@@ -118,11 +118,17 @@
             "GenerateStatelessSummary": {
               "methods": ["generateStatelessSummary", "generateStatelessSummaryCallable"]
             },
+            "GenerateSuggestions": {
+              "methods": ["generateSuggestions", "generateSuggestions", "generateSuggestions", "generateSuggestionsCallable"]
+            },
             "GetConversation": {
               "methods": ["getConversation", "getConversation", "getConversation", "getConversationCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "IngestContextReferences": {
+              "methods": ["ingestContextReferences", "ingestContextReferences", "ingestContextReferences", "ingestContextReferencesCallable"]
             },
             "ListConversations": {
               "methods": ["listConversations", "listConversations", "listConversations", "listConversations", "listConversationsPagedCallable", "listConversationsCallable"]

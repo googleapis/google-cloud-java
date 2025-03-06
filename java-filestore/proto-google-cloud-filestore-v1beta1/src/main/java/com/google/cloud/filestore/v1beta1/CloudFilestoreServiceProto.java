@@ -49,13 +49,41 @@ public final class CloudFilestoreServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_filestore_v1beta1_DirectoryServicesConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_filestore_v1beta1_ReplicaConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_filestore_v1beta1_ReplicaConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_filestore_v1beta1_Replication_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_filestore_v1beta1_Replication_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_filestore_v1beta1_Instance_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_filestore_v1beta1_Instance_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_filestore_v1beta1_Instance_IOPSPerTB_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_filestore_v1beta1_Instance_IOPSPerTB_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_filestore_v1beta1_Instance_FixedIOPS_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_filestore_v1beta1_Instance_FixedIOPS_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceLimits_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceLimits_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_filestore_v1beta1_Instance_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_filestore_v1beta1_Instance_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_filestore_v1beta1_Instance_TagsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_filestore_v1beta1_Instance_TagsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_filestore_v1beta1_CreateInstanceRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -89,6 +117,10 @@ public final class CloudFilestoreServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_filestore_v1beta1_ListInstancesResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_filestore_v1beta1_PromoteReplicaRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_filestore_v1beta1_PromoteReplicaRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_filestore_v1beta1_Snapshot_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_filestore_v1beta1_Snapshot_fieldAccessorTable;
@@ -96,6 +128,10 @@ public final class CloudFilestoreServiceProto {
       internal_static_google_cloud_filestore_v1beta1_Snapshot_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_filestore_v1beta1_Snapshot_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_filestore_v1beta1_Snapshot_TagsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_filestore_v1beta1_Snapshot_TagsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_filestore_v1beta1_CreateSnapshotRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -128,6 +164,10 @@ public final class CloudFilestoreServiceProto {
       internal_static_google_cloud_filestore_v1beta1_Backup_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_filestore_v1beta1_Backup_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_filestore_v1beta1_Backup_TagsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_filestore_v1beta1_Backup_TagsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_filestore_v1beta1_CreateBackupRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -233,316 +273,380 @@ public final class CloudFilestoreServiceProto {
           + "UASH\020\001\022\017\n\013ROOT_SQUASH\020\002\"_\n\016SecurityFlavo"
           + "r\022\037\n\033SECURITY_FLAVOR_UNSPECIFIED\020\000\022\014\n\010AU"
           + "TH_SYS\020\001\022\010\n\004KRB5\020\002\022\t\n\005KRB5I\020\003\022\t\n\005KRB5P\020\004"
-          + "\"@\n\034ManagedActiveDirectoryConfig\022\016\n\006doma"
-          + "in\030\001 \001(\t\022\020\n\010computer\030\002 \001(\t\"\205\001\n\027Directory"
-          + "ServicesConfig\022`\n\030managed_active_directo"
-          + "ry\030\001 \001(\0132<.google.cloud.filestore.v1beta"
-          + "1.ManagedActiveDirectoryConfigH\000B\010\n\006conf"
-          + "ig\"\274\014\n\010Instance\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\023\n\013de"
-          + "scription\030\002 \001(\t\022B\n\005state\030\005 \001(\0162..google."
-          + "cloud.filestore.v1beta1.Instance.StateB\003"
-          + "\340A\003\022\033\n\016status_message\030\006 \001(\tB\003\340A\003\0224\n\013crea"
-          + "te_time\030\007 \001(\0132\032.google.protobuf.Timestam"
-          + "pB\003\340A\003\022;\n\004tier\030\010 \001(\0162-.google.cloud.file"
-          + "store.v1beta1.Instance.Tier\022D\n\006labels\030\t "
-          + "\003(\01324.google.cloud.filestore.v1beta1.Ins"
-          + "tance.LabelsEntry\022D\n\013file_shares\030\n \003(\0132/"
-          + ".google.cloud.filestore.v1beta1.FileShar"
-          + "eConfig\022?\n\010networks\030\013 \003(\0132-.google.cloud"
-          + ".filestore.v1beta1.NetworkConfig\022\014\n\004etag"
-          + "\030\014 \001(\t\0226\n\rsatisfies_pzs\030\r \001(\0132\032.google.p"
-          + "rotobuf.BoolValueB\003\340A\003\022\032\n\rsatisfies_pzi\030"
-          + "\032 \001(\010B\003\340A\003\022\024\n\014kms_key_name\030\016 \001(\t\022Z\n\022susp"
-          + "ension_reasons\030\017 \003(\01629.google.cloud.file"
-          + "store.v1beta1.Instance.SuspensionReasonB"
-          + "\003\340A\003\022\034\n\017max_capacity_gb\030\020 \001(\003B\003\340A\003\022\"\n\025ca"
-          + "pacity_step_size_gb\030\021 \001(\003B\003\340A\003\022\027\n\017max_sh"
-          + "are_count\030\022 \001(\003\022\023\n\013capacity_gb\030\023 \001(\003\022\033\n\023"
-          + "multi_share_enabled\030\024 \001(\010\022L\n\010protocol\030\025 "
-          + "\001(\01625.google.cloud.filestore.v1beta1.Ins"
-          + "tance.FileProtocolB\003\340A\005\022S\n\022directory_ser"
-          + "vices\030\030 \001(\01327.google.cloud.filestore.v1b"
-          + "eta1.DirectoryServicesConfig\032-\n\013LabelsEn"
-          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\252\001\n\005"
-          + "State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CREATING"
-          + "\020\001\022\t\n\005READY\020\002\022\r\n\tREPAIRING\020\003\022\014\n\010DELETING"
-          + "\020\004\022\t\n\005ERROR\020\006\022\r\n\tRESTORING\020\007\022\r\n\tSUSPENDE"
-          + "D\020\010\022\r\n\tREVERTING\020\t\022\016\n\nSUSPENDING\020\n\022\014\n\010RE"
-          + "SUMING\020\013\"\222\001\n\004Tier\022\024\n\020TIER_UNSPECIFIED\020\000\022"
-          + "\014\n\010STANDARD\020\001\022\013\n\007PREMIUM\020\002\022\r\n\tBASIC_HDD\020"
-          + "\003\022\r\n\tBASIC_SSD\020\004\022\022\n\016HIGH_SCALE_SSD\020\006\022\016\n\n"
-          + "ENTERPRISE\020\007\022\t\n\005ZONAL\020\010\022\014\n\010REGIONAL\020\t\"H\n"
-          + "\020SuspensionReason\022!\n\035SUSPENSION_REASON_U"
-          + "NSPECIFIED\020\000\022\021\n\rKMS_KEY_ISSUE\020\001\"G\n\014FileP"
-          + "rotocol\022\035\n\031FILE_PROTOCOL_UNSPECIFIED\020\000\022\n"
-          + "\n\006NFS_V3\020\001\022\014\n\010NFS_V4_1\020\002:_\352A\\\n\034file.goog"
-          + "leapis.com/Instance\022<projects/{project}/"
-          + "locations/{location}/instances/{instance"
-          + "}\"\255\001\n\025CreateInstanceRequest\0229\n\006parent\030\001 "
-          + "\001(\tB)\340A\002\372A#\n!locations.googleapis.com/Lo"
-          + "cation\022\030\n\013instance_id\030\002 \001(\tB\003\340A\002\022?\n\010inst"
-          + "ance\030\003 \001(\0132(.google.cloud.filestore.v1be"
-          + "ta1.InstanceB\003\340A\002\"H\n\022GetInstanceRequest\022"
-          + "2\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034file.googleapis.c"
-          + "om/Instance\"\216\001\n\025UpdateInstanceRequest\0224\n"
-          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.Fie"
-          + "ldMaskB\003\340A\002\022?\n\010instance\030\002 \001(\0132(.google.c"
-          + "loud.filestore.v1beta1.InstanceB\003\340A\002\"\351\001\n"
-          + "\026RestoreInstanceRequest\0222\n\004name\030\001 \001(\tB$\340"
-          + "A\002\372A\036\n\034file.googleapis.com/Instance\022\027\n\nf"
-          + "ile_share\030\002 \001(\tB\003\340A\002\022>\n\017source_snapshot\030"
-          + "\003 \001(\tB#\030\001\372A\036\n\034file.googleapis.com/Snapsh"
-          + "otH\000\0228\n\rsource_backup\030\004 \001(\tB\037\372A\034\n\032file.g"
-          + "oogleapis.com/BackupH\000B\010\n\006source\"l\n\025Reve"
-          + "rtInstanceRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n"
-          + "\034file.googleapis.com/Instance\022\037\n\022target_"
-          + "snapshot_id\030\002 \001(\tB\003\340A\002\"Z\n\025DeleteInstance"
-          + "Request\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034file.goog"
-          + "leapis.com/Instance\022\r\n\005force\030\002 \001(\010\"\232\001\n\024L"
-          + "istInstancesRequest\0229\n\006parent\030\001 \001(\tB)\340A\002"
-          + "\372A#\n!locations.googleapis.com/Location\022\021"
-          + "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\020\n"
-          + "\010order_by\030\004 \001(\t\022\016\n\006filter\030\005 \001(\t\"\202\001\n\025List"
-          + "InstancesResponse\022;\n\tinstances\030\001 \003(\0132(.g"
-          + "oogle.cloud.filestore.v1beta1.Instance\022\027"
-          + "\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003"
-          + " \003(\t\"\202\004\n\010Snapshot\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\023\n\013"
-          + "description\030\002 \001(\t\022B\n\005state\030\003 \001(\0162..googl"
-          + "e.cloud.filestore.v1beta1.Snapshot.State"
-          + "B\003\340A\003\0224\n\013create_time\030\004 \001(\0132\032.google.prot"
-          + "obuf.TimestampB\003\340A\003\022D\n\006labels\030\005 \003(\01324.go"
-          + "ogle.cloud.filestore.v1beta1.Snapshot.La"
-          + "belsEntry\022\"\n\025filesystem_used_bytes\030\014 \001(\003"
-          + "B\003\340A\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
-          + "ue\030\002 \001(\t:\0028\001\"E\n\005State\022\025\n\021STATE_UNSPECIFI"
-          + "ED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY\020\003\022\014\n\010DELETIN"
-          + "G\020\004:t\352Aq\n\034file.googleapis.com/Snapshot\022Q"
-          + "projects/{project}/locations/{location}/"
-          + "instances/{instance}/snapshots/{snapshot"
-          + "}\"\250\001\n\025CreateSnapshotRequest\0224\n\006parent\030\001 "
-          + "\001(\tB$\340A\002\372A\036\n\034file.googleapis.com/Instanc"
-          + "e\022\030\n\013snapshot_id\030\002 \001(\tB\003\340A\002\022?\n\010snapshot\030"
-          + "\003 \001(\0132(.google.cloud.filestore.v1beta1.S"
-          + "napshotB\003\340A\002\"H\n\022GetSnapshotRequest\0222\n\004na"
-          + "me\030\001 \001(\tB$\340A\002\372A\036\n\034file.googleapis.com/Sn"
-          + "apshot\"K\n\025DeleteSnapshotRequest\0222\n\004name\030"
-          + "\001 \001(\tB$\340A\002\372A\036\n\034file.googleapis.com/Snaps"
-          + "hot\"\216\001\n\025UpdateSnapshotRequest\0224\n\013update_"
-          + "mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003"
-          + "\340A\002\022?\n\010snapshot\030\002 \001(\0132(.google.cloud.fil"
-          + "estore.v1beta1.SnapshotB\003\340A\002\"\225\001\n\024ListSna"
-          + "pshotsRequest\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034f"
+          + "\"v\n\034ManagedActiveDirectoryConfig\022?\n\006doma"
+          + "in\030\001 \001(\tB/\340A\002\372A)\n\'managedidentities.goog"
+          + "leapis.com/Domain\022\025\n\010computer\030\002 \001(\tB\003\340A\002"
+          + "\"\205\001\n\027DirectoryServicesConfig\022`\n\030managed_"
+          + "active_directory\030\001 \001(\0132<.google.cloud.fi"
+          + "lestore.v1beta1.ManagedActiveDirectoryCo"
+          + "nfigH\000B\010\n\006config\"\314\003\n\rReplicaConfig\022B\n\005st"
+          + "ate\030\001 \001(\01623.google.cloud.filestore.v1bet"
+          + "a1.ReplicaConfig.State\022P\n\rstate_reasons\030"
+          + "\002 \003(\01629.google.cloud.filestore.v1beta1.R"
+          + "eplicaConfig.StateReason\0228\n\rpeer_instanc"
+          + "e\030\003 \001(\tB!\372A\036\n\034file.googleapis.com/Instan"
+          + "ce\0229\n\025last_active_sync_time\030\n \001(\0132\032.goog"
+          + "le.protobuf.Timestamp\"Q\n\005State\022\025\n\021STATE_"
+          + "UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY\020\003\022\014"
+          + "\n\010REMOVING\020\004\022\n\n\006FAILED\020\005\"]\n\013StateReason\022"
+          + "\034\n\030STATE_REASON_UNSPECIFIED\020\000\022\035\n\031PEER_IN"
+          + "STANCE_UNREACHABLE\020\001\022\021\n\rREMOVE_FAILED\020\002\""
+          + "\305\001\n\013Replication\022>\n\004role\030\001 \001(\01620.google.c"
+          + "loud.filestore.v1beta1.Replication.Role\022"
+          + "?\n\010replicas\030\002 \003(\0132-.google.cloud.filesto"
+          + "re.v1beta1.ReplicaConfig\"5\n\004Role\022\024\n\020ROLE"
+          + "_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\013\n\007STANDBY\020\002\""
+          + "\376\023\n\010Instance\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\023\n\013descr"
+          + "iption\030\002 \001(\t\022B\n\005state\030\005 \001(\0162..google.clo"
+          + "ud.filestore.v1beta1.Instance.StateB\003\340A\003"
+          + "\022\033\n\016status_message\030\006 \001(\tB\003\340A\003\0224\n\013create_"
+          + "time\030\007 \001(\0132\032.google.protobuf.TimestampB\003"
+          + "\340A\003\022;\n\004tier\030\010 \001(\0162-.google.cloud.filesto"
+          + "re.v1beta1.Instance.Tier\022D\n\006labels\030\t \003(\013"
+          + "24.google.cloud.filestore.v1beta1.Instan"
+          + "ce.LabelsEntry\022D\n\013file_shares\030\n \003(\0132/.go"
+          + "ogle.cloud.filestore.v1beta1.FileShareCo"
+          + "nfig\022?\n\010networks\030\013 \003(\0132-.google.cloud.fi"
+          + "lestore.v1beta1.NetworkConfig\022\014\n\004etag\030\014 "
+          + "\001(\t\0226\n\rsatisfies_pzs\030\r \001(\0132\032.google.prot"
+          + "obuf.BoolValueB\003\340A\003\022\032\n\rsatisfies_pzi\030\032 \001"
+          + "(\010B\003\340A\003\022\024\n\014kms_key_name\030\016 \001(\t\022Z\n\022suspens"
+          + "ion_reasons\030\017 \003(\01629.google.cloud.filesto"
+          + "re.v1beta1.Instance.SuspensionReasonB\003\340A"
+          + "\003\022\034\n\017max_capacity_gb\030\020 \001(\003B\003\340A\003\022\"\n\025capac"
+          + "ity_step_size_gb\030\021 \001(\003B\003\340A\003\022\027\n\017max_share"
+          + "_count\030\022 \001(\003\022\023\n\013capacity_gb\030\023 \001(\003\022\033\n\023mul"
+          + "ti_share_enabled\030\024 \001(\010\022L\n\010protocol\030\025 \001(\016"
+          + "25.google.cloud.filestore.v1beta1.Instan"
+          + "ce.FileProtocolB\003\340A\005\022X\n\022directory_servic"
+          + "es\030\030 \001(\01327.google.cloud.filestore.v1beta"
+          + "1.DirectoryServicesConfigB\003\340A\001\022E\n\013replic"
+          + "ation\030\031 \001(\0132+.google.cloud.filestore.v1b"
+          + "eta1.ReplicationB\003\340A\001\022K\n\004tags\030\033 \003(\01322.go"
+          + "ogle.cloud.filestore.v1beta1.Instance.Ta"
+          + "gsEntryB\t\340A\004\340A\005\340A\001\022)\n\034custom_performance"
+          + "_supported\030\034 \001(\010B\003\340A\003\022[\n\022performance_con"
+          + "fig\030\035 \001(\0132:.google.cloud.filestore.v1bet"
+          + "a1.Instance.PerformanceConfigB\003\340A\001\022[\n\022pe"
+          + "rformance_limits\030\036 \001(\0132:.google.cloud.fi"
+          + "lestore.v1beta1.Instance.PerformanceLimi"
+          + "tsB\003\340A\003\022(\n\033deletion_protection_enabled\030\037"
+          + " \001(\010B\003\340A\001\022\'\n\032deletion_protection_reason\030"
+          + "  \001(\tB\003\340A\001\032)\n\tIOPSPerTB\022\034\n\017max_iops_per_"
+          + "tb\030\002 \001(\003B\003\340A\002\032\"\n\tFixedIOPS\022\025\n\010max_iops\030\002"
+          + " \001(\003B\003\340A\002\032\260\001\n\021PerformanceConfig\022I\n\013iops_"
+          + "per_tb\030\004 \001(\01322.google.cloud.filestore.v1"
+          + "beta1.Instance.IOPSPerTBH\000\022H\n\nfixed_iops"
+          + "\030\002 \001(\01322.google.cloud.filestore.v1beta1."
+          + "Instance.FixedIOPSH\000B\006\n\004mode\032\260\001\n\021Perform"
+          + "anceLimits\022\025\n\010max_iops\030\007 \001(\003B\003\340A\003\022\032\n\rmax"
+          + "_read_iops\030\001 \001(\003B\003\340A\003\022\033\n\016max_write_iops\030"
+          + "\002 \001(\003B\003\340A\003\022$\n\027max_read_throughput_bps\030\005 "
+          + "\001(\003B\003\340A\003\022%\n\030max_write_throughput_bps\030\006 \001"
+          + "(\003B\003\340A\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
+          + "alue\030\002 \001(\t:\0028\001\032+\n\tTagsEntry\022\013\n\003key\030\001 \001(\t"
+          + "\022\r\n\005value\030\002 \001(\t:\0028\001\"\271\001\n\005State\022\025\n\021STATE_U"
+          + "NSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY\020\002\022\r\n"
+          + "\tREPAIRING\020\003\022\014\n\010DELETING\020\004\022\t\n\005ERROR\020\006\022\r\n"
+          + "\tRESTORING\020\007\022\r\n\tSUSPENDED\020\010\022\r\n\tREVERTING"
+          + "\020\t\022\016\n\nSUSPENDING\020\n\022\014\n\010RESUMING\020\013\022\r\n\tPROM"
+          + "OTING\020\r\"\222\001\n\004Tier\022\024\n\020TIER_UNSPECIFIED\020\000\022\014"
+          + "\n\010STANDARD\020\001\022\013\n\007PREMIUM\020\002\022\r\n\tBASIC_HDD\020\003"
+          + "\022\r\n\tBASIC_SSD\020\004\022\022\n\016HIGH_SCALE_SSD\020\006\022\016\n\nE"
+          + "NTERPRISE\020\007\022\t\n\005ZONAL\020\010\022\014\n\010REGIONAL\020\t\"H\n\020"
+          + "SuspensionReason\022!\n\035SUSPENSION_REASON_UN"
+          + "SPECIFIED\020\000\022\021\n\rKMS_KEY_ISSUE\020\001\"G\n\014FilePr"
+          + "otocol\022\035\n\031FILE_PROTOCOL_UNSPECIFIED\020\000\022\n\n"
+          + "\006NFS_V3\020\001\022\014\n\010NFS_V4_1\020\002:_\352A\\\n\034file.googl"
+          + "eapis.com/Instance\022<projects/{project}/l"
+          + "ocations/{location}/instances/{instance}"
+          + "\"\255\001\n\025CreateInstanceRequest\0229\n\006parent\030\001 \001"
+          + "(\tB)\340A\002\372A#\n!locations.googleapis.com/Loc"
+          + "ation\022\030\n\013instance_id\030\002 \001(\tB\003\340A\002\022?\n\010insta"
+          + "nce\030\003 \001(\0132(.google.cloud.filestore.v1bet"
+          + "a1.InstanceB\003\340A\002\"H\n\022GetInstanceRequest\0222"
+          + "\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034file.googleapis.co"
+          + "m/Instance\"\216\001\n\025UpdateInstanceRequest\0224\n\013"
+          + "update_mask\030\001 \001(\0132\032.google.protobuf.Fiel"
+          + "dMaskB\003\340A\002\022?\n\010instance\030\002 \001(\0132(.google.cl"
+          + "oud.filestore.v1beta1.InstanceB\003\340A\002\"\351\001\n\026"
+          + "RestoreInstanceRequest\0222\n\004name\030\001 \001(\tB$\340A"
+          + "\002\372A\036\n\034file.googleapis.com/Instance\022\027\n\nfi"
+          + "le_share\030\002 \001(\tB\003\340A\002\022>\n\017source_snapshot\030\003"
+          + " \001(\tB#\030\001\372A\036\n\034file.googleapis.com/Snapsho"
+          + "tH\000\0228\n\rsource_backup\030\004 \001(\tB\037\372A\034\n\032file.go"
+          + "ogleapis.com/BackupH\000B\010\n\006source\"l\n\025Rever"
+          + "tInstanceRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034"
+          + "file.googleapis.com/Instance\022\037\n\022target_s"
+          + "napshot_id\030\002 \001(\tB\003\340A\002\"Z\n\025DeleteInstanceR"
+          + "equest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034file.googl"
+          + "eapis.com/Instance\022\r\n\005force\030\002 \001(\010\"\232\001\n\024Li"
+          + "stInstancesRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372"
+          + "A#\n!locations.googleapis.com/Location\022\021\n"
+          + "\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\020\n\010"
+          + "order_by\030\004 \001(\t\022\016\n\006filter\030\005 \001(\t\"\207\001\n\025ListI"
+          + "nstancesResponse\022;\n\tinstances\030\001 \003(\0132(.go"
+          + "ogle.cloud.filestore.v1beta1.Instance\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\030\n\013unreachable\030\003 "
+          + "\003(\tB\003\340A\006\"\210\001\n\025PromoteReplicaRequest\0222\n\004na"
+          + "me\030\001 \001(\tB$\340A\002\372A\036\n\034file.googleapis.com/In"
+          + "stance\022;\n\rpeer_instance\030\002 \001(\tB$\340A\001\372A\036\n\034f"
+          + "ile.googleapis.com/Instance\"\374\004\n\010Snapshot"
+          + "\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\023\n\013description\030\002 \001(\t"
+          + "\022B\n\005state\030\003 \001(\0162..google.cloud.filestore"
+          + ".v1beta1.Snapshot.StateB\003\340A\003\0224\n\013create_t"
+          + "ime\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340"
+          + "A\003\022D\n\006labels\030\005 \003(\01324.google.cloud.filest"
+          + "ore.v1beta1.Snapshot.LabelsEntry\022\"\n\025file"
+          + "system_used_bytes\030\014 \001(\003B\003\340A\003\022K\n\004tags\030\r \003"
+          + "(\01322.google.cloud.filestore.v1beta1.Snap"
+          + "shot.TagsEntryB\t\340A\004\340A\005\340A\001\032-\n\013LabelsEntry"
+          + "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032+\n\tTags"
+          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"E\n"
+          + "\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CREATIN"
+          + "G\020\001\022\t\n\005READY\020\003\022\014\n\010DELETING\020\004:t\352Aq\n\034file."
+          + "googleapis.com/Snapshot\022Qprojects/{proje"
+          + "ct}/locations/{location}/instances/{inst"
+          + "ance}/snapshots/{snapshot}\"\250\001\n\025CreateSna"
+          + "pshotRequest\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034fi"
+          + "le.googleapis.com/Instance\022\030\n\013snapshot_i"
+          + "d\030\002 \001(\tB\003\340A\002\022?\n\010snapshot\030\003 \001(\0132(.google."
+          + "cloud.filestore.v1beta1.SnapshotB\003\340A\002\"H\n"
+          + "\022GetSnapshotRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A"
+          + "\036\n\034file.googleapis.com/Snapshot\"K\n\025Delet"
+          + "eSnapshotRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034"
+          + "file.googleapis.com/Snapshot\"\216\001\n\025UpdateS"
+          + "napshotRequest\0224\n\013update_mask\030\001 \001(\0132\032.go"
+          + "ogle.protobuf.FieldMaskB\003\340A\002\022?\n\010snapshot"
+          + "\030\002 \001(\0132(.google.cloud.filestore.v1beta1."
+          + "SnapshotB\003\340A\002\"\272\001\n\024ListSnapshotsRequest\0224"
+          + "\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034file.googleapis."
+          + "com/Instance\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_"
+          + "token\030\003 \001(\t\022\020\n\010order_by\030\004 \001(\t\022\016\n\006filter\030"
+          + "\005 \001(\t\022#\n\026return_partial_success\030\006 \001(\010B\003\340"
+          + "A\001\"\207\001\n\025ListSnapshotsResponse\022;\n\tsnapshot"
+          + "s\030\001 \003(\0132(.google.cloud.filestore.v1beta1"
+          + ".Snapshot\022\027\n\017next_page_token\030\002 \001(\t\022\030\n\013un"
+          + "reachable\030\003 \003(\tB\003\340A\006\"\227\010\n\006Backup\022\021\n\004name\030"
+          + "\001 \001(\tB\003\340A\003\022\023\n\013description\030\002 \001(\t\022@\n\005state"
+          + "\030\003 \001(\0162,.google.cloud.filestore.v1beta1."
+          + "Backup.StateB\003\340A\003\0224\n\013create_time\030\004 \001(\0132\032"
+          + ".google.protobuf.TimestampB\003\340A\003\022B\n\006label"
+          + "s\030\005 \003(\01322.google.cloud.filestore.v1beta1"
+          + ".Backup.LabelsEntry\022\030\n\013capacity_gb\030\006 \001(\003"
+          + "B\003\340A\003\022\032\n\rstorage_bytes\030\007 \001(\003B\003\340A\003\022:\n\017sou"
+          + "rce_instance\030\010 \001(\tB!\372A\036\n\034file.googleapis"
+          + ".com/Instance\022\031\n\021source_file_share\030\t \001(\t"
+          + "\022P\n\024source_instance_tier\030\n \001(\0162-.google."
+          + "cloud.filestore.v1beta1.Instance.TierB\003\340"
+          + "A\003\022\033\n\016download_bytes\030\013 \001(\003B\003\340A\003\0226\n\rsatis"
+          + "fies_pzs\030\014 \001(\0132\032.google.protobuf.BoolVal"
+          + "ueB\003\340A\003\022\032\n\rsatisfies_pzi\030\016 \001(\010B\003\340A\003\022\031\n\014k"
+          + "ms_key_name\030\r \001(\tB\003\340A\005\022I\n\004tags\030\017 \003(\01320.g"
+          + "oogle.cloud.filestore.v1beta1.Backup.Tag"
+          + "sEntryB\t\340A\004\340A\005\340A\001\022X\n\024file_system_protoco"
+          + "l\030\020 \001(\01625.google.cloud.filestore.v1beta1"
+          + ".Instance.FileProtocolB\003\340A\003\032-\n\013LabelsEnt"
+          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032+\n\tTa"
+          + "gsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\""
+          + "b\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CREAT"
+          + "ING\020\001\022\016\n\nFINALIZING\020\002\022\t\n\005READY\020\003\022\014\n\010DELE"
+          + "TING\020\004\022\013\n\007INVALID\020\005:Y\352AV\n\032file.googleapi"
+          + "s.com/Backup\0228projects/{project}/locatio"
+          + "ns/{location}/backups/{backup}\"\245\001\n\023Creat"
+          + "eBackupRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!"
+          + "locations.googleapis.com/Location\022;\n\006bac"
+          + "kup\030\002 \001(\0132&.google.cloud.filestore.v1bet"
+          + "a1.BackupB\003\340A\002\022\026\n\tbackup_id\030\003 \001(\tB\003\340A\002\"G"
+          + "\n\023DeleteBackupRequest\0220\n\004name\030\001 \001(\tB\"\340A\002"
+          + "\372A\034\n\032file.googleapis.com/Backup\"\210\001\n\023Upda"
+          + "teBackupRequest\022;\n\006backup\030\001 \001(\0132&.google"
+          + ".cloud.filestore.v1beta1.BackupB\003\340A\002\0224\n\013"
+          + "update_mask\030\002 \001(\0132\032.google.protobuf.Fiel"
+          + "dMaskB\003\340A\002\"D\n\020GetBackupRequest\0220\n\004name\030\001"
+          + " \001(\tB\"\340A\002\372A\034\n\032file.googleapis.com/Backup"
+          + "\"\230\001\n\022ListBackupsRequest\0229\n\006parent\030\001 \001(\tB"
+          + ")\340A\002\372A#\n!locations.googleapis.com/Locati"
+          + "on\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001("
+          + "\t\022\020\n\010order_by\030\004 \001(\t\022\016\n\006filter\030\005 \001(\t\"\201\001\n\023"
+          + "ListBackupsResponse\0227\n\007backups\030\001 \003(\0132&.g"
+          + "oogle.cloud.filestore.v1beta1.Backup\022\027\n\017"
+          + "next_page_token\030\002 \001(\t\022\030\n\013unreachable\030\003 \003"
+          + "(\tB\003\340A\006\"\203\005\n\005Share\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\022\n\n"
+          + "mount_name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\023\n"
+          + "\013capacity_gb\030\004 \001(\003\022L\n\022nfs_export_options"
+          + "\030\005 \003(\01320.google.cloud.filestore.v1beta1."
+          + "NfsExportOptions\022?\n\005state\030\006 \001(\0162+.google"
+          + ".cloud.filestore.v1beta1.Share.StateB\003\340A"
+          + "\003\0224\n\013create_time\030\007 \001(\0132\032.google.protobuf"
+          + ".TimestampB\003\340A\003\022A\n\006labels\030\010 \003(\01321.google"
+          + ".cloud.filestore.v1beta1.Share.LabelsEnt"
+          + "ry\0224\n\006backup\030\t \001(\tB\"\340A\005\372A\034\n\032file.googlea"
+          + "pis.com/BackupH\000\032-\n\013LabelsEntry\022\013\n\003key\030\001"
+          + " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"E\n\005State\022\025\n\021STAT"
+          + "E_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY\020\003"
+          + "\022\014\n\010DELETING\020\004:k\352Ah\n\031file.googleapis.com"
+          + "/Share\022Kprojects/{project}/locations/{lo"
+          + "cation}/instances/{instance}/shares/{sha"
+          + "re}B\010\n\006source\"\234\001\n\022CreateShareRequest\0224\n\006"
+          + "parent\030\001 \001(\tB$\340A\002\372A\036\n\034file.googleapis.co"
+          + "m/Instance\022\025\n\010share_id\030\002 \001(\tB\003\340A\002\0229\n\005sha"
+          + "re\030\003 \001(\0132%.google.cloud.filestore.v1beta"
+          + "1.ShareB\003\340A\002\"B\n\017GetShareRequest\022/\n\004name\030"
+          + "\001 \001(\tB!\340A\002\372A\033\n\031file.googleapis.com/Share"
+          + "\"E\n\022DeleteShareRequest\022/\n\004name\030\001 \001(\tB!\340A"
+          + "\002\372A\033\n\031file.googleapis.com/Share\"\222\001\n\021List"
+          + "SharesRequest\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034f"
           + "ile.googleapis.com/Instance\022\021\n\tpage_size"
           + "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\020\n\010order_by\030\004"
-          + " \001(\t\022\016\n\006filter\030\005 \001(\t\"m\n\025ListSnapshotsRes"
-          + "ponse\022;\n\tsnapshots\030\001 \003(\0132(.google.cloud."
-          + "filestore.v1beta1.Snapshot\022\027\n\017next_page_"
-          + "token\030\002 \001(\t\"\305\006\n\006Backup\022\021\n\004name\030\001 \001(\tB\003\340A"
-          + "\003\022\023\n\013description\030\002 \001(\t\022@\n\005state\030\003 \001(\0162,."
-          + "google.cloud.filestore.v1beta1.Backup.St"
-          + "ateB\003\340A\003\0224\n\013create_time\030\004 \001(\0132\032.google.p"
-          + "rotobuf.TimestampB\003\340A\003\022B\n\006labels\030\005 \003(\01322"
-          + ".google.cloud.filestore.v1beta1.Backup.L"
-          + "abelsEntry\022\030\n\013capacity_gb\030\006 \001(\003B\003\340A\003\022\032\n\r"
-          + "storage_bytes\030\007 \001(\003B\003\340A\003\022:\n\017source_insta"
-          + "nce\030\010 \001(\tB!\372A\036\n\034file.googleapis.com/Inst"
-          + "ance\022\031\n\021source_file_share\030\t \001(\t\022P\n\024sourc"
-          + "e_instance_tier\030\n \001(\0162-.google.cloud.fil"
-          + "estore.v1beta1.Instance.TierB\003\340A\003\022\033\n\016dow"
-          + "nload_bytes\030\013 \001(\003B\003\340A\003\0226\n\rsatisfies_pzs\030"
-          + "\014 \001(\0132\032.google.protobuf.BoolValueB\003\340A\003\022\032"
-          + "\n\rsatisfies_pzi\030\016 \001(\010B\003\340A\003\022\031\n\014kms_key_na"
-          + "me\030\r \001(\tB\003\340A\005\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001("
-          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"b\n\005State\022\025\n\021STATE_U"
-          + "NSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\016\n\nFINALIZING"
-          + "\020\002\022\t\n\005READY\020\003\022\014\n\010DELETING\020\004\022\013\n\007INVALID\020\005"
-          + ":Y\352AV\n\032file.googleapis.com/Backup\0228proje"
-          + "cts/{project}/locations/{location}/backu"
-          + "ps/{backup}\"\245\001\n\023CreateBackupRequest\0229\n\006p"
-          + "arent\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapi"
-          + "s.com/Location\022;\n\006backup\030\002 \001(\0132&.google."
-          + "cloud.filestore.v1beta1.BackupB\003\340A\002\022\026\n\tb"
-          + "ackup_id\030\003 \001(\tB\003\340A\002\"G\n\023DeleteBackupReque"
-          + "st\0220\n\004name\030\001 \001(\tB\"\340A\002\372A\034\n\032file.googleapi"
-          + "s.com/Backup\"\210\001\n\023UpdateBackupRequest\022;\n\006"
-          + "backup\030\001 \001(\0132&.google.cloud.filestore.v1"
-          + "beta1.BackupB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032"
-          + ".google.protobuf.FieldMaskB\003\340A\002\"D\n\020GetBa"
-          + "ckupRequest\0220\n\004name\030\001 \001(\tB\"\340A\002\372A\034\n\032file."
-          + "googleapis.com/Backup\"\230\001\n\022ListBackupsReq"
-          + "uest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations."
-          + "googleapis.com/Location\022\021\n\tpage_size\030\002 \001"
-          + "(\005\022\022\n\npage_token\030\003 \001(\t\022\020\n\010order_by\030\004 \001(\t"
-          + "\022\016\n\006filter\030\005 \001(\t\"|\n\023ListBackupsResponse\022"
-          + "7\n\007backups\030\001 \003(\0132&.google.cloud.filestor"
-          + "e.v1beta1.Backup\022\027\n\017next_page_token\030\002 \001("
-          + "\t\022\023\n\013unreachable\030\003 \003(\t\"\203\005\n\005Share\022\021\n\004name"
-          + "\030\001 \001(\tB\003\340A\003\022\022\n\nmount_name\030\002 \001(\t\022\023\n\013descr"
-          + "iption\030\003 \001(\t\022\023\n\013capacity_gb\030\004 \001(\003\022L\n\022nfs"
-          + "_export_options\030\005 \003(\01320.google.cloud.fil"
-          + "estore.v1beta1.NfsExportOptions\022?\n\005state"
-          + "\030\006 \001(\0162+.google.cloud.filestore.v1beta1."
-          + "Share.StateB\003\340A\003\0224\n\013create_time\030\007 \001(\0132\032."
-          + "google.protobuf.TimestampB\003\340A\003\022A\n\006labels"
-          + "\030\010 \003(\01321.google.cloud.filestore.v1beta1."
-          + "Share.LabelsEntry\0224\n\006backup\030\t \001(\tB\"\340A\005\372A"
-          + "\034\n\032file.googleapis.com/BackupH\000\032-\n\013Label"
-          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"E"
-          + "\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CREATI"
-          + "NG\020\001\022\t\n\005READY\020\003\022\014\n\010DELETING\020\004:k\352Ah\n\031file"
-          + ".googleapis.com/Share\022Kprojects/{project"
-          + "}/locations/{location}/instances/{instan"
-          + "ce}/shares/{share}B\010\n\006source\"\234\001\n\022CreateS"
-          + "hareRequest\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034fil"
-          + "e.googleapis.com/Instance\022\025\n\010share_id\030\002 "
-          + "\001(\tB\003\340A\002\0229\n\005share\030\003 \001(\0132%.google.cloud.f"
-          + "ilestore.v1beta1.ShareB\003\340A\002\"B\n\017GetShareR"
-          + "equest\022/\n\004name\030\001 \001(\tB!\340A\002\372A\033\n\031file.googl"
-          + "eapis.com/Share\"E\n\022DeleteShareRequest\022/\n"
-          + "\004name\030\001 \001(\tB!\340A\002\372A\033\n\031file.googleapis.com"
-          + "/Share\"\222\001\n\021ListSharesRequest\0224\n\006parent\030\001"
-          + " \001(\tB$\340A\002\372A\036\n\034file.googleapis.com/Instan"
-          + "ce\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001("
-          + "\t\022\020\n\010order_by\030\004 \001(\t\022\016\n\006filter\030\005 \001(\t\"y\n\022L"
-          + "istSharesResponse\0225\n\006shares\030\001 \003(\0132%.goog"
-          + "le.cloud.filestore.v1beta1.Share\022\027\n\017next"
-          + "_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"\205"
-          + "\001\n\022UpdateShareRequest\0229\n\005share\030\001 \001(\0132%.g"
-          + "oogle.cloud.filestore.v1beta1.ShareB\003\340A\002"
-          + "\0224\n\013update_mask\030\002 \001(\0132\032.google.protobuf."
-          + "FieldMaskB\003\340A\0022\310\'\n\025CloudFilestoreManager"
-          + "\022\301\001\n\rListInstances\0224.google.cloud.filest"
-          + "ore.v1beta1.ListInstancesRequest\0325.googl"
-          + "e.cloud.filestore.v1beta1.ListInstancesR"
-          + "esponse\"C\332A\006parent\202\323\344\223\0024\0222/v1beta1/{pare"
-          + "nt=projects/*/locations/*}/instances\022\256\001\n"
-          + "\013GetInstance\0222.google.cloud.filestore.v1"
-          + "beta1.GetInstanceRequest\032(.google.cloud."
-          + "filestore.v1beta1.Instance\"A\332A\004name\202\323\344\223\002"
-          + "4\0222/v1beta1/{name=projects/*/locations/*"
-          + "/instances/*}\022\377\001\n\016CreateInstance\0225.googl"
-          + "e.cloud.filestore.v1beta1.CreateInstance"
-          + "Request\032\035.google.longrunning.Operation\"\226"
-          + "\001\312A1\n\010Instance\022%google.cloud.common.Oper"
-          + "ationMetadata\332A\033parent,instance,instance"
-          + "_id\202\323\344\223\002>\"2/v1beta1/{parent=projects/*/l"
-          + "ocations/*}/instances:\010instance\022\201\002\n\016Upda"
-          + "teInstance\0225.google.cloud.filestore.v1be"
-          + "ta1.UpdateInstanceRequest\032\035.google.longr"
-          + "unning.Operation\"\230\001\312A1\n\010Instance\022%google"
-          + ".cloud.common.OperationMetadata\332A\024instan"
-          + "ce,update_mask\202\323\344\223\002G2;/v1beta1/{instance"
-          + ".name=projects/*/locations/*/instances/*"
-          + "}:\010instance\022\343\001\n\017RestoreInstance\0226.google"
-          + ".cloud.filestore.v1beta1.RestoreInstance"
-          + "Request\032\035.google.longrunning.Operation\"y"
-          + "\312A1\n\010Instance\022%google.cloud.common.Opera"
-          + "tionMetadata\202\323\344\223\002?\":/v1beta1/{name=proje"
-          + "cts/*/locations/*/instances/*}:restore:\001"
-          + "*\022\340\001\n\016RevertInstance\0225.google.cloud.file"
-          + "store.v1beta1.RevertInstanceRequest\032\035.go"
-          + "ogle.longrunning.Operation\"x\312A1\n\010Instanc"
-          + "e\022%google.cloud.common.OperationMetadata"
-          + "\202\323\344\223\002>\"9/v1beta1/{name=projects/*/locati"
-          + "ons/*/instances/*}:revert:\001*\022\353\001\n\016DeleteI"
-          + "nstance\0225.google.cloud.filestore.v1beta1"
-          + ".DeleteInstanceRequest\032\035.google.longrunn"
-          + "ing.Operation\"\202\001\312A>\n\025google.protobuf.Emp"
-          + "ty\022%google.cloud.common.OperationMetadat"
-          + "a\332A\004name\202\323\344\223\0024*2/v1beta1/{name=projects/"
-          + "*/locations/*/instances/*}\022\315\001\n\rListSnaps"
-          + "hots\0224.google.cloud.filestore.v1beta1.Li"
-          + "stSnapshotsRequest\0325.google.cloud.filest"
-          + "ore.v1beta1.ListSnapshotsResponse\"O\332A\006pa"
-          + "rent\202\323\344\223\002@\022>/v1beta1/{parent=projects/*/"
-          + "locations/*/instances/*}/snapshots\022\272\001\n\013G"
-          + "etSnapshot\0222.google.cloud.filestore.v1be"
-          + "ta1.GetSnapshotRequest\032(.google.cloud.fi"
-          + "lestore.v1beta1.Snapshot\"M\332A\004name\202\323\344\223\002@\022"
-          + ">/v1beta1/{name=projects/*/locations/*/i"
-          + "nstances/*/snapshots/*}\022\213\002\n\016CreateSnapsh"
-          + "ot\0225.google.cloud.filestore.v1beta1.Crea"
-          + "teSnapshotRequest\032\035.google.longrunning.O"
-          + "peration\"\242\001\312A1\n\010Snapshot\022%google.cloud.c"
-          + "ommon.OperationMetadata\332A\033parent,snapsho"
-          + "t,snapshot_id\202\323\344\223\002J\">/v1beta1/{parent=pr"
-          + "ojects/*/locations/*/instances/*}/snapsh"
-          + "ots:\010snapshot\022\367\001\n\016DeleteSnapshot\0225.googl"
-          + "e.cloud.filestore.v1beta1.DeleteSnapshot"
-          + "Request\032\035.google.longrunning.Operation\"\216"
-          + "\001\312A>\n\025google.protobuf.Empty\022%google.clou"
-          + "d.common.OperationMetadata\332A\004name\202\323\344\223\002@*"
-          + ">/v1beta1/{name=projects/*/locations/*/i"
-          + "nstances/*/snapshots/*}\022\215\002\n\016UpdateSnapsh"
-          + "ot\0225.google.cloud.filestore.v1beta1.Upda"
-          + "teSnapshotRequest\032\035.google.longrunning.O"
-          + "peration\"\244\001\312A1\n\010Snapshot\022%google.cloud.c"
-          + "ommon.OperationMetadata\332A\024snapshot,updat"
-          + "e_mask\202\323\344\223\002S2G/v1beta1/{snapshot.name=pr"
-          + "ojects/*/locations/*/instances/*/snapsho"
-          + "ts/*}:\010snapshot\022\271\001\n\013ListBackups\0222.google"
-          + ".cloud.filestore.v1beta1.ListBackupsRequ"
-          + "est\0323.google.cloud.filestore.v1beta1.Lis"
-          + "tBackupsResponse\"A\332A\006parent\202\323\344\223\0022\0220/v1be"
-          + "ta1/{parent=projects/*/locations/*}/back"
-          + "ups\022\246\001\n\tGetBackup\0220.google.cloud.filesto"
-          + "re.v1beta1.GetBackupRequest\032&.google.clo"
-          + "ud.filestore.v1beta1.Backup\"?\332A\004name\202\323\344\223"
-          + "\0022\0220/v1beta1/{name=projects/*/locations/"
-          + "*/backups/*}\022\361\001\n\014CreateBackup\0223.google.c"
-          + "loud.filestore.v1beta1.CreateBackupReque"
-          + "st\032\035.google.longrunning.Operation\"\214\001\312A/\n"
-          + "\006Backup\022%google.cloud.common.OperationMe"
-          + "tadata\332A\027parent,backup,backup_id\202\323\344\223\002:\"0"
-          + "/v1beta1/{parent=projects/*/locations/*}"
-          + "/backups:\006backup\022\345\001\n\014DeleteBackup\0223.goog"
-          + "le.cloud.filestore.v1beta1.DeleteBackupR"
-          + "equest\032\035.google.longrunning.Operation\"\200\001"
-          + "\312A>\n\025google.protobuf.Empty\022%google.cloud"
-          + ".common.OperationMetadata\332A\004name\202\323\344\223\0022*0"
-          + "/v1beta1/{name=projects/*/locations/*/ba"
-          + "ckups/*}\022\363\001\n\014UpdateBackup\0223.google.cloud"
-          + ".filestore.v1beta1.UpdateBackupRequest\032\035"
-          + ".google.longrunning.Operation\"\216\001\312A/\n\006Bac"
-          + "kup\022%google.cloud.common.OperationMetada"
-          + "ta\332A\022backup,update_mask\202\323\344\223\002A27/v1beta1/"
-          + "{backup.name=projects/*/locations/*/back"
-          + "ups/*}:\006backup\022\301\001\n\nListShares\0221.google.c"
-          + "loud.filestore.v1beta1.ListSharesRequest"
-          + "\0322.google.cloud.filestore.v1beta1.ListSh"
-          + "aresResponse\"L\332A\006parent\202\323\344\223\002=\022;/v1beta1/"
-          + "{parent=projects/*/locations/*/instances"
-          + "/*}/shares\022\256\001\n\010GetShare\022/.google.cloud.f"
-          + "ilestore.v1beta1.GetShareRequest\032%.googl"
-          + "e.cloud.filestore.v1beta1.Share\"J\332A\004name"
-          + "\202\323\344\223\002=\022;/v1beta1/{name=projects/*/locati"
-          + "ons/*/instances/*/shares/*}\022\366\001\n\013CreateSh"
-          + "are\0222.google.cloud.filestore.v1beta1.Cre"
-          + "ateShareRequest\032\035.google.longrunning.Ope"
-          + "ration\"\223\001\312A.\n\005Share\022%google.cloud.common"
-          + ".OperationMetadata\332A\025parent,share,share_"
-          + "id\202\323\344\223\002D\";/v1beta1/{parent=projects/*/lo"
-          + "cations/*/instances/*}/shares:\005share\022\356\001\n"
-          + "\013DeleteShare\0222.google.cloud.filestore.v1"
-          + "beta1.DeleteShareRequest\032\035.google.longru"
-          + "nning.Operation\"\213\001\312A>\n\025google.protobuf.E"
-          + "mpty\022%google.cloud.common.OperationMetad"
-          + "ata\332A\004name\202\323\344\223\002=*;/v1beta1/{name=project"
-          + "s/*/locations/*/instances/*/shares/*}\022\370\001"
-          + "\n\013UpdateShare\0222.google.cloud.filestore.v"
-          + "1beta1.UpdateShareRequest\032\035.google.longr"
-          + "unning.Operation\"\225\001\312A.\n\005Share\022%google.cl"
-          + "oud.common.OperationMetadata\332A\021share,upd"
-          + "ate_mask\202\323\344\223\002J2A/v1beta1/{share.name=pro"
-          + "jects/*/locations/*/instances/*/shares/*"
-          + "}:\005share\032G\312A\023file.googleapis.com\322A.https"
-          + "://www.googleapis.com/auth/cloud-platfor"
-          + "mB\306\001\n\"com.google.cloud.filestore.v1beta1"
-          + "B\032CloudFilestoreServiceProtoP\001Z@cloud.go"
-          + "ogle.com/go/filestore/apiv1beta1/filesto"
-          + "repb;filestorepb\252\002\036Google.Cloud.Filestor"
-          + "e.V1Beta1\312\002\036Google\\Cloud\\Filestore\\V1bet"
-          + "a1b\006proto3"
+          + " \001(\t\022\016\n\006filter\030\005 \001(\t\"~\n\022ListSharesRespon"
+          + "se\0225\n\006shares\030\001 \003(\0132%.google.cloud.filest"
+          + "ore.v1beta1.Share\022\027\n\017next_page_token\030\002 \001"
+          + "(\t\022\030\n\013unreachable\030\003 \003(\tB\003\340A\006\"\205\001\n\022UpdateS"
+          + "hareRequest\0229\n\005share\030\001 \001(\0132%.google.clou"
+          + "d.filestore.v1beta1.ShareB\003\340A\002\0224\n\013update"
+          + "_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB"
+          + "\003\340A\0022\264)\n\025CloudFilestoreManager\022\301\001\n\rListI"
+          + "nstances\0224.google.cloud.filestore.v1beta"
+          + "1.ListInstancesRequest\0325.google.cloud.fi"
+          + "lestore.v1beta1.ListInstancesResponse\"C\332"
+          + "A\006parent\202\323\344\223\0024\0222/v1beta1/{parent=project"
+          + "s/*/locations/*}/instances\022\256\001\n\013GetInstan"
+          + "ce\0222.google.cloud.filestore.v1beta1.GetI"
+          + "nstanceRequest\032(.google.cloud.filestore."
+          + "v1beta1.Instance\"A\332A\004name\202\323\344\223\0024\0222/v1beta"
+          + "1/{name=projects/*/locations/*/instances"
+          + "/*}\022\377\001\n\016CreateInstance\0225.google.cloud.fi"
+          + "lestore.v1beta1.CreateInstanceRequest\032\035."
+          + "google.longrunning.Operation\"\226\001\312A1\n\010Inst"
+          + "ance\022%google.cloud.common.OperationMetad"
+          + "ata\332A\033parent,instance,instance_id\202\323\344\223\002>\""
+          + "2/v1beta1/{parent=projects/*/locations/*"
+          + "}/instances:\010instance\022\201\002\n\016UpdateInstance"
+          + "\0225.google.cloud.filestore.v1beta1.Update"
+          + "InstanceRequest\032\035.google.longrunning.Ope"
+          + "ration\"\230\001\312A1\n\010Instance\022%google.cloud.com"
+          + "mon.OperationMetadata\332A\024instance,update_"
+          + "mask\202\323\344\223\002G2;/v1beta1/{instance.name=proj"
+          + "ects/*/locations/*/instances/*}:\010instanc"
+          + "e\022\343\001\n\017RestoreInstance\0226.google.cloud.fil"
+          + "estore.v1beta1.RestoreInstanceRequest\032\035."
+          + "google.longrunning.Operation\"y\312A1\n\010Insta"
+          + "nce\022%google.cloud.common.OperationMetada"
+          + "ta\202\323\344\223\002?\":/v1beta1/{name=projects/*/loca"
+          + "tions/*/instances/*}:restore:\001*\022\340\001\n\016Reve"
+          + "rtInstance\0225.google.cloud.filestore.v1be"
+          + "ta1.RevertInstanceRequest\032\035.google.longr"
+          + "unning.Operation\"x\312A1\n\010Instance\022%google."
+          + "cloud.common.OperationMetadata\202\323\344\223\002>\"9/v"
+          + "1beta1/{name=projects/*/locations/*/inst"
+          + "ances/*}:revert:\001*\022\351\001\n\016PromoteReplica\0225."
+          + "google.cloud.filestore.v1beta1.PromoteRe"
+          + "plicaRequest\032\035.google.longrunning.Operat"
+          + "ion\"\200\001\312A1\n\010Instance\022%google.cloud.common"
+          + ".OperationMetadata\202\323\344\223\002F\"A/v1beta1/{name"
+          + "=projects/*/locations/*/instances/*}:pro"
+          + "moteReplica:\001*\022\353\001\n\016DeleteInstance\0225.goog"
+          + "le.cloud.filestore.v1beta1.DeleteInstanc"
+          + "eRequest\032\035.google.longrunning.Operation\""
+          + "\202\001\312A>\n\025google.protobuf.Empty\022%google.clo"
+          + "ud.common.OperationMetadata\332A\004name\202\323\344\223\0024"
+          + "*2/v1beta1/{name=projects/*/locations/*/"
+          + "instances/*}\022\315\001\n\rListSnapshots\0224.google."
+          + "cloud.filestore.v1beta1.ListSnapshotsReq"
+          + "uest\0325.google.cloud.filestore.v1beta1.Li"
+          + "stSnapshotsResponse\"O\332A\006parent\202\323\344\223\002@\022>/v"
+          + "1beta1/{parent=projects/*/locations/*/in"
+          + "stances/*}/snapshots\022\272\001\n\013GetSnapshot\0222.g"
+          + "oogle.cloud.filestore.v1beta1.GetSnapsho"
+          + "tRequest\032(.google.cloud.filestore.v1beta"
+          + "1.Snapshot\"M\332A\004name\202\323\344\223\002@\022>/v1beta1/{nam"
+          + "e=projects/*/locations/*/instances/*/sna"
+          + "pshots/*}\022\213\002\n\016CreateSnapshot\0225.google.cl"
+          + "oud.filestore.v1beta1.CreateSnapshotRequ"
+          + "est\032\035.google.longrunning.Operation\"\242\001\312A1"
+          + "\n\010Snapshot\022%google.cloud.common.Operatio"
+          + "nMetadata\332A\033parent,snapshot,snapshot_id\202"
+          + "\323\344\223\002J\">/v1beta1/{parent=projects/*/locat"
+          + "ions/*/instances/*}/snapshots:\010snapshot\022"
+          + "\367\001\n\016DeleteSnapshot\0225.google.cloud.filest"
+          + "ore.v1beta1.DeleteSnapshotRequest\032\035.goog"
+          + "le.longrunning.Operation\"\216\001\312A>\n\025google.p"
+          + "rotobuf.Empty\022%google.cloud.common.Opera"
+          + "tionMetadata\332A\004name\202\323\344\223\002@*>/v1beta1/{nam"
+          + "e=projects/*/locations/*/instances/*/sna"
+          + "pshots/*}\022\215\002\n\016UpdateSnapshot\0225.google.cl"
+          + "oud.filestore.v1beta1.UpdateSnapshotRequ"
+          + "est\032\035.google.longrunning.Operation\"\244\001\312A1"
+          + "\n\010Snapshot\022%google.cloud.common.Operatio"
+          + "nMetadata\332A\024snapshot,update_mask\202\323\344\223\002S2G"
+          + "/v1beta1/{snapshot.name=projects/*/locat"
+          + "ions/*/instances/*/snapshots/*}:\010snapsho"
+          + "t\022\271\001\n\013ListBackups\0222.google.cloud.filesto"
+          + "re.v1beta1.ListBackupsRequest\0323.google.c"
+          + "loud.filestore.v1beta1.ListBackupsRespon"
+          + "se\"A\332A\006parent\202\323\344\223\0022\0220/v1beta1/{parent=pr"
+          + "ojects/*/locations/*}/backups\022\246\001\n\tGetBac"
+          + "kup\0220.google.cloud.filestore.v1beta1.Get"
+          + "BackupRequest\032&.google.cloud.filestore.v"
+          + "1beta1.Backup\"?\332A\004name\202\323\344\223\0022\0220/v1beta1/{"
+          + "name=projects/*/locations/*/backups/*}\022\361"
+          + "\001\n\014CreateBackup\0223.google.cloud.filestore"
+          + ".v1beta1.CreateBackupRequest\032\035.google.lo"
+          + "ngrunning.Operation\"\214\001\312A/\n\006Backup\022%googl"
+          + "e.cloud.common.OperationMetadata\332A\027paren"
+          + "t,backup,backup_id\202\323\344\223\002:\"0/v1beta1/{pare"
+          + "nt=projects/*/locations/*}/backups:\006back"
+          + "up\022\345\001\n\014DeleteBackup\0223.google.cloud.files"
+          + "tore.v1beta1.DeleteBackupRequest\032\035.googl"
+          + "e.longrunning.Operation\"\200\001\312A>\n\025google.pr"
+          + "otobuf.Empty\022%google.cloud.common.Operat"
+          + "ionMetadata\332A\004name\202\323\344\223\0022*0/v1beta1/{name"
+          + "=projects/*/locations/*/backups/*}\022\363\001\n\014U"
+          + "pdateBackup\0223.google.cloud.filestore.v1b"
+          + "eta1.UpdateBackupRequest\032\035.google.longru"
+          + "nning.Operation\"\216\001\312A/\n\006Backup\022%google.cl"
+          + "oud.common.OperationMetadata\332A\022backup,up"
+          + "date_mask\202\323\344\223\002A27/v1beta1/{backup.name=p"
+          + "rojects/*/locations/*/backups/*}:\006backup"
+          + "\022\301\001\n\nListShares\0221.google.cloud.filestore"
+          + ".v1beta1.ListSharesRequest\0322.google.clou"
+          + "d.filestore.v1beta1.ListSharesResponse\"L"
+          + "\332A\006parent\202\323\344\223\002=\022;/v1beta1/{parent=projec"
+          + "ts/*/locations/*/instances/*}/shares\022\256\001\n"
+          + "\010GetShare\022/.google.cloud.filestore.v1bet"
+          + "a1.GetShareRequest\032%.google.cloud.filest"
+          + "ore.v1beta1.Share\"J\332A\004name\202\323\344\223\002=\022;/v1bet"
+          + "a1/{name=projects/*/locations/*/instance"
+          + "s/*/shares/*}\022\366\001\n\013CreateShare\0222.google.c"
+          + "loud.filestore.v1beta1.CreateShareReques"
+          + "t\032\035.google.longrunning.Operation\"\223\001\312A.\n\005"
+          + "Share\022%google.cloud.common.OperationMeta"
+          + "data\332A\025parent,share,share_id\202\323\344\223\002D\";/v1b"
+          + "eta1/{parent=projects/*/locations/*/inst"
+          + "ances/*}/shares:\005share\022\356\001\n\013DeleteShare\0222"
+          + ".google.cloud.filestore.v1beta1.DeleteSh"
+          + "areRequest\032\035.google.longrunning.Operatio"
+          + "n\"\213\001\312A>\n\025google.protobuf.Empty\022%google.c"
+          + "loud.common.OperationMetadata\332A\004name\202\323\344\223"
+          + "\002=*;/v1beta1/{name=projects/*/locations/"
+          + "*/instances/*/shares/*}\022\370\001\n\013UpdateShare\022"
+          + "2.google.cloud.filestore.v1beta1.UpdateS"
+          + "hareRequest\032\035.google.longrunning.Operati",
+      "on\"\225\001\312A.\n\005Share\022%google.cloud.common.Ope"
+          + "rationMetadata\332A\021share,update_mask\202\323\344\223\002J"
+          + "2A/v1beta1/{share.name=projects/*/locati"
+          + "ons/*/instances/*/shares/*}:\005share\032G\312A\023f"
+          + "ile.googleapis.com\322A.https://www.googlea"
+          + "pis.com/auth/cloud-platformB\254\002\n\"com.goog"
+          + "le.cloud.filestore.v1beta1B\032CloudFilesto"
+          + "reServiceProtoP\001Z@cloud.google.com/go/fi"
+          + "lestore/apiv1beta1/filestorepb;filestore"
+          + "pb\252\002\036Google.Cloud.Filestore.V1Beta1\312\002\036Go"
+          + "ogle\\Cloud\\Filestore\\V1beta1\352Ac\n\'managed"
+          + "identities.googleapis.com/Domain\0228projec"
+          + "ts/{project}/locations/{location}/domain"
+          + "s/{domain}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -599,8 +703,24 @@ public final class CloudFilestoreServiceProto {
             new java.lang.String[] {
               "ManagedActiveDirectory", "Config",
             });
-    internal_static_google_cloud_filestore_v1beta1_Instance_descriptor =
+    internal_static_google_cloud_filestore_v1beta1_ReplicaConfig_descriptor =
         getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_filestore_v1beta1_ReplicaConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_filestore_v1beta1_ReplicaConfig_descriptor,
+            new java.lang.String[] {
+              "State", "StateReasons", "PeerInstance", "LastActiveSyncTime",
+            });
+    internal_static_google_cloud_filestore_v1beta1_Replication_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_filestore_v1beta1_Replication_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_filestore_v1beta1_Replication_descriptor,
+            new java.lang.String[] {
+              "Role", "Replicas",
+            });
+    internal_static_google_cloud_filestore_v1beta1_Instance_descriptor =
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_filestore_v1beta1_Instance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_Instance_descriptor,
@@ -626,17 +746,68 @@ public final class CloudFilestoreServiceProto {
               "MultiShareEnabled",
               "Protocol",
               "DirectoryServices",
+              "Replication",
+              "Tags",
+              "CustomPerformanceSupported",
+              "PerformanceConfig",
+              "PerformanceLimits",
+              "DeletionProtectionEnabled",
+              "DeletionProtectionReason",
+            });
+    internal_static_google_cloud_filestore_v1beta1_Instance_IOPSPerTB_descriptor =
+        internal_static_google_cloud_filestore_v1beta1_Instance_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_filestore_v1beta1_Instance_IOPSPerTB_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_filestore_v1beta1_Instance_IOPSPerTB_descriptor,
+            new java.lang.String[] {
+              "MaxIopsPerTb",
+            });
+    internal_static_google_cloud_filestore_v1beta1_Instance_FixedIOPS_descriptor =
+        internal_static_google_cloud_filestore_v1beta1_Instance_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_filestore_v1beta1_Instance_FixedIOPS_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_filestore_v1beta1_Instance_FixedIOPS_descriptor,
+            new java.lang.String[] {
+              "MaxIops",
+            });
+    internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceConfig_descriptor =
+        internal_static_google_cloud_filestore_v1beta1_Instance_descriptor.getNestedTypes().get(2);
+    internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceConfig_descriptor,
+            new java.lang.String[] {
+              "IopsPerTb", "FixedIops", "Mode",
+            });
+    internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceLimits_descriptor =
+        internal_static_google_cloud_filestore_v1beta1_Instance_descriptor.getNestedTypes().get(3);
+    internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceLimits_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_filestore_v1beta1_Instance_PerformanceLimits_descriptor,
+            new java.lang.String[] {
+              "MaxIops",
+              "MaxReadIops",
+              "MaxWriteIops",
+              "MaxReadThroughputBps",
+              "MaxWriteThroughputBps",
             });
     internal_static_google_cloud_filestore_v1beta1_Instance_LabelsEntry_descriptor =
-        internal_static_google_cloud_filestore_v1beta1_Instance_descriptor.getNestedTypes().get(0);
+        internal_static_google_cloud_filestore_v1beta1_Instance_descriptor.getNestedTypes().get(4);
     internal_static_google_cloud_filestore_v1beta1_Instance_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_Instance_LabelsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_filestore_v1beta1_Instance_TagsEntry_descriptor =
+        internal_static_google_cloud_filestore_v1beta1_Instance_descriptor.getNestedTypes().get(5);
+    internal_static_google_cloud_filestore_v1beta1_Instance_TagsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_filestore_v1beta1_Instance_TagsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
     internal_static_google_cloud_filestore_v1beta1_CreateInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_filestore_v1beta1_CreateInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_CreateInstanceRequest_descriptor,
@@ -644,7 +815,7 @@ public final class CloudFilestoreServiceProto {
               "Parent", "InstanceId", "Instance",
             });
     internal_static_google_cloud_filestore_v1beta1_GetInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_filestore_v1beta1_GetInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_GetInstanceRequest_descriptor,
@@ -652,7 +823,7 @@ public final class CloudFilestoreServiceProto {
               "Name",
             });
     internal_static_google_cloud_filestore_v1beta1_UpdateInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_filestore_v1beta1_UpdateInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_UpdateInstanceRequest_descriptor,
@@ -660,7 +831,7 @@ public final class CloudFilestoreServiceProto {
               "UpdateMask", "Instance",
             });
     internal_static_google_cloud_filestore_v1beta1_RestoreInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_filestore_v1beta1_RestoreInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_RestoreInstanceRequest_descriptor,
@@ -668,7 +839,7 @@ public final class CloudFilestoreServiceProto {
               "Name", "FileShare", "SourceSnapshot", "SourceBackup", "Source",
             });
     internal_static_google_cloud_filestore_v1beta1_RevertInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_filestore_v1beta1_RevertInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_RevertInstanceRequest_descriptor,
@@ -676,7 +847,7 @@ public final class CloudFilestoreServiceProto {
               "Name", "TargetSnapshotId",
             });
     internal_static_google_cloud_filestore_v1beta1_DeleteInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_filestore_v1beta1_DeleteInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_DeleteInstanceRequest_descriptor,
@@ -684,7 +855,7 @@ public final class CloudFilestoreServiceProto {
               "Name", "Force",
             });
     internal_static_google_cloud_filestore_v1beta1_ListInstancesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_filestore_v1beta1_ListInstancesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_ListInstancesRequest_descriptor,
@@ -692,20 +863,28 @@ public final class CloudFilestoreServiceProto {
               "Parent", "PageSize", "PageToken", "OrderBy", "Filter",
             });
     internal_static_google_cloud_filestore_v1beta1_ListInstancesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_filestore_v1beta1_ListInstancesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_ListInstancesResponse_descriptor,
             new java.lang.String[] {
               "Instances", "NextPageToken", "Unreachable",
             });
+    internal_static_google_cloud_filestore_v1beta1_PromoteReplicaRequest_descriptor =
+        getDescriptor().getMessageTypes().get(16);
+    internal_static_google_cloud_filestore_v1beta1_PromoteReplicaRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_filestore_v1beta1_PromoteReplicaRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "PeerInstance",
+            });
     internal_static_google_cloud_filestore_v1beta1_Snapshot_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_filestore_v1beta1_Snapshot_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_Snapshot_descriptor,
             new java.lang.String[] {
-              "Name", "Description", "State", "CreateTime", "Labels", "FilesystemUsedBytes",
+              "Name", "Description", "State", "CreateTime", "Labels", "FilesystemUsedBytes", "Tags",
             });
     internal_static_google_cloud_filestore_v1beta1_Snapshot_LabelsEntry_descriptor =
         internal_static_google_cloud_filestore_v1beta1_Snapshot_descriptor.getNestedTypes().get(0);
@@ -715,8 +894,16 @@ public final class CloudFilestoreServiceProto {
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_filestore_v1beta1_Snapshot_TagsEntry_descriptor =
+        internal_static_google_cloud_filestore_v1beta1_Snapshot_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_filestore_v1beta1_Snapshot_TagsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_filestore_v1beta1_Snapshot_TagsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
     internal_static_google_cloud_filestore_v1beta1_CreateSnapshotRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_filestore_v1beta1_CreateSnapshotRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_CreateSnapshotRequest_descriptor,
@@ -724,7 +911,7 @@ public final class CloudFilestoreServiceProto {
               "Parent", "SnapshotId", "Snapshot",
             });
     internal_static_google_cloud_filestore_v1beta1_GetSnapshotRequest_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_filestore_v1beta1_GetSnapshotRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_GetSnapshotRequest_descriptor,
@@ -732,7 +919,7 @@ public final class CloudFilestoreServiceProto {
               "Name",
             });
     internal_static_google_cloud_filestore_v1beta1_DeleteSnapshotRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_filestore_v1beta1_DeleteSnapshotRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_DeleteSnapshotRequest_descriptor,
@@ -740,7 +927,7 @@ public final class CloudFilestoreServiceProto {
               "Name",
             });
     internal_static_google_cloud_filestore_v1beta1_UpdateSnapshotRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_filestore_v1beta1_UpdateSnapshotRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_UpdateSnapshotRequest_descriptor,
@@ -748,23 +935,23 @@ public final class CloudFilestoreServiceProto {
               "UpdateMask", "Snapshot",
             });
     internal_static_google_cloud_filestore_v1beta1_ListSnapshotsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_filestore_v1beta1_ListSnapshotsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_ListSnapshotsRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken", "OrderBy", "Filter",
+              "Parent", "PageSize", "PageToken", "OrderBy", "Filter", "ReturnPartialSuccess",
             });
     internal_static_google_cloud_filestore_v1beta1_ListSnapshotsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_filestore_v1beta1_ListSnapshotsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_ListSnapshotsResponse_descriptor,
             new java.lang.String[] {
-              "Snapshots", "NextPageToken",
+              "Snapshots", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_filestore_v1beta1_Backup_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_filestore_v1beta1_Backup_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_Backup_descriptor,
@@ -783,6 +970,8 @@ public final class CloudFilestoreServiceProto {
               "SatisfiesPzs",
               "SatisfiesPzi",
               "KmsKeyName",
+              "Tags",
+              "FileSystemProtocol",
             });
     internal_static_google_cloud_filestore_v1beta1_Backup_LabelsEntry_descriptor =
         internal_static_google_cloud_filestore_v1beta1_Backup_descriptor.getNestedTypes().get(0);
@@ -792,8 +981,16 @@ public final class CloudFilestoreServiceProto {
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_filestore_v1beta1_Backup_TagsEntry_descriptor =
+        internal_static_google_cloud_filestore_v1beta1_Backup_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_filestore_v1beta1_Backup_TagsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_filestore_v1beta1_Backup_TagsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
     internal_static_google_cloud_filestore_v1beta1_CreateBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_filestore_v1beta1_CreateBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_CreateBackupRequest_descriptor,
@@ -801,7 +998,7 @@ public final class CloudFilestoreServiceProto {
               "Parent", "Backup", "BackupId",
             });
     internal_static_google_cloud_filestore_v1beta1_DeleteBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_filestore_v1beta1_DeleteBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_DeleteBackupRequest_descriptor,
@@ -809,7 +1006,7 @@ public final class CloudFilestoreServiceProto {
               "Name",
             });
     internal_static_google_cloud_filestore_v1beta1_UpdateBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_filestore_v1beta1_UpdateBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_UpdateBackupRequest_descriptor,
@@ -817,7 +1014,7 @@ public final class CloudFilestoreServiceProto {
               "Backup", "UpdateMask",
             });
     internal_static_google_cloud_filestore_v1beta1_GetBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_filestore_v1beta1_GetBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_GetBackupRequest_descriptor,
@@ -825,7 +1022,7 @@ public final class CloudFilestoreServiceProto {
               "Name",
             });
     internal_static_google_cloud_filestore_v1beta1_ListBackupsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_filestore_v1beta1_ListBackupsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_ListBackupsRequest_descriptor,
@@ -833,7 +1030,7 @@ public final class CloudFilestoreServiceProto {
               "Parent", "PageSize", "PageToken", "OrderBy", "Filter",
             });
     internal_static_google_cloud_filestore_v1beta1_ListBackupsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_filestore_v1beta1_ListBackupsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_ListBackupsResponse_descriptor,
@@ -841,7 +1038,7 @@ public final class CloudFilestoreServiceProto {
               "Backups", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_filestore_v1beta1_Share_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_filestore_v1beta1_Share_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_Share_descriptor,
@@ -866,7 +1063,7 @@ public final class CloudFilestoreServiceProto {
               "Key", "Value",
             });
     internal_static_google_cloud_filestore_v1beta1_CreateShareRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_filestore_v1beta1_CreateShareRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_CreateShareRequest_descriptor,
@@ -874,7 +1071,7 @@ public final class CloudFilestoreServiceProto {
               "Parent", "ShareId", "Share",
             });
     internal_static_google_cloud_filestore_v1beta1_GetShareRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_filestore_v1beta1_GetShareRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_GetShareRequest_descriptor,
@@ -882,7 +1079,7 @@ public final class CloudFilestoreServiceProto {
               "Name",
             });
     internal_static_google_cloud_filestore_v1beta1_DeleteShareRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_filestore_v1beta1_DeleteShareRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_DeleteShareRequest_descriptor,
@@ -890,7 +1087,7 @@ public final class CloudFilestoreServiceProto {
               "Name",
             });
     internal_static_google_cloud_filestore_v1beta1_ListSharesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_filestore_v1beta1_ListSharesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_ListSharesRequest_descriptor,
@@ -898,7 +1095,7 @@ public final class CloudFilestoreServiceProto {
               "Parent", "PageSize", "PageToken", "OrderBy", "Filter",
             });
     internal_static_google_cloud_filestore_v1beta1_ListSharesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_filestore_v1beta1_ListSharesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_ListSharesResponse_descriptor,
@@ -906,7 +1103,7 @@ public final class CloudFilestoreServiceProto {
               "Shares", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_filestore_v1beta1_UpdateShareRequest_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_filestore_v1beta1_UpdateShareRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_filestore_v1beta1_UpdateShareRequest_descriptor,
@@ -921,6 +1118,7 @@ public final class CloudFilestoreServiceProto {
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
