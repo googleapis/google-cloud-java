@@ -88,6 +88,14 @@ public final class InstanceProto {
       internal_static_google_bigtable_admin_v2_HotTablet_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_HotTablet_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_LogicalView_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_LogicalView_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_MaterializedView_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_MaterializedView_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -102,108 +110,124 @@ public final class InstanceProto {
           + "field_behavior.proto\032\031google/api/resourc"
           + "e.proto\032%google/bigtable/admin/v2/common"
           + ".proto\032\037google/protobuf/timestamp.proto\""
-          + "\306\004\n\010Instance\022\014\n\004name\030\001 \001(\t\022\031\n\014display_na"
-          + "me\030\002 \001(\tB\003\340A\002\0227\n\005state\030\003 \001(\0162(.google.bi"
-          + "gtable.admin.v2.Instance.State\0225\n\004type\030\004"
-          + " \001(\0162\'.google.bigtable.admin.v2.Instance"
-          + ".Type\022>\n\006labels\030\005 \003(\0132..google.bigtable."
-          + "admin.v2.Instance.LabelsEntry\0224\n\013create_"
-          + "time\030\007 \001(\0132\032.google.protobuf.TimestampB\003"
-          + "\340A\003\022\037\n\rsatisfies_pzs\030\010 \001(\010B\003\340A\003H\000\210\001\001\032-\n\013"
-          + "LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
-          + "\0028\001\"5\n\005State\022\023\n\017STATE_NOT_KNOWN\020\000\022\t\n\005REA"
-          + "DY\020\001\022\014\n\010CREATING\020\002\"=\n\004Type\022\024\n\020TYPE_UNSPE"
-          + "CIFIED\020\000\022\016\n\nPRODUCTION\020\001\022\017\n\013DEVELOPMENT\020"
-          + "\002:S\352AP\n%bigtableadmin.googleapis.com/Ins"
-          + "tance\022\'projects/{project}/instances/{ins"
-          + "tance}B\020\n\016_satisfies_pzs\"_\n\022AutoscalingT"
-          + "argets\022\037\n\027cpu_utilization_percent\030\002 \001(\005\022"
-          + "(\n storage_utilization_gib_per_node\030\003 \001("
-          + "\005\"O\n\021AutoscalingLimits\022\034\n\017min_serve_node"
-          + "s\030\001 \001(\005B\003\340A\002\022\034\n\017max_serve_nodes\030\002 \001(\005B\003\340"
-          + "A\002\"\232\t\n\007Cluster\022\014\n\004name\030\001 \001(\t\022;\n\010location"
-          + "\030\002 \001(\tB)\340A\005\372A#\n!locations.googleapis.com"
-          + "/Location\022;\n\005state\030\003 \001(\0162\'.google.bigtab"
-          + "le.admin.v2.Cluster.StateB\003\340A\003\022\023\n\013serve_"
-          + "nodes\030\004 \001(\005\022U\n\023node_scaling_factor\030\t \001(\016"
-          + "23.google.bigtable.admin.v2.Cluster.Node"
-          + "ScalingFactorB\003\340A\005\022I\n\016cluster_config\030\007 \001"
-          + "(\0132/.google.bigtable.admin.v2.Cluster.Cl"
-          + "usterConfigH\000\022H\n\024default_storage_type\030\005 "
-          + "\001(\0162%.google.bigtable.admin.v2.StorageTy"
-          + "peB\003\340A\005\022R\n\021encryption_config\030\006 \001(\01322.goo"
-          + "gle.bigtable.admin.v2.Cluster.Encryption"
-          + "ConfigB\003\340A\005\032\270\001\n\030ClusterAutoscalingConfig"
-          + "\022L\n\022autoscaling_limits\030\001 \001(\0132+.google.bi"
-          + "gtable.admin.v2.AutoscalingLimitsB\003\340A\002\022N"
-          + "\n\023autoscaling_targets\030\002 \001(\0132,.google.big"
-          + "table.admin.v2.AutoscalingTargetsB\003\340A\002\032o"
-          + "\n\rClusterConfig\022^\n\032cluster_autoscaling_c"
-          + "onfig\030\001 \001(\0132:.google.bigtable.admin.v2.C"
-          + "luster.ClusterAutoscalingConfig\032P\n\020Encry"
-          + "ptionConfig\022<\n\014kms_key_name\030\001 \001(\tB&\372A#\n!"
-          + "cloudkms.googleapis.com/CryptoKey\"Q\n\005Sta"
-          + "te\022\023\n\017STATE_NOT_KNOWN\020\000\022\t\n\005READY\020\001\022\014\n\010CR"
-          + "EATING\020\002\022\014\n\010RESIZING\020\003\022\014\n\010DISABLED\020\004\"p\n\021"
-          + "NodeScalingFactor\022#\n\037NODE_SCALING_FACTOR"
-          + "_UNSPECIFIED\020\000\022\032\n\026NODE_SCALING_FACTOR_1X"
-          + "\020\001\022\032\n\026NODE_SCALING_FACTOR_2X\020\002:e\352Ab\n$big"
-          + "tableadmin.googleapis.com/Cluster\022:proje"
-          + "cts/{project}/instances/{instance}/clust"
-          + "ers/{cluster}B\010\n\006config\"\322\n\n\nAppProfile\022\014"
-          + "\n\004name\030\001 \001(\t\022\014\n\004etag\030\002 \001(\t\022\023\n\013descriptio"
-          + "n\030\003 \001(\t\022g\n\035multi_cluster_routing_use_any"
-          + "\030\005 \001(\0132>.google.bigtable.admin.v2.AppPro"
-          + "file.MultiClusterRoutingUseAnyH\000\022[\n\026sing"
-          + "le_cluster_routing\030\006 \001(\01329.google.bigtab"
-          + "le.admin.v2.AppProfile.SingleClusterRout"
-          + "ingH\000\022E\n\010priority\030\007 \001(\0162-.google.bigtabl"
-          + "e.admin.v2.AppProfile.PriorityB\002\030\001H\001\022T\n\022"
-          + "standard_isolation\030\013 \001(\01326.google.bigtab"
-          + "le.admin.v2.AppProfile.StandardIsolation"
-          + "H\001\022i\n\036data_boost_isolation_read_only\030\n \001"
-          + "(\0132?.google.bigtable.admin.v2.AppProfile"
-          + ".DataBoostIsolationReadOnlyH\001\032\257\001\n\031MultiC"
-          + "lusterRoutingUseAny\022\023\n\013cluster_ids\030\001 \003(\t"
-          + "\022b\n\014row_affinity\030\003 \001(\0132J.google.bigtable"
+          + "\223\005\n\010Instance\022\014\n\004name\030\001 \001(\t\022\031\n\014display_na"
+          + "me\030\002 \001(\tB\003\340A\002\022<\n\005state\030\003 \001(\0162(.google.bi"
+          + "gtable.admin.v2.Instance.StateB\003\340A\003\0225\n\004t"
+          + "ype\030\004 \001(\0162\'.google.bigtable.admin.v2.Ins"
+          + "tance.Type\022>\n\006labels\030\005 \003(\0132..google.bigt"
+          + "able.admin.v2.Instance.LabelsEntry\0224\n\013cr"
+          + "eate_time\030\007 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\003\340A\003\022\037\n\rsatisfies_pzs\030\010 \001(\010B\003\340A\003H\000\210\001"
+          + "\001\022\037\n\rsatisfies_pzi\030\013 \001(\010B\003\340A\003H\001\210\001\001\032-\n\013La"
+          + "belsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
+          + "\001\"5\n\005State\022\023\n\017STATE_NOT_KNOWN\020\000\022\t\n\005READY"
+          + "\020\001\022\014\n\010CREATING\020\002\"=\n\004Type\022\024\n\020TYPE_UNSPECI"
+          + "FIED\020\000\022\016\n\nPRODUCTION\020\001\022\017\n\013DEVELOPMENT\020\002:"
+          + "h\352Ae\n%bigtableadmin.googleapis.com/Insta"
+          + "nce\022\'projects/{project}/instances/{insta"
+          + "nce}*\tinstances2\010instanceB\020\n\016_satisfies_"
+          + "pzsB\020\n\016_satisfies_pzi\"_\n\022AutoscalingTarg"
+          + "ets\022\037\n\027cpu_utilization_percent\030\002 \001(\005\022(\n "
+          + "storage_utilization_gib_per_node\030\003 \001(\005\"O"
+          + "\n\021AutoscalingLimits\022\034\n\017min_serve_nodes\030\001"
+          + " \001(\005B\003\340A\002\022\034\n\017max_serve_nodes\030\002 \001(\005B\003\340A\002\""
+          + "\255\t\n\007Cluster\022\014\n\004name\030\001 \001(\t\022;\n\010location\030\002 "
+          + "\001(\tB)\340A\005\372A#\n!locations.googleapis.com/Lo"
+          + "cation\022;\n\005state\030\003 \001(\0162\'.google.bigtable."
+          + "admin.v2.Cluster.StateB\003\340A\003\022\023\n\013serve_nod"
+          + "es\030\004 \001(\005\022U\n\023node_scaling_factor\030\t \001(\01623."
+          + "google.bigtable.admin.v2.Cluster.NodeSca"
+          + "lingFactorB\003\340A\005\022I\n\016cluster_config\030\007 \001(\0132"
+          + "/.google.bigtable.admin.v2.Cluster.Clust"
+          + "erConfigH\000\022H\n\024default_storage_type\030\005 \001(\016"
+          + "2%.google.bigtable.admin.v2.StorageTypeB"
+          + "\003\340A\005\022R\n\021encryption_config\030\006 \001(\01322.google"
+          + ".bigtable.admin.v2.Cluster.EncryptionCon"
+          + "figB\003\340A\005\032\270\001\n\030ClusterAutoscalingConfig\022L\n"
+          + "\022autoscaling_limits\030\001 \001(\0132+.google.bigta"
+          + "ble.admin.v2.AutoscalingLimitsB\003\340A\002\022N\n\023a"
+          + "utoscaling_targets\030\002 \001(\0132,.google.bigtab"
+          + "le.admin.v2.AutoscalingTargetsB\003\340A\002\032o\n\rC"
+          + "lusterConfig\022^\n\032cluster_autoscaling_conf"
+          + "ig\030\001 \001(\0132:.google.bigtable.admin.v2.Clus"
+          + "ter.ClusterAutoscalingConfig\032P\n\020Encrypti"
+          + "onConfig\022<\n\014kms_key_name\030\001 \001(\tB&\372A#\n!clo"
+          + "udkms.googleapis.com/CryptoKey\"Q\n\005State\022"
+          + "\023\n\017STATE_NOT_KNOWN\020\000\022\t\n\005READY\020\001\022\014\n\010CREAT"
+          + "ING\020\002\022\014\n\010RESIZING\020\003\022\014\n\010DISABLED\020\004\"p\n\021Nod"
+          + "eScalingFactor\022#\n\037NODE_SCALING_FACTOR_UN"
+          + "SPECIFIED\020\000\022\032\n\026NODE_SCALING_FACTOR_1X\020\001\022"
+          + "\032\n\026NODE_SCALING_FACTOR_2X\020\002:x\352Au\n$bigtab"
+          + "leadmin.googleapis.com/Cluster\022:projects"
+          + "/{project}/instances/{instance}/clusters"
+          + "/{cluster}*\010clusters2\007clusterB\010\n\006config\""
+          + "\355\n\n\nAppProfile\022\014\n\004name\030\001 \001(\t\022\014\n\004etag\030\002 \001"
+          + "(\t\022\023\n\013description\030\003 \001(\t\022g\n\035multi_cluster"
+          + "_routing_use_any\030\005 \001(\0132>.google.bigtable"
           + ".admin.v2.AppProfile.MultiClusterRouting"
-          + "UseAny.RowAffinityH\000\032\r\n\013RowAffinityB\n\n\010a"
-          + "ffinity\032N\n\024SingleClusterRouting\022\022\n\nclust"
-          + "er_id\030\001 \001(\t\022\"\n\032allow_transactional_write"
-          + "s\030\002 \001(\010\032T\n\021StandardIsolation\022?\n\010priority"
-          + "\030\001 \001(\0162-.google.bigtable.admin.v2.AppPro"
-          + "file.Priority\032\374\001\n\032DataBoostIsolationRead"
-          + "Only\022w\n\025compute_billing_owner\030\001 \001(\0162S.go"
-          + "ogle.bigtable.admin.v2.AppProfile.DataBo"
-          + "ostIsolationReadOnly.ComputeBillingOwner"
-          + "H\000\210\001\001\"K\n\023ComputeBillingOwner\022%\n!COMPUTE_"
-          + "BILLING_OWNER_UNSPECIFIED\020\000\022\r\n\tHOST_PAYS"
-          + "\020\001B\030\n\026_compute_billing_owner\"^\n\010Priority"
-          + "\022\030\n\024PRIORITY_UNSPECIFIED\020\000\022\020\n\014PRIORITY_L"
-          + "OW\020\001\022\023\n\017PRIORITY_MEDIUM\020\002\022\021\n\rPRIORITY_HI"
-          + "GH\020\003:o\352Al\n\'bigtableadmin.googleapis.com/"
-          + "AppProfile\022Aprojects/{project}/instances"
-          + "/{instance}/appProfiles/{app_profile}B\020\n"
-          + "\016routing_policyB\013\n\tisolation\"\210\003\n\tHotTabl"
-          + "et\022\014\n\004name\030\001 \001(\t\022;\n\ntable_name\030\002 \001(\tB\'\372A"
-          + "$\n\"bigtableadmin.googleapis.com/Table\0223\n"
-          + "\nstart_time\030\003 \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\0221\n\010end_time\030\004 \001(\0132\032.google.pr"
-          + "otobuf.TimestampB\003\340A\003\022\021\n\tstart_key\030\005 \001(\t"
-          + "\022\017\n\007end_key\030\006 \001(\t\022#\n\026node_cpu_usage_perc"
-          + "ent\030\007 \001(\002B\003\340A\003:\177\352A|\n&bigtableadmin.googl"
-          + "eapis.com/HotTablet\022Rprojects/{project}/"
-          + "instances/{instance}/clusters/{cluster}/"
-          + "hotTablets/{hot_tablet}B\313\002\n\034com.google.b"
-          + "igtable.admin.v2B\rInstanceProtoP\001Z8cloud"
-          + ".google.com/go/bigtable/admin/apiv2/admi"
-          + "npb;adminpb\252\002\036Google.Cloud.Bigtable.Admi"
-          + "n.V2\312\002\036Google\\Cloud\\Bigtable\\Admin\\V2\352\002\""
-          + "Google::Cloud::Bigtable::Admin::V2\352Ax\n!c"
-          + "loudkms.googleapis.com/CryptoKey\022Sprojec"
-          + "ts/{project}/locations/{location}/keyRin"
-          + "gs/{key_ring}/cryptoKeys/{crypto_key}b\006p"
-          + "roto3"
+          + "UseAnyH\000\022[\n\026single_cluster_routing\030\006 \001(\013"
+          + "29.google.bigtable.admin.v2.AppProfile.S"
+          + "ingleClusterRoutingH\000\022E\n\010priority\030\007 \001(\0162"
+          + "-.google.bigtable.admin.v2.AppProfile.Pr"
+          + "iorityB\002\030\001H\001\022T\n\022standard_isolation\030\013 \001(\013"
+          + "26.google.bigtable.admin.v2.AppProfile.S"
+          + "tandardIsolationH\001\022i\n\036data_boost_isolati"
+          + "on_read_only\030\n \001(\0132?.google.bigtable.adm"
+          + "in.v2.AppProfile.DataBoostIsolationReadO"
+          + "nlyH\001\032\257\001\n\031MultiClusterRoutingUseAny\022\023\n\013c"
+          + "luster_ids\030\001 \003(\t\022b\n\014row_affinity\030\003 \001(\0132J"
+          + ".google.bigtable.admin.v2.AppProfile.Mul"
+          + "tiClusterRoutingUseAny.RowAffinityH\000\032\r\n\013"
+          + "RowAffinityB\n\n\010affinity\032N\n\024SingleCluster"
+          + "Routing\022\022\n\ncluster_id\030\001 \001(\t\022\"\n\032allow_tra"
+          + "nsactional_writes\030\002 \001(\010\032T\n\021StandardIsola"
+          + "tion\022?\n\010priority\030\001 \001(\0162-.google.bigtable"
+          + ".admin.v2.AppProfile.Priority\032\374\001\n\032DataBo"
+          + "ostIsolationReadOnly\022w\n\025compute_billing_"
+          + "owner\030\001 \001(\0162S.google.bigtable.admin.v2.A"
+          + "ppProfile.DataBoostIsolationReadOnly.Com"
+          + "puteBillingOwnerH\000\210\001\001\"K\n\023ComputeBillingO"
+          + "wner\022%\n!COMPUTE_BILLING_OWNER_UNSPECIFIE"
+          + "D\020\000\022\r\n\tHOST_PAYS\020\001B\030\n\026_compute_billing_o"
+          + "wner\"^\n\010Priority\022\030\n\024PRIORITY_UNSPECIFIED"
+          + "\020\000\022\020\n\014PRIORITY_LOW\020\001\022\023\n\017PRIORITY_MEDIUM\020"
+          + "\002\022\021\n\rPRIORITY_HIGH\020\003:\211\001\352A\205\001\n\'bigtableadm"
+          + "in.googleapis.com/AppProfile\022Aprojects/{"
+          + "project}/instances/{instance}/appProfile"
+          + "s/{app_profile}*\013appProfiles2\nappProfile"
+          + "B\020\n\016routing_policyB\013\n\tisolation\"\241\003\n\tHotT"
+          + "ablet\022\014\n\004name\030\001 \001(\t\022;\n\ntable_name\030\002 \001(\tB"
+          + "\'\372A$\n\"bigtableadmin.googleapis.com/Table"
+          + "\0223\n\nstart_time\030\003 \001(\0132\032.google.protobuf.T"
+          + "imestampB\003\340A\003\0221\n\010end_time\030\004 \001(\0132\032.google"
+          + ".protobuf.TimestampB\003\340A\003\022\021\n\tstart_key\030\005 "
+          + "\001(\t\022\017\n\007end_key\030\006 \001(\t\022#\n\026node_cpu_usage_p"
+          + "ercent\030\007 \001(\002B\003\340A\003:\227\001\352A\223\001\n&bigtableadmin."
+          + "googleapis.com/HotTablet\022Rprojects/{proj"
+          + "ect}/instances/{instance}/clusters/{clus"
+          + "ter}/hotTablets/{hot_tablet}*\nhotTablets"
+          + "2\thotTablet\"\330\001\n\013LogicalView\022\021\n\004name\030\001 \001("
+          + "\tB\003\340A\010\022\022\n\005query\030\002 \001(\tB\003\340A\002\022\021\n\004etag\030\003 \001(\t"
+          + "B\003\340A\001:\216\001\352A\212\001\n(bigtableadmin.googleapis.c"
+          + "om/LogicalView\022Cprojects/{project}/insta"
+          + "nces/{instance}/logicalViews/{logical_vi"
+          + "ew}*\014logicalViews2\013logicalView\"\226\002\n\020Mater"
+          + "ializedView\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\025\n\005query\030"
+          + "\002 \001(\tB\006\340A\002\340A\005\022\021\n\004etag\030\003 \001(\tB\003\340A\001\022\033\n\023dele"
+          + "tion_protection\030\006 \001(\010:\247\001\352A\243\001\n-bigtablead"
+          + "min.googleapis.com/MaterializedView\022Mpro"
+          + "jects/{project}/instances/{instance}/mat"
+          + "erializedViews/{materialized_view}*\021mate"
+          + "rializedViews2\020materializedViewB\313\002\n\034com."
+          + "google.bigtable.admin.v2B\rInstanceProtoP"
+          + "\001Z8cloud.google.com/go/bigtable/admin/ap"
+          + "iv2/adminpb;adminpb\252\002\036Google.Cloud.Bigta"
+          + "ble.Admin.V2\312\002\036Google\\Cloud\\Bigtable\\Adm"
+          + "in\\V2\352\002\"Google::Cloud::Bigtable::Admin::"
+          + "V2\352Ax\n!cloudkms.googleapis.com/CryptoKey"
+          + "\022Sprojects/{project}/locations/{location"
+          + "}/keyRings/{key_ring}/cryptoKeys/{crypto"
+          + "_key}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -220,7 +244,14 @@ public final class InstanceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_Instance_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "State", "Type", "Labels", "CreateTime", "SatisfiesPzs",
+              "Name",
+              "DisplayName",
+              "State",
+              "Type",
+              "Labels",
+              "CreateTime",
+              "SatisfiesPzs",
+              "SatisfiesPzi",
             });
     internal_static_google_bigtable_admin_v2_Instance_LabelsEntry_descriptor =
         internal_static_google_bigtable_admin_v2_Instance_descriptor.getNestedTypes().get(0);
@@ -356,6 +387,22 @@ public final class InstanceProto {
               "StartKey",
               "EndKey",
               "NodeCpuUsagePercent",
+            });
+    internal_static_google_bigtable_admin_v2_LogicalView_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_bigtable_admin_v2_LogicalView_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_LogicalView_descriptor,
+            new java.lang.String[] {
+              "Name", "Query", "Etag",
+            });
+    internal_static_google_bigtable_admin_v2_MaterializedView_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_bigtable_admin_v2_MaterializedView_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_MaterializedView_descriptor,
+            new java.lang.String[] {
+              "Name", "Query", "Etag", "DeletionProtection",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

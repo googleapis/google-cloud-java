@@ -130,6 +130,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
    * * `change_stream_config`
    * * `change_stream_config.retention_period`
    * * `deletion_protection`
+   * * `row_key_schema`
    *
    * If `column_families` is set in `update_mask`, it will return an
    * UNIMPLEMENTED error.
@@ -157,6 +158,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
    * * `change_stream_config`
    * * `change_stream_config.retention_period`
    * * `deletion_protection`
+   * * `row_key_schema`
    *
    * If `column_families` is set in `update_mask`, it will return an
    * UNIMPLEMENTED error.
@@ -184,6 +186,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
    * * `change_stream_config`
    * * `change_stream_config.retention_period`
    * * `deletion_protection`
+   * * `row_key_schema`
    *
    * If `column_families` is set in `update_mask`, it will return an
    * UNIMPLEMENTED error.
@@ -195,6 +198,24 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+
+  public static final int IGNORE_WARNINGS_FIELD_NUMBER = 3;
+  private boolean ignoreWarnings_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, ignore safety checks when updating the table.
+   * </pre>
+   *
+   * <code>bool ignore_warnings = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ignoreWarnings.
+   */
+  @java.lang.Override
+  public boolean getIgnoreWarnings() {
+    return ignoreWarnings_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -217,6 +238,9 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getUpdateMask());
     }
+    if (ignoreWarnings_ != false) {
+      output.writeBool(3, ignoreWarnings_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -231,6 +255,9 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
+    }
+    if (ignoreWarnings_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, ignoreWarnings_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -256,6 +283,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
     if (hasUpdateMask()) {
       if (!getUpdateMask().equals(other.getUpdateMask())) return false;
     }
+    if (getIgnoreWarnings() != other.getIgnoreWarnings()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -275,6 +303,8 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateMask().hashCode();
     }
+    hash = (37 * hash) + IGNORE_WARNINGS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreWarnings());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -435,6 +465,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
         updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
+      ignoreWarnings_ = false;
       return this;
     }
 
@@ -479,6 +510,9 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ignoreWarnings_ = ignoreWarnings_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -535,6 +569,9 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
       if (other.hasUpdateMask()) {
         mergeUpdateMask(other.getUpdateMask());
       }
+      if (other.getIgnoreWarnings() != false) {
+        setIgnoreWarnings(other.getIgnoreWarnings());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -573,6 +610,12 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 24:
+              {
+                ignoreWarnings_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -810,6 +853,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      * * `change_stream_config`
      * * `change_stream_config.retention_period`
      * * `deletion_protection`
+     * * `row_key_schema`
      *
      * If `column_families` is set in `update_mask`, it will return an
      * UNIMPLEMENTED error.
@@ -836,6 +880,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      * * `change_stream_config`
      * * `change_stream_config.retention_period`
      * * `deletion_protection`
+     * * `row_key_schema`
      *
      * If `column_families` is set in `update_mask`, it will return an
      * UNIMPLEMENTED error.
@@ -868,6 +913,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      * * `change_stream_config`
      * * `change_stream_config.retention_period`
      * * `deletion_protection`
+     * * `row_key_schema`
      *
      * If `column_families` is set in `update_mask`, it will return an
      * UNIMPLEMENTED error.
@@ -902,6 +948,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      * * `change_stream_config`
      * * `change_stream_config.retention_period`
      * * `deletion_protection`
+     * * `row_key_schema`
      *
      * If `column_families` is set in `update_mask`, it will return an
      * UNIMPLEMENTED error.
@@ -933,6 +980,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      * * `change_stream_config`
      * * `change_stream_config.retention_period`
      * * `deletion_protection`
+     * * `row_key_schema`
      *
      * If `column_families` is set in `update_mask`, it will return an
      * UNIMPLEMENTED error.
@@ -972,6 +1020,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      * * `change_stream_config`
      * * `change_stream_config.retention_period`
      * * `deletion_protection`
+     * * `row_key_schema`
      *
      * If `column_families` is set in `update_mask`, it will return an
      * UNIMPLEMENTED error.
@@ -1003,6 +1052,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      * * `change_stream_config`
      * * `change_stream_config.retention_period`
      * * `deletion_protection`
+     * * `row_key_schema`
      *
      * If `column_families` is set in `update_mask`, it will return an
      * UNIMPLEMENTED error.
@@ -1029,6 +1079,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      * * `change_stream_config`
      * * `change_stream_config.retention_period`
      * * `deletion_protection`
+     * * `row_key_schema`
      *
      * If `column_families` is set in `update_mask`, it will return an
      * UNIMPLEMENTED error.
@@ -1059,6 +1110,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      * * `change_stream_config`
      * * `change_stream_config.retention_period`
      * * `deletion_protection`
+     * * `row_key_schema`
      *
      * If `column_families` is set in `update_mask`, it will return an
      * UNIMPLEMENTED error.
@@ -1082,6 +1134,59 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
         updateMask_ = null;
       }
       return updateMaskBuilder_;
+    }
+
+    private boolean ignoreWarnings_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, ignore safety checks when updating the table.
+     * </pre>
+     *
+     * <code>bool ignore_warnings = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The ignoreWarnings.
+     */
+    @java.lang.Override
+    public boolean getIgnoreWarnings() {
+      return ignoreWarnings_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, ignore safety checks when updating the table.
+     * </pre>
+     *
+     * <code>bool ignore_warnings = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The ignoreWarnings to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIgnoreWarnings(boolean value) {
+
+      ignoreWarnings_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, ignore safety checks when updating the table.
+     * </pre>
+     *
+     * <code>bool ignore_warnings = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIgnoreWarnings() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ignoreWarnings_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

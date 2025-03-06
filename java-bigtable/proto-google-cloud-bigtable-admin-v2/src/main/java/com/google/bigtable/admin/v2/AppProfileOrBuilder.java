@@ -209,7 +209,7 @@ public interface AppProfileOrBuilder
    * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-   *     google/bigtable/admin/v2/instance.proto;l=405
+   *     google/bigtable/admin/v2/instance.proto;l=406
    * @return Whether the priority field is set.
    */
   @java.lang.Deprecated
@@ -227,7 +227,7 @@ public interface AppProfileOrBuilder
    * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-   *     google/bigtable/admin/v2/instance.proto;l=405
+   *     google/bigtable/admin/v2/instance.proto;l=406
    * @return The enum numeric value on the wire for priority.
    */
   @java.lang.Deprecated
@@ -245,7 +245,7 @@ public interface AppProfileOrBuilder
    * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-   *     google/bigtable/admin/v2/instance.proto;l=405
+   *     google/bigtable/admin/v2/instance.proto;l=406
    * @return The priority.
    */
   @java.lang.Deprecated

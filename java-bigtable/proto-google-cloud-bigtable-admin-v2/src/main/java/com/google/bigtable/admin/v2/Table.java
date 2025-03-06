@@ -3777,6 +3777,221 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     return com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.getDefaultInstance();
   }
 
+  public static final int ROW_KEY_SCHEMA_FIELD_NUMBER = 15;
+  private com.google.bigtable.admin.v2.Type.Struct rowKeySchema_;
+  /**
+   *
+   *
+   * <pre>
+   * The row key schema for this table. The schema is used to decode the raw row
+   * key bytes into a structured format. The order of field declarations in this
+   * schema is important, as it reflects how the raw row key bytes are
+   * structured. Currently, this only affects how the key is read via a
+   * GoogleSQL query from the ExecuteQuery API.
+   *
+   * For a SQL query, the _key column is still read as raw bytes. But queries
+   * can reference the key fields by name, which will be decoded from _key using
+   * provided type and encoding. Queries that reference key fields will fail if
+   * they encounter an invalid row key.
+   *
+   * For example, if _key = "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" with the
+   * following schema:
+   * {
+   *   fields {
+   *     field_name: "id"
+   *     type { string { encoding: utf8_bytes {} } }
+   *   }
+   *   fields {
+   *     field_name: "date"
+   *     type { string { encoding: utf8_bytes {} } }
+   *   }
+   *   fields {
+   *     field_name: "product_code"
+   *     type { int64 { encoding: big_endian_bytes {} } }
+   *   }
+   *   encoding { delimited_bytes { delimiter: "#" } }
+   * }
+   *
+   * The decoded key parts would be:
+   *   id = "some_id", date = "2024-04-30", product_code = 1245427
+   * The query "SELECT _key, product_code FROM table" will return two columns:
+   * /------------------------------------------------------&#92;
+   * |              _key                     | product_code |
+   * | --------------------------------------|--------------|
+   * | "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" |   1245427    |
+   * &#92;------------------------------------------------------/
+   *
+   * The schema has the following invariants:
+   * (1) The decoded field values are order-preserved. For read, the field
+   * values will be decoded in sorted mode from the raw bytes.
+   * (2) Every field in the schema must specify a non-empty name.
+   * (3) Every field must specify a type with an associated encoding. The type
+   * is limited to scalar types only: Array, Map, Aggregate, and Struct are not
+   * allowed.
+   * (4) The field names must not collide with existing column family
+   * names and reserved keywords "_key" and "_timestamp".
+   *
+   * The following update operations are allowed for row_key_schema:
+   * - Update from an empty schema to a new schema.
+   * - Remove the existing schema. This operation requires setting the
+   *   `ignore_warnings` flag to `true`, since it might be a backward
+   *   incompatible change. Without the flag, the update request will fail with
+   *   an INVALID_ARGUMENT error.
+   * Any other row key schema update operation (e.g. update existing schema
+   * columns names or types) is currently unsupported.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Struct row_key_schema = 15;</code>
+   *
+   * @return Whether the rowKeySchema field is set.
+   */
+  @java.lang.Override
+  public boolean hasRowKeySchema() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The row key schema for this table. The schema is used to decode the raw row
+   * key bytes into a structured format. The order of field declarations in this
+   * schema is important, as it reflects how the raw row key bytes are
+   * structured. Currently, this only affects how the key is read via a
+   * GoogleSQL query from the ExecuteQuery API.
+   *
+   * For a SQL query, the _key column is still read as raw bytes. But queries
+   * can reference the key fields by name, which will be decoded from _key using
+   * provided type and encoding. Queries that reference key fields will fail if
+   * they encounter an invalid row key.
+   *
+   * For example, if _key = "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" with the
+   * following schema:
+   * {
+   *   fields {
+   *     field_name: "id"
+   *     type { string { encoding: utf8_bytes {} } }
+   *   }
+   *   fields {
+   *     field_name: "date"
+   *     type { string { encoding: utf8_bytes {} } }
+   *   }
+   *   fields {
+   *     field_name: "product_code"
+   *     type { int64 { encoding: big_endian_bytes {} } }
+   *   }
+   *   encoding { delimited_bytes { delimiter: "#" } }
+   * }
+   *
+   * The decoded key parts would be:
+   *   id = "some_id", date = "2024-04-30", product_code = 1245427
+   * The query "SELECT _key, product_code FROM table" will return two columns:
+   * /------------------------------------------------------&#92;
+   * |              _key                     | product_code |
+   * | --------------------------------------|--------------|
+   * | "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" |   1245427    |
+   * &#92;------------------------------------------------------/
+   *
+   * The schema has the following invariants:
+   * (1) The decoded field values are order-preserved. For read, the field
+   * values will be decoded in sorted mode from the raw bytes.
+   * (2) Every field in the schema must specify a non-empty name.
+   * (3) Every field must specify a type with an associated encoding. The type
+   * is limited to scalar types only: Array, Map, Aggregate, and Struct are not
+   * allowed.
+   * (4) The field names must not collide with existing column family
+   * names and reserved keywords "_key" and "_timestamp".
+   *
+   * The following update operations are allowed for row_key_schema:
+   * - Update from an empty schema to a new schema.
+   * - Remove the existing schema. This operation requires setting the
+   *   `ignore_warnings` flag to `true`, since it might be a backward
+   *   incompatible change. Without the flag, the update request will fail with
+   *   an INVALID_ARGUMENT error.
+   * Any other row key schema update operation (e.g. update existing schema
+   * columns names or types) is currently unsupported.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Struct row_key_schema = 15;</code>
+   *
+   * @return The rowKeySchema.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.Struct getRowKeySchema() {
+    return rowKeySchema_ == null
+        ? com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance()
+        : rowKeySchema_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The row key schema for this table. The schema is used to decode the raw row
+   * key bytes into a structured format. The order of field declarations in this
+   * schema is important, as it reflects how the raw row key bytes are
+   * structured. Currently, this only affects how the key is read via a
+   * GoogleSQL query from the ExecuteQuery API.
+   *
+   * For a SQL query, the _key column is still read as raw bytes. But queries
+   * can reference the key fields by name, which will be decoded from _key using
+   * provided type and encoding. Queries that reference key fields will fail if
+   * they encounter an invalid row key.
+   *
+   * For example, if _key = "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" with the
+   * following schema:
+   * {
+   *   fields {
+   *     field_name: "id"
+   *     type { string { encoding: utf8_bytes {} } }
+   *   }
+   *   fields {
+   *     field_name: "date"
+   *     type { string { encoding: utf8_bytes {} } }
+   *   }
+   *   fields {
+   *     field_name: "product_code"
+   *     type { int64 { encoding: big_endian_bytes {} } }
+   *   }
+   *   encoding { delimited_bytes { delimiter: "#" } }
+   * }
+   *
+   * The decoded key parts would be:
+   *   id = "some_id", date = "2024-04-30", product_code = 1245427
+   * The query "SELECT _key, product_code FROM table" will return two columns:
+   * /------------------------------------------------------&#92;
+   * |              _key                     | product_code |
+   * | --------------------------------------|--------------|
+   * | "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" |   1245427    |
+   * &#92;------------------------------------------------------/
+   *
+   * The schema has the following invariants:
+   * (1) The decoded field values are order-preserved. For read, the field
+   * values will be decoded in sorted mode from the raw bytes.
+   * (2) Every field in the schema must specify a non-empty name.
+   * (3) Every field must specify a type with an associated encoding. The type
+   * is limited to scalar types only: Array, Map, Aggregate, and Struct are not
+   * allowed.
+   * (4) The field names must not collide with existing column family
+   * names and reserved keywords "_key" and "_timestamp".
+   *
+   * The following update operations are allowed for row_key_schema:
+   * - Update from an empty schema to a new schema.
+   * - Remove the existing schema. This operation requires setting the
+   *   `ignore_warnings` flag to `true`, since it might be a backward
+   *   incompatible change. Without the flag, the update request will fail with
+   *   an INVALID_ARGUMENT error.
+   * Any other row key schema update operation (e.g. update existing schema
+   * columns names or types) is currently unsupported.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type.Struct row_key_schema = 15;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type.StructOrBuilder getRowKeySchemaOrBuilder() {
+    return rowKeySchema_ == null
+        ? com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance()
+        : rowKeySchema_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3815,6 +4030,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     if (automatedBackupConfigCase_ == 13) {
       output.writeMessage(
           13, (com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy) automatedBackupConfig_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(15, getRowKeySchema());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3871,6 +4089,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
               13,
               (com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy) automatedBackupConfig_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getRowKeySchema());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3899,6 +4120,10 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       if (!getChangeStreamConfig().equals(other.getChangeStreamConfig())) return false;
     }
     if (getDeletionProtection() != other.getDeletionProtection()) return false;
+    if (hasRowKeySchema() != other.hasRowKeySchema()) return false;
+    if (hasRowKeySchema()) {
+      if (!getRowKeySchema().equals(other.getRowKeySchema())) return false;
+    }
     if (!getAutomatedBackupConfigCase().equals(other.getAutomatedBackupConfigCase())) return false;
     switch (automatedBackupConfigCase_) {
       case 13:
@@ -3940,6 +4165,10 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + DELETION_PROTECTION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeletionProtection());
+    if (hasRowKeySchema()) {
+      hash = (37 * hash) + ROW_KEY_SCHEMA_FIELD_NUMBER;
+      hash = (53 * hash) + getRowKeySchema().hashCode();
+    }
     switch (automatedBackupConfigCase_) {
       case 13:
         hash = (37 * hash) + AUTOMATED_BACKUP_POLICY_FIELD_NUMBER;
@@ -4116,6 +4345,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getRestoreInfoFieldBuilder();
         getChangeStreamConfigFieldBuilder();
+        getRowKeySchemaFieldBuilder();
       }
     }
 
@@ -4140,6 +4370,11 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       deletionProtection_ = false;
       if (automatedBackupPolicyBuilder_ != null) {
         automatedBackupPolicyBuilder_.clear();
+      }
+      rowKeySchema_ = null;
+      if (rowKeySchemaBuilder_ != null) {
+        rowKeySchemaBuilder_.dispose();
+        rowKeySchemaBuilder_ = null;
       }
       automatedBackupConfigCase_ = 0;
       automatedBackupConfig_ = null;
@@ -4208,6 +4443,11 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.deletionProtection_ = deletionProtection_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.rowKeySchema_ =
+            rowKeySchemaBuilder_ == null ? rowKeySchema_ : rowKeySchemaBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4285,6 +4525,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getDeletionProtection() != false) {
         setDeletionProtection(other.getDeletionProtection());
+      }
+      if (other.hasRowKeySchema()) {
+        mergeRowKeySchema(other.getRowKeySchema());
       }
       switch (other.getAutomatedBackupConfigCase()) {
         case AUTOMATED_BACKUP_POLICY:
@@ -4389,6 +4632,12 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
                 automatedBackupConfigCase_ = 13;
                 break;
               } // case 106
+            case 122:
+              {
+                input.readMessage(getRowKeySchemaFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5910,6 +6159,687 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       automatedBackupConfigCase_ = 13;
       onChanged();
       return automatedBackupPolicyBuilder_;
+    }
+
+    private com.google.bigtable.admin.v2.Type.Struct rowKeySchema_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Struct,
+            com.google.bigtable.admin.v2.Type.Struct.Builder,
+            com.google.bigtable.admin.v2.Type.StructOrBuilder>
+        rowKeySchemaBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The row key schema for this table. The schema is used to decode the raw row
+     * key bytes into a structured format. The order of field declarations in this
+     * schema is important, as it reflects how the raw row key bytes are
+     * structured. Currently, this only affects how the key is read via a
+     * GoogleSQL query from the ExecuteQuery API.
+     *
+     * For a SQL query, the _key column is still read as raw bytes. But queries
+     * can reference the key fields by name, which will be decoded from _key using
+     * provided type and encoding. Queries that reference key fields will fail if
+     * they encounter an invalid row key.
+     *
+     * For example, if _key = "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" with the
+     * following schema:
+     * {
+     *   fields {
+     *     field_name: "id"
+     *     type { string { encoding: utf8_bytes {} } }
+     *   }
+     *   fields {
+     *     field_name: "date"
+     *     type { string { encoding: utf8_bytes {} } }
+     *   }
+     *   fields {
+     *     field_name: "product_code"
+     *     type { int64 { encoding: big_endian_bytes {} } }
+     *   }
+     *   encoding { delimited_bytes { delimiter: "#" } }
+     * }
+     *
+     * The decoded key parts would be:
+     *   id = "some_id", date = "2024-04-30", product_code = 1245427
+     * The query "SELECT _key, product_code FROM table" will return two columns:
+     * /------------------------------------------------------&#92;
+     * |              _key                     | product_code |
+     * | --------------------------------------|--------------|
+     * | "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" |   1245427    |
+     * &#92;------------------------------------------------------/
+     *
+     * The schema has the following invariants:
+     * (1) The decoded field values are order-preserved. For read, the field
+     * values will be decoded in sorted mode from the raw bytes.
+     * (2) Every field in the schema must specify a non-empty name.
+     * (3) Every field must specify a type with an associated encoding. The type
+     * is limited to scalar types only: Array, Map, Aggregate, and Struct are not
+     * allowed.
+     * (4) The field names must not collide with existing column family
+     * names and reserved keywords "_key" and "_timestamp".
+     *
+     * The following update operations are allowed for row_key_schema:
+     * - Update from an empty schema to a new schema.
+     * - Remove the existing schema. This operation requires setting the
+     *   `ignore_warnings` flag to `true`, since it might be a backward
+     *   incompatible change. Without the flag, the update request will fail with
+     *   an INVALID_ARGUMENT error.
+     * Any other row key schema update operation (e.g. update existing schema
+     * columns names or types) is currently unsupported.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Struct row_key_schema = 15;</code>
+     *
+     * @return Whether the rowKeySchema field is set.
+     */
+    public boolean hasRowKeySchema() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The row key schema for this table. The schema is used to decode the raw row
+     * key bytes into a structured format. The order of field declarations in this
+     * schema is important, as it reflects how the raw row key bytes are
+     * structured. Currently, this only affects how the key is read via a
+     * GoogleSQL query from the ExecuteQuery API.
+     *
+     * For a SQL query, the _key column is still read as raw bytes. But queries
+     * can reference the key fields by name, which will be decoded from _key using
+     * provided type and encoding. Queries that reference key fields will fail if
+     * they encounter an invalid row key.
+     *
+     * For example, if _key = "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" with the
+     * following schema:
+     * {
+     *   fields {
+     *     field_name: "id"
+     *     type { string { encoding: utf8_bytes {} } }
+     *   }
+     *   fields {
+     *     field_name: "date"
+     *     type { string { encoding: utf8_bytes {} } }
+     *   }
+     *   fields {
+     *     field_name: "product_code"
+     *     type { int64 { encoding: big_endian_bytes {} } }
+     *   }
+     *   encoding { delimited_bytes { delimiter: "#" } }
+     * }
+     *
+     * The decoded key parts would be:
+     *   id = "some_id", date = "2024-04-30", product_code = 1245427
+     * The query "SELECT _key, product_code FROM table" will return two columns:
+     * /------------------------------------------------------&#92;
+     * |              _key                     | product_code |
+     * | --------------------------------------|--------------|
+     * | "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" |   1245427    |
+     * &#92;------------------------------------------------------/
+     *
+     * The schema has the following invariants:
+     * (1) The decoded field values are order-preserved. For read, the field
+     * values will be decoded in sorted mode from the raw bytes.
+     * (2) Every field in the schema must specify a non-empty name.
+     * (3) Every field must specify a type with an associated encoding. The type
+     * is limited to scalar types only: Array, Map, Aggregate, and Struct are not
+     * allowed.
+     * (4) The field names must not collide with existing column family
+     * names and reserved keywords "_key" and "_timestamp".
+     *
+     * The following update operations are allowed for row_key_schema:
+     * - Update from an empty schema to a new schema.
+     * - Remove the existing schema. This operation requires setting the
+     *   `ignore_warnings` flag to `true`, since it might be a backward
+     *   incompatible change. Without the flag, the update request will fail with
+     *   an INVALID_ARGUMENT error.
+     * Any other row key schema update operation (e.g. update existing schema
+     * columns names or types) is currently unsupported.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Struct row_key_schema = 15;</code>
+     *
+     * @return The rowKeySchema.
+     */
+    public com.google.bigtable.admin.v2.Type.Struct getRowKeySchema() {
+      if (rowKeySchemaBuilder_ == null) {
+        return rowKeySchema_ == null
+            ? com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance()
+            : rowKeySchema_;
+      } else {
+        return rowKeySchemaBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The row key schema for this table. The schema is used to decode the raw row
+     * key bytes into a structured format. The order of field declarations in this
+     * schema is important, as it reflects how the raw row key bytes are
+     * structured. Currently, this only affects how the key is read via a
+     * GoogleSQL query from the ExecuteQuery API.
+     *
+     * For a SQL query, the _key column is still read as raw bytes. But queries
+     * can reference the key fields by name, which will be decoded from _key using
+     * provided type and encoding. Queries that reference key fields will fail if
+     * they encounter an invalid row key.
+     *
+     * For example, if _key = "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" with the
+     * following schema:
+     * {
+     *   fields {
+     *     field_name: "id"
+     *     type { string { encoding: utf8_bytes {} } }
+     *   }
+     *   fields {
+     *     field_name: "date"
+     *     type { string { encoding: utf8_bytes {} } }
+     *   }
+     *   fields {
+     *     field_name: "product_code"
+     *     type { int64 { encoding: big_endian_bytes {} } }
+     *   }
+     *   encoding { delimited_bytes { delimiter: "#" } }
+     * }
+     *
+     * The decoded key parts would be:
+     *   id = "some_id", date = "2024-04-30", product_code = 1245427
+     * The query "SELECT _key, product_code FROM table" will return two columns:
+     * /------------------------------------------------------&#92;
+     * |              _key                     | product_code |
+     * | --------------------------------------|--------------|
+     * | "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" |   1245427    |
+     * &#92;------------------------------------------------------/
+     *
+     * The schema has the following invariants:
+     * (1) The decoded field values are order-preserved. For read, the field
+     * values will be decoded in sorted mode from the raw bytes.
+     * (2) Every field in the schema must specify a non-empty name.
+     * (3) Every field must specify a type with an associated encoding. The type
+     * is limited to scalar types only: Array, Map, Aggregate, and Struct are not
+     * allowed.
+     * (4) The field names must not collide with existing column family
+     * names and reserved keywords "_key" and "_timestamp".
+     *
+     * The following update operations are allowed for row_key_schema:
+     * - Update from an empty schema to a new schema.
+     * - Remove the existing schema. This operation requires setting the
+     *   `ignore_warnings` flag to `true`, since it might be a backward
+     *   incompatible change. Without the flag, the update request will fail with
+     *   an INVALID_ARGUMENT error.
+     * Any other row key schema update operation (e.g. update existing schema
+     * columns names or types) is currently unsupported.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Struct row_key_schema = 15;</code>
+     */
+    public Builder setRowKeySchema(com.google.bigtable.admin.v2.Type.Struct value) {
+      if (rowKeySchemaBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rowKeySchema_ = value;
+      } else {
+        rowKeySchemaBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The row key schema for this table. The schema is used to decode the raw row
+     * key bytes into a structured format. The order of field declarations in this
+     * schema is important, as it reflects how the raw row key bytes are
+     * structured. Currently, this only affects how the key is read via a
+     * GoogleSQL query from the ExecuteQuery API.
+     *
+     * For a SQL query, the _key column is still read as raw bytes. But queries
+     * can reference the key fields by name, which will be decoded from _key using
+     * provided type and encoding. Queries that reference key fields will fail if
+     * they encounter an invalid row key.
+     *
+     * For example, if _key = "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" with the
+     * following schema:
+     * {
+     *   fields {
+     *     field_name: "id"
+     *     type { string { encoding: utf8_bytes {} } }
+     *   }
+     *   fields {
+     *     field_name: "date"
+     *     type { string { encoding: utf8_bytes {} } }
+     *   }
+     *   fields {
+     *     field_name: "product_code"
+     *     type { int64 { encoding: big_endian_bytes {} } }
+     *   }
+     *   encoding { delimited_bytes { delimiter: "#" } }
+     * }
+     *
+     * The decoded key parts would be:
+     *   id = "some_id", date = "2024-04-30", product_code = 1245427
+     * The query "SELECT _key, product_code FROM table" will return two columns:
+     * /------------------------------------------------------&#92;
+     * |              _key                     | product_code |
+     * | --------------------------------------|--------------|
+     * | "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" |   1245427    |
+     * &#92;------------------------------------------------------/
+     *
+     * The schema has the following invariants:
+     * (1) The decoded field values are order-preserved. For read, the field
+     * values will be decoded in sorted mode from the raw bytes.
+     * (2) Every field in the schema must specify a non-empty name.
+     * (3) Every field must specify a type with an associated encoding. The type
+     * is limited to scalar types only: Array, Map, Aggregate, and Struct are not
+     * allowed.
+     * (4) The field names must not collide with existing column family
+     * names and reserved keywords "_key" and "_timestamp".
+     *
+     * The following update operations are allowed for row_key_schema:
+     * - Update from an empty schema to a new schema.
+     * - Remove the existing schema. This operation requires setting the
+     *   `ignore_warnings` flag to `true`, since it might be a backward
+     *   incompatible change. Without the flag, the update request will fail with
+     *   an INVALID_ARGUMENT error.
+     * Any other row key schema update operation (e.g. update existing schema
+     * columns names or types) is currently unsupported.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Struct row_key_schema = 15;</code>
+     */
+    public Builder setRowKeySchema(
+        com.google.bigtable.admin.v2.Type.Struct.Builder builderForValue) {
+      if (rowKeySchemaBuilder_ == null) {
+        rowKeySchema_ = builderForValue.build();
+      } else {
+        rowKeySchemaBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The row key schema for this table. The schema is used to decode the raw row
+     * key bytes into a structured format. The order of field declarations in this
+     * schema is important, as it reflects how the raw row key bytes are
+     * structured. Currently, this only affects how the key is read via a
+     * GoogleSQL query from the ExecuteQuery API.
+     *
+     * For a SQL query, the _key column is still read as raw bytes. But queries
+     * can reference the key fields by name, which will be decoded from _key using
+     * provided type and encoding. Queries that reference key fields will fail if
+     * they encounter an invalid row key.
+     *
+     * For example, if _key = "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" with the
+     * following schema:
+     * {
+     *   fields {
+     *     field_name: "id"
+     *     type { string { encoding: utf8_bytes {} } }
+     *   }
+     *   fields {
+     *     field_name: "date"
+     *     type { string { encoding: utf8_bytes {} } }
+     *   }
+     *   fields {
+     *     field_name: "product_code"
+     *     type { int64 { encoding: big_endian_bytes {} } }
+     *   }
+     *   encoding { delimited_bytes { delimiter: "#" } }
+     * }
+     *
+     * The decoded key parts would be:
+     *   id = "some_id", date = "2024-04-30", product_code = 1245427
+     * The query "SELECT _key, product_code FROM table" will return two columns:
+     * /------------------------------------------------------&#92;
+     * |              _key                     | product_code |
+     * | --------------------------------------|--------------|
+     * | "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" |   1245427    |
+     * &#92;------------------------------------------------------/
+     *
+     * The schema has the following invariants:
+     * (1) The decoded field values are order-preserved. For read, the field
+     * values will be decoded in sorted mode from the raw bytes.
+     * (2) Every field in the schema must specify a non-empty name.
+     * (3) Every field must specify a type with an associated encoding. The type
+     * is limited to scalar types only: Array, Map, Aggregate, and Struct are not
+     * allowed.
+     * (4) The field names must not collide with existing column family
+     * names and reserved keywords "_key" and "_timestamp".
+     *
+     * The following update operations are allowed for row_key_schema:
+     * - Update from an empty schema to a new schema.
+     * - Remove the existing schema. This operation requires setting the
+     *   `ignore_warnings` flag to `true`, since it might be a backward
+     *   incompatible change. Without the flag, the update request will fail with
+     *   an INVALID_ARGUMENT error.
+     * Any other row key schema update operation (e.g. update existing schema
+     * columns names or types) is currently unsupported.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Struct row_key_schema = 15;</code>
+     */
+    public Builder mergeRowKeySchema(com.google.bigtable.admin.v2.Type.Struct value) {
+      if (rowKeySchemaBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && rowKeySchema_ != null
+            && rowKeySchema_ != com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance()) {
+          getRowKeySchemaBuilder().mergeFrom(value);
+        } else {
+          rowKeySchema_ = value;
+        }
+      } else {
+        rowKeySchemaBuilder_.mergeFrom(value);
+      }
+      if (rowKeySchema_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The row key schema for this table. The schema is used to decode the raw row
+     * key bytes into a structured format. The order of field declarations in this
+     * schema is important, as it reflects how the raw row key bytes are
+     * structured. Currently, this only affects how the key is read via a
+     * GoogleSQL query from the ExecuteQuery API.
+     *
+     * For a SQL query, the _key column is still read as raw bytes. But queries
+     * can reference the key fields by name, which will be decoded from _key using
+     * provided type and encoding. Queries that reference key fields will fail if
+     * they encounter an invalid row key.
+     *
+     * For example, if _key = "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" with the
+     * following schema:
+     * {
+     *   fields {
+     *     field_name: "id"
+     *     type { string { encoding: utf8_bytes {} } }
+     *   }
+     *   fields {
+     *     field_name: "date"
+     *     type { string { encoding: utf8_bytes {} } }
+     *   }
+     *   fields {
+     *     field_name: "product_code"
+     *     type { int64 { encoding: big_endian_bytes {} } }
+     *   }
+     *   encoding { delimited_bytes { delimiter: "#" } }
+     * }
+     *
+     * The decoded key parts would be:
+     *   id = "some_id", date = "2024-04-30", product_code = 1245427
+     * The query "SELECT _key, product_code FROM table" will return two columns:
+     * /------------------------------------------------------&#92;
+     * |              _key                     | product_code |
+     * | --------------------------------------|--------------|
+     * | "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" |   1245427    |
+     * &#92;------------------------------------------------------/
+     *
+     * The schema has the following invariants:
+     * (1) The decoded field values are order-preserved. For read, the field
+     * values will be decoded in sorted mode from the raw bytes.
+     * (2) Every field in the schema must specify a non-empty name.
+     * (3) Every field must specify a type with an associated encoding. The type
+     * is limited to scalar types only: Array, Map, Aggregate, and Struct are not
+     * allowed.
+     * (4) The field names must not collide with existing column family
+     * names and reserved keywords "_key" and "_timestamp".
+     *
+     * The following update operations are allowed for row_key_schema:
+     * - Update from an empty schema to a new schema.
+     * - Remove the existing schema. This operation requires setting the
+     *   `ignore_warnings` flag to `true`, since it might be a backward
+     *   incompatible change. Without the flag, the update request will fail with
+     *   an INVALID_ARGUMENT error.
+     * Any other row key schema update operation (e.g. update existing schema
+     * columns names or types) is currently unsupported.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Struct row_key_schema = 15;</code>
+     */
+    public Builder clearRowKeySchema() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      rowKeySchema_ = null;
+      if (rowKeySchemaBuilder_ != null) {
+        rowKeySchemaBuilder_.dispose();
+        rowKeySchemaBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The row key schema for this table. The schema is used to decode the raw row
+     * key bytes into a structured format. The order of field declarations in this
+     * schema is important, as it reflects how the raw row key bytes are
+     * structured. Currently, this only affects how the key is read via a
+     * GoogleSQL query from the ExecuteQuery API.
+     *
+     * For a SQL query, the _key column is still read as raw bytes. But queries
+     * can reference the key fields by name, which will be decoded from _key using
+     * provided type and encoding. Queries that reference key fields will fail if
+     * they encounter an invalid row key.
+     *
+     * For example, if _key = "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" with the
+     * following schema:
+     * {
+     *   fields {
+     *     field_name: "id"
+     *     type { string { encoding: utf8_bytes {} } }
+     *   }
+     *   fields {
+     *     field_name: "date"
+     *     type { string { encoding: utf8_bytes {} } }
+     *   }
+     *   fields {
+     *     field_name: "product_code"
+     *     type { int64 { encoding: big_endian_bytes {} } }
+     *   }
+     *   encoding { delimited_bytes { delimiter: "#" } }
+     * }
+     *
+     * The decoded key parts would be:
+     *   id = "some_id", date = "2024-04-30", product_code = 1245427
+     * The query "SELECT _key, product_code FROM table" will return two columns:
+     * /------------------------------------------------------&#92;
+     * |              _key                     | product_code |
+     * | --------------------------------------|--------------|
+     * | "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" |   1245427    |
+     * &#92;------------------------------------------------------/
+     *
+     * The schema has the following invariants:
+     * (1) The decoded field values are order-preserved. For read, the field
+     * values will be decoded in sorted mode from the raw bytes.
+     * (2) Every field in the schema must specify a non-empty name.
+     * (3) Every field must specify a type with an associated encoding. The type
+     * is limited to scalar types only: Array, Map, Aggregate, and Struct are not
+     * allowed.
+     * (4) The field names must not collide with existing column family
+     * names and reserved keywords "_key" and "_timestamp".
+     *
+     * The following update operations are allowed for row_key_schema:
+     * - Update from an empty schema to a new schema.
+     * - Remove the existing schema. This operation requires setting the
+     *   `ignore_warnings` flag to `true`, since it might be a backward
+     *   incompatible change. Without the flag, the update request will fail with
+     *   an INVALID_ARGUMENT error.
+     * Any other row key schema update operation (e.g. update existing schema
+     * columns names or types) is currently unsupported.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Struct row_key_schema = 15;</code>
+     */
+    public com.google.bigtable.admin.v2.Type.Struct.Builder getRowKeySchemaBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getRowKeySchemaFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The row key schema for this table. The schema is used to decode the raw row
+     * key bytes into a structured format. The order of field declarations in this
+     * schema is important, as it reflects how the raw row key bytes are
+     * structured. Currently, this only affects how the key is read via a
+     * GoogleSQL query from the ExecuteQuery API.
+     *
+     * For a SQL query, the _key column is still read as raw bytes. But queries
+     * can reference the key fields by name, which will be decoded from _key using
+     * provided type and encoding. Queries that reference key fields will fail if
+     * they encounter an invalid row key.
+     *
+     * For example, if _key = "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" with the
+     * following schema:
+     * {
+     *   fields {
+     *     field_name: "id"
+     *     type { string { encoding: utf8_bytes {} } }
+     *   }
+     *   fields {
+     *     field_name: "date"
+     *     type { string { encoding: utf8_bytes {} } }
+     *   }
+     *   fields {
+     *     field_name: "product_code"
+     *     type { int64 { encoding: big_endian_bytes {} } }
+     *   }
+     *   encoding { delimited_bytes { delimiter: "#" } }
+     * }
+     *
+     * The decoded key parts would be:
+     *   id = "some_id", date = "2024-04-30", product_code = 1245427
+     * The query "SELECT _key, product_code FROM table" will return two columns:
+     * /------------------------------------------------------&#92;
+     * |              _key                     | product_code |
+     * | --------------------------------------|--------------|
+     * | "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" |   1245427    |
+     * &#92;------------------------------------------------------/
+     *
+     * The schema has the following invariants:
+     * (1) The decoded field values are order-preserved. For read, the field
+     * values will be decoded in sorted mode from the raw bytes.
+     * (2) Every field in the schema must specify a non-empty name.
+     * (3) Every field must specify a type with an associated encoding. The type
+     * is limited to scalar types only: Array, Map, Aggregate, and Struct are not
+     * allowed.
+     * (4) The field names must not collide with existing column family
+     * names and reserved keywords "_key" and "_timestamp".
+     *
+     * The following update operations are allowed for row_key_schema:
+     * - Update from an empty schema to a new schema.
+     * - Remove the existing schema. This operation requires setting the
+     *   `ignore_warnings` flag to `true`, since it might be a backward
+     *   incompatible change. Without the flag, the update request will fail with
+     *   an INVALID_ARGUMENT error.
+     * Any other row key schema update operation (e.g. update existing schema
+     * columns names or types) is currently unsupported.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Struct row_key_schema = 15;</code>
+     */
+    public com.google.bigtable.admin.v2.Type.StructOrBuilder getRowKeySchemaOrBuilder() {
+      if (rowKeySchemaBuilder_ != null) {
+        return rowKeySchemaBuilder_.getMessageOrBuilder();
+      } else {
+        return rowKeySchema_ == null
+            ? com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance()
+            : rowKeySchema_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The row key schema for this table. The schema is used to decode the raw row
+     * key bytes into a structured format. The order of field declarations in this
+     * schema is important, as it reflects how the raw row key bytes are
+     * structured. Currently, this only affects how the key is read via a
+     * GoogleSQL query from the ExecuteQuery API.
+     *
+     * For a SQL query, the _key column is still read as raw bytes. But queries
+     * can reference the key fields by name, which will be decoded from _key using
+     * provided type and encoding. Queries that reference key fields will fail if
+     * they encounter an invalid row key.
+     *
+     * For example, if _key = "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" with the
+     * following schema:
+     * {
+     *   fields {
+     *     field_name: "id"
+     *     type { string { encoding: utf8_bytes {} } }
+     *   }
+     *   fields {
+     *     field_name: "date"
+     *     type { string { encoding: utf8_bytes {} } }
+     *   }
+     *   fields {
+     *     field_name: "product_code"
+     *     type { int64 { encoding: big_endian_bytes {} } }
+     *   }
+     *   encoding { delimited_bytes { delimiter: "#" } }
+     * }
+     *
+     * The decoded key parts would be:
+     *   id = "some_id", date = "2024-04-30", product_code = 1245427
+     * The query "SELECT _key, product_code FROM table" will return two columns:
+     * /------------------------------------------------------&#92;
+     * |              _key                     | product_code |
+     * | --------------------------------------|--------------|
+     * | "some_id#2024-04-30#&#92;x00&#92;x13&#92;x00&#92;xf3" |   1245427    |
+     * &#92;------------------------------------------------------/
+     *
+     * The schema has the following invariants:
+     * (1) The decoded field values are order-preserved. For read, the field
+     * values will be decoded in sorted mode from the raw bytes.
+     * (2) Every field in the schema must specify a non-empty name.
+     * (3) Every field must specify a type with an associated encoding. The type
+     * is limited to scalar types only: Array, Map, Aggregate, and Struct are not
+     * allowed.
+     * (4) The field names must not collide with existing column family
+     * names and reserved keywords "_key" and "_timestamp".
+     *
+     * The following update operations are allowed for row_key_schema:
+     * - Update from an empty schema to a new schema.
+     * - Remove the existing schema. This operation requires setting the
+     *   `ignore_warnings` flag to `true`, since it might be a backward
+     *   incompatible change. Without the flag, the update request will fail with
+     *   an INVALID_ARGUMENT error.
+     * Any other row key schema update operation (e.g. update existing schema
+     * columns names or types) is currently unsupported.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type.Struct row_key_schema = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type.Struct,
+            com.google.bigtable.admin.v2.Type.Struct.Builder,
+            com.google.bigtable.admin.v2.Type.StructOrBuilder>
+        getRowKeySchemaFieldBuilder() {
+      if (rowKeySchemaBuilder_ == null) {
+        rowKeySchemaBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Type.Struct,
+                com.google.bigtable.admin.v2.Type.Struct.Builder,
+                com.google.bigtable.admin.v2.Type.StructOrBuilder>(
+                getRowKeySchema(), getParentForChildren(), isClean());
+        rowKeySchema_ = null;
+      }
+      return rowKeySchemaBuilder_;
     }
 
     @java.lang.Override

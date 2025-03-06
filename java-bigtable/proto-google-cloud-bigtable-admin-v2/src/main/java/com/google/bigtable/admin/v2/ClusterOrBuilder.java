@@ -119,8 +119,9 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * The number of nodes allocated to this cluster. More nodes enable higher
-   * throughput and more consistent performance.
+   * The number of nodes in the cluster. If no value is set,
+   * Cloud Bigtable automatically allocates nodes based on your data footprint
+   * and optimized for 50% storage utilization.
    * </pre>
    *
    * <code>int32 serve_nodes = 4;</code>

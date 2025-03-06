@@ -84,11 +84,12 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The current state of the instance.
+   * Output only. The current state of the instance.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Instance.State state = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Instance.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -97,11 +98,12 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The current state of the instance.
+   * Output only. The current state of the instance.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Instance.State state = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Instance.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */
@@ -244,9 +246,9 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. A server-assigned timestamp representing when this Instance
-   * was created. For instances created before this field was added (August
-   * 2021), this value is `seconds: 0, nanos: 1`.
+   * Output only. A commit timestamp representing when this Instance was
+   * created. For instances created before this field was added (August 2021),
+   * this value is `seconds: 0, nanos: 1`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -259,9 +261,9 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. A server-assigned timestamp representing when this Instance
-   * was created. For instances created before this field was added (August
-   * 2021), this value is `seconds: 0, nanos: 1`.
+   * Output only. A commit timestamp representing when this Instance was
+   * created. For instances created before this field was added (August 2021),
+   * this value is `seconds: 0, nanos: 1`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -274,9 +276,9 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. A server-assigned timestamp representing when this Instance
-   * was created. For instances created before this field was added (August
-   * 2021), this value is `seconds: 0, nanos: 1`.
+   * Output only. A commit timestamp representing when this Instance was
+   * created. For instances created before this field was added (August 2021),
+   * this value is `seconds: 0, nanos: 1`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -308,4 +310,29 @@ public interface InstanceOrBuilder
    * @return The satisfiesPzs.
    */
   boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  boolean hasSatisfiesPzi();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
 }

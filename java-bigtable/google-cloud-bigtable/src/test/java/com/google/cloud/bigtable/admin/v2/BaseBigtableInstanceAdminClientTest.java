@@ -138,6 +138,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -198,6 +199,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -258,6 +260,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
@@ -300,6 +303,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
@@ -422,6 +426,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
@@ -432,6 +437,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
 
     Instance actualResponse = client.updateInstance(request);
@@ -448,6 +454,7 @@ public class BaseBigtableInstanceAdminClientTest {
     Assert.assertEquals(request.getLabelsMap(), actualRequest.getLabelsMap());
     Assert.assertEquals(request.getCreateTime(), actualRequest.getCreateTime());
     Assert.assertEquals(request.getSatisfiesPzs(), actualRequest.getSatisfiesPzs());
+    Assert.assertEquals(request.getSatisfiesPzi(), actualRequest.getSatisfiesPzi());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -467,6 +474,7 @@ public class BaseBigtableInstanceAdminClientTest {
               .putAllLabels(new HashMap<String, String>())
               .setCreateTime(Timestamp.newBuilder().build())
               .setSatisfiesPzs(true)
+              .setSatisfiesPzi(true)
               .build();
       client.updateInstance(request);
       Assert.fail("No exception raised");
@@ -484,6 +492,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1439,6 +1448,80 @@ public class BaseBigtableInstanceAdminClientTest {
     try {
       String name = "name3373707";
       client.deleteAppProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAppProfileTest3() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
+    boolean ignoreWarnings = true;
+
+    client.deleteAppProfile(name, ignoreWarnings);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAppProfileRequest actualRequest = ((DeleteAppProfileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(ignoreWarnings, actualRequest.getIgnoreWarnings());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAppProfileExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
+      boolean ignoreWarnings = true;
+      client.deleteAppProfile(name, ignoreWarnings);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAppProfileTest4() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    boolean ignoreWarnings = true;
+
+    client.deleteAppProfile(name, ignoreWarnings);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAppProfileRequest actualRequest = ((DeleteAppProfileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(ignoreWarnings, actualRequest.getIgnoreWarnings());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAppProfileExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      String name = "name3373707";
+      boolean ignoreWarnings = true;
+      client.deleteAppProfile(name, ignoreWarnings);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

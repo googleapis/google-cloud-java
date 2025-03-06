@@ -20,7 +20,7 @@
               "methods": ["createInstanceAsync", "createInstanceAsync", "createInstanceAsync", "createInstanceOperationCallable", "createInstanceCallable"]
             },
             "DeleteAppProfile": {
-              "methods": ["deleteAppProfile", "deleteAppProfile", "deleteAppProfile", "deleteAppProfileCallable"]
+              "methods": ["deleteAppProfile", "deleteAppProfile", "deleteAppProfile", "deleteAppProfile", "deleteAppProfile", "deleteAppProfileCallable"]
             },
             "DeleteCluster": {
               "methods": ["deleteCluster", "deleteCluster", "deleteCluster", "deleteClusterCallable"]

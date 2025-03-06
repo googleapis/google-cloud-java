@@ -944,6 +944,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *       <li>`change_stream_config`
    *       <li>`change_stream_config.retention_period`
    *       <li>`deletion_protection`
+   *       <li>`row_key_schema`
    *     </ul>
    *     <p>If `column_families` is set in `update_mask`, it will return an UNIMPLEMENTED error.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -973,6 +974,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *       UpdateTableRequest.newBuilder()
    *           .setTable(Table.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setIgnoreWarnings(true)
    *           .build();
    *   Table response = baseBigtableTableAdminClient.updateTableAsync(request).get();
    * }
@@ -1004,6 +1006,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *       UpdateTableRequest.newBuilder()
    *           .setTable(Table.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setIgnoreWarnings(true)
    *           .build();
    *   OperationFuture<Table, UpdateTableMetadata> future =
    *       baseBigtableTableAdminClient.updateTableOperationCallable().futureCall(request);
@@ -1035,6 +1038,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *       UpdateTableRequest.newBuilder()
    *           .setTable(Table.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setIgnoreWarnings(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       baseBigtableTableAdminClient.updateTableCallable().futureCall(request);

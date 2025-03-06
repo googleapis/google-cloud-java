@@ -3402,17 +3402,10 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Data Boost is a serverless compute capability that lets you run
-   * high-throughput read jobs on your Bigtable data, without impacting the
-   * performance of the clusters that handle your application traffic.
-   * Currently, Data Boost exclusively supports read-only use-cases with
-   * single-cluster routing.
-   *
-   * Data Boost reads are only guaranteed to see the results of writes that
-   * were written at least 30 minutes ago. This means newly written values may
-   * not become visible for up to 30m, and also means that old values may
-   * remain visible for up to 30m after being deleted or overwritten. To
-   * mitigate the staleness of the data, users may either wait 30m, or use
-   * CheckConsistency.
+   * high-throughput read jobs and queries on your Bigtable data, without
+   * impacting the performance of the clusters that handle your application
+   * traffic. Data Boost supports read-only use cases with single-cluster
+   * routing.
    * </pre>
    *
    * Protobuf type {@code google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly}
@@ -3833,17 +3826,10 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Data Boost is a serverless compute capability that lets you run
-     * high-throughput read jobs on your Bigtable data, without impacting the
-     * performance of the clusters that handle your application traffic.
-     * Currently, Data Boost exclusively supports read-only use-cases with
-     * single-cluster routing.
-     *
-     * Data Boost reads are only guaranteed to see the results of writes that
-     * were written at least 30 minutes ago. This means newly written values may
-     * not become visible for up to 30m, and also means that old values may
-     * remain visible for up to 30m after being deleted or overwritten. To
-     * mitigate the staleness of the data, users may either wait 30m, or use
-     * CheckConsistency.
+     * high-throughput read jobs and queries on your Bigtable data, without
+     * impacting the performance of the clusters that handle your application
+     * traffic. Data Boost supports read-only use cases with single-cluster
+     * routing.
      * </pre>
      *
      * Protobuf type {@code google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly}
@@ -4624,7 +4610,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-   *     google/bigtable/admin/v2/instance.proto;l=405
+   *     google/bigtable/admin/v2/instance.proto;l=406
    * @return Whether the priority field is set.
    */
   @java.lang.Deprecated
@@ -4644,7 +4630,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-   *     google/bigtable/admin/v2/instance.proto;l=405
+   *     google/bigtable/admin/v2/instance.proto;l=406
    * @return The enum numeric value on the wire for priority.
    */
   @java.lang.Deprecated
@@ -4667,7 +4653,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-   *     google/bigtable/admin/v2/instance.proto;l=405
+   *     google/bigtable/admin/v2/instance.proto;l=406
    * @return The priority.
    */
   @java.lang.Deprecated
@@ -6261,7 +6247,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=405
+     *     google/bigtable/admin/v2/instance.proto;l=406
      * @return Whether the priority field is set.
      */
     @java.lang.Override
@@ -6282,7 +6268,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=405
+     *     google/bigtable/admin/v2/instance.proto;l=406
      * @return The enum numeric value on the wire for priority.
      */
     @java.lang.Override
@@ -6306,7 +6292,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=405
+     *     google/bigtable/admin/v2/instance.proto;l=406
      * @param value The enum numeric value on the wire for priority to set.
      * @return This builder for chaining.
      */
@@ -6330,7 +6316,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=405
+     *     google/bigtable/admin/v2/instance.proto;l=406
      * @return The priority.
      */
     @java.lang.Override
@@ -6359,7 +6345,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=405
+     *     google/bigtable/admin/v2/instance.proto;l=406
      * @param value The priority to set.
      * @return This builder for chaining.
      */
@@ -6386,7 +6372,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=405
+     *     google/bigtable/admin/v2/instance.proto;l=406
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

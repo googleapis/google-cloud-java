@@ -78,6 +78,7 @@ public interface UpdateTableRequestOrBuilder
    * * `change_stream_config`
    * * `change_stream_config.retention_period`
    * * `deletion_protection`
+   * * `row_key_schema`
    *
    * If `column_families` is set in `update_mask`, it will return an
    * UNIMPLEMENTED error.
@@ -102,6 +103,7 @@ public interface UpdateTableRequestOrBuilder
    * * `change_stream_config`
    * * `change_stream_config.retention_period`
    * * `deletion_protection`
+   * * `row_key_schema`
    *
    * If `column_families` is set in `update_mask`, it will return an
    * UNIMPLEMENTED error.
@@ -126,6 +128,7 @@ public interface UpdateTableRequestOrBuilder
    * * `change_stream_config`
    * * `change_stream_config.retention_period`
    * * `deletion_protection`
+   * * `row_key_schema`
    *
    * If `column_families` is set in `update_mask`, it will return an
    * UNIMPLEMENTED error.
@@ -135,4 +138,17 @@ public interface UpdateTableRequestOrBuilder
    * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, ignore safety checks when updating the table.
+   * </pre>
+   *
+   * <code>bool ignore_warnings = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ignoreWarnings.
+   */
+  boolean getIgnoreWarnings();
 }

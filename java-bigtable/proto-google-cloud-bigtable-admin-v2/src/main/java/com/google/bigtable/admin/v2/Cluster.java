@@ -2397,7 +2397,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
      *  2) Only regional keys can be used and the region of the CMEK key must
      *  match the region of the cluster.
-     *  3) All clusters within an instance must use the same CMEK key.
      * Values are of the form
      * `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`
      * </pre>
@@ -2418,7 +2417,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
      *  2) Only regional keys can be used and the region of the CMEK key must
      *  match the region of the cluster.
-     *  3) All clusters within an instance must use the same CMEK key.
      * Values are of the form
      * `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`
      * </pre>
@@ -2489,7 +2487,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
      *  2) Only regional keys can be used and the region of the CMEK key must
      *  match the region of the cluster.
-     *  3) All clusters within an instance must use the same CMEK key.
      * Values are of the form
      * `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`
      * </pre>
@@ -2521,7 +2518,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
      *  2) Only regional keys can be used and the region of the CMEK key must
      *  match the region of the cluster.
-     *  3) All clusters within an instance must use the same CMEK key.
      * Values are of the form
      * `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`
      * </pre>
@@ -2903,7 +2899,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
        *  2) Only regional keys can be used and the region of the CMEK key must
        *  match the region of the cluster.
-       *  3) All clusters within an instance must use the same CMEK key.
        * Values are of the form
        * `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`
        * </pre>
@@ -2934,7 +2929,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
        *  2) Only regional keys can be used and the region of the CMEK key must
        *  match the region of the cluster.
-       *  3) All clusters within an instance must use the same CMEK key.
        * Values are of the form
        * `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`
        * </pre>
@@ -2965,7 +2959,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
        *  2) Only regional keys can be used and the region of the CMEK key must
        *  match the region of the cluster.
-       *  3) All clusters within an instance must use the same CMEK key.
        * Values are of the form
        * `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`
        * </pre>
@@ -2995,7 +2988,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
        *  2) Only regional keys can be used and the region of the CMEK key must
        *  match the region of the cluster.
-       *  3) All clusters within an instance must use the same CMEK key.
        * Values are of the form
        * `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`
        * </pre>
@@ -3021,7 +3013,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
        *  2) Only regional keys can be used and the region of the CMEK key must
        *  match the region of the cluster.
-       *  3) All clusters within an instance must use the same CMEK key.
        * Values are of the form
        * `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`
        * </pre>
@@ -3312,8 +3303,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The number of nodes allocated to this cluster. More nodes enable higher
-   * throughput and more consistent performance.
+   * The number of nodes in the cluster. If no value is set,
+   * Cloud Bigtable automatically allocates nodes based on your data footprint
+   * and optimized for 50% storage utilization.
    * </pre>
    *
    * <code>int32 serve_nodes = 4;</code>
@@ -4434,8 +4426,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of nodes allocated to this cluster. More nodes enable higher
-     * throughput and more consistent performance.
+     * The number of nodes in the cluster. If no value is set,
+     * Cloud Bigtable automatically allocates nodes based on your data footprint
+     * and optimized for 50% storage utilization.
      * </pre>
      *
      * <code>int32 serve_nodes = 4;</code>
@@ -4450,8 +4443,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of nodes allocated to this cluster. More nodes enable higher
-     * throughput and more consistent performance.
+     * The number of nodes in the cluster. If no value is set,
+     * Cloud Bigtable automatically allocates nodes based on your data footprint
+     * and optimized for 50% storage utilization.
      * </pre>
      *
      * <code>int32 serve_nodes = 4;</code>
@@ -4470,8 +4464,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of nodes allocated to this cluster. More nodes enable higher
-     * throughput and more consistent performance.
+     * The number of nodes in the cluster. If no value is set,
+     * Cloud Bigtable automatically allocates nodes based on your data footprint
+     * and optimized for 50% storage utilization.
      * </pre>
      *
      * <code>int32 serve_nodes = 4;</code>

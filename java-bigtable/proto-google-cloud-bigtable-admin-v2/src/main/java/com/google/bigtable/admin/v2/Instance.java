@@ -522,11 +522,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The current state of the instance.
+   * Output only. The current state of the instance.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Instance.State state = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Instance.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -538,11 +539,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`OutputOnly`)
-   * The current state of the instance.
+   * Output only. The current state of the instance.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Instance.State state = 3;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Instance.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */
@@ -736,9 +738,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A server-assigned timestamp representing when this Instance
-   * was created. For instances created before this field was added (August
-   * 2021), this value is `seconds: 0, nanos: 1`.
+   * Output only. A commit timestamp representing when this Instance was
+   * created. For instances created before this field was added (August 2021),
+   * this value is `seconds: 0, nanos: 1`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -754,9 +756,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A server-assigned timestamp representing when this Instance
-   * was created. For instances created before this field was added (August
-   * 2021), this value is `seconds: 0, nanos: 1`.
+   * Output only. A commit timestamp representing when this Instance was
+   * created. For instances created before this field was added (August 2021),
+   * this value is `seconds: 0, nanos: 1`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -772,9 +774,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A server-assigned timestamp representing when this Instance
-   * was created. For instances created before this field was added (August
-   * 2021), this value is `seconds: 0, nanos: 1`.
+   * Output only. A commit timestamp representing when this Instance was
+   * created. For instances created before this field was added (August 2021),
+   * this value is `seconds: 0, nanos: 1`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -818,6 +820,39 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzs_;
   }
 
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 11;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzi() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -851,6 +886,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(8, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(11, satisfiesPzi_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -889,6 +927,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, satisfiesPzs_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -916,6 +957,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasSatisfiesPzs() != other.hasSatisfiesPzs()) return false;
     if (hasSatisfiesPzs()) {
       if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    }
+    if (hasSatisfiesPzi() != other.hasSatisfiesPzi()) return false;
+    if (hasSatisfiesPzi()) {
+      if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -947,6 +992,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasSatisfiesPzs()) {
       hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    }
+    if (hasSatisfiesPzi()) {
+      hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1131,6 +1180,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_ = null;
       }
       satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       return this;
     }
 
@@ -1191,6 +1241,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1263,6 +1317,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSatisfiesPzs()) {
         setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.hasSatisfiesPzi()) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1338,6 +1395,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 64
+            case 88:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 88
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1589,11 +1652,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The current state of the instance.
+     * Output only. The current state of the instance.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance.State state = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The enum numeric value on the wire for state.
      */
@@ -1605,11 +1669,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The current state of the instance.
+     * Output only. The current state of the instance.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance.State state = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
@@ -1624,11 +1689,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The current state of the instance.
+     * Output only. The current state of the instance.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance.State state = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The state.
      */
@@ -1642,11 +1708,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The current state of the instance.
+     * Output only. The current state of the instance.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance.State state = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The state to set.
      * @return This builder for chaining.
@@ -1664,11 +1731,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`OutputOnly`)
-     * The current state of the instance.
+     * Output only. The current state of the instance.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Instance.State state = 3;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Instance.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2012,9 +2080,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A server-assigned timestamp representing when this Instance
-     * was created. For instances created before this field was added (August
-     * 2021), this value is `seconds: 0, nanos: 1`.
+     * Output only. A commit timestamp representing when this Instance was
+     * created. For instances created before this field was added (August 2021),
+     * this value is `seconds: 0, nanos: 1`.
      * </pre>
      *
      * <code>
@@ -2030,9 +2098,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A server-assigned timestamp representing when this Instance
-     * was created. For instances created before this field was added (August
-     * 2021), this value is `seconds: 0, nanos: 1`.
+     * Output only. A commit timestamp representing when this Instance was
+     * created. For instances created before this field was added (August 2021),
+     * this value is `seconds: 0, nanos: 1`.
      * </pre>
      *
      * <code>
@@ -2054,9 +2122,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A server-assigned timestamp representing when this Instance
-     * was created. For instances created before this field was added (August
-     * 2021), this value is `seconds: 0, nanos: 1`.
+     * Output only. A commit timestamp representing when this Instance was
+     * created. For instances created before this field was added (August 2021),
+     * this value is `seconds: 0, nanos: 1`.
      * </pre>
      *
      * <code>
@@ -2080,9 +2148,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A server-assigned timestamp representing when this Instance
-     * was created. For instances created before this field was added (August
-     * 2021), this value is `seconds: 0, nanos: 1`.
+     * Output only. A commit timestamp representing when this Instance was
+     * created. For instances created before this field was added (August 2021),
+     * this value is `seconds: 0, nanos: 1`.
      * </pre>
      *
      * <code>
@@ -2103,9 +2171,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A server-assigned timestamp representing when this Instance
-     * was created. For instances created before this field was added (August
-     * 2021), this value is `seconds: 0, nanos: 1`.
+     * Output only. A commit timestamp representing when this Instance was
+     * created. For instances created before this field was added (August 2021),
+     * this value is `seconds: 0, nanos: 1`.
      * </pre>
      *
      * <code>
@@ -2134,9 +2202,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A server-assigned timestamp representing when this Instance
-     * was created. For instances created before this field was added (August
-     * 2021), this value is `seconds: 0, nanos: 1`.
+     * Output only. A commit timestamp representing when this Instance was
+     * created. For instances created before this field was added (August 2021),
+     * this value is `seconds: 0, nanos: 1`.
      * </pre>
      *
      * <code>
@@ -2157,9 +2225,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A server-assigned timestamp representing when this Instance
-     * was created. For instances created before this field was added (August
-     * 2021), this value is `seconds: 0, nanos: 1`.
+     * Output only. A commit timestamp representing when this Instance was
+     * created. For instances created before this field was added (August 2021),
+     * this value is `seconds: 0, nanos: 1`.
      * </pre>
      *
      * <code>
@@ -2175,9 +2243,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A server-assigned timestamp representing when this Instance
-     * was created. For instances created before this field was added (August
-     * 2021), this value is `seconds: 0, nanos: 1`.
+     * Output only. A commit timestamp representing when this Instance was
+     * created. For instances created before this field was added (August 2021),
+     * this value is `seconds: 0, nanos: 1`.
      * </pre>
      *
      * <code>
@@ -2197,9 +2265,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A server-assigned timestamp representing when this Instance
-     * was created. For instances created before this field was added (August
-     * 2021), this value is `seconds: 0, nanos: 1`.
+     * Output only. A commit timestamp representing when this Instance was
+     * created. For instances created before this field was added (August 2021),
+     * this value is `seconds: 0, nanos: 1`.
      * </pre>
      *
      * <code>
@@ -2287,6 +2355,74 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSatisfiesPzs() {
       bitField0_ = (bitField0_ & ~0x00000040);
       satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the satisfiesPzi field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzi() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      satisfiesPzi_ = false;
       onChanged();
       return this;
     }

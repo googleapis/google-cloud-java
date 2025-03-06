@@ -287,7 +287,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently, at most four clusters can be specified.
    * </pre>
    *
    * <code>
@@ -315,7 +314,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently, at most four clusters can be specified.
    * </pre>
    *
    * <code>
@@ -334,7 +332,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently, at most four clusters can be specified.
    * </pre>
    *
    * <code>
@@ -361,7 +358,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently, at most four clusters can be specified.
    * </pre>
    *
    * <code>
@@ -1365,7 +1361,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * cluster ID, e.g., just `mycluster` rather than
      * `projects/myproject/instances/myinstance/clusters/mycluster`.
      * Fields marked `OutputOnly` must be left blank.
-     * Currently, at most four clusters can be specified.
      * </pre>
      *
      * <code>
@@ -1393,7 +1388,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * cluster ID, e.g., just `mycluster` rather than
      * `projects/myproject/instances/myinstance/clusters/mycluster`.
      * Fields marked `OutputOnly` must be left blank.
-     * Currently, at most four clusters can be specified.
      * </pre>
      *
      * <code>
@@ -1412,7 +1406,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * cluster ID, e.g., just `mycluster` rather than
      * `projects/myproject/instances/myinstance/clusters/mycluster`.
      * Fields marked `OutputOnly` must be left blank.
-     * Currently, at most four clusters can be specified.
      * </pre>
      *
      * <code>
@@ -1439,7 +1432,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * cluster ID, e.g., just `mycluster` rather than
      * `projects/myproject/instances/myinstance/clusters/mycluster`.
      * Fields marked `OutputOnly` must be left blank.
-     * Currently, at most four clusters can be specified.
      * </pre>
      *
      * <code>
@@ -1472,7 +1464,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * cluster ID, e.g., just `mycluster` rather than
      * `projects/myproject/instances/myinstance/clusters/mycluster`.
      * Fields marked `OutputOnly` must be left blank.
-     * Currently, at most four clusters can be specified.
      * </pre>
      *
      * <code>
@@ -1501,7 +1492,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * cluster ID, e.g., just `mycluster` rather than
      * `projects/myproject/instances/myinstance/clusters/mycluster`.
      * Fields marked `OutputOnly` must be left blank.
-     * Currently, at most four clusters can be specified.
      * </pre>
      *
      * <code>
@@ -1527,7 +1517,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * cluster ID, e.g., just `mycluster` rather than
      * `projects/myproject/instances/myinstance/clusters/mycluster`.
      * Fields marked `OutputOnly` must be left blank.
-     * Currently, at most four clusters can be specified.
      * </pre>
      *
      * <code>
@@ -1554,7 +1543,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * cluster ID, e.g., just `mycluster` rather than
      * `projects/myproject/instances/myinstance/clusters/mycluster`.
      * Fields marked `OutputOnly` must be left blank.
-     * Currently, at most four clusters can be specified.
      * </pre>
      *
      * <code>

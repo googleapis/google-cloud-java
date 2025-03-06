@@ -287,7 +287,7 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "retry_policy_4_codes",
+          "retry_policy_5_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
@@ -297,9 +297,14 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
           "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
           "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_7_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_4_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -334,7 +339,7 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
               .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_4_params", settings);
+      definitions.put("retry_policy_5_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
@@ -360,7 +365,7 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
               .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
-      definitions.put("no_retry_5_params", settings);
+      definitions.put("no_retry_6_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeoutDuration(Duration.ofMillis(43200000L))
@@ -368,7 +373,18 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
               .setMaxRpcTimeoutDuration(Duration.ofMillis(43200000L))
               .setTotalTimeoutDuration(Duration.ofMillis(43200000L))
               .build();
-      definitions.put("no_retry_6_params", settings);
+      definitions.put("no_retry_7_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelayDuration(Duration.ofMillis(10L))
+              .setRetryDelayMultiplier(2.0)
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(43200000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(43200000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(43200000L))
+              .build();
+      definitions.put("retry_policy_4_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -447,8 +463,8 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
 
       builder
           .mutateRowSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
 
       builder
           .mutateRowsSettings()
@@ -472,18 +488,18 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
 
       builder
           .generateInitialChangeStreamPartitionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
-
-      builder
-          .readChangeStreamSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
 
       builder
+          .readChangeStreamSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+
+      builder
           .executeQuerySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       return builder;
     }

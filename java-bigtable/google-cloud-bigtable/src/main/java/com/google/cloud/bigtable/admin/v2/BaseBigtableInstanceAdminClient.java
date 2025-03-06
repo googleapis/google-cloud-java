@@ -185,7 +185,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @param clusters Required. The clusters to be created within the instance, mapped by desired
    *     cluster ID, e.g., just `mycluster` rather than
    *     `projects/myproject/instances/myinstance/clusters/mycluster`. Fields marked `OutputOnly`
-   *     must be left blank. Currently, at most four clusters can be specified.
+   *     must be left blank.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, CreateInstanceMetadata> createInstanceAsync(
@@ -239,7 +239,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * @param clusters Required. The clusters to be created within the instance, mapped by desired
    *     cluster ID, e.g., just `mycluster` rather than
    *     `projects/myproject/instances/myinstance/clusters/mycluster`. Fields marked `OutputOnly`
-   *     must be left blank. Currently, at most four clusters can be specified.
+   *     must be left blank.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, CreateInstanceMetadata> createInstanceAsync(
@@ -623,6 +623,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *           .putAllLabels(new HashMap<String, String>())
    *           .setCreateTime(Timestamp.newBuilder().build())
    *           .setSatisfiesPzs(true)
+   *           .setSatisfiesPzi(true)
    *           .build();
    *   Instance response = baseBigtableInstanceAdminClient.updateInstance(request);
    * }
@@ -657,6 +658,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *           .putAllLabels(new HashMap<String, String>())
    *           .setCreateTime(Timestamp.newBuilder().build())
    *           .setSatisfiesPzs(true)
+   *           .setSatisfiesPzi(true)
    *           .build();
    *   ApiFuture<Instance> future =
    *       baseBigtableInstanceAdminClient.updateInstanceCallable().futureCall(request);
@@ -2382,6 +2384,74 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    */
   public final void deleteAppProfile(String name) {
     DeleteAppProfileRequest request = DeleteAppProfileRequest.newBuilder().setName(name).build();
+    deleteAppProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an app profile from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
+   *   boolean ignoreWarnings = true;
+   *   baseBigtableInstanceAdminClient.deleteAppProfile(name, ignoreWarnings);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the app profile to be deleted. Values are of the form
+   *     `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
+   * @param ignoreWarnings Required. If true, ignore safety checks when deleting the app profile.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAppProfile(AppProfileName name, boolean ignoreWarnings) {
+    DeleteAppProfileRequest request =
+        DeleteAppProfileRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setIgnoreWarnings(ignoreWarnings)
+            .build();
+    deleteAppProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an app profile from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   String name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]").toString();
+   *   boolean ignoreWarnings = true;
+   *   baseBigtableInstanceAdminClient.deleteAppProfile(name, ignoreWarnings);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the app profile to be deleted. Values are of the form
+   *     `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
+   * @param ignoreWarnings Required. If true, ignore safety checks when deleting the app profile.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAppProfile(String name, boolean ignoreWarnings) {
+    DeleteAppProfileRequest request =
+        DeleteAppProfileRequest.newBuilder()
+            .setName(name)
+            .setIgnoreWarnings(ignoreWarnings)
+            .build();
     deleteAppProfile(request);
   }
 
