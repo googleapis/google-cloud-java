@@ -1,6 +1,7 @@
 gapic_generator_version: 2.54.0
 googleapis_commitish: f62aabb07208c9aeb7f56a2b43d06175dd37b62f
 libraries_bom_version: 26.55.0
+is_monorepo: true
 
 # the libraries are ordered with respect to library name, which is
 # java-{library.library_name} or java-{library.api-shortname} when
