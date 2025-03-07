@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.30.10](https://github.com/googleapis/java-firestore/compare/v3.30.9...v3.30.10) (2025-03-06)
+
+
+### Bug Fixes
+
+* Use lazy encoding in UTF-8 encoded string comparison ([#2021](https://github.com/googleapis/java-firestore/issues/2021)) ([11a4c74](https://github.com/googleapis/java-firestore/commit/11a4c743beddbc7415ef0157bbc4f545a27509f7))
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-trace-v1 to v2.59.0 ([#2030](https://github.com/googleapis/java-firestore/issues/2030)) ([38d80ac](https://github.com/googleapis/java-firestore/commit/38d80ac587351c2c675e669f126a7825bba7235c))
+* Update dependency com.google.cloud:google-cloud-trace to v2.59.0 ([#2031](https://github.com/googleapis/java-firestore/issues/2031)) ([73a68a6](https://github.com/googleapis/java-firestore/commit/73a68a69e156cff1bf1ca6652ddd6e8dc58cf3f3))
+
 ## [3.30.9](https://github.com/googleapis/java-firestore/compare/v3.30.8...v3.30.9) (2025-02-26)
 
 
