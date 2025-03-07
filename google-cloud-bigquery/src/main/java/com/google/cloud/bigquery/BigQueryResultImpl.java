@@ -16,14 +16,19 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.cloud.bigquery.FieldValue.Attribute;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
@@ -114,6 +119,77 @@ public class BigQueryResultImpl<T> implements BigQueryResult<T> {
     // curTup.isLast(). Ref: https://github.com/googleapis/java-bigquery/issues/2033
     private boolean wasNull = false;
 
+    private class BigQueryArrayResult implements java.sql.Array {
+      List<Object> array;
+
+      public BigQueryArrayResult(Object array) {
+        if (array instanceof Object[]) {
+          this.array = new ArrayList<>(Arrays.asList((Object[]) array));
+        } else if (array instanceof FieldValueList) {
+          this.array = new ArrayList<>((FieldValueList) array);
+        } else {
+          this.array = (List<Object>) array;
+        }
+      }
+
+      @Override
+      public String getBaseTypeName() throws SQLException {
+        throw new SQLFeatureNotSupportedException();
+      }
+
+      @Override
+      public int getBaseType() throws SQLException {
+        throw new SQLFeatureNotSupportedException();
+      }
+
+      @Override
+      public Object getArray() throws SQLException {
+        return array;
+      }
+
+      @Override
+      public Object getArray(java.util.Map<String, Class<?>> map) throws SQLException {
+        throw new SQLFeatureNotSupportedException();
+      }
+
+      @Override
+      public Object getArray(long index, int count) throws SQLException {
+        throw new SQLFeatureNotSupportedException();
+      }
+
+      @Override
+      public Object getArray(long index, int count, java.util.Map<String, Class<?>> map)
+          throws SQLException {
+        throw new SQLFeatureNotSupportedException();
+      }
+
+      @Override
+      public ResultSet getResultSet() throws SQLException {
+        throw new SQLFeatureNotSupportedException();
+      }
+
+      @Override
+      public ResultSet getResultSet(java.util.Map<String, Class<?>> map) throws SQLException {
+        throw new SQLFeatureNotSupportedException();
+      }
+
+      @Override
+      public ResultSet getResultSet(long index, int count) throws SQLException {
+        throw new SQLFeatureNotSupportedException();
+      }
+
+      @Override
+      public ResultSet getResultSet(long index, int count, java.util.Map<String, Class<?>> map)
+          throws SQLException {
+        throw new SQLFeatureNotSupportedException();
+      }
+
+      @Override
+      public void free() throws SQLException {
+        throw new SQLFeatureNotSupportedException();
+      }
+    }
+
     @Override
     /*Advances the result set to the next row, returning false if no such row exists. Potentially blocking operation*/
     public boolean next() throws SQLException {
@@ -158,6 +234,54 @@ public class BigQueryResultImpl<T> implements BigQueryResult<T> {
         throw new SQLException(String.format("Field %s not found", fieldName));
       }
       return curRow.get(fieldName);
+    }
+
+    @Override
+    public java.sql.Array getArray(String fieldName) throws SQLException {
+      if (fieldName == null) {
+        throw new SQLException("fieldName can't be null");
+      }
+      if (cursor == null) {
+        throw new BigQuerySQLException(NULL_CURSOR_MSG);
+      } else if (cursor instanceof FieldValueList) {
+        FieldValue fieldValue = ((FieldValueList) cursor).get(fieldName);
+        if ((fieldValue == null || fieldValue.getValue() == null)) {
+          wasNull = true;
+          return null;
+        }
+        wasNull = false;
+        if (fieldValue.getAttribute().equals(Attribute.REPEATED)) {
+          return new BigQueryArrayResult(fieldValue.getValue());
+        } else {
+          wasNull = true;
+          return null;
+        }
+      } else { // Data received from Read API (Arrow)
+        Object currentVal = getCurrentValueForReadApiData(fieldName);
+        if (currentVal == null) {
+          wasNull = true;
+          return null;
+        }
+        wasNull = false;
+        return new BigQueryArrayResult(currentVal);
+      }
+    }
+
+    @Override
+    public java.sql.Array getArray(int columnIndex) throws SQLException {
+      if (cursor == null) {
+        return null;
+      } else if (cursor instanceof FieldValueList) {
+        FieldValue fieldValue = ((FieldValueList) cursor).get(columnIndex);
+        if (fieldValue == null || fieldValue.getValue() == null) {
+          wasNull = true;
+          return null;
+        }
+        wasNull = false;
+        return new BigQueryArrayResult(fieldValue.getValue());
+      } else {
+        return getArray(schemaFieldList.get(columnIndex).getName());
+      }
     }
 
     @Override

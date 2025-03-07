@@ -30,6 +30,8 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalTime;
 import java.util.AbstractList;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.BlockingQueue;
@@ -58,7 +60,13 @@ public class BigQueryResultImplTest {
               .setMode(Field.Mode.NULLABLE)
               .build(),
           Field.newBuilder("time", StandardSQLTypeName.TIME).setMode(Field.Mode.NULLABLE).build(),
-          Field.newBuilder("date", StandardSQLTypeName.DATE).setMode(Field.Mode.NULLABLE).build());
+          Field.newBuilder("date", StandardSQLTypeName.DATE).setMode(Field.Mode.NULLABLE).build(),
+          Field.newBuilder("intArray", StandardSQLTypeName.INT64)
+              .setMode(Field.Mode.REPEATED)
+              .build(),
+          Field.newBuilder("stringArray", StandardSQLTypeName.STRING)
+              .setMode(Field.Mode.REPEATED)
+              .build());
 
   private static final FieldList FIELD_LIST_SCHEMA =
       FieldList.of(
@@ -69,7 +77,9 @@ public class BigQueryResultImplTest {
           Field.of("bytes", LegacySQLTypeName.BYTES),
           Field.of("timestamp", LegacySQLTypeName.TIMESTAMP),
           Field.of("time", LegacySQLTypeName.TIME),
-          Field.of("date", LegacySQLTypeName.DATE));
+          Field.of("date", LegacySQLTypeName.DATE),
+          Field.of("intArray", LegacySQLTypeName.INTEGER),
+          Field.of("stringArray", LegacySQLTypeName.STRING));
 
   private static final byte[] BYTES = {0xD, 0xE, 0xA, 0xD};
   private static final String BYTES_BASE64 = BaseEncoding.base64().encode(BYTES);
@@ -79,6 +89,11 @@ public class BigQueryResultImplTest {
   private static final String DATE = "2020-01-21";
   private static final int DATE_INT = 0;
   private static final Date EXPECTED_DATE = java.sql.Date.valueOf(DATE);
+  private static final ArrayList<Integer> EXPECTED_INT_ARRAY =
+      new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4));
+  private static final String[] STRING_ARRAY = {"str1", "str2", "str3"};
+  private static final ArrayList<String> EXPECTED_STRING_ARRAY =
+      new ArrayList<>(Arrays.asList(STRING_ARRAY));
   private static final int BUFFER_SIZE = 10;
 
   @Test
@@ -97,7 +112,9 @@ public class BigQueryResultImplTest {
                     Long.toString(EXPECTED_TIMESTAMP.getTime() / 1000),
                     false), // getTime is in milliseconds.
                 FieldValue.of(Attribute.PRIMITIVE, TIME),
-                FieldValue.of(Attribute.PRIMITIVE, DATE)),
+                FieldValue.of(Attribute.PRIMITIVE, DATE),
+                FieldValue.of(Attribute.REPEATED, EXPECTED_INT_ARRAY),
+                FieldValue.of(Attribute.REPEATED, STRING_ARRAY)),
             FIELD_LIST_SCHEMA);
     buffer.put(fieldValues);
 
@@ -111,7 +128,9 @@ public class BigQueryResultImplTest {
                 FieldValue.of(Attribute.PRIMITIVE, null),
                 FieldValue.of(Attribute.PRIMITIVE, null),
                 FieldValue.of(Attribute.PRIMITIVE, null),
-                FieldValue.of(Attribute.PRIMITIVE, null)),
+                FieldValue.of(Attribute.PRIMITIVE, null),
+                FieldValue.of(Attribute.REPEATED, null),
+                FieldValue.of(Attribute.REPEATED, null)),
             FIELD_LIST_SCHEMA);
     buffer.put(nullValues);
 
@@ -143,6 +162,10 @@ public class BigQueryResultImplTest {
     assertThat(resultSet.wasNull()).isFalse();
     assertThat(resultSet.getDate("date").getTime()).isEqualTo(EXPECTED_DATE.getTime());
     assertThat(resultSet.wasNull()).isFalse();
+    assertThat(resultSet.getArray("intArray").getArray()).isEqualTo(EXPECTED_INT_ARRAY);
+    assertThat(resultSet.wasNull()).isFalse();
+    assertThat(resultSet.getArray("stringArray").getArray()).isEqualTo(EXPECTED_STRING_ARRAY);
+    assertThat(resultSet.wasNull()).isFalse();
 
     assertThat(resultSet.next()).isTrue();
     assertThat(resultSet.getObject("string")).isNull();
@@ -167,6 +190,10 @@ public class BigQueryResultImplTest {
     assertThat(resultSet.wasNull()).isTrue();
     assertThat(resultSet.getDate("date")).isNull();
     assertThat(resultSet.wasNull()).isTrue();
+    assertThat(resultSet.getArray("intArray")).isNull();
+    assertThat(resultSet.wasNull()).isTrue();
+    assertThat(resultSet.getArray("stringArray")).isNull();
+    assertThat(resultSet.wasNull()).isTrue();
 
     assertThat(resultSet.next()).isFalse();
   }
@@ -184,6 +211,8 @@ public class BigQueryResultImplTest {
     rowValues.put("timestamp", EXPECTED_TIMESTAMP.getTime() * 1000);
     rowValues.put("time", EXPECTED_TIME.getTime() * 1000);
     rowValues.put("date", DATE_INT);
+    rowValues.put("intArray", EXPECTED_INT_ARRAY);
+    rowValues.put("stringArray", STRING_ARRAY);
     buffer.put(new BigQueryResultImpl.Row(rowValues));
 
     Map<String, Object> nullValues = new HashMap<>();
@@ -195,6 +224,8 @@ public class BigQueryResultImplTest {
     nullValues.put("timestamp", null);
     nullValues.put("time", null);
     nullValues.put("date", null);
+    nullValues.put("intArray", null);
+    nullValues.put("stringArray", null);
     buffer.put(new BigQueryResultImpl.Row(nullValues));
 
     buffer.put(new BigQueryResultImpl.Row(null, true)); // End of buffer marker.
@@ -227,6 +258,10 @@ public class BigQueryResultImplTest {
     // JVM default timezone which causes flakes in non-UTC zones.
     assertThat(resultSet.getDate("date")).isNotNull();
     assertThat(resultSet.wasNull()).isFalse();
+    assertThat(resultSet.getArray("intArray")).isNotNull();
+    assertThat(resultSet.wasNull()).isFalse();
+    assertThat(resultSet.getArray("stringArray")).isNotNull();
+    assertThat(resultSet.wasNull()).isFalse();
 
     assertThat(resultSet.next()).isTrue();
     assertThat(resultSet.getObject("string")).isNull();
@@ -250,6 +285,10 @@ public class BigQueryResultImplTest {
     assertThat(resultSet.getTime("time")).isNull();
     assertThat(resultSet.wasNull()).isTrue();
     assertThat(resultSet.getDate("date")).isNull();
+    assertThat(resultSet.wasNull()).isTrue();
+    assertThat(resultSet.getArray("intArray")).isNull();
+    assertThat(resultSet.wasNull()).isTrue();
+    assertThat(resultSet.getArray("stringArray")).isNull();
     assertThat(resultSet.wasNull()).isTrue();
 
     assertThat(resultSet.next()).isFalse();
