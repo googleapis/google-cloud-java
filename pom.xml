@@ -8,6 +8,7 @@
 
   <properties>
     <enforcer.skip>true</enforcer.skip>
+    <handwritten-libraries>false</handwritten-libraries>
   </properties>
 
   <!-- Do not deploy the aggregator POM -->
@@ -78,7 +79,10 @@
     <profile>
       <id>all</id>
       <activation>
-        <jdk>[1.)</jdk>
+        <property>
+          <name>handwritten-libraries</name>
+          <value>false</value>
+        </property>
       </activation>
       <modules>
         <module>gapic-libraries-bom</module>
@@ -295,6 +299,12 @@
     </profile>
     <profile>
       <id>handwritten-libraries</id>
+      <activation>
+        <property>
+          <name>handwritten-libraries</name>
+          <value>true</value>
+        </property>
+      </activation>
       <modules>
         <module>java-vertexai</module>
         <module>java-grafeas</module>
