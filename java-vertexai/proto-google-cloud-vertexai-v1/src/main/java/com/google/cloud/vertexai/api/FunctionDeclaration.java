@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,9 @@ package com.google.cloud.vertexai.api;
  * <pre>
  * Structured representation of a function declaration as defined by the
  * [OpenAPI 3.0 specification](https://spec.openapis.org/oas/v3.0.3). Included
- * in this declaration are the function name and parameters. This
- * FunctionDeclaration is a representation of a block of code that can be used
- * as a `Tool` by the model and executed by the client.
+ * in this declaration are the function name, description, parameters and
+ * response type. This FunctionDeclaration is a representation of a block of
+ * code that can be used as a `Tool` by the model and executed by the client.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vertexai.v1.FunctionDeclaration}
@@ -274,6 +274,65 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
         : parameters_;
   }
 
+  public static final int RESPONSE_FIELD_NUMBER = 4;
+  private com.google.cloud.vertexai.api.Schema response_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the output from this function in JSON Schema format.
+   * Reflects the Open API 3.03 Response Object. The Schema defines the type
+   * used for the response value of the function.
+   * </pre>
+   *
+   * <code>.google.cloud.vertexai.v1.Schema response = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the response field is set.
+   */
+  @java.lang.Override
+  public boolean hasResponse() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the output from this function in JSON Schema format.
+   * Reflects the Open API 3.03 Response Object. The Schema defines the type
+   * used for the response value of the function.
+   * </pre>
+   *
+   * <code>.google.cloud.vertexai.v1.Schema response = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The response.
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.Schema getResponse() {
+    return response_ == null
+        ? com.google.cloud.vertexai.api.Schema.getDefaultInstance()
+        : response_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the output from this function in JSON Schema format.
+   * Reflects the Open API 3.03 Response Object. The Schema defines the type
+   * used for the response value of the function.
+   * </pre>
+   *
+   * <code>.google.cloud.vertexai.v1.Schema response = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.SchemaOrBuilder getResponseOrBuilder() {
+    return response_ == null
+        ? com.google.cloud.vertexai.api.Schema.getDefaultInstance()
+        : response_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -297,6 +356,9 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getParameters());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(4, getResponse());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -314,6 +376,9 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getParameters());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getResponse());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -337,6 +402,10 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
     if (hasParameters()) {
       if (!getParameters().equals(other.getParameters())) return false;
     }
+    if (hasResponse() != other.hasResponse()) return false;
+    if (hasResponse()) {
+      if (!getResponse().equals(other.getResponse())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -355,6 +424,10 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
     if (hasParameters()) {
       hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getParameters().hashCode();
+    }
+    if (hasResponse()) {
+      hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+      hash = (53 * hash) + getResponse().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -462,9 +535,9 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
    * <pre>
    * Structured representation of a function declaration as defined by the
    * [OpenAPI 3.0 specification](https://spec.openapis.org/oas/v3.0.3). Included
-   * in this declaration are the function name and parameters. This
-   * FunctionDeclaration is a representation of a block of code that can be used
-   * as a `Tool` by the model and executed by the client.
+   * in this declaration are the function name, description, parameters and
+   * response type. This FunctionDeclaration is a representation of a block of
+   * code that can be used as a `Tool` by the model and executed by the client.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vertexai.v1.FunctionDeclaration}
@@ -501,6 +574,7 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getParametersFieldBuilder();
+        getResponseFieldBuilder();
       }
     }
 
@@ -514,6 +588,11 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       if (parametersBuilder_ != null) {
         parametersBuilder_.dispose();
         parametersBuilder_ = null;
+      }
+      response_ = null;
+      if (responseBuilder_ != null) {
+        responseBuilder_.dispose();
+        responseBuilder_ = null;
       }
       return this;
     }
@@ -561,6 +640,10 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.parameters_ = parametersBuilder_ == null ? parameters_ : parametersBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.response_ = responseBuilder_ == null ? response_ : responseBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -624,6 +707,9 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
       if (other.hasParameters()) {
         mergeParameters(other.getParameters());
       }
+      if (other.hasResponse()) {
+        mergeResponse(other.getResponse());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -668,6 +754,12 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getResponseFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1237,6 +1329,227 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
         parameters_ = null;
       }
       return parametersBuilder_;
+    }
+
+    private com.google.cloud.vertexai.api.Schema response_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.Schema,
+            com.google.cloud.vertexai.api.Schema.Builder,
+            com.google.cloud.vertexai.api.SchemaOrBuilder>
+        responseBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the output from this function in JSON Schema format.
+     * Reflects the Open API 3.03 Response Object. The Schema defines the type
+     * used for the response value of the function.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Schema response = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the response field is set.
+     */
+    public boolean hasResponse() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the output from this function in JSON Schema format.
+     * Reflects the Open API 3.03 Response Object. The Schema defines the type
+     * used for the response value of the function.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Schema response = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The response.
+     */
+    public com.google.cloud.vertexai.api.Schema getResponse() {
+      if (responseBuilder_ == null) {
+        return response_ == null
+            ? com.google.cloud.vertexai.api.Schema.getDefaultInstance()
+            : response_;
+      } else {
+        return responseBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the output from this function in JSON Schema format.
+     * Reflects the Open API 3.03 Response Object. The Schema defines the type
+     * used for the response value of the function.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Schema response = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setResponse(com.google.cloud.vertexai.api.Schema value) {
+      if (responseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        response_ = value;
+      } else {
+        responseBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the output from this function in JSON Schema format.
+     * Reflects the Open API 3.03 Response Object. The Schema defines the type
+     * used for the response value of the function.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Schema response = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setResponse(com.google.cloud.vertexai.api.Schema.Builder builderForValue) {
+      if (responseBuilder_ == null) {
+        response_ = builderForValue.build();
+      } else {
+        responseBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the output from this function in JSON Schema format.
+     * Reflects the Open API 3.03 Response Object. The Schema defines the type
+     * used for the response value of the function.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Schema response = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeResponse(com.google.cloud.vertexai.api.Schema value) {
+      if (responseBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && response_ != null
+            && response_ != com.google.cloud.vertexai.api.Schema.getDefaultInstance()) {
+          getResponseBuilder().mergeFrom(value);
+        } else {
+          response_ = value;
+        }
+      } else {
+        responseBuilder_.mergeFrom(value);
+      }
+      if (response_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the output from this function in JSON Schema format.
+     * Reflects the Open API 3.03 Response Object. The Schema defines the type
+     * used for the response value of the function.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Schema response = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearResponse() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      response_ = null;
+      if (responseBuilder_ != null) {
+        responseBuilder_.dispose();
+        responseBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the output from this function in JSON Schema format.
+     * Reflects the Open API 3.03 Response Object. The Schema defines the type
+     * used for the response value of the function.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Schema response = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.Schema.Builder getResponseBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getResponseFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the output from this function in JSON Schema format.
+     * Reflects the Open API 3.03 Response Object. The Schema defines the type
+     * used for the response value of the function.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Schema response = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.SchemaOrBuilder getResponseOrBuilder() {
+      if (responseBuilder_ != null) {
+        return responseBuilder_.getMessageOrBuilder();
+      } else {
+        return response_ == null
+            ? com.google.cloud.vertexai.api.Schema.getDefaultInstance()
+            : response_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the output from this function in JSON Schema format.
+     * Reflects the Open API 3.03 Response Object. The Schema defines the type
+     * used for the response value of the function.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Schema response = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.Schema,
+            com.google.cloud.vertexai.api.Schema.Builder,
+            com.google.cloud.vertexai.api.SchemaOrBuilder>
+        getResponseFieldBuilder() {
+      if (responseBuilder_ == null) {
+        responseBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vertexai.api.Schema,
+                com.google.cloud.vertexai.api.Schema.Builder,
+                com.google.cloud.vertexai.api.SchemaOrBuilder>(
+                getResponse(), getParentForChildren(), isClean());
+        response_ = null;
+      }
+      return responseBuilder_;
     }
 
     @java.lang.Override

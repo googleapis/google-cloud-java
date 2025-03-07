@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,7 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import com.google.protobuf.Value;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -576,6 +577,9 @@ public class PredictionServiceClientHttpJsonTest {
     GenerateContentResponse expectedResponse =
         GenerateContentResponse.newBuilder()
             .addAllCandidates(new ArrayList<Candidate>())
+            .setModelVersion("modelVersion212437359")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setResponseId("responseId-633138884")
             .setPromptFeedback(GenerateContentResponse.PromptFeedback.newBuilder().build())
             .setUsageMetadata(GenerateContentResponse.UsageMetadata.newBuilder().build())
             .build();

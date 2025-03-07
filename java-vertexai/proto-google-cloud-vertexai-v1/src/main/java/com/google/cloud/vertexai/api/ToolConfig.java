@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,6 +119,62 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
         : functionCallingConfig_;
   }
 
+  public static final int RETRIEVAL_CONFIG_FIELD_NUMBER = 2;
+  private com.google.cloud.vertexai.api.RetrievalConfig retrievalConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Retrieval config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.RetrievalConfig retrieval_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the retrievalConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRetrievalConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Retrieval config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.RetrievalConfig retrieval_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The retrievalConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.RetrievalConfig getRetrievalConfig() {
+    return retrievalConfig_ == null
+        ? com.google.cloud.vertexai.api.RetrievalConfig.getDefaultInstance()
+        : retrievalConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Retrieval config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.RetrievalConfig retrieval_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.RetrievalConfigOrBuilder getRetrievalConfigOrBuilder() {
+    return retrievalConfig_ == null
+        ? com.google.cloud.vertexai.api.RetrievalConfig.getDefaultInstance()
+        : retrievalConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -136,6 +192,9 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getFunctionCallingConfig());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(2, getRetrievalConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -148,6 +207,9 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(1, getFunctionCallingConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRetrievalConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -168,6 +230,10 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasFunctionCallingConfig()) {
       if (!getFunctionCallingConfig().equals(other.getFunctionCallingConfig())) return false;
     }
+    if (hasRetrievalConfig() != other.hasRetrievalConfig()) return false;
+    if (hasRetrievalConfig()) {
+      if (!getRetrievalConfig().equals(other.getRetrievalConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -182,6 +248,10 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasFunctionCallingConfig()) {
       hash = (37 * hash) + FUNCTION_CALLING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getFunctionCallingConfig().hashCode();
+    }
+    if (hasRetrievalConfig()) {
+      hash = (37 * hash) + RETRIEVAL_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRetrievalConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -324,6 +394,7 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getFunctionCallingConfigFieldBuilder();
+        getRetrievalConfigFieldBuilder();
       }
     }
 
@@ -335,6 +406,11 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
       if (functionCallingConfigBuilder_ != null) {
         functionCallingConfigBuilder_.dispose();
         functionCallingConfigBuilder_ = null;
+      }
+      retrievalConfig_ = null;
+      if (retrievalConfigBuilder_ != null) {
+        retrievalConfigBuilder_.dispose();
+        retrievalConfigBuilder_ = null;
       }
       return this;
     }
@@ -379,6 +455,11 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
                 ? functionCallingConfig_
                 : functionCallingConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.retrievalConfig_ =
+            retrievalConfigBuilder_ == null ? retrievalConfig_ : retrievalConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -431,6 +512,9 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasFunctionCallingConfig()) {
         mergeFunctionCallingConfig(other.getFunctionCallingConfig());
       }
+      if (other.hasRetrievalConfig()) {
+        mergeRetrievalConfig(other.getRetrievalConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -464,6 +548,12 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(getRetrievalConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -690,6 +780,211 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
         functionCallingConfig_ = null;
       }
       return functionCallingConfigBuilder_;
+    }
+
+    private com.google.cloud.vertexai.api.RetrievalConfig retrievalConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.RetrievalConfig,
+            com.google.cloud.vertexai.api.RetrievalConfig.Builder,
+            com.google.cloud.vertexai.api.RetrievalConfigOrBuilder>
+        retrievalConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Retrieval config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.RetrievalConfig retrieval_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the retrievalConfig field is set.
+     */
+    public boolean hasRetrievalConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Retrieval config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.RetrievalConfig retrieval_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The retrievalConfig.
+     */
+    public com.google.cloud.vertexai.api.RetrievalConfig getRetrievalConfig() {
+      if (retrievalConfigBuilder_ == null) {
+        return retrievalConfig_ == null
+            ? com.google.cloud.vertexai.api.RetrievalConfig.getDefaultInstance()
+            : retrievalConfig_;
+      } else {
+        return retrievalConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Retrieval config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.RetrievalConfig retrieval_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRetrievalConfig(com.google.cloud.vertexai.api.RetrievalConfig value) {
+      if (retrievalConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        retrievalConfig_ = value;
+      } else {
+        retrievalConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Retrieval config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.RetrievalConfig retrieval_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRetrievalConfig(
+        com.google.cloud.vertexai.api.RetrievalConfig.Builder builderForValue) {
+      if (retrievalConfigBuilder_ == null) {
+        retrievalConfig_ = builderForValue.build();
+      } else {
+        retrievalConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Retrieval config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.RetrievalConfig retrieval_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRetrievalConfig(com.google.cloud.vertexai.api.RetrievalConfig value) {
+      if (retrievalConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && retrievalConfig_ != null
+            && retrievalConfig_
+                != com.google.cloud.vertexai.api.RetrievalConfig.getDefaultInstance()) {
+          getRetrievalConfigBuilder().mergeFrom(value);
+        } else {
+          retrievalConfig_ = value;
+        }
+      } else {
+        retrievalConfigBuilder_.mergeFrom(value);
+      }
+      if (retrievalConfig_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Retrieval config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.RetrievalConfig retrieval_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRetrievalConfig() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      retrievalConfig_ = null;
+      if (retrievalConfigBuilder_ != null) {
+        retrievalConfigBuilder_.dispose();
+        retrievalConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Retrieval config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.RetrievalConfig retrieval_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.RetrievalConfig.Builder getRetrievalConfigBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getRetrievalConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Retrieval config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.RetrievalConfig retrieval_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.RetrievalConfigOrBuilder getRetrievalConfigOrBuilder() {
+      if (retrievalConfigBuilder_ != null) {
+        return retrievalConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return retrievalConfig_ == null
+            ? com.google.cloud.vertexai.api.RetrievalConfig.getDefaultInstance()
+            : retrievalConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Retrieval config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.RetrievalConfig retrieval_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.RetrievalConfig,
+            com.google.cloud.vertexai.api.RetrievalConfig.Builder,
+            com.google.cloud.vertexai.api.RetrievalConfigOrBuilder>
+        getRetrievalConfigFieldBuilder() {
+      if (retrievalConfigBuilder_ == null) {
+        retrievalConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vertexai.api.RetrievalConfig,
+                com.google.cloud.vertexai.api.RetrievalConfig.Builder,
+                com.google.cloud.vertexai.api.RetrievalConfigOrBuilder>(
+                getRetrievalConfig(), getParentForChildren(), isClean());
+        retrievalConfig_ = null;
+      }
+      return retrievalConfigBuilder_;
     }
 
     @java.lang.Override

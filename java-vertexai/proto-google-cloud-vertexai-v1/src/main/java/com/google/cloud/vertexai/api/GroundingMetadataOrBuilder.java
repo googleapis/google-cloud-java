@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -229,4 +229,45 @@ public interface GroundingMetadataOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.GroundingSupportOrBuilder getGroundingSupportsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Retrieval metadata.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.vertexai.v1.RetrievalMetadata retrieval_metadata = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the retrievalMetadata field is set.
+   */
+  boolean hasRetrievalMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Retrieval metadata.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.vertexai.v1.RetrievalMetadata retrieval_metadata = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The retrievalMetadata.
+   */
+  com.google.cloud.vertexai.api.RetrievalMetadata getRetrievalMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Retrieval metadata.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.vertexai.v1.RetrievalMetadata retrieval_metadata = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vertexai.api.RetrievalMetadataOrBuilder getRetrievalMetadataOrBuilder();
 }

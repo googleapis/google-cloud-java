@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ package com.google.cloud.vertexai.api;
  * <pre>
  * Schema is used to define the format of input/output data. Represents a select
  * subset of an [OpenAPI 3.0 schema
- * object](https://spec.openapis.org/oas/v3.0.3#schema). More fields may be
- * added in the future as needed.
+ * object](https://spec.openapis.org/oas/v3.0.3#schema-object). More fields may
+ * be added in the future as needed.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vertexai.v1.Schema}
@@ -47,8 +47,10 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     title_ = "";
     description_ = "";
     enum_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    propertyOrdering_ = com.google.protobuf.LazyStringArrayList.emptyList();
     required_ = com.google.protobuf.LazyStringArrayList.emptyList();
     pattern_ = "";
+    anyOf_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -441,9 +443,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Possible values of the element of Type.STRING with enum format.
-   * For example we can define an Enum Direction as :
+   * Optional. Possible values of the element of primitive type with enum
+   * format. Examples:
+   * 1. We can define direction as :
    * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+   * 2. We can define apartment number as :
+   * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
    * </pre>
    *
    * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -457,9 +462,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Possible values of the element of Type.STRING with enum format.
-   * For example we can define an Enum Direction as :
+   * Optional. Possible values of the element of primitive type with enum
+   * format. Examples:
+   * 1. We can define direction as :
    * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+   * 2. We can define apartment number as :
+   * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
    * </pre>
    *
    * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -473,9 +481,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Possible values of the element of Type.STRING with enum format.
-   * For example we can define an Enum Direction as :
+   * Optional. Possible values of the element of primitive type with enum
+   * format. Examples:
+   * 1. We can define direction as :
    * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+   * 2. We can define apartment number as :
+   * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
    * </pre>
    *
    * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -490,9 +501,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Possible values of the element of Type.STRING with enum format.
-   * For example we can define an Enum Direction as :
+   * Optional. Possible values of the element of primitive type with enum
+   * format. Examples:
+   * 1. We can define direction as :
    * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+   * 2. We can define apartment number as :
+   * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
    * </pre>
    *
    * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -623,6 +637,78 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
+  }
+
+  public static final int PROPERTY_ORDERING_FIELD_NUMBER = 25;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList propertyOrdering_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The order of the properties.
+   * Not a standard field in open api spec. Only used to support the order of
+   * the properties.
+   * </pre>
+   *
+   * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the propertyOrdering.
+   */
+  public com.google.protobuf.ProtocolStringList getPropertyOrderingList() {
+    return propertyOrdering_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The order of the properties.
+   * Not a standard field in open api spec. Only used to support the order of
+   * the properties.
+   * </pre>
+   *
+   * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of propertyOrdering.
+   */
+  public int getPropertyOrderingCount() {
+    return propertyOrdering_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The order of the properties.
+   * Not a standard field in open api spec. Only used to support the order of
+   * the properties.
+   * </pre>
+   *
+   * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The propertyOrdering at the given index.
+   */
+  public java.lang.String getPropertyOrdering(int index) {
+    return propertyOrdering_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The order of the properties.
+   * Not a standard field in open api spec. Only used to support the order of
+   * the properties.
+   * </pre>
+   *
+   * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the propertyOrdering at the given index.
+   */
+  public com.google.protobuf.ByteString getPropertyOrderingBytes(int index) {
+    return propertyOrdering_.getByteString(index);
   }
 
   public static final int REQUIRED_FIELD_NUMBER = 5;
@@ -901,6 +987,92 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     return example_ == null ? com.google.protobuf.Value.getDefaultInstance() : example_;
   }
 
+  public static final int ANY_OF_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.vertexai.api.Schema> anyOf_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.vertexai.api.Schema> getAnyOfList() {
+    return anyOf_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.vertexai.api.SchemaOrBuilder>
+      getAnyOfOrBuilderList() {
+    return anyOf_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getAnyOfCount() {
+    return anyOf_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.Schema getAnyOf(int index) {
+    return anyOf_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.SchemaOrBuilder getAnyOfOrBuilder(int index) {
+    return anyOf_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -941,6 +1113,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < enum_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, enum_.getRaw(i));
     }
+    for (int i = 0; i < anyOf_.size(); i++) {
+      output.writeMessage(11, anyOf_.get(i));
+    }
     if (minProperties_ != 0L) {
       output.writeInt64(14, minProperties_);
     }
@@ -973,6 +1148,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 24, title_);
+    }
+    for (int i = 0; i < propertyOrdering_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 25, propertyOrdering_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1028,6 +1206,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getEnumList().size();
     }
+    for (int i = 0; i < anyOf_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, anyOf_.get(i));
+    }
     if (minProperties_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(14, minProperties_);
     }
@@ -1061,6 +1242,14 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, title_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < propertyOrdering_.size(); i++) {
+        dataSize += computeStringSizeNoTag(propertyOrdering_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getPropertyOrderingList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1093,6 +1282,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     if (getMaxItems() != other.getMaxItems()) return false;
     if (!getEnumList().equals(other.getEnumList())) return false;
     if (!internalGetProperties().equals(other.internalGetProperties())) return false;
+    if (!getPropertyOrderingList().equals(other.getPropertyOrderingList())) return false;
     if (!getRequiredList().equals(other.getRequiredList())) return false;
     if (getMinProperties() != other.getMinProperties()) return false;
     if (getMaxProperties() != other.getMaxProperties()) return false;
@@ -1107,6 +1297,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     if (hasExample()) {
       if (!getExample().equals(other.getExample())) return false;
     }
+    if (!getAnyOfList().equals(other.getAnyOfList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1148,6 +1339,10 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PROPERTIES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetProperties().hashCode();
     }
+    if (getPropertyOrderingCount() > 0) {
+      hash = (37 * hash) + PROPERTY_ORDERING_FIELD_NUMBER;
+      hash = (53 * hash) + getPropertyOrderingList().hashCode();
+    }
     if (getRequiredCount() > 0) {
       hash = (37 * hash) + REQUIRED_FIELD_NUMBER;
       hash = (53 * hash) + getRequiredList().hashCode();
@@ -1175,6 +1370,10 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     if (hasExample()) {
       hash = (37 * hash) + EXAMPLE_FIELD_NUMBER;
       hash = (53 * hash) + getExample().hashCode();
+    }
+    if (getAnyOfCount() > 0) {
+      hash = (37 * hash) + ANY_OF_FIELD_NUMBER;
+      hash = (53 * hash) + getAnyOfList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1281,8 +1480,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Schema is used to define the format of input/output data. Represents a select
    * subset of an [OpenAPI 3.0 schema
-   * object](https://spec.openapis.org/oas/v3.0.3#schema). More fields may be
-   * added in the future as needed.
+   * object](https://spec.openapis.org/oas/v3.0.3#schema-object). More fields may
+   * be added in the future as needed.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vertexai.v1.Schema}
@@ -1343,6 +1542,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         getDefaultFieldBuilder();
         getItemsFieldBuilder();
         getExampleFieldBuilder();
+        getAnyOfFieldBuilder();
       }
     }
 
@@ -1369,6 +1569,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       maxItems_ = 0L;
       enum_ = com.google.protobuf.LazyStringArrayList.emptyList();
       internalGetMutableProperties().clear();
+      propertyOrdering_ = com.google.protobuf.LazyStringArrayList.emptyList();
       required_ = com.google.protobuf.LazyStringArrayList.emptyList();
       minProperties_ = 0L;
       maxProperties_ = 0L;
@@ -1382,6 +1583,13 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         exampleBuilder_.dispose();
         exampleBuilder_ = null;
       }
+      if (anyOfBuilder_ == null) {
+        anyOf_ = java.util.Collections.emptyList();
+      } else {
+        anyOf_ = null;
+        anyOfBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00200000);
       return this;
     }
 
@@ -1408,11 +1616,24 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.vertexai.api.Schema buildPartial() {
       com.google.cloud.vertexai.api.Schema result = new com.google.cloud.vertexai.api.Schema(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.vertexai.api.Schema result) {
+      if (anyOfBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)) {
+          anyOf_ = java.util.Collections.unmodifiableList(anyOf_);
+          bitField0_ = (bitField0_ & ~0x00200000);
+        }
+        result.anyOf_ = anyOf_;
+      } else {
+        result.anyOf_ = anyOfBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.vertexai.api.Schema result) {
@@ -1456,31 +1677,35 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
             internalGetProperties().build(PropertiesDefaultEntryHolder.defaultEntry);
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        propertyOrdering_.makeImmutable();
+        result.propertyOrdering_ = propertyOrdering_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         required_.makeImmutable();
         result.required_ = required_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.minProperties_ = minProperties_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.maxProperties_ = maxProperties_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.minimum_ = minimum_;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.maximum_ = maximum_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.minLength_ = minLength_;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.maxLength_ = maxLength_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.pattern_ = pattern_;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.example_ = exampleBuilder_ == null ? example_ : exampleBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
@@ -1577,10 +1802,20 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableProperties().mergeFrom(other.internalGetProperties());
       bitField0_ |= 0x00000400;
+      if (!other.propertyOrdering_.isEmpty()) {
+        if (propertyOrdering_.isEmpty()) {
+          propertyOrdering_ = other.propertyOrdering_;
+          bitField0_ |= 0x00000800;
+        } else {
+          ensurePropertyOrderingIsMutable();
+          propertyOrdering_.addAll(other.propertyOrdering_);
+        }
+        onChanged();
+      }
       if (!other.required_.isEmpty()) {
         if (required_.isEmpty()) {
           required_ = other.required_;
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00001000;
         } else {
           ensureRequiredIsMutable();
           required_.addAll(other.required_);
@@ -1607,11 +1842,38 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getPattern().isEmpty()) {
         pattern_ = other.pattern_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.hasExample()) {
         mergeExample(other.getExample());
+      }
+      if (anyOfBuilder_ == null) {
+        if (!other.anyOf_.isEmpty()) {
+          if (anyOf_.isEmpty()) {
+            anyOf_ = other.anyOf_;
+            bitField0_ = (bitField0_ & ~0x00200000);
+          } else {
+            ensureAnyOfIsMutable();
+            anyOf_.addAll(other.anyOf_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.anyOf_.isEmpty()) {
+          if (anyOfBuilder_.isEmpty()) {
+            anyOfBuilder_.dispose();
+            anyOfBuilder_ = null;
+            anyOf_ = other.anyOf_;
+            bitField0_ = (bitField0_ & ~0x00200000);
+            anyOfBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAnyOfFieldBuilder()
+                    : null;
+          } else {
+            anyOfBuilder_.addAllMessages(other.anyOf_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1667,7 +1929,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 input.readMessage(getExampleFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 34
             case 42:
@@ -1702,46 +1964,59 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
                 enum_.add(s);
                 break;
               } // case 74
+            case 90:
+              {
+                com.google.cloud.vertexai.api.Schema m =
+                    input.readMessage(
+                        com.google.cloud.vertexai.api.Schema.parser(), extensionRegistry);
+                if (anyOfBuilder_ == null) {
+                  ensureAnyOfIsMutable();
+                  anyOf_.add(m);
+                } else {
+                  anyOfBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
             case 112:
               {
                 minProperties_ = input.readInt64();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 112
             case 120:
               {
                 maxProperties_ = input.readInt64();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 120
             case 129:
               {
                 minimum_ = input.readDouble();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 129
             case 137:
               {
                 maximum_ = input.readDouble();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 137
             case 144:
               {
                 minLength_ = input.readInt64();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 144
             case 152:
               {
                 maxLength_ = input.readInt64();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 152
             case 162:
               {
                 pattern_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 162
             case 168:
@@ -1768,6 +2043,13 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 194
+            case 202:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensurePropertyOrderingIsMutable();
+                propertyOrdering_.add(s);
+                break;
+              } // case 202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2772,9 +3054,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Possible values of the element of Type.STRING with enum format.
-     * For example we can define an Enum Direction as :
+     * Optional. Possible values of the element of primitive type with enum
+     * format. Examples:
+     * 1. We can define direction as :
      * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+     * 2. We can define apartment number as :
+     * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
      * </pre>
      *
      * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2789,9 +3074,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Possible values of the element of Type.STRING with enum format.
-     * For example we can define an Enum Direction as :
+     * Optional. Possible values of the element of primitive type with enum
+     * format. Examples:
+     * 1. We can define direction as :
      * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+     * 2. We can define apartment number as :
+     * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
      * </pre>
      *
      * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2805,9 +3093,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Possible values of the element of Type.STRING with enum format.
-     * For example we can define an Enum Direction as :
+     * Optional. Possible values of the element of primitive type with enum
+     * format. Examples:
+     * 1. We can define direction as :
      * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+     * 2. We can define apartment number as :
+     * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
      * </pre>
      *
      * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2822,9 +3113,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Possible values of the element of Type.STRING with enum format.
-     * For example we can define an Enum Direction as :
+     * Optional. Possible values of the element of primitive type with enum
+     * format. Examples:
+     * 1. We can define direction as :
      * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+     * 2. We can define apartment number as :
+     * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
      * </pre>
      *
      * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2839,9 +3133,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Possible values of the element of Type.STRING with enum format.
-     * For example we can define an Enum Direction as :
+     * Optional. Possible values of the element of primitive type with enum
+     * format. Examples:
+     * 1. We can define direction as :
      * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+     * 2. We can define apartment number as :
+     * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
      * </pre>
      *
      * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2864,9 +3161,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Possible values of the element of Type.STRING with enum format.
-     * For example we can define an Enum Direction as :
+     * Optional. Possible values of the element of primitive type with enum
+     * format. Examples:
+     * 1. We can define direction as :
      * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+     * 2. We can define apartment number as :
+     * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
      * </pre>
      *
      * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2888,9 +3188,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Possible values of the element of Type.STRING with enum format.
-     * For example we can define an Enum Direction as :
+     * Optional. Possible values of the element of primitive type with enum
+     * format. Examples:
+     * 1. We can define direction as :
      * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+     * 2. We can define apartment number as :
+     * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
      * </pre>
      *
      * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2909,9 +3212,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Possible values of the element of Type.STRING with enum format.
-     * For example we can define an Enum Direction as :
+     * Optional. Possible values of the element of primitive type with enum
+     * format. Examples:
+     * 1. We can define direction as :
      * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+     * 2. We can define apartment number as :
+     * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
      * </pre>
      *
      * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2929,9 +3235,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Possible values of the element of Type.STRING with enum format.
-     * For example we can define an Enum Direction as :
+     * Optional. Possible values of the element of primitive type with enum
+     * format. Examples:
+     * 1. We can define direction as :
      * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+     * 2. We can define apartment number as :
+     * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
      * </pre>
      *
      * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3207,6 +3516,207 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.vertexai.api.Schema.Builder) entry;
     }
 
+    private com.google.protobuf.LazyStringArrayList propertyOrdering_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensurePropertyOrderingIsMutable() {
+      if (!propertyOrdering_.isModifiable()) {
+        propertyOrdering_ = new com.google.protobuf.LazyStringArrayList(propertyOrdering_);
+      }
+      bitField0_ |= 0x00000800;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The order of the properties.
+     * Not a standard field in open api spec. Only used to support the order of
+     * the properties.
+     * </pre>
+     *
+     * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the propertyOrdering.
+     */
+    public com.google.protobuf.ProtocolStringList getPropertyOrderingList() {
+      propertyOrdering_.makeImmutable();
+      return propertyOrdering_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The order of the properties.
+     * Not a standard field in open api spec. Only used to support the order of
+     * the properties.
+     * </pre>
+     *
+     * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of propertyOrdering.
+     */
+    public int getPropertyOrderingCount() {
+      return propertyOrdering_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The order of the properties.
+     * Not a standard field in open api spec. Only used to support the order of
+     * the properties.
+     * </pre>
+     *
+     * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The propertyOrdering at the given index.
+     */
+    public java.lang.String getPropertyOrdering(int index) {
+      return propertyOrdering_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The order of the properties.
+     * Not a standard field in open api spec. Only used to support the order of
+     * the properties.
+     * </pre>
+     *
+     * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the propertyOrdering at the given index.
+     */
+    public com.google.protobuf.ByteString getPropertyOrderingBytes(int index) {
+      return propertyOrdering_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The order of the properties.
+     * Not a standard field in open api spec. Only used to support the order of
+     * the properties.
+     * </pre>
+     *
+     * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The propertyOrdering to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPropertyOrdering(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePropertyOrderingIsMutable();
+      propertyOrdering_.set(index, value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The order of the properties.
+     * Not a standard field in open api spec. Only used to support the order of
+     * the properties.
+     * </pre>
+     *
+     * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The propertyOrdering to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPropertyOrdering(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePropertyOrderingIsMutable();
+      propertyOrdering_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The order of the properties.
+     * Not a standard field in open api spec. Only used to support the order of
+     * the properties.
+     * </pre>
+     *
+     * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The propertyOrdering to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllPropertyOrdering(java.lang.Iterable<java.lang.String> values) {
+      ensurePropertyOrderingIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, propertyOrdering_);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The order of the properties.
+     * Not a standard field in open api spec. Only used to support the order of
+     * the properties.
+     * </pre>
+     *
+     * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPropertyOrdering() {
+      propertyOrdering_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The order of the properties.
+     * Not a standard field in open api spec. Only used to support the order of
+     * the properties.
+     * </pre>
+     *
+     * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the propertyOrdering to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPropertyOrderingBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensurePropertyOrderingIsMutable();
+      propertyOrdering_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList required_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -3214,7 +3724,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       if (!required_.isModifiable()) {
         required_ = new com.google.protobuf.LazyStringArrayList(required_);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
     }
     /**
      *
@@ -3294,7 +3804,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRequiredIsMutable();
       required_.set(index, value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3316,7 +3826,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRequiredIsMutable();
       required_.add(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3335,7 +3845,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllRequired(java.lang.Iterable<java.lang.String> values) {
       ensureRequiredIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, required_);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3352,7 +3862,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRequired() {
       required_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       ;
       onChanged();
       return this;
@@ -3376,7 +3886,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureRequiredIsMutable();
       required_.add(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3412,7 +3922,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public Builder setMinProperties(long value) {
 
       minProperties_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3428,7 +3938,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMinProperties() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       minProperties_ = 0L;
       onChanged();
       return this;
@@ -3465,7 +3975,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxProperties(long value) {
 
       maxProperties_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3481,7 +3991,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxProperties() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       maxProperties_ = 0L;
       onChanged();
       return this;
@@ -3520,7 +4030,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public Builder setMinimum(double value) {
 
       minimum_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3537,7 +4047,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMinimum() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       minimum_ = 0D;
       onChanged();
       return this;
@@ -3574,7 +4084,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaximum(double value) {
 
       maximum_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -3590,7 +4100,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaximum() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       maximum_ = 0D;
       onChanged();
       return this;
@@ -3629,7 +4139,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public Builder setMinLength(long value) {
 
       minLength_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -3646,7 +4156,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMinLength() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       minLength_ = 0L;
       onChanged();
       return this;
@@ -3683,7 +4193,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxLength(long value) {
 
       maxLength_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -3699,7 +4209,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxLength() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       maxLength_ = 0L;
       onChanged();
       return this;
@@ -3770,7 +4280,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       pattern_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -3788,7 +4298,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPattern() {
       pattern_ = getDefaultInstance().getPattern();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -3811,7 +4321,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       pattern_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -3835,7 +4345,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the example field is set.
      */
     public boolean hasExample() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
@@ -3875,7 +4385,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       } else {
         exampleBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -3895,7 +4405,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       } else {
         exampleBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -3911,7 +4421,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExample(com.google.protobuf.Value value) {
       if (exampleBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && example_ != null
             && example_ != com.google.protobuf.Value.getDefaultInstance()) {
           getExampleBuilder().mergeFrom(value);
@@ -3922,7 +4432,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         exampleBuilder_.mergeFrom(value);
       }
       if (example_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -3938,7 +4448,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Value example = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearExample() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       example_ = null;
       if (exampleBuilder_ != null) {
         exampleBuilder_.dispose();
@@ -3958,7 +4468,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Value example = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.Value.Builder getExampleBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return getExampleFieldBuilder().getBuilder();
     }
@@ -4004,6 +4514,408 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         example_ = null;
       }
       return exampleBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.vertexai.api.Schema> anyOf_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAnyOfIsMutable() {
+      if (!((bitField0_ & 0x00200000) != 0)) {
+        anyOf_ = new java.util.ArrayList<com.google.cloud.vertexai.api.Schema>(anyOf_);
+        bitField0_ |= 0x00200000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vertexai.api.Schema,
+            com.google.cloud.vertexai.api.Schema.Builder,
+            com.google.cloud.vertexai.api.SchemaOrBuilder>
+        anyOfBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vertexai.api.Schema> getAnyOfList() {
+      if (anyOfBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(anyOf_);
+      } else {
+        return anyOfBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getAnyOfCount() {
+      if (anyOfBuilder_ == null) {
+        return anyOf_.size();
+      } else {
+        return anyOfBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.Schema getAnyOf(int index) {
+      if (anyOfBuilder_ == null) {
+        return anyOf_.get(index);
+      } else {
+        return anyOfBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAnyOf(int index, com.google.cloud.vertexai.api.Schema value) {
+      if (anyOfBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAnyOfIsMutable();
+        anyOf_.set(index, value);
+        onChanged();
+      } else {
+        anyOfBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAnyOf(
+        int index, com.google.cloud.vertexai.api.Schema.Builder builderForValue) {
+      if (anyOfBuilder_ == null) {
+        ensureAnyOfIsMutable();
+        anyOf_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        anyOfBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAnyOf(com.google.cloud.vertexai.api.Schema value) {
+      if (anyOfBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAnyOfIsMutable();
+        anyOf_.add(value);
+        onChanged();
+      } else {
+        anyOfBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAnyOf(int index, com.google.cloud.vertexai.api.Schema value) {
+      if (anyOfBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAnyOfIsMutable();
+        anyOf_.add(index, value);
+        onChanged();
+      } else {
+        anyOfBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAnyOf(com.google.cloud.vertexai.api.Schema.Builder builderForValue) {
+      if (anyOfBuilder_ == null) {
+        ensureAnyOfIsMutable();
+        anyOf_.add(builderForValue.build());
+        onChanged();
+      } else {
+        anyOfBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAnyOf(
+        int index, com.google.cloud.vertexai.api.Schema.Builder builderForValue) {
+      if (anyOfBuilder_ == null) {
+        ensureAnyOfIsMutable();
+        anyOf_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        anyOfBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllAnyOf(
+        java.lang.Iterable<? extends com.google.cloud.vertexai.api.Schema> values) {
+      if (anyOfBuilder_ == null) {
+        ensureAnyOfIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, anyOf_);
+        onChanged();
+      } else {
+        anyOfBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAnyOf() {
+      if (anyOfBuilder_ == null) {
+        anyOf_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00200000);
+        onChanged();
+      } else {
+        anyOfBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAnyOf(int index) {
+      if (anyOfBuilder_ == null) {
+        ensureAnyOfIsMutable();
+        anyOf_.remove(index);
+        onChanged();
+      } else {
+        anyOfBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.Schema.Builder getAnyOfBuilder(int index) {
+      return getAnyOfFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.SchemaOrBuilder getAnyOfOrBuilder(int index) {
+      if (anyOfBuilder_ == null) {
+        return anyOf_.get(index);
+      } else {
+        return anyOfBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.vertexai.api.SchemaOrBuilder>
+        getAnyOfOrBuilderList() {
+      if (anyOfBuilder_ != null) {
+        return anyOfBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(anyOf_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.Schema.Builder addAnyOfBuilder() {
+      return getAnyOfFieldBuilder()
+          .addBuilder(com.google.cloud.vertexai.api.Schema.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.Schema.Builder addAnyOfBuilder(int index) {
+      return getAnyOfFieldBuilder()
+          .addBuilder(index, com.google.cloud.vertexai.api.Schema.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value should be validated against any (one or more) of the
+     * subschemas in the list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vertexai.api.Schema.Builder> getAnyOfBuilderList() {
+      return getAnyOfFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vertexai.api.Schema,
+            com.google.cloud.vertexai.api.Schema.Builder,
+            com.google.cloud.vertexai.api.SchemaOrBuilder>
+        getAnyOfFieldBuilder() {
+      if (anyOfBuilder_ == null) {
+        anyOfBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vertexai.api.Schema,
+                com.google.cloud.vertexai.api.Schema.Builder,
+                com.google.cloud.vertexai.api.SchemaOrBuilder>(
+                anyOf_, ((bitField0_ & 0x00200000) != 0), getParentForChildren(), isClean());
+        anyOf_ = null;
+      }
+      return anyOfBuilder_;
     }
 
     @java.lang.Override

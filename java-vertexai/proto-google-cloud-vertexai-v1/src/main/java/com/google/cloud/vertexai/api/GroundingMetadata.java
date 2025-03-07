@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -340,6 +340,62 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     return groundingSupports_.get(index);
   }
 
+  public static final int RETRIEVAL_METADATA_FIELD_NUMBER = 7;
+  private com.google.cloud.vertexai.api.RetrievalMetadata retrievalMetadata_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Retrieval metadata.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.vertexai.v1.RetrievalMetadata retrieval_metadata = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the retrievalMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasRetrievalMetadata() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Retrieval metadata.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.vertexai.v1.RetrievalMetadata retrieval_metadata = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The retrievalMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.RetrievalMetadata getRetrievalMetadata() {
+    return retrievalMetadata_ == null
+        ? com.google.cloud.vertexai.api.RetrievalMetadata.getDefaultInstance()
+        : retrievalMetadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Retrieval metadata.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.vertexai.v1.RetrievalMetadata retrieval_metadata = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.RetrievalMetadataOrBuilder getRetrievalMetadataOrBuilder() {
+    return retrievalMetadata_ == null
+        ? com.google.cloud.vertexai.api.RetrievalMetadata.getDefaultInstance()
+        : retrievalMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -365,6 +421,9 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     }
     for (int i = 0; i < groundingSupports_.size(); i++) {
       output.writeMessage(6, groundingSupports_.get(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(7, getRetrievalMetadata());
     }
     getUnknownFields().writeTo(output);
   }
@@ -393,6 +452,9 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(6, groundingSupports_.get(i));
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getRetrievalMetadata());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -416,6 +478,10 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     }
     if (!getGroundingChunksList().equals(other.getGroundingChunksList())) return false;
     if (!getGroundingSupportsList().equals(other.getGroundingSupportsList())) return false;
+    if (hasRetrievalMetadata() != other.hasRetrievalMetadata()) return false;
+    if (hasRetrievalMetadata()) {
+      if (!getRetrievalMetadata().equals(other.getRetrievalMetadata())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -442,6 +508,10 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
     if (getGroundingSupportsCount() > 0) {
       hash = (37 * hash) + GROUNDING_SUPPORTS_FIELD_NUMBER;
       hash = (53 * hash) + getGroundingSupportsList().hashCode();
+    }
+    if (hasRetrievalMetadata()) {
+      hash = (37 * hash) + RETRIEVAL_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getRetrievalMetadata().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -586,6 +656,7 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         getSearchEntryPointFieldBuilder();
         getGroundingChunksFieldBuilder();
         getGroundingSupportsFieldBuilder();
+        getRetrievalMetadataFieldBuilder();
       }
     }
 
@@ -613,6 +684,11 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         groundingSupportsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
+      retrievalMetadata_ = null;
+      if (retrievalMetadataBuilder_ != null) {
+        retrievalMetadataBuilder_.dispose();
+        retrievalMetadataBuilder_ = null;
+      }
       return this;
     }
 
@@ -681,6 +757,13 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         result.searchEntryPoint_ =
             searchEntryPointBuilder_ == null ? searchEntryPoint_ : searchEntryPointBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.retrievalMetadata_ =
+            retrievalMetadataBuilder_ == null
+                ? retrievalMetadata_
+                : retrievalMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -798,6 +881,9 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
           }
         }
       }
+      if (other.hasRetrievalMetadata()) {
+        mergeRetrievalMetadata(other.getRetrievalMetadata());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -864,6 +950,13 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
                 }
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getRetrievalMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2025,6 +2118,212 @@ public final class GroundingMetadata extends com.google.protobuf.GeneratedMessag
         groundingSupports_ = null;
       }
       return groundingSupportsBuilder_;
+    }
+
+    private com.google.cloud.vertexai.api.RetrievalMetadata retrievalMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.RetrievalMetadata,
+            com.google.cloud.vertexai.api.RetrievalMetadata.Builder,
+            com.google.cloud.vertexai.api.RetrievalMetadataOrBuilder>
+        retrievalMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Retrieval metadata.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.vertexai.v1.RetrievalMetadata retrieval_metadata = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the retrievalMetadata field is set.
+     */
+    public boolean hasRetrievalMetadata() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Retrieval metadata.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.vertexai.v1.RetrievalMetadata retrieval_metadata = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The retrievalMetadata.
+     */
+    public com.google.cloud.vertexai.api.RetrievalMetadata getRetrievalMetadata() {
+      if (retrievalMetadataBuilder_ == null) {
+        return retrievalMetadata_ == null
+            ? com.google.cloud.vertexai.api.RetrievalMetadata.getDefaultInstance()
+            : retrievalMetadata_;
+      } else {
+        return retrievalMetadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Retrieval metadata.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.vertexai.v1.RetrievalMetadata retrieval_metadata = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRetrievalMetadata(com.google.cloud.vertexai.api.RetrievalMetadata value) {
+      if (retrievalMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        retrievalMetadata_ = value;
+      } else {
+        retrievalMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Retrieval metadata.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.vertexai.v1.RetrievalMetadata retrieval_metadata = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRetrievalMetadata(
+        com.google.cloud.vertexai.api.RetrievalMetadata.Builder builderForValue) {
+      if (retrievalMetadataBuilder_ == null) {
+        retrievalMetadata_ = builderForValue.build();
+      } else {
+        retrievalMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Retrieval metadata.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.vertexai.v1.RetrievalMetadata retrieval_metadata = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeRetrievalMetadata(com.google.cloud.vertexai.api.RetrievalMetadata value) {
+      if (retrievalMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && retrievalMetadata_ != null
+            && retrievalMetadata_
+                != com.google.cloud.vertexai.api.RetrievalMetadata.getDefaultInstance()) {
+          getRetrievalMetadataBuilder().mergeFrom(value);
+        } else {
+          retrievalMetadata_ = value;
+        }
+      } else {
+        retrievalMetadataBuilder_.mergeFrom(value);
+      }
+      if (retrievalMetadata_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Retrieval metadata.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.vertexai.v1.RetrievalMetadata retrieval_metadata = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearRetrievalMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      retrievalMetadata_ = null;
+      if (retrievalMetadataBuilder_ != null) {
+        retrievalMetadataBuilder_.dispose();
+        retrievalMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Retrieval metadata.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.vertexai.v1.RetrievalMetadata retrieval_metadata = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.RetrievalMetadata.Builder getRetrievalMetadataBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getRetrievalMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Retrieval metadata.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.vertexai.v1.RetrievalMetadata retrieval_metadata = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.RetrievalMetadataOrBuilder
+        getRetrievalMetadataOrBuilder() {
+      if (retrievalMetadataBuilder_ != null) {
+        return retrievalMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return retrievalMetadata_ == null
+            ? com.google.cloud.vertexai.api.RetrievalMetadata.getDefaultInstance()
+            : retrievalMetadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Retrieval metadata.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.vertexai.v1.RetrievalMetadata retrieval_metadata = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.RetrievalMetadata,
+            com.google.cloud.vertexai.api.RetrievalMetadata.Builder,
+            com.google.cloud.vertexai.api.RetrievalMetadataOrBuilder>
+        getRetrievalMetadataFieldBuilder() {
+      if (retrievalMetadataBuilder_ == null) {
+        retrievalMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vertexai.api.RetrievalMetadata,
+                com.google.cloud.vertexai.api.RetrievalMetadata.Builder,
+                com.google.cloud.vertexai.api.RetrievalMetadataOrBuilder>(
+                getRetrievalMetadata(), getParentForChildren(), isClean());
+        retrievalMetadata_ = null;
+      }
+      return retrievalMetadataBuilder_;
     }
 
     @java.lang.Override
