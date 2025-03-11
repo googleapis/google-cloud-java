@@ -44,7 +44,9 @@ public final class SampleRowKeysRequest implements Serializable {
         com.google.bigtable.v2.SampleRowKeysRequest.newBuilder();
     String resourceName =
         targetId.toResourceName(requestContext.getProjectId(), requestContext.getInstanceId());
-    if (targetId.scopedForAuthorizedView()) {
+    if (targetId.scopedForMaterializedView()) {
+      builder.setMaterializedViewName(resourceName);
+    } else if (targetId.scopedForAuthorizedView()) {
       builder.setAuthorizedViewName(resourceName);
     } else {
       builder.setTableName(resourceName);
@@ -55,17 +57,19 @@ public final class SampleRowKeysRequest implements Serializable {
   /**
    * Wraps the protobuf {@link com.google.bigtable.v2.SampleRowKeysRequest}.
    *
-   * <p>WARNING: Please note that the project id & instance id in the table/authorized view name
-   * will be overwritten by the configuration in the BigtableDataClient.
+   * <p>WARNING: Please note that the project id & instance id in the table/authorized
+   * view/materialized view name will be overwritten by the configuration in the BigtableDataClient.
    */
   @InternalApi
   public static SampleRowKeysRequest fromProto(
       @Nonnull com.google.bigtable.v2.SampleRowKeysRequest request) {
     String tableName = request.getTableName();
     String authorizedViewName = request.getAuthorizedViewName();
+    String materializedViewName = request.getMaterializedViewName();
 
     SampleRowKeysRequest sampleRowKeysRequest =
-        SampleRowKeysRequest.create(NameUtil.extractTargetId(tableName, authorizedViewName));
+        SampleRowKeysRequest.create(
+            NameUtil.extractTargetId(tableName, authorizedViewName, materializedViewName));
 
     return sampleRowKeysRequest;
   }

@@ -308,4 +308,10 @@
         <className>com/google/cloud/bigtable/data/v2/models/Heartbeat</className>
         <method>*getEstimatedLowWatermarkTime()</method>
     </difference>
+    <difference>
+        <!-- TargetId is an InternalApi-->
+        <differenceType>7012</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/TargetId</className>
+        <method>*scopedForMaterializedView()</method>
+    </difference>
 </differences>

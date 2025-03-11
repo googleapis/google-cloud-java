@@ -21,22 +21,26 @@ import com.google.auto.value.AutoValue;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.common.base.Preconditions;
 
-/** An implementation of a {@link TargetId} for tables. */
+/**
+ * An implementation of a {@link TargetId} for materialized views.
+ *
+ * <p>See {@link com.google.cloud.bigtable.admin.v2.models.MaterializedView} for more details about
+ * an materialized view.
+ */
 @AutoValue
-public abstract class TableId implements TargetId {
-
-  /** Constructs a new TableId object for the specified table id. */
-  public static TableId of(String tableId) {
-    Preconditions.checkNotNull(tableId, "table id can't be null.");
-    return new AutoValue_TableId(tableId);
+public abstract class MaterializedViewId implements TargetId {
+  /** Constructs a new MaterializedViewId object from the specified materializedViewId. */
+  public static MaterializedViewId of(String materializedViewId) {
+    Preconditions.checkNotNull(materializedViewId, "materialized view id can't be null.");
+    return new AutoValue_MaterializedViewId(materializedViewId);
   }
 
-  abstract String getTableId();
+  abstract String getMaterializedViewId();
 
   @Override
   @InternalApi
   public String toResourceName(String projectId, String instanceId) {
-    return NameUtil.formatTableName(projectId, instanceId, getTableId());
+    return NameUtil.formatMaterializedViewName(projectId, instanceId, getMaterializedViewId());
   }
 
   @Override
@@ -48,6 +52,6 @@ public abstract class TableId implements TargetId {
   @Override
   @InternalApi
   public boolean scopedForMaterializedView() {
-    return false;
+    return true;
   }
 }

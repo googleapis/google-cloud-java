@@ -40,8 +40,15 @@ public interface TargetId extends Serializable {
 
   /**
    * Returns true if this TargetId object represents id for an authorized view (rather than a
-   * table).
+   * table/materialized view).
    */
   @InternalApi
   boolean scopedForAuthorizedView();
+
+  /**
+   * Returns true if this TargetId object represents id for an materialized view (rather than a
+   * table/authorized view).
+   */
+  @InternalApi
+  boolean scopedForMaterializedView();
 }

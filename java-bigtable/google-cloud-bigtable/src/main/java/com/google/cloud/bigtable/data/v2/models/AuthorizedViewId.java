@@ -52,4 +52,10 @@ public abstract class AuthorizedViewId implements TargetId {
   public boolean scopedForAuthorizedView() {
     return true;
   }
+
+  @Override
+  @InternalApi
+  public boolean scopedForMaterializedView() {
+    return false;
+  }
 }
