@@ -5,6 +5,6 @@
   <difference>
     <differenceType>7012</differenceType>
     <className>com/google/bigtable/v2/BigtableGrpc$AsyncService</className>
-    <method>*executeQuery(*</method>
+    <method>*prepareQuery(*</method>
   </difference>
 </differences>

@@ -100,6 +100,41 @@ public interface SampleRowKeysRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. The unique name of the MaterializedView from which to read.
+   *
+   * Values are of the form
+   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/materializedViews/&lt;materialized_view&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string materialized_view_name = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The materializedViewName.
+   */
+  java.lang.String getMaterializedViewName();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The unique name of the MaterializedView from which to read.
+   *
+   * Values are of the form
+   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/materializedViews/&lt;materialized_view&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string materialized_view_name = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for materializedViewName.
+   */
+  com.google.protobuf.ByteString getMaterializedViewNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * This value specifies routing for replication. If not specified, the
    * "default" application profile will be used.
    * </pre>

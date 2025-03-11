@@ -41,6 +41,7 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
   private SampleRowKeysRequest() {
     tableName_ = "";
     authorizedViewName_ = "";
+    materializedViewName_ = "";
     appProfileId_ = "";
   }
 
@@ -189,6 +190,67 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int MATERIALIZED_VIEW_NAME_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object materializedViewName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The unique name of the MaterializedView from which to read.
+   *
+   * Values are of the form
+   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/materializedViews/&lt;materialized_view&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string materialized_view_name = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The materializedViewName.
+   */
+  @java.lang.Override
+  public java.lang.String getMaterializedViewName() {
+    java.lang.Object ref = materializedViewName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      materializedViewName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The unique name of the MaterializedView from which to read.
+   *
+   * Values are of the form
+   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/materializedViews/&lt;materialized_view&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string materialized_view_name = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for materializedViewName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMaterializedViewNameBytes() {
+    java.lang.Object ref = materializedViewName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      materializedViewName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int APP_PROFILE_ID_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
@@ -265,6 +327,9 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authorizedViewName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, authorizedViewName_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(materializedViewName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, materializedViewName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -282,6 +347,9 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authorizedViewName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, authorizedViewName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(materializedViewName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, materializedViewName_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -301,6 +369,7 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
 
     if (!getTableName().equals(other.getTableName())) return false;
     if (!getAuthorizedViewName().equals(other.getAuthorizedViewName())) return false;
+    if (!getMaterializedViewName().equals(other.getMaterializedViewName())) return false;
     if (!getAppProfileId().equals(other.getAppProfileId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -317,6 +386,8 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getTableName().hashCode();
     hash = (37 * hash) + AUTHORIZED_VIEW_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getAuthorizedViewName().hashCode();
+    hash = (37 * hash) + MATERIALIZED_VIEW_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getMaterializedViewName().hashCode();
     hash = (37 * hash) + APP_PROFILE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getAppProfileId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -460,6 +531,7 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
       bitField0_ = 0;
       tableName_ = "";
       authorizedViewName_ = "";
+      materializedViewName_ = "";
       appProfileId_ = "";
       return this;
     }
@@ -504,6 +576,9 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
         result.authorizedViewName_ = authorizedViewName_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.materializedViewName_ = materializedViewName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.appProfileId_ = appProfileId_;
       }
     }
@@ -563,9 +638,14 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getMaterializedViewName().isEmpty()) {
+        materializedViewName_ = other.materializedViewName_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (!other.getAppProfileId().isEmpty()) {
         appProfileId_ = other.appProfileId_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -603,7 +683,7 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
             case 18:
               {
                 appProfileId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 34:
@@ -612,6 +692,12 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000002;
                 break;
               } // case 34
+            case 42:
+              {
+                materializedViewName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -898,6 +984,137 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private java.lang.Object materializedViewName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique name of the MaterializedView from which to read.
+     *
+     * Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/materializedViews/&lt;materialized_view&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string materialized_view_name = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The materializedViewName.
+     */
+    public java.lang.String getMaterializedViewName() {
+      java.lang.Object ref = materializedViewName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        materializedViewName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique name of the MaterializedView from which to read.
+     *
+     * Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/materializedViews/&lt;materialized_view&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string materialized_view_name = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for materializedViewName.
+     */
+    public com.google.protobuf.ByteString getMaterializedViewNameBytes() {
+      java.lang.Object ref = materializedViewName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        materializedViewName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique name of the MaterializedView from which to read.
+     *
+     * Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/materializedViews/&lt;materialized_view&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string materialized_view_name = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The materializedViewName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaterializedViewName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      materializedViewName_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique name of the MaterializedView from which to read.
+     *
+     * Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/materializedViews/&lt;materialized_view&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string materialized_view_name = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaterializedViewName() {
+      materializedViewName_ = getDefaultInstance().getMaterializedViewName();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique name of the MaterializedView from which to read.
+     *
+     * Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/materializedViews/&lt;materialized_view&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string materialized_view_name = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for materializedViewName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaterializedViewNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      materializedViewName_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object appProfileId_ = "";
     /**
      *
@@ -963,7 +1180,7 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       appProfileId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -981,7 +1198,7 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder clearAppProfileId() {
       appProfileId_ = getDefaultInstance().getAppProfileId();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1004,7 +1221,7 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       appProfileId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

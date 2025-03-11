@@ -28,6 +28,9 @@
             "PingAndWarm": {
               "methods": ["pingAndWarm", "pingAndWarm", "pingAndWarm", "pingAndWarm", "pingAndWarm", "pingAndWarmCallable"]
             },
+            "PrepareQuery": {
+              "methods": ["prepareQuery", "prepareQuery", "prepareQuery", "prepareQuery", "prepareQuery", "prepareQueryCallable"]
+            },
             "ReadChangeStream": {
               "methods": ["readChangeStreamCallable"]
             },

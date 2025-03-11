@@ -45,6 +45,8 @@ import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsResponse;
 import com.google.bigtable.v2.PingAndWarmRequest;
 import com.google.bigtable.v2.PingAndWarmResponse;
+import com.google.bigtable.v2.PrepareQueryRequest;
+import com.google.bigtable.v2.PrepareQueryResponse;
 import com.google.bigtable.v2.ReadChangeStreamRequest;
 import com.google.bigtable.v2.ReadChangeStreamResponse;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
@@ -95,6 +97,7 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
       generateInitialChangeStreamPartitionsSettings;
   private final ServerStreamingCallSettings<ReadChangeStreamRequest, ReadChangeStreamResponse>
       readChangeStreamSettings;
+  private final UnaryCallSettings<PrepareQueryRequest, PrepareQueryResponse> prepareQuerySettings;
   private final ServerStreamingCallSettings<ExecuteQueryRequest, ExecuteQueryResponse>
       executeQuerySettings;
 
@@ -150,6 +153,11 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
   public ServerStreamingCallSettings<ReadChangeStreamRequest, ReadChangeStreamResponse>
       readChangeStreamSettings() {
     return readChangeStreamSettings;
+  }
+
+  /** Returns the object with the settings used for calls to prepareQuery. */
+  public UnaryCallSettings<PrepareQueryRequest, PrepareQueryResponse> prepareQuerySettings() {
+    return prepareQuerySettings;
   }
 
   /** Returns the object with the settings used for calls to executeQuery. */
@@ -248,6 +256,7 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
     generateInitialChangeStreamPartitionsSettings =
         settingsBuilder.generateInitialChangeStreamPartitionsSettings().build();
     readChangeStreamSettings = settingsBuilder.readChangeStreamSettings().build();
+    prepareQuerySettings = settingsBuilder.prepareQuerySettings().build();
     executeQuerySettings = settingsBuilder.executeQuerySettings().build();
   }
 
@@ -274,6 +283,8 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
     private final ServerStreamingCallSettings.Builder<
             ReadChangeStreamRequest, ReadChangeStreamResponse>
         readChangeStreamSettings;
+    private final UnaryCallSettings.Builder<PrepareQueryRequest, PrepareQueryResponse>
+        prepareQuerySettings;
     private final ServerStreamingCallSettings.Builder<ExecuteQueryRequest, ExecuteQueryResponse>
         executeQuerySettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -404,6 +415,7 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
       readModifyWriteRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       generateInitialChangeStreamPartitionsSettings = ServerStreamingCallSettings.newBuilder();
       readChangeStreamSettings = ServerStreamingCallSettings.newBuilder();
+      prepareQuerySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       executeQuerySettings = ServerStreamingCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
@@ -411,7 +423,8 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
               mutateRowSettings,
               checkAndMutateRowSettings,
               pingAndWarmSettings,
-              readModifyWriteRowSettings);
+              readModifyWriteRowSettings,
+              prepareQuerySettings);
       initDefaults(this);
     }
 
@@ -428,6 +441,7 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
       generateInitialChangeStreamPartitionsSettings =
           settings.generateInitialChangeStreamPartitionsSettings.toBuilder();
       readChangeStreamSettings = settings.readChangeStreamSettings.toBuilder();
+      prepareQuerySettings = settings.prepareQuerySettings.toBuilder();
       executeQuerySettings = settings.executeQuerySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -435,7 +449,8 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
               mutateRowSettings,
               checkAndMutateRowSettings,
               pingAndWarmSettings,
-              readModifyWriteRowSettings);
+              readModifyWriteRowSettings,
+              prepareQuerySettings);
     }
 
     private static Builder createDefault() {
@@ -495,6 +510,11 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
           .readChangeStreamSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+
+      builder
+          .prepareQuerySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .executeQuerySettings()
@@ -574,6 +594,12 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
     public ServerStreamingCallSettings.Builder<ReadChangeStreamRequest, ReadChangeStreamResponse>
         readChangeStreamSettings() {
       return readChangeStreamSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to prepareQuery. */
+    public UnaryCallSettings.Builder<PrepareQueryRequest, PrepareQueryResponse>
+        prepareQuerySettings() {
+      return prepareQuerySettings;
     }
 
     /** Returns the builder for the settings used for calls to executeQuery. */

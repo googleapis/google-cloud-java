@@ -24,8 +24,38 @@ package com.google.bigtable.v2;
  *
  * <pre>
  * A partial result set from the streaming query API.
- * CBT client will buffer partial_rows from result_sets until it gets a
- * resumption_token.
+ * Cloud Bigtable clients buffer partial results received in this message until
+ * a `resume_token` is received.
+ *
+ * The pseudocode below describes how to buffer and parse a stream of
+ * `PartialResultSet` messages.
+ *
+ * Having:
+ * - queue of row results waiting to be returned `queue`
+ * - extensible buffer of bytes `buffer`
+ * - a place to keep track of the most recent `resume_token`
+ * for each PartialResultSet `p` received {
+ *   if p.reset {
+ *     ensure `queue` is empty
+ *     ensure `buffer` is empty
+ *   }
+ *   if p.estimated_batch_size != 0 {
+ *     (optional) ensure `buffer` is sized to at least `p.estimated_batch_size`
+ *   }
+ *   if `p.proto_rows_batch` is set {
+ *     append `p.proto_rows_batch.bytes` to `buffer`
+ *   }
+ *   if p.batch_checksum is set and `buffer` is not empty {
+ *     validate the checksum matches the contents of `buffer`
+ *     (see comments on `batch_checksum`)
+ *     parse `buffer` as `ProtoRows` message, clearing `buffer`
+ *     add parsed rows to end of `queue`
+ *   }
+ *   if p.resume_token is set {
+ *     release results in `queue`
+ *     save `p.resume_token` in `resume_token`
+ *   }
+ * }
  * </pre>
  *
  * Protobuf type {@code google.bigtable.v2.PartialResultSet}
@@ -65,6 +95,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
             com.google.bigtable.v2.PartialResultSet.Builder.class);
   }
 
+  private int bitField0_;
   private int partialRowsCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -162,6 +193,69 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     return com.google.bigtable.v2.ProtoRowsBatch.getDefaultInstance();
   }
 
+  public static final int BATCH_CHECKSUM_FIELD_NUMBER = 6;
+  private int batchChecksum_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * CRC32C checksum of concatenated `partial_rows` data for the current batch.
+   *
+   * When present, the buffered data from `partial_rows` forms a complete
+   * parseable message of the appropriate type.
+   *
+   * The client should mark the end of a parseable message and prepare to
+   * receive a new one starting from the next `PartialResultSet` message.
+   * Clients must verify the checksum of the serialized batch before yielding it
+   * to the caller.
+   *
+   * This does NOT mean the values can be yielded to the callers since a
+   * `resume_token` is required to safely do so.
+   *
+   * If `resume_token` is non-empty and any data has been received since the
+   * last one, this field is guaranteed to be non-empty. In other words, clients
+   * may assume that a batch will never cross a `resume_token` boundary.
+   * </pre>
+   *
+   * <code>optional uint32 batch_checksum = 6;</code>
+   *
+   * @return Whether the batchChecksum field is set.
+   */
+  @java.lang.Override
+  public boolean hasBatchChecksum() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * CRC32C checksum of concatenated `partial_rows` data for the current batch.
+   *
+   * When present, the buffered data from `partial_rows` forms a complete
+   * parseable message of the appropriate type.
+   *
+   * The client should mark the end of a parseable message and prepare to
+   * receive a new one starting from the next `PartialResultSet` message.
+   * Clients must verify the checksum of the serialized batch before yielding it
+   * to the caller.
+   *
+   * This does NOT mean the values can be yielded to the callers since a
+   * `resume_token` is required to safely do so.
+   *
+   * If `resume_token` is non-empty and any data has been received since the
+   * last one, this field is guaranteed to be non-empty. In other words, clients
+   * may assume that a batch will never cross a `resume_token` boundary.
+   * </pre>
+   *
+   * <code>optional uint32 batch_checksum = 6;</code>
+   *
+   * @return The batchChecksum.
+   */
+  @java.lang.Override
+  public int getBatchChecksum() {
+    return batchChecksum_;
+  }
+
   public static final int RESUME_TOKEN_FIELD_NUMBER = 5;
   private com.google.protobuf.ByteString resumeToken_ = com.google.protobuf.ByteString.EMPTY;
   /**
@@ -169,23 +263,27 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * An opaque token sent by the server to allow query resumption and signal
-   * the client to accumulate `partial_rows` since the last non-empty
-   * `resume_token`. On resumption, the resumed query will return the remaining
-   * rows for this query.
+   * that the buffered values constructed from received `partial_rows` can be
+   * yielded to the caller. Clients can provide this token in a subsequent
+   * request to resume the result stream from the current point.
    *
-   * If there is a batch in progress, a non-empty `resume_token`
-   * means that that the batch of `partial_rows` will be complete after merging
-   * the `partial_rows` from this response. The client must only yield
-   * completed batches to the application, and must ensure that any future
-   * retries send the latest token to avoid returning duplicate data.
+   * When `resume_token` is non-empty, the buffered values received from
+   * `partial_rows` since the last non-empty `resume_token` can be yielded to
+   * the callers, provided that the client keeps the value of `resume_token` and
+   * uses it on subsequent retries.
    *
-   * The server may set 'resume_token' without a 'partial_rows'. If there is a
-   * batch in progress the client should yield it.
+   * A `resume_token` may be sent without information in `partial_rows` to
+   * checkpoint the progress of a sparse query. Any previous `partial_rows` data
+   * should still be yielded in this case, and the new `resume_token` should be
+   * saved for future retries as normal.
+   *
+   * A `resume_token` will only be sent on a boundary where there is either no
+   * ongoing result batch, or `batch_checksum` is also populated.
    *
    * The server will also send a sentinel `resume_token` when last batch of
    * `partial_rows` is sent. If the client retries the ExecuteQueryRequest with
    * the sentinel `resume_token`, the server will emit it again without any
-   * `partial_rows`, then return OK.
+   * data in `partial_rows`, then return OK.
    * </pre>
    *
    * <code>bytes resume_token = 5;</code>
@@ -197,20 +295,40 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     return resumeToken_;
   }
 
+  public static final int RESET_FIELD_NUMBER = 7;
+  private boolean reset_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * If `true`, any data buffered since the last non-empty `resume_token` must
+   * be discarded before the other parts of this message, if any, are handled.
+   * </pre>
+   *
+   * <code>bool reset = 7;</code>
+   *
+   * @return The reset.
+   */
+  @java.lang.Override
+  public boolean getReset() {
+    return reset_;
+  }
+
   public static final int ESTIMATED_BATCH_SIZE_FIELD_NUMBER = 4;
   private int estimatedBatchSize_ = 0;
   /**
    *
    *
    * <pre>
-   * Estimated size of a new batch. The server will always set this when
-   * returning the first `partial_rows` of a batch, and will not set it at any
-   * other time.
+   * Estimated size of the buffer required to hold the next batch of results.
    *
-   * The client can use this estimate to allocate an initial buffer for the
-   * batched results. This helps minimize the number of allocations required,
-   * though the buffer size may still need to be increased if the estimate is
-   * too low.
+   * This value will be sent with the first `partial_rows` of a batch. That is,
+   * on the first `partial_rows` received in a stream, on the first message
+   * after a `batch_checksum` message, and any time `reset` is true.
+   *
+   * The client can use this estimate to allocate a buffer for the next batch of
+   * results. This helps minimize the number of allocations required, though the
+   * buffer size may still need to be increased if the estimate is too low.
    * </pre>
    *
    * <code>int32 estimated_batch_size = 4;</code>
@@ -245,6 +363,12 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     if (!resumeToken_.isEmpty()) {
       output.writeBytes(5, resumeToken_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeUInt32(6, batchChecksum_);
+    }
+    if (reset_ != false) {
+      output.writeBool(7, reset_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -265,6 +389,12 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     if (!resumeToken_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(5, resumeToken_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(6, batchChecksum_);
+    }
+    if (reset_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, reset_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -280,7 +410,12 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     }
     com.google.bigtable.v2.PartialResultSet other = (com.google.bigtable.v2.PartialResultSet) obj;
 
+    if (hasBatchChecksum() != other.hasBatchChecksum()) return false;
+    if (hasBatchChecksum()) {
+      if (getBatchChecksum() != other.getBatchChecksum()) return false;
+    }
     if (!getResumeToken().equals(other.getResumeToken())) return false;
+    if (getReset() != other.getReset()) return false;
     if (getEstimatedBatchSize() != other.getEstimatedBatchSize()) return false;
     if (!getPartialRowsCase().equals(other.getPartialRowsCase())) return false;
     switch (partialRowsCase_) {
@@ -301,8 +436,14 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasBatchChecksum()) {
+      hash = (37 * hash) + BATCH_CHECKSUM_FIELD_NUMBER;
+      hash = (53 * hash) + getBatchChecksum();
+    }
     hash = (37 * hash) + RESUME_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getResumeToken().hashCode();
+    hash = (37 * hash) + RESET_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReset());
     hash = (37 * hash) + ESTIMATED_BATCH_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getEstimatedBatchSize();
     switch (partialRowsCase_) {
@@ -418,8 +559,38 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * A partial result set from the streaming query API.
-   * CBT client will buffer partial_rows from result_sets until it gets a
-   * resumption_token.
+   * Cloud Bigtable clients buffer partial results received in this message until
+   * a `resume_token` is received.
+   *
+   * The pseudocode below describes how to buffer and parse a stream of
+   * `PartialResultSet` messages.
+   *
+   * Having:
+   * - queue of row results waiting to be returned `queue`
+   * - extensible buffer of bytes `buffer`
+   * - a place to keep track of the most recent `resume_token`
+   * for each PartialResultSet `p` received {
+   *   if p.reset {
+   *     ensure `queue` is empty
+   *     ensure `buffer` is empty
+   *   }
+   *   if p.estimated_batch_size != 0 {
+   *     (optional) ensure `buffer` is sized to at least `p.estimated_batch_size`
+   *   }
+   *   if `p.proto_rows_batch` is set {
+   *     append `p.proto_rows_batch.bytes` to `buffer`
+   *   }
+   *   if p.batch_checksum is set and `buffer` is not empty {
+   *     validate the checksum matches the contents of `buffer`
+   *     (see comments on `batch_checksum`)
+   *     parse `buffer` as `ProtoRows` message, clearing `buffer`
+   *     add parsed rows to end of `queue`
+   *   }
+   *   if p.resume_token is set {
+   *     release results in `queue`
+   *     save `p.resume_token` in `resume_token`
+   *   }
+   * }
    * </pre>
    *
    * Protobuf type {@code google.bigtable.v2.PartialResultSet}
@@ -457,7 +628,9 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
       if (protoRowsBatchBuilder_ != null) {
         protoRowsBatchBuilder_.clear();
       }
+      batchChecksum_ = 0;
       resumeToken_ = com.google.protobuf.ByteString.EMPTY;
+      reset_ = false;
       estimatedBatchSize_ = 0;
       partialRowsCase_ = 0;
       partialRows_ = null;
@@ -498,12 +671,21 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.bigtable.v2.PartialResultSet result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.resumeToken_ = resumeToken_;
+        result.batchChecksum_ = batchChecksum_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.resumeToken_ = resumeToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.reset_ = reset_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.estimatedBatchSize_ = estimatedBatchSize_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.bigtable.v2.PartialResultSet result) {
@@ -559,8 +741,14 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.bigtable.v2.PartialResultSet other) {
       if (other == com.google.bigtable.v2.PartialResultSet.getDefaultInstance()) return this;
+      if (other.hasBatchChecksum()) {
+        setBatchChecksum(other.getBatchChecksum());
+      }
       if (other.getResumeToken() != com.google.protobuf.ByteString.EMPTY) {
         setResumeToken(other.getResumeToken());
+      }
+      if (other.getReset() != false) {
+        setReset(other.getReset());
       }
       if (other.getEstimatedBatchSize() != 0) {
         setEstimatedBatchSize(other.getEstimatedBatchSize());
@@ -611,15 +799,27 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
             case 32:
               {
                 estimatedBatchSize_ = input.readInt32();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 42:
               {
                 resumeToken_ = input.readBytes();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
+            case 48:
+              {
+                batchChecksum_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 48
+            case 56:
+              {
+                reset_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -862,29 +1062,161 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
       return protoRowsBatchBuilder_;
     }
 
+    private int batchChecksum_;
+    /**
+     *
+     *
+     * <pre>
+     * CRC32C checksum of concatenated `partial_rows` data for the current batch.
+     *
+     * When present, the buffered data from `partial_rows` forms a complete
+     * parseable message of the appropriate type.
+     *
+     * The client should mark the end of a parseable message and prepare to
+     * receive a new one starting from the next `PartialResultSet` message.
+     * Clients must verify the checksum of the serialized batch before yielding it
+     * to the caller.
+     *
+     * This does NOT mean the values can be yielded to the callers since a
+     * `resume_token` is required to safely do so.
+     *
+     * If `resume_token` is non-empty and any data has been received since the
+     * last one, this field is guaranteed to be non-empty. In other words, clients
+     * may assume that a batch will never cross a `resume_token` boundary.
+     * </pre>
+     *
+     * <code>optional uint32 batch_checksum = 6;</code>
+     *
+     * @return Whether the batchChecksum field is set.
+     */
+    @java.lang.Override
+    public boolean hasBatchChecksum() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * CRC32C checksum of concatenated `partial_rows` data for the current batch.
+     *
+     * When present, the buffered data from `partial_rows` forms a complete
+     * parseable message of the appropriate type.
+     *
+     * The client should mark the end of a parseable message and prepare to
+     * receive a new one starting from the next `PartialResultSet` message.
+     * Clients must verify the checksum of the serialized batch before yielding it
+     * to the caller.
+     *
+     * This does NOT mean the values can be yielded to the callers since a
+     * `resume_token` is required to safely do so.
+     *
+     * If `resume_token` is non-empty and any data has been received since the
+     * last one, this field is guaranteed to be non-empty. In other words, clients
+     * may assume that a batch will never cross a `resume_token` boundary.
+     * </pre>
+     *
+     * <code>optional uint32 batch_checksum = 6;</code>
+     *
+     * @return The batchChecksum.
+     */
+    @java.lang.Override
+    public int getBatchChecksum() {
+      return batchChecksum_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * CRC32C checksum of concatenated `partial_rows` data for the current batch.
+     *
+     * When present, the buffered data from `partial_rows` forms a complete
+     * parseable message of the appropriate type.
+     *
+     * The client should mark the end of a parseable message and prepare to
+     * receive a new one starting from the next `PartialResultSet` message.
+     * Clients must verify the checksum of the serialized batch before yielding it
+     * to the caller.
+     *
+     * This does NOT mean the values can be yielded to the callers since a
+     * `resume_token` is required to safely do so.
+     *
+     * If `resume_token` is non-empty and any data has been received since the
+     * last one, this field is guaranteed to be non-empty. In other words, clients
+     * may assume that a batch will never cross a `resume_token` boundary.
+     * </pre>
+     *
+     * <code>optional uint32 batch_checksum = 6;</code>
+     *
+     * @param value The batchChecksum to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBatchChecksum(int value) {
+
+      batchChecksum_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * CRC32C checksum of concatenated `partial_rows` data for the current batch.
+     *
+     * When present, the buffered data from `partial_rows` forms a complete
+     * parseable message of the appropriate type.
+     *
+     * The client should mark the end of a parseable message and prepare to
+     * receive a new one starting from the next `PartialResultSet` message.
+     * Clients must verify the checksum of the serialized batch before yielding it
+     * to the caller.
+     *
+     * This does NOT mean the values can be yielded to the callers since a
+     * `resume_token` is required to safely do so.
+     *
+     * If `resume_token` is non-empty and any data has been received since the
+     * last one, this field is guaranteed to be non-empty. In other words, clients
+     * may assume that a batch will never cross a `resume_token` boundary.
+     * </pre>
+     *
+     * <code>optional uint32 batch_checksum = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBatchChecksum() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      batchChecksum_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.ByteString resumeToken_ = com.google.protobuf.ByteString.EMPTY;
     /**
      *
      *
      * <pre>
      * An opaque token sent by the server to allow query resumption and signal
-     * the client to accumulate `partial_rows` since the last non-empty
-     * `resume_token`. On resumption, the resumed query will return the remaining
-     * rows for this query.
+     * that the buffered values constructed from received `partial_rows` can be
+     * yielded to the caller. Clients can provide this token in a subsequent
+     * request to resume the result stream from the current point.
      *
-     * If there is a batch in progress, a non-empty `resume_token`
-     * means that that the batch of `partial_rows` will be complete after merging
-     * the `partial_rows` from this response. The client must only yield
-     * completed batches to the application, and must ensure that any future
-     * retries send the latest token to avoid returning duplicate data.
+     * When `resume_token` is non-empty, the buffered values received from
+     * `partial_rows` since the last non-empty `resume_token` can be yielded to
+     * the callers, provided that the client keeps the value of `resume_token` and
+     * uses it on subsequent retries.
      *
-     * The server may set 'resume_token' without a 'partial_rows'. If there is a
-     * batch in progress the client should yield it.
+     * A `resume_token` may be sent without information in `partial_rows` to
+     * checkpoint the progress of a sparse query. Any previous `partial_rows` data
+     * should still be yielded in this case, and the new `resume_token` should be
+     * saved for future retries as normal.
+     *
+     * A `resume_token` will only be sent on a boundary where there is either no
+     * ongoing result batch, or `batch_checksum` is also populated.
      *
      * The server will also send a sentinel `resume_token` when last batch of
      * `partial_rows` is sent. If the client retries the ExecuteQueryRequest with
      * the sentinel `resume_token`, the server will emit it again without any
-     * `partial_rows`, then return OK.
+     * data in `partial_rows`, then return OK.
      * </pre>
      *
      * <code>bytes resume_token = 5;</code>
@@ -900,23 +1232,27 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * An opaque token sent by the server to allow query resumption and signal
-     * the client to accumulate `partial_rows` since the last non-empty
-     * `resume_token`. On resumption, the resumed query will return the remaining
-     * rows for this query.
+     * that the buffered values constructed from received `partial_rows` can be
+     * yielded to the caller. Clients can provide this token in a subsequent
+     * request to resume the result stream from the current point.
      *
-     * If there is a batch in progress, a non-empty `resume_token`
-     * means that that the batch of `partial_rows` will be complete after merging
-     * the `partial_rows` from this response. The client must only yield
-     * completed batches to the application, and must ensure that any future
-     * retries send the latest token to avoid returning duplicate data.
+     * When `resume_token` is non-empty, the buffered values received from
+     * `partial_rows` since the last non-empty `resume_token` can be yielded to
+     * the callers, provided that the client keeps the value of `resume_token` and
+     * uses it on subsequent retries.
      *
-     * The server may set 'resume_token' without a 'partial_rows'. If there is a
-     * batch in progress the client should yield it.
+     * A `resume_token` may be sent without information in `partial_rows` to
+     * checkpoint the progress of a sparse query. Any previous `partial_rows` data
+     * should still be yielded in this case, and the new `resume_token` should be
+     * saved for future retries as normal.
+     *
+     * A `resume_token` will only be sent on a boundary where there is either no
+     * ongoing result batch, or `batch_checksum` is also populated.
      *
      * The server will also send a sentinel `resume_token` when last batch of
      * `partial_rows` is sent. If the client retries the ExecuteQueryRequest with
      * the sentinel `resume_token`, the server will emit it again without any
-     * `partial_rows`, then return OK.
+     * data in `partial_rows`, then return OK.
      * </pre>
      *
      * <code>bytes resume_token = 5;</code>
@@ -929,7 +1265,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       resumeToken_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -938,23 +1274,27 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * An opaque token sent by the server to allow query resumption and signal
-     * the client to accumulate `partial_rows` since the last non-empty
-     * `resume_token`. On resumption, the resumed query will return the remaining
-     * rows for this query.
+     * that the buffered values constructed from received `partial_rows` can be
+     * yielded to the caller. Clients can provide this token in a subsequent
+     * request to resume the result stream from the current point.
      *
-     * If there is a batch in progress, a non-empty `resume_token`
-     * means that that the batch of `partial_rows` will be complete after merging
-     * the `partial_rows` from this response. The client must only yield
-     * completed batches to the application, and must ensure that any future
-     * retries send the latest token to avoid returning duplicate data.
+     * When `resume_token` is non-empty, the buffered values received from
+     * `partial_rows` since the last non-empty `resume_token` can be yielded to
+     * the callers, provided that the client keeps the value of `resume_token` and
+     * uses it on subsequent retries.
      *
-     * The server may set 'resume_token' without a 'partial_rows'. If there is a
-     * batch in progress the client should yield it.
+     * A `resume_token` may be sent without information in `partial_rows` to
+     * checkpoint the progress of a sparse query. Any previous `partial_rows` data
+     * should still be yielded in this case, and the new `resume_token` should be
+     * saved for future retries as normal.
+     *
+     * A `resume_token` will only be sent on a boundary where there is either no
+     * ongoing result batch, or `batch_checksum` is also populated.
      *
      * The server will also send a sentinel `resume_token` when last batch of
      * `partial_rows` is sent. If the client retries the ExecuteQueryRequest with
      * the sentinel `resume_token`, the server will emit it again without any
-     * `partial_rows`, then return OK.
+     * data in `partial_rows`, then return OK.
      * </pre>
      *
      * <code>bytes resume_token = 5;</code>
@@ -962,8 +1302,64 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearResumeToken() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       resumeToken_ = getDefaultInstance().getResumeToken();
+      onChanged();
+      return this;
+    }
+
+    private boolean reset_;
+    /**
+     *
+     *
+     * <pre>
+     * If `true`, any data buffered since the last non-empty `resume_token` must
+     * be discarded before the other parts of this message, if any, are handled.
+     * </pre>
+     *
+     * <code>bool reset = 7;</code>
+     *
+     * @return The reset.
+     */
+    @java.lang.Override
+    public boolean getReset() {
+      return reset_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `true`, any data buffered since the last non-empty `resume_token` must
+     * be discarded before the other parts of this message, if any, are handled.
+     * </pre>
+     *
+     * <code>bool reset = 7;</code>
+     *
+     * @param value The reset to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReset(boolean value) {
+
+      reset_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `true`, any data buffered since the last non-empty `resume_token` must
+     * be discarded before the other parts of this message, if any, are handled.
+     * </pre>
+     *
+     * <code>bool reset = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReset() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      reset_ = false;
       onChanged();
       return this;
     }
@@ -973,14 +1369,15 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Estimated size of a new batch. The server will always set this when
-     * returning the first `partial_rows` of a batch, and will not set it at any
-     * other time.
+     * Estimated size of the buffer required to hold the next batch of results.
      *
-     * The client can use this estimate to allocate an initial buffer for the
-     * batched results. This helps minimize the number of allocations required,
-     * though the buffer size may still need to be increased if the estimate is
-     * too low.
+     * This value will be sent with the first `partial_rows` of a batch. That is,
+     * on the first `partial_rows` received in a stream, on the first message
+     * after a `batch_checksum` message, and any time `reset` is true.
+     *
+     * The client can use this estimate to allocate a buffer for the next batch of
+     * results. This helps minimize the number of allocations required, though the
+     * buffer size may still need to be increased if the estimate is too low.
      * </pre>
      *
      * <code>int32 estimated_batch_size = 4;</code>
@@ -995,14 +1392,15 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Estimated size of a new batch. The server will always set this when
-     * returning the first `partial_rows` of a batch, and will not set it at any
-     * other time.
+     * Estimated size of the buffer required to hold the next batch of results.
      *
-     * The client can use this estimate to allocate an initial buffer for the
-     * batched results. This helps minimize the number of allocations required,
-     * though the buffer size may still need to be increased if the estimate is
-     * too low.
+     * This value will be sent with the first `partial_rows` of a batch. That is,
+     * on the first `partial_rows` received in a stream, on the first message
+     * after a `batch_checksum` message, and any time `reset` is true.
+     *
+     * The client can use this estimate to allocate a buffer for the next batch of
+     * results. This helps minimize the number of allocations required, though the
+     * buffer size may still need to be increased if the estimate is too low.
      * </pre>
      *
      * <code>int32 estimated_batch_size = 4;</code>
@@ -1013,7 +1411,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     public Builder setEstimatedBatchSize(int value) {
 
       estimatedBatchSize_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1021,14 +1419,15 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Estimated size of a new batch. The server will always set this when
-     * returning the first `partial_rows` of a batch, and will not set it at any
-     * other time.
+     * Estimated size of the buffer required to hold the next batch of results.
      *
-     * The client can use this estimate to allocate an initial buffer for the
-     * batched results. This helps minimize the number of allocations required,
-     * though the buffer size may still need to be increased if the estimate is
-     * too low.
+     * This value will be sent with the first `partial_rows` of a batch. That is,
+     * on the first `partial_rows` received in a stream, on the first message
+     * after a `batch_checksum` message, and any time `reset` is true.
+     *
+     * The client can use this estimate to allocate a buffer for the next batch of
+     * results. This helps minimize the number of allocations required, though the
+     * buffer size may still need to be increased if the estimate is too low.
      * </pre>
      *
      * <code>int32 estimated_batch_size = 4;</code>
@@ -1036,7 +1435,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEstimatedBatchSize() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       estimatedBatchSize_ = 0;
       onChanged();
       return this;

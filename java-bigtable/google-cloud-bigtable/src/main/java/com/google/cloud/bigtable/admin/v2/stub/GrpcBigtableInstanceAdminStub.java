@@ -18,6 +18,8 @@ package com.google.cloud.bigtable.admin.v2.stub;
 
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListHotTabletsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListLogicalViewsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMaterializedViewsPagedResponse;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -35,12 +37,20 @@ import com.google.bigtable.admin.v2.CreateClusterMetadata;
 import com.google.bigtable.admin.v2.CreateClusterRequest;
 import com.google.bigtable.admin.v2.CreateInstanceMetadata;
 import com.google.bigtable.admin.v2.CreateInstanceRequest;
+import com.google.bigtable.admin.v2.CreateLogicalViewMetadata;
+import com.google.bigtable.admin.v2.CreateLogicalViewRequest;
+import com.google.bigtable.admin.v2.CreateMaterializedViewMetadata;
+import com.google.bigtable.admin.v2.CreateMaterializedViewRequest;
 import com.google.bigtable.admin.v2.DeleteAppProfileRequest;
 import com.google.bigtable.admin.v2.DeleteClusterRequest;
 import com.google.bigtable.admin.v2.DeleteInstanceRequest;
+import com.google.bigtable.admin.v2.DeleteLogicalViewRequest;
+import com.google.bigtable.admin.v2.DeleteMaterializedViewRequest;
 import com.google.bigtable.admin.v2.GetAppProfileRequest;
 import com.google.bigtable.admin.v2.GetClusterRequest;
 import com.google.bigtable.admin.v2.GetInstanceRequest;
+import com.google.bigtable.admin.v2.GetLogicalViewRequest;
+import com.google.bigtable.admin.v2.GetMaterializedViewRequest;
 import com.google.bigtable.admin.v2.Instance;
 import com.google.bigtable.admin.v2.ListAppProfilesRequest;
 import com.google.bigtable.admin.v2.ListAppProfilesResponse;
@@ -50,6 +60,12 @@ import com.google.bigtable.admin.v2.ListHotTabletsRequest;
 import com.google.bigtable.admin.v2.ListHotTabletsResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
+import com.google.bigtable.admin.v2.ListLogicalViewsRequest;
+import com.google.bigtable.admin.v2.ListLogicalViewsResponse;
+import com.google.bigtable.admin.v2.ListMaterializedViewsRequest;
+import com.google.bigtable.admin.v2.ListMaterializedViewsResponse;
+import com.google.bigtable.admin.v2.LogicalView;
+import com.google.bigtable.admin.v2.MaterializedView;
 import com.google.bigtable.admin.v2.PartialUpdateClusterMetadata;
 import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
@@ -57,6 +73,10 @@ import com.google.bigtable.admin.v2.UpdateAppProfileMetadata;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
 import com.google.bigtable.admin.v2.UpdateClusterMetadata;
 import com.google.bigtable.admin.v2.UpdateInstanceMetadata;
+import com.google.bigtable.admin.v2.UpdateLogicalViewMetadata;
+import com.google.bigtable.admin.v2.UpdateLogicalViewRequest;
+import com.google.bigtable.admin.v2.UpdateMaterializedViewMetadata;
+import com.google.bigtable.admin.v2.UpdateMaterializedViewRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -279,6 +299,113 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   ProtoUtils.marshaller(ListHotTabletsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateLogicalViewRequest, Operation>
+      createLogicalViewMethodDescriptor =
+          MethodDescriptor.<CreateLogicalViewRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/CreateLogicalView")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateLogicalViewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetLogicalViewRequest, LogicalView>
+      getLogicalViewMethodDescriptor =
+          MethodDescriptor.<GetLogicalViewRequest, LogicalView>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/GetLogicalView")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetLogicalViewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(LogicalView.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListLogicalViewsRequest, ListLogicalViewsResponse>
+      listLogicalViewsMethodDescriptor =
+          MethodDescriptor.<ListLogicalViewsRequest, ListLogicalViewsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/ListLogicalViews")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLogicalViewsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLogicalViewsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateLogicalViewRequest, Operation>
+      updateLogicalViewMethodDescriptor =
+          MethodDescriptor.<UpdateLogicalViewRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/UpdateLogicalView")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateLogicalViewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteLogicalViewRequest, Empty>
+      deleteLogicalViewMethodDescriptor =
+          MethodDescriptor.<DeleteLogicalViewRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/DeleteLogicalView")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteLogicalViewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateMaterializedViewRequest, Operation>
+      createMaterializedViewMethodDescriptor =
+          MethodDescriptor.<CreateMaterializedViewRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.bigtable.admin.v2.BigtableInstanceAdmin/CreateMaterializedView")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateMaterializedViewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetMaterializedViewRequest, MaterializedView>
+      getMaterializedViewMethodDescriptor =
+          MethodDescriptor.<GetMaterializedViewRequest, MaterializedView>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.bigtable.admin.v2.BigtableInstanceAdmin/GetMaterializedView")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetMaterializedViewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MaterializedView.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListMaterializedViewsRequest, ListMaterializedViewsResponse>
+      listMaterializedViewsMethodDescriptor =
+          MethodDescriptor.<ListMaterializedViewsRequest, ListMaterializedViewsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.bigtable.admin.v2.BigtableInstanceAdmin/ListMaterializedViews")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListMaterializedViewsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListMaterializedViewsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateMaterializedViewRequest, Operation>
+      updateMaterializedViewMethodDescriptor =
+          MethodDescriptor.<UpdateMaterializedViewRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.bigtable.admin.v2.BigtableInstanceAdmin/UpdateMaterializedView")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateMaterializedViewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteMaterializedViewRequest, Empty>
+      deleteMaterializedViewMethodDescriptor =
+          MethodDescriptor.<DeleteMaterializedViewRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.bigtable.admin.v2.BigtableInstanceAdmin/DeleteMaterializedView")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteMaterializedViewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable;
   private final OperationCallable<CreateInstanceRequest, Instance, CreateInstanceMetadata>
       createInstanceOperationCallable;
@@ -320,6 +447,35 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
   private final UnaryCallable<ListHotTabletsRequest, ListHotTabletsResponse> listHotTabletsCallable;
   private final UnaryCallable<ListHotTabletsRequest, ListHotTabletsPagedResponse>
       listHotTabletsPagedCallable;
+  private final UnaryCallable<CreateLogicalViewRequest, Operation> createLogicalViewCallable;
+  private final OperationCallable<CreateLogicalViewRequest, LogicalView, CreateLogicalViewMetadata>
+      createLogicalViewOperationCallable;
+  private final UnaryCallable<GetLogicalViewRequest, LogicalView> getLogicalViewCallable;
+  private final UnaryCallable<ListLogicalViewsRequest, ListLogicalViewsResponse>
+      listLogicalViewsCallable;
+  private final UnaryCallable<ListLogicalViewsRequest, ListLogicalViewsPagedResponse>
+      listLogicalViewsPagedCallable;
+  private final UnaryCallable<UpdateLogicalViewRequest, Operation> updateLogicalViewCallable;
+  private final OperationCallable<UpdateLogicalViewRequest, LogicalView, UpdateLogicalViewMetadata>
+      updateLogicalViewOperationCallable;
+  private final UnaryCallable<DeleteLogicalViewRequest, Empty> deleteLogicalViewCallable;
+  private final UnaryCallable<CreateMaterializedViewRequest, Operation>
+      createMaterializedViewCallable;
+  private final OperationCallable<
+          CreateMaterializedViewRequest, MaterializedView, CreateMaterializedViewMetadata>
+      createMaterializedViewOperationCallable;
+  private final UnaryCallable<GetMaterializedViewRequest, MaterializedView>
+      getMaterializedViewCallable;
+  private final UnaryCallable<ListMaterializedViewsRequest, ListMaterializedViewsResponse>
+      listMaterializedViewsCallable;
+  private final UnaryCallable<ListMaterializedViewsRequest, ListMaterializedViewsPagedResponse>
+      listMaterializedViewsPagedCallable;
+  private final UnaryCallable<UpdateMaterializedViewRequest, Operation>
+      updateMaterializedViewCallable;
+  private final OperationCallable<
+          UpdateMaterializedViewRequest, MaterializedView, UpdateMaterializedViewMetadata>
+      updateMaterializedViewOperationCallable;
+  private final UnaryCallable<DeleteMaterializedViewRequest, Empty> deleteMaterializedViewCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -580,6 +736,115 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<CreateLogicalViewRequest, Operation> createLogicalViewTransportSettings =
+        GrpcCallSettings.<CreateLogicalViewRequest, Operation>newBuilder()
+            .setMethodDescriptor(createLogicalViewMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetLogicalViewRequest, LogicalView> getLogicalViewTransportSettings =
+        GrpcCallSettings.<GetLogicalViewRequest, LogicalView>newBuilder()
+            .setMethodDescriptor(getLogicalViewMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListLogicalViewsRequest, ListLogicalViewsResponse>
+        listLogicalViewsTransportSettings =
+            GrpcCallSettings.<ListLogicalViewsRequest, ListLogicalViewsResponse>newBuilder()
+                .setMethodDescriptor(listLogicalViewsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateLogicalViewRequest, Operation> updateLogicalViewTransportSettings =
+        GrpcCallSettings.<UpdateLogicalViewRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateLogicalViewMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "logical_view.name", String.valueOf(request.getLogicalView().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteLogicalViewRequest, Empty> deleteLogicalViewTransportSettings =
+        GrpcCallSettings.<DeleteLogicalViewRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteLogicalViewMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateMaterializedViewRequest, Operation>
+        createMaterializedViewTransportSettings =
+            GrpcCallSettings.<CreateMaterializedViewRequest, Operation>newBuilder()
+                .setMethodDescriptor(createMaterializedViewMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetMaterializedViewRequest, MaterializedView>
+        getMaterializedViewTransportSettings =
+            GrpcCallSettings.<GetMaterializedViewRequest, MaterializedView>newBuilder()
+                .setMethodDescriptor(getMaterializedViewMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListMaterializedViewsRequest, ListMaterializedViewsResponse>
+        listMaterializedViewsTransportSettings =
+            GrpcCallSettings
+                .<ListMaterializedViewsRequest, ListMaterializedViewsResponse>newBuilder()
+                .setMethodDescriptor(listMaterializedViewsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateMaterializedViewRequest, Operation>
+        updateMaterializedViewTransportSettings =
+            GrpcCallSettings.<UpdateMaterializedViewRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateMaterializedViewMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "materialized_view.name",
+                          String.valueOf(request.getMaterializedView().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteMaterializedViewRequest, Empty> deleteMaterializedViewTransportSettings =
+        GrpcCallSettings.<DeleteMaterializedViewRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteMaterializedViewMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.createInstanceCallable =
         callableFactory.createUnaryCallable(
@@ -692,6 +957,84 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
     this.listHotTabletsPagedCallable =
         callableFactory.createPagedCallable(
             listHotTabletsTransportSettings, settings.listHotTabletsSettings(), clientContext);
+    this.createLogicalViewCallable =
+        callableFactory.createUnaryCallable(
+            createLogicalViewTransportSettings,
+            settings.createLogicalViewSettings(),
+            clientContext);
+    this.createLogicalViewOperationCallable =
+        callableFactory.createOperationCallable(
+            createLogicalViewTransportSettings,
+            settings.createLogicalViewOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getLogicalViewCallable =
+        callableFactory.createUnaryCallable(
+            getLogicalViewTransportSettings, settings.getLogicalViewSettings(), clientContext);
+    this.listLogicalViewsCallable =
+        callableFactory.createUnaryCallable(
+            listLogicalViewsTransportSettings, settings.listLogicalViewsSettings(), clientContext);
+    this.listLogicalViewsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLogicalViewsTransportSettings, settings.listLogicalViewsSettings(), clientContext);
+    this.updateLogicalViewCallable =
+        callableFactory.createUnaryCallable(
+            updateLogicalViewTransportSettings,
+            settings.updateLogicalViewSettings(),
+            clientContext);
+    this.updateLogicalViewOperationCallable =
+        callableFactory.createOperationCallable(
+            updateLogicalViewTransportSettings,
+            settings.updateLogicalViewOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteLogicalViewCallable =
+        callableFactory.createUnaryCallable(
+            deleteLogicalViewTransportSettings,
+            settings.deleteLogicalViewSettings(),
+            clientContext);
+    this.createMaterializedViewCallable =
+        callableFactory.createUnaryCallable(
+            createMaterializedViewTransportSettings,
+            settings.createMaterializedViewSettings(),
+            clientContext);
+    this.createMaterializedViewOperationCallable =
+        callableFactory.createOperationCallable(
+            createMaterializedViewTransportSettings,
+            settings.createMaterializedViewOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getMaterializedViewCallable =
+        callableFactory.createUnaryCallable(
+            getMaterializedViewTransportSettings,
+            settings.getMaterializedViewSettings(),
+            clientContext);
+    this.listMaterializedViewsCallable =
+        callableFactory.createUnaryCallable(
+            listMaterializedViewsTransportSettings,
+            settings.listMaterializedViewsSettings(),
+            clientContext);
+    this.listMaterializedViewsPagedCallable =
+        callableFactory.createPagedCallable(
+            listMaterializedViewsTransportSettings,
+            settings.listMaterializedViewsSettings(),
+            clientContext);
+    this.updateMaterializedViewCallable =
+        callableFactory.createUnaryCallable(
+            updateMaterializedViewTransportSettings,
+            settings.updateMaterializedViewSettings(),
+            clientContext);
+    this.updateMaterializedViewOperationCallable =
+        callableFactory.createOperationCallable(
+            updateMaterializedViewTransportSettings,
+            settings.updateMaterializedViewOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteMaterializedViewCallable =
+        callableFactory.createUnaryCallable(
+            deleteMaterializedViewTransportSettings,
+            settings.deleteMaterializedViewSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -853,6 +1196,96 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
   public UnaryCallable<ListHotTabletsRequest, ListHotTabletsPagedResponse>
       listHotTabletsPagedCallable() {
     return listHotTabletsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateLogicalViewRequest, Operation> createLogicalViewCallable() {
+    return createLogicalViewCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateLogicalViewRequest, LogicalView, CreateLogicalViewMetadata>
+      createLogicalViewOperationCallable() {
+    return createLogicalViewOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLogicalViewRequest, LogicalView> getLogicalViewCallable() {
+    return getLogicalViewCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLogicalViewsRequest, ListLogicalViewsResponse>
+      listLogicalViewsCallable() {
+    return listLogicalViewsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLogicalViewsRequest, ListLogicalViewsPagedResponse>
+      listLogicalViewsPagedCallable() {
+    return listLogicalViewsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateLogicalViewRequest, Operation> updateLogicalViewCallable() {
+    return updateLogicalViewCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateLogicalViewRequest, LogicalView, UpdateLogicalViewMetadata>
+      updateLogicalViewOperationCallable() {
+    return updateLogicalViewOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteLogicalViewRequest, Empty> deleteLogicalViewCallable() {
+    return deleteLogicalViewCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateMaterializedViewRequest, Operation> createMaterializedViewCallable() {
+    return createMaterializedViewCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateMaterializedViewRequest, MaterializedView, CreateMaterializedViewMetadata>
+      createMaterializedViewOperationCallable() {
+    return createMaterializedViewOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMaterializedViewRequest, MaterializedView> getMaterializedViewCallable() {
+    return getMaterializedViewCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMaterializedViewsRequest, ListMaterializedViewsResponse>
+      listMaterializedViewsCallable() {
+    return listMaterializedViewsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMaterializedViewsRequest, ListMaterializedViewsPagedResponse>
+      listMaterializedViewsPagedCallable() {
+    return listMaterializedViewsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateMaterializedViewRequest, Operation> updateMaterializedViewCallable() {
+    return updateMaterializedViewCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateMaterializedViewRequest, MaterializedView, UpdateMaterializedViewMetadata>
+      updateMaterializedViewOperationCallable() {
+    return updateMaterializedViewOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteMaterializedViewRequest, Empty> deleteMaterializedViewCallable() {
+    return deleteMaterializedViewCallable;
   }
 
   @Override

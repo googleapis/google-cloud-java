@@ -970,6 +970,489 @@ public final class BigtableInstanceAdminGrpc {
     return getListHotTabletsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.CreateLogicalViewRequest, com.google.longrunning.Operation>
+      getCreateLogicalViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateLogicalView",
+      requestType = com.google.bigtable.admin.v2.CreateLogicalViewRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.CreateLogicalViewRequest, com.google.longrunning.Operation>
+      getCreateLogicalViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.CreateLogicalViewRequest, com.google.longrunning.Operation>
+        getCreateLogicalViewMethod;
+    if ((getCreateLogicalViewMethod = BigtableInstanceAdminGrpc.getCreateLogicalViewMethod)
+        == null) {
+      synchronized (BigtableInstanceAdminGrpc.class) {
+        if ((getCreateLogicalViewMethod = BigtableInstanceAdminGrpc.getCreateLogicalViewMethod)
+            == null) {
+          BigtableInstanceAdminGrpc.getCreateLogicalViewMethod =
+              getCreateLogicalViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.CreateLogicalViewRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateLogicalView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.CreateLogicalViewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableInstanceAdminMethodDescriptorSupplier("CreateLogicalView"))
+                      .build();
+        }
+      }
+    }
+    return getCreateLogicalViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.GetLogicalViewRequest,
+          com.google.bigtable.admin.v2.LogicalView>
+      getGetLogicalViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetLogicalView",
+      requestType = com.google.bigtable.admin.v2.GetLogicalViewRequest.class,
+      responseType = com.google.bigtable.admin.v2.LogicalView.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.GetLogicalViewRequest,
+          com.google.bigtable.admin.v2.LogicalView>
+      getGetLogicalViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.GetLogicalViewRequest,
+            com.google.bigtable.admin.v2.LogicalView>
+        getGetLogicalViewMethod;
+    if ((getGetLogicalViewMethod = BigtableInstanceAdminGrpc.getGetLogicalViewMethod) == null) {
+      synchronized (BigtableInstanceAdminGrpc.class) {
+        if ((getGetLogicalViewMethod = BigtableInstanceAdminGrpc.getGetLogicalViewMethod) == null) {
+          BigtableInstanceAdminGrpc.getGetLogicalViewMethod =
+              getGetLogicalViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.GetLogicalViewRequest,
+                          com.google.bigtable.admin.v2.LogicalView>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLogicalView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.GetLogicalViewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.LogicalView.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableInstanceAdminMethodDescriptorSupplier("GetLogicalView"))
+                      .build();
+        }
+      }
+    }
+    return getGetLogicalViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.ListLogicalViewsRequest,
+          com.google.bigtable.admin.v2.ListLogicalViewsResponse>
+      getListLogicalViewsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListLogicalViews",
+      requestType = com.google.bigtable.admin.v2.ListLogicalViewsRequest.class,
+      responseType = com.google.bigtable.admin.v2.ListLogicalViewsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.ListLogicalViewsRequest,
+          com.google.bigtable.admin.v2.ListLogicalViewsResponse>
+      getListLogicalViewsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.ListLogicalViewsRequest,
+            com.google.bigtable.admin.v2.ListLogicalViewsResponse>
+        getListLogicalViewsMethod;
+    if ((getListLogicalViewsMethod = BigtableInstanceAdminGrpc.getListLogicalViewsMethod) == null) {
+      synchronized (BigtableInstanceAdminGrpc.class) {
+        if ((getListLogicalViewsMethod = BigtableInstanceAdminGrpc.getListLogicalViewsMethod)
+            == null) {
+          BigtableInstanceAdminGrpc.getListLogicalViewsMethod =
+              getListLogicalViewsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.ListLogicalViewsRequest,
+                          com.google.bigtable.admin.v2.ListLogicalViewsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListLogicalViews"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.ListLogicalViewsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.ListLogicalViewsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableInstanceAdminMethodDescriptorSupplier("ListLogicalViews"))
+                      .build();
+        }
+      }
+    }
+    return getListLogicalViewsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.UpdateLogicalViewRequest, com.google.longrunning.Operation>
+      getUpdateLogicalViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateLogicalView",
+      requestType = com.google.bigtable.admin.v2.UpdateLogicalViewRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.UpdateLogicalViewRequest, com.google.longrunning.Operation>
+      getUpdateLogicalViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.UpdateLogicalViewRequest, com.google.longrunning.Operation>
+        getUpdateLogicalViewMethod;
+    if ((getUpdateLogicalViewMethod = BigtableInstanceAdminGrpc.getUpdateLogicalViewMethod)
+        == null) {
+      synchronized (BigtableInstanceAdminGrpc.class) {
+        if ((getUpdateLogicalViewMethod = BigtableInstanceAdminGrpc.getUpdateLogicalViewMethod)
+            == null) {
+          BigtableInstanceAdminGrpc.getUpdateLogicalViewMethod =
+              getUpdateLogicalViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.UpdateLogicalViewRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateLogicalView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.UpdateLogicalViewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableInstanceAdminMethodDescriptorSupplier("UpdateLogicalView"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateLogicalViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.DeleteLogicalViewRequest, com.google.protobuf.Empty>
+      getDeleteLogicalViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteLogicalView",
+      requestType = com.google.bigtable.admin.v2.DeleteLogicalViewRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.DeleteLogicalViewRequest, com.google.protobuf.Empty>
+      getDeleteLogicalViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.DeleteLogicalViewRequest, com.google.protobuf.Empty>
+        getDeleteLogicalViewMethod;
+    if ((getDeleteLogicalViewMethod = BigtableInstanceAdminGrpc.getDeleteLogicalViewMethod)
+        == null) {
+      synchronized (BigtableInstanceAdminGrpc.class) {
+        if ((getDeleteLogicalViewMethod = BigtableInstanceAdminGrpc.getDeleteLogicalViewMethod)
+            == null) {
+          BigtableInstanceAdminGrpc.getDeleteLogicalViewMethod =
+              getDeleteLogicalViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.DeleteLogicalViewRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteLogicalView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.DeleteLogicalViewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableInstanceAdminMethodDescriptorSupplier("DeleteLogicalView"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteLogicalViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.CreateMaterializedViewRequest,
+          com.google.longrunning.Operation>
+      getCreateMaterializedViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateMaterializedView",
+      requestType = com.google.bigtable.admin.v2.CreateMaterializedViewRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.CreateMaterializedViewRequest,
+          com.google.longrunning.Operation>
+      getCreateMaterializedViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.CreateMaterializedViewRequest,
+            com.google.longrunning.Operation>
+        getCreateMaterializedViewMethod;
+    if ((getCreateMaterializedViewMethod =
+            BigtableInstanceAdminGrpc.getCreateMaterializedViewMethod)
+        == null) {
+      synchronized (BigtableInstanceAdminGrpc.class) {
+        if ((getCreateMaterializedViewMethod =
+                BigtableInstanceAdminGrpc.getCreateMaterializedViewMethod)
+            == null) {
+          BigtableInstanceAdminGrpc.getCreateMaterializedViewMethod =
+              getCreateMaterializedViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.CreateMaterializedViewRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateMaterializedView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.CreateMaterializedViewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableInstanceAdminMethodDescriptorSupplier(
+                              "CreateMaterializedView"))
+                      .build();
+        }
+      }
+    }
+    return getCreateMaterializedViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.GetMaterializedViewRequest,
+          com.google.bigtable.admin.v2.MaterializedView>
+      getGetMaterializedViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMaterializedView",
+      requestType = com.google.bigtable.admin.v2.GetMaterializedViewRequest.class,
+      responseType = com.google.bigtable.admin.v2.MaterializedView.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.GetMaterializedViewRequest,
+          com.google.bigtable.admin.v2.MaterializedView>
+      getGetMaterializedViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.GetMaterializedViewRequest,
+            com.google.bigtable.admin.v2.MaterializedView>
+        getGetMaterializedViewMethod;
+    if ((getGetMaterializedViewMethod = BigtableInstanceAdminGrpc.getGetMaterializedViewMethod)
+        == null) {
+      synchronized (BigtableInstanceAdminGrpc.class) {
+        if ((getGetMaterializedViewMethod = BigtableInstanceAdminGrpc.getGetMaterializedViewMethod)
+            == null) {
+          BigtableInstanceAdminGrpc.getGetMaterializedViewMethod =
+              getGetMaterializedViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.GetMaterializedViewRequest,
+                          com.google.bigtable.admin.v2.MaterializedView>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetMaterializedView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.GetMaterializedViewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.MaterializedView.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableInstanceAdminMethodDescriptorSupplier("GetMaterializedView"))
+                      .build();
+        }
+      }
+    }
+    return getGetMaterializedViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.ListMaterializedViewsRequest,
+          com.google.bigtable.admin.v2.ListMaterializedViewsResponse>
+      getListMaterializedViewsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMaterializedViews",
+      requestType = com.google.bigtable.admin.v2.ListMaterializedViewsRequest.class,
+      responseType = com.google.bigtable.admin.v2.ListMaterializedViewsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.ListMaterializedViewsRequest,
+          com.google.bigtable.admin.v2.ListMaterializedViewsResponse>
+      getListMaterializedViewsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.ListMaterializedViewsRequest,
+            com.google.bigtable.admin.v2.ListMaterializedViewsResponse>
+        getListMaterializedViewsMethod;
+    if ((getListMaterializedViewsMethod = BigtableInstanceAdminGrpc.getListMaterializedViewsMethod)
+        == null) {
+      synchronized (BigtableInstanceAdminGrpc.class) {
+        if ((getListMaterializedViewsMethod =
+                BigtableInstanceAdminGrpc.getListMaterializedViewsMethod)
+            == null) {
+          BigtableInstanceAdminGrpc.getListMaterializedViewsMethod =
+              getListMaterializedViewsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.ListMaterializedViewsRequest,
+                          com.google.bigtable.admin.v2.ListMaterializedViewsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListMaterializedViews"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.ListMaterializedViewsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.ListMaterializedViewsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableInstanceAdminMethodDescriptorSupplier(
+                              "ListMaterializedViews"))
+                      .build();
+        }
+      }
+    }
+    return getListMaterializedViewsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.UpdateMaterializedViewRequest,
+          com.google.longrunning.Operation>
+      getUpdateMaterializedViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateMaterializedView",
+      requestType = com.google.bigtable.admin.v2.UpdateMaterializedViewRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.UpdateMaterializedViewRequest,
+          com.google.longrunning.Operation>
+      getUpdateMaterializedViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.UpdateMaterializedViewRequest,
+            com.google.longrunning.Operation>
+        getUpdateMaterializedViewMethod;
+    if ((getUpdateMaterializedViewMethod =
+            BigtableInstanceAdminGrpc.getUpdateMaterializedViewMethod)
+        == null) {
+      synchronized (BigtableInstanceAdminGrpc.class) {
+        if ((getUpdateMaterializedViewMethod =
+                BigtableInstanceAdminGrpc.getUpdateMaterializedViewMethod)
+            == null) {
+          BigtableInstanceAdminGrpc.getUpdateMaterializedViewMethod =
+              getUpdateMaterializedViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.UpdateMaterializedViewRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateMaterializedView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.UpdateMaterializedViewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableInstanceAdminMethodDescriptorSupplier(
+                              "UpdateMaterializedView"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateMaterializedViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.DeleteMaterializedViewRequest, com.google.protobuf.Empty>
+      getDeleteMaterializedViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteMaterializedView",
+      requestType = com.google.bigtable.admin.v2.DeleteMaterializedViewRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.DeleteMaterializedViewRequest, com.google.protobuf.Empty>
+      getDeleteMaterializedViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.DeleteMaterializedViewRequest, com.google.protobuf.Empty>
+        getDeleteMaterializedViewMethod;
+    if ((getDeleteMaterializedViewMethod =
+            BigtableInstanceAdminGrpc.getDeleteMaterializedViewMethod)
+        == null) {
+      synchronized (BigtableInstanceAdminGrpc.class) {
+        if ((getDeleteMaterializedViewMethod =
+                BigtableInstanceAdminGrpc.getDeleteMaterializedViewMethod)
+            == null) {
+          BigtableInstanceAdminGrpc.getDeleteMaterializedViewMethod =
+              getDeleteMaterializedViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.DeleteMaterializedViewRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteMaterializedView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.DeleteMaterializedViewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableInstanceAdminMethodDescriptorSupplier(
+                              "DeleteMaterializedView"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteMaterializedViewMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static BigtableInstanceAdminStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<BigtableInstanceAdminStub> factory =
@@ -1346,6 +1829,149 @@ public final class BigtableInstanceAdminGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListHotTabletsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a logical view within an instance.
+     * </pre>
+     */
+    default void createLogicalView(
+        com.google.bigtable.admin.v2.CreateLogicalViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateLogicalViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a logical view.
+     * </pre>
+     */
+    default void getLogicalView(
+        com.google.bigtable.admin.v2.GetLogicalViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.LogicalView> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetLogicalViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about logical views in an instance.
+     * </pre>
+     */
+    default void listLogicalViews(
+        com.google.bigtable.admin.v2.ListLogicalViewsRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListLogicalViewsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListLogicalViewsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a logical view within an instance.
+     * </pre>
+     */
+    default void updateLogicalView(
+        com.google.bigtable.admin.v2.UpdateLogicalViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateLogicalViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a logical view from an instance.
+     * </pre>
+     */
+    default void deleteLogicalView(
+        com.google.bigtable.admin.v2.DeleteLogicalViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteLogicalViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a materialized view within an instance.
+     * </pre>
+     */
+    default void createMaterializedView(
+        com.google.bigtable.admin.v2.CreateMaterializedViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateMaterializedViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a materialized view.
+     * </pre>
+     */
+    default void getMaterializedView(
+        com.google.bigtable.admin.v2.GetMaterializedViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.MaterializedView>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetMaterializedViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about materialized views in an instance.
+     * </pre>
+     */
+    default void listMaterializedViews(
+        com.google.bigtable.admin.v2.ListMaterializedViewsRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListMaterializedViewsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListMaterializedViewsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a materialized view within an instance.
+     * </pre>
+     */
+    default void updateMaterializedView(
+        com.google.bigtable.admin.v2.UpdateMaterializedViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateMaterializedViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a materialized view from an instance.
+     * </pre>
+     */
+    default void deleteMaterializedView(
+        com.google.bigtable.admin.v2.DeleteMaterializedViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteMaterializedViewMethod(), responseObserver);
     }
   }
 
@@ -1754,6 +2380,169 @@ public final class BigtableInstanceAdminGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a logical view within an instance.
+     * </pre>
+     */
+    public void createLogicalView(
+        com.google.bigtable.admin.v2.CreateLogicalViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateLogicalViewMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a logical view.
+     * </pre>
+     */
+    public void getLogicalView(
+        com.google.bigtable.admin.v2.GetLogicalViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.LogicalView> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetLogicalViewMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about logical views in an instance.
+     * </pre>
+     */
+    public void listLogicalViews(
+        com.google.bigtable.admin.v2.ListLogicalViewsRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListLogicalViewsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListLogicalViewsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a logical view within an instance.
+     * </pre>
+     */
+    public void updateLogicalView(
+        com.google.bigtable.admin.v2.UpdateLogicalViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateLogicalViewMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a logical view from an instance.
+     * </pre>
+     */
+    public void deleteLogicalView(
+        com.google.bigtable.admin.v2.DeleteLogicalViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteLogicalViewMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a materialized view within an instance.
+     * </pre>
+     */
+    public void createMaterializedView(
+        com.google.bigtable.admin.v2.CreateMaterializedViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateMaterializedViewMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a materialized view.
+     * </pre>
+     */
+    public void getMaterializedView(
+        com.google.bigtable.admin.v2.GetMaterializedViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.MaterializedView>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMaterializedViewMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about materialized views in an instance.
+     * </pre>
+     */
+    public void listMaterializedViews(
+        com.google.bigtable.admin.v2.ListMaterializedViewsRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListMaterializedViewsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMaterializedViewsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a materialized view within an instance.
+     * </pre>
+     */
+    public void updateMaterializedView(
+        com.google.bigtable.admin.v2.UpdateMaterializedViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateMaterializedViewMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a materialized view from an instance.
+     * </pre>
+     */
+    public void deleteMaterializedView(
+        com.google.bigtable.admin.v2.DeleteMaterializedViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteMaterializedViewMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2075,6 +2864,136 @@ public final class BigtableInstanceAdminGrpc {
         com.google.bigtable.admin.v2.ListHotTabletsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListHotTabletsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a logical view within an instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createLogicalView(
+        com.google.bigtable.admin.v2.CreateLogicalViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateLogicalViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a logical view.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.LogicalView getLogicalView(
+        com.google.bigtable.admin.v2.GetLogicalViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLogicalViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about logical views in an instance.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListLogicalViewsResponse listLogicalViews(
+        com.google.bigtable.admin.v2.ListLogicalViewsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListLogicalViewsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a logical view within an instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateLogicalView(
+        com.google.bigtable.admin.v2.UpdateLogicalViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateLogicalViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a logical view from an instance.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteLogicalView(
+        com.google.bigtable.admin.v2.DeleteLogicalViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteLogicalViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a materialized view within an instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMaterializedView(
+        com.google.bigtable.admin.v2.CreateMaterializedViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMaterializedViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a materialized view.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.MaterializedView getMaterializedView(
+        com.google.bigtable.admin.v2.GetMaterializedViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMaterializedViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about materialized views in an instance.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListMaterializedViewsResponse listMaterializedViews(
+        com.google.bigtable.admin.v2.ListMaterializedViewsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMaterializedViewsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a materialized view within an instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMaterializedView(
+        com.google.bigtable.admin.v2.UpdateMaterializedViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMaterializedViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a materialized view from an instance.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteMaterializedView(
+        com.google.bigtable.admin.v2.DeleteMaterializedViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMaterializedViewMethod(), getCallOptions(), request);
     }
   }
 
@@ -2408,6 +3327,140 @@ public final class BigtableInstanceAdminGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListHotTabletsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a logical view within an instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createLogicalView(com.google.bigtable.admin.v2.CreateLogicalViewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateLogicalViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a logical view.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.bigtable.admin.v2.LogicalView>
+        getLogicalView(com.google.bigtable.admin.v2.GetLogicalViewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetLogicalViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about logical views in an instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.bigtable.admin.v2.ListLogicalViewsResponse>
+        listLogicalViews(com.google.bigtable.admin.v2.ListLogicalViewsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListLogicalViewsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a logical view within an instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateLogicalView(com.google.bigtable.admin.v2.UpdateLogicalViewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateLogicalViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a logical view from an instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteLogicalView(com.google.bigtable.admin.v2.DeleteLogicalViewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteLogicalViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a materialized view within an instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createMaterializedView(com.google.bigtable.admin.v2.CreateMaterializedViewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateMaterializedViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a materialized view.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.bigtable.admin.v2.MaterializedView>
+        getMaterializedView(com.google.bigtable.admin.v2.GetMaterializedViewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMaterializedViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about materialized views in an instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.bigtable.admin.v2.ListMaterializedViewsResponse>
+        listMaterializedViews(com.google.bigtable.admin.v2.ListMaterializedViewsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMaterializedViewsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a materialized view within an instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateMaterializedView(com.google.bigtable.admin.v2.UpdateMaterializedViewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateMaterializedViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a materialized view from an instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteMaterializedView(com.google.bigtable.admin.v2.DeleteMaterializedViewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteMaterializedViewMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_INSTANCE = 0;
@@ -2431,6 +3484,16 @@ public final class BigtableInstanceAdminGrpc {
   private static final int METHODID_SET_IAM_POLICY = 18;
   private static final int METHODID_TEST_IAM_PERMISSIONS = 19;
   private static final int METHODID_LIST_HOT_TABLETS = 20;
+  private static final int METHODID_CREATE_LOGICAL_VIEW = 21;
+  private static final int METHODID_GET_LOGICAL_VIEW = 22;
+  private static final int METHODID_LIST_LOGICAL_VIEWS = 23;
+  private static final int METHODID_UPDATE_LOGICAL_VIEW = 24;
+  private static final int METHODID_DELETE_LOGICAL_VIEW = 25;
+  private static final int METHODID_CREATE_MATERIALIZED_VIEW = 26;
+  private static final int METHODID_GET_MATERIALIZED_VIEW = 27;
+  private static final int METHODID_LIST_MATERIALIZED_VIEWS = 28;
+  private static final int METHODID_UPDATE_MATERIALIZED_VIEW = 29;
+  private static final int METHODID_DELETE_MATERIALIZED_VIEW = 30;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2562,6 +3625,61 @@ public final class BigtableInstanceAdminGrpc {
               (com.google.bigtable.admin.v2.ListHotTabletsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListHotTabletsResponse>)
                   responseObserver);
+          break;
+        case METHODID_CREATE_LOGICAL_VIEW:
+          serviceImpl.createLogicalView(
+              (com.google.bigtable.admin.v2.CreateLogicalViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_LOGICAL_VIEW:
+          serviceImpl.getLogicalView(
+              (com.google.bigtable.admin.v2.GetLogicalViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.LogicalView>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_LOGICAL_VIEWS:
+          serviceImpl.listLogicalViews(
+              (com.google.bigtable.admin.v2.ListLogicalViewsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListLogicalViewsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_LOGICAL_VIEW:
+          serviceImpl.updateLogicalView(
+              (com.google.bigtable.admin.v2.UpdateLogicalViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_LOGICAL_VIEW:
+          serviceImpl.deleteLogicalView(
+              (com.google.bigtable.admin.v2.DeleteLogicalViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_MATERIALIZED_VIEW:
+          serviceImpl.createMaterializedView(
+              (com.google.bigtable.admin.v2.CreateMaterializedViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_MATERIALIZED_VIEW:
+          serviceImpl.getMaterializedView(
+              (com.google.bigtable.admin.v2.GetMaterializedViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.MaterializedView>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_MATERIALIZED_VIEWS:
+          serviceImpl.listMaterializedViews(
+              (com.google.bigtable.admin.v2.ListMaterializedViewsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.bigtable.admin.v2.ListMaterializedViewsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_MATERIALIZED_VIEW:
+          serviceImpl.updateMaterializedView(
+              (com.google.bigtable.admin.v2.UpdateMaterializedViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_MATERIALIZED_VIEW:
+          serviceImpl.deleteMaterializedView(
+              (com.google.bigtable.admin.v2.DeleteMaterializedViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2710,6 +3828,69 @@ public final class BigtableInstanceAdminGrpc {
                     com.google.bigtable.admin.v2.ListHotTabletsRequest,
                     com.google.bigtable.admin.v2.ListHotTabletsResponse>(
                     service, METHODID_LIST_HOT_TABLETS)))
+        .addMethod(
+            getCreateLogicalViewMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.CreateLogicalViewRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_LOGICAL_VIEW)))
+        .addMethod(
+            getGetLogicalViewMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.GetLogicalViewRequest,
+                    com.google.bigtable.admin.v2.LogicalView>(service, METHODID_GET_LOGICAL_VIEW)))
+        .addMethod(
+            getListLogicalViewsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.ListLogicalViewsRequest,
+                    com.google.bigtable.admin.v2.ListLogicalViewsResponse>(
+                    service, METHODID_LIST_LOGICAL_VIEWS)))
+        .addMethod(
+            getUpdateLogicalViewMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.UpdateLogicalViewRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_LOGICAL_VIEW)))
+        .addMethod(
+            getDeleteLogicalViewMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.DeleteLogicalViewRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_LOGICAL_VIEW)))
+        .addMethod(
+            getCreateMaterializedViewMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.CreateMaterializedViewRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_MATERIALIZED_VIEW)))
+        .addMethod(
+            getGetMaterializedViewMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.GetMaterializedViewRequest,
+                    com.google.bigtable.admin.v2.MaterializedView>(
+                    service, METHODID_GET_MATERIALIZED_VIEW)))
+        .addMethod(
+            getListMaterializedViewsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.ListMaterializedViewsRequest,
+                    com.google.bigtable.admin.v2.ListMaterializedViewsResponse>(
+                    service, METHODID_LIST_MATERIALIZED_VIEWS)))
+        .addMethod(
+            getUpdateMaterializedViewMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.UpdateMaterializedViewRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_MATERIALIZED_VIEW)))
+        .addMethod(
+            getDeleteMaterializedViewMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.DeleteMaterializedViewRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_MATERIALIZED_VIEW)))
         .build();
   }
 
@@ -2782,6 +3963,16 @@ public final class BigtableInstanceAdminGrpc {
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())
                       .addMethod(getListHotTabletsMethod())
+                      .addMethod(getCreateLogicalViewMethod())
+                      .addMethod(getGetLogicalViewMethod())
+                      .addMethod(getListLogicalViewsMethod())
+                      .addMethod(getUpdateLogicalViewMethod())
+                      .addMethod(getDeleteLogicalViewMethod())
+                      .addMethod(getCreateMaterializedViewMethod())
+                      .addMethod(getGetMaterializedViewMethod())
+                      .addMethod(getListMaterializedViewsMethod())
+                      .addMethod(getUpdateMaterializedViewMethod())
+                      .addMethod(getDeleteMaterializedViewMethod())
                       .build();
         }
       }

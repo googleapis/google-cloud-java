@@ -63,24 +63,83 @@ public interface PartialResultSetOrBuilder
    *
    *
    * <pre>
+   * CRC32C checksum of concatenated `partial_rows` data for the current batch.
+   *
+   * When present, the buffered data from `partial_rows` forms a complete
+   * parseable message of the appropriate type.
+   *
+   * The client should mark the end of a parseable message and prepare to
+   * receive a new one starting from the next `PartialResultSet` message.
+   * Clients must verify the checksum of the serialized batch before yielding it
+   * to the caller.
+   *
+   * This does NOT mean the values can be yielded to the callers since a
+   * `resume_token` is required to safely do so.
+   *
+   * If `resume_token` is non-empty and any data has been received since the
+   * last one, this field is guaranteed to be non-empty. In other words, clients
+   * may assume that a batch will never cross a `resume_token` boundary.
+   * </pre>
+   *
+   * <code>optional uint32 batch_checksum = 6;</code>
+   *
+   * @return Whether the batchChecksum field is set.
+   */
+  boolean hasBatchChecksum();
+  /**
+   *
+   *
+   * <pre>
+   * CRC32C checksum of concatenated `partial_rows` data for the current batch.
+   *
+   * When present, the buffered data from `partial_rows` forms a complete
+   * parseable message of the appropriate type.
+   *
+   * The client should mark the end of a parseable message and prepare to
+   * receive a new one starting from the next `PartialResultSet` message.
+   * Clients must verify the checksum of the serialized batch before yielding it
+   * to the caller.
+   *
+   * This does NOT mean the values can be yielded to the callers since a
+   * `resume_token` is required to safely do so.
+   *
+   * If `resume_token` is non-empty and any data has been received since the
+   * last one, this field is guaranteed to be non-empty. In other words, clients
+   * may assume that a batch will never cross a `resume_token` boundary.
+   * </pre>
+   *
+   * <code>optional uint32 batch_checksum = 6;</code>
+   *
+   * @return The batchChecksum.
+   */
+  int getBatchChecksum();
+
+  /**
+   *
+   *
+   * <pre>
    * An opaque token sent by the server to allow query resumption and signal
-   * the client to accumulate `partial_rows` since the last non-empty
-   * `resume_token`. On resumption, the resumed query will return the remaining
-   * rows for this query.
+   * that the buffered values constructed from received `partial_rows` can be
+   * yielded to the caller. Clients can provide this token in a subsequent
+   * request to resume the result stream from the current point.
    *
-   * If there is a batch in progress, a non-empty `resume_token`
-   * means that that the batch of `partial_rows` will be complete after merging
-   * the `partial_rows` from this response. The client must only yield
-   * completed batches to the application, and must ensure that any future
-   * retries send the latest token to avoid returning duplicate data.
+   * When `resume_token` is non-empty, the buffered values received from
+   * `partial_rows` since the last non-empty `resume_token` can be yielded to
+   * the callers, provided that the client keeps the value of `resume_token` and
+   * uses it on subsequent retries.
    *
-   * The server may set 'resume_token' without a 'partial_rows'. If there is a
-   * batch in progress the client should yield it.
+   * A `resume_token` may be sent without information in `partial_rows` to
+   * checkpoint the progress of a sparse query. Any previous `partial_rows` data
+   * should still be yielded in this case, and the new `resume_token` should be
+   * saved for future retries as normal.
+   *
+   * A `resume_token` will only be sent on a boundary where there is either no
+   * ongoing result batch, or `batch_checksum` is also populated.
    *
    * The server will also send a sentinel `resume_token` when last batch of
    * `partial_rows` is sent. If the client retries the ExecuteQueryRequest with
    * the sentinel `resume_token`, the server will emit it again without any
-   * `partial_rows`, then return OK.
+   * data in `partial_rows`, then return OK.
    * </pre>
    *
    * <code>bytes resume_token = 5;</code>
@@ -93,14 +152,29 @@ public interface PartialResultSetOrBuilder
    *
    *
    * <pre>
-   * Estimated size of a new batch. The server will always set this when
-   * returning the first `partial_rows` of a batch, and will not set it at any
-   * other time.
+   * If `true`, any data buffered since the last non-empty `resume_token` must
+   * be discarded before the other parts of this message, if any, are handled.
+   * </pre>
    *
-   * The client can use this estimate to allocate an initial buffer for the
-   * batched results. This helps minimize the number of allocations required,
-   * though the buffer size may still need to be increased if the estimate is
-   * too low.
+   * <code>bool reset = 7;</code>
+   *
+   * @return The reset.
+   */
+  boolean getReset();
+
+  /**
+   *
+   *
+   * <pre>
+   * Estimated size of the buffer required to hold the next batch of results.
+   *
+   * This value will be sent with the first `partial_rows` of a batch. That is,
+   * on the first `partial_rows` received in a stream, on the first message
+   * after a `batch_checksum` message, and any time `reset` is true.
+   *
+   * The client can use this estimate to allocate a buffer for the next batch of
+   * results. This helps minimize the number of allocations required, though the
+   * buffer size may still need to be increased if the estimate is too low.
    * </pre>
    *
    * <code>int32 estimated_batch_size = 4;</code>

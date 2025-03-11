@@ -18,6 +18,8 @@ package com.google.cloud.bigtable.admin.v2;
 
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListHotTabletsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListLogicalViewsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMaterializedViewsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.InternalApi;
@@ -38,12 +40,20 @@ import com.google.bigtable.admin.v2.CreateClusterMetadata;
 import com.google.bigtable.admin.v2.CreateClusterRequest;
 import com.google.bigtable.admin.v2.CreateInstanceMetadata;
 import com.google.bigtable.admin.v2.CreateInstanceRequest;
+import com.google.bigtable.admin.v2.CreateLogicalViewMetadata;
+import com.google.bigtable.admin.v2.CreateLogicalViewRequest;
+import com.google.bigtable.admin.v2.CreateMaterializedViewMetadata;
+import com.google.bigtable.admin.v2.CreateMaterializedViewRequest;
 import com.google.bigtable.admin.v2.DeleteAppProfileRequest;
 import com.google.bigtable.admin.v2.DeleteClusterRequest;
 import com.google.bigtable.admin.v2.DeleteInstanceRequest;
+import com.google.bigtable.admin.v2.DeleteLogicalViewRequest;
+import com.google.bigtable.admin.v2.DeleteMaterializedViewRequest;
 import com.google.bigtable.admin.v2.GetAppProfileRequest;
 import com.google.bigtable.admin.v2.GetClusterRequest;
 import com.google.bigtable.admin.v2.GetInstanceRequest;
+import com.google.bigtable.admin.v2.GetLogicalViewRequest;
+import com.google.bigtable.admin.v2.GetMaterializedViewRequest;
 import com.google.bigtable.admin.v2.Instance;
 import com.google.bigtable.admin.v2.ListAppProfilesRequest;
 import com.google.bigtable.admin.v2.ListAppProfilesResponse;
@@ -53,6 +63,12 @@ import com.google.bigtable.admin.v2.ListHotTabletsRequest;
 import com.google.bigtable.admin.v2.ListHotTabletsResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
+import com.google.bigtable.admin.v2.ListLogicalViewsRequest;
+import com.google.bigtable.admin.v2.ListLogicalViewsResponse;
+import com.google.bigtable.admin.v2.ListMaterializedViewsRequest;
+import com.google.bigtable.admin.v2.ListMaterializedViewsResponse;
+import com.google.bigtable.admin.v2.LogicalView;
+import com.google.bigtable.admin.v2.MaterializedView;
 import com.google.bigtable.admin.v2.PartialUpdateClusterMetadata;
 import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
@@ -60,6 +76,10 @@ import com.google.bigtable.admin.v2.UpdateAppProfileMetadata;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
 import com.google.bigtable.admin.v2.UpdateClusterMetadata;
 import com.google.bigtable.admin.v2.UpdateInstanceMetadata;
+import com.google.bigtable.admin.v2.UpdateLogicalViewMetadata;
+import com.google.bigtable.admin.v2.UpdateLogicalViewRequest;
+import com.google.bigtable.admin.v2.UpdateMaterializedViewMetadata;
+import com.google.bigtable.admin.v2.UpdateMaterializedViewRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStubSettings;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -223,6 +243,95 @@ public class BaseBigtableInstanceAdminSettings
           ListHotTabletsRequest, ListHotTabletsResponse, ListHotTabletsPagedResponse>
       listHotTabletsSettings() {
     return ((BigtableInstanceAdminStubSettings) getStubSettings()).listHotTabletsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createLogicalView. */
+  public UnaryCallSettings<CreateLogicalViewRequest, Operation> createLogicalViewSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings()).createLogicalViewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createLogicalView. */
+  public OperationCallSettings<CreateLogicalViewRequest, LogicalView, CreateLogicalViewMetadata>
+      createLogicalViewOperationSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings())
+        .createLogicalViewOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLogicalView. */
+  public UnaryCallSettings<GetLogicalViewRequest, LogicalView> getLogicalViewSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings()).getLogicalViewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLogicalViews. */
+  public PagedCallSettings<
+          ListLogicalViewsRequest, ListLogicalViewsResponse, ListLogicalViewsPagedResponse>
+      listLogicalViewsSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings()).listLogicalViewsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateLogicalView. */
+  public UnaryCallSettings<UpdateLogicalViewRequest, Operation> updateLogicalViewSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings()).updateLogicalViewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateLogicalView. */
+  public OperationCallSettings<UpdateLogicalViewRequest, LogicalView, UpdateLogicalViewMetadata>
+      updateLogicalViewOperationSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings())
+        .updateLogicalViewOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteLogicalView. */
+  public UnaryCallSettings<DeleteLogicalViewRequest, Empty> deleteLogicalViewSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings()).deleteLogicalViewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMaterializedView. */
+  public UnaryCallSettings<CreateMaterializedViewRequest, Operation>
+      createMaterializedViewSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings()).createMaterializedViewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMaterializedView. */
+  public OperationCallSettings<
+          CreateMaterializedViewRequest, MaterializedView, CreateMaterializedViewMetadata>
+      createMaterializedViewOperationSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings())
+        .createMaterializedViewOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getMaterializedView. */
+  public UnaryCallSettings<GetMaterializedViewRequest, MaterializedView>
+      getMaterializedViewSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings()).getMaterializedViewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listMaterializedViews. */
+  public PagedCallSettings<
+          ListMaterializedViewsRequest,
+          ListMaterializedViewsResponse,
+          ListMaterializedViewsPagedResponse>
+      listMaterializedViewsSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings()).listMaterializedViewsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateMaterializedView. */
+  public UnaryCallSettings<UpdateMaterializedViewRequest, Operation>
+      updateMaterializedViewSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings()).updateMaterializedViewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateMaterializedView. */
+  public OperationCallSettings<
+          UpdateMaterializedViewRequest, MaterializedView, UpdateMaterializedViewMetadata>
+      updateMaterializedViewOperationSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings())
+        .updateMaterializedViewOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteMaterializedView. */
+  public UnaryCallSettings<DeleteMaterializedViewRequest, Empty> deleteMaterializedViewSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings()).deleteMaterializedViewSettings();
   }
 
   public static final BaseBigtableInstanceAdminSettings create(
@@ -470,6 +579,96 @@ public class BaseBigtableInstanceAdminSettings
             ListHotTabletsRequest, ListHotTabletsResponse, ListHotTabletsPagedResponse>
         listHotTabletsSettings() {
       return getStubSettingsBuilder().listHotTabletsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createLogicalView. */
+    public UnaryCallSettings.Builder<CreateLogicalViewRequest, Operation>
+        createLogicalViewSettings() {
+      return getStubSettingsBuilder().createLogicalViewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createLogicalView. */
+    public OperationCallSettings.Builder<
+            CreateLogicalViewRequest, LogicalView, CreateLogicalViewMetadata>
+        createLogicalViewOperationSettings() {
+      return getStubSettingsBuilder().createLogicalViewOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLogicalView. */
+    public UnaryCallSettings.Builder<GetLogicalViewRequest, LogicalView> getLogicalViewSettings() {
+      return getStubSettingsBuilder().getLogicalViewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLogicalViews. */
+    public PagedCallSettings.Builder<
+            ListLogicalViewsRequest, ListLogicalViewsResponse, ListLogicalViewsPagedResponse>
+        listLogicalViewsSettings() {
+      return getStubSettingsBuilder().listLogicalViewsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateLogicalView. */
+    public UnaryCallSettings.Builder<UpdateLogicalViewRequest, Operation>
+        updateLogicalViewSettings() {
+      return getStubSettingsBuilder().updateLogicalViewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateLogicalView. */
+    public OperationCallSettings.Builder<
+            UpdateLogicalViewRequest, LogicalView, UpdateLogicalViewMetadata>
+        updateLogicalViewOperationSettings() {
+      return getStubSettingsBuilder().updateLogicalViewOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteLogicalView. */
+    public UnaryCallSettings.Builder<DeleteLogicalViewRequest, Empty> deleteLogicalViewSettings() {
+      return getStubSettingsBuilder().deleteLogicalViewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMaterializedView. */
+    public UnaryCallSettings.Builder<CreateMaterializedViewRequest, Operation>
+        createMaterializedViewSettings() {
+      return getStubSettingsBuilder().createMaterializedViewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMaterializedView. */
+    public OperationCallSettings.Builder<
+            CreateMaterializedViewRequest, MaterializedView, CreateMaterializedViewMetadata>
+        createMaterializedViewOperationSettings() {
+      return getStubSettingsBuilder().createMaterializedViewOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMaterializedView. */
+    public UnaryCallSettings.Builder<GetMaterializedViewRequest, MaterializedView>
+        getMaterializedViewSettings() {
+      return getStubSettingsBuilder().getMaterializedViewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listMaterializedViews. */
+    public PagedCallSettings.Builder<
+            ListMaterializedViewsRequest,
+            ListMaterializedViewsResponse,
+            ListMaterializedViewsPagedResponse>
+        listMaterializedViewsSettings() {
+      return getStubSettingsBuilder().listMaterializedViewsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateMaterializedView. */
+    public UnaryCallSettings.Builder<UpdateMaterializedViewRequest, Operation>
+        updateMaterializedViewSettings() {
+      return getStubSettingsBuilder().updateMaterializedViewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateMaterializedView. */
+    public OperationCallSettings.Builder<
+            UpdateMaterializedViewRequest, MaterializedView, UpdateMaterializedViewMetadata>
+        updateMaterializedViewOperationSettings() {
+      return getStubSettingsBuilder().updateMaterializedViewOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMaterializedView. */
+    public UnaryCallSettings.Builder<DeleteMaterializedViewRequest, Empty>
+        deleteMaterializedViewSettings() {
+      return getStubSettingsBuilder().deleteMaterializedViewSettings();
     }
 
     @Override

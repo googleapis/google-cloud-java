@@ -37,12 +37,20 @@ import com.google.bigtable.admin.v2.CreateClusterMetadata;
 import com.google.bigtable.admin.v2.CreateClusterRequest;
 import com.google.bigtable.admin.v2.CreateInstanceMetadata;
 import com.google.bigtable.admin.v2.CreateInstanceRequest;
+import com.google.bigtable.admin.v2.CreateLogicalViewMetadata;
+import com.google.bigtable.admin.v2.CreateLogicalViewRequest;
+import com.google.bigtable.admin.v2.CreateMaterializedViewMetadata;
+import com.google.bigtable.admin.v2.CreateMaterializedViewRequest;
 import com.google.bigtable.admin.v2.DeleteAppProfileRequest;
 import com.google.bigtable.admin.v2.DeleteClusterRequest;
 import com.google.bigtable.admin.v2.DeleteInstanceRequest;
+import com.google.bigtable.admin.v2.DeleteLogicalViewRequest;
+import com.google.bigtable.admin.v2.DeleteMaterializedViewRequest;
 import com.google.bigtable.admin.v2.GetAppProfileRequest;
 import com.google.bigtable.admin.v2.GetClusterRequest;
 import com.google.bigtable.admin.v2.GetInstanceRequest;
+import com.google.bigtable.admin.v2.GetLogicalViewRequest;
+import com.google.bigtable.admin.v2.GetMaterializedViewRequest;
 import com.google.bigtable.admin.v2.HotTablet;
 import com.google.bigtable.admin.v2.Instance;
 import com.google.bigtable.admin.v2.InstanceName;
@@ -54,6 +62,14 @@ import com.google.bigtable.admin.v2.ListHotTabletsRequest;
 import com.google.bigtable.admin.v2.ListHotTabletsResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
+import com.google.bigtable.admin.v2.ListLogicalViewsRequest;
+import com.google.bigtable.admin.v2.ListLogicalViewsResponse;
+import com.google.bigtable.admin.v2.ListMaterializedViewsRequest;
+import com.google.bigtable.admin.v2.ListMaterializedViewsResponse;
+import com.google.bigtable.admin.v2.LogicalView;
+import com.google.bigtable.admin.v2.LogicalViewName;
+import com.google.bigtable.admin.v2.MaterializedView;
+import com.google.bigtable.admin.v2.MaterializedViewName;
 import com.google.bigtable.admin.v2.PartialUpdateClusterMetadata;
 import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
@@ -62,6 +78,10 @@ import com.google.bigtable.admin.v2.UpdateAppProfileMetadata;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
 import com.google.bigtable.admin.v2.UpdateClusterMetadata;
 import com.google.bigtable.admin.v2.UpdateInstanceMetadata;
+import com.google.bigtable.admin.v2.UpdateLogicalViewMetadata;
+import com.google.bigtable.admin.v2.UpdateLogicalViewRequest;
+import com.google.bigtable.admin.v2.UpdateMaterializedViewMetadata;
+import com.google.bigtable.admin.v2.UpdateMaterializedViewRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -3092,6 +3112,1473 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
     return stub.listHotTabletsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a logical view within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   LogicalView logicalView = LogicalView.newBuilder().build();
+   *   String logicalViewId = "logicalViewId-1408054263";
+   *   LogicalView response =
+   *       baseBigtableInstanceAdminClient
+   *           .createLogicalViewAsync(parent, logicalView, logicalViewId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent instance where this logical view will be created. Format:
+   *     `projects/{project}/instances/{instance}`.
+   * @param logicalView Required. The logical view to create.
+   * @param logicalViewId Required. The ID to use for the logical view, which will become the final
+   *     component of the logical view's resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LogicalView, CreateLogicalViewMetadata> createLogicalViewAsync(
+      InstanceName parent, LogicalView logicalView, String logicalViewId) {
+    CreateLogicalViewRequest request =
+        CreateLogicalViewRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setLogicalView(logicalView)
+            .setLogicalViewId(logicalViewId)
+            .build();
+    return createLogicalViewAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a logical view within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   String parent = InstanceName.of("[PROJECT]", "[INSTANCE]").toString();
+   *   LogicalView logicalView = LogicalView.newBuilder().build();
+   *   String logicalViewId = "logicalViewId-1408054263";
+   *   LogicalView response =
+   *       baseBigtableInstanceAdminClient
+   *           .createLogicalViewAsync(parent, logicalView, logicalViewId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent instance where this logical view will be created. Format:
+   *     `projects/{project}/instances/{instance}`.
+   * @param logicalView Required. The logical view to create.
+   * @param logicalViewId Required. The ID to use for the logical view, which will become the final
+   *     component of the logical view's resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LogicalView, CreateLogicalViewMetadata> createLogicalViewAsync(
+      String parent, LogicalView logicalView, String logicalViewId) {
+    CreateLogicalViewRequest request =
+        CreateLogicalViewRequest.newBuilder()
+            .setParent(parent)
+            .setLogicalView(logicalView)
+            .setLogicalViewId(logicalViewId)
+            .build();
+    return createLogicalViewAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a logical view within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   CreateLogicalViewRequest request =
+   *       CreateLogicalViewRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+   *           .setLogicalViewId("logicalViewId-1408054263")
+   *           .setLogicalView(LogicalView.newBuilder().build())
+   *           .build();
+   *   LogicalView response = baseBigtableInstanceAdminClient.createLogicalViewAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LogicalView, CreateLogicalViewMetadata> createLogicalViewAsync(
+      CreateLogicalViewRequest request) {
+    return createLogicalViewOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a logical view within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   CreateLogicalViewRequest request =
+   *       CreateLogicalViewRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+   *           .setLogicalViewId("logicalViewId-1408054263")
+   *           .setLogicalView(LogicalView.newBuilder().build())
+   *           .build();
+   *   OperationFuture<LogicalView, CreateLogicalViewMetadata> future =
+   *       baseBigtableInstanceAdminClient.createLogicalViewOperationCallable().futureCall(request);
+   *   // Do something.
+   *   LogicalView response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateLogicalViewRequest, LogicalView, CreateLogicalViewMetadata>
+      createLogicalViewOperationCallable() {
+    return stub.createLogicalViewOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a logical view within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   CreateLogicalViewRequest request =
+   *       CreateLogicalViewRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+   *           .setLogicalViewId("logicalViewId-1408054263")
+   *           .setLogicalView(LogicalView.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       baseBigtableInstanceAdminClient.createLogicalViewCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateLogicalViewRequest, Operation> createLogicalViewCallable() {
+    return stub.createLogicalViewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a logical view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   LogicalViewName name = LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]");
+   *   LogicalView response = baseBigtableInstanceAdminClient.getLogicalView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the requested logical view. Values are of the form
+   *     `projects/{project}/instances/{instance}/logicalViews/{logical_view}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogicalView getLogicalView(LogicalViewName name) {
+    GetLogicalViewRequest request =
+        GetLogicalViewRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getLogicalView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a logical view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   String name = LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]").toString();
+   *   LogicalView response = baseBigtableInstanceAdminClient.getLogicalView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the requested logical view. Values are of the form
+   *     `projects/{project}/instances/{instance}/logicalViews/{logical_view}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogicalView getLogicalView(String name) {
+    GetLogicalViewRequest request = GetLogicalViewRequest.newBuilder().setName(name).build();
+    return getLogicalView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a logical view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   GetLogicalViewRequest request =
+   *       GetLogicalViewRequest.newBuilder()
+   *           .setName(LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]").toString())
+   *           .build();
+   *   LogicalView response = baseBigtableInstanceAdminClient.getLogicalView(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LogicalView getLogicalView(GetLogicalViewRequest request) {
+    return getLogicalViewCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a logical view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   GetLogicalViewRequest request =
+   *       GetLogicalViewRequest.newBuilder()
+   *           .setName(LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]").toString())
+   *           .build();
+   *   ApiFuture<LogicalView> future =
+   *       baseBigtableInstanceAdminClient.getLogicalViewCallable().futureCall(request);
+   *   // Do something.
+   *   LogicalView response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLogicalViewRequest, LogicalView> getLogicalViewCallable() {
+    return stub.getLogicalViewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about logical views in an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   for (LogicalView element :
+   *       baseBigtableInstanceAdminClient.listLogicalViews(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The unique name of the instance for which the list of logical views is
+   *     requested. Values are of the form `projects/{project}/instances/{instance}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLogicalViewsPagedResponse listLogicalViews(InstanceName parent) {
+    ListLogicalViewsRequest request =
+        ListLogicalViewsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listLogicalViews(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about logical views in an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   String parent = InstanceName.of("[PROJECT]", "[INSTANCE]").toString();
+   *   for (LogicalView element :
+   *       baseBigtableInstanceAdminClient.listLogicalViews(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The unique name of the instance for which the list of logical views is
+   *     requested. Values are of the form `projects/{project}/instances/{instance}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLogicalViewsPagedResponse listLogicalViews(String parent) {
+    ListLogicalViewsRequest request =
+        ListLogicalViewsRequest.newBuilder().setParent(parent).build();
+    return listLogicalViews(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about logical views in an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   ListLogicalViewsRequest request =
+   *       ListLogicalViewsRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (LogicalView element :
+   *       baseBigtableInstanceAdminClient.listLogicalViews(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLogicalViewsPagedResponse listLogicalViews(ListLogicalViewsRequest request) {
+    return listLogicalViewsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about logical views in an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   ListLogicalViewsRequest request =
+   *       ListLogicalViewsRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<LogicalView> future =
+   *       baseBigtableInstanceAdminClient.listLogicalViewsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (LogicalView element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLogicalViewsRequest, ListLogicalViewsPagedResponse>
+      listLogicalViewsPagedCallable() {
+    return stub.listLogicalViewsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about logical views in an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   ListLogicalViewsRequest request =
+   *       ListLogicalViewsRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListLogicalViewsResponse response =
+   *         baseBigtableInstanceAdminClient.listLogicalViewsCallable().call(request);
+   *     for (LogicalView element : response.getLogicalViewsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLogicalViewsRequest, ListLogicalViewsResponse>
+      listLogicalViewsCallable() {
+    return stub.listLogicalViewsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a logical view within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   LogicalView logicalView = LogicalView.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   LogicalView response =
+   *       baseBigtableInstanceAdminClient.updateLogicalViewAsync(logicalView, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param logicalView Required. The logical view to update.
+   *     <p>The logical view's `name` field is used to identify the view to update. Format:
+   *     `projects/{project}/instances/{instance}/logicalViews/{logical_view}`.
+   * @param updateMask Optional. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LogicalView, UpdateLogicalViewMetadata> updateLogicalViewAsync(
+      LogicalView logicalView, FieldMask updateMask) {
+    UpdateLogicalViewRequest request =
+        UpdateLogicalViewRequest.newBuilder()
+            .setLogicalView(logicalView)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateLogicalViewAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a logical view within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   UpdateLogicalViewRequest request =
+   *       UpdateLogicalViewRequest.newBuilder()
+   *           .setLogicalView(LogicalView.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   LogicalView response = baseBigtableInstanceAdminClient.updateLogicalViewAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LogicalView, UpdateLogicalViewMetadata> updateLogicalViewAsync(
+      UpdateLogicalViewRequest request) {
+    return updateLogicalViewOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a logical view within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   UpdateLogicalViewRequest request =
+   *       UpdateLogicalViewRequest.newBuilder()
+   *           .setLogicalView(LogicalView.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<LogicalView, UpdateLogicalViewMetadata> future =
+   *       baseBigtableInstanceAdminClient.updateLogicalViewOperationCallable().futureCall(request);
+   *   // Do something.
+   *   LogicalView response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateLogicalViewRequest, LogicalView, UpdateLogicalViewMetadata>
+      updateLogicalViewOperationCallable() {
+    return stub.updateLogicalViewOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a logical view within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   UpdateLogicalViewRequest request =
+   *       UpdateLogicalViewRequest.newBuilder()
+   *           .setLogicalView(LogicalView.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       baseBigtableInstanceAdminClient.updateLogicalViewCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateLogicalViewRequest, Operation> updateLogicalViewCallable() {
+    return stub.updateLogicalViewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a logical view from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   LogicalViewName name = LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]");
+   *   baseBigtableInstanceAdminClient.deleteLogicalView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the logical view to be deleted. Format:
+   *     `projects/{project}/instances/{instance}/logicalViews/{logical_view}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteLogicalView(LogicalViewName name) {
+    DeleteLogicalViewRequest request =
+        DeleteLogicalViewRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteLogicalView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a logical view from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   String name = LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]").toString();
+   *   baseBigtableInstanceAdminClient.deleteLogicalView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the logical view to be deleted. Format:
+   *     `projects/{project}/instances/{instance}/logicalViews/{logical_view}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteLogicalView(String name) {
+    DeleteLogicalViewRequest request = DeleteLogicalViewRequest.newBuilder().setName(name).build();
+    deleteLogicalView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a logical view from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   DeleteLogicalViewRequest request =
+   *       DeleteLogicalViewRequest.newBuilder()
+   *           .setName(LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   baseBigtableInstanceAdminClient.deleteLogicalView(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteLogicalView(DeleteLogicalViewRequest request) {
+    deleteLogicalViewCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a logical view from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   DeleteLogicalViewRequest request =
+   *       DeleteLogicalViewRequest.newBuilder()
+   *           .setName(LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       baseBigtableInstanceAdminClient.deleteLogicalViewCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteLogicalViewRequest, Empty> deleteLogicalViewCallable() {
+    return stub.deleteLogicalViewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a materialized view within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   MaterializedView materializedView = MaterializedView.newBuilder().build();
+   *   String materializedViewId = "materializedViewId682270903";
+   *   MaterializedView response =
+   *       baseBigtableInstanceAdminClient
+   *           .createMaterializedViewAsync(parent, materializedView, materializedViewId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent instance where this materialized view will be created.
+   *     Format: `projects/{project}/instances/{instance}`.
+   * @param materializedView Required. The materialized view to create.
+   * @param materializedViewId Required. The ID to use for the materialized view, which will become
+   *     the final component of the materialized view's resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MaterializedView, CreateMaterializedViewMetadata>
+      createMaterializedViewAsync(
+          InstanceName parent, MaterializedView materializedView, String materializedViewId) {
+    CreateMaterializedViewRequest request =
+        CreateMaterializedViewRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setMaterializedView(materializedView)
+            .setMaterializedViewId(materializedViewId)
+            .build();
+    return createMaterializedViewAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a materialized view within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   String parent = InstanceName.of("[PROJECT]", "[INSTANCE]").toString();
+   *   MaterializedView materializedView = MaterializedView.newBuilder().build();
+   *   String materializedViewId = "materializedViewId682270903";
+   *   MaterializedView response =
+   *       baseBigtableInstanceAdminClient
+   *           .createMaterializedViewAsync(parent, materializedView, materializedViewId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent instance where this materialized view will be created.
+   *     Format: `projects/{project}/instances/{instance}`.
+   * @param materializedView Required. The materialized view to create.
+   * @param materializedViewId Required. The ID to use for the materialized view, which will become
+   *     the final component of the materialized view's resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MaterializedView, CreateMaterializedViewMetadata>
+      createMaterializedViewAsync(
+          String parent, MaterializedView materializedView, String materializedViewId) {
+    CreateMaterializedViewRequest request =
+        CreateMaterializedViewRequest.newBuilder()
+            .setParent(parent)
+            .setMaterializedView(materializedView)
+            .setMaterializedViewId(materializedViewId)
+            .build();
+    return createMaterializedViewAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a materialized view within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   CreateMaterializedViewRequest request =
+   *       CreateMaterializedViewRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+   *           .setMaterializedViewId("materializedViewId682270903")
+   *           .setMaterializedView(MaterializedView.newBuilder().build())
+   *           .build();
+   *   MaterializedView response =
+   *       baseBigtableInstanceAdminClient.createMaterializedViewAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MaterializedView, CreateMaterializedViewMetadata>
+      createMaterializedViewAsync(CreateMaterializedViewRequest request) {
+    return createMaterializedViewOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a materialized view within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   CreateMaterializedViewRequest request =
+   *       CreateMaterializedViewRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+   *           .setMaterializedViewId("materializedViewId682270903")
+   *           .setMaterializedView(MaterializedView.newBuilder().build())
+   *           .build();
+   *   OperationFuture<MaterializedView, CreateMaterializedViewMetadata> future =
+   *       baseBigtableInstanceAdminClient
+   *           .createMaterializedViewOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   MaterializedView response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateMaterializedViewRequest, MaterializedView, CreateMaterializedViewMetadata>
+      createMaterializedViewOperationCallable() {
+    return stub.createMaterializedViewOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a materialized view within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   CreateMaterializedViewRequest request =
+   *       CreateMaterializedViewRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+   *           .setMaterializedViewId("materializedViewId682270903")
+   *           .setMaterializedView(MaterializedView.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       baseBigtableInstanceAdminClient.createMaterializedViewCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateMaterializedViewRequest, Operation>
+      createMaterializedViewCallable() {
+    return stub.createMaterializedViewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a materialized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   MaterializedViewName name =
+   *       MaterializedViewName.of("[PROJECT]", "[INSTANCE]", "[MATERIALIZED_VIEW]");
+   *   MaterializedView response = baseBigtableInstanceAdminClient.getMaterializedView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the requested materialized view. Values are of the
+   *     form `projects/{project}/instances/{instance}/materializedViews/{materialized_view}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MaterializedView getMaterializedView(MaterializedViewName name) {
+    GetMaterializedViewRequest request =
+        GetMaterializedViewRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getMaterializedView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a materialized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   String name =
+   *       MaterializedViewName.of("[PROJECT]", "[INSTANCE]", "[MATERIALIZED_VIEW]").toString();
+   *   MaterializedView response = baseBigtableInstanceAdminClient.getMaterializedView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the requested materialized view. Values are of the
+   *     form `projects/{project}/instances/{instance}/materializedViews/{materialized_view}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MaterializedView getMaterializedView(String name) {
+    GetMaterializedViewRequest request =
+        GetMaterializedViewRequest.newBuilder().setName(name).build();
+    return getMaterializedView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a materialized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   GetMaterializedViewRequest request =
+   *       GetMaterializedViewRequest.newBuilder()
+   *           .setName(
+   *               MaterializedViewName.of("[PROJECT]", "[INSTANCE]", "[MATERIALIZED_VIEW]")
+   *                   .toString())
+   *           .build();
+   *   MaterializedView response = baseBigtableInstanceAdminClient.getMaterializedView(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MaterializedView getMaterializedView(GetMaterializedViewRequest request) {
+    return getMaterializedViewCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a materialized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   GetMaterializedViewRequest request =
+   *       GetMaterializedViewRequest.newBuilder()
+   *           .setName(
+   *               MaterializedViewName.of("[PROJECT]", "[INSTANCE]", "[MATERIALIZED_VIEW]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<MaterializedView> future =
+   *       baseBigtableInstanceAdminClient.getMaterializedViewCallable().futureCall(request);
+   *   // Do something.
+   *   MaterializedView response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetMaterializedViewRequest, MaterializedView>
+      getMaterializedViewCallable() {
+    return stub.getMaterializedViewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about materialized views in an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   *   for (MaterializedView element :
+   *       baseBigtableInstanceAdminClient.listMaterializedViews(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The unique name of the instance for which the list of materialized
+   *     views is requested. Values are of the form `projects/{project}/instances/{instance}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMaterializedViewsPagedResponse listMaterializedViews(InstanceName parent) {
+    ListMaterializedViewsRequest request =
+        ListMaterializedViewsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listMaterializedViews(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about materialized views in an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   String parent = InstanceName.of("[PROJECT]", "[INSTANCE]").toString();
+   *   for (MaterializedView element :
+   *       baseBigtableInstanceAdminClient.listMaterializedViews(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The unique name of the instance for which the list of materialized
+   *     views is requested. Values are of the form `projects/{project}/instances/{instance}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMaterializedViewsPagedResponse listMaterializedViews(String parent) {
+    ListMaterializedViewsRequest request =
+        ListMaterializedViewsRequest.newBuilder().setParent(parent).build();
+    return listMaterializedViews(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about materialized views in an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   ListMaterializedViewsRequest request =
+   *       ListMaterializedViewsRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (MaterializedView element :
+   *       baseBigtableInstanceAdminClient.listMaterializedViews(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMaterializedViewsPagedResponse listMaterializedViews(
+      ListMaterializedViewsRequest request) {
+    return listMaterializedViewsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about materialized views in an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   ListMaterializedViewsRequest request =
+   *       ListMaterializedViewsRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<MaterializedView> future =
+   *       baseBigtableInstanceAdminClient.listMaterializedViewsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (MaterializedView element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMaterializedViewsRequest, ListMaterializedViewsPagedResponse>
+      listMaterializedViewsPagedCallable() {
+    return stub.listMaterializedViewsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about materialized views in an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   ListMaterializedViewsRequest request =
+   *       ListMaterializedViewsRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[INSTANCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListMaterializedViewsResponse response =
+   *         baseBigtableInstanceAdminClient.listMaterializedViewsCallable().call(request);
+   *     for (MaterializedView element : response.getMaterializedViewsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMaterializedViewsRequest, ListMaterializedViewsResponse>
+      listMaterializedViewsCallable() {
+    return stub.listMaterializedViewsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a materialized view within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   MaterializedView materializedView = MaterializedView.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   MaterializedView response =
+   *       baseBigtableInstanceAdminClient
+   *           .updateMaterializedViewAsync(materializedView, updateMask)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param materializedView Required. The materialized view to update.
+   *     <p>The materialized view's `name` field is used to identify the view to update. Format:
+   *     `projects/{project}/instances/{instance}/materializedViews/{materialized_view}`.
+   * @param updateMask Optional. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MaterializedView, UpdateMaterializedViewMetadata>
+      updateMaterializedViewAsync(MaterializedView materializedView, FieldMask updateMask) {
+    UpdateMaterializedViewRequest request =
+        UpdateMaterializedViewRequest.newBuilder()
+            .setMaterializedView(materializedView)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateMaterializedViewAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a materialized view within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   UpdateMaterializedViewRequest request =
+   *       UpdateMaterializedViewRequest.newBuilder()
+   *           .setMaterializedView(MaterializedView.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   MaterializedView response =
+   *       baseBigtableInstanceAdminClient.updateMaterializedViewAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MaterializedView, UpdateMaterializedViewMetadata>
+      updateMaterializedViewAsync(UpdateMaterializedViewRequest request) {
+    return updateMaterializedViewOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a materialized view within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   UpdateMaterializedViewRequest request =
+   *       UpdateMaterializedViewRequest.newBuilder()
+   *           .setMaterializedView(MaterializedView.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<MaterializedView, UpdateMaterializedViewMetadata> future =
+   *       baseBigtableInstanceAdminClient
+   *           .updateMaterializedViewOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   MaterializedView response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateMaterializedViewRequest, MaterializedView, UpdateMaterializedViewMetadata>
+      updateMaterializedViewOperationCallable() {
+    return stub.updateMaterializedViewOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a materialized view within an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   UpdateMaterializedViewRequest request =
+   *       UpdateMaterializedViewRequest.newBuilder()
+   *           .setMaterializedView(MaterializedView.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       baseBigtableInstanceAdminClient.updateMaterializedViewCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateMaterializedViewRequest, Operation>
+      updateMaterializedViewCallable() {
+    return stub.updateMaterializedViewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a materialized view from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   MaterializedViewName name =
+   *       MaterializedViewName.of("[PROJECT]", "[INSTANCE]", "[MATERIALIZED_VIEW]");
+   *   baseBigtableInstanceAdminClient.deleteMaterializedView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the materialized view to be deleted. Format:
+   *     `projects/{project}/instances/{instance}/materializedViews/{materialized_view}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMaterializedView(MaterializedViewName name) {
+    DeleteMaterializedViewRequest request =
+        DeleteMaterializedViewRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteMaterializedView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a materialized view from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   String name =
+   *       MaterializedViewName.of("[PROJECT]", "[INSTANCE]", "[MATERIALIZED_VIEW]").toString();
+   *   baseBigtableInstanceAdminClient.deleteMaterializedView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the materialized view to be deleted. Format:
+   *     `projects/{project}/instances/{instance}/materializedViews/{materialized_view}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMaterializedView(String name) {
+    DeleteMaterializedViewRequest request =
+        DeleteMaterializedViewRequest.newBuilder().setName(name).build();
+    deleteMaterializedView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a materialized view from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   DeleteMaterializedViewRequest request =
+   *       DeleteMaterializedViewRequest.newBuilder()
+   *           .setName(
+   *               MaterializedViewName.of("[PROJECT]", "[INSTANCE]", "[MATERIALIZED_VIEW]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   baseBigtableInstanceAdminClient.deleteMaterializedView(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMaterializedView(DeleteMaterializedViewRequest request) {
+    deleteMaterializedViewCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a materialized view from an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   DeleteMaterializedViewRequest request =
+   *       DeleteMaterializedViewRequest.newBuilder()
+   *           .setName(
+   *               MaterializedViewName.of("[PROJECT]", "[INSTANCE]", "[MATERIALIZED_VIEW]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       baseBigtableInstanceAdminClient.deleteMaterializedViewCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteMaterializedViewRequest, Empty>
+      deleteMaterializedViewCallable() {
+    return stub.deleteMaterializedViewCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -3272,6 +4759,167 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
     protected ListHotTabletsFixedSizeCollection createCollection(
         List<ListHotTabletsPage> pages, int collectionSize) {
       return new ListHotTabletsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLogicalViewsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLogicalViewsRequest,
+          ListLogicalViewsResponse,
+          LogicalView,
+          ListLogicalViewsPage,
+          ListLogicalViewsFixedSizeCollection> {
+
+    public static ApiFuture<ListLogicalViewsPagedResponse> createAsync(
+        PageContext<ListLogicalViewsRequest, ListLogicalViewsResponse, LogicalView> context,
+        ApiFuture<ListLogicalViewsResponse> futureResponse) {
+      ApiFuture<ListLogicalViewsPage> futurePage =
+          ListLogicalViewsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLogicalViewsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLogicalViewsPagedResponse(ListLogicalViewsPage page) {
+      super(page, ListLogicalViewsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLogicalViewsPage
+      extends AbstractPage<
+          ListLogicalViewsRequest, ListLogicalViewsResponse, LogicalView, ListLogicalViewsPage> {
+
+    private ListLogicalViewsPage(
+        PageContext<ListLogicalViewsRequest, ListLogicalViewsResponse, LogicalView> context,
+        ListLogicalViewsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLogicalViewsPage createEmptyPage() {
+      return new ListLogicalViewsPage(null, null);
+    }
+
+    @Override
+    protected ListLogicalViewsPage createPage(
+        PageContext<ListLogicalViewsRequest, ListLogicalViewsResponse, LogicalView> context,
+        ListLogicalViewsResponse response) {
+      return new ListLogicalViewsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLogicalViewsPage> createPageAsync(
+        PageContext<ListLogicalViewsRequest, ListLogicalViewsResponse, LogicalView> context,
+        ApiFuture<ListLogicalViewsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLogicalViewsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLogicalViewsRequest,
+          ListLogicalViewsResponse,
+          LogicalView,
+          ListLogicalViewsPage,
+          ListLogicalViewsFixedSizeCollection> {
+
+    private ListLogicalViewsFixedSizeCollection(
+        List<ListLogicalViewsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLogicalViewsFixedSizeCollection createEmptyCollection() {
+      return new ListLogicalViewsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLogicalViewsFixedSizeCollection createCollection(
+        List<ListLogicalViewsPage> pages, int collectionSize) {
+      return new ListLogicalViewsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListMaterializedViewsPagedResponse
+      extends AbstractPagedListResponse<
+          ListMaterializedViewsRequest,
+          ListMaterializedViewsResponse,
+          MaterializedView,
+          ListMaterializedViewsPage,
+          ListMaterializedViewsFixedSizeCollection> {
+
+    public static ApiFuture<ListMaterializedViewsPagedResponse> createAsync(
+        PageContext<ListMaterializedViewsRequest, ListMaterializedViewsResponse, MaterializedView>
+            context,
+        ApiFuture<ListMaterializedViewsResponse> futureResponse) {
+      ApiFuture<ListMaterializedViewsPage> futurePage =
+          ListMaterializedViewsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListMaterializedViewsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListMaterializedViewsPagedResponse(ListMaterializedViewsPage page) {
+      super(page, ListMaterializedViewsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListMaterializedViewsPage
+      extends AbstractPage<
+          ListMaterializedViewsRequest,
+          ListMaterializedViewsResponse,
+          MaterializedView,
+          ListMaterializedViewsPage> {
+
+    private ListMaterializedViewsPage(
+        PageContext<ListMaterializedViewsRequest, ListMaterializedViewsResponse, MaterializedView>
+            context,
+        ListMaterializedViewsResponse response) {
+      super(context, response);
+    }
+
+    private static ListMaterializedViewsPage createEmptyPage() {
+      return new ListMaterializedViewsPage(null, null);
+    }
+
+    @Override
+    protected ListMaterializedViewsPage createPage(
+        PageContext<ListMaterializedViewsRequest, ListMaterializedViewsResponse, MaterializedView>
+            context,
+        ListMaterializedViewsResponse response) {
+      return new ListMaterializedViewsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListMaterializedViewsPage> createPageAsync(
+        PageContext<ListMaterializedViewsRequest, ListMaterializedViewsResponse, MaterializedView>
+            context,
+        ApiFuture<ListMaterializedViewsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListMaterializedViewsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListMaterializedViewsRequest,
+          ListMaterializedViewsResponse,
+          MaterializedView,
+          ListMaterializedViewsPage,
+          ListMaterializedViewsFixedSizeCollection> {
+
+    private ListMaterializedViewsFixedSizeCollection(
+        List<ListMaterializedViewsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListMaterializedViewsFixedSizeCollection createEmptyCollection() {
+      return new ListMaterializedViewsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListMaterializedViewsFixedSizeCollection createCollection(
+        List<ListMaterializedViewsPage> pages, int collectionSize) {
+      return new ListMaterializedViewsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

@@ -89,25 +89,58 @@ public interface ExecuteQueryRequestOrBuilder
    *
    * <pre>
    * Required. The query string.
+   *
+   * Exactly one of `query` and `prepared_query` is required. Setting both
+   * or neither is an `INVALID_ARGUMENT`.
    * </pre>
    *
-   * <code>string query = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string query = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
+   * @deprecated google.bigtable.v2.ExecuteQueryRequest.query is deprecated. See
+   *     google/bigtable/v2/bigtable.proto;l=1090
    * @return The query.
    */
+  @java.lang.Deprecated
   java.lang.String getQuery();
   /**
    *
    *
    * <pre>
    * Required. The query string.
+   *
+   * Exactly one of `query` and `prepared_query` is required. Setting both
+   * or neither is an `INVALID_ARGUMENT`.
    * </pre>
    *
-   * <code>string query = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string query = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
+   * @deprecated google.bigtable.v2.ExecuteQueryRequest.query is deprecated. See
+   *     google/bigtable/v2/bigtable.proto;l=1090
    * @return The bytes for query.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getQueryBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * A prepared query that was returned from `PrepareQueryResponse`.
+   *
+   * Exactly one of `query` and `prepared_query` is required. Setting both
+   * or neither is an `INVALID_ARGUMENT`.
+   *
+   * Setting this field also places restrictions on several other fields:
+   * - `data_format` must be empty.
+   * - `validate_only` must be false.
+   * - `params` must match the `param_types` set in the `PrepareQueryRequest`.
+   * </pre>
+   *
+   * <code>bytes prepared_query = 9;</code>
+   *
+   * @return The preparedQuery.
+   */
+  com.google.protobuf.ByteString getPreparedQuery();
 
   /**
    *
@@ -117,10 +150,13 @@ public interface ExecuteQueryRequestOrBuilder
    * messages.
    * </pre>
    *
-   * <code>.google.bigtable.v2.ProtoFormat proto_format = 4;</code>
+   * <code>.google.bigtable.v2.ProtoFormat proto_format = 4 [deprecated = true];</code>
    *
+   * @deprecated google.bigtable.v2.ExecuteQueryRequest.proto_format is deprecated. See
+   *     google/bigtable/v2/bigtable.proto;l=1111
    * @return Whether the protoFormat field is set.
    */
+  @java.lang.Deprecated
   boolean hasProtoFormat();
   /**
    *
@@ -130,10 +166,13 @@ public interface ExecuteQueryRequestOrBuilder
    * messages.
    * </pre>
    *
-   * <code>.google.bigtable.v2.ProtoFormat proto_format = 4;</code>
+   * <code>.google.bigtable.v2.ProtoFormat proto_format = 4 [deprecated = true];</code>
    *
+   * @deprecated google.bigtable.v2.ExecuteQueryRequest.proto_format is deprecated. See
+   *     google/bigtable/v2/bigtable.proto;l=1111
    * @return The protoFormat.
    */
+  @java.lang.Deprecated
   com.google.bigtable.v2.ProtoFormat getProtoFormat();
   /**
    *
@@ -143,8 +182,9 @@ public interface ExecuteQueryRequestOrBuilder
    * messages.
    * </pre>
    *
-   * <code>.google.bigtable.v2.ProtoFormat proto_format = 4;</code>
+   * <code>.google.bigtable.v2.ProtoFormat proto_format = 4 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.bigtable.v2.ProtoFormatOrBuilder getProtoFormatOrBuilder();
 
   /**
@@ -178,17 +218,21 @@ public interface ExecuteQueryRequestOrBuilder
    *
    * For example, if
    * `params["firstName"] = bytes_value: "foo" type {bytes_type {}}`
-   *  then `&#64;firstName` will be replaced with googlesql bytes value "foo" in the
-   *  query string during query evaluation.
+   * then `&#64;firstName` will be replaced with googlesql bytes value "foo" in the
+   * query string during query evaluation.
    *
-   * In case of Value.kind is not set, it will be set to corresponding null
-   * value in googlesql.
-   *  `params["firstName"] =  type {string_type {}}`
-   *  then `&#64;firstName` will be replaced with googlesql null string.
+   * If `Value.kind` is not set, the value is treated as a NULL value of the
+   * given type. For example, if
+   * `params["firstName"] = type {string_type {}}`
+   * then `&#64;firstName` will be replaced with googlesql null string.
    *
-   * Value.type should always be set and no inference of type will be made from
-   * Value.kind. If Value.type is not set, we will return INVALID_ARGUMENT
-   * error.
+   * If `query` is set, any empty `Value.type` in the map will be rejected with
+   * `INVALID_ARGUMENT`.
+   *
+   * If `prepared_query` is set, any empty `Value.type` in the map will be
+   * inferred from the `param_types` in the `PrepareQueryRequest`. Any non-empty
+   * `Value.type` must match the corresponding `param_types` entry, or be
+   * rejected with `INVALID_ARGUMENT`.
    * </pre>
    *
    * <code>
@@ -208,17 +252,21 @@ public interface ExecuteQueryRequestOrBuilder
    *
    * For example, if
    * `params["firstName"] = bytes_value: "foo" type {bytes_type {}}`
-   *  then `&#64;firstName` will be replaced with googlesql bytes value "foo" in the
-   *  query string during query evaluation.
+   * then `&#64;firstName` will be replaced with googlesql bytes value "foo" in the
+   * query string during query evaluation.
    *
-   * In case of Value.kind is not set, it will be set to corresponding null
-   * value in googlesql.
-   *  `params["firstName"] =  type {string_type {}}`
-   *  then `&#64;firstName` will be replaced with googlesql null string.
+   * If `Value.kind` is not set, the value is treated as a NULL value of the
+   * given type. For example, if
+   * `params["firstName"] = type {string_type {}}`
+   * then `&#64;firstName` will be replaced with googlesql null string.
    *
-   * Value.type should always be set and no inference of type will be made from
-   * Value.kind. If Value.type is not set, we will return INVALID_ARGUMENT
-   * error.
+   * If `query` is set, any empty `Value.type` in the map will be rejected with
+   * `INVALID_ARGUMENT`.
+   *
+   * If `prepared_query` is set, any empty `Value.type` in the map will be
+   * inferred from the `param_types` in the `PrepareQueryRequest`. Any non-empty
+   * `Value.type` must match the corresponding `param_types` entry, or be
+   * rejected with `INVALID_ARGUMENT`.
    * </pre>
    *
    * <code>
@@ -241,17 +289,21 @@ public interface ExecuteQueryRequestOrBuilder
    *
    * For example, if
    * `params["firstName"] = bytes_value: "foo" type {bytes_type {}}`
-   *  then `&#64;firstName` will be replaced with googlesql bytes value "foo" in the
-   *  query string during query evaluation.
+   * then `&#64;firstName` will be replaced with googlesql bytes value "foo" in the
+   * query string during query evaluation.
    *
-   * In case of Value.kind is not set, it will be set to corresponding null
-   * value in googlesql.
-   *  `params["firstName"] =  type {string_type {}}`
-   *  then `&#64;firstName` will be replaced with googlesql null string.
+   * If `Value.kind` is not set, the value is treated as a NULL value of the
+   * given type. For example, if
+   * `params["firstName"] = type {string_type {}}`
+   * then `&#64;firstName` will be replaced with googlesql null string.
    *
-   * Value.type should always be set and no inference of type will be made from
-   * Value.kind. If Value.type is not set, we will return INVALID_ARGUMENT
-   * error.
+   * If `query` is set, any empty `Value.type` in the map will be rejected with
+   * `INVALID_ARGUMENT`.
+   *
+   * If `prepared_query` is set, any empty `Value.type` in the map will be
+   * inferred from the `param_types` in the `PrepareQueryRequest`. Any non-empty
+   * `Value.type` must match the corresponding `param_types` entry, or be
+   * rejected with `INVALID_ARGUMENT`.
    * </pre>
    *
    * <code>
@@ -271,17 +323,21 @@ public interface ExecuteQueryRequestOrBuilder
    *
    * For example, if
    * `params["firstName"] = bytes_value: "foo" type {bytes_type {}}`
-   *  then `&#64;firstName` will be replaced with googlesql bytes value "foo" in the
-   *  query string during query evaluation.
+   * then `&#64;firstName` will be replaced with googlesql bytes value "foo" in the
+   * query string during query evaluation.
    *
-   * In case of Value.kind is not set, it will be set to corresponding null
-   * value in googlesql.
-   *  `params["firstName"] =  type {string_type {}}`
-   *  then `&#64;firstName` will be replaced with googlesql null string.
+   * If `Value.kind` is not set, the value is treated as a NULL value of the
+   * given type. For example, if
+   * `params["firstName"] = type {string_type {}}`
+   * then `&#64;firstName` will be replaced with googlesql null string.
    *
-   * Value.type should always be set and no inference of type will be made from
-   * Value.kind. If Value.type is not set, we will return INVALID_ARGUMENT
-   * error.
+   * If `query` is set, any empty `Value.type` in the map will be rejected with
+   * `INVALID_ARGUMENT`.
+   *
+   * If `prepared_query` is set, any empty `Value.type` in the map will be
+   * inferred from the `param_types` in the `PrepareQueryRequest`. Any non-empty
+   * `Value.type` must match the corresponding `param_types` entry, or be
+   * rejected with `INVALID_ARGUMENT`.
    * </pre>
    *
    * <code>
@@ -305,17 +361,21 @@ public interface ExecuteQueryRequestOrBuilder
    *
    * For example, if
    * `params["firstName"] = bytes_value: "foo" type {bytes_type {}}`
-   *  then `&#64;firstName` will be replaced with googlesql bytes value "foo" in the
-   *  query string during query evaluation.
+   * then `&#64;firstName` will be replaced with googlesql bytes value "foo" in the
+   * query string during query evaluation.
    *
-   * In case of Value.kind is not set, it will be set to corresponding null
-   * value in googlesql.
-   *  `params["firstName"] =  type {string_type {}}`
-   *  then `&#64;firstName` will be replaced with googlesql null string.
+   * If `Value.kind` is not set, the value is treated as a NULL value of the
+   * given type. For example, if
+   * `params["firstName"] = type {string_type {}}`
+   * then `&#64;firstName` will be replaced with googlesql null string.
    *
-   * Value.type should always be set and no inference of type will be made from
-   * Value.kind. If Value.type is not set, we will return INVALID_ARGUMENT
-   * error.
+   * If `query` is set, any empty `Value.type` in the map will be rejected with
+   * `INVALID_ARGUMENT`.
+   *
+   * If `prepared_query` is set, any empty `Value.type` in the map will be
+   * inferred from the `param_types` in the `PrepareQueryRequest`. Any non-empty
+   * `Value.type` must match the corresponding `param_types` entry, or be
+   * rejected with `INVALID_ARGUMENT`.
    * </pre>
    *
    * <code>

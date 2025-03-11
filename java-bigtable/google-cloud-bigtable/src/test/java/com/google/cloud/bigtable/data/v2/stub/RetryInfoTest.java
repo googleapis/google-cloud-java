@@ -206,6 +206,7 @@ public class RetryInfoTest {
     // Exclude methods that don't support retry info
     methods.add("PingAndWarm");
     methods.add("ExecuteQuery");
+    methods.add("PrepareQuery");
 
     assertThat(methods).containsExactlyElementsIn(expected);
   }

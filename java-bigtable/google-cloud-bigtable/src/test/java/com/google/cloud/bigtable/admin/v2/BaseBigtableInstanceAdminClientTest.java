@@ -18,6 +18,8 @@ package com.google.cloud.bigtable.admin.v2;
 
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListHotTabletsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListLogicalViewsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMaterializedViewsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -35,12 +37,18 @@ import com.google.bigtable.admin.v2.ClusterName;
 import com.google.bigtable.admin.v2.CreateAppProfileRequest;
 import com.google.bigtable.admin.v2.CreateClusterRequest;
 import com.google.bigtable.admin.v2.CreateInstanceRequest;
+import com.google.bigtable.admin.v2.CreateLogicalViewRequest;
+import com.google.bigtable.admin.v2.CreateMaterializedViewRequest;
 import com.google.bigtable.admin.v2.DeleteAppProfileRequest;
 import com.google.bigtable.admin.v2.DeleteClusterRequest;
 import com.google.bigtable.admin.v2.DeleteInstanceRequest;
+import com.google.bigtable.admin.v2.DeleteLogicalViewRequest;
+import com.google.bigtable.admin.v2.DeleteMaterializedViewRequest;
 import com.google.bigtable.admin.v2.GetAppProfileRequest;
 import com.google.bigtable.admin.v2.GetClusterRequest;
 import com.google.bigtable.admin.v2.GetInstanceRequest;
+import com.google.bigtable.admin.v2.GetLogicalViewRequest;
+import com.google.bigtable.admin.v2.GetMaterializedViewRequest;
 import com.google.bigtable.admin.v2.HotTablet;
 import com.google.bigtable.admin.v2.Instance;
 import com.google.bigtable.admin.v2.InstanceName;
@@ -52,12 +60,22 @@ import com.google.bigtable.admin.v2.ListHotTabletsRequest;
 import com.google.bigtable.admin.v2.ListHotTabletsResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
+import com.google.bigtable.admin.v2.ListLogicalViewsRequest;
+import com.google.bigtable.admin.v2.ListLogicalViewsResponse;
+import com.google.bigtable.admin.v2.ListMaterializedViewsRequest;
+import com.google.bigtable.admin.v2.ListMaterializedViewsResponse;
 import com.google.bigtable.admin.v2.LocationName;
+import com.google.bigtable.admin.v2.LogicalView;
+import com.google.bigtable.admin.v2.LogicalViewName;
+import com.google.bigtable.admin.v2.MaterializedView;
+import com.google.bigtable.admin.v2.MaterializedViewName;
 import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
 import com.google.bigtable.admin.v2.ProjectName;
 import com.google.bigtable.admin.v2.StorageType;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
+import com.google.bigtable.admin.v2.UpdateLogicalViewRequest;
+import com.google.bigtable.admin.v2.UpdateMaterializedViewRequest;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.AuditConfig;
 import com.google.iam.v1.Binding;
@@ -1858,6 +1876,827 @@ public class BaseBigtableInstanceAdminClientTest {
     try {
       String parent = "parent-995424086";
       client.listHotTablets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createLogicalViewTest() throws Exception {
+    LogicalView expectedResponse =
+        LogicalView.newBuilder()
+            .setName(LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]").toString())
+            .setQuery("query107944136")
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createLogicalViewTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(resultOperation);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+    LogicalView logicalView = LogicalView.newBuilder().build();
+    String logicalViewId = "logicalViewId-1408054263";
+
+    LogicalView actualResponse =
+        client.createLogicalViewAsync(parent, logicalView, logicalViewId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateLogicalViewRequest actualRequest = ((CreateLogicalViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(logicalView, actualRequest.getLogicalView());
+    Assert.assertEquals(logicalViewId, actualRequest.getLogicalViewId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createLogicalViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+      LogicalView logicalView = LogicalView.newBuilder().build();
+      String logicalViewId = "logicalViewId-1408054263";
+      client.createLogicalViewAsync(parent, logicalView, logicalViewId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createLogicalViewTest2() throws Exception {
+    LogicalView expectedResponse =
+        LogicalView.newBuilder()
+            .setName(LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]").toString())
+            .setQuery("query107944136")
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createLogicalViewTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    LogicalView logicalView = LogicalView.newBuilder().build();
+    String logicalViewId = "logicalViewId-1408054263";
+
+    LogicalView actualResponse =
+        client.createLogicalViewAsync(parent, logicalView, logicalViewId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateLogicalViewRequest actualRequest = ((CreateLogicalViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(logicalView, actualRequest.getLogicalView());
+    Assert.assertEquals(logicalViewId, actualRequest.getLogicalViewId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createLogicalViewExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      LogicalView logicalView = LogicalView.newBuilder().build();
+      String logicalViewId = "logicalViewId-1408054263";
+      client.createLogicalViewAsync(parent, logicalView, logicalViewId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getLogicalViewTest() throws Exception {
+    LogicalView expectedResponse =
+        LogicalView.newBuilder()
+            .setName(LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]").toString())
+            .setQuery("query107944136")
+            .setEtag("etag3123477")
+            .build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    LogicalViewName name = LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]");
+
+    LogicalView actualResponse = client.getLogicalView(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetLogicalViewRequest actualRequest = ((GetLogicalViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getLogicalViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      LogicalViewName name = LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]");
+      client.getLogicalView(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getLogicalViewTest2() throws Exception {
+    LogicalView expectedResponse =
+        LogicalView.newBuilder()
+            .setName(LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]").toString())
+            .setQuery("query107944136")
+            .setEtag("etag3123477")
+            .build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    LogicalView actualResponse = client.getLogicalView(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetLogicalViewRequest actualRequest = ((GetLogicalViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getLogicalViewExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getLogicalView(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLogicalViewsTest() throws Exception {
+    LogicalView responsesElement = LogicalView.newBuilder().build();
+    ListLogicalViewsResponse expectedResponse =
+        ListLogicalViewsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLogicalViews(Arrays.asList(responsesElement))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+
+    ListLogicalViewsPagedResponse pagedListResponse = client.listLogicalViews(parent);
+
+    List<LogicalView> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLogicalViewsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListLogicalViewsRequest actualRequest = ((ListLogicalViewsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listLogicalViewsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+      client.listLogicalViews(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLogicalViewsTest2() throws Exception {
+    LogicalView responsesElement = LogicalView.newBuilder().build();
+    ListLogicalViewsResponse expectedResponse =
+        ListLogicalViewsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLogicalViews(Arrays.asList(responsesElement))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListLogicalViewsPagedResponse pagedListResponse = client.listLogicalViews(parent);
+
+    List<LogicalView> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLogicalViewsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListLogicalViewsRequest actualRequest = ((ListLogicalViewsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listLogicalViewsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listLogicalViews(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateLogicalViewTest() throws Exception {
+    LogicalView expectedResponse =
+        LogicalView.newBuilder()
+            .setName(LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]").toString())
+            .setQuery("query107944136")
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateLogicalViewTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(resultOperation);
+
+    LogicalView logicalView = LogicalView.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    LogicalView actualResponse = client.updateLogicalViewAsync(logicalView, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateLogicalViewRequest actualRequest = ((UpdateLogicalViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(logicalView, actualRequest.getLogicalView());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateLogicalViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      LogicalView logicalView = LogicalView.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateLogicalViewAsync(logicalView, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteLogicalViewTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    LogicalViewName name = LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]");
+
+    client.deleteLogicalView(name);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteLogicalViewRequest actualRequest = ((DeleteLogicalViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteLogicalViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      LogicalViewName name = LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]");
+      client.deleteLogicalView(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteLogicalViewTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteLogicalView(name);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteLogicalViewRequest actualRequest = ((DeleteLogicalViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteLogicalViewExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteLogicalView(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMaterializedViewTest() throws Exception {
+    MaterializedView expectedResponse =
+        MaterializedView.newBuilder()
+            .setName(
+                MaterializedViewName.of("[PROJECT]", "[INSTANCE]", "[MATERIALIZED_VIEW]")
+                    .toString())
+            .setQuery("query107944136")
+            .setEtag("etag3123477")
+            .setDeletionProtection(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createMaterializedViewTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(resultOperation);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+    MaterializedView materializedView = MaterializedView.newBuilder().build();
+    String materializedViewId = "materializedViewId682270903";
+
+    MaterializedView actualResponse =
+        client.createMaterializedViewAsync(parent, materializedView, materializedViewId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMaterializedViewRequest actualRequest =
+        ((CreateMaterializedViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(materializedView, actualRequest.getMaterializedView());
+    Assert.assertEquals(materializedViewId, actualRequest.getMaterializedViewId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMaterializedViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+      MaterializedView materializedView = MaterializedView.newBuilder().build();
+      String materializedViewId = "materializedViewId682270903";
+      client.createMaterializedViewAsync(parent, materializedView, materializedViewId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createMaterializedViewTest2() throws Exception {
+    MaterializedView expectedResponse =
+        MaterializedView.newBuilder()
+            .setName(
+                MaterializedViewName.of("[PROJECT]", "[INSTANCE]", "[MATERIALIZED_VIEW]")
+                    .toString())
+            .setQuery("query107944136")
+            .setEtag("etag3123477")
+            .setDeletionProtection(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createMaterializedViewTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    MaterializedView materializedView = MaterializedView.newBuilder().build();
+    String materializedViewId = "materializedViewId682270903";
+
+    MaterializedView actualResponse =
+        client.createMaterializedViewAsync(parent, materializedView, materializedViewId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMaterializedViewRequest actualRequest =
+        ((CreateMaterializedViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(materializedView, actualRequest.getMaterializedView());
+    Assert.assertEquals(materializedViewId, actualRequest.getMaterializedViewId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMaterializedViewExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      MaterializedView materializedView = MaterializedView.newBuilder().build();
+      String materializedViewId = "materializedViewId682270903";
+      client.createMaterializedViewAsync(parent, materializedView, materializedViewId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getMaterializedViewTest() throws Exception {
+    MaterializedView expectedResponse =
+        MaterializedView.newBuilder()
+            .setName(
+                MaterializedViewName.of("[PROJECT]", "[INSTANCE]", "[MATERIALIZED_VIEW]")
+                    .toString())
+            .setQuery("query107944136")
+            .setEtag("etag3123477")
+            .setDeletionProtection(true)
+            .build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    MaterializedViewName name =
+        MaterializedViewName.of("[PROJECT]", "[INSTANCE]", "[MATERIALIZED_VIEW]");
+
+    MaterializedView actualResponse = client.getMaterializedView(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMaterializedViewRequest actualRequest = ((GetMaterializedViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMaterializedViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      MaterializedViewName name =
+          MaterializedViewName.of("[PROJECT]", "[INSTANCE]", "[MATERIALIZED_VIEW]");
+      client.getMaterializedView(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMaterializedViewTest2() throws Exception {
+    MaterializedView expectedResponse =
+        MaterializedView.newBuilder()
+            .setName(
+                MaterializedViewName.of("[PROJECT]", "[INSTANCE]", "[MATERIALIZED_VIEW]")
+                    .toString())
+            .setQuery("query107944136")
+            .setEtag("etag3123477")
+            .setDeletionProtection(true)
+            .build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    MaterializedView actualResponse = client.getMaterializedView(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMaterializedViewRequest actualRequest = ((GetMaterializedViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMaterializedViewExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getMaterializedView(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMaterializedViewsTest() throws Exception {
+    MaterializedView responsesElement = MaterializedView.newBuilder().build();
+    ListMaterializedViewsResponse expectedResponse =
+        ListMaterializedViewsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMaterializedViews(Arrays.asList(responsesElement))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+
+    ListMaterializedViewsPagedResponse pagedListResponse = client.listMaterializedViews(parent);
+
+    List<MaterializedView> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMaterializedViewsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMaterializedViewsRequest actualRequest =
+        ((ListMaterializedViewsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMaterializedViewsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
+      client.listMaterializedViews(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMaterializedViewsTest2() throws Exception {
+    MaterializedView responsesElement = MaterializedView.newBuilder().build();
+    ListMaterializedViewsResponse expectedResponse =
+        ListMaterializedViewsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMaterializedViews(Arrays.asList(responsesElement))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListMaterializedViewsPagedResponse pagedListResponse = client.listMaterializedViews(parent);
+
+    List<MaterializedView> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMaterializedViewsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMaterializedViewsRequest actualRequest =
+        ((ListMaterializedViewsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMaterializedViewsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listMaterializedViews(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateMaterializedViewTest() throws Exception {
+    MaterializedView expectedResponse =
+        MaterializedView.newBuilder()
+            .setName(
+                MaterializedViewName.of("[PROJECT]", "[INSTANCE]", "[MATERIALIZED_VIEW]")
+                    .toString())
+            .setQuery("query107944136")
+            .setEtag("etag3123477")
+            .setDeletionProtection(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateMaterializedViewTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(resultOperation);
+
+    MaterializedView materializedView = MaterializedView.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    MaterializedView actualResponse =
+        client.updateMaterializedViewAsync(materializedView, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateMaterializedViewRequest actualRequest =
+        ((UpdateMaterializedViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(materializedView, actualRequest.getMaterializedView());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateMaterializedViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      MaterializedView materializedView = MaterializedView.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateMaterializedViewAsync(materializedView, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteMaterializedViewTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    MaterializedViewName name =
+        MaterializedViewName.of("[PROJECT]", "[INSTANCE]", "[MATERIALIZED_VIEW]");
+
+    client.deleteMaterializedView(name);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteMaterializedViewRequest actualRequest =
+        ((DeleteMaterializedViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteMaterializedViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      MaterializedViewName name =
+          MaterializedViewName.of("[PROJECT]", "[INSTANCE]", "[MATERIALIZED_VIEW]");
+      client.deleteMaterializedView(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteMaterializedViewTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteMaterializedView(name);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteMaterializedViewRequest actualRequest =
+        ((DeleteMaterializedViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteMaterializedViewExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteMaterializedView(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

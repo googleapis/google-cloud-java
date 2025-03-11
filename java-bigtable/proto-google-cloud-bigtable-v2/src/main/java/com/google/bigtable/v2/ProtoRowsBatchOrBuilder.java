@@ -28,8 +28,11 @@ public interface ProtoRowsBatchOrBuilder
    *
    *
    * <pre>
-   * Merge partial results by concatenating these bytes, then parsing the
-   * overall value as a `ProtoRows` message.
+   * Part of a serialized `ProtoRows` message.
+   * A complete, parseable ProtoRows message is constructed by
+   * concatenating `batch_data` from multiple `ProtoRowsBatch` messages. The
+   * `PartialResultSet` that contains the last part has `complete_batch` set to
+   * `true`.
    * </pre>
    *
    * <code>bytes batch_data = 1;</code>

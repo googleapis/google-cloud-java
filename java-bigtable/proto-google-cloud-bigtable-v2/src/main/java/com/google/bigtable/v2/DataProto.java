@@ -280,15 +280,17 @@ public final class DataProto {
           + "gtable.v2.ProtoSchemaH\000B\010\n\006schema\"6\n\tPro"
           + "toRows\022)\n\006values\030\002 \003(\0132\031.google.bigtable"
           + ".v2.Value\"$\n\016ProtoRowsBatch\022\022\n\nbatch_dat"
-          + "a\030\001 \001(\014\"\226\001\n\020PartialResultSet\022>\n\020proto_ro"
+          + "a\030\001 \001(\014\"\325\001\n\020PartialResultSet\022>\n\020proto_ro"
           + "ws_batch\030\003 \001(\0132\".google.bigtable.v2.Prot"
-          + "oRowsBatchH\000\022\024\n\014resume_token\030\005 \001(\014\022\034\n\024es"
-          + "timated_batch_size\030\004 \001(\005B\016\n\014partial_rows"
-          + "B\263\001\n\026com.google.bigtable.v2B\tDataProtoP\001"
-          + "Z8cloud.google.com/go/bigtable/apiv2/big"
-          + "tablepb;bigtablepb\252\002\030Google.Cloud.Bigtab"
-          + "le.V2\312\002\030Google\\Cloud\\Bigtable\\V2\352\002\033Googl"
-          + "e::Cloud::Bigtable::V2b\006proto3"
+          + "oRowsBatchH\000\022\033\n\016batch_checksum\030\006 \001(\rH\001\210\001"
+          + "\001\022\024\n\014resume_token\030\005 \001(\014\022\r\n\005reset\030\007 \001(\010\022\034"
+          + "\n\024estimated_batch_size\030\004 \001(\005B\016\n\014partial_"
+          + "rowsB\021\n\017_batch_checksumB\263\001\n\026com.google.b"
+          + "igtable.v2B\tDataProtoP\001Z8cloud.google.co"
+          + "m/go/bigtable/apiv2/bigtablepb;bigtablep"
+          + "b\252\002\030Google.Cloud.Bigtable.V2\312\002\030Google\\Cl"
+          + "oud\\Bigtable\\V2\352\002\033Google::Cloud::Bigtabl"
+          + "e::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -597,7 +599,12 @@ public final class DataProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_v2_PartialResultSet_descriptor,
             new java.lang.String[] {
-              "ProtoRowsBatch", "ResumeToken", "EstimatedBatchSize", "PartialRows",
+              "ProtoRowsBatch",
+              "BatchChecksum",
+              "ResumeToken",
+              "Reset",
+              "EstimatedBatchSize",
+              "PartialRows",
             });
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.bigtable.v2.TypesProto.getDescriptor();

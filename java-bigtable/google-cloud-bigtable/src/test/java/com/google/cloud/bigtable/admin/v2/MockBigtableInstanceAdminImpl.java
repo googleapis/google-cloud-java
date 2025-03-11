@@ -23,12 +23,18 @@ import com.google.bigtable.admin.v2.Cluster;
 import com.google.bigtable.admin.v2.CreateAppProfileRequest;
 import com.google.bigtable.admin.v2.CreateClusterRequest;
 import com.google.bigtable.admin.v2.CreateInstanceRequest;
+import com.google.bigtable.admin.v2.CreateLogicalViewRequest;
+import com.google.bigtable.admin.v2.CreateMaterializedViewRequest;
 import com.google.bigtable.admin.v2.DeleteAppProfileRequest;
 import com.google.bigtable.admin.v2.DeleteClusterRequest;
 import com.google.bigtable.admin.v2.DeleteInstanceRequest;
+import com.google.bigtable.admin.v2.DeleteLogicalViewRequest;
+import com.google.bigtable.admin.v2.DeleteMaterializedViewRequest;
 import com.google.bigtable.admin.v2.GetAppProfileRequest;
 import com.google.bigtable.admin.v2.GetClusterRequest;
 import com.google.bigtable.admin.v2.GetInstanceRequest;
+import com.google.bigtable.admin.v2.GetLogicalViewRequest;
+import com.google.bigtable.admin.v2.GetMaterializedViewRequest;
 import com.google.bigtable.admin.v2.Instance;
 import com.google.bigtable.admin.v2.ListAppProfilesRequest;
 import com.google.bigtable.admin.v2.ListAppProfilesResponse;
@@ -38,9 +44,17 @@ import com.google.bigtable.admin.v2.ListHotTabletsRequest;
 import com.google.bigtable.admin.v2.ListHotTabletsResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
+import com.google.bigtable.admin.v2.ListLogicalViewsRequest;
+import com.google.bigtable.admin.v2.ListLogicalViewsResponse;
+import com.google.bigtable.admin.v2.ListMaterializedViewsRequest;
+import com.google.bigtable.admin.v2.ListMaterializedViewsResponse;
+import com.google.bigtable.admin.v2.LogicalView;
+import com.google.bigtable.admin.v2.MaterializedView;
 import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
+import com.google.bigtable.admin.v2.UpdateLogicalViewRequest;
+import com.google.bigtable.admin.v2.UpdateMaterializedViewRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -519,6 +533,217 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
                   "Unrecognized response type %s for method ListHotTablets, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListHotTabletsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createLogicalView(
+      CreateLogicalViewRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateLogicalView, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getLogicalView(
+      GetLogicalViewRequest request, StreamObserver<LogicalView> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof LogicalView) {
+      requests.add(request);
+      responseObserver.onNext(((LogicalView) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetLogicalView, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  LogicalView.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listLogicalViews(
+      ListLogicalViewsRequest request, StreamObserver<ListLogicalViewsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListLogicalViewsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListLogicalViewsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListLogicalViews, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListLogicalViewsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateLogicalView(
+      UpdateLogicalViewRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateLogicalView, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteLogicalView(
+      DeleteLogicalViewRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteLogicalView, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createMaterializedView(
+      CreateMaterializedViewRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateMaterializedView, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getMaterializedView(
+      GetMaterializedViewRequest request, StreamObserver<MaterializedView> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MaterializedView) {
+      requests.add(request);
+      responseObserver.onNext(((MaterializedView) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMaterializedView, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MaterializedView.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listMaterializedViews(
+      ListMaterializedViewsRequest request,
+      StreamObserver<ListMaterializedViewsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListMaterializedViewsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListMaterializedViewsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMaterializedViews, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListMaterializedViewsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateMaterializedView(
+      UpdateMaterializedViewRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateMaterializedView, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteMaterializedView(
+      DeleteMaterializedViewRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteMaterializedView, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }
