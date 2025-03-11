@@ -1362,6 +1362,46 @@ public class BigtableDataClient implements AutoCloseable {
   }
 
   /**
+   * This is an internal API, it is subject to breaking changes and should not be relied on by user
+   * code
+   *
+   * <p>Streams back the results of the query skipping the large-rows. This callable allows for
+   * customization of the logical representation of a row. It's meant for advanced use cases.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *
+   *   Query query = Query.create(tableId)
+   *          .range("[START KEY]", "[END KEY]")
+   *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
+   *
+   *   // Iterator style
+   *   try {
+   *     for(CustomRow row : bigtableDataClient.skipLargeRowsCallable(new CustomRowAdapter()).call(query)) {
+   *       // Do something with row
+   *     }
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to read a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }
+   * }
+   * }</pre>
+   *
+   * @see ServerStreamingCallable For call styles.
+   * @see Query For query options.
+   * @see com.google.cloud.bigtable.data.v2.models.Filters For the filter building DSL.
+   */
+  @InternalApi("only to be used by Bigtable beam connector")
+  public <RowT> ServerStreamingCallable<Query, RowT> skipLargeRowsCallable(
+      RowAdapter<RowT> rowAdapter) {
+    return stub.createSkipLargeRowsCallable(rowAdapter);
+  }
+
+  /**
    * Convenience method to synchronously return a sample of row keys in the table. The returned row
    * keys will delimit contiguous sections of the table of approximately equal size, which can be
    * used to break up the data for distributed tasks like mapreduces.
