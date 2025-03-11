@@ -171,8 +171,6 @@ google-cloud-dataflow:0.63.0:0.64.0-SNAPSHOT
 grpc-google-cloud-dataflow-v1beta3:0.63.0:0.64.0-SNAPSHOT
 proto-google-cloud-dataflow-v1beta3:0.63.0:0.64.0-SNAPSHOT
 google-cloud-dataform:0.58.0:0.59.0-SNAPSHOT
-proto-google-cloud-dataform-v1alpha2:0.58.0:0.59.0-SNAPSHOT
-grpc-google-cloud-dataform-v1alpha2:0.58.0:0.59.0-SNAPSHOT
 proto-google-cloud-dataform-v1beta1:0.58.0:0.59.0-SNAPSHOT
 grpc-google-cloud-dataform-v1beta1:0.58.0:0.59.0-SNAPSHOT
 google-cloud-data-fusion:1.59.0:1.60.0-SNAPSHOT
