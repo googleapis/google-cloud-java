@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.0](https://github.com/googleapis/java-shared-config/compare/v1.14.4...v1.15.0) (2025-03-04)
+
+
+### Features
+
+* Google-java-format version as a property ([#997](https://github.com/googleapis/java-shared-config/issues/997)) ([6838220](https://github.com/googleapis/java-shared-config/commit/6838220bee2c8041f860274dc985aa99f01be51a))
+
 ## [1.14.4](https://github.com/googleapis/java-shared-config/compare/v1.14.3...v1.14.4) (2025-02-24)
 
 
