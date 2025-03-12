@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery;
 
-import static com.google.cloud.RetryHelper.runWithRetries;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
 import com.google.api.core.BetaApi;
@@ -28,8 +27,8 @@ import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.api.services.bigquery.model.TableDataList;
 import com.google.api.services.bigquery.model.TableRow;
-import com.google.cloud.RetryHelper;
 import com.google.cloud.Tuple;
+import com.google.cloud.bigquery.BigQueryRetryHelper.BigQueryRetryHelperException;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.JobStatistics.SessionInfo;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
@@ -102,6 +101,8 @@ class ConnectionImpl implements Connection {
       bufferFvl; // initialized lazily iff we end up using the tabledata.list end point
   private BlockingQueue<BigQueryResultImpl.Row>
       bufferRow; // initialized lazily iff we end up using Read API
+  private static final BigQueryRetryConfig EMPTY_RETRY_CONFIG =
+      BigQueryRetryConfig.newBuilder().build();
 
   ConnectionImpl(
       ConnectionSettings connectionSettings,
@@ -466,12 +467,15 @@ class ConnectionImpl implements Connection {
     try {
       results =
           BigQueryRetryHelper.runWithRetries(
-              () -> bigQueryRpc.queryRpc(projectId, queryRequest),
+              () ->
+                  bigQueryOptions
+                      .getBigQueryRpcV2()
+                      .queryRpcSkipExceptionTranslation(projectId, queryRequest),
               bigQueryOptions.getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               bigQueryOptions.getClock(),
               retryConfig);
-    } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
+    } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
 
@@ -914,21 +918,30 @@ class ConnectionImpl implements Connection {
     com.google.api.services.bigquery.model.Job jobPb;
     try {
       jobPb =
-          runWithRetries(
+          BigQueryRetryHelper.runWithRetries(
               () ->
-                  bigQueryRpc.getQueryJob(
-                      completeJobId.getProject(),
-                      completeJobId.getJob(),
-                      completeJobId.getLocation()),
+                  bigQueryOptions
+                      .getBigQueryRpcV2()
+                      .getQueryJobSkipExceptionTranslation(
+                          completeJobId.getProject(),
+                          completeJobId.getJob(),
+                          completeJobId.getLocation()),
               bigQueryOptions.getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
-              bigQueryOptions.getClock());
-      if (bigQueryOptions.getThrowNotFound() && jobPb == null) {
-        throw new BigQueryException(HTTP_NOT_FOUND, "Query job not found");
+              bigQueryOptions.getClock(),
+              EMPTY_RETRY_CONFIG);
+    } catch (BigQueryRetryHelperException e) {
+      if (e.getCause() instanceof BigQueryException) {
+        if (((BigQueryException) e.getCause()).getCode() == HTTP_NOT_FOUND) {
+          if (bigQueryOptions.getThrowNotFound()) {
+            throw new BigQueryException(HTTP_NOT_FOUND, "Query job not found");
+          }
+          return null;
+        }
       }
-    } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
+    // getQueryJobSkipExceptionTranslation will never return null so this is safe.
     return Job.fromPb(bigQueryOptions.getService(), jobPb);
   }
 
@@ -948,11 +961,11 @@ class ConnectionImpl implements Connection {
                   ? bigQueryOptions.getProjectId()
                   : destinationTable.getProject());
       TableDataList results =
-          runWithRetries(
+          BigQueryRetryHelper.runWithRetries(
               () ->
                   bigQueryOptions
                       .getBigQueryRpcV2()
-                      .listTableDataWithRowLimit(
+                      .listTableDataWithRowLimitSkipExceptionTranslation(
                           completeTableId.getProject(),
                           completeTableId.getDataset(),
                           completeTableId.getTable(),
@@ -960,10 +973,11 @@ class ConnectionImpl implements Connection {
                           pageToken),
               bigQueryOptions.getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
-              bigQueryOptions.getClock());
+              bigQueryOptions.getClock(),
+              EMPTY_RETRY_CONFIG);
 
       return results;
-    } catch (RetryHelper.RetryHelperException e) {
+    } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
   }
@@ -1177,12 +1191,14 @@ class ConnectionImpl implements Connection {
         results =
             BigQueryRetryHelper.runWithRetries(
                 () ->
-                    bigQueryRpc.getQueryResultsWithRowLimit(
-                        completeJobId.getProject(),
-                        completeJobId.getJob(),
-                        completeJobId.getLocation(),
-                        connectionSettings.getMaxResultPerPage(),
-                        timeoutMs),
+                    bigQueryOptions
+                        .getBigQueryRpcV2()
+                        .getQueryResultsWithRowLimitSkipExceptionTranslation(
+                            completeJobId.getProject(),
+                            completeJobId.getJob(),
+                            completeJobId.getLocation(),
+                            connectionSettings.getMaxResultPerPage(),
+                            timeoutMs),
                 bigQueryOptions.getRetrySettings(),
                 BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
                 bigQueryOptions.getClock(),
@@ -1197,7 +1213,7 @@ class ConnectionImpl implements Connection {
           // with the case where there  is a HTTP error
           throw new BigQueryException(bigQueryErrors);
         }
-      } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
+      } catch (BigQueryRetryHelperException e) {
         logger.log(Level.WARNING, "\n Error occurred while calling getQueryResultsWithRowLimit", e);
         throw BigQueryException.translateAndThrow(e);
       }
@@ -1442,7 +1458,10 @@ class ConnectionImpl implements Connection {
     try {
       queryJob =
           BigQueryRetryHelper.runWithRetries(
-              () -> bigQueryRpc.createJobForQuery(jobPb),
+              () ->
+                  bigQueryOptions
+                      .getBigQueryRpcV2()
+                      .createJobForQuerySkipExceptionTranslation(jobPb),
               bigQueryOptions.getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               bigQueryOptions.getClock(),
@@ -1482,7 +1501,10 @@ class ConnectionImpl implements Connection {
     try {
       dryRunJob =
           BigQueryRetryHelper.runWithRetries(
-              () -> bigQueryRpc.createJobForQuery(jobPb),
+              () ->
+                  bigQueryOptions
+                      .getBigQueryRpcV2()
+                      .createJobForQuerySkipExceptionTranslation(jobPb),
               bigQueryOptions.getRetrySettings(),
               BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
               bigQueryOptions.getClock(),

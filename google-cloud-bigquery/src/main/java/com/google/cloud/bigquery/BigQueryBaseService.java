@@ -31,6 +31,7 @@ abstract class BigQueryBaseService<OptionsT extends ServiceOptions<?, OptionsT>>
           .abortOn(RuntimeException.class)
           .retryOn(java.net.ConnectException.class) // retry on Connection Exception
           .retryOn(java.net.UnknownHostException.class) // retry on UnknownHostException
+          .retryOn(java.net.SocketException.class) // retry on SocketException
           .addInterceptors(EXCEPTION_HANDLER_INTERCEPTOR)
           .build();
 }

@@ -21,7 +21,6 @@ import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
-import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.common.annotations.VisibleForTesting;
@@ -132,8 +131,8 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     return SCOPES;
   }
 
-  protected BigQueryRpc getBigQueryRpcV2() {
-    return (BigQueryRpc) getRpc();
+  protected HttpBigQueryRpc getBigQueryRpcV2() {
+    return (HttpBigQueryRpc) getRpc();
   }
 
   public String getLocation() {
