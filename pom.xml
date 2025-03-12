@@ -168,6 +168,8 @@
         <artifactId>maven-dependency-plugin</artifactId>
         <configuration>
           <ignoredUnusedDeclaredDependencies>
+            <ignoredUnusedDeclaredDependency>io.netty:netty-buffer</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>io.netty:netty-common</ignoredUnusedDeclaredDependency>
             <ignoredUnusedDeclaredDependency>org.apache.arrow:arrow-memory-netty</ignoredUnusedDeclaredDependency>
           </ignoredUnusedDeclaredDependencies>
         </configuration>
