@@ -22,13 +22,18 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.bigtable.admin.v2.DeleteAppProfileRequest;
+import com.google.bigtable.admin.v2.DeleteMaterializedViewRequest;
 import com.google.bigtable.admin.v2.GetAppProfileRequest;
+import com.google.bigtable.admin.v2.GetMaterializedViewRequest;
 import com.google.bigtable.admin.v2.ListAppProfilesRequest;
+import com.google.bigtable.admin.v2.ListMaterializedViewsRequest;
 import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.cloud.Policy;
 import com.google.cloud.Policy.DefaultMarshaller;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMaterializedViewsPage;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMaterializedViewsPagedResponse;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
@@ -36,11 +41,14 @@ import com.google.cloud.bigtable.admin.v2.models.ClusterAutoscalingConfig;
 import com.google.cloud.bigtable.admin.v2.models.CreateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
+import com.google.cloud.bigtable.admin.v2.models.CreateMaterializedViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.Instance;
+import com.google.cloud.bigtable.admin.v2.models.MaterializedView;
 import com.google.cloud.bigtable.admin.v2.models.PartialListClustersException;
 import com.google.cloud.bigtable.admin.v2.models.PartialListInstancesException;
 import com.google.cloud.bigtable.admin.v2.models.UpdateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateInstanceRequest;
+import com.google.cloud.bigtable.admin.v2.models.UpdateMaterializedViewRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
 import com.google.common.base.Verify;
 import com.google.common.collect.ImmutableList;
@@ -1387,6 +1395,304 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
           @Override
           public List<String> apply(TestIamPermissionsResponse input) {
             return input.getPermissionsList();
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Creates a new materialized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * MaterializedView materializedView = client.createMaterializedView(
+   *   CreateMaterializedViewRequest.of("my-instance", "my-new-materialized-view")
+   *     .setQuery(query)
+   * );
+   * }</pre>
+   *
+   * @see CreateMaterializedViewRequest
+   */
+  @SuppressWarnings("WeakerAccess")
+  public MaterializedView createMaterializedView(CreateMaterializedViewRequest request) {
+    return ApiExceptions.callAndTranslateApiException(createMaterializedViewAsync(request));
+  }
+
+  /**
+   * Asynchronously creates a new materialized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<MaterializedView> materializedViewFuture = client.createMaterializedViewAsync(
+   *   CreateMaterializedViewRequest.of("my-instance", "my-new-materialized-view")
+   *     .setQuery(query)
+   * );
+   *
+   * MaterializedView materializedView = materializedViewFuture.get();
+   * }</pre>
+   *
+   * @see CreateMaterializedViewRequest
+   */
+  @SuppressWarnings("WeakerAccess")
+  public ApiFuture<MaterializedView> createMaterializedViewAsync(
+      CreateMaterializedViewRequest request) {
+    return ApiFutures.transform(
+        stub.createMaterializedViewOperationCallable().futureCall(request.toProto(projectId)),
+        new ApiFunction<com.google.bigtable.admin.v2.MaterializedView, MaterializedView>() {
+          @Override
+          public MaterializedView apply(com.google.bigtable.admin.v2.MaterializedView proto) {
+            return MaterializedView.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Gets the materialized view by ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * MaterializedView materializedView = client.getMaterializedView("my-instance", "my-materialized-view");
+   * }</pre>
+   *
+   * @see MaterializedView
+   */
+  public MaterializedView getMaterializedView(String instanceId, String materializedViewId) {
+    return ApiExceptions.callAndTranslateApiException(
+        getMaterializedViewAsync(instanceId, materializedViewId));
+  }
+
+  /**
+   * Asynchronously gets the materialized view by ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<MaterializedView> materializedViewFuture = client.getMaterializedViewAsync("my-instance", "my-materialized-view");
+   *
+   * MaterializedView materializedView = materializedViewFuture.get();
+   * }</pre>
+   *
+   * @see MaterializedView
+   */
+  @SuppressWarnings("WeakerAccess")
+  public ApiFuture<MaterializedView> getMaterializedViewAsync(
+      String instanceId, String materializedViewId) {
+    String name = NameUtil.formatMaterializedViewName(projectId, instanceId, materializedViewId);
+
+    GetMaterializedViewRequest request =
+        GetMaterializedViewRequest.newBuilder().setName(name).build();
+
+    return ApiFutures.transform(
+        stub.getMaterializedViewCallable().futureCall(request),
+        new ApiFunction<com.google.bigtable.admin.v2.MaterializedView, MaterializedView>() {
+          @Override
+          public MaterializedView apply(com.google.bigtable.admin.v2.MaterializedView proto) {
+            return MaterializedView.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Lists all materialized views of the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * List<MaterializedView> materializedViews = client.listMaterializedViews("my-instance");
+   * }</pre>
+   *
+   * @see MaterializedView
+   */
+  @SuppressWarnings("WeakerAccess")
+  public List<MaterializedView> listMaterializedViews(String instanceId) {
+    return ApiExceptions.callAndTranslateApiException(listMaterializedViewsAsync(instanceId));
+  }
+
+  /**
+   * Asynchronously lists all materialized views of the specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<List<MaterializedView>> materializedViewsFuture = client.listMaterializedViewsAsync("my-instance");
+   *
+   * List<MaterializedView> materializedViews = materializedViewFuture.get();
+   * }</pre>
+   *
+   * @see MaterializedView
+   */
+  @SuppressWarnings("WeakerAccess")
+  public ApiFuture<List<MaterializedView>> listMaterializedViewsAsync(String instanceId) {
+    String instanceName = NameUtil.formatInstanceName(projectId, instanceId);
+
+    ListMaterializedViewsRequest request =
+        ListMaterializedViewsRequest.newBuilder().setParent(instanceName).build();
+
+    // TODO(igorbernstein2): try to upstream pagination spooling or figure out a way to expose the
+    // paginated responses while maintaining the wrapper facade.
+
+    // Fetches the first page.
+    ApiFuture<ListMaterializedViewsPage> firstPageFuture =
+        ApiFutures.transform(
+            stub.listMaterializedViewsPagedCallable().futureCall(request),
+            new ApiFunction<ListMaterializedViewsPagedResponse, ListMaterializedViewsPage>() {
+              @Override
+              public ListMaterializedViewsPage apply(ListMaterializedViewsPagedResponse response) {
+                return response.getPage();
+              }
+            },
+            MoreExecutors.directExecutor());
+
+    // Fetches the rest of the pages by chaining the futures.
+    ApiFuture<List<com.google.bigtable.admin.v2.MaterializedView>> allProtos =
+        ApiFutures.transformAsync(
+            firstPageFuture,
+            new ApiAsyncFunction<
+                ListMaterializedViewsPage, List<com.google.bigtable.admin.v2.MaterializedView>>() {
+              List<com.google.bigtable.admin.v2.MaterializedView> responseAccumulator =
+                  Lists.newArrayList();
+
+              @Override
+              public ApiFuture<List<com.google.bigtable.admin.v2.MaterializedView>> apply(
+                  ListMaterializedViewsPage page) {
+                // Add all entries from the page
+                responseAccumulator.addAll(Lists.newArrayList(page.getValues()));
+
+                // If this is the last page, just return the accumulated responses.
+                if (!page.hasNextPage()) {
+                  return ApiFutures.immediateFuture(responseAccumulator);
+                }
+
+                // Otherwise fetch the next page.
+                return ApiFutures.transformAsync(
+                    page.getNextPageAsync(), this, MoreExecutors.directExecutor());
+              }
+            },
+            MoreExecutors.directExecutor());
+
+    // Wraps all of the accumulated protos.
+    return ApiFutures.transform(
+        allProtos,
+        new ApiFunction<
+            List<com.google.bigtable.admin.v2.MaterializedView>, List<MaterializedView>>() {
+          @Override
+          public List<MaterializedView> apply(
+              List<com.google.bigtable.admin.v2.MaterializedView> input) {
+            List<MaterializedView> results = Lists.newArrayListWithCapacity(input.size());
+            for (com.google.bigtable.admin.v2.MaterializedView materializedView : input) {
+              results.add(MaterializedView.fromProto(materializedView));
+            }
+            return results;
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Updates an existing materialized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * MaterializedView existingMaterializedView = client.getMaterializedView("my-instance", "my-materialized-view");
+   *
+   * MaterializedView updatedMaterializedView = client.updateMaterializedView(
+   *   UpdateMaterializedViewRequest.of(existingMaterializedView)
+   *     .setDeletionProtection(false)
+   * );
+   * }</pre>
+   *
+   * @see UpdateMaterializedViewRequest
+   */
+  @SuppressWarnings("WeakerAccess")
+  public MaterializedView updateMaterializedView(UpdateMaterializedViewRequest request) {
+    return ApiExceptions.callAndTranslateApiException(updateMaterializedViewAsync(request));
+  }
+
+  /**
+   * Asynchronously updates an existing materialized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<MaterializedView> existingMaterializedViewFuture = client.getMaterializedViewAsync("my-instance", "my-materialized-view");
+   *
+   * ApiFuture<MaterializedView> updatedMaterializedViewFuture = ApiFutures.transformAsync(
+   *   existingMaterializedViewFuture,
+   *   new ApiAsyncFunction<MaterializedView, MaterializedView>() {
+   *     public ApiFuture<MaterializedView> apply(MaterializedView existingMaterializedView) {
+   *       return client.updateMaterializedViewAsync(
+   *         UpdateMaterializedViewRequest.of(existingMaterializedView)
+   *           .setDeletionProtection(false)
+   *       );
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   *
+   * ApiFuture<MaterializedView> materializedView = updatedMaterializedViewFuture.get();
+   * }</pre>
+   *
+   * @see UpdateMaterializedViewRequest
+   */
+  @SuppressWarnings("WeakerAccess")
+  public ApiFuture<MaterializedView> updateMaterializedViewAsync(
+      UpdateMaterializedViewRequest request) {
+    return ApiFutures.transform(
+        stub.updateMaterializedViewOperationCallable().futureCall(request.toProto(projectId)),
+        new ApiFunction<com.google.bigtable.admin.v2.MaterializedView, MaterializedView>() {
+          @Override
+          public MaterializedView apply(com.google.bigtable.admin.v2.MaterializedView proto) {
+            return MaterializedView.fromProto(proto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Deletes the specified materialized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * client.deleteMaterializedView("my-instance", "my-materialized-view");
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  public void deleteMaterializedView(String instanceId, String materializedViewId) {
+    ApiExceptions.callAndTranslateApiException(
+        deleteMaterializedViewAsync(instanceId, materializedViewId));
+  }
+
+  /**
+   * Asynchronously deletes the specified materialized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Void> deleteFuture = client.deleteMaterializedViewAsync("my-instance", "my-materialized-view");
+   *
+   * deleteFuture.get();
+   * }</pre>
+   */
+  @SuppressWarnings("WeakerAccess")
+  public ApiFuture<Void> deleteMaterializedViewAsync(String instanceId, String materializedViewId) {
+
+    String name = NameUtil.formatMaterializedViewName(projectId, instanceId, materializedViewId);
+    DeleteMaterializedViewRequest request =
+        DeleteMaterializedViewRequest.newBuilder().setName(name).build();
+
+    return ApiFutures.transform(
+        stub.deleteMaterializedViewCallable().futureCall(request),
+        new ApiFunction<Empty, Void>() {
+          @Override
+          public Void apply(Empty input) {
+            return null;
           }
         },
         MoreExecutors.directExecutor());

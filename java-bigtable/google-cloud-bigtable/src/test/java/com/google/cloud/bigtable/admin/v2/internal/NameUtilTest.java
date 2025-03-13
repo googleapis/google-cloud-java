@@ -61,6 +61,17 @@ public class NameUtilTest {
   }
 
   @Test
+  public void formatMaterializedViewNameTest() {
+    String testMaterializedViewName =
+        "projects/my-project/instances/my-instance/materializedViews/my-materialized-view";
+
+    assertThat(
+            NameUtil.formatMaterializedViewName(
+                "my-project", "my-instance", "my-materialized-view"))
+        .isEqualTo(testMaterializedViewName);
+  }
+
+  @Test
   public void extractAuthorizedViewIdFromAuthorizedViewNameTest() {
     String testAuthorizedViewName =
         "projects/my-project/instances/my-instance/tables/my-table/authorizedViews/my-authorized-view";

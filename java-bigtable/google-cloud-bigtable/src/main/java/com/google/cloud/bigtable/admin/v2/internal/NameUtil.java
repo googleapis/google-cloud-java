@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.admin.v2.internal;
 import com.google.api.core.InternalApi;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.annotation.Nonnull;
 
 /**
  * Internal helper to compose full resource names.
@@ -47,6 +48,11 @@ public class NameUtil {
 
   public static String formatTableName(String projectId, String instanceId, String tableId) {
     return formatInstanceName(projectId, instanceId) + "/tables/" + tableId;
+  }
+
+  public static String formatMaterializedViewName(
+      @Nonnull String projectId, @Nonnull String instanceId, @Nonnull String materializedViewId) {
+    return formatInstanceName(projectId, instanceId) + "/materializedViews/" + materializedViewId;
   }
 
   public static String formatLocationName(String projectId, String zone) {

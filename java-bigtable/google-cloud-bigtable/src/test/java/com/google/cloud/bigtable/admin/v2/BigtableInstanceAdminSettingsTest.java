@@ -123,6 +123,11 @@ public class BigtableInstanceAdminSettingsTest {
     "getIamPolicySettings",
     "setIamPolicySettings",
     "testIamPermissionsSettings",
+    "createMaterializedViewSettings",
+    "getMaterializedViewSettings",
+    "listMaterializedViewsSettings",
+    "updateMaterializedViewSettings",
+    "deleteMaterializedViewSettings",
   };
 
   @Test
