@@ -64,9 +64,13 @@ public class FakeServiceBuilder {
         return startWithoutRetries();
       } catch (IOException e) {
         lastError = e;
-        if (!(e.getCause() instanceof BindException)) {
-          break;
+        if (e.getCause() instanceof BindException) {
+          continue;
         }
+        if (e.getMessage().contains("Failed to bind to address")) {
+          continue;
+        }
+        break;
       }
     }
 

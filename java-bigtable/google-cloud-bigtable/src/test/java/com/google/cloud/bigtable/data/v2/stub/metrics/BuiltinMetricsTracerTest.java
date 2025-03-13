@@ -35,9 +35,11 @@ import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestU
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestUtils.getMetricData;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestUtils.verifyAttributes;
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 
 import com.google.api.client.util.Lists;
 import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.batching.BatchingException;
@@ -98,6 +100,7 @@ import java.io.IOException;
 import java.net.SocketAddress;
 import java.nio.charset.Charset;
 import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -134,7 +137,7 @@ public class BuiltinMetricsTracerTest {
   private static final long APPLICATION_LATENCY = 200;
   private static final long SLEEP_VARIABILITY = 15;
   private static final String CLIENT_NAME = "java-bigtable/" + Version.VERSION;
-  private static final long CHANNEL_BLOCKING_LATENCY = 200;
+  private static final Duration CHANNEL_BLOCKING_LATENCY = Duration.ofMillis(200);
 
   @Rule public final MockitoRule mockitoRule = MockitoJUnit.rule();
 
@@ -148,6 +151,8 @@ public class BuiltinMetricsTracerTest {
   private Attributes baseAttributes;
 
   private InMemoryMetricReader metricReader;
+
+  private DelayProxyDetector delayProxyDetector;
 
   @Before
   public void setUp() throws Exception {
@@ -253,15 +258,16 @@ public class BuiltinMetricsTracerTest {
     final ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> oldConfigurator =
         channelProvider.getChannelConfigurator();
 
+    delayProxyDetector = new DelayProxyDetector();
+
     channelProvider.setChannelConfigurator(
         (builder) -> {
           if (oldConfigurator != null) {
             builder = oldConfigurator.apply(builder);
           }
-          return builder.proxyDetector(new DelayProxyDetector());
+          return builder.proxyDetector(delayProxyDetector);
         });
     stubSettingsBuilder.setTransportChannelProvider(channelProvider.build());
-
     EnhancedBigtableStubSettings stubSettings = stubSettingsBuilder.build();
     stub = new EnhancedBigtableStub(stubSettings, ClientContext.create(stubSettings));
   }
@@ -696,8 +702,10 @@ public class BuiltinMetricsTracerTest {
   }
 
   @Test
-  public void testQueuedOnChannelServerStreamLatencies() {
-    stub.readRowsCallable().all().call(Query.create(TABLE));
+  public void testQueuedOnChannelServerStreamLatencies() throws Exception {
+    ApiFuture<List<Row>> f = stub.readRowsCallable().all().futureCall(Query.create(TABLE));
+    Duration proxyDelayPriorTest = delayProxyDetector.getCurrentDelayUsed();
+    f.get();
 
     MetricData clientLatency = getMetricData(metricReader, CLIENT_BLOCKING_LATENCIES_NAME);
 
@@ -711,14 +719,17 @@ public class BuiltinMetricsTracerTest {
             .put(CLIENT_NAME_KEY, CLIENT_NAME)
             .build();
 
-    long value = getAggregatedValue(clientLatency, attributes);
-    assertThat(value).isAtLeast(CHANNEL_BLOCKING_LATENCY);
+    Duration value = Duration.ofMillis(getAggregatedValue(clientLatency, attributes));
+    assertThat(value).isAtLeast(CHANNEL_BLOCKING_LATENCY.minus(proxyDelayPriorTest));
   }
 
   @Test
-  public void testQueuedOnChannelUnaryLatencies() {
-
-    stub.mutateRowCallable().call(RowMutation.create(TABLE, "a-key").setCell("f", "q", "v"));
+  public void testQueuedOnChannelUnaryLatencies() throws Exception {
+    ApiFuture<Void> f =
+        stub.mutateRowCallable()
+            .futureCall(RowMutation.create(TABLE, "a-key").setCell("f", "q", "v"));
+    Duration proxyDelayPriorTest = delayProxyDetector.getCurrentDelayUsed();
+    f.get();
 
     MetricData clientLatency = getMetricData(metricReader, CLIENT_BLOCKING_LATENCIES_NAME);
 
@@ -732,8 +743,8 @@ public class BuiltinMetricsTracerTest {
             .put(CLIENT_NAME_KEY, CLIENT_NAME)
             .build();
 
-    long actual = getAggregatedValue(clientLatency, attributes);
-    assertThat(actual).isAtLeast(CHANNEL_BLOCKING_LATENCY);
+    Duration actual = Duration.ofMillis(getAggregatedValue(clientLatency, attributes));
+    assertThat(actual).isAtLeast(CHANNEL_BLOCKING_LATENCY.minus(proxyDelayPriorTest));
   }
 
   @Test
@@ -809,7 +820,7 @@ public class BuiltinMetricsTracerTest {
 
     double okRemainingDeadline = okHistogramPointData.getSum();
     // first attempt latency + retry delay
-    double expected = 9000 - SERVER_LATENCY - CHANNEL_BLOCKING_LATENCY - 10;
+    double expected = 9000 - SERVER_LATENCY - CHANNEL_BLOCKING_LATENCY.toMillis() - 10;
     assertThat(okRemainingDeadline).isIn(Range.closed(expected - 500, expected + 10));
   }
 
@@ -934,16 +945,33 @@ public class BuiltinMetricsTracerTest {
   }
 
   class DelayProxyDetector implements ProxyDetector {
+    private volatile Instant lastProxyDelay = null;
 
     @Nullable
     @Override
     public ProxiedSocketAddress proxyFor(SocketAddress socketAddress) throws IOException {
+      lastProxyDelay = Instant.now();
       try {
-        Thread.sleep(CHANNEL_BLOCKING_LATENCY);
+        Thread.sleep(CHANNEL_BLOCKING_LATENCY.toMillis());
       } catch (InterruptedException e) {
 
       }
       return null;
+    }
+
+    Duration getCurrentDelayUsed() {
+      Instant local = lastProxyDelay;
+      // If the delay was never injected
+      if (local == null) {
+        return Duration.ZERO;
+      }
+      Duration duration = Duration.between(local, Instant.now());
+
+      assertWithMessage("test burned through all channel blocking latency during setup")
+          .that(duration)
+          .isLessThan(CHANNEL_BLOCKING_LATENCY);
+
+      return duration;
     }
   }
 }

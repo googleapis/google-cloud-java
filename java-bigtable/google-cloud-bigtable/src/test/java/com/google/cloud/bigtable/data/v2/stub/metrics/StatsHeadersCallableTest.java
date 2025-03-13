@@ -97,8 +97,12 @@ public class StatsHeadersCallableTest {
 
   @After
   public void tearDown() {
-    stub.close();
-    server.shutdown();
+    if (stub != null) {
+      stub.close();
+    }
+    if (server != null) {
+      server.shutdown();
+    }
   }
 
   @Test
