@@ -12,7 +12,7 @@ including:
 - Verbose messages in underlying dependency libraries
 
 While there are various ways to configure the logging,
-to quickly enable verbose logging for the gRPC or HTTP transportation, create
+to quickly enable verbose logging for the request transportation, create
 a file `logging.properties` with the following content:
 
 ```
