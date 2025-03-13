@@ -2,7 +2,8 @@
 
 ## Advanced Logging Setup
 
-Our libraries use the Java logging API via `java.util.logging` package.
+Our core dependencies, e.g., gRPC, and some handwritten libraries use the
+Java logging API via `java.util.logging` package.
 Configuring logging level reveals various facts that help your troubleshooting,
 including:
 
@@ -11,7 +12,7 @@ including:
 - Verbose messages in underlying dependency libraries
 
 While there are various ways to configure the logging,
-to quickly enable verbose logging for the Google Cloud Java libraries, create
+to quickly enable verbose logging for the gRPC or HTTP transportation, create
 a file `logging.properties` with the following content:
 
 ```
@@ -26,7 +27,7 @@ java.util.logging.ConsoleHandler.formatter=java.util.logging.SimpleFormatter
 .level=INFO
 
 # --- Specify logging level for certain packages ---
-# com.google.api is for HTTP 1.1 layer
+# com.google.api is for Google API Extension (GAX) layer
 com.google.api.level=ALL
 # io.grpc is for gRPC + Netty layer
 io.grpc.level=FINE
