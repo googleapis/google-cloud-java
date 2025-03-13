@@ -25,5 +25,6 @@ public final class Constants {
   static final String CLOUD_ML_REGION = "CLOUD_ML_REGION";
   static final String GOOGLE_CLOUD_PROJECT = "GOOGLE_CLOUD_PROJECT";
 
+  // trivial change
   private Constants() {}
 }
