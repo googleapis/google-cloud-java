@@ -1,6 +1,6 @@
 # Troubleshooting
 
-## Advanced Logging
+## Advanced Logging Setup
 
 Our libraries use the Java logging API via `java.util.logging` package.
 Configuring logging level reveals various facts that help your troubleshooting,
