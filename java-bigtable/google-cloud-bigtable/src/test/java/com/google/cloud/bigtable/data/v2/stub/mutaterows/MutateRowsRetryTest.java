@@ -28,6 +28,7 @@ import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import com.google.common.collect.Queues;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -62,7 +63,8 @@ public class MutateRowsRetryTest {
         BigtableDataSettings.newBuilder()
             .setProjectId("fake-project")
             .setInstanceId("fake-instance")
-            .setCredentialsProvider(NoCredentialsProvider.create());
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setMetricsProvider(NoopMetricsProvider.INSTANCE);
 
     settings
         .stubSettings()

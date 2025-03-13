@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.common.base.Suppliers;
 import io.opentelemetry.sdk.metrics.InstrumentSelector;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
 import io.opentelemetry.sdk.metrics.View;
@@ -99,11 +100,26 @@ public class BuiltinMetricsView {
   public static void registerBuiltinMetrics(
       @Nullable Credentials credentials, SdkMeterProviderBuilder builder, @Nullable String endpoint)
       throws IOException {
-    MetricExporter metricExporter = BigtableCloudMonitoringExporter.create(credentials, endpoint);
+    MetricExporter publicExporter =
+        BigtableCloudMonitoringExporter.create(
+            "bigtable metrics",
+            credentials,
+            endpoint,
+            new BigtableCloudMonitoringExporter.PublicTimeSeriesConverter());
+    MetricExporter internalExporter =
+        BigtableCloudMonitoringExporter.create(
+            "application metrics",
+            credentials,
+            endpoint,
+            new BigtableCloudMonitoringExporter.InternalTimeSeriesConverter(
+                Suppliers.memoize(BigtableExporterUtils::detectResourceSafe)));
+
     for (Map.Entry<InstrumentSelector, View> entry :
         BuiltinMetricsConstants.getAllViews().entrySet()) {
       builder.registerView(entry.getKey(), entry.getValue());
     }
-    builder.registerMetricReader(PeriodicMetricReader.create(metricExporter));
+    builder
+        .registerMetricReader(PeriodicMetricReader.create(publicExporter))
+        .registerMetricReader(PeriodicMetricReader.create(internalExporter));
   }
 }

@@ -70,6 +70,7 @@ import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.common.base.Stopwatch;
+import com.google.common.collect.Comparators;
 import com.google.common.collect.Range;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.BytesValue;
@@ -719,8 +720,11 @@ public class BuiltinMetricsTracerTest {
             .put(CLIENT_NAME_KEY, CLIENT_NAME)
             .build();
 
-    Duration value = Duration.ofMillis(getAggregatedValue(clientLatency, attributes));
-    assertThat(value).isAtLeast(CHANNEL_BLOCKING_LATENCY.minus(proxyDelayPriorTest));
+    assertThat(Duration.ofMillis(getAggregatedValue(clientLatency, attributes)))
+        .isAtLeast(
+            // Offset the expected latency to deal with asynchrony and jitter
+            CHANNEL_BLOCKING_LATENCY.minus(
+                Comparators.max(proxyDelayPriorTest, Duration.ofMillis(1))));
   }
 
   @Test
@@ -743,8 +747,11 @@ public class BuiltinMetricsTracerTest {
             .put(CLIENT_NAME_KEY, CLIENT_NAME)
             .build();
 
-    Duration actual = Duration.ofMillis(getAggregatedValue(clientLatency, attributes));
-    assertThat(actual).isAtLeast(CHANNEL_BLOCKING_LATENCY.minus(proxyDelayPriorTest));
+    assertThat(Duration.ofMillis(getAggregatedValue(clientLatency, attributes)))
+        .isAtLeast(
+            // Offset the expected latency to deal with asynchrony and jitter
+            CHANNEL_BLOCKING_LATENCY.minus(
+                Comparators.max(proxyDelayPriorTest, Duration.ofMillis(1))));
   }
 
   @Test

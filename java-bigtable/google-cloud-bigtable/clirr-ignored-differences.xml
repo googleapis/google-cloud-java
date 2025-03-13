@@ -314,4 +314,10 @@
         <className>com/google/cloud/bigtable/data/v2/models/TargetId</className>
         <method>*scopedForMaterializedView()</method>
     </difference>
+    <difference>
+        <!-- BigtableCloudMonitoringExporter is InternalApi -->
+        <differenceType>7009</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/BigtableCloudMonitoringExporter</className>
+        <method>*</method>
+    </difference>
 </differences>

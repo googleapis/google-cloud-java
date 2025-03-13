@@ -36,6 +36,7 @@ import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Range;
@@ -86,7 +87,8 @@ public class ReadRowsRetryTest {
         BigtableDataSettings.newBuilder()
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
-            .setCredentialsProvider(NoCredentialsProvider.create());
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setMetricsProvider(NoopMetricsProvider.INSTANCE);
 
     settings
         .stubSettings()

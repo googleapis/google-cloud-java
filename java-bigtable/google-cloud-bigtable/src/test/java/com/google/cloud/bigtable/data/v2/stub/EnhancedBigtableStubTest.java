@@ -99,6 +99,7 @@ import com.google.rpc.Status;
 import io.grpc.CallOptions;
 import io.grpc.Context;
 import io.grpc.Deadline;
+import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
 import io.grpc.Metadata.Key;
@@ -238,6 +239,9 @@ public class EnhancedBigtableStubTest {
             .setPrivateKeyId("fake-private-key")
             .build();
 
+    ManagedChannel channel =
+        ManagedChannelBuilder.forAddress("localhost", server.getPort()).usePlaintext().build();
+
     EnhancedBigtableStubSettings settings =
         EnhancedBigtableStubSettings.newBuilder()
             .setProjectId("fake-project")
@@ -247,11 +251,7 @@ public class EnhancedBigtableStubTest {
             .setMetricsProvider(NoopMetricsProvider.INSTANCE)
             // Use a fixed channel that will ignore the default endpoint and connect to the emulator
             .setTransportChannelProvider(
-                FixedTransportChannelProvider.create(
-                    GrpcTransportChannel.create(
-                        ManagedChannelBuilder.forAddress("localhost", server.getPort())
-                            .usePlaintext()
-                            .build())))
+                FixedTransportChannelProvider.create(GrpcTransportChannel.create(channel)))
             // Channel refreshing doesn't work with FixedTransportChannelProvider. Disable it for
             // the test
             .setRefreshingChannel(false)
@@ -263,6 +263,7 @@ public class EnhancedBigtableStubTest {
       stub.readRowCallable().futureCall(Query.create("fake-table")).get();
       metadata = metadataInterceptor.headers.take();
     }
+    channel.shutdown();
 
     String authValue = metadata.get(Key.of("Authorization", Metadata.ASCII_STRING_MARSHALLER));
     String expectedPrefix = "Bearer ";
