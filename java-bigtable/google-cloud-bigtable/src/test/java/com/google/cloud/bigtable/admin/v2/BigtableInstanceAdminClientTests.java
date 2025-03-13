@@ -40,6 +40,8 @@ import com.google.cloud.Policy;
 import com.google.cloud.Role;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListLogicalViewsPage;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListLogicalViewsPagedResponse;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMaterializedViewsPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMaterializedViewsPagedResponse;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
@@ -52,14 +54,17 @@ import com.google.cloud.bigtable.admin.v2.models.ClusterAutoscalingConfig;
 import com.google.cloud.bigtable.admin.v2.models.CreateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
+import com.google.cloud.bigtable.admin.v2.models.CreateLogicalViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateMaterializedViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.Instance;
+import com.google.cloud.bigtable.admin.v2.models.LogicalView;
 import com.google.cloud.bigtable.admin.v2.models.MaterializedView;
 import com.google.cloud.bigtable.admin.v2.models.PartialListClustersException;
 import com.google.cloud.bigtable.admin.v2.models.PartialListInstancesException;
 import com.google.cloud.bigtable.admin.v2.models.StorageType;
 import com.google.cloud.bigtable.admin.v2.models.UpdateAppProfileRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateInstanceRequest;
+import com.google.cloud.bigtable.admin.v2.models.UpdateLogicalViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateMaterializedViewRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
 import com.google.common.collect.ImmutableList;
@@ -103,6 +108,7 @@ public class BigtableInstanceAdminClientTests {
   private static final String CLUSTER_ID = "my-cluster";
   private static final String APP_PROFILE_ID = "my-app-profile";
   private static final String MATERIALIZED_VIEW_ID = "my-materialized-view";
+  private static final String LOGICAL_VIEW_ID = "my-logical-view";
 
   private static final String PROJECT_NAME = NameUtil.formatProjectName(PROJECT_ID);
   private static final String INSTANCE_NAME = NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID);
@@ -112,6 +118,8 @@ public class BigtableInstanceAdminClientTests {
       NameUtil.formatAppProfileName(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID);
   private static final String MATERIALIZED_VIEW_NAME =
       NameUtil.formatMaterializedViewName(PROJECT_ID, INSTANCE_ID, MATERIALIZED_VIEW_ID);
+  private static final String LOGICAL_VIEW_NAME =
+      NameUtil.formatLogicalViewName(PROJECT_ID, INSTANCE_ID, LOGICAL_VIEW_ID);
 
   private BigtableInstanceAdminClient adminClient;
 
@@ -268,6 +276,35 @@ public class BigtableInstanceAdminClientTests {
   @Mock
   private UnaryCallable<com.google.bigtable.admin.v2.DeleteMaterializedViewRequest, Empty>
       mockDeleteMaterializedViewCallable;
+
+  @Mock
+  private OperationCallable<
+          com.google.bigtable.admin.v2.CreateLogicalViewRequest,
+          com.google.bigtable.admin.v2.LogicalView,
+          com.google.bigtable.admin.v2.CreateLogicalViewMetadata>
+      mockCreateLogicalViewCallable;
+
+  @Mock
+  private UnaryCallable<
+          com.google.bigtable.admin.v2.GetLogicalViewRequest,
+          com.google.bigtable.admin.v2.LogicalView>
+      mockGetLogicalViewCallable;
+
+  @Mock
+  private UnaryCallable<
+          com.google.bigtable.admin.v2.ListLogicalViewsRequest, ListLogicalViewsPagedResponse>
+      mockListLogicalViewsCallable;
+
+  @Mock
+  private OperationCallable<
+          com.google.bigtable.admin.v2.UpdateLogicalViewRequest,
+          com.google.bigtable.admin.v2.LogicalView,
+          com.google.bigtable.admin.v2.UpdateLogicalViewMetadata>
+      mockUpdateLogicalViewCallable;
+
+  @Mock
+  private UnaryCallable<com.google.bigtable.admin.v2.DeleteLogicalViewRequest, Empty>
+      mockDeleteLogicalViewCallable;
 
   @Before
   public void setUp() {
@@ -1777,6 +1814,179 @@ public class BigtableInstanceAdminClientTests {
     adminClient.deleteMaterializedView(INSTANCE_ID, MATERIALIZED_VIEW_ID);
 
     adminClient.deleteMaterializedViewAsync(INSTANCE_ID, MATERIALIZED_VIEW_ID).get();
+
+    // Verify
+    assertThat(wasCalled.get()).isEqualTo(2);
+  }
+
+  @Test
+  public void testCreateLogicalView() {
+    // Setup
+    Mockito.when(mockStub.createLogicalViewOperationCallable())
+        .thenReturn(mockCreateLogicalViewCallable);
+
+    com.google.bigtable.admin.v2.CreateLogicalViewRequest expectedRequest =
+        com.google.bigtable.admin.v2.CreateLogicalViewRequest.newBuilder()
+            .setParent(NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID))
+            .setLogicalViewId(LOGICAL_VIEW_ID)
+            .setLogicalView(
+                com.google.bigtable.admin.v2.LogicalView.newBuilder()
+                    .setQuery("SELECT 1 FROM Table"))
+            .build();
+
+    com.google.bigtable.admin.v2.LogicalView expectedResponse =
+        com.google.bigtable.admin.v2.LogicalView.newBuilder()
+            .setName(LOGICAL_VIEW_NAME)
+            .setQuery("SELECT 1 FROM Table")
+            .build();
+
+    mockOperationResult(mockCreateLogicalViewCallable, expectedRequest, expectedResponse);
+
+    // Execute
+    LogicalView actualResult =
+        adminClient.createLogicalView(
+            CreateLogicalViewRequest.of(INSTANCE_ID, LOGICAL_VIEW_ID)
+                .setQuery("SELECT 1 FROM Table"));
+
+    // Verify
+    assertThat(actualResult).isEqualTo(LogicalView.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testGetLogicalView() {
+    // Setup
+    Mockito.when(mockStub.getLogicalViewCallable()).thenReturn(mockGetLogicalViewCallable);
+
+    com.google.bigtable.admin.v2.GetLogicalViewRequest expectedRequest =
+        com.google.bigtable.admin.v2.GetLogicalViewRequest.newBuilder()
+            .setName(LOGICAL_VIEW_NAME)
+            .build();
+
+    com.google.bigtable.admin.v2.LogicalView expectedResponse =
+        com.google.bigtable.admin.v2.LogicalView.newBuilder()
+            .setName(LOGICAL_VIEW_NAME)
+            .setQuery("SELECT 1 FROM Table")
+            .build();
+
+    Mockito.when(mockGetLogicalViewCallable.futureCall(expectedRequest))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
+
+    // Execute
+    LogicalView actualResult = adminClient.getLogicalView(INSTANCE_ID, LOGICAL_VIEW_ID);
+
+    // Verify
+    assertThat(actualResult).isEqualTo(LogicalView.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testListLogicalViews() {
+    // Setup
+    Mockito.when(mockStub.listLogicalViewsPagedCallable()).thenReturn(mockListLogicalViewsCallable);
+
+    com.google.bigtable.admin.v2.ListLogicalViewsRequest expectedRequest =
+        com.google.bigtable.admin.v2.ListLogicalViewsRequest.newBuilder()
+            .setParent(NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID))
+            .build();
+
+    // 3 LogicalViews spread across 2 pages
+    List<com.google.bigtable.admin.v2.LogicalView> expectedProtos = Lists.newArrayList();
+    for (int i = 0; i < 3; i++) {
+      expectedProtos.add(
+          com.google.bigtable.admin.v2.LogicalView.newBuilder()
+              .setName(LOGICAL_VIEW_NAME + i)
+              .setQuery("SELECT 1 FROM Table" + i)
+              .build());
+    }
+    // 2 on the first page
+    ListLogicalViewsPage page0 = Mockito.mock(ListLogicalViewsPage.class);
+    Mockito.when(page0.getValues()).thenReturn(expectedProtos.subList(0, 2));
+    Mockito.when(page0.hasNextPage()).thenReturn(true);
+
+    // 1 on the last page
+    ListLogicalViewsPage page1 = Mockito.mock(ListLogicalViewsPage.class);
+    Mockito.when(page1.getValues()).thenReturn(expectedProtos.subList(2, 3));
+
+    // Link page0 to page1
+    Mockito.when(page0.getNextPageAsync()).thenReturn(ApiFutures.immediateFuture(page1));
+
+    // Link page to the response
+    ListLogicalViewsPagedResponse response0 = Mockito.mock(ListLogicalViewsPagedResponse.class);
+    Mockito.when(response0.getPage()).thenReturn(page0);
+
+    Mockito.when(mockListLogicalViewsCallable.futureCall(expectedRequest))
+        .thenReturn(ApiFutures.immediateFuture(response0));
+
+    // Execute
+    List<LogicalView> actualResults = adminClient.listLogicalViews(INSTANCE_ID);
+
+    // Verify
+    List<LogicalView> expectedResults = Lists.newArrayList();
+    for (com.google.bigtable.admin.v2.LogicalView expectedProto : expectedProtos) {
+      expectedResults.add(LogicalView.fromProto(expectedProto));
+    }
+
+    assertThat(actualResults).containsExactlyElementsIn(expectedResults);
+  }
+
+  @Test
+  public void testUpdateLogicalView() {
+    // Setup
+    Mockito.when(mockStub.updateLogicalViewOperationCallable())
+        .thenReturn(mockUpdateLogicalViewCallable);
+
+    com.google.bigtable.admin.v2.UpdateLogicalViewRequest expectedRequest =
+        com.google.bigtable.admin.v2.UpdateLogicalViewRequest.newBuilder()
+            .setLogicalView(
+                com.google.bigtable.admin.v2.LogicalView.newBuilder()
+                    .setName(LOGICAL_VIEW_NAME)
+                    .setQuery("SELECT 1 FROM Table"))
+            .setUpdateMask(FieldMask.newBuilder().addPaths("query"))
+            .build();
+
+    com.google.bigtable.admin.v2.LogicalView expectedResponse =
+        com.google.bigtable.admin.v2.LogicalView.newBuilder()
+            .setName(LOGICAL_VIEW_NAME)
+            .setQuery("SELECT 1 FROM Table")
+            .build();
+
+    mockOperationResult(mockUpdateLogicalViewCallable, expectedRequest, expectedResponse);
+
+    // Execute
+    LogicalView actualResult =
+        adminClient.updateLogicalView(
+            UpdateLogicalViewRequest.of(INSTANCE_ID, LOGICAL_VIEW_ID)
+                .setQuery("SELECT 1 FROM Table"));
+
+    // Verify
+    assertThat(actualResult).isEqualTo(LogicalView.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testDeleteLogicalView() throws Exception {
+    // Setup
+    Mockito.when(mockStub.deleteLogicalViewCallable()).thenReturn(mockDeleteLogicalViewCallable);
+
+    com.google.bigtable.admin.v2.DeleteLogicalViewRequest expectedRequest =
+        com.google.bigtable.admin.v2.DeleteLogicalViewRequest.newBuilder()
+            .setName(LOGICAL_VIEW_NAME)
+            .build();
+
+    final AtomicInteger wasCalled = new AtomicInteger(0);
+
+    Mockito.when(mockDeleteLogicalViewCallable.futureCall(expectedRequest))
+        .thenAnswer(
+            new Answer<ApiFuture<Empty>>() {
+              @Override
+              public ApiFuture<Empty> answer(InvocationOnMock invocationOnMock) {
+                wasCalled.incrementAndGet();
+                return ApiFutures.immediateFuture(Empty.getDefaultInstance());
+              }
+            });
+
+    // Execute
+    adminClient.deleteLogicalView(INSTANCE_ID, LOGICAL_VIEW_ID);
+
+    adminClient.deleteLogicalViewAsync(INSTANCE_ID, LOGICAL_VIEW_ID).get();
 
     // Verify
     assertThat(wasCalled.get()).isEqualTo(2);

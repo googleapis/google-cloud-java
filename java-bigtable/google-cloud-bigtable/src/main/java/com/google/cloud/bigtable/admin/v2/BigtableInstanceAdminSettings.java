@@ -118,6 +118,11 @@ public final class BigtableInstanceAdminSettings {
         .add("listMaterializedViewsSettings", stubSettings.listMaterializedViewsSettings())
         .add("updateMaterializedViewSettings", stubSettings.updateMaterializedViewSettings())
         .add("deleteMaterializedViewSettings", stubSettings.deleteMaterializedViewSettings())
+        .add("createLogicalViewSettings", stubSettings.createLogicalViewSettings())
+        .add("getLogicalViewSettings", stubSettings.getLogicalViewSettings())
+        .add("listLogicalViewsSettings", stubSettings.listLogicalViewsSettings())
+        .add("updateLogicalViewSettings", stubSettings.updateLogicalViewSettings())
+        .add("deleteLogicalViewSettings", stubSettings.deleteLogicalViewSettings())
         .add("stubSettings", stubSettings)
         .toString();
   }

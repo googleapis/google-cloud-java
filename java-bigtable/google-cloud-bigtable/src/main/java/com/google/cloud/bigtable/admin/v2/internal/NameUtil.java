@@ -55,6 +55,11 @@ public class NameUtil {
     return formatInstanceName(projectId, instanceId) + "/materializedViews/" + materializedViewId;
   }
 
+  public static String formatLogicalViewName(
+      @Nonnull String projectId, @Nonnull String instanceId, @Nonnull String logicalViewId) {
+    return formatInstanceName(projectId, instanceId) + "/logicalViews/" + logicalViewId;
+  }
+
   public static String formatLocationName(String projectId, String zone) {
     return formatProjectName(projectId) + "/locations/" + zone;
   }

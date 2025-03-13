@@ -128,6 +128,11 @@ public class BigtableInstanceAdminSettingsTest {
     "listMaterializedViewsSettings",
     "updateMaterializedViewSettings",
     "deleteMaterializedViewSettings",
+    "createLogicalViewSettings",
+    "getLogicalViewSettings",
+    "listLogicalViewsSettings",
+    "updateLogicalViewSettings",
+    "deleteLogicalViewSettings",
   };
 
   @Test
