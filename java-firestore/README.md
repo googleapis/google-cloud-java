@@ -41,7 +41,7 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-firestore</artifactId>
-  <version>3.30.9</version>
+  <version>3.30.10</version>
 </dependency>
 
 ```
@@ -49,7 +49,7 @@ If you are using Maven without the BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies:
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.53.0')
+implementation platform('com.google.cloud:libraries-bom:26.56.0')
 
 implementation 'com.google.cloud:google-cloud-firestore'
 ```

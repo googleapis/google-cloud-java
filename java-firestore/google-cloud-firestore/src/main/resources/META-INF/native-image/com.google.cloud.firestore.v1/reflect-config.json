@@ -378,6 +378,42 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.api.RoutingParameter",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.api.RoutingParameter$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.api.RoutingRule",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.api.RoutingRule$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.api.RubySettings",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
