@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.138.0](https://github.com/googleapis/java-pubsub/compare/v1.137.1...v1.138.0) (2025-03-14)
+
+
+### Features
+
+* Deprecate `enabled` field for message transforms and add `disabled` field ([76b2a3d](https://github.com/googleapis/java-pubsub/commit/76b2a3dc1f001dfeb3f8974a4cc4de843b7383bc))
+* Next release from main branch is 1.138.0 ([#2361](https://github.com/googleapis/java-pubsub/issues/2361)) ([b6ba56c](https://github.com/googleapis/java-pubsub/commit/b6ba56c04619660d2660a660eaacbda7de9f8608))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.55.1 ([76b2a3d](https://github.com/googleapis/java-pubsub/commit/76b2a3dc1f001dfeb3f8974a4cc4de843b7383bc))
+* Prevent excessive string parsing when publishing and receiving messages to improve performance ([#2317](https://github.com/googleapis/java-pubsub/issues/2317)) ([07b1350](https://github.com/googleapis/java-pubsub/commit/07b135001b4726c9bafafe90c80d369f25f04956))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.48.1 ([#2356](https://github.com/googleapis/java-pubsub/issues/2356)) ([7d3d2e4](https://github.com/googleapis/java-pubsub/commit/7d3d2e4690539ebbe7ab521c2c345b06cba766ea))
+* Update dependency com.google.cloud:google-cloud-storage to v2.49.0 ([#2358](https://github.com/googleapis/java-pubsub/issues/2358)) ([81d3435](https://github.com/googleapis/java-pubsub/commit/81d34352d332ee9c4935e7908b6b9a2383d3a8ba))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.45.1 ([#2366](https://github.com/googleapis/java-pubsub/issues/2366)) ([15899d1](https://github.com/googleapis/java-pubsub/commit/15899d127131747c51c71c94d66ff581f70278f3))
+* Update googleapis/sdk-platform-java action to v2.55.1 ([#2367](https://github.com/googleapis/java-pubsub/issues/2367)) ([de6f84a](https://github.com/googleapis/java-pubsub/commit/de6f84a43a27e954c0dc635158c43c5db4d07dfa))
+
 ## [1.137.1](https://github.com/googleapis/java-pubsub/compare/v1.137.0...v1.137.1) (2025-02-26)
 
 
