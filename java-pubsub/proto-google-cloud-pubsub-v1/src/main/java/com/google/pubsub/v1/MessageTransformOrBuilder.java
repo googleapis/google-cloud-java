@@ -72,15 +72,32 @@ public interface MessageTransformOrBuilder
    *
    *
    * <pre>
-   * Optional. If set to true, the transform is enabled. If false, the transform
-   * is disabled and will not be applied to messages. Defaults to `true`.
+   * Optional. This field is deprecated, use the `disabled` field to disable
+   * transforms.
    * </pre>
    *
-   * <code>bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool enabled = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.pubsub.v1.MessageTransform.enabled is deprecated. See
+   *     google/pubsub/v1/pubsub.proto;l=726
    * @return The enabled.
    */
+  @java.lang.Deprecated
   boolean getEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the transform is disabled and will not be applied to
+   * messages. Defaults to `false`.
+   * </pre>
+   *
+   * <code>bool disabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disabled.
+   */
+  boolean getDisabled();
 
   com.google.pubsub.v1.MessageTransform.TransformCase getTransformCase();
 }

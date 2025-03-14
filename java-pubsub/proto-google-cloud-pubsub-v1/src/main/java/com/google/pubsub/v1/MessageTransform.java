@@ -173,17 +173,39 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. If set to true, the transform is enabled. If false, the transform
-   * is disabled and will not be applied to messages. Defaults to `true`.
+   * Optional. This field is deprecated, use the `disabled` field to disable
+   * transforms.
    * </pre>
    *
-   * <code>bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool enabled = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.pubsub.v1.MessageTransform.enabled is deprecated. See
+   *     google/pubsub/v1/pubsub.proto;l=726
    * @return The enabled.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getEnabled() {
     return enabled_;
+  }
+
+  public static final int DISABLED_FIELD_NUMBER = 4;
+  private boolean disabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the transform is disabled and will not be applied to
+   * messages. Defaults to `false`.
+   * </pre>
+   *
+   * <code>bool disabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disabled.
+   */
+  @java.lang.Override
+  public boolean getDisabled() {
+    return disabled_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -206,6 +228,9 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     if (enabled_ != false) {
       output.writeBool(3, enabled_);
     }
+    if (disabled_ != false) {
+      output.writeBool(4, disabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -223,6 +248,9 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     if (enabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, enabled_);
     }
+    if (disabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, disabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -239,6 +267,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     com.google.pubsub.v1.MessageTransform other = (com.google.pubsub.v1.MessageTransform) obj;
 
     if (getEnabled() != other.getEnabled()) return false;
+    if (getDisabled() != other.getDisabled()) return false;
     if (!getTransformCase().equals(other.getTransformCase())) return false;
     switch (transformCase_) {
       case 2:
@@ -260,6 +289,8 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+    hash = (37 * hash) + DISABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
     switch (transformCase_) {
       case 2:
         hash = (37 * hash) + JAVASCRIPT_UDF_FIELD_NUMBER;
@@ -410,6 +441,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
         javascriptUdfBuilder_.clear();
       }
       enabled_ = false;
+      disabled_ = false;
       transformCase_ = 0;
       transform_ = null;
       return this;
@@ -451,6 +483,9 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.enabled_ = enabled_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.disabled_ = disabled_;
       }
     }
 
@@ -510,6 +545,9 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
       if (other.getEnabled() != false) {
         setEnabled(other.getEnabled());
       }
+      if (other.getDisabled() != false) {
+        setDisabled(other.getDisabled());
+      }
       switch (other.getTransformCase()) {
         case JAVASCRIPT_UDF:
           {
@@ -559,6 +597,12 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 24
+            case 32:
+              {
+                disabled_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -830,15 +874,18 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. If set to true, the transform is enabled. If false, the transform
-     * is disabled and will not be applied to messages. Defaults to `true`.
+     * Optional. This field is deprecated, use the `disabled` field to disable
+     * transforms.
      * </pre>
      *
-     * <code>bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool enabled = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.pubsub.v1.MessageTransform.enabled is deprecated. See
+     *     google/pubsub/v1/pubsub.proto;l=726
      * @return The enabled.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getEnabled() {
       return enabled_;
     }
@@ -846,15 +893,18 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. If set to true, the transform is enabled. If false, the transform
-     * is disabled and will not be applied to messages. Defaults to `true`.
+     * Optional. This field is deprecated, use the `disabled` field to disable
+     * transforms.
      * </pre>
      *
-     * <code>bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool enabled = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.pubsub.v1.MessageTransform.enabled is deprecated. See
+     *     google/pubsub/v1/pubsub.proto;l=726
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
@@ -866,17 +916,76 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. If set to true, the transform is enabled. If false, the transform
-     * is disabled and will not be applied to messages. Defaults to `true`.
+     * Optional. This field is deprecated, use the `disabled` field to disable
+     * transforms.
      * </pre>
      *
-     * <code>bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool enabled = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.pubsub.v1.MessageTransform.enabled is deprecated. See
+     *     google/pubsub/v1/pubsub.proto;l=726
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearEnabled() {
       bitField0_ = (bitField0_ & ~0x00000002);
       enabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean disabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the transform is disabled and will not be applied to
+     * messages. Defaults to `false`.
+     * </pre>
+     *
+     * <code>bool disabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disabled.
+     */
+    @java.lang.Override
+    public boolean getDisabled() {
+      return disabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the transform is disabled and will not be applied to
+     * messages. Defaults to `false`.
+     * </pre>
+     *
+     * <code>bool disabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The disabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisabled(boolean value) {
+
+      disabled_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the transform is disabled and will not be applied to
+     * messages. Defaults to `false`.
+     * </pre>
+     *
+     * <code>bool disabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisabled() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      disabled_ = false;
       onChanged();
       return this;
     }
