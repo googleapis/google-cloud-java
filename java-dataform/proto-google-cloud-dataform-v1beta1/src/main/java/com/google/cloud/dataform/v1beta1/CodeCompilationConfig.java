@@ -81,6 +81,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
             com.google.cloud.dataform.v1beta1.CodeCompilationConfig.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DEFAULT_DATABASE_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -552,6 +553,64 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int DEFAULT_NOTEBOOK_RUNTIME_OPTIONS_FIELD_NUMBER = 9;
+  private com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions defaultNotebookRuntimeOptions_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default notebook runtime options.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.NotebookRuntimeOptions default_notebook_runtime_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the defaultNotebookRuntimeOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasDefaultNotebookRuntimeOptions() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default notebook runtime options.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.NotebookRuntimeOptions default_notebook_runtime_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The defaultNotebookRuntimeOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions
+      getDefaultNotebookRuntimeOptions() {
+    return defaultNotebookRuntimeOptions_ == null
+        ? com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions.getDefaultInstance()
+        : defaultNotebookRuntimeOptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default notebook runtime options.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.NotebookRuntimeOptions default_notebook_runtime_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.NotebookRuntimeOptionsOrBuilder
+      getDefaultNotebookRuntimeOptionsOrBuilder() {
+    return defaultNotebookRuntimeOptions_ == null
+        ? com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions.getDefaultInstance()
+        : defaultNotebookRuntimeOptions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -588,6 +647,9 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultLocation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, defaultLocation_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(9, getDefaultNotebookRuntimeOptions());
     }
     getUnknownFields().writeTo(output);
   }
@@ -629,6 +691,11 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultLocation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, defaultLocation_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, getDefaultNotebookRuntimeOptions());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -653,6 +720,12 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     if (!getDatabaseSuffix().equals(other.getDatabaseSuffix())) return false;
     if (!getSchemaSuffix().equals(other.getSchemaSuffix())) return false;
     if (!getTablePrefix().equals(other.getTablePrefix())) return false;
+    if (hasDefaultNotebookRuntimeOptions() != other.hasDefaultNotebookRuntimeOptions())
+      return false;
+    if (hasDefaultNotebookRuntimeOptions()) {
+      if (!getDefaultNotebookRuntimeOptions().equals(other.getDefaultNotebookRuntimeOptions()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -682,6 +755,10 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getSchemaSuffix().hashCode();
     hash = (37 * hash) + TABLE_PREFIX_FIELD_NUMBER;
     hash = (53 * hash) + getTablePrefix().hashCode();
+    if (hasDefaultNotebookRuntimeOptions()) {
+      hash = (37 * hash) + DEFAULT_NOTEBOOK_RUNTIME_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultNotebookRuntimeOptions().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -834,10 +911,19 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using com.google.cloud.dataform.v1beta1.CodeCompilationConfig.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDefaultNotebookRuntimeOptionsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -852,6 +938,11 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       databaseSuffix_ = "";
       schemaSuffix_ = "";
       tablePrefix_ = "";
+      defaultNotebookRuntimeOptions_ = null;
+      if (defaultNotebookRuntimeOptionsBuilder_ != null) {
+        defaultNotebookRuntimeOptionsBuilder_.dispose();
+        defaultNotebookRuntimeOptionsBuilder_ = null;
+      }
       return this;
     }
 
@@ -913,6 +1004,15 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.tablePrefix_ = tablePrefix_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.defaultNotebookRuntimeOptions_ =
+            defaultNotebookRuntimeOptionsBuilder_ == null
+                ? defaultNotebookRuntimeOptions_
+                : defaultNotebookRuntimeOptionsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -998,6 +1098,9 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (other.hasDefaultNotebookRuntimeOptions()) {
+        mergeDefaultNotebookRuntimeOptions(other.getDefaultNotebookRuntimeOptions());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1075,6 +1178,13 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000004;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getDefaultNotebookRuntimeOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2024,6 +2134,216 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000080;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions defaultNotebookRuntimeOptions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions,
+            com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions.Builder,
+            com.google.cloud.dataform.v1beta1.NotebookRuntimeOptionsOrBuilder>
+        defaultNotebookRuntimeOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default notebook runtime options.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.NotebookRuntimeOptions default_notebook_runtime_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the defaultNotebookRuntimeOptions field is set.
+     */
+    public boolean hasDefaultNotebookRuntimeOptions() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default notebook runtime options.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.NotebookRuntimeOptions default_notebook_runtime_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The defaultNotebookRuntimeOptions.
+     */
+    public com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions
+        getDefaultNotebookRuntimeOptions() {
+      if (defaultNotebookRuntimeOptionsBuilder_ == null) {
+        return defaultNotebookRuntimeOptions_ == null
+            ? com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions.getDefaultInstance()
+            : defaultNotebookRuntimeOptions_;
+      } else {
+        return defaultNotebookRuntimeOptionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default notebook runtime options.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.NotebookRuntimeOptions default_notebook_runtime_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDefaultNotebookRuntimeOptions(
+        com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions value) {
+      if (defaultNotebookRuntimeOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        defaultNotebookRuntimeOptions_ = value;
+      } else {
+        defaultNotebookRuntimeOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default notebook runtime options.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.NotebookRuntimeOptions default_notebook_runtime_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDefaultNotebookRuntimeOptions(
+        com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions.Builder builderForValue) {
+      if (defaultNotebookRuntimeOptionsBuilder_ == null) {
+        defaultNotebookRuntimeOptions_ = builderForValue.build();
+      } else {
+        defaultNotebookRuntimeOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default notebook runtime options.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.NotebookRuntimeOptions default_notebook_runtime_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDefaultNotebookRuntimeOptions(
+        com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions value) {
+      if (defaultNotebookRuntimeOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && defaultNotebookRuntimeOptions_ != null
+            && defaultNotebookRuntimeOptions_
+                != com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions.getDefaultInstance()) {
+          getDefaultNotebookRuntimeOptionsBuilder().mergeFrom(value);
+        } else {
+          defaultNotebookRuntimeOptions_ = value;
+        }
+      } else {
+        defaultNotebookRuntimeOptionsBuilder_.mergeFrom(value);
+      }
+      if (defaultNotebookRuntimeOptions_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default notebook runtime options.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.NotebookRuntimeOptions default_notebook_runtime_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDefaultNotebookRuntimeOptions() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      defaultNotebookRuntimeOptions_ = null;
+      if (defaultNotebookRuntimeOptionsBuilder_ != null) {
+        defaultNotebookRuntimeOptionsBuilder_.dispose();
+        defaultNotebookRuntimeOptionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default notebook runtime options.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.NotebookRuntimeOptions default_notebook_runtime_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions.Builder
+        getDefaultNotebookRuntimeOptionsBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getDefaultNotebookRuntimeOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default notebook runtime options.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.NotebookRuntimeOptions default_notebook_runtime_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.NotebookRuntimeOptionsOrBuilder
+        getDefaultNotebookRuntimeOptionsOrBuilder() {
+      if (defaultNotebookRuntimeOptionsBuilder_ != null) {
+        return defaultNotebookRuntimeOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return defaultNotebookRuntimeOptions_ == null
+            ? com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions.getDefaultInstance()
+            : defaultNotebookRuntimeOptions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default notebook runtime options.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.NotebookRuntimeOptions default_notebook_runtime_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions,
+            com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions.Builder,
+            com.google.cloud.dataform.v1beta1.NotebookRuntimeOptionsOrBuilder>
+        getDefaultNotebookRuntimeOptionsFieldBuilder() {
+      if (defaultNotebookRuntimeOptionsBuilder_ == null) {
+        defaultNotebookRuntimeOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions,
+                com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions.Builder,
+                com.google.cloud.dataform.v1beta1.NotebookRuntimeOptionsOrBuilder>(
+                getDefaultNotebookRuntimeOptions(), getParentForChildren(), isClean());
+        defaultNotebookRuntimeOptions_ = null;
+      }
+      return defaultNotebookRuntimeOptionsBuilder_;
     }
 
     @java.lang.Override

@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.v2.samples;
 
 // [START dialogflow_v2_generated_Conversations_GenerateStatelessSuggestion_sync]
+import com.google.cloud.dialogflow.v2.Conversation;
 import com.google.cloud.dialogflow.v2.ConversationContext;
 import com.google.cloud.dialogflow.v2.ConversationsClient;
 import com.google.cloud.dialogflow.v2.GenerateStatelessSuggestionRequest;
@@ -24,6 +25,7 @@ import com.google.cloud.dialogflow.v2.GenerateStatelessSuggestionResponse;
 import com.google.cloud.dialogflow.v2.LocationName;
 import com.google.cloud.dialogflow.v2.TriggerEvent;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SyncGenerateStatelessSuggestion {
 
@@ -41,6 +43,7 @@ public class SyncGenerateStatelessSuggestion {
       GenerateStatelessSuggestionRequest request =
           GenerateStatelessSuggestionRequest.newBuilder()
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .putAllContextReferences(new HashMap<String, Conversation.ContextReference>())
               .setConversationContext(ConversationContext.newBuilder().build())
               .addAllTriggerEvents(new ArrayList<TriggerEvent>())
               .build();

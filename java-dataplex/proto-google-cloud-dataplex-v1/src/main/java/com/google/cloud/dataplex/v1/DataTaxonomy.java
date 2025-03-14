@@ -30,6 +30,7 @@ package com.google.cloud.dataplex.v1;
  *
  * Protobuf type {@code google.cloud.dataplex.v1.DataTaxonomy}
  */
+@java.lang.Deprecated
 public final class DataTaxonomy extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataTaxonomy)

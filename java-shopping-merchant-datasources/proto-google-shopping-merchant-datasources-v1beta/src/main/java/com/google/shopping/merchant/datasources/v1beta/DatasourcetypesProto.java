@@ -37,6 +37,10 @@ public final class DatasourcetypesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_datasources_v1beta_PrimaryProductDataSource_DefaultRule_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_datasources_v1beta_PrimaryProductDataSource_Destination_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_datasources_v1beta_PrimaryProductDataSource_Destination_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_shopping_merchant_datasources_v1beta_SupplementalProductDataSource_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_datasources_v1beta_SupplementalProductDataSource_fieldAccessorTable;
@@ -76,54 +80,65 @@ public final class DatasourcetypesProto {
       "\nAgoogle/shopping/merchant/datasources/v"
           + "1beta/datasourcetypes.proto\022+google.shop"
           + "ping.merchant.datasources.v1beta\032\037google"
-          + "/api/field_behavior.proto\"\305\004\n\030PrimaryPro"
-          + "ductDataSource\022f\n\007channel\030\003 \001(\0162M.google"
-          + ".shopping.merchant.datasources.v1beta.Pr"
-          + "imaryProductDataSource.ChannelB\006\340A\002\340A\005\022\037"
+          + "/api/field_behavior.proto\032 google/shoppi"
+          + "ng/type/types.proto\"\256\007\n\030PrimaryProductDa"
+          + "taSource\022f\n\007channel\030\003 \001(\0162M.google.shopp"
+          + "ing.merchant.datasources.v1beta.PrimaryP"
+          + "roductDataSource.ChannelB\006\340A\001\340A\005\022\037\n\nfeed"
+          + "_label\030\004 \001(\tB\006\340A\001\340A\005H\000\210\001\001\022%\n\020content_lan"
+          + "guage\030\005 \001(\tB\006\340A\001\340A\005H\001\210\001\001\022\026\n\tcountries\030\006 "
+          + "\003(\tB\003\340A\001\022l\n\014default_rule\030\007 \001(\0132Q.google."
+          + "shopping.merchant.datasources.v1beta.Pri"
+          + "maryProductDataSource.DefaultRuleB\003\340A\001\022l"
+          + "\n\014destinations\030\n \003(\0132Q.google.shopping.m"
+          + "erchant.datasources.v1beta.PrimaryProduc"
+          + "tDataSource.DestinationB\003\340A\001\032t\n\013DefaultR"
+          + "ule\022e\n\026take_from_data_sources\030\001 \003(\0132@.go"
+          + "ogle.shopping.merchant.datasources.v1bet"
+          + "a.DataSourceReferenceB\003\340A\002\032\370\001\n\013Destinati"
+          + "on\022F\n\013destination\030\001 \001(\01621.google.shoppin"
+          + "g.type.Destination.DestinationEnum\022f\n\005st"
+          + "ate\030\002 \001(\0162W.google.shopping.merchant.dat"
+          + "asources.v1beta.PrimaryProductDataSource"
+          + ".Destination.State\"9\n\005State\022\025\n\021STATE_UNS"
+          + "PECIFIED\020\000\022\013\n\007ENABLED\020\001\022\014\n\010DISABLED\020\002\"Y\n"
+          + "\007Channel\022\027\n\023CHANNEL_UNSPECIFIED\020\000\022\023\n\017ONL"
+          + "INE_PRODUCTS\020\001\022\022\n\016LOCAL_PRODUCTS\020\002\022\014\n\010PR"
+          + "ODUCTS\020\003B\r\n\013_feed_labelB\023\n\021_content_lang"
+          + "uage\"\374\001\n\035SupplementalProductDataSource\022\037"
           + "\n\nfeed_label\030\004 \001(\tB\006\340A\001\340A\005H\000\210\001\001\022%\n\020conte"
-          + "nt_language\030\005 \001(\tB\006\340A\001\340A\005H\001\210\001\001\022\026\n\tcountr"
-          + "ies\030\006 \003(\tB\003\340A\001\022l\n\014default_rule\030\007 \001(\0132Q.g"
-          + "oogle.shopping.merchant.datasources.v1be"
-          + "ta.PrimaryProductDataSource.DefaultRuleB"
-          + "\003\340A\001\032t\n\013DefaultRule\022e\n\026take_from_data_so"
-          + "urces\030\001 \003(\0132@.google.shopping.merchant.d"
-          + "atasources.v1beta.DataSourceReferenceB\003\340"
-          + "A\002\"Y\n\007Channel\022\027\n\023CHANNEL_UNSPECIFIED\020\000\022\023"
-          + "\n\017ONLINE_PRODUCTS\020\001\022\022\n\016LOCAL_PRODUCTS\020\002\022"
-          + "\014\n\010PRODUCTS\020\003B\r\n\013_feed_labelB\023\n\021_content"
-          + "_language\"\374\001\n\035SupplementalProductDataSou"
-          + "rce\022\037\n\nfeed_label\030\004 \001(\tB\006\340A\001\340A\005H\000\210\001\001\022%\n\020"
-          + "content_language\030\005 \001(\tB\006\340A\001\340A\005H\001\210\001\001\022o\n r"
-          + "eferencing_primary_data_sources\030\007 \003(\0132@."
-          + "google.shopping.merchant.datasources.v1b"
-          + "eta.DataSourceReferenceB\003\340A\003B\r\n\013_feed_la"
-          + "belB\023\n\021_content_language\"X\n\030LocalInvento"
-          + "ryDataSource\022\032\n\nfeed_label\030\004 \001(\tB\006\340A\002\340A\005"
-          + "\022 \n\020content_language\030\005 \001(\tB\006\340A\002\340A\005\"[\n\033Re"
-          + "gionalInventoryDataSource\022\032\n\nfeed_label\030"
-          + "\004 \001(\tB\006\340A\002\340A\005\022 \n\020content_language\030\005 \001(\tB"
-          + "\006\340A\002\340A\005\"W\n\023PromotionDataSource\022\036\n\016target"
-          + "_country\030\001 \001(\tB\006\340A\002\340A\005\022 \n\020content_langua"
-          + "ge\030\002 \001(\tB\006\340A\002\340A\005\"\031\n\027ProductReviewDataSou"
-          + "rce\"\032\n\030MerchantReviewDataSource\"\216\001\n\023Data"
-          + "SourceReference\022\016\n\004self\030\001 \001(\010H\000\022\'\n\030prima"
-          + "ry_data_source_name\030\003 \001(\tB\003\340A\001H\000\022,\n\035supp"
-          + "lemental_data_source_name\030\002 \001(\tB\003\340A\001H\000B\020"
-          + "\n\016data_source_idB\260\002\n/com.google.shopping"
-          + ".merchant.datasources.v1betaB\024Datasource"
-          + "typesProtoP\001ZWcloud.google.com/go/shoppi"
-          + "ng/merchant/datasources/apiv1beta/dataso"
-          + "urcespb;datasourcespb\252\002+Google.Shopping."
-          + "Merchant.DataSources.V1Beta\312\002+Google\\Sho"
-          + "pping\\Merchant\\DataSources\\V1beta\352\002/Goog"
-          + "le::Shopping::Merchant::DataSources::V1b"
-          + "etab\006proto3"
+          + "nt_language\030\005 \001(\tB\006\340A\001\340A\005H\001\210\001\001\022o\n refere"
+          + "ncing_primary_data_sources\030\007 \003(\0132@.googl"
+          + "e.shopping.merchant.datasources.v1beta.D"
+          + "ataSourceReferenceB\003\340A\003B\r\n\013_feed_labelB\023"
+          + "\n\021_content_language\"X\n\030LocalInventoryDat"
+          + "aSource\022\032\n\nfeed_label\030\004 \001(\tB\006\340A\002\340A\005\022 \n\020c"
+          + "ontent_language\030\005 \001(\tB\006\340A\002\340A\005\"[\n\033Regiona"
+          + "lInventoryDataSource\022\032\n\nfeed_label\030\004 \001(\t"
+          + "B\006\340A\002\340A\005\022 \n\020content_language\030\005 \001(\tB\006\340A\002\340"
+          + "A\005\"W\n\023PromotionDataSource\022\036\n\016target_coun"
+          + "try\030\001 \001(\tB\006\340A\002\340A\005\022 \n\020content_language\030\002 "
+          + "\001(\tB\006\340A\002\340A\005\"\031\n\027ProductReviewDataSource\"\032"
+          + "\n\030MerchantReviewDataSource\"\216\001\n\023DataSourc"
+          + "eReference\022\016\n\004self\030\001 \001(\010H\000\022\'\n\030primary_da"
+          + "ta_source_name\030\003 \001(\tB\003\340A\001H\000\022,\n\035supplemen"
+          + "tal_data_source_name\030\002 \001(\tB\003\340A\001H\000B\020\n\016dat"
+          + "a_source_idB\260\002\n/com.google.shopping.merc"
+          + "hant.datasources.v1betaB\024Datasourcetypes"
+          + "ProtoP\001ZWcloud.google.com/go/shopping/me"
+          + "rchant/datasources/apiv1beta/datasources"
+          + "pb;datasourcespb\252\002+Google.Shopping.Merch"
+          + "ant.DataSources.V1Beta\312\002+Google\\Shopping"
+          + "\\Merchant\\DataSources\\V1beta\352\002/Google::S"
+          + "hopping::Merchant::DataSources::V1betab\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.shopping.type.TypesProto.getDescriptor(),
             });
     internal_static_google_shopping_merchant_datasources_v1beta_PrimaryProductDataSource_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -131,7 +146,7 @@ public final class DatasourcetypesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_datasources_v1beta_PrimaryProductDataSource_descriptor,
             new java.lang.String[] {
-              "Channel", "FeedLabel", "ContentLanguage", "Countries", "DefaultRule",
+              "Channel", "FeedLabel", "ContentLanguage", "Countries", "DefaultRule", "Destinations",
             });
     internal_static_google_shopping_merchant_datasources_v1beta_PrimaryProductDataSource_DefaultRule_descriptor =
         internal_static_google_shopping_merchant_datasources_v1beta_PrimaryProductDataSource_descriptor
@@ -142,6 +157,16 @@ public final class DatasourcetypesProto {
             internal_static_google_shopping_merchant_datasources_v1beta_PrimaryProductDataSource_DefaultRule_descriptor,
             new java.lang.String[] {
               "TakeFromDataSources",
+            });
+    internal_static_google_shopping_merchant_datasources_v1beta_PrimaryProductDataSource_Destination_descriptor =
+        internal_static_google_shopping_merchant_datasources_v1beta_PrimaryProductDataSource_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_shopping_merchant_datasources_v1beta_PrimaryProductDataSource_Destination_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_datasources_v1beta_PrimaryProductDataSource_Destination_descriptor,
+            new java.lang.String[] {
+              "Destination", "State",
             });
     internal_static_google_shopping_merchant_datasources_v1beta_SupplementalProductDataSource_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -201,6 +226,7 @@ public final class DatasourcetypesProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.shopping.type.TypesProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

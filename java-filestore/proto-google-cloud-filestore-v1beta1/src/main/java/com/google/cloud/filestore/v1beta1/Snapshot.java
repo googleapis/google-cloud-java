@@ -62,6 +62,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     switch (number) {
       case 5:
         return internalGetLabels();
+      case 13:
+        return internalGetTags();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -572,6 +574,152 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     return filesystemUsedBytes_;
   }
 
+  public static final int TAGS_FIELD_NUMBER = 13;
+
+  private static final class TagsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.filestore.v1beta1.CloudFilestoreServiceProto
+                .internal_static_google_cloud_filestore_v1beta1_Snapshot_TagsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+    if (tags_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+    }
+    return tags_;
+  }
+
+  public int getTagsCount() {
+    return internalGetTags().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag key-value pairs bound to this
+   * resource. Each key must be a namespaced name and each value a short name.
+   * Example:
+   * "123456789012/environment" : "production",
+   * "123456789013/costCenter" : "marketing"
+   * See the documentation for more information:
+   * - Namespaced name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+   * - Short name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsTags(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetTags().getMap().containsKey(key);
+  }
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getTags() {
+    return getTagsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag key-value pairs bound to this
+   * resource. Each key must be a namespaced name and each value a short name.
+   * Example:
+   * "123456789012/environment" : "production",
+   * "123456789013/costCenter" : "marketing"
+   * See the documentation for more information:
+   * - Namespaced name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+   * - Short name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+    return internalGetTags().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag key-value pairs bound to this
+   * resource. Each key must be a namespaced name and each value a short name.
+   * Example:
+   * "123456789012/environment" : "production",
+   * "123456789013/costCenter" : "marketing"
+   * See the documentation for more information:
+   * - Namespaced name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+   * - Short name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag key-value pairs bound to this
+   * resource. Each key must be a namespaced name and each value a short name.
+   * Example:
+   * "123456789012/environment" : "production",
+   * "123456789013/costCenter" : "marketing"
+   * See the documentation for more information:
+   * - Namespaced name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+   * - Short name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getTagsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -603,6 +751,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     if (filesystemUsedBytes_ != 0L) {
       output.writeInt64(12, filesystemUsedBytes_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 13);
     getUnknownFields().writeTo(output);
   }
 
@@ -637,6 +787,16 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     if (filesystemUsedBytes_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(12, filesystemUsedBytes_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetTags().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+          TagsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, tags__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -662,6 +822,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (getFilesystemUsedBytes() != other.getFilesystemUsedBytes()) return false;
+    if (!internalGetTags().equals(other.internalGetTags())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -689,6 +850,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + FILESYSTEM_USED_BYTES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getFilesystemUsedBytes());
+    if (!internalGetTags().getMap().isEmpty()) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetTags().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -813,6 +978,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 5:
           return internalGetLabels();
+        case 13:
+          return internalGetTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -824,6 +991,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 5:
           return internalGetMutableLabels();
+        case 13:
+          return internalGetMutableTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -869,6 +1038,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableLabels().clear();
       filesystemUsedBytes_ = 0L;
+      internalGetMutableTags().clear();
       return this;
     }
 
@@ -925,6 +1095,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.filesystemUsedBytes_ = filesystemUsedBytes_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.tags_ = internalGetTags();
+        result.tags_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -995,6 +1169,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       if (other.getFilesystemUsedBytes() != 0L) {
         setFilesystemUsedBytes(other.getFilesystemUsedBytes());
       }
+      internalGetMutableTags().mergeFrom(other.internalGetTags());
+      bitField0_ |= 0x00000040;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1063,6 +1239,15 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 96
+            case 106:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+                    input.readMessage(
+                        TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1825,6 +2010,246 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000020);
       filesystemUsedBytes_ = 0L;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+      if (tags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      return tags_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableTags() {
+      if (tags_ == null) {
+        tags_ = com.google.protobuf.MapField.newMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      if (!tags_.isMutable()) {
+        tags_ = tags_.copy();
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return tags_;
+    }
+
+    public int getTagsCount() {
+      return internalGetTags().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag key-value pairs bound to this
+     * resource. Each key must be a namespaced name and each value a short name.
+     * Example:
+     * "123456789012/environment" : "production",
+     * "123456789013/costCenter" : "marketing"
+     * See the documentation for more information:
+     * - Namespaced name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+     * - Short name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetTags().getMap().containsKey(key);
+    }
+    /** Use {@link #getTagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getTags() {
+      return getTagsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag key-value pairs bound to this
+     * resource. Each key must be a namespaced name and each value a short name.
+     * Example:
+     * "123456789012/environment" : "production",
+     * "123456789013/costCenter" : "marketing"
+     * See the documentation for more information:
+     * - Namespaced name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+     * - Short name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+      return internalGetTags().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag key-value pairs bound to this
+     * resource. Each key must be a namespaced name and each value a short name.
+     * Example:
+     * "123456789012/environment" : "production",
+     * "123456789013/costCenter" : "marketing"
+     * See the documentation for more information:
+     * - Namespaced name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+     * - Short name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag key-value pairs bound to this
+     * resource. Each key must be a namespaced name and each value a short name.
+     * Example:
+     * "123456789012/environment" : "production",
+     * "123456789013/costCenter" : "marketing"
+     * See the documentation for more information:
+     * - Namespaced name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+     * - Short name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getTagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearTags() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      internalGetMutableTags().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag key-value pairs bound to this
+     * resource. Each key must be a namespaced name and each value a short name.
+     * Example:
+     * "123456789012/environment" : "production",
+     * "123456789013/costCenter" : "marketing"
+     * See the documentation for more information:
+     * - Namespaced name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+     * - Short name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableTags().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
+      bitField0_ |= 0x00000040;
+      return internalGetMutableTags().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag key-value pairs bound to this
+     * resource. Each key must be a namespaced name and each value a short name.
+     * Example:
+     * "123456789012/environment" : "production",
+     * "123456789013/costCenter" : "marketing"
+     * See the documentation for more information:
+     * - Namespaced name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+     * - Short name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putTags(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableTags().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag key-value pairs bound to this
+     * resource. Each key must be a namespaced name and each value a short name.
+     * Example:
+     * "123456789012/environment" : "production",
+     * "123456789013/costCenter" : "marketing"
+     * See the documentation for more information:
+     * - Namespaced name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+     * - Short name:
+     * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllTags(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableTags().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000040;
       return this;
     }
 

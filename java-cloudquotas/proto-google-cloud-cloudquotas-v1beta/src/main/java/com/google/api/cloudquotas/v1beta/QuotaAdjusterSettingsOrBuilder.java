@@ -28,8 +28,9 @@ public interface QuotaAdjusterSettingsOrBuilder
    *
    *
    * <pre>
-   * Identifier. Name of the config would be of the format:
-   *   projects/12345/locations/global/quotaAdjusterSettings
+   * Identifier. Name of the configuration, in the following format:
+   *   `projects/PROJECT_NUMBER/locations/global/quotaAdjusterSettings`.
+   * Replace PROJECT_NUMBER with the project number for your project.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -41,8 +42,9 @@ public interface QuotaAdjusterSettingsOrBuilder
    *
    *
    * <pre>
-   * Identifier. Name of the config would be of the format:
-   *   projects/12345/locations/global/quotaAdjusterSettings
+   * Identifier. Name of the configuration, in the following format:
+   *   `projects/PROJECT_NUMBER/locations/global/quotaAdjusterSettings`.
+   * Replace PROJECT_NUMBER with the project number for your project.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -84,7 +86,8 @@ public interface QuotaAdjusterSettingsOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp when the QuotaAdjusterSettings was last updated.
+   * Output only. The timestamp when the QuotaAdjusterSettings resource was last
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -97,7 +100,8 @@ public interface QuotaAdjusterSettingsOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp when the QuotaAdjusterSettings was last updated.
+   * Output only. The timestamp when the QuotaAdjusterSettings resource was last
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -110,7 +114,8 @@ public interface QuotaAdjusterSettingsOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp when the QuotaAdjusterSettings was last updated.
+   * Output only. The timestamp when the QuotaAdjusterSettings resource was last
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -122,11 +127,10 @@ public interface QuotaAdjusterSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. The current etag of the QuotaAdjusterSettings. If an etag is
-   * provided on update and does not match the current server's etag of the
-   * QuotaAdjusterSettings, the request will be blocked and an ABORTED error
-   * will be returned. See https://google.aip.dev/134#etags for more details on
-   * etags.
+   * Optional. The current ETag of the QuotaAdjusterSettings. If an ETag is
+   * provided on update and does not match the current server's ETag in the
+   * QuotaAdjusterSettings, the request is blocked and returns an ABORTED error.
+   * See https://google.aip.dev/134#etags for more details on ETags.
    * </pre>
    *
    * <code>string etag = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -138,11 +142,10 @@ public interface QuotaAdjusterSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. The current etag of the QuotaAdjusterSettings. If an etag is
-   * provided on update and does not match the current server's etag of the
-   * QuotaAdjusterSettings, the request will be blocked and an ABORTED error
-   * will be returned. See https://google.aip.dev/134#etags for more details on
-   * etags.
+   * Optional. The current ETag of the QuotaAdjusterSettings. If an ETag is
+   * provided on update and does not match the current server's ETag in the
+   * QuotaAdjusterSettings, the request is blocked and returns an ABORTED error.
+   * See https://google.aip.dev/134#etags for more details on ETags.
    * </pre>
    *
    * <code>string etag = 6 [(.google.api.field_behavior) = OPTIONAL];</code>

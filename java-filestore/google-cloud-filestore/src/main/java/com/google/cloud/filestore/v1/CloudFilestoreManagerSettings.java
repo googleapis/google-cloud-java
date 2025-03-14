@@ -283,6 +283,18 @@ public class CloudFilestoreManagerSettings extends ClientSettings<CloudFilestore
     return ((CloudFilestoreManagerStubSettings) getStubSettings()).updateBackupOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to promoteReplica. */
+  public UnaryCallSettings<PromoteReplicaRequest, Operation> promoteReplicaSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings()).promoteReplicaSettings();
+  }
+
+  /** Returns the object with the settings used for calls to promoteReplica. */
+  public OperationCallSettings<PromoteReplicaRequest, Instance, OperationMetadata>
+      promoteReplicaOperationSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings())
+        .promoteReplicaOperationSettings();
+  }
+
   public static final CloudFilestoreManagerSettings create(CloudFilestoreManagerStubSettings stub)
       throws IOException {
     return new CloudFilestoreManagerSettings.Builder(stub.toBuilder()).build();
@@ -551,6 +563,17 @@ public class CloudFilestoreManagerSettings extends ClientSettings<CloudFilestore
     public OperationCallSettings.Builder<UpdateBackupRequest, Backup, OperationMetadata>
         updateBackupOperationSettings() {
       return getStubSettingsBuilder().updateBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to promoteReplica. */
+    public UnaryCallSettings.Builder<PromoteReplicaRequest, Operation> promoteReplicaSettings() {
+      return getStubSettingsBuilder().promoteReplicaSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to promoteReplica. */
+    public OperationCallSettings.Builder<PromoteReplicaRequest, Instance, OperationMetadata>
+        promoteReplicaOperationSettings() {
+      return getStubSettingsBuilder().promoteReplicaOperationSettings();
     }
 
     @Override

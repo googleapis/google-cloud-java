@@ -65,6 +65,7 @@ import com.google.chat.v1.GetAttachmentRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
 import com.google.chat.v1.GetSpaceEventRequest;
+import com.google.chat.v1.GetSpaceNotificationSettingRequest;
 import com.google.chat.v1.GetSpaceReadStateRequest;
 import com.google.chat.v1.GetSpaceRequest;
 import com.google.chat.v1.GetThreadReadStateRequest;
@@ -86,10 +87,12 @@ import com.google.chat.v1.SearchSpacesResponse;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
 import com.google.chat.v1.SpaceEvent;
+import com.google.chat.v1.SpaceNotificationSetting;
 import com.google.chat.v1.SpaceReadState;
 import com.google.chat.v1.ThreadReadState;
 import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
+import com.google.chat.v1.UpdateSpaceNotificationSettingRequest;
 import com.google.chat.v1.UpdateSpaceReadStateRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
 import com.google.chat.v1.UploadAttachmentRequest;
@@ -181,6 +184,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           .add("https://www.googleapis.com/auth/chat.spaces.readonly")
           .add("https://www.googleapis.com/auth/chat.users.readstate")
           .add("https://www.googleapis.com/auth/chat.users.readstate.readonly")
+          .add("https://www.googleapis.com/auth/chat.users.spacesettings")
           .build();
 
   private final UnaryCallSettings<CreateMessageRequest, Message> createMessageSettings;
@@ -228,6 +232,10 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
   private final PagedCallSettings<
           ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
       listSpaceEventsSettings;
+  private final UnaryCallSettings<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingSettings;
+  private final UnaryCallSettings<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingSettings;
 
   private static final PagedListDescriptor<ListMessagesRequest, ListMessagesResponse, Message>
       LIST_MESSAGES_PAGE_STR_DESC =
@@ -698,6 +706,18 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     return listSpaceEventsSettings;
   }
 
+  /** Returns the object with the settings used for calls to getSpaceNotificationSetting. */
+  public UnaryCallSettings<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingSettings() {
+    return getSpaceNotificationSettingSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSpaceNotificationSetting. */
+  public UnaryCallSettings<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingSettings() {
+    return updateSpaceNotificationSettingSettings;
+  }
+
   public ChatServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -838,6 +858,10 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     getThreadReadStateSettings = settingsBuilder.getThreadReadStateSettings().build();
     getSpaceEventSettings = settingsBuilder.getSpaceEventSettings().build();
     listSpaceEventsSettings = settingsBuilder.listSpaceEventsSettings().build();
+    getSpaceNotificationSettingSettings =
+        settingsBuilder.getSpaceNotificationSettingSettings().build();
+    updateSpaceNotificationSettingSettings =
+        settingsBuilder.updateSpaceNotificationSettingSettings().build();
   }
 
   /** Builder for ChatServiceStubSettings. */
@@ -893,6 +917,12 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     private final PagedCallSettings.Builder<
             ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
         listSpaceEventsSettings;
+    private final UnaryCallSettings.Builder<
+            GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        getSpaceNotificationSettingSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        updateSpaceNotificationSettingSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -960,6 +990,8 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getThreadReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSpaceEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSpaceEventsSettings = PagedCallSettings.newBuilder(LIST_SPACE_EVENTS_PAGE_STR_FACT);
+      getSpaceNotificationSettingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSpaceNotificationSettingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -991,7 +1023,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               updateSpaceReadStateSettings,
               getThreadReadStateSettings,
               getSpaceEventSettings,
-              listSpaceEventsSettings);
+              listSpaceEventsSettings,
+              getSpaceNotificationSettingSettings,
+              updateSpaceNotificationSettingSettings);
       initDefaults(this);
     }
 
@@ -1027,6 +1061,10 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getThreadReadStateSettings = settings.getThreadReadStateSettings.toBuilder();
       getSpaceEventSettings = settings.getSpaceEventSettings.toBuilder();
       listSpaceEventsSettings = settings.listSpaceEventsSettings.toBuilder();
+      getSpaceNotificationSettingSettings =
+          settings.getSpaceNotificationSettingSettings.toBuilder();
+      updateSpaceNotificationSettingSettings =
+          settings.updateSpaceNotificationSettingSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1058,7 +1096,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               updateSpaceReadStateSettings,
               getThreadReadStateSettings,
               getSpaceEventSettings,
-              listSpaceEventsSettings);
+              listSpaceEventsSettings,
+              getSpaceNotificationSettingSettings,
+              updateSpaceNotificationSettingSettings);
     }
 
     private static Builder createDefault() {
@@ -1228,6 +1268,16 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
       builder
           .listSpaceEventsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSpaceNotificationSettingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateSpaceNotificationSettingSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1411,6 +1461,19 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
             ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
         listSpaceEventsSettings() {
       return listSpaceEventsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSpaceNotificationSetting. */
+    public UnaryCallSettings.Builder<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        getSpaceNotificationSettingSettings() {
+      return getSpaceNotificationSettingSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSpaceNotificationSetting. */
+    public UnaryCallSettings.Builder<
+            UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        updateSpaceNotificationSettingSettings() {
+      return updateSpaceNotificationSettingSettings;
     }
 
     @Override

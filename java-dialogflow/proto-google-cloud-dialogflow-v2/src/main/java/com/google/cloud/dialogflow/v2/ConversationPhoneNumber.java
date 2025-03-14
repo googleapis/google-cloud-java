@@ -64,6 +64,24 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
             com.google.cloud.dialogflow.v2.ConversationPhoneNumber.Builder.class);
   }
 
+  public static final int COUNTRY_CODE_FIELD_NUMBER = 2;
+  private int countryCode_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Desired country code for the phone number.
+   * </pre>
+   *
+   * <code>int32 country_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The countryCode.
+   */
+  @java.lang.Override
+  public int getCountryCode() {
+    return countryCode_;
+  }
+
   public static final int PHONE_NUMBER_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -129,6 +147,9 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (countryCode_ != 0) {
+      output.writeInt32(2, countryCode_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phoneNumber_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, phoneNumber_);
     }
@@ -141,6 +162,9 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
+    if (countryCode_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, countryCode_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phoneNumber_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, phoneNumber_);
     }
@@ -160,6 +184,7 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
     com.google.cloud.dialogflow.v2.ConversationPhoneNumber other =
         (com.google.cloud.dialogflow.v2.ConversationPhoneNumber) obj;
 
+    if (getCountryCode() != other.getCountryCode()) return false;
     if (!getPhoneNumber().equals(other.getPhoneNumber())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -172,6 +197,8 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + COUNTRY_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getCountryCode();
     hash = (37 * hash) + PHONE_NUMBER_FIELD_NUMBER;
     hash = (53 * hash) + getPhoneNumber().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -315,6 +342,7 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      countryCode_ = 0;
       phoneNumber_ = "";
       return this;
     }
@@ -353,6 +381,9 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
     private void buildPartial0(com.google.cloud.dialogflow.v2.ConversationPhoneNumber result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.countryCode_ = countryCode_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.phoneNumber_ = phoneNumber_;
       }
     }
@@ -403,9 +434,12 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
     public Builder mergeFrom(com.google.cloud.dialogflow.v2.ConversationPhoneNumber other) {
       if (other == com.google.cloud.dialogflow.v2.ConversationPhoneNumber.getDefaultInstance())
         return this;
+      if (other.getCountryCode() != 0) {
+        setCountryCode(other.getCountryCode());
+      }
       if (!other.getPhoneNumber().isEmpty()) {
         phoneNumber_ = other.phoneNumber_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -434,10 +468,16 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
             case 0:
               done = true;
               break;
+            case 16:
+              {
+                countryCode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
             case 26:
               {
                 phoneNumber_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -458,6 +498,59 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
     }
 
     private int bitField0_;
+
+    private int countryCode_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Desired country code for the phone number.
+     * </pre>
+     *
+     * <code>int32 country_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The countryCode.
+     */
+    @java.lang.Override
+    public int getCountryCode() {
+      return countryCode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Desired country code for the phone number.
+     * </pre>
+     *
+     * <code>int32 country_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The countryCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCountryCode(int value) {
+
+      countryCode_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Desired country code for the phone number.
+     * </pre>
+     *
+     * <code>int32 country_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCountryCode() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      countryCode_ = 0;
+      onChanged();
+      return this;
+    }
 
     private java.lang.Object phoneNumber_ = "";
     /**
@@ -521,7 +614,7 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       phoneNumber_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -538,7 +631,7 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
      */
     public Builder clearPhoneNumber() {
       phoneNumber_ = getDefaultInstance().getPhoneNumber();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -560,7 +653,7 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
       }
       checkByteStringIsUtf8(value);
       phoneNumber_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

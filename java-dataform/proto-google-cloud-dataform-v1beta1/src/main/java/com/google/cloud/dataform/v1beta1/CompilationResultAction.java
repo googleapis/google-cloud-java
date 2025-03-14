@@ -40,6 +40,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
   private CompilationResultAction() {
     filePath_ = "";
+    internalMetadata_ = "";
   }
 
   @java.lang.Override
@@ -12173,6 +12174,1650 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
   }
 
+  public interface NotebookOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataform.v1beta1.CompilationResultAction.Notebook)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of actions that this action depends on.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+     */
+    java.util.List<com.google.cloud.dataform.v1beta1.Target> getDependencyTargetsList();
+    /**
+     *
+     *
+     * <pre>
+     * A list of actions that this action depends on.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+     */
+    com.google.cloud.dataform.v1beta1.Target getDependencyTargets(int index);
+    /**
+     *
+     *
+     * <pre>
+     * A list of actions that this action depends on.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+     */
+    int getDependencyTargetsCount();
+    /**
+     *
+     *
+     * <pre>
+     * A list of actions that this action depends on.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+     */
+    java.util.List<? extends com.google.cloud.dataform.v1beta1.TargetOrBuilder>
+        getDependencyTargetsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * A list of actions that this action depends on.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+     */
+    com.google.cloud.dataform.v1beta1.TargetOrBuilder getDependencyTargetsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether this action is disabled (i.e. should not be run).
+     * </pre>
+     *
+     * <code>bool disabled = 2;</code>
+     *
+     * @return The disabled.
+     */
+    boolean getDisabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * The contents of the notebook.
+     * </pre>
+     *
+     * <code>string contents = 3;</code>
+     *
+     * @return The contents.
+     */
+    java.lang.String getContents();
+    /**
+     *
+     *
+     * <pre>
+     * The contents of the notebook.
+     * </pre>
+     *
+     * <code>string contents = 3;</code>
+     *
+     * @return The bytes for contents.
+     */
+    com.google.protobuf.ByteString getContentsBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Arbitrary, user-defined tags on this action.
+     * </pre>
+     *
+     * <code>repeated string tags = 4;</code>
+     *
+     * @return A list containing the tags.
+     */
+    java.util.List<java.lang.String> getTagsList();
+    /**
+     *
+     *
+     * <pre>
+     * Arbitrary, user-defined tags on this action.
+     * </pre>
+     *
+     * <code>repeated string tags = 4;</code>
+     *
+     * @return The count of tags.
+     */
+    int getTagsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Arbitrary, user-defined tags on this action.
+     * </pre>
+     *
+     * <code>repeated string tags = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    java.lang.String getTags(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Arbitrary, user-defined tags on this action.
+     * </pre>
+     *
+     * <code>repeated string tags = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    com.google.protobuf.ByteString getTagsBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents a notebook.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataform.v1beta1.CompilationResultAction.Notebook}
+   */
+  public static final class Notebook extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.CompilationResultAction.Notebook)
+      NotebookOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Notebook.newBuilder() to construct.
+    private Notebook(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Notebook() {
+      dependencyTargets_ = java.util.Collections.emptyList();
+      contents_ = "";
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Notebook();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataform.v1beta1.DataformProto
+          .internal_static_google_cloud_dataform_v1beta1_CompilationResultAction_Notebook_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataform.v1beta1.DataformProto
+          .internal_static_google_cloud_dataform_v1beta1_CompilationResultAction_Notebook_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook.class,
+              com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook.Builder.class);
+    }
+
+    public static final int DEPENDENCY_TARGETS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.dataform.v1beta1.Target> dependencyTargets_;
+    /**
+     *
+     *
+     * <pre>
+     * A list of actions that this action depends on.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.dataform.v1beta1.Target> getDependencyTargetsList() {
+      return dependencyTargets_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of actions that this action depends on.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.dataform.v1beta1.TargetOrBuilder>
+        getDependencyTargetsOrBuilderList() {
+      return dependencyTargets_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of actions that this action depends on.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+     */
+    @java.lang.Override
+    public int getDependencyTargetsCount() {
+      return dependencyTargets_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of actions that this action depends on.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.Target getDependencyTargets(int index) {
+      return dependencyTargets_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of actions that this action depends on.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.TargetOrBuilder getDependencyTargetsOrBuilder(
+        int index) {
+      return dependencyTargets_.get(index);
+    }
+
+    public static final int DISABLED_FIELD_NUMBER = 2;
+    private boolean disabled_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Whether this action is disabled (i.e. should not be run).
+     * </pre>
+     *
+     * <code>bool disabled = 2;</code>
+     *
+     * @return The disabled.
+     */
+    @java.lang.Override
+    public boolean getDisabled() {
+      return disabled_;
+    }
+
+    public static final int CONTENTS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object contents_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The contents of the notebook.
+     * </pre>
+     *
+     * <code>string contents = 3;</code>
+     *
+     * @return The contents.
+     */
+    @java.lang.Override
+    public java.lang.String getContents() {
+      java.lang.Object ref = contents_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contents_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The contents of the notebook.
+     * </pre>
+     *
+     * <code>string contents = 3;</code>
+     *
+     * @return The bytes for contents.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getContentsBytes() {
+      java.lang.Object ref = contents_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        contents_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TAGS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Arbitrary, user-defined tags on this action.
+     * </pre>
+     *
+     * <code>repeated string tags = 4;</code>
+     *
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList getTagsList() {
+      return tags_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Arbitrary, user-defined tags on this action.
+     * </pre>
+     *
+     * <code>repeated string tags = 4;</code>
+     *
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Arbitrary, user-defined tags on this action.
+     * </pre>
+     *
+     * <code>repeated string tags = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Arbitrary, user-defined tags on this action.
+     * </pre>
+     *
+     * <code>repeated string tags = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < dependencyTargets_.size(); i++) {
+        output.writeMessage(1, dependencyTargets_.get(i));
+      }
+      if (disabled_ != false) {
+        output.writeBool(2, disabled_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contents_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, contents_);
+      }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tags_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < dependencyTargets_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, dependencyTargets_.get(i));
+      }
+      if (disabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, disabled_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contents_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, contents_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook other =
+          (com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook) obj;
+
+      if (!getDependencyTargetsList().equals(other.getDependencyTargetsList())) return false;
+      if (getDisabled() != other.getDisabled()) return false;
+      if (!getContents().equals(other.getContents())) return false;
+      if (!getTagsList().equals(other.getTagsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getDependencyTargetsCount() > 0) {
+        hash = (37 * hash) + DEPENDENCY_TARGETS_FIELD_NUMBER;
+        hash = (53 * hash) + getDependencyTargetsList().hashCode();
+      }
+      hash = (37 * hash) + DISABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
+      hash = (37 * hash) + CONTENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getContents().hashCode();
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a notebook.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataform.v1beta1.CompilationResultAction.Notebook}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataform.v1beta1.CompilationResultAction.Notebook)
+        com.google.cloud.dataform.v1beta1.CompilationResultAction.NotebookOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_CompilationResultAction_Notebook_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_CompilationResultAction_Notebook_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook.class,
+                com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (dependencyTargetsBuilder_ == null) {
+          dependencyTargets_ = java.util.Collections.emptyList();
+        } else {
+          dependencyTargets_ = null;
+          dependencyTargetsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        disabled_ = false;
+        contents_ = "";
+        tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_CompilationResultAction_Notebook_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook
+          getDefaultInstanceForType() {
+        return com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook build() {
+        com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook buildPartial() {
+        com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook result =
+            new com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook result) {
+        if (dependencyTargetsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            dependencyTargets_ = java.util.Collections.unmodifiableList(dependencyTargets_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.dependencyTargets_ = dependencyTargets_;
+        } else {
+          result.dependencyTargets_ = dependencyTargetsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.disabled_ = disabled_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.contents_ = contents_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          tags_.makeImmutable();
+          result.tags_ = tags_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook) {
+          return mergeFrom(
+              (com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook other) {
+        if (other
+            == com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook
+                .getDefaultInstance()) return this;
+        if (dependencyTargetsBuilder_ == null) {
+          if (!other.dependencyTargets_.isEmpty()) {
+            if (dependencyTargets_.isEmpty()) {
+              dependencyTargets_ = other.dependencyTargets_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureDependencyTargetsIsMutable();
+              dependencyTargets_.addAll(other.dependencyTargets_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.dependencyTargets_.isEmpty()) {
+            if (dependencyTargetsBuilder_.isEmpty()) {
+              dependencyTargetsBuilder_.dispose();
+              dependencyTargetsBuilder_ = null;
+              dependencyTargets_ = other.dependencyTargets_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              dependencyTargetsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getDependencyTargetsFieldBuilder()
+                      : null;
+            } else {
+              dependencyTargetsBuilder_.addAllMessages(other.dependencyTargets_);
+            }
+          }
+        }
+        if (other.getDisabled() != false) {
+          setDisabled(other.getDisabled());
+        }
+        if (!other.getContents().isEmpty()) {
+          contents_ = other.contents_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ |= 0x00000008;
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.dataform.v1beta1.Target m =
+                      input.readMessage(
+                          com.google.cloud.dataform.v1beta1.Target.parser(), extensionRegistry);
+                  if (dependencyTargetsBuilder_ == null) {
+                    ensureDependencyTargetsIsMutable();
+                    dependencyTargets_.add(m);
+                  } else {
+                    dependencyTargetsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 16:
+                {
+                  disabled_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 26:
+                {
+                  contents_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureTagsIsMutable();
+                  tags_.add(s);
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.cloud.dataform.v1beta1.Target> dependencyTargets_ =
+          java.util.Collections.emptyList();
+
+      private void ensureDependencyTargetsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          dependencyTargets_ =
+              new java.util.ArrayList<com.google.cloud.dataform.v1beta1.Target>(dependencyTargets_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dataform.v1beta1.Target,
+              com.google.cloud.dataform.v1beta1.Target.Builder,
+              com.google.cloud.dataform.v1beta1.TargetOrBuilder>
+          dependencyTargetsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of actions that this action depends on.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+       */
+      public java.util.List<com.google.cloud.dataform.v1beta1.Target> getDependencyTargetsList() {
+        if (dependencyTargetsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(dependencyTargets_);
+        } else {
+          return dependencyTargetsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of actions that this action depends on.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+       */
+      public int getDependencyTargetsCount() {
+        if (dependencyTargetsBuilder_ == null) {
+          return dependencyTargets_.size();
+        } else {
+          return dependencyTargetsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of actions that this action depends on.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+       */
+      public com.google.cloud.dataform.v1beta1.Target getDependencyTargets(int index) {
+        if (dependencyTargetsBuilder_ == null) {
+          return dependencyTargets_.get(index);
+        } else {
+          return dependencyTargetsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of actions that this action depends on.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+       */
+      public Builder setDependencyTargets(
+          int index, com.google.cloud.dataform.v1beta1.Target value) {
+        if (dependencyTargetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDependencyTargetsIsMutable();
+          dependencyTargets_.set(index, value);
+          onChanged();
+        } else {
+          dependencyTargetsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of actions that this action depends on.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+       */
+      public Builder setDependencyTargets(
+          int index, com.google.cloud.dataform.v1beta1.Target.Builder builderForValue) {
+        if (dependencyTargetsBuilder_ == null) {
+          ensureDependencyTargetsIsMutable();
+          dependencyTargets_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          dependencyTargetsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of actions that this action depends on.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+       */
+      public Builder addDependencyTargets(com.google.cloud.dataform.v1beta1.Target value) {
+        if (dependencyTargetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDependencyTargetsIsMutable();
+          dependencyTargets_.add(value);
+          onChanged();
+        } else {
+          dependencyTargetsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of actions that this action depends on.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+       */
+      public Builder addDependencyTargets(
+          int index, com.google.cloud.dataform.v1beta1.Target value) {
+        if (dependencyTargetsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDependencyTargetsIsMutable();
+          dependencyTargets_.add(index, value);
+          onChanged();
+        } else {
+          dependencyTargetsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of actions that this action depends on.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+       */
+      public Builder addDependencyTargets(
+          com.google.cloud.dataform.v1beta1.Target.Builder builderForValue) {
+        if (dependencyTargetsBuilder_ == null) {
+          ensureDependencyTargetsIsMutable();
+          dependencyTargets_.add(builderForValue.build());
+          onChanged();
+        } else {
+          dependencyTargetsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of actions that this action depends on.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+       */
+      public Builder addDependencyTargets(
+          int index, com.google.cloud.dataform.v1beta1.Target.Builder builderForValue) {
+        if (dependencyTargetsBuilder_ == null) {
+          ensureDependencyTargetsIsMutable();
+          dependencyTargets_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          dependencyTargetsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of actions that this action depends on.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+       */
+      public Builder addAllDependencyTargets(
+          java.lang.Iterable<? extends com.google.cloud.dataform.v1beta1.Target> values) {
+        if (dependencyTargetsBuilder_ == null) {
+          ensureDependencyTargetsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dependencyTargets_);
+          onChanged();
+        } else {
+          dependencyTargetsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of actions that this action depends on.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+       */
+      public Builder clearDependencyTargets() {
+        if (dependencyTargetsBuilder_ == null) {
+          dependencyTargets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          dependencyTargetsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of actions that this action depends on.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+       */
+      public Builder removeDependencyTargets(int index) {
+        if (dependencyTargetsBuilder_ == null) {
+          ensureDependencyTargetsIsMutable();
+          dependencyTargets_.remove(index);
+          onChanged();
+        } else {
+          dependencyTargetsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of actions that this action depends on.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+       */
+      public com.google.cloud.dataform.v1beta1.Target.Builder getDependencyTargetsBuilder(
+          int index) {
+        return getDependencyTargetsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of actions that this action depends on.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+       */
+      public com.google.cloud.dataform.v1beta1.TargetOrBuilder getDependencyTargetsOrBuilder(
+          int index) {
+        if (dependencyTargetsBuilder_ == null) {
+          return dependencyTargets_.get(index);
+        } else {
+          return dependencyTargetsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of actions that this action depends on.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+       */
+      public java.util.List<? extends com.google.cloud.dataform.v1beta1.TargetOrBuilder>
+          getDependencyTargetsOrBuilderList() {
+        if (dependencyTargetsBuilder_ != null) {
+          return dependencyTargetsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(dependencyTargets_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of actions that this action depends on.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+       */
+      public com.google.cloud.dataform.v1beta1.Target.Builder addDependencyTargetsBuilder() {
+        return getDependencyTargetsFieldBuilder()
+            .addBuilder(com.google.cloud.dataform.v1beta1.Target.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of actions that this action depends on.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+       */
+      public com.google.cloud.dataform.v1beta1.Target.Builder addDependencyTargetsBuilder(
+          int index) {
+        return getDependencyTargetsFieldBuilder()
+            .addBuilder(index, com.google.cloud.dataform.v1beta1.Target.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of actions that this action depends on.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dataform.v1beta1.Target dependency_targets = 1;</code>
+       */
+      public java.util.List<com.google.cloud.dataform.v1beta1.Target.Builder>
+          getDependencyTargetsBuilderList() {
+        return getDependencyTargetsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dataform.v1beta1.Target,
+              com.google.cloud.dataform.v1beta1.Target.Builder,
+              com.google.cloud.dataform.v1beta1.TargetOrBuilder>
+          getDependencyTargetsFieldBuilder() {
+        if (dependencyTargetsBuilder_ == null) {
+          dependencyTargetsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.dataform.v1beta1.Target,
+                  com.google.cloud.dataform.v1beta1.Target.Builder,
+                  com.google.cloud.dataform.v1beta1.TargetOrBuilder>(
+                  dependencyTargets_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          dependencyTargets_ = null;
+        }
+        return dependencyTargetsBuilder_;
+      }
+
+      private boolean disabled_;
+      /**
+       *
+       *
+       * <pre>
+       * Whether this action is disabled (i.e. should not be run).
+       * </pre>
+       *
+       * <code>bool disabled = 2;</code>
+       *
+       * @return The disabled.
+       */
+      @java.lang.Override
+      public boolean getDisabled() {
+        return disabled_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether this action is disabled (i.e. should not be run).
+       * </pre>
+       *
+       * <code>bool disabled = 2;</code>
+       *
+       * @param value The disabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisabled(boolean value) {
+
+        disabled_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether this action is disabled (i.e. should not be run).
+       * </pre>
+       *
+       * <code>bool disabled = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisabled() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        disabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object contents_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The contents of the notebook.
+       * </pre>
+       *
+       * <code>string contents = 3;</code>
+       *
+       * @return The contents.
+       */
+      public java.lang.String getContents() {
+        java.lang.Object ref = contents_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contents_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The contents of the notebook.
+       * </pre>
+       *
+       * <code>string contents = 3;</code>
+       *
+       * @return The bytes for contents.
+       */
+      public com.google.protobuf.ByteString getContentsBytes() {
+        java.lang.Object ref = contents_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          contents_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The contents of the notebook.
+       * </pre>
+       *
+       * <code>string contents = 3;</code>
+       *
+       * @param value The contents to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContents(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        contents_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The contents of the notebook.
+       * </pre>
+       *
+       * <code>string contents = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearContents() {
+        contents_ = getDefaultInstance().getContents();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The contents of the notebook.
+       * </pre>
+       *
+       * <code>string contents = 3;</code>
+       *
+       * @param value The bytes for contents to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        contents_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList tags_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureTagsIsMutable() {
+        if (!tags_.isModifiable()) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+        }
+        bitField0_ |= 0x00000008;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Arbitrary, user-defined tags on this action.
+       * </pre>
+       *
+       * <code>repeated string tags = 4;</code>
+       *
+       * @return A list containing the tags.
+       */
+      public com.google.protobuf.ProtocolStringList getTagsList() {
+        tags_.makeImmutable();
+        return tags_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Arbitrary, user-defined tags on this action.
+       * </pre>
+       *
+       * <code>repeated string tags = 4;</code>
+       *
+       * @return The count of tags.
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Arbitrary, user-defined tags on this action.
+       * </pre>
+       *
+       * <code>repeated string tags = 4;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Arbitrary, user-defined tags on this action.
+       * </pre>
+       *
+       * <code>repeated string tags = 4;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
+       */
+      public com.google.protobuf.ByteString getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Arbitrary, user-defined tags on this action.
+       * </pre>
+       *
+       * <code>repeated string tags = 4;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTags(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagsIsMutable();
+        tags_.set(index, value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Arbitrary, user-defined tags on this action.
+       * </pre>
+       *
+       * <code>repeated string tags = 4;</code>
+       *
+       * @param value The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTags(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagsIsMutable();
+        tags_.add(value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Arbitrary, user-defined tags on this action.
+       * </pre>
+       *
+       * <code>repeated string tags = 4;</code>
+       *
+       * @param values The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Arbitrary, user-defined tags on this action.
+       * </pre>
+       *
+       * <code>repeated string tags = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Arbitrary, user-defined tags on this action.
+       * </pre>
+       *
+       * <code>repeated string tags = 4;</code>
+       *
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTagsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1beta1.CompilationResultAction.Notebook)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataform.v1beta1.CompilationResultAction.Notebook)
+    private static final com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook();
+    }
+
+    public static com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Notebook> PARSER =
+        new com.google.protobuf.AbstractParser<Notebook>() {
+          @java.lang.Override
+          public Notebook parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Notebook> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Notebook> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int compiledObjectCase_ = 0;
 
@@ -12187,6 +13832,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     OPERATIONS(5),
     ASSERTION(6),
     DECLARATION(7),
+    NOTEBOOK(8),
     COMPILEDOBJECT_NOT_SET(0);
     private final int value;
 
@@ -12213,6 +13859,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return ASSERTION;
         case 7:
           return DECLARATION;
+        case 8:
+          return NOTEBOOK;
         case 0:
           return COMPILEDOBJECT_NOT_SET;
         default:
@@ -12227,162 +13875,6 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
   public CompiledObjectCase getCompiledObjectCase() {
     return CompiledObjectCase.forNumber(compiledObjectCase_);
-  }
-
-  public static final int TARGET_FIELD_NUMBER = 1;
-  private com.google.cloud.dataform.v1beta1.Target target_;
-  /**
-   *
-   *
-   * <pre>
-   * This action's identifier. Unique within the compilation result.
-   * </pre>
-   *
-   * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
-   *
-   * @return Whether the target field is set.
-   */
-  @java.lang.Override
-  public boolean hasTarget() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * This action's identifier. Unique within the compilation result.
-   * </pre>
-   *
-   * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
-   *
-   * @return The target.
-   */
-  @java.lang.Override
-  public com.google.cloud.dataform.v1beta1.Target getTarget() {
-    return target_ == null
-        ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
-        : target_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * This action's identifier. Unique within the compilation result.
-   * </pre>
-   *
-   * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.dataform.v1beta1.TargetOrBuilder getTargetOrBuilder() {
-    return target_ == null
-        ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
-        : target_;
-  }
-
-  public static final int CANONICAL_TARGET_FIELD_NUMBER = 2;
-  private com.google.cloud.dataform.v1beta1.Target canonicalTarget_;
-  /**
-   *
-   *
-   * <pre>
-   * The action's identifier if the project had been compiled without any
-   * overrides configured. Unique within the compilation result.
-   * </pre>
-   *
-   * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
-   *
-   * @return Whether the canonicalTarget field is set.
-   */
-  @java.lang.Override
-  public boolean hasCanonicalTarget() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The action's identifier if the project had been compiled without any
-   * overrides configured. Unique within the compilation result.
-   * </pre>
-   *
-   * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
-   *
-   * @return The canonicalTarget.
-   */
-  @java.lang.Override
-  public com.google.cloud.dataform.v1beta1.Target getCanonicalTarget() {
-    return canonicalTarget_ == null
-        ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
-        : canonicalTarget_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The action's identifier if the project had been compiled without any
-   * overrides configured. Unique within the compilation result.
-   * </pre>
-   *
-   * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.dataform.v1beta1.TargetOrBuilder getCanonicalTargetOrBuilder() {
-    return canonicalTarget_ == null
-        ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
-        : canonicalTarget_;
-  }
-
-  public static final int FILE_PATH_FIELD_NUMBER = 3;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object filePath_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * The full path including filename in which this action is located, relative
-   * to the workspace root.
-   * </pre>
-   *
-   * <code>string file_path = 3;</code>
-   *
-   * @return The filePath.
-   */
-  @java.lang.Override
-  public java.lang.String getFilePath() {
-    java.lang.Object ref = filePath_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      filePath_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The full path including filename in which this action is located, relative
-   * to the workspace root.
-   * </pre>
-   *
-   * <code>string file_path = 3;</code>
-   *
-   * @return The bytes for filePath.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getFilePathBytes() {
-    java.lang.Object ref = filePath_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      filePath_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   public static final int RELATION_FIELD_NUMBER = 4;
@@ -12602,6 +14094,289 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         .getDefaultInstance();
   }
 
+  public static final int NOTEBOOK_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * The notebook executed by this action.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook notebook = 8;</code>
+   *
+   * @return Whether the notebook field is set.
+   */
+  @java.lang.Override
+  public boolean hasNotebook() {
+    return compiledObjectCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The notebook executed by this action.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook notebook = 8;</code>
+   *
+   * @return The notebook.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook getNotebook() {
+    if (compiledObjectCase_ == 8) {
+      return (com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook) compiledObject_;
+    }
+    return com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The notebook executed by this action.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook notebook = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.CompilationResultAction.NotebookOrBuilder
+      getNotebookOrBuilder() {
+    if (compiledObjectCase_ == 8) {
+      return (com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook) compiledObject_;
+    }
+    return com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook.getDefaultInstance();
+  }
+
+  public static final int TARGET_FIELD_NUMBER = 1;
+  private com.google.cloud.dataform.v1beta1.Target target_;
+  /**
+   *
+   *
+   * <pre>
+   * This action's identifier. Unique within the compilation result.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+   *
+   * @return Whether the target field is set.
+   */
+  @java.lang.Override
+  public boolean hasTarget() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This action's identifier. Unique within the compilation result.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+   *
+   * @return The target.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.Target getTarget() {
+    return target_ == null
+        ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
+        : target_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This action's identifier. Unique within the compilation result.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.TargetOrBuilder getTargetOrBuilder() {
+    return target_ == null
+        ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
+        : target_;
+  }
+
+  public static final int CANONICAL_TARGET_FIELD_NUMBER = 2;
+  private com.google.cloud.dataform.v1beta1.Target canonicalTarget_;
+  /**
+   *
+   *
+   * <pre>
+   * The action's identifier if the project had been compiled without any
+   * overrides configured. Unique within the compilation result.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
+   *
+   * @return Whether the canonicalTarget field is set.
+   */
+  @java.lang.Override
+  public boolean hasCanonicalTarget() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The action's identifier if the project had been compiled without any
+   * overrides configured. Unique within the compilation result.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
+   *
+   * @return The canonicalTarget.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.Target getCanonicalTarget() {
+    return canonicalTarget_ == null
+        ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
+        : canonicalTarget_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The action's identifier if the project had been compiled without any
+   * overrides configured. Unique within the compilation result.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.TargetOrBuilder getCanonicalTargetOrBuilder() {
+    return canonicalTarget_ == null
+        ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
+        : canonicalTarget_;
+  }
+
+  public static final int FILE_PATH_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filePath_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The full path including filename in which this action is located, relative
+   * to the workspace root.
+   * </pre>
+   *
+   * <code>string file_path = 3;</code>
+   *
+   * @return The filePath.
+   */
+  @java.lang.Override
+  public java.lang.String getFilePath() {
+    java.lang.Object ref = filePath_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filePath_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The full path including filename in which this action is located, relative
+   * to the workspace root.
+   * </pre>
+   *
+   * <code>string file_path = 3;</code>
+   *
+   * @return The bytes for filePath.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFilePathBytes() {
+    java.lang.Object ref = filePath_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filePath_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int INTERNAL_METADATA_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object internalMetadata_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the internalMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasInternalMetadata() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The internalMetadata.
+   */
+  @java.lang.Override
+  public java.lang.String getInternalMetadata() {
+    java.lang.Object ref = internalMetadata_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      internalMetadata_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for internalMetadata.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getInternalMetadataBytes() {
+    java.lang.Object ref = internalMetadata_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      internalMetadata_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -12642,6 +14417,13 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       output.writeMessage(
           7,
           (com.google.cloud.dataform.v1beta1.CompilationResultAction.Declaration) compiledObject_);
+    }
+    if (compiledObjectCase_ == 8) {
+      output.writeMessage(
+          8, (com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook) compiledObject_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, internalMetadata_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -12688,6 +14470,15 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               (com.google.cloud.dataform.v1beta1.CompilationResultAction.Declaration)
                   compiledObject_);
     }
+    if (compiledObjectCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8,
+              (com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook) compiledObject_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, internalMetadata_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -12713,6 +14504,10 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       if (!getCanonicalTarget().equals(other.getCanonicalTarget())) return false;
     }
     if (!getFilePath().equals(other.getFilePath())) return false;
+    if (hasInternalMetadata() != other.hasInternalMetadata()) return false;
+    if (hasInternalMetadata()) {
+      if (!getInternalMetadata().equals(other.getInternalMetadata())) return false;
+    }
     if (!getCompiledObjectCase().equals(other.getCompiledObjectCase())) return false;
     switch (compiledObjectCase_) {
       case 4:
@@ -12726,6 +14521,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         break;
       case 7:
         if (!getDeclaration().equals(other.getDeclaration())) return false;
+        break;
+      case 8:
+        if (!getNotebook().equals(other.getNotebook())) return false;
         break;
       case 0:
       default:
@@ -12751,6 +14549,10 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
     hash = (37 * hash) + FILE_PATH_FIELD_NUMBER;
     hash = (53 * hash) + getFilePath().hashCode();
+    if (hasInternalMetadata()) {
+      hash = (37 * hash) + INTERNAL_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getInternalMetadata().hashCode();
+    }
     switch (compiledObjectCase_) {
       case 4:
         hash = (37 * hash) + RELATION_FIELD_NUMBER;
@@ -12767,6 +14569,10 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       case 7:
         hash = (37 * hash) + DECLARATION_FIELD_NUMBER;
         hash = (53 * hash) + getDeclaration().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + NOTEBOOK_FIELD_NUMBER;
+        hash = (53 * hash) + getNotebook().hashCode();
         break;
       case 0:
       default:
@@ -12921,17 +14727,6 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      target_ = null;
-      if (targetBuilder_ != null) {
-        targetBuilder_.dispose();
-        targetBuilder_ = null;
-      }
-      canonicalTarget_ = null;
-      if (canonicalTargetBuilder_ != null) {
-        canonicalTargetBuilder_.dispose();
-        canonicalTargetBuilder_ = null;
-      }
-      filePath_ = "";
       if (relationBuilder_ != null) {
         relationBuilder_.clear();
       }
@@ -12944,6 +14739,21 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       if (declarationBuilder_ != null) {
         declarationBuilder_.clear();
       }
+      if (notebookBuilder_ != null) {
+        notebookBuilder_.clear();
+      }
+      target_ = null;
+      if (targetBuilder_ != null) {
+        targetBuilder_.dispose();
+        targetBuilder_ = null;
+      }
+      canonicalTarget_ = null;
+      if (canonicalTargetBuilder_ != null) {
+        canonicalTargetBuilder_.dispose();
+        canonicalTargetBuilder_ = null;
+      }
+      filePath_ = "";
+      internalMetadata_ = "";
       compiledObjectCase_ = 0;
       compiledObject_ = null;
       return this;
@@ -12984,17 +14794,21 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     private void buildPartial0(com.google.cloud.dataform.v1beta1.CompilationResultAction result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.target_ = targetBuilder_ == null ? target_ : targetBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.canonicalTarget_ =
             canonicalTargetBuilder_ == null ? canonicalTarget_ : canonicalTargetBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.filePath_ = filePath_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.internalMetadata_ = internalMetadata_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -13014,6 +14828,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
       if (compiledObjectCase_ == 7 && declarationBuilder_ != null) {
         result.compiledObject_ = declarationBuilder_.build();
+      }
+      if (compiledObjectCase_ == 8 && notebookBuilder_ != null) {
+        result.compiledObject_ = notebookBuilder_.build();
       }
     }
 
@@ -13071,7 +14888,12 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       }
       if (!other.getFilePath().isEmpty()) {
         filePath_ = other.filePath_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (other.hasInternalMetadata()) {
+        internalMetadata_ = other.internalMetadata_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       switch (other.getCompiledObjectCase()) {
@@ -13093,6 +14915,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         case DECLARATION:
           {
             mergeDeclaration(other.getDeclaration());
+            break;
+          }
+        case NOTEBOOK:
+          {
+            mergeNotebook(other.getNotebook());
             break;
           }
         case COMPILEDOBJECT_NOT_SET:
@@ -13129,19 +14956,19 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getTargetFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCanonicalTargetFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 18
             case 26:
               {
                 filePath_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 26
             case 34:
@@ -13168,6 +14995,18 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
                 compiledObjectCase_ = 7;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(getNotebookFieldBuilder().getBuilder(), extensionRegistry);
+                compiledObjectCase_ = 8;
+                break;
+              } // case 66
+            case 82:
+              {
+                internalMetadata_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13200,497 +15039,6 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     }
 
     private int bitField0_;
-
-    private com.google.cloud.dataform.v1beta1.Target target_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataform.v1beta1.Target,
-            com.google.cloud.dataform.v1beta1.Target.Builder,
-            com.google.cloud.dataform.v1beta1.TargetOrBuilder>
-        targetBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * This action's identifier. Unique within the compilation result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
-     *
-     * @return Whether the target field is set.
-     */
-    public boolean hasTarget() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This action's identifier. Unique within the compilation result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
-     *
-     * @return The target.
-     */
-    public com.google.cloud.dataform.v1beta1.Target getTarget() {
-      if (targetBuilder_ == null) {
-        return target_ == null
-            ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
-            : target_;
-      } else {
-        return targetBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This action's identifier. Unique within the compilation result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
-     */
-    public Builder setTarget(com.google.cloud.dataform.v1beta1.Target value) {
-      if (targetBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        target_ = value;
-      } else {
-        targetBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This action's identifier. Unique within the compilation result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
-     */
-    public Builder setTarget(com.google.cloud.dataform.v1beta1.Target.Builder builderForValue) {
-      if (targetBuilder_ == null) {
-        target_ = builderForValue.build();
-      } else {
-        targetBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This action's identifier. Unique within the compilation result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
-     */
-    public Builder mergeTarget(com.google.cloud.dataform.v1beta1.Target value) {
-      if (targetBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
-            && target_ != null
-            && target_ != com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()) {
-          getTargetBuilder().mergeFrom(value);
-        } else {
-          target_ = value;
-        }
-      } else {
-        targetBuilder_.mergeFrom(value);
-      }
-      if (target_ != null) {
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This action's identifier. Unique within the compilation result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
-     */
-    public Builder clearTarget() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      target_ = null;
-      if (targetBuilder_ != null) {
-        targetBuilder_.dispose();
-        targetBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This action's identifier. Unique within the compilation result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
-     */
-    public com.google.cloud.dataform.v1beta1.Target.Builder getTargetBuilder() {
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return getTargetFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This action's identifier. Unique within the compilation result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
-     */
-    public com.google.cloud.dataform.v1beta1.TargetOrBuilder getTargetOrBuilder() {
-      if (targetBuilder_ != null) {
-        return targetBuilder_.getMessageOrBuilder();
-      } else {
-        return target_ == null
-            ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
-            : target_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * This action's identifier. Unique within the compilation result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataform.v1beta1.Target,
-            com.google.cloud.dataform.v1beta1.Target.Builder,
-            com.google.cloud.dataform.v1beta1.TargetOrBuilder>
-        getTargetFieldBuilder() {
-      if (targetBuilder_ == null) {
-        targetBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.dataform.v1beta1.Target,
-                com.google.cloud.dataform.v1beta1.Target.Builder,
-                com.google.cloud.dataform.v1beta1.TargetOrBuilder>(
-                getTarget(), getParentForChildren(), isClean());
-        target_ = null;
-      }
-      return targetBuilder_;
-    }
-
-    private com.google.cloud.dataform.v1beta1.Target canonicalTarget_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataform.v1beta1.Target,
-            com.google.cloud.dataform.v1beta1.Target.Builder,
-            com.google.cloud.dataform.v1beta1.TargetOrBuilder>
-        canonicalTargetBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * The action's identifier if the project had been compiled without any
-     * overrides configured. Unique within the compilation result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
-     *
-     * @return Whether the canonicalTarget field is set.
-     */
-    public boolean hasCanonicalTarget() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The action's identifier if the project had been compiled without any
-     * overrides configured. Unique within the compilation result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
-     *
-     * @return The canonicalTarget.
-     */
-    public com.google.cloud.dataform.v1beta1.Target getCanonicalTarget() {
-      if (canonicalTargetBuilder_ == null) {
-        return canonicalTarget_ == null
-            ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
-            : canonicalTarget_;
-      } else {
-        return canonicalTargetBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The action's identifier if the project had been compiled without any
-     * overrides configured. Unique within the compilation result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
-     */
-    public Builder setCanonicalTarget(com.google.cloud.dataform.v1beta1.Target value) {
-      if (canonicalTargetBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        canonicalTarget_ = value;
-      } else {
-        canonicalTargetBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The action's identifier if the project had been compiled without any
-     * overrides configured. Unique within the compilation result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
-     */
-    public Builder setCanonicalTarget(
-        com.google.cloud.dataform.v1beta1.Target.Builder builderForValue) {
-      if (canonicalTargetBuilder_ == null) {
-        canonicalTarget_ = builderForValue.build();
-      } else {
-        canonicalTargetBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The action's identifier if the project had been compiled without any
-     * overrides configured. Unique within the compilation result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
-     */
-    public Builder mergeCanonicalTarget(com.google.cloud.dataform.v1beta1.Target value) {
-      if (canonicalTargetBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
-            && canonicalTarget_ != null
-            && canonicalTarget_ != com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()) {
-          getCanonicalTargetBuilder().mergeFrom(value);
-        } else {
-          canonicalTarget_ = value;
-        }
-      } else {
-        canonicalTargetBuilder_.mergeFrom(value);
-      }
-      if (canonicalTarget_ != null) {
-        bitField0_ |= 0x00000002;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The action's identifier if the project had been compiled without any
-     * overrides configured. Unique within the compilation result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
-     */
-    public Builder clearCanonicalTarget() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      canonicalTarget_ = null;
-      if (canonicalTargetBuilder_ != null) {
-        canonicalTargetBuilder_.dispose();
-        canonicalTargetBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The action's identifier if the project had been compiled without any
-     * overrides configured. Unique within the compilation result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
-     */
-    public com.google.cloud.dataform.v1beta1.Target.Builder getCanonicalTargetBuilder() {
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return getCanonicalTargetFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The action's identifier if the project had been compiled without any
-     * overrides configured. Unique within the compilation result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
-     */
-    public com.google.cloud.dataform.v1beta1.TargetOrBuilder getCanonicalTargetOrBuilder() {
-      if (canonicalTargetBuilder_ != null) {
-        return canonicalTargetBuilder_.getMessageOrBuilder();
-      } else {
-        return canonicalTarget_ == null
-            ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
-            : canonicalTarget_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The action's identifier if the project had been compiled without any
-     * overrides configured. Unique within the compilation result.
-     * </pre>
-     *
-     * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataform.v1beta1.Target,
-            com.google.cloud.dataform.v1beta1.Target.Builder,
-            com.google.cloud.dataform.v1beta1.TargetOrBuilder>
-        getCanonicalTargetFieldBuilder() {
-      if (canonicalTargetBuilder_ == null) {
-        canonicalTargetBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.dataform.v1beta1.Target,
-                com.google.cloud.dataform.v1beta1.Target.Builder,
-                com.google.cloud.dataform.v1beta1.TargetOrBuilder>(
-                getCanonicalTarget(), getParentForChildren(), isClean());
-        canonicalTarget_ = null;
-      }
-      return canonicalTargetBuilder_;
-    }
-
-    private java.lang.Object filePath_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * The full path including filename in which this action is located, relative
-     * to the workspace root.
-     * </pre>
-     *
-     * <code>string file_path = 3;</code>
-     *
-     * @return The filePath.
-     */
-    public java.lang.String getFilePath() {
-      java.lang.Object ref = filePath_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        filePath_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The full path including filename in which this action is located, relative
-     * to the workspace root.
-     * </pre>
-     *
-     * <code>string file_path = 3;</code>
-     *
-     * @return The bytes for filePath.
-     */
-    public com.google.protobuf.ByteString getFilePathBytes() {
-      java.lang.Object ref = filePath_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        filePath_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The full path including filename in which this action is located, relative
-     * to the workspace root.
-     * </pre>
-     *
-     * <code>string file_path = 3;</code>
-     *
-     * @param value The filePath to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFilePath(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      filePath_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The full path including filename in which this action is located, relative
-     * to the workspace root.
-     * </pre>
-     *
-     * <code>string file_path = 3;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearFilePath() {
-      filePath_ = getDefaultInstance().getFilePath();
-      bitField0_ = (bitField0_ & ~0x00000004);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The full path including filename in which this action is located, relative
-     * to the workspace root.
-     * </pre>
-     *
-     * <code>string file_path = 3;</code>
-     *
-     * @param value The bytes for filePath to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFilePathBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      filePath_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation,
@@ -14608,6 +15956,860 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       compiledObjectCase_ = 7;
       onChanged();
       return declarationBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook,
+            com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook.Builder,
+            com.google.cloud.dataform.v1beta1.CompilationResultAction.NotebookOrBuilder>
+        notebookBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The notebook executed by this action.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook notebook = 8;</code>
+     *
+     * @return Whether the notebook field is set.
+     */
+    @java.lang.Override
+    public boolean hasNotebook() {
+      return compiledObjectCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The notebook executed by this action.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook notebook = 8;</code>
+     *
+     * @return The notebook.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook getNotebook() {
+      if (notebookBuilder_ == null) {
+        if (compiledObjectCase_ == 8) {
+          return (com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook)
+              compiledObject_;
+        }
+        return com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook
+            .getDefaultInstance();
+      } else {
+        if (compiledObjectCase_ == 8) {
+          return notebookBuilder_.getMessage();
+        }
+        return com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The notebook executed by this action.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook notebook = 8;</code>
+     */
+    public Builder setNotebook(
+        com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook value) {
+      if (notebookBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        compiledObject_ = value;
+        onChanged();
+      } else {
+        notebookBuilder_.setMessage(value);
+      }
+      compiledObjectCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The notebook executed by this action.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook notebook = 8;</code>
+     */
+    public Builder setNotebook(
+        com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook.Builder
+            builderForValue) {
+      if (notebookBuilder_ == null) {
+        compiledObject_ = builderForValue.build();
+        onChanged();
+      } else {
+        notebookBuilder_.setMessage(builderForValue.build());
+      }
+      compiledObjectCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The notebook executed by this action.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook notebook = 8;</code>
+     */
+    public Builder mergeNotebook(
+        com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook value) {
+      if (notebookBuilder_ == null) {
+        if (compiledObjectCase_ == 8
+            && compiledObject_
+                != com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook
+                    .getDefaultInstance()) {
+          compiledObject_ =
+              com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook.newBuilder(
+                      (com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook)
+                          compiledObject_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          compiledObject_ = value;
+        }
+        onChanged();
+      } else {
+        if (compiledObjectCase_ == 8) {
+          notebookBuilder_.mergeFrom(value);
+        } else {
+          notebookBuilder_.setMessage(value);
+        }
+      }
+      compiledObjectCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The notebook executed by this action.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook notebook = 8;</code>
+     */
+    public Builder clearNotebook() {
+      if (notebookBuilder_ == null) {
+        if (compiledObjectCase_ == 8) {
+          compiledObjectCase_ = 0;
+          compiledObject_ = null;
+          onChanged();
+        }
+      } else {
+        if (compiledObjectCase_ == 8) {
+          compiledObjectCase_ = 0;
+          compiledObject_ = null;
+        }
+        notebookBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The notebook executed by this action.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook notebook = 8;</code>
+     */
+    public com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook.Builder
+        getNotebookBuilder() {
+      return getNotebookFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The notebook executed by this action.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook notebook = 8;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.CompilationResultAction.NotebookOrBuilder
+        getNotebookOrBuilder() {
+      if ((compiledObjectCase_ == 8) && (notebookBuilder_ != null)) {
+        return notebookBuilder_.getMessageOrBuilder();
+      } else {
+        if (compiledObjectCase_ == 8) {
+          return (com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook)
+              compiledObject_;
+        }
+        return com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The notebook executed by this action.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook notebook = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook,
+            com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook.Builder,
+            com.google.cloud.dataform.v1beta1.CompilationResultAction.NotebookOrBuilder>
+        getNotebookFieldBuilder() {
+      if (notebookBuilder_ == null) {
+        if (!(compiledObjectCase_ == 8)) {
+          compiledObject_ =
+              com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook
+                  .getDefaultInstance();
+        }
+        notebookBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook,
+                com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook.Builder,
+                com.google.cloud.dataform.v1beta1.CompilationResultAction.NotebookOrBuilder>(
+                (com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook)
+                    compiledObject_,
+                getParentForChildren(),
+                isClean());
+        compiledObject_ = null;
+      }
+      compiledObjectCase_ = 8;
+      onChanged();
+      return notebookBuilder_;
+    }
+
+    private com.google.cloud.dataform.v1beta1.Target target_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.Target,
+            com.google.cloud.dataform.v1beta1.Target.Builder,
+            com.google.cloud.dataform.v1beta1.TargetOrBuilder>
+        targetBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * This action's identifier. Unique within the compilation result.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+     *
+     * @return Whether the target field is set.
+     */
+    public boolean hasTarget() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This action's identifier. Unique within the compilation result.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+     *
+     * @return The target.
+     */
+    public com.google.cloud.dataform.v1beta1.Target getTarget() {
+      if (targetBuilder_ == null) {
+        return target_ == null
+            ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
+            : target_;
+      } else {
+        return targetBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This action's identifier. Unique within the compilation result.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+     */
+    public Builder setTarget(com.google.cloud.dataform.v1beta1.Target value) {
+      if (targetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        target_ = value;
+      } else {
+        targetBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This action's identifier. Unique within the compilation result.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+     */
+    public Builder setTarget(com.google.cloud.dataform.v1beta1.Target.Builder builderForValue) {
+      if (targetBuilder_ == null) {
+        target_ = builderForValue.build();
+      } else {
+        targetBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This action's identifier. Unique within the compilation result.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+     */
+    public Builder mergeTarget(com.google.cloud.dataform.v1beta1.Target value) {
+      if (targetBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && target_ != null
+            && target_ != com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()) {
+          getTargetBuilder().mergeFrom(value);
+        } else {
+          target_ = value;
+        }
+      } else {
+        targetBuilder_.mergeFrom(value);
+      }
+      if (target_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This action's identifier. Unique within the compilation result.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+     */
+    public Builder clearTarget() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      target_ = null;
+      if (targetBuilder_ != null) {
+        targetBuilder_.dispose();
+        targetBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This action's identifier. Unique within the compilation result.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+     */
+    public com.google.cloud.dataform.v1beta1.Target.Builder getTargetBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getTargetFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This action's identifier. Unique within the compilation result.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+     */
+    public com.google.cloud.dataform.v1beta1.TargetOrBuilder getTargetOrBuilder() {
+      if (targetBuilder_ != null) {
+        return targetBuilder_.getMessageOrBuilder();
+      } else {
+        return target_ == null
+            ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
+            : target_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This action's identifier. Unique within the compilation result.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.Target,
+            com.google.cloud.dataform.v1beta1.Target.Builder,
+            com.google.cloud.dataform.v1beta1.TargetOrBuilder>
+        getTargetFieldBuilder() {
+      if (targetBuilder_ == null) {
+        targetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.Target,
+                com.google.cloud.dataform.v1beta1.Target.Builder,
+                com.google.cloud.dataform.v1beta1.TargetOrBuilder>(
+                getTarget(), getParentForChildren(), isClean());
+        target_ = null;
+      }
+      return targetBuilder_;
+    }
+
+    private com.google.cloud.dataform.v1beta1.Target canonicalTarget_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.Target,
+            com.google.cloud.dataform.v1beta1.Target.Builder,
+            com.google.cloud.dataform.v1beta1.TargetOrBuilder>
+        canonicalTargetBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The action's identifier if the project had been compiled without any
+     * overrides configured. Unique within the compilation result.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
+     *
+     * @return Whether the canonicalTarget field is set.
+     */
+    public boolean hasCanonicalTarget() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The action's identifier if the project had been compiled without any
+     * overrides configured. Unique within the compilation result.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
+     *
+     * @return The canonicalTarget.
+     */
+    public com.google.cloud.dataform.v1beta1.Target getCanonicalTarget() {
+      if (canonicalTargetBuilder_ == null) {
+        return canonicalTarget_ == null
+            ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
+            : canonicalTarget_;
+      } else {
+        return canonicalTargetBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The action's identifier if the project had been compiled without any
+     * overrides configured. Unique within the compilation result.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
+     */
+    public Builder setCanonicalTarget(com.google.cloud.dataform.v1beta1.Target value) {
+      if (canonicalTargetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        canonicalTarget_ = value;
+      } else {
+        canonicalTargetBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The action's identifier if the project had been compiled without any
+     * overrides configured. Unique within the compilation result.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
+     */
+    public Builder setCanonicalTarget(
+        com.google.cloud.dataform.v1beta1.Target.Builder builderForValue) {
+      if (canonicalTargetBuilder_ == null) {
+        canonicalTarget_ = builderForValue.build();
+      } else {
+        canonicalTargetBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The action's identifier if the project had been compiled without any
+     * overrides configured. Unique within the compilation result.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
+     */
+    public Builder mergeCanonicalTarget(com.google.cloud.dataform.v1beta1.Target value) {
+      if (canonicalTargetBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && canonicalTarget_ != null
+            && canonicalTarget_ != com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()) {
+          getCanonicalTargetBuilder().mergeFrom(value);
+        } else {
+          canonicalTarget_ = value;
+        }
+      } else {
+        canonicalTargetBuilder_.mergeFrom(value);
+      }
+      if (canonicalTarget_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The action's identifier if the project had been compiled without any
+     * overrides configured. Unique within the compilation result.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
+     */
+    public Builder clearCanonicalTarget() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      canonicalTarget_ = null;
+      if (canonicalTargetBuilder_ != null) {
+        canonicalTargetBuilder_.dispose();
+        canonicalTargetBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The action's identifier if the project had been compiled without any
+     * overrides configured. Unique within the compilation result.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
+     */
+    public com.google.cloud.dataform.v1beta1.Target.Builder getCanonicalTargetBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getCanonicalTargetFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The action's identifier if the project had been compiled without any
+     * overrides configured. Unique within the compilation result.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
+     */
+    public com.google.cloud.dataform.v1beta1.TargetOrBuilder getCanonicalTargetOrBuilder() {
+      if (canonicalTargetBuilder_ != null) {
+        return canonicalTargetBuilder_.getMessageOrBuilder();
+      } else {
+        return canonicalTarget_ == null
+            ? com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()
+            : canonicalTarget_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The action's identifier if the project had been compiled without any
+     * overrides configured. Unique within the compilation result.
+     * </pre>
+     *
+     * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.Target,
+            com.google.cloud.dataform.v1beta1.Target.Builder,
+            com.google.cloud.dataform.v1beta1.TargetOrBuilder>
+        getCanonicalTargetFieldBuilder() {
+      if (canonicalTargetBuilder_ == null) {
+        canonicalTargetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.Target,
+                com.google.cloud.dataform.v1beta1.Target.Builder,
+                com.google.cloud.dataform.v1beta1.TargetOrBuilder>(
+                getCanonicalTarget(), getParentForChildren(), isClean());
+        canonicalTarget_ = null;
+      }
+      return canonicalTargetBuilder_;
+    }
+
+    private java.lang.Object filePath_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The full path including filename in which this action is located, relative
+     * to the workspace root.
+     * </pre>
+     *
+     * <code>string file_path = 3;</code>
+     *
+     * @return The filePath.
+     */
+    public java.lang.String getFilePath() {
+      java.lang.Object ref = filePath_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filePath_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full path including filename in which this action is located, relative
+     * to the workspace root.
+     * </pre>
+     *
+     * <code>string file_path = 3;</code>
+     *
+     * @return The bytes for filePath.
+     */
+    public com.google.protobuf.ByteString getFilePathBytes() {
+      java.lang.Object ref = filePath_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filePath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full path including filename in which this action is located, relative
+     * to the workspace root.
+     * </pre>
+     *
+     * <code>string file_path = 3;</code>
+     *
+     * @param value The filePath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilePath(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      filePath_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full path including filename in which this action is located, relative
+     * to the workspace root.
+     * </pre>
+     *
+     * <code>string file_path = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFilePath() {
+      filePath_ = getDefaultInstance().getFilePath();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full path including filename in which this action is located, relative
+     * to the workspace root.
+     * </pre>
+     *
+     * <code>string file_path = 3;</code>
+     *
+     * @param value The bytes for filePath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilePathBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      filePath_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object internalMetadata_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the internalMetadata field is set.
+     */
+    public boolean hasInternalMetadata() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The internalMetadata.
+     */
+    public java.lang.String getInternalMetadata() {
+      java.lang.Object ref = internalMetadata_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        internalMetadata_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for internalMetadata.
+     */
+    public com.google.protobuf.ByteString getInternalMetadataBytes() {
+      java.lang.Object ref = internalMetadata_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        internalMetadata_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The internalMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalMetadata(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      internalMetadata_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInternalMetadata() {
+      internalMetadata_ = getDefaultInstance().getInternalMetadata();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for internalMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalMetadataBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      internalMetadata_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

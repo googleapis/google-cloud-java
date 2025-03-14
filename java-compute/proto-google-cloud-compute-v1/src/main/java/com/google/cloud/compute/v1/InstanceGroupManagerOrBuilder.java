@@ -752,6 +752,48 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
+   * Resource policies for this managed instance group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerResourcePolicies resource_policies = 22220385;
+   * </code>
+   *
+   * @return Whether the resourcePolicies field is set.
+   */
+  boolean hasResourcePolicies();
+  /**
+   *
+   *
+   * <pre>
+   * Resource policies for this managed instance group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerResourcePolicies resource_policies = 22220385;
+   * </code>
+   *
+   * @return The resourcePolicies.
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerResourcePolicies getResourcePolicies();
+  /**
+   *
+   *
+   * <pre>
+   * Resource policies for this managed instance group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerResourcePolicies resource_policies = 22220385;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerResourcePoliciesOrBuilder
+      getResourcePoliciesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Reserved for future use.
    * </pre>
    *

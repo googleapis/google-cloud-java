@@ -76,6 +76,7 @@ import com.google.cloud.compute.v1.PerformMaintenanceInstanceRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.Reference;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest;
+import com.google.cloud.compute.v1.ReportHostAsFaultyInstanceRequest;
 import com.google.cloud.compute.v1.ResetInstanceRequest;
 import com.google.cloud.compute.v1.ResumeInstanceRequest;
 import com.google.cloud.compute.v1.Screenshot;
@@ -258,6 +259,10 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       removeResourcePoliciesSettings;
   private final OperationCallSettings<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
       removeResourcePoliciesOperationSettings;
+  private final UnaryCallSettings<ReportHostAsFaultyInstanceRequest, Operation>
+      reportHostAsFaultySettings;
+  private final OperationCallSettings<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+      reportHostAsFaultyOperationSettings;
   private final UnaryCallSettings<ResetInstanceRequest, Operation> resetSettings;
   private final OperationCallSettings<ResetInstanceRequest, Operation, Operation>
       resetOperationSettings;
@@ -704,6 +709,18 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return removeResourcePoliciesOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to reportHostAsFaulty. */
+  public UnaryCallSettings<ReportHostAsFaultyInstanceRequest, Operation>
+      reportHostAsFaultySettings() {
+    return reportHostAsFaultySettings;
+  }
+
+  /** Returns the object with the settings used for calls to reportHostAsFaulty. */
+  public OperationCallSettings<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+      reportHostAsFaultyOperationSettings() {
+    return reportHostAsFaultyOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to reset. */
   public UnaryCallSettings<ResetInstanceRequest, Operation> resetSettings() {
     return resetSettings;
@@ -1126,6 +1143,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     removeResourcePoliciesSettings = settingsBuilder.removeResourcePoliciesSettings().build();
     removeResourcePoliciesOperationSettings =
         settingsBuilder.removeResourcePoliciesOperationSettings().build();
+    reportHostAsFaultySettings = settingsBuilder.reportHostAsFaultySettings().build();
+    reportHostAsFaultyOperationSettings =
+        settingsBuilder.reportHostAsFaultyOperationSettings().build();
     resetSettings = settingsBuilder.resetSettings().build();
     resetOperationSettings = settingsBuilder.resetOperationSettings().build();
     resumeSettings = settingsBuilder.resumeSettings().build();
@@ -1265,6 +1285,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     private final OperationCallSettings.Builder<
             RemoveResourcePoliciesInstanceRequest, Operation, Operation>
         removeResourcePoliciesOperationSettings;
+    private final UnaryCallSettings.Builder<ReportHostAsFaultyInstanceRequest, Operation>
+        reportHostAsFaultySettings;
+    private final OperationCallSettings.Builder<
+            ReportHostAsFaultyInstanceRequest, Operation, Operation>
+        reportHostAsFaultyOperationSettings;
     private final UnaryCallSettings.Builder<ResetInstanceRequest, Operation> resetSettings;
     private final OperationCallSettings.Builder<ResetInstanceRequest, Operation, Operation>
         resetOperationSettings;
@@ -1458,6 +1483,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       performMaintenanceOperationSettings = OperationCallSettings.newBuilder();
       removeResourcePoliciesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       removeResourcePoliciesOperationSettings = OperationCallSettings.newBuilder();
+      reportHostAsFaultySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      reportHostAsFaultyOperationSettings = OperationCallSettings.newBuilder();
       resetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       resetOperationSettings = OperationCallSettings.newBuilder();
       resumeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1534,6 +1561,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               listReferrersSettings,
               performMaintenanceSettings,
               removeResourcePoliciesSettings,
+              reportHostAsFaultySettings,
               resetSettings,
               resumeSettings,
               sendDiagnosticInterruptSettings,
@@ -1603,6 +1631,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       removeResourcePoliciesSettings = settings.removeResourcePoliciesSettings.toBuilder();
       removeResourcePoliciesOperationSettings =
           settings.removeResourcePoliciesOperationSettings.toBuilder();
+      reportHostAsFaultySettings = settings.reportHostAsFaultySettings.toBuilder();
+      reportHostAsFaultyOperationSettings =
+          settings.reportHostAsFaultyOperationSettings.toBuilder();
       resetSettings = settings.resetSettings.toBuilder();
       resetOperationSettings = settings.resetOperationSettings.toBuilder();
       resumeSettings = settings.resumeSettings.toBuilder();
@@ -1690,6 +1721,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               listReferrersSettings,
               performMaintenanceSettings,
               removeResourcePoliciesSettings,
+              reportHostAsFaultySettings,
               resetSettings,
               resumeSettings,
               sendDiagnosticInterruptSettings,
@@ -1830,6 +1862,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
       builder
           .removeResourcePoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .reportHostAsFaultySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -2197,6 +2234,31 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<RemoveResourcePoliciesInstanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .reportHostAsFaultyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ReportHostAsFaultyInstanceRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
@@ -3024,6 +3086,18 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
             RemoveResourcePoliciesInstanceRequest, Operation, Operation>
         removeResourcePoliciesOperationSettings() {
       return removeResourcePoliciesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to reportHostAsFaulty. */
+    public UnaryCallSettings.Builder<ReportHostAsFaultyInstanceRequest, Operation>
+        reportHostAsFaultySettings() {
+      return reportHostAsFaultySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to reportHostAsFaulty. */
+    public OperationCallSettings.Builder<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+        reportHostAsFaultyOperationSettings() {
+      return reportHostAsFaultyOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to reset. */

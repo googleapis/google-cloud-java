@@ -94,7 +94,7 @@ public interface RestoreInstanceRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.filestore.v1beta1.RestoreInstanceRequest.source_snapshot is
-   *     deprecated. See google/cloud/filestore/v1beta1/cloud_filestore_service.proto;l=773
+   *     deprecated. See google/cloud/filestore/v1beta1/cloud_filestore_service.proto;l=989
    * @return Whether the sourceSnapshot field is set.
    */
   @java.lang.Deprecated
@@ -111,7 +111,7 @@ public interface RestoreInstanceRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.filestore.v1beta1.RestoreInstanceRequest.source_snapshot is
-   *     deprecated. See google/cloud/filestore/v1beta1/cloud_filestore_service.proto;l=773
+   *     deprecated. See google/cloud/filestore/v1beta1/cloud_filestore_service.proto;l=989
    * @return The sourceSnapshot.
    */
   @java.lang.Deprecated
@@ -128,7 +128,7 @@ public interface RestoreInstanceRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.filestore.v1beta1.RestoreInstanceRequest.source_snapshot is
-   *     deprecated. See google/cloud/filestore/v1beta1/cloud_filestore_service.proto;l=773
+   *     deprecated. See google/cloud/filestore/v1beta1/cloud_filestore_service.proto;l=989
    * @return The bytes for sourceSnapshot.
    */
   @java.lang.Deprecated

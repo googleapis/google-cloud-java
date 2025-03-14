@@ -28,10 +28,13 @@ public interface ManagedActiveDirectoryConfigOrBuilder
    *
    *
    * <pre>
-   * Fully qualified domain name.
+   * Required. The domain resource name, in the format
+   * `projects/{project_id}/locations/global/domains/{domain}`.
    * </pre>
    *
-   * <code>string domain = 1;</code>
+   * <code>
+   * string domain = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The domain.
    */
@@ -40,10 +43,13 @@ public interface ManagedActiveDirectoryConfigOrBuilder
    *
    *
    * <pre>
-   * Fully qualified domain name.
+   * Required. The domain resource name, in the format
+   * `projects/{project_id}/locations/global/domains/{domain}`.
    * </pre>
    *
-   * <code>string domain = 1;</code>
+   * <code>
+   * string domain = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for domain.
    */
@@ -53,13 +59,14 @@ public interface ManagedActiveDirectoryConfigOrBuilder
    *
    *
    * <pre>
-   * The computer name is used as a prefix to the mount remote target.
-   * Example: if the computer_name is `my-computer`, the mount command will
-   * look like: `$mount -o vers=4,sec=krb5
-   * my-computer.filestore.&lt;domain&gt;:&lt;share&gt;`.
+   * Required. The computer name is used as a prefix in the command to mount the
+   * remote target.
+   * For example: if the computer is `my-computer`, the mount command will
+   * look like: `$mount -o vers=4.1,sec=krb5
+   * my-computer.filestore.&lt;domain&gt;:&lt;share&gt; &lt;mount point&gt;`.
    * </pre>
    *
-   * <code>string computer = 2;</code>
+   * <code>string computer = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The computer.
    */
@@ -68,13 +75,14 @@ public interface ManagedActiveDirectoryConfigOrBuilder
    *
    *
    * <pre>
-   * The computer name is used as a prefix to the mount remote target.
-   * Example: if the computer_name is `my-computer`, the mount command will
-   * look like: `$mount -o vers=4,sec=krb5
-   * my-computer.filestore.&lt;domain&gt;:&lt;share&gt;`.
+   * Required. The computer name is used as a prefix in the command to mount the
+   * remote target.
+   * For example: if the computer is `my-computer`, the mount command will
+   * look like: `$mount -o vers=4.1,sec=krb5
+   * my-computer.filestore.&lt;domain&gt;:&lt;share&gt; &lt;mount point&gt;`.
    * </pre>
    *
-   * <code>string computer = 2;</code>
+   * <code>string computer = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for computer.
    */

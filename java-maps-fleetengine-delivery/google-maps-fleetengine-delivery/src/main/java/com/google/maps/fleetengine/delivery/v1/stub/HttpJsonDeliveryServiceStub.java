@@ -36,6 +36,8 @@ import com.google.maps.fleetengine.delivery.v1.BatchCreateTasksRequest;
 import com.google.maps.fleetengine.delivery.v1.BatchCreateTasksResponse;
 import com.google.maps.fleetengine.delivery.v1.CreateDeliveryVehicleRequest;
 import com.google.maps.fleetengine.delivery.v1.CreateTaskRequest;
+import com.google.maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest;
+import com.google.maps.fleetengine.delivery.v1.DeleteTaskRequest;
 import com.google.maps.fleetengine.delivery.v1.DeliveryVehicle;
 import com.google.maps.fleetengine.delivery.v1.GetDeliveryVehicleRequest;
 import com.google.maps.fleetengine.delivery.v1.GetTaskRequest;
@@ -48,6 +50,7 @@ import com.google.maps.fleetengine.delivery.v1.Task;
 import com.google.maps.fleetengine.delivery.v1.TaskTrackingInfo;
 import com.google.maps.fleetengine.delivery.v1.UpdateDeliveryVehicleRequest;
 import com.google.maps.fleetengine.delivery.v1.UpdateTaskRequest;
+import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -139,6 +142,42 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<DeliveryVehicle>newBuilder()
                       .setDefaultInstance(DeliveryVehicle.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteDeliveryVehicleRequest, Empty>
+      deleteDeliveryVehicleMethodDescriptor =
+          ApiMethodDescriptor.<DeleteDeliveryVehicleRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "maps.fleetengine.delivery.v1.DeliveryService/DeleteDeliveryVehicle")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteDeliveryVehicleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=providers/*/deliveryVehicles/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDeliveryVehicleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDeliveryVehicleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "header", request.getHeader());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -290,6 +329,40 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
           .setResponseParser(
               ProtoMessageResponseParser.<Task>newBuilder()
                   .setDefaultInstance(Task.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<DeleteTaskRequest, Empty> deleteTaskMethodDescriptor =
+      ApiMethodDescriptor.<DeleteTaskRequest, Empty>newBuilder()
+          .setFullMethodName("maps.fleetengine.delivery.v1.DeliveryService/DeleteTask")
+          .setHttpMethod("DELETE")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<DeleteTaskRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=providers/*/tasks/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<DeleteTaskRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<DeleteTaskRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "header", request.getHeader());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Empty>newBuilder()
+                  .setDefaultInstance(Empty.getDefaultInstance())
                   .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
@@ -450,12 +523,14 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
       createDeliveryVehicleCallable;
   private final UnaryCallable<GetDeliveryVehicleRequest, DeliveryVehicle>
       getDeliveryVehicleCallable;
+  private final UnaryCallable<DeleteDeliveryVehicleRequest, Empty> deleteDeliveryVehicleCallable;
   private final UnaryCallable<UpdateDeliveryVehicleRequest, DeliveryVehicle>
       updateDeliveryVehicleCallable;
   private final UnaryCallable<BatchCreateTasksRequest, BatchCreateTasksResponse>
       batchCreateTasksCallable;
   private final UnaryCallable<CreateTaskRequest, Task> createTaskCallable;
   private final UnaryCallable<GetTaskRequest, Task> getTaskCallable;
+  private final UnaryCallable<DeleteTaskRequest, Empty> deleteTaskCallable;
   private final UnaryCallable<UpdateTaskRequest, Task> updateTaskCallable;
   private final UnaryCallable<ListTasksRequest, ListTasksResponse> listTasksCallable;
   private final UnaryCallable<ListTasksRequest, ListTasksPagedResponse> listTasksPagedCallable;
@@ -473,6 +548,8 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
       PathTemplate.create("{provider_id=providers/*}");
   private static final PathTemplate GET_DELIVERY_VEHICLE_0_PATH_TEMPLATE =
       PathTemplate.create("{provider_id=providers/*}");
+  private static final PathTemplate DELETE_DELIVERY_VEHICLE_0_PATH_TEMPLATE =
+      PathTemplate.create("{provider_id=providers/*}");
   private static final PathTemplate UPDATE_DELIVERY_VEHICLE_0_PATH_TEMPLATE =
       PathTemplate.create("{provider_id=providers/*}");
   private static final PathTemplate BATCH_CREATE_TASKS_0_PATH_TEMPLATE =
@@ -480,6 +557,8 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
   private static final PathTemplate CREATE_TASK_0_PATH_TEMPLATE =
       PathTemplate.create("{provider_id=providers/*}");
   private static final PathTemplate GET_TASK_0_PATH_TEMPLATE =
+      PathTemplate.create("{provider_id=providers/*}");
+  private static final PathTemplate DELETE_TASK_0_PATH_TEMPLATE =
       PathTemplate.create("{provider_id=providers/*}");
   private static final PathTemplate UPDATE_TASK_0_PATH_TEMPLATE =
       PathTemplate.create("{provider_id=providers/*}");
@@ -557,6 +636,21 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<DeleteDeliveryVehicleRequest, Empty>
+        deleteDeliveryVehicleTransportSettings =
+            HttpJsonCallSettings.<DeleteDeliveryVehicleRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteDeliveryVehicleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          request.getName(),
+                          "provider_id",
+                          DELETE_DELIVERY_VEHICLE_0_PATH_TEMPLATE);
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<UpdateDeliveryVehicleRequest, DeliveryVehicle>
         updateDeliveryVehicleTransportSettings =
             HttpJsonCallSettings.<UpdateDeliveryVehicleRequest, DeliveryVehicle>newBuilder()
@@ -606,6 +700,17 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add(request.getName(), "provider_id", GET_TASK_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteTaskRequest, Empty> deleteTaskTransportSettings =
+        HttpJsonCallSettings.<DeleteTaskRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTaskMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "provider_id", DELETE_TASK_0_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -674,6 +779,11 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
             getDeliveryVehicleTransportSettings,
             settings.getDeliveryVehicleSettings(),
             clientContext);
+    this.deleteDeliveryVehicleCallable =
+        callableFactory.createUnaryCallable(
+            deleteDeliveryVehicleTransportSettings,
+            settings.deleteDeliveryVehicleSettings(),
+            clientContext);
     this.updateDeliveryVehicleCallable =
         callableFactory.createUnaryCallable(
             updateDeliveryVehicleTransportSettings,
@@ -688,6 +798,9 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
     this.getTaskCallable =
         callableFactory.createUnaryCallable(
             getTaskTransportSettings, settings.getTaskSettings(), clientContext);
+    this.deleteTaskCallable =
+        callableFactory.createUnaryCallable(
+            deleteTaskTransportSettings, settings.deleteTaskSettings(), clientContext);
     this.updateTaskCallable =
         callableFactory.createUnaryCallable(
             updateTaskTransportSettings, settings.updateTaskSettings(), clientContext);
@@ -722,10 +835,12 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(createDeliveryVehicleMethodDescriptor);
     methodDescriptors.add(getDeliveryVehicleMethodDescriptor);
+    methodDescriptors.add(deleteDeliveryVehicleMethodDescriptor);
     methodDescriptors.add(updateDeliveryVehicleMethodDescriptor);
     methodDescriptors.add(batchCreateTasksMethodDescriptor);
     methodDescriptors.add(createTaskMethodDescriptor);
     methodDescriptors.add(getTaskMethodDescriptor);
+    methodDescriptors.add(deleteTaskMethodDescriptor);
     methodDescriptors.add(updateTaskMethodDescriptor);
     methodDescriptors.add(listTasksMethodDescriptor);
     methodDescriptors.add(getTaskTrackingInfoMethodDescriptor);
@@ -742,6 +857,11 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
   @Override
   public UnaryCallable<GetDeliveryVehicleRequest, DeliveryVehicle> getDeliveryVehicleCallable() {
     return getDeliveryVehicleCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDeliveryVehicleRequest, Empty> deleteDeliveryVehicleCallable() {
+    return deleteDeliveryVehicleCallable;
   }
 
   @Override
@@ -764,6 +884,11 @@ public class HttpJsonDeliveryServiceStub extends DeliveryServiceStub {
   @Override
   public UnaryCallable<GetTaskRequest, Task> getTaskCallable() {
     return getTaskCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteTaskRequest, Empty> deleteTaskCallable() {
+    return deleteTaskCallable;
   }
 
   @Override

@@ -70,7 +70,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetOnlineReturnPolicy</td>
- *      <td><p> Gets an existing return policy.</td>
+ *      <td><p> Gets an existing return policy for a given business.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -89,7 +89,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListOnlineReturnPolicies</td>
- *      <td><p> Lists all existing return policies.</td>
+ *      <td><p> Lists all existing return policies for a given business.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -220,7 +220,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an existing return policy.
+   * Gets an existing return policy for a given business.
    *
    * <p>Sample code:
    *
@@ -251,7 +251,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an existing return policy.
+   * Gets an existing return policy for a given business.
    *
    * <p>Sample code:
    *
@@ -280,7 +280,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an existing return policy.
+   * Gets an existing return policy for a given business.
    *
    * <p>Sample code:
    *
@@ -309,7 +309,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an existing return policy.
+   * Gets an existing return policy for a given business.
    *
    * <p>Sample code:
    *
@@ -339,7 +339,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all existing return policies.
+   * Lists all existing return policies for a given business.
    *
    * <p>Sample code:
    *
@@ -359,7 +359,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The merchant account for which to list return policies. Format:
+   * @param parent Required. The business account for which to list return policies. Format:
    *     `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -373,7 +373,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all existing return policies.
+   * Lists all existing return policies for a given business.
    *
    * <p>Sample code:
    *
@@ -393,7 +393,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The merchant account for which to list return policies. Format:
+   * @param parent Required. The business account for which to list return policies. Format:
    *     `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -405,7 +405,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all existing return policies.
+   * Lists all existing return policies for a given business.
    *
    * <p>Sample code:
    *
@@ -440,7 +440,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all existing return policies.
+   * Lists all existing return policies for a given business.
    *
    * <p>Sample code:
    *
@@ -476,7 +476,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all existing return policies.
+   * Lists all existing return policies for a given business.
    *
    * <p>Sample code:
    *

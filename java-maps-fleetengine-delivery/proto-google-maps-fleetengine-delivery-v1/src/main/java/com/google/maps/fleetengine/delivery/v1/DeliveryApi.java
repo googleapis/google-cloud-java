@@ -37,6 +37,10 @@ public final class DeliveryApi {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_maps_fleetengine_delivery_v1_GetDeliveryVehicleRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_maps_fleetengine_delivery_v1_DeleteDeliveryVehicleRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_maps_fleetengine_delivery_v1_DeleteDeliveryVehicleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_maps_fleetengine_delivery_v1_ListDeliveryVehiclesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_maps_fleetengine_delivery_v1_ListDeliveryVehiclesRequest_fieldAccessorTable;
@@ -64,6 +68,10 @@ public final class DeliveryApi {
       internal_static_maps_fleetengine_delivery_v1_GetTaskRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_maps_fleetengine_delivery_v1_GetTaskRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_maps_fleetengine_delivery_v1_DeleteTaskRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_maps_fleetengine_delivery_v1_DeleteTaskRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_maps_fleetengine_delivery_v1_UpdateTaskRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -101,138 +109,157 @@ public final class DeliveryApi {
           + "ader.proto\032<google/maps/fleetengine/deli"
           + "very/v1/task_tracking_info.proto\032/google"
           + "/maps/fleetengine/delivery/v1/tasks.prot"
-          + "o\032 google/protobuf/field_mask.proto\"\355\001\n\034"
-          + "CreateDeliveryVehicleRequest\022H\n\006header\030\001"
-          + " \001(\01323.maps.fleetengine.delivery.v1.Deli"
-          + "veryRequestHeaderB\003\340A\001\022\023\n\006parent\030\003 \001(\tB\003"
-          + "\340A\002\022 \n\023delivery_vehicle_id\030\004 \001(\tB\003\340A\002\022L\n"
-          + "\020delivery_vehicle\030\005 \001(\0132-.maps.fleetengi"
-          + "ne.delivery.v1.DeliveryVehicleB\003\340A\002\"\247\001\n\031"
-          + "GetDeliveryVehicleRequest\022H\n\006header\030\001 \001("
-          + "\01323.maps.fleetengine.delivery.v1.Deliver"
-          + "yRequestHeaderB\003\340A\001\022@\n\004name\030\003 \001(\tB2\340A\002\372A"
-          + ",\n*fleetengine.googleapis.com/DeliveryVe"
-          + "hicle\"\243\002\n\033ListDeliveryVehiclesRequest\022H\n"
+          + "o\032\033google/protobuf/empty.proto\032 google/p"
+          + "rotobuf/field_mask.proto\"\355\001\n\034CreateDeliv"
+          + "eryVehicleRequest\022H\n\006header\030\001 \001(\01323.maps"
+          + ".fleetengine.delivery.v1.DeliveryRequest"
+          + "HeaderB\003\340A\001\022\023\n\006parent\030\003 \001(\tB\003\340A\002\022 \n\023deli"
+          + "very_vehicle_id\030\004 \001(\tB\003\340A\002\022L\n\020delivery_v"
+          + "ehicle\030\005 \001(\0132-.maps.fleetengine.delivery"
+          + ".v1.DeliveryVehicleB\003\340A\002\"\247\001\n\031GetDelivery"
+          + "VehicleRequest\022H\n\006header\030\001 \001(\01323.maps.fl"
+          + "eetengine.delivery.v1.DeliveryRequestHea"
+          + "derB\003\340A\001\022@\n\004name\030\003 \001(\tB2\340A\002\372A,\n*fleeteng"
+          + "ine.googleapis.com/DeliveryVehicle\"\252\001\n\034D"
+          + "eleteDeliveryVehicleRequest\022H\n\006header\030\001 "
+          + "\001(\01323.maps.fleetengine.delivery.v1.Deliv"
+          + "eryRequestHeaderB\003\340A\001\022@\n\004name\030\002 \001(\tB2\340A\002"
+          + "\372A,\n*fleetengine.googleapis.com/Delivery"
+          + "Vehicle\"\243\002\n\033ListDeliveryVehiclesRequest\022"
+          + "H\n\006header\030\001 \001(\01323.maps.fleetengine.deliv"
+          + "ery.v1.DeliveryRequestHeaderB\003\340A\001\022B\n\006par"
+          + "ent\030\003 \001(\tB2\340A\002\372A,\022*fleetengine.googleapi"
+          + "s.com/DeliveryVehicle\022\026\n\tpage_size\030\004 \001(\005"
+          + "B\003\340A\001\022\027\n\npage_token\030\005 \001(\tB\003\340A\001\022\023\n\006filter"
+          + "\030\006 \001(\tB\003\340A\001\0220\n\010viewport\030\007 \001(\0132\031.google.g"
+          + "eo.type.ViewportB\003\340A\001\"\225\001\n\034ListDeliveryVe"
+          + "hiclesResponse\022H\n\021delivery_vehicles\030\001 \003("
+          + "\0132-.maps.fleetengine.delivery.v1.Deliver"
+          + "yVehicle\022\027\n\017next_page_token\030\002 \001(\t\022\022\n\ntot"
+          + "al_size\030\003 \001(\003\"\354\001\n\034UpdateDeliveryVehicleR"
+          + "equest\022H\n\006header\030\001 \001(\01323.maps.fleetengin"
+          + "e.delivery.v1.DeliveryRequestHeaderB\003\340A\001"
+          + "\022L\n\020delivery_vehicle\030\003 \001(\0132-.maps.fleete"
+          + "ngine.delivery.v1.DeliveryVehicleB\003\340A\002\0224"
+          + "\n\013update_mask\030\004 \001(\0132\032.google.protobuf.Fi"
+          + "eldMaskB\003\340A\002\"\344\001\n\027BatchCreateTasksRequest"
+          + "\022H\n\006header\030\001 \001(\01323.maps.fleetengine.deli"
+          + "very.v1.DeliveryRequestHeaderB\003\340A\001\0227\n\006pa"
+          + "rent\030\003 \001(\tB\'\340A\002\372A!\022\037fleetengine.googleap"
+          + "is.com/Task\022F\n\010requests\030\004 \003(\0132/.maps.fle"
+          + "etengine.delivery.v1.CreateTaskRequestB\003"
+          + "\340A\002\"M\n\030BatchCreateTasksResponse\0221\n\005tasks"
+          + "\030\001 \003(\0132\".maps.fleetengine.delivery.v1.Ta"
+          + "sk\"\277\001\n\021CreateTaskRequest\022H\n\006header\030\001 \001(\013"
+          + "23.maps.fleetengine.delivery.v1.Delivery"
+          + "RequestHeaderB\003\340A\001\022\023\n\006parent\030\003 \001(\tB\003\340A\002\022"
+          + "\024\n\007task_id\030\005 \001(\tB\003\340A\002\0225\n\004task\030\004 \001(\0132\".ma"
+          + "ps.fleetengine.delivery.v1.TaskB\003\340A\002\"\221\001\n"
+          + "\016GetTaskRequest\022H\n\006header\030\001 \001(\01323.maps.f"
+          + "leetengine.delivery.v1.DeliveryRequestHe"
+          + "aderB\003\340A\001\0225\n\004name\030\003 \001(\tB\'\340A\002\372A!\n\037fleeten"
+          + "gine.googleapis.com/Task\"\224\001\n\021DeleteTaskR"
+          + "equest\022H\n\006header\030\001 \001(\01323.maps.fleetengin"
+          + "e.delivery.v1.DeliveryRequestHeaderB\003\340A\001"
+          + "\0225\n\004name\030\002 \001(\tB\'\340A\002\372A!\n\037fleetengine.goog"
+          + "leapis.com/Task\"\312\001\n\021UpdateTaskRequest\022H\n"
           + "\006header\030\001 \001(\01323.maps.fleetengine.deliver"
-          + "y.v1.DeliveryRequestHeaderB\003\340A\001\022B\n\006paren"
-          + "t\030\003 \001(\tB2\340A\002\372A,\022*fleetengine.googleapis."
-          + "com/DeliveryVehicle\022\026\n\tpage_size\030\004 \001(\005B\003"
-          + "\340A\001\022\027\n\npage_token\030\005 \001(\tB\003\340A\001\022\023\n\006filter\030\006"
-          + " \001(\tB\003\340A\001\0220\n\010viewport\030\007 \001(\0132\031.google.geo"
-          + ".type.ViewportB\003\340A\001\"\225\001\n\034ListDeliveryVehi"
-          + "clesResponse\022H\n\021delivery_vehicles\030\001 \003(\0132"
-          + "-.maps.fleetengine.delivery.v1.DeliveryV"
-          + "ehicle\022\027\n\017next_page_token\030\002 \001(\t\022\022\n\ntotal"
-          + "_size\030\003 \001(\003\"\354\001\n\034UpdateDeliveryVehicleReq"
-          + "uest\022H\n\006header\030\001 \001(\01323.maps.fleetengine."
-          + "delivery.v1.DeliveryRequestHeaderB\003\340A\001\022L"
-          + "\n\020delivery_vehicle\030\003 \001(\0132-.maps.fleeteng"
-          + "ine.delivery.v1.DeliveryVehicleB\003\340A\002\0224\n\013"
-          + "update_mask\030\004 \001(\0132\032.google.protobuf.Fiel"
-          + "dMaskB\003\340A\002\"\344\001\n\027BatchCreateTasksRequest\022H"
-          + "\n\006header\030\001 \001(\01323.maps.fleetengine.delive"
-          + "ry.v1.DeliveryRequestHeaderB\003\340A\001\0227\n\006pare"
-          + "nt\030\003 \001(\tB\'\340A\002\372A!\022\037fleetengine.googleapis"
-          + ".com/Task\022F\n\010requests\030\004 \003(\0132/.maps.fleet"
-          + "engine.delivery.v1.CreateTaskRequestB\003\340A"
-          + "\002\"M\n\030BatchCreateTasksResponse\0221\n\005tasks\030\001"
-          + " \003(\0132\".maps.fleetengine.delivery.v1.Task"
-          + "\"\277\001\n\021CreateTaskRequest\022H\n\006header\030\001 \001(\01323"
-          + ".maps.fleetengine.delivery.v1.DeliveryRe"
-          + "questHeaderB\003\340A\001\022\023\n\006parent\030\003 \001(\tB\003\340A\002\022\024\n"
-          + "\007task_id\030\005 \001(\tB\003\340A\002\0225\n\004task\030\004 \001(\0132\".maps"
-          + ".fleetengine.delivery.v1.TaskB\003\340A\002\"\221\001\n\016G"
-          + "etTaskRequest\022H\n\006header\030\001 \001(\01323.maps.fle"
-          + "etengine.delivery.v1.DeliveryRequestHead"
-          + "erB\003\340A\001\0225\n\004name\030\003 \001(\tB\'\340A\002\372A!\n\037fleetengi"
-          + "ne.googleapis.com/Task\"\312\001\n\021UpdateTaskReq"
-          + "uest\022H\n\006header\030\001 \001(\01323.maps.fleetengine."
-          + "delivery.v1.DeliveryRequestHeaderB\003\340A\001\0225"
-          + "\n\004task\030\003 \001(\0132\".maps.fleetengine.delivery"
-          + ".v1.TaskB\003\340A\002\0224\n\013update_mask\030\004 \001(\0132\032.goo"
-          + "gle.protobuf.FieldMaskB\003\340A\002\"\333\001\n\020ListTask"
-          + "sRequest\022H\n\006header\030\001 \001(\01323.maps.fleeteng"
-          + "ine.delivery.v1.DeliveryRequestHeaderB\003\340"
-          + "A\001\0227\n\006parent\030\003 \001(\tB\'\340A\002\372A!\022\037fleetengine."
-          + "googleapis.com/Task\022\026\n\tpage_size\030\004 \001(\005B\003"
-          + "\340A\001\022\027\n\npage_token\030\005 \001(\tB\003\340A\001\022\023\n\006filter\030\006"
-          + " \001(\tB\003\340A\001\"s\n\021ListTasksResponse\0221\n\005tasks\030"
-          + "\001 \003(\0132\".maps.fleetengine.delivery.v1.Tas"
-          + "k\022\027\n\017next_page_token\030\002 \001(\t\022\022\n\ntotal_size"
-          + "\030\003 \001(\003\"\251\001\n\032GetTaskTrackingInfoRequest\022H\n"
-          + "\006header\030\001 \001(\01323.maps.fleetengine.deliver"
-          + "y.v1.DeliveryRequestHeaderB\003\340A\001\022A\n\004name\030"
-          + "\003 \001(\tB3\340A\002\372A-\n+fleetengine.googleapis.co"
-          + "m/TaskTrackingInfo2\212\023\n\017DeliveryService\022\241"
-          + "\002\n\025CreateDeliveryVehicle\022:.maps.fleeteng"
-          + "ine.delivery.v1.CreateDeliveryVehicleReq"
+          + "y.v1.DeliveryRequestHeaderB\003\340A\001\0225\n\004task\030"
+          + "\003 \001(\0132\".maps.fleetengine.delivery.v1.Tas"
+          + "kB\003\340A\002\0224\n\013update_mask\030\004 \001(\0132\032.google.pro"
+          + "tobuf.FieldMaskB\003\340A\002\"\333\001\n\020ListTasksReques"
+          + "t\022H\n\006header\030\001 \001(\01323.maps.fleetengine.del"
+          + "ivery.v1.DeliveryRequestHeaderB\003\340A\001\0227\n\006p"
+          + "arent\030\003 \001(\tB\'\340A\002\372A!\022\037fleetengine.googlea"
+          + "pis.com/Task\022\026\n\tpage_size\030\004 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\005 \001(\tB\003\340A\001\022\023\n\006filter\030\006 \001(\tB\003\340"
+          + "A\001\"s\n\021ListTasksResponse\0221\n\005tasks\030\001 \003(\0132\""
+          + ".maps.fleetengine.delivery.v1.Task\022\027\n\017ne"
+          + "xt_page_token\030\002 \001(\t\022\022\n\ntotal_size\030\003 \001(\003\""
+          + "\251\001\n\032GetTaskTrackingInfoRequest\022H\n\006header"
+          + "\030\001 \001(\01323.maps.fleetengine.delivery.v1.De"
+          + "liveryRequestHeaderB\003\340A\001\022A\n\004name\030\003 \001(\tB3"
+          + "\340A\002\372A-\n+fleetengine.googleapis.com/TaskT"
+          + "rackingInfo2\213\026\n\017DeliveryService\022\241\002\n\025Crea"
+          + "teDeliveryVehicle\022:.maps.fleetengine.del"
+          + "ivery.v1.CreateDeliveryVehicleRequest\032-."
+          + "maps.fleetengine.delivery.v1.DeliveryVeh"
+          + "icle\"\234\001\332A+parent,delivery_vehicle,delive"
+          + "ry_vehicle_id\202\323\344\223\002=\")/v1/{parent=provide"
+          + "rs/*}/deliveryVehicles:\020delivery_vehicle"
+          + "\212\323\344\223\002%\022#\n\006parent\022\031{provider_id=providers"
+          + "/*}\022\337\001\n\022GetDeliveryVehicle\0227.maps.fleete"
+          + "ngine.delivery.v1.GetDeliveryVehicleRequ"
+          + "est\032-.maps.fleetengine.delivery.v1.Deliv"
+          + "eryVehicle\"a\332A\004name\202\323\344\223\002+\022)/v1/{name=pro"
+          + "viders/*/deliveryVehicles/*}\212\323\344\223\002#\022!\n\004na"
+          + "me\022\031{provider_id=providers/*}\022\316\001\n\025Delete"
+          + "DeliveryVehicle\022:.maps.fleetengine.deliv"
+          + "ery.v1.DeleteDeliveryVehicleRequest\032\026.go"
+          + "ogle.protobuf.Empty\"a\332A\004name\202\323\344\223\002+*)/v1/"
+          + "{name=providers/*/deliveryVehicles/*}\212\323\344"
+          + "\223\002#\022!\n\004name\022\031{provider_id=providers/*}\022\262"
+          + "\002\n\025UpdateDeliveryVehicle\022:.maps.fleeteng"
+          + "ine.delivery.v1.UpdateDeliveryVehicleReq"
           + "uest\032-.maps.fleetengine.delivery.v1.Deli"
-          + "veryVehicle\"\234\001\332A+parent,delivery_vehicle"
-          + ",delivery_vehicle_id\202\323\344\223\002=\")/v1/{parent="
-          + "providers/*}/deliveryVehicles:\020delivery_"
-          + "vehicle\212\323\344\223\002%\022#\n\006parent\022\031{provider_id=pr"
-          + "oviders/*}\022\337\001\n\022GetDeliveryVehicle\0227.maps"
-          + ".fleetengine.delivery.v1.GetDeliveryVehi"
-          + "cleRequest\032-.maps.fleetengine.delivery.v"
-          + "1.DeliveryVehicle\"a\332A\004name\202\323\344\223\002+\022)/v1/{n"
-          + "ame=providers/*/deliveryVehicles/*}\212\323\344\223\002"
-          + "#\022!\n\004name\022\031{provider_id=providers/*}\022\262\002\n"
-          + "\025UpdateDeliveryVehicle\022:.maps.fleetengin"
-          + "e.delivery.v1.UpdateDeliveryVehicleReque"
-          + "st\032-.maps.fleetengine.delivery.v1.Delive"
-          + "ryVehicle\"\255\001\332A\034delivery_vehicle,update_m"
-          + "ask\202\323\344\223\002N2:/v1/{delivery_vehicle.name=pr"
-          + "oviders/*/deliveryVehicles/*}:\020delivery_"
-          + "vehicle\212\323\344\223\0024\0222\n\025delivery_vehicle.name\022\031"
-          + "{provider_id=providers/*}\022\343\001\n\020BatchCreat"
-          + "eTasks\0225.maps.fleetengine.delivery.v1.Ba"
-          + "tchCreateTasksRequest\0326.maps.fleetengine"
-          + ".delivery.v1.BatchCreateTasksResponse\"`\202"
-          + "\323\344\223\002/\"*/v1/{parent=providers/*}/tasks:ba"
-          + "tchCreate:\001*\212\323\344\223\002%\022#\n\006parent\022\031{provider_"
-          + "id=providers/*}\022\320\001\n\nCreateTask\022/.maps.fl"
-          + "eetengine.delivery.v1.CreateTaskRequest\032"
-          + "\".maps.fleetengine.delivery.v1.Task\"m\332A\023"
-          + "parent,task,task_id\202\323\344\223\002&\"\036/v1/{parent=p"
-          + "roviders/*}/tasks:\004task\212\323\344\223\002%\022#\n\006parent\022"
-          + "\031{provider_id=providers/*}\022\263\001\n\007GetTask\022,"
-          + ".maps.fleetengine.delivery.v1.GetTaskReq"
-          + "uest\032\".maps.fleetengine.delivery.v1.Task"
-          + "\"V\332A\004name\202\323\344\223\002 \022\036/v1/{name=providers/*/t"
-          + "asks/*}\212\323\344\223\002#\022!\n\004name\022\031{provider_id=prov"
-          + "iders/*}\022\325\001\n\nUpdateTask\022/.maps.fleetengi"
-          + "ne.delivery.v1.UpdateTaskRequest\032\".maps."
-          + "fleetengine.delivery.v1.Task\"r\332A\020task,up"
-          + "date_mask\202\323\344\223\002+2#/v1/{task.name=provider"
-          + "s/*/tasks/*}:\004task\212\323\344\223\002(\022&\n\ttask.name\022\031{"
-          + "provider_id=providers/*}\022\310\001\n\tListTasks\022."
-          + ".maps.fleetengine.delivery.v1.ListTasksR"
-          + "equest\032/.maps.fleetengine.delivery.v1.Li"
-          + "stTasksResponse\"Z\332A\006parent\202\323\344\223\002 \022\036/v1/{p"
-          + "arent=providers/*}/tasks\212\323\344\223\002%\022#\n\006parent"
-          + "\022\031{provider_id=providers/*}\022\342\001\n\023GetTaskT"
-          + "rackingInfo\0228.maps.fleetengine.delivery."
-          + "v1.GetTaskTrackingInfoRequest\032..maps.fle"
-          + "etengine.delivery.v1.TaskTrackingInfo\"a\332"
-          + "A\004name\202\323\344\223\002+\022)/v1/{name=providers/*/task"
-          + "TrackingInfo/*}\212\323\344\223\002#\022!\n\004name\022\031{provider"
-          + "_id=providers/*}\022\364\001\n\024ListDeliveryVehicle"
-          + "s\0229.maps.fleetengine.delivery.v1.ListDel"
-          + "iveryVehiclesRequest\032:.maps.fleetengine."
-          + "delivery.v1.ListDeliveryVehiclesResponse"
-          + "\"e\332A\006parent\202\323\344\223\002+\022)/v1/{parent=providers"
-          + "/*}/deliveryVehicles\212\323\344\223\002%\022#\n\006parent\022\031{p"
-          + "rovider_id=providers/*}\032N\312A\032fleetengine."
-          + "googleapis.com\322A.https://www.googleapis."
-          + "com/auth/cloud-platformB\276\002\n\'com.google.m"
-          + "aps.fleetengine.delivery.v1B\013DeliveryApi"
-          + "P\001ZIcloud.google.com/go/maps/fleetengine"
-          + "/delivery/apiv1/deliverypb;deliverypb\242\002\004"
-          + "CFED\252\002#Google.Maps.FleetEngine.Delivery."
-          + "V1\312\002#Google\\Maps\\FleetEngine\\Delivery\\V1"
-          + "\352\002\'Google::Maps::FleetEngine::Delivery::"
-          + "V1\352A;\n#fleetengine.googleapis.com/Provid"
-          + "er\022\024providers/{provider}b\006proto3"
+          + "veryVehicle\"\255\001\332A\034delivery_vehicle,update"
+          + "_mask\202\323\344\223\002N2:/v1/{delivery_vehicle.name="
+          + "providers/*/deliveryVehicles/*}:\020deliver"
+          + "y_vehicle\212\323\344\223\0024\0222\n\025delivery_vehicle.name"
+          + "\022\031{provider_id=providers/*}\022\343\001\n\020BatchCre"
+          + "ateTasks\0225.maps.fleetengine.delivery.v1."
+          + "BatchCreateTasksRequest\0326.maps.fleetengi"
+          + "ne.delivery.v1.BatchCreateTasksResponse\""
+          + "`\202\323\344\223\002/\"*/v1/{parent=providers/*}/tasks:"
+          + "batchCreate:\001*\212\323\344\223\002%\022#\n\006parent\022\031{provide"
+          + "r_id=providers/*}\022\320\001\n\nCreateTask\022/.maps."
+          + "fleetengine.delivery.v1.CreateTaskReques"
+          + "t\032\".maps.fleetengine.delivery.v1.Task\"m\332"
+          + "A\023parent,task,task_id\202\323\344\223\002&\"\036/v1/{parent"
+          + "=providers/*}/tasks:\004task\212\323\344\223\002%\022#\n\006paren"
+          + "t\022\031{provider_id=providers/*}\022\263\001\n\007GetTask"
+          + "\022,.maps.fleetengine.delivery.v1.GetTaskR"
+          + "equest\032\".maps.fleetengine.delivery.v1.Ta"
+          + "sk\"V\332A\004name\202\323\344\223\002 \022\036/v1/{name=providers/*"
+          + "/tasks/*}\212\323\344\223\002#\022!\n\004name\022\031{provider_id=pr"
+          + "oviders/*}\022\255\001\n\nDeleteTask\022/.maps.fleeten"
+          + "gine.delivery.v1.DeleteTaskRequest\032\026.goo"
+          + "gle.protobuf.Empty\"V\332A\004name\202\323\344\223\002 *\036/v1/{"
+          + "name=providers/*/tasks/*}\212\323\344\223\002#\022!\n\004name\022"
+          + "\031{provider_id=providers/*}\022\325\001\n\nUpdateTas"
+          + "k\022/.maps.fleetengine.delivery.v1.UpdateT"
+          + "askRequest\032\".maps.fleetengine.delivery.v"
+          + "1.Task\"r\332A\020task,update_mask\202\323\344\223\002+2#/v1/{"
+          + "task.name=providers/*/tasks/*}:\004task\212\323\344\223"
+          + "\002(\022&\n\ttask.name\022\031{provider_id=providers/"
+          + "*}\022\310\001\n\tListTasks\022..maps.fleetengine.deli"
+          + "very.v1.ListTasksRequest\032/.maps.fleeteng"
+          + "ine.delivery.v1.ListTasksResponse\"Z\332A\006pa"
+          + "rent\202\323\344\223\002 \022\036/v1/{parent=providers/*}/tas"
+          + "ks\212\323\344\223\002%\022#\n\006parent\022\031{provider_id=provide"
+          + "rs/*}\022\342\001\n\023GetTaskTrackingInfo\0228.maps.fle"
+          + "etengine.delivery.v1.GetTaskTrackingInfo"
+          + "Request\032..maps.fleetengine.delivery.v1.T"
+          + "askTrackingInfo\"a\332A\004name\202\323\344\223\002+\022)/v1/{nam"
+          + "e=providers/*/taskTrackingInfo/*}\212\323\344\223\002#\022"
+          + "!\n\004name\022\031{provider_id=providers/*}\022\364\001\n\024L"
+          + "istDeliveryVehicles\0229.maps.fleetengine.d"
+          + "elivery.v1.ListDeliveryVehiclesRequest\032:"
+          + ".maps.fleetengine.delivery.v1.ListDelive"
+          + "ryVehiclesResponse\"e\332A\006parent\202\323\344\223\002+\022)/v1"
+          + "/{parent=providers/*}/deliveryVehicles\212\323"
+          + "\344\223\002%\022#\n\006parent\022\031{provider_id=providers/*"
+          + "}\032N\312A\032fleetengine.googleapis.com\322A.https"
+          + "://www.googleapis.com/auth/cloud-platfor"
+          + "mB\276\002\n\'com.google.maps.fleetengine.delive"
+          + "ry.v1B\013DeliveryApiP\001ZIcloud.google.com/g"
+          + "o/maps/fleetengine/delivery/apiv1/delive"
+          + "rypb;deliverypb\242\002\004CFED\252\002#Google.Maps.Fle"
+          + "etEngine.Delivery.V1\312\002#Google\\Maps\\Fleet"
+          + "Engine\\Delivery\\V1\352\002\'Google::Maps::Fleet"
+          + "Engine::Delivery::V1\352A;\n#fleetengine.goo"
+          + "gleapis.com/Provider\022\024providers/{provide"
+          + "r}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -248,6 +275,7 @@ public final class DeliveryApi {
               com.google.maps.fleetengine.delivery.v1.Headers.getDescriptor(),
               com.google.maps.fleetengine.delivery.v1.TaskTrackingInfoProto.getDescriptor(),
               com.google.maps.fleetengine.delivery.v1.Tasks.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_maps_fleetengine_delivery_v1_CreateDeliveryVehicleRequest_descriptor =
@@ -266,8 +294,16 @@ public final class DeliveryApi {
             new java.lang.String[] {
               "Header", "Name",
             });
-    internal_static_maps_fleetengine_delivery_v1_ListDeliveryVehiclesRequest_descriptor =
+    internal_static_maps_fleetengine_delivery_v1_DeleteDeliveryVehicleRequest_descriptor =
         getDescriptor().getMessageTypes().get(2);
+    internal_static_maps_fleetengine_delivery_v1_DeleteDeliveryVehicleRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_maps_fleetengine_delivery_v1_DeleteDeliveryVehicleRequest_descriptor,
+            new java.lang.String[] {
+              "Header", "Name",
+            });
+    internal_static_maps_fleetengine_delivery_v1_ListDeliveryVehiclesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(3);
     internal_static_maps_fleetengine_delivery_v1_ListDeliveryVehiclesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_maps_fleetengine_delivery_v1_ListDeliveryVehiclesRequest_descriptor,
@@ -275,7 +311,7 @@ public final class DeliveryApi {
               "Header", "Parent", "PageSize", "PageToken", "Filter", "Viewport",
             });
     internal_static_maps_fleetengine_delivery_v1_ListDeliveryVehiclesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_maps_fleetengine_delivery_v1_ListDeliveryVehiclesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_maps_fleetengine_delivery_v1_ListDeliveryVehiclesResponse_descriptor,
@@ -283,7 +319,7 @@ public final class DeliveryApi {
               "DeliveryVehicles", "NextPageToken", "TotalSize",
             });
     internal_static_maps_fleetengine_delivery_v1_UpdateDeliveryVehicleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_maps_fleetengine_delivery_v1_UpdateDeliveryVehicleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_maps_fleetengine_delivery_v1_UpdateDeliveryVehicleRequest_descriptor,
@@ -291,7 +327,7 @@ public final class DeliveryApi {
               "Header", "DeliveryVehicle", "UpdateMask",
             });
     internal_static_maps_fleetengine_delivery_v1_BatchCreateTasksRequest_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_maps_fleetengine_delivery_v1_BatchCreateTasksRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_maps_fleetengine_delivery_v1_BatchCreateTasksRequest_descriptor,
@@ -299,7 +335,7 @@ public final class DeliveryApi {
               "Header", "Parent", "Requests",
             });
     internal_static_maps_fleetengine_delivery_v1_BatchCreateTasksResponse_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_maps_fleetengine_delivery_v1_BatchCreateTasksResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_maps_fleetengine_delivery_v1_BatchCreateTasksResponse_descriptor,
@@ -307,7 +343,7 @@ public final class DeliveryApi {
               "Tasks",
             });
     internal_static_maps_fleetengine_delivery_v1_CreateTaskRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_maps_fleetengine_delivery_v1_CreateTaskRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_maps_fleetengine_delivery_v1_CreateTaskRequest_descriptor,
@@ -315,15 +351,23 @@ public final class DeliveryApi {
               "Header", "Parent", "TaskId", "Task",
             });
     internal_static_maps_fleetengine_delivery_v1_GetTaskRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_maps_fleetengine_delivery_v1_GetTaskRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_maps_fleetengine_delivery_v1_GetTaskRequest_descriptor,
             new java.lang.String[] {
               "Header", "Name",
             });
+    internal_static_maps_fleetengine_delivery_v1_DeleteTaskRequest_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_maps_fleetengine_delivery_v1_DeleteTaskRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_maps_fleetengine_delivery_v1_DeleteTaskRequest_descriptor,
+            new java.lang.String[] {
+              "Header", "Name",
+            });
     internal_static_maps_fleetengine_delivery_v1_UpdateTaskRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_maps_fleetengine_delivery_v1_UpdateTaskRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_maps_fleetengine_delivery_v1_UpdateTaskRequest_descriptor,
@@ -331,7 +375,7 @@ public final class DeliveryApi {
               "Header", "Task", "UpdateMask",
             });
     internal_static_maps_fleetengine_delivery_v1_ListTasksRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_maps_fleetengine_delivery_v1_ListTasksRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_maps_fleetengine_delivery_v1_ListTasksRequest_descriptor,
@@ -339,7 +383,7 @@ public final class DeliveryApi {
               "Header", "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_maps_fleetengine_delivery_v1_ListTasksResponse_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_maps_fleetengine_delivery_v1_ListTasksResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_maps_fleetengine_delivery_v1_ListTasksResponse_descriptor,
@@ -347,7 +391,7 @@ public final class DeliveryApi {
               "Tasks", "NextPageToken", "TotalSize",
             });
     internal_static_maps_fleetengine_delivery_v1_GetTaskTrackingInfoRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_maps_fleetengine_delivery_v1_GetTaskTrackingInfoRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_maps_fleetengine_delivery_v1_GetTaskTrackingInfoRequest_descriptor,
@@ -376,6 +420,7 @@ public final class DeliveryApi {
     com.google.maps.fleetengine.delivery.v1.Headers.getDescriptor();
     com.google.maps.fleetengine.delivery.v1.TaskTrackingInfoProto.getDescriptor();
     com.google.maps.fleetengine.delivery.v1.Tasks.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
   }
 

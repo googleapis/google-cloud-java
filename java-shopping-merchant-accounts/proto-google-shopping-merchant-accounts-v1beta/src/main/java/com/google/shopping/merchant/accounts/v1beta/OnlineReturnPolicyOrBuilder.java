@@ -80,17 +80,19 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * This field represents the unique user-defined label of the return policy.
-   * It is important to note that the same label cannot be used in different
-   * return policies for the same country. Unless a product specifies a specific
-   * label attribute, policies will be automatically labeled as 'default'.
-   * To assign a custom return policy to certain product groups, follow the
-   * instructions provided in the [Return policy label]
+   * Required. Immutable. This field represents the unique user-defined label of
+   * the return policy. It is important to note that the same label cannot be
+   * used in different return policies for the same country. Unless a product
+   * specifies a specific label attribute, policies will be automatically
+   * labeled as 'default'. To assign a custom return policy to certain product
+   * groups, follow the instructions provided in the [Return policy label]
    * (https://support.google.com/merchants/answer/9445425).
    * The label can contain up to 50 characters.
    * </pre>
    *
-   * <code>string label = 3;</code>
+   * <code>
+   * string label = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The label.
    */
@@ -99,17 +101,19 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * This field represents the unique user-defined label of the return policy.
-   * It is important to note that the same label cannot be used in different
-   * return policies for the same country. Unless a product specifies a specific
-   * label attribute, policies will be automatically labeled as 'default'.
-   * To assign a custom return policy to certain product groups, follow the
-   * instructions provided in the [Return policy label]
+   * Required. Immutable. This field represents the unique user-defined label of
+   * the return policy. It is important to note that the same label cannot be
+   * used in different return policies for the same country. Unless a product
+   * specifies a specific label attribute, policies will be automatically
+   * labeled as 'default'. To assign a custom return policy to certain product
+   * groups, follow the instructions provided in the [Return policy label]
    * (https://support.google.com/merchants/answer/9445425).
    * The label can contain up to 50 characters.
    * </pre>
    *
-   * <code>string label = 3;</code>
+   * <code>
+   * string label = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for label.
    */
@@ -119,11 +123,13 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The countries of sale where the return policy applies. The values
-   * must be a valid 2 letter ISO 3166 code.
+   * Required. Immutable. The countries of sale where the return policy applies.
+   * The values must be a valid 2 letter ISO 3166 code.
    * </pre>
    *
-   * <code>repeated string countries = 4;</code>
+   * <code>
+   * repeated string countries = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return A list containing the countries.
    */
@@ -132,11 +138,13 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The countries of sale where the return policy applies. The values
-   * must be a valid 2 letter ISO 3166 code.
+   * Required. Immutable. The countries of sale where the return policy applies.
+   * The values must be a valid 2 letter ISO 3166 code.
    * </pre>
    *
-   * <code>repeated string countries = 4;</code>
+   * <code>
+   * repeated string countries = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The count of countries.
    */
@@ -145,11 +153,13 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The countries of sale where the return policy applies. The values
-   * must be a valid 2 letter ISO 3166 code.
+   * Required. Immutable. The countries of sale where the return policy applies.
+   * The values must be a valid 2 letter ISO 3166 code.
    * </pre>
    *
-   * <code>repeated string countries = 4;</code>
+   * <code>
+   * repeated string countries = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The countries at the given index.
@@ -159,11 +169,13 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The countries of sale where the return policy applies. The values
-   * must be a valid 2 letter ISO 3166 code.
+   * Required. Immutable. The countries of sale where the return policy applies.
+   * The values must be a valid 2 letter ISO 3166 code.
    * </pre>
    *
-   * <code>repeated string countries = 4;</code>
+   * <code>
+   * repeated string countries = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the countries at the given index.
@@ -205,6 +217,79 @@ public interface OnlineReturnPolicyOrBuilder
    */
   com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.PolicyOrBuilder
       getPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides to the general policy for orders placed during a
+   * specific set of time intervals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride>
+      getSeasonalOverridesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides to the general policy for orders placed during a
+   * specific set of time intervals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+      getSeasonalOverrides(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides to the general policy for orders placed during a
+   * specific set of time intervals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getSeasonalOverridesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides to the general policy for orders placed during a
+   * specific set of time intervals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy
+                  .SeasonalOverrideOrBuilder>
+      getSeasonalOverridesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides to the general policy for orders placed during a
+   * specific set of time intervals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverrideOrBuilder
+      getSeasonalOverridesOrBuilder(int index);
 
   /**
    *
@@ -461,11 +546,11 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The return policy uri. This can used by Google to do a sanity check for the
-   * policy. It must be a valid URL.
+   * Required. The return policy uri. This can used by Google to do a sanity
+   * check for the policy. It must be a valid URL.
    * </pre>
    *
-   * <code>string return_policy_uri = 10;</code>
+   * <code>string return_policy_uri = 10 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The returnPolicyUri.
    */
@@ -474,11 +559,11 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The return policy uri. This can used by Google to do a sanity check for the
-   * policy. It must be a valid URL.
+   * Required. The return policy uri. This can used by Google to do a sanity
+   * check for the policy. It must be a valid URL.
    * </pre>
    *
-   * <code>string return_policy_uri = 10;</code>
+   * <code>string return_policy_uri = 10 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for returnPolicyUri.
    */

@@ -452,7 +452,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=330
+   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=357
    * @return Whether the partialFailureGcsSink field is set.
    */
   @java.lang.Override
@@ -473,7 +473,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=330
+   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=357
    * @return The partialFailureGcsSink.
    */
   @java.lang.Override
@@ -525,7 +525,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=339
+   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=366
    * @return Whether the partialFailureBigquerySink field is set.
    */
   @java.lang.Override
@@ -551,7 +551,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=339
+   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=366
    * @return The partialFailureBigquerySink.
    */
   @java.lang.Override
@@ -647,6 +647,66 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         : ragFileTransformationConfig_;
   }
 
+  public static final int RAG_FILE_PARSING_CONFIG_FIELD_NUMBER = 8;
+  private com.google.cloud.aiplatform.v1.RagFileParsingConfig ragFileParsingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the parsing config for RagFiles.
+   * RAG will use the default parser if this field is not set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ragFileParsingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRagFileParsingConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the parsing config for RagFiles.
+   * RAG will use the default parser if this field is not set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ragFileParsingConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.RagFileParsingConfig getRagFileParsingConfig() {
+    return ragFileParsingConfig_ == null
+        ? com.google.cloud.aiplatform.v1.RagFileParsingConfig.getDefaultInstance()
+        : ragFileParsingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the parsing config for RagFiles.
+   * RAG will use the default parser if this field is not set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.RagFileParsingConfigOrBuilder
+      getRagFileParsingConfigOrBuilder() {
+    return ragFileParsingConfig_ == null
+        ? com.google.cloud.aiplatform.v1.RagFileParsingConfig.getDefaultInstance()
+        : ragFileParsingConfig_;
+  }
+
   public static final int MAX_EMBEDDING_REQUESTS_PER_MIN_FIELD_NUMBER = 5;
   private int maxEmbeddingRequestsPerMin_ = 0;
   /**
@@ -699,6 +759,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     if (importSourceCase_ == 7) {
       output.writeMessage(7, (com.google.cloud.aiplatform.v1.JiraSource) importSource_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(8, getRagFileParsingConfig());
+    }
     if (partialFailureSinkCase_ == 11) {
       output.writeMessage(11, (com.google.cloud.aiplatform.v1.GcsDestination) partialFailureSink_);
     }
@@ -745,6 +808,10 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, (com.google.cloud.aiplatform.v1.JiraSource) importSource_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(8, getRagFileParsingConfig());
+    }
     if (partialFailureSinkCase_ == 11) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -785,6 +852,10 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     if (hasRagFileTransformationConfig()) {
       if (!getRagFileTransformationConfig().equals(other.getRagFileTransformationConfig()))
         return false;
+    }
+    if (hasRagFileParsingConfig() != other.hasRagFileParsingConfig()) return false;
+    if (hasRagFileParsingConfig()) {
+      if (!getRagFileParsingConfig().equals(other.getRagFileParsingConfig())) return false;
     }
     if (getMaxEmbeddingRequestsPerMin() != other.getMaxEmbeddingRequestsPerMin()) return false;
     if (!getImportSourceCase().equals(other.getImportSourceCase())) return false;
@@ -833,6 +904,10 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     if (hasRagFileTransformationConfig()) {
       hash = (37 * hash) + RAG_FILE_TRANSFORMATION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRagFileTransformationConfig().hashCode();
+    }
+    if (hasRagFileParsingConfig()) {
+      hash = (37 * hash) + RAG_FILE_PARSING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRagFileParsingConfig().hashCode();
     }
     hash = (37 * hash) + MAX_EMBEDDING_REQUESTS_PER_MIN_FIELD_NUMBER;
     hash = (53 * hash) + getMaxEmbeddingRequestsPerMin();
@@ -1013,6 +1088,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getRagFileTransformationConfigFieldBuilder();
+        getRagFileParsingConfigFieldBuilder();
       }
     }
 
@@ -1045,6 +1121,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       if (ragFileTransformationConfigBuilder_ != null) {
         ragFileTransformationConfigBuilder_.dispose();
         ragFileTransformationConfigBuilder_ = null;
+      }
+      ragFileParsingConfig_ = null;
+      if (ragFileParsingConfigBuilder_ != null) {
+        ragFileParsingConfigBuilder_.dispose();
+        ragFileParsingConfigBuilder_ = null;
       }
       maxEmbeddingRequestsPerMin_ = 0;
       importSourceCase_ = 0;
@@ -1097,6 +1178,13 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.ragFileParsingConfig_ =
+            ragFileParsingConfigBuilder_ == null
+                ? ragFileParsingConfig_
+                : ragFileParsingConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.maxEmbeddingRequestsPerMin_ = maxEmbeddingRequestsPerMin_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1178,6 +1266,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return this;
       if (other.hasRagFileTransformationConfig()) {
         mergeRagFileTransformationConfig(other.getRagFileTransformationConfig());
+      }
+      if (other.hasRagFileParsingConfig()) {
+        mergeRagFileParsingConfig(other.getRagFileParsingConfig());
       }
       if (other.getMaxEmbeddingRequestsPerMin() != 0) {
         setMaxEmbeddingRequestsPerMin(other.getMaxEmbeddingRequestsPerMin());
@@ -1271,7 +1362,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             case 40:
               {
                 maxEmbeddingRequestsPerMin_ = input.readInt32();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 40
             case 50:
@@ -1286,6 +1377,13 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
                 importSourceCase_ = 7;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getRagFileParsingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 66
             case 90:
               {
                 input.readMessage(
@@ -2463,7 +2561,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_gcs_sink is
-     *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=330
+     *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=357
      * @return Whether the partialFailureGcsSink field is set.
      */
     @java.lang.Override
@@ -2484,7 +2582,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_gcs_sink is
-     *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=330
+     *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=357
      * @return The partialFailureGcsSink.
      */
     @java.lang.Override
@@ -2718,7 +2816,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-     *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=339
+     *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=366
      * @return Whether the partialFailureBigquerySink field is set.
      */
     @java.lang.Override
@@ -2744,7 +2842,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-     *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=339
+     *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=366
      * @return The partialFailureBigquerySink.
      */
     @java.lang.Override
@@ -3205,6 +3303,224 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       return ragFileTransformationConfigBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1.RagFileParsingConfig ragFileParsingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.RagFileParsingConfig,
+            com.google.cloud.aiplatform.v1.RagFileParsingConfig.Builder,
+            com.google.cloud.aiplatform.v1.RagFileParsingConfigOrBuilder>
+        ragFileParsingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the parsing config for RagFiles.
+     * RAG will use the default parser if this field is not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the ragFileParsingConfig field is set.
+     */
+    public boolean hasRagFileParsingConfig() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the parsing config for RagFiles.
+     * RAG will use the default parser if this field is not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The ragFileParsingConfig.
+     */
+    public com.google.cloud.aiplatform.v1.RagFileParsingConfig getRagFileParsingConfig() {
+      if (ragFileParsingConfigBuilder_ == null) {
+        return ragFileParsingConfig_ == null
+            ? com.google.cloud.aiplatform.v1.RagFileParsingConfig.getDefaultInstance()
+            : ragFileParsingConfig_;
+      } else {
+        return ragFileParsingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the parsing config for RagFiles.
+     * RAG will use the default parser if this field is not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRagFileParsingConfig(
+        com.google.cloud.aiplatform.v1.RagFileParsingConfig value) {
+      if (ragFileParsingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ragFileParsingConfig_ = value;
+      } else {
+        ragFileParsingConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the parsing config for RagFiles.
+     * RAG will use the default parser if this field is not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRagFileParsingConfig(
+        com.google.cloud.aiplatform.v1.RagFileParsingConfig.Builder builderForValue) {
+      if (ragFileParsingConfigBuilder_ == null) {
+        ragFileParsingConfig_ = builderForValue.build();
+      } else {
+        ragFileParsingConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the parsing config for RagFiles.
+     * RAG will use the default parser if this field is not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRagFileParsingConfig(
+        com.google.cloud.aiplatform.v1.RagFileParsingConfig value) {
+      if (ragFileParsingConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && ragFileParsingConfig_ != null
+            && ragFileParsingConfig_
+                != com.google.cloud.aiplatform.v1.RagFileParsingConfig.getDefaultInstance()) {
+          getRagFileParsingConfigBuilder().mergeFrom(value);
+        } else {
+          ragFileParsingConfig_ = value;
+        }
+      } else {
+        ragFileParsingConfigBuilder_.mergeFrom(value);
+      }
+      if (ragFileParsingConfig_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the parsing config for RagFiles.
+     * RAG will use the default parser if this field is not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRagFileParsingConfig() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      ragFileParsingConfig_ = null;
+      if (ragFileParsingConfigBuilder_ != null) {
+        ragFileParsingConfigBuilder_.dispose();
+        ragFileParsingConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the parsing config for RagFiles.
+     * RAG will use the default parser if this field is not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.RagFileParsingConfig.Builder
+        getRagFileParsingConfigBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getRagFileParsingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the parsing config for RagFiles.
+     * RAG will use the default parser if this field is not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.RagFileParsingConfigOrBuilder
+        getRagFileParsingConfigOrBuilder() {
+      if (ragFileParsingConfigBuilder_ != null) {
+        return ragFileParsingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return ragFileParsingConfig_ == null
+            ? com.google.cloud.aiplatform.v1.RagFileParsingConfig.getDefaultInstance()
+            : ragFileParsingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the parsing config for RagFiles.
+     * RAG will use the default parser if this field is not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.RagFileParsingConfig,
+            com.google.cloud.aiplatform.v1.RagFileParsingConfig.Builder,
+            com.google.cloud.aiplatform.v1.RagFileParsingConfigOrBuilder>
+        getRagFileParsingConfigFieldBuilder() {
+      if (ragFileParsingConfigBuilder_ == null) {
+        ragFileParsingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.RagFileParsingConfig,
+                com.google.cloud.aiplatform.v1.RagFileParsingConfig.Builder,
+                com.google.cloud.aiplatform.v1.RagFileParsingConfigOrBuilder>(
+                getRagFileParsingConfig(), getParentForChildren(), isClean());
+        ragFileParsingConfig_ = null;
+      }
+      return ragFileParsingConfigBuilder_;
+    }
+
     private int maxEmbeddingRequestsPerMin_;
     /**
      *
@@ -3246,7 +3562,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public Builder setMaxEmbeddingRequestsPerMin(int value) {
 
       maxEmbeddingRequestsPerMin_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3267,7 +3583,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMaxEmbeddingRequestsPerMin() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       maxEmbeddingRequestsPerMin_ = 0;
       onChanged();
       return this;

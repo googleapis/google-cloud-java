@@ -29,6 +29,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeployPublisherModelOperationMetadata}
  */
+@java.lang.Deprecated
 public final class DeployPublisherModelOperationMetadata
     extends com.google.protobuf.GeneratedMessageV3
     implements

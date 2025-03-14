@@ -440,6 +440,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ReportHostAsFaulty</td>
+ *      <td><p> Mark the host as faulty and try to restart the instance on a new host.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> reportHostAsFaultyAsync(ReportHostAsFaultyInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> reportHostAsFaultyAsync(String project, String zone, String instance, InstancesReportHostAsFaultyRequest instancesReportHostAsFaultyRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> reportHostAsFaultyOperationCallable()
+ *           <li><p> reportHostAsFaultyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> Reset</td>
  *      <td><p> Performs a reset on the instance. This is a hard reset. The VM does not do a graceful shutdown. For more information, see Resetting an instance.</td>
  *      <td>
@@ -3641,6 +3660,156 @@ public class InstancesClient implements BackgroundResource {
   public final UnaryCallable<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesCallable() {
     return stub.removeResourcePoliciesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Mark the host as faulty and try to restart the instance on a new host.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   InstancesReportHostAsFaultyRequest instancesReportHostAsFaultyRequestResource =
+   *       InstancesReportHostAsFaultyRequest.newBuilder().build();
+   *   Operation response =
+   *       instancesClient
+   *           .reportHostAsFaultyAsync(
+   *               project, zone, instance, instancesReportHostAsFaultyRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param instance Name of the instance scoping this request.
+   * @param instancesReportHostAsFaultyRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> reportHostAsFaultyAsync(
+      String project,
+      String zone,
+      String instance,
+      InstancesReportHostAsFaultyRequest instancesReportHostAsFaultyRequestResource) {
+    ReportHostAsFaultyInstanceRequest request =
+        ReportHostAsFaultyInstanceRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setInstance(instance)
+            .setInstancesReportHostAsFaultyRequestResource(
+                instancesReportHostAsFaultyRequestResource)
+            .build();
+    return reportHostAsFaultyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Mark the host as faulty and try to restart the instance on a new host.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   ReportHostAsFaultyInstanceRequest request =
+   *       ReportHostAsFaultyInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesReportHostAsFaultyRequestResource(
+   *               InstancesReportHostAsFaultyRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = instancesClient.reportHostAsFaultyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> reportHostAsFaultyAsync(
+      ReportHostAsFaultyInstanceRequest request) {
+    return reportHostAsFaultyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Mark the host as faulty and try to restart the instance on a new host.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   ReportHostAsFaultyInstanceRequest request =
+   *       ReportHostAsFaultyInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesReportHostAsFaultyRequestResource(
+   *               InstancesReportHostAsFaultyRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.reportHostAsFaultyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+      reportHostAsFaultyOperationCallable() {
+    return stub.reportHostAsFaultyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Mark the host as faulty and try to restart the instance on a new host.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   ReportHostAsFaultyInstanceRequest request =
+   *       ReportHostAsFaultyInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesReportHostAsFaultyRequestResource(
+   *               InstancesReportHostAsFaultyRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instancesClient.reportHostAsFaultyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ReportHostAsFaultyInstanceRequest, Operation>
+      reportHostAsFaultyCallable() {
+    return stub.reportHostAsFaultyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

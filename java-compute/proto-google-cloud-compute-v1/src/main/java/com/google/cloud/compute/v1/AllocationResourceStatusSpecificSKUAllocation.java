@@ -55,6 +55,18 @@ public final class AllocationResourceStatusSpecificSKUAllocation
         .internal_static_google_cloud_compute_v1_AllocationResourceStatusSpecificSKUAllocation_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 402495121:
+        return internalGetUtilizations();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -133,6 +145,106 @@ public final class AllocationResourceStatusSpecificSKUAllocation
     }
   }
 
+  public static final int UTILIZATIONS_FIELD_NUMBER = 402495121;
+
+  private static final class UtilizationsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.Long> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.Long>newDefaultInstance(
+            com.google.cloud.compute.v1.Compute
+                .internal_static_google_cloud_compute_v1_AllocationResourceStatusSpecificSKUAllocation_UtilizationsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.INT64,
+            0L);
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Long> utilizations_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Long> internalGetUtilizations() {
+    if (utilizations_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          UtilizationsDefaultEntryHolder.defaultEntry);
+    }
+    return utilizations_;
+  }
+
+  public int getUtilizationsCount() {
+    return internalGetUtilizations().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
+   */
+  @java.lang.Override
+  public boolean containsUtilizations(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetUtilizations().getMap().containsKey(key);
+  }
+  /** Use {@link #getUtilizationsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.Long> getUtilizations() {
+    return getUtilizationsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.Long> getUtilizationsMap() {
+    return internalGetUtilizations().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
+   */
+  @java.lang.Override
+  public long getUtilizationsOrDefault(java.lang.String key, long defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Long> map = internalGetUtilizations().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
+   */
+  @java.lang.Override
+  public long getUtilizationsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Long> map = internalGetUtilizations().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -151,6 +263,8 @@ public final class AllocationResourceStatusSpecificSKUAllocation
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 111196154, sourceInstanceTemplateId_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetUtilizations(), UtilizationsDefaultEntryHolder.defaultEntry, 402495121);
     getUnknownFields().writeTo(output);
   }
 
@@ -164,6 +278,16 @@ public final class AllocationResourceStatusSpecificSKUAllocation
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               111196154, sourceInstanceTemplateId_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.Long> entry :
+        internalGetUtilizations().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.Long> utilizations__ =
+          UtilizationsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(402495121, utilizations__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -186,6 +310,7 @@ public final class AllocationResourceStatusSpecificSKUAllocation
     if (hasSourceInstanceTemplateId()) {
       if (!getSourceInstanceTemplateId().equals(other.getSourceInstanceTemplateId())) return false;
     }
+    if (!internalGetUtilizations().equals(other.internalGetUtilizations())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -200,6 +325,10 @@ public final class AllocationResourceStatusSpecificSKUAllocation
     if (hasSourceInstanceTemplateId()) {
       hash = (37 * hash) + SOURCE_INSTANCE_TEMPLATE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSourceInstanceTemplateId().hashCode();
+    }
+    if (!internalGetUtilizations().getMap().isEmpty()) {
+      hash = (37 * hash) + UTILIZATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetUtilizations().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -321,6 +450,28 @@ public final class AllocationResourceStatusSpecificSKUAllocation
           .internal_static_google_cloud_compute_v1_AllocationResourceStatusSpecificSKUAllocation_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 402495121:
+          return internalGetUtilizations();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 402495121:
+          return internalGetMutableUtilizations();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -345,6 +496,7 @@ public final class AllocationResourceStatusSpecificSKUAllocation
       super.clear();
       bitField0_ = 0;
       sourceInstanceTemplateId_ = "";
+      internalGetMutableUtilizations().clear();
       return this;
     }
 
@@ -390,6 +542,10 @@ public final class AllocationResourceStatusSpecificSKUAllocation
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.sourceInstanceTemplateId_ = sourceInstanceTemplateId_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.utilizations_ = internalGetUtilizations();
+        result.utilizations_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -449,6 +605,8 @@ public final class AllocationResourceStatusSpecificSKUAllocation
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      internalGetMutableUtilizations().mergeFrom(other.internalGetUtilizations());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -481,6 +639,18 @@ public final class AllocationResourceStatusSpecificSKUAllocation
                 bitField0_ |= 0x00000001;
                 break;
               } // case 889569234
+            case -1075006326:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Long> utilizations__ =
+                    input.readMessage(
+                        UtilizationsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableUtilizations()
+                    .getMutableMap()
+                    .put(utilizations__.getKey(), utilizations__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -1075006326
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -617,6 +787,167 @@ public final class AllocationResourceStatusSpecificSKUAllocation
       sourceInstanceTemplateId_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Long> utilizations_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+        internalGetUtilizations() {
+      if (utilizations_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            UtilizationsDefaultEntryHolder.defaultEntry);
+      }
+      return utilizations_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+        internalGetMutableUtilizations() {
+      if (utilizations_ == null) {
+        utilizations_ =
+            com.google.protobuf.MapField.newMapField(UtilizationsDefaultEntryHolder.defaultEntry);
+      }
+      if (!utilizations_.isMutable()) {
+        utilizations_ = utilizations_.copy();
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return utilizations_;
+    }
+
+    public int getUtilizationsCount() {
+      return internalGetUtilizations().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
+     */
+    @java.lang.Override
+    public boolean containsUtilizations(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetUtilizations().getMap().containsKey(key);
+    }
+    /** Use {@link #getUtilizationsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Long> getUtilizations() {
+      return getUtilizationsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.Long> getUtilizationsMap() {
+      return internalGetUtilizations().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
+     */
+    @java.lang.Override
+    public long getUtilizationsOrDefault(java.lang.String key, long defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Long> map = internalGetUtilizations().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
+     */
+    @java.lang.Override
+    public long getUtilizationsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Long> map = internalGetUtilizations().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearUtilizations() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      internalGetMutableUtilizations().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
+     */
+    public Builder removeUtilizations(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableUtilizations().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Long> getMutableUtilizations() {
+      bitField0_ |= 0x00000002;
+      return internalGetMutableUtilizations().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
+     */
+    public Builder putUtilizations(java.lang.String key, long value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+
+      internalGetMutableUtilizations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+     * </pre>
+     *
+     * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
+     */
+    public Builder putAllUtilizations(java.util.Map<java.lang.String, java.lang.Long> values) {
+      internalGetMutableUtilizations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.cx.v3beta1.stub;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListLocationsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListToolVersionsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListToolsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -24,14 +25,22 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateToolRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteToolRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportToolsMetadata;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportToolsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportToolsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.GetToolRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.ListToolsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListToolsResponse;
+import com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.Tool;
+import com.google.cloud.dialogflow.cx.v3beta1.ToolVersion;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateToolRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -91,6 +100,33 @@ public abstract class ToolsStub implements BackgroundResource {
 
   public UnaryCallable<DeleteToolRequest, Empty> deleteToolCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteToolCallable()");
+  }
+
+  public UnaryCallable<ListToolVersionsRequest, ListToolVersionsPagedResponse>
+      listToolVersionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listToolVersionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListToolVersionsRequest, ListToolVersionsResponse>
+      listToolVersionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listToolVersionsCallable()");
+  }
+
+  public UnaryCallable<CreateToolVersionRequest, ToolVersion> createToolVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: createToolVersionCallable()");
+  }
+
+  public UnaryCallable<GetToolVersionRequest, ToolVersion> getToolVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getToolVersionCallable()");
+  }
+
+  public UnaryCallable<DeleteToolVersionRequest, Empty> deleteToolVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteToolVersionCallable()");
+  }
+
+  public UnaryCallable<RestoreToolVersionRequest, RestoreToolVersionResponse>
+      restoreToolVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: restoreToolVersionCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

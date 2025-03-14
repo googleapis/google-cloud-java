@@ -91,6 +91,90 @@ public interface DeliveryVehicleOrBuilder
    *
    *
    * <pre>
+   * Input only. Locations where this Delivery Vehicle has been in the past that
+   * haven't yet been reported to Fleet Engine. This is used in
+   * `UpdateDeliveryVehicleRequest` to record locations which were previously
+   * unable to be sent to the server. Typically this happens when the Delivery
+   * Vehicle does not have internet connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation>
+      getPastLocationsList();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Locations where this Delivery Vehicle has been in the past that
+   * haven't yet been reported to Fleet Engine. This is used in
+   * `UpdateDeliveryVehicleRequest` to record locations which were previously
+   * unable to be sent to the server. Typically this happens when the Delivery
+   * Vehicle does not have internet connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation getPastLocations(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Locations where this Delivery Vehicle has been in the past that
+   * haven't yet been reported to Fleet Engine. This is used in
+   * `UpdateDeliveryVehicleRequest` to record locations which were previously
+   * unable to be sent to the server. Typically this happens when the Delivery
+   * Vehicle does not have internet connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  int getPastLocationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Locations where this Delivery Vehicle has been in the past that
+   * haven't yet been reported to Fleet Engine. This is used in
+   * `UpdateDeliveryVehicleRequest` to record locations which were previously
+   * unable to be sent to the server. Typically this happens when the Delivery
+   * Vehicle does not have internet connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocationOrBuilder>
+      getPastLocationsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Locations where this Delivery Vehicle has been in the past that
+   * haven't yet been reported to Fleet Engine. This is used in
+   * `UpdateDeliveryVehicleRequest` to record locations which were previously
+   * unable to be sent to the server. Typically this happens when the Delivery
+   * Vehicle does not have internet connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocationOrBuilder
+      getPastLocationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * The Delivery Vehicle's navigation status.
    * </pre>
    *

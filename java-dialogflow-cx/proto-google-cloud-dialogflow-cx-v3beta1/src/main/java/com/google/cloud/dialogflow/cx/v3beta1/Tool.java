@@ -5776,6 +5776,4806 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ConnectorToolOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The full resource name of the referenced Integration Connectors
+     * Connection. Format: `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;`
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The full resource name of the referenced Integration Connectors
+     * Connection. Format: `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;`
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Actions for the tool to use.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action>
+        getActionsList();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Actions for the tool to use.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action getActions(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Required. Actions for the tool to use.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    int getActionsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Actions for the tool to use.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    java.util.List<
+            ? extends com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.ActionOrBuilder>
+        getActionsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Actions for the tool to use.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.ActionOrBuilder getActionsOrBuilder(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Integration Connectors end-user authentication configuration.
+     * If configured, the end-user authentication fields will be passed in the
+     * Integration Connectors API request and override the admin, default
+     * authentication configured for the Connection.
+     * **Note**: The Connection must have authentication override enabled in
+     * order to specify an EUC configuration here - otherwise, the ConnectorTool
+     * creation will fail. See:
+     * https://cloud.google.com/application-integration/docs/configure-connectors-task#configure-authentication-override
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig end_user_auth_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the endUserAuthConfig field is set.
+     */
+    boolean hasEndUserAuthConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Integration Connectors end-user authentication configuration.
+     * If configured, the end-user authentication fields will be passed in the
+     * Integration Connectors API request and override the admin, default
+     * authentication configured for the Connection.
+     * **Note**: The Connection must have authentication override enabled in
+     * order to specify an EUC configuration here - otherwise, the ConnectorTool
+     * creation will fail. See:
+     * https://cloud.google.com/application-integration/docs/configure-connectors-task#configure-authentication-override
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig end_user_auth_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The endUserAuthConfig.
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig getEndUserAuthConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Integration Connectors end-user authentication configuration.
+     * If configured, the end-user authentication fields will be passed in the
+     * Integration Connectors API request and override the admin, default
+     * authentication configured for the Connection.
+     * **Note**: The Connection must have authentication override enabled in
+     * order to specify an EUC configuration here - otherwise, the ConnectorTool
+     * creation will fail. See:
+     * https://cloud.google.com/application-integration/docs/configure-connectors-task#configure-authentication-override
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig end_user_auth_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfigOrBuilder
+        getEndUserAuthConfigOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A ConnectorTool enabling using Integration Connectors Connections as tools.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool}
+   */
+  public static final class ConnectorTool extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool)
+      ConnectorToolOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ConnectorTool.newBuilder() to construct.
+    private ConnectorTool(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ConnectorTool() {
+      name_ = "";
+      actions_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ConnectorTool();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ConnectorTool_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ConnectorTool_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.class,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Builder.class);
+    }
+
+    public interface ActionOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * ID of a Connection action for the tool to use.
+       * </pre>
+       *
+       * <code>string connection_action_id = 4;</code>
+       *
+       * @return Whether the connectionActionId field is set.
+       */
+      boolean hasConnectionActionId();
+      /**
+       *
+       *
+       * <pre>
+       * ID of a Connection action for the tool to use.
+       * </pre>
+       *
+       * <code>string connection_action_id = 4;</code>
+       *
+       * @return The connectionActionId.
+       */
+      java.lang.String getConnectionActionId();
+      /**
+       *
+       *
+       * <pre>
+       * ID of a Connection action for the tool to use.
+       * </pre>
+       *
+       * <code>string connection_action_id = 4;</code>
+       *
+       * @return The bytes for connectionActionId.
+       */
+      com.google.protobuf.ByteString getConnectionActionIdBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Entity operation configuration for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation entity_operation = 5;
+       * </code>
+       *
+       * @return Whether the entityOperation field is set.
+       */
+      boolean hasEntityOperation();
+      /**
+       *
+       *
+       * <pre>
+       * Entity operation configuration for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation entity_operation = 5;
+       * </code>
+       *
+       * @return The entityOperation.
+       */
+      com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+          getEntityOperation();
+      /**
+       *
+       *
+       * <pre>
+       * Entity operation configuration for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation entity_operation = 5;
+       * </code>
+       */
+      com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperationOrBuilder
+          getEntityOperationOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entity fields to use as inputs for the operation.
+       * If no fields are specified, all fields of the Entity will be used.
+       * </pre>
+       *
+       * <code>repeated string input_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the inputFields.
+       */
+      java.util.List<java.lang.String> getInputFieldsList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entity fields to use as inputs for the operation.
+       * If no fields are specified, all fields of the Entity will be used.
+       * </pre>
+       *
+       * <code>repeated string input_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of inputFields.
+       */
+      int getInputFieldsCount();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entity fields to use as inputs for the operation.
+       * If no fields are specified, all fields of the Entity will be used.
+       * </pre>
+       *
+       * <code>repeated string input_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The inputFields at the given index.
+       */
+      java.lang.String getInputFields(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entity fields to use as inputs for the operation.
+       * If no fields are specified, all fields of the Entity will be used.
+       * </pre>
+       *
+       * <code>repeated string input_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the inputFields at the given index.
+       */
+      com.google.protobuf.ByteString getInputFieldsBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entity fields to return from the operation.
+       * If no fields are specified, all fields of the Entity will be returned.
+       * </pre>
+       *
+       * <code>repeated string output_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the outputFields.
+       */
+      java.util.List<java.lang.String> getOutputFieldsList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entity fields to return from the operation.
+       * If no fields are specified, all fields of the Entity will be returned.
+       * </pre>
+       *
+       * <code>repeated string output_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of outputFields.
+       */
+      int getOutputFieldsCount();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entity fields to return from the operation.
+       * If no fields are specified, all fields of the Entity will be returned.
+       * </pre>
+       *
+       * <code>repeated string output_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The outputFields at the given index.
+       */
+      java.lang.String getOutputFields(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entity fields to return from the operation.
+       * If no fields are specified, all fields of the Entity will be returned.
+       * </pre>
+       *
+       * <code>repeated string output_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the outputFields at the given index.
+       */
+      com.google.protobuf.ByteString getOutputFieldsBytes(int index);
+
+      com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.ActionSpecCase
+          getActionSpecCase();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of a Connection operation for the tool to use.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action}
+     */
+    public static final class Action extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action)
+        ActionOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use Action.newBuilder() to construct.
+      private Action(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Action() {
+        inputFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        outputFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Action();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ConnectorTool_Action_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ConnectorTool_Action_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.class,
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.Builder.class);
+      }
+
+      public interface EntityOperationOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. ID of the entity.
+         * </pre>
+         *
+         * <code>string entity_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The entityId.
+         */
+        java.lang.String getEntityId();
+        /**
+         *
+         *
+         * <pre>
+         * Required. ID of the entity.
+         * </pre>
+         *
+         * <code>string entity_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for entityId.
+         */
+        com.google.protobuf.ByteString getEntityIdBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Operation to perform on the entity.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation.OperationType operation = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for operation.
+         */
+        int getOperationValue();
+        /**
+         *
+         *
+         * <pre>
+         * Required. Operation to perform on the entity.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation.OperationType operation = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The operation.
+         */
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                .OperationType
+            getOperation();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Entity CRUD operation specification.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation}
+       */
+      public static final class EntityOperation extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation)
+          EntityOperationOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use EntityOperation.newBuilder() to construct.
+        private EntityOperation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private EntityOperation() {
+          entityId_ = "";
+          operation_ = 0;
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new EntityOperation();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ConnectorTool_Action_EntityOperation_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ConnectorTool_Action_EntityOperation_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                      .class,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                      .Builder.class);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The operation to perform on the entity.
+         * </pre>
+         *
+         * Protobuf enum {@code
+         * google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation.OperationType}
+         */
+        public enum OperationType implements com.google.protobuf.ProtocolMessageEnum {
+          /**
+           *
+           *
+           * <pre>
+           * Operation type unspecified. Invalid, ConnectorTool create/update
+           * will fail.
+           * </pre>
+           *
+           * <code>OPERATION_TYPE_UNSPECIFIED = 0;</code>
+           */
+          OPERATION_TYPE_UNSPECIFIED(0),
+          /**
+           *
+           *
+           * <pre>
+           * List operation.
+           * </pre>
+           *
+           * <code>LIST = 1;</code>
+           */
+          LIST(1),
+          /**
+           *
+           *
+           * <pre>
+           * Get operation.
+           * </pre>
+           *
+           * <code>GET = 2;</code>
+           */
+          GET(2),
+          /**
+           *
+           *
+           * <pre>
+           * Create operation.
+           * </pre>
+           *
+           * <code>CREATE = 3;</code>
+           */
+          CREATE(3),
+          /**
+           *
+           *
+           * <pre>
+           * Update operation.
+           * </pre>
+           *
+           * <code>UPDATE = 4;</code>
+           */
+          UPDATE(4),
+          /**
+           *
+           *
+           * <pre>
+           * Delete operation.
+           * </pre>
+           *
+           * <code>DELETE = 5;</code>
+           */
+          DELETE(5),
+          UNRECOGNIZED(-1),
+          ;
+
+          /**
+           *
+           *
+           * <pre>
+           * Operation type unspecified. Invalid, ConnectorTool create/update
+           * will fail.
+           * </pre>
+           *
+           * <code>OPERATION_TYPE_UNSPECIFIED = 0;</code>
+           */
+          public static final int OPERATION_TYPE_UNSPECIFIED_VALUE = 0;
+          /**
+           *
+           *
+           * <pre>
+           * List operation.
+           * </pre>
+           *
+           * <code>LIST = 1;</code>
+           */
+          public static final int LIST_VALUE = 1;
+          /**
+           *
+           *
+           * <pre>
+           * Get operation.
+           * </pre>
+           *
+           * <code>GET = 2;</code>
+           */
+          public static final int GET_VALUE = 2;
+          /**
+           *
+           *
+           * <pre>
+           * Create operation.
+           * </pre>
+           *
+           * <code>CREATE = 3;</code>
+           */
+          public static final int CREATE_VALUE = 3;
+          /**
+           *
+           *
+           * <pre>
+           * Update operation.
+           * </pre>
+           *
+           * <code>UPDATE = 4;</code>
+           */
+          public static final int UPDATE_VALUE = 4;
+          /**
+           *
+           *
+           * <pre>
+           * Delete operation.
+           * </pre>
+           *
+           * <code>DELETE = 5;</code>
+           */
+          public static final int DELETE_VALUE = 5;
+
+          public final int getNumber() {
+            if (this == UNRECOGNIZED) {
+              throw new java.lang.IllegalArgumentException(
+                  "Can't get the number of an unknown enum value.");
+            }
+            return value;
+          }
+
+          /**
+           * @param value The numeric wire value of the corresponding enum entry.
+           * @return The enum associated with the given numeric wire value.
+           * @deprecated Use {@link #forNumber(int)} instead.
+           */
+          @java.lang.Deprecated
+          public static OperationType valueOf(int value) {
+            return forNumber(value);
+          }
+
+          /**
+           * @param value The numeric wire value of the corresponding enum entry.
+           * @return The enum associated with the given numeric wire value.
+           */
+          public static OperationType forNumber(int value) {
+            switch (value) {
+              case 0:
+                return OPERATION_TYPE_UNSPECIFIED;
+              case 1:
+                return LIST;
+              case 2:
+                return GET;
+              case 3:
+                return CREATE;
+              case 4:
+                return UPDATE;
+              case 5:
+                return DELETE;
+              default:
+                return null;
+            }
+          }
+
+          public static com.google.protobuf.Internal.EnumLiteMap<OperationType>
+              internalGetValueMap() {
+            return internalValueMap;
+          }
+
+          private static final com.google.protobuf.Internal.EnumLiteMap<OperationType>
+              internalValueMap =
+                  new com.google.protobuf.Internal.EnumLiteMap<OperationType>() {
+                    public OperationType findValueByNumber(int number) {
+                      return OperationType.forNumber(number);
+                    }
+                  };
+
+          public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+            if (this == UNRECOGNIZED) {
+              throw new java.lang.IllegalStateException(
+                  "Can't get the descriptor of an unrecognized enum value.");
+            }
+            return getDescriptor().getValues().get(ordinal());
+          }
+
+          public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+            return getDescriptor();
+          }
+
+          public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+            return com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                .getDescriptor()
+                .getEnumTypes()
+                .get(0);
+          }
+
+          private static final OperationType[] VALUES = values();
+
+          public static OperationType valueOf(
+              com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+            if (desc.getType() != getDescriptor()) {
+              throw new java.lang.IllegalArgumentException(
+                  "EnumValueDescriptor is not for this type.");
+            }
+            if (desc.getIndex() == -1) {
+              return UNRECOGNIZED;
+            }
+            return VALUES[desc.getIndex()];
+          }
+
+          private final int value;
+
+          private OperationType(int value) {
+            this.value = value;
+          }
+
+          // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation.OperationType)
+        }
+
+        public static final int ENTITY_ID_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object entityId_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Required. ID of the entity.
+         * </pre>
+         *
+         * <code>string entity_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The entityId.
+         */
+        @java.lang.Override
+        public java.lang.String getEntityId() {
+          java.lang.Object ref = entityId_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            entityId_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. ID of the entity.
+         * </pre>
+         *
+         * <code>string entity_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for entityId.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getEntityIdBytes() {
+          java.lang.Object ref = entityId_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            entityId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int OPERATION_FIELD_NUMBER = 2;
+        private int operation_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Required. Operation to perform on the entity.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation.OperationType operation = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for operation.
+         */
+        @java.lang.Override
+        public int getOperationValue() {
+          return operation_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Operation to perform on the entity.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation.OperationType operation = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The operation.
+         */
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                .OperationType
+            getOperation() {
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                  .OperationType
+              result =
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                      .OperationType.forNumber(operation_);
+          return result == null
+              ? com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                  .OperationType.UNRECOGNIZED
+              : result;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityId_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, entityId_);
+          }
+          if (operation_
+              != com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                  .OperationType.OPERATION_TYPE_UNSPECIFIED
+                  .getNumber()) {
+            output.writeEnum(2, operation_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entityId_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, entityId_);
+          }
+          if (operation_
+              != com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                  .OperationType.OPERATION_TYPE_UNSPECIFIED
+                  .getNumber()) {
+            size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, operation_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation other =
+              (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation)
+                  obj;
+
+          if (!getEntityId().equals(other.getEntityId())) return false;
+          if (operation_ != other.operation_) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+          hash = (53 * hash) + getEntityId().hashCode();
+          hash = (37 * hash) + OPERATION_FIELD_NUMBER;
+          hash = (53 * hash) + operation_;
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                .EntityOperation
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                .EntityOperation
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                .EntityOperation
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                .EntityOperation
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                .EntityOperation
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                .EntityOperation
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                .EntityOperation
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                .EntityOperation
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                .EntityOperation
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                .EntityOperation
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                .EntityOperation
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                .EntityOperation
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Entity CRUD operation specification.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation)
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                .EntityOperationOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+                .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ConnectorTool_Action_EntityOperation_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+                .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ConnectorTool_Action_EntityOperation_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                        .class,
+                    com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                        .Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            entityId_ = "";
+            operation_ = 0;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+                .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ConnectorTool_Action_EntityOperation_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+              getDefaultInstanceForType() {
+            return com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+              build() {
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+              buildPartial() {
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                result =
+                    new com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                        .EntityOperation(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.entityId_ = entityId_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.operation_ = operation_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation) {
+              return mergeFrom(
+                  (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                  other) {
+            if (other
+                == com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                    .getDefaultInstance()) return this;
+            if (!other.getEntityId().isEmpty()) {
+              entityId_ = other.entityId_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            if (other.operation_ != 0) {
+              setOperationValue(other.getOperationValue());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      entityId_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 16:
+                    {
+                      operation_ = input.readEnum();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 16
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object entityId_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Required. ID of the entity.
+           * </pre>
+           *
+           * <code>string entity_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The entityId.
+           */
+          public java.lang.String getEntityId() {
+            java.lang.Object ref = entityId_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              entityId_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. ID of the entity.
+           * </pre>
+           *
+           * <code>string entity_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The bytes for entityId.
+           */
+          public com.google.protobuf.ByteString getEntityIdBytes() {
+            java.lang.Object ref = entityId_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              entityId_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. ID of the entity.
+           * </pre>
+           *
+           * <code>string entity_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The entityId to set.
+           * @return This builder for chaining.
+           */
+          public Builder setEntityId(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            entityId_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. ID of the entity.
+           * </pre>
+           *
+           * <code>string entity_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearEntityId() {
+            entityId_ = getDefaultInstance().getEntityId();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. ID of the entity.
+           * </pre>
+           *
+           * <code>string entity_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The bytes for entityId to set.
+           * @return This builder for chaining.
+           */
+          public Builder setEntityIdBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            entityId_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          private int operation_ = 0;
+          /**
+           *
+           *
+           * <pre>
+           * Required. Operation to perform on the entity.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation.OperationType operation = 2 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @return The enum numeric value on the wire for operation.
+           */
+          @java.lang.Override
+          public int getOperationValue() {
+            return operation_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Operation to perform on the entity.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation.OperationType operation = 2 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @param value The enum numeric value on the wire for operation to set.
+           * @return This builder for chaining.
+           */
+          public Builder setOperationValue(int value) {
+            operation_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Operation to perform on the entity.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation.OperationType operation = 2 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @return The operation.
+           */
+          @java.lang.Override
+          public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                  .OperationType
+              getOperation() {
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                    .OperationType
+                result =
+                    com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                        .OperationType.forNumber(operation_);
+            return result == null
+                ? com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                    .OperationType.UNRECOGNIZED
+                : result;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Operation to perform on the entity.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation.OperationType operation = 2 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @param value The operation to set.
+           * @return This builder for chaining.
+           */
+          public Builder setOperation(
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                      .OperationType
+                  value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            bitField0_ |= 0x00000002;
+            operation_ = value.getNumber();
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Operation to perform on the entity.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation.OperationType operation = 2 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearOperation() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            operation_ = 0;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation)
+        private static final com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                .EntityOperation
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                  .EntityOperation();
+        }
+
+        public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                .EntityOperation
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<EntityOperation> PARSER =
+            new com.google.protobuf.AbstractParser<EntityOperation>() {
+              @java.lang.Override
+              public EntityOperation parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<EntityOperation> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<EntityOperation> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      private int actionSpecCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object actionSpec_;
+
+      public enum ActionSpecCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        CONNECTION_ACTION_ID(4),
+        ENTITY_OPERATION(5),
+        ACTIONSPEC_NOT_SET(0);
+        private final int value;
+
+        private ActionSpecCase(int value) {
+          this.value = value;
+        }
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static ActionSpecCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static ActionSpecCase forNumber(int value) {
+          switch (value) {
+            case 4:
+              return CONNECTION_ACTION_ID;
+            case 5:
+              return ENTITY_OPERATION;
+            case 0:
+              return ACTIONSPEC_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public ActionSpecCase getActionSpecCase() {
+        return ActionSpecCase.forNumber(actionSpecCase_);
+      }
+
+      public static final int CONNECTION_ACTION_ID_FIELD_NUMBER = 4;
+      /**
+       *
+       *
+       * <pre>
+       * ID of a Connection action for the tool to use.
+       * </pre>
+       *
+       * <code>string connection_action_id = 4;</code>
+       *
+       * @return Whether the connectionActionId field is set.
+       */
+      public boolean hasConnectionActionId() {
+        return actionSpecCase_ == 4;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * ID of a Connection action for the tool to use.
+       * </pre>
+       *
+       * <code>string connection_action_id = 4;</code>
+       *
+       * @return The connectionActionId.
+       */
+      public java.lang.String getConnectionActionId() {
+        java.lang.Object ref = "";
+        if (actionSpecCase_ == 4) {
+          ref = actionSpec_;
+        }
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (actionSpecCase_ == 4) {
+            actionSpec_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * ID of a Connection action for the tool to use.
+       * </pre>
+       *
+       * <code>string connection_action_id = 4;</code>
+       *
+       * @return The bytes for connectionActionId.
+       */
+      public com.google.protobuf.ByteString getConnectionActionIdBytes() {
+        java.lang.Object ref = "";
+        if (actionSpecCase_ == 4) {
+          ref = actionSpec_;
+        }
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (actionSpecCase_ == 4) {
+            actionSpec_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ENTITY_OPERATION_FIELD_NUMBER = 5;
+      /**
+       *
+       *
+       * <pre>
+       * Entity operation configuration for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation entity_operation = 5;
+       * </code>
+       *
+       * @return Whether the entityOperation field is set.
+       */
+      @java.lang.Override
+      public boolean hasEntityOperation() {
+        return actionSpecCase_ == 5;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Entity operation configuration for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation entity_operation = 5;
+       * </code>
+       *
+       * @return The entityOperation.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+          getEntityOperation() {
+        if (actionSpecCase_ == 5) {
+          return (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation)
+              actionSpec_;
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+            .getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Entity operation configuration for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation entity_operation = 5;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+              .EntityOperationOrBuilder
+          getEntityOperationOrBuilder() {
+        if (actionSpecCase_ == 5) {
+          return (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation)
+              actionSpec_;
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+            .getDefaultInstance();
+      }
+
+      public static final int INPUT_FIELDS_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList inputFields_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entity fields to use as inputs for the operation.
+       * If no fields are specified, all fields of the Entity will be used.
+       * </pre>
+       *
+       * <code>repeated string input_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the inputFields.
+       */
+      public com.google.protobuf.ProtocolStringList getInputFieldsList() {
+        return inputFields_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entity fields to use as inputs for the operation.
+       * If no fields are specified, all fields of the Entity will be used.
+       * </pre>
+       *
+       * <code>repeated string input_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of inputFields.
+       */
+      public int getInputFieldsCount() {
+        return inputFields_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entity fields to use as inputs for the operation.
+       * If no fields are specified, all fields of the Entity will be used.
+       * </pre>
+       *
+       * <code>repeated string input_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The inputFields at the given index.
+       */
+      public java.lang.String getInputFields(int index) {
+        return inputFields_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entity fields to use as inputs for the operation.
+       * If no fields are specified, all fields of the Entity will be used.
+       * </pre>
+       *
+       * <code>repeated string input_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the inputFields at the given index.
+       */
+      public com.google.protobuf.ByteString getInputFieldsBytes(int index) {
+        return inputFields_.getByteString(index);
+      }
+
+      public static final int OUTPUT_FIELDS_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList outputFields_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entity fields to return from the operation.
+       * If no fields are specified, all fields of the Entity will be returned.
+       * </pre>
+       *
+       * <code>repeated string output_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the outputFields.
+       */
+      public com.google.protobuf.ProtocolStringList getOutputFieldsList() {
+        return outputFields_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entity fields to return from the operation.
+       * If no fields are specified, all fields of the Entity will be returned.
+       * </pre>
+       *
+       * <code>repeated string output_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of outputFields.
+       */
+      public int getOutputFieldsCount() {
+        return outputFields_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entity fields to return from the operation.
+       * If no fields are specified, all fields of the Entity will be returned.
+       * </pre>
+       *
+       * <code>repeated string output_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The outputFields at the given index.
+       */
+      public java.lang.String getOutputFields(int index) {
+        return outputFields_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entity fields to return from the operation.
+       * If no fields are specified, all fields of the Entity will be returned.
+       * </pre>
+       *
+       * <code>repeated string output_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the outputFields at the given index.
+       */
+      public com.google.protobuf.ByteString getOutputFieldsBytes(int index) {
+        return outputFields_.getByteString(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < inputFields_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, inputFields_.getRaw(i));
+        }
+        for (int i = 0; i < outputFields_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, outputFields_.getRaw(i));
+        }
+        if (actionSpecCase_ == 4) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, actionSpec_);
+        }
+        if (actionSpecCase_ == 5) {
+          output.writeMessage(
+              5,
+              (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation)
+                  actionSpec_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < inputFields_.size(); i++) {
+            dataSize += computeStringSizeNoTag(inputFields_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getInputFieldsList().size();
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < outputFields_.size(); i++) {
+            dataSize += computeStringSizeNoTag(outputFields_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getOutputFieldsList().size();
+        }
+        if (actionSpecCase_ == 4) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, actionSpec_);
+        }
+        if (actionSpecCase_ == 5) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  5,
+                  (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation)
+                      actionSpec_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action other =
+            (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action) obj;
+
+        if (!getInputFieldsList().equals(other.getInputFieldsList())) return false;
+        if (!getOutputFieldsList().equals(other.getOutputFieldsList())) return false;
+        if (!getActionSpecCase().equals(other.getActionSpecCase())) return false;
+        switch (actionSpecCase_) {
+          case 4:
+            if (!getConnectionActionId().equals(other.getConnectionActionId())) return false;
+            break;
+          case 5:
+            if (!getEntityOperation().equals(other.getEntityOperation())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getInputFieldsCount() > 0) {
+          hash = (37 * hash) + INPUT_FIELDS_FIELD_NUMBER;
+          hash = (53 * hash) + getInputFieldsList().hashCode();
+        }
+        if (getOutputFieldsCount() > 0) {
+          hash = (37 * hash) + OUTPUT_FIELDS_FIELD_NUMBER;
+          hash = (53 * hash) + getOutputFieldsList().hashCode();
+        }
+        switch (actionSpecCase_) {
+          case 4:
+            hash = (37 * hash) + CONNECTION_ACTION_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getConnectionActionId().hashCode();
+            break;
+          case 5:
+            hash = (37 * hash) + ENTITY_OPERATION_FIELD_NUMBER;
+            hash = (53 * hash) + getEntityOperation().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration of a Connection operation for the tool to use.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action)
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.ActionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ConnectorTool_Action_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ConnectorTool_Action_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.class,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (entityOperationBuilder_ != null) {
+            entityOperationBuilder_.clear();
+          }
+          inputFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          outputFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          actionSpecCase_ = 0;
+          actionSpec_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ConnectorTool_Action_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action build() {
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action buildPartial() {
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action result =
+              new com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            inputFields_.makeImmutable();
+            result.inputFields_ = inputFields_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            outputFields_.makeImmutable();
+            result.outputFields_ = outputFields_;
+          }
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action result) {
+          result.actionSpecCase_ = actionSpecCase_;
+          result.actionSpec_ = this.actionSpec_;
+          if (actionSpecCase_ == 5 && entityOperationBuilder_ != null) {
+            result.actionSpec_ = entityOperationBuilder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action other) {
+          if (other
+              == com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                  .getDefaultInstance()) return this;
+          if (!other.inputFields_.isEmpty()) {
+            if (inputFields_.isEmpty()) {
+              inputFields_ = other.inputFields_;
+              bitField0_ |= 0x00000004;
+            } else {
+              ensureInputFieldsIsMutable();
+              inputFields_.addAll(other.inputFields_);
+            }
+            onChanged();
+          }
+          if (!other.outputFields_.isEmpty()) {
+            if (outputFields_.isEmpty()) {
+              outputFields_ = other.outputFields_;
+              bitField0_ |= 0x00000008;
+            } else {
+              ensureOutputFieldsIsMutable();
+              outputFields_.addAll(other.outputFields_);
+            }
+            onChanged();
+          }
+          switch (other.getActionSpecCase()) {
+            case CONNECTION_ACTION_ID:
+              {
+                actionSpecCase_ = 4;
+                actionSpec_ = other.actionSpec_;
+                onChanged();
+                break;
+              }
+            case ENTITY_OPERATION:
+              {
+                mergeEntityOperation(other.getEntityOperation());
+                break;
+              }
+            case ACTIONSPEC_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 18:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureInputFieldsIsMutable();
+                    inputFields_.add(s);
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureOutputFieldsIsMutable();
+                    outputFields_.add(s);
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    actionSpecCase_ = 4;
+                    actionSpec_ = s;
+                    break;
+                  } // case 34
+                case 42:
+                  {
+                    input.readMessage(
+                        getEntityOperationFieldBuilder().getBuilder(), extensionRegistry);
+                    actionSpecCase_ = 5;
+                    break;
+                  } // case 42
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int actionSpecCase_ = 0;
+        private java.lang.Object actionSpec_;
+
+        public ActionSpecCase getActionSpecCase() {
+          return ActionSpecCase.forNumber(actionSpecCase_);
+        }
+
+        public Builder clearActionSpec() {
+          actionSpecCase_ = 0;
+          actionSpec_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        /**
+         *
+         *
+         * <pre>
+         * ID of a Connection action for the tool to use.
+         * </pre>
+         *
+         * <code>string connection_action_id = 4;</code>
+         *
+         * @return Whether the connectionActionId field is set.
+         */
+        @java.lang.Override
+        public boolean hasConnectionActionId() {
+          return actionSpecCase_ == 4;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * ID of a Connection action for the tool to use.
+         * </pre>
+         *
+         * <code>string connection_action_id = 4;</code>
+         *
+         * @return The connectionActionId.
+         */
+        @java.lang.Override
+        public java.lang.String getConnectionActionId() {
+          java.lang.Object ref = "";
+          if (actionSpecCase_ == 4) {
+            ref = actionSpec_;
+          }
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (actionSpecCase_ == 4) {
+              actionSpec_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * ID of a Connection action for the tool to use.
+         * </pre>
+         *
+         * <code>string connection_action_id = 4;</code>
+         *
+         * @return The bytes for connectionActionId.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getConnectionActionIdBytes() {
+          java.lang.Object ref = "";
+          if (actionSpecCase_ == 4) {
+            ref = actionSpec_;
+          }
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            if (actionSpecCase_ == 4) {
+              actionSpec_ = b;
+            }
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * ID of a Connection action for the tool to use.
+         * </pre>
+         *
+         * <code>string connection_action_id = 4;</code>
+         *
+         * @param value The connectionActionId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setConnectionActionId(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          actionSpecCase_ = 4;
+          actionSpec_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * ID of a Connection action for the tool to use.
+         * </pre>
+         *
+         * <code>string connection_action_id = 4;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearConnectionActionId() {
+          if (actionSpecCase_ == 4) {
+            actionSpecCase_ = 0;
+            actionSpec_ = null;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * ID of a Connection action for the tool to use.
+         * </pre>
+         *
+         * <code>string connection_action_id = 4;</code>
+         *
+         * @param value The bytes for connectionActionId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setConnectionActionIdBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          actionSpecCase_ = 4;
+          actionSpec_ = value;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation,
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                    .Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                    .EntityOperationOrBuilder>
+            entityOperationBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Entity operation configuration for the tool to use.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation entity_operation = 5;
+         * </code>
+         *
+         * @return Whether the entityOperation field is set.
+         */
+        @java.lang.Override
+        public boolean hasEntityOperation() {
+          return actionSpecCase_ == 5;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Entity operation configuration for the tool to use.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation entity_operation = 5;
+         * </code>
+         *
+         * @return The entityOperation.
+         */
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+            getEntityOperation() {
+          if (entityOperationBuilder_ == null) {
+            if (actionSpecCase_ == 5) {
+              return (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                      .EntityOperation)
+                  actionSpec_;
+            }
+            return com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                .getDefaultInstance();
+          } else {
+            if (actionSpecCase_ == 5) {
+              return entityOperationBuilder_.getMessage();
+            }
+            return com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                .getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Entity operation configuration for the tool to use.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation entity_operation = 5;
+         * </code>
+         */
+        public Builder setEntityOperation(
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                value) {
+          if (entityOperationBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            actionSpec_ = value;
+            onChanged();
+          } else {
+            entityOperationBuilder_.setMessage(value);
+          }
+          actionSpecCase_ = 5;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Entity operation configuration for the tool to use.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation entity_operation = 5;
+         * </code>
+         */
+        public Builder setEntityOperation(
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation.Builder
+                builderForValue) {
+          if (entityOperationBuilder_ == null) {
+            actionSpec_ = builderForValue.build();
+            onChanged();
+          } else {
+            entityOperationBuilder_.setMessage(builderForValue.build());
+          }
+          actionSpecCase_ = 5;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Entity operation configuration for the tool to use.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation entity_operation = 5;
+         * </code>
+         */
+        public Builder mergeEntityOperation(
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                value) {
+          if (entityOperationBuilder_ == null) {
+            if (actionSpecCase_ == 5
+                && actionSpec_
+                    != com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                        .EntityOperation.getDefaultInstance()) {
+              actionSpec_ =
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                      .newBuilder(
+                          (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                                  .EntityOperation)
+                              actionSpec_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              actionSpec_ = value;
+            }
+            onChanged();
+          } else {
+            if (actionSpecCase_ == 5) {
+              entityOperationBuilder_.mergeFrom(value);
+            } else {
+              entityOperationBuilder_.setMessage(value);
+            }
+          }
+          actionSpecCase_ = 5;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Entity operation configuration for the tool to use.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation entity_operation = 5;
+         * </code>
+         */
+        public Builder clearEntityOperation() {
+          if (entityOperationBuilder_ == null) {
+            if (actionSpecCase_ == 5) {
+              actionSpecCase_ = 0;
+              actionSpec_ = null;
+              onChanged();
+            }
+          } else {
+            if (actionSpecCase_ == 5) {
+              actionSpecCase_ = 0;
+              actionSpec_ = null;
+            }
+            entityOperationBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Entity operation configuration for the tool to use.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation entity_operation = 5;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                .Builder
+            getEntityOperationBuilder() {
+          return getEntityOperationFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Entity operation configuration for the tool to use.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation entity_operation = 5;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                .EntityOperationOrBuilder
+            getEntityOperationOrBuilder() {
+          if ((actionSpecCase_ == 5) && (entityOperationBuilder_ != null)) {
+            return entityOperationBuilder_.getMessageOrBuilder();
+          } else {
+            if (actionSpecCase_ == 5) {
+              return (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                      .EntityOperation)
+                  actionSpec_;
+            }
+            return com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                .getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Entity operation configuration for the tool to use.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation entity_operation = 5;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation,
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                    .Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                    .EntityOperationOrBuilder>
+            getEntityOperationFieldBuilder() {
+          if (entityOperationBuilder_ == null) {
+            if (!(actionSpecCase_ == 5)) {
+              actionSpec_ =
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                      .getDefaultInstance();
+            }
+            entityOperationBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                        .EntityOperation,
+                    com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.EntityOperation
+                        .Builder,
+                    com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                        .EntityOperationOrBuilder>(
+                    (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                            .EntityOperation)
+                        actionSpec_,
+                    getParentForChildren(),
+                    isClean());
+            actionSpec_ = null;
+          }
+          actionSpecCase_ = 5;
+          onChanged();
+          return entityOperationBuilder_;
+        }
+
+        private com.google.protobuf.LazyStringArrayList inputFields_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureInputFieldsIsMutable() {
+          if (!inputFields_.isModifiable()) {
+            inputFields_ = new com.google.protobuf.LazyStringArrayList(inputFields_);
+          }
+          bitField0_ |= 0x00000004;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Entity fields to use as inputs for the operation.
+         * If no fields are specified, all fields of the Entity will be used.
+         * </pre>
+         *
+         * <code>repeated string input_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return A list containing the inputFields.
+         */
+        public com.google.protobuf.ProtocolStringList getInputFieldsList() {
+          inputFields_.makeImmutable();
+          return inputFields_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Entity fields to use as inputs for the operation.
+         * If no fields are specified, all fields of the Entity will be used.
+         * </pre>
+         *
+         * <code>repeated string input_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The count of inputFields.
+         */
+        public int getInputFieldsCount() {
+          return inputFields_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Entity fields to use as inputs for the operation.
+         * If no fields are specified, all fields of the Entity will be used.
+         * </pre>
+         *
+         * <code>repeated string input_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The inputFields at the given index.
+         */
+        public java.lang.String getInputFields(int index) {
+          return inputFields_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Entity fields to use as inputs for the operation.
+         * If no fields are specified, all fields of the Entity will be used.
+         * </pre>
+         *
+         * <code>repeated string input_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the inputFields at the given index.
+         */
+        public com.google.protobuf.ByteString getInputFieldsBytes(int index) {
+          return inputFields_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Entity fields to use as inputs for the operation.
+         * If no fields are specified, all fields of the Entity will be used.
+         * </pre>
+         *
+         * <code>repeated string input_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The inputFields to set.
+         * @return This builder for chaining.
+         */
+        public Builder setInputFields(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInputFieldsIsMutable();
+          inputFields_.set(index, value);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Entity fields to use as inputs for the operation.
+         * If no fields are specified, all fields of the Entity will be used.
+         * </pre>
+         *
+         * <code>repeated string input_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The inputFields to add.
+         * @return This builder for chaining.
+         */
+        public Builder addInputFields(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInputFieldsIsMutable();
+          inputFields_.add(value);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Entity fields to use as inputs for the operation.
+         * If no fields are specified, all fields of the Entity will be used.
+         * </pre>
+         *
+         * <code>repeated string input_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param values The inputFields to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllInputFields(java.lang.Iterable<java.lang.String> values) {
+          ensureInputFieldsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, inputFields_);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Entity fields to use as inputs for the operation.
+         * If no fields are specified, all fields of the Entity will be used.
+         * </pre>
+         *
+         * <code>repeated string input_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearInputFields() {
+          inputFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Entity fields to use as inputs for the operation.
+         * If no fields are specified, all fields of the Entity will be used.
+         * </pre>
+         *
+         * <code>repeated string input_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes of the inputFields to add.
+         * @return This builder for chaining.
+         */
+        public Builder addInputFieldsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureInputFieldsIsMutable();
+          inputFields_.add(value);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList outputFields_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureOutputFieldsIsMutable() {
+          if (!outputFields_.isModifiable()) {
+            outputFields_ = new com.google.protobuf.LazyStringArrayList(outputFields_);
+          }
+          bitField0_ |= 0x00000008;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Entity fields to return from the operation.
+         * If no fields are specified, all fields of the Entity will be returned.
+         * </pre>
+         *
+         * <code>repeated string output_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return A list containing the outputFields.
+         */
+        public com.google.protobuf.ProtocolStringList getOutputFieldsList() {
+          outputFields_.makeImmutable();
+          return outputFields_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Entity fields to return from the operation.
+         * If no fields are specified, all fields of the Entity will be returned.
+         * </pre>
+         *
+         * <code>repeated string output_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The count of outputFields.
+         */
+        public int getOutputFieldsCount() {
+          return outputFields_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Entity fields to return from the operation.
+         * If no fields are specified, all fields of the Entity will be returned.
+         * </pre>
+         *
+         * <code>repeated string output_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The outputFields at the given index.
+         */
+        public java.lang.String getOutputFields(int index) {
+          return outputFields_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Entity fields to return from the operation.
+         * If no fields are specified, all fields of the Entity will be returned.
+         * </pre>
+         *
+         * <code>repeated string output_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the outputFields at the given index.
+         */
+        public com.google.protobuf.ByteString getOutputFieldsBytes(int index) {
+          return outputFields_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Entity fields to return from the operation.
+         * If no fields are specified, all fields of the Entity will be returned.
+         * </pre>
+         *
+         * <code>repeated string output_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The outputFields to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOutputFields(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOutputFieldsIsMutable();
+          outputFields_.set(index, value);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Entity fields to return from the operation.
+         * If no fields are specified, all fields of the Entity will be returned.
+         * </pre>
+         *
+         * <code>repeated string output_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The outputFields to add.
+         * @return This builder for chaining.
+         */
+        public Builder addOutputFields(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOutputFieldsIsMutable();
+          outputFields_.add(value);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Entity fields to return from the operation.
+         * If no fields are specified, all fields of the Entity will be returned.
+         * </pre>
+         *
+         * <code>repeated string output_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param values The outputFields to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllOutputFields(java.lang.Iterable<java.lang.String> values) {
+          ensureOutputFieldsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, outputFields_);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Entity fields to return from the operation.
+         * If no fields are specified, all fields of the Entity will be returned.
+         * </pre>
+         *
+         * <code>repeated string output_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearOutputFields() {
+          outputFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Entity fields to return from the operation.
+         * If no fields are specified, all fields of the Entity will be returned.
+         * </pre>
+         *
+         * <code>repeated string output_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes of the outputFields to add.
+         * @return This builder for chaining.
+         */
+        public Builder addOutputFieldsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureOutputFieldsIsMutable();
+          outputFields_.add(value);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action)
+      private static final com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action();
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Action> PARSER =
+          new com.google.protobuf.AbstractParser<Action>() {
+            @java.lang.Override
+            public Action parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<Action> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Action> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The full resource name of the referenced Integration Connectors
+     * Connection. Format: `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;`
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The full resource name of the referenced Integration Connectors
+     * Connection. Format: `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;`
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ACTIONS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action>
+        actions_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Actions for the tool to use.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action>
+        getActionsList() {
+      return actions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Actions for the tool to use.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.ActionOrBuilder>
+        getActionsOrBuilderList() {
+      return actions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Actions for the tool to use.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public int getActionsCount() {
+      return actions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Actions for the tool to use.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action getActions(int index) {
+      return actions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Actions for the tool to use.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.ActionOrBuilder
+        getActionsOrBuilder(int index) {
+      return actions_.get(index);
+    }
+
+    public static final int END_USER_AUTH_CONFIG_FIELD_NUMBER = 3;
+    private com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig endUserAuthConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Integration Connectors end-user authentication configuration.
+     * If configured, the end-user authentication fields will be passed in the
+     * Integration Connectors API request and override the admin, default
+     * authentication configured for the Connection.
+     * **Note**: The Connection must have authentication override enabled in
+     * order to specify an EUC configuration here - otherwise, the ConnectorTool
+     * creation will fail. See:
+     * https://cloud.google.com/application-integration/docs/configure-connectors-task#configure-authentication-override
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig end_user_auth_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the endUserAuthConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasEndUserAuthConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Integration Connectors end-user authentication configuration.
+     * If configured, the end-user authentication fields will be passed in the
+     * Integration Connectors API request and override the admin, default
+     * authentication configured for the Connection.
+     * **Note**: The Connection must have authentication override enabled in
+     * order to specify an EUC configuration here - otherwise, the ConnectorTool
+     * creation will fail. See:
+     * https://cloud.google.com/application-integration/docs/configure-connectors-task#configure-authentication-override
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig end_user_auth_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The endUserAuthConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig getEndUserAuthConfig() {
+      return endUserAuthConfig_ == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.getDefaultInstance()
+          : endUserAuthConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Integration Connectors end-user authentication configuration.
+     * If configured, the end-user authentication fields will be passed in the
+     * Integration Connectors API request and override the admin, default
+     * authentication configured for the Connection.
+     * **Note**: The Connection must have authentication override enabled in
+     * order to specify an EUC configuration here - otherwise, the ConnectorTool
+     * creation will fail. See:
+     * https://cloud.google.com/application-integration/docs/configure-connectors-task#configure-authentication-override
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig end_user_auth_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfigOrBuilder
+        getEndUserAuthConfigOrBuilder() {
+      return endUserAuthConfig_ == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.getDefaultInstance()
+          : endUserAuthConfig_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      for (int i = 0; i < actions_.size(); i++) {
+        output.writeMessage(2, actions_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getEndUserAuthConfig());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      for (int i = 0; i < actions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, actions_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getEndUserAuthConfig());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool other =
+          (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (!getActionsList().equals(other.getActionsList())) return false;
+      if (hasEndUserAuthConfig() != other.hasEndUserAuthConfig()) return false;
+      if (hasEndUserAuthConfig()) {
+        if (!getEndUserAuthConfig().equals(other.getEndUserAuthConfig())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      if (getActionsCount() > 0) {
+        hash = (37 * hash) + ACTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getActionsList().hashCode();
+      }
+      if (hasEndUserAuthConfig()) {
+        hash = (37 * hash) + END_USER_AUTH_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getEndUserAuthConfig().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A ConnectorTool enabling using Integration Connectors Connections as tools.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool)
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorToolOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ConnectorTool_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ConnectorTool_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.class,
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getActionsFieldBuilder();
+          getEndUserAuthConfigFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        name_ = "";
+        if (actionsBuilder_ == null) {
+          actions_ = java.util.Collections.emptyList();
+        } else {
+          actions_ = null;
+          actionsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        endUserAuthConfig_ = null;
+        if (endUserAuthConfigBuilder_ != null) {
+          endUserAuthConfigBuilder_.dispose();
+          endUserAuthConfigBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_ConnectorTool_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool build() {
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool result =
+            new com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool result) {
+        if (actionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            actions_ = java.util.Collections.unmodifiableList(actions_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.actions_ = actions_;
+        } else {
+          result.actions_ = actionsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.endUserAuthConfig_ =
+              endUserAuthConfigBuilder_ == null
+                  ? endUserAuthConfig_
+                  : endUserAuthConfigBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool) {
+          return mergeFrom((com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool other) {
+        if (other == com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.getDefaultInstance())
+          return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (actionsBuilder_ == null) {
+          if (!other.actions_.isEmpty()) {
+            if (actions_.isEmpty()) {
+              actions_ = other.actions_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureActionsIsMutable();
+              actions_.addAll(other.actions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.actions_.isEmpty()) {
+            if (actionsBuilder_.isEmpty()) {
+              actionsBuilder_.dispose();
+              actionsBuilder_ = null;
+              actions_ = other.actions_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              actionsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getActionsFieldBuilder()
+                      : null;
+            } else {
+              actionsBuilder_.addAllMessages(other.actions_);
+            }
+          }
+        }
+        if (other.hasEndUserAuthConfig()) {
+          mergeEndUserAuthConfig(other.getEndUserAuthConfig());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  name_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action m =
+                      input.readMessage(
+                          com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.parser(),
+                          extensionRegistry);
+                  if (actionsBuilder_ == null) {
+                    ensureActionsIsMutable();
+                    actions_.add(m);
+                  } else {
+                    actionsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getEndUserAuthConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The full resource name of the referenced Integration Connectors
+       * Connection. Format: `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;`
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The full resource name of the referenced Integration Connectors
+       * Connection. Format: `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;`
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The full resource name of the referenced Integration Connectors
+       * Connection. Format: `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;`
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The full resource name of the referenced Integration Connectors
+       * Connection. Format: `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;`
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The full resource name of the referenced Integration Connectors
+       * Connection. Format: `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;`
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action>
+          actions_ = java.util.Collections.emptyList();
+
+      private void ensureActionsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          actions_ =
+              new java.util.ArrayList<
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action>(actions_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.ActionOrBuilder>
+          actionsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Actions for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action>
+          getActionsList() {
+        if (actionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(actions_);
+        } else {
+          return actionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Actions for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public int getActionsCount() {
+        if (actionsBuilder_ == null) {
+          return actions_.size();
+        } else {
+          return actionsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Actions for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action getActions(
+          int index) {
+        if (actionsBuilder_ == null) {
+          return actions_.get(index);
+        } else {
+          return actionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Actions for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setActions(
+          int index, com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureActionsIsMutable();
+          actions_.set(index, value);
+          onChanged();
+        } else {
+          actionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Actions for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setActions(
+          int index,
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.Builder
+              builderForValue) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          actionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Actions for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addActions(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureActionsIsMutable();
+          actions_.add(value);
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Actions for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addActions(
+          int index, com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureActionsIsMutable();
+          actions_.add(index, value);
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Actions for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addActions(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.Builder
+              builderForValue) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Actions for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addActions(
+          int index,
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.Builder
+              builderForValue) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Actions for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addAllActions(
+          java.lang.Iterable<
+                  ? extends com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action>
+              values) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, actions_);
+          onChanged();
+        } else {
+          actionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Actions for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearActions() {
+        if (actionsBuilder_ == null) {
+          actions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          actionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Actions for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder removeActions(int index) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.remove(index);
+          onChanged();
+        } else {
+          actionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Actions for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.Builder
+          getActionsBuilder(int index) {
+        return getActionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Actions for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.ActionOrBuilder
+          getActionsOrBuilder(int index) {
+        if (actionsBuilder_ == null) {
+          return actions_.get(index);
+        } else {
+          return actionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Actions for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.ActionOrBuilder>
+          getActionsOrBuilderList() {
+        if (actionsBuilder_ != null) {
+          return actionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(actions_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Actions for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.Builder
+          addActionsBuilder() {
+        return getActionsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Actions for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.Builder
+          addActionsBuilder(int index) {
+        return getActionsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Actions for the tool to use.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action actions = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.Builder>
+          getActionsBuilderList() {
+        return getActionsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.ActionOrBuilder>
+          getActionsFieldBuilder() {
+        if (actionsBuilder_ == null) {
+          actionsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Action.Builder,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.ActionOrBuilder>(
+                  actions_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+          actions_ = null;
+        }
+        return actionsBuilder_;
+      }
+
+      private com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig endUserAuthConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfigOrBuilder>
+          endUserAuthConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Integration Connectors end-user authentication configuration.
+       * If configured, the end-user authentication fields will be passed in the
+       * Integration Connectors API request and override the admin, default
+       * authentication configured for the Connection.
+       * **Note**: The Connection must have authentication override enabled in
+       * order to specify an EUC configuration here - otherwise, the ConnectorTool
+       * creation will fail. See:
+       * https://cloud.google.com/application-integration/docs/configure-connectors-task#configure-authentication-override
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig end_user_auth_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the endUserAuthConfig field is set.
+       */
+      public boolean hasEndUserAuthConfig() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Integration Connectors end-user authentication configuration.
+       * If configured, the end-user authentication fields will be passed in the
+       * Integration Connectors API request and override the admin, default
+       * authentication configured for the Connection.
+       * **Note**: The Connection must have authentication override enabled in
+       * order to specify an EUC configuration here - otherwise, the ConnectorTool
+       * creation will fail. See:
+       * https://cloud.google.com/application-integration/docs/configure-connectors-task#configure-authentication-override
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig end_user_auth_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The endUserAuthConfig.
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig getEndUserAuthConfig() {
+        if (endUserAuthConfigBuilder_ == null) {
+          return endUserAuthConfig_ == null
+              ? com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.getDefaultInstance()
+              : endUserAuthConfig_;
+        } else {
+          return endUserAuthConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Integration Connectors end-user authentication configuration.
+       * If configured, the end-user authentication fields will be passed in the
+       * Integration Connectors API request and override the admin, default
+       * authentication configured for the Connection.
+       * **Note**: The Connection must have authentication override enabled in
+       * order to specify an EUC configuration here - otherwise, the ConnectorTool
+       * creation will fail. See:
+       * https://cloud.google.com/application-integration/docs/configure-connectors-task#configure-authentication-override
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig end_user_auth_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setEndUserAuthConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig value) {
+        if (endUserAuthConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          endUserAuthConfig_ = value;
+        } else {
+          endUserAuthConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Integration Connectors end-user authentication configuration.
+       * If configured, the end-user authentication fields will be passed in the
+       * Integration Connectors API request and override the admin, default
+       * authentication configured for the Connection.
+       * **Note**: The Connection must have authentication override enabled in
+       * order to specify an EUC configuration here - otherwise, the ConnectorTool
+       * creation will fail. See:
+       * https://cloud.google.com/application-integration/docs/configure-connectors-task#configure-authentication-override
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig end_user_auth_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setEndUserAuthConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Builder builderForValue) {
+        if (endUserAuthConfigBuilder_ == null) {
+          endUserAuthConfig_ = builderForValue.build();
+        } else {
+          endUserAuthConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Integration Connectors end-user authentication configuration.
+       * If configured, the end-user authentication fields will be passed in the
+       * Integration Connectors API request and override the admin, default
+       * authentication configured for the Connection.
+       * **Note**: The Connection must have authentication override enabled in
+       * order to specify an EUC configuration here - otherwise, the ConnectorTool
+       * creation will fail. See:
+       * https://cloud.google.com/application-integration/docs/configure-connectors-task#configure-authentication-override
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig end_user_auth_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeEndUserAuthConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig value) {
+        if (endUserAuthConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && endUserAuthConfig_ != null
+              && endUserAuthConfig_
+                  != com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                      .getDefaultInstance()) {
+            getEndUserAuthConfigBuilder().mergeFrom(value);
+          } else {
+            endUserAuthConfig_ = value;
+          }
+        } else {
+          endUserAuthConfigBuilder_.mergeFrom(value);
+        }
+        if (endUserAuthConfig_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Integration Connectors end-user authentication configuration.
+       * If configured, the end-user authentication fields will be passed in the
+       * Integration Connectors API request and override the admin, default
+       * authentication configured for the Connection.
+       * **Note**: The Connection must have authentication override enabled in
+       * order to specify an EUC configuration here - otherwise, the ConnectorTool
+       * creation will fail. See:
+       * https://cloud.google.com/application-integration/docs/configure-connectors-task#configure-authentication-override
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig end_user_auth_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearEndUserAuthConfig() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        endUserAuthConfig_ = null;
+        if (endUserAuthConfigBuilder_ != null) {
+          endUserAuthConfigBuilder_.dispose();
+          endUserAuthConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Integration Connectors end-user authentication configuration.
+       * If configured, the end-user authentication fields will be passed in the
+       * Integration Connectors API request and override the admin, default
+       * authentication configured for the Connection.
+       * **Note**: The Connection must have authentication override enabled in
+       * order to specify an EUC configuration here - otherwise, the ConnectorTool
+       * creation will fail. See:
+       * https://cloud.google.com/application-integration/docs/configure-connectors-task#configure-authentication-override
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig end_user_auth_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Builder
+          getEndUserAuthConfigBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getEndUserAuthConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Integration Connectors end-user authentication configuration.
+       * If configured, the end-user authentication fields will be passed in the
+       * Integration Connectors API request and override the admin, default
+       * authentication configured for the Connection.
+       * **Note**: The Connection must have authentication override enabled in
+       * order to specify an EUC configuration here - otherwise, the ConnectorTool
+       * creation will fail. See:
+       * https://cloud.google.com/application-integration/docs/configure-connectors-task#configure-authentication-override
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig end_user_auth_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfigOrBuilder
+          getEndUserAuthConfigOrBuilder() {
+        if (endUserAuthConfigBuilder_ != null) {
+          return endUserAuthConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return endUserAuthConfig_ == null
+              ? com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.getDefaultInstance()
+              : endUserAuthConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Integration Connectors end-user authentication configuration.
+       * If configured, the end-user authentication fields will be passed in the
+       * Integration Connectors API request and override the admin, default
+       * authentication configured for the Connection.
+       * **Note**: The Connection must have authentication override enabled in
+       * order to specify an EUC configuration here - otherwise, the ConnectorTool
+       * creation will fail. See:
+       * https://cloud.google.com/application-integration/docs/configure-connectors-task#configure-authentication-override
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig end_user_auth_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfigOrBuilder>
+          getEndUserAuthConfigFieldBuilder() {
+        if (endUserAuthConfigBuilder_ == null) {
+          endUserAuthConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Builder,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfigOrBuilder>(
+                  getEndUserAuthConfig(), getParentForChildren(), isClean());
+          endUserAuthConfig_ = null;
+        }
+        return endUserAuthConfigBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConnectorTool> PARSER =
+        new com.google.protobuf.AbstractParser<ConnectorTool>() {
+          @java.lang.Override
+          public ConnectorTool parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ConnectorTool> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConnectorTool> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface AuthenticationOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Tool.Authentication)
@@ -6198,10 +10998,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The API key.
+       * Optional. The API key. If the `secret_version_for_api_key` field is
+       * set, this field will be ignored.
        * </pre>
        *
-       * <code>string api_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string api_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The apiKey.
        */
@@ -6210,10 +11011,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The API key.
+       * Optional. The API key. If the `secret_version_for_api_key` field is
+       * set, this field will be ignored.
        * </pre>
        *
-       * <code>string api_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string api_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for apiKey.
        */
@@ -6359,10 +11161,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The API key.
+       * Optional. The API key. If the `secret_version_for_api_key` field is
+       * set, this field will be ignored.
        * </pre>
        *
-       * <code>string api_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string api_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The apiKey.
        */
@@ -6382,10 +11185,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The API key.
+       * Optional. The API key. If the `secret_version_for_api_key` field is
+       * set, this field will be ignored.
        * </pre>
        *
-       * <code>string api_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string api_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for apiKey.
        */
@@ -6986,10 +11790,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The API key.
+         * Optional. The API key. If the `secret_version_for_api_key` field is
+         * set, this field will be ignored.
          * </pre>
          *
-         * <code>string api_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string api_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The apiKey.
          */
@@ -7008,10 +11813,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The API key.
+         * Optional. The API key. If the `secret_version_for_api_key` field is
+         * set, this field will be ignored.
          * </pre>
          *
-         * <code>string api_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string api_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The bytes for apiKey.
          */
@@ -7030,10 +11836,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The API key.
+         * Optional. The API key. If the `secret_version_for_api_key` field is
+         * set, this field will be ignored.
          * </pre>
          *
-         * <code>string api_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string api_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The apiKey to set.
          * @return This builder for chaining.
@@ -7051,10 +11858,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The API key.
+         * Optional. The API key. If the `secret_version_for_api_key` field is
+         * set, this field will be ignored.
          * </pre>
          *
-         * <code>string api_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string api_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return This builder for chaining.
          */
@@ -7068,10 +11876,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The API key.
+         * Optional. The API key. If the `secret_version_for_api_key` field is
+         * set, this field will be ignored.
          * </pre>
          *
-         * <code>string api_key = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string api_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The bytes for apiKey to set.
          * @return This builder for chaining.
@@ -7325,10 +12134,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The client secret from the OAuth provider.
+       * Optional. The client secret from the OAuth provider. If the
+       * `secret_version_for_client_secret` field is set, this field will be
+       * ignored.
        * </pre>
        *
-       * <code>string client_secret = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string client_secret = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The clientSecret.
        */
@@ -7337,10 +12148,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The client secret from the OAuth provider.
+       * Optional. The client secret from the OAuth provider. If the
+       * `secret_version_for_client_secret` field is set, this field will be
+       * ignored.
        * </pre>
        *
-       * <code>string client_secret = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string client_secret = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for clientSecret.
        */
@@ -7724,10 +12537,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The client secret from the OAuth provider.
+       * Optional. The client secret from the OAuth provider. If the
+       * `secret_version_for_client_secret` field is set, this field will be
+       * ignored.
        * </pre>
        *
-       * <code>string client_secret = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string client_secret = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The clientSecret.
        */
@@ -7747,10 +12562,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The client secret from the OAuth provider.
+       * Optional. The client secret from the OAuth provider. If the
+       * `secret_version_for_client_secret` field is set, this field will be
+       * ignored.
        * </pre>
        *
-       * <code>string client_secret = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string client_secret = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for clientSecret.
        */
@@ -8584,10 +13401,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The client secret from the OAuth provider.
+         * Optional. The client secret from the OAuth provider. If the
+         * `secret_version_for_client_secret` field is set, this field will be
+         * ignored.
          * </pre>
          *
-         * <code>string client_secret = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string client_secret = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The clientSecret.
          */
@@ -8606,10 +13425,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The client secret from the OAuth provider.
+         * Optional. The client secret from the OAuth provider. If the
+         * `secret_version_for_client_secret` field is set, this field will be
+         * ignored.
          * </pre>
          *
-         * <code>string client_secret = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string client_secret = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The bytes for clientSecret.
          */
@@ -8628,10 +13449,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The client secret from the OAuth provider.
+         * Optional. The client secret from the OAuth provider. If the
+         * `secret_version_for_client_secret` field is set, this field will be
+         * ignored.
          * </pre>
          *
-         * <code>string client_secret = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string client_secret = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The clientSecret to set.
          * @return This builder for chaining.
@@ -8649,10 +13472,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The client secret from the OAuth provider.
+         * Optional. The client secret from the OAuth provider. If the
+         * `secret_version_for_client_secret` field is set, this field will be
+         * ignored.
          * </pre>
          *
-         * <code>string client_secret = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string client_secret = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return This builder for chaining.
          */
@@ -8666,10 +13491,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The client secret from the OAuth provider.
+         * Optional. The client secret from the OAuth provider. If the
+         * `secret_version_for_client_secret` field is set, this field will be
+         * ignored.
          * </pre>
          *
-         * <code>string client_secret = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string client_secret = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The bytes for clientSecret to set.
          * @return This builder for chaining.
@@ -9963,7 +14790,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The text token appended to the text `Bearer` to the request
+       * Optional. The text token appended to the text `Bearer` to the request
        * Authorization header.
        * [Session parameters
        * reference](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
@@ -9971,7 +14798,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        * `$session.params.parameter-id`.
        * </pre>
        *
-       * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The token.
        */
@@ -9980,7 +14807,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The text token appended to the text `Bearer` to the request
+       * Optional. The text token appended to the text `Bearer` to the request
        * Authorization header.
        * [Session parameters
        * reference](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
@@ -9988,7 +14815,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        * `$session.params.parameter-id`.
        * </pre>
        *
-       * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for token.
        */
@@ -10048,7 +14875,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The text token appended to the text `Bearer` to the request
+       * Optional. The text token appended to the text `Bearer` to the request
        * Authorization header.
        * [Session parameters
        * reference](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
@@ -10056,7 +14883,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        * `$session.params.parameter-id`.
        * </pre>
        *
-       * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The token.
        */
@@ -10076,7 +14903,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The text token appended to the text `Bearer` to the request
+       * Optional. The text token appended to the text `Bearer` to the request
        * Authorization header.
        * [Session parameters
        * reference](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
@@ -10084,7 +14911,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        * `$session.params.parameter-id`.
        * </pre>
        *
-       * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for token.
        */
@@ -10480,7 +15307,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The text token appended to the text `Bearer` to the request
+         * Optional. The text token appended to the text `Bearer` to the request
          * Authorization header.
          * [Session parameters
          * reference](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
@@ -10488,7 +15315,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          * `$session.params.parameter-id`.
          * </pre>
          *
-         * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The token.
          */
@@ -10507,7 +15334,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The text token appended to the text `Bearer` to the request
+         * Optional. The text token appended to the text `Bearer` to the request
          * Authorization header.
          * [Session parameters
          * reference](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
@@ -10515,7 +15342,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          * `$session.params.parameter-id`.
          * </pre>
          *
-         * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The bytes for token.
          */
@@ -10534,7 +15361,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The text token appended to the text `Bearer` to the request
+         * Optional. The text token appended to the text `Bearer` to the request
          * Authorization header.
          * [Session parameters
          * reference](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
@@ -10542,7 +15369,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          * `$session.params.parameter-id`.
          * </pre>
          *
-         * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The token to set.
          * @return This builder for chaining.
@@ -10560,7 +15387,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The text token appended to the text `Bearer` to the request
+         * Optional. The text token appended to the text `Bearer` to the request
          * Authorization header.
          * [Session parameters
          * reference](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
@@ -10568,7 +15395,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          * `$session.params.parameter-id`.
          * </pre>
          *
-         * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return This builder for chaining.
          */
@@ -10582,7 +15409,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The text token appended to the text `Bearer` to the request
+         * Optional. The text token appended to the text `Bearer` to the request
          * Authorization header.
          * [Session parameters
          * reference](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
@@ -10590,7 +15417,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          * `$session.params.parameter-id`.
          * </pre>
          *
-         * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The bytes for token to set.
          * @return This builder for chaining.
@@ -12720,11 +17547,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        * is empty or unspecified, Dialogflow will use Google's default trust
        * store to verify certificates. N.B. Make sure the HTTPS server
        * certificates are signed with "subject alt name". For instance a
-       * certificate can be self-signed using the following command,
+       * certificate can be self-signed using the following command:
+       *
+       * ```
        *    openssl x509 -req -days 200 -in example.com.csr &#92;
        *      -signkey example.com.key &#92;
        *      -out example.com.crt &#92;
        *      -extfile &lt;(printf "&#92;nsubjectAltName='DNS:www.example.com'")
+       * ```
        * </pre>
        *
        * <code>bytes cert = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -12842,11 +17672,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        * is empty or unspecified, Dialogflow will use Google's default trust
        * store to verify certificates. N.B. Make sure the HTTPS server
        * certificates are signed with "subject alt name". For instance a
-       * certificate can be self-signed using the following command,
+       * certificate can be self-signed using the following command:
+       *
+       * ```
        *    openssl x509 -req -days 200 -in example.com.csr &#92;
        *      -signkey example.com.key &#92;
        *      -out example.com.crt &#92;
        *      -extfile &lt;(printf "&#92;nsubjectAltName='DNS:www.example.com'")
+       * ```
        * </pre>
        *
        * <code>bytes cert = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -13352,11 +18185,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          * is empty or unspecified, Dialogflow will use Google's default trust
          * store to verify certificates. N.B. Make sure the HTTPS server
          * certificates are signed with "subject alt name". For instance a
-         * certificate can be self-signed using the following command,
+         * certificate can be self-signed using the following command:
+         *
+         * ```
          *    openssl x509 -req -days 200 -in example.com.csr &#92;
          *      -signkey example.com.key &#92;
          *      -out example.com.crt &#92;
          *      -extfile &lt;(printf "&#92;nsubjectAltName='DNS:www.example.com'")
+         * ```
          * </pre>
          *
          * <code>bytes cert = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -13376,11 +18212,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          * is empty or unspecified, Dialogflow will use Google's default trust
          * store to verify certificates. N.B. Make sure the HTTPS server
          * certificates are signed with "subject alt name". For instance a
-         * certificate can be self-signed using the following command,
+         * certificate can be self-signed using the following command:
+         *
+         * ```
          *    openssl x509 -req -days 200 -in example.com.csr &#92;
          *      -signkey example.com.key &#92;
          *      -out example.com.crt &#92;
          *      -extfile &lt;(printf "&#92;nsubjectAltName='DNS:www.example.com'")
+         * ```
          * </pre>
          *
          * <code>bytes cert = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -13406,11 +18245,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          * is empty or unspecified, Dialogflow will use Google's default trust
          * store to verify certificates. N.B. Make sure the HTTPS server
          * certificates are signed with "subject alt name". For instance a
-         * certificate can be self-signed using the following command,
+         * certificate can be self-signed using the following command:
+         *
+         * ```
          *    openssl x509 -req -days 200 -in example.com.csr &#92;
          *      -signkey example.com.key &#92;
          *      -out example.com.crt &#92;
          *      -extfile &lt;(printf "&#92;nsubjectAltName='DNS:www.example.com'")
+         * ```
          * </pre>
          *
          * <code>bytes cert = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -15177,6 +20019,3176 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface EndUserAuthConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Oauth 2.0 Authorization Code authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig oauth2_auth_code_config = 2;
+     * </code>
+     *
+     * @return Whether the oauth2AuthCodeConfig field is set.
+     */
+    boolean hasOauth2AuthCodeConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Oauth 2.0 Authorization Code authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig oauth2_auth_code_config = 2;
+     * </code>
+     *
+     * @return The oauth2AuthCodeConfig.
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+        getOauth2AuthCodeConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Oauth 2.0 Authorization Code authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig oauth2_auth_code_config = 2;
+     * </code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfigOrBuilder
+        getOauth2AuthCodeConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * JWT Profile Oauth 2.0 Authorization Grant authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig oauth2_jwt_bearer_config = 3;
+     * </code>
+     *
+     * @return Whether the oauth2JwtBearerConfig field is set.
+     */
+    boolean hasOauth2JwtBearerConfig();
+    /**
+     *
+     *
+     * <pre>
+     * JWT Profile Oauth 2.0 Authorization Grant authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig oauth2_jwt_bearer_config = 3;
+     * </code>
+     *
+     * @return The oauth2JwtBearerConfig.
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+        getOauth2JwtBearerConfig();
+    /**
+     *
+     *
+     * <pre>
+     * JWT Profile Oauth 2.0 Authorization Grant authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig oauth2_jwt_bearer_config = 3;
+     * </code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfigOrBuilder
+        getOauth2JwtBearerConfigOrBuilder();
+
+    com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.EndUserAuthConfigCase
+        getEndUserAuthConfigCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * End-user authentication configuration used for Connection calls.
+   * The field values can either be hardcoded authentication values or the names
+   * of [session
+   * parameters](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
+   * or [request
+   * parameters](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#request-scoped).
+   *
+   * If parameter names are provided, then those parameters can be used to pass
+   * the authentication values dynamically, through `$session.params.param-id`
+   * or `$request.payload.param-id`.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig}
+   */
+  public static final class EndUserAuthConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig)
+      EndUserAuthConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use EndUserAuthConfig.newBuilder() to construct.
+    private EndUserAuthConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private EndUserAuthConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new EndUserAuthConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_EndUserAuthConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_EndUserAuthConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.class,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Builder.class);
+    }
+
+    public interface Oauth2AuthCodeConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Oauth token value or parameter name to pass it through.
+       * </pre>
+       *
+       * <code>string oauth_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The oauthToken.
+       */
+      java.lang.String getOauthToken();
+      /**
+       *
+       *
+       * <pre>
+       * Required. Oauth token value or parameter name to pass it through.
+       * </pre>
+       *
+       * <code>string oauth_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for oauthToken.
+       */
+      com.google.protobuf.ByteString getOauthTokenBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Oauth 2.0 Authorization Code authentication configuration.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig}
+     */
+    public static final class Oauth2AuthCodeConfig extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig)
+        Oauth2AuthCodeConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use Oauth2AuthCodeConfig.newBuilder() to construct.
+      private Oauth2AuthCodeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Oauth2AuthCodeConfig() {
+        oauthToken_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Oauth2AuthCodeConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_EndUserAuthConfig_Oauth2AuthCodeConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_EndUserAuthConfig_Oauth2AuthCodeConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+                    .class,
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+                    .Builder.class);
+      }
+
+      public static final int OAUTH_TOKEN_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object oauthToken_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. Oauth token value or parameter name to pass it through.
+       * </pre>
+       *
+       * <code>string oauth_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The oauthToken.
+       */
+      @java.lang.Override
+      public java.lang.String getOauthToken() {
+        java.lang.Object ref = oauthToken_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          oauthToken_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Oauth token value or parameter name to pass it through.
+       * </pre>
+       *
+       * <code>string oauth_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for oauthToken.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getOauthTokenBytes() {
+        java.lang.Object ref = oauthToken_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          oauthToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(oauthToken_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, oauthToken_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(oauthToken_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, oauthToken_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig other =
+            (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig)
+                obj;
+
+        if (!getOauthToken().equals(other.getOauthToken())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + OAUTH_TOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getOauthToken().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2AuthCodeConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2AuthCodeConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2AuthCodeConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2AuthCodeConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2AuthCodeConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2AuthCodeConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2AuthCodeConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2AuthCodeConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2AuthCodeConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2AuthCodeConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2AuthCodeConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2AuthCodeConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Oauth 2.0 Authorization Code authentication configuration.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig)
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2AuthCodeConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_EndUserAuthConfig_Oauth2AuthCodeConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_EndUserAuthConfig_Oauth2AuthCodeConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+                      .class,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          oauthToken_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_EndUserAuthConfig_Oauth2AuthCodeConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+            build() {
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+            buildPartial() {
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+              result =
+                  new com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                      .Oauth2AuthCodeConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.oauthToken_ = oauthToken_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+                other) {
+          if (other
+              == com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+                  .getDefaultInstance()) return this;
+          if (!other.getOauthToken().isEmpty()) {
+            oauthToken_ = other.oauthToken_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    oauthToken_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object oauthToken_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Required. Oauth token value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string oauth_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The oauthToken.
+         */
+        public java.lang.String getOauthToken() {
+          java.lang.Object ref = oauthToken_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            oauthToken_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Oauth token value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string oauth_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for oauthToken.
+         */
+        public com.google.protobuf.ByteString getOauthTokenBytes() {
+          java.lang.Object ref = oauthToken_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            oauthToken_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Oauth token value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string oauth_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The oauthToken to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOauthToken(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          oauthToken_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Oauth token value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string oauth_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearOauthToken() {
+          oauthToken_ = getDefaultInstance().getOauthToken();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Oauth token value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string oauth_token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for oauthToken to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOauthTokenBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          oauthToken_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig)
+      private static final com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2AuthCodeConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                .Oauth2AuthCodeConfig();
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2AuthCodeConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Oauth2AuthCodeConfig> PARSER =
+          new com.google.protobuf.AbstractParser<Oauth2AuthCodeConfig>() {
+            @java.lang.Override
+            public Oauth2AuthCodeConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<Oauth2AuthCodeConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Oauth2AuthCodeConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface Oauth2JwtBearerConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Issuer value or parameter name to pass it through.
+       * </pre>
+       *
+       * <code>string issuer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The issuer.
+       */
+      java.lang.String getIssuer();
+      /**
+       *
+       *
+       * <pre>
+       * Required. Issuer value or parameter name to pass it through.
+       * </pre>
+       *
+       * <code>string issuer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for issuer.
+       */
+      com.google.protobuf.ByteString getIssuerBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Subject value or parameter name to pass it through.
+       * </pre>
+       *
+       * <code>string subject = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The subject.
+       */
+      java.lang.String getSubject();
+      /**
+       *
+       *
+       * <pre>
+       * Required. Subject value or parameter name to pass it through.
+       * </pre>
+       *
+       * <code>string subject = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for subject.
+       */
+      com.google.protobuf.ByteString getSubjectBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Client key value or parameter name to pass it through.
+       * </pre>
+       *
+       * <code>string client_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The clientKey.
+       */
+      java.lang.String getClientKey();
+      /**
+       *
+       *
+       * <pre>
+       * Required. Client key value or parameter name to pass it through.
+       * </pre>
+       *
+       * <code>string client_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for clientKey.
+       */
+      com.google.protobuf.ByteString getClientKeyBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * JWT Profile Oauth 2.0 Authorization Grant authentication configuration.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig}
+     */
+    public static final class Oauth2JwtBearerConfig extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig)
+        Oauth2JwtBearerConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use Oauth2JwtBearerConfig.newBuilder() to construct.
+      private Oauth2JwtBearerConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Oauth2JwtBearerConfig() {
+        issuer_ = "";
+        subject_ = "";
+        clientKey_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Oauth2JwtBearerConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_EndUserAuthConfig_Oauth2JwtBearerConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_EndUserAuthConfig_Oauth2JwtBearerConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+                    .class,
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+                    .Builder.class);
+      }
+
+      public static final int ISSUER_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object issuer_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. Issuer value or parameter name to pass it through.
+       * </pre>
+       *
+       * <code>string issuer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The issuer.
+       */
+      @java.lang.Override
+      public java.lang.String getIssuer() {
+        java.lang.Object ref = issuer_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          issuer_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Issuer value or parameter name to pass it through.
+       * </pre>
+       *
+       * <code>string issuer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for issuer.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getIssuerBytes() {
+        java.lang.Object ref = issuer_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          issuer_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int SUBJECT_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object subject_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. Subject value or parameter name to pass it through.
+       * </pre>
+       *
+       * <code>string subject = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The subject.
+       */
+      @java.lang.Override
+      public java.lang.String getSubject() {
+        java.lang.Object ref = subject_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          subject_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Subject value or parameter name to pass it through.
+       * </pre>
+       *
+       * <code>string subject = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for subject.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getSubjectBytes() {
+        java.lang.Object ref = subject_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          subject_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int CLIENT_KEY_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object clientKey_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. Client key value or parameter name to pass it through.
+       * </pre>
+       *
+       * <code>string client_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The clientKey.
+       */
+      @java.lang.Override
+      public java.lang.String getClientKey() {
+        java.lang.Object ref = clientKey_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clientKey_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Client key value or parameter name to pass it through.
+       * </pre>
+       *
+       * <code>string client_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for clientKey.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getClientKeyBytes() {
+        java.lang.Object ref = clientKey_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          clientKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issuer_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, issuer_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subject_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, subject_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientKey_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clientKey_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issuer_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, issuer_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subject_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, subject_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientKey_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clientKey_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig other =
+            (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig)
+                obj;
+
+        if (!getIssuer().equals(other.getIssuer())) return false;
+        if (!getSubject().equals(other.getSubject())) return false;
+        if (!getClientKey().equals(other.getClientKey())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + ISSUER_FIELD_NUMBER;
+        hash = (53 * hash) + getIssuer().hashCode();
+        hash = (37 * hash) + SUBJECT_FIELD_NUMBER;
+        hash = (53 * hash) + getSubject().hashCode();
+        hash = (37 * hash) + CLIENT_KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getClientKey().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2JwtBearerConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2JwtBearerConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2JwtBearerConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2JwtBearerConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2JwtBearerConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2JwtBearerConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2JwtBearerConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2JwtBearerConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2JwtBearerConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2JwtBearerConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2JwtBearerConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2JwtBearerConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * JWT Profile Oauth 2.0 Authorization Grant authentication configuration.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig)
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2JwtBearerConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_EndUserAuthConfig_Oauth2JwtBearerConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_EndUserAuthConfig_Oauth2JwtBearerConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                      .Oauth2JwtBearerConfig.class,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                      .Oauth2JwtBearerConfig.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          issuer_ = "";
+          subject_ = "";
+          clientKey_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_EndUserAuthConfig_Oauth2JwtBearerConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+            build() {
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+            buildPartial() {
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+              result =
+                  new com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                      .Oauth2JwtBearerConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.issuer_ = issuer_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.subject_ = subject_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.clientKey_ = clientKey_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                        .Oauth2JwtBearerConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+                other) {
+          if (other
+              == com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+                  .getDefaultInstance()) return this;
+          if (!other.getIssuer().isEmpty()) {
+            issuer_ = other.issuer_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.getSubject().isEmpty()) {
+            subject_ = other.subject_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          if (!other.getClientKey().isEmpty()) {
+            clientKey_ = other.clientKey_;
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    issuer_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    subject_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    clientKey_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object issuer_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Required. Issuer value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string issuer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The issuer.
+         */
+        public java.lang.String getIssuer() {
+          java.lang.Object ref = issuer_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            issuer_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Issuer value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string issuer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for issuer.
+         */
+        public com.google.protobuf.ByteString getIssuerBytes() {
+          java.lang.Object ref = issuer_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            issuer_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Issuer value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string issuer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The issuer to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIssuer(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          issuer_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Issuer value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string issuer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearIssuer() {
+          issuer_ = getDefaultInstance().getIssuer();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Issuer value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string issuer = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for issuer to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIssuerBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          issuer_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object subject_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Required. Subject value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string subject = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The subject.
+         */
+        public java.lang.String getSubject() {
+          java.lang.Object ref = subject_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            subject_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Subject value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string subject = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for subject.
+         */
+        public com.google.protobuf.ByteString getSubjectBytes() {
+          java.lang.Object ref = subject_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            subject_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Subject value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string subject = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The subject to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSubject(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          subject_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Subject value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string subject = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSubject() {
+          subject_ = getDefaultInstance().getSubject();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Subject value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string subject = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for subject to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSubjectBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          subject_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object clientKey_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Required. Client key value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string client_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The clientKey.
+         */
+        public java.lang.String getClientKey() {
+          java.lang.Object ref = clientKey_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            clientKey_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Client key value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string client_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for clientKey.
+         */
+        public com.google.protobuf.ByteString getClientKeyBytes() {
+          java.lang.Object ref = clientKey_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            clientKey_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Client key value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string client_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The clientKey to set.
+         * @return This builder for chaining.
+         */
+        public Builder setClientKey(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          clientKey_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Client key value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string client_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearClientKey() {
+          clientKey_ = getDefaultInstance().getClientKey();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. Client key value or parameter name to pass it through.
+         * </pre>
+         *
+         * <code>string client_key = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for clientKey to set.
+         * @return This builder for chaining.
+         */
+        public Builder setClientKeyBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          clientKey_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig)
+      private static final com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2JwtBearerConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                .Oauth2JwtBearerConfig();
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2JwtBearerConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Oauth2JwtBearerConfig> PARSER =
+          new com.google.protobuf.AbstractParser<Oauth2JwtBearerConfig>() {
+            @java.lang.Override
+            public Oauth2JwtBearerConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<Oauth2JwtBearerConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Oauth2JwtBearerConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int endUserAuthConfigCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object endUserAuthConfig_;
+
+    public enum EndUserAuthConfigCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      OAUTH2_AUTH_CODE_CONFIG(2),
+      OAUTH2_JWT_BEARER_CONFIG(3),
+      ENDUSERAUTHCONFIG_NOT_SET(0);
+      private final int value;
+
+      private EndUserAuthConfigCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static EndUserAuthConfigCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static EndUserAuthConfigCase forNumber(int value) {
+        switch (value) {
+          case 2:
+            return OAUTH2_AUTH_CODE_CONFIG;
+          case 3:
+            return OAUTH2_JWT_BEARER_CONFIG;
+          case 0:
+            return ENDUSERAUTHCONFIG_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public EndUserAuthConfigCase getEndUserAuthConfigCase() {
+      return EndUserAuthConfigCase.forNumber(endUserAuthConfigCase_);
+    }
+
+    public static final int OAUTH2_AUTH_CODE_CONFIG_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Oauth 2.0 Authorization Code authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig oauth2_auth_code_config = 2;
+     * </code>
+     *
+     * @return Whether the oauth2AuthCodeConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasOauth2AuthCodeConfig() {
+      return endUserAuthConfigCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Oauth 2.0 Authorization Code authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig oauth2_auth_code_config = 2;
+     * </code>
+     *
+     * @return The oauth2AuthCodeConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+        getOauth2AuthCodeConfig() {
+      if (endUserAuthConfigCase_ == 2) {
+        return (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig)
+            endUserAuthConfig_;
+      }
+      return com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Oauth 2.0 Authorization Code authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig oauth2_auth_code_config = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+            .Oauth2AuthCodeConfigOrBuilder
+        getOauth2AuthCodeConfigOrBuilder() {
+      if (endUserAuthConfigCase_ == 2) {
+        return (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig)
+            endUserAuthConfig_;
+      }
+      return com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+          .getDefaultInstance();
+    }
+
+    public static final int OAUTH2_JWT_BEARER_CONFIG_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * JWT Profile Oauth 2.0 Authorization Grant authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig oauth2_jwt_bearer_config = 3;
+     * </code>
+     *
+     * @return Whether the oauth2JwtBearerConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasOauth2JwtBearerConfig() {
+      return endUserAuthConfigCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * JWT Profile Oauth 2.0 Authorization Grant authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig oauth2_jwt_bearer_config = 3;
+     * </code>
+     *
+     * @return The oauth2JwtBearerConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+        getOauth2JwtBearerConfig() {
+      if (endUserAuthConfigCase_ == 3) {
+        return (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig)
+            endUserAuthConfig_;
+      }
+      return com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * JWT Profile Oauth 2.0 Authorization Grant authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig oauth2_jwt_bearer_config = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+            .Oauth2JwtBearerConfigOrBuilder
+        getOauth2JwtBearerConfigOrBuilder() {
+      if (endUserAuthConfigCase_ == 3) {
+        return (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig)
+            endUserAuthConfig_;
+      }
+      return com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+          .getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (endUserAuthConfigCase_ == 2) {
+        output.writeMessage(
+            2,
+            (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig)
+                endUserAuthConfig_);
+      }
+      if (endUserAuthConfigCase_ == 3) {
+        output.writeMessage(
+            3,
+            (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig)
+                endUserAuthConfig_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (endUserAuthConfigCase_ == 2) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2,
+                (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig)
+                    endUserAuthConfig_);
+      }
+      if (endUserAuthConfigCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3,
+                (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                        .Oauth2JwtBearerConfig)
+                    endUserAuthConfig_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig other =
+          (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig) obj;
+
+      if (!getEndUserAuthConfigCase().equals(other.getEndUserAuthConfigCase())) return false;
+      switch (endUserAuthConfigCase_) {
+        case 2:
+          if (!getOauth2AuthCodeConfig().equals(other.getOauth2AuthCodeConfig())) return false;
+          break;
+        case 3:
+          if (!getOauth2JwtBearerConfig().equals(other.getOauth2JwtBearerConfig())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (endUserAuthConfigCase_) {
+        case 2:
+          hash = (37 * hash) + OAUTH2_AUTH_CODE_CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getOauth2AuthCodeConfig().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + OAUTH2_JWT_BEARER_CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getOauth2JwtBearerConfig().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * End-user authentication configuration used for Connection calls.
+     * The field values can either be hardcoded authentication values or the names
+     * of [session
+     * parameters](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
+     * or [request
+     * parameters](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#request-scoped).
+     *
+     * If parameter names are provided, then those parameters can be used to pass
+     * the authentication values dynamically, through `$session.params.param-id`
+     * or `$request.payload.param-id`.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig)
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_EndUserAuthConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_EndUserAuthConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.class,
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (oauth2AuthCodeConfigBuilder_ != null) {
+          oauth2AuthCodeConfigBuilder_.clear();
+        }
+        if (oauth2JwtBearerConfigBuilder_ != null) {
+          oauth2JwtBearerConfigBuilder_.clear();
+        }
+        endUserAuthConfigCase_ = 0;
+        endUserAuthConfig_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_EndUserAuthConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig build() {
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig result =
+            new com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig result) {
+        result.endUserAuthConfigCase_ = endUserAuthConfigCase_;
+        result.endUserAuthConfig_ = this.endUserAuthConfig_;
+        if (endUserAuthConfigCase_ == 2 && oauth2AuthCodeConfigBuilder_ != null) {
+          result.endUserAuthConfig_ = oauth2AuthCodeConfigBuilder_.build();
+        }
+        if (endUserAuthConfigCase_ == 3 && oauth2JwtBearerConfigBuilder_ != null) {
+          result.endUserAuthConfig_ = oauth2JwtBearerConfigBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig) {
+          return mergeFrom((com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.getDefaultInstance())
+          return this;
+        switch (other.getEndUserAuthConfigCase()) {
+          case OAUTH2_AUTH_CODE_CONFIG:
+            {
+              mergeOauth2AuthCodeConfig(other.getOauth2AuthCodeConfig());
+              break;
+            }
+          case OAUTH2_JWT_BEARER_CONFIG:
+            {
+              mergeOauth2JwtBearerConfig(other.getOauth2JwtBearerConfig());
+              break;
+            }
+          case ENDUSERAUTHCONFIG_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18:
+                {
+                  input.readMessage(
+                      getOauth2AuthCodeConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  endUserAuthConfigCase_ = 2;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getOauth2JwtBearerConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  endUserAuthConfigCase_ = 3;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int endUserAuthConfigCase_ = 0;
+      private java.lang.Object endUserAuthConfig_;
+
+      public EndUserAuthConfigCase getEndUserAuthConfigCase() {
+        return EndUserAuthConfigCase.forNumber(endUserAuthConfigCase_);
+      }
+
+      public Builder clearEndUserAuthConfig() {
+        endUserAuthConfigCase_ = 0;
+        endUserAuthConfig_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+                  .Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                  .Oauth2AuthCodeConfigOrBuilder>
+          oauth2AuthCodeConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Oauth 2.0 Authorization Code authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig oauth2_auth_code_config = 2;
+       * </code>
+       *
+       * @return Whether the oauth2AuthCodeConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasOauth2AuthCodeConfig() {
+        return endUserAuthConfigCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Oauth 2.0 Authorization Code authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig oauth2_auth_code_config = 2;
+       * </code>
+       *
+       * @return The oauth2AuthCodeConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+          getOauth2AuthCodeConfig() {
+        if (oauth2AuthCodeConfigBuilder_ == null) {
+          if (endUserAuthConfigCase_ == 2) {
+            return (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                    .Oauth2AuthCodeConfig)
+                endUserAuthConfig_;
+          }
+          return com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+              .getDefaultInstance();
+        } else {
+          if (endUserAuthConfigCase_ == 2) {
+            return oauth2AuthCodeConfigBuilder_.getMessage();
+          }
+          return com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Oauth 2.0 Authorization Code authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig oauth2_auth_code_config = 2;
+       * </code>
+       */
+      public Builder setOauth2AuthCodeConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+              value) {
+        if (oauth2AuthCodeConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          endUserAuthConfig_ = value;
+          onChanged();
+        } else {
+          oauth2AuthCodeConfigBuilder_.setMessage(value);
+        }
+        endUserAuthConfigCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Oauth 2.0 Authorization Code authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig oauth2_auth_code_config = 2;
+       * </code>
+       */
+      public Builder setOauth2AuthCodeConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig.Builder
+              builderForValue) {
+        if (oauth2AuthCodeConfigBuilder_ == null) {
+          endUserAuthConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          oauth2AuthCodeConfigBuilder_.setMessage(builderForValue.build());
+        }
+        endUserAuthConfigCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Oauth 2.0 Authorization Code authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig oauth2_auth_code_config = 2;
+       * </code>
+       */
+      public Builder mergeOauth2AuthCodeConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+              value) {
+        if (oauth2AuthCodeConfigBuilder_ == null) {
+          if (endUserAuthConfigCase_ == 2
+              && endUserAuthConfig_
+                  != com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                      .Oauth2AuthCodeConfig.getDefaultInstance()) {
+            endUserAuthConfig_ =
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+                    .newBuilder(
+                        (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                                .Oauth2AuthCodeConfig)
+                            endUserAuthConfig_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            endUserAuthConfig_ = value;
+          }
+          onChanged();
+        } else {
+          if (endUserAuthConfigCase_ == 2) {
+            oauth2AuthCodeConfigBuilder_.mergeFrom(value);
+          } else {
+            oauth2AuthCodeConfigBuilder_.setMessage(value);
+          }
+        }
+        endUserAuthConfigCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Oauth 2.0 Authorization Code authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig oauth2_auth_code_config = 2;
+       * </code>
+       */
+      public Builder clearOauth2AuthCodeConfig() {
+        if (oauth2AuthCodeConfigBuilder_ == null) {
+          if (endUserAuthConfigCase_ == 2) {
+            endUserAuthConfigCase_ = 0;
+            endUserAuthConfig_ = null;
+            onChanged();
+          }
+        } else {
+          if (endUserAuthConfigCase_ == 2) {
+            endUserAuthConfigCase_ = 0;
+            endUserAuthConfig_ = null;
+          }
+          oauth2AuthCodeConfigBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Oauth 2.0 Authorization Code authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig oauth2_auth_code_config = 2;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+              .Builder
+          getOauth2AuthCodeConfigBuilder() {
+        return getOauth2AuthCodeConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Oauth 2.0 Authorization Code authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig oauth2_auth_code_config = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2AuthCodeConfigOrBuilder
+          getOauth2AuthCodeConfigOrBuilder() {
+        if ((endUserAuthConfigCase_ == 2) && (oauth2AuthCodeConfigBuilder_ != null)) {
+          return oauth2AuthCodeConfigBuilder_.getMessageOrBuilder();
+        } else {
+          if (endUserAuthConfigCase_ == 2) {
+            return (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                    .Oauth2AuthCodeConfig)
+                endUserAuthConfig_;
+          }
+          return com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Oauth 2.0 Authorization Code authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig oauth2_auth_code_config = 2;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+                  .Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                  .Oauth2AuthCodeConfigOrBuilder>
+          getOauth2AuthCodeConfigFieldBuilder() {
+        if (oauth2AuthCodeConfigBuilder_ == null) {
+          if (!(endUserAuthConfigCase_ == 2)) {
+            endUserAuthConfig_ =
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+                    .getDefaultInstance();
+          }
+          oauth2AuthCodeConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                      .Oauth2AuthCodeConfig,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2AuthCodeConfig
+                      .Builder,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                      .Oauth2AuthCodeConfigOrBuilder>(
+                  (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                          .Oauth2AuthCodeConfig)
+                      endUserAuthConfig_,
+                  getParentForChildren(),
+                  isClean());
+          endUserAuthConfig_ = null;
+        }
+        endUserAuthConfigCase_ = 2;
+        onChanged();
+        return oauth2AuthCodeConfigBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+                  .Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                  .Oauth2JwtBearerConfigOrBuilder>
+          oauth2JwtBearerConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * JWT Profile Oauth 2.0 Authorization Grant authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig oauth2_jwt_bearer_config = 3;
+       * </code>
+       *
+       * @return Whether the oauth2JwtBearerConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasOauth2JwtBearerConfig() {
+        return endUserAuthConfigCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * JWT Profile Oauth 2.0 Authorization Grant authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig oauth2_jwt_bearer_config = 3;
+       * </code>
+       *
+       * @return The oauth2JwtBearerConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+          getOauth2JwtBearerConfig() {
+        if (oauth2JwtBearerConfigBuilder_ == null) {
+          if (endUserAuthConfigCase_ == 3) {
+            return (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                    .Oauth2JwtBearerConfig)
+                endUserAuthConfig_;
+          }
+          return com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+              .getDefaultInstance();
+        } else {
+          if (endUserAuthConfigCase_ == 3) {
+            return oauth2JwtBearerConfigBuilder_.getMessage();
+          }
+          return com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * JWT Profile Oauth 2.0 Authorization Grant authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig oauth2_jwt_bearer_config = 3;
+       * </code>
+       */
+      public Builder setOauth2JwtBearerConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+              value) {
+        if (oauth2JwtBearerConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          endUserAuthConfig_ = value;
+          onChanged();
+        } else {
+          oauth2JwtBearerConfigBuilder_.setMessage(value);
+        }
+        endUserAuthConfigCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * JWT Profile Oauth 2.0 Authorization Grant authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig oauth2_jwt_bearer_config = 3;
+       * </code>
+       */
+      public Builder setOauth2JwtBearerConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+                  .Builder
+              builderForValue) {
+        if (oauth2JwtBearerConfigBuilder_ == null) {
+          endUserAuthConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          oauth2JwtBearerConfigBuilder_.setMessage(builderForValue.build());
+        }
+        endUserAuthConfigCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * JWT Profile Oauth 2.0 Authorization Grant authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig oauth2_jwt_bearer_config = 3;
+       * </code>
+       */
+      public Builder mergeOauth2JwtBearerConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+              value) {
+        if (oauth2JwtBearerConfigBuilder_ == null) {
+          if (endUserAuthConfigCase_ == 3
+              && endUserAuthConfig_
+                  != com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                      .Oauth2JwtBearerConfig.getDefaultInstance()) {
+            endUserAuthConfig_ =
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+                    .newBuilder(
+                        (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                                .Oauth2JwtBearerConfig)
+                            endUserAuthConfig_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            endUserAuthConfig_ = value;
+          }
+          onChanged();
+        } else {
+          if (endUserAuthConfigCase_ == 3) {
+            oauth2JwtBearerConfigBuilder_.mergeFrom(value);
+          } else {
+            oauth2JwtBearerConfigBuilder_.setMessage(value);
+          }
+        }
+        endUserAuthConfigCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * JWT Profile Oauth 2.0 Authorization Grant authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig oauth2_jwt_bearer_config = 3;
+       * </code>
+       */
+      public Builder clearOauth2JwtBearerConfig() {
+        if (oauth2JwtBearerConfigBuilder_ == null) {
+          if (endUserAuthConfigCase_ == 3) {
+            endUserAuthConfigCase_ = 0;
+            endUserAuthConfig_ = null;
+            onChanged();
+          }
+        } else {
+          if (endUserAuthConfigCase_ == 3) {
+            endUserAuthConfigCase_ = 0;
+            endUserAuthConfig_ = null;
+          }
+          oauth2JwtBearerConfigBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * JWT Profile Oauth 2.0 Authorization Grant authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig oauth2_jwt_bearer_config = 3;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+              .Builder
+          getOauth2JwtBearerConfigBuilder() {
+        return getOauth2JwtBearerConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * JWT Profile Oauth 2.0 Authorization Grant authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig oauth2_jwt_bearer_config = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+              .Oauth2JwtBearerConfigOrBuilder
+          getOauth2JwtBearerConfigOrBuilder() {
+        if ((endUserAuthConfigCase_ == 3) && (oauth2JwtBearerConfigBuilder_ != null)) {
+          return oauth2JwtBearerConfigBuilder_.getMessageOrBuilder();
+        } else {
+          if (endUserAuthConfigCase_ == 3) {
+            return (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                    .Oauth2JwtBearerConfig)
+                endUserAuthConfig_;
+          }
+          return com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * JWT Profile Oauth 2.0 Authorization Grant authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig oauth2_jwt_bearer_config = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+                  .Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                  .Oauth2JwtBearerConfigOrBuilder>
+          getOauth2JwtBearerConfigFieldBuilder() {
+        if (oauth2JwtBearerConfigBuilder_ == null) {
+          if (!(endUserAuthConfigCase_ == 3)) {
+            endUserAuthConfig_ =
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig.Oauth2JwtBearerConfig
+                    .getDefaultInstance();
+          }
+          oauth2JwtBearerConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                      .Oauth2JwtBearerConfig,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                      .Oauth2JwtBearerConfig.Builder,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                      .Oauth2JwtBearerConfigOrBuilder>(
+                  (com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+                          .Oauth2JwtBearerConfig)
+                      endUserAuthConfig_,
+                  getParentForChildren(),
+                  isClean());
+          endUserAuthConfig_ = null;
+        }
+        endUserAuthConfigCase_ = 3;
+        onChanged();
+        return oauth2JwtBearerConfigBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EndUserAuthConfig> PARSER =
+        new com.google.protobuf.AbstractParser<EndUserAuthConfig>() {
+          @java.lang.Override
+          public EndUserAuthConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<EndUserAuthConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EndUserAuthConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.EndUserAuthConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int specificationCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -15190,6 +23202,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     DATA_STORE_SPEC(8),
     EXTENSION_SPEC(11),
     FUNCTION_SPEC(13),
+    CONNECTOR_SPEC(15),
     SPECIFICATION_NOT_SET(0);
     private final int value;
 
@@ -15216,6 +23229,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           return EXTENSION_SPEC;
         case 13:
           return FUNCTION_SPEC;
+        case 15:
+          return CONNECTOR_SPEC;
         case 0:
           return SPECIFICATION_NOT_SET;
         default:
@@ -15597,6 +23612,58 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dialogflow.cx.v3beta1.Tool.FunctionTool.getDefaultInstance();
   }
 
+  public static final int CONNECTOR_SPEC_FIELD_NUMBER = 15;
+  /**
+   *
+   *
+   * <pre>
+   * Integration connectors tool specification.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool connector_spec = 15;</code>
+   *
+   * @return Whether the connectorSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasConnectorSpec() {
+    return specificationCase_ == 15;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Integration connectors tool specification.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool connector_spec = 15;</code>
+   *
+   * @return The connectorSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool getConnectorSpec() {
+    if (specificationCase_ == 15) {
+      return (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool) specification_;
+    }
+    return com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Integration connectors tool specification.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool connector_spec = 15;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorToolOrBuilder
+      getConnectorSpecOrBuilder() {
+    if (specificationCase_ == 15) {
+      return (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool) specification_;
+    }
+    return com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.getDefaultInstance();
+  }
+
   public static final int TOOL_TYPE_FIELD_NUMBER = 12;
   private int toolType_ = 0;
   /**
@@ -15681,6 +23748,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           13, (com.google.cloud.dialogflow.cx.v3beta1.Tool.FunctionTool) specification_);
     }
+    if (specificationCase_ == 15) {
+      output.writeMessage(
+          15, (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool) specification_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -15723,6 +23794,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, (com.google.cloud.dialogflow.cx.v3beta1.Tool.FunctionTool) specification_);
     }
+    if (specificationCase_ == 15) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool) specification_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -15756,6 +23832,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         break;
       case 13:
         if (!getFunctionSpec().equals(other.getFunctionSpec())) return false;
+        break;
+      case 15:
+        if (!getConnectorSpec().equals(other.getConnectorSpec())) return false;
         break;
       case 0:
       default:
@@ -15795,6 +23874,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       case 13:
         hash = (37 * hash) + FUNCTION_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getFunctionSpec().hashCode();
+        break;
+      case 15:
+        hash = (37 * hash) + CONNECTOR_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getConnectorSpec().hashCode();
         break;
       case 0:
       default:
@@ -15956,6 +24039,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (functionSpecBuilder_ != null) {
         functionSpecBuilder_.clear();
       }
+      if (connectorSpecBuilder_ != null) {
+        connectorSpecBuilder_.clear();
+      }
       toolType_ = 0;
       specificationCase_ = 0;
       specification_ = null;
@@ -16005,7 +24091,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.toolType_ = toolType_;
       }
     }
@@ -16024,6 +24110,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       if (specificationCase_ == 13 && functionSpecBuilder_ != null) {
         result.specification_ = functionSpecBuilder_.build();
+      }
+      if (specificationCase_ == 15 && connectorSpecBuilder_ != null) {
+        result.specification_ = connectorSpecBuilder_.build();
       }
     }
 
@@ -16111,6 +24200,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             mergeFunctionSpec(other.getFunctionSpec());
             break;
           }
+        case CONNECTOR_SPEC:
+          {
+            mergeConnectorSpec(other.getConnectorSpec());
+            break;
+          }
         case SPECIFICATION_NOT_SET:
           {
             break;
@@ -16181,7 +24275,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             case 96:
               {
                 toolType_ = input.readEnum();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 96
             case 106:
@@ -16190,6 +24284,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                 specificationCase_ = 13;
                 break;
               } // case 106
+            case 122:
+              {
+                input.readMessage(getConnectorSpecFieldBuilder().getBuilder(), extensionRegistry);
+                specificationCase_ = 15;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -17407,6 +25507,221 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       return functionSpecBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool,
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorToolOrBuilder>
+        connectorSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Integration connectors tool specification.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool connector_spec = 15;</code>
+     *
+     * @return Whether the connectorSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasConnectorSpec() {
+      return specificationCase_ == 15;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integration connectors tool specification.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool connector_spec = 15;</code>
+     *
+     * @return The connectorSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool getConnectorSpec() {
+      if (connectorSpecBuilder_ == null) {
+        if (specificationCase_ == 15) {
+          return (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool) specification_;
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.getDefaultInstance();
+      } else {
+        if (specificationCase_ == 15) {
+          return connectorSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integration connectors tool specification.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool connector_spec = 15;</code>
+     */
+    public Builder setConnectorSpec(
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool value) {
+      if (connectorSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        specification_ = value;
+        onChanged();
+      } else {
+        connectorSpecBuilder_.setMessage(value);
+      }
+      specificationCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integration connectors tool specification.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool connector_spec = 15;</code>
+     */
+    public Builder setConnectorSpec(
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Builder builderForValue) {
+      if (connectorSpecBuilder_ == null) {
+        specification_ = builderForValue.build();
+        onChanged();
+      } else {
+        connectorSpecBuilder_.setMessage(builderForValue.build());
+      }
+      specificationCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integration connectors tool specification.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool connector_spec = 15;</code>
+     */
+    public Builder mergeConnectorSpec(
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool value) {
+      if (connectorSpecBuilder_ == null) {
+        if (specificationCase_ == 15
+            && specification_
+                != com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.getDefaultInstance()) {
+          specification_ =
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.newBuilder(
+                      (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool) specification_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          specification_ = value;
+        }
+        onChanged();
+      } else {
+        if (specificationCase_ == 15) {
+          connectorSpecBuilder_.mergeFrom(value);
+        } else {
+          connectorSpecBuilder_.setMessage(value);
+        }
+      }
+      specificationCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integration connectors tool specification.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool connector_spec = 15;</code>
+     */
+    public Builder clearConnectorSpec() {
+      if (connectorSpecBuilder_ == null) {
+        if (specificationCase_ == 15) {
+          specificationCase_ = 0;
+          specification_ = null;
+          onChanged();
+        }
+      } else {
+        if (specificationCase_ == 15) {
+          specificationCase_ = 0;
+          specification_ = null;
+        }
+        connectorSpecBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integration connectors tool specification.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool connector_spec = 15;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Builder
+        getConnectorSpecBuilder() {
+      return getConnectorSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integration connectors tool specification.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool connector_spec = 15;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorToolOrBuilder
+        getConnectorSpecOrBuilder() {
+      if ((specificationCase_ == 15) && (connectorSpecBuilder_ != null)) {
+        return connectorSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (specificationCase_ == 15) {
+          return (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool) specification_;
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Integration connectors tool specification.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool connector_spec = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool,
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorToolOrBuilder>
+        getConnectorSpecFieldBuilder() {
+      if (connectorSpecBuilder_ == null) {
+        if (!(specificationCase_ == 15)) {
+          specification_ =
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.getDefaultInstance();
+        }
+        connectorSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool,
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorToolOrBuilder>(
+                (com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool) specification_,
+                getParentForChildren(),
+                isClean());
+        specification_ = null;
+      }
+      specificationCase_ = 15;
+      onChanged();
+      return connectorSpecBuilder_;
+    }
+
     private int toolType_ = 0;
     /**
      *
@@ -17441,7 +25756,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setToolTypeValue(int value) {
       toolType_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -17484,7 +25799,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       toolType_ = value.getNumber();
       onChanged();
       return this;
@@ -17503,7 +25818,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearToolType() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       toolType_ = 0;
       onChanged();
       return this;

@@ -45,6 +45,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     returnPolicyId_ = "";
     label_ = "";
     countries_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    seasonalOverrides_ = java.util.Collections.emptyList();
     returnMethods_ = java.util.Collections.emptyList();
     itemConditions_ = java.util.Collections.emptyList();
     returnPolicyUri_ = "";
@@ -420,11 +421,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Type of return shipping fee.
+     * Required. Type of return shipping fee.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Type type = 1;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The enum numeric value on the wire for type.
@@ -434,11 +435,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Type of return shipping fee.
+     * Required. Type of return shipping fee.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Type type = 1;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The type.
@@ -703,11 +704,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Type of return shipping fee.
+     * Required. Type of return shipping fee.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Type type = 1;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The enum numeric value on the wire for type.
@@ -720,11 +721,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Type of return shipping fee.
+     * Required. Type of return shipping fee.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Type type = 1;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The type.
@@ -1221,11 +1222,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Type of return shipping fee.
+       * Required. Type of return shipping fee.
        * </pre>
        *
        * <code>
-       * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Type type = 1;
+       * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        *
        * @return The enum numeric value on the wire for type.
@@ -1238,11 +1239,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Type of return shipping fee.
+       * Required. Type of return shipping fee.
        * </pre>
        *
        * <code>
-       * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Type type = 1;
+       * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        *
        * @param value The enum numeric value on the wire for type to set.
@@ -1258,11 +1259,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Type of return shipping fee.
+       * Required. Type of return shipping fee.
        * </pre>
        *
        * <code>
-       * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Type type = 1;
+       * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        *
        * @return The type.
@@ -1283,11 +1284,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Type of return shipping fee.
+       * Required. Type of return shipping fee.
        * </pre>
        *
        * <code>
-       * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Type type = 1;
+       * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        *
        * @param value The type to set.
@@ -1308,11 +1309,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Type of return shipping fee.
+       * Required. Type of return shipping fee.
        * </pre>
        *
        * <code>
-       * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Type type = 1;
+       * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        *
        * @return This builder for chaining.
@@ -3579,6 +3580,1866 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public interface SeasonalOverrideOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of days (from the delivery date) that the product can be
+     * returned.
+     * </pre>
+     *
+     * <code>int32 return_days = 5;</code>
+     *
+     * @return Whether the returnDays field is set.
+     */
+    boolean hasReturnDays();
+    /**
+     *
+     *
+     * <pre>
+     * Number of days (from the delivery date) that the product can be
+     * returned.
+     * </pre>
+     *
+     * <code>int32 return_days = 5;</code>
+     *
+     * @return The returnDays.
+     */
+    int getReturnDays();
+
+    /**
+     *
+     *
+     * <pre>
+     * Fixed end date until which the product can be returned.
+     * </pre>
+     *
+     * <code>.google.type.Date return_until_date = 6;</code>
+     *
+     * @return Whether the returnUntilDate field is set.
+     */
+    boolean hasReturnUntilDate();
+    /**
+     *
+     *
+     * <pre>
+     * Fixed end date until which the product can be returned.
+     * </pre>
+     *
+     * <code>.google.type.Date return_until_date = 6;</code>
+     *
+     * @return The returnUntilDate.
+     */
+    com.google.type.Date getReturnUntilDate();
+    /**
+     *
+     *
+     * <pre>
+     * Fixed end date until which the product can be returned.
+     * </pre>
+     *
+     * <code>.google.type.Date return_until_date = 6;</code>
+     */
+    com.google.type.DateOrBuilder getReturnUntilDateOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Display name of this seasonal override in Merchant Center.
+     * </pre>
+     *
+     * <code>string label = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The label.
+     */
+    java.lang.String getLabel();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Display name of this seasonal override in Merchant Center.
+     * </pre>
+     *
+     * <code>string label = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for label.
+     */
+    com.google.protobuf.ByteString getLabelBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Defines the date range when this seasonal override applies.
+     * Both start_date and end_date are inclusive.
+     * The dates of the seasonal overrides should not overlap.
+     * </pre>
+     *
+     * <code>.google.type.Date start_date = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the startDate field is set.
+     */
+    boolean hasStartDate();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Defines the date range when this seasonal override applies.
+     * Both start_date and end_date are inclusive.
+     * The dates of the seasonal overrides should not overlap.
+     * </pre>
+     *
+     * <code>.google.type.Date start_date = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The startDate.
+     */
+    com.google.type.Date getStartDate();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Defines the date range when this seasonal override applies.
+     * Both start_date and end_date are inclusive.
+     * The dates of the seasonal overrides should not overlap.
+     * </pre>
+     *
+     * <code>.google.type.Date start_date = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    com.google.type.DateOrBuilder getStartDateOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. seasonal override end date (inclusive).
+     * </pre>
+     *
+     * <code>.google.type.Date end_date = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the endDate field is set.
+     */
+    boolean hasEndDate();
+    /**
+     *
+     *
+     * <pre>
+     * Required. seasonal override end date (inclusive).
+     * </pre>
+     *
+     * <code>.google.type.Date end_date = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The endDate.
+     */
+    com.google.type.Date getEndDate();
+    /**
+     *
+     *
+     * <pre>
+     * Required. seasonal override end date (inclusive).
+     * </pre>
+     *
+     * <code>.google.type.Date end_date = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    com.google.type.DateOrBuilder getEndDateOrBuilder();
+
+    com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+            .ReturnWindowCase
+        getReturnWindowCase();
+  }
+  /**
+   * Protobuf type {@code
+   * google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride}
+   */
+  public static final class SeasonalOverride extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride)
+      SeasonalOverrideOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SeasonalOverride.newBuilder() to construct.
+    private SeasonalOverride(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SeasonalOverride() {
+      label_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SeasonalOverride();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicyProto
+          .internal_static_google_shopping_merchant_accounts_v1beta_OnlineReturnPolicy_SeasonalOverride_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicyProto
+          .internal_static_google_shopping_merchant_accounts_v1beta_OnlineReturnPolicy_SeasonalOverride_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+                  .class,
+              com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+                  .Builder.class);
+    }
+
+    private int bitField0_;
+    private int returnWindowCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object returnWindow_;
+
+    public enum ReturnWindowCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      RETURN_DAYS(5),
+      RETURN_UNTIL_DATE(6),
+      RETURNWINDOW_NOT_SET(0);
+      private final int value;
+
+      private ReturnWindowCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ReturnWindowCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ReturnWindowCase forNumber(int value) {
+        switch (value) {
+          case 5:
+            return RETURN_DAYS;
+          case 6:
+            return RETURN_UNTIL_DATE;
+          case 0:
+            return RETURNWINDOW_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ReturnWindowCase getReturnWindowCase() {
+      return ReturnWindowCase.forNumber(returnWindowCase_);
+    }
+
+    public static final int RETURN_DAYS_FIELD_NUMBER = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Number of days (from the delivery date) that the product can be
+     * returned.
+     * </pre>
+     *
+     * <code>int32 return_days = 5;</code>
+     *
+     * @return Whether the returnDays field is set.
+     */
+    @java.lang.Override
+    public boolean hasReturnDays() {
+      return returnWindowCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of days (from the delivery date) that the product can be
+     * returned.
+     * </pre>
+     *
+     * <code>int32 return_days = 5;</code>
+     *
+     * @return The returnDays.
+     */
+    @java.lang.Override
+    public int getReturnDays() {
+      if (returnWindowCase_ == 5) {
+        return (java.lang.Integer) returnWindow_;
+      }
+      return 0;
+    }
+
+    public static final int RETURN_UNTIL_DATE_FIELD_NUMBER = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Fixed end date until which the product can be returned.
+     * </pre>
+     *
+     * <code>.google.type.Date return_until_date = 6;</code>
+     *
+     * @return Whether the returnUntilDate field is set.
+     */
+    @java.lang.Override
+    public boolean hasReturnUntilDate() {
+      return returnWindowCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fixed end date until which the product can be returned.
+     * </pre>
+     *
+     * <code>.google.type.Date return_until_date = 6;</code>
+     *
+     * @return The returnUntilDate.
+     */
+    @java.lang.Override
+    public com.google.type.Date getReturnUntilDate() {
+      if (returnWindowCase_ == 6) {
+        return (com.google.type.Date) returnWindow_;
+      }
+      return com.google.type.Date.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fixed end date until which the product can be returned.
+     * </pre>
+     *
+     * <code>.google.type.Date return_until_date = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.type.DateOrBuilder getReturnUntilDateOrBuilder() {
+      if (returnWindowCase_ == 6) {
+        return (com.google.type.Date) returnWindow_;
+      }
+      return com.google.type.Date.getDefaultInstance();
+    }
+
+    public static final int LABEL_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object label_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. Display name of this seasonal override in Merchant Center.
+     * </pre>
+     *
+     * <code>string label = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The label.
+     */
+    @java.lang.Override
+    public java.lang.String getLabel() {
+      java.lang.Object ref = label_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        label_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Display name of this seasonal override in Merchant Center.
+     * </pre>
+     *
+     * <code>string label = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for label.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getLabelBytes() {
+      java.lang.Object ref = label_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        label_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int START_DATE_FIELD_NUMBER = 2;
+    private com.google.type.Date startDate_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Defines the date range when this seasonal override applies.
+     * Both start_date and end_date are inclusive.
+     * The dates of the seasonal overrides should not overlap.
+     * </pre>
+     *
+     * <code>.google.type.Date start_date = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the startDate field is set.
+     */
+    @java.lang.Override
+    public boolean hasStartDate() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Defines the date range when this seasonal override applies.
+     * Both start_date and end_date are inclusive.
+     * The dates of the seasonal overrides should not overlap.
+     * </pre>
+     *
+     * <code>.google.type.Date start_date = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The startDate.
+     */
+    @java.lang.Override
+    public com.google.type.Date getStartDate() {
+      return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Defines the date range when this seasonal override applies.
+     * Both start_date and end_date are inclusive.
+     * The dates of the seasonal overrides should not overlap.
+     * </pre>
+     *
+     * <code>.google.type.Date start_date = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    @java.lang.Override
+    public com.google.type.DateOrBuilder getStartDateOrBuilder() {
+      return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
+    }
+
+    public static final int END_DATE_FIELD_NUMBER = 3;
+    private com.google.type.Date endDate_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. seasonal override end date (inclusive).
+     * </pre>
+     *
+     * <code>.google.type.Date end_date = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the endDate field is set.
+     */
+    @java.lang.Override
+    public boolean hasEndDate() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. seasonal override end date (inclusive).
+     * </pre>
+     *
+     * <code>.google.type.Date end_date = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The endDate.
+     */
+    @java.lang.Override
+    public com.google.type.Date getEndDate() {
+      return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. seasonal override end date (inclusive).
+     * </pre>
+     *
+     * <code>.google.type.Date end_date = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    @java.lang.Override
+    public com.google.type.DateOrBuilder getEndDateOrBuilder() {
+      return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(label_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, label_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getStartDate());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(3, getEndDate());
+      }
+      if (returnWindowCase_ == 5) {
+        output.writeInt32(5, (int) ((java.lang.Integer) returnWindow_));
+      }
+      if (returnWindowCase_ == 6) {
+        output.writeMessage(6, (com.google.type.Date) returnWindow_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(label_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, label_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getStartDate());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getEndDate());
+      }
+      if (returnWindowCase_ == 5) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt32Size(
+                5, (int) ((java.lang.Integer) returnWindow_));
+      }
+      if (returnWindowCase_ == 6) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6, (com.google.type.Date) returnWindow_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride)) {
+        return super.equals(obj);
+      }
+      com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride other =
+          (com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride) obj;
+
+      if (!getLabel().equals(other.getLabel())) return false;
+      if (hasStartDate() != other.hasStartDate()) return false;
+      if (hasStartDate()) {
+        if (!getStartDate().equals(other.getStartDate())) return false;
+      }
+      if (hasEndDate() != other.hasEndDate()) return false;
+      if (hasEndDate()) {
+        if (!getEndDate().equals(other.getEndDate())) return false;
+      }
+      if (!getReturnWindowCase().equals(other.getReturnWindowCase())) return false;
+      switch (returnWindowCase_) {
+        case 5:
+          if (getReturnDays() != other.getReturnDays()) return false;
+          break;
+        case 6:
+          if (!getReturnUntilDate().equals(other.getReturnUntilDate())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LABEL_FIELD_NUMBER;
+      hash = (53 * hash) + getLabel().hashCode();
+      if (hasStartDate()) {
+        hash = (37 * hash) + START_DATE_FIELD_NUMBER;
+        hash = (53 * hash) + getStartDate().hashCode();
+      }
+      if (hasEndDate()) {
+        hash = (37 * hash) + END_DATE_FIELD_NUMBER;
+        hash = (53 * hash) + getEndDate().hashCode();
+      }
+      switch (returnWindowCase_) {
+        case 5:
+          hash = (37 * hash) + RETURN_DAYS_FIELD_NUMBER;
+          hash = (53 * hash) + getReturnDays();
+          break;
+        case 6:
+          hash = (37 * hash) + RETURN_UNTIL_DATE_FIELD_NUMBER;
+          hash = (53 * hash) + getReturnUntilDate().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code
+     * google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride)
+        com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverrideOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicyProto
+            .internal_static_google_shopping_merchant_accounts_v1beta_OnlineReturnPolicy_SeasonalOverride_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicyProto
+            .internal_static_google_shopping_merchant_accounts_v1beta_OnlineReturnPolicy_SeasonalOverride_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+                    .class,
+                com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getStartDateFieldBuilder();
+          getEndDateFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (returnUntilDateBuilder_ != null) {
+          returnUntilDateBuilder_.clear();
+        }
+        label_ = "";
+        startDate_ = null;
+        if (startDateBuilder_ != null) {
+          startDateBuilder_.dispose();
+          startDateBuilder_ = null;
+        }
+        endDate_ = null;
+        if (endDateBuilder_ != null) {
+          endDateBuilder_.dispose();
+          endDateBuilder_ = null;
+        }
+        returnWindowCase_ = 0;
+        returnWindow_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicyProto
+            .internal_static_google_shopping_merchant_accounts_v1beta_OnlineReturnPolicy_SeasonalOverride_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+          getDefaultInstanceForType() {
+        return com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+          build() {
+        com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+          buildPartial() {
+        com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride result =
+            new com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.label_ = label_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.startDate_ = startDateBuilder_ == null ? startDate_ : startDateBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.endDate_ = endDateBuilder_ == null ? endDate_ : endDateBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride result) {
+        result.returnWindowCase_ = returnWindowCase_;
+        result.returnWindow_ = this.returnWindow_;
+        if (returnWindowCase_ == 6 && returnUntilDateBuilder_ != null) {
+          result.returnWindow_ = returnUntilDateBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride) {
+          return mergeFrom(
+              (com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride other) {
+        if (other
+            == com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+                .getDefaultInstance()) return this;
+        if (!other.getLabel().isEmpty()) {
+          label_ = other.label_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.hasStartDate()) {
+          mergeStartDate(other.getStartDate());
+        }
+        if (other.hasEndDate()) {
+          mergeEndDate(other.getEndDate());
+        }
+        switch (other.getReturnWindowCase()) {
+          case RETURN_DAYS:
+            {
+              setReturnDays(other.getReturnDays());
+              break;
+            }
+          case RETURN_UNTIL_DATE:
+            {
+              mergeReturnUntilDate(other.getReturnUntilDate());
+              break;
+            }
+          case RETURNWINDOW_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  label_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getStartDateFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(getEndDateFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 26
+              case 40:
+                {
+                  returnWindow_ = input.readInt32();
+                  returnWindowCase_ = 5;
+                  break;
+                } // case 40
+              case 50:
+                {
+                  input.readMessage(
+                      getReturnUntilDateFieldBuilder().getBuilder(), extensionRegistry);
+                  returnWindowCase_ = 6;
+                  break;
+                } // case 50
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int returnWindowCase_ = 0;
+      private java.lang.Object returnWindow_;
+
+      public ReturnWindowCase getReturnWindowCase() {
+        return ReturnWindowCase.forNumber(returnWindowCase_);
+      }
+
+      public Builder clearReturnWindow() {
+        returnWindowCase_ = 0;
+        returnWindow_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Number of days (from the delivery date) that the product can be
+       * returned.
+       * </pre>
+       *
+       * <code>int32 return_days = 5;</code>
+       *
+       * @return Whether the returnDays field is set.
+       */
+      public boolean hasReturnDays() {
+        return returnWindowCase_ == 5;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of days (from the delivery date) that the product can be
+       * returned.
+       * </pre>
+       *
+       * <code>int32 return_days = 5;</code>
+       *
+       * @return The returnDays.
+       */
+      public int getReturnDays() {
+        if (returnWindowCase_ == 5) {
+          return (java.lang.Integer) returnWindow_;
+        }
+        return 0;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of days (from the delivery date) that the product can be
+       * returned.
+       * </pre>
+       *
+       * <code>int32 return_days = 5;</code>
+       *
+       * @param value The returnDays to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReturnDays(int value) {
+
+        returnWindowCase_ = 5;
+        returnWindow_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of days (from the delivery date) that the product can be
+       * returned.
+       * </pre>
+       *
+       * <code>int32 return_days = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearReturnDays() {
+        if (returnWindowCase_ == 5) {
+          returnWindowCase_ = 0;
+          returnWindow_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+          returnUntilDateBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Fixed end date until which the product can be returned.
+       * </pre>
+       *
+       * <code>.google.type.Date return_until_date = 6;</code>
+       *
+       * @return Whether the returnUntilDate field is set.
+       */
+      @java.lang.Override
+      public boolean hasReturnUntilDate() {
+        return returnWindowCase_ == 6;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fixed end date until which the product can be returned.
+       * </pre>
+       *
+       * <code>.google.type.Date return_until_date = 6;</code>
+       *
+       * @return The returnUntilDate.
+       */
+      @java.lang.Override
+      public com.google.type.Date getReturnUntilDate() {
+        if (returnUntilDateBuilder_ == null) {
+          if (returnWindowCase_ == 6) {
+            return (com.google.type.Date) returnWindow_;
+          }
+          return com.google.type.Date.getDefaultInstance();
+        } else {
+          if (returnWindowCase_ == 6) {
+            return returnUntilDateBuilder_.getMessage();
+          }
+          return com.google.type.Date.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fixed end date until which the product can be returned.
+       * </pre>
+       *
+       * <code>.google.type.Date return_until_date = 6;</code>
+       */
+      public Builder setReturnUntilDate(com.google.type.Date value) {
+        if (returnUntilDateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          returnWindow_ = value;
+          onChanged();
+        } else {
+          returnUntilDateBuilder_.setMessage(value);
+        }
+        returnWindowCase_ = 6;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fixed end date until which the product can be returned.
+       * </pre>
+       *
+       * <code>.google.type.Date return_until_date = 6;</code>
+       */
+      public Builder setReturnUntilDate(com.google.type.Date.Builder builderForValue) {
+        if (returnUntilDateBuilder_ == null) {
+          returnWindow_ = builderForValue.build();
+          onChanged();
+        } else {
+          returnUntilDateBuilder_.setMessage(builderForValue.build());
+        }
+        returnWindowCase_ = 6;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fixed end date until which the product can be returned.
+       * </pre>
+       *
+       * <code>.google.type.Date return_until_date = 6;</code>
+       */
+      public Builder mergeReturnUntilDate(com.google.type.Date value) {
+        if (returnUntilDateBuilder_ == null) {
+          if (returnWindowCase_ == 6
+              && returnWindow_ != com.google.type.Date.getDefaultInstance()) {
+            returnWindow_ =
+                com.google.type.Date.newBuilder((com.google.type.Date) returnWindow_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            returnWindow_ = value;
+          }
+          onChanged();
+        } else {
+          if (returnWindowCase_ == 6) {
+            returnUntilDateBuilder_.mergeFrom(value);
+          } else {
+            returnUntilDateBuilder_.setMessage(value);
+          }
+        }
+        returnWindowCase_ = 6;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fixed end date until which the product can be returned.
+       * </pre>
+       *
+       * <code>.google.type.Date return_until_date = 6;</code>
+       */
+      public Builder clearReturnUntilDate() {
+        if (returnUntilDateBuilder_ == null) {
+          if (returnWindowCase_ == 6) {
+            returnWindowCase_ = 0;
+            returnWindow_ = null;
+            onChanged();
+          }
+        } else {
+          if (returnWindowCase_ == 6) {
+            returnWindowCase_ = 0;
+            returnWindow_ = null;
+          }
+          returnUntilDateBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fixed end date until which the product can be returned.
+       * </pre>
+       *
+       * <code>.google.type.Date return_until_date = 6;</code>
+       */
+      public com.google.type.Date.Builder getReturnUntilDateBuilder() {
+        return getReturnUntilDateFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fixed end date until which the product can be returned.
+       * </pre>
+       *
+       * <code>.google.type.Date return_until_date = 6;</code>
+       */
+      @java.lang.Override
+      public com.google.type.DateOrBuilder getReturnUntilDateOrBuilder() {
+        if ((returnWindowCase_ == 6) && (returnUntilDateBuilder_ != null)) {
+          return returnUntilDateBuilder_.getMessageOrBuilder();
+        } else {
+          if (returnWindowCase_ == 6) {
+            return (com.google.type.Date) returnWindow_;
+          }
+          return com.google.type.Date.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fixed end date until which the product can be returned.
+       * </pre>
+       *
+       * <code>.google.type.Date return_until_date = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+          getReturnUntilDateFieldBuilder() {
+        if (returnUntilDateBuilder_ == null) {
+          if (!(returnWindowCase_ == 6)) {
+            returnWindow_ = com.google.type.Date.getDefaultInstance();
+          }
+          returnUntilDateBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.Date,
+                  com.google.type.Date.Builder,
+                  com.google.type.DateOrBuilder>(
+                  (com.google.type.Date) returnWindow_, getParentForChildren(), isClean());
+          returnWindow_ = null;
+        }
+        returnWindowCase_ = 6;
+        onChanged();
+        return returnUntilDateBuilder_;
+      }
+
+      private java.lang.Object label_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. Display name of this seasonal override in Merchant Center.
+       * </pre>
+       *
+       * <code>string label = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The label.
+       */
+      public java.lang.String getLabel() {
+        java.lang.Object ref = label_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          label_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Display name of this seasonal override in Merchant Center.
+       * </pre>
+       *
+       * <code>string label = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for label.
+       */
+      public com.google.protobuf.ByteString getLabelBytes() {
+        java.lang.Object ref = label_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          label_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Display name of this seasonal override in Merchant Center.
+       * </pre>
+       *
+       * <code>string label = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The label to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLabel(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        label_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Display name of this seasonal override in Merchant Center.
+       * </pre>
+       *
+       * <code>string label = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLabel() {
+        label_ = getDefaultInstance().getLabel();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Display name of this seasonal override in Merchant Center.
+       * </pre>
+       *
+       * <code>string label = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for label to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLabelBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        label_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private com.google.type.Date startDate_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+          startDateBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Defines the date range when this seasonal override applies.
+       * Both start_date and end_date are inclusive.
+       * The dates of the seasonal overrides should not overlap.
+       * </pre>
+       *
+       * <code>.google.type.Date start_date = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return Whether the startDate field is set.
+       */
+      public boolean hasStartDate() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Defines the date range when this seasonal override applies.
+       * Both start_date and end_date are inclusive.
+       * The dates of the seasonal overrides should not overlap.
+       * </pre>
+       *
+       * <code>.google.type.Date start_date = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The startDate.
+       */
+      public com.google.type.Date getStartDate() {
+        if (startDateBuilder_ == null) {
+          return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
+        } else {
+          return startDateBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Defines the date range when this seasonal override applies.
+       * Both start_date and end_date are inclusive.
+       * The dates of the seasonal overrides should not overlap.
+       * </pre>
+       *
+       * <code>.google.type.Date start_date = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder setStartDate(com.google.type.Date value) {
+        if (startDateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          startDate_ = value;
+        } else {
+          startDateBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Defines the date range when this seasonal override applies.
+       * Both start_date and end_date are inclusive.
+       * The dates of the seasonal overrides should not overlap.
+       * </pre>
+       *
+       * <code>.google.type.Date start_date = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder setStartDate(com.google.type.Date.Builder builderForValue) {
+        if (startDateBuilder_ == null) {
+          startDate_ = builderForValue.build();
+        } else {
+          startDateBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Defines the date range when this seasonal override applies.
+       * Both start_date and end_date are inclusive.
+       * The dates of the seasonal overrides should not overlap.
+       * </pre>
+       *
+       * <code>.google.type.Date start_date = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder mergeStartDate(com.google.type.Date value) {
+        if (startDateBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && startDate_ != null
+              && startDate_ != com.google.type.Date.getDefaultInstance()) {
+            getStartDateBuilder().mergeFrom(value);
+          } else {
+            startDate_ = value;
+          }
+        } else {
+          startDateBuilder_.mergeFrom(value);
+        }
+        if (startDate_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Defines the date range when this seasonal override applies.
+       * Both start_date and end_date are inclusive.
+       * The dates of the seasonal overrides should not overlap.
+       * </pre>
+       *
+       * <code>.google.type.Date start_date = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder clearStartDate() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        startDate_ = null;
+        if (startDateBuilder_ != null) {
+          startDateBuilder_.dispose();
+          startDateBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Defines the date range when this seasonal override applies.
+       * Both start_date and end_date are inclusive.
+       * The dates of the seasonal overrides should not overlap.
+       * </pre>
+       *
+       * <code>.google.type.Date start_date = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public com.google.type.Date.Builder getStartDateBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getStartDateFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Defines the date range when this seasonal override applies.
+       * Both start_date and end_date are inclusive.
+       * The dates of the seasonal overrides should not overlap.
+       * </pre>
+       *
+       * <code>.google.type.Date start_date = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public com.google.type.DateOrBuilder getStartDateOrBuilder() {
+        if (startDateBuilder_ != null) {
+          return startDateBuilder_.getMessageOrBuilder();
+        } else {
+          return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Defines the date range when this seasonal override applies.
+       * Both start_date and end_date are inclusive.
+       * The dates of the seasonal overrides should not overlap.
+       * </pre>
+       *
+       * <code>.google.type.Date start_date = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+          getStartDateFieldBuilder() {
+        if (startDateBuilder_ == null) {
+          startDateBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.Date,
+                  com.google.type.Date.Builder,
+                  com.google.type.DateOrBuilder>(getStartDate(), getParentForChildren(), isClean());
+          startDate_ = null;
+        }
+        return startDateBuilder_;
+      }
+
+      private com.google.type.Date endDate_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+          endDateBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. seasonal override end date (inclusive).
+       * </pre>
+       *
+       * <code>.google.type.Date end_date = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return Whether the endDate field is set.
+       */
+      public boolean hasEndDate() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. seasonal override end date (inclusive).
+       * </pre>
+       *
+       * <code>.google.type.Date end_date = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The endDate.
+       */
+      public com.google.type.Date getEndDate() {
+        if (endDateBuilder_ == null) {
+          return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
+        } else {
+          return endDateBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. seasonal override end date (inclusive).
+       * </pre>
+       *
+       * <code>.google.type.Date end_date = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder setEndDate(com.google.type.Date value) {
+        if (endDateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          endDate_ = value;
+        } else {
+          endDateBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. seasonal override end date (inclusive).
+       * </pre>
+       *
+       * <code>.google.type.Date end_date = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder setEndDate(com.google.type.Date.Builder builderForValue) {
+        if (endDateBuilder_ == null) {
+          endDate_ = builderForValue.build();
+        } else {
+          endDateBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. seasonal override end date (inclusive).
+       * </pre>
+       *
+       * <code>.google.type.Date end_date = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder mergeEndDate(com.google.type.Date value) {
+        if (endDateBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && endDate_ != null
+              && endDate_ != com.google.type.Date.getDefaultInstance()) {
+            getEndDateBuilder().mergeFrom(value);
+          } else {
+            endDate_ = value;
+          }
+        } else {
+          endDateBuilder_.mergeFrom(value);
+        }
+        if (endDate_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. seasonal override end date (inclusive).
+       * </pre>
+       *
+       * <code>.google.type.Date end_date = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder clearEndDate() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        endDate_ = null;
+        if (endDateBuilder_ != null) {
+          endDateBuilder_.dispose();
+          endDateBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. seasonal override end date (inclusive).
+       * </pre>
+       *
+       * <code>.google.type.Date end_date = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public com.google.type.Date.Builder getEndDateBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getEndDateFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. seasonal override end date (inclusive).
+       * </pre>
+       *
+       * <code>.google.type.Date end_date = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public com.google.type.DateOrBuilder getEndDateOrBuilder() {
+        if (endDateBuilder_ != null) {
+          return endDateBuilder_.getMessageOrBuilder();
+        } else {
+          return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. seasonal override end date (inclusive).
+       * </pre>
+       *
+       * <code>.google.type.Date end_date = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+          getEndDateFieldBuilder() {
+        if (endDateBuilder_ == null) {
+          endDateBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.Date,
+                  com.google.type.Date.Builder,
+                  com.google.type.DateOrBuilder>(getEndDate(), getParentForChildren(), isClean());
+          endDate_ = null;
+        }
+        return endDateBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride)
+    private static final com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy
+            .SeasonalOverride
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride();
+    }
+
+    public static com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SeasonalOverride> PARSER =
+        new com.google.protobuf.AbstractParser<SeasonalOverride>() {
+          @java.lang.Override
+          public SeasonalOverride parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SeasonalOverride> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SeasonalOverride> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -3692,17 +5553,19 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * This field represents the unique user-defined label of the return policy.
-   * It is important to note that the same label cannot be used in different
-   * return policies for the same country. Unless a product specifies a specific
-   * label attribute, policies will be automatically labeled as 'default'.
-   * To assign a custom return policy to certain product groups, follow the
-   * instructions provided in the [Return policy label]
+   * Required. Immutable. This field represents the unique user-defined label of
+   * the return policy. It is important to note that the same label cannot be
+   * used in different return policies for the same country. Unless a product
+   * specifies a specific label attribute, policies will be automatically
+   * labeled as 'default'. To assign a custom return policy to certain product
+   * groups, follow the instructions provided in the [Return policy label]
    * (https://support.google.com/merchants/answer/9445425).
    * The label can contain up to 50 characters.
    * </pre>
    *
-   * <code>string label = 3;</code>
+   * <code>
+   * string label = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The label.
    */
@@ -3722,17 +5585,19 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * This field represents the unique user-defined label of the return policy.
-   * It is important to note that the same label cannot be used in different
-   * return policies for the same country. Unless a product specifies a specific
-   * label attribute, policies will be automatically labeled as 'default'.
-   * To assign a custom return policy to certain product groups, follow the
-   * instructions provided in the [Return policy label]
+   * Required. Immutable. This field represents the unique user-defined label of
+   * the return policy. It is important to note that the same label cannot be
+   * used in different return policies for the same country. Unless a product
+   * specifies a specific label attribute, policies will be automatically
+   * labeled as 'default'. To assign a custom return policy to certain product
+   * groups, follow the instructions provided in the [Return policy label]
    * (https://support.google.com/merchants/answer/9445425).
    * The label can contain up to 50 characters.
    * </pre>
    *
-   * <code>string label = 3;</code>
+   * <code>
+   * string label = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for label.
    */
@@ -3758,11 +5623,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The countries of sale where the return policy applies. The values
-   * must be a valid 2 letter ISO 3166 code.
+   * Required. Immutable. The countries of sale where the return policy applies.
+   * The values must be a valid 2 letter ISO 3166 code.
    * </pre>
    *
-   * <code>repeated string countries = 4;</code>
+   * <code>
+   * repeated string countries = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return A list containing the countries.
    */
@@ -3773,11 +5640,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The countries of sale where the return policy applies. The values
-   * must be a valid 2 letter ISO 3166 code.
+   * Required. Immutable. The countries of sale where the return policy applies.
+   * The values must be a valid 2 letter ISO 3166 code.
    * </pre>
    *
-   * <code>repeated string countries = 4;</code>
+   * <code>
+   * repeated string countries = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The count of countries.
    */
@@ -3788,11 +5657,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The countries of sale where the return policy applies. The values
-   * must be a valid 2 letter ISO 3166 code.
+   * Required. Immutable. The countries of sale where the return policy applies.
+   * The values must be a valid 2 letter ISO 3166 code.
    * </pre>
    *
-   * <code>repeated string countries = 4;</code>
+   * <code>
+   * repeated string countries = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The countries at the given index.
@@ -3804,11 +5675,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The countries of sale where the return policy applies. The values
-   * must be a valid 2 letter ISO 3166 code.
+   * Required. Immutable. The countries of sale where the return policy applies.
+   * The values must be a valid 2 letter ISO 3166 code.
    * </pre>
    *
-   * <code>repeated string countries = 4;</code>
+   * <code>
+   * repeated string countries = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the countries at the given index.
@@ -3868,6 +5741,101 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         ? com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy
             .getDefaultInstance()
         : policy_;
+  }
+
+  public static final int SEASONAL_OVERRIDES_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private java.util.List<
+          com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride>
+      seasonalOverrides_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides to the general policy for orders placed during a
+   * specific set of time intervals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride>
+      getSeasonalOverridesList() {
+    return seasonalOverrides_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides to the general policy for orders placed during a
+   * specific set of time intervals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy
+                  .SeasonalOverrideOrBuilder>
+      getSeasonalOverridesOrBuilderList() {
+    return seasonalOverrides_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides to the general policy for orders placed during a
+   * specific set of time intervals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getSeasonalOverridesCount() {
+    return seasonalOverrides_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides to the general policy for orders placed during a
+   * specific set of time intervals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+      getSeasonalOverrides(int index) {
+    return seasonalOverrides_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides to the general policy for orders placed during a
+   * specific set of time intervals.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverrideOrBuilder
+      getSeasonalOverridesOrBuilder(int index) {
+    return seasonalOverrides_.get(index);
   }
 
   public static final int RESTOCKING_FEE_FIELD_NUMBER = 6;
@@ -4254,11 +6222,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The return policy uri. This can used by Google to do a sanity check for the
-   * policy. It must be a valid URL.
+   * Required. The return policy uri. This can used by Google to do a sanity
+   * check for the policy. It must be a valid URL.
    * </pre>
    *
-   * <code>string return_policy_uri = 10;</code>
+   * <code>string return_policy_uri = 10 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The returnPolicyUri.
    */
@@ -4278,11 +6246,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The return policy uri. This can used by Google to do a sanity check for the
-   * policy. It must be a valid URL.
+   * Required. The return policy uri. This can used by Google to do a sanity
+   * check for the policy. It must be a valid URL.
    * </pre>
    *
-   * <code>string return_policy_uri = 10;</code>
+   * <code>string return_policy_uri = 10 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for returnPolicyUri.
    */
@@ -4466,6 +6434,9 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeBool(13, acceptExchange_);
     }
+    for (int i = 0; i < seasonalOverrides_.size(); i++) {
+      output.writeMessage(14, seasonalOverrides_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4539,6 +6510,10 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, acceptExchange_);
     }
+    for (int i = 0; i < seasonalOverrides_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(14, seasonalOverrides_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4563,6 +6538,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     if (hasPolicy()) {
       if (!getPolicy().equals(other.getPolicy())) return false;
     }
+    if (!getSeasonalOverridesList().equals(other.getSeasonalOverridesList())) return false;
     if (hasRestockingFee() != other.hasRestockingFee()) return false;
     if (hasRestockingFee()) {
       if (!getRestockingFee().equals(other.getRestockingFee())) return false;
@@ -4610,6 +6586,10 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     if (hasPolicy()) {
       hash = (37 * hash) + POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getPolicy().hashCode();
+    }
+    if (getSeasonalOverridesCount() > 0) {
+      hash = (37 * hash) + SEASONAL_OVERRIDES_FIELD_NUMBER;
+      hash = (53 * hash) + getSeasonalOverridesList().hashCode();
     }
     if (hasRestockingFee()) {
       hash = (37 * hash) + RESTOCKING_FEE_FIELD_NUMBER;
@@ -4785,6 +6765,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPolicyFieldBuilder();
+        getSeasonalOverridesFieldBuilder();
         getRestockingFeeFieldBuilder();
         getReturnShippingFeeFieldBuilder();
       }
@@ -4803,15 +6784,22 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         policyBuilder_.dispose();
         policyBuilder_ = null;
       }
+      if (seasonalOverridesBuilder_ == null) {
+        seasonalOverrides_ = java.util.Collections.emptyList();
+      } else {
+        seasonalOverrides_ = null;
+        seasonalOverridesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
       restockingFee_ = null;
       if (restockingFeeBuilder_ != null) {
         restockingFeeBuilder_.dispose();
         restockingFeeBuilder_ = null;
       }
       returnMethods_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000040);
-      itemConditions_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      itemConditions_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000100);
       returnShippingFee_ = null;
       if (returnShippingFeeBuilder_ != null) {
         returnShippingFeeBuilder_.dispose();
@@ -4859,14 +6847,23 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
 
     private void buildPartialRepeatedFields(
         com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy result) {
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (seasonalOverridesBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          seasonalOverrides_ = java.util.Collections.unmodifiableList(seasonalOverrides_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.seasonalOverrides_ = seasonalOverrides_;
+      } else {
+        result.seasonalOverrides_ = seasonalOverridesBuilder_.build();
+      }
+      if (((bitField0_ & 0x00000080) != 0)) {
         returnMethods_ = java.util.Collections.unmodifiableList(returnMethods_);
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
       }
       result.returnMethods_ = returnMethods_;
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         itemConditions_ = java.util.Collections.unmodifiableList(itemConditions_);
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.itemConditions_ = itemConditions_;
     }
@@ -4892,30 +6889,30 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         result.policy_ = policyBuilder_ == null ? policy_ : policyBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.restockingFee_ =
             restockingFeeBuilder_ == null ? restockingFee_ : restockingFeeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.returnShippingFee_ =
             returnShippingFeeBuilder_ == null
                 ? returnShippingFee_
                 : returnShippingFeeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.returnPolicyUri_ = returnPolicyUri_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.acceptDefectiveOnly_ = acceptDefectiveOnly_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.processRefundDays_ = processRefundDays_;
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.acceptExchange_ = acceptExchange_;
         to_bitField0_ |= 0x00000020;
       }
@@ -4998,13 +6995,40 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       if (other.hasPolicy()) {
         mergePolicy(other.getPolicy());
       }
+      if (seasonalOverridesBuilder_ == null) {
+        if (!other.seasonalOverrides_.isEmpty()) {
+          if (seasonalOverrides_.isEmpty()) {
+            seasonalOverrides_ = other.seasonalOverrides_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureSeasonalOverridesIsMutable();
+            seasonalOverrides_.addAll(other.seasonalOverrides_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.seasonalOverrides_.isEmpty()) {
+          if (seasonalOverridesBuilder_.isEmpty()) {
+            seasonalOverridesBuilder_.dispose();
+            seasonalOverridesBuilder_ = null;
+            seasonalOverrides_ = other.seasonalOverrides_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            seasonalOverridesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSeasonalOverridesFieldBuilder()
+                    : null;
+          } else {
+            seasonalOverridesBuilder_.addAllMessages(other.seasonalOverrides_);
+          }
+        }
+      }
       if (other.hasRestockingFee()) {
         mergeRestockingFee(other.getRestockingFee());
       }
       if (!other.returnMethods_.isEmpty()) {
         if (returnMethods_.isEmpty()) {
           returnMethods_ = other.returnMethods_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureReturnMethodsIsMutable();
           returnMethods_.addAll(other.returnMethods_);
@@ -5014,7 +7038,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       if (!other.itemConditions_.isEmpty()) {
         if (itemConditions_.isEmpty()) {
           itemConditions_ = other.itemConditions_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureItemConditionsIsMutable();
           itemConditions_.addAll(other.itemConditions_);
@@ -5026,7 +7050,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getReturnPolicyUri().isEmpty()) {
         returnPolicyUri_ = other.returnPolicyUri_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasAcceptDefectiveOnly()) {
@@ -5098,7 +7122,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
             case 50:
               {
                 input.readMessage(getRestockingFeeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 56:
@@ -5143,33 +7167,48 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
               {
                 input.readMessage(
                     getReturnShippingFeeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 82:
               {
                 returnPolicyUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 88:
               {
                 acceptDefectiveOnly_ = input.readBool();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 88
             case 96:
               {
                 processRefundDays_ = input.readInt32();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 96
             case 104:
               {
                 acceptExchange_ = input.readBool();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 104
+            case 114:
+              {
+                com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride m =
+                    input.readMessage(
+                        com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy
+                            .SeasonalOverride.parser(),
+                        extensionRegistry);
+                if (seasonalOverridesBuilder_ == null) {
+                  ensureSeasonalOverridesIsMutable();
+                  seasonalOverrides_.add(m);
+                } else {
+                  seasonalOverridesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5411,17 +7450,19 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * This field represents the unique user-defined label of the return policy.
-     * It is important to note that the same label cannot be used in different
-     * return policies for the same country. Unless a product specifies a specific
-     * label attribute, policies will be automatically labeled as 'default'.
-     * To assign a custom return policy to certain product groups, follow the
-     * instructions provided in the [Return policy label]
+     * Required. Immutable. This field represents the unique user-defined label of
+     * the return policy. It is important to note that the same label cannot be
+     * used in different return policies for the same country. Unless a product
+     * specifies a specific label attribute, policies will be automatically
+     * labeled as 'default'. To assign a custom return policy to certain product
+     * groups, follow the instructions provided in the [Return policy label]
      * (https://support.google.com/merchants/answer/9445425).
      * The label can contain up to 50 characters.
      * </pre>
      *
-     * <code>string label = 3;</code>
+     * <code>
+     * string label = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The label.
      */
@@ -5440,17 +7481,19 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * This field represents the unique user-defined label of the return policy.
-     * It is important to note that the same label cannot be used in different
-     * return policies for the same country. Unless a product specifies a specific
-     * label attribute, policies will be automatically labeled as 'default'.
-     * To assign a custom return policy to certain product groups, follow the
-     * instructions provided in the [Return policy label]
+     * Required. Immutable. This field represents the unique user-defined label of
+     * the return policy. It is important to note that the same label cannot be
+     * used in different return policies for the same country. Unless a product
+     * specifies a specific label attribute, policies will be automatically
+     * labeled as 'default'. To assign a custom return policy to certain product
+     * groups, follow the instructions provided in the [Return policy label]
      * (https://support.google.com/merchants/answer/9445425).
      * The label can contain up to 50 characters.
      * </pre>
      *
-     * <code>string label = 3;</code>
+     * <code>
+     * string label = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for label.
      */
@@ -5469,17 +7512,19 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * This field represents the unique user-defined label of the return policy.
-     * It is important to note that the same label cannot be used in different
-     * return policies for the same country. Unless a product specifies a specific
-     * label attribute, policies will be automatically labeled as 'default'.
-     * To assign a custom return policy to certain product groups, follow the
-     * instructions provided in the [Return policy label]
+     * Required. Immutable. This field represents the unique user-defined label of
+     * the return policy. It is important to note that the same label cannot be
+     * used in different return policies for the same country. Unless a product
+     * specifies a specific label attribute, policies will be automatically
+     * labeled as 'default'. To assign a custom return policy to certain product
+     * groups, follow the instructions provided in the [Return policy label]
      * (https://support.google.com/merchants/answer/9445425).
      * The label can contain up to 50 characters.
      * </pre>
      *
-     * <code>string label = 3;</code>
+     * <code>
+     * string label = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The label to set.
      * @return This builder for chaining.
@@ -5497,17 +7542,19 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * This field represents the unique user-defined label of the return policy.
-     * It is important to note that the same label cannot be used in different
-     * return policies for the same country. Unless a product specifies a specific
-     * label attribute, policies will be automatically labeled as 'default'.
-     * To assign a custom return policy to certain product groups, follow the
-     * instructions provided in the [Return policy label]
+     * Required. Immutable. This field represents the unique user-defined label of
+     * the return policy. It is important to note that the same label cannot be
+     * used in different return policies for the same country. Unless a product
+     * specifies a specific label attribute, policies will be automatically
+     * labeled as 'default'. To assign a custom return policy to certain product
+     * groups, follow the instructions provided in the [Return policy label]
      * (https://support.google.com/merchants/answer/9445425).
      * The label can contain up to 50 characters.
      * </pre>
      *
-     * <code>string label = 3;</code>
+     * <code>
+     * string label = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -5521,17 +7568,19 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * This field represents the unique user-defined label of the return policy.
-     * It is important to note that the same label cannot be used in different
-     * return policies for the same country. Unless a product specifies a specific
-     * label attribute, policies will be automatically labeled as 'default'.
-     * To assign a custom return policy to certain product groups, follow the
-     * instructions provided in the [Return policy label]
+     * Required. Immutable. This field represents the unique user-defined label of
+     * the return policy. It is important to note that the same label cannot be
+     * used in different return policies for the same country. Unless a product
+     * specifies a specific label attribute, policies will be automatically
+     * labeled as 'default'. To assign a custom return policy to certain product
+     * groups, follow the instructions provided in the [Return policy label]
      * (https://support.google.com/merchants/answer/9445425).
      * The label can contain up to 50 characters.
      * </pre>
      *
-     * <code>string label = 3;</code>
+     * <code>
+     * string label = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for label to set.
      * @return This builder for chaining.
@@ -5560,11 +7609,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The countries of sale where the return policy applies. The values
-     * must be a valid 2 letter ISO 3166 code.
+     * Required. Immutable. The countries of sale where the return policy applies.
+     * The values must be a valid 2 letter ISO 3166 code.
      * </pre>
      *
-     * <code>repeated string countries = 4;</code>
+     * <code>
+     * repeated string countries = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return A list containing the countries.
      */
@@ -5576,11 +7627,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The countries of sale where the return policy applies. The values
-     * must be a valid 2 letter ISO 3166 code.
+     * Required. Immutable. The countries of sale where the return policy applies.
+     * The values must be a valid 2 letter ISO 3166 code.
      * </pre>
      *
-     * <code>repeated string countries = 4;</code>
+     * <code>
+     * repeated string countries = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The count of countries.
      */
@@ -5591,11 +7644,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The countries of sale where the return policy applies. The values
-     * must be a valid 2 letter ISO 3166 code.
+     * Required. Immutable. The countries of sale where the return policy applies.
+     * The values must be a valid 2 letter ISO 3166 code.
      * </pre>
      *
-     * <code>repeated string countries = 4;</code>
+     * <code>
+     * repeated string countries = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The countries at the given index.
@@ -5607,11 +7662,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The countries of sale where the return policy applies. The values
-     * must be a valid 2 letter ISO 3166 code.
+     * Required. Immutable. The countries of sale where the return policy applies.
+     * The values must be a valid 2 letter ISO 3166 code.
      * </pre>
      *
-     * <code>repeated string countries = 4;</code>
+     * <code>
+     * repeated string countries = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the countries at the given index.
@@ -5623,11 +7680,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The countries of sale where the return policy applies. The values
-     * must be a valid 2 letter ISO 3166 code.
+     * Required. Immutable. The countries of sale where the return policy applies.
+     * The values must be a valid 2 letter ISO 3166 code.
      * </pre>
      *
-     * <code>repeated string countries = 4;</code>
+     * <code>
+     * repeated string countries = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The countries to set.
@@ -5647,11 +7706,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The countries of sale where the return policy applies. The values
-     * must be a valid 2 letter ISO 3166 code.
+     * Required. Immutable. The countries of sale where the return policy applies.
+     * The values must be a valid 2 letter ISO 3166 code.
      * </pre>
      *
-     * <code>repeated string countries = 4;</code>
+     * <code>
+     * repeated string countries = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The countries to add.
      * @return This builder for chaining.
@@ -5670,11 +7731,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The countries of sale where the return policy applies. The values
-     * must be a valid 2 letter ISO 3166 code.
+     * Required. Immutable. The countries of sale where the return policy applies.
+     * The values must be a valid 2 letter ISO 3166 code.
      * </pre>
      *
-     * <code>repeated string countries = 4;</code>
+     * <code>
+     * repeated string countries = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param values The countries to add.
      * @return This builder for chaining.
@@ -5690,11 +7753,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The countries of sale where the return policy applies. The values
-     * must be a valid 2 letter ISO 3166 code.
+     * Required. Immutable. The countries of sale where the return policy applies.
+     * The values must be a valid 2 letter ISO 3166 code.
      * </pre>
      *
-     * <code>repeated string countries = 4;</code>
+     * <code>
+     * repeated string countries = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -5709,11 +7774,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The countries of sale where the return policy applies. The values
-     * must be a valid 2 letter ISO 3166 code.
+     * Required. Immutable. The countries of sale where the return policy applies.
+     * The values must be a valid 2 letter ISO 3166 code.
      * </pre>
      *
-     * <code>repeated string countries = 4;</code>
+     * <code>
+     * repeated string countries = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes of the countries to add.
      * @return This builder for chaining.
@@ -5925,6 +7992,454 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       return policyBuilder_;
     }
 
+    private java.util.List<
+            com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride>
+        seasonalOverrides_ = java.util.Collections.emptyList();
+
+    private void ensureSeasonalOverridesIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        seasonalOverrides_ =
+            new java.util.ArrayList<
+                com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride>(
+                seasonalOverrides_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride,
+            com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+                .Builder,
+            com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy
+                .SeasonalOverrideOrBuilder>
+        seasonalOverridesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides to the general policy for orders placed during a
+     * specific set of time intervals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride>
+        getSeasonalOverridesList() {
+      if (seasonalOverridesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(seasonalOverrides_);
+      } else {
+        return seasonalOverridesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides to the general policy for orders placed during a
+     * specific set of time intervals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getSeasonalOverridesCount() {
+      if (seasonalOverridesBuilder_ == null) {
+        return seasonalOverrides_.size();
+      } else {
+        return seasonalOverridesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides to the general policy for orders placed during a
+     * specific set of time intervals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+        getSeasonalOverrides(int index) {
+      if (seasonalOverridesBuilder_ == null) {
+        return seasonalOverrides_.get(index);
+      } else {
+        return seasonalOverridesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides to the general policy for orders placed during a
+     * specific set of time intervals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSeasonalOverrides(
+        int index,
+        com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride value) {
+      if (seasonalOverridesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSeasonalOverridesIsMutable();
+        seasonalOverrides_.set(index, value);
+        onChanged();
+      } else {
+        seasonalOverridesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides to the general policy for orders placed during a
+     * specific set of time intervals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSeasonalOverrides(
+        int index,
+        com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride.Builder
+            builderForValue) {
+      if (seasonalOverridesBuilder_ == null) {
+        ensureSeasonalOverridesIsMutable();
+        seasonalOverrides_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        seasonalOverridesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides to the general policy for orders placed during a
+     * specific set of time intervals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSeasonalOverrides(
+        com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride value) {
+      if (seasonalOverridesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSeasonalOverridesIsMutable();
+        seasonalOverrides_.add(value);
+        onChanged();
+      } else {
+        seasonalOverridesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides to the general policy for orders placed during a
+     * specific set of time intervals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSeasonalOverrides(
+        int index,
+        com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride value) {
+      if (seasonalOverridesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSeasonalOverridesIsMutable();
+        seasonalOverrides_.add(index, value);
+        onChanged();
+      } else {
+        seasonalOverridesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides to the general policy for orders placed during a
+     * specific set of time intervals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSeasonalOverrides(
+        com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride.Builder
+            builderForValue) {
+      if (seasonalOverridesBuilder_ == null) {
+        ensureSeasonalOverridesIsMutable();
+        seasonalOverrides_.add(builderForValue.build());
+        onChanged();
+      } else {
+        seasonalOverridesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides to the general policy for orders placed during a
+     * specific set of time intervals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSeasonalOverrides(
+        int index,
+        com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride.Builder
+            builderForValue) {
+      if (seasonalOverridesBuilder_ == null) {
+        ensureSeasonalOverridesIsMutable();
+        seasonalOverrides_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        seasonalOverridesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides to the general policy for orders placed during a
+     * specific set of time intervals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllSeasonalOverrides(
+        java.lang.Iterable<
+                ? extends
+                    com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy
+                        .SeasonalOverride>
+            values) {
+      if (seasonalOverridesBuilder_ == null) {
+        ensureSeasonalOverridesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, seasonalOverrides_);
+        onChanged();
+      } else {
+        seasonalOverridesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides to the general policy for orders placed during a
+     * specific set of time intervals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSeasonalOverrides() {
+      if (seasonalOverridesBuilder_ == null) {
+        seasonalOverrides_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        seasonalOverridesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides to the general policy for orders placed during a
+     * specific set of time intervals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeSeasonalOverrides(int index) {
+      if (seasonalOverridesBuilder_ == null) {
+        ensureSeasonalOverridesIsMutable();
+        seasonalOverrides_.remove(index);
+        onChanged();
+      } else {
+        seasonalOverridesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides to the general policy for orders placed during a
+     * specific set of time intervals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride.Builder
+        getSeasonalOverridesBuilder(int index) {
+      return getSeasonalOverridesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides to the general policy for orders placed during a
+     * specific set of time intervals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverrideOrBuilder
+        getSeasonalOverridesOrBuilder(int index) {
+      if (seasonalOverridesBuilder_ == null) {
+        return seasonalOverrides_.get(index);
+      } else {
+        return seasonalOverridesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides to the general policy for orders placed during a
+     * specific set of time intervals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy
+                    .SeasonalOverrideOrBuilder>
+        getSeasonalOverridesOrBuilderList() {
+      if (seasonalOverridesBuilder_ != null) {
+        return seasonalOverridesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(seasonalOverrides_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides to the general policy for orders placed during a
+     * specific set of time intervals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride.Builder
+        addSeasonalOverridesBuilder() {
+      return getSeasonalOverridesFieldBuilder()
+          .addBuilder(
+              com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides to the general policy for orders placed during a
+     * specific set of time intervals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride.Builder
+        addSeasonalOverridesBuilder(int index) {
+      return getSeasonalOverridesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides to the general policy for orders placed during a
+     * specific set of time intervals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride seasonal_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+                .Builder>
+        getSeasonalOverridesBuilderList() {
+      return getSeasonalOverridesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride,
+            com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+                .Builder,
+            com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy
+                .SeasonalOverrideOrBuilder>
+        getSeasonalOverridesFieldBuilder() {
+      if (seasonalOverridesBuilder_ == null) {
+        seasonalOverridesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride,
+                com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
+                    .Builder,
+                com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy
+                    .SeasonalOverrideOrBuilder>(
+                seasonalOverrides_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        seasonalOverrides_ = null;
+      }
+      return seasonalOverridesBuilder_;
+    }
+
     private com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee
         restockingFee_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -5947,7 +8462,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return Whether the restockingFee field is set.
      */
     public boolean hasRestockingFee() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -5996,7 +8511,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       } else {
         restockingFeeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -6020,7 +8535,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       } else {
         restockingFeeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -6039,7 +8554,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public Builder mergeRestockingFee(
         com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee value) {
       if (restockingFeeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && restockingFee_ != null
             && restockingFee_
                 != com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee
@@ -6052,7 +8567,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         restockingFeeBuilder_.mergeFrom(value);
       }
       if (restockingFee_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -6070,7 +8585,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearRestockingFee() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       restockingFee_ = null;
       if (restockingFeeBuilder_ != null) {
         restockingFeeBuilder_.dispose();
@@ -6093,7 +8608,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      */
     public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee.Builder
         getRestockingFeeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getRestockingFeeFieldBuilder().getBuilder();
     }
@@ -6153,9 +8668,9 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     private java.util.List<java.lang.Integer> returnMethods_ = java.util.Collections.emptyList();
 
     private void ensureReturnMethodsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         returnMethods_ = new java.util.ArrayList<java.lang.Integer>(returnMethods_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -6312,7 +8827,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearReturnMethods() {
       returnMethods_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -6421,9 +8936,9 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     private java.util.List<java.lang.Integer> itemConditions_ = java.util.Collections.emptyList();
 
     private void ensureItemConditionsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         itemConditions_ = new java.util.ArrayList<java.lang.Integer>(itemConditions_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -6580,7 +9095,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearItemConditions() {
       itemConditions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -6710,7 +9225,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return Whether the returnShippingFee field is set.
      */
     public boolean hasReturnShippingFee() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -6759,7 +9274,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       } else {
         returnShippingFeeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6783,7 +9298,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       } else {
         returnShippingFeeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6802,7 +9317,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public Builder mergeReturnShippingFee(
         com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee value) {
       if (returnShippingFeeBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && returnShippingFee_ != null
             && returnShippingFee_
                 != com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee
@@ -6815,7 +9330,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         returnShippingFeeBuilder_.mergeFrom(value);
       }
       if (returnShippingFee_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -6833,7 +9348,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearReturnShippingFee() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       returnShippingFee_ = null;
       if (returnShippingFeeBuilder_ != null) {
         returnShippingFeeBuilder_.dispose();
@@ -6856,7 +9371,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      */
     public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Builder
         getReturnShippingFeeBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getReturnShippingFeeFieldBuilder().getBuilder();
     }
@@ -6922,11 +9437,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return policy uri. This can used by Google to do a sanity check for the
-     * policy. It must be a valid URL.
+     * Required. The return policy uri. This can used by Google to do a sanity
+     * check for the policy. It must be a valid URL.
      * </pre>
      *
-     * <code>string return_policy_uri = 10;</code>
+     * <code>string return_policy_uri = 10 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The returnPolicyUri.
      */
@@ -6945,11 +9460,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return policy uri. This can used by Google to do a sanity check for the
-     * policy. It must be a valid URL.
+     * Required. The return policy uri. This can used by Google to do a sanity
+     * check for the policy. It must be a valid URL.
      * </pre>
      *
-     * <code>string return_policy_uri = 10;</code>
+     * <code>string return_policy_uri = 10 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for returnPolicyUri.
      */
@@ -6968,11 +9483,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return policy uri. This can used by Google to do a sanity check for the
-     * policy. It must be a valid URL.
+     * Required. The return policy uri. This can used by Google to do a sanity
+     * check for the policy. It must be a valid URL.
      * </pre>
      *
-     * <code>string return_policy_uri = 10;</code>
+     * <code>string return_policy_uri = 10 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The returnPolicyUri to set.
      * @return This builder for chaining.
@@ -6982,7 +9497,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       returnPolicyUri_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -6990,17 +9505,17 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return policy uri. This can used by Google to do a sanity check for the
-     * policy. It must be a valid URL.
+     * Required. The return policy uri. This can used by Google to do a sanity
+     * check for the policy. It must be a valid URL.
      * </pre>
      *
-     * <code>string return_policy_uri = 10;</code>
+     * <code>string return_policy_uri = 10 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearReturnPolicyUri() {
       returnPolicyUri_ = getDefaultInstance().getReturnPolicyUri();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -7008,11 +9523,11 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return policy uri. This can used by Google to do a sanity check for the
-     * policy. It must be a valid URL.
+     * Required. The return policy uri. This can used by Google to do a sanity
+     * check for the policy. It must be a valid URL.
      * </pre>
      *
-     * <code>string return_policy_uri = 10;</code>
+     * <code>string return_policy_uri = 10 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for returnPolicyUri to set.
      * @return This builder for chaining.
@@ -7023,7 +9538,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       returnPolicyUri_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -7043,7 +9558,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public boolean hasAcceptDefectiveOnly() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -7077,7 +9592,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public Builder setAcceptDefectiveOnly(boolean value) {
 
       acceptDefectiveOnly_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -7094,7 +9609,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAcceptDefectiveOnly() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       acceptDefectiveOnly_ = false;
       onChanged();
       return this;
@@ -7115,7 +9630,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public boolean hasProcessRefundDays() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -7149,7 +9664,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public Builder setProcessRefundDays(int value) {
 
       processRefundDays_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -7166,7 +9681,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearProcessRefundDays() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       processRefundDays_ = 0;
       onChanged();
       return this;
@@ -7187,7 +9702,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public boolean hasAcceptExchange() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -7221,7 +9736,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public Builder setAcceptExchange(boolean value) {
 
       acceptExchange_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -7238,7 +9753,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAcceptExchange() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       acceptExchange_ = false;
       onChanged();
       return this;

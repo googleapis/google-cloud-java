@@ -45,6 +45,10 @@ public final class AgentProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_GithubSettings_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_GitConnectionSettings_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_GitConnectionSettings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GenAppBuilderSettings_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GenAppBuilderSettings_fieldAccessorTable;
@@ -149,7 +153,7 @@ public final class AgentProto {
           + "google/protobuf/empty.proto\032 google/prot"
           + "obuf/field_mask.proto\032\034google/protobuf/s"
           + "truct.proto\"8\n\024SpeechToTextSettings\022 \n\030e"
-          + "nable_speech_adaptation\030\001 \001(\010\"\261\022\n\005Agent\022"
+          + "nable_speech_adaptation\030\001 \001(\010\"\231\025\n\005Agent\022"
           + "\014\n\004name\030\001 \001(\t\022\031\n\014display_name\030\002 \001(\tB\003\340A\002"
           + "\022%\n\025default_language_code\030\003 \001(\tB\006\340A\002\340A\005\022"
           + " \n\030supported_language_codes\030\004 \003(\t\022\026\n\ttim"
@@ -186,14 +190,23 @@ public final class AgentProto {
           + "gs\030+ \001(\0132C.google.cloud.dialogflow.cx.v3"
           + "beta1.Agent.ClientCertificateSettingsB\003\340"
           + "A\001\022\"\n\rsatisfies_pzs\030- \001(\010B\006\340A\001\340A\003H\002\210\001\001\022\""
-          + "\n\rsatisfies_pzi\030. \001(\010B\006\340A\001\340A\003H\003\210\001\001\032\225\002\n\026G"
+          + "\n\rsatisfies_pzi\030. \001(\010B\006\340A\001\340A\003H\003\210\001\001\032\375\004\n\026G"
           + "itIntegrationSettings\022j\n\017github_settings"
           + "\030\001 \001(\0132O.google.cloud.dialogflow.cx.v3be"
           + "ta1.Agent.GitIntegrationSettings.GithubS"
-          + "ettingsH\000\032\177\n\016GithubSettings\022\024\n\014display_n"
-          + "ame\030\001 \001(\t\022\026\n\016repository_uri\030\002 \001(\t\022\027\n\017tra"
-          + "cking_branch\030\003 \001(\t\022\024\n\014access_token\030\004 \001(\t"
-          + "\022\020\n\010branches\030\005 \003(\tB\016\n\014git_settings\032,\n\025Ge"
+          + "ettingsH\000\022y\n\027git_connection_settings\030\002 \001"
+          + "(\0132V.google.cloud.dialogflow.cx.v3beta1."
+          + "Agent.GitIntegrationSettings.GitConnecti"
+          + "onSettingsH\000\032\177\n\016GithubSettings\022\024\n\014displa"
+          + "y_name\030\001 \001(\t\022\026\n\016repository_uri\030\002 \001(\t\022\027\n\017"
+          + "tracking_branch\030\003 \001(\t\022\024\n\014access_token\030\004 "
+          + "\001(\t\022\020\n\010branches\030\005 \003(\t\032\352\001\n\025GitConnectionS"
+          + "ettings\022\031\n\014display_name\030\001 \001(\tB\003\340A\002\022\033\n\016re"
+          + "pository_uri\030\002 \001(\tB\003\340A\002\022\034\n\017tracking_bran"
+          + "ch\030\003 \001(\tB\003\340A\002\022\025\n\010branches\030\004 \003(\tB\003\340A\001\022N\n\023"
+          + "access_token_secret\030\005 \001(\tB/\372A,\n*secretma"
+          + "nager.googleapis.com/SecretVersionH\000B\024\n\022"
+          + "git_authenticationB\016\n\014git_settings\032,\n\025Ge"
           + "nAppBuilderSettings\022\023\n\006engine\030\001 \001(\tB\003\340A\002"
           + "\032=\n\026AnswerFeedbackSettings\022#\n\026enable_ans"
           + "wer_feedback\030\001 \001(\010B\003\340A\001\032Z\n\027Personalizati"
@@ -408,7 +421,7 @@ public final class AgentProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_descriptor,
             new java.lang.String[] {
-              "GithubSettings", "GitSettings",
+              "GithubSettings", "GitConnectionSettings", "GitSettings",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_GithubSettings_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_descriptor
@@ -419,6 +432,21 @@ public final class AgentProto {
             internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_GithubSettings_descriptor,
             new java.lang.String[] {
               "DisplayName", "RepositoryUri", "TrackingBranch", "AccessToken", "Branches",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_GitConnectionSettings_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_GitConnectionSettings_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GitIntegrationSettings_GitConnectionSettings_descriptor,
+            new java.lang.String[] {
+              "DisplayName",
+              "RepositoryUri",
+              "TrackingBranch",
+              "Branches",
+              "AccessTokenSecret",
+              "GitAuthentication",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_GenAppBuilderSettings_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_descriptor.getNestedTypes().get(1);

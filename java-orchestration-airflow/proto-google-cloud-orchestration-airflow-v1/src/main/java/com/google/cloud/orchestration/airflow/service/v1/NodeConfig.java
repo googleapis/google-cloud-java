@@ -730,7 +730,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * projects/{project}/regions/{region}/networkAttachments/{networkAttachment}.
    *
    * This field is supported for Cloud Composer environments in versions
-   * composer-3.*.*-airflow-*.*.* and newer.
+   * composer-3-airflow-*.*.*-build.* and newer.
    * </pre>
    *
    * <code>string composer_network_attachment = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -763,7 +763,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * projects/{project}/regions/{region}/networkAttachments/{networkAttachment}.
    *
    * This field is supported for Cloud Composer environments in versions
-   * composer-3.*.*-airflow-*.*.* and newer.
+   * composer-3-airflow-*.*.*-build.* and newer.
    * </pre>
    *
    * <code>string composer_network_attachment = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -798,7 +798,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * If not specified, the default value of '100.64.128.0/20' is used.
    *
    * This field is supported for Cloud Composer environments in versions
-   * composer-3.*.*-airflow-*.*.* and newer.
+   * composer-3-airflow-*.*.*-build.* and newer.
    * </pre>
    *
    * <code>string composer_internal_ipv4_cidr_block = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -829,7 +829,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * If not specified, the default value of '100.64.128.0/20' is used.
    *
    * This field is supported for Cloud Composer environments in versions
-   * composer-3.*.*-airflow-*.*.* and newer.
+   * composer-3-airflow-*.*.*-build.* and newer.
    * </pre>
    *
    * <code>string composer_internal_ipv4_cidr_block = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -3130,7 +3130,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * projects/{project}/regions/{region}/networkAttachments/{networkAttachment}.
      *
      * This field is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      *
      * <code>string composer_network_attachment = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -3163,7 +3163,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * projects/{project}/regions/{region}/networkAttachments/{networkAttachment}.
      *
      * This field is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      *
      * <code>string composer_network_attachment = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -3196,7 +3196,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * projects/{project}/regions/{region}/networkAttachments/{networkAttachment}.
      *
      * This field is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      *
      * <code>string composer_network_attachment = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -3228,7 +3228,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * projects/{project}/regions/{region}/networkAttachments/{networkAttachment}.
      *
      * This field is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      *
      * <code>string composer_network_attachment = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -3256,7 +3256,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * projects/{project}/regions/{region}/networkAttachments/{networkAttachment}.
      *
      * This field is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      *
      * <code>string composer_network_attachment = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -3288,7 +3288,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * If not specified, the default value of '100.64.128.0/20' is used.
      *
      * This field is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      *
      * <code>
@@ -3319,7 +3319,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * If not specified, the default value of '100.64.128.0/20' is used.
      *
      * This field is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      *
      * <code>
@@ -3350,7 +3350,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * If not specified, the default value of '100.64.128.0/20' is used.
      *
      * This field is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      *
      * <code>
@@ -3380,7 +3380,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * If not specified, the default value of '100.64.128.0/20' is used.
      *
      * This field is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      *
      * <code>
@@ -3406,7 +3406,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * If not specified, the default value of '100.64.128.0/20' is used.
      *
      * This field is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      *
      * <code>

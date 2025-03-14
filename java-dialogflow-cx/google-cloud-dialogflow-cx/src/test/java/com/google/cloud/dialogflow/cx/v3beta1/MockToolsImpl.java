@@ -180,4 +180,110 @@ public class MockToolsImpl extends ToolsImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listToolVersions(
+      ListToolVersionsRequest request, StreamObserver<ListToolVersionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListToolVersionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListToolVersionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListToolVersions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListToolVersionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createToolVersion(
+      CreateToolVersionRequest request, StreamObserver<ToolVersion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ToolVersion) {
+      requests.add(request);
+      responseObserver.onNext(((ToolVersion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateToolVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ToolVersion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getToolVersion(
+      GetToolVersionRequest request, StreamObserver<ToolVersion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ToolVersion) {
+      requests.add(request);
+      responseObserver.onNext(((ToolVersion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetToolVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ToolVersion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteToolVersion(
+      DeleteToolVersionRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteToolVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void restoreToolVersion(
+      RestoreToolVersionRequest request,
+      StreamObserver<RestoreToolVersionResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RestoreToolVersionResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RestoreToolVersionResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RestoreToolVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RestoreToolVersionResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

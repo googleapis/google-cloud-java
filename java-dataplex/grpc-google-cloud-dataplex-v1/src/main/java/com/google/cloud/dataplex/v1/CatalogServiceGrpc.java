@@ -1513,10 +1513,6 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Gets an Entry.
-     * **Caution**: The BigQuery metadata that is stored in Dataplex Catalog is
-     * changing. For more information, see [Changes to BigQuery metadata stored in
-     * Dataplex
-     * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
      * </pre>
      */
     default void getEntry(
@@ -1529,11 +1525,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Looks up a single Entry by name using the permission on the source system.
-     * **Caution**: The BigQuery metadata that is stored in Dataplex Catalog is
-     * changing. For more information, see [Changes to BigQuery metadata stored in
-     * Dataplex
-     * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
+     * Looks up an entry by name using the permission on the source system.
      * </pre>
      */
     default void lookupEntry(
@@ -1976,10 +1968,6 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Gets an Entry.
-     * **Caution**: The BigQuery metadata that is stored in Dataplex Catalog is
-     * changing. For more information, see [Changes to BigQuery metadata stored in
-     * Dataplex
-     * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
      * </pre>
      */
     public void getEntry(
@@ -1993,11 +1981,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Looks up a single Entry by name using the permission on the source system.
-     * **Caution**: The BigQuery metadata that is stored in Dataplex Catalog is
-     * changing. For more information, see [Changes to BigQuery metadata stored in
-     * Dataplex
-     * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
+     * Looks up an entry by name using the permission on the source system.
      * </pre>
      */
     public void lookupEntry(
@@ -2372,10 +2356,6 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Gets an Entry.
-     * **Caution**: The BigQuery metadata that is stored in Dataplex Catalog is
-     * changing. For more information, see [Changes to BigQuery metadata stored in
-     * Dataplex
-     * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry getEntry(
@@ -2388,11 +2368,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Looks up a single Entry by name using the permission on the source system.
-     * **Caution**: The BigQuery metadata that is stored in Dataplex Catalog is
-     * changing. For more information, see [Changes to BigQuery metadata stored in
-     * Dataplex
-     * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
+     * Looks up an entry by name using the permission on the source system.
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry lookupEntry(
@@ -2754,10 +2730,6 @@ public final class CatalogServiceGrpc {
      *
      * <pre>
      * Gets an Entry.
-     * **Caution**: The BigQuery metadata that is stored in Dataplex Catalog is
-     * changing. For more information, see [Changes to BigQuery metadata stored in
-     * Dataplex
-     * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataplex.v1.Entry>
@@ -2770,11 +2742,7 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
-     * Looks up a single Entry by name using the permission on the source system.
-     * **Caution**: The BigQuery metadata that is stored in Dataplex Catalog is
-     * changing. For more information, see [Changes to BigQuery metadata stored in
-     * Dataplex
-     * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
+     * Looks up an entry by name using the permission on the source system.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataplex.v1.Entry>

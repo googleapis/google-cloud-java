@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.cx.v3beta1;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListLocationsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListToolVersionsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListToolsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -156,6 +157,34 @@ public class ToolsSettings extends ClientSettings<ToolsSettings> {
   /** Returns the object with the settings used for calls to deleteTool. */
   public UnaryCallSettings<DeleteToolRequest, Empty> deleteToolSettings() {
     return ((ToolsStubSettings) getStubSettings()).deleteToolSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listToolVersions. */
+  public PagedCallSettings<
+          ListToolVersionsRequest, ListToolVersionsResponse, ListToolVersionsPagedResponse>
+      listToolVersionsSettings() {
+    return ((ToolsStubSettings) getStubSettings()).listToolVersionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createToolVersion. */
+  public UnaryCallSettings<CreateToolVersionRequest, ToolVersion> createToolVersionSettings() {
+    return ((ToolsStubSettings) getStubSettings()).createToolVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getToolVersion. */
+  public UnaryCallSettings<GetToolVersionRequest, ToolVersion> getToolVersionSettings() {
+    return ((ToolsStubSettings) getStubSettings()).getToolVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteToolVersion. */
+  public UnaryCallSettings<DeleteToolVersionRequest, Empty> deleteToolVersionSettings() {
+    return ((ToolsStubSettings) getStubSettings()).deleteToolVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restoreToolVersion. */
+  public UnaryCallSettings<RestoreToolVersionRequest, RestoreToolVersionResponse>
+      restoreToolVersionSettings() {
+    return ((ToolsStubSettings) getStubSettings()).restoreToolVersionSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -316,6 +345,35 @@ public class ToolsSettings extends ClientSettings<ToolsSettings> {
     /** Returns the builder for the settings used for calls to deleteTool. */
     public UnaryCallSettings.Builder<DeleteToolRequest, Empty> deleteToolSettings() {
       return getStubSettingsBuilder().deleteToolSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listToolVersions. */
+    public PagedCallSettings.Builder<
+            ListToolVersionsRequest, ListToolVersionsResponse, ListToolVersionsPagedResponse>
+        listToolVersionsSettings() {
+      return getStubSettingsBuilder().listToolVersionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createToolVersion. */
+    public UnaryCallSettings.Builder<CreateToolVersionRequest, ToolVersion>
+        createToolVersionSettings() {
+      return getStubSettingsBuilder().createToolVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getToolVersion. */
+    public UnaryCallSettings.Builder<GetToolVersionRequest, ToolVersion> getToolVersionSettings() {
+      return getStubSettingsBuilder().getToolVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteToolVersion. */
+    public UnaryCallSettings.Builder<DeleteToolVersionRequest, Empty> deleteToolVersionSettings() {
+      return getStubSettingsBuilder().deleteToolVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restoreToolVersion. */
+    public UnaryCallSettings.Builder<RestoreToolVersionRequest, RestoreToolVersionResponse>
+        restoreToolVersionSettings() {
+      return getStubSettingsBuilder().restoreToolVersionSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

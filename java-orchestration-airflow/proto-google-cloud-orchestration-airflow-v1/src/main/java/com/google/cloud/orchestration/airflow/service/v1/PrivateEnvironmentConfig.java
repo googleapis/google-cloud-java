@@ -106,7 +106,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
    * internet.
    *
    * This field is supported for Cloud Composer environments in versions
-   * composer-3.*.*-airflow-*.*.* and newer.
+   * composer-3-airflow-*.*.*-build.* and newer.
    * </pre>
    *
    * <code>bool enable_private_builds_only = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1355,7 +1355,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * internet.
      *
      * This field is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      *
      * <code>bool enable_private_builds_only = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1378,7 +1378,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * internet.
      *
      * This field is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      *
      * <code>bool enable_private_builds_only = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1405,7 +1405,7 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * internet.
      *
      * This field is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      *
      * <code>bool enable_private_builds_only = 11 [(.google.api.field_behavior) = OPTIONAL];</code>

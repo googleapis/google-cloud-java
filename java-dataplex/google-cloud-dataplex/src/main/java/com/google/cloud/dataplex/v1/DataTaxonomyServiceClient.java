@@ -454,7 +454,10 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class DataTaxonomyServiceClient implements BackgroundResource {
   private final DataTaxonomyServiceSettings settings;
@@ -553,9 +556,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the data taxonomy location, of the form:
-   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a GCP
-   *     region.
+   * @param parent
    * @param dataTaxonomy Required. DataTaxonomy resource.
    * @param dataTaxonomyId Required. DataTaxonomy identifier.
    *     <ul>
@@ -567,7 +568,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<DataTaxonomy, OperationMetadata> createDataTaxonomyAsync(
       LocationName parent, DataTaxonomy dataTaxonomy, String dataTaxonomyId) {
     CreateDataTaxonomyRequest request =
@@ -602,9 +605,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the data taxonomy location, of the form:
-   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a GCP
-   *     region.
+   * @param parent
    * @param dataTaxonomy Required. DataTaxonomy resource.
    * @param dataTaxonomyId Required. DataTaxonomy identifier.
    *     <ul>
@@ -616,7 +617,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<DataTaxonomy, OperationMetadata> createDataTaxonomyAsync(
       String parent, DataTaxonomy dataTaxonomy, String dataTaxonomyId) {
     CreateDataTaxonomyRequest request =
@@ -654,7 +657,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<DataTaxonomy, OperationMetadata> createDataTaxonomyAsync(
       CreateDataTaxonomyRequest request) {
     return createDataTaxonomyOperationCallable().futureCall(request);
@@ -686,7 +691,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   DataTaxonomy response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<CreateDataTaxonomyRequest, DataTaxonomy, OperationMetadata>
       createDataTaxonomyOperationCallable() {
     return stub.createDataTaxonomyOperationCallable();
@@ -718,7 +726,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CreateDataTaxonomyRequest, Operation> createDataTaxonomyCallable() {
     return stub.createDataTaxonomyCallable();
   }
@@ -746,7 +757,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @param dataTaxonomy Required. Only fields specified in `update_mask` are updated.
    * @param updateMask Required. Mask of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<DataTaxonomy, OperationMetadata> updateDataTaxonomyAsync(
       DataTaxonomy dataTaxonomy, FieldMask updateMask) {
     UpdateDataTaxonomyRequest request =
@@ -782,7 +795,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<DataTaxonomy, OperationMetadata> updateDataTaxonomyAsync(
       UpdateDataTaxonomyRequest request) {
     return updateDataTaxonomyOperationCallable().futureCall(request);
@@ -813,7 +828,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   DataTaxonomy response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<UpdateDataTaxonomyRequest, DataTaxonomy, OperationMetadata>
       updateDataTaxonomyOperationCallable() {
     return stub.updateDataTaxonomyOperationCallable();
@@ -844,7 +862,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<UpdateDataTaxonomyRequest, Operation> updateDataTaxonomyCallable() {
     return stub.updateDataTaxonomyCallable();
   }
@@ -871,7 +892,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the DataTaxonomy:
    *     projects/{project_number}/locations/{location_id}/dataTaxonomies/{data_taxonomy_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteDataTaxonomyAsync(
       DataTaxonomyName name) {
     DeleteDataTaxonomyRequest request =
@@ -903,7 +926,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the DataTaxonomy:
    *     projects/{project_number}/locations/{location_id}/dataTaxonomies/{data_taxonomy_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteDataTaxonomyAsync(String name) {
     DeleteDataTaxonomyRequest request =
         DeleteDataTaxonomyRequest.newBuilder().setName(name).build();
@@ -936,7 +961,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteDataTaxonomyAsync(
       DeleteDataTaxonomyRequest request) {
     return deleteDataTaxonomyOperationCallable().futureCall(request);
@@ -968,7 +995,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<DeleteDataTaxonomyRequest, Empty, OperationMetadata>
       deleteDataTaxonomyOperationCallable() {
     return stub.deleteDataTaxonomyOperationCallable();
@@ -1000,7 +1030,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<DeleteDataTaxonomyRequest, Operation> deleteDataTaxonomyCallable() {
     return stub.deleteDataTaxonomyCallable();
   }
@@ -1030,7 +1063,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *     projects/{project_number}/locations/{location_id} where `location_id` refers to a GCP
    *     region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListDataTaxonomiesPagedResponse listDataTaxonomies(LocationName parent) {
     ListDataTaxonomiesRequest request =
         ListDataTaxonomiesRequest.newBuilder()
@@ -1064,7 +1099,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *     projects/{project_number}/locations/{location_id} where `location_id` refers to a GCP
    *     region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListDataTaxonomiesPagedResponse listDataTaxonomies(String parent) {
     ListDataTaxonomiesRequest request =
         ListDataTaxonomiesRequest.newBuilder().setParent(parent).build();
@@ -1101,7 +1138,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListDataTaxonomiesPagedResponse listDataTaxonomies(
       ListDataTaxonomiesRequest request) {
     return listDataTaxonomiesPagedCallable().call(request);
@@ -1136,7 +1175,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListDataTaxonomiesRequest, ListDataTaxonomiesPagedResponse>
       listDataTaxonomiesPagedCallable() {
     return stub.listDataTaxonomiesPagedCallable();
@@ -1178,7 +1220,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListDataTaxonomiesRequest, ListDataTaxonomiesResponse>
       listDataTaxonomiesCallable() {
     return stub.listDataTaxonomiesCallable();
@@ -1202,10 +1247,11 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the DataTaxonomy:
-   *     projects/{project_number}/locations/{location_id}/dataTaxonomies/{data_taxonomy_id}
+   * @param name
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final DataTaxonomy getDataTaxonomy(DataTaxonomyName name) {
     GetDataTaxonomyRequest request =
         GetDataTaxonomyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
@@ -1230,10 +1276,11 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the DataTaxonomy:
-   *     projects/{project_number}/locations/{location_id}/dataTaxonomies/{data_taxonomy_id}
+   * @param name
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final DataTaxonomy getDataTaxonomy(String name) {
     GetDataTaxonomyRequest request = GetDataTaxonomyRequest.newBuilder().setName(name).build();
     return getDataTaxonomy(request);
@@ -1263,7 +1310,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final DataTaxonomy getDataTaxonomy(GetDataTaxonomyRequest request) {
     return getDataTaxonomyCallable().call(request);
   }
@@ -1292,7 +1341,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   DataTaxonomy response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetDataTaxonomyRequest, DataTaxonomy> getDataTaxonomyCallable() {
     return stub.getDataTaxonomyCallable();
   }
@@ -1333,7 +1385,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<DataAttributeBinding, OperationMetadata>
       createDataAttributeBindingAsync(
           LocationName parent,
@@ -1384,7 +1438,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<DataAttributeBinding, OperationMetadata>
       createDataAttributeBindingAsync(
           String parent, DataAttributeBinding dataAttributeBinding, String dataAttributeBindingId) {
@@ -1424,7 +1480,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<DataAttributeBinding, OperationMetadata>
       createDataAttributeBindingAsync(CreateDataAttributeBindingRequest request) {
     return createDataAttributeBindingOperationCallable().futureCall(request);
@@ -1458,7 +1516,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   DataAttributeBinding response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<
           CreateDataAttributeBindingRequest, DataAttributeBinding, OperationMetadata>
       createDataAttributeBindingOperationCallable() {
@@ -1491,7 +1552,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CreateDataAttributeBindingRequest, Operation>
       createDataAttributeBindingCallable() {
     return stub.createDataAttributeBindingCallable();
@@ -1522,7 +1586,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @param dataAttributeBinding Required. Only fields specified in `update_mask` are updated.
    * @param updateMask Required. Mask of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<DataAttributeBinding, OperationMetadata>
       updateDataAttributeBindingAsync(
           DataAttributeBinding dataAttributeBinding, FieldMask updateMask) {
@@ -1560,7 +1626,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<DataAttributeBinding, OperationMetadata>
       updateDataAttributeBindingAsync(UpdateDataAttributeBindingRequest request) {
     return updateDataAttributeBindingOperationCallable().futureCall(request);
@@ -1593,7 +1661,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   DataAttributeBinding response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<
           UpdateDataAttributeBindingRequest, DataAttributeBinding, OperationMetadata>
       updateDataAttributeBindingOperationCallable() {
@@ -1625,7 +1696,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<UpdateDataAttributeBindingRequest, Operation>
       updateDataAttributeBindingCallable() {
     return stub.updateDataAttributeBindingCallable();
@@ -1654,7 +1728,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the DataAttributeBinding:
    *     projects/{project_number}/locations/{location_id}/dataAttributeBindings/{data_attribute_binding_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteDataAttributeBindingAsync(
       DataAttributeBindingName name) {
     DeleteDataAttributeBindingRequest request =
@@ -1688,7 +1764,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the DataAttributeBinding:
    *     projects/{project_number}/locations/{location_id}/dataAttributeBindings/{data_attribute_binding_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteDataAttributeBindingAsync(
       String name) {
     DeleteDataAttributeBindingRequest request =
@@ -1724,7 +1802,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteDataAttributeBindingAsync(
       DeleteDataAttributeBindingRequest request) {
     return deleteDataAttributeBindingOperationCallable().futureCall(request);
@@ -1760,7 +1840,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<DeleteDataAttributeBindingRequest, Empty, OperationMetadata>
       deleteDataAttributeBindingOperationCallable() {
     return stub.deleteDataAttributeBindingOperationCallable();
@@ -1794,7 +1877,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<DeleteDataAttributeBindingRequest, Operation>
       deleteDataAttributeBindingCallable() {
     return stub.deleteDataAttributeBindingCallable();
@@ -1824,7 +1910,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the Location:
    *     projects/{project_number}/locations/{location_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListDataAttributeBindingsPagedResponse listDataAttributeBindings(
       LocationName parent) {
     ListDataAttributeBindingsRequest request =
@@ -1858,7 +1946,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the Location:
    *     projects/{project_number}/locations/{location_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListDataAttributeBindingsPagedResponse listDataAttributeBindings(String parent) {
     ListDataAttributeBindingsRequest request =
         ListDataAttributeBindingsRequest.newBuilder().setParent(parent).build();
@@ -1895,7 +1985,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListDataAttributeBindingsPagedResponse listDataAttributeBindings(
       ListDataAttributeBindingsRequest request) {
     return listDataAttributeBindingsPagedCallable().call(request);
@@ -1930,7 +2022,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<
           ListDataAttributeBindingsRequest, ListDataAttributeBindingsPagedResponse>
       listDataAttributeBindingsPagedCallable() {
@@ -1973,7 +2068,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListDataAttributeBindingsRequest, ListDataAttributeBindingsResponse>
       listDataAttributeBindingsCallable() {
     return stub.listDataAttributeBindingsCallable();
@@ -2001,7 +2099,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the DataAttributeBinding:
    *     projects/{project_number}/locations/{location_id}/dataAttributeBindings/{data_attribute_binding_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final DataAttributeBinding getDataAttributeBinding(DataAttributeBindingName name) {
     GetDataAttributeBindingRequest request =
         GetDataAttributeBindingRequest.newBuilder()
@@ -2033,7 +2133,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the DataAttributeBinding:
    *     projects/{project_number}/locations/{location_id}/dataAttributeBindings/{data_attribute_binding_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final DataAttributeBinding getDataAttributeBinding(String name) {
     GetDataAttributeBindingRequest request =
         GetDataAttributeBindingRequest.newBuilder().setName(name).build();
@@ -2066,7 +2168,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final DataAttributeBinding getDataAttributeBinding(
       GetDataAttributeBindingRequest request) {
     return getDataAttributeBindingCallable().call(request);
@@ -2098,7 +2202,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   DataAttributeBinding response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetDataAttributeBindingRequest, DataAttributeBinding>
       getDataAttributeBindingCallable() {
     return stub.getDataAttributeBindingCallable();
@@ -2141,7 +2248,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<DataAttribute, OperationMetadata> createDataAttributeAsync(
       DataTaxonomyName parent, DataAttribute dataAttribute, String dataAttributeId) {
     CreateDataAttributeRequest request =
@@ -2190,7 +2299,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<DataAttribute, OperationMetadata> createDataAttributeAsync(
       String parent, DataAttribute dataAttribute, String dataAttributeId) {
     CreateDataAttributeRequest request =
@@ -2229,7 +2340,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<DataAttribute, OperationMetadata> createDataAttributeAsync(
       CreateDataAttributeRequest request) {
     return createDataAttributeOperationCallable().futureCall(request);
@@ -2262,7 +2375,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   DataAttribute response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<CreateDataAttributeRequest, DataAttribute, OperationMetadata>
       createDataAttributeOperationCallable() {
     return stub.createDataAttributeOperationCallable();
@@ -2295,7 +2411,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CreateDataAttributeRequest, Operation> createDataAttributeCallable() {
     return stub.createDataAttributeCallable();
   }
@@ -2323,7 +2442,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @param dataAttribute Required. Only fields specified in `update_mask` are updated.
    * @param updateMask Required. Mask of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<DataAttribute, OperationMetadata> updateDataAttributeAsync(
       DataAttribute dataAttribute, FieldMask updateMask) {
     UpdateDataAttributeRequest request =
@@ -2359,7 +2480,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<DataAttribute, OperationMetadata> updateDataAttributeAsync(
       UpdateDataAttributeRequest request) {
     return updateDataAttributeOperationCallable().futureCall(request);
@@ -2390,7 +2513,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   DataAttribute response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<UpdateDataAttributeRequest, DataAttribute, OperationMetadata>
       updateDataAttributeOperationCallable() {
     return stub.updateDataAttributeOperationCallable();
@@ -2421,7 +2547,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<UpdateDataAttributeRequest, Operation> updateDataAttributeCallable() {
     return stub.updateDataAttributeCallable();
   }
@@ -2448,7 +2577,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the DataAttribute:
    *     projects/{project_number}/locations/{location_id}/dataTaxonomies/{dataTaxonomy}/attributes/{data_attribute_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteDataAttributeAsync(
       DataAttributeName name) {
     DeleteDataAttributeRequest request =
@@ -2481,7 +2612,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the DataAttribute:
    *     projects/{project_number}/locations/{location_id}/dataTaxonomies/{dataTaxonomy}/attributes/{data_attribute_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteDataAttributeAsync(String name) {
     DeleteDataAttributeRequest request =
         DeleteDataAttributeRequest.newBuilder().setName(name).build();
@@ -2515,7 +2648,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteDataAttributeAsync(
       DeleteDataAttributeRequest request) {
     return deleteDataAttributeOperationCallable().futureCall(request);
@@ -2548,7 +2683,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<DeleteDataAttributeRequest, Empty, OperationMetadata>
       deleteDataAttributeOperationCallable() {
     return stub.deleteDataAttributeOperationCallable();
@@ -2581,7 +2719,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<DeleteDataAttributeRequest, Operation> deleteDataAttributeCallable() {
     return stub.deleteDataAttributeCallable();
   }
@@ -2611,7 +2752,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the DataTaxonomy:
    *     projects/{project_number}/locations/{location_id}/dataTaxonomies/{data_taxonomy_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListDataAttributesPagedResponse listDataAttributes(DataTaxonomyName parent) {
     ListDataAttributesRequest request =
         ListDataAttributesRequest.newBuilder()
@@ -2645,7 +2788,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the DataTaxonomy:
    *     projects/{project_number}/locations/{location_id}/dataTaxonomies/{data_taxonomy_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListDataAttributesPagedResponse listDataAttributes(String parent) {
     ListDataAttributesRequest request =
         ListDataAttributesRequest.newBuilder().setParent(parent).build();
@@ -2683,7 +2828,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListDataAttributesPagedResponse listDataAttributes(
       ListDataAttributesRequest request) {
     return listDataAttributesPagedCallable().call(request);
@@ -2719,7 +2866,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListDataAttributesRequest, ListDataAttributesPagedResponse>
       listDataAttributesPagedCallable() {
     return stub.listDataAttributesPagedCallable();
@@ -2762,7 +2912,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListDataAttributesRequest, ListDataAttributesResponse>
       listDataAttributesCallable() {
     return stub.listDataAttributesCallable();
@@ -2790,7 +2943,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the dataAttribute:
    *     projects/{project_number}/locations/{location_id}/dataTaxonomies/{dataTaxonomy}/attributes/{data_attribute_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final DataAttribute getDataAttribute(DataAttributeName name) {
     GetDataAttributeRequest request =
         GetDataAttributeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
@@ -2820,7 +2975,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the dataAttribute:
    *     projects/{project_number}/locations/{location_id}/dataTaxonomies/{dataTaxonomy}/attributes/{data_attribute_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final DataAttribute getDataAttribute(String name) {
     GetDataAttributeRequest request = GetDataAttributeRequest.newBuilder().setName(name).build();
     return getDataAttribute(request);
@@ -2852,7 +3009,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final DataAttribute getDataAttribute(GetDataAttributeRequest request) {
     return getDataAttributeCallable().call(request);
   }
@@ -2883,7 +3042,10 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    *   DataAttribute response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetDataAttributeRequest, DataAttribute> getDataAttributeCallable() {
     return stub.getDataAttributeCallable();
   }

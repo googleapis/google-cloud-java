@@ -502,7 +502,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetConsumerGroupRequest>newBuilder()
                       .setPath(
-                          "/v1/{name=projects/*/locations/*/clusters/*/consumerGroups/*}",
+                          "/v1/{name=projects/*/locations/*/clusters/*/consumerGroups/**}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<GetConsumerGroupRequest> serializer =
@@ -536,7 +536,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateConsumerGroupRequest>newBuilder()
                       .setPath(
-                          "/v1/{consumerGroup.name=projects/*/locations/*/clusters/*/consumerGroups/*}",
+                          "/v1/{consumerGroup.name=projects/*/locations/*/clusters/*/consumerGroups/**}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateConsumerGroupRequest> serializer =
@@ -575,7 +575,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteConsumerGroupRequest>newBuilder()
                       .setPath(
-                          "/v1/{name=projects/*/locations/*/clusters/*/consumerGroups/*}",
+                          "/v1/{name=projects/*/locations/*/clusters/*/consumerGroups/**}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteConsumerGroupRequest> serializer =

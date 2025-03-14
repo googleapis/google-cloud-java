@@ -29,6 +29,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest}
  */
+@java.lang.Deprecated
 public final class DeployPublisherModelRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest)
@@ -77,11 +78,13 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The name of the PublisherModel resource.
+   * Required. The model to deploy.
    * Format:
-   * `publishers/{publisher}/models/{publisher_model}&#64;{version_id}`, or
-   * `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}&#64;001`
-   * or Hugging Face model ID like `google/gemma-2-2b-it`.
+   * 1. `publishers/{publisher}/models/{publisher_model}&#64;{version_id}`, or
+   * `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}&#64;001`.
+   * 2. Hugging Face model ID like `google/gemma-2-2b-it`.
+   * 3. Custom model Google Cloud Storage URI like `gs://bucket`.
+   * 4. Custom model zip file like `https://example.com/a.zip`.
    * </pre>
    *
    * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -104,11 +107,13 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The name of the PublisherModel resource.
+   * Required. The model to deploy.
    * Format:
-   * `publishers/{publisher}/models/{publisher_model}&#64;{version_id}`, or
-   * `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}&#64;001`
-   * or Hugging Face model ID like `google/gemma-2-2b-it`.
+   * 1. `publishers/{publisher}/models/{publisher_model}&#64;{version_id}`, or
+   * `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}&#64;001`.
+   * 2. Hugging Face model ID like `google/gemma-2-2b-it`.
+   * 3. Custom model Google Cloud Storage URI like `gs://bucket`.
+   * 4. Custom model zip file like `https://example.com/a.zip`.
    * </pre>
    *
    * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -941,11 +946,13 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The name of the PublisherModel resource.
+     * Required. The model to deploy.
      * Format:
-     * `publishers/{publisher}/models/{publisher_model}&#64;{version_id}`, or
-     * `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}&#64;001`
-     * or Hugging Face model ID like `google/gemma-2-2b-it`.
+     * 1. `publishers/{publisher}/models/{publisher_model}&#64;{version_id}`, or
+     * `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}&#64;001`.
+     * 2. Hugging Face model ID like `google/gemma-2-2b-it`.
+     * 3. Custom model Google Cloud Storage URI like `gs://bucket`.
+     * 4. Custom model zip file like `https://example.com/a.zip`.
      * </pre>
      *
      * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -967,11 +974,13 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The name of the PublisherModel resource.
+     * Required. The model to deploy.
      * Format:
-     * `publishers/{publisher}/models/{publisher_model}&#64;{version_id}`, or
-     * `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}&#64;001`
-     * or Hugging Face model ID like `google/gemma-2-2b-it`.
+     * 1. `publishers/{publisher}/models/{publisher_model}&#64;{version_id}`, or
+     * `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}&#64;001`.
+     * 2. Hugging Face model ID like `google/gemma-2-2b-it`.
+     * 3. Custom model Google Cloud Storage URI like `gs://bucket`.
+     * 4. Custom model zip file like `https://example.com/a.zip`.
      * </pre>
      *
      * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -993,11 +1002,13 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The name of the PublisherModel resource.
+     * Required. The model to deploy.
      * Format:
-     * `publishers/{publisher}/models/{publisher_model}&#64;{version_id}`, or
-     * `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}&#64;001`
-     * or Hugging Face model ID like `google/gemma-2-2b-it`.
+     * 1. `publishers/{publisher}/models/{publisher_model}&#64;{version_id}`, or
+     * `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}&#64;001`.
+     * 2. Hugging Face model ID like `google/gemma-2-2b-it`.
+     * 3. Custom model Google Cloud Storage URI like `gs://bucket`.
+     * 4. Custom model zip file like `https://example.com/a.zip`.
      * </pre>
      *
      * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1018,11 +1029,13 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The name of the PublisherModel resource.
+     * Required. The model to deploy.
      * Format:
-     * `publishers/{publisher}/models/{publisher_model}&#64;{version_id}`, or
-     * `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}&#64;001`
-     * or Hugging Face model ID like `google/gemma-2-2b-it`.
+     * 1. `publishers/{publisher}/models/{publisher_model}&#64;{version_id}`, or
+     * `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}&#64;001`.
+     * 2. Hugging Face model ID like `google/gemma-2-2b-it`.
+     * 3. Custom model Google Cloud Storage URI like `gs://bucket`.
+     * 4. Custom model zip file like `https://example.com/a.zip`.
      * </pre>
      *
      * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1039,11 +1052,13 @@ public final class DeployPublisherModelRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The name of the PublisherModel resource.
+     * Required. The model to deploy.
      * Format:
-     * `publishers/{publisher}/models/{publisher_model}&#64;{version_id}`, or
-     * `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}&#64;001`
-     * or Hugging Face model ID like `google/gemma-2-2b-it`.
+     * 1. `publishers/{publisher}/models/{publisher_model}&#64;{version_id}`, or
+     * `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}&#64;001`.
+     * 2. Hugging Face model ID like `google/gemma-2-2b-it`.
+     * 3. Custom model Google Cloud Storage URI like `gs://bucket`.
+     * 4. Custom model zip file like `https://example.com/a.zip`.
      * </pre>
      *
      * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>

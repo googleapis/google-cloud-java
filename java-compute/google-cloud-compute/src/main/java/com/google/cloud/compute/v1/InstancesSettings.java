@@ -286,6 +286,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).removeResourcePoliciesOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to reportHostAsFaulty. */
+  public UnaryCallSettings<ReportHostAsFaultyInstanceRequest, Operation>
+      reportHostAsFaultySettings() {
+    return ((InstancesStubSettings) getStubSettings()).reportHostAsFaultySettings();
+  }
+
+  /** Returns the object with the settings used for calls to reportHostAsFaulty. */
+  public OperationCallSettings<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+      reportHostAsFaultyOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).reportHostAsFaultyOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to reset. */
   public UnaryCallSettings<ResetInstanceRequest, Operation> resetSettings() {
     return ((InstancesStubSettings) getStubSettings()).resetSettings();
@@ -866,6 +878,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
             RemoveResourcePoliciesInstanceRequest, Operation, Operation>
         removeResourcePoliciesOperationSettings() {
       return getStubSettingsBuilder().removeResourcePoliciesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to reportHostAsFaulty. */
+    public UnaryCallSettings.Builder<ReportHostAsFaultyInstanceRequest, Operation>
+        reportHostAsFaultySettings() {
+      return getStubSettingsBuilder().reportHostAsFaultySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to reportHostAsFaulty. */
+    public OperationCallSettings.Builder<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+        reportHostAsFaultyOperationSettings() {
+      return getStubSettingsBuilder().reportHostAsFaultyOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to reset. */

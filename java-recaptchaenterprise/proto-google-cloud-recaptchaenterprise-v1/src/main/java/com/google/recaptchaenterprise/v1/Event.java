@@ -47,6 +47,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
     requestedUri_ = "";
     ja3_ = "";
+    ja4_ = "";
     headers_ = com.google.protobuf.LazyStringArrayList.emptyList();
     fraudPrevention_ = 0;
   }
@@ -109,8 +110,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Disable Fraud Prevention for this assessment, regardless of Google Cloud
-     * console settings.
+     * Disable Fraud Prevention for this assessment, regardless of the Google
+     * Cloud console settings.
      * </pre>
      *
      * <code>DISABLED = 2;</code>
@@ -146,8 +147,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Disable Fraud Prevention for this assessment, regardless of Google Cloud
-     * console settings.
+     * Disable Fraud Prevention for this assessment, regardless of the Google
+     * Cloud console settings.
      * </pre>
      *
      * <code>DISABLED = 2;</code>
@@ -633,7 +634,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. JA3 fingerprint for SSL clients.
+   * Optional. JA3 fingerprint for SSL clients. To learn how to compute this
+   * fingerprint, please refer to https://github.com/salesforce/ja3.
    * </pre>
    *
    * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -656,7 +658,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. JA3 fingerprint for SSL clients.
+   * Optional. JA3 fingerprint for SSL clients. To learn how to compute this
+   * fingerprint, please refer to https://github.com/salesforce/ja3.
    * </pre>
    *
    * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -670,6 +673,59 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       ja3_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int JA4_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ja4_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. JA4 fingerprint for SSL clients. To learn how to compute this
+   * fingerprint, please refer to https://github.com/FoxIO-LLC/ja4.
+   * </pre>
+   *
+   * <code>string ja4 = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ja4.
+   */
+  @java.lang.Override
+  public java.lang.String getJa4() {
+    java.lang.Object ref = ja4_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ja4_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. JA4 fingerprint for SSL clients. To learn how to compute this
+   * fingerprint, please refer to https://github.com/FoxIO-LLC/ja4.
+   * </pre>
+   *
+   * <code>string ja4 = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for ja4.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getJa4Bytes() {
+    java.lang.Object ref = ja4_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ja4_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -989,6 +1045,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(17, fraudPrevention_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ja4_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, ja4_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1050,6 +1109,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, fraudPrevention_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ja4_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, ja4_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1075,6 +1137,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (!getRequestedUri().equals(other.getRequestedUri())) return false;
     if (getWafTokenAssessment() != other.getWafTokenAssessment()) return false;
     if (!getJa3().equals(other.getJa3())) return false;
+    if (!getJa4().equals(other.getJa4())) return false;
     if (!getHeadersList().equals(other.getHeadersList())) return false;
     if (getFirewallPolicyEvaluation() != other.getFirewallPolicyEvaluation()) return false;
     if (hasTransactionData() != other.hasTransactionData()) return false;
@@ -1117,6 +1180,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getWafTokenAssessment());
     hash = (37 * hash) + JA3_FIELD_NUMBER;
     hash = (53 * hash) + getJa3().hashCode();
+    hash = (37 * hash) + JA4_FIELD_NUMBER;
+    hash = (53 * hash) + getJa4().hashCode();
     if (getHeadersCount() > 0) {
       hash = (37 * hash) + HEADERS_FIELD_NUMBER;
       hash = (53 * hash) + getHeadersList().hashCode();
@@ -1292,6 +1357,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       requestedUri_ = "";
       wafTokenAssessment_ = false;
       ja3_ = "";
+      ja4_ = "";
       headers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       firewallPolicyEvaluation_ = false;
       transactionData_ = null;
@@ -1372,23 +1438,26 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         result.ja3_ = ja3_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.ja4_ = ja4_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         headers_.makeImmutable();
         result.headers_ = headers_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.firewallPolicyEvaluation_ = firewallPolicyEvaluation_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.transactionData_ =
             transactionDataBuilder_ == null ? transactionData_ : transactionDataBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.userInfo_ = userInfoBuilder_ == null ? userInfo_ : userInfoBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.fraudPrevention_ = fraudPrevention_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1483,10 +1552,15 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000200;
         onChanged();
       }
+      if (!other.getJa4().isEmpty()) {
+        ja4_ = other.ja4_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
       if (!other.headers_.isEmpty()) {
         if (headers_.isEmpty()) {
           headers_ = other.headers_;
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000800;
         } else {
           ensureHeadersIsMutable();
           headers_.addAll(other.headers_);
@@ -1595,13 +1669,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             case 96:
               {
                 firewallPolicyEvaluation_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 96
             case 106:
               {
                 input.readMessage(getTransactionDataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
             case 112:
@@ -1613,15 +1687,21 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             case 122:
               {
                 input.readMessage(getUserInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 122
             case 136:
               {
                 fraudPrevention_ = input.readEnum();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 136
+            case 146:
+              {
+                ja4_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2513,7 +2593,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. JA3 fingerprint for SSL clients.
+     * Optional. JA3 fingerprint for SSL clients. To learn how to compute this
+     * fingerprint, please refer to https://github.com/salesforce/ja3.
      * </pre>
      *
      * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2535,7 +2616,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. JA3 fingerprint for SSL clients.
+     * Optional. JA3 fingerprint for SSL clients. To learn how to compute this
+     * fingerprint, please refer to https://github.com/salesforce/ja3.
      * </pre>
      *
      * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2557,7 +2639,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. JA3 fingerprint for SSL clients.
+     * Optional. JA3 fingerprint for SSL clients. To learn how to compute this
+     * fingerprint, please refer to https://github.com/salesforce/ja3.
      * </pre>
      *
      * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2578,7 +2661,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. JA3 fingerprint for SSL clients.
+     * Optional. JA3 fingerprint for SSL clients. To learn how to compute this
+     * fingerprint, please refer to https://github.com/salesforce/ja3.
      * </pre>
      *
      * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2595,7 +2679,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. JA3 fingerprint for SSL clients.
+     * Optional. JA3 fingerprint for SSL clients. To learn how to compute this
+     * fingerprint, please refer to https://github.com/salesforce/ja3.
      * </pre>
      *
      * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2614,6 +2699,117 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object ja4_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. JA4 fingerprint for SSL clients. To learn how to compute this
+     * fingerprint, please refer to https://github.com/FoxIO-LLC/ja4.
+     * </pre>
+     *
+     * <code>string ja4 = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The ja4.
+     */
+    public java.lang.String getJa4() {
+      java.lang.Object ref = ja4_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ja4_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. JA4 fingerprint for SSL clients. To learn how to compute this
+     * fingerprint, please refer to https://github.com/FoxIO-LLC/ja4.
+     * </pre>
+     *
+     * <code>string ja4 = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for ja4.
+     */
+    public com.google.protobuf.ByteString getJa4Bytes() {
+      java.lang.Object ref = ja4_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ja4_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. JA4 fingerprint for SSL clients. To learn how to compute this
+     * fingerprint, please refer to https://github.com/FoxIO-LLC/ja4.
+     * </pre>
+     *
+     * <code>string ja4 = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The ja4 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJa4(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ja4_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. JA4 fingerprint for SSL clients. To learn how to compute this
+     * fingerprint, please refer to https://github.com/FoxIO-LLC/ja4.
+     * </pre>
+     *
+     * <code>string ja4 = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearJa4() {
+      ja4_ = getDefaultInstance().getJa4();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. JA4 fingerprint for SSL clients. To learn how to compute this
+     * fingerprint, please refer to https://github.com/FoxIO-LLC/ja4.
+     * </pre>
+     *
+     * <code>string ja4 = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for ja4 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJa4Bytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ja4_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList headers_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -2621,7 +2817,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (!headers_.isModifiable()) {
         headers_ = new com.google.protobuf.LazyStringArrayList(headers_);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
     }
     /**
      *
@@ -2701,7 +2897,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       ensureHeadersIsMutable();
       headers_.set(index, value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2723,7 +2919,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       ensureHeadersIsMutable();
       headers_.add(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2742,7 +2938,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllHeaders(java.lang.Iterable<java.lang.String> values) {
       ensureHeadersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, headers_);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2759,7 +2955,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearHeaders() {
       headers_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       ;
       onChanged();
       return this;
@@ -2783,7 +2979,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureHeadersIsMutable();
       headers_.add(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2823,7 +3019,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public Builder setFirewallPolicyEvaluation(boolean value) {
 
       firewallPolicyEvaluation_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2841,7 +3037,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFirewallPolicyEvaluation() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       firewallPolicyEvaluation_ = false;
       onChanged();
       return this;
@@ -2869,7 +3065,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the transactionData field is set.
      */
     public boolean hasTransactionData() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -2917,7 +3113,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         transactionDataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -2941,7 +3137,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         transactionDataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -2960,7 +3156,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTransactionData(com.google.recaptchaenterprise.v1.TransactionData value) {
       if (transactionDataBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && transactionData_ != null
             && transactionData_
                 != com.google.recaptchaenterprise.v1.TransactionData.getDefaultInstance()) {
@@ -2972,7 +3168,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         transactionDataBuilder_.mergeFrom(value);
       }
       if (transactionData_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -2991,7 +3187,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTransactionData() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       transactionData_ = null;
       if (transactionDataBuilder_ != null) {
         transactionDataBuilder_.dispose();
@@ -3014,7 +3210,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.Builder getTransactionDataBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getTransactionDataFieldBuilder().getBuilder();
     }
@@ -3094,7 +3290,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the userInfo field is set.
      */
     public boolean hasUserInfo() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -3144,7 +3340,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         userInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3168,7 +3364,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         userInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3188,7 +3384,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUserInfo(com.google.recaptchaenterprise.v1.UserInfo value) {
       if (userInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && userInfo_ != null
             && userInfo_ != com.google.recaptchaenterprise.v1.UserInfo.getDefaultInstance()) {
           getUserInfoBuilder().mergeFrom(value);
@@ -3199,7 +3395,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         userInfoBuilder_.mergeFrom(value);
       }
       if (userInfo_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -3219,7 +3415,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUserInfo() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       userInfo_ = null;
       if (userInfoBuilder_ != null) {
         userInfoBuilder_.dispose();
@@ -3243,7 +3439,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.recaptchaenterprise.v1.UserInfo.Builder getUserInfoBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getUserInfoFieldBuilder().getBuilder();
     }
@@ -3335,7 +3531,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setFraudPreventionValue(int value) {
       fraudPrevention_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3379,7 +3575,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       fraudPrevention_ = value.getNumber();
       onChanged();
       return this;
@@ -3398,7 +3594,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFraudPrevention() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       fraudPrevention_ = 0;
       onChanged();
       return this;

@@ -465,7 +465,7 @@ public interface AgentOrBuilder
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is deprecated.
-   *     See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=386
+   *     See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=414
    * @return The enableStackdriverLogging.
    */
   @java.lang.Deprecated

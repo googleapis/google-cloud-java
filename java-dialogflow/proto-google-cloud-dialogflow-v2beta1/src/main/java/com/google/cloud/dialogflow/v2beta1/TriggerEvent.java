@@ -61,6 +61,26 @@ public enum TriggerEvent implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MANUAL_CALL = 2;</code>
    */
   MANUAL_CALL(2),
+  /**
+   *
+   *
+   * <pre>
+   * Triggers after each customer message only.
+   * </pre>
+   *
+   * <code>CUSTOMER_MESSAGE = 3;</code>
+   */
+  CUSTOMER_MESSAGE(3),
+  /**
+   *
+   *
+   * <pre>
+   * Triggers after each agent message only.
+   * </pre>
+   *
+   * <code>AGENT_MESSAGE = 4;</code>
+   */
+  AGENT_MESSAGE(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -96,6 +116,26 @@ public enum TriggerEvent implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MANUAL_CALL = 2;</code>
    */
   public static final int MANUAL_CALL_VALUE = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Triggers after each customer message only.
+   * </pre>
+   *
+   * <code>CUSTOMER_MESSAGE = 3;</code>
+   */
+  public static final int CUSTOMER_MESSAGE_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Triggers after each agent message only.
+   * </pre>
+   *
+   * <code>AGENT_MESSAGE = 4;</code>
+   */
+  public static final int AGENT_MESSAGE_VALUE = 4;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -127,6 +167,10 @@ public enum TriggerEvent implements com.google.protobuf.ProtocolMessageEnum {
         return END_OF_UTTERANCE;
       case 2:
         return MANUAL_CALL;
+      case 3:
+        return CUSTOMER_MESSAGE;
+      case 4:
+        return AGENT_MESSAGE;
       default:
         return null;
     }

@@ -1181,7 +1181,7 @@ public class ManagedKafkaClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     String name =
-        "projects/project-5499/locations/location-5499/clusters/cluster-5499/consumerGroups/consumerGroup-5499";
+        "projects/project-2449/locations/location-2449/clusters/cluster-2449/consumerGroups/consumerGroup-2449";
 
     ConsumerGroup actualResponse = client.getConsumerGroup(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1210,7 +1210,7 @@ public class ManagedKafkaClientHttpJsonTest {
 
     try {
       String name =
-          "projects/project-5499/locations/location-5499/clusters/cluster-5499/consumerGroups/consumerGroup-5499";
+          "projects/project-2449/locations/location-2449/clusters/cluster-2449/consumerGroups/consumerGroup-2449";
       client.getConsumerGroup(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1327,7 +1327,7 @@ public class ManagedKafkaClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     String name =
-        "projects/project-5499/locations/location-5499/clusters/cluster-5499/consumerGroups/consumerGroup-5499";
+        "projects/project-2449/locations/location-2449/clusters/cluster-2449/consumerGroups/consumerGroup-2449";
 
     client.deleteConsumerGroup(name);
 
@@ -1355,7 +1355,7 @@ public class ManagedKafkaClientHttpJsonTest {
 
     try {
       String name =
-          "projects/project-5499/locations/location-5499/clusters/cluster-5499/consumerGroups/consumerGroup-5499";
+          "projects/project-2449/locations/location-2449/clusters/cluster-2449/consumerGroups/consumerGroup-2449";
       client.deleteConsumerGroup(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

@@ -168,6 +168,7 @@ public class RegionBackendServicesClientTest {
                 BackendServiceConnectionTrackingPolicy.newBuilder().build())
             .setConsistentHash(ConsistentHashLoadBalancerSettings.newBuilder().build())
             .setCreationTimestamp("creationTimestamp-370203401")
+            .addAllCustomMetrics(new ArrayList<BackendServiceCustomMetric>())
             .addAllCustomRequestHeaders(new ArrayList<String>())
             .addAllCustomResponseHeaders(new ArrayList<String>())
             .setDescription("description-1724546052")

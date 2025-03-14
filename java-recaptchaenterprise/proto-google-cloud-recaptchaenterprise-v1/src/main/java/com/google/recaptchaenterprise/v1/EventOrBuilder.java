@@ -242,7 +242,8 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Optional. JA3 fingerprint for SSL clients.
+   * Optional. JA3 fingerprint for SSL clients. To learn how to compute this
+   * fingerprint, please refer to https://github.com/salesforce/ja3.
    * </pre>
    *
    * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -254,7 +255,8 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Optional. JA3 fingerprint for SSL clients.
+   * Optional. JA3 fingerprint for SSL clients. To learn how to compute this
+   * fingerprint, please refer to https://github.com/salesforce/ja3.
    * </pre>
    *
    * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -262,6 +264,33 @@ public interface EventOrBuilder
    * @return The bytes for ja3.
    */
   com.google.protobuf.ByteString getJa3Bytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. JA4 fingerprint for SSL clients. To learn how to compute this
+   * fingerprint, please refer to https://github.com/FoxIO-LLC/ja4.
+   * </pre>
+   *
+   * <code>string ja4 = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ja4.
+   */
+  java.lang.String getJa4();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. JA4 fingerprint for SSL clients. To learn how to compute this
+   * fingerprint, please refer to https://github.com/FoxIO-LLC/ja4.
+   * </pre>
+   *
+   * <code>string ja4 = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for ja4.
+   */
+  com.google.protobuf.ByteString getJa4Bytes();
 
   /**
    *

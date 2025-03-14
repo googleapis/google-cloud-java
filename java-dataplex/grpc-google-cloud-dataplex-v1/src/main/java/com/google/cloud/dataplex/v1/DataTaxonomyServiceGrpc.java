@@ -29,6 +29,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dataplex/v1/data_taxonomy.proto")
 @io.grpc.stub.annotations.GrpcGenerated
+@java.lang.Deprecated
 public final class DataTaxonomyServiceGrpc {
 
   private DataTaxonomyServiceGrpc() {}
@@ -818,6 +819,7 @@ public final class DataTaxonomyServiceGrpc {
    * currently offered include DataTaxonomy and DataAttribute.
    * </pre>
    */
+  @java.lang.Deprecated
   public interface AsyncService {
 
     /**
@@ -827,6 +829,7 @@ public final class DataTaxonomyServiceGrpc {
      * Create a DataTaxonomy resource.
      * </pre>
      */
+    @java.lang.Deprecated
     default void createDataTaxonomy(
         com.google.cloud.dataplex.v1.CreateDataTaxonomyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -841,6 +844,7 @@ public final class DataTaxonomyServiceGrpc {
      * Updates a DataTaxonomy resource.
      * </pre>
      */
+    @java.lang.Deprecated
     default void updateDataTaxonomy(
         com.google.cloud.dataplex.v1.UpdateDataTaxonomyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -856,6 +860,7 @@ public final class DataTaxonomyServiceGrpc {
      * must be deleted before the DataTaxonomy can be deleted.
      * </pre>
      */
+    @java.lang.Deprecated
     default void deleteDataTaxonomy(
         com.google.cloud.dataplex.v1.DeleteDataTaxonomyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -870,6 +875,7 @@ public final class DataTaxonomyServiceGrpc {
      * Lists DataTaxonomy resources in a project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     default void listDataTaxonomies(
         com.google.cloud.dataplex.v1.ListDataTaxonomiesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListDataTaxonomiesResponse>
@@ -885,6 +891,7 @@ public final class DataTaxonomyServiceGrpc {
      * Retrieves a DataTaxonomy resource.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getDataTaxonomy(
         com.google.cloud.dataplex.v1.GetDataTaxonomyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.DataTaxonomy> responseObserver) {
@@ -899,6 +906,7 @@ public final class DataTaxonomyServiceGrpc {
      * Create a DataAttributeBinding resource.
      * </pre>
      */
+    @java.lang.Deprecated
     default void createDataAttributeBinding(
         com.google.cloud.dataplex.v1.CreateDataAttributeBindingRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -913,6 +921,7 @@ public final class DataTaxonomyServiceGrpc {
      * Updates a DataAttributeBinding resource.
      * </pre>
      */
+    @java.lang.Deprecated
     default void updateDataAttributeBinding(
         com.google.cloud.dataplex.v1.UpdateDataAttributeBindingRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -929,6 +938,7 @@ public final class DataTaxonomyServiceGrpc {
      * deleted.
      * </pre>
      */
+    @java.lang.Deprecated
     default void deleteDataAttributeBinding(
         com.google.cloud.dataplex.v1.DeleteDataAttributeBindingRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -943,6 +953,7 @@ public final class DataTaxonomyServiceGrpc {
      * Lists DataAttributeBinding resources in a project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     default void listDataAttributeBindings(
         com.google.cloud.dataplex.v1.ListDataAttributeBindingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListDataAttributeBindingsResponse>
@@ -958,6 +969,7 @@ public final class DataTaxonomyServiceGrpc {
      * Retrieves a DataAttributeBinding resource.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getDataAttributeBinding(
         com.google.cloud.dataplex.v1.GetDataAttributeBindingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.DataAttributeBinding>
@@ -973,6 +985,7 @@ public final class DataTaxonomyServiceGrpc {
      * Create a DataAttribute resource.
      * </pre>
      */
+    @java.lang.Deprecated
     default void createDataAttribute(
         com.google.cloud.dataplex.v1.CreateDataAttributeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -987,6 +1000,7 @@ public final class DataTaxonomyServiceGrpc {
      * Updates a DataAttribute resource.
      * </pre>
      */
+    @java.lang.Deprecated
     default void updateDataAttribute(
         com.google.cloud.dataplex.v1.UpdateDataAttributeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1001,6 +1015,7 @@ public final class DataTaxonomyServiceGrpc {
      * Deletes a Data Attribute resource.
      * </pre>
      */
+    @java.lang.Deprecated
     default void deleteDataAttribute(
         com.google.cloud.dataplex.v1.DeleteDataAttributeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1015,6 +1030,7 @@ public final class DataTaxonomyServiceGrpc {
      * Lists Data Attribute resources in a DataTaxonomy.
      * </pre>
      */
+    @java.lang.Deprecated
     default void listDataAttributes(
         com.google.cloud.dataplex.v1.ListDataAttributesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListDataAttributesResponse>
@@ -1030,6 +1046,7 @@ public final class DataTaxonomyServiceGrpc {
      * Retrieves a Data Attribute resource.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getDataAttribute(
         com.google.cloud.dataplex.v1.GetDataAttributeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.DataAttribute> responseObserver) {
@@ -1046,6 +1063,7 @@ public final class DataTaxonomyServiceGrpc {
    * currently offered include DataTaxonomy and DataAttribute.
    * </pre>
    */
+  @java.lang.Deprecated
   public abstract static class DataTaxonomyServiceImplBase
       implements io.grpc.BindableService, AsyncService {
 
@@ -1063,6 +1081,7 @@ public final class DataTaxonomyServiceGrpc {
    * currently offered include DataTaxonomy and DataAttribute.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class DataTaxonomyServiceStub
       extends io.grpc.stub.AbstractAsyncStub<DataTaxonomyServiceStub> {
     private DataTaxonomyServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1082,6 +1101,7 @@ public final class DataTaxonomyServiceGrpc {
      * Create a DataTaxonomy resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public void createDataTaxonomy(
         com.google.cloud.dataplex.v1.CreateDataTaxonomyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1098,6 +1118,7 @@ public final class DataTaxonomyServiceGrpc {
      * Updates a DataTaxonomy resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public void updateDataTaxonomy(
         com.google.cloud.dataplex.v1.UpdateDataTaxonomyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1115,6 +1136,7 @@ public final class DataTaxonomyServiceGrpc {
      * must be deleted before the DataTaxonomy can be deleted.
      * </pre>
      */
+    @java.lang.Deprecated
     public void deleteDataTaxonomy(
         com.google.cloud.dataplex.v1.DeleteDataTaxonomyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1131,6 +1153,7 @@ public final class DataTaxonomyServiceGrpc {
      * Lists DataTaxonomy resources in a project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listDataTaxonomies(
         com.google.cloud.dataplex.v1.ListDataTaxonomiesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListDataTaxonomiesResponse>
@@ -1148,6 +1171,7 @@ public final class DataTaxonomyServiceGrpc {
      * Retrieves a DataTaxonomy resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getDataTaxonomy(
         com.google.cloud.dataplex.v1.GetDataTaxonomyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.DataTaxonomy> responseObserver) {
@@ -1164,6 +1188,7 @@ public final class DataTaxonomyServiceGrpc {
      * Create a DataAttributeBinding resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public void createDataAttributeBinding(
         com.google.cloud.dataplex.v1.CreateDataAttributeBindingRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1180,6 +1205,7 @@ public final class DataTaxonomyServiceGrpc {
      * Updates a DataAttributeBinding resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public void updateDataAttributeBinding(
         com.google.cloud.dataplex.v1.UpdateDataAttributeBindingRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1198,6 +1224,7 @@ public final class DataTaxonomyServiceGrpc {
      * deleted.
      * </pre>
      */
+    @java.lang.Deprecated
     public void deleteDataAttributeBinding(
         com.google.cloud.dataplex.v1.DeleteDataAttributeBindingRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1214,6 +1241,7 @@ public final class DataTaxonomyServiceGrpc {
      * Lists DataAttributeBinding resources in a project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listDataAttributeBindings(
         com.google.cloud.dataplex.v1.ListDataAttributeBindingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListDataAttributeBindingsResponse>
@@ -1231,6 +1259,7 @@ public final class DataTaxonomyServiceGrpc {
      * Retrieves a DataAttributeBinding resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getDataAttributeBinding(
         com.google.cloud.dataplex.v1.GetDataAttributeBindingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.DataAttributeBinding>
@@ -1248,6 +1277,7 @@ public final class DataTaxonomyServiceGrpc {
      * Create a DataAttribute resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public void createDataAttribute(
         com.google.cloud.dataplex.v1.CreateDataAttributeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1264,6 +1294,7 @@ public final class DataTaxonomyServiceGrpc {
      * Updates a DataAttribute resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public void updateDataAttribute(
         com.google.cloud.dataplex.v1.UpdateDataAttributeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1280,6 +1311,7 @@ public final class DataTaxonomyServiceGrpc {
      * Deletes a Data Attribute resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public void deleteDataAttribute(
         com.google.cloud.dataplex.v1.DeleteDataAttributeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1296,6 +1328,7 @@ public final class DataTaxonomyServiceGrpc {
      * Lists Data Attribute resources in a DataTaxonomy.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listDataAttributes(
         com.google.cloud.dataplex.v1.ListDataAttributesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListDataAttributesResponse>
@@ -1313,6 +1346,7 @@ public final class DataTaxonomyServiceGrpc {
      * Retrieves a Data Attribute resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getDataAttribute(
         com.google.cloud.dataplex.v1.GetDataAttributeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.DataAttribute> responseObserver) {
@@ -1331,6 +1365,7 @@ public final class DataTaxonomyServiceGrpc {
    * currently offered include DataTaxonomy and DataAttribute.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class DataTaxonomyServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<DataTaxonomyServiceBlockingStub> {
     private DataTaxonomyServiceBlockingStub(
@@ -1351,6 +1386,7 @@ public final class DataTaxonomyServiceGrpc {
      * Create a DataTaxonomy resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createDataTaxonomy(
         com.google.cloud.dataplex.v1.CreateDataTaxonomyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1364,6 +1400,7 @@ public final class DataTaxonomyServiceGrpc {
      * Updates a DataTaxonomy resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation updateDataTaxonomy(
         com.google.cloud.dataplex.v1.UpdateDataTaxonomyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1378,6 +1415,7 @@ public final class DataTaxonomyServiceGrpc {
      * must be deleted before the DataTaxonomy can be deleted.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteDataTaxonomy(
         com.google.cloud.dataplex.v1.DeleteDataTaxonomyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1391,6 +1429,7 @@ public final class DataTaxonomyServiceGrpc {
      * Lists DataTaxonomy resources in a project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.dataplex.v1.ListDataTaxonomiesResponse listDataTaxonomies(
         com.google.cloud.dataplex.v1.ListDataTaxonomiesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1404,6 +1443,7 @@ public final class DataTaxonomyServiceGrpc {
      * Retrieves a DataTaxonomy resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.dataplex.v1.DataTaxonomy getDataTaxonomy(
         com.google.cloud.dataplex.v1.GetDataTaxonomyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1417,6 +1457,7 @@ public final class DataTaxonomyServiceGrpc {
      * Create a DataAttributeBinding resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createDataAttributeBinding(
         com.google.cloud.dataplex.v1.CreateDataAttributeBindingRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1430,6 +1471,7 @@ public final class DataTaxonomyServiceGrpc {
      * Updates a DataAttributeBinding resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation updateDataAttributeBinding(
         com.google.cloud.dataplex.v1.UpdateDataAttributeBindingRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1445,6 +1487,7 @@ public final class DataTaxonomyServiceGrpc {
      * deleted.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteDataAttributeBinding(
         com.google.cloud.dataplex.v1.DeleteDataAttributeBindingRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1458,6 +1501,7 @@ public final class DataTaxonomyServiceGrpc {
      * Lists DataAttributeBinding resources in a project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.dataplex.v1.ListDataAttributeBindingsResponse listDataAttributeBindings(
         com.google.cloud.dataplex.v1.ListDataAttributeBindingsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1471,6 +1515,7 @@ public final class DataTaxonomyServiceGrpc {
      * Retrieves a DataAttributeBinding resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.dataplex.v1.DataAttributeBinding getDataAttributeBinding(
         com.google.cloud.dataplex.v1.GetDataAttributeBindingRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1484,6 +1529,7 @@ public final class DataTaxonomyServiceGrpc {
      * Create a DataAttribute resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createDataAttribute(
         com.google.cloud.dataplex.v1.CreateDataAttributeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1497,6 +1543,7 @@ public final class DataTaxonomyServiceGrpc {
      * Updates a DataAttribute resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation updateDataAttribute(
         com.google.cloud.dataplex.v1.UpdateDataAttributeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1510,6 +1557,7 @@ public final class DataTaxonomyServiceGrpc {
      * Deletes a Data Attribute resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteDataAttribute(
         com.google.cloud.dataplex.v1.DeleteDataAttributeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1523,6 +1571,7 @@ public final class DataTaxonomyServiceGrpc {
      * Lists Data Attribute resources in a DataTaxonomy.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.dataplex.v1.ListDataAttributesResponse listDataAttributes(
         com.google.cloud.dataplex.v1.ListDataAttributesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1536,6 +1585,7 @@ public final class DataTaxonomyServiceGrpc {
      * Retrieves a Data Attribute resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.dataplex.v1.DataAttribute getDataAttribute(
         com.google.cloud.dataplex.v1.GetDataAttributeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1551,6 +1601,7 @@ public final class DataTaxonomyServiceGrpc {
    * currently offered include DataTaxonomy and DataAttribute.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class DataTaxonomyServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<DataTaxonomyServiceFutureStub> {
     private DataTaxonomyServiceFutureStub(
@@ -1571,6 +1622,7 @@ public final class DataTaxonomyServiceGrpc {
      * Create a DataTaxonomy resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createDataTaxonomy(com.google.cloud.dataplex.v1.CreateDataTaxonomyRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -1584,6 +1636,7 @@ public final class DataTaxonomyServiceGrpc {
      * Updates a DataTaxonomy resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateDataTaxonomy(com.google.cloud.dataplex.v1.UpdateDataTaxonomyRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -1598,6 +1651,7 @@ public final class DataTaxonomyServiceGrpc {
      * must be deleted before the DataTaxonomy can be deleted.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteDataTaxonomy(com.google.cloud.dataplex.v1.DeleteDataTaxonomyRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -1611,6 +1665,7 @@ public final class DataTaxonomyServiceGrpc {
      * Lists DataTaxonomy resources in a project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dataplex.v1.ListDataTaxonomiesResponse>
         listDataTaxonomies(com.google.cloud.dataplex.v1.ListDataTaxonomiesRequest request) {
@@ -1625,6 +1680,7 @@ public final class DataTaxonomyServiceGrpc {
      * Retrieves a DataTaxonomy resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dataplex.v1.DataTaxonomy>
         getDataTaxonomy(com.google.cloud.dataplex.v1.GetDataTaxonomyRequest request) {
@@ -1639,6 +1695,7 @@ public final class DataTaxonomyServiceGrpc {
      * Create a DataAttributeBinding resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createDataAttributeBinding(
             com.google.cloud.dataplex.v1.CreateDataAttributeBindingRequest request) {
@@ -1653,6 +1710,7 @@ public final class DataTaxonomyServiceGrpc {
      * Updates a DataAttributeBinding resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateDataAttributeBinding(
             com.google.cloud.dataplex.v1.UpdateDataAttributeBindingRequest request) {
@@ -1669,6 +1727,7 @@ public final class DataTaxonomyServiceGrpc {
      * deleted.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteDataAttributeBinding(
             com.google.cloud.dataplex.v1.DeleteDataAttributeBindingRequest request) {
@@ -1683,6 +1742,7 @@ public final class DataTaxonomyServiceGrpc {
      * Lists DataAttributeBinding resources in a project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dataplex.v1.ListDataAttributeBindingsResponse>
         listDataAttributeBindings(
@@ -1698,6 +1758,7 @@ public final class DataTaxonomyServiceGrpc {
      * Retrieves a DataAttributeBinding resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dataplex.v1.DataAttributeBinding>
         getDataAttributeBinding(
@@ -1713,6 +1774,7 @@ public final class DataTaxonomyServiceGrpc {
      * Create a DataAttribute resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createDataAttribute(com.google.cloud.dataplex.v1.CreateDataAttributeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -1726,6 +1788,7 @@ public final class DataTaxonomyServiceGrpc {
      * Updates a DataAttribute resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateDataAttribute(com.google.cloud.dataplex.v1.UpdateDataAttributeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -1739,6 +1802,7 @@ public final class DataTaxonomyServiceGrpc {
      * Deletes a Data Attribute resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteDataAttribute(com.google.cloud.dataplex.v1.DeleteDataAttributeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -1752,6 +1816,7 @@ public final class DataTaxonomyServiceGrpc {
      * Lists Data Attribute resources in a DataTaxonomy.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dataplex.v1.ListDataAttributesResponse>
         listDataAttributes(com.google.cloud.dataplex.v1.ListDataAttributesRequest request) {
@@ -1766,6 +1831,7 @@ public final class DataTaxonomyServiceGrpc {
      * Retrieves a Data Attribute resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dataplex.v1.DataAttribute>
         getDataAttribute(com.google.cloud.dataplex.v1.GetDataAttributeRequest request) {

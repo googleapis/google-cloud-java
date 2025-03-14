@@ -303,6 +303,235 @@ public final class ToolsGrpc {
     return getDeleteToolMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsResponse>
+      getListToolVersionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListToolVersions",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest.class,
+      responseType = com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsResponse>
+      getListToolVersionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest,
+            com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsResponse>
+        getListToolVersionsMethod;
+    if ((getListToolVersionsMethod = ToolsGrpc.getListToolVersionsMethod) == null) {
+      synchronized (ToolsGrpc.class) {
+        if ((getListToolVersionsMethod = ToolsGrpc.getListToolVersionsMethod) == null) {
+          ToolsGrpc.getListToolVersionsMethod =
+              getListToolVersionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest,
+                          com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListToolVersions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new ToolsMethodDescriptorSupplier("ListToolVersions"))
+                      .build();
+        }
+      }
+    }
+    return getListToolVersionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.ToolVersion>
+      getCreateToolVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateToolVersion",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest.class,
+      responseType = com.google.cloud.dialogflow.cx.v3beta1.ToolVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.ToolVersion>
+      getCreateToolVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest,
+            com.google.cloud.dialogflow.cx.v3beta1.ToolVersion>
+        getCreateToolVersionMethod;
+    if ((getCreateToolVersionMethod = ToolsGrpc.getCreateToolVersionMethod) == null) {
+      synchronized (ToolsGrpc.class) {
+        if ((getCreateToolVersionMethod = ToolsGrpc.getCreateToolVersionMethod) == null) {
+          ToolsGrpc.getCreateToolVersionMethod =
+              getCreateToolVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest,
+                          com.google.cloud.dialogflow.cx.v3beta1.ToolVersion>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateToolVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.ToolVersion
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new ToolsMethodDescriptorSupplier("CreateToolVersion"))
+                      .build();
+        }
+      }
+    }
+    return getCreateToolVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.ToolVersion>
+      getGetToolVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetToolVersion",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest.class,
+      responseType = com.google.cloud.dialogflow.cx.v3beta1.ToolVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.ToolVersion>
+      getGetToolVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest,
+            com.google.cloud.dialogflow.cx.v3beta1.ToolVersion>
+        getGetToolVersionMethod;
+    if ((getGetToolVersionMethod = ToolsGrpc.getGetToolVersionMethod) == null) {
+      synchronized (ToolsGrpc.class) {
+        if ((getGetToolVersionMethod = ToolsGrpc.getGetToolVersionMethod) == null) {
+          ToolsGrpc.getGetToolVersionMethod =
+              getGetToolVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest,
+                          com.google.cloud.dialogflow.cx.v3beta1.ToolVersion>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetToolVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.ToolVersion
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new ToolsMethodDescriptorSupplier("GetToolVersion"))
+                      .build();
+        }
+      }
+    }
+    return getGetToolVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest,
+          com.google.protobuf.Empty>
+      getDeleteToolVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteToolVersion",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest,
+          com.google.protobuf.Empty>
+      getDeleteToolVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest,
+            com.google.protobuf.Empty>
+        getDeleteToolVersionMethod;
+    if ((getDeleteToolVersionMethod = ToolsGrpc.getDeleteToolVersionMethod) == null) {
+      synchronized (ToolsGrpc.class) {
+        if ((getDeleteToolVersionMethod = ToolsGrpc.getDeleteToolVersionMethod) == null) {
+          ToolsGrpc.getDeleteToolVersionMethod =
+              getDeleteToolVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteToolVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(new ToolsMethodDescriptorSupplier("DeleteToolVersion"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteToolVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionResponse>
+      getRestoreToolVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RestoreToolVersion",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest.class,
+      responseType = com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionResponse>
+      getRestoreToolVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest,
+            com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionResponse>
+        getRestoreToolVersionMethod;
+    if ((getRestoreToolVersionMethod = ToolsGrpc.getRestoreToolVersionMethod) == null) {
+      synchronized (ToolsGrpc.class) {
+        if ((getRestoreToolVersionMethod = ToolsGrpc.getRestoreToolVersionMethod) == null) {
+          ToolsGrpc.getRestoreToolVersionMethod =
+              getRestoreToolVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest,
+                          com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RestoreToolVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new ToolsMethodDescriptorSupplier("RestoreToolVersion"))
+                      .build();
+        }
+      }
+    }
+    return getRestoreToolVersionMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ToolsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ToolsStub> factory =
@@ -432,6 +661,86 @@ public final class ToolsGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteToolMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * List versions of the specified
+     * [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+     * </pre>
+     */
+    default void listToolVersions(
+        com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListToolVersionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a version for the specified
+     * [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+     * </pre>
+     */
+    default void createToolVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ToolVersion>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateToolVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified version of the
+     * [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+     * </pre>
+     */
+    default void getToolVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ToolVersion>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetToolVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified version of the
+     * [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+     * </pre>
+     */
+    default void deleteToolVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteToolVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified version of the Tool and stores it as the
+     * current tool draft, returning the tool with resources updated.
+     * </pre>
+     */
+    default void restoreToolVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRestoreToolVersionMethod(), responseObserver);
+    }
   }
 
   /**
@@ -554,6 +863,96 @@ public final class ToolsGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteToolMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * List versions of the specified
+     * [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+     * </pre>
+     */
+    public void listToolVersions(
+        com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListToolVersionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a version for the specified
+     * [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+     * </pre>
+     */
+    public void createToolVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ToolVersion>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateToolVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified version of the
+     * [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+     * </pre>
+     */
+    public void getToolVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ToolVersion>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetToolVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified version of the
+     * [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+     * </pre>
+     */
+    public void deleteToolVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteToolVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified version of the Tool and stores it as the
+     * current tool draft, returning the tool with resources updated.
+     * </pre>
+     */
+    public void restoreToolVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRestoreToolVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -652,6 +1051,76 @@ public final class ToolsGrpc {
         com.google.cloud.dialogflow.cx.v3beta1.DeleteToolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteToolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List versions of the specified
+     * [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsResponse listToolVersions(
+        com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListToolVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a version for the specified
+     * [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ToolVersion createToolVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateToolVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified version of the
+     * [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ToolVersion getToolVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetToolVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified version of the
+     * [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteToolVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteToolVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified version of the Tool and stores it as the
+     * current tool draft, returning the tool with resources updated.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionResponse restoreToolVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestoreToolVersionMethod(), getCallOptions(), request);
     }
   }
 
@@ -756,6 +1225,81 @@ public final class ToolsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteToolMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * List versions of the specified
+     * [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsResponse>
+        listToolVersions(com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListToolVersionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a version for the specified
+     * [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.cx.v3beta1.ToolVersion>
+        createToolVersion(com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateToolVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified version of the
+     * [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.cx.v3beta1.ToolVersion>
+        getToolVersion(com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetToolVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified version of the
+     * [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteToolVersion(com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteToolVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified version of the Tool and stores it as the
+     * current tool draft, returning the tool with resources updated.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionResponse>
+        restoreToolVersion(
+            com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRestoreToolVersionMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_TOOL = 0;
@@ -764,6 +1308,11 @@ public final class ToolsGrpc {
   private static final int METHODID_GET_TOOL = 3;
   private static final int METHODID_UPDATE_TOOL = 4;
   private static final int METHODID_DELETE_TOOL = 5;
+  private static final int METHODID_LIST_TOOL_VERSIONS = 6;
+  private static final int METHODID_CREATE_TOOL_VERSION = 7;
+  private static final int METHODID_GET_TOOL_VERSION = 8;
+  private static final int METHODID_DELETE_TOOL_VERSION = 9;
+  private static final int METHODID_RESTORE_TOOL_VERSION = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -816,6 +1365,37 @@ public final class ToolsGrpc {
           serviceImpl.deleteTool(
               (com.google.cloud.dialogflow.cx.v3beta1.DeleteToolRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_TOOL_VERSIONS:
+          serviceImpl.listToolVersions(
+              (com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_TOOL_VERSION:
+          serviceImpl.createToolVersion(
+              (com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ToolVersion>)
+                  responseObserver);
+          break;
+        case METHODID_GET_TOOL_VERSION:
+          serviceImpl.getToolVersion(
+              (com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ToolVersion>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_TOOL_VERSION:
+          serviceImpl.deleteToolVersion(
+              (com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_RESTORE_TOOL_VERSION:
+          serviceImpl.restoreToolVersion(
+              (com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -872,6 +1452,40 @@ public final class ToolsGrpc {
                 new MethodHandlers<
                     com.google.cloud.dialogflow.cx.v3beta1.DeleteToolRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_TOOL)))
+        .addMethod(
+            getListToolVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsResponse>(
+                    service, METHODID_LIST_TOOL_VERSIONS)))
+        .addMethod(
+            getCreateToolVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.ToolVersion>(
+                    service, METHODID_CREATE_TOOL_VERSION)))
+        .addMethod(
+            getGetToolVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.ToolVersion>(
+                    service, METHODID_GET_TOOL_VERSION)))
+        .addMethod(
+            getDeleteToolVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_TOOL_VERSION)))
+        .addMethod(
+            getRestoreToolVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionResponse>(
+                    service, METHODID_RESTORE_TOOL_VERSION)))
         .build();
   }
 
@@ -927,6 +1541,11 @@ public final class ToolsGrpc {
                       .addMethod(getGetToolMethod())
                       .addMethod(getUpdateToolMethod())
                       .addMethod(getDeleteToolMethod())
+                      .addMethod(getListToolVersionsMethod())
+                      .addMethod(getCreateToolVersionMethod())
+                      .addMethod(getGetToolVersionMethod())
+                      .addMethod(getDeleteToolVersionMethod())
+                      .addMethod(getRestoreToolVersionMethod())
                       .build();
         }
       }

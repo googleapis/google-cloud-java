@@ -74,7 +74,7 @@ public final class ListOnlineReturnPoliciesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The merchant account for which to list return policies.
+   * Required. The business account for which to list return policies.
    * Format: `accounts/{account}`
    * </pre>
    *
@@ -100,7 +100,7 @@ public final class ListOnlineReturnPoliciesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The merchant account for which to list return policies.
+   * Required. The business account for which to list return policies.
    * Format: `accounts/{account}`
    * </pre>
    *
@@ -622,7 +622,7 @@ public final class ListOnlineReturnPoliciesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The merchant account for which to list return policies.
+     * Required. The business account for which to list return policies.
      * Format: `accounts/{account}`
      * </pre>
      *
@@ -647,7 +647,7 @@ public final class ListOnlineReturnPoliciesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The merchant account for which to list return policies.
+     * Required. The business account for which to list return policies.
      * Format: `accounts/{account}`
      * </pre>
      *
@@ -672,7 +672,7 @@ public final class ListOnlineReturnPoliciesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The merchant account for which to list return policies.
+     * Required. The business account for which to list return policies.
      * Format: `accounts/{account}`
      * </pre>
      *
@@ -696,7 +696,7 @@ public final class ListOnlineReturnPoliciesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The merchant account for which to list return policies.
+     * Required. The business account for which to list return policies.
      * Format: `accounts/{account}`
      * </pre>
      *
@@ -716,7 +716,7 @@ public final class ListOnlineReturnPoliciesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The merchant account for which to list return policies.
+     * Required. The business account for which to list return policies.
      * Format: `accounts/{account}`
      * </pre>
      *

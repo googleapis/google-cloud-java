@@ -19,6 +19,7 @@ package com.google.maps.fleetengine.delivery.v1;
 import com.google.api.core.BetaApi;
 import com.google.maps.fleetengine.delivery.v1.DeliveryServiceGrpc.DeliveryServiceImplBase;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -101,6 +102,27 @@ public class MockDeliveryServiceImpl extends DeliveryServiceImplBase {
   }
 
   @Override
+  public void deleteDeliveryVehicle(
+      DeleteDeliveryVehicleRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDeliveryVehicle, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void updateDeliveryVehicle(
       UpdateDeliveryVehicleRequest request, StreamObserver<DeliveryVehicle> responseObserver) {
     Object response = responses.poll();
@@ -178,6 +200,26 @@ public class MockDeliveryServiceImpl extends DeliveryServiceImplBase {
                   "Unrecognized response type %s for method GetTask, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Task.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteTask(DeleteTaskRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteTask, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

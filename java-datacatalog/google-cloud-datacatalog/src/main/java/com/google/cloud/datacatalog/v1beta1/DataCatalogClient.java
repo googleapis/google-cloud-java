@@ -43,8 +43,9 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Data Catalog API service allows clients to discover, understand, and manage
- * their data.
+ * Service Description: Deprecated: Please use Dataplex Catalog instead.
+ *
+ * <p>Data Catalog API service allows clients to discover, understand, and manage their data.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -666,8 +667,11 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @BetaApi
+@Deprecated
 @Generated("by gapic-generator-java")
 public class DataCatalogClient implements BackgroundResource {
   private final DataCatalogSettings settings;
@@ -767,7 +771,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference) for more
    *     information.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final SearchCatalogPagedResponse searchCatalog(
       SearchCatalogRequest.Scope scope, String query) {
     SearchCatalogRequest request =
@@ -816,7 +822,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final SearchCatalogPagedResponse searchCatalog(SearchCatalogRequest request) {
     return searchCatalogPagedCallable().call(request);
   }
@@ -862,7 +870,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<SearchCatalogRequest, SearchCatalogPagedResponse>
       searchCatalogPagedCallable() {
     return stub.searchCatalogPagedCallable();
@@ -915,7 +926,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<SearchCatalogRequest, SearchCatalogResponse> searchCatalogCallable() {
     return stub.searchCatalogCallable();
   }
@@ -955,7 +969,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     64 characters.
    * @param entryGroup The entry group to create. Defaults to an empty entry group.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final EntryGroup createEntryGroup(
       LocationName parent, String entryGroupId, EntryGroup entryGroup) {
     CreateEntryGroupRequest request =
@@ -1002,7 +1018,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     64 characters.
    * @param entryGroup The entry group to create. Defaults to an empty entry group.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final EntryGroup createEntryGroup(
       String parent, String entryGroupId, EntryGroup entryGroup) {
     CreateEntryGroupRequest request =
@@ -1043,7 +1061,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final EntryGroup createEntryGroup(CreateEntryGroupRequest request) {
     return createEntryGroupCallable().call(request);
   }
@@ -1077,7 +1097,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   EntryGroup response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CreateEntryGroupRequest, EntryGroup> createEntryGroupCallable() {
     return stub.createEntryGroupCallable();
   }
@@ -1104,7 +1127,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param entryGroup Required. The updated entry group. "name" field must be set.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final EntryGroup updateEntryGroup(EntryGroup entryGroup) {
     UpdateEntryGroupRequest request =
         UpdateEntryGroupRequest.newBuilder().setEntryGroup(entryGroup).build();
@@ -1137,7 +1162,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     <p>If this parameter is absent or empty, all modifiable fields are overwritten. If such
    *     fields are non-required and omitted in the request body, their values are emptied.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final EntryGroup updateEntryGroup(EntryGroup entryGroup, FieldMask updateMask) {
     UpdateEntryGroupRequest request =
         UpdateEntryGroupRequest.newBuilder()
@@ -1173,7 +1200,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final EntryGroup updateEntryGroup(UpdateEntryGroupRequest request) {
     return updateEntryGroupCallable().call(request);
   }
@@ -1204,7 +1233,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   EntryGroup response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupCallable() {
     return stub.updateEntryGroupCallable();
   }
@@ -1230,7 +1262,9 @@ public class DataCatalogClient implements BackgroundResource {
    * @param name Required. The name of the entry group. For example,
    *     `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final EntryGroup getEntryGroup(EntryGroupName name) {
     GetEntryGroupRequest request =
         GetEntryGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
@@ -1258,7 +1292,9 @@ public class DataCatalogClient implements BackgroundResource {
    * @param name Required. The name of the entry group. For example,
    *     `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final EntryGroup getEntryGroup(String name) {
     GetEntryGroupRequest request = GetEntryGroupRequest.newBuilder().setName(name).build();
     return getEntryGroup(request);
@@ -1287,7 +1323,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
    * @param readMask The fields to return. If not set or empty, all fields are returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final EntryGroup getEntryGroup(EntryGroupName name, FieldMask readMask) {
     GetEntryGroupRequest request =
         GetEntryGroupRequest.newBuilder()
@@ -1320,7 +1358,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
    * @param readMask The fields to return. If not set or empty, all fields are returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final EntryGroup getEntryGroup(String name, FieldMask readMask) {
     GetEntryGroupRequest request =
         GetEntryGroupRequest.newBuilder().setName(name).setReadMask(readMask).build();
@@ -1351,7 +1391,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final EntryGroup getEntryGroup(GetEntryGroupRequest request) {
     return getEntryGroupCallable().call(request);
   }
@@ -1379,7 +1421,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   EntryGroup response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetEntryGroupRequest, EntryGroup> getEntryGroupCallable() {
     return stub.getEntryGroupCallable();
   }
@@ -1408,7 +1453,9 @@ public class DataCatalogClient implements BackgroundResource {
    * @param name Required. The name of the entry group. For example,
    *     `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final void deleteEntryGroup(EntryGroupName name) {
     DeleteEntryGroupRequest request =
         DeleteEntryGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
@@ -1439,7 +1486,9 @@ public class DataCatalogClient implements BackgroundResource {
    * @param name Required. The name of the entry group. For example,
    *     `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final void deleteEntryGroup(String name) {
     DeleteEntryGroupRequest request = DeleteEntryGroupRequest.newBuilder().setName(name).build();
     deleteEntryGroup(request);
@@ -1472,7 +1521,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final void deleteEntryGroup(DeleteEntryGroupRequest request) {
     deleteEntryGroupCallable().call(request);
   }
@@ -1503,7 +1554,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<DeleteEntryGroupRequest, Empty> deleteEntryGroupCallable() {
     return stub.deleteEntryGroupCallable();
   }
@@ -1535,7 +1589,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListEntryGroupsPagedResponse listEntryGroups(LocationName parent) {
     ListEntryGroupsRequest request =
         ListEntryGroupsRequest.newBuilder()
@@ -1571,7 +1627,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListEntryGroupsPagedResponse listEntryGroups(String parent) {
     ListEntryGroupsRequest request = ListEntryGroupsRequest.newBuilder().setParent(parent).build();
     return listEntryGroups(request);
@@ -1604,7 +1662,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListEntryGroupsPagedResponse listEntryGroups(ListEntryGroupsRequest request) {
     return listEntryGroupsPagedCallable().call(request);
   }
@@ -1636,7 +1696,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsPagedResponse>
       listEntryGroupsPagedCallable() {
     return stub.listEntryGroupsPagedCallable();
@@ -1676,7 +1739,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsResponse>
       listEntryGroupsCallable() {
     return stub.listEntryGroupsCallable();
@@ -1717,7 +1783,9 @@ public class DataCatalogClient implements BackgroundResource {
    * @param entryId Required. The id of the entry to create.
    * @param entry Required. The entry to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Entry createEntry(EntryGroupName parent, String entryId, Entry entry) {
     CreateEntryRequest request =
         CreateEntryRequest.newBuilder()
@@ -1763,7 +1831,9 @@ public class DataCatalogClient implements BackgroundResource {
    * @param entryId Required. The id of the entry to create.
    * @param entry Required. The entry to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Entry createEntry(String parent, String entryId, Entry entry) {
     CreateEntryRequest request =
         CreateEntryRequest.newBuilder()
@@ -1805,7 +1875,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Entry createEntry(CreateEntryRequest request) {
     return createEntryCallable().call(request);
   }
@@ -1840,7 +1912,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   Entry response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CreateEntryRequest, Entry> createEntryCallable() {
     return stub.createEntryCallable();
   }
@@ -1867,7 +1942,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param entry Required. The updated entry. The "name" field must be set.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Entry updateEntry(Entry entry) {
     UpdateEntryRequest request = UpdateEntryRequest.newBuilder().setEntry(entry).build();
     return updateEntry(request);
@@ -1909,7 +1986,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Entry updateEntry(Entry entry, FieldMask updateMask) {
     UpdateEntryRequest request =
         UpdateEntryRequest.newBuilder().setEntry(entry).setUpdateMask(updateMask).build();
@@ -1942,7 +2021,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Entry updateEntry(UpdateEntryRequest request) {
     return updateEntryCallable().call(request);
   }
@@ -1972,7 +2053,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   Entry response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<UpdateEntryRequest, Entry> updateEntryCallable() {
     return stub.updateEntryCallable();
   }
@@ -2005,7 +2089,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final void deleteEntry(EntryName name) {
     DeleteEntryRequest request =
         DeleteEntryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
@@ -2040,7 +2126,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final void deleteEntry(String name) {
     DeleteEntryRequest request = DeleteEntryRequest.newBuilder().setName(name).build();
     deleteEntry(request);
@@ -2074,7 +2162,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final void deleteEntry(DeleteEntryRequest request) {
     deleteEntryCallable().call(request);
   }
@@ -2106,7 +2196,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<DeleteEntryRequest, Empty> deleteEntryCallable() {
     return stub.deleteEntryCallable();
   }
@@ -2135,7 +2228,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Entry getEntry(EntryName name) {
     GetEntryRequest request =
         GetEntryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
@@ -2166,7 +2261,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Entry getEntry(String name) {
     GetEntryRequest request = GetEntryRequest.newBuilder().setName(name).build();
     return getEntry(request);
@@ -2196,7 +2293,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Entry getEntry(GetEntryRequest request) {
     return getEntryCallable().call(request);
   }
@@ -2224,7 +2323,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   Entry response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetEntryRequest, Entry> getEntryCallable() {
     return stub.getEntryCallable();
   }
@@ -2250,7 +2352,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Entry lookupEntry(LookupEntryRequest request) {
     return lookupEntryCallable().call(request);
   }
@@ -2275,7 +2379,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   Entry response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<LookupEntryRequest, Entry> lookupEntryCallable() {
     return stub.lookupEntryCallable();
   }
@@ -2307,7 +2414,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListEntriesPagedResponse listEntries(EntryGroupName parent) {
     ListEntriesRequest request =
         ListEntriesRequest.newBuilder()
@@ -2343,7 +2452,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListEntriesPagedResponse listEntries(String parent) {
     ListEntriesRequest request = ListEntriesRequest.newBuilder().setParent(parent).build();
     return listEntries(request);
@@ -2377,7 +2488,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListEntriesPagedResponse listEntries(ListEntriesRequest request) {
     return listEntriesPagedCallable().call(request);
   }
@@ -2409,7 +2522,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListEntriesRequest, ListEntriesPagedResponse>
       listEntriesPagedCallable() {
     return stub.listEntriesPagedCallable();
@@ -2449,7 +2565,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListEntriesRequest, ListEntriesResponse> listEntriesCallable() {
     return stub.listEntriesCallable();
   }
@@ -2488,7 +2607,9 @@ public class DataCatalogClient implements BackgroundResource {
    * @param tagTemplateId Required. The id of the tag template to create.
    * @param tagTemplate Required. The tag template to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplate createTagTemplate(
       LocationName parent, String tagTemplateId, TagTemplate tagTemplate) {
     CreateTagTemplateRequest request =
@@ -2534,7 +2655,9 @@ public class DataCatalogClient implements BackgroundResource {
    * @param tagTemplateId Required. The id of the tag template to create.
    * @param tagTemplate Required. The tag template to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplate createTagTemplate(
       String parent, String tagTemplateId, TagTemplate tagTemplate) {
     CreateTagTemplateRequest request =
@@ -2574,7 +2697,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplate createTagTemplate(CreateTagTemplateRequest request) {
     return createTagTemplateCallable().call(request);
   }
@@ -2607,7 +2732,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   TagTemplate response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CreateTagTemplateRequest, TagTemplate> createTagTemplateCallable() {
     return stub.createTagTemplateCallable();
   }
@@ -2636,7 +2764,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplate getTagTemplate(TagTemplateName name) {
     GetTagTemplateRequest request =
         GetTagTemplateRequest.newBuilder().setName(name == null ? null : name.toString()).build();
@@ -2667,7 +2797,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplate getTagTemplate(String name) {
     GetTagTemplateRequest request = GetTagTemplateRequest.newBuilder().setName(name).build();
     return getTagTemplate(request);
@@ -2696,7 +2828,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplate getTagTemplate(GetTagTemplateRequest request) {
     return getTagTemplateCallable().call(request);
   }
@@ -2724,7 +2858,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   TagTemplate response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetTagTemplateRequest, TagTemplate> getTagTemplateCallable() {
     return stub.getTagTemplateCallable();
   }
@@ -2753,7 +2890,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param tagTemplate Required. The template to update. The "name" field must be set.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplate updateTagTemplate(TagTemplate tagTemplate) {
     UpdateTagTemplateRequest request =
         UpdateTagTemplateRequest.newBuilder().setTagTemplate(tagTemplate).build();
@@ -2789,7 +2928,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     <p>In general, if this parameter is absent or empty, all modifiable fields are overwritten.
    *     If such fields are non-required and omitted in the request body, their values are emptied.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplate updateTagTemplate(TagTemplate tagTemplate, FieldMask updateMask) {
     UpdateTagTemplateRequest request =
         UpdateTagTemplateRequest.newBuilder()
@@ -2827,7 +2968,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplate updateTagTemplate(UpdateTagTemplateRequest request) {
     return updateTagTemplateCallable().call(request);
   }
@@ -2860,7 +3003,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   TagTemplate response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<UpdateTagTemplateRequest, TagTemplate> updateTagTemplateCallable() {
     return stub.updateTagTemplateCallable();
   }
@@ -2895,7 +3041,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     deletion of any possible tags using this template. `force = false` will be supported in the
    *     future.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final void deleteTagTemplate(TagTemplateName name, boolean force) {
     DeleteTagTemplateRequest request =
         DeleteTagTemplateRequest.newBuilder()
@@ -2935,7 +3083,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     deletion of any possible tags using this template. `force = false` will be supported in the
    *     future.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final void deleteTagTemplate(String name, boolean force) {
     DeleteTagTemplateRequest request =
         DeleteTagTemplateRequest.newBuilder().setName(name).setForce(force).build();
@@ -2968,7 +3118,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final void deleteTagTemplate(DeleteTagTemplateRequest request) {
     deleteTagTemplateCallable().call(request);
   }
@@ -2998,7 +3150,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<DeleteTagTemplateRequest, Empty> deleteTagTemplateCallable() {
     return stub.deleteTagTemplateCallable();
   }
@@ -3040,7 +3195,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     must also be unique within their template.
    * @param tagTemplateField Required. The tag template field to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplateField createTagTemplateField(
       TagTemplateName parent, String tagTemplateFieldId, TagTemplateField tagTemplateField) {
     CreateTagTemplateFieldRequest request =
@@ -3089,7 +3246,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     must also be unique within their template.
    * @param tagTemplateField Required. The tag template field to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplateField createTagTemplateField(
       String parent, String tagTemplateFieldId, TagTemplateField tagTemplateField) {
     CreateTagTemplateFieldRequest request =
@@ -3129,7 +3288,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplateField createTagTemplateField(CreateTagTemplateFieldRequest request) {
     return createTagTemplateFieldCallable().call(request);
   }
@@ -3162,7 +3323,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   TagTemplateField response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CreateTagTemplateFieldRequest, TagTemplateField>
       createTagTemplateFieldCallable() {
     return stub.createTagTemplateFieldCallable();
@@ -3198,7 +3362,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param tagTemplateField Required. The template to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplateField updateTagTemplateField(
       TagTemplateFieldName name, TagTemplateField tagTemplateField) {
     UpdateTagTemplateFieldRequest request =
@@ -3240,7 +3406,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param tagTemplateField Required. The template to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplateField updateTagTemplateField(
       String name, TagTemplateField tagTemplateField) {
     UpdateTagTemplateFieldRequest request =
@@ -3296,7 +3464,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplateField updateTagTemplateField(
       TagTemplateFieldName name, TagTemplateField tagTemplateField, FieldMask updateMask) {
     UpdateTagTemplateFieldRequest request =
@@ -3354,7 +3524,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplateField updateTagTemplateField(
       String name, TagTemplateField tagTemplateField, FieldMask updateMask) {
     UpdateTagTemplateFieldRequest request =
@@ -3396,7 +3568,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplateField updateTagTemplateField(UpdateTagTemplateFieldRequest request) {
     return updateTagTemplateFieldCallable().call(request);
   }
@@ -3431,7 +3605,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   TagTemplateField response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<UpdateTagTemplateFieldRequest, TagTemplateField>
       updateTagTemplateFieldCallable() {
     return stub.updateTagTemplateFieldCallable();
@@ -3469,7 +3646,9 @@ public class DataCatalogClient implements BackgroundResource {
    * @param newTagTemplateFieldId Required. The new ID of this tag template field. For example,
    *     `my_new_field`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplateField renameTagTemplateField(
       TagTemplateFieldName name, String newTagTemplateFieldId) {
     RenameTagTemplateFieldRequest request =
@@ -3513,7 +3692,9 @@ public class DataCatalogClient implements BackgroundResource {
    * @param newTagTemplateFieldId Required. The new ID of this tag template field. For example,
    *     `my_new_field`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplateField renameTagTemplateField(String name, String newTagTemplateFieldId) {
     RenameTagTemplateFieldRequest request =
         RenameTagTemplateFieldRequest.newBuilder()
@@ -3552,7 +3733,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplateField renameTagTemplateField(RenameTagTemplateFieldRequest request) {
     return renameTagTemplateFieldCallable().call(request);
   }
@@ -3586,7 +3769,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   TagTemplateField response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<RenameTagTemplateFieldRequest, TagTemplateField>
       renameTagTemplateFieldCallable() {
     return stub.renameTagTemplateFieldCallable();
@@ -3628,7 +3814,9 @@ public class DataCatalogClient implements BackgroundResource {
    * @param newEnumValueDisplayName Required. The new display name of the enum value. For example,
    *     `my_new_enum_value`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplateField renameTagTemplateFieldEnumValue(
       TagTemplateFieldEnumValueName name, String newEnumValueDisplayName) {
     RenameTagTemplateFieldEnumValueRequest request =
@@ -3676,7 +3864,9 @@ public class DataCatalogClient implements BackgroundResource {
    * @param newEnumValueDisplayName Required. The new display name of the enum value. For example,
    *     `my_new_enum_value`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplateField renameTagTemplateFieldEnumValue(
       String name, String newEnumValueDisplayName) {
     RenameTagTemplateFieldEnumValueRequest request =
@@ -3720,7 +3910,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TagTemplateField renameTagTemplateFieldEnumValue(
       RenameTagTemplateFieldEnumValueRequest request) {
     return renameTagTemplateFieldEnumValueCallable().call(request);
@@ -3759,7 +3951,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   TagTemplateField response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
       renameTagTemplateFieldEnumValueCallable() {
     return stub.renameTagTemplateFieldEnumValueCallable();
@@ -3797,7 +3992,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     deletion of this field from any tags using this field. `force = false` will be supported in
    *     the future.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final void deleteTagTemplateField(TagTemplateFieldName name, boolean force) {
     DeleteTagTemplateFieldRequest request =
         DeleteTagTemplateFieldRequest.newBuilder()
@@ -3840,7 +4037,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     deletion of this field from any tags using this field. `force = false` will be supported in
    *     the future.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final void deleteTagTemplateField(String name, boolean force) {
     DeleteTagTemplateFieldRequest request =
         DeleteTagTemplateFieldRequest.newBuilder().setName(name).setForce(force).build();
@@ -3876,7 +4075,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final void deleteTagTemplateField(DeleteTagTemplateFieldRequest request) {
     deleteTagTemplateFieldCallable().call(request);
   }
@@ -3910,7 +4111,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<DeleteTagTemplateFieldRequest, Empty>
       deleteTagTemplateFieldCallable() {
     return stub.deleteTagTemplateFieldCallable();
@@ -3948,7 +4152,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     this name.
    * @param tag Required. The tag to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Tag createTag(EntryName parent, Tag tag) {
     CreateTagRequest request =
         CreateTagRequest.newBuilder()
@@ -3991,7 +4197,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     this name.
    * @param tag Required. The tag to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Tag createTag(String parent, Tag tag) {
     CreateTagRequest request = CreateTagRequest.newBuilder().setParent(parent).setTag(tag).build();
     return createTag(request);
@@ -4027,7 +4235,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Tag createTag(CreateTagRequest request) {
     return createTagCallable().call(request);
   }
@@ -4061,7 +4271,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   Tag response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CreateTagRequest, Tag> createTagCallable() {
     return stub.createTagCallable();
   }
@@ -4086,7 +4299,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param tag Required. The updated tag. The "name" field must be set.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Tag updateTag(Tag tag) {
     UpdateTagRequest request = UpdateTagRequest.newBuilder().setTag(tag).build();
     return updateTag(request);
@@ -4118,7 +4333,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     <p>In general, if this parameter is absent or empty, all modifiable fields are overwritten.
    *     If such fields are non-required and omitted in the request body, their values are emptied.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Tag updateTag(Tag tag, FieldMask updateMask) {
     UpdateTagRequest request =
         UpdateTagRequest.newBuilder().setTag(tag).setUpdateMask(updateMask).build();
@@ -4149,7 +4366,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Tag updateTag(UpdateTagRequest request) {
     return updateTagCallable().call(request);
   }
@@ -4177,7 +4396,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   Tag response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<UpdateTagRequest, Tag> updateTagCallable() {
     return stub.updateTagCallable();
   }
@@ -4206,7 +4428,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final void deleteTag(EntryName name) {
     DeleteTagRequest request =
         DeleteTagRequest.newBuilder().setName(name == null ? null : name.toString()).build();
@@ -4237,7 +4461,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final void deleteTag(String name) {
     DeleteTagRequest request = DeleteTagRequest.newBuilder().setName(name).build();
     deleteTag(request);
@@ -4267,7 +4493,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final void deleteTag(DeleteTagRequest request) {
     deleteTagCallable().call(request);
   }
@@ -4295,7 +4523,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable() {
     return stub.deleteTagCallable();
   }
@@ -4331,7 +4562,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListTagsPagedResponse listTags(EntryName parent) {
     ListTagsRequest request =
         ListTagsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
@@ -4370,7 +4603,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListTagsPagedResponse listTags(String parent) {
     ListTagsRequest request = ListTagsRequest.newBuilder().setParent(parent).build();
     return listTags(request);
@@ -4405,7 +4640,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListTagsPagedResponse listTags(ListTagsRequest request) {
     return listTagsPagedCallable().call(request);
   }
@@ -4438,7 +4675,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable() {
     return stub.listTagsPagedCallable();
   }
@@ -4478,7 +4718,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListTagsRequest, ListTagsResponse> listTagsCallable() {
     return stub.listTagsCallable();
   }
@@ -4515,7 +4758,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Policy setIamPolicy(ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
@@ -4558,7 +4803,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Policy setIamPolicy(String resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
@@ -4597,7 +4844,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Policy setIamPolicy(SetIamPolicyRequest request) {
     return setIamPolicyCallable().call(request);
   }
@@ -4633,7 +4882,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   Policy response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
   }
@@ -4669,7 +4921,9 @@ public class DataCatalogClient implements BackgroundResource {
    * @param resource REQUIRED: The resource for which the policy is being requested. See the
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Policy getIamPolicy(ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
@@ -4710,7 +4964,9 @@ public class DataCatalogClient implements BackgroundResource {
    * @param resource REQUIRED: The resource for which the policy is being requested. See the
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Policy getIamPolicy(String resource) {
     GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
     return getIamPolicy(request);
@@ -4751,7 +5007,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Policy getIamPolicy(GetIamPolicyRequest request) {
     return getIamPolicyCallable().call(request);
   }
@@ -4790,7 +5048,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   Policy response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
   }
@@ -4827,7 +5088,9 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
     return testIamPermissionsCallable().call(request);
   }
@@ -4864,7 +5127,10 @@ public class DataCatalogClient implements BackgroundResource {
    *   TestIamPermissionsResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();

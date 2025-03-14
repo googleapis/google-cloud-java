@@ -92,7 +92,10 @@ import javax.annotation.Generated;
  * Base stub class for the DataCatalog service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public abstract class DataCatalogStub implements BackgroundResource {
 
@@ -104,184 +107,227 @@ public abstract class DataCatalogStub implements BackgroundResource {
     return null;
   }
 
+  @Deprecated
   public UnaryCallable<SearchCatalogRequest, SearchCatalogPagedResponse>
       searchCatalogPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: searchCatalogPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<SearchCatalogRequest, SearchCatalogResponse> searchCatalogCallable() {
     throw new UnsupportedOperationException("Not implemented: searchCatalogCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<CreateEntryGroupRequest, EntryGroup> createEntryGroupCallable() {
     throw new UnsupportedOperationException("Not implemented: createEntryGroupCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GetEntryGroupRequest, EntryGroup> getEntryGroupCallable() {
     throw new UnsupportedOperationException("Not implemented: getEntryGroupCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupCallable() {
     throw new UnsupportedOperationException("Not implemented: updateEntryGroupCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<DeleteEntryGroupRequest, Empty> deleteEntryGroupCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteEntryGroupCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsPagedResponse>
       listEntryGroupsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listEntryGroupsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsResponse> listEntryGroupsCallable() {
     throw new UnsupportedOperationException("Not implemented: listEntryGroupsCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<CreateEntryRequest, Entry> createEntryCallable() {
     throw new UnsupportedOperationException("Not implemented: createEntryCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<UpdateEntryRequest, Entry> updateEntryCallable() {
     throw new UnsupportedOperationException("Not implemented: updateEntryCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<DeleteEntryRequest, Empty> deleteEntryCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteEntryCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GetEntryRequest, Entry> getEntryCallable() {
     throw new UnsupportedOperationException("Not implemented: getEntryCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<LookupEntryRequest, Entry> lookupEntryCallable() {
     throw new UnsupportedOperationException("Not implemented: lookupEntryCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListEntriesRequest, ListEntriesPagedResponse> listEntriesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listEntriesPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListEntriesRequest, ListEntriesResponse> listEntriesCallable() {
     throw new UnsupportedOperationException("Not implemented: listEntriesCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ModifyEntryOverviewRequest, EntryOverview> modifyEntryOverviewCallable() {
     throw new UnsupportedOperationException("Not implemented: modifyEntryOverviewCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ModifyEntryContactsRequest, Contacts> modifyEntryContactsCallable() {
     throw new UnsupportedOperationException("Not implemented: modifyEntryContactsCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<CreateTagTemplateRequest, TagTemplate> createTagTemplateCallable() {
     throw new UnsupportedOperationException("Not implemented: createTagTemplateCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GetTagTemplateRequest, TagTemplate> getTagTemplateCallable() {
     throw new UnsupportedOperationException("Not implemented: getTagTemplateCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<UpdateTagTemplateRequest, TagTemplate> updateTagTemplateCallable() {
     throw new UnsupportedOperationException("Not implemented: updateTagTemplateCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<DeleteTagTemplateRequest, Empty> deleteTagTemplateCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteTagTemplateCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<CreateTagTemplateFieldRequest, TagTemplateField>
       createTagTemplateFieldCallable() {
     throw new UnsupportedOperationException("Not implemented: createTagTemplateFieldCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<UpdateTagTemplateFieldRequest, TagTemplateField>
       updateTagTemplateFieldCallable() {
     throw new UnsupportedOperationException("Not implemented: updateTagTemplateFieldCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<RenameTagTemplateFieldRequest, TagTemplateField>
       renameTagTemplateFieldCallable() {
     throw new UnsupportedOperationException("Not implemented: renameTagTemplateFieldCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
       renameTagTemplateFieldEnumValueCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: renameTagTemplateFieldEnumValueCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteTagTemplateFieldCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<CreateTagRequest, Tag> createTagCallable() {
     throw new UnsupportedOperationException("Not implemented: createTagCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<UpdateTagRequest, Tag> updateTagCallable() {
     throw new UnsupportedOperationException("Not implemented: updateTagCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteTagCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listTagsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListTagsRequest, ListTagsResponse> listTagsCallable() {
     throw new UnsupportedOperationException("Not implemented: listTagsCallable()");
   }
 
+  @Deprecated
   public OperationCallable<ReconcileTagsRequest, ReconcileTagsResponse, ReconcileTagsMetadata>
       reconcileTagsOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: reconcileTagsOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ReconcileTagsRequest, Operation> reconcileTagsCallable() {
     throw new UnsupportedOperationException("Not implemented: reconcileTagsCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<StarEntryRequest, StarEntryResponse> starEntryCallable() {
     throw new UnsupportedOperationException("Not implemented: starEntryCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<UnstarEntryRequest, UnstarEntryResponse> unstarEntryCallable() {
     throw new UnsupportedOperationException("Not implemented: unstarEntryCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
+  @Deprecated
   public OperationCallable<ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
       importEntriesOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: importEntriesOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ImportEntriesRequest, Operation> importEntriesCallable() {
     throw new UnsupportedOperationException("Not implemented: importEntriesCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<SetConfigRequest, MigrationConfig> setConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: setConfigCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<RetrieveConfigRequest, OrganizationConfig> retrieveConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: retrieveConfigCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<RetrieveEffectiveConfigRequest, MigrationConfig>
       retrieveEffectiveConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: retrieveEffectiveConfigCallable()");

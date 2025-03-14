@@ -434,6 +434,16 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Bound to the lifecycle of the reservation in which it is provisioned.
+     * </pre>
+     *
+     * <code>RESERVATION_BOUND = 293538571;</code>
+     */
+    RESERVATION_BOUND(293538571),
+    /**
+     *
+     *
+     * <pre>
      * Heavily discounted, no guaranteed runtime.
      * </pre>
      *
@@ -463,6 +473,16 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PROVISIONING_MODEL = 0;</code>
      */
     public static final int UNDEFINED_PROVISIONING_MODEL_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Bound to the lifecycle of the reservation in which it is provisioned.
+     * </pre>
+     *
+     * <code>RESERVATION_BOUND = 293538571;</code>
+     */
+    public static final int RESERVATION_BOUND_VALUE = 293538571;
     /**
      *
      *
@@ -510,6 +530,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_PROVISIONING_MODEL;
+        case 293538571:
+          return RESERVATION_BOUND;
         case 2552066:
           return SPOT;
         case 484642493:

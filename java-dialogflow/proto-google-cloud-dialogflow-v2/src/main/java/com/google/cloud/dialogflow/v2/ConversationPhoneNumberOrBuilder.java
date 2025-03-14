@@ -28,6 +28,19 @@ public interface ConversationPhoneNumberOrBuilder
    *
    *
    * <pre>
+   * Output only. Desired country code for the phone number.
+   * </pre>
+   *
+   * <code>int32 country_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The countryCode.
+   */
+  int getCountryCode();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The phone number to connect to this conversation.
    * </pre>
    *

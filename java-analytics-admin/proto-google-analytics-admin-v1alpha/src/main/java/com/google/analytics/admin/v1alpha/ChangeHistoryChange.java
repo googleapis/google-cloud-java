@@ -1004,6 +1004,41 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      */
     com.google.analytics.admin.v1alpha.CalculatedMetricOrBuilder getCalculatedMetricOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a KeyEvent resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.KeyEvent key_event = 32;</code>
+     *
+     * @return Whether the keyEvent field is set.
+     */
+    boolean hasKeyEvent();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a KeyEvent resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.KeyEvent key_event = 32;</code>
+     *
+     * @return The keyEvent.
+     */
+    com.google.analytics.admin.v1alpha.KeyEvent getKeyEvent();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a KeyEvent resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.KeyEvent key_event = 32;</code>
+     */
+    com.google.analytics.admin.v1alpha.KeyEventOrBuilder getKeyEventOrBuilder();
+
     com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource.ResourceCase
         getResourceCase();
   }
@@ -1085,6 +1120,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       AUDIENCE(28),
       EVENT_CREATE_RULE(29),
       CALCULATED_METRIC(31),
+      KEY_EVENT(32),
       RESOURCE_NOT_SET(0);
       private final int value;
 
@@ -1153,6 +1189,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             return EVENT_CREATE_RULE;
           case 31:
             return CALCULATED_METRIC;
+          case 32:
+            return KEY_EVENT;
           case 0:
             return RESOURCE_NOT_SET;
           default:
@@ -2516,6 +2554,57 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return com.google.analytics.admin.v1alpha.CalculatedMetric.getDefaultInstance();
     }
 
+    public static final int KEY_EVENT_FIELD_NUMBER = 32;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a KeyEvent resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.KeyEvent key_event = 32;</code>
+     *
+     * @return Whether the keyEvent field is set.
+     */
+    @java.lang.Override
+    public boolean hasKeyEvent() {
+      return resourceCase_ == 32;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a KeyEvent resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.KeyEvent key_event = 32;</code>
+     *
+     * @return The keyEvent.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.KeyEvent getKeyEvent() {
+      if (resourceCase_ == 32) {
+        return (com.google.analytics.admin.v1alpha.KeyEvent) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.KeyEvent.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a KeyEvent resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.KeyEvent key_event = 32;</code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.KeyEventOrBuilder getKeyEventOrBuilder() {
+      if (resourceCase_ == 32) {
+        return (com.google.analytics.admin.v1alpha.KeyEvent) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.KeyEvent.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2613,6 +2702,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       if (resourceCase_ == 31) {
         output.writeMessage(31, (com.google.analytics.admin.v1alpha.CalculatedMetric) resource_);
+      }
+      if (resourceCase_ == 32) {
+        output.writeMessage(32, (com.google.analytics.admin.v1alpha.KeyEvent) resource_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -2751,6 +2843,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 31, (com.google.analytics.admin.v1alpha.CalculatedMetric) resource_);
       }
+      if (resourceCase_ == 32) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                32, (com.google.analytics.admin.v1alpha.KeyEvent) resource_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2850,6 +2947,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           break;
         case 31:
           if (!getCalculatedMetric().equals(other.getCalculatedMetric())) return false;
+          break;
+        case 32:
+          if (!getKeyEvent().equals(other.getKeyEvent())) return false;
           break;
         case 0:
         default:
@@ -2965,6 +3065,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 31:
           hash = (37 * hash) + CALCULATED_METRIC_FIELD_NUMBER;
           hash = (53 * hash) + getCalculatedMetric().hashCode();
+          break;
+        case 32:
+          hash = (37 * hash) + KEY_EVENT_FIELD_NUMBER;
+          hash = (53 * hash) + getKeyEvent().hashCode();
           break;
         case 0:
         default:
@@ -3196,6 +3300,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         if (calculatedMetricBuilder_ != null) {
           calculatedMetricBuilder_.clear();
         }
+        if (keyEventBuilder_ != null) {
+          keyEventBuilder_.clear();
+        }
         resourceCase_ = 0;
         resource_ = null;
         return this;
@@ -3320,6 +3427,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         if (resourceCase_ == 31 && calculatedMetricBuilder_ != null) {
           result.resource_ = calculatedMetricBuilder_.build();
+        }
+        if (resourceCase_ == 32 && keyEventBuilder_ != null) {
+          result.resource_ = keyEventBuilder_.build();
         }
       }
 
@@ -3501,6 +3611,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           case CALCULATED_METRIC:
             {
               mergeCalculatedMetric(other.getCalculatedMetric());
+              break;
+            }
+          case KEY_EVENT:
+            {
+              mergeKeyEvent(other.getKeyEvent());
               break;
             }
           case RESOURCE_NOT_SET:
@@ -3702,6 +3817,12 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
                   resourceCase_ = 31;
                   break;
                 } // case 250
+              case 258:
+                {
+                  input.readMessage(getKeyEventFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 32;
+                  break;
+                } // case 258
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9224,6 +9345,215 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 31;
         onChanged();
         return calculatedMetricBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.KeyEvent,
+              com.google.analytics.admin.v1alpha.KeyEvent.Builder,
+              com.google.analytics.admin.v1alpha.KeyEventOrBuilder>
+          keyEventBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a KeyEvent resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.KeyEvent key_event = 32;</code>
+       *
+       * @return Whether the keyEvent field is set.
+       */
+      @java.lang.Override
+      public boolean hasKeyEvent() {
+        return resourceCase_ == 32;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a KeyEvent resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.KeyEvent key_event = 32;</code>
+       *
+       * @return The keyEvent.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.KeyEvent getKeyEvent() {
+        if (keyEventBuilder_ == null) {
+          if (resourceCase_ == 32) {
+            return (com.google.analytics.admin.v1alpha.KeyEvent) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.KeyEvent.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 32) {
+            return keyEventBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.KeyEvent.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a KeyEvent resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.KeyEvent key_event = 32;</code>
+       */
+      public Builder setKeyEvent(com.google.analytics.admin.v1alpha.KeyEvent value) {
+        if (keyEventBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          keyEventBuilder_.setMessage(value);
+        }
+        resourceCase_ = 32;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a KeyEvent resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.KeyEvent key_event = 32;</code>
+       */
+      public Builder setKeyEvent(
+          com.google.analytics.admin.v1alpha.KeyEvent.Builder builderForValue) {
+        if (keyEventBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          keyEventBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 32;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a KeyEvent resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.KeyEvent key_event = 32;</code>
+       */
+      public Builder mergeKeyEvent(com.google.analytics.admin.v1alpha.KeyEvent value) {
+        if (keyEventBuilder_ == null) {
+          if (resourceCase_ == 32
+              && resource_ != com.google.analytics.admin.v1alpha.KeyEvent.getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.KeyEvent.newBuilder(
+                        (com.google.analytics.admin.v1alpha.KeyEvent) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 32) {
+            keyEventBuilder_.mergeFrom(value);
+          } else {
+            keyEventBuilder_.setMessage(value);
+          }
+        }
+        resourceCase_ = 32;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a KeyEvent resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.KeyEvent key_event = 32;</code>
+       */
+      public Builder clearKeyEvent() {
+        if (keyEventBuilder_ == null) {
+          if (resourceCase_ == 32) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 32) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          keyEventBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a KeyEvent resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.KeyEvent key_event = 32;</code>
+       */
+      public com.google.analytics.admin.v1alpha.KeyEvent.Builder getKeyEventBuilder() {
+        return getKeyEventFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a KeyEvent resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.KeyEvent key_event = 32;</code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.KeyEventOrBuilder getKeyEventOrBuilder() {
+        if ((resourceCase_ == 32) && (keyEventBuilder_ != null)) {
+          return keyEventBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 32) {
+            return (com.google.analytics.admin.v1alpha.KeyEvent) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.KeyEvent.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a KeyEvent resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.KeyEvent key_event = 32;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.KeyEvent,
+              com.google.analytics.admin.v1alpha.KeyEvent.Builder,
+              com.google.analytics.admin.v1alpha.KeyEventOrBuilder>
+          getKeyEventFieldBuilder() {
+        if (keyEventBuilder_ == null) {
+          if (!(resourceCase_ == 32)) {
+            resource_ = com.google.analytics.admin.v1alpha.KeyEvent.getDefaultInstance();
+          }
+          keyEventBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.KeyEvent,
+                  com.google.analytics.admin.v1alpha.KeyEvent.Builder,
+                  com.google.analytics.admin.v1alpha.KeyEventOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.KeyEvent) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 32;
+        onChanged();
+        return keyEventBuilder_;
       }
 
       @java.lang.Override

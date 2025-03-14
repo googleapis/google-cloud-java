@@ -184,6 +184,102 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListToolVersions</td>
+ *      <td><p> List versions of the specified [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listToolVersions(ListToolVersionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listToolVersions(ToolName parent)
+ *           <li><p> listToolVersions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listToolVersionsPagedCallable()
+ *           <li><p> listToolVersionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateToolVersion</td>
+ *      <td><p> Creates a version for the specified [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createToolVersion(CreateToolVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createToolVersion(ToolName parent, ToolVersion toolVersion)
+ *           <li><p> createToolVersion(String parent, ToolVersion toolVersion)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createToolVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetToolVersion</td>
+ *      <td><p> Retrieves the specified version of the [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getToolVersion(GetToolVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getToolVersion(ToolVersionName name)
+ *           <li><p> getToolVersion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getToolVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteToolVersion</td>
+ *      <td><p> Deletes the specified version of the [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteToolVersion(DeleteToolVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteToolVersion(ToolVersionName name)
+ *           <li><p> deleteToolVersion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteToolVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RestoreToolVersion</td>
+ *      <td><p> Retrieves the specified version of the Tool and stores it as the current tool draft, returning the tool with resources updated.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> restoreToolVersion(RestoreToolVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> restoreToolVersion(ToolVersionName name)
+ *           <li><p> restoreToolVersion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> restoreToolVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -1018,6 +1114,656 @@ public class ToolsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * List versions of the specified [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   ToolName parent = ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]");
+   *   for (ToolVersion element : toolsClient.listToolVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent of the tool versions. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListToolVersionsPagedResponse listToolVersions(ToolName parent) {
+    ListToolVersionsRequest request =
+        ListToolVersionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listToolVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List versions of the specified [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   String parent = ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString();
+   *   for (ToolVersion element : toolsClient.listToolVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent of the tool versions. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListToolVersionsPagedResponse listToolVersions(String parent) {
+    ListToolVersionsRequest request =
+        ListToolVersionsRequest.newBuilder().setParent(parent).build();
+    return listToolVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List versions of the specified [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   ListToolVersionsRequest request =
+   *       ListToolVersionsRequest.newBuilder()
+   *           .setParent(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ToolVersion element : toolsClient.listToolVersions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListToolVersionsPagedResponse listToolVersions(ListToolVersionsRequest request) {
+    return listToolVersionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List versions of the specified [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   ListToolVersionsRequest request =
+   *       ListToolVersionsRequest.newBuilder()
+   *           .setParent(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ToolVersion> future =
+   *       toolsClient.listToolVersionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ToolVersion element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListToolVersionsRequest, ListToolVersionsPagedResponse>
+      listToolVersionsPagedCallable() {
+    return stub.listToolVersionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List versions of the specified [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   ListToolVersionsRequest request =
+   *       ListToolVersionsRequest.newBuilder()
+   *           .setParent(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListToolVersionsResponse response = toolsClient.listToolVersionsCallable().call(request);
+   *     for (ToolVersion element : response.getToolVersionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListToolVersionsRequest, ListToolVersionsResponse>
+      listToolVersionsCallable() {
+    return stub.listToolVersionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a version for the specified [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   ToolName parent = ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]");
+   *   ToolVersion toolVersion = ToolVersion.newBuilder().build();
+   *   ToolVersion response = toolsClient.createToolVersion(parent, toolVersion);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The tool to create a version for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
+   * @param toolVersion Required. The tool version to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ToolVersion createToolVersion(ToolName parent, ToolVersion toolVersion) {
+    CreateToolVersionRequest request =
+        CreateToolVersionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setToolVersion(toolVersion)
+            .build();
+    return createToolVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a version for the specified [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   String parent = ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString();
+   *   ToolVersion toolVersion = ToolVersion.newBuilder().build();
+   *   ToolVersion response = toolsClient.createToolVersion(parent, toolVersion);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The tool to create a version for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
+   * @param toolVersion Required. The tool version to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ToolVersion createToolVersion(String parent, ToolVersion toolVersion) {
+    CreateToolVersionRequest request =
+        CreateToolVersionRequest.newBuilder().setParent(parent).setToolVersion(toolVersion).build();
+    return createToolVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a version for the specified [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   CreateToolVersionRequest request =
+   *       CreateToolVersionRequest.newBuilder()
+   *           .setParent(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
+   *           .setToolVersion(ToolVersion.newBuilder().build())
+   *           .build();
+   *   ToolVersion response = toolsClient.createToolVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ToolVersion createToolVersion(CreateToolVersionRequest request) {
+    return createToolVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a version for the specified [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   CreateToolVersionRequest request =
+   *       CreateToolVersionRequest.newBuilder()
+   *           .setParent(ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]").toString())
+   *           .setToolVersion(ToolVersion.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ToolVersion> future = toolsClient.createToolVersionCallable().futureCall(request);
+   *   // Do something.
+   *   ToolVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateToolVersionRequest, ToolVersion> createToolVersionCallable() {
+    return stub.createToolVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the specified version of the [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   ToolVersionName name =
+   *       ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]");
+   *   ToolVersion response = toolsClient.getToolVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the tool version. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;/versions/&lt;VersionID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ToolVersion getToolVersion(ToolVersionName name) {
+    GetToolVersionRequest request =
+        GetToolVersionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getToolVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the specified version of the [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   String name =
+   *       ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]")
+   *           .toString();
+   *   ToolVersion response = toolsClient.getToolVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the tool version. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;/versions/&lt;VersionID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ToolVersion getToolVersion(String name) {
+    GetToolVersionRequest request = GetToolVersionRequest.newBuilder().setName(name).build();
+    return getToolVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the specified version of the [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   GetToolVersionRequest request =
+   *       GetToolVersionRequest.newBuilder()
+   *           .setName(
+   *               ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ToolVersion response = toolsClient.getToolVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ToolVersion getToolVersion(GetToolVersionRequest request) {
+    return getToolVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the specified version of the [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   GetToolVersionRequest request =
+   *       GetToolVersionRequest.newBuilder()
+   *           .setName(
+   *               ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ToolVersion> future = toolsClient.getToolVersionCallable().futureCall(request);
+   *   // Do something.
+   *   ToolVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetToolVersionRequest, ToolVersion> getToolVersionCallable() {
+    return stub.getToolVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified version of the [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   ToolVersionName name =
+   *       ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]");
+   *   toolsClient.deleteToolVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the tool version to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;/versions/&lt;VersionID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteToolVersion(ToolVersionName name) {
+    DeleteToolVersionRequest request =
+        DeleteToolVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteToolVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified version of the [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   String name =
+   *       ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]")
+   *           .toString();
+   *   toolsClient.deleteToolVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the tool version to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;/versions/&lt;VersionID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteToolVersion(String name) {
+    DeleteToolVersionRequest request = DeleteToolVersionRequest.newBuilder().setName(name).build();
+    deleteToolVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified version of the [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   DeleteToolVersionRequest request =
+   *       DeleteToolVersionRequest.newBuilder()
+   *           .setName(
+   *               ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]")
+   *                   .toString())
+   *           .setForce(true)
+   *           .build();
+   *   toolsClient.deleteToolVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteToolVersion(DeleteToolVersionRequest request) {
+    deleteToolVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified version of the [Tool][google.cloud.dialogflow.cx.v3beta1.Tool].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   DeleteToolVersionRequest request =
+   *       DeleteToolVersionRequest.newBuilder()
+   *           .setName(
+   *               ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]")
+   *                   .toString())
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Empty> future = toolsClient.deleteToolVersionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteToolVersionRequest, Empty> deleteToolVersionCallable() {
+    return stub.deleteToolVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the specified version of the Tool and stores it as the current tool draft, returning
+   * the tool with resources updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   ToolVersionName name =
+   *       ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]");
+   *   RestoreToolVersionResponse response = toolsClient.restoreToolVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the tool version. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;/versions/&lt;VersionID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestoreToolVersionResponse restoreToolVersion(ToolVersionName name) {
+    RestoreToolVersionRequest request =
+        RestoreToolVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return restoreToolVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the specified version of the Tool and stores it as the current tool draft, returning
+   * the tool with resources updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   String name =
+   *       ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]")
+   *           .toString();
+   *   RestoreToolVersionResponse response = toolsClient.restoreToolVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the tool version. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;/versions/&lt;VersionID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestoreToolVersionResponse restoreToolVersion(String name) {
+    RestoreToolVersionRequest request =
+        RestoreToolVersionRequest.newBuilder().setName(name).build();
+    return restoreToolVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the specified version of the Tool and stores it as the current tool draft, returning
+   * the tool with resources updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   RestoreToolVersionRequest request =
+   *       RestoreToolVersionRequest.newBuilder()
+   *           .setName(
+   *               ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]")
+   *                   .toString())
+   *           .build();
+   *   RestoreToolVersionResponse response = toolsClient.restoreToolVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestoreToolVersionResponse restoreToolVersion(RestoreToolVersionRequest request) {
+    return restoreToolVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the specified version of the Tool and stores it as the current tool draft, returning
+   * the tool with resources updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ToolsClient toolsClient = ToolsClient.create()) {
+   *   RestoreToolVersionRequest request =
+   *       RestoreToolVersionRequest.newBuilder()
+   *           .setName(
+   *               ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<RestoreToolVersionResponse> future =
+   *       toolsClient.restoreToolVersionCallable().futureCall(request);
+   *   // Do something.
+   *   RestoreToolVersionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RestoreToolVersionRequest, RestoreToolVersionResponse>
+      restoreToolVersionCallable() {
+    return stub.restoreToolVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -1262,6 +2008,83 @@ public class ToolsClient implements BackgroundResource {
     protected ListToolsFixedSizeCollection createCollection(
         List<ListToolsPage> pages, int collectionSize) {
       return new ListToolsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListToolVersionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListToolVersionsRequest,
+          ListToolVersionsResponse,
+          ToolVersion,
+          ListToolVersionsPage,
+          ListToolVersionsFixedSizeCollection> {
+
+    public static ApiFuture<ListToolVersionsPagedResponse> createAsync(
+        PageContext<ListToolVersionsRequest, ListToolVersionsResponse, ToolVersion> context,
+        ApiFuture<ListToolVersionsResponse> futureResponse) {
+      ApiFuture<ListToolVersionsPage> futurePage =
+          ListToolVersionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListToolVersionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListToolVersionsPagedResponse(ListToolVersionsPage page) {
+      super(page, ListToolVersionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListToolVersionsPage
+      extends AbstractPage<
+          ListToolVersionsRequest, ListToolVersionsResponse, ToolVersion, ListToolVersionsPage> {
+
+    private ListToolVersionsPage(
+        PageContext<ListToolVersionsRequest, ListToolVersionsResponse, ToolVersion> context,
+        ListToolVersionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListToolVersionsPage createEmptyPage() {
+      return new ListToolVersionsPage(null, null);
+    }
+
+    @Override
+    protected ListToolVersionsPage createPage(
+        PageContext<ListToolVersionsRequest, ListToolVersionsResponse, ToolVersion> context,
+        ListToolVersionsResponse response) {
+      return new ListToolVersionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListToolVersionsPage> createPageAsync(
+        PageContext<ListToolVersionsRequest, ListToolVersionsResponse, ToolVersion> context,
+        ApiFuture<ListToolVersionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListToolVersionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListToolVersionsRequest,
+          ListToolVersionsResponse,
+          ToolVersion,
+          ListToolVersionsPage,
+          ListToolVersionsFixedSizeCollection> {
+
+    private ListToolVersionsFixedSizeCollection(
+        List<ListToolVersionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListToolVersionsFixedSizeCollection createEmptyCollection() {
+      return new ListToolVersionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListToolVersionsFixedSizeCollection createCollection(
+        List<ListToolVersionsPage> pages, int collectionSize) {
+      return new ListToolVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
 

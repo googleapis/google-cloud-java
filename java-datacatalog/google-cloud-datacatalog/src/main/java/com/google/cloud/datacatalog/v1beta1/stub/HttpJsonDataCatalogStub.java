@@ -88,8 +88,11 @@ import javax.annotation.Generated;
  * REST stub implementation for the DataCatalog service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @BetaApi
+@Deprecated
 @Generated("by gapic-generator-java")
 public class HttpJsonDataCatalogStub extends DataCatalogStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();

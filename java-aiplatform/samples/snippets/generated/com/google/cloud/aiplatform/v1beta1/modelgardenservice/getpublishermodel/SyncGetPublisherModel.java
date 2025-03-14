@@ -43,6 +43,7 @@ public class SyncGetPublisherModel {
               .setView(PublisherModelView.forNumber(0))
               .setIsHuggingFaceModel(true)
               .setHuggingFaceToken("huggingFaceToken74062599")
+              .setIncludeEquivalentModelGardenModelDeploymentConfigs(true)
               .build();
       PublisherModel response = modelGardenServiceClient.getPublisherModel(request);
     }

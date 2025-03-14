@@ -164,7 +164,10 @@ import javax.annotation.Generated;
  *     .setPollingAlgorithm(timedRetryAlgorithm)
  *     .build();
  * }</pre>
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomyServiceStubSettings> {
   /** The default scopes of the service. */
@@ -468,7 +471,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
             }
           };
 
-  /** Returns the object with the settings used for calls to createDataTaxonomy. */
+  /**
+   * Returns the object with the settings used for calls to createDataTaxonomy.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateDataTaxonomyRequest, Operation> createDataTaxonomySettings() {
     return createDataTaxonomySettings;
   }
@@ -479,7 +487,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return createDataTaxonomyOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateDataTaxonomy. */
+  /**
+   * Returns the object with the settings used for calls to updateDataTaxonomy.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateDataTaxonomyRequest, Operation> updateDataTaxonomySettings() {
     return updateDataTaxonomySettings;
   }
@@ -490,7 +503,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return updateDataTaxonomyOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteDataTaxonomy. */
+  /**
+   * Returns the object with the settings used for calls to deleteDataTaxonomy.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteDataTaxonomyRequest, Operation> deleteDataTaxonomySettings() {
     return deleteDataTaxonomySettings;
   }
@@ -501,19 +519,34 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return deleteDataTaxonomyOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to listDataTaxonomies. */
+  /**
+   * Returns the object with the settings used for calls to listDataTaxonomies.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListDataTaxonomiesRequest, ListDataTaxonomiesResponse, ListDataTaxonomiesPagedResponse>
       listDataTaxonomiesSettings() {
     return listDataTaxonomiesSettings;
   }
 
-  /** Returns the object with the settings used for calls to getDataTaxonomy. */
+  /**
+   * Returns the object with the settings used for calls to getDataTaxonomy.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetDataTaxonomyRequest, DataTaxonomy> getDataTaxonomySettings() {
     return getDataTaxonomySettings;
   }
 
-  /** Returns the object with the settings used for calls to createDataAttributeBinding. */
+  /**
+   * Returns the object with the settings used for calls to createDataAttributeBinding.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateDataAttributeBindingRequest, Operation>
       createDataAttributeBindingSettings() {
     return createDataAttributeBindingSettings;
@@ -526,7 +559,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return createDataAttributeBindingOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateDataAttributeBinding. */
+  /**
+   * Returns the object with the settings used for calls to updateDataAttributeBinding.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateDataAttributeBindingRequest, Operation>
       updateDataAttributeBindingSettings() {
     return updateDataAttributeBindingSettings;
@@ -539,7 +577,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return updateDataAttributeBindingOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteDataAttributeBinding. */
+  /**
+   * Returns the object with the settings used for calls to deleteDataAttributeBinding.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteDataAttributeBindingRequest, Operation>
       deleteDataAttributeBindingSettings() {
     return deleteDataAttributeBindingSettings;
@@ -551,7 +594,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return deleteDataAttributeBindingOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to listDataAttributeBindings. */
+  /**
+   * Returns the object with the settings used for calls to listDataAttributeBindings.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListDataAttributeBindingsRequest,
           ListDataAttributeBindingsResponse,
@@ -560,13 +608,23 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return listDataAttributeBindingsSettings;
   }
 
-  /** Returns the object with the settings used for calls to getDataAttributeBinding. */
+  /**
+   * Returns the object with the settings used for calls to getDataAttributeBinding.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetDataAttributeBindingRequest, DataAttributeBinding>
       getDataAttributeBindingSettings() {
     return getDataAttributeBindingSettings;
   }
 
-  /** Returns the object with the settings used for calls to createDataAttribute. */
+  /**
+   * Returns the object with the settings used for calls to createDataAttribute.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateDataAttributeRequest, Operation> createDataAttributeSettings() {
     return createDataAttributeSettings;
   }
@@ -577,7 +635,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return createDataAttributeOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateDataAttribute. */
+  /**
+   * Returns the object with the settings used for calls to updateDataAttribute.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateDataAttributeRequest, Operation> updateDataAttributeSettings() {
     return updateDataAttributeSettings;
   }
@@ -588,7 +651,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return updateDataAttributeOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteDataAttribute. */
+  /**
+   * Returns the object with the settings used for calls to deleteDataAttribute.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteDataAttributeRequest, Operation> deleteDataAttributeSettings() {
     return deleteDataAttributeSettings;
   }
@@ -599,14 +667,24 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return deleteDataAttributeOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to listDataAttributes. */
+  /**
+   * Returns the object with the settings used for calls to listDataAttributes.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListDataAttributesRequest, ListDataAttributesResponse, ListDataAttributesPagedResponse>
       listDataAttributesSettings() {
     return listDataAttributesSettings;
   }
 
-  /** Returns the object with the settings used for calls to getDataAttribute. */
+  /**
+   * Returns the object with the settings used for calls to getDataAttribute.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetDataAttributeRequest, DataAttribute> getDataAttributeSettings() {
     return getDataAttributeSettings;
   }
@@ -1326,7 +1404,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to createDataTaxonomy. */
+    /**
+     * Returns the builder for the settings used for calls to createDataTaxonomy.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateDataTaxonomyRequest, Operation>
         createDataTaxonomySettings() {
       return createDataTaxonomySettings;
@@ -1338,7 +1421,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
       return createDataTaxonomyOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateDataTaxonomy. */
+    /**
+     * Returns the builder for the settings used for calls to updateDataTaxonomy.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateDataTaxonomyRequest, Operation>
         updateDataTaxonomySettings() {
       return updateDataTaxonomySettings;
@@ -1350,7 +1438,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
       return updateDataTaxonomyOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteDataTaxonomy. */
+    /**
+     * Returns the builder for the settings used for calls to deleteDataTaxonomy.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteDataTaxonomyRequest, Operation>
         deleteDataTaxonomySettings() {
       return deleteDataTaxonomySettings;
@@ -1362,20 +1455,35 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
       return deleteDataTaxonomyOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listDataTaxonomies. */
+    /**
+     * Returns the builder for the settings used for calls to listDataTaxonomies.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListDataTaxonomiesRequest, ListDataTaxonomiesResponse, ListDataTaxonomiesPagedResponse>
         listDataTaxonomiesSettings() {
       return listDataTaxonomiesSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getDataTaxonomy. */
+    /**
+     * Returns the builder for the settings used for calls to getDataTaxonomy.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetDataTaxonomyRequest, DataTaxonomy>
         getDataTaxonomySettings() {
       return getDataTaxonomySettings;
     }
 
-    /** Returns the builder for the settings used for calls to createDataAttributeBinding. */
+    /**
+     * Returns the builder for the settings used for calls to createDataAttributeBinding.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateDataAttributeBindingRequest, Operation>
         createDataAttributeBindingSettings() {
       return createDataAttributeBindingSettings;
@@ -1388,7 +1496,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
       return createDataAttributeBindingOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateDataAttributeBinding. */
+    /**
+     * Returns the builder for the settings used for calls to updateDataAttributeBinding.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateDataAttributeBindingRequest, Operation>
         updateDataAttributeBindingSettings() {
       return updateDataAttributeBindingSettings;
@@ -1401,7 +1514,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
       return updateDataAttributeBindingOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteDataAttributeBinding. */
+    /**
+     * Returns the builder for the settings used for calls to deleteDataAttributeBinding.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteDataAttributeBindingRequest, Operation>
         deleteDataAttributeBindingSettings() {
       return deleteDataAttributeBindingSettings;
@@ -1414,7 +1532,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
       return deleteDataAttributeBindingOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listDataAttributeBindings. */
+    /**
+     * Returns the builder for the settings used for calls to listDataAttributeBindings.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListDataAttributeBindingsRequest,
             ListDataAttributeBindingsResponse,
@@ -1423,13 +1546,23 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
       return listDataAttributeBindingsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getDataAttributeBinding. */
+    /**
+     * Returns the builder for the settings used for calls to getDataAttributeBinding.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetDataAttributeBindingRequest, DataAttributeBinding>
         getDataAttributeBindingSettings() {
       return getDataAttributeBindingSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createDataAttribute. */
+    /**
+     * Returns the builder for the settings used for calls to createDataAttribute.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateDataAttributeRequest, Operation>
         createDataAttributeSettings() {
       return createDataAttributeSettings;
@@ -1442,7 +1575,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
       return createDataAttributeOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateDataAttribute. */
+    /**
+     * Returns the builder for the settings used for calls to updateDataAttribute.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateDataAttributeRequest, Operation>
         updateDataAttributeSettings() {
       return updateDataAttributeSettings;
@@ -1455,7 +1593,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
       return updateDataAttributeOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteDataAttribute. */
+    /**
+     * Returns the builder for the settings used for calls to deleteDataAttribute.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteDataAttributeRequest, Operation>
         deleteDataAttributeSettings() {
       return deleteDataAttributeSettings;
@@ -1467,14 +1610,24 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
       return deleteDataAttributeOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listDataAttributes. */
+    /**
+     * Returns the builder for the settings used for calls to listDataAttributes.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListDataAttributesRequest, ListDataAttributesResponse, ListDataAttributesPagedResponse>
         listDataAttributesSettings() {
       return listDataAttributesSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getDataAttribute. */
+    /**
+     * Returns the builder for the settings used for calls to getDataAttribute.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetDataAttributeRequest, DataAttribute>
         getDataAttributeSettings() {
       return getDataAttributeSettings;

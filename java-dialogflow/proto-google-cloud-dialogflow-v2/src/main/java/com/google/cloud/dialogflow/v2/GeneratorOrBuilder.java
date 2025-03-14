@@ -84,6 +84,41 @@ public interface GeneratorOrBuilder
    *
    *
    * <pre>
+   * Input of free from generator to LLM.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.FreeFormContext free_form_context = 11;</code>
+   *
+   * @return Whether the freeFormContext field is set.
+   */
+  boolean hasFreeFormContext();
+  /**
+   *
+   *
+   * <pre>
+   * Input of free from generator to LLM.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.FreeFormContext free_form_context = 11;</code>
+   *
+   * @return The freeFormContext.
+   */
+  com.google.cloud.dialogflow.v2.FreeFormContext getFreeFormContext();
+  /**
+   *
+   *
+   * <pre>
+   * Input of free from generator to LLM.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.FreeFormContext free_form_context = 11;</code>
+   */
+  com.google.cloud.dialogflow.v2.FreeFormContextOrBuilder getFreeFormContextOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Input of prebuilt Summarization feature.
    * </pre>
    *
@@ -191,6 +226,55 @@ public interface GeneratorOrBuilder
    *
    *
    * <pre>
+   * Optional. The published Large Language Model name.
+   * * To use the latest model version, specify the model name without version
+   *   number. Example: `text-bison`
+   * * To use a stable model version, specify the version number as well.
+   *   Example: `text-bison&#64;002`.
+   * </pre>
+   *
+   * <code>string published_model = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the publishedModel field is set.
+   */
+  boolean hasPublishedModel();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The published Large Language Model name.
+   * * To use the latest model version, specify the model name without version
+   *   number. Example: `text-bison`
+   * * To use a stable model version, specify the version number as well.
+   *   Example: `text-bison&#64;002`.
+   * </pre>
+   *
+   * <code>string published_model = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The publishedModel.
+   */
+  java.lang.String getPublishedModel();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The published Large Language Model name.
+   * * To use the latest model version, specify the model name without version
+   *   number. Example: `text-bison`
+   * * To use a stable model version, specify the version number as well.
+   *   Example: `text-bison&#64;002`.
+   * </pre>
+   *
+   * <code>string published_model = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for publishedModel.
+   */
+  com.google.protobuf.ByteString getPublishedModelBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Creation time of this generator.
    * </pre>
    *
@@ -264,4 +348,6 @@ public interface GeneratorOrBuilder
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
   com.google.cloud.dialogflow.v2.Generator.ContextCase getContextCase();
+
+  com.google.cloud.dialogflow.v2.Generator.FoundationModelCase getFoundationModelCase();
 }

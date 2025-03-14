@@ -70,6 +70,7 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    FREE_FORM_SUGGESTION(1),
     SUMMARY_SUGGESTION(2),
     SUGGESTION_NOT_SET(0);
     private final int value;
@@ -89,6 +90,8 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
 
     public static SuggestionCase forNumber(int value) {
       switch (value) {
+        case 1:
+          return FREE_FORM_SUGGESTION;
         case 2:
           return SUMMARY_SUGGESTION;
         case 0:
@@ -105,6 +108,64 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
 
   public SuggestionCase getSuggestionCase() {
     return SuggestionCase.forNumber(suggestionCase_);
+  }
+
+  public static final int FREE_FORM_SUGGESTION_FIELD_NUMBER = 1;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Free form suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.FreeFormSuggestion free_form_suggestion = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the freeFormSuggestion field is set.
+   */
+  @java.lang.Override
+  public boolean hasFreeFormSuggestion() {
+    return suggestionCase_ == 1;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Free form suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.FreeFormSuggestion free_form_suggestion = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The freeFormSuggestion.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.FreeFormSuggestion getFreeFormSuggestion() {
+    if (suggestionCase_ == 1) {
+      return (com.google.cloud.dialogflow.v2.FreeFormSuggestion) suggestion_;
+    }
+    return com.google.cloud.dialogflow.v2.FreeFormSuggestion.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Free form suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.FreeFormSuggestion free_form_suggestion = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.FreeFormSuggestionOrBuilder
+      getFreeFormSuggestionOrBuilder() {
+    if (suggestionCase_ == 1) {
+      return (com.google.cloud.dialogflow.v2.FreeFormSuggestion) suggestion_;
+    }
+    return com.google.cloud.dialogflow.v2.FreeFormSuggestion.getDefaultInstance();
   }
 
   public static final int SUMMARY_SUGGESTION_FIELD_NUMBER = 2;
@@ -178,6 +239,9 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (suggestionCase_ == 1) {
+      output.writeMessage(1, (com.google.cloud.dialogflow.v2.FreeFormSuggestion) suggestion_);
+    }
     if (suggestionCase_ == 2) {
       output.writeMessage(2, (com.google.cloud.dialogflow.v2.SummarySuggestion) suggestion_);
     }
@@ -190,6 +254,11 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
+    if (suggestionCase_ == 1) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              1, (com.google.cloud.dialogflow.v2.FreeFormSuggestion) suggestion_);
+    }
     if (suggestionCase_ == 2) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -213,6 +282,9 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
 
     if (!getSuggestionCase().equals(other.getSuggestionCase())) return false;
     switch (suggestionCase_) {
+      case 1:
+        if (!getFreeFormSuggestion().equals(other.getFreeFormSuggestion())) return false;
+        break;
       case 2:
         if (!getSummarySuggestion().equals(other.getSummarySuggestion())) return false;
         break;
@@ -231,6 +303,10 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     switch (suggestionCase_) {
+      case 1:
+        hash = (37 * hash) + FREE_FORM_SUGGESTION_FIELD_NUMBER;
+        hash = (53 * hash) + getFreeFormSuggestion().hashCode();
+        break;
       case 2:
         hash = (37 * hash) + SUMMARY_SUGGESTION_FIELD_NUMBER;
         hash = (53 * hash) + getSummarySuggestion().hashCode();
@@ -377,6 +453,9 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (freeFormSuggestionBuilder_ != null) {
+        freeFormSuggestionBuilder_.clear();
+      }
       if (summarySuggestionBuilder_ != null) {
         summarySuggestionBuilder_.clear();
       }
@@ -424,6 +503,9 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
     private void buildPartialOneofs(com.google.cloud.dialogflow.v2.GeneratorSuggestion result) {
       result.suggestionCase_ = suggestionCase_;
       result.suggestion_ = this.suggestion_;
+      if (suggestionCase_ == 1 && freeFormSuggestionBuilder_ != null) {
+        result.suggestion_ = freeFormSuggestionBuilder_.build();
+      }
       if (suggestionCase_ == 2 && summarySuggestionBuilder_ != null) {
         result.suggestion_ = summarySuggestionBuilder_.build();
       }
@@ -476,6 +558,11 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
       if (other == com.google.cloud.dialogflow.v2.GeneratorSuggestion.getDefaultInstance())
         return this;
       switch (other.getSuggestionCase()) {
+        case FREE_FORM_SUGGESTION:
+          {
+            mergeFreeFormSuggestion(other.getFreeFormSuggestion());
+            break;
+          }
         case SUMMARY_SUGGESTION:
           {
             mergeSummarySuggestion(other.getSummarySuggestion());
@@ -512,6 +599,13 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                input.readMessage(
+                    getFreeFormSuggestionFieldBuilder().getBuilder(), extensionRegistry);
+                suggestionCase_ = 1;
+                break;
+              } // case 10
             case 18:
               {
                 input.readMessage(
@@ -551,6 +645,237 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
     }
 
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.FreeFormSuggestion,
+            com.google.cloud.dialogflow.v2.FreeFormSuggestion.Builder,
+            com.google.cloud.dialogflow.v2.FreeFormSuggestionOrBuilder>
+        freeFormSuggestionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Free form suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.FreeFormSuggestion free_form_suggestion = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the freeFormSuggestion field is set.
+     */
+    @java.lang.Override
+    public boolean hasFreeFormSuggestion() {
+      return suggestionCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Free form suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.FreeFormSuggestion free_form_suggestion = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The freeFormSuggestion.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.FreeFormSuggestion getFreeFormSuggestion() {
+      if (freeFormSuggestionBuilder_ == null) {
+        if (suggestionCase_ == 1) {
+          return (com.google.cloud.dialogflow.v2.FreeFormSuggestion) suggestion_;
+        }
+        return com.google.cloud.dialogflow.v2.FreeFormSuggestion.getDefaultInstance();
+      } else {
+        if (suggestionCase_ == 1) {
+          return freeFormSuggestionBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2.FreeFormSuggestion.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Free form suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.FreeFormSuggestion free_form_suggestion = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFreeFormSuggestion(com.google.cloud.dialogflow.v2.FreeFormSuggestion value) {
+      if (freeFormSuggestionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        suggestion_ = value;
+        onChanged();
+      } else {
+        freeFormSuggestionBuilder_.setMessage(value);
+      }
+      suggestionCase_ = 1;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Free form suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.FreeFormSuggestion free_form_suggestion = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFreeFormSuggestion(
+        com.google.cloud.dialogflow.v2.FreeFormSuggestion.Builder builderForValue) {
+      if (freeFormSuggestionBuilder_ == null) {
+        suggestion_ = builderForValue.build();
+        onChanged();
+      } else {
+        freeFormSuggestionBuilder_.setMessage(builderForValue.build());
+      }
+      suggestionCase_ = 1;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Free form suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.FreeFormSuggestion free_form_suggestion = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeFreeFormSuggestion(
+        com.google.cloud.dialogflow.v2.FreeFormSuggestion value) {
+      if (freeFormSuggestionBuilder_ == null) {
+        if (suggestionCase_ == 1
+            && suggestion_
+                != com.google.cloud.dialogflow.v2.FreeFormSuggestion.getDefaultInstance()) {
+          suggestion_ =
+              com.google.cloud.dialogflow.v2.FreeFormSuggestion.newBuilder(
+                      (com.google.cloud.dialogflow.v2.FreeFormSuggestion) suggestion_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          suggestion_ = value;
+        }
+        onChanged();
+      } else {
+        if (suggestionCase_ == 1) {
+          freeFormSuggestionBuilder_.mergeFrom(value);
+        } else {
+          freeFormSuggestionBuilder_.setMessage(value);
+        }
+      }
+      suggestionCase_ = 1;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Free form suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.FreeFormSuggestion free_form_suggestion = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFreeFormSuggestion() {
+      if (freeFormSuggestionBuilder_ == null) {
+        if (suggestionCase_ == 1) {
+          suggestionCase_ = 0;
+          suggestion_ = null;
+          onChanged();
+        }
+      } else {
+        if (suggestionCase_ == 1) {
+          suggestionCase_ = 0;
+          suggestion_ = null;
+        }
+        freeFormSuggestionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Free form suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.FreeFormSuggestion free_form_suggestion = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.FreeFormSuggestion.Builder
+        getFreeFormSuggestionBuilder() {
+      return getFreeFormSuggestionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Free form suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.FreeFormSuggestion free_form_suggestion = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.FreeFormSuggestionOrBuilder
+        getFreeFormSuggestionOrBuilder() {
+      if ((suggestionCase_ == 1) && (freeFormSuggestionBuilder_ != null)) {
+        return freeFormSuggestionBuilder_.getMessageOrBuilder();
+      } else {
+        if (suggestionCase_ == 1) {
+          return (com.google.cloud.dialogflow.v2.FreeFormSuggestion) suggestion_;
+        }
+        return com.google.cloud.dialogflow.v2.FreeFormSuggestion.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Free form suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.FreeFormSuggestion free_form_suggestion = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.FreeFormSuggestion,
+            com.google.cloud.dialogflow.v2.FreeFormSuggestion.Builder,
+            com.google.cloud.dialogflow.v2.FreeFormSuggestionOrBuilder>
+        getFreeFormSuggestionFieldBuilder() {
+      if (freeFormSuggestionBuilder_ == null) {
+        if (!(suggestionCase_ == 1)) {
+          suggestion_ = com.google.cloud.dialogflow.v2.FreeFormSuggestion.getDefaultInstance();
+        }
+        freeFormSuggestionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.FreeFormSuggestion,
+                com.google.cloud.dialogflow.v2.FreeFormSuggestion.Builder,
+                com.google.cloud.dialogflow.v2.FreeFormSuggestionOrBuilder>(
+                (com.google.cloud.dialogflow.v2.FreeFormSuggestion) suggestion_,
+                getParentForChildren(),
+                isClean());
+        suggestion_ = null;
+      }
+      suggestionCase_ = 1;
+      onChanged();
+      return freeFormSuggestionBuilder_;
+    }
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.SummarySuggestion,

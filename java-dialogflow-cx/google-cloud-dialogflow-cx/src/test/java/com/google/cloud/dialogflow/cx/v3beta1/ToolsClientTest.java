@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.cx.v3beta1;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListLocationsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListToolVersionsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListToolsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -37,6 +38,7 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -507,6 +509,422 @@ public class ToolsClientTest {
     try {
       String name = "name3373707";
       client.deleteTool(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listToolVersionsTest() throws Exception {
+    ToolVersion responsesElement = ToolVersion.newBuilder().build();
+    ListToolVersionsResponse expectedResponse =
+        ListToolVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllToolVersions(Arrays.asList(responsesElement))
+            .build();
+    mockTools.addResponse(expectedResponse);
+
+    ToolName parent = ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]");
+
+    ListToolVersionsPagedResponse pagedListResponse = client.listToolVersions(parent);
+
+    List<ToolVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getToolVersionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTools.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListToolVersionsRequest actualRequest = ((ListToolVersionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listToolVersionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTools.addException(exception);
+
+    try {
+      ToolName parent = ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]");
+      client.listToolVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listToolVersionsTest2() throws Exception {
+    ToolVersion responsesElement = ToolVersion.newBuilder().build();
+    ListToolVersionsResponse expectedResponse =
+        ListToolVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllToolVersions(Arrays.asList(responsesElement))
+            .build();
+    mockTools.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListToolVersionsPagedResponse pagedListResponse = client.listToolVersions(parent);
+
+    List<ToolVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getToolVersionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTools.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListToolVersionsRequest actualRequest = ((ListToolVersionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listToolVersionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTools.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listToolVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createToolVersionTest() throws Exception {
+    ToolVersion expectedResponse =
+        ToolVersion.newBuilder()
+            .setName(
+                ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setTool(Tool.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockTools.addResponse(expectedResponse);
+
+    ToolName parent = ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]");
+    ToolVersion toolVersion = ToolVersion.newBuilder().build();
+
+    ToolVersion actualResponse = client.createToolVersion(parent, toolVersion);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTools.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateToolVersionRequest actualRequest = ((CreateToolVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(toolVersion, actualRequest.getToolVersion());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createToolVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTools.addException(exception);
+
+    try {
+      ToolName parent = ToolName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]");
+      ToolVersion toolVersion = ToolVersion.newBuilder().build();
+      client.createToolVersion(parent, toolVersion);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createToolVersionTest2() throws Exception {
+    ToolVersion expectedResponse =
+        ToolVersion.newBuilder()
+            .setName(
+                ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setTool(Tool.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockTools.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    ToolVersion toolVersion = ToolVersion.newBuilder().build();
+
+    ToolVersion actualResponse = client.createToolVersion(parent, toolVersion);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTools.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateToolVersionRequest actualRequest = ((CreateToolVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(toolVersion, actualRequest.getToolVersion());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createToolVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTools.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      ToolVersion toolVersion = ToolVersion.newBuilder().build();
+      client.createToolVersion(parent, toolVersion);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getToolVersionTest() throws Exception {
+    ToolVersion expectedResponse =
+        ToolVersion.newBuilder()
+            .setName(
+                ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setTool(Tool.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockTools.addResponse(expectedResponse);
+
+    ToolVersionName name =
+        ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]");
+
+    ToolVersion actualResponse = client.getToolVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTools.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetToolVersionRequest actualRequest = ((GetToolVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getToolVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTools.addException(exception);
+
+    try {
+      ToolVersionName name =
+          ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]");
+      client.getToolVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getToolVersionTest2() throws Exception {
+    ToolVersion expectedResponse =
+        ToolVersion.newBuilder()
+            .setName(
+                ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setTool(Tool.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockTools.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ToolVersion actualResponse = client.getToolVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTools.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetToolVersionRequest actualRequest = ((GetToolVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getToolVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTools.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getToolVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteToolVersionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockTools.addResponse(expectedResponse);
+
+    ToolVersionName name =
+        ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]");
+
+    client.deleteToolVersion(name);
+
+    List<AbstractMessage> actualRequests = mockTools.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteToolVersionRequest actualRequest = ((DeleteToolVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteToolVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTools.addException(exception);
+
+    try {
+      ToolVersionName name =
+          ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]");
+      client.deleteToolVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteToolVersionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockTools.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteToolVersion(name);
+
+    List<AbstractMessage> actualRequests = mockTools.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteToolVersionRequest actualRequest = ((DeleteToolVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteToolVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTools.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteToolVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void restoreToolVersionTest() throws Exception {
+    RestoreToolVersionResponse expectedResponse =
+        RestoreToolVersionResponse.newBuilder().setTool(Tool.newBuilder().build()).build();
+    mockTools.addResponse(expectedResponse);
+
+    ToolVersionName name =
+        ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]");
+
+    RestoreToolVersionResponse actualResponse = client.restoreToolVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTools.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RestoreToolVersionRequest actualRequest = ((RestoreToolVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void restoreToolVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTools.addException(exception);
+
+    try {
+      ToolVersionName name =
+          ToolVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[TOOL]", "[VERSION]");
+      client.restoreToolVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void restoreToolVersionTest2() throws Exception {
+    RestoreToolVersionResponse expectedResponse =
+        RestoreToolVersionResponse.newBuilder().setTool(Tool.newBuilder().build()).build();
+    mockTools.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    RestoreToolVersionResponse actualResponse = client.restoreToolVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTools.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RestoreToolVersionRequest actualRequest = ((RestoreToolVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void restoreToolVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTools.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.restoreToolVersion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

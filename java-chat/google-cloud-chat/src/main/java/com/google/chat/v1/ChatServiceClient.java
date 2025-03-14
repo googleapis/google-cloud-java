@@ -682,6 +682,45 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> GetSpaceNotificationSetting</td>
+ *      <td><p> Gets the space notification setting. For an example, see [Get the caller's space notification setting](https://developers.google.com/workspace/chat/get-space-notification-setting).
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSpaceNotificationSetting(GetSpaceNotificationSettingRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSpaceNotificationSetting(SpaceNotificationSettingName name)
+ *           <li><p> getSpaceNotificationSetting(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSpaceNotificationSettingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSpaceNotificationSetting</td>
+ *      <td><p> Updates the space notification setting. For an example, see [Update the caller's space notification setting](https://developers.google.com/workspace/chat/update-space-notification-setting).
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSpaceNotificationSetting(UpdateSpaceNotificationSettingRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateSpaceNotificationSetting(SpaceNotificationSetting spaceNotificationSetting, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSpaceNotificationSettingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -5609,6 +5648,259 @@ public class ChatServiceClient implements BackgroundResource {
   public final UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsResponse>
       listSpaceEventsCallable() {
     return stub.listSpaceEventsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the space notification setting. For an example, see [Get the caller's space notification
+   * setting](https://developers.google.com/workspace/chat/get-space-notification-setting).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SpaceNotificationSettingName name = SpaceNotificationSettingName.of("[USER]", "[SPACE]");
+   *   SpaceNotificationSetting response = chatServiceClient.getSpaceNotificationSetting(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Format: users/{user}/spaces/{space}/spaceNotificationSetting
+   *     <p>- `users/me/spaces/{space}/spaceNotificationSetting`, OR -
+   *     `users/user{@literal @}example.com/spaces/{space}/spaceNotificationSetting`, OR -
+   *     `users/123456789/spaces/{space}/spaceNotificationSetting`. Note: Only the caller's user id
+   *     or email is allowed in the path.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SpaceNotificationSetting getSpaceNotificationSetting(
+      SpaceNotificationSettingName name) {
+    GetSpaceNotificationSettingRequest request =
+        GetSpaceNotificationSettingRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getSpaceNotificationSetting(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the space notification setting. For an example, see [Get the caller's space notification
+   * setting](https://developers.google.com/workspace/chat/get-space-notification-setting).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String name = SpaceNotificationSettingName.of("[USER]", "[SPACE]").toString();
+   *   SpaceNotificationSetting response = chatServiceClient.getSpaceNotificationSetting(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Format: users/{user}/spaces/{space}/spaceNotificationSetting
+   *     <p>- `users/me/spaces/{space}/spaceNotificationSetting`, OR -
+   *     `users/user{@literal @}example.com/spaces/{space}/spaceNotificationSetting`, OR -
+   *     `users/123456789/spaces/{space}/spaceNotificationSetting`. Note: Only the caller's user id
+   *     or email is allowed in the path.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SpaceNotificationSetting getSpaceNotificationSetting(String name) {
+    GetSpaceNotificationSettingRequest request =
+        GetSpaceNotificationSettingRequest.newBuilder().setName(name).build();
+    return getSpaceNotificationSetting(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the space notification setting. For an example, see [Get the caller's space notification
+   * setting](https://developers.google.com/workspace/chat/get-space-notification-setting).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   GetSpaceNotificationSettingRequest request =
+   *       GetSpaceNotificationSettingRequest.newBuilder()
+   *           .setName(SpaceNotificationSettingName.of("[USER]", "[SPACE]").toString())
+   *           .build();
+   *   SpaceNotificationSetting response = chatServiceClient.getSpaceNotificationSetting(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SpaceNotificationSetting getSpaceNotificationSetting(
+      GetSpaceNotificationSettingRequest request) {
+    return getSpaceNotificationSettingCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the space notification setting. For an example, see [Get the caller's space notification
+   * setting](https://developers.google.com/workspace/chat/get-space-notification-setting).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   GetSpaceNotificationSettingRequest request =
+   *       GetSpaceNotificationSettingRequest.newBuilder()
+   *           .setName(SpaceNotificationSettingName.of("[USER]", "[SPACE]").toString())
+   *           .build();
+   *   ApiFuture<SpaceNotificationSetting> future =
+   *       chatServiceClient.getSpaceNotificationSettingCallable().futureCall(request);
+   *   // Do something.
+   *   SpaceNotificationSetting response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingCallable() {
+    return stub.getSpaceNotificationSettingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the space notification setting. For an example, see [Update the caller's space
+   * notification
+   * setting](https://developers.google.com/workspace/chat/update-space-notification-setting).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SpaceNotificationSetting spaceNotificationSetting =
+   *       SpaceNotificationSetting.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   SpaceNotificationSetting response =
+   *       chatServiceClient.updateSpaceNotificationSetting(spaceNotificationSetting, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param spaceNotificationSetting Required. The resource name for the space notification settings
+   *     must be populated in the form of `users/{user}/spaces/{space}/spaceNotificationSetting`.
+   *     Only fields specified by `update_mask` are updated.
+   * @param updateMask Required. Supported field paths:
+   *     <p>- `notification_setting`
+   *     <p>- `mute_setting`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SpaceNotificationSetting updateSpaceNotificationSetting(
+      SpaceNotificationSetting spaceNotificationSetting, FieldMask updateMask) {
+    UpdateSpaceNotificationSettingRequest request =
+        UpdateSpaceNotificationSettingRequest.newBuilder()
+            .setSpaceNotificationSetting(spaceNotificationSetting)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateSpaceNotificationSetting(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the space notification setting. For an example, see [Update the caller's space
+   * notification
+   * setting](https://developers.google.com/workspace/chat/update-space-notification-setting).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   UpdateSpaceNotificationSettingRequest request =
+   *       UpdateSpaceNotificationSettingRequest.newBuilder()
+   *           .setSpaceNotificationSetting(SpaceNotificationSetting.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   SpaceNotificationSetting response = chatServiceClient.updateSpaceNotificationSetting(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SpaceNotificationSetting updateSpaceNotificationSetting(
+      UpdateSpaceNotificationSettingRequest request) {
+    return updateSpaceNotificationSettingCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the space notification setting. For an example, see [Update the caller's space
+   * notification
+   * setting](https://developers.google.com/workspace/chat/update-space-notification-setting).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   UpdateSpaceNotificationSettingRequest request =
+   *       UpdateSpaceNotificationSettingRequest.newBuilder()
+   *           .setSpaceNotificationSetting(SpaceNotificationSetting.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SpaceNotificationSetting> future =
+   *       chatServiceClient.updateSpaceNotificationSettingCallable().futureCall(request);
+   *   // Do something.
+   *   SpaceNotificationSetting response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingCallable() {
+    return stub.updateSpaceNotificationSettingCallable();
   }
 
   @Override

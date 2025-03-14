@@ -63,6 +63,7 @@ import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PerformMaintenanceInstanceRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest;
+import com.google.cloud.compute.v1.ReportHostAsFaultyInstanceRequest;
 import com.google.cloud.compute.v1.ResetInstanceRequest;
 import com.google.cloud.compute.v1.ResumeInstanceRequest;
 import com.google.cloud.compute.v1.Screenshot;
@@ -1106,6 +1107,63 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .setOperationSnapshotFactory(
                   (RemoveResourcePoliciesInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<ReportHostAsFaultyInstanceRequest, Operation>
+      reportHostAsFaultyMethodDescriptor =
+          ApiMethodDescriptor.<ReportHostAsFaultyInstanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Instances/ReportHostAsFaulty")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ReportHostAsFaultyInstanceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/reportHostAsFaulty",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ReportHostAsFaultyInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ReportHostAsFaultyInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "instancesReportHostAsFaultyRequestResource",
+                                      request.getInstancesReportHostAsFaultyRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ReportHostAsFaultyInstanceRequest request, Operation response) -> {
                     StringBuilder opName = new StringBuilder(response.getName());
                     opName.append(":").append(request.getProject());
                     opName.append(":").append(request.getZone());
@@ -2701,6 +2759,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
       removeResourcePoliciesCallable;
   private final OperationCallable<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
       removeResourcePoliciesOperationCallable;
+  private final UnaryCallable<ReportHostAsFaultyInstanceRequest, Operation>
+      reportHostAsFaultyCallable;
+  private final OperationCallable<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+      reportHostAsFaultyOperationCallable;
   private final UnaryCallable<ResetInstanceRequest, Operation> resetCallable;
   private final OperationCallable<ResetInstanceRequest, Operation, Operation>
       resetOperationCallable;
@@ -3099,6 +3161,20 @@ public class HttpJsonInstancesStub extends InstancesStub {
         removeResourcePoliciesTransportSettings =
             HttpJsonCallSettings.<RemoveResourcePoliciesInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(removeResourcePoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("instance", String.valueOf(request.getInstance()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ReportHostAsFaultyInstanceRequest, Operation>
+        reportHostAsFaultyTransportSettings =
+            HttpJsonCallSettings.<ReportHostAsFaultyInstanceRequest, Operation>newBuilder()
+                .setMethodDescriptor(reportHostAsFaultyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -3640,6 +3716,17 @@ public class HttpJsonInstancesStub extends InstancesStub {
             settings.removeResourcePoliciesOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.reportHostAsFaultyCallable =
+        callableFactory.createUnaryCallable(
+            reportHostAsFaultyTransportSettings,
+            settings.reportHostAsFaultySettings(),
+            clientContext);
+    this.reportHostAsFaultyOperationCallable =
+        callableFactory.createOperationCallable(
+            reportHostAsFaultyTransportSettings,
+            settings.reportHostAsFaultyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.resetCallable =
         callableFactory.createUnaryCallable(
             resetTransportSettings, settings.resetSettings(), clientContext);
@@ -3932,6 +4019,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
     methodDescriptors.add(listReferrersMethodDescriptor);
     methodDescriptors.add(performMaintenanceMethodDescriptor);
     methodDescriptors.add(removeResourcePoliciesMethodDescriptor);
+    methodDescriptors.add(reportHostAsFaultyMethodDescriptor);
     methodDescriptors.add(resetMethodDescriptor);
     methodDescriptors.add(resumeMethodDescriptor);
     methodDescriptors.add(sendDiagnosticInterruptMethodDescriptor);
@@ -4144,6 +4232,17 @@ public class HttpJsonInstancesStub extends InstancesStub {
   public OperationCallable<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
       removeResourcePoliciesOperationCallable() {
     return removeResourcePoliciesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ReportHostAsFaultyInstanceRequest, Operation> reportHostAsFaultyCallable() {
+    return reportHostAsFaultyCallable;
+  }
+
+  @Override
+  public OperationCallable<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+      reportHostAsFaultyOperationCallable() {
+    return reportHostAsFaultyOperationCallable;
   }
 
   @Override

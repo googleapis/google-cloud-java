@@ -1095,12 +1095,16 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * bool populate_data_store_connection_signals = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * bool populate_data_store_connection_signals = 25 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated
+   *     google.cloud.dialogflow.cx.v3.QueryParameters.populate_data_store_connection_signals is
+   *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=730
    * @return The populateDataStoreConnectionSignals.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getPopulateDataStoreConnectionSignals() {
     return populateDataStoreConnectionSignals_;
   }
@@ -4983,12 +4987,16 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * bool populate_data_store_connection_signals = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * bool populate_data_store_connection_signals = 25 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.dialogflow.cx.v3.QueryParameters.populate_data_store_connection_signals is
+     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=730
      * @return The populateDataStoreConnectionSignals.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getPopulateDataStoreConnectionSignals() {
       return populateDataStoreConnectionSignals_;
     }
@@ -5003,12 +5011,16 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * bool populate_data_store_connection_signals = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * bool populate_data_store_connection_signals = 25 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.dialogflow.cx.v3.QueryParameters.populate_data_store_connection_signals is
+     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=730
      * @param value The populateDataStoreConnectionSignals to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPopulateDataStoreConnectionSignals(boolean value) {
 
       populateDataStoreConnectionSignals_ = value;
@@ -5027,11 +5039,15 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * bool populate_data_store_connection_signals = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * bool populate_data_store_connection_signals = 25 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.dialogflow.cx.v3.QueryParameters.populate_data_store_connection_signals is
+     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=730
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearPopulateDataStoreConnectionSignals() {
       bitField0_ = (bitField0_ & ~0x00004000);
       populateDataStoreConnectionSignals_ = false;

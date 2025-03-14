@@ -257,6 +257,27 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int MULTIHOST_GPU_NODE_COUNT_FIELD_NUMBER = 6;
+  private int multihostGpuNodeCount_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The number of nodes per replica for multihost GPU
+   * deployments.
+   * </pre>
+   *
+   * <code>
+   * int32 multihost_gpu_node_count = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The multihostGpuNodeCount.
+   */
+  @java.lang.Override
+  public int getMultihostGpuNodeCount() {
+    return multihostGpuNodeCount_;
+  }
+
   public static final int RESERVATION_AFFINITY_FIELD_NUMBER = 5;
   private com.google.cloud.aiplatform.v1beta1.ReservationAffinity reservationAffinity_;
   /**
@@ -348,6 +369,9 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(5, getReservationAffinity());
     }
+    if (multihostGpuNodeCount_ != 0) {
+      output.writeInt32(6, multihostGpuNodeCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -374,6 +398,9 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getReservationAffinity());
     }
+    if (multihostGpuNodeCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, multihostGpuNodeCount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -394,6 +421,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     if (acceleratorType_ != other.acceleratorType_) return false;
     if (getAcceleratorCount() != other.getAcceleratorCount()) return false;
     if (!getTpuTopology().equals(other.getTpuTopology())) return false;
+    if (getMultihostGpuNodeCount() != other.getMultihostGpuNodeCount()) return false;
     if (hasReservationAffinity() != other.hasReservationAffinity()) return false;
     if (hasReservationAffinity()) {
       if (!getReservationAffinity().equals(other.getReservationAffinity())) return false;
@@ -417,6 +445,8 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getAcceleratorCount();
     hash = (37 * hash) + TPU_TOPOLOGY_FIELD_NUMBER;
     hash = (53 * hash) + getTpuTopology().hashCode();
+    hash = (37 * hash) + MULTIHOST_GPU_NODE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getMultihostGpuNodeCount();
     if (hasReservationAffinity()) {
       hash = (37 * hash) + RESERVATION_AFFINITY_FIELD_NUMBER;
       hash = (53 * hash) + getReservationAffinity().hashCode();
@@ -573,6 +603,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       acceleratorType_ = 0;
       acceleratorCount_ = 0;
       tpuTopology_ = "";
+      multihostGpuNodeCount_ = 0;
       reservationAffinity_ = null;
       if (reservationAffinityBuilder_ != null) {
         reservationAffinityBuilder_.dispose();
@@ -626,8 +657,11 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.tpuTopology_ = tpuTopology_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.multihostGpuNodeCount_ = multihostGpuNodeCount_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.reservationAffinity_ =
             reservationAffinityBuilder_ == null
                 ? reservationAffinity_
@@ -699,6 +733,9 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.getMultihostGpuNodeCount() != 0) {
+        setMultihostGpuNodeCount(other.getMultihostGpuNodeCount());
+      }
       if (other.hasReservationAffinity()) {
         mergeReservationAffinity(other.getReservationAffinity());
       }
@@ -756,9 +793,15 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getReservationAffinityFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
+            case 48:
+              {
+                multihostGpuNodeCount_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1220,6 +1263,68 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int multihostGpuNodeCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The number of nodes per replica for multihost GPU
+     * deployments.
+     * </pre>
+     *
+     * <code>
+     * int32 multihost_gpu_node_count = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The multihostGpuNodeCount.
+     */
+    @java.lang.Override
+    public int getMultihostGpuNodeCount() {
+      return multihostGpuNodeCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The number of nodes per replica for multihost GPU
+     * deployments.
+     * </pre>
+     *
+     * <code>
+     * int32 multihost_gpu_node_count = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The multihostGpuNodeCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMultihostGpuNodeCount(int value) {
+
+      multihostGpuNodeCount_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The number of nodes per replica for multihost GPU
+     * deployments.
+     * </pre>
+     *
+     * <code>
+     * int32 multihost_gpu_node_count = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMultihostGpuNodeCount() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      multihostGpuNodeCount_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.ReservationAffinity reservationAffinity_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.ReservationAffinity,
@@ -1241,7 +1346,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the reservationAffinity field is set.
      */
     public boolean hasReservationAffinity() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1288,7 +1393,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         reservationAffinityBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1311,7 +1416,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         reservationAffinityBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1330,7 +1435,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeReservationAffinity(
         com.google.cloud.aiplatform.v1beta1.ReservationAffinity value) {
       if (reservationAffinityBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && reservationAffinity_ != null
             && reservationAffinity_
                 != com.google.cloud.aiplatform.v1beta1.ReservationAffinity.getDefaultInstance()) {
@@ -1342,7 +1447,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
         reservationAffinityBuilder_.mergeFrom(value);
       }
       if (reservationAffinity_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1360,7 +1465,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearReservationAffinity() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       reservationAffinity_ = null;
       if (reservationAffinityBuilder_ != null) {
         reservationAffinityBuilder_.dispose();
@@ -1383,7 +1488,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.ReservationAffinity.Builder
         getReservationAffinityBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getReservationAffinityFieldBuilder().getBuilder();
     }

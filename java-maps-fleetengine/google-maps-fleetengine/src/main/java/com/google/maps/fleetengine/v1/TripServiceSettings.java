@@ -96,6 +96,11 @@ public class TripServiceSettings extends ClientSettings<TripServiceSettings> {
     return ((TripServiceStubSettings) getStubSettings()).getTripSettings();
   }
 
+  /** Returns the object with the settings used for calls to deleteTrip. */
+  public UnaryCallSettings<DeleteTripRequest, Empty> deleteTripSettings() {
+    return ((TripServiceStubSettings) getStubSettings()).deleteTripSettings();
+  }
+
   /** Returns the object with the settings used for calls to reportBillableTrip. */
   public UnaryCallSettings<ReportBillableTripRequest, Empty> reportBillableTripSettings() {
     return ((TripServiceStubSettings) getStubSettings()).reportBillableTripSettings();
@@ -215,6 +220,11 @@ public class TripServiceSettings extends ClientSettings<TripServiceSettings> {
     /** Returns the builder for the settings used for calls to getTrip. */
     public UnaryCallSettings.Builder<GetTripRequest, Trip> getTripSettings() {
       return getStubSettingsBuilder().getTripSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTrip. */
+    public UnaryCallSettings.Builder<DeleteTripRequest, Empty> deleteTripSettings() {
+      return getStubSettingsBuilder().deleteTripSettings();
     }
 
     /** Returns the builder for the settings used for calls to reportBillableTrip. */

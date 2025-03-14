@@ -250,6 +250,18 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     return ((ChatServiceStubSettings) getStubSettings()).listSpaceEventsSettings();
   }
 
+  /** Returns the object with the settings used for calls to getSpaceNotificationSetting. */
+  public UnaryCallSettings<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).getSpaceNotificationSettingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSpaceNotificationSetting. */
+  public UnaryCallSettings<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).updateSpaceNotificationSettingSettings();
+  }
+
   public static final ChatServiceSettings create(ChatServiceStubSettings stub) throws IOException {
     return new ChatServiceSettings.Builder(stub.toBuilder()).build();
   }
@@ -523,6 +535,19 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
             ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
         listSpaceEventsSettings() {
       return getStubSettingsBuilder().listSpaceEventsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSpaceNotificationSetting. */
+    public UnaryCallSettings.Builder<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        getSpaceNotificationSettingSettings() {
+      return getStubSettingsBuilder().getSpaceNotificationSettingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSpaceNotificationSetting. */
+    public UnaryCallSettings.Builder<
+            UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        updateSpaceNotificationSettingSettings() {
+      return getStubSettingsBuilder().updateSpaceNotificationSettingSettings();
     }
 
     @Override

@@ -628,9 +628,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The
-   * [promotion](https://support.google.com/merchants/answer/2906014) data
-   * source.
+   * The [promotion](https://support.google.com/merchants/answer/2906014)
+   * data source.
    * </pre>
    *
    * <code>
@@ -647,9 +646,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The
-   * [promotion](https://support.google.com/merchants/answer/2906014) data
-   * source.
+   * The [promotion](https://support.google.com/merchants/answer/2906014)
+   * data source.
    * </pre>
    *
    * <code>
@@ -670,9 +668,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The
-   * [promotion](https://support.google.com/merchants/answer/2906014) data
-   * source.
+   * The [promotion](https://support.google.com/merchants/answer/2906014)
+   * data source.
    * </pre>
    *
    * <code>
@@ -2847,9 +2844,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The
-     * [promotion](https://support.google.com/merchants/answer/2906014) data
-     * source.
+     * The [promotion](https://support.google.com/merchants/answer/2906014)
+     * data source.
      * </pre>
      *
      * <code>
@@ -2866,9 +2862,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The
-     * [promotion](https://support.google.com/merchants/answer/2906014) data
-     * source.
+     * The [promotion](https://support.google.com/merchants/answer/2906014)
+     * data source.
      * </pre>
      *
      * <code>
@@ -2898,9 +2893,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The
-     * [promotion](https://support.google.com/merchants/answer/2906014) data
-     * source.
+     * The [promotion](https://support.google.com/merchants/answer/2906014)
+     * data source.
      * </pre>
      *
      * <code>
@@ -2925,9 +2919,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The
-     * [promotion](https://support.google.com/merchants/answer/2906014) data
-     * source.
+     * The [promotion](https://support.google.com/merchants/answer/2906014)
+     * data source.
      * </pre>
      *
      * <code>
@@ -2950,9 +2943,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The
-     * [promotion](https://support.google.com/merchants/answer/2906014) data
-     * source.
+     * The [promotion](https://support.google.com/merchants/answer/2906014)
+     * data source.
      * </pre>
      *
      * <code>
@@ -2989,9 +2981,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The
-     * [promotion](https://support.google.com/merchants/answer/2906014) data
-     * source.
+     * The [promotion](https://support.google.com/merchants/answer/2906014)
+     * data source.
      * </pre>
      *
      * <code>
@@ -3018,9 +3009,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The
-     * [promotion](https://support.google.com/merchants/answer/2906014) data
-     * source.
+     * The [promotion](https://support.google.com/merchants/answer/2906014)
+     * data source.
      * </pre>
      *
      * <code>
@@ -3035,9 +3025,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The
-     * [promotion](https://support.google.com/merchants/answer/2906014) data
-     * source.
+     * The [promotion](https://support.google.com/merchants/answer/2906014)
+     * data source.
      * </pre>
      *
      * <code>
@@ -3061,9 +3050,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The
-     * [promotion](https://support.google.com/merchants/answer/2906014) data
-     * source.
+     * The [promotion](https://support.google.com/merchants/answer/2906014)
+     * data source.
      * </pre>
      *
      * <code>

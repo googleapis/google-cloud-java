@@ -96,6 +96,41 @@ public interface AnalyzeContentRequestOrBuilder
    *
    *
    * <pre>
+   * The natural language speech audio to be processed.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
+   *
+   * @return Whether the audioInput field is set.
+   */
+  boolean hasAudioInput();
+  /**
+   *
+   *
+   * <pre>
+   * The natural language speech audio to be processed.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
+   *
+   * @return The audioInput.
+   */
+  com.google.cloud.dialogflow.v2.AudioInput getAudioInput();
+  /**
+   *
+   *
+   * <pre>
+   * The natural language speech audio to be processed.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.AudioInput audio_input = 7;</code>
+   */
+  com.google.cloud.dialogflow.v2.AudioInputOrBuilder getAudioInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * An input event to send to Dialogflow.
    * </pre>
    *

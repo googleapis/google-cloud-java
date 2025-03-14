@@ -43,6 +43,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     npmrcEnvironmentVariablesSecretVersion_ = "";
     serviceAccount_ = "";
+    kmsKeyName_ = "";
+    internalMetadata_ = "";
   }
 
   @java.lang.Override
@@ -223,7 +225,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=555
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=628
      * @return The enum numeric value on the wire for tokenStatus.
      */
     @java.lang.Deprecated
@@ -242,7 +244,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=555
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=628
      * @return The tokenStatus.
      */
     @java.lang.Deprecated
@@ -296,6 +298,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     /**
+     *
+     *
+     * <pre>
+     * The status of the authentication token.
+     * </pre>
+     *
      * Protobuf enum {@code google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.TokenStatus}
      */
     public enum TokenStatus implements com.google.protobuf.ProtocolMessageEnum {
@@ -1673,7 +1681,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=555
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=628
      * @return The enum numeric value on the wire for tokenStatus.
      */
     @java.lang.Override
@@ -1695,7 +1703,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=555
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=628
      * @return The tokenStatus.
      */
     @java.lang.Override
@@ -2776,7 +2784,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=555
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=628
        * @return The enum numeric value on the wire for tokenStatus.
        */
       @java.lang.Override
@@ -2798,7 +2806,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=555
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=628
        * @param value The enum numeric value on the wire for tokenStatus to set.
        * @return This builder for chaining.
        */
@@ -2823,7 +2831,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=555
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=628
        * @return The tokenStatus.
        */
       @java.lang.Override
@@ -2852,7 +2860,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=555
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=628
        * @param value The tokenStatus to set.
        * @return This builder for chaining.
        */
@@ -2881,7 +2889,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=555
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=628
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -3045,13 +3053,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configures workspace compilation overrides for a repository.
-   * Primarily used by the UI (`console.cloud.google.com`).
-   * `schema_suffix` and `table_prefix` can have a special expression -
-   * `${workspaceName}`, which refers to the workspace name from which the
-   * compilation results will be created. API callers are expected to resolve
-   * the expression in these overrides and provide them explicitly in
-   * `code_compilation_config`
+   * Configures workspace compilation overrides for a repository. Primarily used
+   * by the UI (`console.cloud.google.com`). `schema_suffix` and `table_prefix`
+   * can have a special expression - `${workspaceName}`, which refers to the
+   * workspace name from which the compilation results will be created. API
+   * callers are expected to resolve the expression in these overrides and
+   * provide them explicitly in `code_compilation_config`
    * (https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.compilationResults#codecompilationconfig)
    * when creating workspace-scoped compilation results.
    * </pre>
@@ -3443,13 +3450,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configures workspace compilation overrides for a repository.
-     * Primarily used by the UI (`console.cloud.google.com`).
-     * `schema_suffix` and `table_prefix` can have a special expression -
-     * `${workspaceName}`, which refers to the workspace name from which the
-     * compilation results will be created. API callers are expected to resolve
-     * the expression in these overrides and provide them explicitly in
-     * `code_compilation_config`
+     * Configures workspace compilation overrides for a repository. Primarily used
+     * by the UI (`console.cloud.google.com`). `schema_suffix` and `table_prefix`
+     * can have a special expression - `${workspaceName}`, which refers to the
+     * workspace name from which the compilation results will be created. API
+     * callers are expected to resolve the expression in these overrides and
+     * provide them explicitly in `code_compilation_config`
      * (https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.compilationResults#codecompilationconfig)
      * when creating workspace-scoped compilation results.
      * </pre>
@@ -4074,10 +4080,10 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The repository's name.
+   * Identifier. The repository's name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -4097,10 +4103,10 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The repository's name.
+   * Identifier. The repository's name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -4115,6 +4121,55 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int CREATE_TIME_FIELD_NUMBER = 13;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp of when the repository was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp of when the repository was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp of when the repository was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 8;
@@ -4185,7 +4240,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasGitRemoteSettings() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -4307,7 +4362,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasWorkspaceCompilationOverrides() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -4532,6 +4587,204 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int KMS_KEY_NAME_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The reference to a KMS encryption key. If provided, it will be
+   * used to encrypt user data in the repository and all child resources. It is
+   * not possible to add or update the encryption key after the repository is
+   * created. Example:
+   * `projects/{kms_project}/locations/{location}/keyRings/{key_location}/cryptoKeys/{key}`
+   * </pre>
+   *
+   * <code>
+   * string kms_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The kmsKeyName.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKeyName() {
+    java.lang.Object ref = kmsKeyName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKeyName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The reference to a KMS encryption key. If provided, it will be
+   * used to encrypt user data in the repository and all child resources. It is
+   * not possible to add or update the encryption key after the repository is
+   * created. Example:
+   * `projects/{kms_project}/locations/{location}/keyRings/{key_location}/cryptoKeys/{key}`
+   * </pre>
+   *
+   * <code>
+   * string kms_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+    java.lang.Object ref = kmsKeyName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKeyName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DATA_ENCRYPTION_STATE_FIELD_NUMBER = 12;
+  private com.google.cloud.dataform.v1beta1.DataEncryptionState dataEncryptionState_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A data encryption state of a Git repository if this Repository
+   * is protected by a KMS key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataEncryptionState field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataEncryptionState() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A data encryption state of a Git repository if this Repository
+   * is protected by a KMS key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataEncryptionState.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.DataEncryptionState getDataEncryptionState() {
+    return dataEncryptionState_ == null
+        ? com.google.cloud.dataform.v1beta1.DataEncryptionState.getDefaultInstance()
+        : dataEncryptionState_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A data encryption state of a Git repository if this Repository
+   * is protected by a KMS key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.DataEncryptionStateOrBuilder
+      getDataEncryptionStateOrBuilder() {
+    return dataEncryptionState_ == null
+        ? com.google.cloud.dataform.v1beta1.DataEncryptionState.getDefaultInstance()
+        : dataEncryptionState_;
+  }
+
+  public static final int INTERNAL_METADATA_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object internalMetadata_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the internalMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasInternalMetadata() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The internalMetadata.
+   */
+  @java.lang.Override
+  public java.lang.String getInternalMetadata() {
+    java.lang.Object ref = internalMetadata_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      internalMetadata_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for internalMetadata.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getInternalMetadataBytes() {
+    java.lang.Object ref = internalMetadata_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      internalMetadata_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4549,7 +4802,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getGitRemoteSettings());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(
@@ -4557,7 +4810,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 3, npmrcEnvironmentVariablesSecretVersion_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getWorkspaceCompilationOverrides());
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -4571,6 +4824,18 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, serviceAccount_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, kmsKeyName_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(12, getDataEncryptionState());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(13, getCreateTime());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, internalMetadata_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4583,7 +4848,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getGitRemoteSettings());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(
@@ -4592,7 +4857,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               3, npmrcEnvironmentVariablesSecretVersion_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, getWorkspaceCompilationOverrides());
@@ -4616,6 +4881,19 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, serviceAccount_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, kmsKeyName_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(12, getDataEncryptionState());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getCreateTime());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, internalMetadata_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4633,6 +4911,10 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.dataform.v1beta1.Repository) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (hasGitRemoteSettings() != other.hasGitRemoteSettings()) return false;
     if (hasGitRemoteSettings()) {
@@ -4649,6 +4931,15 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (getSetAuthenticatedUserAdmin() != other.getSetAuthenticatedUserAdmin()) return false;
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
+    if (hasDataEncryptionState() != other.hasDataEncryptionState()) return false;
+    if (hasDataEncryptionState()) {
+      if (!getDataEncryptionState().equals(other.getDataEncryptionState())) return false;
+    }
+    if (hasInternalMetadata() != other.hasInternalMetadata()) return false;
+    if (hasInternalMetadata()) {
+      if (!getInternalMetadata().equals(other.getInternalMetadata())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4662,6 +4953,10 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
     if (hasGitRemoteSettings()) {
@@ -4682,6 +4977,16 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSetAuthenticatedUserAdmin());
     hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAccount().hashCode();
+    hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getKmsKeyName().hashCode();
+    if (hasDataEncryptionState()) {
+      hash = (37 * hash) + DATA_ENCRYPTION_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getDataEncryptionState().hashCode();
+    }
+    if (hasInternalMetadata()) {
+      hash = (37 * hash) + INTERNAL_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getInternalMetadata().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4844,8 +5149,10 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getCreateTimeFieldBuilder();
         getGitRemoteSettingsFieldBuilder();
         getWorkspaceCompilationOverridesFieldBuilder();
+        getDataEncryptionStateFieldBuilder();
       }
     }
 
@@ -4854,6 +5161,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
       displayName_ = "";
       gitRemoteSettings_ = null;
       if (gitRemoteSettingsBuilder_ != null) {
@@ -4869,6 +5181,13 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().clear();
       setAuthenticatedUserAdmin_ = false;
       serviceAccount_ = "";
+      kmsKeyName_ = "";
+      dataEncryptionState_ = null;
+      if (dataEncryptionStateBuilder_ != null) {
+        dataEncryptionStateBuilder_.dispose();
+        dataEncryptionStateBuilder_ = null;
+      }
+      internalMetadata_ = "";
       return this;
     }
 
@@ -4908,36 +5227,54 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.displayName_ = displayName_;
       }
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.gitRemoteSettings_ =
             gitRemoteSettingsBuilder_ == null
                 ? gitRemoteSettings_
                 : gitRemoteSettingsBuilder_.build();
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.npmrcEnvironmentVariablesSecretVersion_ = npmrcEnvironmentVariablesSecretVersion_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.npmrcEnvironmentVariablesSecretVersion_ = npmrcEnvironmentVariablesSecretVersion_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.workspaceCompilationOverrides_ =
             workspaceCompilationOverridesBuilder_ == null
                 ? workspaceCompilationOverrides_
                 : workspaceCompilationOverridesBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.setAuthenticatedUserAdmin_ = setAuthenticatedUserAdmin_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.kmsKeyName_ = kmsKeyName_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.dataEncryptionState_ =
+            dataEncryptionStateBuilder_ == null
+                ? dataEncryptionState_
+                : dataEncryptionStateBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.internalMetadata_ = internalMetadata_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4992,9 +5329,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasGitRemoteSettings()) {
@@ -5002,20 +5342,33 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getNpmrcEnvironmentVariablesSecretVersion().isEmpty()) {
         npmrcEnvironmentVariablesSecretVersion_ = other.npmrcEnvironmentVariablesSecretVersion_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasWorkspaceCompilationOverrides()) {
         mergeWorkspaceCompilationOverrides(other.getWorkspaceCompilationOverrides());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       if (other.getSetAuthenticatedUserAdmin() != false) {
         setSetAuthenticatedUserAdmin(other.getSetAuthenticatedUserAdmin());
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      if (!other.getKmsKeyName().isEmpty()) {
+        kmsKeyName_ = other.kmsKeyName_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (other.hasDataEncryptionState()) {
+        mergeDataEncryptionState(other.getDataEncryptionState());
+      }
+      if (other.hasInternalMetadata()) {
+        internalMetadata_ = other.internalMetadata_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -5054,20 +5407,20 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getGitRemoteSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
               {
                 npmrcEnvironmentVariablesSecretVersion_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getWorkspaceCompilationOverridesFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
@@ -5079,27 +5432,52 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 66:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 66
             case 72:
               {
                 setAuthenticatedUserAdmin_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 72
             case 82:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
+            case 90:
+              {
+                kmsKeyName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getDataEncryptionStateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 106
+            case 122:
+              {
+                internalMetadata_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5124,10 +5502,10 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The repository's name.
+     * Identifier. The repository's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -5146,10 +5524,10 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The repository's name.
+     * Identifier. The repository's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -5168,10 +5546,10 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The repository's name.
+     * Identifier. The repository's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -5189,10 +5567,10 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The repository's name.
+     * Identifier. The repository's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -5206,10 +5584,10 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The repository's name.
+     * Identifier. The repository's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -5223,6 +5601,209 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the repository was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the repository was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the repository was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the repository was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the repository was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
+        } else {
+          createTime_ = value;
+        }
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+      if (createTime_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the repository was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateTime() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the repository was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the repository was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of when the repository was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
     }
 
     private java.lang.Object displayName_ = "";
@@ -5287,7 +5868,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -5304,7 +5885,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -5326,7 +5907,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -5351,7 +5932,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gitRemoteSettings field is set.
      */
     public boolean hasGitRemoteSettings() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -5396,7 +5977,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       } else {
         gitRemoteSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5418,7 +5999,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       } else {
         gitRemoteSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5436,7 +6017,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeGitRemoteSettings(
         com.google.cloud.dataform.v1beta1.Repository.GitRemoteSettings value) {
       if (gitRemoteSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && gitRemoteSettings_ != null
             && gitRemoteSettings_
                 != com.google.cloud.dataform.v1beta1.Repository.GitRemoteSettings
@@ -5449,7 +6030,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         gitRemoteSettingsBuilder_.mergeFrom(value);
       }
       if (gitRemoteSettings_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -5466,7 +6047,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearGitRemoteSettings() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       gitRemoteSettings_ = null;
       if (gitRemoteSettingsBuilder_ != null) {
         gitRemoteSettingsBuilder_.dispose();
@@ -5488,7 +6069,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.Builder
         getGitRemoteSettingsBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getGitRemoteSettingsFieldBuilder().getBuilder();
     }
@@ -5618,7 +6199,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       npmrcEnvironmentVariablesSecretVersion_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5641,7 +6222,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public Builder clearNpmrcEnvironmentVariablesSecretVersion() {
       npmrcEnvironmentVariablesSecretVersion_ =
           getDefaultInstance().getNpmrcEnvironmentVariablesSecretVersion();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -5669,7 +6250,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       npmrcEnvironmentVariablesSecretVersion_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5698,7 +6279,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the workspaceCompilationOverrides field is set.
      */
     public boolean hasWorkspaceCompilationOverrides() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -5751,7 +6332,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       } else {
         workspaceCompilationOverridesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5777,7 +6358,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       } else {
         workspaceCompilationOverridesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5798,7 +6379,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeWorkspaceCompilationOverrides(
         com.google.cloud.dataform.v1beta1.Repository.WorkspaceCompilationOverrides value) {
       if (workspaceCompilationOverridesBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && workspaceCompilationOverrides_ != null
             && workspaceCompilationOverrides_
                 != com.google.cloud.dataform.v1beta1.Repository.WorkspaceCompilationOverrides
@@ -5811,7 +6392,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         workspaceCompilationOverridesBuilder_.mergeFrom(value);
       }
       if (workspaceCompilationOverrides_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -5831,7 +6412,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearWorkspaceCompilationOverrides() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       workspaceCompilationOverrides_ = null;
       if (workspaceCompilationOverridesBuilder_ != null) {
         workspaceCompilationOverridesBuilder_.dispose();
@@ -5856,7 +6437,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dataform.v1beta1.Repository.WorkspaceCompilationOverrides.Builder
         getWorkspaceCompilationOverridesBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getWorkspaceCompilationOverridesFieldBuilder().getBuilder();
     }
@@ -5934,7 +6515,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return labels_;
     }
@@ -6019,7 +6600,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -6042,7 +6623,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -6062,7 +6643,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -6076,7 +6657,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
 
@@ -6121,7 +6702,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public Builder setSetAuthenticatedUserAdmin(boolean value) {
 
       setAuthenticatedUserAdmin_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -6142,7 +6723,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSetAuthenticatedUserAdmin() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       setAuthenticatedUserAdmin_ = false;
       onChanged();
       return this;
@@ -6210,7 +6791,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       serviceAccount_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -6227,7 +6808,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServiceAccount() {
       serviceAccount_ = getDefaultInstance().getServiceAccount();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -6249,7 +6830,499 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       serviceAccount_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object kmsKeyName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The reference to a KMS encryption key. If provided, it will be
+     * used to encrypt user data in the repository and all child resources. It is
+     * not possible to add or update the encryption key after the repository is
+     * created. Example:
+     * `projects/{kms_project}/locations/{location}/keyRings/{key_location}/cryptoKeys/{key}`
+     * </pre>
+     *
+     * <code>
+     * string kms_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The kmsKeyName.
+     */
+    public java.lang.String getKmsKeyName() {
+      java.lang.Object ref = kmsKeyName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKeyName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The reference to a KMS encryption key. If provided, it will be
+     * used to encrypt user data in the repository and all child resources. It is
+     * not possible to add or update the encryption key after the repository is
+     * created. Example:
+     * `projects/{kms_project}/locations/{location}/keyRings/{key_location}/cryptoKeys/{key}`
+     * </pre>
+     *
+     * <code>
+     * string kms_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for kmsKeyName.
+     */
+    public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+      java.lang.Object ref = kmsKeyName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKeyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The reference to a KMS encryption key. If provided, it will be
+     * used to encrypt user data in the repository and all child resources. It is
+     * not possible to add or update the encryption key after the repository is
+     * created. Example:
+     * `projects/{kms_project}/locations/{location}/keyRings/{key_location}/cryptoKeys/{key}`
+     * </pre>
+     *
+     * <code>
+     * string kms_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The kmsKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKeyName_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The reference to a KMS encryption key. If provided, it will be
+     * used to encrypt user data in the repository and all child resources. It is
+     * not possible to add or update the encryption key after the repository is
+     * created. Example:
+     * `projects/{kms_project}/locations/{location}/keyRings/{key_location}/cryptoKeys/{key}`
+     * </pre>
+     *
+     * <code>
+     * string kms_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKeyName() {
+      kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The reference to a KMS encryption key. If provided, it will be
+     * used to encrypt user data in the repository and all child resources. It is
+     * not possible to add or update the encryption key after the repository is
+     * created. Example:
+     * `projects/{kms_project}/locations/{location}/keyRings/{key_location}/cryptoKeys/{key}`
+     * </pre>
+     *
+     * <code>
+     * string kms_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for kmsKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKeyName_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.dataform.v1beta1.DataEncryptionState dataEncryptionState_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.DataEncryptionState,
+            com.google.cloud.dataform.v1beta1.DataEncryptionState.Builder,
+            com.google.cloud.dataform.v1beta1.DataEncryptionStateOrBuilder>
+        dataEncryptionStateBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A data encryption state of a Git repository if this Repository
+     * is protected by a KMS key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the dataEncryptionState field is set.
+     */
+    public boolean hasDataEncryptionState() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A data encryption state of a Git repository if this Repository
+     * is protected by a KMS key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dataEncryptionState.
+     */
+    public com.google.cloud.dataform.v1beta1.DataEncryptionState getDataEncryptionState() {
+      if (dataEncryptionStateBuilder_ == null) {
+        return dataEncryptionState_ == null
+            ? com.google.cloud.dataform.v1beta1.DataEncryptionState.getDefaultInstance()
+            : dataEncryptionState_;
+      } else {
+        return dataEncryptionStateBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A data encryption state of a Git repository if this Repository
+     * is protected by a KMS key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataEncryptionState(
+        com.google.cloud.dataform.v1beta1.DataEncryptionState value) {
+      if (dataEncryptionStateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataEncryptionState_ = value;
+      } else {
+        dataEncryptionStateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A data encryption state of a Git repository if this Repository
+     * is protected by a KMS key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataEncryptionState(
+        com.google.cloud.dataform.v1beta1.DataEncryptionState.Builder builderForValue) {
+      if (dataEncryptionStateBuilder_ == null) {
+        dataEncryptionState_ = builderForValue.build();
+      } else {
+        dataEncryptionStateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A data encryption state of a Git repository if this Repository
+     * is protected by a KMS key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDataEncryptionState(
+        com.google.cloud.dataform.v1beta1.DataEncryptionState value) {
+      if (dataEncryptionStateBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && dataEncryptionState_ != null
+            && dataEncryptionState_
+                != com.google.cloud.dataform.v1beta1.DataEncryptionState.getDefaultInstance()) {
+          getDataEncryptionStateBuilder().mergeFrom(value);
+        } else {
+          dataEncryptionState_ = value;
+        }
+      } else {
+        dataEncryptionStateBuilder_.mergeFrom(value);
+      }
+      if (dataEncryptionState_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A data encryption state of a Git repository if this Repository
+     * is protected by a KMS key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDataEncryptionState() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      dataEncryptionState_ = null;
+      if (dataEncryptionStateBuilder_ != null) {
+        dataEncryptionStateBuilder_.dispose();
+        dataEncryptionStateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A data encryption state of a Git repository if this Repository
+     * is protected by a KMS key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.DataEncryptionState.Builder
+        getDataEncryptionStateBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getDataEncryptionStateFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A data encryption state of a Git repository if this Repository
+     * is protected by a KMS key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.DataEncryptionStateOrBuilder
+        getDataEncryptionStateOrBuilder() {
+      if (dataEncryptionStateBuilder_ != null) {
+        return dataEncryptionStateBuilder_.getMessageOrBuilder();
+      } else {
+        return dataEncryptionState_ == null
+            ? com.google.cloud.dataform.v1beta1.DataEncryptionState.getDefaultInstance()
+            : dataEncryptionState_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A data encryption state of a Git repository if this Repository
+     * is protected by a KMS key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.DataEncryptionState,
+            com.google.cloud.dataform.v1beta1.DataEncryptionState.Builder,
+            com.google.cloud.dataform.v1beta1.DataEncryptionStateOrBuilder>
+        getDataEncryptionStateFieldBuilder() {
+      if (dataEncryptionStateBuilder_ == null) {
+        dataEncryptionStateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataform.v1beta1.DataEncryptionState,
+                com.google.cloud.dataform.v1beta1.DataEncryptionState.Builder,
+                com.google.cloud.dataform.v1beta1.DataEncryptionStateOrBuilder>(
+                getDataEncryptionState(), getParentForChildren(), isClean());
+        dataEncryptionState_ = null;
+      }
+      return dataEncryptionStateBuilder_;
+    }
+
+    private java.lang.Object internalMetadata_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the internalMetadata field is set.
+     */
+    public boolean hasInternalMetadata() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The internalMetadata.
+     */
+    public java.lang.String getInternalMetadata() {
+      java.lang.Object ref = internalMetadata_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        internalMetadata_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for internalMetadata.
+     */
+    public com.google.protobuf.ByteString getInternalMetadataBytes() {
+      java.lang.Object ref = internalMetadata_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        internalMetadata_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The internalMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalMetadata(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      internalMetadata_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInternalMetadata() {
+      internalMetadata_ = getDefaultInstance().getInternalMetadata();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for internalMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalMetadataBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      internalMetadata_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

@@ -134,7 +134,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateRepository</td>
- *      <td><p> Updates a single Repository.</td>
+ *      <td><p> Updates a single Repository.
+ * <p>  &#42;&#42;Note:&#42;&#42; This method does not fully implement [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set   fields, the request is treated as a full update on all modifiable fields</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -460,6 +461,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> SearchFiles</td>
+ *      <td><p> Finds the contents of a given Workspace directory by filter.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchFiles(SearchFilesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchFilesPagedCallable()
+ *           <li><p> searchFilesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> MakeDirectory</td>
  *      <td><p> Creates a directory inside a Workspace.</td>
  *      <td>
@@ -617,7 +633,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateReleaseConfig</td>
- *      <td><p> Updates a single ReleaseConfig.</td>
+ *      <td><p> Updates a single ReleaseConfig.
+ * <p>  &#42;&#42;Note:&#42;&#42; This method does not fully implement [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set   fields, the request is treated as a full update on all modifiable fields</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -785,7 +802,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateWorkflowConfig</td>
- *      <td><p> Updates a single WorkflowConfig.</td>
+ *      <td><p> Updates a single WorkflowConfig.
+ * <p>  &#42;&#42;Note:&#42;&#42; This method does not fully implement [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set   fields, the request is treated as a full update on all modifiable fields</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -923,6 +941,44 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> queryWorkflowInvocationActionsPagedCallable()
  *           <li><p> queryWorkflowInvocationActionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetConfig</td>
+ *      <td><p> Get default config for a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getConfig(GetConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getConfig(ConfigName name)
+ *           <li><p> getConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateConfig</td>
+ *      <td><p> Update default config for a given project and location.
+ * <p>  &#42;&#42;Note:&#42;&#42; This method does not fully implement [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set   fields, the request is treated as a full update on all modifiable fields</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateConfig(UpdateConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateConfig(Config config, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1521,6 +1577,12 @@ public class DataformClient implements BackgroundResource {
   /**
    * Updates a single Repository.
    *
+   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
+   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
+   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
+   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
+   * is treated as a full update on all modifiable fields
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1554,6 +1616,12 @@ public class DataformClient implements BackgroundResource {
   /**
    * Updates a single Repository.
    *
+   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
+   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
+   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
+   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
+   * is treated as a full update on all modifiable fields
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1582,6 +1650,12 @@ public class DataformClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a single Repository.
+   *
+   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
+   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
+   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
+   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
+   * is treated as a full update on all modifiable fields
    *
    * <p>Sample code:
    *
@@ -1739,15 +1813,16 @@ public class DataformClient implements BackgroundResource {
    *           .putAllFileOperations(
    *               new HashMap<String, CommitRepositoryChangesRequest.FileOperation>())
    *           .build();
-   *   dataformClient.commitRepositoryChanges(request);
+   *   CommitRepositoryChangesResponse response = dataformClient.commitRepositoryChanges(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void commitRepositoryChanges(CommitRepositoryChangesRequest request) {
-    commitRepositoryChangesCallable().call(request);
+  public final CommitRepositoryChangesResponse commitRepositoryChanges(
+      CommitRepositoryChangesRequest request) {
+    return commitRepositoryChangesCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1772,14 +1847,14 @@ public class DataformClient implements BackgroundResource {
    *           .putAllFileOperations(
    *               new HashMap<String, CommitRepositoryChangesRequest.FileOperation>())
    *           .build();
-   *   ApiFuture<Empty> future =
+   *   ApiFuture<CommitRepositoryChangesResponse> future =
    *       dataformClient.commitRepositoryChangesCallable().futureCall(request);
    *   // Do something.
-   *   future.get();
+   *   CommitRepositoryChangesResponse response = future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<CommitRepositoryChangesRequest, Empty>
+  public final UnaryCallable<CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>
       commitRepositoryChangesCallable() {
     return stub.commitRepositoryChangesCallable();
   }
@@ -2806,15 +2881,15 @@ public class DataformClient implements BackgroundResource {
    *           .setRemoteBranch("remoteBranch-533119608")
    *           .setAuthor(CommitAuthor.newBuilder().build())
    *           .build();
-   *   dataformClient.pullGitCommits(request);
+   *   PullGitCommitsResponse response = dataformClient.pullGitCommits(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void pullGitCommits(PullGitCommitsRequest request) {
-    pullGitCommitsCallable().call(request);
+  public final PullGitCommitsResponse pullGitCommits(PullGitCommitsRequest request) {
+    return pullGitCommitsCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2838,13 +2913,15 @@ public class DataformClient implements BackgroundResource {
    *           .setRemoteBranch("remoteBranch-533119608")
    *           .setAuthor(CommitAuthor.newBuilder().build())
    *           .build();
-   *   ApiFuture<Empty> future = dataformClient.pullGitCommitsCallable().futureCall(request);
+   *   ApiFuture<PullGitCommitsResponse> future =
+   *       dataformClient.pullGitCommitsCallable().futureCall(request);
    *   // Do something.
-   *   future.get();
+   *   PullGitCommitsResponse response = future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<PullGitCommitsRequest, Empty> pullGitCommitsCallable() {
+  public final UnaryCallable<PullGitCommitsRequest, PullGitCommitsResponse>
+      pullGitCommitsCallable() {
     return stub.pullGitCommitsCallable();
   }
 
@@ -2868,15 +2945,15 @@ public class DataformClient implements BackgroundResource {
    *                   .toString())
    *           .setRemoteBranch("remoteBranch-533119608")
    *           .build();
-   *   dataformClient.pushGitCommits(request);
+   *   PushGitCommitsResponse response = dataformClient.pushGitCommits(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void pushGitCommits(PushGitCommitsRequest request) {
-    pushGitCommitsCallable().call(request);
+  public final PushGitCommitsResponse pushGitCommits(PushGitCommitsRequest request) {
+    return pushGitCommitsCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2899,13 +2976,15 @@ public class DataformClient implements BackgroundResource {
    *                   .toString())
    *           .setRemoteBranch("remoteBranch-533119608")
    *           .build();
-   *   ApiFuture<Empty> future = dataformClient.pushGitCommitsCallable().futureCall(request);
+   *   ApiFuture<PushGitCommitsResponse> future =
+   *       dataformClient.pushGitCommitsCallable().futureCall(request);
    *   // Do something.
-   *   future.get();
+   *   PushGitCommitsResponse response = future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<PushGitCommitsRequest, Empty> pushGitCommitsCallable() {
+  public final UnaryCallable<PushGitCommitsRequest, PushGitCommitsResponse>
+      pushGitCommitsCallable() {
     return stub.pushGitCommitsCallable();
   }
 
@@ -3056,15 +3135,16 @@ public class DataformClient implements BackgroundResource {
    *           .setCommitMessage("commitMessage2039804624")
    *           .addAllPaths(new ArrayList<String>())
    *           .build();
-   *   dataformClient.commitWorkspaceChanges(request);
+   *   CommitWorkspaceChangesResponse response = dataformClient.commitWorkspaceChanges(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void commitWorkspaceChanges(CommitWorkspaceChangesRequest request) {
-    commitWorkspaceChangesCallable().call(request);
+  public final CommitWorkspaceChangesResponse commitWorkspaceChanges(
+      CommitWorkspaceChangesRequest request) {
+    return commitWorkspaceChangesCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3089,13 +3169,14 @@ public class DataformClient implements BackgroundResource {
    *           .setCommitMessage("commitMessage2039804624")
    *           .addAllPaths(new ArrayList<String>())
    *           .build();
-   *   ApiFuture<Empty> future = dataformClient.commitWorkspaceChangesCallable().futureCall(request);
+   *   ApiFuture<CommitWorkspaceChangesResponse> future =
+   *       dataformClient.commitWorkspaceChangesCallable().futureCall(request);
    *   // Do something.
-   *   future.get();
+   *   CommitWorkspaceChangesResponse response = future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<CommitWorkspaceChangesRequest, Empty>
+  public final UnaryCallable<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
       commitWorkspaceChangesCallable() {
     return stub.commitWorkspaceChangesCallable();
   }
@@ -3121,15 +3202,16 @@ public class DataformClient implements BackgroundResource {
    *           .addAllPaths(new ArrayList<String>())
    *           .setClean(true)
    *           .build();
-   *   dataformClient.resetWorkspaceChanges(request);
+   *   ResetWorkspaceChangesResponse response = dataformClient.resetWorkspaceChanges(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void resetWorkspaceChanges(ResetWorkspaceChangesRequest request) {
-    resetWorkspaceChangesCallable().call(request);
+  public final ResetWorkspaceChangesResponse resetWorkspaceChanges(
+      ResetWorkspaceChangesRequest request) {
+    return resetWorkspaceChangesCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3153,13 +3235,15 @@ public class DataformClient implements BackgroundResource {
    *           .addAllPaths(new ArrayList<String>())
    *           .setClean(true)
    *           .build();
-   *   ApiFuture<Empty> future = dataformClient.resetWorkspaceChangesCallable().futureCall(request);
+   *   ApiFuture<ResetWorkspaceChangesResponse> future =
+   *       dataformClient.resetWorkspaceChangesCallable().futureCall(request);
    *   // Do something.
-   *   future.get();
+   *   ResetWorkspaceChangesResponse response = future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<ResetWorkspaceChangesRequest, Empty> resetWorkspaceChangesCallable() {
+  public final UnaryCallable<ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>
+      resetWorkspaceChangesCallable() {
     return stub.resetWorkspaceChangesCallable();
   }
 
@@ -3342,6 +3426,118 @@ public class DataformClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Finds the contents of a given Workspace directory by filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   SearchFilesRequest request =
+   *       SearchFilesRequest.newBuilder()
+   *           .setWorkspace(
+   *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (SearchResult element : dataformClient.searchFiles(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchFilesPagedResponse searchFiles(SearchFilesRequest request) {
+    return searchFilesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finds the contents of a given Workspace directory by filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   SearchFilesRequest request =
+   *       SearchFilesRequest.newBuilder()
+   *           .setWorkspace(
+   *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<SearchResult> future =
+   *       dataformClient.searchFilesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SearchResult element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchFilesRequest, SearchFilesPagedResponse>
+      searchFilesPagedCallable() {
+    return stub.searchFilesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finds the contents of a given Workspace directory by filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   SearchFilesRequest request =
+   *       SearchFilesRequest.newBuilder()
+   *           .setWorkspace(
+   *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     SearchFilesResponse response = dataformClient.searchFilesCallable().call(request);
+   *     for (SearchResult element : response.getSearchResultsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchFilesRequest, SearchFilesResponse> searchFilesCallable() {
+    return stub.searchFilesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a directory inside a Workspace.
    *
    * <p>Sample code:
@@ -3422,15 +3618,15 @@ public class DataformClient implements BackgroundResource {
    *                   .toString())
    *           .setPath("path3433509")
    *           .build();
-   *   dataformClient.removeDirectory(request);
+   *   RemoveDirectoryResponse response = dataformClient.removeDirectory(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void removeDirectory(RemoveDirectoryRequest request) {
-    removeDirectoryCallable().call(request);
+  public final RemoveDirectoryResponse removeDirectory(RemoveDirectoryRequest request) {
+    return removeDirectoryCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3453,13 +3649,15 @@ public class DataformClient implements BackgroundResource {
    *                   .toString())
    *           .setPath("path3433509")
    *           .build();
-   *   ApiFuture<Empty> future = dataformClient.removeDirectoryCallable().futureCall(request);
+   *   ApiFuture<RemoveDirectoryResponse> future =
+   *       dataformClient.removeDirectoryCallable().futureCall(request);
    *   // Do something.
-   *   future.get();
+   *   RemoveDirectoryResponse response = future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<RemoveDirectoryRequest, Empty> removeDirectoryCallable() {
+  public final UnaryCallable<RemoveDirectoryRequest, RemoveDirectoryResponse>
+      removeDirectoryCallable() {
     return stub.removeDirectoryCallable();
   }
 
@@ -3546,6 +3744,7 @@ public class DataformClient implements BackgroundResource {
    *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
    *                   .toString())
    *           .setPath("path3433509")
+   *           .setRevision("revision-260786213")
    *           .build();
    *   ReadFileResponse response = dataformClient.readFile(request);
    * }
@@ -3577,6 +3776,7 @@ public class DataformClient implements BackgroundResource {
    *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
    *                   .toString())
    *           .setPath("path3433509")
+   *           .setRevision("revision-260786213")
    *           .build();
    *   ApiFuture<ReadFileResponse> future = dataformClient.readFileCallable().futureCall(request);
    *   // Do something.
@@ -3608,15 +3808,15 @@ public class DataformClient implements BackgroundResource {
    *                   .toString())
    *           .setPath("path3433509")
    *           .build();
-   *   dataformClient.removeFile(request);
+   *   RemoveFileResponse response = dataformClient.removeFile(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void removeFile(RemoveFileRequest request) {
-    removeFileCallable().call(request);
+  public final RemoveFileResponse removeFile(RemoveFileRequest request) {
+    return removeFileCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3639,13 +3839,14 @@ public class DataformClient implements BackgroundResource {
    *                   .toString())
    *           .setPath("path3433509")
    *           .build();
-   *   ApiFuture<Empty> future = dataformClient.removeFileCallable().futureCall(request);
+   *   ApiFuture<RemoveFileResponse> future =
+   *       dataformClient.removeFileCallable().futureCall(request);
    *   // Do something.
-   *   future.get();
+   *   RemoveFileResponse response = future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<RemoveFileRequest, Empty> removeFileCallable() {
+  public final UnaryCallable<RemoveFileRequest, RemoveFileResponse> removeFileCallable() {
     return stub.removeFileCallable();
   }
 
@@ -4204,6 +4405,12 @@ public class DataformClient implements BackgroundResource {
   /**
    * Updates a single ReleaseConfig.
    *
+   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
+   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
+   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
+   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
+   * is treated as a full update on all modifiable fields
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -4238,6 +4445,12 @@ public class DataformClient implements BackgroundResource {
   /**
    * Updates a single ReleaseConfig.
    *
+   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
+   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
+   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
+   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
+   * is treated as a full update on all modifiable fields
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -4266,6 +4479,12 @@ public class DataformClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a single ReleaseConfig.
+   *
+   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
+   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
+   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
+   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
+   * is treated as a full update on all modifiable fields
    *
    * <p>Sample code:
    *
@@ -4493,6 +4712,8 @@ public class DataformClient implements BackgroundResource {
    *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (CompilationResult element :
    *       dataformClient.listCompilationResults(request).iterateAll()) {
@@ -4527,6 +4748,8 @@ public class DataformClient implements BackgroundResource {
    *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<CompilationResult> future =
    *       dataformClient.listCompilationResultsPagedCallable().futureCall(request);
@@ -4560,6 +4783,8 @@ public class DataformClient implements BackgroundResource {
    *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListCompilationResultsResponse response =
@@ -5387,6 +5612,12 @@ public class DataformClient implements BackgroundResource {
   /**
    * Updates a single WorkflowConfig.
    *
+   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
+   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
+   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
+   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
+   * is treated as a full update on all modifiable fields
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -5421,6 +5652,12 @@ public class DataformClient implements BackgroundResource {
   /**
    * Updates a single WorkflowConfig.
    *
+   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
+   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
+   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
+   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
+   * is treated as a full update on all modifiable fields
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -5449,6 +5686,12 @@ public class DataformClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a single WorkflowConfig.
+   *
+   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
+   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
+   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
+   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
+   * is treated as a full update on all modifiable fields
    *
    * <p>Sample code:
    *
@@ -6171,15 +6414,16 @@ public class DataformClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKFLOW_INVOCATION]")
    *                   .toString())
    *           .build();
-   *   dataformClient.cancelWorkflowInvocation(request);
+   *   CancelWorkflowInvocationResponse response = dataformClient.cancelWorkflowInvocation(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void cancelWorkflowInvocation(CancelWorkflowInvocationRequest request) {
-    cancelWorkflowInvocationCallable().call(request);
+  public final CancelWorkflowInvocationResponse cancelWorkflowInvocation(
+      CancelWorkflowInvocationRequest request) {
+    return cancelWorkflowInvocationCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -6202,14 +6446,14 @@ public class DataformClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKFLOW_INVOCATION]")
    *                   .toString())
    *           .build();
-   *   ApiFuture<Empty> future =
+   *   ApiFuture<CancelWorkflowInvocationResponse> future =
    *       dataformClient.cancelWorkflowInvocationCallable().futureCall(request);
    *   // Do something.
-   *   future.get();
+   *   CancelWorkflowInvocationResponse response = future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<CancelWorkflowInvocationRequest, Empty>
+  public final UnaryCallable<CancelWorkflowInvocationRequest, CancelWorkflowInvocationResponse>
       cancelWorkflowInvocationCallable() {
     return stub.cancelWorkflowInvocationCallable();
   }
@@ -6330,6 +6574,218 @@ public class DataformClient implements BackgroundResource {
           QueryWorkflowInvocationActionsRequest, QueryWorkflowInvocationActionsResponse>
       queryWorkflowInvocationActionsCallable() {
     return stub.queryWorkflowInvocationActionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get default config for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   ConfigName name = ConfigName.of("[PROJECT]", "[LOCATION]");
+   *   Config response = dataformClient.getConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The config name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Config getConfig(ConfigName name) {
+    GetConfigRequest request =
+        GetConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get default config for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String name = ConfigName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Config response = dataformClient.getConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The config name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Config getConfig(String name) {
+    GetConfigRequest request = GetConfigRequest.newBuilder().setName(name).build();
+    return getConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get default config for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   GetConfigRequest request =
+   *       GetConfigRequest.newBuilder()
+   *           .setName(ConfigName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   Config response = dataformClient.getConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Config getConfig(GetConfigRequest request) {
+    return getConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get default config for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   GetConfigRequest request =
+   *       GetConfigRequest.newBuilder()
+   *           .setName(ConfigName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<Config> future = dataformClient.getConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Config response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetConfigRequest, Config> getConfigCallable() {
+    return stub.getConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update default config for a given project and location.
+   *
+   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
+   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
+   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
+   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
+   * is treated as a full update on all modifiable fields
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   Config config = Config.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Config response = dataformClient.updateConfig(config, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param config Required. The config to update.
+   * @param updateMask Optional. Specifies the fields to be updated in the config.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Config updateConfig(Config config, FieldMask updateMask) {
+    UpdateConfigRequest request =
+        UpdateConfigRequest.newBuilder().setConfig(config).setUpdateMask(updateMask).build();
+    return updateConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update default config for a given project and location.
+   *
+   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
+   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
+   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
+   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
+   * is treated as a full update on all modifiable fields
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   UpdateConfigRequest request =
+   *       UpdateConfigRequest.newBuilder()
+   *           .setConfig(Config.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Config response = dataformClient.updateConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Config updateConfig(UpdateConfigRequest request) {
+    return updateConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update default config for a given project and location.
+   *
+   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
+   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
+   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
+   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
+   * is treated as a full update on all modifiable fields
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   UpdateConfigRequest request =
+   *       UpdateConfigRequest.newBuilder()
+   *           .setConfig(Config.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Config> future = dataformClient.updateConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Config response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateConfigRequest, Config> updateConfigCallable() {
+    return stub.updateConfigCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -7123,6 +7579,79 @@ public class DataformClient implements BackgroundResource {
     protected QueryDirectoryContentsFixedSizeCollection createCollection(
         List<QueryDirectoryContentsPage> pages, int collectionSize) {
       return new QueryDirectoryContentsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class SearchFilesPagedResponse
+      extends AbstractPagedListResponse<
+          SearchFilesRequest,
+          SearchFilesResponse,
+          SearchResult,
+          SearchFilesPage,
+          SearchFilesFixedSizeCollection> {
+
+    public static ApiFuture<SearchFilesPagedResponse> createAsync(
+        PageContext<SearchFilesRequest, SearchFilesResponse, SearchResult> context,
+        ApiFuture<SearchFilesResponse> futureResponse) {
+      ApiFuture<SearchFilesPage> futurePage =
+          SearchFilesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new SearchFilesPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private SearchFilesPagedResponse(SearchFilesPage page) {
+      super(page, SearchFilesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchFilesPage
+      extends AbstractPage<SearchFilesRequest, SearchFilesResponse, SearchResult, SearchFilesPage> {
+
+    private SearchFilesPage(
+        PageContext<SearchFilesRequest, SearchFilesResponse, SearchResult> context,
+        SearchFilesResponse response) {
+      super(context, response);
+    }
+
+    private static SearchFilesPage createEmptyPage() {
+      return new SearchFilesPage(null, null);
+    }
+
+    @Override
+    protected SearchFilesPage createPage(
+        PageContext<SearchFilesRequest, SearchFilesResponse, SearchResult> context,
+        SearchFilesResponse response) {
+      return new SearchFilesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchFilesPage> createPageAsync(
+        PageContext<SearchFilesRequest, SearchFilesResponse, SearchResult> context,
+        ApiFuture<SearchFilesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchFilesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchFilesRequest,
+          SearchFilesResponse,
+          SearchResult,
+          SearchFilesPage,
+          SearchFilesFixedSizeCollection> {
+
+    private SearchFilesFixedSizeCollection(List<SearchFilesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchFilesFixedSizeCollection createEmptyCollection() {
+      return new SearchFilesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchFilesFixedSizeCollection createCollection(
+        List<SearchFilesPage> pages, int collectionSize) {
+      return new SearchFilesFixedSizeCollection(pages, collectionSize);
     }
   }
 

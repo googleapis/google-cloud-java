@@ -247,6 +247,41 @@ public interface ToolOrBuilder
    *
    *
    * <pre>
+   * Integration connectors tool specification.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool connector_spec = 15;</code>
+   *
+   * @return Whether the connectorSpec field is set.
+   */
+  boolean hasConnectorSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Integration connectors tool specification.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool connector_spec = 15;</code>
+   *
+   * @return The connectorSpec.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool getConnectorSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Integration connectors tool specification.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorTool connector_spec = 15;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.Tool.ConnectorToolOrBuilder getConnectorSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The tool type.
    * </pre>
    *

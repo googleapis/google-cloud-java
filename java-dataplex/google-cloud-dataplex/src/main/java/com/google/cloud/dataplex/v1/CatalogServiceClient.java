@@ -447,8 +447,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetEntry</td>
- *      <td><p> Gets an Entry.
- * <p>  &#42;&#42;Caution&#42;&#42;: The BigQuery metadata that is stored in Dataplex Catalog is changing. For more information, see [Changes to BigQuery metadata stored in Dataplex Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).</td>
+ *      <td><p> Gets an Entry.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -467,8 +466,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> LookupEntry</td>
- *      <td><p> Looks up a single Entry by name using the permission on the source system.
- * <p>  &#42;&#42;Caution&#42;&#42;: The BigQuery metadata that is stored in Dataplex Catalog is changing. For more information, see [Changes to BigQuery metadata stored in Dataplex Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).</td>
+ *      <td><p> Looks up an entry by name using the permission on the source system.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -3452,10 +3450,6 @@ public class CatalogServiceClient implements BackgroundResource {
   /**
    * Gets an Entry.
    *
-   * <p>&#42;&#42;Caution&#42;&#42;: The BigQuery metadata that is stored in Dataplex Catalog is
-   * changing. For more information, see [Changes to BigQuery metadata stored in Dataplex
-   * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -3484,10 +3478,6 @@ public class CatalogServiceClient implements BackgroundResource {
   /**
    * Gets an Entry.
    *
-   * <p>&#42;&#42;Caution&#42;&#42;: The BigQuery metadata that is stored in Dataplex Catalog is
-   * changing. For more information, see [Changes to BigQuery metadata stored in Dataplex
-   * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -3514,10 +3504,6 @@ public class CatalogServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets an Entry.
-   *
-   * <p>&#42;&#42;Caution&#42;&#42;: The BigQuery metadata that is stored in Dataplex Catalog is
-   * changing. For more information, see [Changes to BigQuery metadata stored in Dataplex
-   * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
    *
    * <p>Sample code:
    *
@@ -3551,10 +3537,6 @@ public class CatalogServiceClient implements BackgroundResource {
   /**
    * Gets an Entry.
    *
-   * <p>&#42;&#42;Caution&#42;&#42;: The BigQuery metadata that is stored in Dataplex Catalog is
-   * changing. For more information, see [Changes to BigQuery metadata stored in Dataplex
-   * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -3584,11 +3566,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up a single Entry by name using the permission on the source system.
-   *
-   * <p>&#42;&#42;Caution&#42;&#42;: The BigQuery metadata that is stored in Dataplex Catalog is
-   * changing. For more information, see [Changes to BigQuery metadata stored in Dataplex
-   * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
+   * Looks up an entry by name using the permission on the source system.
    *
    * <p>Sample code:
    *
@@ -3621,11 +3599,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up a single Entry by name using the permission on the source system.
-   *
-   * <p>&#42;&#42;Caution&#42;&#42;: The BigQuery metadata that is stored in Dataplex Catalog is
-   * changing. For more information, see [Changes to BigQuery metadata stored in Dataplex
-   * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
+   * Looks up an entry by name using the permission on the source system.
    *
    * <p>Sample code:
    *

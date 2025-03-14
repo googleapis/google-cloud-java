@@ -45,6 +45,7 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
     timeZone_ = "";
     recentScheduledReleaseRecords_ = java.util.Collections.emptyList();
     releaseCompilationResult_ = "";
+    internalMetadata_ = "";
   }
 
   @java.lang.Override
@@ -72,41 +73,6 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dataform.v1beta1.ReleaseConfig.ScheduledReleaseRecord)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * The timestamp of this release attempt.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp release_time = 1;</code>
-     *
-     * @return Whether the releaseTime field is set.
-     */
-    boolean hasReleaseTime();
-    /**
-     *
-     *
-     * <pre>
-     * The timestamp of this release attempt.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp release_time = 1;</code>
-     *
-     * @return The releaseTime.
-     */
-    com.google.protobuf.Timestamp getReleaseTime();
-    /**
-     *
-     *
-     * <pre>
-     * The timestamp of this release attempt.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp release_time = 1;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getReleaseTimeOrBuilder();
 
     /**
      *
@@ -188,6 +154,47 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error_status = 3;</code>
      */
     com.google.rpc.StatusOrBuilder getErrorStatusOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of this release attempt.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp release_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the releaseTime field is set.
+     */
+    boolean hasReleaseTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of this release attempt.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp release_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The releaseTime.
+     */
+    com.google.protobuf.Timestamp getReleaseTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of this release attempt.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp release_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getReleaseTimeOrBuilder();
 
     com.google.cloud.dataform.v1beta1.ReleaseConfig.ScheduledReleaseRecord.ResultCase
         getResultCase();
@@ -283,56 +290,6 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
 
     public ResultCase getResultCase() {
       return ResultCase.forNumber(resultCase_);
-    }
-
-    public static final int RELEASE_TIME_FIELD_NUMBER = 1;
-    private com.google.protobuf.Timestamp releaseTime_;
-    /**
-     *
-     *
-     * <pre>
-     * The timestamp of this release attempt.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp release_time = 1;</code>
-     *
-     * @return Whether the releaseTime field is set.
-     */
-    @java.lang.Override
-    public boolean hasReleaseTime() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The timestamp of this release attempt.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp release_time = 1;</code>
-     *
-     * @return The releaseTime.
-     */
-    @java.lang.Override
-    public com.google.protobuf.Timestamp getReleaseTime() {
-      return releaseTime_ == null
-          ? com.google.protobuf.Timestamp.getDefaultInstance()
-          : releaseTime_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The timestamp of this release attempt.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp release_time = 1;</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getReleaseTimeOrBuilder() {
-      return releaseTime_ == null
-          ? com.google.protobuf.Timestamp.getDefaultInstance()
-          : releaseTime_;
     }
 
     public static final int COMPILATION_RESULT_FIELD_NUMBER = 2;
@@ -463,6 +420,62 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.rpc.Status) result_;
       }
       return com.google.rpc.Status.getDefaultInstance();
+    }
+
+    public static final int RELEASE_TIME_FIELD_NUMBER = 1;
+    private com.google.protobuf.Timestamp releaseTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of this release attempt.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp release_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the releaseTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasReleaseTime() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of this release attempt.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp release_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The releaseTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getReleaseTime() {
+      return releaseTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : releaseTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp of this release attempt.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp release_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getReleaseTimeOrBuilder() {
+      return releaseTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : releaseTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -722,13 +735,13 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        if (errorStatusBuilder_ != null) {
+          errorStatusBuilder_.clear();
+        }
         releaseTime_ = null;
         if (releaseTimeBuilder_ != null) {
           releaseTimeBuilder_.dispose();
           releaseTimeBuilder_ = null;
-        }
-        if (errorStatusBuilder_ != null) {
-          errorStatusBuilder_.clear();
         }
         resultCase_ = 0;
         result_ = null;
@@ -774,7 +787,7 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dataform.v1beta1.ReleaseConfig.ScheduledReleaseRecord result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.releaseTime_ =
               releaseTimeBuilder_ == null ? releaseTime_ : releaseTimeBuilder_.build();
           to_bitField0_ |= 0x00000001;
@@ -893,7 +906,7 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   input.readMessage(getReleaseTimeFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000001;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 10
               case 18:
@@ -941,191 +954,6 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int bitField0_;
-
-      private com.google.protobuf.Timestamp releaseTime_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp,
-              com.google.protobuf.Timestamp.Builder,
-              com.google.protobuf.TimestampOrBuilder>
-          releaseTimeBuilder_;
-      /**
-       *
-       *
-       * <pre>
-       * The timestamp of this release attempt.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp release_time = 1;</code>
-       *
-       * @return Whether the releaseTime field is set.
-       */
-      public boolean hasReleaseTime() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The timestamp of this release attempt.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp release_time = 1;</code>
-       *
-       * @return The releaseTime.
-       */
-      public com.google.protobuf.Timestamp getReleaseTime() {
-        if (releaseTimeBuilder_ == null) {
-          return releaseTime_ == null
-              ? com.google.protobuf.Timestamp.getDefaultInstance()
-              : releaseTime_;
-        } else {
-          return releaseTimeBuilder_.getMessage();
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The timestamp of this release attempt.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp release_time = 1;</code>
-       */
-      public Builder setReleaseTime(com.google.protobuf.Timestamp value) {
-        if (releaseTimeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          releaseTime_ = value;
-        } else {
-          releaseTimeBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The timestamp of this release attempt.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp release_time = 1;</code>
-       */
-      public Builder setReleaseTime(com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (releaseTimeBuilder_ == null) {
-          releaseTime_ = builderForValue.build();
-        } else {
-          releaseTimeBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The timestamp of this release attempt.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp release_time = 1;</code>
-       */
-      public Builder mergeReleaseTime(com.google.protobuf.Timestamp value) {
-        if (releaseTimeBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)
-              && releaseTime_ != null
-              && releaseTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-            getReleaseTimeBuilder().mergeFrom(value);
-          } else {
-            releaseTime_ = value;
-          }
-        } else {
-          releaseTimeBuilder_.mergeFrom(value);
-        }
-        if (releaseTime_ != null) {
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The timestamp of this release attempt.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp release_time = 1;</code>
-       */
-      public Builder clearReleaseTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        releaseTime_ = null;
-        if (releaseTimeBuilder_ != null) {
-          releaseTimeBuilder_.dispose();
-          releaseTimeBuilder_ = null;
-        }
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The timestamp of this release attempt.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp release_time = 1;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getReleaseTimeBuilder() {
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return getReleaseTimeFieldBuilder().getBuilder();
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The timestamp of this release attempt.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp release_time = 1;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getReleaseTimeOrBuilder() {
-        if (releaseTimeBuilder_ != null) {
-          return releaseTimeBuilder_.getMessageOrBuilder();
-        } else {
-          return releaseTime_ == null
-              ? com.google.protobuf.Timestamp.getDefaultInstance()
-              : releaseTime_;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The timestamp of this release attempt.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp release_time = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp,
-              com.google.protobuf.Timestamp.Builder,
-              com.google.protobuf.TimestampOrBuilder>
-          getReleaseTimeFieldBuilder() {
-        if (releaseTimeBuilder_ == null) {
-          releaseTimeBuilder_ =
-              new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.protobuf.Timestamp,
-                  com.google.protobuf.Timestamp.Builder,
-                  com.google.protobuf.TimestampOrBuilder>(
-                  getReleaseTime(), getParentForChildren(), isClean());
-          releaseTime_ = null;
-        }
-        return releaseTimeBuilder_;
-      }
 
       /**
        *
@@ -1482,6 +1310,209 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
         return errorStatusBuilder_;
       }
 
+      private com.google.protobuf.Timestamp releaseTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          releaseTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The timestamp of this release attempt.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp release_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the releaseTime field is set.
+       */
+      public boolean hasReleaseTime() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The timestamp of this release attempt.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp release_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The releaseTime.
+       */
+      public com.google.protobuf.Timestamp getReleaseTime() {
+        if (releaseTimeBuilder_ == null) {
+          return releaseTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : releaseTime_;
+        } else {
+          return releaseTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The timestamp of this release attempt.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp release_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setReleaseTime(com.google.protobuf.Timestamp value) {
+        if (releaseTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          releaseTime_ = value;
+        } else {
+          releaseTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The timestamp of this release attempt.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp release_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setReleaseTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (releaseTimeBuilder_ == null) {
+          releaseTime_ = builderForValue.build();
+        } else {
+          releaseTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The timestamp of this release attempt.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp release_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeReleaseTime(com.google.protobuf.Timestamp value) {
+        if (releaseTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && releaseTime_ != null
+              && releaseTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getReleaseTimeBuilder().mergeFrom(value);
+          } else {
+            releaseTime_ = value;
+          }
+        } else {
+          releaseTimeBuilder_.mergeFrom(value);
+        }
+        if (releaseTime_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The timestamp of this release attempt.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp release_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearReleaseTime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        releaseTime_ = null;
+        if (releaseTimeBuilder_ != null) {
+          releaseTimeBuilder_.dispose();
+          releaseTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The timestamp of this release attempt.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp release_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getReleaseTimeBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getReleaseTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The timestamp of this release attempt.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp release_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getReleaseTimeOrBuilder() {
+        if (releaseTimeBuilder_ != null) {
+          return releaseTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return releaseTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : releaseTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The timestamp of this release attempt.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp release_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getReleaseTimeFieldBuilder() {
+        if (releaseTimeBuilder_ == null) {
+          releaseTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getReleaseTime(), getParentForChildren(), isClean());
+          releaseTime_ = null;
+        }
+        return releaseTimeBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1559,10 +1590,10 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The release config's name.
+   * Identifier. The release config's name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -1582,10 +1613,10 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The release config's name.
+   * Identifier. The release config's name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1841,8 +1872,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Records of the 10 most recent scheduled release attempts,
-   * ordered in in descending order of `release_time`. Updated whenever
-   * automatic creation of a compilation result is triggered by cron_schedule.
+   * ordered in descending order of `release_time`. Updated whenever automatic
+   * creation of a compilation result is triggered by cron_schedule.
    * </pre>
    *
    * <code>
@@ -1859,8 +1890,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Records of the 10 most recent scheduled release attempts,
-   * ordered in in descending order of `release_time`. Updated whenever
-   * automatic creation of a compilation result is triggered by cron_schedule.
+   * ordered in descending order of `release_time`. Updated whenever automatic
+   * creation of a compilation result is triggered by cron_schedule.
    * </pre>
    *
    * <code>
@@ -1878,8 +1909,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Records of the 10 most recent scheduled release attempts,
-   * ordered in in descending order of `release_time`. Updated whenever
-   * automatic creation of a compilation result is triggered by cron_schedule.
+   * ordered in descending order of `release_time`. Updated whenever automatic
+   * creation of a compilation result is triggered by cron_schedule.
    * </pre>
    *
    * <code>
@@ -1895,8 +1926,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Records of the 10 most recent scheduled release attempts,
-   * ordered in in descending order of `release_time`. Updated whenever
-   * automatic creation of a compilation result is triggered by cron_schedule.
+   * ordered in descending order of `release_time`. Updated whenever automatic
+   * creation of a compilation result is triggered by cron_schedule.
    * </pre>
    *
    * <code>
@@ -1913,8 +1944,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Records of the 10 most recent scheduled release attempts,
-   * ordered in in descending order of `release_time`. Updated whenever
-   * automatic creation of a compilation result is triggered by cron_schedule.
+   * ordered in descending order of `release_time`. Updated whenever automatic
+   * creation of a compilation result is triggered by cron_schedule.
    * </pre>
    *
    * <code>
@@ -1936,10 +1967,11 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The name of the currently released compilation result for this
-   * release config. This value is updated when a compilation result is created
-   * from this release config, or when this resource is updated by API call
-   * (perhaps to roll back to an earlier release). The compilation result must
-   * have been created using this release config. Must be in the format
+   * release config. This value is updated when a compilation result is
+   * automatically created from this release config (using cron_schedule), or
+   * when this resource is updated by API call (perhaps to roll back to an
+   * earlier release). The compilation result must have been created using this
+   * release config. Must be in the format
    * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
    * </pre>
    *
@@ -1966,10 +1998,11 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The name of the currently released compilation result for this
-   * release config. This value is updated when a compilation result is created
-   * from this release config, or when this resource is updated by API call
-   * (perhaps to roll back to an earlier release). The compilation result must
-   * have been created using this release config. Must be in the format
+   * release config. This value is updated when a compilation result is
+   * automatically created from this release config (using cron_schedule), or
+   * when this resource is updated by API call (perhaps to roll back to an
+   * earlier release). The compilation result must have been created using this
+   * release config. Must be in the format
    * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
    * </pre>
    *
@@ -1986,6 +2019,99 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       releaseCompilationResult_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DISABLED_FIELD_NUMBER = 8;
+  private boolean disabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disables automatic creation of compilation results.
+   * </pre>
+   *
+   * <code>bool disabled = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disabled.
+   */
+  @java.lang.Override
+  public boolean getDisabled() {
+    return disabled_;
+  }
+
+  public static final int INTERNAL_METADATA_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object internalMetadata_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the internalMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasInternalMetadata() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The internalMetadata.
+   */
+  @java.lang.Override
+  public java.lang.String getInternalMetadata() {
+    java.lang.Object ref = internalMetadata_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      internalMetadata_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for internalMetadata.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getInternalMetadataBytes() {
+    java.lang.Object ref = internalMetadata_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      internalMetadata_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -2027,6 +2153,12 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, timeZone_);
     }
+    if (disabled_ != false) {
+      output.writeBool(8, disabled_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, internalMetadata_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2061,6 +2193,12 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, timeZone_);
     }
+    if (disabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, disabled_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, internalMetadata_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2088,6 +2226,11 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getRecentScheduledReleaseRecordsList()
         .equals(other.getRecentScheduledReleaseRecordsList())) return false;
     if (!getReleaseCompilationResult().equals(other.getReleaseCompilationResult())) return false;
+    if (getDisabled() != other.getDisabled()) return false;
+    if (hasInternalMetadata() != other.hasInternalMetadata()) return false;
+    if (hasInternalMetadata()) {
+      if (!getInternalMetadata().equals(other.getInternalMetadata())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2117,6 +2260,12 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + RELEASE_COMPILATION_RESULT_FIELD_NUMBER;
     hash = (53 * hash) + getReleaseCompilationResult().hashCode();
+    hash = (37 * hash) + DISABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
+    if (hasInternalMetadata()) {
+      hash = (37 * hash) + INTERNAL_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getInternalMetadata().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2283,6 +2432,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000020);
       releaseCompilationResult_ = "";
+      disabled_ = false;
+      internalMetadata_ = "";
       return this;
     }
 
@@ -2356,6 +2507,13 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.releaseCompilationResult_ = releaseCompilationResult_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.disabled_ = disabled_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.internalMetadata_ = internalMetadata_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2462,6 +2620,14 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (other.getDisabled() != false) {
+        setDisabled(other.getDisabled());
+      }
+      if (other.hasInternalMetadata()) {
+        internalMetadata_ = other.internalMetadata_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2540,6 +2706,18 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
+            case 64:
+              {
+                disabled_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+            case 74:
+              {
+                internalMetadata_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2564,10 +2742,10 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The release config's name.
+     * Identifier. The release config's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -2586,10 +2764,10 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The release config's name.
+     * Identifier. The release config's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -2608,10 +2786,10 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The release config's name.
+     * Identifier. The release config's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2629,10 +2807,10 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The release config's name.
+     * Identifier. The release config's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -2646,10 +2824,10 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The release config's name.
+     * Identifier. The release config's name.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -3265,8 +3443,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled release attempts,
-     * ordered in in descending order of `release_time`. Updated whenever
-     * automatic creation of a compilation result is triggered by cron_schedule.
+     * ordered in descending order of `release_time`. Updated whenever automatic
+     * creation of a compilation result is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3286,8 +3464,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled release attempts,
-     * ordered in in descending order of `release_time`. Updated whenever
-     * automatic creation of a compilation result is triggered by cron_schedule.
+     * ordered in descending order of `release_time`. Updated whenever automatic
+     * creation of a compilation result is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3306,8 +3484,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled release attempts,
-     * ordered in in descending order of `release_time`. Updated whenever
-     * automatic creation of a compilation result is triggered by cron_schedule.
+     * ordered in descending order of `release_time`. Updated whenever automatic
+     * creation of a compilation result is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3327,8 +3505,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled release attempts,
-     * ordered in in descending order of `release_time`. Updated whenever
-     * automatic creation of a compilation result is triggered by cron_schedule.
+     * ordered in descending order of `release_time`. Updated whenever automatic
+     * creation of a compilation result is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3354,8 +3532,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled release attempts,
-     * ordered in in descending order of `release_time`. Updated whenever
-     * automatic creation of a compilation result is triggered by cron_schedule.
+     * ordered in descending order of `release_time`. Updated whenever automatic
+     * creation of a compilation result is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3380,8 +3558,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled release attempts,
-     * ordered in in descending order of `release_time`. Updated whenever
-     * automatic creation of a compilation result is triggered by cron_schedule.
+     * ordered in descending order of `release_time`. Updated whenever automatic
+     * creation of a compilation result is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3407,8 +3585,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled release attempts,
-     * ordered in in descending order of `release_time`. Updated whenever
-     * automatic creation of a compilation result is triggered by cron_schedule.
+     * ordered in descending order of `release_time`. Updated whenever automatic
+     * creation of a compilation result is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3434,8 +3612,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled release attempts,
-     * ordered in in descending order of `release_time`. Updated whenever
-     * automatic creation of a compilation result is triggered by cron_schedule.
+     * ordered in descending order of `release_time`. Updated whenever automatic
+     * creation of a compilation result is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3459,8 +3637,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled release attempts,
-     * ordered in in descending order of `release_time`. Updated whenever
-     * automatic creation of a compilation result is triggered by cron_schedule.
+     * ordered in descending order of `release_time`. Updated whenever automatic
+     * creation of a compilation result is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3485,8 +3663,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled release attempts,
-     * ordered in in descending order of `release_time`. Updated whenever
-     * automatic creation of a compilation result is triggered by cron_schedule.
+     * ordered in descending order of `release_time`. Updated whenever automatic
+     * creation of a compilation result is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3512,8 +3690,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled release attempts,
-     * ordered in in descending order of `release_time`. Updated whenever
-     * automatic creation of a compilation result is triggered by cron_schedule.
+     * ordered in descending order of `release_time`. Updated whenever automatic
+     * creation of a compilation result is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3535,8 +3713,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled release attempts,
-     * ordered in in descending order of `release_time`. Updated whenever
-     * automatic creation of a compilation result is triggered by cron_schedule.
+     * ordered in descending order of `release_time`. Updated whenever automatic
+     * creation of a compilation result is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3558,8 +3736,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled release attempts,
-     * ordered in in descending order of `release_time`. Updated whenever
-     * automatic creation of a compilation result is triggered by cron_schedule.
+     * ordered in descending order of `release_time`. Updated whenever automatic
+     * creation of a compilation result is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3575,8 +3753,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled release attempts,
-     * ordered in in descending order of `release_time`. Updated whenever
-     * automatic creation of a compilation result is triggered by cron_schedule.
+     * ordered in descending order of `release_time`. Updated whenever automatic
+     * creation of a compilation result is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3596,8 +3774,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled release attempts,
-     * ordered in in descending order of `release_time`. Updated whenever
-     * automatic creation of a compilation result is triggered by cron_schedule.
+     * ordered in descending order of `release_time`. Updated whenever automatic
+     * creation of a compilation result is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3619,8 +3797,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled release attempts,
-     * ordered in in descending order of `release_time`. Updated whenever
-     * automatic creation of a compilation result is triggered by cron_schedule.
+     * ordered in descending order of `release_time`. Updated whenever automatic
+     * creation of a compilation result is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3639,8 +3817,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled release attempts,
-     * ordered in in descending order of `release_time`. Updated whenever
-     * automatic creation of a compilation result is triggered by cron_schedule.
+     * ordered in descending order of `release_time`. Updated whenever automatic
+     * creation of a compilation result is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3660,8 +3838,8 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Records of the 10 most recent scheduled release attempts,
-     * ordered in in descending order of `release_time`. Updated whenever
-     * automatic creation of a compilation result is triggered by cron_schedule.
+     * ordered in descending order of `release_time`. Updated whenever automatic
+     * creation of a compilation result is triggered by cron_schedule.
      * </pre>
      *
      * <code>
@@ -3700,10 +3878,11 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The name of the currently released compilation result for this
-     * release config. This value is updated when a compilation result is created
-     * from this release config, or when this resource is updated by API call
-     * (perhaps to roll back to an earlier release). The compilation result must
-     * have been created using this release config. Must be in the format
+     * release config. This value is updated when a compilation result is
+     * automatically created from this release config (using cron_schedule), or
+     * when this resource is updated by API call (perhaps to roll back to an
+     * earlier release). The compilation result must have been created using this
+     * release config. Must be in the format
      * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
      * </pre>
      *
@@ -3729,10 +3908,11 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The name of the currently released compilation result for this
-     * release config. This value is updated when a compilation result is created
-     * from this release config, or when this resource is updated by API call
-     * (perhaps to roll back to an earlier release). The compilation result must
-     * have been created using this release config. Must be in the format
+     * release config. This value is updated when a compilation result is
+     * automatically created from this release config (using cron_schedule), or
+     * when this resource is updated by API call (perhaps to roll back to an
+     * earlier release). The compilation result must have been created using this
+     * release config. Must be in the format
      * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
      * </pre>
      *
@@ -3758,10 +3938,11 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The name of the currently released compilation result for this
-     * release config. This value is updated when a compilation result is created
-     * from this release config, or when this resource is updated by API call
-     * (perhaps to roll back to an earlier release). The compilation result must
-     * have been created using this release config. Must be in the format
+     * release config. This value is updated when a compilation result is
+     * automatically created from this release config (using cron_schedule), or
+     * when this resource is updated by API call (perhaps to roll back to an
+     * earlier release). The compilation result must have been created using this
+     * release config. Must be in the format
      * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
      * </pre>
      *
@@ -3786,10 +3967,11 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The name of the currently released compilation result for this
-     * release config. This value is updated when a compilation result is created
-     * from this release config, or when this resource is updated by API call
-     * (perhaps to roll back to an earlier release). The compilation result must
-     * have been created using this release config. Must be in the format
+     * release config. This value is updated when a compilation result is
+     * automatically created from this release config (using cron_schedule), or
+     * when this resource is updated by API call (perhaps to roll back to an
+     * earlier release). The compilation result must have been created using this
+     * release config. Must be in the format
      * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
      * </pre>
      *
@@ -3810,10 +3992,11 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The name of the currently released compilation result for this
-     * release config. This value is updated when a compilation result is created
-     * from this release config, or when this resource is updated by API call
-     * (perhaps to roll back to an earlier release). The compilation result must
-     * have been created using this release config. Must be in the format
+     * release config. This value is updated when a compilation result is
+     * automatically created from this release config (using cron_schedule), or
+     * when this resource is updated by API call (perhaps to roll back to an
+     * earlier release). The compilation result must have been created using this
+     * release config. Must be in the format
      * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
      * </pre>
      *
@@ -3831,6 +4014,197 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       releaseCompilationResult_ = value;
       bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private boolean disabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables automatic creation of compilation results.
+     * </pre>
+     *
+     * <code>bool disabled = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disabled.
+     */
+    @java.lang.Override
+    public boolean getDisabled() {
+      return disabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables automatic creation of compilation results.
+     * </pre>
+     *
+     * <code>bool disabled = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The disabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisabled(boolean value) {
+
+      disabled_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables automatic creation of compilation results.
+     * </pre>
+     *
+     * <code>bool disabled = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisabled() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      disabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object internalMetadata_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the internalMetadata field is set.
+     */
+    public boolean hasInternalMetadata() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The internalMetadata.
+     */
+    public java.lang.String getInternalMetadata() {
+      java.lang.Object ref = internalMetadata_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        internalMetadata_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for internalMetadata.
+     */
+    public com.google.protobuf.ByteString getInternalMetadataBytes() {
+      java.lang.Object ref = internalMetadata_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        internalMetadata_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The internalMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalMetadata(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      internalMetadata_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInternalMetadata() {
+      internalMetadata_ = getDefaultInstance().getInternalMetadata();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All the metadata information that is used internally to serve
+     * the resource. For example: timestamps, flags, status fields, etc. The
+     * format of this field is a JSON string.
+     * </pre>
+     *
+     * <code>optional string internal_metadata = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for internalMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalMetadataBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      internalMetadata_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

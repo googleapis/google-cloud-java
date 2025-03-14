@@ -182,6 +182,18 @@ public class CloudFilestoreManagerSettings extends ClientSettings<CloudFilestore
         .revertInstanceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to promoteReplica. */
+  public UnaryCallSettings<PromoteReplicaRequest, Operation> promoteReplicaSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings()).promoteReplicaSettings();
+  }
+
+  /** Returns the object with the settings used for calls to promoteReplica. */
+  public OperationCallSettings<PromoteReplicaRequest, Instance, OperationMetadata>
+      promoteReplicaOperationSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings())
+        .promoteReplicaOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteInstance. */
   public UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings() {
     return ((CloudFilestoreManagerStubSettings) getStubSettings()).deleteInstanceSettings();
@@ -496,6 +508,17 @@ public class CloudFilestoreManagerSettings extends ClientSettings<CloudFilestore
     public OperationCallSettings.Builder<RevertInstanceRequest, Instance, OperationMetadata>
         revertInstanceOperationSettings() {
       return getStubSettingsBuilder().revertInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to promoteReplica. */
+    public UnaryCallSettings.Builder<PromoteReplicaRequest, Operation> promoteReplicaSettings() {
+      return getStubSettingsBuilder().promoteReplicaSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to promoteReplica. */
+    public OperationCallSettings.Builder<PromoteReplicaRequest, Instance, OperationMetadata>
+        promoteReplicaOperationSettings() {
+      return getStubSettingsBuilder().promoteReplicaOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */

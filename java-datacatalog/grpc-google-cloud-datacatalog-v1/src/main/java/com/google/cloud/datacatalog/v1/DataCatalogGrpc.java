@@ -21,6 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
+ * Deprecated: Please use Dataplex Catalog instead.
  * Data Catalog API service allows you to discover, understand, and manage
  * your data.
  * </pre>
@@ -29,6 +30,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/datacatalog/v1/datacatalog.proto")
 @io.grpc.stub.annotations.GrpcGenerated
+@java.lang.Deprecated
 public final class DataCatalogGrpc {
 
   private DataCatalogGrpc() {}
@@ -1742,10 +1744,12 @@ public final class DataCatalogGrpc {
    *
    *
    * <pre>
+   * Deprecated: Please use Dataplex Catalog instead.
    * Data Catalog API service allows you to discover, understand, and manage
    * your data.
    * </pre>
    */
+  @java.lang.Deprecated
   public interface AsyncService {
 
     /**
@@ -1766,6 +1770,7 @@ public final class DataCatalogGrpc {
      * (https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * </pre>
      */
+    @java.lang.Deprecated
     default void searchCatalog(
         com.google.cloud.datacatalog.v1.SearchCatalogRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.SearchCatalogResponse>
@@ -1800,6 +1805,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     default void createEntryGroup(
         com.google.cloud.datacatalog.v1.CreateEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.EntryGroup> responseObserver) {
@@ -1814,6 +1820,7 @@ public final class DataCatalogGrpc {
      * Gets an entry group.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getEntryGroup(
         com.google.cloud.datacatalog.v1.GetEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.EntryGroup> responseObserver) {
@@ -1832,6 +1839,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     default void updateEntryGroup(
         com.google.cloud.datacatalog.v1.UpdateEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.EntryGroup> responseObserver) {
@@ -1850,6 +1858,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     default void deleteEntryGroup(
         com.google.cloud.datacatalog.v1.DeleteEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1864,6 +1873,7 @@ public final class DataCatalogGrpc {
      * Lists entry groups.
      * </pre>
      */
+    @java.lang.Deprecated
     default void listEntryGroups(
         com.google.cloud.datacatalog.v1.ListEntryGroupsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.ListEntryGroupsResponse>
@@ -1886,6 +1896,7 @@ public final class DataCatalogGrpc {
      * An entry group can have a maximum of 100,000 entries.
      * </pre>
      */
+    @java.lang.Deprecated
     default void createEntry(
         com.google.cloud.datacatalog.v1.CreateEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Entry> responseObserver) {
@@ -1904,6 +1915,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     default void updateEntry(
         com.google.cloud.datacatalog.v1.UpdateEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Entry> responseObserver) {
@@ -1925,6 +1937,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     default void deleteEntry(
         com.google.cloud.datacatalog.v1.DeleteEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1939,6 +1952,7 @@ public final class DataCatalogGrpc {
      * Gets an entry.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getEntry(
         com.google.cloud.datacatalog.v1.GetEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Entry> responseObserver) {
@@ -1953,6 +1967,7 @@ public final class DataCatalogGrpc {
      * The resource name comes from the source Google Cloud Platform service.
      * </pre>
      */
+    @java.lang.Deprecated
     default void lookupEntry(
         com.google.cloud.datacatalog.v1.LookupEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Entry> responseObserver) {
@@ -1970,6 +1985,7 @@ public final class DataCatalogGrpc {
      * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
      * </pre>
      */
+    @java.lang.Deprecated
     default void listEntries(
         com.google.cloud.datacatalog.v1.ListEntriesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.ListEntriesResponse>
@@ -1988,6 +2004,7 @@ public final class DataCatalogGrpc {
      * IAM permission on the corresponding project.
      * </pre>
      */
+    @java.lang.Deprecated
     default void modifyEntryOverview(
         com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.EntryOverview>
@@ -2006,6 +2023,7 @@ public final class DataCatalogGrpc {
      * IAM permission on the corresponding project.
      * </pre>
      */
+    @java.lang.Deprecated
     default void modifyEntryContacts(
         com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Contacts> responseObserver) {
@@ -2024,6 +2042,7 @@ public final class DataCatalogGrpc {
      * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     default void createTagTemplate(
         com.google.cloud.datacatalog.v1.CreateTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.TagTemplate> responseObserver) {
@@ -2038,6 +2057,7 @@ public final class DataCatalogGrpc {
      * Gets a tag template.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getTagTemplate(
         com.google.cloud.datacatalog.v1.GetTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.TagTemplate> responseObserver) {
@@ -2058,6 +2078,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     default void updateTagTemplate(
         com.google.cloud.datacatalog.v1.UpdateTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.TagTemplate> responseObserver) {
@@ -2075,6 +2096,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     default void deleteTagTemplate(
         com.google.cloud.datacatalog.v1.DeleteTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -2092,6 +2114,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     default void createTagTemplateField(
         com.google.cloud.datacatalog.v1.CreateTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.TagTemplateField>
@@ -2112,6 +2135,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     default void updateTagTemplateField(
         com.google.cloud.datacatalog.v1.UpdateTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.TagTemplateField>
@@ -2130,6 +2154,7 @@ public final class DataCatalogGrpc {
      * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     default void renameTagTemplateField(
         com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.TagTemplateField>
@@ -2146,6 +2171,7 @@ public final class DataCatalogGrpc {
      * Within a single enum field, enum values must be unique.
      * </pre>
      */
+    @java.lang.Deprecated
     default void renameTagTemplateFieldEnumValue(
         com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.TagTemplateField>
@@ -2165,6 +2191,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     default void deleteTagTemplateField(
         com.google.cloud.datacatalog.v1.DeleteTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -2188,6 +2215,7 @@ public final class DataCatalogGrpc {
      * used to create the tag must be in the same organization.
      * </pre>
      */
+    @java.lang.Deprecated
     default void createTag(
         com.google.cloud.datacatalog.v1.CreateTagRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Tag> responseObserver) {
@@ -2201,6 +2229,7 @@ public final class DataCatalogGrpc {
      * Updates an existing tag.
      * </pre>
      */
+    @java.lang.Deprecated
     default void updateTag(
         com.google.cloud.datacatalog.v1.UpdateTagRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Tag> responseObserver) {
@@ -2214,6 +2243,7 @@ public final class DataCatalogGrpc {
      * Deletes a tag.
      * </pre>
      */
+    @java.lang.Deprecated
     default void deleteTag(
         com.google.cloud.datacatalog.v1.DeleteTagRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -2229,6 +2259,7 @@ public final class DataCatalogGrpc {
      * lowercased.
      * </pre>
      */
+    @java.lang.Deprecated
     default void listTags(
         com.google.cloud.datacatalog.v1.ListTagsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.ListTagsResponse>
@@ -2254,6 +2285,7 @@ public final class DataCatalogGrpc {
      * [google.cloud.datacatalog.v1.ReconcileTagsResponse] message.
      * </pre>
      */
+    @java.lang.Deprecated
     default void reconcileTags(
         com.google.cloud.datacatalog.v1.ReconcileTagsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -2269,6 +2301,7 @@ public final class DataCatalogGrpc {
      * the current user. Starring information is private to each user.
      * </pre>
      */
+    @java.lang.Deprecated
     default void starEntry(
         com.google.cloud.datacatalog.v1.StarEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.StarEntryResponse>
@@ -2284,6 +2317,7 @@ public final class DataCatalogGrpc {
      * the current user. Starring information is private to each user.
      * </pre>
      */
+    @java.lang.Deprecated
     default void unstarEntry(
         com.google.cloud.datacatalog.v1.UnstarEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.UnstarEntryResponse>
@@ -2310,6 +2344,7 @@ public final class DataCatalogGrpc {
      * - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
      * </pre>
      */
+    @java.lang.Deprecated
     default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
@@ -2337,6 +2372,7 @@ public final class DataCatalogGrpc {
      * - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
@@ -2359,6 +2395,7 @@ public final class DataCatalogGrpc {
      * No Google IAM permissions are required to call this method.
      * </pre>
      */
+    @java.lang.Deprecated
     default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
@@ -2389,6 +2426,7 @@ public final class DataCatalogGrpc {
      * message.
      * </pre>
      */
+    @java.lang.Deprecated
     default void importEntries(
         com.google.cloud.datacatalog.v1.ImportEntriesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -2404,6 +2442,7 @@ public final class DataCatalogGrpc {
      * organization or project.
      * </pre>
      */
+    @java.lang.Deprecated
     default void setConfig(
         com.google.cloud.datacatalog.v1.SetConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.MigrationConfig>
@@ -2420,6 +2459,7 @@ public final class DataCatalogGrpc {
      * which have a separate configuration set.
      * </pre>
      */
+    @java.lang.Deprecated
     default void retrieveConfig(
         com.google.cloud.datacatalog.v1.RetrieveConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.OrganizationConfig>
@@ -2439,6 +2479,7 @@ public final class DataCatalogGrpc {
      * resource itself.
      * </pre>
      */
+    @java.lang.Deprecated
     default void retrieveEffectiveConfig(
         com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.MigrationConfig>
@@ -2452,10 +2493,12 @@ public final class DataCatalogGrpc {
    * Base class for the server implementation of the service DataCatalog.
    *
    * <pre>
+   * Deprecated: Please use Dataplex Catalog instead.
    * Data Catalog API service allows you to discover, understand, and manage
    * your data.
    * </pre>
    */
+  @java.lang.Deprecated
   public abstract static class DataCatalogImplBase
       implements io.grpc.BindableService, AsyncService {
 
@@ -2469,10 +2512,12 @@ public final class DataCatalogGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service DataCatalog.
    *
    * <pre>
+   * Deprecated: Please use Dataplex Catalog instead.
    * Data Catalog API service allows you to discover, understand, and manage
    * your data.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class DataCatalogStub
       extends io.grpc.stub.AbstractAsyncStub<DataCatalogStub> {
     private DataCatalogStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -2502,6 +2547,7 @@ public final class DataCatalogGrpc {
      * (https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * </pre>
      */
+    @java.lang.Deprecated
     public void searchCatalog(
         com.google.cloud.datacatalog.v1.SearchCatalogRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.SearchCatalogResponse>
@@ -2538,6 +2584,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public void createEntryGroup(
         com.google.cloud.datacatalog.v1.CreateEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.EntryGroup> responseObserver) {
@@ -2554,6 +2601,7 @@ public final class DataCatalogGrpc {
      * Gets an entry group.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getEntryGroup(
         com.google.cloud.datacatalog.v1.GetEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.EntryGroup> responseObserver) {
@@ -2574,6 +2622,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public void updateEntryGroup(
         com.google.cloud.datacatalog.v1.UpdateEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.EntryGroup> responseObserver) {
@@ -2594,6 +2643,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public void deleteEntryGroup(
         com.google.cloud.datacatalog.v1.DeleteEntryGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -2610,6 +2660,7 @@ public final class DataCatalogGrpc {
      * Lists entry groups.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listEntryGroups(
         com.google.cloud.datacatalog.v1.ListEntryGroupsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.ListEntryGroupsResponse>
@@ -2634,6 +2685,7 @@ public final class DataCatalogGrpc {
      * An entry group can have a maximum of 100,000 entries.
      * </pre>
      */
+    @java.lang.Deprecated
     public void createEntry(
         com.google.cloud.datacatalog.v1.CreateEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Entry> responseObserver) {
@@ -2654,6 +2706,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public void updateEntry(
         com.google.cloud.datacatalog.v1.UpdateEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Entry> responseObserver) {
@@ -2677,6 +2730,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public void deleteEntry(
         com.google.cloud.datacatalog.v1.DeleteEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -2693,6 +2747,7 @@ public final class DataCatalogGrpc {
      * Gets an entry.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getEntry(
         com.google.cloud.datacatalog.v1.GetEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Entry> responseObserver) {
@@ -2708,6 +2763,7 @@ public final class DataCatalogGrpc {
      * The resource name comes from the source Google Cloud Platform service.
      * </pre>
      */
+    @java.lang.Deprecated
     public void lookupEntry(
         com.google.cloud.datacatalog.v1.LookupEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Entry> responseObserver) {
@@ -2727,6 +2783,7 @@ public final class DataCatalogGrpc {
      * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
      * </pre>
      */
+    @java.lang.Deprecated
     public void listEntries(
         com.google.cloud.datacatalog.v1.ListEntriesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.ListEntriesResponse>
@@ -2747,6 +2804,7 @@ public final class DataCatalogGrpc {
      * IAM permission on the corresponding project.
      * </pre>
      */
+    @java.lang.Deprecated
     public void modifyEntryOverview(
         com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.EntryOverview>
@@ -2767,6 +2825,7 @@ public final class DataCatalogGrpc {
      * IAM permission on the corresponding project.
      * </pre>
      */
+    @java.lang.Deprecated
     public void modifyEntryContacts(
         com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Contacts> responseObserver) {
@@ -2787,6 +2846,7 @@ public final class DataCatalogGrpc {
      * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public void createTagTemplate(
         com.google.cloud.datacatalog.v1.CreateTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.TagTemplate> responseObserver) {
@@ -2803,6 +2863,7 @@ public final class DataCatalogGrpc {
      * Gets a tag template.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getTagTemplate(
         com.google.cloud.datacatalog.v1.GetTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.TagTemplate> responseObserver) {
@@ -2825,6 +2886,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public void updateTagTemplate(
         com.google.cloud.datacatalog.v1.UpdateTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.TagTemplate> responseObserver) {
@@ -2844,6 +2906,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public void deleteTagTemplate(
         com.google.cloud.datacatalog.v1.DeleteTagTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -2863,6 +2926,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public void createTagTemplateField(
         com.google.cloud.datacatalog.v1.CreateTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.TagTemplateField>
@@ -2885,6 +2949,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public void updateTagTemplateField(
         com.google.cloud.datacatalog.v1.UpdateTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.TagTemplateField>
@@ -2905,6 +2970,7 @@ public final class DataCatalogGrpc {
      * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public void renameTagTemplateField(
         com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.TagTemplateField>
@@ -2923,6 +2989,7 @@ public final class DataCatalogGrpc {
      * Within a single enum field, enum values must be unique.
      * </pre>
      */
+    @java.lang.Deprecated
     public void renameTagTemplateFieldEnumValue(
         com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.TagTemplateField>
@@ -2944,6 +3011,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public void deleteTagTemplateField(
         com.google.cloud.datacatalog.v1.DeleteTagTemplateFieldRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -2969,6 +3037,7 @@ public final class DataCatalogGrpc {
      * used to create the tag must be in the same organization.
      * </pre>
      */
+    @java.lang.Deprecated
     public void createTag(
         com.google.cloud.datacatalog.v1.CreateTagRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Tag> responseObserver) {
@@ -2983,6 +3052,7 @@ public final class DataCatalogGrpc {
      * Updates an existing tag.
      * </pre>
      */
+    @java.lang.Deprecated
     public void updateTag(
         com.google.cloud.datacatalog.v1.UpdateTagRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Tag> responseObserver) {
@@ -2997,6 +3067,7 @@ public final class DataCatalogGrpc {
      * Deletes a tag.
      * </pre>
      */
+    @java.lang.Deprecated
     public void deleteTag(
         com.google.cloud.datacatalog.v1.DeleteTagRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -3013,6 +3084,7 @@ public final class DataCatalogGrpc {
      * lowercased.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listTags(
         com.google.cloud.datacatalog.v1.ListTagsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.ListTagsResponse>
@@ -3039,6 +3111,7 @@ public final class DataCatalogGrpc {
      * [google.cloud.datacatalog.v1.ReconcileTagsResponse] message.
      * </pre>
      */
+    @java.lang.Deprecated
     public void reconcileTags(
         com.google.cloud.datacatalog.v1.ReconcileTagsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -3056,6 +3129,7 @@ public final class DataCatalogGrpc {
      * the current user. Starring information is private to each user.
      * </pre>
      */
+    @java.lang.Deprecated
     public void starEntry(
         com.google.cloud.datacatalog.v1.StarEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.StarEntryResponse>
@@ -3072,6 +3146,7 @@ public final class DataCatalogGrpc {
      * the current user. Starring information is private to each user.
      * </pre>
      */
+    @java.lang.Deprecated
     public void unstarEntry(
         com.google.cloud.datacatalog.v1.UnstarEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.UnstarEntryResponse>
@@ -3100,6 +3175,7 @@ public final class DataCatalogGrpc {
      * - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
      * </pre>
      */
+    @java.lang.Deprecated
     public void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
@@ -3129,6 +3205,7 @@ public final class DataCatalogGrpc {
      * - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
@@ -3153,6 +3230,7 @@ public final class DataCatalogGrpc {
      * No Google IAM permissions are required to call this method.
      * </pre>
      */
+    @java.lang.Deprecated
     public void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
@@ -3185,6 +3263,7 @@ public final class DataCatalogGrpc {
      * message.
      * </pre>
      */
+    @java.lang.Deprecated
     public void importEntries(
         com.google.cloud.datacatalog.v1.ImportEntriesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -3202,6 +3281,7 @@ public final class DataCatalogGrpc {
      * organization or project.
      * </pre>
      */
+    @java.lang.Deprecated
     public void setConfig(
         com.google.cloud.datacatalog.v1.SetConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.MigrationConfig>
@@ -3219,6 +3299,7 @@ public final class DataCatalogGrpc {
      * which have a separate configuration set.
      * </pre>
      */
+    @java.lang.Deprecated
     public void retrieveConfig(
         com.google.cloud.datacatalog.v1.RetrieveConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.OrganizationConfig>
@@ -3240,6 +3321,7 @@ public final class DataCatalogGrpc {
      * resource itself.
      * </pre>
      */
+    @java.lang.Deprecated
     public void retrieveEffectiveConfig(
         com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.MigrationConfig>
@@ -3255,10 +3337,12 @@ public final class DataCatalogGrpc {
    * A stub to allow clients to do synchronous rpc calls to service DataCatalog.
    *
    * <pre>
+   * Deprecated: Please use Dataplex Catalog instead.
    * Data Catalog API service allows you to discover, understand, and manage
    * your data.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class DataCatalogBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<DataCatalogBlockingStub> {
     private DataCatalogBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -3289,6 +3373,7 @@ public final class DataCatalogGrpc {
      * (https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.SearchCatalogResponse searchCatalog(
         com.google.cloud.datacatalog.v1.SearchCatalogRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3321,6 +3406,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.EntryGroup createEntryGroup(
         com.google.cloud.datacatalog.v1.CreateEntryGroupRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3334,6 +3420,7 @@ public final class DataCatalogGrpc {
      * Gets an entry group.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.EntryGroup getEntryGroup(
         com.google.cloud.datacatalog.v1.GetEntryGroupRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3351,6 +3438,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.EntryGroup updateEntryGroup(
         com.google.cloud.datacatalog.v1.UpdateEntryGroupRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3368,6 +3456,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.Empty deleteEntryGroup(
         com.google.cloud.datacatalog.v1.DeleteEntryGroupRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3381,6 +3470,7 @@ public final class DataCatalogGrpc {
      * Lists entry groups.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.ListEntryGroupsResponse listEntryGroups(
         com.google.cloud.datacatalog.v1.ListEntryGroupsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3401,6 +3491,7 @@ public final class DataCatalogGrpc {
      * An entry group can have a maximum of 100,000 entries.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.Entry createEntry(
         com.google.cloud.datacatalog.v1.CreateEntryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3418,6 +3509,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.Entry updateEntry(
         com.google.cloud.datacatalog.v1.UpdateEntryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3438,6 +3530,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.Empty deleteEntry(
         com.google.cloud.datacatalog.v1.DeleteEntryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3451,6 +3544,7 @@ public final class DataCatalogGrpc {
      * Gets an entry.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.Entry getEntry(
         com.google.cloud.datacatalog.v1.GetEntryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3465,6 +3559,7 @@ public final class DataCatalogGrpc {
      * The resource name comes from the source Google Cloud Platform service.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.Entry lookupEntry(
         com.google.cloud.datacatalog.v1.LookupEntryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3481,6 +3576,7 @@ public final class DataCatalogGrpc {
      * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.ListEntriesResponse listEntries(
         com.google.cloud.datacatalog.v1.ListEntriesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3497,6 +3593,7 @@ public final class DataCatalogGrpc {
      * IAM permission on the corresponding project.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.EntryOverview modifyEntryOverview(
         com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3513,6 +3610,7 @@ public final class DataCatalogGrpc {
      * IAM permission on the corresponding project.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.Contacts modifyEntryContacts(
         com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3530,6 +3628,7 @@ public final class DataCatalogGrpc {
      * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.TagTemplate createTagTemplate(
         com.google.cloud.datacatalog.v1.CreateTagTemplateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3543,6 +3642,7 @@ public final class DataCatalogGrpc {
      * Gets a tag template.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.TagTemplate getTagTemplate(
         com.google.cloud.datacatalog.v1.GetTagTemplateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3562,6 +3662,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.TagTemplate updateTagTemplate(
         com.google.cloud.datacatalog.v1.UpdateTagTemplateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3578,6 +3679,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.Empty deleteTagTemplate(
         com.google.cloud.datacatalog.v1.DeleteTagTemplateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3594,6 +3696,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.TagTemplateField createTagTemplateField(
         com.google.cloud.datacatalog.v1.CreateTagTemplateFieldRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3612,6 +3715,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.TagTemplateField updateTagTemplateField(
         com.google.cloud.datacatalog.v1.UpdateTagTemplateFieldRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3628,6 +3732,7 @@ public final class DataCatalogGrpc {
      * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.TagTemplateField renameTagTemplateField(
         com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3642,6 +3747,7 @@ public final class DataCatalogGrpc {
      * Within a single enum field, enum values must be unique.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.TagTemplateField renameTagTemplateFieldEnumValue(
         com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3659,6 +3765,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.Empty deleteTagTemplateField(
         com.google.cloud.datacatalog.v1.DeleteTagTemplateFieldRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3681,6 +3788,7 @@ public final class DataCatalogGrpc {
      * used to create the tag must be in the same organization.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.Tag createTag(
         com.google.cloud.datacatalog.v1.CreateTagRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3694,6 +3802,7 @@ public final class DataCatalogGrpc {
      * Updates an existing tag.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.Tag updateTag(
         com.google.cloud.datacatalog.v1.UpdateTagRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3707,6 +3816,7 @@ public final class DataCatalogGrpc {
      * Deletes a tag.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.Empty deleteTag(
         com.google.cloud.datacatalog.v1.DeleteTagRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3722,6 +3832,7 @@ public final class DataCatalogGrpc {
      * lowercased.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.ListTagsResponse listTags(
         com.google.cloud.datacatalog.v1.ListTagsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3746,6 +3857,7 @@ public final class DataCatalogGrpc {
      * [google.cloud.datacatalog.v1.ReconcileTagsResponse] message.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation reconcileTags(
         com.google.cloud.datacatalog.v1.ReconcileTagsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3760,6 +3872,7 @@ public final class DataCatalogGrpc {
      * the current user. Starring information is private to each user.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.StarEntryResponse starEntry(
         com.google.cloud.datacatalog.v1.StarEntryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3774,6 +3887,7 @@ public final class DataCatalogGrpc {
      * the current user. Starring information is private to each user.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.UnstarEntryResponse unstarEntry(
         com.google.cloud.datacatalog.v1.UnstarEntryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3798,6 +3912,7 @@ public final class DataCatalogGrpc {
      * - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
@@ -3823,6 +3938,7 @@ public final class DataCatalogGrpc {
      * - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
@@ -3843,6 +3959,7 @@ public final class DataCatalogGrpc {
      * No Google IAM permissions are required to call this method.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3871,6 +3988,7 @@ public final class DataCatalogGrpc {
      * message.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation importEntries(
         com.google.cloud.datacatalog.v1.ImportEntriesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3885,6 +4003,7 @@ public final class DataCatalogGrpc {
      * organization or project.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.MigrationConfig setConfig(
         com.google.cloud.datacatalog.v1.SetConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3900,6 +4019,7 @@ public final class DataCatalogGrpc {
      * which have a separate configuration set.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.OrganizationConfig retrieveConfig(
         com.google.cloud.datacatalog.v1.RetrieveConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3917,6 +4037,7 @@ public final class DataCatalogGrpc {
      * resource itself.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datacatalog.v1.MigrationConfig retrieveEffectiveConfig(
         com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -3928,10 +4049,12 @@ public final class DataCatalogGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service DataCatalog.
    *
    * <pre>
+   * Deprecated: Please use Dataplex Catalog instead.
    * Data Catalog API service allows you to discover, understand, and manage
    * your data.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class DataCatalogFutureStub
       extends io.grpc.stub.AbstractFutureStub<DataCatalogFutureStub> {
     private DataCatalogFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -3962,6 +4085,7 @@ public final class DataCatalogGrpc {
      * (https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.SearchCatalogResponse>
         searchCatalog(com.google.cloud.datacatalog.v1.SearchCatalogRequest request) {
@@ -3995,6 +4119,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.EntryGroup>
         createEntryGroup(com.google.cloud.datacatalog.v1.CreateEntryGroupRequest request) {
@@ -4009,6 +4134,7 @@ public final class DataCatalogGrpc {
      * Gets an entry group.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.EntryGroup>
         getEntryGroup(com.google.cloud.datacatalog.v1.GetEntryGroupRequest request) {
@@ -4027,6 +4153,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.EntryGroup>
         updateEntryGroup(com.google.cloud.datacatalog.v1.UpdateEntryGroupRequest request) {
@@ -4045,6 +4172,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteEntryGroup(com.google.cloud.datacatalog.v1.DeleteEntryGroupRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -4058,6 +4186,7 @@ public final class DataCatalogGrpc {
      * Lists entry groups.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.ListEntryGroupsResponse>
         listEntryGroups(com.google.cloud.datacatalog.v1.ListEntryGroupsRequest request) {
@@ -4079,6 +4208,7 @@ public final class DataCatalogGrpc {
      * An entry group can have a maximum of 100,000 entries.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.Entry>
         createEntry(com.google.cloud.datacatalog.v1.CreateEntryRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -4096,6 +4226,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.Entry>
         updateEntry(com.google.cloud.datacatalog.v1.UpdateEntryRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -4116,6 +4247,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteEntry(com.google.cloud.datacatalog.v1.DeleteEntryRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -4129,6 +4261,7 @@ public final class DataCatalogGrpc {
      * Gets an entry.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.Entry>
         getEntry(com.google.cloud.datacatalog.v1.GetEntryRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -4143,6 +4276,7 @@ public final class DataCatalogGrpc {
      * The resource name comes from the source Google Cloud Platform service.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.Entry>
         lookupEntry(com.google.cloud.datacatalog.v1.LookupEntryRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -4159,6 +4293,7 @@ public final class DataCatalogGrpc {
      * [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.ListEntriesResponse>
         listEntries(com.google.cloud.datacatalog.v1.ListEntriesRequest request) {
@@ -4176,6 +4311,7 @@ public final class DataCatalogGrpc {
      * IAM permission on the corresponding project.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.EntryOverview>
         modifyEntryOverview(com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest request) {
@@ -4193,6 +4329,7 @@ public final class DataCatalogGrpc {
      * IAM permission on the corresponding project.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.Contacts>
         modifyEntryContacts(com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest request) {
@@ -4211,6 +4348,7 @@ public final class DataCatalogGrpc {
      * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.TagTemplate>
         createTagTemplate(com.google.cloud.datacatalog.v1.CreateTagTemplateRequest request) {
@@ -4225,6 +4363,7 @@ public final class DataCatalogGrpc {
      * Gets a tag template.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.TagTemplate>
         getTagTemplate(com.google.cloud.datacatalog.v1.GetTagTemplateRequest request) {
@@ -4245,6 +4384,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.TagTemplate>
         updateTagTemplate(com.google.cloud.datacatalog.v1.UpdateTagTemplateRequest request) {
@@ -4262,6 +4402,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteTagTemplate(com.google.cloud.datacatalog.v1.DeleteTagTemplateRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -4278,6 +4419,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.TagTemplateField>
         createTagTemplateField(
@@ -4298,6 +4440,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.TagTemplateField>
         updateTagTemplateField(
@@ -4316,6 +4459,7 @@ public final class DataCatalogGrpc {
      * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.TagTemplateField>
         renameTagTemplateField(
@@ -4332,6 +4476,7 @@ public final class DataCatalogGrpc {
      * Within a single enum field, enum values must be unique.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.TagTemplateField>
         renameTagTemplateFieldEnumValue(
@@ -4352,6 +4497,7 @@ public final class DataCatalogGrpc {
      * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteTagTemplateField(
             com.google.cloud.datacatalog.v1.DeleteTagTemplateFieldRequest request) {
@@ -4375,6 +4521,7 @@ public final class DataCatalogGrpc {
      * used to create the tag must be in the same organization.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.Tag>
         createTag(com.google.cloud.datacatalog.v1.CreateTagRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -4388,6 +4535,7 @@ public final class DataCatalogGrpc {
      * Updates an existing tag.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.Tag>
         updateTag(com.google.cloud.datacatalog.v1.UpdateTagRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -4401,6 +4549,7 @@ public final class DataCatalogGrpc {
      * Deletes a tag.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteTag(
         com.google.cloud.datacatalog.v1.DeleteTagRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -4416,6 +4565,7 @@ public final class DataCatalogGrpc {
      * lowercased.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.ListTagsResponse>
         listTags(com.google.cloud.datacatalog.v1.ListTagsRequest request) {
@@ -4441,6 +4591,7 @@ public final class DataCatalogGrpc {
      * [google.cloud.datacatalog.v1.ReconcileTagsResponse] message.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         reconcileTags(com.google.cloud.datacatalog.v1.ReconcileTagsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -4455,6 +4606,7 @@ public final class DataCatalogGrpc {
      * the current user. Starring information is private to each user.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.StarEntryResponse>
         starEntry(com.google.cloud.datacatalog.v1.StarEntryRequest request) {
@@ -4470,6 +4622,7 @@ public final class DataCatalogGrpc {
      * the current user. Starring information is private to each user.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.UnstarEntryResponse>
         unstarEntry(com.google.cloud.datacatalog.v1.UnstarEntryRequest request) {
@@ -4495,6 +4648,7 @@ public final class DataCatalogGrpc {
      * - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -4521,6 +4675,7 @@ public final class DataCatalogGrpc {
      * - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
         getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -4542,6 +4697,7 @@ public final class DataCatalogGrpc {
      * No Google IAM permissions are required to call this method.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.iam.v1.TestIamPermissionsResponse>
         testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
@@ -4571,6 +4727,7 @@ public final class DataCatalogGrpc {
      * message.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         importEntries(com.google.cloud.datacatalog.v1.ImportEntriesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -4585,6 +4742,7 @@ public final class DataCatalogGrpc {
      * organization or project.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.MigrationConfig>
         setConfig(com.google.cloud.datacatalog.v1.SetConfigRequest request) {
@@ -4601,6 +4759,7 @@ public final class DataCatalogGrpc {
      * which have a separate configuration set.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.OrganizationConfig>
         retrieveConfig(com.google.cloud.datacatalog.v1.RetrieveConfigRequest request) {
@@ -4619,6 +4778,7 @@ public final class DataCatalogGrpc {
      * resource itself.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.datacatalog.v1.MigrationConfig>
         retrieveEffectiveConfig(

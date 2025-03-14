@@ -27,6 +27,8 @@ import com.google.geo.type.Viewport;
 import com.google.protobuf.AbstractMessage;
 import com.google.type.LatLng;
 import com.google.type.LocalizedText;
+import com.google.type.PostalAddress;
+import com.google.type.TimeZone;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -337,6 +339,7 @@ public class PlacesClientTest {
             .setInternationalPhoneNumber("internationalPhoneNumber-74125591")
             .setFormattedAddress("formattedAddress1036810136")
             .setShortFormattedAddress("shortFormattedAddress282445876")
+            .setPostalAddress(PostalAddress.newBuilder().build())
             .addAllAddressComponents(new ArrayList<Place.AddressComponent>())
             .setPlusCode(Place.PlusCode.newBuilder().build())
             .setLocation(LatLng.newBuilder().build())
@@ -347,6 +350,7 @@ public class PlacesClientTest {
             .addAllReviews(new ArrayList<Review>())
             .setRegularOpeningHours(Place.OpeningHours.newBuilder().build())
             .setUtcOffsetMinutes(1046614318)
+            .setTimeZone(TimeZone.newBuilder().build())
             .addAllPhotos(new ArrayList<Photo>())
             .setAdrFormatAddress("adrFormatAddress1685861262")
             .setPriceLevel(PriceLevel.forNumber(0))
@@ -439,6 +443,7 @@ public class PlacesClientTest {
             .setInternationalPhoneNumber("internationalPhoneNumber-74125591")
             .setFormattedAddress("formattedAddress1036810136")
             .setShortFormattedAddress("shortFormattedAddress282445876")
+            .setPostalAddress(PostalAddress.newBuilder().build())
             .addAllAddressComponents(new ArrayList<Place.AddressComponent>())
             .setPlusCode(Place.PlusCode.newBuilder().build())
             .setLocation(LatLng.newBuilder().build())
@@ -449,6 +454,7 @@ public class PlacesClientTest {
             .addAllReviews(new ArrayList<Review>())
             .setRegularOpeningHours(Place.OpeningHours.newBuilder().build())
             .setUtcOffsetMinutes(1046614318)
+            .setTimeZone(TimeZone.newBuilder().build())
             .addAllPhotos(new ArrayList<Photo>())
             .setAdrFormatAddress("adrFormatAddress1685861262")
             .setPriceLevel(PriceLevel.forNumber(0))

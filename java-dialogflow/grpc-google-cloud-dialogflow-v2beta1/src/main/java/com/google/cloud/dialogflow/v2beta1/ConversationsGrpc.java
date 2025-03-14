@@ -228,6 +228,56 @@ public final class ConversationsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.IngestContextReferencesRequest,
+          com.google.cloud.dialogflow.v2beta1.IngestContextReferencesResponse>
+      getIngestContextReferencesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "IngestContextReferences",
+      requestType = com.google.cloud.dialogflow.v2beta1.IngestContextReferencesRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.IngestContextReferencesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.IngestContextReferencesRequest,
+          com.google.cloud.dialogflow.v2beta1.IngestContextReferencesResponse>
+      getIngestContextReferencesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2beta1.IngestContextReferencesRequest,
+            com.google.cloud.dialogflow.v2beta1.IngestContextReferencesResponse>
+        getIngestContextReferencesMethod;
+    if ((getIngestContextReferencesMethod = ConversationsGrpc.getIngestContextReferencesMethod)
+        == null) {
+      synchronized (ConversationsGrpc.class) {
+        if ((getIngestContextReferencesMethod = ConversationsGrpc.getIngestContextReferencesMethod)
+            == null) {
+          ConversationsGrpc.getIngestContextReferencesMethod =
+              getIngestContextReferencesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2beta1.IngestContextReferencesRequest,
+                          com.google.cloud.dialogflow.v2beta1.IngestContextReferencesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "IngestContextReferences"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2beta1.IngestContextReferencesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2beta1.IngestContextReferencesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConversationsMethodDescriptorSupplier("IngestContextReferences"))
+                      .build();
+        }
+      }
+    }
+    return getIngestContextReferencesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesRequest,
           com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesResponse>
       getBatchCreateMessagesMethod;
@@ -525,6 +575,55 @@ public final class ConversationsGrpc {
     return getSearchKnowledgeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsRequest,
+          com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsResponse>
+      getGenerateSuggestionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateSuggestions",
+      requestType = com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsRequest,
+          com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsResponse>
+      getGenerateSuggestionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsRequest,
+            com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsResponse>
+        getGenerateSuggestionsMethod;
+    if ((getGenerateSuggestionsMethod = ConversationsGrpc.getGenerateSuggestionsMethod) == null) {
+      synchronized (ConversationsGrpc.class) {
+        if ((getGenerateSuggestionsMethod = ConversationsGrpc.getGenerateSuggestionsMethod)
+            == null) {
+          ConversationsGrpc.getGenerateSuggestionsMethod =
+              getGenerateSuggestionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsRequest,
+                          com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GenerateSuggestions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConversationsMethodDescriptorSupplier("GenerateSuggestions"))
+                      .build();
+        }
+      }
+    }
+    return getGenerateSuggestionsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ConversationsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ConversationsStub> factory =
@@ -657,6 +756,23 @@ public final class ConversationsGrpc {
      *
      *
      * <pre>
+     * Data ingestion API.
+     * Ingests context references for an existing conversation.
+     * </pre>
+     */
+    default void ingestContextReferences(
+        com.google.cloud.dialogflow.v2beta1.IngestContextReferencesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dialogflow.v2beta1.IngestContextReferencesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getIngestContextReferencesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Batch ingests messages to conversation. Customers can use this RPC to
      * ingest historical messages to conversation.
      * </pre>
@@ -753,6 +869,23 @@ public final class ConversationsGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSearchKnowledgeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates all the suggestions using generators configured in the
+     * conversation profile. A generator is used only if its trigger event is
+     * matched.
+     * </pre>
+     */
+    default void generateSuggestions(
+        com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGenerateSuggestionsMethod(), responseObserver);
     }
   }
 
@@ -881,6 +1014,25 @@ public final class ConversationsGrpc {
      *
      *
      * <pre>
+     * Data ingestion API.
+     * Ingests context references for an existing conversation.
+     * </pre>
+     */
+    public void ingestContextReferences(
+        com.google.cloud.dialogflow.v2beta1.IngestContextReferencesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dialogflow.v2beta1.IngestContextReferencesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getIngestContextReferencesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Batch ingests messages to conversation. Customers can use this RPC to
      * ingest historical messages to conversation.
      * </pre>
@@ -990,6 +1142,25 @@ public final class ConversationsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates all the suggestions using generators configured in the
+     * conversation profile. A generator is used only if its trigger event is
+     * matched.
+     * </pre>
+     */
+    public void generateSuggestions(
+        com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateSuggestionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1085,6 +1256,21 @@ public final class ConversationsGrpc {
      *
      *
      * <pre>
+     * Data ingestion API.
+     * Ingests context references for an existing conversation.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.IngestContextReferencesResponse
+        ingestContextReferences(
+            com.google.cloud.dialogflow.v2beta1.IngestContextReferencesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getIngestContextReferencesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Batch ingests messages to conversation. Customers can use this RPC to
      * ingest historical messages to conversation.
      * </pre>
@@ -1169,6 +1355,21 @@ public final class ConversationsGrpc {
         com.google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchKnowledgeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates all the suggestions using generators configured in the
+     * conversation profile. A generator is used only if its trigger event is
+     * matched.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsResponse generateSuggestions(
+        com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateSuggestionsMethod(), getCallOptions(), request);
     }
   }
 
@@ -1270,6 +1471,22 @@ public final class ConversationsGrpc {
      *
      *
      * <pre>
+     * Data ingestion API.
+     * Ingests context references for an existing conversation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.v2beta1.IngestContextReferencesResponse>
+        ingestContextReferences(
+            com.google.cloud.dialogflow.v2beta1.IngestContextReferencesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getIngestContextReferencesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Batch ingests messages to conversation. Customers can use this RPC to
      * ingest historical messages to conversation.
      * </pre>
@@ -1362,18 +1579,37 @@ public final class ConversationsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchKnowledgeMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates all the suggestions using generators configured in the
+     * conversation profile. A generator is used only if its trigger event is
+     * matched.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsResponse>
+        generateSuggestions(
+            com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateSuggestionsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_CONVERSATION = 0;
   private static final int METHODID_LIST_CONVERSATIONS = 1;
   private static final int METHODID_GET_CONVERSATION = 2;
   private static final int METHODID_COMPLETE_CONVERSATION = 3;
-  private static final int METHODID_BATCH_CREATE_MESSAGES = 4;
-  private static final int METHODID_LIST_MESSAGES = 5;
-  private static final int METHODID_SUGGEST_CONVERSATION_SUMMARY = 6;
-  private static final int METHODID_GENERATE_STATELESS_SUMMARY = 7;
-  private static final int METHODID_GENERATE_STATELESS_SUGGESTION = 8;
-  private static final int METHODID_SEARCH_KNOWLEDGE = 9;
+  private static final int METHODID_INGEST_CONTEXT_REFERENCES = 4;
+  private static final int METHODID_BATCH_CREATE_MESSAGES = 5;
+  private static final int METHODID_LIST_MESSAGES = 6;
+  private static final int METHODID_SUGGEST_CONVERSATION_SUMMARY = 7;
+  private static final int METHODID_GENERATE_STATELESS_SUMMARY = 8;
+  private static final int METHODID_GENERATE_STATELESS_SUGGESTION = 9;
+  private static final int METHODID_SEARCH_KNOWLEDGE = 10;
+  private static final int METHODID_GENERATE_SUGGESTIONS = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1417,6 +1653,13 @@ public final class ConversationsGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Conversation>)
                   responseObserver);
           break;
+        case METHODID_INGEST_CONTEXT_REFERENCES:
+          serviceImpl.ingestContextReferences(
+              (com.google.cloud.dialogflow.v2beta1.IngestContextReferencesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.v2beta1.IngestContextReferencesResponse>)
+                  responseObserver);
+          break;
         case METHODID_BATCH_CREATE_MESSAGES:
           serviceImpl.batchCreateMessages(
               (com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesRequest) request,
@@ -1457,6 +1700,13 @@ public final class ConversationsGrpc {
               (com.google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.dialogflow.v2beta1.SearchKnowledgeResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GENERATE_SUGGESTIONS:
+          serviceImpl.generateSuggestions(
+              (com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsResponse>)
                   responseObserver);
           break;
         default:
@@ -1506,6 +1756,13 @@ public final class ConversationsGrpc {
                     com.google.cloud.dialogflow.v2beta1.Conversation>(
                     service, METHODID_COMPLETE_CONVERSATION)))
         .addMethod(
+            getIngestContextReferencesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.IngestContextReferencesRequest,
+                    com.google.cloud.dialogflow.v2beta1.IngestContextReferencesResponse>(
+                    service, METHODID_INGEST_CONTEXT_REFERENCES)))
+        .addMethod(
             getBatchCreateMessagesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1547,6 +1804,13 @@ public final class ConversationsGrpc {
                     com.google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest,
                     com.google.cloud.dialogflow.v2beta1.SearchKnowledgeResponse>(
                     service, METHODID_SEARCH_KNOWLEDGE)))
+        .addMethod(
+            getGenerateSuggestionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsRequest,
+                    com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsResponse>(
+                    service, METHODID_GENERATE_SUGGESTIONS)))
         .build();
   }
 
@@ -1602,12 +1866,14 @@ public final class ConversationsGrpc {
                       .addMethod(getListConversationsMethod())
                       .addMethod(getGetConversationMethod())
                       .addMethod(getCompleteConversationMethod())
+                      .addMethod(getIngestContextReferencesMethod())
                       .addMethod(getBatchCreateMessagesMethod())
                       .addMethod(getListMessagesMethod())
                       .addMethod(getSuggestConversationSummaryMethod())
                       .addMethod(getGenerateStatelessSummaryMethod())
                       .addMethod(getGenerateStatelessSuggestionMethod())
                       .addMethod(getSearchKnowledgeMethod())
+                      .addMethod(getGenerateSuggestionsMethod())
                       .build();
         }
       }

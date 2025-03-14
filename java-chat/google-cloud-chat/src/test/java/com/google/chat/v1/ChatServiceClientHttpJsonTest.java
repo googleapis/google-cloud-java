@@ -2597,4 +2597,145 @@ public class ChatServiceClientHttpJsonTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void getSpaceNotificationSettingTest() throws Exception {
+    SpaceNotificationSetting expectedResponse =
+        SpaceNotificationSetting.newBuilder()
+            .setName(SpaceNotificationSettingName.of("[USER]", "[SPACE]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SpaceNotificationSettingName name = SpaceNotificationSettingName.of("[USER]", "[SPACE]");
+
+    SpaceNotificationSetting actualResponse = client.getSpaceNotificationSetting(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSpaceNotificationSettingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SpaceNotificationSettingName name = SpaceNotificationSettingName.of("[USER]", "[SPACE]");
+      client.getSpaceNotificationSetting(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSpaceNotificationSettingTest2() throws Exception {
+    SpaceNotificationSetting expectedResponse =
+        SpaceNotificationSetting.newBuilder()
+            .setName(SpaceNotificationSettingName.of("[USER]", "[SPACE]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "users/user-8145/spaces/space-8145/spaceNotificationSetting";
+
+    SpaceNotificationSetting actualResponse = client.getSpaceNotificationSetting(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSpaceNotificationSettingExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "users/user-8145/spaces/space-8145/spaceNotificationSetting";
+      client.getSpaceNotificationSetting(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSpaceNotificationSettingTest() throws Exception {
+    SpaceNotificationSetting expectedResponse =
+        SpaceNotificationSetting.newBuilder()
+            .setName(SpaceNotificationSettingName.of("[USER]", "[SPACE]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SpaceNotificationSetting spaceNotificationSetting =
+        SpaceNotificationSetting.newBuilder()
+            .setName(SpaceNotificationSettingName.of("[USER]", "[SPACE]").toString())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    SpaceNotificationSetting actualResponse =
+        client.updateSpaceNotificationSetting(spaceNotificationSetting, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateSpaceNotificationSettingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SpaceNotificationSetting spaceNotificationSetting =
+          SpaceNotificationSetting.newBuilder()
+              .setName(SpaceNotificationSettingName.of("[USER]", "[SPACE]").toString())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSpaceNotificationSetting(spaceNotificationSetting, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

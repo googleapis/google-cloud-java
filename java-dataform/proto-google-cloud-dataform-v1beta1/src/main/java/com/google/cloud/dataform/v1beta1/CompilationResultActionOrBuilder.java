@@ -28,106 +28,6 @@ public interface CompilationResultActionOrBuilder
    *
    *
    * <pre>
-   * This action's identifier. Unique within the compilation result.
-   * </pre>
-   *
-   * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
-   *
-   * @return Whether the target field is set.
-   */
-  boolean hasTarget();
-  /**
-   *
-   *
-   * <pre>
-   * This action's identifier. Unique within the compilation result.
-   * </pre>
-   *
-   * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
-   *
-   * @return The target.
-   */
-  com.google.cloud.dataform.v1beta1.Target getTarget();
-  /**
-   *
-   *
-   * <pre>
-   * This action's identifier. Unique within the compilation result.
-   * </pre>
-   *
-   * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
-   */
-  com.google.cloud.dataform.v1beta1.TargetOrBuilder getTargetOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * The action's identifier if the project had been compiled without any
-   * overrides configured. Unique within the compilation result.
-   * </pre>
-   *
-   * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
-   *
-   * @return Whether the canonicalTarget field is set.
-   */
-  boolean hasCanonicalTarget();
-  /**
-   *
-   *
-   * <pre>
-   * The action's identifier if the project had been compiled without any
-   * overrides configured. Unique within the compilation result.
-   * </pre>
-   *
-   * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
-   *
-   * @return The canonicalTarget.
-   */
-  com.google.cloud.dataform.v1beta1.Target getCanonicalTarget();
-  /**
-   *
-   *
-   * <pre>
-   * The action's identifier if the project had been compiled without any
-   * overrides configured. Unique within the compilation result.
-   * </pre>
-   *
-   * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
-   */
-  com.google.cloud.dataform.v1beta1.TargetOrBuilder getCanonicalTargetOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * The full path including filename in which this action is located, relative
-   * to the workspace root.
-   * </pre>
-   *
-   * <code>string file_path = 3;</code>
-   *
-   * @return The filePath.
-   */
-  java.lang.String getFilePath();
-  /**
-   *
-   *
-   * <pre>
-   * The full path including filename in which this action is located, relative
-   * to the workspace root.
-   * </pre>
-   *
-   * <code>string file_path = 3;</code>
-   *
-   * @return The bytes for filePath.
-   */
-  com.google.protobuf.ByteString getFilePathBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * The database relation created/updated by this action.
    * </pre>
    *
@@ -270,6 +170,188 @@ public interface CompilationResultActionOrBuilder
    */
   com.google.cloud.dataform.v1beta1.CompilationResultAction.DeclarationOrBuilder
       getDeclarationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The notebook executed by this action.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook notebook = 8;</code>
+   *
+   * @return Whether the notebook field is set.
+   */
+  boolean hasNotebook();
+  /**
+   *
+   *
+   * <pre>
+   * The notebook executed by this action.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook notebook = 8;</code>
+   *
+   * @return The notebook.
+   */
+  com.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook getNotebook();
+  /**
+   *
+   *
+   * <pre>
+   * The notebook executed by this action.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.CompilationResultAction.Notebook notebook = 8;</code>
+   */
+  com.google.cloud.dataform.v1beta1.CompilationResultAction.NotebookOrBuilder
+      getNotebookOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * This action's identifier. Unique within the compilation result.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+   *
+   * @return Whether the target field is set.
+   */
+  boolean hasTarget();
+  /**
+   *
+   *
+   * <pre>
+   * This action's identifier. Unique within the compilation result.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+   *
+   * @return The target.
+   */
+  com.google.cloud.dataform.v1beta1.Target getTarget();
+  /**
+   *
+   *
+   * <pre>
+   * This action's identifier. Unique within the compilation result.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.Target target = 1;</code>
+   */
+  com.google.cloud.dataform.v1beta1.TargetOrBuilder getTargetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The action's identifier if the project had been compiled without any
+   * overrides configured. Unique within the compilation result.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
+   *
+   * @return Whether the canonicalTarget field is set.
+   */
+  boolean hasCanonicalTarget();
+  /**
+   *
+   *
+   * <pre>
+   * The action's identifier if the project had been compiled without any
+   * overrides configured. Unique within the compilation result.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
+   *
+   * @return The canonicalTarget.
+   */
+  com.google.cloud.dataform.v1beta1.Target getCanonicalTarget();
+  /**
+   *
+   *
+   * <pre>
+   * The action's identifier if the project had been compiled without any
+   * overrides configured. Unique within the compilation result.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.Target canonical_target = 2;</code>
+   */
+  com.google.cloud.dataform.v1beta1.TargetOrBuilder getCanonicalTargetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The full path including filename in which this action is located, relative
+   * to the workspace root.
+   * </pre>
+   *
+   * <code>string file_path = 3;</code>
+   *
+   * @return The filePath.
+   */
+  java.lang.String getFilePath();
+  /**
+   *
+   *
+   * <pre>
+   * The full path including filename in which this action is located, relative
+   * to the workspace root.
+   * </pre>
+   *
+   * <code>string file_path = 3;</code>
+   *
+   * @return The bytes for filePath.
+   */
+  com.google.protobuf.ByteString getFilePathBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the internalMetadata field is set.
+   */
+  boolean hasInternalMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The internalMetadata.
+   */
+  java.lang.String getInternalMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for internalMetadata.
+   */
+  com.google.protobuf.ByteString getInternalMetadataBytes();
 
   com.google.cloud.dataform.v1beta1.CompilationResultAction.CompiledObjectCase
       getCompiledObjectCase();

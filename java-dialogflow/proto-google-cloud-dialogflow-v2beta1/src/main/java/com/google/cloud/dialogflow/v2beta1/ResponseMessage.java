@@ -896,7 +896,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    *
    * You may set this, for example:
    *
-   * * In the entry fulfillment of a CX Page if entering the page indicates
+   * * In the entry fulfillment of a Dialogflow CX Page if entering the page
+   * indicates
    *   something went extremely wrong in the conversation.
    * * In a webhook response when you determine that the customer issue can only
    *   be handled by a human.
@@ -1166,7 +1167,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      * You may set this, for example:
      *
-     * * In the entry fulfillment of a CX Page if entering the page indicates
+     * * In the entry fulfillment of a Dialogflow CX Page if entering the page
+     * indicates
      *   something went extremely wrong in the conversation.
      * * In a webhook response when you determine that the customer issue can only
      *   be handled by a human.

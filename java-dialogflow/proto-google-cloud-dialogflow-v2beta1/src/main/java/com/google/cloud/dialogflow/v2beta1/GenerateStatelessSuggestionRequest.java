@@ -56,6 +56,18 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
         .internal_static_google_cloud_dialogflow_v2beta1_GenerateStatelessSuggestionRequest_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 4:
+        return internalGetContextReferences();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -300,6 +312,149 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     }
   }
 
+  public static final int CONTEXT_REFERENCES_FIELD_NUMBER = 4;
+
+  private static final class ContextReferencesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String,
+                    com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
+                    newDefaultInstance(
+                        com.google.cloud.dialogflow.v2beta1.ConversationProto
+                            .internal_static_google_cloud_dialogflow_v2beta1_GenerateStatelessSuggestionRequest_ContextReferencesEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference
+                            .getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
+      contextReferences_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
+      internalGetContextReferences() {
+    if (contextReferences_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ContextReferencesDefaultEntryHolder.defaultEntry);
+    }
+    return contextReferences_;
+  }
+
+  public int getContextReferencesCount() {
+    return internalGetContextReferences().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A section of ingested context information. The key is the name of
+   * the context reference and the value contains the contents of the context
+   * reference. The key is used to incorporate ingested context references to
+   * enhance the generator.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.ContextReference&gt; context_references = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsContextReferences(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetContextReferences().getMap().containsKey(key);
+  }
+  /** Use {@link #getContextReferencesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<
+          java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
+      getContextReferences() {
+    return getContextReferencesMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A section of ingested context information. The key is the name of
+   * the context reference and the value contains the contents of the context
+   * reference. The key is used to incorporate ingested context references to
+   * enhance the generator.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.ContextReference&gt; context_references = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<
+          java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
+      getContextReferencesMap() {
+    return internalGetContextReferences().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A section of ingested context information. The key is the name of
+   * the context reference and the value contains the contents of the context
+   * reference. The key is used to incorporate ingested context references to
+   * enhance the generator.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.ContextReference&gt; context_references = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference
+      getContextReferencesOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<
+            java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
+        map = internalGetContextReferences().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A section of ingested context information. The key is the name of
+   * the context reference and the value contains the contents of the context
+   * reference. The key is used to incorporate ingested context references to
+   * enhance the generator.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.ContextReference&gt; context_references = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference
+      getContextReferencesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<
+            java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
+        map = internalGetContextReferences().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int CONVERSATION_CONTEXT_FIELD_NUMBER = 5;
   private com.google.cloud.dialogflow.v2beta1.ConversationContext conversationContext_;
   /**
@@ -497,6 +652,11 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     if (generatorResourceCase_ == 3) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, generatorResource_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetContextReferences(),
+        ContextReferencesDefaultEntryHolder.defaultEntry,
+        4);
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(5, getConversationContext());
     }
@@ -526,6 +686,19 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     }
     if (generatorResourceCase_ == 3) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, generatorResource_);
+    }
+    for (java.util.Map.Entry<
+            java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
+        entry : internalGetContextReferences().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
+          contextReferences__ =
+              ContextReferencesDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, contextReferences__);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getConversationContext());
@@ -560,6 +733,7 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
         (com.google.cloud.dialogflow.v2beta1.GenerateStatelessSuggestionRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
+    if (!internalGetContextReferences().equals(other.internalGetContextReferences())) return false;
     if (hasConversationContext() != other.hasConversationContext()) return false;
     if (hasConversationContext()) {
       if (!getConversationContext().equals(other.getConversationContext())) return false;
@@ -589,6 +763,10 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
+    if (!internalGetContextReferences().getMap().isEmpty()) {
+      hash = (37 * hash) + CONTEXT_REFERENCES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetContextReferences().hashCode();
+    }
     if (hasConversationContext()) {
       hash = (37 * hash) + CONVERSATION_CONTEXT_FIELD_NUMBER;
       hash = (53 * hash) + getConversationContext().hashCode();
@@ -730,6 +908,28 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
           .internal_static_google_cloud_dialogflow_v2beta1_GenerateStatelessSuggestionRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetContextReferences();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetMutableContextReferences();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -765,13 +965,14 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       if (generatorBuilder_ != null) {
         generatorBuilder_.clear();
       }
+      internalGetMutableContextReferences().clear();
       conversationContext_ = null;
       if (conversationContextBuilder_ != null) {
         conversationContextBuilder_.dispose();
         conversationContextBuilder_ = null;
       }
       triggerEvents_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       generatorResourceCase_ = 0;
       generatorResource_ = null;
       return this;
@@ -815,9 +1016,9 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
 
     private void buildPartialRepeatedFields(
         com.google.cloud.dialogflow.v2beta1.GenerateStatelessSuggestionRequest result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         triggerEvents_ = java.util.Collections.unmodifiableList(triggerEvents_);
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.triggerEvents_ = triggerEvents_;
     }
@@ -828,8 +1029,12 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.contextReferences_ =
+            internalGetContextReferences().build(ContextReferencesDefaultEntryHolder.defaultEntry);
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.conversationContext_ =
             conversationContextBuilder_ == null
                 ? conversationContext_
@@ -902,13 +1107,15 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      internalGetMutableContextReferences().mergeFrom(other.internalGetContextReferences());
+      bitField0_ |= 0x00000008;
       if (other.hasConversationContext()) {
         mergeConversationContext(other.getConversationContext());
       }
       if (!other.triggerEvents_.isEmpty()) {
         if (triggerEvents_.isEmpty()) {
           triggerEvents_ = other.triggerEvents_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureTriggerEventsIsMutable();
           triggerEvents_.addAll(other.triggerEvents_);
@@ -978,11 +1185,26 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
                 generatorResource_ = s;
                 break;
               } // case 26
+            case 34:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String,
+                        com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
+                    contextReferences__ =
+                        input.readMessage(
+                            ContextReferencesDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableContextReferences()
+                    .ensureBuilderMap()
+                    .put(contextReferences__.getKey(), contextReferences__.getValue());
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             case 42:
               {
                 input.readMessage(
                     getConversationContextFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
@@ -1517,6 +1739,300 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       return this;
     }
 
+    private static final class ContextReferencesConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.cloud.dialogflow.v2beta1.Conversation.ContextReferenceOrBuilder,
+            com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference> {
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference build(
+          com.google.cloud.dialogflow.v2beta1.Conversation.ContextReferenceOrBuilder val) {
+        if (val instanceof com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference) {
+          return (com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference) val;
+        }
+        return ((com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference.Builder) val)
+            .build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
+          defaultEntry() {
+        return ContextReferencesDefaultEntryHolder.defaultEntry;
+      }
+    };
+
+    private static final ContextReferencesConverter contextReferencesConverter =
+        new ContextReferencesConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.dialogflow.v2beta1.Conversation.ContextReferenceOrBuilder,
+            com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference,
+            com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference.Builder>
+        contextReferences_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.dialogflow.v2beta1.Conversation.ContextReferenceOrBuilder,
+            com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference,
+            com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference.Builder>
+        internalGetContextReferences() {
+      if (contextReferences_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(contextReferencesConverter);
+      }
+      return contextReferences_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.dialogflow.v2beta1.Conversation.ContextReferenceOrBuilder,
+            com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference,
+            com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference.Builder>
+        internalGetMutableContextReferences() {
+      if (contextReferences_ == null) {
+        contextReferences_ = new com.google.protobuf.MapFieldBuilder<>(contextReferencesConverter);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return contextReferences_;
+    }
+
+    public int getContextReferencesCount() {
+      return internalGetContextReferences().ensureBuilderMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A section of ingested context information. The key is the name of
+     * the context reference and the value contains the contents of the context
+     * reference. The key is used to incorporate ingested context references to
+     * enhance the generator.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.ContextReference&gt; context_references = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsContextReferences(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetContextReferences().ensureBuilderMap().containsKey(key);
+    }
+    /** Use {@link #getContextReferencesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
+        getContextReferences() {
+      return getContextReferencesMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A section of ingested context information. The key is the name of
+     * the context reference and the value contains the contents of the context
+     * reference. The key is used to incorporate ingested context references to
+     * enhance the generator.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.ContextReference&gt; context_references = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
+        getContextReferencesMap() {
+      return internalGetContextReferences().getImmutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A section of ingested context information. The key is the name of
+     * the context reference and the value contains the contents of the context
+     * reference. The key is used to incorporate ingested context references to
+     * enhance the generator.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.ContextReference&gt; context_references = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference
+        getContextReferencesOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.dialogflow.v2beta1.Conversation.ContextReferenceOrBuilder>
+          map = internalGetMutableContextReferences().ensureBuilderMap();
+      return map.containsKey(key) ? contextReferencesConverter.build(map.get(key)) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A section of ingested context information. The key is the name of
+     * the context reference and the value contains the contents of the context
+     * reference. The key is used to incorporate ingested context references to
+     * enhance the generator.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.ContextReference&gt; context_references = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference
+        getContextReferencesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.dialogflow.v2beta1.Conversation.ContextReferenceOrBuilder>
+          map = internalGetMutableContextReferences().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return contextReferencesConverter.build(map.get(key));
+    }
+
+    public Builder clearContextReferences() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      internalGetMutableContextReferences().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A section of ingested context information. The key is the name of
+     * the context reference and the value contains the contents of the context
+     * reference. The key is used to incorporate ingested context references to
+     * enhance the generator.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.ContextReference&gt; context_references = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeContextReferences(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableContextReferences().ensureBuilderMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
+        getMutableContextReferences() {
+      bitField0_ |= 0x00000008;
+      return internalGetMutableContextReferences().ensureMessageMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A section of ingested context information. The key is the name of
+     * the context reference and the value contains the contents of the context
+     * reference. The key is used to incorporate ingested context references to
+     * enhance the generator.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.ContextReference&gt; context_references = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putContextReferences(
+        java.lang.String key,
+        com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableContextReferences().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00000008;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A section of ingested context information. The key is the name of
+     * the context reference and the value contains the contents of the context
+     * reference. The key is used to incorporate ingested context references to
+     * enhance the generator.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.ContextReference&gt; context_references = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllContextReferences(
+        java.util.Map<
+                java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
+            values) {
+      for (java.util.Map.Entry<
+              java.lang.String, com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference>
+          e : values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableContextReferences().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00000008;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A section of ingested context information. The key is the name of
+     * the context reference and the value contains the contents of the context
+     * reference. The key is used to incorporate ingested context references to
+     * enhance the generator.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dialogflow.v2beta1.Conversation.ContextReference&gt; context_references = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference.Builder
+        putContextReferencesBuilderIfAbsent(java.lang.String key) {
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.dialogflow.v2beta1.Conversation.ContextReferenceOrBuilder>
+          builderMap = internalGetMutableContextReferences().ensureBuilderMap();
+      com.google.cloud.dialogflow.v2beta1.Conversation.ContextReferenceOrBuilder entry =
+          builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference) {
+        entry =
+            ((com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference.Builder) entry;
+    }
+
     private com.google.cloud.dialogflow.v2beta1.ConversationContext conversationContext_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.ConversationContext,
@@ -1537,7 +2053,7 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
      * @return Whether the conversationContext field is set.
      */
     public boolean hasConversationContext() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1582,7 +2098,7 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       } else {
         conversationContextBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1604,7 +2120,7 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       } else {
         conversationContextBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1622,7 +2138,7 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     public Builder mergeConversationContext(
         com.google.cloud.dialogflow.v2beta1.ConversationContext value) {
       if (conversationContextBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && conversationContext_ != null
             && conversationContext_
                 != com.google.cloud.dialogflow.v2beta1.ConversationContext.getDefaultInstance()) {
@@ -1634,7 +2150,7 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
         conversationContextBuilder_.mergeFrom(value);
       }
       if (conversationContext_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1651,7 +2167,7 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
      * </code>
      */
     public Builder clearConversationContext() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       conversationContext_ = null;
       if (conversationContextBuilder_ != null) {
         conversationContextBuilder_.dispose();
@@ -1673,7 +2189,7 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
      */
     public com.google.cloud.dialogflow.v2beta1.ConversationContext.Builder
         getConversationContextBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getConversationContextFieldBuilder().getBuilder();
     }
@@ -1729,9 +2245,9 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     private java.util.List<java.lang.Integer> triggerEvents_ = java.util.Collections.emptyList();
 
     private void ensureTriggerEventsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         triggerEvents_ = new java.util.ArrayList<java.lang.Integer>(triggerEvents_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -1878,7 +2394,7 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
      */
     public Builder clearTriggerEvents() {
       triggerEvents_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }

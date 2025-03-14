@@ -51,6 +51,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PerformMaintenanceInstanceRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest;
+import com.google.cloud.compute.v1.ReportHostAsFaultyInstanceRequest;
 import com.google.cloud.compute.v1.ResetInstanceRequest;
 import com.google.cloud.compute.v1.ResumeInstanceRequest;
 import com.google.cloud.compute.v1.Screenshot;
@@ -248,6 +249,16 @@ public abstract class InstancesStub implements BackgroundResource {
   public UnaryCallable<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesCallable() {
     throw new UnsupportedOperationException("Not implemented: removeResourcePoliciesCallable()");
+  }
+
+  public OperationCallable<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+      reportHostAsFaultyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: reportHostAsFaultyOperationCallable()");
+  }
+
+  public UnaryCallable<ReportHostAsFaultyInstanceRequest, Operation> reportHostAsFaultyCallable() {
+    throw new UnsupportedOperationException("Not implemented: reportHostAsFaultyCallable()");
   }
 
   public OperationCallable<ResetInstanceRequest, Operation, Operation> resetOperationCallable() {

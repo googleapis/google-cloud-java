@@ -73,8 +73,11 @@ public interface ImportItemOrBuilder
    * listed in the update mask, and regardless of whether a field is present
    * in the `entry` object.
    *
-   *
    * The `update_mask` field is ignored when an entry is created or re-created.
+   *
+   * In an aspect-only metadata job (when entry sync mode is `NONE`), set this
+   * value to `aspects`.
+   *
    *
    * Dataplex also determines which entries and aspects to modify by comparing
    * the values and timestamps that you provide in the metadata import file with
@@ -102,8 +105,11 @@ public interface ImportItemOrBuilder
    * listed in the update mask, and regardless of whether a field is present
    * in the `entry` object.
    *
-   *
    * The `update_mask` field is ignored when an entry is created or re-created.
+   *
+   * In an aspect-only metadata job (when entry sync mode is `NONE`), set this
+   * value to `aspects`.
+   *
    *
    * Dataplex also determines which entries and aspects to modify by comparing
    * the values and timestamps that you provide in the metadata import file with
@@ -131,8 +137,11 @@ public interface ImportItemOrBuilder
    * listed in the update mask, and regardless of whether a field is present
    * in the `entry` object.
    *
-   *
    * The `update_mask` field is ignored when an entry is created or re-created.
+   *
+   * In an aspect-only metadata job (when entry sync mode is `NONE`), set this
+   * value to `aspects`.
+   *
    *
    * Dataplex also determines which entries and aspects to modify by comparing
    * the values and timestamps that you provide in the metadata import file with
@@ -155,18 +164,18 @@ public interface ImportItemOrBuilder
    * aspect type and are attached directly to the entry.
    * * `{aspect_type_reference}&#64;{path}`: matches aspects that belong to the
    * specified aspect type and path.
-   * * `&lt;aspect_type_reference&gt;&#64;*` : matches aspects of the given type for all
+   * * `{aspect_type_reference}&#64;*` : matches aspects of the given type for all
    * paths.
    * * `*&#64;path` : matches aspects of all types on the given path.
+   *
    * Replace `{aspect_type_reference}` with a reference to the aspect type, in
    * the format
    * `{project_id_or_number}.{location_id}.{aspect_type_id}`.
    *
-   * If you leave this field empty, it is treated as specifying exactly those
-   * aspects that are present within the specified entry.
-   *
-   * In `FULL` entry sync mode, Dataplex implicitly adds the keys for all of the
-   * required aspects of an entry.
+   * In `FULL` entry sync mode, if you leave this field empty, it is treated as
+   * specifying exactly those aspects that are present within the specified
+   * entry. Dataplex implicitly adds the keys for all of the required aspects of
+   * an entry.
    * </pre>
    *
    * <code>repeated string aspect_keys = 3;</code>
@@ -184,18 +193,18 @@ public interface ImportItemOrBuilder
    * aspect type and are attached directly to the entry.
    * * `{aspect_type_reference}&#64;{path}`: matches aspects that belong to the
    * specified aspect type and path.
-   * * `&lt;aspect_type_reference&gt;&#64;*` : matches aspects of the given type for all
+   * * `{aspect_type_reference}&#64;*` : matches aspects of the given type for all
    * paths.
    * * `*&#64;path` : matches aspects of all types on the given path.
+   *
    * Replace `{aspect_type_reference}` with a reference to the aspect type, in
    * the format
    * `{project_id_or_number}.{location_id}.{aspect_type_id}`.
    *
-   * If you leave this field empty, it is treated as specifying exactly those
-   * aspects that are present within the specified entry.
-   *
-   * In `FULL` entry sync mode, Dataplex implicitly adds the keys for all of the
-   * required aspects of an entry.
+   * In `FULL` entry sync mode, if you leave this field empty, it is treated as
+   * specifying exactly those aspects that are present within the specified
+   * entry. Dataplex implicitly adds the keys for all of the required aspects of
+   * an entry.
    * </pre>
    *
    * <code>repeated string aspect_keys = 3;</code>
@@ -213,18 +222,18 @@ public interface ImportItemOrBuilder
    * aspect type and are attached directly to the entry.
    * * `{aspect_type_reference}&#64;{path}`: matches aspects that belong to the
    * specified aspect type and path.
-   * * `&lt;aspect_type_reference&gt;&#64;*` : matches aspects of the given type for all
+   * * `{aspect_type_reference}&#64;*` : matches aspects of the given type for all
    * paths.
    * * `*&#64;path` : matches aspects of all types on the given path.
+   *
    * Replace `{aspect_type_reference}` with a reference to the aspect type, in
    * the format
    * `{project_id_or_number}.{location_id}.{aspect_type_id}`.
    *
-   * If you leave this field empty, it is treated as specifying exactly those
-   * aspects that are present within the specified entry.
-   *
-   * In `FULL` entry sync mode, Dataplex implicitly adds the keys for all of the
-   * required aspects of an entry.
+   * In `FULL` entry sync mode, if you leave this field empty, it is treated as
+   * specifying exactly those aspects that are present within the specified
+   * entry. Dataplex implicitly adds the keys for all of the required aspects of
+   * an entry.
    * </pre>
    *
    * <code>repeated string aspect_keys = 3;</code>
@@ -243,18 +252,18 @@ public interface ImportItemOrBuilder
    * aspect type and are attached directly to the entry.
    * * `{aspect_type_reference}&#64;{path}`: matches aspects that belong to the
    * specified aspect type and path.
-   * * `&lt;aspect_type_reference&gt;&#64;*` : matches aspects of the given type for all
+   * * `{aspect_type_reference}&#64;*` : matches aspects of the given type for all
    * paths.
    * * `*&#64;path` : matches aspects of all types on the given path.
+   *
    * Replace `{aspect_type_reference}` with a reference to the aspect type, in
    * the format
    * `{project_id_or_number}.{location_id}.{aspect_type_id}`.
    *
-   * If you leave this field empty, it is treated as specifying exactly those
-   * aspects that are present within the specified entry.
-   *
-   * In `FULL` entry sync mode, Dataplex implicitly adds the keys for all of the
-   * required aspects of an entry.
+   * In `FULL` entry sync mode, if you leave this field empty, it is treated as
+   * specifying exactly those aspects that are present within the specified
+   * entry. Dataplex implicitly adds the keys for all of the required aspects of
+   * an entry.
    * </pre>
    *
    * <code>repeated string aspect_keys = 3;</code>

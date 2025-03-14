@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.maps.fleetengine.v1.CreateVehicleRequest;
+import com.google.maps.fleetengine.v1.DeleteVehicleRequest;
 import com.google.maps.fleetengine.v1.GetVehicleRequest;
 import com.google.maps.fleetengine.v1.ListVehiclesRequest;
 import com.google.maps.fleetengine.v1.ListVehiclesResponse;
@@ -37,6 +38,7 @@ import com.google.maps.fleetengine.v1.UpdateVehicleAttributesRequest;
 import com.google.maps.fleetengine.v1.UpdateVehicleAttributesResponse;
 import com.google.maps.fleetengine.v1.UpdateVehicleRequest;
 import com.google.maps.fleetengine.v1.Vehicle;
+import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -67,6 +69,14 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
           .setFullMethodName("maps.fleetengine.v1.VehicleService/GetVehicle")
           .setRequestMarshaller(ProtoUtils.marshaller(GetVehicleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Vehicle.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<DeleteVehicleRequest, Empty> deleteVehicleMethodDescriptor =
+      MethodDescriptor.<DeleteVehicleRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("maps.fleetengine.v1.VehicleService/DeleteVehicle")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteVehicleRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
 
   private static final MethodDescriptor<UpdateVehicleRequest, Vehicle>
@@ -115,6 +125,7 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
 
   private final UnaryCallable<CreateVehicleRequest, Vehicle> createVehicleCallable;
   private final UnaryCallable<GetVehicleRequest, Vehicle> getVehicleCallable;
+  private final UnaryCallable<DeleteVehicleRequest, Empty> deleteVehicleCallable;
   private final UnaryCallable<UpdateVehicleRequest, Vehicle> updateVehicleCallable;
   private final UnaryCallable<UpdateVehicleAttributesRequest, UpdateVehicleAttributesResponse>
       updateVehicleAttributesCallable;
@@ -130,6 +141,8 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
   private static final PathTemplate CREATE_VEHICLE_0_PATH_TEMPLATE =
       PathTemplate.create("{provider_id=providers/*}");
   private static final PathTemplate GET_VEHICLE_0_PATH_TEMPLATE =
+      PathTemplate.create("{provider_id=providers/*}");
+  private static final PathTemplate DELETE_VEHICLE_0_PATH_TEMPLATE =
       PathTemplate.create("{provider_id=providers/*}");
   private static final PathTemplate UPDATE_VEHICLE_0_PATH_TEMPLATE =
       PathTemplate.create("{provider_id=providers/*}");
@@ -200,6 +213,16 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<DeleteVehicleRequest, Empty> deleteVehicleTransportSettings =
+        GrpcCallSettings.<DeleteVehicleRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteVehicleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "provider_id", DELETE_VEHICLE_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<UpdateVehicleRequest, Vehicle> updateVehicleTransportSettings =
         GrpcCallSettings.<UpdateVehicleRequest, Vehicle>newBuilder()
             .setMethodDescriptor(updateVehicleMethodDescriptor)
@@ -254,6 +277,9 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
     this.getVehicleCallable =
         callableFactory.createUnaryCallable(
             getVehicleTransportSettings, settings.getVehicleSettings(), clientContext);
+    this.deleteVehicleCallable =
+        callableFactory.createUnaryCallable(
+            deleteVehicleTransportSettings, settings.deleteVehicleSettings(), clientContext);
     this.updateVehicleCallable =
         callableFactory.createUnaryCallable(
             updateVehicleTransportSettings, settings.updateVehicleSettings(), clientContext);
@@ -288,6 +314,11 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
   @Override
   public UnaryCallable<GetVehicleRequest, Vehicle> getVehicleCallable() {
     return getVehicleCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteVehicleRequest, Empty> deleteVehicleCallable() {
+    return deleteVehicleCallable;
   }
 
   @Override

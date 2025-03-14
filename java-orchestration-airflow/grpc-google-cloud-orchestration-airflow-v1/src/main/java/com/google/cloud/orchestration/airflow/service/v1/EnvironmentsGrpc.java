@@ -1459,7 +1459,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Creates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void createUserWorkloadsSecret(
@@ -1478,7 +1478,7 @@ public final class EnvironmentsGrpc {
      * Gets an existing user workloads Secret.
      * Values of the "data" field in the response are cleared.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void getUserWorkloadsSecret(
@@ -1496,7 +1496,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Lists user workloads Secrets.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void listUserWorkloadsSecrets(
@@ -1514,7 +1514,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Updates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void updateUserWorkloadsSecret(
@@ -1532,7 +1532,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Deletes a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void deleteUserWorkloadsSecret(
@@ -1548,7 +1548,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Creates a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void createUserWorkloadsConfigMap(
@@ -1567,7 +1567,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Gets an existing user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void getUserWorkloadsConfigMap(
@@ -1585,7 +1585,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Lists user workloads ConfigMaps.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void listUserWorkloadsConfigMaps(
@@ -1605,7 +1605,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Updates a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void updateUserWorkloadsConfigMap(
@@ -1624,7 +1624,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Deletes a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     default void deleteUserWorkloadsConfigMap(
@@ -1913,7 +1913,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Creates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void createUserWorkloadsSecret(
@@ -1934,7 +1934,7 @@ public final class EnvironmentsGrpc {
      * Gets an existing user workloads Secret.
      * Values of the "data" field in the response are cleared.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void getUserWorkloadsSecret(
@@ -1954,7 +1954,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Lists user workloads Secrets.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void listUserWorkloadsSecrets(
@@ -1974,7 +1974,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Updates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void updateUserWorkloadsSecret(
@@ -1994,7 +1994,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Deletes a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void deleteUserWorkloadsSecret(
@@ -2012,7 +2012,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Creates a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void createUserWorkloadsConfigMap(
@@ -2033,7 +2033,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Gets an existing user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void getUserWorkloadsConfigMap(
@@ -2053,7 +2053,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Lists user workloads ConfigMaps.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void listUserWorkloadsConfigMaps(
@@ -2075,7 +2075,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Updates a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void updateUserWorkloadsConfigMap(
@@ -2096,7 +2096,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Deletes a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public void deleteUserWorkloadsConfigMap(
@@ -2344,7 +2344,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Creates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret
@@ -2362,7 +2362,7 @@ public final class EnvironmentsGrpc {
      * Gets an existing user workloads Secret.
      * Values of the "data" field in the response are cleared.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret
@@ -2379,7 +2379,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Lists user workloads Secrets.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsResponse
@@ -2396,7 +2396,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Updates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret
@@ -2413,7 +2413,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Deletes a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.protobuf.Empty deleteUserWorkloadsSecret(
@@ -2429,7 +2429,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Creates a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap
@@ -2446,7 +2446,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Gets an existing user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap
@@ -2463,7 +2463,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Lists user workloads ConfigMaps.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsResponse
@@ -2480,7 +2480,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Updates a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap
@@ -2497,7 +2497,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Deletes a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.protobuf.Empty deleteUserWorkloadsConfigMap(
@@ -2742,7 +2742,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Creates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2761,7 +2761,7 @@ public final class EnvironmentsGrpc {
      * Gets an existing user workloads Secret.
      * Values of the "data" field in the response are cleared.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2779,7 +2779,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Lists user workloads Secrets.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2797,7 +2797,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Updates a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2815,7 +2815,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Deletes a user workloads Secret.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2832,7 +2832,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Creates a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2850,7 +2850,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Gets an existing user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2868,7 +2868,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Lists user workloads ConfigMaps.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2886,7 +2886,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Updates a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2904,7 +2904,7 @@ public final class EnvironmentsGrpc {
      * <pre>
      * Deletes a user workloads ConfigMap.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-3-airflow-*.*.*-build.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

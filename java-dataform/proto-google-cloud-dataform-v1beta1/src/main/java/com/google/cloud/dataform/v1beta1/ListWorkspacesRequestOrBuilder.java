@@ -77,8 +77,9 @@ public interface ListWorkspacesRequestOrBuilder
    * Optional. Page token received from a previous `ListWorkspaces` call.
    * Provide this to retrieve the subsequent page.
    *
-   * When paginating, all other parameters provided to `ListWorkspaces`
-   * must match the call that provided the page token.
+   * When paginating, all other parameters provided to `ListWorkspaces`, with
+   * the exception of `page_size`, must match the call that provided the page
+   * token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -93,8 +94,9 @@ public interface ListWorkspacesRequestOrBuilder
    * Optional. Page token received from a previous `ListWorkspaces` call.
    * Provide this to retrieve the subsequent page.
    *
-   * When paginating, all other parameters provided to `ListWorkspaces`
-   * must match the call that provided the page token.
+   * When paginating, all other parameters provided to `ListWorkspaces`, with
+   * the exception of `page_size`, must match the call that provided the page
+   * token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

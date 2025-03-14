@@ -93,6 +93,58 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
+   * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;</code>
+   */
+  java.util.List<com.google.cloud.compute.v1.BackendCustomMetric> getCustomMetricsList();
+  /**
+   *
+   *
+   * <pre>
+   * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;</code>
+   */
+  com.google.cloud.compute.v1.BackendCustomMetric getCustomMetrics(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;</code>
+   */
+  int getCustomMetricsCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;</code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.BackendCustomMetricOrBuilder>
+      getCustomMetricsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;</code>
+   */
+  com.google.cloud.compute.v1.BackendCustomMetricOrBuilder getCustomMetricsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *

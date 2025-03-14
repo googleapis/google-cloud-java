@@ -68,7 +68,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Type of underlaying storage type.
+   * Type of underlying storage type.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.datacatalog.v1.FeatureOnlineStoreSpec.StorageType}
@@ -98,7 +98,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Underlaying is optimized online server (Lightning).
+     * Underlying is optimized online server (Lightning).
      * </pre>
      *
      * <code>OPTIMIZED = 2;</code>
@@ -131,7 +131,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Underlaying is optimized online server (Lightning).
+     * Underlying is optimized online server (Lightning).
      * </pre>
      *
      * <code>OPTIMIZED = 2;</code>
@@ -229,7 +229,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Output only. Type of underelaying storage for the FeatureOnlineStore.
+   * Output only. Type of underlying storage for the FeatureOnlineStore.
    * </pre>
    *
    * <code>
@@ -246,7 +246,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Output only. Type of underelaying storage for the FeatureOnlineStore.
+   * Output only. Type of underlying storage for the FeatureOnlineStore.
    * </pre>
    *
    * <code>
@@ -617,7 +617,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. Type of underelaying storage for the FeatureOnlineStore.
+     * Output only. Type of underlying storage for the FeatureOnlineStore.
      * </pre>
      *
      * <code>
@@ -634,7 +634,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. Type of underelaying storage for the FeatureOnlineStore.
+     * Output only. Type of underlying storage for the FeatureOnlineStore.
      * </pre>
      *
      * <code>
@@ -654,7 +654,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. Type of underelaying storage for the FeatureOnlineStore.
+     * Output only. Type of underlying storage for the FeatureOnlineStore.
      * </pre>
      *
      * <code>
@@ -676,7 +676,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. Type of underelaying storage for the FeatureOnlineStore.
+     * Output only. Type of underlying storage for the FeatureOnlineStore.
      * </pre>
      *
      * <code>
@@ -700,7 +700,7 @@ public final class FeatureOnlineStoreSpec extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. Type of underelaying storage for the FeatureOnlineStore.
+     * Output only. Type of underlying storage for the FeatureOnlineStore.
      * </pre>
      *
      * <code>

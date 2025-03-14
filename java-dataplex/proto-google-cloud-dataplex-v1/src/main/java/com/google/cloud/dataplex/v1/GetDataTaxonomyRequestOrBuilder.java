@@ -19,19 +19,13 @@
 // Protobuf Java Version: 3.25.5
 package com.google.cloud.dataplex.v1;
 
+@java.lang.Deprecated
 public interface GetDataTaxonomyRequestOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.GetDataTaxonomyRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
-   * <pre>
-   * Required. The resource name of the DataTaxonomy:
-   * projects/{project_number}/locations/{location_id}/dataTaxonomies/{data_taxonomy_id}
-   * </pre>
-   *
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -40,13 +34,6 @@ public interface GetDataTaxonomyRequestOrBuilder
    */
   java.lang.String getName();
   /**
-   *
-   *
-   * <pre>
-   * Required. The resource name of the DataTaxonomy:
-   * projects/{project_number}/locations/{location_id}/dataTaxonomies/{data_taxonomy_id}
-   * </pre>
-   *
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>

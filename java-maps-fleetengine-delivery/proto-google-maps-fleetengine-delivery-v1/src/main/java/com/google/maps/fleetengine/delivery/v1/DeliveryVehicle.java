@@ -48,6 +48,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
 
   private DeliveryVehicle() {
     name_ = "";
+    pastLocations_ = java.util.Collections.emptyList();
     navigationStatus_ = 0;
     currentRouteSegment_ = com.google.protobuf.ByteString.EMPTY;
     remainingVehicleJourneySegments_ = java.util.Collections.emptyList();
@@ -387,6 +388,112 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
     return lastLocation_ == null
         ? com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation.getDefaultInstance()
         : lastLocation_;
+  }
+
+  public static final int PAST_LOCATIONS_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation>
+      pastLocations_;
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Locations where this Delivery Vehicle has been in the past that
+   * haven't yet been reported to Fleet Engine. This is used in
+   * `UpdateDeliveryVehicleRequest` to record locations which were previously
+   * unable to be sent to the server. Typically this happens when the Delivery
+   * Vehicle does not have internet connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation>
+      getPastLocationsList() {
+    return pastLocations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Locations where this Delivery Vehicle has been in the past that
+   * haven't yet been reported to Fleet Engine. This is used in
+   * `UpdateDeliveryVehicleRequest` to record locations which were previously
+   * unable to be sent to the server. Typically this happens when the Delivery
+   * Vehicle does not have internet connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocationOrBuilder>
+      getPastLocationsOrBuilderList() {
+    return pastLocations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Locations where this Delivery Vehicle has been in the past that
+   * haven't yet been reported to Fleet Engine. This is used in
+   * `UpdateDeliveryVehicleRequest` to record locations which were previously
+   * unable to be sent to the server. Typically this happens when the Delivery
+   * Vehicle does not have internet connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPastLocationsCount() {
+    return pastLocations_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Locations where this Delivery Vehicle has been in the past that
+   * haven't yet been reported to Fleet Engine. This is used in
+   * `UpdateDeliveryVehicleRequest` to record locations which were previously
+   * unable to be sent to the server. Typically this happens when the Delivery
+   * Vehicle does not have internet connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation getPastLocations(
+      int index) {
+    return pastLocations_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Locations where this Delivery Vehicle has been in the past that
+   * haven't yet been reported to Fleet Engine. This is used in
+   * `UpdateDeliveryVehicleRequest` to record locations which were previously
+   * unable to be sent to the server. Typically this happens when the Delivery
+   * Vehicle does not have internet connectivity.
+   * </pre>
+   *
+   * <code>
+   * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocationOrBuilder
+      getPastLocationsOrBuilder(int index) {
+    return pastLocations_.get(index);
   }
 
   public static final int NAVIGATION_STATUS_FIELD_NUMBER = 3;
@@ -976,6 +1083,9 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       output.writeEnum(10, type_);
     }
+    for (int i = 0; i < pastLocations_.size(); i++) {
+      output.writeMessage(12, pastLocations_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1026,6 +1136,9 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, type_);
     }
+    for (int i = 0; i < pastLocations_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, pastLocations_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1047,6 +1160,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
     if (hasLastLocation()) {
       if (!getLastLocation().equals(other.getLastLocation())) return false;
     }
+    if (!getPastLocationsList().equals(other.getPastLocationsList())) return false;
     if (navigationStatus_ != other.navigationStatus_) return false;
     if (!getCurrentRouteSegment().equals(other.getCurrentRouteSegment())) return false;
     if (hasCurrentRouteSegmentEndPoint() != other.hasCurrentRouteSegmentEndPoint()) return false;
@@ -1082,6 +1196,10 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
     if (hasLastLocation()) {
       hash = (37 * hash) + LAST_LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getLastLocation().hashCode();
+    }
+    if (getPastLocationsCount() > 0) {
+      hash = (37 * hash) + PAST_LOCATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getPastLocationsList().hashCode();
     }
     hash = (37 * hash) + NAVIGATION_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + navigationStatus_;
@@ -1259,6 +1377,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getLastLocationFieldBuilder();
+        getPastLocationsFieldBuilder();
         getCurrentRouteSegmentEndPointFieldBuilder();
         getRemainingDistanceMetersFieldBuilder();
         getRemainingDurationFieldBuilder();
@@ -1277,6 +1396,13 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
         lastLocationBuilder_.dispose();
         lastLocationBuilder_ = null;
       }
+      if (pastLocationsBuilder_ == null) {
+        pastLocations_ = java.util.Collections.emptyList();
+      } else {
+        pastLocations_ = null;
+        pastLocationsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       navigationStatus_ = 0;
       currentRouteSegment_ = com.google.protobuf.ByteString.EMPTY;
       currentRouteSegmentEndPoint_ = null;
@@ -1300,14 +1426,14 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
         remainingVehicleJourneySegments_ = null;
         remainingVehicleJourneySegmentsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       if (attributesBuilder_ == null) {
         attributes_ = java.util.Collections.emptyList();
       } else {
         attributes_ = null;
         attributesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       type_ = 0;
       return this;
     }
@@ -1346,20 +1472,29 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
 
     private void buildPartialRepeatedFields(
         com.google.maps.fleetengine.delivery.v1.DeliveryVehicle result) {
+      if (pastLocationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          pastLocations_ = java.util.Collections.unmodifiableList(pastLocations_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.pastLocations_ = pastLocations_;
+      } else {
+        result.pastLocations_ = pastLocationsBuilder_.build();
+      }
       if (remainingVehicleJourneySegmentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           remainingVehicleJourneySegments_ =
               java.util.Collections.unmodifiableList(remainingVehicleJourneySegments_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.remainingVehicleJourneySegments_ = remainingVehicleJourneySegments_;
       } else {
         result.remainingVehicleJourneySegments_ = remainingVehicleJourneySegmentsBuilder_.build();
       }
       if (attributesBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           attributes_ = java.util.Collections.unmodifiableList(attributes_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.attributes_ = attributes_;
       } else {
@@ -1378,34 +1513,34 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
             lastLocationBuilder_ == null ? lastLocation_ : lastLocationBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.navigationStatus_ = navigationStatus_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.currentRouteSegment_ = currentRouteSegment_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.currentRouteSegmentEndPoint_ =
             currentRouteSegmentEndPointBuilder_ == null
                 ? currentRouteSegmentEndPoint_
                 : currentRouteSegmentEndPointBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.remainingDistanceMeters_ =
             remainingDistanceMetersBuilder_ == null
                 ? remainingDistanceMeters_
                 : remainingDistanceMetersBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.remainingDuration_ =
             remainingDurationBuilder_ == null
                 ? remainingDuration_
                 : remainingDurationBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.type_ = type_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1465,6 +1600,33 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
       if (other.hasLastLocation()) {
         mergeLastLocation(other.getLastLocation());
       }
+      if (pastLocationsBuilder_ == null) {
+        if (!other.pastLocations_.isEmpty()) {
+          if (pastLocations_.isEmpty()) {
+            pastLocations_ = other.pastLocations_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensurePastLocationsIsMutable();
+            pastLocations_.addAll(other.pastLocations_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.pastLocations_.isEmpty()) {
+          if (pastLocationsBuilder_.isEmpty()) {
+            pastLocationsBuilder_.dispose();
+            pastLocationsBuilder_ = null;
+            pastLocations_ = other.pastLocations_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            pastLocationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPastLocationsFieldBuilder()
+                    : null;
+          } else {
+            pastLocationsBuilder_.addAllMessages(other.pastLocations_);
+          }
+        }
+      }
       if (other.navigationStatus_ != 0) {
         setNavigationStatusValue(other.getNavigationStatusValue());
       }
@@ -1484,7 +1646,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
         if (!other.remainingVehicleJourneySegments_.isEmpty()) {
           if (remainingVehicleJourneySegments_.isEmpty()) {
             remainingVehicleJourneySegments_ = other.remainingVehicleJourneySegments_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureRemainingVehicleJourneySegmentsIsMutable();
             remainingVehicleJourneySegments_.addAll(other.remainingVehicleJourneySegments_);
@@ -1497,7 +1659,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
             remainingVehicleJourneySegmentsBuilder_.dispose();
             remainingVehicleJourneySegmentsBuilder_ = null;
             remainingVehicleJourneySegments_ = other.remainingVehicleJourneySegments_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
             remainingVehicleJourneySegmentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRemainingVehicleJourneySegmentsFieldBuilder()
@@ -1512,7 +1674,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
         if (!other.attributes_.isEmpty()) {
           if (attributes_.isEmpty()) {
             attributes_ = other.attributes_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureAttributesIsMutable();
             attributes_.addAll(other.attributes_);
@@ -1525,7 +1687,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
             attributesBuilder_.dispose();
             attributesBuilder_ = null;
             attributes_ = other.attributes_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
             attributesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAttributesFieldBuilder()
@@ -1579,34 +1741,34 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
             case 24:
               {
                 navigationStatus_ = input.readEnum();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 34:
               {
                 currentRouteSegment_ = input.readBytes();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getCurrentRouteSegmentEndPointFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getRemainingDistanceMetersFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     getRemainingDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
@@ -1640,9 +1802,23 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
             case 80:
               {
                 type_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 80
+            case 98:
+              {
+                com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation m =
+                    input.readMessage(
+                        com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation.parser(),
+                        extensionRegistry);
+                if (pastLocationsBuilder_ == null) {
+                  ensurePastLocationsIsMutable();
+                  pastLocations_.add(m);
+                } else {
+                  pastLocationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1965,6 +2141,486 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
       return lastLocationBuilder_;
     }
 
+    private java.util.List<com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation>
+        pastLocations_ = java.util.Collections.emptyList();
+
+    private void ensurePastLocationsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        pastLocations_ =
+            new java.util.ArrayList<
+                com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation>(pastLocations_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation,
+            com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation.Builder,
+            com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocationOrBuilder>
+        pastLocationsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this Delivery Vehicle has been in the past that
+     * haven't yet been reported to Fleet Engine. This is used in
+     * `UpdateDeliveryVehicleRequest` to record locations which were previously
+     * unable to be sent to the server. Typically this happens when the Delivery
+     * Vehicle does not have internet connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation>
+        getPastLocationsList() {
+      if (pastLocationsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(pastLocations_);
+      } else {
+        return pastLocationsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this Delivery Vehicle has been in the past that
+     * haven't yet been reported to Fleet Engine. This is used in
+     * `UpdateDeliveryVehicleRequest` to record locations which were previously
+     * unable to be sent to the server. Typically this happens when the Delivery
+     * Vehicle does not have internet connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public int getPastLocationsCount() {
+      if (pastLocationsBuilder_ == null) {
+        return pastLocations_.size();
+      } else {
+        return pastLocationsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this Delivery Vehicle has been in the past that
+     * haven't yet been reported to Fleet Engine. This is used in
+     * `UpdateDeliveryVehicleRequest` to record locations which were previously
+     * unable to be sent to the server. Typically this happens when the Delivery
+     * Vehicle does not have internet connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation getPastLocations(
+        int index) {
+      if (pastLocationsBuilder_ == null) {
+        return pastLocations_.get(index);
+      } else {
+        return pastLocationsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this Delivery Vehicle has been in the past that
+     * haven't yet been reported to Fleet Engine. This is used in
+     * `UpdateDeliveryVehicleRequest` to record locations which were previously
+     * unable to be sent to the server. Typically this happens when the Delivery
+     * Vehicle does not have internet connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setPastLocations(
+        int index, com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation value) {
+      if (pastLocationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePastLocationsIsMutable();
+        pastLocations_.set(index, value);
+        onChanged();
+      } else {
+        pastLocationsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this Delivery Vehicle has been in the past that
+     * haven't yet been reported to Fleet Engine. This is used in
+     * `UpdateDeliveryVehicleRequest` to record locations which were previously
+     * unable to be sent to the server. Typically this happens when the Delivery
+     * Vehicle does not have internet connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setPastLocations(
+        int index,
+        com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation.Builder builderForValue) {
+      if (pastLocationsBuilder_ == null) {
+        ensurePastLocationsIsMutable();
+        pastLocations_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        pastLocationsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this Delivery Vehicle has been in the past that
+     * haven't yet been reported to Fleet Engine. This is used in
+     * `UpdateDeliveryVehicleRequest` to record locations which were previously
+     * unable to be sent to the server. Typically this happens when the Delivery
+     * Vehicle does not have internet connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addPastLocations(
+        com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation value) {
+      if (pastLocationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePastLocationsIsMutable();
+        pastLocations_.add(value);
+        onChanged();
+      } else {
+        pastLocationsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this Delivery Vehicle has been in the past that
+     * haven't yet been reported to Fleet Engine. This is used in
+     * `UpdateDeliveryVehicleRequest` to record locations which were previously
+     * unable to be sent to the server. Typically this happens when the Delivery
+     * Vehicle does not have internet connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addPastLocations(
+        int index, com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation value) {
+      if (pastLocationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePastLocationsIsMutable();
+        pastLocations_.add(index, value);
+        onChanged();
+      } else {
+        pastLocationsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this Delivery Vehicle has been in the past that
+     * haven't yet been reported to Fleet Engine. This is used in
+     * `UpdateDeliveryVehicleRequest` to record locations which were previously
+     * unable to be sent to the server. Typically this happens when the Delivery
+     * Vehicle does not have internet connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addPastLocations(
+        com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation.Builder builderForValue) {
+      if (pastLocationsBuilder_ == null) {
+        ensurePastLocationsIsMutable();
+        pastLocations_.add(builderForValue.build());
+        onChanged();
+      } else {
+        pastLocationsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this Delivery Vehicle has been in the past that
+     * haven't yet been reported to Fleet Engine. This is used in
+     * `UpdateDeliveryVehicleRequest` to record locations which were previously
+     * unable to be sent to the server. Typically this happens when the Delivery
+     * Vehicle does not have internet connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addPastLocations(
+        int index,
+        com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation.Builder builderForValue) {
+      if (pastLocationsBuilder_ == null) {
+        ensurePastLocationsIsMutable();
+        pastLocations_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        pastLocationsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this Delivery Vehicle has been in the past that
+     * haven't yet been reported to Fleet Engine. This is used in
+     * `UpdateDeliveryVehicleRequest` to record locations which were previously
+     * unable to be sent to the server. Typically this happens when the Delivery
+     * Vehicle does not have internet connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllPastLocations(
+        java.lang.Iterable<
+                ? extends com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation>
+            values) {
+      if (pastLocationsBuilder_ == null) {
+        ensurePastLocationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pastLocations_);
+        onChanged();
+      } else {
+        pastLocationsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this Delivery Vehicle has been in the past that
+     * haven't yet been reported to Fleet Engine. This is used in
+     * `UpdateDeliveryVehicleRequest` to record locations which were previously
+     * unable to be sent to the server. Typically this happens when the Delivery
+     * Vehicle does not have internet connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPastLocations() {
+      if (pastLocationsBuilder_ == null) {
+        pastLocations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        pastLocationsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this Delivery Vehicle has been in the past that
+     * haven't yet been reported to Fleet Engine. This is used in
+     * `UpdateDeliveryVehicleRequest` to record locations which were previously
+     * unable to be sent to the server. Typically this happens when the Delivery
+     * Vehicle does not have internet connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder removePastLocations(int index) {
+      if (pastLocationsBuilder_ == null) {
+        ensurePastLocationsIsMutable();
+        pastLocations_.remove(index);
+        onChanged();
+      } else {
+        pastLocationsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this Delivery Vehicle has been in the past that
+     * haven't yet been reported to Fleet Engine. This is used in
+     * `UpdateDeliveryVehicleRequest` to record locations which were previously
+     * unable to be sent to the server. Typically this happens when the Delivery
+     * Vehicle does not have internet connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation.Builder
+        getPastLocationsBuilder(int index) {
+      return getPastLocationsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this Delivery Vehicle has been in the past that
+     * haven't yet been reported to Fleet Engine. This is used in
+     * `UpdateDeliveryVehicleRequest` to record locations which were previously
+     * unable to be sent to the server. Typically this happens when the Delivery
+     * Vehicle does not have internet connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocationOrBuilder
+        getPastLocationsOrBuilder(int index) {
+      if (pastLocationsBuilder_ == null) {
+        return pastLocations_.get(index);
+      } else {
+        return pastLocationsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this Delivery Vehicle has been in the past that
+     * haven't yet been reported to Fleet Engine. This is used in
+     * `UpdateDeliveryVehicleRequest` to record locations which were previously
+     * unable to be sent to the server. Typically this happens when the Delivery
+     * Vehicle does not have internet connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocationOrBuilder>
+        getPastLocationsOrBuilderList() {
+      if (pastLocationsBuilder_ != null) {
+        return pastLocationsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(pastLocations_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this Delivery Vehicle has been in the past that
+     * haven't yet been reported to Fleet Engine. This is used in
+     * `UpdateDeliveryVehicleRequest` to record locations which were previously
+     * unable to be sent to the server. Typically this happens when the Delivery
+     * Vehicle does not have internet connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation.Builder
+        addPastLocationsBuilder() {
+      return getPastLocationsFieldBuilder()
+          .addBuilder(
+              com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this Delivery Vehicle has been in the past that
+     * haven't yet been reported to Fleet Engine. This is used in
+     * `UpdateDeliveryVehicleRequest` to record locations which were previously
+     * unable to be sent to the server. Typically this happens when the Delivery
+     * Vehicle does not have internet connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation.Builder
+        addPastLocationsBuilder(int index) {
+      return getPastLocationsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Locations where this Delivery Vehicle has been in the past that
+     * haven't yet been reported to Fleet Engine. This is used in
+     * `UpdateDeliveryVehicleRequest` to record locations which were previously
+     * unable to be sent to the server. Typically this happens when the Delivery
+     * Vehicle does not have internet connectivity.
+     * </pre>
+     *
+     * <code>
+     * repeated .maps.fleetengine.delivery.v1.DeliveryVehicleLocation past_locations = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation.Builder>
+        getPastLocationsBuilderList() {
+      return getPastLocationsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation,
+            com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation.Builder,
+            com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocationOrBuilder>
+        getPastLocationsFieldBuilder() {
+      if (pastLocationsBuilder_ == null) {
+        pastLocationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation,
+                com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation.Builder,
+                com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocationOrBuilder>(
+                pastLocations_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        pastLocations_ = null;
+      }
+      return pastLocationsBuilder_;
+    }
+
     private int navigationStatus_ = 0;
     /**
      *
@@ -1997,7 +2653,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
      */
     public Builder setNavigationStatusValue(int value) {
       navigationStatus_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2041,7 +2697,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       navigationStatus_ = value.getNumber();
       onChanged();
       return this;
@@ -2059,7 +2715,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearNavigationStatus() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       navigationStatus_ = 0;
       onChanged();
       return this;
@@ -2151,7 +2807,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       currentRouteSegment_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2193,7 +2849,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearCurrentRouteSegment() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       currentRouteSegment_ = getDefaultInstance().getCurrentRouteSegment();
       onChanged();
       return this;
@@ -2222,7 +2878,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
      * @return Whether the currentRouteSegmentEndPoint field is set.
      */
     public boolean hasCurrentRouteSegmentEndPoint() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2276,7 +2932,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
       } else {
         currentRouteSegmentEndPointBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2302,7 +2958,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
       } else {
         currentRouteSegmentEndPointBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2324,7 +2980,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeCurrentRouteSegmentEndPoint(com.google.type.LatLng value) {
       if (currentRouteSegmentEndPointBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && currentRouteSegmentEndPoint_ != null
             && currentRouteSegmentEndPoint_ != com.google.type.LatLng.getDefaultInstance()) {
           getCurrentRouteSegmentEndPointBuilder().mergeFrom(value);
@@ -2335,7 +2991,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
         currentRouteSegmentEndPointBuilder_.mergeFrom(value);
       }
       if (currentRouteSegmentEndPoint_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -2357,7 +3013,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
      * <code>.google.type.LatLng current_route_segment_end_point = 5;</code>
      */
     public Builder clearCurrentRouteSegmentEndPoint() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       currentRouteSegmentEndPoint_ = null;
       if (currentRouteSegmentEndPointBuilder_ != null) {
         currentRouteSegmentEndPointBuilder_.dispose();
@@ -2383,7 +3039,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
      * <code>.google.type.LatLng current_route_segment_end_point = 5;</code>
      */
     public com.google.type.LatLng.Builder getCurrentRouteSegmentEndPointBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCurrentRouteSegmentEndPointFieldBuilder().getBuilder();
     }
@@ -2472,7 +3128,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
      * @return Whether the remainingDistanceMeters field is set.
      */
     public boolean hasRemainingDistanceMeters() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2534,7 +3190,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
       } else {
         remainingDistanceMetersBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2565,7 +3221,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
       } else {
         remainingDistanceMetersBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2591,7 +3247,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeRemainingDistanceMeters(com.google.protobuf.Int32Value value) {
       if (remainingDistanceMetersBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && remainingDistanceMeters_ != null
             && remainingDistanceMeters_ != com.google.protobuf.Int32Value.getDefaultInstance()) {
           getRemainingDistanceMetersBuilder().mergeFrom(value);
@@ -2602,7 +3258,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
         remainingDistanceMetersBuilder_.mergeFrom(value);
       }
       if (remainingDistanceMeters_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2628,7 +3284,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Int32Value remaining_distance_meters = 6;</code>
      */
     public Builder clearRemainingDistanceMeters() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       remainingDistanceMeters_ = null;
       if (remainingDistanceMetersBuilder_ != null) {
         remainingDistanceMetersBuilder_.dispose();
@@ -2658,7 +3314,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Int32Value remaining_distance_meters = 6;</code>
      */
     public com.google.protobuf.Int32Value.Builder getRemainingDistanceMetersBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getRemainingDistanceMetersFieldBuilder().getBuilder();
     }
@@ -2757,7 +3413,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
      * @return Whether the remainingDuration field is set.
      */
     public boolean hasRemainingDuration() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2819,7 +3475,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
       } else {
         remainingDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2849,7 +3505,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
       } else {
         remainingDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2875,7 +3531,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeRemainingDuration(com.google.protobuf.Duration value) {
       if (remainingDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && remainingDuration_ != null
             && remainingDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getRemainingDurationBuilder().mergeFrom(value);
@@ -2886,7 +3542,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
         remainingDurationBuilder_.mergeFrom(value);
       }
       if (remainingDuration_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2912,7 +3568,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Duration remaining_duration = 7;</code>
      */
     public Builder clearRemainingDuration() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       remainingDuration_ = null;
       if (remainingDurationBuilder_ != null) {
         remainingDurationBuilder_.dispose();
@@ -2942,7 +3598,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Duration remaining_duration = 7;</code>
      */
     public com.google.protobuf.Duration.Builder getRemainingDurationBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getRemainingDurationFieldBuilder().getBuilder();
     }
@@ -3016,11 +3672,11 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
         remainingVehicleJourneySegments_ = java.util.Collections.emptyList();
 
     private void ensureRemainingVehicleJourneySegmentsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         remainingVehicleJourneySegments_ =
             new java.util.ArrayList<com.google.maps.fleetengine.delivery.v1.VehicleJourneySegment>(
                 remainingVehicleJourneySegments_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -3289,7 +3945,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
     public Builder clearRemainingVehicleJourneySegments() {
       if (remainingVehicleJourneySegmentsBuilder_ == null) {
         remainingVehicleJourneySegments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         remainingVehicleJourneySegmentsBuilder_.clear();
@@ -3448,7 +4104,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
                 com.google.maps.fleetengine.delivery.v1.VehicleJourneySegment.Builder,
                 com.google.maps.fleetengine.delivery.v1.VehicleJourneySegmentOrBuilder>(
                 remainingVehicleJourneySegments_,
-                ((bitField0_ & 0x00000080) != 0),
+                ((bitField0_ & 0x00000100) != 0),
                 getParentForChildren(),
                 isClean());
         remainingVehicleJourneySegments_ = null;
@@ -3460,11 +4116,11 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
         attributes_ = java.util.Collections.emptyList();
 
     private void ensureAttributesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         attributes_ =
             new java.util.ArrayList<
                 com.google.maps.fleetengine.delivery.v1.DeliveryVehicleAttribute>(attributes_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -3700,7 +4356,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
     public Builder clearAttributes() {
       if (attributesBuilder_ == null) {
         attributes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         attributesBuilder_.clear();
@@ -3839,7 +4495,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
                 com.google.maps.fleetengine.delivery.v1.DeliveryVehicleAttribute,
                 com.google.maps.fleetengine.delivery.v1.DeliveryVehicleAttribute.Builder,
                 com.google.maps.fleetengine.delivery.v1.DeliveryVehicleAttributeOrBuilder>(
-                attributes_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
+                attributes_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
         attributes_ = null;
       }
       return attributesBuilder_;
@@ -3875,7 +4531,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
      */
     public Builder setTypeValue(int value) {
       type_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3916,7 +4572,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -3933,7 +4589,7 @@ public final class DeliveryVehicle extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       type_ = 0;
       onChanged();
       return this;

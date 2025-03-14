@@ -77,4 +77,45 @@ public interface RagRetrievalConfigOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.RagRetrievalConfig.FilterOrBuilder getFilterOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for ranking and reranking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ranking field is set.
+   */
+  boolean hasRanking();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for ranking and reranking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ranking.
+   */
+  com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking getRanking();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for ranking and reranking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.RagRetrievalConfig.RankingOrBuilder getRankingOrBuilder();
 }

@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.cx.v3beta1.stub;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListLocationsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListToolVersionsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListToolsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -50,14 +51,22 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateToolRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteToolRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportToolsMetadata;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportToolsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportToolsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.GetToolRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.ListToolsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListToolsResponse;
+import com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.Tool;
+import com.google.cloud.dialogflow.cx.v3beta1.ToolVersion;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateToolRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -168,6 +177,14 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
   private final UnaryCallSettings<UpdateToolRequest, Tool> updateToolSettings;
   private final UnaryCallSettings<DeleteToolRequest, Empty> deleteToolSettings;
   private final PagedCallSettings<
+          ListToolVersionsRequest, ListToolVersionsResponse, ListToolVersionsPagedResponse>
+      listToolVersionsSettings;
+  private final UnaryCallSettings<CreateToolVersionRequest, ToolVersion> createToolVersionSettings;
+  private final UnaryCallSettings<GetToolVersionRequest, ToolVersion> getToolVersionSettings;
+  private final UnaryCallSettings<DeleteToolVersionRequest, Empty> deleteToolVersionSettings;
+  private final UnaryCallSettings<RestoreToolVersionRequest, RestoreToolVersionResponse>
+      restoreToolVersionSettings;
+  private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
@@ -203,6 +220,44 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
             @Override
             public Iterable<Tool> extractResources(ListToolsResponse payload) {
               return payload.getToolsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListToolVersionsRequest, ListToolVersionsResponse, ToolVersion>
+      LIST_TOOL_VERSIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListToolVersionsRequest, ListToolVersionsResponse, ToolVersion>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListToolVersionsRequest injectToken(
+                ListToolVersionsRequest payload, String token) {
+              return ListToolVersionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListToolVersionsRequest injectPageSize(
+                ListToolVersionsRequest payload, int pageSize) {
+              return ListToolVersionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListToolVersionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListToolVersionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ToolVersion> extractResources(ListToolVersionsResponse payload) {
+              return payload.getToolVersionsList();
             }
           };
 
@@ -258,6 +313,25 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
           };
 
   private static final PagedListResponseFactory<
+          ListToolVersionsRequest, ListToolVersionsResponse, ListToolVersionsPagedResponse>
+      LIST_TOOL_VERSIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListToolVersionsRequest, ListToolVersionsResponse, ListToolVersionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListToolVersionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListToolVersionsRequest, ListToolVersionsResponse> callable,
+                ListToolVersionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListToolVersionsResponse> futureResponse) {
+              PageContext<ListToolVersionsRequest, ListToolVersionsResponse, ToolVersion>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TOOL_VERSIONS_PAGE_STR_DESC, request, context);
+              return ListToolVersionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -309,6 +383,34 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
   /** Returns the object with the settings used for calls to deleteTool. */
   public UnaryCallSettings<DeleteToolRequest, Empty> deleteToolSettings() {
     return deleteToolSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listToolVersions. */
+  public PagedCallSettings<
+          ListToolVersionsRequest, ListToolVersionsResponse, ListToolVersionsPagedResponse>
+      listToolVersionsSettings() {
+    return listToolVersionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createToolVersion. */
+  public UnaryCallSettings<CreateToolVersionRequest, ToolVersion> createToolVersionSettings() {
+    return createToolVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getToolVersion. */
+  public UnaryCallSettings<GetToolVersionRequest, ToolVersion> getToolVersionSettings() {
+    return getToolVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteToolVersion. */
+  public UnaryCallSettings<DeleteToolVersionRequest, Empty> deleteToolVersionSettings() {
+    return deleteToolVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to restoreToolVersion. */
+  public UnaryCallSettings<RestoreToolVersionRequest, RestoreToolVersionResponse>
+      restoreToolVersionSettings() {
+    return restoreToolVersionSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -438,6 +540,11 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
     getToolSettings = settingsBuilder.getToolSettings().build();
     updateToolSettings = settingsBuilder.updateToolSettings().build();
     deleteToolSettings = settingsBuilder.deleteToolSettings().build();
+    listToolVersionsSettings = settingsBuilder.listToolVersionsSettings().build();
+    createToolVersionSettings = settingsBuilder.createToolVersionSettings().build();
+    getToolVersionSettings = settingsBuilder.getToolVersionSettings().build();
+    deleteToolVersionSettings = settingsBuilder.deleteToolVersionSettings().build();
+    restoreToolVersionSettings = settingsBuilder.restoreToolVersionSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -456,6 +563,17 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
     private final UnaryCallSettings.Builder<GetToolRequest, Tool> getToolSettings;
     private final UnaryCallSettings.Builder<UpdateToolRequest, Tool> updateToolSettings;
     private final UnaryCallSettings.Builder<DeleteToolRequest, Empty> deleteToolSettings;
+    private final PagedCallSettings.Builder<
+            ListToolVersionsRequest, ListToolVersionsResponse, ListToolVersionsPagedResponse>
+        listToolVersionsSettings;
+    private final UnaryCallSettings.Builder<CreateToolVersionRequest, ToolVersion>
+        createToolVersionSettings;
+    private final UnaryCallSettings.Builder<GetToolVersionRequest, ToolVersion>
+        getToolVersionSettings;
+    private final UnaryCallSettings.Builder<DeleteToolVersionRequest, Empty>
+        deleteToolVersionSettings;
+    private final UnaryCallSettings.Builder<RestoreToolVersionRequest, RestoreToolVersionResponse>
+        restoreToolVersionSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -505,6 +623,11 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
       getToolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateToolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteToolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listToolVersionsSettings = PagedCallSettings.newBuilder(LIST_TOOL_VERSIONS_PAGE_STR_FACT);
+      createToolVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getToolVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteToolVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      restoreToolVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -516,6 +639,11 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
               getToolSettings,
               updateToolSettings,
               deleteToolSettings,
+              listToolVersionsSettings,
+              createToolVersionSettings,
+              getToolVersionSettings,
+              deleteToolVersionSettings,
+              restoreToolVersionSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -531,6 +659,11 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
       getToolSettings = settings.getToolSettings.toBuilder();
       updateToolSettings = settings.updateToolSettings.toBuilder();
       deleteToolSettings = settings.deleteToolSettings.toBuilder();
+      listToolVersionsSettings = settings.listToolVersionsSettings.toBuilder();
+      createToolVersionSettings = settings.createToolVersionSettings.toBuilder();
+      getToolVersionSettings = settings.getToolVersionSettings.toBuilder();
+      deleteToolVersionSettings = settings.deleteToolVersionSettings.toBuilder();
+      restoreToolVersionSettings = settings.restoreToolVersionSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -542,6 +675,11 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
               getToolSettings,
               updateToolSettings,
               deleteToolSettings,
+              listToolVersionsSettings,
+              createToolVersionSettings,
+              getToolVersionSettings,
+              deleteToolVersionSettings,
+              restoreToolVersionSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -598,6 +736,31 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
 
       builder
           .deleteToolSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listToolVersionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createToolVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getToolVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteToolVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .restoreToolVersionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -688,6 +851,35 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
     /** Returns the builder for the settings used for calls to deleteTool. */
     public UnaryCallSettings.Builder<DeleteToolRequest, Empty> deleteToolSettings() {
       return deleteToolSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listToolVersions. */
+    public PagedCallSettings.Builder<
+            ListToolVersionsRequest, ListToolVersionsResponse, ListToolVersionsPagedResponse>
+        listToolVersionsSettings() {
+      return listToolVersionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createToolVersion. */
+    public UnaryCallSettings.Builder<CreateToolVersionRequest, ToolVersion>
+        createToolVersionSettings() {
+      return createToolVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getToolVersion. */
+    public UnaryCallSettings.Builder<GetToolVersionRequest, ToolVersion> getToolVersionSettings() {
+      return getToolVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteToolVersion. */
+    public UnaryCallSettings.Builder<DeleteToolVersionRequest, Empty> deleteToolVersionSettings() {
+      return deleteToolVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restoreToolVersion. */
+    public UnaryCallSettings.Builder<RestoreToolVersionRequest, RestoreToolVersionResponse>
+        restoreToolVersionSettings() {
+      return restoreToolVersionSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -389,7 +389,7 @@ public final class ConversationModelEvaluation extends com.google.protobuf.Gener
    *
    * <pre>
    * Output only. Human eval template in csv format.
-   * It tooks real-world conversations provided through input dataset, generates
+   * It takes real-world conversations provided through input dataset, generates
    * example suggestions for customer to verify quality of the model.
    * For Smart Reply, the generated csv file contains columns of
    * Context, (Suggestions,Q1,Q2)*3, Actual reply.
@@ -427,7 +427,7 @@ public final class ConversationModelEvaluation extends com.google.protobuf.Gener
    *
    * <pre>
    * Output only. Human eval template in csv format.
-   * It tooks real-world conversations provided through input dataset, generates
+   * It takes real-world conversations provided through input dataset, generates
    * example suggestions for customer to verify quality of the model.
    * For Smart Reply, the generated csv file contains columns of
    * Context, (Suggestions,Q1,Q2)*3, Actual reply.
@@ -1865,7 +1865,7 @@ public final class ConversationModelEvaluation extends com.google.protobuf.Gener
      *
      * <pre>
      * Output only. Human eval template in csv format.
-     * It tooks real-world conversations provided through input dataset, generates
+     * It takes real-world conversations provided through input dataset, generates
      * example suggestions for customer to verify quality of the model.
      * For Smart Reply, the generated csv file contains columns of
      * Context, (Suggestions,Q1,Q2)*3, Actual reply.
@@ -1902,7 +1902,7 @@ public final class ConversationModelEvaluation extends com.google.protobuf.Gener
      *
      * <pre>
      * Output only. Human eval template in csv format.
-     * It tooks real-world conversations provided through input dataset, generates
+     * It takes real-world conversations provided through input dataset, generates
      * example suggestions for customer to verify quality of the model.
      * For Smart Reply, the generated csv file contains columns of
      * Context, (Suggestions,Q1,Q2)*3, Actual reply.
@@ -1939,7 +1939,7 @@ public final class ConversationModelEvaluation extends com.google.protobuf.Gener
      *
      * <pre>
      * Output only. Human eval template in csv format.
-     * It tooks real-world conversations provided through input dataset, generates
+     * It takes real-world conversations provided through input dataset, generates
      * example suggestions for customer to verify quality of the model.
      * For Smart Reply, the generated csv file contains columns of
      * Context, (Suggestions,Q1,Q2)*3, Actual reply.
@@ -1975,7 +1975,7 @@ public final class ConversationModelEvaluation extends com.google.protobuf.Gener
      *
      * <pre>
      * Output only. Human eval template in csv format.
-     * It tooks real-world conversations provided through input dataset, generates
+     * It takes real-world conversations provided through input dataset, generates
      * example suggestions for customer to verify quality of the model.
      * For Smart Reply, the generated csv file contains columns of
      * Context, (Suggestions,Q1,Q2)*3, Actual reply.
@@ -2007,7 +2007,7 @@ public final class ConversationModelEvaluation extends com.google.protobuf.Gener
      *
      * <pre>
      * Output only. Human eval template in csv format.
-     * It tooks real-world conversations provided through input dataset, generates
+     * It takes real-world conversations provided through input dataset, generates
      * example suggestions for customer to verify quality of the model.
      * For Smart Reply, the generated csv file contains columns of
      * Context, (Suggestions,Q1,Q2)*3, Actual reply.

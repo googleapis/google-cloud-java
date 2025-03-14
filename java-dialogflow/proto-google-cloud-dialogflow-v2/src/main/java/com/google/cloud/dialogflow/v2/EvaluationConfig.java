@@ -1782,7 +1782,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Configuration for smart reply model evalution.
+   * Configuration for smart reply model evaluation.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.EvaluationConfig.SmartReplyConfig smart_reply_config = 2;
@@ -1798,7 +1798,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Configuration for smart reply model evalution.
+   * Configuration for smart reply model evaluation.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.EvaluationConfig.SmartReplyConfig smart_reply_config = 2;
@@ -1818,7 +1818,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Configuration for smart reply model evalution.
+   * Configuration for smart reply model evaluation.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.EvaluationConfig.SmartReplyConfig smart_reply_config = 2;
@@ -1839,7 +1839,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Configuration for smart compose model evalution.
+   * Configuration for smart compose model evaluation.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.EvaluationConfig.SmartComposeConfig smart_compose_config = 4;
@@ -1855,7 +1855,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Configuration for smart compose model evalution.
+   * Configuration for smart compose model evaluation.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.EvaluationConfig.SmartComposeConfig smart_compose_config = 4;
@@ -1876,7 +1876,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Configuration for smart compose model evalution.
+   * Configuration for smart compose model evaluation.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.EvaluationConfig.SmartComposeConfig smart_compose_config = 4;
@@ -2789,7 +2789,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration for smart reply model evalution.
+     * Configuration for smart reply model evaluation.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.EvaluationConfig.SmartReplyConfig smart_reply_config = 2;
@@ -2805,7 +2805,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration for smart reply model evalution.
+     * Configuration for smart reply model evaluation.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.EvaluationConfig.SmartReplyConfig smart_reply_config = 2;
@@ -2834,7 +2834,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration for smart reply model evalution.
+     * Configuration for smart reply model evaluation.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.EvaluationConfig.SmartReplyConfig smart_reply_config = 2;
@@ -2858,7 +2858,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration for smart reply model evalution.
+     * Configuration for smart reply model evaluation.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.EvaluationConfig.SmartReplyConfig smart_reply_config = 2;
@@ -2879,7 +2879,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration for smart reply model evalution.
+     * Configuration for smart reply model evaluation.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.EvaluationConfig.SmartReplyConfig smart_reply_config = 2;
@@ -2916,7 +2916,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration for smart reply model evalution.
+     * Configuration for smart reply model evaluation.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.EvaluationConfig.SmartReplyConfig smart_reply_config = 2;
@@ -2942,7 +2942,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration for smart reply model evalution.
+     * Configuration for smart reply model evaluation.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.EvaluationConfig.SmartReplyConfig smart_reply_config = 2;
@@ -2956,7 +2956,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration for smart reply model evalution.
+     * Configuration for smart reply model evaluation.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.EvaluationConfig.SmartReplyConfig smart_reply_config = 2;
@@ -2980,7 +2980,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration for smart reply model evalution.
+     * Configuration for smart reply model evaluation.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.EvaluationConfig.SmartReplyConfig smart_reply_config = 2;
@@ -3021,7 +3021,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration for smart compose model evalution.
+     * Configuration for smart compose model evaluation.
      * </pre>
      *
      * <code>
@@ -3038,7 +3038,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration for smart compose model evalution.
+     * Configuration for smart compose model evaluation.
      * </pre>
      *
      * <code>
@@ -3069,7 +3069,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration for smart compose model evalution.
+     * Configuration for smart compose model evaluation.
      * </pre>
      *
      * <code>
@@ -3094,7 +3094,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration for smart compose model evalution.
+     * Configuration for smart compose model evaluation.
      * </pre>
      *
      * <code>
@@ -3117,7 +3117,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration for smart compose model evalution.
+     * Configuration for smart compose model evaluation.
      * </pre>
      *
      * <code>
@@ -3155,7 +3155,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration for smart compose model evalution.
+     * Configuration for smart compose model evaluation.
      * </pre>
      *
      * <code>
@@ -3182,7 +3182,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration for smart compose model evalution.
+     * Configuration for smart compose model evaluation.
      * </pre>
      *
      * <code>
@@ -3197,7 +3197,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration for smart compose model evalution.
+     * Configuration for smart compose model evaluation.
      * </pre>
      *
      * <code>
@@ -3222,7 +3222,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration for smart compose model evalution.
+     * Configuration for smart compose model evaluation.
      * </pre>
      *
      * <code>

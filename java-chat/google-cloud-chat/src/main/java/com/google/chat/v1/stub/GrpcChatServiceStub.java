@@ -46,6 +46,7 @@ import com.google.chat.v1.GetAttachmentRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
 import com.google.chat.v1.GetSpaceEventRequest;
+import com.google.chat.v1.GetSpaceNotificationSettingRequest;
 import com.google.chat.v1.GetSpaceReadStateRequest;
 import com.google.chat.v1.GetSpaceRequest;
 import com.google.chat.v1.GetThreadReadStateRequest;
@@ -67,10 +68,12 @@ import com.google.chat.v1.SearchSpacesResponse;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
 import com.google.chat.v1.SpaceEvent;
+import com.google.chat.v1.SpaceNotificationSetting;
 import com.google.chat.v1.SpaceReadState;
 import com.google.chat.v1.ThreadReadState;
 import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
+import com.google.chat.v1.UpdateSpaceNotificationSettingRequest;
 import com.google.chat.v1.UpdateSpaceReadStateRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
 import com.google.chat.v1.UploadAttachmentRequest;
@@ -371,6 +374,32 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   ProtoUtils.marshaller(ListSpaceEventsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingMethodDescriptor =
+          MethodDescriptor
+              .<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/GetSpaceNotificationSetting")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSpaceNotificationSettingRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SpaceNotificationSetting.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingMethodDescriptor =
+          MethodDescriptor
+              .<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/UpdateSpaceNotificationSetting")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSpaceNotificationSettingRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SpaceNotificationSetting.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateMessageRequest, Message> createMessageCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse>
@@ -417,6 +446,10 @@ public class GrpcChatServiceStub extends ChatServiceStub {
       listSpaceEventsCallable;
   private final UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsPagedResponse>
       listSpaceEventsPagedCallable;
+  private final UnaryCallable<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingCallable;
+  private final UnaryCallable<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -728,6 +761,32 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        getSpaceNotificationSettingTransportSettings =
+            GrpcCallSettings
+                .<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>newBuilder()
+                .setMethodDescriptor(getSpaceNotificationSettingMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        updateSpaceNotificationSettingTransportSettings =
+            GrpcCallSettings
+                .<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>newBuilder()
+                .setMethodDescriptor(updateSpaceNotificationSettingMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "space_notification_setting.name",
+                          String.valueOf(request.getSpaceNotificationSetting().getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createMessageCallable =
         callableFactory.createUnaryCallable(
@@ -844,6 +903,16 @@ public class GrpcChatServiceStub extends ChatServiceStub {
     this.listSpaceEventsPagedCallable =
         callableFactory.createPagedCallable(
             listSpaceEventsTransportSettings, settings.listSpaceEventsSettings(), clientContext);
+    this.getSpaceNotificationSettingCallable =
+        callableFactory.createUnaryCallable(
+            getSpaceNotificationSettingTransportSettings,
+            settings.getSpaceNotificationSettingSettings(),
+            clientContext);
+    this.updateSpaceNotificationSettingCallable =
+        callableFactory.createUnaryCallable(
+            updateSpaceNotificationSettingTransportSettings,
+            settings.updateSpaceNotificationSettingSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1031,6 +1100,18 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   public UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsPagedResponse>
       listSpaceEventsPagedCallable() {
     return listSpaceEventsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingCallable() {
+    return getSpaceNotificationSettingCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingCallable() {
+    return updateSpaceNotificationSettingCallable;
   }
 
   @Override

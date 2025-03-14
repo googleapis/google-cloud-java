@@ -150,8 +150,9 @@ public final class FetchRepositoryHistoryRequest extends com.google.protobuf.Gen
    * Optional. Page token received from a previous `FetchRepositoryHistory`
    * call. Provide this to retrieve the subsequent page.
    *
-   * When paginating, all other parameters provided to `FetchRepositoryHistory`
-   * must match the call that provided the page token.
+   * When paginating, all other parameters provided to `FetchRepositoryHistory`,
+   * with the exception of `page_size`, must match the call that provided the
+   * page token.
    * </pre>
    *
    * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -177,8 +178,9 @@ public final class FetchRepositoryHistoryRequest extends com.google.protobuf.Gen
    * Optional. Page token received from a previous `FetchRepositoryHistory`
    * call. Provide this to retrieve the subsequent page.
    *
-   * When paginating, all other parameters provided to `FetchRepositoryHistory`
-   * must match the call that provided the page token.
+   * When paginating, all other parameters provided to `FetchRepositoryHistory`,
+   * with the exception of `page_size`, must match the call that provided the
+   * page token.
    * </pre>
    *
    * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -774,8 +776,9 @@ public final class FetchRepositoryHistoryRequest extends com.google.protobuf.Gen
      * Optional. Page token received from a previous `FetchRepositoryHistory`
      * call. Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to `FetchRepositoryHistory`
-     * must match the call that provided the page token.
+     * When paginating, all other parameters provided to `FetchRepositoryHistory`,
+     * with the exception of `page_size`, must match the call that provided the
+     * page token.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -800,8 +803,9 @@ public final class FetchRepositoryHistoryRequest extends com.google.protobuf.Gen
      * Optional. Page token received from a previous `FetchRepositoryHistory`
      * call. Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to `FetchRepositoryHistory`
-     * must match the call that provided the page token.
+     * When paginating, all other parameters provided to `FetchRepositoryHistory`,
+     * with the exception of `page_size`, must match the call that provided the
+     * page token.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -826,8 +830,9 @@ public final class FetchRepositoryHistoryRequest extends com.google.protobuf.Gen
      * Optional. Page token received from a previous `FetchRepositoryHistory`
      * call. Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to `FetchRepositoryHistory`
-     * must match the call that provided the page token.
+     * When paginating, all other parameters provided to `FetchRepositoryHistory`,
+     * with the exception of `page_size`, must match the call that provided the
+     * page token.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -851,8 +856,9 @@ public final class FetchRepositoryHistoryRequest extends com.google.protobuf.Gen
      * Optional. Page token received from a previous `FetchRepositoryHistory`
      * call. Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to `FetchRepositoryHistory`
-     * must match the call that provided the page token.
+     * When paginating, all other parameters provided to `FetchRepositoryHistory`,
+     * with the exception of `page_size`, must match the call that provided the
+     * page token.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -872,8 +878,9 @@ public final class FetchRepositoryHistoryRequest extends com.google.protobuf.Gen
      * Optional. Page token received from a previous `FetchRepositoryHistory`
      * call. Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to `FetchRepositoryHistory`
-     * must match the call that provided the page token.
+     * When paginating, all other parameters provided to `FetchRepositoryHistory`,
+     * with the exception of `page_size`, must match the call that provided the
+     * page token.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
