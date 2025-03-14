@@ -68,6 +68,7 @@ import com.google.cloud.filestore.v1.ListInstancesRequest;
 import com.google.cloud.filestore.v1.ListInstancesResponse;
 import com.google.cloud.filestore.v1.ListSnapshotsRequest;
 import com.google.cloud.filestore.v1.ListSnapshotsResponse;
+import com.google.cloud.filestore.v1.PromoteReplicaRequest;
 import com.google.cloud.filestore.v1.RestoreInstanceRequest;
 import com.google.cloud.filestore.v1.RevertInstanceRequest;
 import com.google.cloud.filestore.v1.Snapshot;
@@ -213,6 +214,9 @@ public class CloudFilestoreManagerStubSettings
   private final UnaryCallSettings<UpdateBackupRequest, Operation> updateBackupSettings;
   private final OperationCallSettings<UpdateBackupRequest, Backup, OperationMetadata>
       updateBackupOperationSettings;
+  private final UnaryCallSettings<PromoteReplicaRequest, Operation> promoteReplicaSettings;
+  private final OperationCallSettings<PromoteReplicaRequest, Instance, OperationMetadata>
+      promoteReplicaOperationSettings;
 
   private static final PagedListDescriptor<ListInstancesRequest, ListInstancesResponse, Instance>
       LIST_INSTANCES_PAGE_STR_DESC =
@@ -521,6 +525,17 @@ public class CloudFilestoreManagerStubSettings
     return updateBackupOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to promoteReplica. */
+  public UnaryCallSettings<PromoteReplicaRequest, Operation> promoteReplicaSettings() {
+    return promoteReplicaSettings;
+  }
+
+  /** Returns the object with the settings used for calls to promoteReplica. */
+  public OperationCallSettings<PromoteReplicaRequest, Instance, OperationMetadata>
+      promoteReplicaOperationSettings() {
+    return promoteReplicaOperationSettings;
+  }
+
   public CloudFilestoreManagerStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -660,6 +675,8 @@ public class CloudFilestoreManagerStubSettings
     deleteBackupOperationSettings = settingsBuilder.deleteBackupOperationSettings().build();
     updateBackupSettings = settingsBuilder.updateBackupSettings().build();
     updateBackupOperationSettings = settingsBuilder.updateBackupOperationSettings().build();
+    promoteReplicaSettings = settingsBuilder.promoteReplicaSettings().build();
+    promoteReplicaOperationSettings = settingsBuilder.promoteReplicaOperationSettings().build();
   }
 
   /** Builder for CloudFilestoreManagerStubSettings. */
@@ -719,6 +736,10 @@ public class CloudFilestoreManagerStubSettings
     private final UnaryCallSettings.Builder<UpdateBackupRequest, Operation> updateBackupSettings;
     private final OperationCallSettings.Builder<UpdateBackupRequest, Backup, OperationMetadata>
         updateBackupOperationSettings;
+    private final UnaryCallSettings.Builder<PromoteReplicaRequest, Operation>
+        promoteReplicaSettings;
+    private final OperationCallSettings.Builder<PromoteReplicaRequest, Instance, OperationMetadata>
+        promoteReplicaOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -818,6 +839,8 @@ public class CloudFilestoreManagerStubSettings
       deleteBackupOperationSettings = OperationCallSettings.newBuilder();
       updateBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateBackupOperationSettings = OperationCallSettings.newBuilder();
+      promoteReplicaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      promoteReplicaOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -837,7 +860,8 @@ public class CloudFilestoreManagerStubSettings
               getBackupSettings,
               createBackupSettings,
               deleteBackupSettings,
-              updateBackupSettings);
+              updateBackupSettings,
+              promoteReplicaSettings);
       initDefaults(this);
     }
 
@@ -872,6 +896,8 @@ public class CloudFilestoreManagerStubSettings
       deleteBackupOperationSettings = settings.deleteBackupOperationSettings.toBuilder();
       updateBackupSettings = settings.updateBackupSettings.toBuilder();
       updateBackupOperationSettings = settings.updateBackupOperationSettings.toBuilder();
+      promoteReplicaSettings = settings.promoteReplicaSettings.toBuilder();
+      promoteReplicaOperationSettings = settings.promoteReplicaOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -891,7 +917,8 @@ public class CloudFilestoreManagerStubSettings
               getBackupSettings,
               createBackupSettings,
               deleteBackupSettings,
-              updateBackupSettings);
+              updateBackupSettings,
+              promoteReplicaSettings);
     }
 
     private static Builder createDefault() {
@@ -1003,6 +1030,11 @@ public class CloudFilestoreManagerStubSettings
           .updateBackupSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
+          .promoteReplicaSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createInstanceOperationSettings()
@@ -1268,6 +1300,30 @@ public class CloudFilestoreManagerStubSettings
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .promoteReplicaOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PromoteReplicaRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1441,6 +1497,17 @@ public class CloudFilestoreManagerStubSettings
     public OperationCallSettings.Builder<UpdateBackupRequest, Backup, OperationMetadata>
         updateBackupOperationSettings() {
       return updateBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to promoteReplica. */
+    public UnaryCallSettings.Builder<PromoteReplicaRequest, Operation> promoteReplicaSettings() {
+      return promoteReplicaSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to promoteReplica. */
+    public OperationCallSettings.Builder<PromoteReplicaRequest, Instance, OperationMetadata>
+        promoteReplicaOperationSettings() {
+      return promoteReplicaOperationSettings;
     }
 
     @Override

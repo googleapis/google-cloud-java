@@ -46,6 +46,7 @@ import com.google.cloud.filestore.v1.ListInstancesRequest;
 import com.google.cloud.filestore.v1.ListInstancesResponse;
 import com.google.cloud.filestore.v1.ListSnapshotsRequest;
 import com.google.cloud.filestore.v1.ListSnapshotsResponse;
+import com.google.cloud.filestore.v1.PromoteReplicaRequest;
 import com.google.cloud.filestore.v1.RestoreInstanceRequest;
 import com.google.cloud.filestore.v1.RevertInstanceRequest;
 import com.google.cloud.filestore.v1.Snapshot;
@@ -232,6 +233,16 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<PromoteReplicaRequest, Operation>
+      promoteReplicaMethodDescriptor =
+          MethodDescriptor.<PromoteReplicaRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.filestore.v1.CloudFilestoreManager/PromoteReplica")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PromoteReplicaRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;
   private final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable;
@@ -277,6 +288,9 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
   private final UnaryCallable<UpdateBackupRequest, Operation> updateBackupCallable;
   private final OperationCallable<UpdateBackupRequest, Backup, OperationMetadata>
       updateBackupOperationCallable;
+  private final UnaryCallable<PromoteReplicaRequest, Operation> promoteReplicaCallable;
+  private final OperationCallable<PromoteReplicaRequest, Instance, OperationMetadata>
+      promoteReplicaOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -492,6 +506,16 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<PromoteReplicaRequest, Operation> promoteReplicaTransportSettings =
+        GrpcCallSettings.<PromoteReplicaRequest, Operation>newBuilder()
+            .setMethodDescriptor(promoteReplicaMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.listInstancesCallable =
         callableFactory.createUnaryCallable(
@@ -617,6 +641,15 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
         callableFactory.createOperationCallable(
             updateBackupTransportSettings,
             settings.updateBackupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.promoteReplicaCallable =
+        callableFactory.createUnaryCallable(
+            promoteReplicaTransportSettings, settings.promoteReplicaSettings(), clientContext);
+    this.promoteReplicaOperationCallable =
+        callableFactory.createOperationCallable(
+            promoteReplicaTransportSettings,
+            settings.promoteReplicaOperationSettings(),
             clientContext,
             operationsStub);
 
@@ -794,6 +827,17 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
   public OperationCallable<UpdateBackupRequest, Backup, OperationMetadata>
       updateBackupOperationCallable() {
     return updateBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PromoteReplicaRequest, Operation> promoteReplicaCallable() {
+    return promoteReplicaCallable;
+  }
+
+  @Override
+  public OperationCallable<PromoteReplicaRequest, Instance, OperationMetadata>
+      promoteReplicaOperationCallable() {
+    return promoteReplicaOperationCallable;
   }
 
   @Override

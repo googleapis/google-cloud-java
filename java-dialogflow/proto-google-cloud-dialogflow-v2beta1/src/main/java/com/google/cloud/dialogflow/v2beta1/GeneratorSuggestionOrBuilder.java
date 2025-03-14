@@ -28,6 +28,47 @@ public interface GeneratorSuggestionOrBuilder
    *
    *
    * <pre>
+   * Optional. Free form suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.FreeFormSuggestion free_form_suggestion = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the freeFormSuggestion field is set.
+   */
+  boolean hasFreeFormSuggestion();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Free form suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.FreeFormSuggestion free_form_suggestion = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The freeFormSuggestion.
+   */
+  com.google.cloud.dialogflow.v2beta1.FreeFormSuggestion getFreeFormSuggestion();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Free form suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.FreeFormSuggestion free_form_suggestion = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.FreeFormSuggestionOrBuilder getFreeFormSuggestionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Suggested summary.
    * </pre>
    *

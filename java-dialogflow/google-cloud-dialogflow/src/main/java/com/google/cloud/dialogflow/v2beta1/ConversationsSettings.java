@@ -117,6 +117,12 @@ public class ConversationsSettings extends ClientSettings<ConversationsSettings>
     return ((ConversationsStubSettings) getStubSettings()).completeConversationSettings();
   }
 
+  /** Returns the object with the settings used for calls to ingestContextReferences. */
+  public UnaryCallSettings<IngestContextReferencesRequest, IngestContextReferencesResponse>
+      ingestContextReferencesSettings() {
+    return ((ConversationsStubSettings) getStubSettings()).ingestContextReferencesSettings();
+  }
+
   /** Returns the object with the settings used for calls to batchCreateMessages. */
   public UnaryCallSettings<BatchCreateMessagesRequest, BatchCreateMessagesResponse>
       batchCreateMessagesSettings() {
@@ -151,6 +157,12 @@ public class ConversationsSettings extends ClientSettings<ConversationsSettings>
   public UnaryCallSettings<SearchKnowledgeRequest, SearchKnowledgeResponse>
       searchKnowledgeSettings() {
     return ((ConversationsStubSettings) getStubSettings()).searchKnowledgeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to generateSuggestions. */
+  public UnaryCallSettings<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+      generateSuggestionsSettings() {
+    return ((ConversationsStubSettings) getStubSettings()).generateSuggestionsSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -301,6 +313,13 @@ public class ConversationsSettings extends ClientSettings<ConversationsSettings>
       return getStubSettingsBuilder().completeConversationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to ingestContextReferences. */
+    public UnaryCallSettings.Builder<
+            IngestContextReferencesRequest, IngestContextReferencesResponse>
+        ingestContextReferencesSettings() {
+      return getStubSettingsBuilder().ingestContextReferencesSettings();
+    }
+
     /** Returns the builder for the settings used for calls to batchCreateMessages. */
     public UnaryCallSettings.Builder<BatchCreateMessagesRequest, BatchCreateMessagesResponse>
         batchCreateMessagesSettings() {
@@ -339,6 +358,12 @@ public class ConversationsSettings extends ClientSettings<ConversationsSettings>
     public UnaryCallSettings.Builder<SearchKnowledgeRequest, SearchKnowledgeResponse>
         searchKnowledgeSettings() {
       return getStubSettingsBuilder().searchKnowledgeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to generateSuggestions. */
+    public UnaryCallSettings.Builder<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+        generateSuggestionsSettings() {
+      return getStubSettingsBuilder().generateSuggestionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

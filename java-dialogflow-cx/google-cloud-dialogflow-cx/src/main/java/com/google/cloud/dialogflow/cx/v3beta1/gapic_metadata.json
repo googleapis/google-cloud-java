@@ -598,8 +598,14 @@
             "CreateTool": {
               "methods": ["createTool", "createTool", "createTool", "createToolCallable"]
             },
+            "CreateToolVersion": {
+              "methods": ["createToolVersion", "createToolVersion", "createToolVersion", "createToolVersionCallable"]
+            },
             "DeleteTool": {
               "methods": ["deleteTool", "deleteTool", "deleteTool", "deleteToolCallable"]
+            },
+            "DeleteToolVersion": {
+              "methods": ["deleteToolVersion", "deleteToolVersion", "deleteToolVersion", "deleteToolVersionCallable"]
             },
             "ExportTools": {
               "methods": ["exportToolsAsync", "exportToolsOperationCallable", "exportToolsCallable"]
@@ -610,11 +616,20 @@
             "GetTool": {
               "methods": ["getTool", "getTool", "getTool", "getToolCallable"]
             },
+            "GetToolVersion": {
+              "methods": ["getToolVersion", "getToolVersion", "getToolVersion", "getToolVersionCallable"]
+            },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "ListToolVersions": {
+              "methods": ["listToolVersions", "listToolVersions", "listToolVersions", "listToolVersionsPagedCallable", "listToolVersionsCallable"]
+            },
             "ListTools": {
               "methods": ["listTools", "listTools", "listTools", "listToolsPagedCallable", "listToolsCallable"]
+            },
+            "RestoreToolVersion": {
+              "methods": ["restoreToolVersion", "restoreToolVersion", "restoreToolVersion", "restoreToolVersionCallable"]
             },
             "UpdateTool": {
               "methods": ["updateTool", "updateTool", "updateToolCallable"]

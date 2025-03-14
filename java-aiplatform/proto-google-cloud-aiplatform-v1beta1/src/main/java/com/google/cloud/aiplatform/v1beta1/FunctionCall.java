@@ -41,6 +41,7 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
   }
 
   private FunctionCall() {
+    id_ = "";
     name_ = "";
   }
 
@@ -66,6 +67,59 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  public static final int ID_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The unique id of the function call. If populated, the client to
+   * execute the `function_call` and return the response with the matching `id`.
+   * </pre>
+   *
+   * <code>string id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The id.
+   */
+  @java.lang.Override
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      id_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The unique id of the function call. If populated, the client to
+   * execute the `function_call` and return the response with the matching `id`.
+   * </pre>
+   *
+   * <code>string id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for id.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIdBytes() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      id_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -188,6 +242,9 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getArgs());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -202,6 +259,9 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getArgs());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -219,6 +279,7 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.aiplatform.v1beta1.FunctionCall other =
         (com.google.cloud.aiplatform.v1beta1.FunctionCall) obj;
 
+    if (!getId().equals(other.getId())) return false;
     if (!getName().equals(other.getName())) return false;
     if (hasArgs() != other.hasArgs()) return false;
     if (hasArgs()) {
@@ -235,6 +296,8 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
     if (hasArgs()) {
@@ -391,6 +454,7 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      id_ = "";
       name_ = "";
       args_ = null;
       if (argsBuilder_ != null) {
@@ -434,10 +498,13 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.FunctionCall result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.name_ = name_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.args_ = argsBuilder_ == null ? args_ : argsBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
@@ -490,9 +557,14 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.FunctionCall other) {
       if (other == com.google.cloud.aiplatform.v1beta1.FunctionCall.getDefaultInstance())
         return this;
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasArgs()) {
@@ -527,15 +599,21 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getArgsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
+            case 26:
+              {
+                id_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -554,6 +632,117 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+
+    private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique id of the function call. If populated, the client to
+     * execute the `function_call` and return the response with the matching `id`.
+     * </pre>
+     *
+     * <code>string id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The id.
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique id of the function call. If populated, the client to
+     * execute the `function_call` and return the response with the matching `id`.
+     * </pre>
+     *
+     * <code>string id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique id of the function call. If populated, the client to
+     * execute the `function_call` and return the response with the matching `id`.
+     * </pre>
+     *
+     * <code>string id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      id_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique id of the function call. If populated, the client to
+     * execute the `function_call` and return the response with the matching `id`.
+     * </pre>
+     *
+     * <code>string id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearId() {
+      id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique id of the function call. If populated, the client to
+     * execute the `function_call` and return the response with the matching `id`.
+     * </pre>
+     *
+     * <code>string id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      id_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
 
     private java.lang.Object name_ = "";
     /**
@@ -620,7 +809,7 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -638,7 +827,7 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -661,7 +850,7 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -685,7 +874,7 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the args field is set.
      */
     public boolean hasArgs() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -725,7 +914,7 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
       } else {
         argsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -745,7 +934,7 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
       } else {
         argsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -761,7 +950,7 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeArgs(com.google.protobuf.Struct value) {
       if (argsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && args_ != null
             && args_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getArgsBuilder().mergeFrom(value);
@@ -772,7 +961,7 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
         argsBuilder_.mergeFrom(value);
       }
       if (args_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -788,7 +977,7 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Struct args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearArgs() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       args_ = null;
       if (argsBuilder_ != null) {
         argsBuilder_.dispose();
@@ -808,7 +997,7 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Struct args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.Struct.Builder getArgsBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getArgsFieldBuilder().getBuilder();
     }

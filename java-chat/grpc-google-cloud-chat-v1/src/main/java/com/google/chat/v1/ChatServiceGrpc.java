@@ -1206,6 +1206,108 @@ public final class ChatServiceGrpc {
     return getListSpaceEventsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.GetSpaceNotificationSettingRequest,
+          com.google.chat.v1.SpaceNotificationSetting>
+      getGetSpaceNotificationSettingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSpaceNotificationSetting",
+      requestType = com.google.chat.v1.GetSpaceNotificationSettingRequest.class,
+      responseType = com.google.chat.v1.SpaceNotificationSetting.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.GetSpaceNotificationSettingRequest,
+          com.google.chat.v1.SpaceNotificationSetting>
+      getGetSpaceNotificationSettingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.GetSpaceNotificationSettingRequest,
+            com.google.chat.v1.SpaceNotificationSetting>
+        getGetSpaceNotificationSettingMethod;
+    if ((getGetSpaceNotificationSettingMethod =
+            ChatServiceGrpc.getGetSpaceNotificationSettingMethod)
+        == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getGetSpaceNotificationSettingMethod =
+                ChatServiceGrpc.getGetSpaceNotificationSettingMethod)
+            == null) {
+          ChatServiceGrpc.getGetSpaceNotificationSettingMethod =
+              getGetSpaceNotificationSettingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.GetSpaceNotificationSettingRequest,
+                          com.google.chat.v1.SpaceNotificationSetting>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetSpaceNotificationSetting"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.GetSpaceNotificationSettingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.SpaceNotificationSetting.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("GetSpaceNotificationSetting"))
+                      .build();
+        }
+      }
+    }
+    return getGetSpaceNotificationSettingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.UpdateSpaceNotificationSettingRequest,
+          com.google.chat.v1.SpaceNotificationSetting>
+      getUpdateSpaceNotificationSettingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSpaceNotificationSetting",
+      requestType = com.google.chat.v1.UpdateSpaceNotificationSettingRequest.class,
+      responseType = com.google.chat.v1.SpaceNotificationSetting.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.UpdateSpaceNotificationSettingRequest,
+          com.google.chat.v1.SpaceNotificationSetting>
+      getUpdateSpaceNotificationSettingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.UpdateSpaceNotificationSettingRequest,
+            com.google.chat.v1.SpaceNotificationSetting>
+        getUpdateSpaceNotificationSettingMethod;
+    if ((getUpdateSpaceNotificationSettingMethod =
+            ChatServiceGrpc.getUpdateSpaceNotificationSettingMethod)
+        == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getUpdateSpaceNotificationSettingMethod =
+                ChatServiceGrpc.getUpdateSpaceNotificationSettingMethod)
+            == null) {
+          ChatServiceGrpc.getUpdateSpaceNotificationSettingMethod =
+              getUpdateSpaceNotificationSettingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.UpdateSpaceNotificationSettingRequest,
+                          com.google.chat.v1.SpaceNotificationSetting>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateSpaceNotificationSetting"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.UpdateSpaceNotificationSettingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.SpaceNotificationSetting.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("UpdateSpaceNotificationSetting"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSpaceNotificationSettingMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ChatServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ChatServiceStub> factory =
@@ -1997,6 +2099,42 @@ public final class ChatServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.chat.v1.ListSpaceEventsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListSpaceEventsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the space notification setting. For an example, see [Get the
+     * caller's space notification
+     * setting](https://developers.google.com/workspace/chat/get-space-notification-setting).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    default void getSpaceNotificationSetting(
+        com.google.chat.v1.GetSpaceNotificationSettingRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.SpaceNotificationSetting> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSpaceNotificationSettingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the space notification setting. For an example, see [Update
+     * the caller's space notification
+     * setting](https://developers.google.com/workspace/chat/update-space-notification-setting).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    default void updateSpaceNotificationSetting(
+        com.google.chat.v1.UpdateSpaceNotificationSettingRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.SpaceNotificationSetting> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSpaceNotificationSettingMethod(), responseObserver);
     }
   }
 
@@ -2832,6 +2970,46 @@ public final class ChatServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the space notification setting. For an example, see [Get the
+     * caller's space notification
+     * setting](https://developers.google.com/workspace/chat/get-space-notification-setting).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public void getSpaceNotificationSetting(
+        com.google.chat.v1.GetSpaceNotificationSettingRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.SpaceNotificationSetting> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSpaceNotificationSettingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the space notification setting. For an example, see [Update
+     * the caller's space notification
+     * setting](https://developers.google.com/workspace/chat/update-space-notification-setting).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public void updateSpaceNotificationSetting(
+        com.google.chat.v1.UpdateSpaceNotificationSettingRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.SpaceNotificationSetting> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSpaceNotificationSettingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -3563,6 +3741,40 @@ public final class ChatServiceGrpc {
         com.google.chat.v1.ListSpaceEventsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListSpaceEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the space notification setting. For an example, see [Get the
+     * caller's space notification
+     * setting](https://developers.google.com/workspace/chat/get-space-notification-setting).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public com.google.chat.v1.SpaceNotificationSetting getSpaceNotificationSetting(
+        com.google.chat.v1.GetSpaceNotificationSettingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSpaceNotificationSettingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the space notification setting. For an example, see [Update
+     * the caller's space notification
+     * setting](https://developers.google.com/workspace/chat/update-space-notification-setting).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public com.google.chat.v1.SpaceNotificationSetting updateSpaceNotificationSetting(
+        com.google.chat.v1.UpdateSpaceNotificationSettingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSpaceNotificationSettingMethod(), getCallOptions(), request);
     }
   }
 
@@ -4309,6 +4521,44 @@ public final class ChatServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListSpaceEventsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the space notification setting. For an example, see [Get the
+     * caller's space notification
+     * setting](https://developers.google.com/workspace/chat/get-space-notification-setting).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.chat.v1.SpaceNotificationSetting>
+        getSpaceNotificationSetting(com.google.chat.v1.GetSpaceNotificationSettingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSpaceNotificationSettingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the space notification setting. For an example, see [Update
+     * the caller's space notification
+     * setting](https://developers.google.com/workspace/chat/update-space-notification-setting).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.chat.v1.SpaceNotificationSetting>
+        updateSpaceNotificationSetting(
+            com.google.chat.v1.UpdateSpaceNotificationSettingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSpaceNotificationSettingMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_CREATE_MESSAGE = 0;
@@ -4340,6 +4590,8 @@ public final class ChatServiceGrpc {
   private static final int METHODID_GET_THREAD_READ_STATE = 26;
   private static final int METHODID_GET_SPACE_EVENT = 27;
   private static final int METHODID_LIST_SPACE_EVENTS = 28;
+  private static final int METHODID_GET_SPACE_NOTIFICATION_SETTING = 29;
+  private static final int METHODID_UPDATE_SPACE_NOTIFICATION_SETTING = 30;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4509,6 +4761,18 @@ public final class ChatServiceGrpc {
           serviceImpl.listSpaceEvents(
               (com.google.chat.v1.ListSpaceEventsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.chat.v1.ListSpaceEventsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_SPACE_NOTIFICATION_SETTING:
+          serviceImpl.getSpaceNotificationSetting(
+              (com.google.chat.v1.GetSpaceNotificationSettingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.SpaceNotificationSetting>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_SPACE_NOTIFICATION_SETTING:
+          serviceImpl.updateSpaceNotificationSetting(
+              (com.google.chat.v1.UpdateSpaceNotificationSettingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.SpaceNotificationSetting>)
                   responseObserver);
           break;
         default:
@@ -4703,6 +4967,20 @@ public final class ChatServiceGrpc {
                     com.google.chat.v1.ListSpaceEventsRequest,
                     com.google.chat.v1.ListSpaceEventsResponse>(
                     service, METHODID_LIST_SPACE_EVENTS)))
+        .addMethod(
+            getGetSpaceNotificationSettingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.GetSpaceNotificationSettingRequest,
+                    com.google.chat.v1.SpaceNotificationSetting>(
+                    service, METHODID_GET_SPACE_NOTIFICATION_SETTING)))
+        .addMethod(
+            getUpdateSpaceNotificationSettingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.UpdateSpaceNotificationSettingRequest,
+                    com.google.chat.v1.SpaceNotificationSetting>(
+                    service, METHODID_UPDATE_SPACE_NOTIFICATION_SETTING)))
         .build();
   }
 
@@ -4783,6 +5061,8 @@ public final class ChatServiceGrpc {
                       .addMethod(getGetThreadReadStateMethod())
                       .addMethod(getGetSpaceEventMethod())
                       .addMethod(getListSpaceEventsMethod())
+                      .addMethod(getGetSpaceNotificationSettingMethod())
+                      .addMethod(getUpdateSpaceNotificationSettingMethod())
                       .build();
         }
       }

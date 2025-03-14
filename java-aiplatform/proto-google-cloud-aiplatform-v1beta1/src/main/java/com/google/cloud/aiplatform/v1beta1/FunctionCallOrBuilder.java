@@ -28,6 +28,33 @@ public interface FunctionCallOrBuilder
    *
    *
    * <pre>
+   * Optional. The unique id of the function call. If populated, the client to
+   * execute the `function_call` and return the response with the matching `id`.
+   * </pre>
+   *
+   * <code>string id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The id.
+   */
+  java.lang.String getId();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The unique id of the function call. If populated, the client to
+   * execute the `function_call` and return the response with the matching `id`.
+   * </pre>
+   *
+   * <code>string id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString getIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The name of the function to call.
    * Matches [FunctionDeclaration.name].
    * </pre>

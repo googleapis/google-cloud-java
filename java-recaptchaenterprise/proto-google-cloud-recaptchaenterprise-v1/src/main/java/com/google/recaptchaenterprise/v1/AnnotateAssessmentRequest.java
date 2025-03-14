@@ -294,7 +294,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Default unspecified reason.
+     * Unspecified reason. Do not use.
      * </pre>
      *
      * <code>REASON_UNSPECIFIED = 0;</code>
@@ -464,7 +464,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Default unspecified reason.
+     * Unspecified reason. Do not use.
      * </pre>
      *
      * <code>REASON_UNSPECIFIED = 0;</code>

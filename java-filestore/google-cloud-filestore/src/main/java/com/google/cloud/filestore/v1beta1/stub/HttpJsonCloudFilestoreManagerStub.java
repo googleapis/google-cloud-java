@@ -61,6 +61,7 @@ import com.google.cloud.filestore.v1beta1.ListSharesRequest;
 import com.google.cloud.filestore.v1beta1.ListSharesResponse;
 import com.google.cloud.filestore.v1beta1.ListSnapshotsRequest;
 import com.google.cloud.filestore.v1beta1.ListSnapshotsResponse;
+import com.google.cloud.filestore.v1beta1.PromoteReplicaRequest;
 import com.google.cloud.filestore.v1beta1.RestoreInstanceRequest;
 import com.google.cloud.filestore.v1beta1.RevertInstanceRequest;
 import com.google.cloud.filestore.v1beta1.Share;
@@ -340,6 +341,47 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<PromoteReplicaRequest, Operation>
+      promoteReplicaMethodDescriptor =
+          ApiMethodDescriptor.<PromoteReplicaRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.filestore.v1beta1.CloudFilestoreManager/PromoteReplica")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PromoteReplicaRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/instances/*}:promoteReplica",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PromoteReplicaRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PromoteReplicaRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PromoteReplicaRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<DeleteInstanceRequest, Operation>
       deleteInstanceMethodDescriptor =
           ApiMethodDescriptor.<DeleteInstanceRequest, Operation>newBuilder()
@@ -406,6 +448,8 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -976,6 +1020,9 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
   private final UnaryCallable<RevertInstanceRequest, Operation> revertInstanceCallable;
   private final OperationCallable<RevertInstanceRequest, Instance, OperationMetadata>
       revertInstanceOperationCallable;
+  private final UnaryCallable<PromoteReplicaRequest, Operation> promoteReplicaCallable;
+  private final OperationCallable<PromoteReplicaRequest, Instance, OperationMetadata>
+      promoteReplicaOperationCallable;
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
   private final OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable;
@@ -1149,6 +1196,17 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
     HttpJsonCallSettings<RevertInstanceRequest, Operation> revertInstanceTransportSettings =
         HttpJsonCallSettings.<RevertInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(revertInstanceMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<PromoteReplicaRequest, Operation> promoteReplicaTransportSettings =
+        HttpJsonCallSettings.<PromoteReplicaRequest, Operation>newBuilder()
+            .setMethodDescriptor(promoteReplicaMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
                 request -> {
@@ -1380,6 +1438,15 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
             settings.revertInstanceOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.promoteReplicaCallable =
+        callableFactory.createUnaryCallable(
+            promoteReplicaTransportSettings, settings.promoteReplicaSettings(), clientContext);
+    this.promoteReplicaOperationCallable =
+        callableFactory.createOperationCallable(
+            promoteReplicaTransportSettings,
+            settings.promoteReplicaOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteInstanceCallable =
         callableFactory.createUnaryCallable(
             deleteInstanceTransportSettings, settings.deleteInstanceSettings(), clientContext);
@@ -1511,6 +1578,7 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
     methodDescriptors.add(updateInstanceMethodDescriptor);
     methodDescriptors.add(restoreInstanceMethodDescriptor);
     methodDescriptors.add(revertInstanceMethodDescriptor);
+    methodDescriptors.add(promoteReplicaMethodDescriptor);
     methodDescriptors.add(deleteInstanceMethodDescriptor);
     methodDescriptors.add(listSnapshotsMethodDescriptor);
     methodDescriptors.add(getSnapshotMethodDescriptor);
@@ -1592,6 +1660,17 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
   public OperationCallable<RevertInstanceRequest, Instance, OperationMetadata>
       revertInstanceOperationCallable() {
     return revertInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PromoteReplicaRequest, Operation> promoteReplicaCallable() {
+    return promoteReplicaCallable;
+  }
+
+  @Override
+  public OperationCallable<PromoteReplicaRequest, Instance, OperationMetadata>
+      promoteReplicaOperationCallable() {
+    return promoteReplicaOperationCallable;
   }
 
   @Override

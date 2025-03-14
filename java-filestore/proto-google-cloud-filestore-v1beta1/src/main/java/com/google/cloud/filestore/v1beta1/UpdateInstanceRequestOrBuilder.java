@@ -33,8 +33,12 @@ public interface UpdateInstanceRequestOrBuilder
    * these fields:
    *
    * * "description"
+   * * "directory_services"
    * * "file_shares"
    * * "labels"
+   * * "performance_config"
+   * * "deletion_protection_enabled"
+   * * "deletion_protection_reason"
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -52,8 +56,12 @@ public interface UpdateInstanceRequestOrBuilder
    * these fields:
    *
    * * "description"
+   * * "directory_services"
    * * "file_shares"
    * * "labels"
+   * * "performance_config"
+   * * "deletion_protection_enabled"
+   * * "deletion_protection_reason"
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -71,8 +79,12 @@ public interface UpdateInstanceRequestOrBuilder
    * these fields:
    *
    * * "description"
+   * * "directory_services"
    * * "file_shares"
    * * "labels"
+   * * "performance_config"
+   * * "deletion_protection_enabled"
+   * * "deletion_protection_reason"
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];

@@ -206,7 +206,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Gets an existing return policy.
+     * Gets an existing return policy for a given business.
      * </pre>
      */
     default void getOnlineReturnPolicy(
@@ -221,7 +221,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Lists all existing return policies.
+     * Lists all existing return policies for a given business.
      * </pre>
      */
     default void listOnlineReturnPolicies(
@@ -280,7 +280,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Gets an existing return policy.
+     * Gets an existing return policy for a given business.
      * </pre>
      */
     public void getOnlineReturnPolicy(
@@ -297,7 +297,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Lists all existing return policies.
+     * Lists all existing return policies for a given business.
      * </pre>
      */
     public void listOnlineReturnPolicies(
@@ -339,7 +339,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Gets an existing return policy.
+     * Gets an existing return policy for a given business.
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy getOnlineReturnPolicy(
@@ -352,7 +352,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Lists all existing return policies.
+     * Lists all existing return policies for a given business.
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesResponse
@@ -391,7 +391,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Gets an existing return policy.
+     * Gets an existing return policy for a given business.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -406,7 +406,7 @@ public final class OnlineReturnPolicyServiceGrpc {
      *
      *
      * <pre>
-     * Lists all existing return policies.
+     * Lists all existing return policies for a given business.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

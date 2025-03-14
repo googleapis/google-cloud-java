@@ -587,7 +587,7 @@ public interface SoftwareConfigOrBuilder
    * If unspecified, the field defaults to `PLUGINS_ENABLED`.
    *
    * This field is supported for Cloud Composer environments in versions
-   * composer-3.*.*-airflow-*.*.* and newer.
+   * composer-3-airflow-*.*.*-build.* and newer.
    * </pre>
    *
    * <code>
@@ -605,7 +605,7 @@ public interface SoftwareConfigOrBuilder
    * If unspecified, the field defaults to `PLUGINS_ENABLED`.
    *
    * This field is supported for Cloud Composer environments in versions
-   * composer-3.*.*-airflow-*.*.* and newer.
+   * composer-3-airflow-*.*.*-build.* and newer.
    * </pre>
    *
    * <code>

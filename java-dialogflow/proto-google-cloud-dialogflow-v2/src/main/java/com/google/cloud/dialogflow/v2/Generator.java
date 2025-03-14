@@ -75,6 +75,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    FREE_FORM_CONTEXT(11),
     SUMMARIZATION_CONTEXT(13),
     CONTEXT_NOT_SET(0);
     private final int value;
@@ -94,6 +95,8 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
 
     public static ContextCase forNumber(int value) {
       switch (value) {
+        case 11:
+          return FREE_FORM_CONTEXT;
         case 13:
           return SUMMARIZATION_CONTEXT;
         case 0:
@@ -110,6 +113,52 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
 
   public ContextCase getContextCase() {
     return ContextCase.forNumber(contextCase_);
+  }
+
+  private int foundationModelCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object foundationModel_;
+
+  public enum FoundationModelCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    PUBLISHED_MODEL(15),
+    FOUNDATIONMODEL_NOT_SET(0);
+    private final int value;
+
+    private FoundationModelCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static FoundationModelCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static FoundationModelCase forNumber(int value) {
+      switch (value) {
+        case 15:
+          return PUBLISHED_MODEL;
+        case 0:
+          return FOUNDATIONMODEL_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public FoundationModelCase getFoundationModelCase() {
+    return FoundationModelCase.forNumber(foundationModelCase_);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -218,6 +267,57 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int FREE_FORM_CONTEXT_FIELD_NUMBER = 11;
+  /**
+   *
+   *
+   * <pre>
+   * Input of free from generator to LLM.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.FreeFormContext free_form_context = 11;</code>
+   *
+   * @return Whether the freeFormContext field is set.
+   */
+  @java.lang.Override
+  public boolean hasFreeFormContext() {
+    return contextCase_ == 11;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input of free from generator to LLM.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.FreeFormContext free_form_context = 11;</code>
+   *
+   * @return The freeFormContext.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.FreeFormContext getFreeFormContext() {
+    if (contextCase_ == 11) {
+      return (com.google.cloud.dialogflow.v2.FreeFormContext) context_;
+    }
+    return com.google.cloud.dialogflow.v2.FreeFormContext.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input of free from generator to LLM.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.FreeFormContext free_form_context = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.FreeFormContextOrBuilder getFreeFormContextOrBuilder() {
+    if (contextCase_ == 11) {
+      return (com.google.cloud.dialogflow.v2.FreeFormContext) context_;
+    }
+    return com.google.cloud.dialogflow.v2.FreeFormContext.getDefaultInstance();
   }
 
   public static final int SUMMARIZATION_CONTEXT_FIELD_NUMBER = 13;
@@ -370,6 +470,88 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.dialogflow.v2.TriggerEvent.UNRECOGNIZED : result;
   }
 
+  public static final int PUBLISHED_MODEL_FIELD_NUMBER = 15;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The published Large Language Model name.
+   * * To use the latest model version, specify the model name without version
+   *   number. Example: `text-bison`
+   * * To use a stable model version, specify the version number as well.
+   *   Example: `text-bison&#64;002`.
+   * </pre>
+   *
+   * <code>string published_model = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the publishedModel field is set.
+   */
+  public boolean hasPublishedModel() {
+    return foundationModelCase_ == 15;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The published Large Language Model name.
+   * * To use the latest model version, specify the model name without version
+   *   number. Example: `text-bison`
+   * * To use a stable model version, specify the version number as well.
+   *   Example: `text-bison&#64;002`.
+   * </pre>
+   *
+   * <code>string published_model = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The publishedModel.
+   */
+  public java.lang.String getPublishedModel() {
+    java.lang.Object ref = "";
+    if (foundationModelCase_ == 15) {
+      ref = foundationModel_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (foundationModelCase_ == 15) {
+        foundationModel_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The published Large Language Model name.
+   * * To use the latest model version, specify the model name without version
+   *   number. Example: `text-bison`
+   * * To use a stable model version, specify the version number as well.
+   *   Example: `text-bison&#64;002`.
+   * </pre>
+   *
+   * <code>string published_model = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for publishedModel.
+   */
+  public com.google.protobuf.ByteString getPublishedModelBytes() {
+    java.lang.Object ref = "";
+    if (foundationModelCase_ == 15) {
+      ref = foundationModel_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (foundationModelCase_ == 15) {
+        foundationModel_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int CREATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp createTime_;
   /**
@@ -501,8 +683,14 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(9, getUpdateTime());
     }
+    if (contextCase_ == 11) {
+      output.writeMessage(11, (com.google.cloud.dialogflow.v2.FreeFormContext) context_);
+    }
     if (contextCase_ == 13) {
       output.writeMessage(13, (com.google.cloud.dialogflow.v2.SummarizationContext) context_);
+    }
+    if (foundationModelCase_ == 15) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, foundationModel_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -532,10 +720,18 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getUpdateTime());
     }
+    if (contextCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (com.google.cloud.dialogflow.v2.FreeFormContext) context_);
+    }
     if (contextCase_ == 13) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, (com.google.cloud.dialogflow.v2.SummarizationContext) context_);
+    }
+    if (foundationModelCase_ == 15) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, foundationModel_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -569,8 +765,19 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getContextCase().equals(other.getContextCase())) return false;
     switch (contextCase_) {
+      case 11:
+        if (!getFreeFormContext().equals(other.getFreeFormContext())) return false;
+        break;
       case 13:
         if (!getSummarizationContext().equals(other.getSummarizationContext())) return false;
+        break;
+      case 0:
+      default:
+    }
+    if (!getFoundationModelCase().equals(other.getFoundationModelCase())) return false;
+    switch (foundationModelCase_) {
+      case 15:
+        if (!getPublishedModel().equals(other.getPublishedModel())) return false;
         break;
       case 0:
       default:
@@ -605,9 +812,21 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
     switch (contextCase_) {
+      case 11:
+        hash = (37 * hash) + FREE_FORM_CONTEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getFreeFormContext().hashCode();
+        break;
       case 13:
         hash = (37 * hash) + SUMMARIZATION_CONTEXT_FIELD_NUMBER;
         hash = (53 * hash) + getSummarizationContext().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (foundationModelCase_) {
+      case 15:
+        hash = (37 * hash) + PUBLISHED_MODEL_FIELD_NUMBER;
+        hash = (53 * hash) + getPublishedModel().hashCode();
         break;
       case 0:
       default:
@@ -764,6 +983,9 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       name_ = "";
       description_ = "";
+      if (freeFormContextBuilder_ != null) {
+        freeFormContextBuilder_.clear();
+      }
       if (summarizationContextBuilder_ != null) {
         summarizationContextBuilder_.clear();
       }
@@ -785,6 +1007,8 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       }
       contextCase_ = 0;
       context_ = null;
+      foundationModelCase_ = 0;
+      foundationModel_ = null;
       return this;
     }
 
@@ -829,21 +1053,21 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         result.description_ = description_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.inferenceParameter_ =
             inferenceParameterBuilder_ == null
                 ? inferenceParameter_
                 : inferenceParameterBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.triggerEvent_ = triggerEvent_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
@@ -853,9 +1077,14 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialOneofs(com.google.cloud.dialogflow.v2.Generator result) {
       result.contextCase_ = contextCase_;
       result.context_ = this.context_;
+      if (contextCase_ == 11 && freeFormContextBuilder_ != null) {
+        result.context_ = freeFormContextBuilder_.build();
+      }
       if (contextCase_ == 13 && summarizationContextBuilder_ != null) {
         result.context_ = summarizationContextBuilder_.build();
       }
+      result.foundationModelCase_ = foundationModelCase_;
+      result.foundationModel_ = this.foundationModel_;
     }
 
     @java.lang.Override
@@ -926,12 +1155,30 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         mergeUpdateTime(other.getUpdateTime());
       }
       switch (other.getContextCase()) {
+        case FREE_FORM_CONTEXT:
+          {
+            mergeFreeFormContext(other.getFreeFormContext());
+            break;
+          }
         case SUMMARIZATION_CONTEXT:
           {
             mergeSummarizationContext(other.getSummarizationContext());
             break;
           }
         case CONTEXT_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getFoundationModelCase()) {
+        case PUBLISHED_MODEL:
+          {
+            foundationModelCase_ = 15;
+            foundationModel_ = other.foundationModel_;
+            onChanged();
+            break;
+          }
+        case FOUNDATIONMODEL_NOT_SET:
           {
             break;
           }
@@ -978,27 +1225,33 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getInferenceParameterFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 40:
               {
                 triggerEvent_ = input.readEnum();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 66:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
+            case 90:
+              {
+                input.readMessage(getFreeFormContextFieldBuilder().getBuilder(), extensionRegistry);
+                contextCase_ = 11;
+                break;
+              } // case 90
             case 106:
               {
                 input.readMessage(
@@ -1006,6 +1259,13 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
                 contextCase_ = 13;
                 break;
               } // case 106
+            case 122:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                foundationModelCase_ = 15;
+                foundationModel_ = s;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1033,6 +1293,20 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     public Builder clearContext() {
       contextCase_ = 0;
       context_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int foundationModelCase_ = 0;
+    private java.lang.Object foundationModel_;
+
+    public FoundationModelCase getFoundationModelCase() {
+      return FoundationModelCase.forNumber(foundationModelCase_);
+    }
+
+    public Builder clearFoundationModel() {
+      foundationModelCase_ = 0;
+      foundationModel_ = null;
       onChanged();
       return this;
     }
@@ -1264,6 +1538,215 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.FreeFormContext,
+            com.google.cloud.dialogflow.v2.FreeFormContext.Builder,
+            com.google.cloud.dialogflow.v2.FreeFormContextOrBuilder>
+        freeFormContextBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Input of free from generator to LLM.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.FreeFormContext free_form_context = 11;</code>
+     *
+     * @return Whether the freeFormContext field is set.
+     */
+    @java.lang.Override
+    public boolean hasFreeFormContext() {
+      return contextCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input of free from generator to LLM.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.FreeFormContext free_form_context = 11;</code>
+     *
+     * @return The freeFormContext.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.FreeFormContext getFreeFormContext() {
+      if (freeFormContextBuilder_ == null) {
+        if (contextCase_ == 11) {
+          return (com.google.cloud.dialogflow.v2.FreeFormContext) context_;
+        }
+        return com.google.cloud.dialogflow.v2.FreeFormContext.getDefaultInstance();
+      } else {
+        if (contextCase_ == 11) {
+          return freeFormContextBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2.FreeFormContext.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input of free from generator to LLM.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.FreeFormContext free_form_context = 11;</code>
+     */
+    public Builder setFreeFormContext(com.google.cloud.dialogflow.v2.FreeFormContext value) {
+      if (freeFormContextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        context_ = value;
+        onChanged();
+      } else {
+        freeFormContextBuilder_.setMessage(value);
+      }
+      contextCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input of free from generator to LLM.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.FreeFormContext free_form_context = 11;</code>
+     */
+    public Builder setFreeFormContext(
+        com.google.cloud.dialogflow.v2.FreeFormContext.Builder builderForValue) {
+      if (freeFormContextBuilder_ == null) {
+        context_ = builderForValue.build();
+        onChanged();
+      } else {
+        freeFormContextBuilder_.setMessage(builderForValue.build());
+      }
+      contextCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input of free from generator to LLM.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.FreeFormContext free_form_context = 11;</code>
+     */
+    public Builder mergeFreeFormContext(com.google.cloud.dialogflow.v2.FreeFormContext value) {
+      if (freeFormContextBuilder_ == null) {
+        if (contextCase_ == 11
+            && context_ != com.google.cloud.dialogflow.v2.FreeFormContext.getDefaultInstance()) {
+          context_ =
+              com.google.cloud.dialogflow.v2.FreeFormContext.newBuilder(
+                      (com.google.cloud.dialogflow.v2.FreeFormContext) context_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          context_ = value;
+        }
+        onChanged();
+      } else {
+        if (contextCase_ == 11) {
+          freeFormContextBuilder_.mergeFrom(value);
+        } else {
+          freeFormContextBuilder_.setMessage(value);
+        }
+      }
+      contextCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input of free from generator to LLM.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.FreeFormContext free_form_context = 11;</code>
+     */
+    public Builder clearFreeFormContext() {
+      if (freeFormContextBuilder_ == null) {
+        if (contextCase_ == 11) {
+          contextCase_ = 0;
+          context_ = null;
+          onChanged();
+        }
+      } else {
+        if (contextCase_ == 11) {
+          contextCase_ = 0;
+          context_ = null;
+        }
+        freeFormContextBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input of free from generator to LLM.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.FreeFormContext free_form_context = 11;</code>
+     */
+    public com.google.cloud.dialogflow.v2.FreeFormContext.Builder getFreeFormContextBuilder() {
+      return getFreeFormContextFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input of free from generator to LLM.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.FreeFormContext free_form_context = 11;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.FreeFormContextOrBuilder getFreeFormContextOrBuilder() {
+      if ((contextCase_ == 11) && (freeFormContextBuilder_ != null)) {
+        return freeFormContextBuilder_.getMessageOrBuilder();
+      } else {
+        if (contextCase_ == 11) {
+          return (com.google.cloud.dialogflow.v2.FreeFormContext) context_;
+        }
+        return com.google.cloud.dialogflow.v2.FreeFormContext.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input of free from generator to LLM.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.FreeFormContext free_form_context = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.FreeFormContext,
+            com.google.cloud.dialogflow.v2.FreeFormContext.Builder,
+            com.google.cloud.dialogflow.v2.FreeFormContextOrBuilder>
+        getFreeFormContextFieldBuilder() {
+      if (freeFormContextBuilder_ == null) {
+        if (!(contextCase_ == 11)) {
+          context_ = com.google.cloud.dialogflow.v2.FreeFormContext.getDefaultInstance();
+        }
+        freeFormContextBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.FreeFormContext,
+                com.google.cloud.dialogflow.v2.FreeFormContext.Builder,
+                com.google.cloud.dialogflow.v2.FreeFormContextOrBuilder>(
+                (com.google.cloud.dialogflow.v2.FreeFormContext) context_,
+                getParentForChildren(),
+                isClean());
+        context_ = null;
+      }
+      contextCase_ = 11;
+      onChanged();
+      return freeFormContextBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1500,7 +1983,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the inferenceParameter field is set.
      */
     public boolean hasInferenceParameter() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1544,7 +2027,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       } else {
         inferenceParameterBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1566,7 +2049,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       } else {
         inferenceParameterBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1584,7 +2067,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeInferenceParameter(
         com.google.cloud.dialogflow.v2.InferenceParameter value) {
       if (inferenceParameterBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && inferenceParameter_ != null
             && inferenceParameter_
                 != com.google.cloud.dialogflow.v2.InferenceParameter.getDefaultInstance()) {
@@ -1596,7 +2079,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         inferenceParameterBuilder_.mergeFrom(value);
       }
       if (inferenceParameter_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1613,7 +2096,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearInferenceParameter() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       inferenceParameter_ = null;
       if (inferenceParameterBuilder_ != null) {
         inferenceParameterBuilder_.dispose();
@@ -1635,7 +2118,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.v2.InferenceParameter.Builder
         getInferenceParameterBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getInferenceParameterFieldBuilder().getBuilder();
     }
@@ -1724,7 +2207,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setTriggerEventValue(int value) {
       triggerEvent_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1767,7 +2250,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       triggerEvent_ = value.getNumber();
       onChanged();
       return this;
@@ -1787,8 +2270,166 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTriggerEvent() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       triggerEvent_ = 0;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The published Large Language Model name.
+     * * To use the latest model version, specify the model name without version
+     *   number. Example: `text-bison`
+     * * To use a stable model version, specify the version number as well.
+     *   Example: `text-bison&#64;002`.
+     * </pre>
+     *
+     * <code>string published_model = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the publishedModel field is set.
+     */
+    @java.lang.Override
+    public boolean hasPublishedModel() {
+      return foundationModelCase_ == 15;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The published Large Language Model name.
+     * * To use the latest model version, specify the model name without version
+     *   number. Example: `text-bison`
+     * * To use a stable model version, specify the version number as well.
+     *   Example: `text-bison&#64;002`.
+     * </pre>
+     *
+     * <code>string published_model = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The publishedModel.
+     */
+    @java.lang.Override
+    public java.lang.String getPublishedModel() {
+      java.lang.Object ref = "";
+      if (foundationModelCase_ == 15) {
+        ref = foundationModel_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (foundationModelCase_ == 15) {
+          foundationModel_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The published Large Language Model name.
+     * * To use the latest model version, specify the model name without version
+     *   number. Example: `text-bison`
+     * * To use a stable model version, specify the version number as well.
+     *   Example: `text-bison&#64;002`.
+     * </pre>
+     *
+     * <code>string published_model = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for publishedModel.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPublishedModelBytes() {
+      java.lang.Object ref = "";
+      if (foundationModelCase_ == 15) {
+        ref = foundationModel_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (foundationModelCase_ == 15) {
+          foundationModel_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The published Large Language Model name.
+     * * To use the latest model version, specify the model name without version
+     *   number. Example: `text-bison`
+     * * To use a stable model version, specify the version number as well.
+     *   Example: `text-bison&#64;002`.
+     * </pre>
+     *
+     * <code>string published_model = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The publishedModel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublishedModel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      foundationModelCase_ = 15;
+      foundationModel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The published Large Language Model name.
+     * * To use the latest model version, specify the model name without version
+     *   number. Example: `text-bison`
+     * * To use a stable model version, specify the version number as well.
+     *   Example: `text-bison&#64;002`.
+     * </pre>
+     *
+     * <code>string published_model = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPublishedModel() {
+      if (foundationModelCase_ == 15) {
+        foundationModelCase_ = 0;
+        foundationModel_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The published Large Language Model name.
+     * * To use the latest model version, specify the model name without version
+     *   number. Example: `text-bison`
+     * * To use a stable model version, specify the version number as well.
+     *   Example: `text-bison&#64;002`.
+     * </pre>
+     *
+     * <code>string published_model = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for publishedModel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublishedModelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      foundationModelCase_ = 15;
+      foundationModel_ = value;
       onChanged();
       return this;
     }
@@ -1813,7 +2454,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -1857,7 +2498,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1878,7 +2519,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1895,7 +2536,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -1906,7 +2547,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -1923,7 +2564,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1944,7 +2585,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2016,7 +2657,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2060,7 +2701,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2081,7 +2722,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2098,7 +2739,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -2109,7 +2750,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2126,7 +2767,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -2147,7 +2788,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }

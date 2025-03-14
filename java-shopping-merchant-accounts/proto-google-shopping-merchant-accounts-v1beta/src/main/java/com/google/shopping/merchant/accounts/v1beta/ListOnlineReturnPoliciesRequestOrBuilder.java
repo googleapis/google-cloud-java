@@ -28,7 +28,7 @@ public interface ListOnlineReturnPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The merchant account for which to list return policies.
+   * Required. The business account for which to list return policies.
    * Format: `accounts/{account}`
    * </pre>
    *
@@ -43,7 +43,7 @@ public interface ListOnlineReturnPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The merchant account for which to list return policies.
+   * Required. The business account for which to list return policies.
    * Format: `accounts/{account}`
    * </pre>
    *

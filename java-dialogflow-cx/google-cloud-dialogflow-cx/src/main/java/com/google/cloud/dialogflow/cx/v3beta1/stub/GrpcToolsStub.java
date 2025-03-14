@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.cx.v3beta1.stub;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListLocationsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListToolVersionsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListToolsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -29,14 +30,22 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateToolRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteToolRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportToolsMetadata;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportToolsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportToolsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.GetToolRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.ListToolsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListToolsResponse;
+import com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.Tool;
+import com.google.cloud.dialogflow.cx.v3beta1.ToolVersion;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateToolRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -109,6 +118,58 @@ public class GrpcToolsStub extends ToolsStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<ListToolVersionsRequest, ListToolVersionsResponse>
+      listToolVersionsMethodDescriptor =
+          MethodDescriptor.<ListToolVersionsRequest, ListToolVersionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Tools/ListToolVersions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListToolVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListToolVersionsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateToolVersionRequest, ToolVersion>
+      createToolVersionMethodDescriptor =
+          MethodDescriptor.<CreateToolVersionRequest, ToolVersion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Tools/CreateToolVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateToolVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ToolVersion.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetToolVersionRequest, ToolVersion>
+      getToolVersionMethodDescriptor =
+          MethodDescriptor.<GetToolVersionRequest, ToolVersion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Tools/GetToolVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetToolVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ToolVersion.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteToolVersionRequest, Empty>
+      deleteToolVersionMethodDescriptor =
+          MethodDescriptor.<DeleteToolVersionRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Tools/DeleteToolVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteToolVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RestoreToolVersionRequest, RestoreToolVersionResponse>
+      restoreToolVersionMethodDescriptor =
+          MethodDescriptor.<RestoreToolVersionRequest, RestoreToolVersionResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Tools/RestoreToolVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RestoreToolVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RestoreToolVersionResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -137,6 +198,15 @@ public class GrpcToolsStub extends ToolsStub {
   private final UnaryCallable<GetToolRequest, Tool> getToolCallable;
   private final UnaryCallable<UpdateToolRequest, Tool> updateToolCallable;
   private final UnaryCallable<DeleteToolRequest, Empty> deleteToolCallable;
+  private final UnaryCallable<ListToolVersionsRequest, ListToolVersionsResponse>
+      listToolVersionsCallable;
+  private final UnaryCallable<ListToolVersionsRequest, ListToolVersionsPagedResponse>
+      listToolVersionsPagedCallable;
+  private final UnaryCallable<CreateToolVersionRequest, ToolVersion> createToolVersionCallable;
+  private final UnaryCallable<GetToolVersionRequest, ToolVersion> getToolVersionCallable;
+  private final UnaryCallable<DeleteToolVersionRequest, Empty> deleteToolVersionCallable;
+  private final UnaryCallable<RestoreToolVersionRequest, RestoreToolVersionResponse>
+      restoreToolVersionCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -241,6 +311,58 @@ public class GrpcToolsStub extends ToolsStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ListToolVersionsRequest, ListToolVersionsResponse>
+        listToolVersionsTransportSettings =
+            GrpcCallSettings.<ListToolVersionsRequest, ListToolVersionsResponse>newBuilder()
+                .setMethodDescriptor(listToolVersionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateToolVersionRequest, ToolVersion> createToolVersionTransportSettings =
+        GrpcCallSettings.<CreateToolVersionRequest, ToolVersion>newBuilder()
+            .setMethodDescriptor(createToolVersionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetToolVersionRequest, ToolVersion> getToolVersionTransportSettings =
+        GrpcCallSettings.<GetToolVersionRequest, ToolVersion>newBuilder()
+            .setMethodDescriptor(getToolVersionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteToolVersionRequest, Empty> deleteToolVersionTransportSettings =
+        GrpcCallSettings.<DeleteToolVersionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteToolVersionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<RestoreToolVersionRequest, RestoreToolVersionResponse>
+        restoreToolVersionTransportSettings =
+            GrpcCallSettings.<RestoreToolVersionRequest, RestoreToolVersionResponse>newBuilder()
+                .setMethodDescriptor(restoreToolVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -289,6 +411,30 @@ public class GrpcToolsStub extends ToolsStub {
     this.deleteToolCallable =
         callableFactory.createUnaryCallable(
             deleteToolTransportSettings, settings.deleteToolSettings(), clientContext);
+    this.listToolVersionsCallable =
+        callableFactory.createUnaryCallable(
+            listToolVersionsTransportSettings, settings.listToolVersionsSettings(), clientContext);
+    this.listToolVersionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listToolVersionsTransportSettings, settings.listToolVersionsSettings(), clientContext);
+    this.createToolVersionCallable =
+        callableFactory.createUnaryCallable(
+            createToolVersionTransportSettings,
+            settings.createToolVersionSettings(),
+            clientContext);
+    this.getToolVersionCallable =
+        callableFactory.createUnaryCallable(
+            getToolVersionTransportSettings, settings.getToolVersionSettings(), clientContext);
+    this.deleteToolVersionCallable =
+        callableFactory.createUnaryCallable(
+            deleteToolVersionTransportSettings,
+            settings.deleteToolVersionSettings(),
+            clientContext);
+    this.restoreToolVersionCallable =
+        callableFactory.createUnaryCallable(
+            restoreToolVersionTransportSettings,
+            settings.restoreToolVersionSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -346,6 +492,39 @@ public class GrpcToolsStub extends ToolsStub {
   @Override
   public UnaryCallable<DeleteToolRequest, Empty> deleteToolCallable() {
     return deleteToolCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListToolVersionsRequest, ListToolVersionsResponse>
+      listToolVersionsCallable() {
+    return listToolVersionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListToolVersionsRequest, ListToolVersionsPagedResponse>
+      listToolVersionsPagedCallable() {
+    return listToolVersionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateToolVersionRequest, ToolVersion> createToolVersionCallable() {
+    return createToolVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetToolVersionRequest, ToolVersion> getToolVersionCallable() {
+    return getToolVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteToolVersionRequest, Empty> deleteToolVersionCallable() {
+    return deleteToolVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<RestoreToolVersionRequest, RestoreToolVersionResponse>
+      restoreToolVersionCallable() {
+    return restoreToolVersionCallable;
   }
 
   @Override

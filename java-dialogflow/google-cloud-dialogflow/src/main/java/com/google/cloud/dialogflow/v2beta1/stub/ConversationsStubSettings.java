@@ -55,7 +55,11 @@ import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSuggestionRequest;
 import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSuggestionResponse;
 import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryRequest;
 import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryResponse;
+import com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsRequest;
+import com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsResponse;
 import com.google.cloud.dialogflow.v2beta1.GetConversationRequest;
+import com.google.cloud.dialogflow.v2beta1.IngestContextReferencesRequest;
+import com.google.cloud.dialogflow.v2beta1.IngestContextReferencesResponse;
 import com.google.cloud.dialogflow.v2beta1.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2beta1.ListMessagesRequest;
@@ -146,6 +150,8 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
   private final UnaryCallSettings<GetConversationRequest, Conversation> getConversationSettings;
   private final UnaryCallSettings<CompleteConversationRequest, Conversation>
       completeConversationSettings;
+  private final UnaryCallSettings<IngestContextReferencesRequest, IngestContextReferencesResponse>
+      ingestContextReferencesSettings;
   private final UnaryCallSettings<BatchCreateMessagesRequest, BatchCreateMessagesResponse>
       batchCreateMessagesSettings;
   private final PagedCallSettings<
@@ -161,6 +167,8 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       generateStatelessSuggestionSettings;
   private final UnaryCallSettings<SearchKnowledgeRequest, SearchKnowledgeResponse>
       searchKnowledgeSettings;
+  private final UnaryCallSettings<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+      generateSuggestionsSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -350,6 +358,12 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     return completeConversationSettings;
   }
 
+  /** Returns the object with the settings used for calls to ingestContextReferences. */
+  public UnaryCallSettings<IngestContextReferencesRequest, IngestContextReferencesResponse>
+      ingestContextReferencesSettings() {
+    return ingestContextReferencesSettings;
+  }
+
   /** Returns the object with the settings used for calls to batchCreateMessages. */
   public UnaryCallSettings<BatchCreateMessagesRequest, BatchCreateMessagesResponse>
       batchCreateMessagesSettings() {
@@ -384,6 +398,12 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
   public UnaryCallSettings<SearchKnowledgeRequest, SearchKnowledgeResponse>
       searchKnowledgeSettings() {
     return searchKnowledgeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to generateSuggestions. */
+  public UnaryCallSettings<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+      generateSuggestionsSettings() {
+    return generateSuggestionsSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -512,6 +532,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     listConversationsSettings = settingsBuilder.listConversationsSettings().build();
     getConversationSettings = settingsBuilder.getConversationSettings().build();
     completeConversationSettings = settingsBuilder.completeConversationSettings().build();
+    ingestContextReferencesSettings = settingsBuilder.ingestContextReferencesSettings().build();
     batchCreateMessagesSettings = settingsBuilder.batchCreateMessagesSettings().build();
     listMessagesSettings = settingsBuilder.listMessagesSettings().build();
     suggestConversationSummarySettings =
@@ -520,6 +541,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     generateStatelessSuggestionSettings =
         settingsBuilder.generateStatelessSuggestionSettings().build();
     searchKnowledgeSettings = settingsBuilder.searchKnowledgeSettings().build();
+    generateSuggestionsSettings = settingsBuilder.generateSuggestionsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -536,6 +558,9 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
         getConversationSettings;
     private final UnaryCallSettings.Builder<CompleteConversationRequest, Conversation>
         completeConversationSettings;
+    private final UnaryCallSettings.Builder<
+            IngestContextReferencesRequest, IngestContextReferencesResponse>
+        ingestContextReferencesSettings;
     private final UnaryCallSettings.Builder<BatchCreateMessagesRequest, BatchCreateMessagesResponse>
         batchCreateMessagesSettings;
     private final PagedCallSettings.Builder<
@@ -552,6 +577,8 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
         generateStatelessSuggestionSettings;
     private final UnaryCallSettings.Builder<SearchKnowledgeRequest, SearchKnowledgeResponse>
         searchKnowledgeSettings;
+    private final UnaryCallSettings.Builder<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+        generateSuggestionsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -598,12 +625,14 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       listConversationsSettings = PagedCallSettings.newBuilder(LIST_CONVERSATIONS_PAGE_STR_FACT);
       getConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       completeConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      ingestContextReferencesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchCreateMessagesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listMessagesSettings = PagedCallSettings.newBuilder(LIST_MESSAGES_PAGE_STR_FACT);
       suggestConversationSummarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       generateStatelessSummarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       generateStatelessSuggestionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       searchKnowledgeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      generateSuggestionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -613,12 +642,14 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
               listConversationsSettings,
               getConversationSettings,
               completeConversationSettings,
+              ingestContextReferencesSettings,
               batchCreateMessagesSettings,
               listMessagesSettings,
               suggestConversationSummarySettings,
               generateStatelessSummarySettings,
               generateStatelessSuggestionSettings,
               searchKnowledgeSettings,
+              generateSuggestionsSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -631,6 +662,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       listConversationsSettings = settings.listConversationsSettings.toBuilder();
       getConversationSettings = settings.getConversationSettings.toBuilder();
       completeConversationSettings = settings.completeConversationSettings.toBuilder();
+      ingestContextReferencesSettings = settings.ingestContextReferencesSettings.toBuilder();
       batchCreateMessagesSettings = settings.batchCreateMessagesSettings.toBuilder();
       listMessagesSettings = settings.listMessagesSettings.toBuilder();
       suggestConversationSummarySettings = settings.suggestConversationSummarySettings.toBuilder();
@@ -638,6 +670,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       generateStatelessSuggestionSettings =
           settings.generateStatelessSuggestionSettings.toBuilder();
       searchKnowledgeSettings = settings.searchKnowledgeSettings.toBuilder();
+      generateSuggestionsSettings = settings.generateSuggestionsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -647,12 +680,14 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
               listConversationsSettings,
               getConversationSettings,
               completeConversationSettings,
+              ingestContextReferencesSettings,
               batchCreateMessagesSettings,
               listMessagesSettings,
               suggestConversationSummarySettings,
               generateStatelessSummarySettings,
               generateStatelessSuggestionSettings,
               searchKnowledgeSettings,
+              generateSuggestionsSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -703,6 +738,11 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .ingestContextReferencesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .batchCreateMessagesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -729,6 +769,11 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
 
       builder
           .searchKnowledgeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .generateSuggestionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -785,6 +830,13 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       return completeConversationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to ingestContextReferences. */
+    public UnaryCallSettings.Builder<
+            IngestContextReferencesRequest, IngestContextReferencesResponse>
+        ingestContextReferencesSettings() {
+      return ingestContextReferencesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to batchCreateMessages. */
     public UnaryCallSettings.Builder<BatchCreateMessagesRequest, BatchCreateMessagesResponse>
         batchCreateMessagesSettings() {
@@ -823,6 +875,12 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     public UnaryCallSettings.Builder<SearchKnowledgeRequest, SearchKnowledgeResponse>
         searchKnowledgeSettings() {
       return searchKnowledgeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to generateSuggestions. */
+    public UnaryCallSettings.Builder<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+        generateSuggestionsSettings() {
+      return generateSuggestionsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

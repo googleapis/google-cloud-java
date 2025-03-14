@@ -205,6 +205,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> PromoteReplica</td>
+ *      <td><p> Promote the standby instance (replica).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> promoteReplicaAsync(PromoteReplicaRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> promoteReplicaOperationCallable()
+ *           <li><p> promoteReplicaCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteInstance</td>
  *      <td><p> Deletes an instance.</td>
  *      <td>
@@ -1172,8 +1187,12 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *     this field. The elements of the repeated paths field may only include these fields:
    *     <ul>
    *       <li>"description"
+   *       <li>"directory_services"
    *       <li>"file_shares"
    *       <li>"labels"
+   *       <li>"performance_config"
+   *       <li>"deletion_protection_enabled"
+   *       <li>"deletion_protection_reason"
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1472,6 +1491,98 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Promote the standby instance (replica).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   PromoteReplicaRequest request =
+   *       PromoteReplicaRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setPeerInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   Instance response = cloudFilestoreManagerClient.promoteReplicaAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> promoteReplicaAsync(
+      PromoteReplicaRequest request) {
+    return promoteReplicaOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Promote the standby instance (replica).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   PromoteReplicaRequest request =
+   *       PromoteReplicaRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setPeerInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       cloudFilestoreManagerClient.promoteReplicaOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PromoteReplicaRequest, Instance, OperationMetadata>
+      promoteReplicaOperationCallable() {
+    return stub.promoteReplicaOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Promote the standby instance (replica).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   PromoteReplicaRequest request =
+   *       PromoteReplicaRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setPeerInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudFilestoreManagerClient.promoteReplicaCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PromoteReplicaRequest, Operation> promoteReplicaCallable() {
+    return stub.promoteReplicaCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes an instance.
    *
    * <p>Sample code:
@@ -1703,6 +1814,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
    *           .setFilter("filter-1274492040")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (Snapshot element : cloudFilestoreManagerClient.listSnapshots(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1738,6 +1850,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
    *           .setFilter("filter-1274492040")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<Snapshot> future =
    *       cloudFilestoreManagerClient.listSnapshotsPagedCallable().futureCall(request);
@@ -1774,6 +1887,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
    *           .setFilter("filter-1274492040")
+   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     ListSnapshotsResponse response =

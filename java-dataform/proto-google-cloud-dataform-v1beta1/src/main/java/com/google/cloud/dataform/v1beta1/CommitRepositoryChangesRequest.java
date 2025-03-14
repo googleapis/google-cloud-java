@@ -2764,12 +2764,12 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * A map to the path of the file to the operation. The path is the full file
-   * path including filename, from repository root.
+   * Optional. A map to the path of the file to the operation. The path is the
+   * full file path including filename, from repository root.
    * </pre>
    *
    * <code>
-   * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3;
+   * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -2792,12 +2792,12 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * A map to the path of the file to the operation. The path is the full file
-   * path including filename, from repository root.
+   * Optional. A map to the path of the file to the operation. The path is the
+   * full file path including filename, from repository root.
    * </pre>
    *
    * <code>
-   * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3;
+   * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -2811,12 +2811,12 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * A map to the path of the file to the operation. The path is the full file
-   * path including filename, from repository root.
+   * Optional. A map to the path of the file to the operation. The path is the
+   * full file path including filename, from repository root.
    * </pre>
    *
    * <code>
-   * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3;
+   * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -2840,12 +2840,12 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * A map to the path of the file to the operation. The path is the full file
-   * path including filename, from repository root.
+   * Optional. A map to the path of the file to the operation. The path is the
+   * full file path including filename, from repository root.
    * </pre>
    *
    * <code>
-   * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3;
+   * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -3856,12 +3856,12 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * A map to the path of the file to the operation. The path is the full file
-     * path including filename, from repository root.
+     * Optional. A map to the path of the file to the operation. The path is the
+     * full file path including filename, from repository root.
      * </pre>
      *
      * <code>
-     * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3;
+     * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -3884,12 +3884,12 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * A map to the path of the file to the operation. The path is the full file
-     * path including filename, from repository root.
+     * Optional. A map to the path of the file to the operation. The path is the
+     * full file path including filename, from repository root.
      * </pre>
      *
      * <code>
-     * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3;
+     * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -3903,12 +3903,12 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * A map to the path of the file to the operation. The path is the full file
-     * path including filename, from repository root.
+     * Optional. A map to the path of the file to the operation. The path is the
+     * full file path including filename, from repository root.
      * </pre>
      *
      * <code>
-     * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3;
+     * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -3933,12 +3933,12 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * A map to the path of the file to the operation. The path is the full file
-     * path including filename, from repository root.
+     * Optional. A map to the path of the file to the operation. The path is the
+     * full file path including filename, from repository root.
      * </pre>
      *
      * <code>
-     * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3;
+     * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -3967,12 +3967,12 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * A map to the path of the file to the operation. The path is the full file
-     * path including filename, from repository root.
+     * Optional. A map to the path of the file to the operation. The path is the
+     * full file path including filename, from repository root.
      * </pre>
      *
      * <code>
-     * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3;
+     * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeFileOperations(java.lang.String key) {
@@ -3995,12 +3995,12 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * A map to the path of the file to the operation. The path is the full file
-     * path including filename, from repository root.
+     * Optional. A map to the path of the file to the operation. The path is the
+     * full file path including filename, from repository root.
      * </pre>
      *
      * <code>
-     * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3;
+     * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder putFileOperations(
@@ -4020,12 +4020,12 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * A map to the path of the file to the operation. The path is the full file
-     * path including filename, from repository root.
+     * Optional. A map to the path of the file to the operation. The path is the
+     * full file path including filename, from repository root.
      * </pre>
      *
      * <code>
-     * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3;
+     * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder putAllFileOperations(
@@ -4049,12 +4049,12 @@ public final class CommitRepositoryChangesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * A map to the path of the file to the operation. The path is the full file
-     * path including filename, from repository root.
+     * Optional. A map to the path of the file to the operation. The path is the
+     * full file path including filename, from repository root.
      * </pre>
      *
      * <code>
-     * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3;
+     * map&lt;string, .google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation&gt; file_operations = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.FileOperation.Builder

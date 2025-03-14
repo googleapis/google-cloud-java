@@ -19,6 +19,7 @@
 // Protobuf Java Version: 3.25.5
 package com.google.cloud.dataplex.v1;
 
+@java.lang.Deprecated
 public interface DataTaxonomyOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataTaxonomy)

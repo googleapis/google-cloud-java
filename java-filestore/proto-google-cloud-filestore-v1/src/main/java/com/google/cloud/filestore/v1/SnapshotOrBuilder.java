@@ -216,4 +216,117 @@ public interface SnapshotOrBuilder
    * @return The filesystemUsedBytes.
    */
   long getFilesystemUsedBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag key-value pairs bound to this
+   * resource. Each key must be a namespaced name and each value a short name.
+   * Example:
+   * "123456789012/environment" : "production",
+   * "123456789013/costCenter" : "marketing"
+   * See the documentation for more information:
+   * - Namespaced name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+   * - Short name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 7 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag key-value pairs bound to this
+   * resource. Each key must be a namespaced name and each value a short name.
+   * Example:
+   * "123456789012/environment" : "production",
+   * "123456789013/costCenter" : "marketing"
+   * See the documentation for more information:
+   * - Namespaced name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+   * - Short name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 7 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsTags(java.lang.String key);
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getTags();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag key-value pairs bound to this
+   * resource. Each key must be a namespaced name and each value a short name.
+   * Example:
+   * "123456789012/environment" : "production",
+   * "123456789013/costCenter" : "marketing"
+   * See the documentation for more information:
+   * - Namespaced name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+   * - Short name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 7 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag key-value pairs bound to this
+   * resource. Each key must be a namespaced name and each value a short name.
+   * Example:
+   * "123456789012/environment" : "production",
+   * "123456789013/costCenter" : "marketing"
+   * See the documentation for more information:
+   * - Namespaced name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+   * - Short name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 7 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag key-value pairs bound to this
+   * resource. Each key must be a namespaced name and each value a short name.
+   * Example:
+   * "123456789012/environment" : "production",
+   * "123456789013/costCenter" : "marketing"
+   * See the documentation for more information:
+   * - Namespaced name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+   * - Short name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 7 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getTagsOrThrow(java.lang.String key);
 }

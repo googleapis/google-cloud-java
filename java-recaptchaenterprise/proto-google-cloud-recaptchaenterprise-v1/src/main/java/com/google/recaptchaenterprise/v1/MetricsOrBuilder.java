@@ -59,7 +59,8 @@ public interface MetricsOrBuilder
    *
    *
    * <pre>
-   * Inclusive start time aligned to a day (UTC).
+   * Inclusive start time aligned to a day in the America/Los_Angeles (Pacific)
+   * timezone.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -71,7 +72,8 @@ public interface MetricsOrBuilder
    *
    *
    * <pre>
-   * Inclusive start time aligned to a day (UTC).
+   * Inclusive start time aligned to a day in the America/Los_Angeles (Pacific)
+   * timezone.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -83,7 +85,8 @@ public interface MetricsOrBuilder
    *
    *
    * <pre>
-   * Inclusive start time aligned to a day (UTC).
+   * Inclusive start time aligned to a day in the America/Los_Angeles (Pacific)
+   * timezone.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>

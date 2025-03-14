@@ -42,6 +42,7 @@ public final class DataStoreConnection extends com.google.protobuf.GeneratedMess
   private DataStoreConnection() {
     dataStoreType_ = 0;
     dataStore_ = "";
+    documentProcessingMode_ = 0;
   }
 
   @java.lang.Override
@@ -157,6 +158,49 @@ public final class DataStoreConnection extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int DOCUMENT_PROCESSING_MODE_FIELD_NUMBER = 4;
+  private int documentProcessingMode_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The document processing mode for the data store connection. Should only be
+   * set for PUBLIC_WEB and UNSTRUCTURED data stores. If not set it is
+   * considered as DOCUMENTS, as this is the legacy mode.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.DocumentProcessingMode document_processing_mode = 4;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for documentProcessingMode.
+   */
+  @java.lang.Override
+  public int getDocumentProcessingModeValue() {
+    return documentProcessingMode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The document processing mode for the data store connection. Should only be
+   * set for PUBLIC_WEB and UNSTRUCTURED data stores. If not set it is
+   * considered as DOCUMENTS, as this is the legacy mode.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.DocumentProcessingMode document_processing_mode = 4;
+   * </code>
+   *
+   * @return The documentProcessingMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.DocumentProcessingMode getDocumentProcessingMode() {
+    com.google.cloud.dialogflow.cx.v3.DocumentProcessingMode result =
+        com.google.cloud.dialogflow.cx.v3.DocumentProcessingMode.forNumber(documentProcessingMode_);
+    return result == null
+        ? com.google.cloud.dialogflow.cx.v3.DocumentProcessingMode.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -179,6 +223,12 @@ public final class DataStoreConnection extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataStore_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, dataStore_);
     }
+    if (documentProcessingMode_
+        != com.google.cloud.dialogflow.cx.v3.DocumentProcessingMode
+            .DOCUMENT_PROCESSING_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(4, documentProcessingMode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -195,6 +245,12 @@ public final class DataStoreConnection extends com.google.protobuf.GeneratedMess
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataStore_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, dataStore_);
+    }
+    if (documentProcessingMode_
+        != com.google.cloud.dialogflow.cx.v3.DocumentProcessingMode
+            .DOCUMENT_PROCESSING_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, documentProcessingMode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -214,6 +270,7 @@ public final class DataStoreConnection extends com.google.protobuf.GeneratedMess
 
     if (dataStoreType_ != other.dataStoreType_) return false;
     if (!getDataStore().equals(other.getDataStore())) return false;
+    if (documentProcessingMode_ != other.documentProcessingMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -229,6 +286,8 @@ public final class DataStoreConnection extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + dataStoreType_;
     hash = (37 * hash) + DATA_STORE_FIELD_NUMBER;
     hash = (53 * hash) + getDataStore().hashCode();
+    hash = (37 * hash) + DOCUMENT_PROCESSING_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + documentProcessingMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -372,6 +431,7 @@ public final class DataStoreConnection extends com.google.protobuf.GeneratedMess
       bitField0_ = 0;
       dataStoreType_ = 0;
       dataStore_ = "";
+      documentProcessingMode_ = 0;
       return this;
     }
 
@@ -413,6 +473,9 @@ public final class DataStoreConnection extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.dataStore_ = dataStore_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.documentProcessingMode_ = documentProcessingMode_;
       }
     }
 
@@ -470,6 +533,9 @@ public final class DataStoreConnection extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.documentProcessingMode_ != 0) {
+        setDocumentProcessingModeValue(other.getDocumentProcessingModeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -508,6 +574,12 @@ public final class DataStoreConnection extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 32:
+              {
+                documentProcessingMode_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -734,6 +806,115 @@ public final class DataStoreConnection extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       dataStore_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private int documentProcessingMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The document processing mode for the data store connection. Should only be
+     * set for PUBLIC_WEB and UNSTRUCTURED data stores. If not set it is
+     * considered as DOCUMENTS, as this is the legacy mode.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.DocumentProcessingMode document_processing_mode = 4;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for documentProcessingMode.
+     */
+    @java.lang.Override
+    public int getDocumentProcessingModeValue() {
+      return documentProcessingMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The document processing mode for the data store connection. Should only be
+     * set for PUBLIC_WEB and UNSTRUCTURED data stores. If not set it is
+     * considered as DOCUMENTS, as this is the legacy mode.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.DocumentProcessingMode document_processing_mode = 4;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for documentProcessingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDocumentProcessingModeValue(int value) {
+      documentProcessingMode_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The document processing mode for the data store connection. Should only be
+     * set for PUBLIC_WEB and UNSTRUCTURED data stores. If not set it is
+     * considered as DOCUMENTS, as this is the legacy mode.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.DocumentProcessingMode document_processing_mode = 4;
+     * </code>
+     *
+     * @return The documentProcessingMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.DocumentProcessingMode getDocumentProcessingMode() {
+      com.google.cloud.dialogflow.cx.v3.DocumentProcessingMode result =
+          com.google.cloud.dialogflow.cx.v3.DocumentProcessingMode.forNumber(
+              documentProcessingMode_);
+      return result == null
+          ? com.google.cloud.dialogflow.cx.v3.DocumentProcessingMode.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The document processing mode for the data store connection. Should only be
+     * set for PUBLIC_WEB and UNSTRUCTURED data stores. If not set it is
+     * considered as DOCUMENTS, as this is the legacy mode.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.DocumentProcessingMode document_processing_mode = 4;
+     * </code>
+     *
+     * @param value The documentProcessingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDocumentProcessingMode(
+        com.google.cloud.dialogflow.cx.v3.DocumentProcessingMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      documentProcessingMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The document processing mode for the data store connection. Should only be
+     * set for PUBLIC_WEB and UNSTRUCTURED data stores. If not set it is
+     * considered as DOCUMENTS, as this is the legacy mode.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.DocumentProcessingMode document_processing_mode = 4;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDocumentProcessingMode() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      documentProcessingMode_ = 0;
       onChanged();
       return this;
     }

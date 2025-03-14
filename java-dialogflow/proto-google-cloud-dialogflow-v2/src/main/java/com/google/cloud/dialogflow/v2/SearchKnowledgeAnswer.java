@@ -1809,7 +1809,7 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
    * Records/&lt;Answer Record ID&gt;`
    * </pre>
    *
-   * <code>string answer_record = 5;</code>
+   * <code>string answer_record = 5 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The answerRecord.
    */
@@ -1834,7 +1834,7 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
    * Records/&lt;Answer Record ID&gt;`
    * </pre>
    *
-   * <code>string answer_record = 5;</code>
+   * <code>string answer_record = 5 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for answerRecord.
    */
@@ -2940,7 +2940,7 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      * Records/&lt;Answer Record ID&gt;`
      * </pre>
      *
-     * <code>string answer_record = 5;</code>
+     * <code>string answer_record = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The answerRecord.
      */
@@ -2964,7 +2964,7 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      * Records/&lt;Answer Record ID&gt;`
      * </pre>
      *
-     * <code>string answer_record = 5;</code>
+     * <code>string answer_record = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for answerRecord.
      */
@@ -2988,7 +2988,7 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      * Records/&lt;Answer Record ID&gt;`
      * </pre>
      *
-     * <code>string answer_record = 5;</code>
+     * <code>string answer_record = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The answerRecord to set.
      * @return This builder for chaining.
@@ -3011,7 +3011,7 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      * Records/&lt;Answer Record ID&gt;`
      * </pre>
      *
-     * <code>string answer_record = 5;</code>
+     * <code>string answer_record = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -3030,7 +3030,7 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      * Records/&lt;Answer Record ID&gt;`
      * </pre>
      *
-     * <code>string answer_record = 5;</code>
+     * <code>string answer_record = 5 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for answerRecord to set.
      * @return This builder for chaining.

@@ -1760,7 +1760,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Spec what aplies to tables that are actually views.
+   * Spec what applies to tables that are actually views.
    * Not set for "real" tables.
    * </pre>
    *
@@ -1777,7 +1777,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Spec what aplies to tables that are actually views.
+   * Spec what applies to tables that are actually views.
    * Not set for "real" tables.
    * </pre>
    *
@@ -1796,7 +1796,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Spec what aplies to tables that are actually views.
+   * Spec what applies to tables that are actually views.
    * Not set for "real" tables.
    * </pre>
    *
@@ -2551,7 +2551,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Spec what aplies to tables that are actually views.
+     * Spec what applies to tables that are actually views.
      * Not set for "real" tables.
      * </pre>
      *
@@ -2567,7 +2567,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Spec what aplies to tables that are actually views.
+     * Spec what applies to tables that are actually views.
      * Not set for "real" tables.
      * </pre>
      *
@@ -2591,7 +2591,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Spec what aplies to tables that are actually views.
+     * Spec what applies to tables that are actually views.
      * Not set for "real" tables.
      * </pre>
      *
@@ -2616,7 +2616,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Spec what aplies to tables that are actually views.
+     * Spec what applies to tables that are actually views.
      * Not set for "real" tables.
      * </pre>
      *
@@ -2639,7 +2639,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Spec what aplies to tables that are actually views.
+     * Spec what applies to tables that are actually views.
      * Not set for "real" tables.
      * </pre>
      *
@@ -2671,7 +2671,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Spec what aplies to tables that are actually views.
+     * Spec what applies to tables that are actually views.
      * Not set for "real" tables.
      * </pre>
      *
@@ -2692,7 +2692,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Spec what aplies to tables that are actually views.
+     * Spec what applies to tables that are actually views.
      * Not set for "real" tables.
      * </pre>
      *
@@ -2709,7 +2709,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Spec what aplies to tables that are actually views.
+     * Spec what applies to tables that are actually views.
      * Not set for "real" tables.
      * </pre>
      *
@@ -2731,7 +2731,7 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Spec what aplies to tables that are actually views.
+     * Spec what applies to tables that are actually views.
      * Not set for "real" tables.
      * </pre>
      *

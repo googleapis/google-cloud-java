@@ -1143,6 +1143,2738 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public interface RankingOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for Rank Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService rank_service = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rankService field is set.
+     */
+    boolean hasRankService();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for Rank Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService rank_service = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rankService.
+     */
+    com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService getRankService();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for Rank Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService rank_service = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankServiceOrBuilder
+        getRankServiceOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for LlmRanker.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker llm_ranker = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the llmRanker field is set.
+     */
+    boolean hasLlmRanker();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for LlmRanker.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker llm_ranker = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The llmRanker.
+     */
+    com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker getLlmRanker();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for LlmRanker.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker llm_ranker = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRankerOrBuilder
+        getLlmRankerOrBuilder();
+
+    com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankingConfigCase
+        getRankingConfigCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config for ranking and reranking.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking}
+   */
+  public static final class Ranking extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking)
+      RankingOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Ranking.newBuilder() to construct.
+    private Ranking(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Ranking() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Ranking();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.ToolProto
+          .internal_static_google_cloud_aiplatform_v1_RagRetrievalConfig_Ranking_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.ToolProto
+          .internal_static_google_cloud_aiplatform_v1_RagRetrievalConfig_Ranking_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.class,
+              com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.Builder.class);
+    }
+
+    public interface RankServiceOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The model name of the rank service.
+       * Format: `semantic-ranker-512&#64;latest`
+       * </pre>
+       *
+       * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the modelName field is set.
+       */
+      boolean hasModelName();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The model name of the rank service.
+       * Format: `semantic-ranker-512&#64;latest`
+       * </pre>
+       *
+       * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The modelName.
+       */
+      java.lang.String getModelName();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The model name of the rank service.
+       * Format: `semantic-ranker-512&#64;latest`
+       * </pre>
+       *
+       * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for modelName.
+       */
+      com.google.protobuf.ByteString getModelNameBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for Rank Service.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService}
+     */
+    public static final class RankService extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService)
+        RankServiceOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use RankService.newBuilder() to construct.
+      private RankService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RankService() {
+        modelName_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new RankService();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1_RagRetrievalConfig_Ranking_RankService_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1_RagRetrievalConfig_Ranking_RankService_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService.class,
+                com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService.Builder
+                    .class);
+      }
+
+      private int bitField0_;
+      public static final int MODEL_NAME_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object modelName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The model name of the rank service.
+       * Format: `semantic-ranker-512&#64;latest`
+       * </pre>
+       *
+       * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the modelName field is set.
+       */
+      @java.lang.Override
+      public boolean hasModelName() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The model name of the rank service.
+       * Format: `semantic-ranker-512&#64;latest`
+       * </pre>
+       *
+       * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The modelName.
+       */
+      @java.lang.Override
+      public java.lang.String getModelName() {
+        java.lang.Object ref = modelName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelName_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The model name of the rank service.
+       * Format: `semantic-ranker-512&#64;latest`
+       * </pre>
+       *
+       * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for modelName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getModelNameBytes() {
+        java.lang.Object ref = modelName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          modelName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, modelName_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, modelName_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService other =
+            (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService) obj;
+
+        if (hasModelName() != other.hasModelName()) return false;
+        if (hasModelName()) {
+          if (!getModelName().equals(other.getModelName())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasModelName()) {
+          hash = (37 * hash) + MODEL_NAME_FIELD_NUMBER;
+          hash = (53 * hash) + getModelName().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for Rank Service.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService)
+          com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankServiceOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1.ToolProto
+              .internal_static_google_cloud_aiplatform_v1_RagRetrievalConfig_Ranking_RankService_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1.ToolProto
+              .internal_static_google_cloud_aiplatform_v1_RagRetrievalConfig_Ranking_RankService_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService.class,
+                  com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          modelName_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1.ToolProto
+              .internal_static_google_cloud_aiplatform_v1_RagRetrievalConfig_Ranking_RankService_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService build() {
+          com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService
+            buildPartial() {
+          com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService result =
+              new com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.modelName_ = modelName_;
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService other) {
+          if (other
+              == com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService
+                  .getDefaultInstance()) return this;
+          if (other.hasModelName()) {
+            modelName_ = other.modelName_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    modelName_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object modelName_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The model name of the rank service.
+         * Format: `semantic-ranker-512&#64;latest`
+         * </pre>
+         *
+         * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the modelName field is set.
+         */
+        public boolean hasModelName() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The model name of the rank service.
+         * Format: `semantic-ranker-512&#64;latest`
+         * </pre>
+         *
+         * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The modelName.
+         */
+        public java.lang.String getModelName() {
+          java.lang.Object ref = modelName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            modelName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The model name of the rank service.
+         * Format: `semantic-ranker-512&#64;latest`
+         * </pre>
+         *
+         * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for modelName.
+         */
+        public com.google.protobuf.ByteString getModelNameBytes() {
+          java.lang.Object ref = modelName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            modelName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The model name of the rank service.
+         * Format: `semantic-ranker-512&#64;latest`
+         * </pre>
+         *
+         * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The modelName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setModelName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          modelName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The model name of the rank service.
+         * Format: `semantic-ranker-512&#64;latest`
+         * </pre>
+         *
+         * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearModelName() {
+          modelName_ = getDefaultInstance().getModelName();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The model name of the rank service.
+         * Format: `semantic-ranker-512&#64;latest`
+         * </pre>
+         *
+         * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for modelName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setModelNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          modelName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService)
+      private static final com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService();
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RankService> PARSER =
+          new com.google.protobuf.AbstractParser<RankService>() {
+            @java.lang.Override
+            public RankService parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<RankService> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RankService> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface LlmRankerOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The model name used for ranking.
+       * Format: `gemini-1.5-pro`
+       * </pre>
+       *
+       * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the modelName field is set.
+       */
+      boolean hasModelName();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The model name used for ranking.
+       * Format: `gemini-1.5-pro`
+       * </pre>
+       *
+       * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The modelName.
+       */
+      java.lang.String getModelName();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The model name used for ranking.
+       * Format: `gemini-1.5-pro`
+       * </pre>
+       *
+       * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for modelName.
+       */
+      com.google.protobuf.ByteString getModelNameBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for LlmRanker.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker}
+     */
+    public static final class LlmRanker extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker)
+        LlmRankerOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use LlmRanker.newBuilder() to construct.
+      private LlmRanker(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private LlmRanker() {
+        modelName_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new LlmRanker();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1_RagRetrievalConfig_Ranking_LlmRanker_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1_RagRetrievalConfig_Ranking_LlmRanker_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker.class,
+                com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int MODEL_NAME_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object modelName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The model name used for ranking.
+       * Format: `gemini-1.5-pro`
+       * </pre>
+       *
+       * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the modelName field is set.
+       */
+      @java.lang.Override
+      public boolean hasModelName() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The model name used for ranking.
+       * Format: `gemini-1.5-pro`
+       * </pre>
+       *
+       * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The modelName.
+       */
+      @java.lang.Override
+      public java.lang.String getModelName() {
+        java.lang.Object ref = modelName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelName_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The model name used for ranking.
+       * Format: `gemini-1.5-pro`
+       * </pre>
+       *
+       * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for modelName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getModelNameBytes() {
+        java.lang.Object ref = modelName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          modelName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, modelName_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, modelName_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker other =
+            (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker) obj;
+
+        if (hasModelName() != other.hasModelName()) return false;
+        if (hasModelName()) {
+          if (!getModelName().equals(other.getModelName())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasModelName()) {
+          hash = (37 * hash) + MODEL_NAME_FIELD_NUMBER;
+          hash = (53 * hash) + getModelName().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for LlmRanker.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker)
+          com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRankerOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1.ToolProto
+              .internal_static_google_cloud_aiplatform_v1_RagRetrievalConfig_Ranking_LlmRanker_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1.ToolProto
+              .internal_static_google_cloud_aiplatform_v1_RagRetrievalConfig_Ranking_LlmRanker_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker.class,
+                  com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          modelName_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1.ToolProto
+              .internal_static_google_cloud_aiplatform_v1_RagRetrievalConfig_Ranking_LlmRanker_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker build() {
+          com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker buildPartial() {
+          com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker result =
+              new com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.modelName_ = modelName_;
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker other) {
+          if (other
+              == com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker
+                  .getDefaultInstance()) return this;
+          if (other.hasModelName()) {
+            modelName_ = other.modelName_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    modelName_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object modelName_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The model name used for ranking.
+         * Format: `gemini-1.5-pro`
+         * </pre>
+         *
+         * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the modelName field is set.
+         */
+        public boolean hasModelName() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The model name used for ranking.
+         * Format: `gemini-1.5-pro`
+         * </pre>
+         *
+         * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The modelName.
+         */
+        public java.lang.String getModelName() {
+          java.lang.Object ref = modelName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            modelName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The model name used for ranking.
+         * Format: `gemini-1.5-pro`
+         * </pre>
+         *
+         * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for modelName.
+         */
+        public com.google.protobuf.ByteString getModelNameBytes() {
+          java.lang.Object ref = modelName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            modelName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The model name used for ranking.
+         * Format: `gemini-1.5-pro`
+         * </pre>
+         *
+         * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The modelName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setModelName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          modelName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The model name used for ranking.
+         * Format: `gemini-1.5-pro`
+         * </pre>
+         *
+         * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearModelName() {
+          modelName_ = getDefaultInstance().getModelName();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The model name used for ranking.
+         * Format: `gemini-1.5-pro`
+         * </pre>
+         *
+         * <code>optional string model_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for modelName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setModelNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          modelName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker)
+      private static final com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker();
+      }
+
+      public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<LlmRanker> PARSER =
+          new com.google.protobuf.AbstractParser<LlmRanker>() {
+            @java.lang.Override
+            public LlmRanker parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<LlmRanker> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<LlmRanker> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int rankingConfigCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object rankingConfig_;
+
+    public enum RankingConfigCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      RANK_SERVICE(1),
+      LLM_RANKER(3),
+      RANKINGCONFIG_NOT_SET(0);
+      private final int value;
+
+      private RankingConfigCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static RankingConfigCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static RankingConfigCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return RANK_SERVICE;
+          case 3:
+            return LLM_RANKER;
+          case 0:
+            return RANKINGCONFIG_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public RankingConfigCase getRankingConfigCase() {
+      return RankingConfigCase.forNumber(rankingConfigCase_);
+    }
+
+    public static final int RANK_SERVICE_FIELD_NUMBER = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for Rank Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService rank_service = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rankService field is set.
+     */
+    @java.lang.Override
+    public boolean hasRankService() {
+      return rankingConfigCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for Rank Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService rank_service = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rankService.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService getRankService() {
+      if (rankingConfigCase_ == 1) {
+        return (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService)
+            rankingConfig_;
+      }
+      return com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for Rank Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService rank_service = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankServiceOrBuilder
+        getRankServiceOrBuilder() {
+      if (rankingConfigCase_ == 1) {
+        return (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService)
+            rankingConfig_;
+      }
+      return com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService
+          .getDefaultInstance();
+    }
+
+    public static final int LLM_RANKER_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for LlmRanker.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker llm_ranker = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the llmRanker field is set.
+     */
+    @java.lang.Override
+    public boolean hasLlmRanker() {
+      return rankingConfigCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for LlmRanker.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker llm_ranker = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The llmRanker.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker getLlmRanker() {
+      if (rankingConfigCase_ == 3) {
+        return (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker) rankingConfig_;
+      }
+      return com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for LlmRanker.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker llm_ranker = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRankerOrBuilder
+        getLlmRankerOrBuilder() {
+      if (rankingConfigCase_ == 3) {
+        return (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker) rankingConfig_;
+      }
+      return com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker
+          .getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (rankingConfigCase_ == 1) {
+        output.writeMessage(
+            1,
+            (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService) rankingConfig_);
+      }
+      if (rankingConfigCase_ == 3) {
+        output.writeMessage(
+            3,
+            (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker) rankingConfig_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (rankingConfigCase_ == 1) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1,
+                (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService)
+                    rankingConfig_);
+      }
+      if (rankingConfigCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3,
+                (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker)
+                    rankingConfig_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking other =
+          (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking) obj;
+
+      if (!getRankingConfigCase().equals(other.getRankingConfigCase())) return false;
+      switch (rankingConfigCase_) {
+        case 1:
+          if (!getRankService().equals(other.getRankService())) return false;
+          break;
+        case 3:
+          if (!getLlmRanker().equals(other.getLlmRanker())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (rankingConfigCase_) {
+        case 1:
+          hash = (37 * hash) + RANK_SERVICE_FIELD_NUMBER;
+          hash = (53 * hash) + getRankService().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + LLM_RANKER_FIELD_NUMBER;
+          hash = (53 * hash) + getLlmRanker().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for ranking and reranking.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking)
+        com.google.cloud.aiplatform.v1.RagRetrievalConfig.RankingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1_RagRetrievalConfig_Ranking_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1_RagRetrievalConfig_Ranking_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.class,
+                com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (rankServiceBuilder_ != null) {
+          rankServiceBuilder_.clear();
+        }
+        if (llmRankerBuilder_ != null) {
+          llmRankerBuilder_.clear();
+        }
+        rankingConfigCase_ = 0;
+        rankingConfig_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1_RagRetrievalConfig_Ranking_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking build() {
+        com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking buildPartial() {
+        com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking result =
+            new com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking result) {
+        result.rankingConfigCase_ = rankingConfigCase_;
+        result.rankingConfig_ = this.rankingConfig_;
+        if (rankingConfigCase_ == 1 && rankServiceBuilder_ != null) {
+          result.rankingConfig_ = rankServiceBuilder_.build();
+        }
+        if (rankingConfigCase_ == 3 && llmRankerBuilder_ != null) {
+          result.rankingConfig_ = llmRankerBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking) {
+          return mergeFrom((com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking other) {
+        if (other == com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.getDefaultInstance())
+          return this;
+        switch (other.getRankingConfigCase()) {
+          case RANK_SERVICE:
+            {
+              mergeRankService(other.getRankService());
+              break;
+            }
+          case LLM_RANKER:
+            {
+              mergeLlmRanker(other.getLlmRanker());
+              break;
+            }
+          case RANKINGCONFIG_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getRankServiceFieldBuilder().getBuilder(), extensionRegistry);
+                  rankingConfigCase_ = 1;
+                  break;
+                } // case 10
+              case 26:
+                {
+                  input.readMessage(getLlmRankerFieldBuilder().getBuilder(), extensionRegistry);
+                  rankingConfigCase_ = 3;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int rankingConfigCase_ = 0;
+      private java.lang.Object rankingConfig_;
+
+      public RankingConfigCase getRankingConfigCase() {
+        return RankingConfigCase.forNumber(rankingConfigCase_);
+      }
+
+      public Builder clearRankingConfig() {
+        rankingConfigCase_ = 0;
+        rankingConfig_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService,
+              com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService.Builder,
+              com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankServiceOrBuilder>
+          rankServiceBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for Rank Service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService rank_service = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the rankService field is set.
+       */
+      @java.lang.Override
+      public boolean hasRankService() {
+        return rankingConfigCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for Rank Service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService rank_service = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The rankService.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService
+          getRankService() {
+        if (rankServiceBuilder_ == null) {
+          if (rankingConfigCase_ == 1) {
+            return (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService)
+                rankingConfig_;
+          }
+          return com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService
+              .getDefaultInstance();
+        } else {
+          if (rankingConfigCase_ == 1) {
+            return rankServiceBuilder_.getMessage();
+          }
+          return com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for Rank Service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService rank_service = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRankService(
+          com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService value) {
+        if (rankServiceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rankingConfig_ = value;
+          onChanged();
+        } else {
+          rankServiceBuilder_.setMessage(value);
+        }
+        rankingConfigCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for Rank Service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService rank_service = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRankService(
+          com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService.Builder
+              builderForValue) {
+        if (rankServiceBuilder_ == null) {
+          rankingConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          rankServiceBuilder_.setMessage(builderForValue.build());
+        }
+        rankingConfigCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for Rank Service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService rank_service = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeRankService(
+          com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService value) {
+        if (rankServiceBuilder_ == null) {
+          if (rankingConfigCase_ == 1
+              && rankingConfig_
+                  != com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService
+                      .getDefaultInstance()) {
+            rankingConfig_ =
+                com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService.newBuilder(
+                        (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService)
+                            rankingConfig_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            rankingConfig_ = value;
+          }
+          onChanged();
+        } else {
+          if (rankingConfigCase_ == 1) {
+            rankServiceBuilder_.mergeFrom(value);
+          } else {
+            rankServiceBuilder_.setMessage(value);
+          }
+        }
+        rankingConfigCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for Rank Service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService rank_service = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearRankService() {
+        if (rankServiceBuilder_ == null) {
+          if (rankingConfigCase_ == 1) {
+            rankingConfigCase_ = 0;
+            rankingConfig_ = null;
+            onChanged();
+          }
+        } else {
+          if (rankingConfigCase_ == 1) {
+            rankingConfigCase_ = 0;
+            rankingConfig_ = null;
+          }
+          rankServiceBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for Rank Service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService rank_service = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService.Builder
+          getRankServiceBuilder() {
+        return getRankServiceFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for Rank Service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService rank_service = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankServiceOrBuilder
+          getRankServiceOrBuilder() {
+        if ((rankingConfigCase_ == 1) && (rankServiceBuilder_ != null)) {
+          return rankServiceBuilder_.getMessageOrBuilder();
+        } else {
+          if (rankingConfigCase_ == 1) {
+            return (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService)
+                rankingConfig_;
+          }
+          return com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for Rank Service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService rank_service = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService,
+              com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService.Builder,
+              com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankServiceOrBuilder>
+          getRankServiceFieldBuilder() {
+        if (rankServiceBuilder_ == null) {
+          if (!(rankingConfigCase_ == 1)) {
+            rankingConfig_ =
+                com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService
+                    .getDefaultInstance();
+          }
+          rankServiceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService,
+                  com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService.Builder,
+                  com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankServiceOrBuilder>(
+                  (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService)
+                      rankingConfig_,
+                  getParentForChildren(),
+                  isClean());
+          rankingConfig_ = null;
+        }
+        rankingConfigCase_ = 1;
+        onChanged();
+        return rankServiceBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker,
+              com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker.Builder,
+              com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRankerOrBuilder>
+          llmRankerBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for LlmRanker.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker llm_ranker = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the llmRanker field is set.
+       */
+      @java.lang.Override
+      public boolean hasLlmRanker() {
+        return rankingConfigCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for LlmRanker.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker llm_ranker = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The llmRanker.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker getLlmRanker() {
+        if (llmRankerBuilder_ == null) {
+          if (rankingConfigCase_ == 3) {
+            return (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker)
+                rankingConfig_;
+          }
+          return com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker
+              .getDefaultInstance();
+        } else {
+          if (rankingConfigCase_ == 3) {
+            return llmRankerBuilder_.getMessage();
+          }
+          return com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for LlmRanker.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker llm_ranker = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setLlmRanker(
+          com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker value) {
+        if (llmRankerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rankingConfig_ = value;
+          onChanged();
+        } else {
+          llmRankerBuilder_.setMessage(value);
+        }
+        rankingConfigCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for LlmRanker.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker llm_ranker = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setLlmRanker(
+          com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker.Builder
+              builderForValue) {
+        if (llmRankerBuilder_ == null) {
+          rankingConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          llmRankerBuilder_.setMessage(builderForValue.build());
+        }
+        rankingConfigCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for LlmRanker.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker llm_ranker = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeLlmRanker(
+          com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker value) {
+        if (llmRankerBuilder_ == null) {
+          if (rankingConfigCase_ == 3
+              && rankingConfig_
+                  != com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker
+                      .getDefaultInstance()) {
+            rankingConfig_ =
+                com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker.newBuilder(
+                        (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker)
+                            rankingConfig_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            rankingConfig_ = value;
+          }
+          onChanged();
+        } else {
+          if (rankingConfigCase_ == 3) {
+            llmRankerBuilder_.mergeFrom(value);
+          } else {
+            llmRankerBuilder_.setMessage(value);
+          }
+        }
+        rankingConfigCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for LlmRanker.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker llm_ranker = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearLlmRanker() {
+        if (llmRankerBuilder_ == null) {
+          if (rankingConfigCase_ == 3) {
+            rankingConfigCase_ = 0;
+            rankingConfig_ = null;
+            onChanged();
+          }
+        } else {
+          if (rankingConfigCase_ == 3) {
+            rankingConfigCase_ = 0;
+            rankingConfig_ = null;
+          }
+          llmRankerBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for LlmRanker.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker llm_ranker = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker.Builder
+          getLlmRankerBuilder() {
+        return getLlmRankerFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for LlmRanker.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker llm_ranker = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRankerOrBuilder
+          getLlmRankerOrBuilder() {
+        if ((rankingConfigCase_ == 3) && (llmRankerBuilder_ != null)) {
+          return llmRankerBuilder_.getMessageOrBuilder();
+        } else {
+          if (rankingConfigCase_ == 3) {
+            return (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker)
+                rankingConfig_;
+          }
+          return com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Config for LlmRanker.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker llm_ranker = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker,
+              com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker.Builder,
+              com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRankerOrBuilder>
+          getLlmRankerFieldBuilder() {
+        if (llmRankerBuilder_ == null) {
+          if (!(rankingConfigCase_ == 3)) {
+            rankingConfig_ =
+                com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker
+                    .getDefaultInstance();
+          }
+          llmRankerBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker,
+                  com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker.Builder,
+                  com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRankerOrBuilder>(
+                  (com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker)
+                      rankingConfig_,
+                  getParentForChildren(),
+                  isClean());
+          rankingConfig_ = null;
+        }
+        rankingConfigCase_ = 3;
+        onChanged();
+        return llmRankerBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking)
+    private static final com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking();
+    }
+
+    public static com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Ranking> PARSER =
+        new com.google.protobuf.AbstractParser<Ranking>() {
+          @java.lang.Override
+          public Ranking parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Ranking> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Ranking> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int TOP_K_FIELD_NUMBER = 1;
   private int topK_ = 0;
@@ -1218,6 +3950,62 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         : filter_;
   }
 
+  public static final int RANKING_FIELD_NUMBER = 4;
+  private com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking ranking_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for ranking and reranking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ranking field is set.
+   */
+  @java.lang.Override
+  public boolean hasRanking() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for ranking and reranking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ranking.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking getRanking() {
+    return ranking_ == null
+        ? com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.getDefaultInstance()
+        : ranking_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for ranking and reranking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.RagRetrievalConfig.RankingOrBuilder getRankingOrBuilder() {
+    return ranking_ == null
+        ? com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.getDefaultInstance()
+        : ranking_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1238,6 +4026,9 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getFilter());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(4, getRanking());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1252,6 +4043,9 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getFilter());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getRanking());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1274,6 +4068,10 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     if (hasFilter()) {
       if (!getFilter().equals(other.getFilter())) return false;
     }
+    if (hasRanking() != other.hasRanking()) return false;
+    if (hasRanking()) {
+      if (!getRanking().equals(other.getRanking())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1290,6 +4088,10 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     if (hasFilter()) {
       hash = (37 * hash) + FILTER_FIELD_NUMBER;
       hash = (53 * hash) + getFilter().hashCode();
+    }
+    if (hasRanking()) {
+      hash = (37 * hash) + RANKING_FIELD_NUMBER;
+      hash = (53 * hash) + getRanking().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1432,6 +4234,7 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getFilterFieldBuilder();
+        getRankingFieldBuilder();
       }
     }
 
@@ -1444,6 +4247,11 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       if (filterBuilder_ != null) {
         filterBuilder_.dispose();
         filterBuilder_ = null;
+      }
+      ranking_ = null;
+      if (rankingBuilder_ != null) {
+        rankingBuilder_.dispose();
+        rankingBuilder_ = null;
       }
       return this;
     }
@@ -1488,6 +4296,10 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.filter_ = filterBuilder_ == null ? filter_ : filterBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ranking_ = rankingBuilder_ == null ? ranking_ : rankingBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1544,6 +4356,9 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       if (other.hasFilter()) {
         mergeFilter(other.getFilter());
       }
+      if (other.hasRanking()) {
+        mergeRanking(other.getRanking());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1582,6 +4397,12 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000002;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getRankingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1857,6 +4678,212 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         filter_ = null;
       }
       return filterBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking ranking_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking,
+            com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.Builder,
+            com.google.cloud.aiplatform.v1.RagRetrievalConfig.RankingOrBuilder>
+        rankingBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for ranking and reranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the ranking field is set.
+     */
+    public boolean hasRanking() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for ranking and reranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The ranking.
+     */
+    public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking getRanking() {
+      if (rankingBuilder_ == null) {
+        return ranking_ == null
+            ? com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.getDefaultInstance()
+            : ranking_;
+      } else {
+        return rankingBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for ranking and reranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRanking(com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking value) {
+      if (rankingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ranking_ = value;
+      } else {
+        rankingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for ranking and reranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRanking(
+        com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.Builder builderForValue) {
+      if (rankingBuilder_ == null) {
+        ranking_ = builderForValue.build();
+      } else {
+        rankingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for ranking and reranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRanking(com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking value) {
+      if (rankingBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && ranking_ != null
+            && ranking_
+                != com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.getDefaultInstance()) {
+          getRankingBuilder().mergeFrom(value);
+        } else {
+          ranking_ = value;
+        }
+      } else {
+        rankingBuilder_.mergeFrom(value);
+      }
+      if (ranking_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for ranking and reranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRanking() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ranking_ = null;
+      if (rankingBuilder_ != null) {
+        rankingBuilder_.dispose();
+        rankingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for ranking and reranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.Builder getRankingBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getRankingFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for ranking and reranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.RagRetrievalConfig.RankingOrBuilder
+        getRankingOrBuilder() {
+      if (rankingBuilder_ != null) {
+        return rankingBuilder_.getMessageOrBuilder();
+      } else {
+        return ranking_ == null
+            ? com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.getDefaultInstance()
+            : ranking_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for ranking and reranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking ranking = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking,
+            com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.Builder,
+            com.google.cloud.aiplatform.v1.RagRetrievalConfig.RankingOrBuilder>
+        getRankingFieldBuilder() {
+      if (rankingBuilder_ == null) {
+        rankingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking,
+                com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.Builder,
+                com.google.cloud.aiplatform.v1.RagRetrievalConfig.RankingOrBuilder>(
+                getRanking(), getParentForChildren(), isClean());
+        ranking_ = null;
+      }
+      return rankingBuilder_;
     }
 
     @java.lang.Override

@@ -203,7 +203,8 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Optional. The time when the message was sent.
+   * Optional. The time when the message was sent. For voice messages, this is
+   * the time when an utterance started.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp send_time = 9 [(.google.api.field_behavior) = OPTIONAL];
@@ -216,7 +217,8 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Optional. The time when the message was sent.
+   * Optional. The time when the message was sent. For voice messages, this is
+   * the time when an utterance started.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp send_time = 9 [(.google.api.field_behavior) = OPTIONAL];
@@ -229,7 +231,8 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Optional. The time when the message was sent.
+   * Optional. The time when the message was sent. For voice messages, this is
+   * the time when an utterance started.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp send_time = 9 [(.google.api.field_behavior) = OPTIONAL];

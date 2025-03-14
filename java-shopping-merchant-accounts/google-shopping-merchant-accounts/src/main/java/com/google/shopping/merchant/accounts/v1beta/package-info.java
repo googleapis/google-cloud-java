@@ -100,6 +100,28 @@
  * }
  * }</pre>
  *
+ * <p>======================= AutomaticImprovementsServiceClient =======================
+ *
+ * <p>Service Description: Service to manage the automatic improvements of an account. The automatic
+ * improvements of the account can be used to automatically update products, improve images and
+ * shipping.
+ *
+ * <p>Sample for AutomaticImprovementsServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AutomaticImprovementsServiceClient automaticImprovementsServiceClient =
+ *     AutomaticImprovementsServiceClient.create()) {
+ *   AutomaticImprovementsName name = AutomaticImprovementsName.of("[ACCOUNT]");
+ *   AutomaticImprovements response =
+ *       automaticImprovementsServiceClient.getAutomaticImprovements(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= BusinessIdentityServiceClient =======================
  *
  * <p>Service Description: Service to support [business

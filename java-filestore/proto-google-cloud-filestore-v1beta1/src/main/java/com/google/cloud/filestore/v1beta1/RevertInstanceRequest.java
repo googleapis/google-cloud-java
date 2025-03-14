@@ -73,9 +73,8 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required.
+   * Required. The resource name of the instance, in the format
    * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
-   * The resource name of the instance, in the format
    * </pre>
    *
    * <code>
@@ -100,9 +99,8 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required.
+   * Required. The resource name of the instance, in the format
    * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
-   * The resource name of the instance, in the format
    * </pre>
    *
    * <code>
@@ -552,9 +550,8 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
+     * Required. The resource name of the instance, in the format
      * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
-     * The resource name of the instance, in the format
      * </pre>
      *
      * <code>
@@ -578,9 +575,8 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
+     * Required. The resource name of the instance, in the format
      * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
-     * The resource name of the instance, in the format
      * </pre>
      *
      * <code>
@@ -604,9 +600,8 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
+     * Required. The resource name of the instance, in the format
      * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
-     * The resource name of the instance, in the format
      * </pre>
      *
      * <code>
@@ -629,9 +624,8 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
+     * Required. The resource name of the instance, in the format
      * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
-     * The resource name of the instance, in the format
      * </pre>
      *
      * <code>
@@ -650,9 +644,8 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required.
+     * Required. The resource name of the instance, in the format
      * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
-     * The resource name of the instance, in the format
      * </pre>
      *
      * <code>

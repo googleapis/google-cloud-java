@@ -48,4 +48,42 @@ public interface ModelGardenSourceOrBuilder
    * @return The bytes for publicModelName.
    */
   com.google.protobuf.ByteString getPublicModelNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model garden source model version ID.
+   * </pre>
+   *
+   * <code>string version_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The versionId.
+   */
+  java.lang.String getVersionId();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model garden source model version ID.
+   * </pre>
+   *
+   * <code>string version_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for versionId.
+   */
+  com.google.protobuf.ByteString getVersionIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to avoid pulling the model from the HF cache.
+   * </pre>
+   *
+   * <code>bool skip_hf_model_cache = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The skipHfModelCache.
+   */
+  boolean getSkipHfModelCache();
 }

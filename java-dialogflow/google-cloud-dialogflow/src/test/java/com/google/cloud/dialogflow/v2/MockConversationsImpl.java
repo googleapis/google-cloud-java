@@ -144,6 +144,28 @@ public class MockConversationsImpl extends ConversationsImplBase {
   }
 
   @Override
+  public void ingestContextReferences(
+      IngestContextReferencesRequest request,
+      StreamObserver<IngestContextReferencesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof IngestContextReferencesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((IngestContextReferencesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method IngestContextReferences, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  IngestContextReferencesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listMessages(
       ListMessagesRequest request, StreamObserver<ListMessagesResponse> responseObserver) {
     Object response = responses.poll();
@@ -247,6 +269,28 @@ public class MockConversationsImpl extends ConversationsImplBase {
                   "Unrecognized response type %s for method SearchKnowledge, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchKnowledgeResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void generateSuggestions(
+      GenerateSuggestionsRequest request,
+      StreamObserver<GenerateSuggestionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateSuggestionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateSuggestionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateSuggestions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateSuggestionsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

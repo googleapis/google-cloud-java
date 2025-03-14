@@ -51,6 +51,7 @@ import com.google.chat.v1.GetAttachmentRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
 import com.google.chat.v1.GetSpaceEventRequest;
+import com.google.chat.v1.GetSpaceNotificationSettingRequest;
 import com.google.chat.v1.GetSpaceReadStateRequest;
 import com.google.chat.v1.GetSpaceRequest;
 import com.google.chat.v1.GetThreadReadStateRequest;
@@ -72,10 +73,12 @@ import com.google.chat.v1.SearchSpacesResponse;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
 import com.google.chat.v1.SpaceEvent;
+import com.google.chat.v1.SpaceNotificationSetting;
 import com.google.chat.v1.SpaceReadState;
 import com.google.chat.v1.ThreadReadState;
 import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
+import com.google.chat.v1.UpdateSpaceNotificationSettingRequest;
 import com.google.chat.v1.UpdateSpaceReadStateRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
 import com.google.chat.v1.UploadAttachmentRequest;
@@ -1169,6 +1172,88 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/GetSpaceNotificationSetting")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetSpaceNotificationSettingRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=users/*/spaces/*/spaceNotificationSetting}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSpaceNotificationSettingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSpaceNotificationSettingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SpaceNotificationSetting>newBuilder()
+                      .setDefaultInstance(SpaceNotificationSetting.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingMethodDescriptor =
+          ApiMethodDescriptor
+              .<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/UpdateSpaceNotificationSetting")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateSpaceNotificationSettingRequest>newBuilder()
+                      .setPath(
+                          "/v1/{spaceNotificationSetting.name=users/*/spaces/*/spaceNotificationSetting}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSpaceNotificationSettingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "spaceNotificationSetting.name",
+                                request.getSpaceNotificationSetting().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSpaceNotificationSettingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "spaceNotificationSetting",
+                                      request.getSpaceNotificationSetting(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SpaceNotificationSetting>newBuilder()
+                      .setDefaultInstance(SpaceNotificationSetting.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateMessageRequest, Message> createMessageCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse>
@@ -1215,6 +1300,10 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
       listSpaceEventsCallable;
   private final UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsPagedResponse>
       listSpaceEventsPagedCallable;
+  private final UnaryCallable<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingCallable;
+  private final UnaryCallable<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -1558,6 +1647,34 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        getSpaceNotificationSettingTransportSettings =
+            HttpJsonCallSettings
+                .<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>newBuilder()
+                .setMethodDescriptor(getSpaceNotificationSettingMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+        updateSpaceNotificationSettingTransportSettings =
+            HttpJsonCallSettings
+                .<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>newBuilder()
+                .setMethodDescriptor(updateSpaceNotificationSettingMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "space_notification_setting.name",
+                          String.valueOf(request.getSpaceNotificationSetting().getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createMessageCallable =
         callableFactory.createUnaryCallable(
@@ -1674,6 +1791,16 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     this.listSpaceEventsPagedCallable =
         callableFactory.createPagedCallable(
             listSpaceEventsTransportSettings, settings.listSpaceEventsSettings(), clientContext);
+    this.getSpaceNotificationSettingCallable =
+        callableFactory.createUnaryCallable(
+            getSpaceNotificationSettingTransportSettings,
+            settings.getSpaceNotificationSettingSettings(),
+            clientContext);
+    this.updateSpaceNotificationSettingCallable =
+        callableFactory.createUnaryCallable(
+            updateSpaceNotificationSettingTransportSettings,
+            settings.updateSpaceNotificationSettingSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1711,6 +1838,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     methodDescriptors.add(getThreadReadStateMethodDescriptor);
     methodDescriptors.add(getSpaceEventMethodDescriptor);
     methodDescriptors.add(listSpaceEventsMethodDescriptor);
+    methodDescriptors.add(getSpaceNotificationSettingMethodDescriptor);
+    methodDescriptors.add(updateSpaceNotificationSettingMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1892,6 +2021,18 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   public UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsPagedResponse>
       listSpaceEventsPagedCallable() {
     return listSpaceEventsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingCallable() {
+    return getSpaceNotificationSettingCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingCallable() {
+    return updateSpaceNotificationSettingCallable;
   }
 
   @Override

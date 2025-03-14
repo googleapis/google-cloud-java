@@ -28,6 +28,7 @@ package com.google.cloud.dataplex.v1;
  *
  * Protobuf type {@code google.cloud.dataplex.v1.GetDataTaxonomyRequest}
  */
+@java.lang.Deprecated
 public final class GetDataTaxonomyRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.GetDataTaxonomyRequest)
@@ -68,13 +69,6 @@ public final class GetDataTaxonomyRequest extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
   /**
-   *
-   *
-   * <pre>
-   * Required. The resource name of the DataTaxonomy:
-   * projects/{project_number}/locations/{location_id}/dataTaxonomies/{data_taxonomy_id}
-   * </pre>
-   *
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -94,13 +88,6 @@ public final class GetDataTaxonomyRequest extends com.google.protobuf.GeneratedM
     }
   }
   /**
-   *
-   *
-   * <pre>
-   * Required. The resource name of the DataTaxonomy:
-   * projects/{project_number}/locations/{location_id}/dataTaxonomies/{data_taxonomy_id}
-   * </pre>
-   *
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -464,13 +451,6 @@ public final class GetDataTaxonomyRequest extends com.google.protobuf.GeneratedM
 
     private java.lang.Object name_ = "";
     /**
-     *
-     *
-     * <pre>
-     * Required. The resource name of the DataTaxonomy:
-     * projects/{project_number}/locations/{location_id}/dataTaxonomies/{data_taxonomy_id}
-     * </pre>
-     *
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -489,13 +469,6 @@ public final class GetDataTaxonomyRequest extends com.google.protobuf.GeneratedM
       }
     }
     /**
-     *
-     *
-     * <pre>
-     * Required. The resource name of the DataTaxonomy:
-     * projects/{project_number}/locations/{location_id}/dataTaxonomies/{data_taxonomy_id}
-     * </pre>
-     *
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -514,13 +487,6 @@ public final class GetDataTaxonomyRequest extends com.google.protobuf.GeneratedM
       }
     }
     /**
-     *
-     *
-     * <pre>
-     * Required. The resource name of the DataTaxonomy:
-     * projects/{project_number}/locations/{location_id}/dataTaxonomies/{data_taxonomy_id}
-     * </pre>
-     *
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -538,13 +504,6 @@ public final class GetDataTaxonomyRequest extends com.google.protobuf.GeneratedM
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * Required. The resource name of the DataTaxonomy:
-     * projects/{project_number}/locations/{location_id}/dataTaxonomies/{data_taxonomy_id}
-     * </pre>
-     *
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -558,13 +517,6 @@ public final class GetDataTaxonomyRequest extends com.google.protobuf.GeneratedM
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * Required. The resource name of the DataTaxonomy:
-     * projects/{project_number}/locations/{location_id}/dataTaxonomies/{data_taxonomy_id}
-     * </pre>
-     *
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>

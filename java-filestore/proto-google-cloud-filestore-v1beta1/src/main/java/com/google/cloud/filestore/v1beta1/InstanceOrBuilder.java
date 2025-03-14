@@ -656,11 +656,13 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Directory Services configuration for Kerberos-based authentication.
-   * Should only be set if protocol is "NFS_V4_1".
+   * Optional. Directory Services configuration for Kerberos-based
+   * authentication. Should only be set if protocol is "NFS_V4_1".
    * </pre>
    *
-   * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+   * <code>
+   * .google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the directoryServices field is set.
    */
@@ -669,11 +671,13 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Directory Services configuration for Kerberos-based authentication.
-   * Should only be set if protocol is "NFS_V4_1".
+   * Optional. Directory Services configuration for Kerberos-based
+   * authentication. Should only be set if protocol is "NFS_V4_1".
    * </pre>
    *
-   * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+   * <code>
+   * .google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The directoryServices.
    */
@@ -682,12 +686,306 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Directory Services configuration for Kerberos-based authentication.
-   * Should only be set if protocol is "NFS_V4_1".
+   * Optional. Directory Services configuration for Kerberos-based
+   * authentication. Should only be set if protocol is "NFS_V4_1".
    * </pre>
    *
-   * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+   * <code>
+   * .google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.filestore.v1beta1.DirectoryServicesConfigOrBuilder
       getDirectoryServicesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Replication configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Replication replication = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the replication field is set.
+   */
+  boolean hasReplication();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Replication configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Replication replication = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The replication.
+   */
+  com.google.cloud.filestore.v1beta1.Replication getReplication();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Replication configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Replication replication = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.filestore.v1beta1.ReplicationOrBuilder getReplicationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag key-value pairs bound to this
+   * resource. Each key must be a namespaced name and each value a short name.
+   * Example:
+   * "123456789012/environment" : "production",
+   * "123456789013/costCenter" : "marketing"
+   * See the documentation for more information:
+   * - Namespaced name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+   * - Short name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag key-value pairs bound to this
+   * resource. Each key must be a namespaced name and each value a short name.
+   * Example:
+   * "123456789012/environment" : "production",
+   * "123456789013/costCenter" : "marketing"
+   * See the documentation for more information:
+   * - Namespaced name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+   * - Short name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsTags(java.lang.String key);
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getTags();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag key-value pairs bound to this
+   * resource. Each key must be a namespaced name and each value a short name.
+   * Example:
+   * "123456789012/environment" : "production",
+   * "123456789013/costCenter" : "marketing"
+   * See the documentation for more information:
+   * - Namespaced name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+   * - Short name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag key-value pairs bound to this
+   * resource. Each key must be a namespaced name and each value a short name.
+   * Example:
+   * "123456789012/environment" : "production",
+   * "123456789013/costCenter" : "marketing"
+   * See the documentation for more information:
+   * - Namespaced name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+   * - Short name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag key-value pairs bound to this
+   * resource. Each key must be a namespaced name and each value a short name.
+   * Example:
+   * "123456789012/environment" : "production",
+   * "123456789013/costCenter" : "marketing"
+   * See the documentation for more information:
+   * - Namespaced name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key
+   * - Short name:
+   * https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 27 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getTagsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether this instance supports configuring its
+   * performance. If true, the user can configure the instance's performance by
+   * using the 'performance_config' field.
+   * </pre>
+   *
+   * <code>bool custom_performance_supported = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The customPerformanceSupported.
+   */
+  boolean getCustomPerformanceSupported();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to configure performance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Instance.PerformanceConfig performance_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the performanceConfig field is set.
+   */
+  boolean hasPerformanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to configure performance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Instance.PerformanceConfig performance_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The performanceConfig.
+   */
+  com.google.cloud.filestore.v1beta1.Instance.PerformanceConfig getPerformanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to configure performance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Instance.PerformanceConfig performance_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.filestore.v1beta1.Instance.PerformanceConfigOrBuilder
+      getPerformanceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Used for getting performance limits.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Instance.PerformanceLimits performance_limits = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the performanceLimits field is set.
+   */
+  boolean hasPerformanceLimits();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Used for getting performance limits.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Instance.PerformanceLimits performance_limits = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The performanceLimits.
+   */
+  com.google.cloud.filestore.v1beta1.Instance.PerformanceLimits getPerformanceLimits();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Used for getting performance limits.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Instance.PerformanceLimits performance_limits = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.filestore.v1beta1.Instance.PerformanceLimitsOrBuilder
+      getPerformanceLimitsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the instance is protected against deletion.
+   * </pre>
+   *
+   * <code>bool deletion_protection_enabled = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The deletionProtectionEnabled.
+   */
+  boolean getDeletionProtectionEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The reason for enabling deletion protection.
+   * </pre>
+   *
+   * <code>string deletion_protection_reason = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The deletionProtectionReason.
+   */
+  java.lang.String getDeletionProtectionReason();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The reason for enabling deletion protection.
+   * </pre>
+   *
+   * <code>string deletion_protection_reason = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for deletionProtectionReason.
+   */
+  com.google.protobuf.ByteString getDeletionProtectionReasonBytes();
 }

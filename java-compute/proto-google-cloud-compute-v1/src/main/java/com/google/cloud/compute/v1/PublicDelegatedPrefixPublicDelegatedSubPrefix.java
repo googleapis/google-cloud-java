@@ -113,6 +113,16 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * <code>EXTERNAL_IPV6_FORWARDING_RULE_CREATION = 398684356;</code>
      */
     EXTERNAL_IPV6_FORWARDING_RULE_CREATION(398684356),
+    /**
+     *
+     *
+     * <pre>
+     * The public delegated prefix is used for creating dual-mode subnetworks only. Such prefixes cannot set publicDelegatedSubPrefixes.
+     * </pre>
+     *
+     * <code>EXTERNAL_IPV6_SUBNETWORK_CREATION = 61198284;</code>
+     */
+    EXTERNAL_IPV6_SUBNETWORK_CREATION(61198284),
     UNRECOGNIZED(-1),
     ;
 
@@ -146,6 +156,16 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * <code>EXTERNAL_IPV6_FORWARDING_RULE_CREATION = 398684356;</code>
      */
     public static final int EXTERNAL_IPV6_FORWARDING_RULE_CREATION_VALUE = 398684356;
+    /**
+     *
+     *
+     * <pre>
+     * The public delegated prefix is used for creating dual-mode subnetworks only. Such prefixes cannot set publicDelegatedSubPrefixes.
+     * </pre>
+     *
+     * <code>EXTERNAL_IPV6_SUBNETWORK_CREATION = 61198284;</code>
+     */
+    public static final int EXTERNAL_IPV6_SUBNETWORK_CREATION_VALUE = 61198284;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -177,6 +197,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
           return DELEGATION;
         case 398684356:
           return EXTERNAL_IPV6_FORWARDING_RULE_CREATION;
+        case 61198284:
+          return EXTERNAL_IPV6_SUBNETWORK_CREATION;
         default:
           return null;
       }

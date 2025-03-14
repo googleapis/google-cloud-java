@@ -21,8 +21,9 @@
  *
  * <p>======================= DataCatalogClient =======================
  *
- * <p>Service Description: Data Catalog API service allows clients to discover, understand, and
- * manage their data.
+ * <p>Service Description: Deprecated: Please use Dataplex Catalog instead.
+ *
+ * <p>Data Catalog API service allows clients to discover, understand, and manage their data.
  *
  * <p>Sample for DataCatalogClient:
  *

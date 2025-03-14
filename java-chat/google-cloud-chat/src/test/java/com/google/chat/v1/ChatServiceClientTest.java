@@ -2226,4 +2226,127 @@ public class ChatServiceClientTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void getSpaceNotificationSettingTest() throws Exception {
+    SpaceNotificationSetting expectedResponse =
+        SpaceNotificationSetting.newBuilder()
+            .setName(SpaceNotificationSettingName.of("[USER]", "[SPACE]").toString())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    SpaceNotificationSettingName name = SpaceNotificationSettingName.of("[USER]", "[SPACE]");
+
+    SpaceNotificationSetting actualResponse = client.getSpaceNotificationSetting(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSpaceNotificationSettingRequest actualRequest =
+        ((GetSpaceNotificationSettingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSpaceNotificationSettingExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      SpaceNotificationSettingName name = SpaceNotificationSettingName.of("[USER]", "[SPACE]");
+      client.getSpaceNotificationSetting(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSpaceNotificationSettingTest2() throws Exception {
+    SpaceNotificationSetting expectedResponse =
+        SpaceNotificationSetting.newBuilder()
+            .setName(SpaceNotificationSettingName.of("[USER]", "[SPACE]").toString())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    SpaceNotificationSetting actualResponse = client.getSpaceNotificationSetting(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSpaceNotificationSettingRequest actualRequest =
+        ((GetSpaceNotificationSettingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSpaceNotificationSettingExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSpaceNotificationSetting(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSpaceNotificationSettingTest() throws Exception {
+    SpaceNotificationSetting expectedResponse =
+        SpaceNotificationSetting.newBuilder()
+            .setName(SpaceNotificationSettingName.of("[USER]", "[SPACE]").toString())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    SpaceNotificationSetting spaceNotificationSetting =
+        SpaceNotificationSetting.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    SpaceNotificationSetting actualResponse =
+        client.updateSpaceNotificationSetting(spaceNotificationSetting, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateSpaceNotificationSettingRequest actualRequest =
+        ((UpdateSpaceNotificationSettingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(spaceNotificationSetting, actualRequest.getSpaceNotificationSetting());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateSpaceNotificationSettingExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      SpaceNotificationSetting spaceNotificationSetting =
+          SpaceNotificationSetting.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSpaceNotificationSetting(spaceNotificationSetting, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

@@ -32,6 +32,8 @@ import com.google.maps.fleetengine.delivery.v1.BatchCreateTasksRequest;
 import com.google.maps.fleetengine.delivery.v1.BatchCreateTasksResponse;
 import com.google.maps.fleetengine.delivery.v1.CreateDeliveryVehicleRequest;
 import com.google.maps.fleetengine.delivery.v1.CreateTaskRequest;
+import com.google.maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest;
+import com.google.maps.fleetengine.delivery.v1.DeleteTaskRequest;
 import com.google.maps.fleetengine.delivery.v1.DeliveryVehicle;
 import com.google.maps.fleetengine.delivery.v1.GetDeliveryVehicleRequest;
 import com.google.maps.fleetengine.delivery.v1.GetTaskRequest;
@@ -44,6 +46,7 @@ import com.google.maps.fleetengine.delivery.v1.Task;
 import com.google.maps.fleetengine.delivery.v1.TaskTrackingInfo;
 import com.google.maps.fleetengine.delivery.v1.UpdateDeliveryVehicleRequest;
 import com.google.maps.fleetengine.delivery.v1.UpdateTaskRequest;
+import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -77,6 +80,17 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDeliveryVehicleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeliveryVehicle.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteDeliveryVehicleRequest, Empty>
+      deleteDeliveryVehicleMethodDescriptor =
+          MethodDescriptor.<DeleteDeliveryVehicleRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "maps.fleetengine.delivery.v1.DeliveryService/DeleteDeliveryVehicle")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteDeliveryVehicleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<UpdateDeliveryVehicleRequest, DeliveryVehicle>
@@ -115,6 +129,14 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
           .setFullMethodName("maps.fleetengine.delivery.v1.DeliveryService/GetTask")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<DeleteTaskRequest, Empty> deleteTaskMethodDescriptor =
+      MethodDescriptor.<DeleteTaskRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("maps.fleetengine.delivery.v1.DeliveryService/DeleteTask")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteTaskRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
 
   private static final MethodDescriptor<UpdateTaskRequest, Task> updateTaskMethodDescriptor =
@@ -160,12 +182,14 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
       createDeliveryVehicleCallable;
   private final UnaryCallable<GetDeliveryVehicleRequest, DeliveryVehicle>
       getDeliveryVehicleCallable;
+  private final UnaryCallable<DeleteDeliveryVehicleRequest, Empty> deleteDeliveryVehicleCallable;
   private final UnaryCallable<UpdateDeliveryVehicleRequest, DeliveryVehicle>
       updateDeliveryVehicleCallable;
   private final UnaryCallable<BatchCreateTasksRequest, BatchCreateTasksResponse>
       batchCreateTasksCallable;
   private final UnaryCallable<CreateTaskRequest, Task> createTaskCallable;
   private final UnaryCallable<GetTaskRequest, Task> getTaskCallable;
+  private final UnaryCallable<DeleteTaskRequest, Empty> deleteTaskCallable;
   private final UnaryCallable<UpdateTaskRequest, Task> updateTaskCallable;
   private final UnaryCallable<ListTasksRequest, ListTasksResponse> listTasksCallable;
   private final UnaryCallable<ListTasksRequest, ListTasksPagedResponse> listTasksPagedCallable;
@@ -184,6 +208,8 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
       PathTemplate.create("{provider_id=providers/*}");
   private static final PathTemplate GET_DELIVERY_VEHICLE_0_PATH_TEMPLATE =
       PathTemplate.create("{provider_id=providers/*}");
+  private static final PathTemplate DELETE_DELIVERY_VEHICLE_0_PATH_TEMPLATE =
+      PathTemplate.create("{provider_id=providers/*}");
   private static final PathTemplate UPDATE_DELIVERY_VEHICLE_0_PATH_TEMPLATE =
       PathTemplate.create("{provider_id=providers/*}");
   private static final PathTemplate BATCH_CREATE_TASKS_0_PATH_TEMPLATE =
@@ -191,6 +217,8 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
   private static final PathTemplate CREATE_TASK_0_PATH_TEMPLATE =
       PathTemplate.create("{provider_id=providers/*}");
   private static final PathTemplate GET_TASK_0_PATH_TEMPLATE =
+      PathTemplate.create("{provider_id=providers/*}");
+  private static final PathTemplate DELETE_TASK_0_PATH_TEMPLATE =
       PathTemplate.create("{provider_id=providers/*}");
   private static final PathTemplate UPDATE_TASK_0_PATH_TEMPLATE =
       PathTemplate.create("{provider_id=providers/*}");
@@ -267,6 +295,17 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<DeleteDeliveryVehicleRequest, Empty> deleteDeliveryVehicleTransportSettings =
+        GrpcCallSettings.<DeleteDeliveryVehicleRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteDeliveryVehicleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      request.getName(), "provider_id", DELETE_DELIVERY_VEHICLE_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<UpdateDeliveryVehicleRequest, DeliveryVehicle>
         updateDeliveryVehicleTransportSettings =
             GrpcCallSettings.<UpdateDeliveryVehicleRequest, DeliveryVehicle>newBuilder()
@@ -312,6 +351,16 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add(request.getName(), "provider_id", GET_TASK_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteTaskRequest, Empty> deleteTaskTransportSettings =
+        GrpcCallSettings.<DeleteTaskRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTaskMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "provider_id", DELETE_TASK_0_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -375,6 +424,11 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
             getDeliveryVehicleTransportSettings,
             settings.getDeliveryVehicleSettings(),
             clientContext);
+    this.deleteDeliveryVehicleCallable =
+        callableFactory.createUnaryCallable(
+            deleteDeliveryVehicleTransportSettings,
+            settings.deleteDeliveryVehicleSettings(),
+            clientContext);
     this.updateDeliveryVehicleCallable =
         callableFactory.createUnaryCallable(
             updateDeliveryVehicleTransportSettings,
@@ -389,6 +443,9 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
     this.getTaskCallable =
         callableFactory.createUnaryCallable(
             getTaskTransportSettings, settings.getTaskSettings(), clientContext);
+    this.deleteTaskCallable =
+        callableFactory.createUnaryCallable(
+            deleteTaskTransportSettings, settings.deleteTaskSettings(), clientContext);
     this.updateTaskCallable =
         callableFactory.createUnaryCallable(
             updateTaskTransportSettings, settings.updateTaskSettings(), clientContext);
@@ -434,6 +491,11 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
   }
 
   @Override
+  public UnaryCallable<DeleteDeliveryVehicleRequest, Empty> deleteDeliveryVehicleCallable() {
+    return deleteDeliveryVehicleCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateDeliveryVehicleRequest, DeliveryVehicle>
       updateDeliveryVehicleCallable() {
     return updateDeliveryVehicleCallable;
@@ -453,6 +515,11 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
   @Override
   public UnaryCallable<GetTaskRequest, Task> getTaskCallable() {
     return getTaskCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteTaskRequest, Empty> deleteTaskCallable() {
+    return deleteTaskCallable;
   }
 
   @Override

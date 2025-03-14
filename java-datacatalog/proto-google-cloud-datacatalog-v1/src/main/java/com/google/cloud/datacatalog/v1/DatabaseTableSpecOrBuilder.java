@@ -97,7 +97,7 @@ public interface DatabaseTableSpecOrBuilder
    *
    *
    * <pre>
-   * Spec what aplies to tables that are actually views.
+   * Spec what applies to tables that are actually views.
    * Not set for "real" tables.
    * </pre>
    *
@@ -111,7 +111,7 @@ public interface DatabaseTableSpecOrBuilder
    *
    *
    * <pre>
-   * Spec what aplies to tables that are actually views.
+   * Spec what applies to tables that are actually views.
    * Not set for "real" tables.
    * </pre>
    *
@@ -125,7 +125,7 @@ public interface DatabaseTableSpecOrBuilder
    *
    *
    * <pre>
-   * Spec what aplies to tables that are actually views.
+   * Spec what applies to tables that are actually views.
    * Not set for "real" tables.
    * </pre>
    *

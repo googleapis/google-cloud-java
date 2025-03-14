@@ -72,8 +72,8 @@ public final class GetQuotaAdjusterSettingsRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Name of the config. Required to be “settings”, as only a single
-   * setting per container will be supported initially.
+   * Required. Name of the `quotaAdjusterSettings` configuration. Only a single
+   * setting per project is supported.
    * </pre>
    *
    * <code>
@@ -98,8 +98,8 @@ public final class GetQuotaAdjusterSettingsRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Name of the config. Required to be “settings”, as only a single
-   * setting per container will be supported initially.
+   * Required. Name of the `quotaAdjusterSettings` configuration. Only a single
+   * setting per project is supported.
    * </pre>
    *
    * <code>
@@ -475,8 +475,8 @@ public final class GetQuotaAdjusterSettingsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Name of the config. Required to be “settings”, as only a single
-     * setting per container will be supported initially.
+     * Required. Name of the `quotaAdjusterSettings` configuration. Only a single
+     * setting per project is supported.
      * </pre>
      *
      * <code>
@@ -500,8 +500,8 @@ public final class GetQuotaAdjusterSettingsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Name of the config. Required to be “settings”, as only a single
-     * setting per container will be supported initially.
+     * Required. Name of the `quotaAdjusterSettings` configuration. Only a single
+     * setting per project is supported.
      * </pre>
      *
      * <code>
@@ -525,8 +525,8 @@ public final class GetQuotaAdjusterSettingsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Name of the config. Required to be “settings”, as only a single
-     * setting per container will be supported initially.
+     * Required. Name of the `quotaAdjusterSettings` configuration. Only a single
+     * setting per project is supported.
      * </pre>
      *
      * <code>
@@ -549,8 +549,8 @@ public final class GetQuotaAdjusterSettingsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Name of the config. Required to be “settings”, as only a single
-     * setting per container will be supported initially.
+     * Required. Name of the `quotaAdjusterSettings` configuration. Only a single
+     * setting per project is supported.
      * </pre>
      *
      * <code>
@@ -569,8 +569,8 @@ public final class GetQuotaAdjusterSettingsRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Name of the config. Required to be “settings”, as only a single
-     * setting per container will be supported initially.
+     * Required. Name of the `quotaAdjusterSettings` configuration. Only a single
+     * setting per project is supported.
      * </pre>
      *
      * <code>

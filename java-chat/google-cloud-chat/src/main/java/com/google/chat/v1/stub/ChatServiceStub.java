@@ -41,6 +41,7 @@ import com.google.chat.v1.GetAttachmentRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
 import com.google.chat.v1.GetSpaceEventRequest;
+import com.google.chat.v1.GetSpaceNotificationSettingRequest;
 import com.google.chat.v1.GetSpaceReadStateRequest;
 import com.google.chat.v1.GetSpaceRequest;
 import com.google.chat.v1.GetThreadReadStateRequest;
@@ -62,10 +63,12 @@ import com.google.chat.v1.SearchSpacesResponse;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
 import com.google.chat.v1.SpaceEvent;
+import com.google.chat.v1.SpaceNotificationSetting;
 import com.google.chat.v1.SpaceReadState;
 import com.google.chat.v1.ThreadReadState;
 import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
+import com.google.chat.v1.UpdateSpaceNotificationSettingRequest;
 import com.google.chat.v1.UpdateSpaceReadStateRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
 import com.google.chat.v1.UploadAttachmentRequest;
@@ -225,6 +228,18 @@ public abstract class ChatServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsResponse> listSpaceEventsCallable() {
     throw new UnsupportedOperationException("Not implemented: listSpaceEventsCallable()");
+  }
+
+  public UnaryCallable<GetSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      getSpaceNotificationSettingCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getSpaceNotificationSettingCallable()");
+  }
+
+  public UnaryCallable<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
+      updateSpaceNotificationSettingCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateSpaceNotificationSettingCallable()");
   }
 
   @Override

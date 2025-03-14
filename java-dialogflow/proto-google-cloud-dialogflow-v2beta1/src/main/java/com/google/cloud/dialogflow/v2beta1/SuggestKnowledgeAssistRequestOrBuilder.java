@@ -113,7 +113,7 @@ public interface SuggestKnowledgeAssistRequestOrBuilder
    *
    * <pre>
    * Optional. The previously suggested query for the given conversation. This
-   * helps identify whether the next suggestion we generate is resonably
+   * helps identify whether the next suggestion we generate is reasonably
    * different from the previous one. This is useful to avoid similar
    * suggestions within the conversation.
    * </pre>
@@ -128,7 +128,7 @@ public interface SuggestKnowledgeAssistRequestOrBuilder
    *
    * <pre>
    * Optional. The previously suggested query for the given conversation. This
-   * helps identify whether the next suggestion we generate is resonably
+   * helps identify whether the next suggestion we generate is reasonably
    * different from the previous one. This is useful to avoid similar
    * suggestions within the conversation.
    * </pre>

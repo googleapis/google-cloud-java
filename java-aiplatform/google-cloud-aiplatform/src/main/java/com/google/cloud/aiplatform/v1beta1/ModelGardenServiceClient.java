@@ -399,6 +399,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *           .setView(PublisherModelView.forNumber(0))
    *           .setIsHuggingFaceModel(true)
    *           .setHuggingFaceToken("huggingFaceToken74062599")
+   *           .setIncludeEquivalentModelGardenModelDeploymentConfigs(true)
    *           .build();
    *   PublisherModel response = modelGardenServiceClient.getPublisherModel(request);
    * }
@@ -431,6 +432,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *           .setView(PublisherModelView.forNumber(0))
    *           .setIsHuggingFaceModel(true)
    *           .setHuggingFaceToken("huggingFaceToken74062599")
+   *           .setIncludeEquivalentModelGardenModelDeploymentConfigs(true)
    *           .build();
    *   ApiFuture<PublisherModel> future =
    *       modelGardenServiceClient.getPublisherModelCallable().futureCall(request);
@@ -720,7 +722,9 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<DeployPublisherModelResponse, DeployPublisherModelOperationMetadata>
       deployPublisherModelAsync(DeployPublisherModelRequest request) {
     return deployPublisherModelOperationCallable().futureCall(request);
@@ -755,7 +759,10 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *   DeployPublisherModelResponse response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<
           DeployPublisherModelRequest,
           DeployPublisherModelResponse,
@@ -793,7 +800,10 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<DeployPublisherModelRequest, Operation>
       deployPublisherModelCallable() {
     return stub.deployPublisherModelCallable();

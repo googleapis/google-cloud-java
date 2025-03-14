@@ -1675,9 +1675,6 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The sync mode for entries.
-     * Only `FULL` mode is supported for entries. All entries in the job's scope
-     * are modified. If an entry exists in Dataplex but isn't included in the
-     * metadata import file, the entry is deleted when you run the metadata job.
      * </pre>
      *
      * <code>
@@ -1692,9 +1689,6 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The sync mode for entries.
-     * Only `FULL` mode is supported for entries. All entries in the job's scope
-     * are modified. If an entry exists in Dataplex but isn't included in the
-     * metadata import file, the entry is deleted when you run the metadata job.
      * </pre>
      *
      * <code>
@@ -1710,9 +1704,6 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The sync mode for aspects.
-     * Only `INCREMENTAL` mode is supported for aspects. An aspect is modified
-     * only if the metadata import file includes a reference to the aspect in
-     * the `update_mask` field and the `aspect_keys` field.
      * </pre>
      *
      * <code>
@@ -1727,9 +1718,6 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The sync mode for aspects.
-     * Only `INCREMENTAL` mode is supported for aspects. An aspect is modified
-     * only if the metadata import file includes a reference to the aspect in
-     * the `update_mask` field and the `aspect_keys` field.
      * </pre>
      *
      * <code>
@@ -1787,7 +1775,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Job specification for a metadata import job
+   * Job specification for a metadata import job.
+   *
+   * You can run the following kinds of metadata import jobs:
+   *
+   * * Full sync of entries with incremental import of their aspects.
+   * Supported for custom entries.
+   * * Incremental import of aspects only. Supported for aspects that belong
+   * to custom entries and system entries. For custom entries, you can modify
+   * both optional aspects and required aspects. For system entries, you can
+   * modify optional aspects.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.MetadataJob.ImportJobSpec}
@@ -1834,7 +1831,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how the entries and aspects in a metadata job are updated.
+     * Specifies how the entries and aspects in a metadata job are updated. For
+     * more information, see [Sync
+     * mode](https://cloud.google.com/dataplex/docs/import-metadata#sync-mode).
      * </pre>
      *
      * Protobuf enum {@code google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.SyncMode}
@@ -1858,6 +1857,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * Dataplex but isn't included in the metadata import file, the resource
        * is deleted when you run the metadata job. Use this mode to perform a
        * full sync of the set of entries in the job scope.
+       *
+       * This sync mode is supported for entries.
        * </pre>
        *
        * <code>FULL = 1;</code>
@@ -1867,9 +1868,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Only the entries and aspects that are explicitly included in the
+       * Only the resources that are explicitly included in the
        * metadata import file are modified. Use this mode to modify a subset of
        * resources while leaving unreferenced resources unchanged.
+       *
+       * This sync mode is supported for aspects.
        * </pre>
        *
        * <code>INCREMENTAL = 2;</code>
@@ -1879,9 +1882,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If entry sync mode is NONE, then the entry-specific fields (apart from
-       * aspects) are not modified and the aspects are modified according to the
-       * aspect_sync_mode
+       * If entry sync mode is `NONE`, then aspects are modified according
+       * to the aspect sync mode. Other metadata that belongs to entries in the
+       * job's scope isn't modified.
+       *
+       * This sync mode is supported for entries.
        * </pre>
        *
        * <code>NONE = 3;</code>
@@ -1908,6 +1913,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * Dataplex but isn't included in the metadata import file, the resource
        * is deleted when you run the metadata job. Use this mode to perform a
        * full sync of the set of entries in the job scope.
+       *
+       * This sync mode is supported for entries.
        * </pre>
        *
        * <code>FULL = 1;</code>
@@ -1917,9 +1924,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Only the entries and aspects that are explicitly included in the
+       * Only the resources that are explicitly included in the
        * metadata import file are modified. Use this mode to modify a subset of
        * resources while leaving unreferenced resources unchanged.
+       *
+       * This sync mode is supported for aspects.
        * </pre>
        *
        * <code>INCREMENTAL = 2;</code>
@@ -1929,9 +1938,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If entry sync mode is NONE, then the entry-specific fields (apart from
-       * aspects) are not modified and the aspects are modified according to the
-       * aspect_sync_mode
+       * If entry sync mode is `NONE`, then aspects are modified according
+       * to the aspect sync mode. Other metadata that belongs to entries in the
+       * job's scope isn't modified.
+       *
+       * This sync mode is supported for entries.
        * </pre>
        *
        * <code>NONE = 3;</code>
@@ -2218,8 +2229,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * Required. The entry group that is in scope for the import job,
        * specified as a relative resource name in the format
        * `projects/{project_number_or_id}/locations/{location_id}/entryGroups/{entry_group_id}`.
-       * Only entries that belong to the specified entry group are affected by
-       * the job.
+       * Only entries and aspects that belong to the specified entry group are
+       * affected by the job.
        *
        * Must contain exactly one element. The entry group and the job
        * must be in the same location.
@@ -2239,8 +2250,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * Required. The entry group that is in scope for the import job,
        * specified as a relative resource name in the format
        * `projects/{project_number_or_id}/locations/{location_id}/entryGroups/{entry_group_id}`.
-       * Only entries that belong to the specified entry group are affected by
-       * the job.
+       * Only entries and aspects that belong to the specified entry group are
+       * affected by the job.
        *
        * Must contain exactly one element. The entry group and the job
        * must be in the same location.
@@ -2260,8 +2271,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * Required. The entry group that is in scope for the import job,
        * specified as a relative resource name in the format
        * `projects/{project_number_or_id}/locations/{location_id}/entryGroups/{entry_group_id}`.
-       * Only entries that belong to the specified entry group are affected by
-       * the job.
+       * Only entries and aspects that belong to the specified entry group are
+       * affected by the job.
        *
        * Must contain exactly one element. The entry group and the job
        * must be in the same location.
@@ -2282,8 +2293,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * Required. The entry group that is in scope for the import job,
        * specified as a relative resource name in the format
        * `projects/{project_number_or_id}/locations/{location_id}/entryGroups/{entry_group_id}`.
-       * Only entries that belong to the specified entry group are affected by
-       * the job.
+       * Only entries and aspects that belong to the specified entry group are
+       * affected by the job.
        *
        * Must contain exactly one element. The entry group and the job
        * must be in the same location.
@@ -2305,7 +2316,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * Required. The entry types that are in scope for the import job,
        * specified as relative resource names in the format
        * `projects/{project_number_or_id}/locations/{location_id}/entryTypes/{entry_type_id}`.
-       * The job modifies only the entries that belong to these entry types.
+       * The job modifies only the entries and aspects that belong to these
+       * entry types.
        *
        * If the metadata import file attempts to modify an entry whose type
        * isn't included in this list, the import job is halted before modifying
@@ -2329,7 +2341,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * Required. The entry types that are in scope for the import job,
        * specified as relative resource names in the format
        * `projects/{project_number_or_id}/locations/{location_id}/entryTypes/{entry_type_id}`.
-       * The job modifies only the entries that belong to these entry types.
+       * The job modifies only the entries and aspects that belong to these
+       * entry types.
        *
        * If the metadata import file attempts to modify an entry whose type
        * isn't included in this list, the import job is halted before modifying
@@ -2353,7 +2366,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * Required. The entry types that are in scope for the import job,
        * specified as relative resource names in the format
        * `projects/{project_number_or_id}/locations/{location_id}/entryTypes/{entry_type_id}`.
-       * The job modifies only the entries that belong to these entry types.
+       * The job modifies only the entries and aspects that belong to these
+       * entry types.
        *
        * If the metadata import file attempts to modify an entry whose type
        * isn't included in this list, the import job is halted before modifying
@@ -2378,7 +2392,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * Required. The entry types that are in scope for the import job,
        * specified as relative resource names in the format
        * `projects/{project_number_or_id}/locations/{location_id}/entryTypes/{entry_type_id}`.
-       * The job modifies only the entries that belong to these entry types.
+       * The job modifies only the entries and aspects that belong to these
+       * entry types.
        *
        * If the metadata import file attempts to modify an entry whose type
        * isn't included in this list, the import job is halted before modifying
@@ -2406,6 +2421,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * `projects/{project_number_or_id}/locations/{location_id}/aspectTypes/{aspect_type_id}`.
        * The job modifies only the aspects that belong to these aspect types.
        *
+       * This field is required when creating an aspect-only import job.
+       *
        * If the metadata import file attempts to modify an aspect whose type
        * isn't included in this list, the import job is halted before modifying
        * any entries or aspects.
@@ -2429,6 +2446,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * specified as relative resource names in the format
        * `projects/{project_number_or_id}/locations/{location_id}/aspectTypes/{aspect_type_id}`.
        * The job modifies only the aspects that belong to these aspect types.
+       *
+       * This field is required when creating an aspect-only import job.
        *
        * If the metadata import file attempts to modify an aspect whose type
        * isn't included in this list, the import job is halted before modifying
@@ -2454,6 +2473,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * `projects/{project_number_or_id}/locations/{location_id}/aspectTypes/{aspect_type_id}`.
        * The job modifies only the aspects that belong to these aspect types.
        *
+       * This field is required when creating an aspect-only import job.
+       *
        * If the metadata import file attempts to modify an aspect whose type
        * isn't included in this list, the import job is halted before modifying
        * any entries or aspects.
@@ -2478,6 +2499,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * specified as relative resource names in the format
        * `projects/{project_number_or_id}/locations/{location_id}/aspectTypes/{aspect_type_id}`.
        * The job modifies only the aspects that belong to these aspect types.
+       *
+       * This field is required when creating an aspect-only import job.
        *
        * If the metadata import file attempts to modify an aspect whose type
        * isn't included in this list, the import job is halted before modifying
@@ -2555,8 +2578,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * Required. The entry group that is in scope for the import job,
        * specified as a relative resource name in the format
        * `projects/{project_number_or_id}/locations/{location_id}/entryGroups/{entry_group_id}`.
-       * Only entries that belong to the specified entry group are affected by
-       * the job.
+       * Only entries and aspects that belong to the specified entry group are
+       * affected by the job.
        *
        * Must contain exactly one element. The entry group and the job
        * must be in the same location.
@@ -2578,8 +2601,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * Required. The entry group that is in scope for the import job,
        * specified as a relative resource name in the format
        * `projects/{project_number_or_id}/locations/{location_id}/entryGroups/{entry_group_id}`.
-       * Only entries that belong to the specified entry group are affected by
-       * the job.
+       * Only entries and aspects that belong to the specified entry group are
+       * affected by the job.
        *
        * Must contain exactly one element. The entry group and the job
        * must be in the same location.
@@ -2601,8 +2624,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * Required. The entry group that is in scope for the import job,
        * specified as a relative resource name in the format
        * `projects/{project_number_or_id}/locations/{location_id}/entryGroups/{entry_group_id}`.
-       * Only entries that belong to the specified entry group are affected by
-       * the job.
+       * Only entries and aspects that belong to the specified entry group are
+       * affected by the job.
        *
        * Must contain exactly one element. The entry group and the job
        * must be in the same location.
@@ -2625,8 +2648,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * Required. The entry group that is in scope for the import job,
        * specified as a relative resource name in the format
        * `projects/{project_number_or_id}/locations/{location_id}/entryGroups/{entry_group_id}`.
-       * Only entries that belong to the specified entry group are affected by
-       * the job.
+       * Only entries and aspects that belong to the specified entry group are
+       * affected by the job.
        *
        * Must contain exactly one element. The entry group and the job
        * must be in the same location.
@@ -2655,7 +2678,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * Required. The entry types that are in scope for the import job,
        * specified as relative resource names in the format
        * `projects/{project_number_or_id}/locations/{location_id}/entryTypes/{entry_type_id}`.
-       * The job modifies only the entries that belong to these entry types.
+       * The job modifies only the entries and aspects that belong to these
+       * entry types.
        *
        * If the metadata import file attempts to modify an entry whose type
        * isn't included in this list, the import job is halted before modifying
@@ -2681,7 +2705,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * Required. The entry types that are in scope for the import job,
        * specified as relative resource names in the format
        * `projects/{project_number_or_id}/locations/{location_id}/entryTypes/{entry_type_id}`.
-       * The job modifies only the entries that belong to these entry types.
+       * The job modifies only the entries and aspects that belong to these
+       * entry types.
        *
        * If the metadata import file attempts to modify an entry whose type
        * isn't included in this list, the import job is halted before modifying
@@ -2707,7 +2732,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * Required. The entry types that are in scope for the import job,
        * specified as relative resource names in the format
        * `projects/{project_number_or_id}/locations/{location_id}/entryTypes/{entry_type_id}`.
-       * The job modifies only the entries that belong to these entry types.
+       * The job modifies only the entries and aspects that belong to these
+       * entry types.
        *
        * If the metadata import file attempts to modify an entry whose type
        * isn't included in this list, the import job is halted before modifying
@@ -2734,7 +2760,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * Required. The entry types that are in scope for the import job,
        * specified as relative resource names in the format
        * `projects/{project_number_or_id}/locations/{location_id}/entryTypes/{entry_type_id}`.
-       * The job modifies only the entries that belong to these entry types.
+       * The job modifies only the entries and aspects that belong to these
+       * entry types.
        *
        * If the metadata import file attempts to modify an entry whose type
        * isn't included in this list, the import job is halted before modifying
@@ -2769,6 +2796,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * `projects/{project_number_or_id}/locations/{location_id}/aspectTypes/{aspect_type_id}`.
        * The job modifies only the aspects that belong to these aspect types.
        *
+       * This field is required when creating an aspect-only import job.
+       *
        * If the metadata import file attempts to modify an aspect whose type
        * isn't included in this list, the import job is halted before modifying
        * any entries or aspects.
@@ -2794,6 +2823,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * specified as relative resource names in the format
        * `projects/{project_number_or_id}/locations/{location_id}/aspectTypes/{aspect_type_id}`.
        * The job modifies only the aspects that belong to these aspect types.
+       *
+       * This field is required when creating an aspect-only import job.
        *
        * If the metadata import file attempts to modify an aspect whose type
        * isn't included in this list, the import job is halted before modifying
@@ -2821,6 +2852,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * `projects/{project_number_or_id}/locations/{location_id}/aspectTypes/{aspect_type_id}`.
        * The job modifies only the aspects that belong to these aspect types.
        *
+       * This field is required when creating an aspect-only import job.
+       *
        * If the metadata import file attempts to modify an aspect whose type
        * isn't included in this list, the import job is halted before modifying
        * any entries or aspects.
@@ -2847,6 +2880,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * specified as relative resource names in the format
        * `projects/{project_number_or_id}/locations/{location_id}/aspectTypes/{aspect_type_id}`.
        * The job modifies only the aspects that belong to these aspect types.
+       *
+       * This field is required when creating an aspect-only import job.
        *
        * If the metadata import file attempts to modify an aspect whose type
        * isn't included in this list, the import job is halted before modifying
@@ -3334,8 +3369,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * Required. The entry group that is in scope for the import job,
          * specified as a relative resource name in the format
          * `projects/{project_number_or_id}/locations/{location_id}/entryGroups/{entry_group_id}`.
-         * Only entries that belong to the specified entry group are affected by
-         * the job.
+         * Only entries and aspects that belong to the specified entry group are
+         * affected by the job.
          *
          * Must contain exactly one element. The entry group and the job
          * must be in the same location.
@@ -3358,8 +3393,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * Required. The entry group that is in scope for the import job,
          * specified as a relative resource name in the format
          * `projects/{project_number_or_id}/locations/{location_id}/entryGroups/{entry_group_id}`.
-         * Only entries that belong to the specified entry group are affected by
-         * the job.
+         * Only entries and aspects that belong to the specified entry group are
+         * affected by the job.
          *
          * Must contain exactly one element. The entry group and the job
          * must be in the same location.
@@ -3381,8 +3416,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * Required. The entry group that is in scope for the import job,
          * specified as a relative resource name in the format
          * `projects/{project_number_or_id}/locations/{location_id}/entryGroups/{entry_group_id}`.
-         * Only entries that belong to the specified entry group are affected by
-         * the job.
+         * Only entries and aspects that belong to the specified entry group are
+         * affected by the job.
          *
          * Must contain exactly one element. The entry group and the job
          * must be in the same location.
@@ -3405,8 +3440,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * Required. The entry group that is in scope for the import job,
          * specified as a relative resource name in the format
          * `projects/{project_number_or_id}/locations/{location_id}/entryGroups/{entry_group_id}`.
-         * Only entries that belong to the specified entry group are affected by
-         * the job.
+         * Only entries and aspects that belong to the specified entry group are
+         * affected by the job.
          *
          * Must contain exactly one element. The entry group and the job
          * must be in the same location.
@@ -3429,8 +3464,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * Required. The entry group that is in scope for the import job,
          * specified as a relative resource name in the format
          * `projects/{project_number_or_id}/locations/{location_id}/entryGroups/{entry_group_id}`.
-         * Only entries that belong to the specified entry group are affected by
-         * the job.
+         * Only entries and aspects that belong to the specified entry group are
+         * affected by the job.
          *
          * Must contain exactly one element. The entry group and the job
          * must be in the same location.
@@ -3461,8 +3496,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * Required. The entry group that is in scope for the import job,
          * specified as a relative resource name in the format
          * `projects/{project_number_or_id}/locations/{location_id}/entryGroups/{entry_group_id}`.
-         * Only entries that belong to the specified entry group are affected by
-         * the job.
+         * Only entries and aspects that belong to the specified entry group are
+         * affected by the job.
          *
          * Must contain exactly one element. The entry group and the job
          * must be in the same location.
@@ -3492,8 +3527,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * Required. The entry group that is in scope for the import job,
          * specified as a relative resource name in the format
          * `projects/{project_number_or_id}/locations/{location_id}/entryGroups/{entry_group_id}`.
-         * Only entries that belong to the specified entry group are affected by
-         * the job.
+         * Only entries and aspects that belong to the specified entry group are
+         * affected by the job.
          *
          * Must contain exactly one element. The entry group and the job
          * must be in the same location.
@@ -3520,8 +3555,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * Required. The entry group that is in scope for the import job,
          * specified as a relative resource name in the format
          * `projects/{project_number_or_id}/locations/{location_id}/entryGroups/{entry_group_id}`.
-         * Only entries that belong to the specified entry group are affected by
-         * the job.
+         * Only entries and aspects that belong to the specified entry group are
+         * affected by the job.
          *
          * Must contain exactly one element. The entry group and the job
          * must be in the same location.
@@ -3547,8 +3582,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * Required. The entry group that is in scope for the import job,
          * specified as a relative resource name in the format
          * `projects/{project_number_or_id}/locations/{location_id}/entryGroups/{entry_group_id}`.
-         * Only entries that belong to the specified entry group are affected by
-         * the job.
+         * Only entries and aspects that belong to the specified entry group are
+         * affected by the job.
          *
          * Must contain exactly one element. The entry group and the job
          * must be in the same location.
@@ -3589,7 +3624,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * Required. The entry types that are in scope for the import job,
          * specified as relative resource names in the format
          * `projects/{project_number_or_id}/locations/{location_id}/entryTypes/{entry_type_id}`.
-         * The job modifies only the entries that belong to these entry types.
+         * The job modifies only the entries and aspects that belong to these
+         * entry types.
          *
          * If the metadata import file attempts to modify an entry whose type
          * isn't included in this list, the import job is halted before modifying
@@ -3616,7 +3652,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * Required. The entry types that are in scope for the import job,
          * specified as relative resource names in the format
          * `projects/{project_number_or_id}/locations/{location_id}/entryTypes/{entry_type_id}`.
-         * The job modifies only the entries that belong to these entry types.
+         * The job modifies only the entries and aspects that belong to these
+         * entry types.
          *
          * If the metadata import file attempts to modify an entry whose type
          * isn't included in this list, the import job is halted before modifying
@@ -3642,7 +3679,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * Required. The entry types that are in scope for the import job,
          * specified as relative resource names in the format
          * `projects/{project_number_or_id}/locations/{location_id}/entryTypes/{entry_type_id}`.
-         * The job modifies only the entries that belong to these entry types.
+         * The job modifies only the entries and aspects that belong to these
+         * entry types.
          *
          * If the metadata import file attempts to modify an entry whose type
          * isn't included in this list, the import job is halted before modifying
@@ -3669,7 +3707,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * Required. The entry types that are in scope for the import job,
          * specified as relative resource names in the format
          * `projects/{project_number_or_id}/locations/{location_id}/entryTypes/{entry_type_id}`.
-         * The job modifies only the entries that belong to these entry types.
+         * The job modifies only the entries and aspects that belong to these
+         * entry types.
          *
          * If the metadata import file attempts to modify an entry whose type
          * isn't included in this list, the import job is halted before modifying
@@ -3696,7 +3735,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * Required. The entry types that are in scope for the import job,
          * specified as relative resource names in the format
          * `projects/{project_number_or_id}/locations/{location_id}/entryTypes/{entry_type_id}`.
-         * The job modifies only the entries that belong to these entry types.
+         * The job modifies only the entries and aspects that belong to these
+         * entry types.
          *
          * If the metadata import file attempts to modify an entry whose type
          * isn't included in this list, the import job is halted before modifying
@@ -3731,7 +3771,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * Required. The entry types that are in scope for the import job,
          * specified as relative resource names in the format
          * `projects/{project_number_or_id}/locations/{location_id}/entryTypes/{entry_type_id}`.
-         * The job modifies only the entries that belong to these entry types.
+         * The job modifies only the entries and aspects that belong to these
+         * entry types.
          *
          * If the metadata import file attempts to modify an entry whose type
          * isn't included in this list, the import job is halted before modifying
@@ -3765,7 +3806,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * Required. The entry types that are in scope for the import job,
          * specified as relative resource names in the format
          * `projects/{project_number_or_id}/locations/{location_id}/entryTypes/{entry_type_id}`.
-         * The job modifies only the entries that belong to these entry types.
+         * The job modifies only the entries and aspects that belong to these
+         * entry types.
          *
          * If the metadata import file attempts to modify an entry whose type
          * isn't included in this list, the import job is halted before modifying
@@ -3796,7 +3838,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * Required. The entry types that are in scope for the import job,
          * specified as relative resource names in the format
          * `projects/{project_number_or_id}/locations/{location_id}/entryTypes/{entry_type_id}`.
-         * The job modifies only the entries that belong to these entry types.
+         * The job modifies only the entries and aspects that belong to these
+         * entry types.
          *
          * If the metadata import file attempts to modify an entry whose type
          * isn't included in this list, the import job is halted before modifying
@@ -3826,7 +3869,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * Required. The entry types that are in scope for the import job,
          * specified as relative resource names in the format
          * `projects/{project_number_or_id}/locations/{location_id}/entryTypes/{entry_type_id}`.
-         * The job modifies only the entries that belong to these entry types.
+         * The job modifies only the entries and aspects that belong to these
+         * entry types.
          *
          * If the metadata import file attempts to modify an entry whose type
          * isn't included in this list, the import job is halted before modifying
@@ -3873,6 +3917,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * `projects/{project_number_or_id}/locations/{location_id}/aspectTypes/{aspect_type_id}`.
          * The job modifies only the aspects that belong to these aspect types.
          *
+         * This field is required when creating an aspect-only import job.
+         *
          * If the metadata import file attempts to modify an aspect whose type
          * isn't included in this list, the import job is halted before modifying
          * any entries or aspects.
@@ -3900,6 +3946,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * `projects/{project_number_or_id}/locations/{location_id}/aspectTypes/{aspect_type_id}`.
          * The job modifies only the aspects that belong to these aspect types.
          *
+         * This field is required when creating an aspect-only import job.
+         *
          * If the metadata import file attempts to modify an aspect whose type
          * isn't included in this list, the import job is halted before modifying
          * any entries or aspects.
@@ -3925,6 +3973,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * specified as relative resource names in the format
          * `projects/{project_number_or_id}/locations/{location_id}/aspectTypes/{aspect_type_id}`.
          * The job modifies only the aspects that belong to these aspect types.
+         *
+         * This field is required when creating an aspect-only import job.
          *
          * If the metadata import file attempts to modify an aspect whose type
          * isn't included in this list, the import job is halted before modifying
@@ -3953,6 +4003,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * `projects/{project_number_or_id}/locations/{location_id}/aspectTypes/{aspect_type_id}`.
          * The job modifies only the aspects that belong to these aspect types.
          *
+         * This field is required when creating an aspect-only import job.
+         *
          * If the metadata import file attempts to modify an aspect whose type
          * isn't included in this list, the import job is halted before modifying
          * any entries or aspects.
@@ -3979,6 +4031,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * specified as relative resource names in the format
          * `projects/{project_number_or_id}/locations/{location_id}/aspectTypes/{aspect_type_id}`.
          * The job modifies only the aspects that belong to these aspect types.
+         *
+         * This field is required when creating an aspect-only import job.
          *
          * If the metadata import file attempts to modify an aspect whose type
          * isn't included in this list, the import job is halted before modifying
@@ -4015,6 +4069,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * `projects/{project_number_or_id}/locations/{location_id}/aspectTypes/{aspect_type_id}`.
          * The job modifies only the aspects that belong to these aspect types.
          *
+         * This field is required when creating an aspect-only import job.
+         *
          * If the metadata import file attempts to modify an aspect whose type
          * isn't included in this list, the import job is halted before modifying
          * any entries or aspects.
@@ -4049,6 +4105,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * `projects/{project_number_or_id}/locations/{location_id}/aspectTypes/{aspect_type_id}`.
          * The job modifies only the aspects that belong to these aspect types.
          *
+         * This field is required when creating an aspect-only import job.
+         *
          * If the metadata import file attempts to modify an aspect whose type
          * isn't included in this list, the import job is halted before modifying
          * any entries or aspects.
@@ -4080,6 +4138,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * `projects/{project_number_or_id}/locations/{location_id}/aspectTypes/{aspect_type_id}`.
          * The job modifies only the aspects that belong to these aspect types.
          *
+         * This field is required when creating an aspect-only import job.
+         *
          * If the metadata import file attempts to modify an aspect whose type
          * isn't included in this list, the import job is halted before modifying
          * any entries or aspects.
@@ -4109,6 +4169,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          * specified as relative resource names in the format
          * `projects/{project_number_or_id}/locations/{location_id}/aspectTypes/{aspect_type_id}`.
          * The job modifies only the aspects that belong to these aspect types.
+         *
+         * This field is required when creating an aspect-only import job.
          *
          * If the metadata import file attempts to modify an aspect whose type
          * isn't included in this list, the import job is halted before modifying
@@ -4419,9 +4481,6 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The sync mode for entries.
-     * Only `FULL` mode is supported for entries. All entries in the job's scope
-     * are modified. If an entry exists in Dataplex but isn't included in the
-     * metadata import file, the entry is deleted when you run the metadata job.
      * </pre>
      *
      * <code>
@@ -4439,9 +4498,6 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The sync mode for entries.
-     * Only `FULL` mode is supported for entries. All entries in the job's scope
-     * are modified. If an entry exists in Dataplex but isn't included in the
-     * metadata import file, the entry is deleted when you run the metadata job.
      * </pre>
      *
      * <code>
@@ -4466,9 +4522,6 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The sync mode for aspects.
-     * Only `INCREMENTAL` mode is supported for aspects. An aspect is modified
-     * only if the metadata import file includes a reference to the aspect in
-     * the `update_mask` field and the `aspect_keys` field.
      * </pre>
      *
      * <code>
@@ -4486,9 +4539,6 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The sync mode for aspects.
-     * Only `INCREMENTAL` mode is supported for aspects. An aspect is modified
-     * only if the metadata import file includes a reference to the aspect in
-     * the `update_mask` field and the `aspect_keys` field.
      * </pre>
      *
      * <code>
@@ -4794,7 +4844,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job specification for a metadata import job
+     * Job specification for a metadata import job.
+     *
+     * You can run the following kinds of metadata import jobs:
+     *
+     * * Full sync of entries with incremental import of their aspects.
+     * Supported for custom entries.
+     * * Incremental import of aspects only. Supported for aspects that belong
+     * to custom entries and system entries. For custom entries, you can modify
+     * both optional aspects and required aspects. For system entries, you can
+     * modify optional aspects.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dataplex.v1.MetadataJob.ImportJobSpec}
@@ -5698,9 +5757,6 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The sync mode for entries.
-       * Only `FULL` mode is supported for entries. All entries in the job's scope
-       * are modified. If an entry exists in Dataplex but isn't included in the
-       * metadata import file, the entry is deleted when you run the metadata job.
        * </pre>
        *
        * <code>
@@ -5718,9 +5774,6 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The sync mode for entries.
-       * Only `FULL` mode is supported for entries. All entries in the job's scope
-       * are modified. If an entry exists in Dataplex but isn't included in the
-       * metadata import file, the entry is deleted when you run the metadata job.
        * </pre>
        *
        * <code>
@@ -5741,9 +5794,6 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The sync mode for entries.
-       * Only `FULL` mode is supported for entries. All entries in the job's scope
-       * are modified. If an entry exists in Dataplex but isn't included in the
-       * metadata import file, the entry is deleted when you run the metadata job.
        * </pre>
        *
        * <code>
@@ -5766,9 +5816,6 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The sync mode for entries.
-       * Only `FULL` mode is supported for entries. All entries in the job's scope
-       * are modified. If an entry exists in Dataplex but isn't included in the
-       * metadata import file, the entry is deleted when you run the metadata job.
        * </pre>
        *
        * <code>
@@ -5793,9 +5840,6 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The sync mode for entries.
-       * Only `FULL` mode is supported for entries. All entries in the job's scope
-       * are modified. If an entry exists in Dataplex but isn't included in the
-       * metadata import file, the entry is deleted when you run the metadata job.
        * </pre>
        *
        * <code>
@@ -5817,9 +5861,6 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The sync mode for aspects.
-       * Only `INCREMENTAL` mode is supported for aspects. An aspect is modified
-       * only if the metadata import file includes a reference to the aspect in
-       * the `update_mask` field and the `aspect_keys` field.
        * </pre>
        *
        * <code>
@@ -5837,9 +5878,6 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The sync mode for aspects.
-       * Only `INCREMENTAL` mode is supported for aspects. An aspect is modified
-       * only if the metadata import file includes a reference to the aspect in
-       * the `update_mask` field and the `aspect_keys` field.
        * </pre>
        *
        * <code>
@@ -5860,9 +5898,6 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The sync mode for aspects.
-       * Only `INCREMENTAL` mode is supported for aspects. An aspect is modified
-       * only if the metadata import file includes a reference to the aspect in
-       * the `update_mask` field and the `aspect_keys` field.
        * </pre>
        *
        * <code>
@@ -5885,9 +5920,6 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The sync mode for aspects.
-       * Only `INCREMENTAL` mode is supported for aspects. An aspect is modified
-       * only if the metadata import file includes a reference to the aspect in
-       * the `update_mask` field and the `aspect_keys` field.
        * </pre>
        *
        * <code>
@@ -5912,9 +5944,6 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The sync mode for aspects.
-       * Only `INCREMENTAL` mode is supported for aspects. An aspect is modified
-       * only if the metadata import file includes a reference to the aspect in
-       * the `update_mask` field and the `aspect_keys` field.
        * </pre>
        *
        * <code>

@@ -43,6 +43,7 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
     feedLabel_ = "";
     contentLanguage_ = "";
     countries_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    destinations_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -1922,6 +1923,1061 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
     }
   }
 
+  public interface DestinationOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * [Marketing methods](https://support.google.com/merchants/answer/15130232)
+     * (also known as destination) selections.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Destination.DestinationEnum destination = 1;</code>
+     *
+     * @return The enum numeric value on the wire for destination.
+     */
+    int getDestinationValue();
+    /**
+     *
+     *
+     * <pre>
+     * [Marketing methods](https://support.google.com/merchants/answer/15130232)
+     * (also known as destination) selections.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Destination.DestinationEnum destination = 1;</code>
+     *
+     * @return The destination.
+     */
+    com.google.shopping.type.Destination.DestinationEnum getDestination();
+
+    /**
+     *
+     *
+     * <pre>
+     * The state of the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.State state = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    int getStateValue();
+    /**
+     *
+     *
+     * <pre>
+     * The state of the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.State state = 2;
+     * </code>
+     *
+     * @return The state.
+     */
+    com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.State
+        getState();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Destinations also known as [Marketing
+   * methods](https://support.google.com/merchants/answer/15130232) selections.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination}
+   */
+  public static final class Destination extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination)
+      DestinationOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Destination.newBuilder() to construct.
+    private Destination(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Destination() {
+      destination_ = 0;
+      state_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Destination();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.shopping.merchant.datasources.v1beta.DatasourcetypesProto
+          .internal_static_google_shopping_merchant_datasources_v1beta_PrimaryProductDataSource_Destination_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.shopping.merchant.datasources.v1beta.DatasourcetypesProto
+          .internal_static_google_shopping_merchant_datasources_v1beta_PrimaryProductDataSource_Destination_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+                  .class,
+              com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+                  .Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The state of the destination.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.State}
+     */
+    public enum State implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Not specified.
+       * </pre>
+       *
+       * <code>STATE_UNSPECIFIED = 0;</code>
+       */
+      STATE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that the destination is enabled.
+       * </pre>
+       *
+       * <code>ENABLED = 1;</code>
+       */
+      ENABLED(1),
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that the destination is disabled.
+       * </pre>
+       *
+       * <code>DISABLED = 2;</code>
+       */
+      DISABLED(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Not specified.
+       * </pre>
+       *
+       * <code>STATE_UNSPECIFIED = 0;</code>
+       */
+      public static final int STATE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that the destination is enabled.
+       * </pre>
+       *
+       * <code>ENABLED = 1;</code>
+       */
+      public static final int ENABLED_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that the destination is disabled.
+       * </pre>
+       *
+       * <code>DISABLED = 2;</code>
+       */
+      public static final int DISABLED_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static State valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static State forNumber(int value) {
+        switch (value) {
+          case 0:
+            return STATE_UNSPECIFIED;
+          case 1:
+            return ENABLED;
+          case 2:
+            return DISABLED;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<State>() {
+            public State findValueByNumber(int number) {
+              return State.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final State[] VALUES = values();
+
+      public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private State(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.State)
+    }
+
+    public static final int DESTINATION_FIELD_NUMBER = 1;
+    private int destination_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * [Marketing methods](https://support.google.com/merchants/answer/15130232)
+     * (also known as destination) selections.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Destination.DestinationEnum destination = 1;</code>
+     *
+     * @return The enum numeric value on the wire for destination.
+     */
+    @java.lang.Override
+    public int getDestinationValue() {
+      return destination_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Marketing methods](https://support.google.com/merchants/answer/15130232)
+     * (also known as destination) selections.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Destination.DestinationEnum destination = 1;</code>
+     *
+     * @return The destination.
+     */
+    @java.lang.Override
+    public com.google.shopping.type.Destination.DestinationEnum getDestination() {
+      com.google.shopping.type.Destination.DestinationEnum result =
+          com.google.shopping.type.Destination.DestinationEnum.forNumber(destination_);
+      return result == null
+          ? com.google.shopping.type.Destination.DestinationEnum.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int STATE_FIELD_NUMBER = 2;
+    private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The state of the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.State state = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The state of the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.State state = 2;
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+            .State
+        getState() {
+      com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.State
+          result =
+              com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+                  .State.forNumber(state_);
+      return result == null
+          ? com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+              .State.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (destination_
+          != com.google.shopping.type.Destination.DestinationEnum.DESTINATION_ENUM_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, destination_);
+      }
+      if (state_
+          != com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+              .State.STATE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, state_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (destination_
+          != com.google.shopping.type.Destination.DestinationEnum.DESTINATION_ENUM_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, destination_);
+      }
+      if (state_
+          != com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+              .State.STATE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, state_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination)) {
+        return super.equals(obj);
+      }
+      com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination other =
+          (com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination)
+              obj;
+
+      if (destination_ != other.destination_) return false;
+      if (state_ != other.state_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
+      hash = (53 * hash) + destination_;
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+            .Destination
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+            .Destination
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+            .Destination
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+            .Destination
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+            .Destination
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+            .Destination
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+            .Destination
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+            .Destination
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+            .Destination
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+            .Destination
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+            .Destination
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+            .Destination
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Destinations also known as [Marketing
+     * methods](https://support.google.com/merchants/answer/15130232) selections.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination)
+        com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+            .DestinationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.shopping.merchant.datasources.v1beta.DatasourcetypesProto
+            .internal_static_google_shopping_merchant_datasources_v1beta_PrimaryProductDataSource_Destination_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.shopping.merchant.datasources.v1beta.DatasourcetypesProto
+            .internal_static_google_shopping_merchant_datasources_v1beta_PrimaryProductDataSource_Destination_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+                    .class,
+                com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        destination_ = 0;
+        state_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.shopping.merchant.datasources.v1beta.DatasourcetypesProto
+            .internal_static_google_shopping_merchant_datasources_v1beta_PrimaryProductDataSource_Destination_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+          getDefaultInstanceForType() {
+        return com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+          build() {
+        com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+          buildPartial() {
+        com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+            result =
+                new com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+                    .Destination(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.destination_ = destination_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.state_ = state_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination) {
+          return mergeFrom(
+              (com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+              other) {
+        if (other
+            == com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+                .getDefaultInstance()) return this;
+        if (other.destination_ != 0) {
+          setDestinationValue(other.getDestinationValue());
+        }
+        if (other.state_ != 0) {
+          setStateValue(other.getStateValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  destination_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  state_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int destination_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * [Marketing methods](https://support.google.com/merchants/answer/15130232)
+       * (also known as destination) selections.
+       * </pre>
+       *
+       * <code>.google.shopping.type.Destination.DestinationEnum destination = 1;</code>
+       *
+       * @return The enum numeric value on the wire for destination.
+       */
+      @java.lang.Override
+      public int getDestinationValue() {
+        return destination_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * [Marketing methods](https://support.google.com/merchants/answer/15130232)
+       * (also known as destination) selections.
+       * </pre>
+       *
+       * <code>.google.shopping.type.Destination.DestinationEnum destination = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for destination to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDestinationValue(int value) {
+        destination_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * [Marketing methods](https://support.google.com/merchants/answer/15130232)
+       * (also known as destination) selections.
+       * </pre>
+       *
+       * <code>.google.shopping.type.Destination.DestinationEnum destination = 1;</code>
+       *
+       * @return The destination.
+       */
+      @java.lang.Override
+      public com.google.shopping.type.Destination.DestinationEnum getDestination() {
+        com.google.shopping.type.Destination.DestinationEnum result =
+            com.google.shopping.type.Destination.DestinationEnum.forNumber(destination_);
+        return result == null
+            ? com.google.shopping.type.Destination.DestinationEnum.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * [Marketing methods](https://support.google.com/merchants/answer/15130232)
+       * (also known as destination) selections.
+       * </pre>
+       *
+       * <code>.google.shopping.type.Destination.DestinationEnum destination = 1;</code>
+       *
+       * @param value The destination to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDestination(com.google.shopping.type.Destination.DestinationEnum value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        destination_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * [Marketing methods](https://support.google.com/merchants/answer/15130232)
+       * (also known as destination) selections.
+       * </pre>
+       *
+       * <code>.google.shopping.type.Destination.DestinationEnum destination = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDestination() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        destination_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int state_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The state of the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.State state = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for state.
+       */
+      @java.lang.Override
+      public int getStateValue() {
+        return state_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The state of the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.State state = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStateValue(int value) {
+        state_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The state of the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.State state = 2;
+       * </code>
+       *
+       * @return The state.
+       */
+      @java.lang.Override
+      public com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+              .State
+          getState() {
+        com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.State
+            result =
+                com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+                    .State.forNumber(state_);
+        return result == null
+            ? com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+                .State.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The state of the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.State state = 2;
+       * </code>
+       *
+       * @param value The state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setState(
+          com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.State
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        state_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The state of the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.State state = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearState() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        state_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination)
+    private static final com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+            .Destination
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+              .Destination();
+    }
+
+    public static com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+            .Destination
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Destination> PARSER =
+        new com.google.protobuf.AbstractParser<Destination>() {
+          @java.lang.Override
+          public Destination parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Destination> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Destination> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int CHANNEL_FIELD_NUMBER = 3;
   private int channel_ = 0;
@@ -1929,11 +2985,11 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Immutable. Specifies the type of data source channel.
+   * Optional. Immutable. Specifies the type of data source channel.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Channel channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Channel channel = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for channel.
@@ -1946,11 +3002,11 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Immutable. Specifies the type of data source channel.
+   * Optional. Immutable. Specifies the type of data source channel.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Channel channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Channel channel = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The channel.
@@ -2317,6 +3373,177 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
         : defaultRule_;
   }
 
+  public static final int DESTINATIONS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private java.util.List<
+          com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination>
+      destinations_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of destinations describing where products of the data
+   * source can be shown.
+   *
+   * When retrieving the data source, the list contains all the destinations
+   * that can be used for the data source, including the ones that are disabled
+   * for the data source but enabled for the account.
+   *
+   * Only destinations that are enabled on the account, for example through
+   * program participation, can be enabled on the data source.
+   *
+   * If unset, during creation, the destinations will be inherited based on the
+   * account level program participation.
+   *
+   * If set, during creation or update, the data source will be set only for the
+   * specified destinations.
+   *
+   * Updating this field requires at least one destination.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination>
+      getDestinationsList() {
+    return destinations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of destinations describing where products of the data
+   * source can be shown.
+   *
+   * When retrieving the data source, the list contains all the destinations
+   * that can be used for the data source, including the ones that are disabled
+   * for the data source but enabled for the account.
+   *
+   * Only destinations that are enabled on the account, for example through
+   * program participation, can be enabled on the data source.
+   *
+   * If unset, during creation, the destinations will be inherited based on the
+   * account level program participation.
+   *
+   * If set, during creation or update, the data source will be set only for the
+   * specified destinations.
+   *
+   * Updating this field requires at least one destination.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+                  .DestinationOrBuilder>
+      getDestinationsOrBuilderList() {
+    return destinations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of destinations describing where products of the data
+   * source can be shown.
+   *
+   * When retrieving the data source, the list contains all the destinations
+   * that can be used for the data source, including the ones that are disabled
+   * for the data source but enabled for the account.
+   *
+   * Only destinations that are enabled on the account, for example through
+   * program participation, can be enabled on the data source.
+   *
+   * If unset, during creation, the destinations will be inherited based on the
+   * account level program participation.
+   *
+   * If set, during creation or update, the data source will be set only for the
+   * specified destinations.
+   *
+   * Updating this field requires at least one destination.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getDestinationsCount() {
+    return destinations_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of destinations describing where products of the data
+   * source can be shown.
+   *
+   * When retrieving the data source, the list contains all the destinations
+   * that can be used for the data source, including the ones that are disabled
+   * for the data source but enabled for the account.
+   *
+   * Only destinations that are enabled on the account, for example through
+   * program participation, can be enabled on the data source.
+   *
+   * If unset, during creation, the destinations will be inherited based on the
+   * account level program participation.
+   *
+   * If set, during creation or update, the data source will be set only for the
+   * specified destinations.
+   *
+   * Updating this field requires at least one destination.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+      getDestinations(int index) {
+    return destinations_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of destinations describing where products of the data
+   * source can be shown.
+   *
+   * When retrieving the data source, the list contains all the destinations
+   * that can be used for the data source, including the ones that are disabled
+   * for the data source but enabled for the account.
+   *
+   * Only destinations that are enabled on the account, for example through
+   * program participation, can be enabled on the data source.
+   *
+   * If unset, during creation, the destinations will be inherited based on the
+   * account level program participation.
+   *
+   * If set, during creation or update, the data source will be set only for the
+   * specified destinations.
+   *
+   * Updating this field requires at least one destination.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+          .DestinationOrBuilder
+      getDestinationsOrBuilder(int index) {
+    return destinations_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2348,6 +3575,9 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(7, getDefaultRule());
+    }
+    for (int i = 0; i < destinations_.size(); i++) {
+      output.writeMessage(10, destinations_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -2381,6 +3611,9 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getDefaultRule());
     }
+    for (int i = 0; i < destinations_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, destinations_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2412,6 +3645,7 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
     if (hasDefaultRule()) {
       if (!getDefaultRule().equals(other.getDefaultRule())) return false;
     }
+    if (!getDestinationsList().equals(other.getDestinationsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2440,6 +3674,10 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
     if (hasDefaultRule()) {
       hash = (37 * hash) + DEFAULT_RULE_FIELD_NUMBER;
       hash = (53 * hash) + getDefaultRule().hashCode();
+    }
+    if (getDestinationsCount() > 0) {
+      hash = (37 * hash) + DESTINATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getDestinationsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2586,6 +3824,7 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getDefaultRuleFieldBuilder();
+        getDestinationsFieldBuilder();
       }
     }
 
@@ -2602,6 +3841,13 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
         defaultRuleBuilder_.dispose();
         defaultRuleBuilder_ = null;
       }
+      if (destinationsBuilder_ == null) {
+        destinations_ = java.util.Collections.emptyList();
+      } else {
+        destinations_ = null;
+        destinationsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -2632,11 +3878,25 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
     public com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource buildPartial() {
       com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource result =
           new com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource result) {
+      if (destinationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          destinations_ = java.util.Collections.unmodifiableList(destinations_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.destinations_ = destinations_;
+      } else {
+        result.destinations_ = destinationsBuilder_.build();
+      }
     }
 
     private void buildPartial0(
@@ -2742,6 +4002,33 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
       if (other.hasDefaultRule()) {
         mergeDefaultRule(other.getDefaultRule());
       }
+      if (destinationsBuilder_ == null) {
+        if (!other.destinations_.isEmpty()) {
+          if (destinations_.isEmpty()) {
+            destinations_ = other.destinations_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureDestinationsIsMutable();
+            destinations_.addAll(other.destinations_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.destinations_.isEmpty()) {
+          if (destinationsBuilder_.isEmpty()) {
+            destinationsBuilder_.dispose();
+            destinationsBuilder_ = null;
+            destinations_ = other.destinations_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            destinationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDestinationsFieldBuilder()
+                    : null;
+          } else {
+            destinationsBuilder_.addAllMessages(other.destinations_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2799,6 +4086,22 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
+            case 82:
+              {
+                com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+                    m =
+                        input.readMessage(
+                            com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+                                .Destination.parser(),
+                            extensionRegistry);
+                if (destinationsBuilder_ == null) {
+                  ensureDestinationsIsMutable();
+                  destinations_.add(m);
+                } else {
+                  destinationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2823,11 +4126,11 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Immutable. Specifies the type of data source channel.
+     * Optional. Immutable. Specifies the type of data source channel.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Channel channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Channel channel = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The enum numeric value on the wire for channel.
@@ -2840,11 +4143,11 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Immutable. Specifies the type of data source channel.
+     * Optional. Immutable. Specifies the type of data source channel.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Channel channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Channel channel = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The enum numeric value on the wire for channel to set.
@@ -2860,11 +4163,11 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Immutable. Specifies the type of data source channel.
+     * Optional. Immutable. Specifies the type of data source channel.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Channel channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Channel channel = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The channel.
@@ -2884,11 +4187,11 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Immutable. Specifies the type of data source channel.
+     * Optional. Immutable. Specifies the type of data source channel.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Channel channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Channel channel = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The channel to set.
@@ -2908,11 +4211,11 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Immutable. Specifies the type of data source channel.
+     * Optional. Immutable. Specifies the type of data source channel.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Channel channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Channel channel = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return This builder for chaining.
@@ -3750,6 +5053,729 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
         defaultRule_ = null;
       }
       return defaultRuleBuilder_;
+    }
+
+    private java.util.List<
+            com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination>
+        destinations_ = java.util.Collections.emptyList();
+
+    private void ensureDestinationsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        destinations_ =
+            new java.util.ArrayList<
+                com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+                    .Destination>(destinations_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination,
+            com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+                .Builder,
+            com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+                .DestinationOrBuilder>
+        destinationsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of destinations describing where products of the data
+     * source can be shown.
+     *
+     * When retrieving the data source, the list contains all the destinations
+     * that can be used for the data source, including the ones that are disabled
+     * for the data source but enabled for the account.
+     *
+     * Only destinations that are enabled on the account, for example through
+     * program participation, can be enabled on the data source.
+     *
+     * If unset, during creation, the destinations will be inherited based on the
+     * account level program participation.
+     *
+     * If set, during creation or update, the data source will be set only for the
+     * specified destinations.
+     *
+     * Updating this field requires at least one destination.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination>
+        getDestinationsList() {
+      if (destinationsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(destinations_);
+      } else {
+        return destinationsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of destinations describing where products of the data
+     * source can be shown.
+     *
+     * When retrieving the data source, the list contains all the destinations
+     * that can be used for the data source, including the ones that are disabled
+     * for the data source but enabled for the account.
+     *
+     * Only destinations that are enabled on the account, for example through
+     * program participation, can be enabled on the data source.
+     *
+     * If unset, during creation, the destinations will be inherited based on the
+     * account level program participation.
+     *
+     * If set, during creation or update, the data source will be set only for the
+     * specified destinations.
+     *
+     * Updating this field requires at least one destination.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getDestinationsCount() {
+      if (destinationsBuilder_ == null) {
+        return destinations_.size();
+      } else {
+        return destinationsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of destinations describing where products of the data
+     * source can be shown.
+     *
+     * When retrieving the data source, the list contains all the destinations
+     * that can be used for the data source, including the ones that are disabled
+     * for the data source but enabled for the account.
+     *
+     * Only destinations that are enabled on the account, for example through
+     * program participation, can be enabled on the data source.
+     *
+     * If unset, during creation, the destinations will be inherited based on the
+     * account level program participation.
+     *
+     * If set, during creation or update, the data source will be set only for the
+     * specified destinations.
+     *
+     * Updating this field requires at least one destination.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+        getDestinations(int index) {
+      if (destinationsBuilder_ == null) {
+        return destinations_.get(index);
+      } else {
+        return destinationsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of destinations describing where products of the data
+     * source can be shown.
+     *
+     * When retrieving the data source, the list contains all the destinations
+     * that can be used for the data source, including the ones that are disabled
+     * for the data source but enabled for the account.
+     *
+     * Only destinations that are enabled on the account, for example through
+     * program participation, can be enabled on the data source.
+     *
+     * If unset, during creation, the destinations will be inherited based on the
+     * account level program participation.
+     *
+     * If set, during creation or update, the data source will be set only for the
+     * specified destinations.
+     *
+     * Updating this field requires at least one destination.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDestinations(
+        int index,
+        com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+            value) {
+      if (destinationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDestinationsIsMutable();
+        destinations_.set(index, value);
+        onChanged();
+      } else {
+        destinationsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of destinations describing where products of the data
+     * source can be shown.
+     *
+     * When retrieving the data source, the list contains all the destinations
+     * that can be used for the data source, including the ones that are disabled
+     * for the data source but enabled for the account.
+     *
+     * Only destinations that are enabled on the account, for example through
+     * program participation, can be enabled on the data source.
+     *
+     * If unset, during creation, the destinations will be inherited based on the
+     * account level program participation.
+     *
+     * If set, during creation or update, the data source will be set only for the
+     * specified destinations.
+     *
+     * Updating this field requires at least one destination.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDestinations(
+        int index,
+        com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.Builder
+            builderForValue) {
+      if (destinationsBuilder_ == null) {
+        ensureDestinationsIsMutable();
+        destinations_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        destinationsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of destinations describing where products of the data
+     * source can be shown.
+     *
+     * When retrieving the data source, the list contains all the destinations
+     * that can be used for the data source, including the ones that are disabled
+     * for the data source but enabled for the account.
+     *
+     * Only destinations that are enabled on the account, for example through
+     * program participation, can be enabled on the data source.
+     *
+     * If unset, during creation, the destinations will be inherited based on the
+     * account level program participation.
+     *
+     * If set, during creation or update, the data source will be set only for the
+     * specified destinations.
+     *
+     * Updating this field requires at least one destination.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDestinations(
+        com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+            value) {
+      if (destinationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDestinationsIsMutable();
+        destinations_.add(value);
+        onChanged();
+      } else {
+        destinationsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of destinations describing where products of the data
+     * source can be shown.
+     *
+     * When retrieving the data source, the list contains all the destinations
+     * that can be used for the data source, including the ones that are disabled
+     * for the data source but enabled for the account.
+     *
+     * Only destinations that are enabled on the account, for example through
+     * program participation, can be enabled on the data source.
+     *
+     * If unset, during creation, the destinations will be inherited based on the
+     * account level program participation.
+     *
+     * If set, during creation or update, the data source will be set only for the
+     * specified destinations.
+     *
+     * Updating this field requires at least one destination.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDestinations(
+        int index,
+        com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+            value) {
+      if (destinationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDestinationsIsMutable();
+        destinations_.add(index, value);
+        onChanged();
+      } else {
+        destinationsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of destinations describing where products of the data
+     * source can be shown.
+     *
+     * When retrieving the data source, the list contains all the destinations
+     * that can be used for the data source, including the ones that are disabled
+     * for the data source but enabled for the account.
+     *
+     * Only destinations that are enabled on the account, for example through
+     * program participation, can be enabled on the data source.
+     *
+     * If unset, during creation, the destinations will be inherited based on the
+     * account level program participation.
+     *
+     * If set, during creation or update, the data source will be set only for the
+     * specified destinations.
+     *
+     * Updating this field requires at least one destination.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDestinations(
+        com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.Builder
+            builderForValue) {
+      if (destinationsBuilder_ == null) {
+        ensureDestinationsIsMutable();
+        destinations_.add(builderForValue.build());
+        onChanged();
+      } else {
+        destinationsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of destinations describing where products of the data
+     * source can be shown.
+     *
+     * When retrieving the data source, the list contains all the destinations
+     * that can be used for the data source, including the ones that are disabled
+     * for the data source but enabled for the account.
+     *
+     * Only destinations that are enabled on the account, for example through
+     * program participation, can be enabled on the data source.
+     *
+     * If unset, during creation, the destinations will be inherited based on the
+     * account level program participation.
+     *
+     * If set, during creation or update, the data source will be set only for the
+     * specified destinations.
+     *
+     * Updating this field requires at least one destination.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDestinations(
+        int index,
+        com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination.Builder
+            builderForValue) {
+      if (destinationsBuilder_ == null) {
+        ensureDestinationsIsMutable();
+        destinations_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        destinationsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of destinations describing where products of the data
+     * source can be shown.
+     *
+     * When retrieving the data source, the list contains all the destinations
+     * that can be used for the data source, including the ones that are disabled
+     * for the data source but enabled for the account.
+     *
+     * Only destinations that are enabled on the account, for example through
+     * program participation, can be enabled on the data source.
+     *
+     * If unset, during creation, the destinations will be inherited based on the
+     * account level program participation.
+     *
+     * If set, during creation or update, the data source will be set only for the
+     * specified destinations.
+     *
+     * Updating this field requires at least one destination.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllDestinations(
+        java.lang.Iterable<
+                ? extends
+                    com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+                        .Destination>
+            values) {
+      if (destinationsBuilder_ == null) {
+        ensureDestinationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, destinations_);
+        onChanged();
+      } else {
+        destinationsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of destinations describing where products of the data
+     * source can be shown.
+     *
+     * When retrieving the data source, the list contains all the destinations
+     * that can be used for the data source, including the ones that are disabled
+     * for the data source but enabled for the account.
+     *
+     * Only destinations that are enabled on the account, for example through
+     * program participation, can be enabled on the data source.
+     *
+     * If unset, during creation, the destinations will be inherited based on the
+     * account level program participation.
+     *
+     * If set, during creation or update, the data source will be set only for the
+     * specified destinations.
+     *
+     * Updating this field requires at least one destination.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDestinations() {
+      if (destinationsBuilder_ == null) {
+        destinations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        destinationsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of destinations describing where products of the data
+     * source can be shown.
+     *
+     * When retrieving the data source, the list contains all the destinations
+     * that can be used for the data source, including the ones that are disabled
+     * for the data source but enabled for the account.
+     *
+     * Only destinations that are enabled on the account, for example through
+     * program participation, can be enabled on the data source.
+     *
+     * If unset, during creation, the destinations will be inherited based on the
+     * account level program participation.
+     *
+     * If set, during creation or update, the data source will be set only for the
+     * specified destinations.
+     *
+     * Updating this field requires at least one destination.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeDestinations(int index) {
+      if (destinationsBuilder_ == null) {
+        ensureDestinationsIsMutable();
+        destinations_.remove(index);
+        onChanged();
+      } else {
+        destinationsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of destinations describing where products of the data
+     * source can be shown.
+     *
+     * When retrieving the data source, the list contains all the destinations
+     * that can be used for the data source, including the ones that are disabled
+     * for the data source but enabled for the account.
+     *
+     * Only destinations that are enabled on the account, for example through
+     * program participation, can be enabled on the data source.
+     *
+     * If unset, during creation, the destinations will be inherited based on the
+     * account level program participation.
+     *
+     * If set, during creation or update, the data source will be set only for the
+     * specified destinations.
+     *
+     * Updating this field requires at least one destination.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+            .Builder
+        getDestinationsBuilder(int index) {
+      return getDestinationsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of destinations describing where products of the data
+     * source can be shown.
+     *
+     * When retrieving the data source, the list contains all the destinations
+     * that can be used for the data source, including the ones that are disabled
+     * for the data source but enabled for the account.
+     *
+     * Only destinations that are enabled on the account, for example through
+     * program participation, can be enabled on the data source.
+     *
+     * If unset, during creation, the destinations will be inherited based on the
+     * account level program participation.
+     *
+     * If set, during creation or update, the data source will be set only for the
+     * specified destinations.
+     *
+     * Updating this field requires at least one destination.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+            .DestinationOrBuilder
+        getDestinationsOrBuilder(int index) {
+      if (destinationsBuilder_ == null) {
+        return destinations_.get(index);
+      } else {
+        return destinationsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of destinations describing where products of the data
+     * source can be shown.
+     *
+     * When retrieving the data source, the list contains all the destinations
+     * that can be used for the data source, including the ones that are disabled
+     * for the data source but enabled for the account.
+     *
+     * Only destinations that are enabled on the account, for example through
+     * program participation, can be enabled on the data source.
+     *
+     * If unset, during creation, the destinations will be inherited based on the
+     * account level program participation.
+     *
+     * If set, during creation or update, the data source will be set only for the
+     * specified destinations.
+     *
+     * Updating this field requires at least one destination.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+                    .DestinationOrBuilder>
+        getDestinationsOrBuilderList() {
+      if (destinationsBuilder_ != null) {
+        return destinationsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(destinations_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of destinations describing where products of the data
+     * source can be shown.
+     *
+     * When retrieving the data source, the list contains all the destinations
+     * that can be used for the data source, including the ones that are disabled
+     * for the data source but enabled for the account.
+     *
+     * Only destinations that are enabled on the account, for example through
+     * program participation, can be enabled on the data source.
+     *
+     * If unset, during creation, the destinations will be inherited based on the
+     * account level program participation.
+     *
+     * If set, during creation or update, the data source will be set only for the
+     * specified destinations.
+     *
+     * Updating this field requires at least one destination.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+            .Builder
+        addDestinationsBuilder() {
+      return getDestinationsFieldBuilder()
+          .addBuilder(
+              com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of destinations describing where products of the data
+     * source can be shown.
+     *
+     * When retrieving the data source, the list contains all the destinations
+     * that can be used for the data source, including the ones that are disabled
+     * for the data source but enabled for the account.
+     *
+     * Only destinations that are enabled on the account, for example through
+     * program participation, can be enabled on the data source.
+     *
+     * If unset, during creation, the destinations will be inherited based on the
+     * account level program participation.
+     *
+     * If set, during creation or update, the data source will be set only for the
+     * specified destinations.
+     *
+     * Updating this field requires at least one destination.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+            .Builder
+        addDestinationsBuilder(int index) {
+      return getDestinationsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of destinations describing where products of the data
+     * source can be shown.
+     *
+     * When retrieving the data source, the list contains all the destinations
+     * that can be used for the data source, including the ones that are disabled
+     * for the data source but enabled for the account.
+     *
+     * Only destinations that are enabled on the account, for example through
+     * program participation, can be enabled on the data source.
+     *
+     * If unset, during creation, the destinations will be inherited based on the
+     * account level program participation.
+     *
+     * If set, during creation or update, the data source will be set only for the
+     * specified destinations.
+     *
+     * Updating this field requires at least one destination.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+                .Builder>
+        getDestinationsBuilderList() {
+      return getDestinationsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination,
+            com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+                .Builder,
+            com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+                .DestinationOrBuilder>
+        getDestinationsFieldBuilder() {
+      if (destinationsBuilder_ == null) {
+        destinationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+                    .Destination,
+                com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+                    .Builder,
+                com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+                    .DestinationOrBuilder>(
+                destinations_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+        destinations_ = null;
+      }
+      return destinationsBuilder_;
     }
 
     @java.lang.Override

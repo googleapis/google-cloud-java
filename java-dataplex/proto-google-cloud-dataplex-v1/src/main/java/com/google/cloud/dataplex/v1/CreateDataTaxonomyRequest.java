@@ -28,6 +28,7 @@ package com.google.cloud.dataplex.v1;
  *
  * Protobuf type {@code google.cloud.dataplex.v1.CreateDataTaxonomyRequest}
  */
+@java.lang.Deprecated
 public final class CreateDataTaxonomyRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.CreateDataTaxonomyRequest)
@@ -70,14 +71,6 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
   /**
-   *
-   *
-   * <pre>
-   * Required. The resource name of the data taxonomy location, of the form:
-   * projects/{project_number}/locations/{location_id}
-   * where `location_id` refers to a GCP region.
-   * </pre>
-   *
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -97,14 +90,6 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
     }
   }
   /**
-   *
-   *
-   * <pre>
-   * Required. The resource name of the data taxonomy location, of the form:
-   * projects/{project_number}/locations/{location_id}
-   * where `location_id` refers to a GCP region.
-   * </pre>
-   *
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -695,14 +680,6 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
 
     private java.lang.Object parent_ = "";
     /**
-     *
-     *
-     * <pre>
-     * Required. The resource name of the data taxonomy location, of the form:
-     * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
-     * </pre>
-     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -721,14 +698,6 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
       }
     }
     /**
-     *
-     *
-     * <pre>
-     * Required. The resource name of the data taxonomy location, of the form:
-     * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
-     * </pre>
-     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -747,14 +716,6 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
       }
     }
     /**
-     *
-     *
-     * <pre>
-     * Required. The resource name of the data taxonomy location, of the form:
-     * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
-     * </pre>
-     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -772,14 +733,6 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * Required. The resource name of the data taxonomy location, of the form:
-     * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
-     * </pre>
-     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -793,14 +746,6 @@ public final class CreateDataTaxonomyRequest extends com.google.protobuf.Generat
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * Required. The resource name of the data taxonomy location, of the form:
-     * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
-     * </pre>
-     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>

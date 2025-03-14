@@ -222,6 +222,8 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * List of names of Cloud Speech phrase sets that are used for transcription.
+   * For phrase set limitations, please refer to [Cloud Speech API quotas and
+   * limits](https://cloud.google.com/speech-to-text/quotas#content).
    * </pre>
    *
    * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -236,6 +238,8 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * List of names of Cloud Speech phrase sets that are used for transcription.
+   * For phrase set limitations, please refer to [Cloud Speech API quotas and
+   * limits](https://cloud.google.com/speech-to-text/quotas#content).
    * </pre>
    *
    * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -250,6 +254,8 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * List of names of Cloud Speech phrase sets that are used for transcription.
+   * For phrase set limitations, please refer to [Cloud Speech API quotas and
+   * limits](https://cloud.google.com/speech-to-text/quotas#content).
    * </pre>
    *
    * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -265,6 +271,8 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * List of names of Cloud Speech phrase sets that are used for transcription.
+   * For phrase set limitations, please refer to [Cloud Speech API quotas and
+   * limits](https://cloud.google.com/speech-to-text/quotas#content).
    * </pre>
    *
    * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -420,7 +428,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Use timeout based endpointing, interpreting endpointer sensitivy as
+   * Use timeout based endpointing, interpreting endpointer sensitivity as
    * seconds of timeout value.
    * </pre>
    *
@@ -1312,6 +1320,8 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of names of Cloud Speech phrase sets that are used for transcription.
+     * For phrase set limitations, please refer to [Cloud Speech API quotas and
+     * limits](https://cloud.google.com/speech-to-text/quotas#content).
      * </pre>
      *
      * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -1327,6 +1337,8 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of names of Cloud Speech phrase sets that are used for transcription.
+     * For phrase set limitations, please refer to [Cloud Speech API quotas and
+     * limits](https://cloud.google.com/speech-to-text/quotas#content).
      * </pre>
      *
      * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -1341,6 +1353,8 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of names of Cloud Speech phrase sets that are used for transcription.
+     * For phrase set limitations, please refer to [Cloud Speech API quotas and
+     * limits](https://cloud.google.com/speech-to-text/quotas#content).
      * </pre>
      *
      * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -1356,6 +1370,8 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of names of Cloud Speech phrase sets that are used for transcription.
+     * For phrase set limitations, please refer to [Cloud Speech API quotas and
+     * limits](https://cloud.google.com/speech-to-text/quotas#content).
      * </pre>
      *
      * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -1371,6 +1387,8 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of names of Cloud Speech phrase sets that are used for transcription.
+     * For phrase set limitations, please refer to [Cloud Speech API quotas and
+     * limits](https://cloud.google.com/speech-to-text/quotas#content).
      * </pre>
      *
      * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -1394,6 +1412,8 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of names of Cloud Speech phrase sets that are used for transcription.
+     * For phrase set limitations, please refer to [Cloud Speech API quotas and
+     * limits](https://cloud.google.com/speech-to-text/quotas#content).
      * </pre>
      *
      * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -1416,6 +1436,8 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of names of Cloud Speech phrase sets that are used for transcription.
+     * For phrase set limitations, please refer to [Cloud Speech API quotas and
+     * limits](https://cloud.google.com/speech-to-text/quotas#content).
      * </pre>
      *
      * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -1435,6 +1457,8 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of names of Cloud Speech phrase sets that are used for transcription.
+     * For phrase set limitations, please refer to [Cloud Speech API quotas and
+     * limits](https://cloud.google.com/speech-to-text/quotas#content).
      * </pre>
      *
      * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -1453,6 +1477,8 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * List of names of Cloud Speech phrase sets that are used for transcription.
+     * For phrase set limitations, please refer to [Cloud Speech API quotas and
+     * limits](https://cloud.google.com/speech-to-text/quotas#content).
      * </pre>
      *
      * <code>repeated string phrase_sets = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -1823,7 +1849,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Use timeout based endpointing, interpreting endpointer sensitivy as
+     * Use timeout based endpointing, interpreting endpointer sensitivity as
      * seconds of timeout value.
      * </pre>
      *
@@ -1839,7 +1865,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Use timeout based endpointing, interpreting endpointer sensitivy as
+     * Use timeout based endpointing, interpreting endpointer sensitivity as
      * seconds of timeout value.
      * </pre>
      *
@@ -1859,7 +1885,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Use timeout based endpointing, interpreting endpointer sensitivy as
+     * Use timeout based endpointing, interpreting endpointer sensitivity as
      * seconds of timeout value.
      * </pre>
      *

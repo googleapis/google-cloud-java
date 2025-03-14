@@ -661,4 +661,48 @@ public class MockChatServiceImpl extends ChatServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getSpaceNotificationSetting(
+      GetSpaceNotificationSettingRequest request,
+      StreamObserver<SpaceNotificationSetting> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SpaceNotificationSetting) {
+      requests.add(request);
+      responseObserver.onNext(((SpaceNotificationSetting) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSpaceNotificationSetting, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SpaceNotificationSetting.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateSpaceNotificationSetting(
+      UpdateSpaceNotificationSettingRequest request,
+      StreamObserver<SpaceNotificationSetting> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SpaceNotificationSetting) {
+      requests.add(request);
+      responseObserver.onNext(((SpaceNotificationSetting) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSpaceNotificationSetting, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SpaceNotificationSetting.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

@@ -146,4 +146,18 @@ public interface ListSnapshotsRequestOrBuilder
    * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, allow partial responses for multi-regional Aggregated
+   * List requests.
+   * </pre>
+   *
+   * <code>bool return_partial_success = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The returnPartialSuccess.
+   */
+  boolean getReturnPartialSuccess();
 }

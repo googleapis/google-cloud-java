@@ -28,10 +28,10 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
-   * Output only. The repository's name.
+   * Identifier. The repository's name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -40,14 +40,52 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
-   * Output only. The repository's name.
+   * Identifier. The repository's name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp of when the repository was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  boolean hasCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp of when the repository was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp of when the repository was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
    *
@@ -303,4 +341,131 @@ public interface RepositoryOrBuilder
    * @return The bytes for serviceAccount.
    */
   com.google.protobuf.ByteString getServiceAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The reference to a KMS encryption key. If provided, it will be
+   * used to encrypt user data in the repository and all child resources. It is
+   * not possible to add or update the encryption key after the repository is
+   * created. Example:
+   * `projects/{kms_project}/locations/{location}/keyRings/{key_location}/cryptoKeys/{key}`
+   * </pre>
+   *
+   * <code>
+   * string kms_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The kmsKeyName.
+   */
+  java.lang.String getKmsKeyName();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The reference to a KMS encryption key. If provided, it will be
+   * used to encrypt user data in the repository and all child resources. It is
+   * not possible to add or update the encryption key after the repository is
+   * created. Example:
+   * `projects/{kms_project}/locations/{location}/keyRings/{key_location}/cryptoKeys/{key}`
+   * </pre>
+   *
+   * <code>
+   * string kms_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  com.google.protobuf.ByteString getKmsKeyNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A data encryption state of a Git repository if this Repository
+   * is protected by a KMS key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataEncryptionState field is set.
+   */
+  boolean hasDataEncryptionState();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A data encryption state of a Git repository if this Repository
+   * is protected by a KMS key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataEncryptionState.
+   */
+  com.google.cloud.dataform.v1beta1.DataEncryptionState getDataEncryptionState();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A data encryption state of a Git repository if this Repository
+   * is protected by a KMS key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataform.v1beta1.DataEncryptionStateOrBuilder getDataEncryptionStateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the internalMetadata field is set.
+   */
+  boolean hasInternalMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The internalMetadata.
+   */
+  java.lang.String getInternalMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for internalMetadata.
+   */
+  com.google.protobuf.ByteString getInternalMetadataBytes();
 }

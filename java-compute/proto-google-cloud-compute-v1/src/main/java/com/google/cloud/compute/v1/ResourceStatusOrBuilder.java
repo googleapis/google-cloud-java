@@ -62,6 +62,48 @@ public interface ResourceStatusOrBuilder
   com.google.protobuf.ByteString getPhysicalHostBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusPhysicalHostTopology physical_host_topology = 390842814;
+   * </code>
+   *
+   * @return Whether the physicalHostTopology field is set.
+   */
+  boolean hasPhysicalHostTopology();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusPhysicalHostTopology physical_host_topology = 390842814;
+   * </code>
+   *
+   * @return The physicalHostTopology.
+   */
+  com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopology getPhysicalHostTopology();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusPhysicalHostTopology physical_host_topology = 390842814;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyOrBuilder
+      getPhysicalHostTopologyOrBuilder();
+
+  /**
    * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;</code>
    *
    * @return Whether the scheduling field is set.

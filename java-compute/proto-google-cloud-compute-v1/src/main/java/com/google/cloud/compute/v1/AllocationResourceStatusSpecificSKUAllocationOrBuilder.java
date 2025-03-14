@@ -60,4 +60,58 @@ public interface AllocationResourceStatusSpecificSKUAllocationOrBuilder
    * @return The bytes for sourceInstanceTemplateId.
    */
   com.google.protobuf.ByteString getSourceInstanceTemplateIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
+   */
+  int getUtilizationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
+   */
+  boolean containsUtilizations(java.lang.String key);
+  /** Use {@link #getUtilizationsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.Long> getUtilizations();
+  /**
+   *
+   *
+   * <pre>
+   * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.Long> getUtilizationsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
+   */
+  long getUtilizationsOrDefault(java.lang.String key, long defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
+   */
+  long getUtilizationsOrThrow(java.lang.String key);
 }

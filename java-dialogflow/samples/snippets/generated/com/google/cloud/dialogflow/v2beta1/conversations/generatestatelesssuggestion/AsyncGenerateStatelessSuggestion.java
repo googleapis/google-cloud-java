@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.v2beta1.samples;
 
 // [START dialogflow_v2beta1_generated_Conversations_GenerateStatelessSuggestion_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.dialogflow.v2beta1.Conversation;
 import com.google.cloud.dialogflow.v2beta1.ConversationContext;
 import com.google.cloud.dialogflow.v2beta1.ConversationsClient;
 import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSuggestionRequest;
@@ -25,6 +26,7 @@ import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSuggestionResponse;
 import com.google.cloud.dialogflow.v2beta1.LocationName;
 import com.google.cloud.dialogflow.v2beta1.TriggerEvent;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AsyncGenerateStatelessSuggestion {
 
@@ -42,6 +44,7 @@ public class AsyncGenerateStatelessSuggestion {
       GenerateStatelessSuggestionRequest request =
           GenerateStatelessSuggestionRequest.newBuilder()
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .putAllContextReferences(new HashMap<String, Conversation.ContextReference>())
               .setConversationContext(ConversationContext.newBuilder().build())
               .addAllTriggerEvents(new ArrayList<TriggerEvent>())
               .build();

@@ -165,6 +165,28 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
      * <code>CUSTOMER_DEFINED = 7;</code>
      */
     CUSTOMER_DEFINED(7),
+    /**
+     *
+     *
+     * <pre>
+     * Concise version of the situation section. This type is only available if
+     * type SITUATION is not selected.
+     * </pre>
+     *
+     * <code>SITUATION_CONCISE = 9;</code>
+     */
+    SITUATION_CONCISE(9),
+    /**
+     *
+     *
+     * <pre>
+     * Concise version of the action section. This type is only available if
+     * type ACTION is not selected.
+     * </pre>
+     *
+     * <code>ACTION_CONCISE = 10;</code>
+     */
+    ACTION_CONCISE(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -258,6 +280,28 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
      * <code>CUSTOMER_DEFINED = 7;</code>
      */
     public static final int CUSTOMER_DEFINED_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Concise version of the situation section. This type is only available if
+     * type SITUATION is not selected.
+     * </pre>
+     *
+     * <code>SITUATION_CONCISE = 9;</code>
+     */
+    public static final int SITUATION_CONCISE_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * Concise version of the action section. This type is only available if
+     * type ACTION is not selected.
+     * </pre>
+     *
+     * <code>ACTION_CONCISE = 10;</code>
+     */
+    public static final int ACTION_CONCISE_VALUE = 10;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -299,6 +343,10 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
           return ENTITIES;
         case 7:
           return CUSTOMER_DEFINED;
+        case 9:
+          return SITUATION_CONCISE;
+        case 10:
+          return ACTION_CONCISE;
         default:
           return null;
       }

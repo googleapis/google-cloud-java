@@ -119,6 +119,47 @@ public final class TripServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.maps.fleetengine.v1.DeleteTripRequest, com.google.protobuf.Empty>
+      getDeleteTripMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTrip",
+      requestType = com.google.maps.fleetengine.v1.DeleteTripRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.maps.fleetengine.v1.DeleteTripRequest, com.google.protobuf.Empty>
+      getDeleteTripMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.maps.fleetengine.v1.DeleteTripRequest, com.google.protobuf.Empty>
+        getDeleteTripMethod;
+    if ((getDeleteTripMethod = TripServiceGrpc.getDeleteTripMethod) == null) {
+      synchronized (TripServiceGrpc.class) {
+        if ((getDeleteTripMethod = TripServiceGrpc.getDeleteTripMethod) == null) {
+          TripServiceGrpc.getDeleteTripMethod =
+              getDeleteTripMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.maps.fleetengine.v1.DeleteTripRequest, com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteTrip"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.maps.fleetengine.v1.DeleteTripRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(new TripServiceMethodDescriptorSupplier("DeleteTrip"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteTripMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.maps.fleetengine.v1.ReportBillableTripRequest, com.google.protobuf.Empty>
       getReportBillableTripMethod;
 
@@ -328,6 +369,21 @@ public final class TripServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a single Trip.
+     * Returns FAILED_PRECONDITION if the Trip is active and assigned to a
+     * vehicle.
+     * </pre>
+     */
+    default void deleteTrip(
+        com.google.maps.fleetengine.v1.DeleteTripRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTripMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Report billable trip usage.
      * </pre>
      */
@@ -433,6 +489,22 @@ public final class TripServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a single Trip.
+     * Returns FAILED_PRECONDITION if the Trip is active and assigned to a
+     * vehicle.
+     * </pre>
+     */
+    public void deleteTrip(
+        com.google.maps.fleetengine.v1.DeleteTripRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteTripMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Report billable trip usage.
      * </pre>
      */
@@ -526,6 +598,21 @@ public final class TripServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a single Trip.
+     * Returns FAILED_PRECONDITION if the Trip is active and assigned to a
+     * vehicle.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTrip(
+        com.google.maps.fleetengine.v1.DeleteTripRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTripMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Report billable trip usage.
      * </pre>
      */
@@ -611,6 +698,21 @@ public final class TripServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a single Trip.
+     * Returns FAILED_PRECONDITION if the Trip is active and assigned to a
+     * vehicle.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteTrip(
+        com.google.maps.fleetengine.v1.DeleteTripRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteTripMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Report billable trip usage.
      * </pre>
      */
@@ -650,9 +752,10 @@ public final class TripServiceGrpc {
 
   private static final int METHODID_CREATE_TRIP = 0;
   private static final int METHODID_GET_TRIP = 1;
-  private static final int METHODID_REPORT_BILLABLE_TRIP = 2;
-  private static final int METHODID_SEARCH_TRIPS = 3;
-  private static final int METHODID_UPDATE_TRIP = 4;
+  private static final int METHODID_DELETE_TRIP = 2;
+  private static final int METHODID_REPORT_BILLABLE_TRIP = 3;
+  private static final int METHODID_SEARCH_TRIPS = 4;
+  private static final int METHODID_UPDATE_TRIP = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -680,6 +783,11 @@ public final class TripServiceGrpc {
           serviceImpl.getTrip(
               (com.google.maps.fleetengine.v1.GetTripRequest) request,
               (io.grpc.stub.StreamObserver<com.google.maps.fleetengine.v1.Trip>) responseObserver);
+          break;
+        case METHODID_DELETE_TRIP:
+          serviceImpl.deleteTrip(
+              (com.google.maps.fleetengine.v1.DeleteTripRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_REPORT_BILLABLE_TRIP:
           serviceImpl.reportBillableTrip(
@@ -727,6 +835,12 @@ public final class TripServiceGrpc {
                 new MethodHandlers<
                     com.google.maps.fleetengine.v1.GetTripRequest,
                     com.google.maps.fleetengine.v1.Trip>(service, METHODID_GET_TRIP)))
+        .addMethod(
+            getDeleteTripMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.fleetengine.v1.DeleteTripRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_TRIP)))
         .addMethod(
             getReportBillableTripMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -799,6 +913,7 @@ public final class TripServiceGrpc {
                       .setSchemaDescriptor(new TripServiceFileDescriptorSupplier())
                       .addMethod(getCreateTripMethod())
                       .addMethod(getGetTripMethod())
+                      .addMethod(getDeleteTripMethod())
                       .addMethod(getReportBillableTripMethod())
                       .addMethod(getSearchTripsMethod())
                       .addMethod(getUpdateTripMethod())

@@ -358,6 +358,41 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
+   * The address in postal address format.
+   * </pre>
+   *
+   * <code>.google.type.PostalAddress postal_address = 90;</code>
+   *
+   * @return Whether the postalAddress field is set.
+   */
+  boolean hasPostalAddress();
+  /**
+   *
+   *
+   * <pre>
+   * The address in postal address format.
+   * </pre>
+   *
+   * <code>.google.type.PostalAddress postal_address = 90;</code>
+   *
+   * @return The postalAddress.
+   */
+  com.google.type.PostalAddress getPostalAddress();
+  /**
+   *
+   *
+   * <pre>
+   * The address in postal address format.
+   * </pre>
+   *
+   * <code>.google.type.PostalAddress postal_address = 90;</code>
+   */
+  com.google.type.PostalAddressOrBuilder getPostalAddressOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Repeated components for each locality level.
    * Note the following facts about the address_components[] array:
    * - The array of address components may contain more components than the
@@ -712,7 +747,12 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The regular hours of operation.
+   * The regular hours of operation. Note that if a place is always open (24
+   * hours), the `close` field will not be set. Clients can rely on always open
+   * (24 hours) being represented as an
+   * [open][google.maps.places.v1.Place.OpeningHours.Period.open] period
+   * containing [day][Point.day] with value `0`, [hour][Point.hour] with
+   * value `0`, and [minute][Point.minute] with value `0`.
    * </pre>
    *
    * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
@@ -724,7 +764,12 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The regular hours of operation.
+   * The regular hours of operation. Note that if a place is always open (24
+   * hours), the `close` field will not be set. Clients can rely on always open
+   * (24 hours) being represented as an
+   * [open][google.maps.places.v1.Place.OpeningHours.Period.open] period
+   * containing [day][Point.day] with value `0`, [hour][Point.hour] with
+   * value `0`, and [minute][Point.minute] with value `0`.
    * </pre>
    *
    * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
@@ -736,7 +781,12 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The regular hours of operation.
+   * The regular hours of operation. Note that if a place is always open (24
+   * hours), the `close` field will not be set. Clients can rely on always open
+   * (24 hours) being represented as an
+   * [open][google.maps.places.v1.Place.OpeningHours.Period.open] period
+   * containing [day][Point.day] with value `0`, [hour][Point.hour] with
+   * value `0`, and [minute][Point.minute] with value `0`.
    * </pre>
    *
    * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
@@ -771,6 +821,41 @@ public interface PlaceOrBuilder
    * @return The utcOffsetMinutes.
    */
   int getUtcOffsetMinutes();
+
+  /**
+   *
+   *
+   * <pre>
+   * IANA Time Zone Database time zone. For example "America/New_York".
+   * </pre>
+   *
+   * <code>.google.type.TimeZone time_zone = 88;</code>
+   *
+   * @return Whether the timeZone field is set.
+   */
+  boolean hasTimeZone();
+  /**
+   *
+   *
+   * <pre>
+   * IANA Time Zone Database time zone. For example "America/New_York".
+   * </pre>
+   *
+   * <code>.google.type.TimeZone time_zone = 88;</code>
+   *
+   * @return The timeZone.
+   */
+  com.google.type.TimeZone getTimeZone();
+  /**
+   *
+   *
+   * <pre>
+   * IANA Time Zone Database time zone. For example "America/New_York".
+   * </pre>
+   *
+   * <code>.google.type.TimeZone time_zone = 88;</code>
+   */
+  com.google.type.TimeZoneOrBuilder getTimeZoneOrBuilder();
 
   /**
    *
@@ -854,12 +939,24 @@ public interface PlaceOrBuilder
   com.google.protobuf.ByteString getAdrFormatAddressBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The business status for the place.
+   * </pre>
+   *
    * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
    *
    * @return The enum numeric value on the wire for businessStatus.
    */
   int getBusinessStatusValue();
   /**
+   *
+   *
+   * <pre>
+   * The business status for the place.
+   * </pre>
+   *
    * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
    *
    * @return The businessStatus.

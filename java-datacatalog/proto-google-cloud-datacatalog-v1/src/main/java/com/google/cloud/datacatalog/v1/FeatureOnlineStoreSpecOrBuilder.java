@@ -28,7 +28,7 @@ public interface FeatureOnlineStoreSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Type of underelaying storage for the FeatureOnlineStore.
+   * Output only. Type of underlying storage for the FeatureOnlineStore.
    * </pre>
    *
    * <code>
@@ -42,7 +42,7 @@ public interface FeatureOnlineStoreSpecOrBuilder
    *
    *
    * <pre>
-   * Output only. Type of underelaying storage for the FeatureOnlineStore.
+   * Output only. Type of underlying storage for the FeatureOnlineStore.
    * </pre>
    *
    * <code>

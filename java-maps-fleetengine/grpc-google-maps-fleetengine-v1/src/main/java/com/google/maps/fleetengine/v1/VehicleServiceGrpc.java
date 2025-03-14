@@ -125,6 +125,49 @@ public final class VehicleServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.maps.fleetengine.v1.DeleteVehicleRequest, com.google.protobuf.Empty>
+      getDeleteVehicleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteVehicle",
+      requestType = com.google.maps.fleetengine.v1.DeleteVehicleRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.maps.fleetengine.v1.DeleteVehicleRequest, com.google.protobuf.Empty>
+      getDeleteVehicleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.maps.fleetengine.v1.DeleteVehicleRequest, com.google.protobuf.Empty>
+        getDeleteVehicleMethod;
+    if ((getDeleteVehicleMethod = VehicleServiceGrpc.getDeleteVehicleMethod) == null) {
+      synchronized (VehicleServiceGrpc.class) {
+        if ((getDeleteVehicleMethod = VehicleServiceGrpc.getDeleteVehicleMethod) == null) {
+          VehicleServiceGrpc.getDeleteVehicleMethod =
+              getDeleteVehicleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.maps.fleetengine.v1.DeleteVehicleRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteVehicle"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.maps.fleetengine.v1.DeleteVehicleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VehicleServiceMethodDescriptorSupplier("DeleteVehicle"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteVehicleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.maps.fleetengine.v1.UpdateVehicleRequest,
           com.google.maps.fleetengine.v1.Vehicle>
       getUpdateVehicleMethod;
@@ -417,6 +460,22 @@ public final class VehicleServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a Vehicle from the Fleet Engine.
+     * Returns FAILED_PRECONDITION if the Vehicle has active Trips.
+     * assigned to it.
+     * </pre>
+     */
+    default void deleteVehicle(
+        com.google.maps.fleetengine.v1.DeleteVehicleRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteVehicleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Writes updated vehicle data to the Fleet Engine.
      * When updating a `Vehicle`, the following fields cannot be updated since
      * they are managed by the server:
@@ -580,6 +639,24 @@ public final class VehicleServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a Vehicle from the Fleet Engine.
+     * Returns FAILED_PRECONDITION if the Vehicle has active Trips.
+     * assigned to it.
+     * </pre>
+     */
+    public void deleteVehicle(
+        com.google.maps.fleetengine.v1.DeleteVehicleRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteVehicleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Writes updated vehicle data to the Fleet Engine.
      * When updating a `Vehicle`, the following fields cannot be updated since
      * they are managed by the server:
@@ -732,6 +809,21 @@ public final class VehicleServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a Vehicle from the Fleet Engine.
+     * Returns FAILED_PRECONDITION if the Vehicle has active Trips.
+     * assigned to it.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteVehicle(
+        com.google.maps.fleetengine.v1.DeleteVehicleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteVehicleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Writes updated vehicle data to the Fleet Engine.
      * When updating a `Vehicle`, the following fields cannot be updated since
      * they are managed by the server:
@@ -871,6 +963,21 @@ public final class VehicleServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a Vehicle from the Fleet Engine.
+     * Returns FAILED_PRECONDITION if the Vehicle has active Trips.
+     * assigned to it.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteVehicle(com.google.maps.fleetengine.v1.DeleteVehicleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteVehicleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Writes updated vehicle data to the Fleet Engine.
      * When updating a `Vehicle`, the following fields cannot be updated since
      * they are managed by the server:
@@ -944,10 +1051,11 @@ public final class VehicleServiceGrpc {
 
   private static final int METHODID_CREATE_VEHICLE = 0;
   private static final int METHODID_GET_VEHICLE = 1;
-  private static final int METHODID_UPDATE_VEHICLE = 2;
-  private static final int METHODID_UPDATE_VEHICLE_ATTRIBUTES = 3;
-  private static final int METHODID_LIST_VEHICLES = 4;
-  private static final int METHODID_SEARCH_VEHICLES = 5;
+  private static final int METHODID_DELETE_VEHICLE = 2;
+  private static final int METHODID_UPDATE_VEHICLE = 3;
+  private static final int METHODID_UPDATE_VEHICLE_ATTRIBUTES = 4;
+  private static final int METHODID_LIST_VEHICLES = 5;
+  private static final int METHODID_SEARCH_VEHICLES = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -977,6 +1085,11 @@ public final class VehicleServiceGrpc {
               (com.google.maps.fleetengine.v1.GetVehicleRequest) request,
               (io.grpc.stub.StreamObserver<com.google.maps.fleetengine.v1.Vehicle>)
                   responseObserver);
+          break;
+        case METHODID_DELETE_VEHICLE:
+          serviceImpl.deleteVehicle(
+              (com.google.maps.fleetengine.v1.DeleteVehicleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_UPDATE_VEHICLE:
           serviceImpl.updateVehicle(
@@ -1033,6 +1146,12 @@ public final class VehicleServiceGrpc {
                 new MethodHandlers<
                     com.google.maps.fleetengine.v1.GetVehicleRequest,
                     com.google.maps.fleetengine.v1.Vehicle>(service, METHODID_GET_VEHICLE)))
+        .addMethod(
+            getDeleteVehicleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.fleetengine.v1.DeleteVehicleRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_VEHICLE)))
         .addMethod(
             getUpdateVehicleMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1113,6 +1232,7 @@ public final class VehicleServiceGrpc {
                       .setSchemaDescriptor(new VehicleServiceFileDescriptorSupplier())
                       .addMethod(getCreateVehicleMethod())
                       .addMethod(getGetVehicleMethod())
+                      .addMethod(getDeleteVehicleMethod())
                       .addMethod(getUpdateVehicleMethod())
                       .addMethod(getUpdateVehicleAttributesMethod())
                       .addMethod(getListVehiclesMethod())

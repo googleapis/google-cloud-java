@@ -40,6 +40,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
 
   private Backend() {
     balancingMode_ = "";
+    customMetrics_ = java.util.Collections.emptyList();
     description_ = "";
     group_ = "";
     preference_ = "";
@@ -100,6 +101,16 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Based on custom defined and reported metrics.
+     * </pre>
+     *
+     * <code>CUSTOM_METRICS = 331575765;</code>
+     */
+    CUSTOM_METRICS(331575765),
+    /**
+     *
+     *
+     * <pre>
      * Balance based on requests per second (RPS).
      * </pre>
      *
@@ -139,6 +150,16 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * <code>CONNECTION = 246311646;</code>
      */
     public static final int CONNECTION_VALUE = 246311646;
+    /**
+     *
+     *
+     * <pre>
+     * Based on custom defined and reported metrics.
+     * </pre>
+     *
+     * <code>CUSTOM_METRICS = 331575765;</code>
+     */
+    public static final int CUSTOM_METRICS_VALUE = 331575765;
     /**
      *
      *
@@ -188,6 +209,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_BALANCING_MODE;
         case 246311646:
           return CONNECTION;
+        case 331575765:
+          return CUSTOM_METRICS;
         case 2508000:
           return RATE;
         case 157008386:
@@ -525,6 +548,78 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public float getCapacityScaler() {
     return capacityScaler_;
+  }
+
+  public static final int CUSTOM_METRICS_FIELD_NUMBER = 429453813;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.compute.v1.BackendCustomMetric> customMetrics_;
+  /**
+   *
+   *
+   * <pre>
+   * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.BackendCustomMetric> getCustomMetricsList() {
+    return customMetrics_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.compute.v1.BackendCustomMetricOrBuilder>
+      getCustomMetricsOrBuilderList() {
+    return customMetrics_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;</code>
+   */
+  @java.lang.Override
+  public int getCustomMetricsCount() {
+    return customMetrics_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendCustomMetric getCustomMetrics(int index) {
+    return customMetrics_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendCustomMetricOrBuilder getCustomMetricsOrBuilder(
+      int index) {
+    return customMetrics_.get(index);
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
@@ -1042,6 +1137,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
+    for (int i = 0; i < customMetrics_.size(); i++) {
+      output.writeMessage(429453813, customMetrics_.get(i));
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 430286217, balancingMode_);
     }
@@ -1095,6 +1193,11 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
+    for (int i = 0; i < customMetrics_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              429453813, customMetrics_.get(i));
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(430286217, balancingMode_);
     }
@@ -1122,6 +1225,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       if (java.lang.Float.floatToIntBits(getCapacityScaler())
           != java.lang.Float.floatToIntBits(other.getCapacityScaler())) return false;
     }
+    if (!getCustomMetricsList().equals(other.getCustomMetricsList())) return false;
     if (hasDescription() != other.hasDescription()) return false;
     if (hasDescription()) {
       if (!getDescription().equals(other.getDescription())) return false;
@@ -1187,6 +1291,10 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     if (hasCapacityScaler()) {
       hash = (37 * hash) + CAPACITY_SCALER_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(getCapacityScaler());
+    }
+    if (getCustomMetricsCount() > 0) {
+      hash = (37 * hash) + CUSTOM_METRICS_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomMetricsList().hashCode();
     }
     if (hasDescription()) {
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
@@ -1372,6 +1480,13 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       balancingMode_ = "";
       capacityScaler_ = 0F;
+      if (customMetricsBuilder_ == null) {
+        customMetrics_ = java.util.Collections.emptyList();
+      } else {
+        customMetrics_ = null;
+        customMetricsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       description_ = "";
       failover_ = false;
       group_ = "";
@@ -1409,11 +1524,24 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.Backend buildPartial() {
       com.google.cloud.compute.v1.Backend result = new com.google.cloud.compute.v1.Backend(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Backend result) {
+      if (customMetricsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          customMetrics_ = java.util.Collections.unmodifiableList(customMetrics_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.customMetrics_ = customMetrics_;
+      } else {
+        result.customMetrics_ = customMetricsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.Backend result) {
@@ -1427,47 +1555,47 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
         result.capacityScaler_ = capacityScaler_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.description_ = description_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.failover_ = failover_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.group_ = group_;
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.maxConnections_ = maxConnections_;
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.maxConnectionsPerEndpoint_ = maxConnectionsPerEndpoint_;
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.maxConnectionsPerInstance_ = maxConnectionsPerInstance_;
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.maxRate_ = maxRate_;
         to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.maxRatePerEndpoint_ = maxRatePerEndpoint_;
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.maxRatePerInstance_ = maxRatePerInstance_;
         to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.maxUtilization_ = maxUtilization_;
         to_bitField0_ |= 0x00000800;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.preference_ = preference_;
         to_bitField0_ |= 0x00001000;
       }
@@ -1527,9 +1655,36 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCapacityScaler()) {
         setCapacityScaler(other.getCapacityScaler());
       }
+      if (customMetricsBuilder_ == null) {
+        if (!other.customMetrics_.isEmpty()) {
+          if (customMetrics_.isEmpty()) {
+            customMetrics_ = other.customMetrics_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureCustomMetricsIsMutable();
+            customMetrics_.addAll(other.customMetrics_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.customMetrics_.isEmpty()) {
+          if (customMetricsBuilder_.isEmpty()) {
+            customMetricsBuilder_.dispose();
+            customMetricsBuilder_ = null;
+            customMetrics_ = other.customMetrics_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            customMetricsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getCustomMetricsFieldBuilder()
+                    : null;
+          } else {
+            customMetricsBuilder_.addAllMessages(other.customMetrics_);
+          }
+        }
+      }
       if (other.hasDescription()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasFailover()) {
@@ -1537,7 +1692,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasGroup()) {
         group_ = other.group_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasMaxConnections()) {
@@ -1563,7 +1718,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPreference()) {
         preference_ = other.preference_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1595,55 +1750,55 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
             case 140796637:
               {
                 maxRatePerInstance_ = input.readFloat();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 140796637
             case 789033978:
               {
                 group_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 789033978
             case 837375200:
               {
                 maxConnectionsPerInstance_ = input.readInt32();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 837375200
             case 885217232:
               {
                 maxConnections_ = input.readInt32();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 885217232
             case 1038658269:
               {
                 maxRatePerEndpoint_ = input.readFloat();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 1038658269
             case 1111140240:
               {
                 failover_ = input.readBool();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 1111140240
             case 1185537597:
               {
                 maxUtilization_ = input.readFloat();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 1185537597
             case 1206249178:
               {
                 preference_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 1206249178
             case 1735236832:
               {
                 maxConnectionsPerEndpoint_ = input.readInt32();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 1735236832
             case -1767302035:
@@ -1655,15 +1810,29 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
             case -1030687016:
               {
                 maxRate_ = input.readInt32();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case -1030687016
             case -911466526:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -911466526
+            case -859336790:
+              {
+                com.google.cloud.compute.v1.BackendCustomMetric m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.BackendCustomMetric.parser(),
+                        extensionRegistry);
+                if (customMetricsBuilder_ == null) {
+                  ensureCustomMetricsIsMutable();
+                  customMetrics_.add(m);
+                } else {
+                  customMetricsBuilder_.addMessage(m);
+                }
+                break;
+              } // case -859336790
             case -852677558:
               {
                 balancingMode_ = input.readStringRequireUtf8();
@@ -1883,6 +2052,384 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.util.List<com.google.cloud.compute.v1.BackendCustomMetric> customMetrics_ =
+        java.util.Collections.emptyList();
+
+    private void ensureCustomMetricsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        customMetrics_ =
+            new java.util.ArrayList<com.google.cloud.compute.v1.BackendCustomMetric>(
+                customMetrics_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.BackendCustomMetric,
+            com.google.cloud.compute.v1.BackendCustomMetric.Builder,
+            com.google.cloud.compute.v1.BackendCustomMetricOrBuilder>
+        customMetricsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.BackendCustomMetric> getCustomMetricsList() {
+      if (customMetricsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(customMetrics_);
+      } else {
+        return customMetricsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;
+     * </code>
+     */
+    public int getCustomMetricsCount() {
+      if (customMetricsBuilder_ == null) {
+        return customMetrics_.size();
+      } else {
+        return customMetricsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendCustomMetric getCustomMetrics(int index) {
+      if (customMetricsBuilder_ == null) {
+        return customMetrics_.get(index);
+      } else {
+        return customMetricsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;
+     * </code>
+     */
+    public Builder setCustomMetrics(
+        int index, com.google.cloud.compute.v1.BackendCustomMetric value) {
+      if (customMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomMetricsIsMutable();
+        customMetrics_.set(index, value);
+        onChanged();
+      } else {
+        customMetricsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;
+     * </code>
+     */
+    public Builder setCustomMetrics(
+        int index, com.google.cloud.compute.v1.BackendCustomMetric.Builder builderForValue) {
+      if (customMetricsBuilder_ == null) {
+        ensureCustomMetricsIsMutable();
+        customMetrics_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        customMetricsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;
+     * </code>
+     */
+    public Builder addCustomMetrics(com.google.cloud.compute.v1.BackendCustomMetric value) {
+      if (customMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomMetricsIsMutable();
+        customMetrics_.add(value);
+        onChanged();
+      } else {
+        customMetricsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;
+     * </code>
+     */
+    public Builder addCustomMetrics(
+        int index, com.google.cloud.compute.v1.BackendCustomMetric value) {
+      if (customMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomMetricsIsMutable();
+        customMetrics_.add(index, value);
+        onChanged();
+      } else {
+        customMetricsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;
+     * </code>
+     */
+    public Builder addCustomMetrics(
+        com.google.cloud.compute.v1.BackendCustomMetric.Builder builderForValue) {
+      if (customMetricsBuilder_ == null) {
+        ensureCustomMetricsIsMutable();
+        customMetrics_.add(builderForValue.build());
+        onChanged();
+      } else {
+        customMetricsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;
+     * </code>
+     */
+    public Builder addCustomMetrics(
+        int index, com.google.cloud.compute.v1.BackendCustomMetric.Builder builderForValue) {
+      if (customMetricsBuilder_ == null) {
+        ensureCustomMetricsIsMutable();
+        customMetrics_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        customMetricsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;
+     * </code>
+     */
+    public Builder addAllCustomMetrics(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.BackendCustomMetric> values) {
+      if (customMetricsBuilder_ == null) {
+        ensureCustomMetricsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customMetrics_);
+        onChanged();
+      } else {
+        customMetricsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;
+     * </code>
+     */
+    public Builder clearCustomMetrics() {
+      if (customMetricsBuilder_ == null) {
+        customMetrics_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        customMetricsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;
+     * </code>
+     */
+    public Builder removeCustomMetrics(int index) {
+      if (customMetricsBuilder_ == null) {
+        ensureCustomMetricsIsMutable();
+        customMetrics_.remove(index);
+        onChanged();
+      } else {
+        customMetricsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendCustomMetric.Builder getCustomMetricsBuilder(
+        int index) {
+      return getCustomMetricsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendCustomMetricOrBuilder getCustomMetricsOrBuilder(
+        int index) {
+      if (customMetricsBuilder_ == null) {
+        return customMetrics_.get(index);
+      } else {
+        return customMetricsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.compute.v1.BackendCustomMetricOrBuilder>
+        getCustomMetricsOrBuilderList() {
+      if (customMetricsBuilder_ != null) {
+        return customMetricsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(customMetrics_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendCustomMetric.Builder addCustomMetricsBuilder() {
+      return getCustomMetricsFieldBuilder()
+          .addBuilder(com.google.cloud.compute.v1.BackendCustomMetric.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendCustomMetric.Builder addCustomMetricsBuilder(
+        int index) {
+      return getCustomMetricsFieldBuilder()
+          .addBuilder(index, com.google.cloud.compute.v1.BackendCustomMetric.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of custom metrics that are used for CUSTOM_METRICS BalancingMode.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendCustomMetric custom_metrics = 429453813;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.BackendCustomMetric.Builder>
+        getCustomMetricsBuilderList() {
+      return getCustomMetricsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.BackendCustomMetric,
+            com.google.cloud.compute.v1.BackendCustomMetric.Builder,
+            com.google.cloud.compute.v1.BackendCustomMetricOrBuilder>
+        getCustomMetricsFieldBuilder() {
+      if (customMetricsBuilder_ == null) {
+        customMetricsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.BackendCustomMetric,
+                com.google.cloud.compute.v1.BackendCustomMetric.Builder,
+                com.google.cloud.compute.v1.BackendCustomMetricOrBuilder>(
+                customMetrics_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        customMetrics_ = null;
+      }
+      return customMetricsBuilder_;
+    }
+
     private java.lang.Object description_ = "";
     /**
      *
@@ -1896,7 +2443,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1959,7 +2506,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1976,7 +2523,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1998,7 +2545,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2017,7 +2564,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasFailover() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2049,7 +2596,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     public Builder setFailover(boolean value) {
 
       failover_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2065,7 +2612,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFailover() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       failover_ = false;
       onChanged();
       return this;
@@ -2084,7 +2631,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the group field is set.
      */
     public boolean hasGroup() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2147,7 +2694,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       group_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2164,7 +2711,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearGroup() {
       group_ = getDefaultInstance().getGroup();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2186,7 +2733,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       group_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2205,7 +2752,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMaxConnections() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2237,7 +2784,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxConnections(int value) {
 
       maxConnections_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2253,7 +2800,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxConnections() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       maxConnections_ = 0;
       onChanged();
       return this;
@@ -2273,7 +2820,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMaxConnectionsPerEndpoint() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2305,7 +2852,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxConnectionsPerEndpoint(int value) {
 
       maxConnectionsPerEndpoint_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2321,7 +2868,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxConnectionsPerEndpoint() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       maxConnectionsPerEndpoint_ = 0;
       onChanged();
       return this;
@@ -2341,7 +2888,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMaxConnectionsPerInstance() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2373,7 +2920,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxConnectionsPerInstance(int value) {
 
       maxConnectionsPerInstance_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2389,7 +2936,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxConnectionsPerInstance() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       maxConnectionsPerInstance_ = 0;
       onChanged();
       return this;
@@ -2409,7 +2956,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMaxRate() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2441,7 +2988,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxRate(int value) {
 
       maxRate_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2457,7 +3004,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxRate() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       maxRate_ = 0;
       onChanged();
       return this;
@@ -2477,7 +3024,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMaxRatePerEndpoint() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2509,7 +3056,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxRatePerEndpoint(float value) {
 
       maxRatePerEndpoint_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2525,7 +3072,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxRatePerEndpoint() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       maxRatePerEndpoint_ = 0F;
       onChanged();
       return this;
@@ -2545,7 +3092,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMaxRatePerInstance() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -2577,7 +3124,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxRatePerInstance(float value) {
 
       maxRatePerInstance_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2593,7 +3140,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxRatePerInstance() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       maxRatePerInstance_ = 0F;
       onChanged();
       return this;
@@ -2613,7 +3160,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMaxUtilization() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -2645,7 +3192,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxUtilization(float value) {
 
       maxUtilization_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2661,7 +3208,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxUtilization() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       maxUtilization_ = 0F;
       onChanged();
       return this;
@@ -2681,7 +3228,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the preference field is set.
      */
     public boolean hasPreference() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -2747,7 +3294,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       preference_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -2765,7 +3312,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPreference() {
       preference_ = getDefaultInstance().getPreference();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -2788,7 +3335,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       preference_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

@@ -218,6 +218,51 @@ public interface SuggestionResultOrBuilder
   com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponseOrBuilder
       getSuggestSmartRepliesResponseOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Suggestions generated using generators triggered by customer or agent
+   * messages.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.GenerateSuggestionsResponse generate_suggestions_response = 9;
+   * </code>
+   *
+   * @return Whether the generateSuggestionsResponse field is set.
+   */
+  boolean hasGenerateSuggestionsResponse();
+  /**
+   *
+   *
+   * <pre>
+   * Suggestions generated using generators triggered by customer or agent
+   * messages.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.GenerateSuggestionsResponse generate_suggestions_response = 9;
+   * </code>
+   *
+   * @return The generateSuggestionsResponse.
+   */
+  com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse getGenerateSuggestionsResponse();
+  /**
+   *
+   *
+   * <pre>
+   * Suggestions generated using generators triggered by customer or agent
+   * messages.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.GenerateSuggestionsResponse generate_suggestions_response = 9;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.GenerateSuggestionsResponseOrBuilder
+      getGenerateSuggestionsResponseOrBuilder();
+
   com.google.cloud.dialogflow.v2.SuggestionResult.SuggestionResponseCase
       getSuggestionResponseCase();
 }

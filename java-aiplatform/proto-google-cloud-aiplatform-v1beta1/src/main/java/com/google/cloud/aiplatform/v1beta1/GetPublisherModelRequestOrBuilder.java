@@ -151,4 +151,20 @@ public interface GetPublisherModelRequestOrBuilder
    * @return The bytes for huggingFaceToken.
    */
   com.google.protobuf.ByteString getHuggingFaceTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to cnclude the deployment configs from the equivalent
+   * Model Garden model if the requested model is a Hugging Face model.
+   * </pre>
+   *
+   * <code>
+   * bool include_equivalent_model_garden_model_deployment_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The includeEquivalentModelGardenModelDeploymentConfigs.
+   */
+  boolean getIncludeEquivalentModelGardenModelDeploymentConfigs();
 }

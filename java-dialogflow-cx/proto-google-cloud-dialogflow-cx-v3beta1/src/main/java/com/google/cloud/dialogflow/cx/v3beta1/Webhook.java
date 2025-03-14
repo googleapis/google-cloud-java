@@ -1274,10 +1274,10 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The client secret provided by the 3rd party platform.
+       * Optional. The client secret provided by the 3rd party platform.
        * </pre>
        *
-       * <code>string client_secret = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string client_secret = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The clientSecret.
        */
@@ -1286,10 +1286,10 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The client secret provided by the 3rd party platform.
+       * Optional. The client secret provided by the 3rd party platform.
        * </pre>
        *
-       * <code>string client_secret = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string client_secret = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for clientSecret.
        */
@@ -1482,10 +1482,10 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The client secret provided by the 3rd party platform.
+       * Optional. The client secret provided by the 3rd party platform.
        * </pre>
        *
-       * <code>string client_secret = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string client_secret = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The clientSecret.
        */
@@ -1505,10 +1505,10 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The client secret provided by the 3rd party platform.
+       * Optional. The client secret provided by the 3rd party platform.
        * </pre>
        *
-       * <code>string client_secret = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string client_secret = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for clientSecret.
        */
@@ -2214,10 +2214,10 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The client secret provided by the 3rd party platform.
+         * Optional. The client secret provided by the 3rd party platform.
          * </pre>
          *
-         * <code>string client_secret = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string client_secret = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The clientSecret.
          */
@@ -2236,10 +2236,10 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The client secret provided by the 3rd party platform.
+         * Optional. The client secret provided by the 3rd party platform.
          * </pre>
          *
-         * <code>string client_secret = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string client_secret = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The bytes for clientSecret.
          */
@@ -2258,10 +2258,10 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The client secret provided by the 3rd party platform.
+         * Optional. The client secret provided by the 3rd party platform.
          * </pre>
          *
-         * <code>string client_secret = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string client_secret = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The clientSecret to set.
          * @return This builder for chaining.
@@ -2279,10 +2279,10 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The client secret provided by the 3rd party platform.
+         * Optional. The client secret provided by the 3rd party platform.
          * </pre>
          *
-         * <code>string client_secret = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string client_secret = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return This builder for chaining.
          */
@@ -2296,10 +2296,10 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The client secret provided by the 3rd party platform.
+         * Optional. The client secret provided by the 3rd party platform.
          * </pre>
          *
-         * <code>string client_secret = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         * <code>string client_secret = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The bytes for clientSecret to set.
          * @return This builder for chaining.

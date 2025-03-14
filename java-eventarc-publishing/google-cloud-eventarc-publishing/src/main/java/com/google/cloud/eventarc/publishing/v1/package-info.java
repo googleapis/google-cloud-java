@@ -31,15 +31,19 @@
  *
  * <p>A partner is a third-party event provider that is integrated with Eventarc.
  *
- * <p>A subscriber is a GCP customer interested in receiving events.
+ * <p>A subscriber is a Google Cloud customer interested in receiving events.
  *
  * <p>Channel is a first-class Eventarc resource that is created and managed by the subscriber in
- * their GCP project. A Channel represents a subscriber's intent to receive events from an event
- * provider. A Channel is associated with exactly one event provider.
+ * their Google Cloud project. A Channel represents a subscriber's intent to receive events from an
+ * event provider. A Channel is associated with exactly one event provider.
  *
  * <p>ChannelConnection is a first-class Eventarc resource that is created and managed by the
- * partner in their GCP project. A ChannelConnection represents a connection between a partner and a
- * subscriber's Channel. A ChannelConnection has a one-to-one mapping with a Channel.
+ * partner in their Google Cloud project. A ChannelConnection represents a connection between a
+ * partner and a subscriber's Channel. A ChannelConnection has a one-to-one mapping with a Channel.
+ *
+ * <p>Bus is a first-class Eventarc resource that is created and managed in a Google Cloud project.
+ * A Bus provides a discoverable endpoint for events and is a router that receives all events
+ * published by event providers and delivers them to zero or more subscribers.
  *
  * <p>Publisher allows an event provider to publish events to Eventarc.
  *

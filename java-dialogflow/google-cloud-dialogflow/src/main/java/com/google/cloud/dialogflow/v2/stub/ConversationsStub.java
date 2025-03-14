@@ -29,7 +29,11 @@ import com.google.cloud.dialogflow.v2.GenerateStatelessSuggestionRequest;
 import com.google.cloud.dialogflow.v2.GenerateStatelessSuggestionResponse;
 import com.google.cloud.dialogflow.v2.GenerateStatelessSummaryRequest;
 import com.google.cloud.dialogflow.v2.GenerateStatelessSummaryResponse;
+import com.google.cloud.dialogflow.v2.GenerateSuggestionsRequest;
+import com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse;
 import com.google.cloud.dialogflow.v2.GetConversationRequest;
+import com.google.cloud.dialogflow.v2.IngestContextReferencesRequest;
+import com.google.cloud.dialogflow.v2.IngestContextReferencesResponse;
 import com.google.cloud.dialogflow.v2.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2.ListMessagesRequest;
@@ -75,6 +79,11 @@ public abstract class ConversationsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: completeConversationCallable()");
   }
 
+  public UnaryCallable<IngestContextReferencesRequest, IngestContextReferencesResponse>
+      ingestContextReferencesCallable() {
+    throw new UnsupportedOperationException("Not implemented: ingestContextReferencesCallable()");
+  }
+
   public UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse> listMessagesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listMessagesPagedCallable()");
   }
@@ -102,6 +111,11 @@ public abstract class ConversationsStub implements BackgroundResource {
 
   public UnaryCallable<SearchKnowledgeRequest, SearchKnowledgeResponse> searchKnowledgeCallable() {
     throw new UnsupportedOperationException("Not implemented: searchKnowledgeCallable()");
+  }
+
+  public UnaryCallable<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+      generateSuggestionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateSuggestionsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

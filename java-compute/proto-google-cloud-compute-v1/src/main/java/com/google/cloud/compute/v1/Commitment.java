@@ -562,6 +562,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     MEMORY_OPTIMIZED(281753417),
     /** <code>MEMORY_OPTIMIZED_M3 = 276301372;</code> */
     MEMORY_OPTIMIZED_M3(276301372),
+    /** <code>MEMORY_OPTIMIZED_M4 = 276301373;</code> */
+    MEMORY_OPTIMIZED_M4(276301373),
     /** <code>MEMORY_OPTIMIZED_X4_16TB = 183089120;</code> */
     MEMORY_OPTIMIZED_X4_16TB(183089120),
     /** <code>MEMORY_OPTIMIZED_X4_24TB = 183116989;</code> */
@@ -633,6 +635,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     public static final int MEMORY_OPTIMIZED_VALUE = 281753417;
     /** <code>MEMORY_OPTIMIZED_M3 = 276301372;</code> */
     public static final int MEMORY_OPTIMIZED_M3_VALUE = 276301372;
+    /** <code>MEMORY_OPTIMIZED_M4 = 276301373;</code> */
+    public static final int MEMORY_OPTIMIZED_M4_VALUE = 276301373;
     /** <code>MEMORY_OPTIMIZED_X4_16TB = 183089120;</code> */
     public static final int MEMORY_OPTIMIZED_X4_16TB_VALUE = 183089120;
     /** <code>MEMORY_OPTIMIZED_X4_24TB = 183116989;</code> */
@@ -718,6 +722,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
           return MEMORY_OPTIMIZED;
         case 276301372:
           return MEMORY_OPTIMIZED_M3;
+        case 276301373:
+          return MEMORY_OPTIMIZED_M4;
         case 183089120:
           return MEMORY_OPTIMIZED_X4_16TB;
         case 183116989:

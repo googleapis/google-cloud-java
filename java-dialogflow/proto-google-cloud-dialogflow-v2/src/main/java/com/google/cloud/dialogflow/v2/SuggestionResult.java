@@ -81,6 +81,7 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     SUGGEST_KNOWLEDGE_ASSIST_RESPONSE(8),
     SUGGEST_FAQ_ANSWERS_RESPONSE(3),
     SUGGEST_SMART_REPLIES_RESPONSE(4),
+    GENERATE_SUGGESTIONS_RESPONSE(9),
     SUGGESTIONRESPONSE_NOT_SET(0);
     private final int value;
 
@@ -109,6 +110,8 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
           return SUGGEST_FAQ_ANSWERS_RESPONSE;
         case 4:
           return SUGGEST_SMART_REPLIES_RESPONSE;
+        case 9:
+          return GENERATE_SUGGESTIONS_RESPONSE;
         case 0:
           return SUGGESTIONRESPONSE_NOT_SET;
         default:
@@ -401,6 +404,68 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse.getDefaultInstance();
   }
 
+  public static final int GENERATE_SUGGESTIONS_RESPONSE_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Suggestions generated using generators triggered by customer or agent
+   * messages.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.GenerateSuggestionsResponse generate_suggestions_response = 9;
+   * </code>
+   *
+   * @return Whether the generateSuggestionsResponse field is set.
+   */
+  @java.lang.Override
+  public boolean hasGenerateSuggestionsResponse() {
+    return suggestionResponseCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Suggestions generated using generators triggered by customer or agent
+   * messages.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.GenerateSuggestionsResponse generate_suggestions_response = 9;
+   * </code>
+   *
+   * @return The generateSuggestionsResponse.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse
+      getGenerateSuggestionsResponse() {
+    if (suggestionResponseCase_ == 9) {
+      return (com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse) suggestionResponse_;
+    }
+    return com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Suggestions generated using generators triggered by customer or agent
+   * messages.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.GenerateSuggestionsResponse generate_suggestions_response = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.GenerateSuggestionsResponseOrBuilder
+      getGenerateSuggestionsResponseOrBuilder() {
+    if (suggestionResponseCase_ == 9) {
+      return (com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse) suggestionResponse_;
+    }
+    return com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -433,6 +498,10 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
     if (suggestionResponseCase_ == 8) {
       output.writeMessage(
           8, (com.google.cloud.dialogflow.v2.SuggestKnowledgeAssistResponse) suggestionResponse_);
+    }
+    if (suggestionResponseCase_ == 9) {
+      output.writeMessage(
+          9, (com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse) suggestionResponse_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -468,6 +537,11 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8,
               (com.google.cloud.dialogflow.v2.SuggestKnowledgeAssistResponse) suggestionResponse_);
+    }
+    if (suggestionResponseCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse) suggestionResponse_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -505,6 +579,10 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
         if (!getSuggestSmartRepliesResponse().equals(other.getSuggestSmartRepliesResponse()))
           return false;
         break;
+      case 9:
+        if (!getGenerateSuggestionsResponse().equals(other.getGenerateSuggestionsResponse()))
+          return false;
+        break;
       case 0:
       default:
     }
@@ -539,6 +617,10 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       case 4:
         hash = (37 * hash) + SUGGEST_SMART_REPLIES_RESPONSE_FIELD_NUMBER;
         hash = (53 * hash) + getSuggestSmartRepliesResponse().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + GENERATE_SUGGESTIONS_RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getGenerateSuggestionsResponse().hashCode();
         break;
       case 0:
       default:
@@ -703,6 +785,9 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       if (suggestSmartRepliesResponseBuilder_ != null) {
         suggestSmartRepliesResponseBuilder_.clear();
       }
+      if (generateSuggestionsResponseBuilder_ != null) {
+        generateSuggestionsResponseBuilder_.clear();
+      }
       suggestionResponseCase_ = 0;
       suggestionResponse_ = null;
       return this;
@@ -761,6 +846,9 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       }
       if (suggestionResponseCase_ == 4 && suggestSmartRepliesResponseBuilder_ != null) {
         result.suggestionResponse_ = suggestSmartRepliesResponseBuilder_.build();
+      }
+      if (suggestionResponseCase_ == 9 && generateSuggestionsResponseBuilder_ != null) {
+        result.suggestionResponse_ = generateSuggestionsResponseBuilder_.build();
       }
     }
 
@@ -836,6 +924,11 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
             mergeSuggestSmartRepliesResponse(other.getSuggestSmartRepliesResponse());
             break;
           }
+        case GENERATE_SUGGESTIONS_RESPONSE:
+          {
+            mergeGenerateSuggestionsResponse(other.getGenerateSuggestionsResponse());
+            break;
+          }
         case SUGGESTIONRESPONSE_NOT_SET:
           {
             break;
@@ -902,6 +995,13 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
                 suggestionResponseCase_ = 8;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getGenerateSuggestionsResponseFieldBuilder().getBuilder(), extensionRegistry);
+                suggestionResponseCase_ = 9;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2057,6 +2157,251 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       suggestionResponseCase_ = 4;
       onChanged();
       return suggestSmartRepliesResponseBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse,
+            com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse.Builder,
+            com.google.cloud.dialogflow.v2.GenerateSuggestionsResponseOrBuilder>
+        generateSuggestionsResponseBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Suggestions generated using generators triggered by customer or agent
+     * messages.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.GenerateSuggestionsResponse generate_suggestions_response = 9;
+     * </code>
+     *
+     * @return Whether the generateSuggestionsResponse field is set.
+     */
+    @java.lang.Override
+    public boolean hasGenerateSuggestionsResponse() {
+      return suggestionResponseCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggestions generated using generators triggered by customer or agent
+     * messages.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.GenerateSuggestionsResponse generate_suggestions_response = 9;
+     * </code>
+     *
+     * @return The generateSuggestionsResponse.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse
+        getGenerateSuggestionsResponse() {
+      if (generateSuggestionsResponseBuilder_ == null) {
+        if (suggestionResponseCase_ == 9) {
+          return (com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse) suggestionResponse_;
+        }
+        return com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse.getDefaultInstance();
+      } else {
+        if (suggestionResponseCase_ == 9) {
+          return generateSuggestionsResponseBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggestions generated using generators triggered by customer or agent
+     * messages.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.GenerateSuggestionsResponse generate_suggestions_response = 9;
+     * </code>
+     */
+    public Builder setGenerateSuggestionsResponse(
+        com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse value) {
+      if (generateSuggestionsResponseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        suggestionResponse_ = value;
+        onChanged();
+      } else {
+        generateSuggestionsResponseBuilder_.setMessage(value);
+      }
+      suggestionResponseCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggestions generated using generators triggered by customer or agent
+     * messages.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.GenerateSuggestionsResponse generate_suggestions_response = 9;
+     * </code>
+     */
+    public Builder setGenerateSuggestionsResponse(
+        com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse.Builder builderForValue) {
+      if (generateSuggestionsResponseBuilder_ == null) {
+        suggestionResponse_ = builderForValue.build();
+        onChanged();
+      } else {
+        generateSuggestionsResponseBuilder_.setMessage(builderForValue.build());
+      }
+      suggestionResponseCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggestions generated using generators triggered by customer or agent
+     * messages.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.GenerateSuggestionsResponse generate_suggestions_response = 9;
+     * </code>
+     */
+    public Builder mergeGenerateSuggestionsResponse(
+        com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse value) {
+      if (generateSuggestionsResponseBuilder_ == null) {
+        if (suggestionResponseCase_ == 9
+            && suggestionResponse_
+                != com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse
+                    .getDefaultInstance()) {
+          suggestionResponse_ =
+              com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse.newBuilder(
+                      (com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse)
+                          suggestionResponse_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          suggestionResponse_ = value;
+        }
+        onChanged();
+      } else {
+        if (suggestionResponseCase_ == 9) {
+          generateSuggestionsResponseBuilder_.mergeFrom(value);
+        } else {
+          generateSuggestionsResponseBuilder_.setMessage(value);
+        }
+      }
+      suggestionResponseCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggestions generated using generators triggered by customer or agent
+     * messages.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.GenerateSuggestionsResponse generate_suggestions_response = 9;
+     * </code>
+     */
+    public Builder clearGenerateSuggestionsResponse() {
+      if (generateSuggestionsResponseBuilder_ == null) {
+        if (suggestionResponseCase_ == 9) {
+          suggestionResponseCase_ = 0;
+          suggestionResponse_ = null;
+          onChanged();
+        }
+      } else {
+        if (suggestionResponseCase_ == 9) {
+          suggestionResponseCase_ = 0;
+          suggestionResponse_ = null;
+        }
+        generateSuggestionsResponseBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggestions generated using generators triggered by customer or agent
+     * messages.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.GenerateSuggestionsResponse generate_suggestions_response = 9;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse.Builder
+        getGenerateSuggestionsResponseBuilder() {
+      return getGenerateSuggestionsResponseFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggestions generated using generators triggered by customer or agent
+     * messages.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.GenerateSuggestionsResponse generate_suggestions_response = 9;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.GenerateSuggestionsResponseOrBuilder
+        getGenerateSuggestionsResponseOrBuilder() {
+      if ((suggestionResponseCase_ == 9) && (generateSuggestionsResponseBuilder_ != null)) {
+        return generateSuggestionsResponseBuilder_.getMessageOrBuilder();
+      } else {
+        if (suggestionResponseCase_ == 9) {
+          return (com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse) suggestionResponse_;
+        }
+        return com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggestions generated using generators triggered by customer or agent
+     * messages.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.GenerateSuggestionsResponse generate_suggestions_response = 9;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse,
+            com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse.Builder,
+            com.google.cloud.dialogflow.v2.GenerateSuggestionsResponseOrBuilder>
+        getGenerateSuggestionsResponseFieldBuilder() {
+      if (generateSuggestionsResponseBuilder_ == null) {
+        if (!(suggestionResponseCase_ == 9)) {
+          suggestionResponse_ =
+              com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse.getDefaultInstance();
+        }
+        generateSuggestionsResponseBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse,
+                com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse.Builder,
+                com.google.cloud.dialogflow.v2.GenerateSuggestionsResponseOrBuilder>(
+                (com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse) suggestionResponse_,
+                getParentForChildren(),
+                isClean());
+        suggestionResponse_ = null;
+      }
+      suggestionResponseCase_ = 9;
+      onChanged();
+      return generateSuggestionsResponseBuilder_;
     }
 
     @java.lang.Override

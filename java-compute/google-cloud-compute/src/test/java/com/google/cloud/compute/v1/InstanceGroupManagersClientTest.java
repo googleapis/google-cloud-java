@@ -695,6 +695,7 @@ public class InstanceGroupManagersClientTest {
             .setName("name3373707")
             .addAllNamedPorts(new ArrayList<NamedPort>())
             .setRegion("region-934795532")
+            .setResourcePolicies(InstanceGroupManagerResourcePolicies.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
             .setSelfLink("selfLink1191800166")

@@ -336,8 +336,8 @@ public class QuotaAdjusterSettingsManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the config. Required to be “settings”, as only a single setting
-   *     per container will be supported initially.
+   * @param name Required. Name of the `quotaAdjusterSettings` configuration. Only a single setting
+   *     per project is supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final QuotaAdjusterSettings getQuotaAdjusterSettings(QuotaAdjusterSettingsName name) {
@@ -368,8 +368,8 @@ public class QuotaAdjusterSettingsManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the config. Required to be “settings”, as only a single setting
-   *     per container will be supported initially.
+   * @param name Required. Name of the `quotaAdjusterSettings` configuration. Only a single setting
+   *     per project is supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final QuotaAdjusterSettings getQuotaAdjusterSettings(String name) {

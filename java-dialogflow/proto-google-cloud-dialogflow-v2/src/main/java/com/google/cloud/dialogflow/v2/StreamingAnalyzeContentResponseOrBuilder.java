@@ -457,4 +457,29 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    */
   com.google.cloud.dialogflow.v2.CloudConversationDebuggingInfoOrBuilder
       getDebuggingInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The name of the actual Cloud speech model used for speech recognition.
+   * </pre>
+   *
+   * <code>string speech_model = 13;</code>
+   *
+   * @return The speechModel.
+   */
+  java.lang.String getSpeechModel();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the actual Cloud speech model used for speech recognition.
+   * </pre>
+   *
+   * <code>string speech_model = 13;</code>
+   *
+   * @return The bytes for speechModel.
+   */
+  com.google.protobuf.ByteString getSpeechModelBytes();
 }

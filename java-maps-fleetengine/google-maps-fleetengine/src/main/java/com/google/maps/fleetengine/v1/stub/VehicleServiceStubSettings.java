@@ -45,6 +45,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.maps.fleetengine.v1.CreateVehicleRequest;
+import com.google.maps.fleetengine.v1.DeleteVehicleRequest;
 import com.google.maps.fleetengine.v1.GetVehicleRequest;
 import com.google.maps.fleetengine.v1.ListVehiclesRequest;
 import com.google.maps.fleetengine.v1.ListVehiclesResponse;
@@ -54,6 +55,7 @@ import com.google.maps.fleetengine.v1.UpdateVehicleAttributesRequest;
 import com.google.maps.fleetengine.v1.UpdateVehicleAttributesResponse;
 import com.google.maps.fleetengine.v1.UpdateVehicleRequest;
 import com.google.maps.fleetengine.v1.Vehicle;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
@@ -117,6 +119,7 @@ public class VehicleServiceStubSettings extends StubSettings<VehicleServiceStubS
 
   private final UnaryCallSettings<CreateVehicleRequest, Vehicle> createVehicleSettings;
   private final UnaryCallSettings<GetVehicleRequest, Vehicle> getVehicleSettings;
+  private final UnaryCallSettings<DeleteVehicleRequest, Empty> deleteVehicleSettings;
   private final UnaryCallSettings<UpdateVehicleRequest, Vehicle> updateVehicleSettings;
   private final UnaryCallSettings<UpdateVehicleAttributesRequest, UpdateVehicleAttributesResponse>
       updateVehicleAttributesSettings;
@@ -185,6 +188,11 @@ public class VehicleServiceStubSettings extends StubSettings<VehicleServiceStubS
   /** Returns the object with the settings used for calls to getVehicle. */
   public UnaryCallSettings<GetVehicleRequest, Vehicle> getVehicleSettings() {
     return getVehicleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteVehicle. */
+  public UnaryCallSettings<DeleteVehicleRequest, Empty> deleteVehicleSettings() {
+    return deleteVehicleSettings;
   }
 
   /** Returns the object with the settings used for calls to updateVehicle. */
@@ -292,6 +300,7 @@ public class VehicleServiceStubSettings extends StubSettings<VehicleServiceStubS
 
     createVehicleSettings = settingsBuilder.createVehicleSettings().build();
     getVehicleSettings = settingsBuilder.getVehicleSettings().build();
+    deleteVehicleSettings = settingsBuilder.deleteVehicleSettings().build();
     updateVehicleSettings = settingsBuilder.updateVehicleSettings().build();
     updateVehicleAttributesSettings = settingsBuilder.updateVehicleAttributesSettings().build();
     listVehiclesSettings = settingsBuilder.listVehiclesSettings().build();
@@ -303,6 +312,7 @@ public class VehicleServiceStubSettings extends StubSettings<VehicleServiceStubS
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<CreateVehicleRequest, Vehicle> createVehicleSettings;
     private final UnaryCallSettings.Builder<GetVehicleRequest, Vehicle> getVehicleSettings;
+    private final UnaryCallSettings.Builder<DeleteVehicleRequest, Empty> deleteVehicleSettings;
     private final UnaryCallSettings.Builder<UpdateVehicleRequest, Vehicle> updateVehicleSettings;
     private final UnaryCallSettings.Builder<
             UpdateVehicleAttributesRequest, UpdateVehicleAttributesResponse>
@@ -355,6 +365,7 @@ public class VehicleServiceStubSettings extends StubSettings<VehicleServiceStubS
 
       createVehicleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getVehicleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteVehicleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateVehicleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateVehicleAttributesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listVehiclesSettings = PagedCallSettings.newBuilder(LIST_VEHICLES_PAGE_STR_FACT);
@@ -364,6 +375,7 @@ public class VehicleServiceStubSettings extends StubSettings<VehicleServiceStubS
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createVehicleSettings,
               getVehicleSettings,
+              deleteVehicleSettings,
               updateVehicleSettings,
               updateVehicleAttributesSettings,
               listVehiclesSettings,
@@ -376,6 +388,7 @@ public class VehicleServiceStubSettings extends StubSettings<VehicleServiceStubS
 
       createVehicleSettings = settings.createVehicleSettings.toBuilder();
       getVehicleSettings = settings.getVehicleSettings.toBuilder();
+      deleteVehicleSettings = settings.deleteVehicleSettings.toBuilder();
       updateVehicleSettings = settings.updateVehicleSettings.toBuilder();
       updateVehicleAttributesSettings = settings.updateVehicleAttributesSettings.toBuilder();
       listVehiclesSettings = settings.listVehiclesSettings.toBuilder();
@@ -385,6 +398,7 @@ public class VehicleServiceStubSettings extends StubSettings<VehicleServiceStubS
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createVehicleSettings,
               getVehicleSettings,
+              deleteVehicleSettings,
               updateVehicleSettings,
               updateVehicleAttributesSettings,
               listVehiclesSettings,
@@ -413,6 +427,11 @@ public class VehicleServiceStubSettings extends StubSettings<VehicleServiceStubS
           .getVehicleSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteVehicleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .updateVehicleSettings()
@@ -460,6 +479,11 @@ public class VehicleServiceStubSettings extends StubSettings<VehicleServiceStubS
     /** Returns the builder for the settings used for calls to getVehicle. */
     public UnaryCallSettings.Builder<GetVehicleRequest, Vehicle> getVehicleSettings() {
       return getVehicleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteVehicle. */
+    public UnaryCallSettings.Builder<DeleteVehicleRequest, Empty> deleteVehicleSettings() {
+      return deleteVehicleSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateVehicle. */

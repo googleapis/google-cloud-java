@@ -32,7 +32,11 @@ import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSuggestionRequest;
 import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSuggestionResponse;
 import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryRequest;
 import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryResponse;
+import com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsRequest;
+import com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsResponse;
 import com.google.cloud.dialogflow.v2beta1.GetConversationRequest;
+import com.google.cloud.dialogflow.v2beta1.IngestContextReferencesRequest;
+import com.google.cloud.dialogflow.v2beta1.IngestContextReferencesResponse;
 import com.google.cloud.dialogflow.v2beta1.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2beta1.ListMessagesRequest;
@@ -79,6 +83,11 @@ public abstract class ConversationsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: completeConversationCallable()");
   }
 
+  public UnaryCallable<IngestContextReferencesRequest, IngestContextReferencesResponse>
+      ingestContextReferencesCallable() {
+    throw new UnsupportedOperationException("Not implemented: ingestContextReferencesCallable()");
+  }
+
   public UnaryCallable<BatchCreateMessagesRequest, BatchCreateMessagesResponse>
       batchCreateMessagesCallable() {
     throw new UnsupportedOperationException("Not implemented: batchCreateMessagesCallable()");
@@ -111,6 +120,11 @@ public abstract class ConversationsStub implements BackgroundResource {
 
   public UnaryCallable<SearchKnowledgeRequest, SearchKnowledgeResponse> searchKnowledgeCallable() {
     throw new UnsupportedOperationException("Not implemented: searchKnowledgeCallable()");
+  }
+
+  public UnaryCallable<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+      generateSuggestionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateSuggestionsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

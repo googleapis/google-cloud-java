@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.cx.v3beta1.stub;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListLocationsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListToolVersionsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.ToolsClient.ListToolsPagedResponse;
 
 import com.google.api.HttpRule;
@@ -37,14 +38,22 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateToolRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.CreateToolVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteToolRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.DeleteToolVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportToolsMetadata;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportToolsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportToolsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.GetToolRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.GetToolVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ListToolVersionsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.ListToolsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListToolsResponse;
+import com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.RestoreToolVersionResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.Tool;
+import com.google.cloud.dialogflow.cx.v3beta1.ToolVersion;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateToolRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -291,6 +300,185 @@ public class HttpJsonToolsStub extends ToolsStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<ListToolVersionsRequest, ListToolVersionsResponse>
+      listToolVersionsMethodDescriptor =
+          ApiMethodDescriptor.<ListToolVersionsRequest, ListToolVersionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Tools/ListToolVersions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListToolVersionsRequest>newBuilder()
+                      .setPath(
+                          "/v3beta1/{parent=projects/*/locations/*/agents/*/tools/*}/versions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListToolVersionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListToolVersionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListToolVersionsResponse>newBuilder()
+                      .setDefaultInstance(ListToolVersionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateToolVersionRequest, ToolVersion>
+      createToolVersionMethodDescriptor =
+          ApiMethodDescriptor.<CreateToolVersionRequest, ToolVersion>newBuilder()
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Tools/CreateToolVersion")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateToolVersionRequest>newBuilder()
+                      .setPath(
+                          "/v3beta1/{parent=projects/*/locations/*/agents/*/tools/*}/versions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateToolVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateToolVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("toolVersion", request.getToolVersion(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ToolVersion>newBuilder()
+                      .setDefaultInstance(ToolVersion.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetToolVersionRequest, ToolVersion>
+      getToolVersionMethodDescriptor =
+          ApiMethodDescriptor.<GetToolVersionRequest, ToolVersion>newBuilder()
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Tools/GetToolVersion")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetToolVersionRequest>newBuilder()
+                      .setPath(
+                          "/v3beta1/{name=projects/*/locations/*/agents/*/tools/*/versions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetToolVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetToolVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ToolVersion>newBuilder()
+                      .setDefaultInstance(ToolVersion.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteToolVersionRequest, Empty>
+      deleteToolVersionMethodDescriptor =
+          ApiMethodDescriptor.<DeleteToolVersionRequest, Empty>newBuilder()
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Tools/DeleteToolVersion")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteToolVersionRequest>newBuilder()
+                      .setPath(
+                          "/v3beta1/{name=projects/*/locations/*/agents/*/tools/*/versions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteToolVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteToolVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<RestoreToolVersionRequest, RestoreToolVersionResponse>
+      restoreToolVersionMethodDescriptor =
+          ApiMethodDescriptor.<RestoreToolVersionRequest, RestoreToolVersionResponse>newBuilder()
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Tools/RestoreToolVersion")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RestoreToolVersionRequest>newBuilder()
+                      .setPath(
+                          "/v3beta1/{name=projects/*/locations/*/agents/*/tools/*/versions/*}:restore",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RestoreToolVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RestoreToolVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RestoreToolVersionResponse>newBuilder()
+                      .setDefaultInstance(RestoreToolVersionResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -368,6 +556,15 @@ public class HttpJsonToolsStub extends ToolsStub {
   private final UnaryCallable<GetToolRequest, Tool> getToolCallable;
   private final UnaryCallable<UpdateToolRequest, Tool> updateToolCallable;
   private final UnaryCallable<DeleteToolRequest, Empty> deleteToolCallable;
+  private final UnaryCallable<ListToolVersionsRequest, ListToolVersionsResponse>
+      listToolVersionsCallable;
+  private final UnaryCallable<ListToolVersionsRequest, ListToolVersionsPagedResponse>
+      listToolVersionsPagedCallable;
+  private final UnaryCallable<CreateToolVersionRequest, ToolVersion> createToolVersionCallable;
+  private final UnaryCallable<GetToolVersionRequest, ToolVersion> getToolVersionCallable;
+  private final UnaryCallable<DeleteToolVersionRequest, Empty> deleteToolVersionCallable;
+  private final UnaryCallable<RestoreToolVersionRequest, RestoreToolVersionResponse>
+      restoreToolVersionCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -514,6 +711,63 @@ public class HttpJsonToolsStub extends ToolsStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListToolVersionsRequest, ListToolVersionsResponse>
+        listToolVersionsTransportSettings =
+            HttpJsonCallSettings.<ListToolVersionsRequest, ListToolVersionsResponse>newBuilder()
+                .setMethodDescriptor(listToolVersionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CreateToolVersionRequest, ToolVersion> createToolVersionTransportSettings =
+        HttpJsonCallSettings.<CreateToolVersionRequest, ToolVersion>newBuilder()
+            .setMethodDescriptor(createToolVersionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetToolVersionRequest, ToolVersion> getToolVersionTransportSettings =
+        HttpJsonCallSettings.<GetToolVersionRequest, ToolVersion>newBuilder()
+            .setMethodDescriptor(getToolVersionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteToolVersionRequest, Empty> deleteToolVersionTransportSettings =
+        HttpJsonCallSettings.<DeleteToolVersionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteToolVersionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<RestoreToolVersionRequest, RestoreToolVersionResponse>
+        restoreToolVersionTransportSettings =
+            HttpJsonCallSettings.<RestoreToolVersionRequest, RestoreToolVersionResponse>newBuilder()
+                .setMethodDescriptor(restoreToolVersionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -565,6 +819,30 @@ public class HttpJsonToolsStub extends ToolsStub {
     this.deleteToolCallable =
         callableFactory.createUnaryCallable(
             deleteToolTransportSettings, settings.deleteToolSettings(), clientContext);
+    this.listToolVersionsCallable =
+        callableFactory.createUnaryCallable(
+            listToolVersionsTransportSettings, settings.listToolVersionsSettings(), clientContext);
+    this.listToolVersionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listToolVersionsTransportSettings, settings.listToolVersionsSettings(), clientContext);
+    this.createToolVersionCallable =
+        callableFactory.createUnaryCallable(
+            createToolVersionTransportSettings,
+            settings.createToolVersionSettings(),
+            clientContext);
+    this.getToolVersionCallable =
+        callableFactory.createUnaryCallable(
+            getToolVersionTransportSettings, settings.getToolVersionSettings(), clientContext);
+    this.deleteToolVersionCallable =
+        callableFactory.createUnaryCallable(
+            deleteToolVersionTransportSettings,
+            settings.deleteToolVersionSettings(),
+            clientContext);
+    this.restoreToolVersionCallable =
+        callableFactory.createUnaryCallable(
+            restoreToolVersionTransportSettings,
+            settings.restoreToolVersionSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -588,6 +866,11 @@ public class HttpJsonToolsStub extends ToolsStub {
     methodDescriptors.add(getToolMethodDescriptor);
     methodDescriptors.add(updateToolMethodDescriptor);
     methodDescriptors.add(deleteToolMethodDescriptor);
+    methodDescriptors.add(listToolVersionsMethodDescriptor);
+    methodDescriptors.add(createToolVersionMethodDescriptor);
+    methodDescriptors.add(getToolVersionMethodDescriptor);
+    methodDescriptors.add(deleteToolVersionMethodDescriptor);
+    methodDescriptors.add(restoreToolVersionMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -636,6 +919,39 @@ public class HttpJsonToolsStub extends ToolsStub {
   @Override
   public UnaryCallable<DeleteToolRequest, Empty> deleteToolCallable() {
     return deleteToolCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListToolVersionsRequest, ListToolVersionsResponse>
+      listToolVersionsCallable() {
+    return listToolVersionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListToolVersionsRequest, ListToolVersionsPagedResponse>
+      listToolVersionsPagedCallable() {
+    return listToolVersionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateToolVersionRequest, ToolVersion> createToolVersionCallable() {
+    return createToolVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetToolVersionRequest, ToolVersion> getToolVersionCallable() {
+    return getToolVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteToolVersionRequest, Empty> deleteToolVersionCallable() {
+    return deleteToolVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<RestoreToolVersionRequest, RestoreToolVersionResponse>
+      restoreToolVersionCallable() {
+    return restoreToolVersionCallable;
   }
 
   @Override

@@ -108,9 +108,9 @@ public interface UpdateQuotaAdjusterSettingsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set to true, validate the request, but do not actually update.
-   * Note that a request being valid does not mean that the request is
-   * guaranteed to be fulfilled.
+   * Optional. If set to true, checks the syntax of the request but doesn't
+   * update the quota adjuster settings value. Note that although a request can
+   * be valid, that doesn't guarantee that the request will be fulfilled.
    * </pre>
    *
    * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -337,6 +337,64 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
+   * List of custom metrics that are used for the WEIGHTED_ROUND_ROBIN locality_lb_policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendServiceCustomMetric custom_metrics = 429453813;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.BackendServiceCustomMetric> getCustomMetricsList();
+  /**
+   *
+   *
+   * <pre>
+   * List of custom metrics that are used for the WEIGHTED_ROUND_ROBIN locality_lb_policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendServiceCustomMetric custom_metrics = 429453813;
+   * </code>
+   */
+  com.google.cloud.compute.v1.BackendServiceCustomMetric getCustomMetrics(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of custom metrics that are used for the WEIGHTED_ROUND_ROBIN locality_lb_policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendServiceCustomMetric custom_metrics = 429453813;
+   * </code>
+   */
+  int getCustomMetricsCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of custom metrics that are used for the WEIGHTED_ROUND_ROBIN locality_lb_policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendServiceCustomMetric custom_metrics = 429453813;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.BackendServiceCustomMetricOrBuilder>
+      getCustomMetricsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * List of custom metrics that are used for the WEIGHTED_ROUND_ROBIN locality_lb_policy.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendServiceCustomMetric custom_metrics = 429453813;
+   * </code>
+   */
+  com.google.cloud.compute.v1.BackendServiceCustomMetricOrBuilder getCustomMetricsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Headers that the load balancer adds to proxied requests. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
    * </pre>
    *

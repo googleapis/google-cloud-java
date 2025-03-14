@@ -179,7 +179,7 @@ public final class WebhookProto {
           + ".dialogflow.cx.v3beta1.Webhook.GenericWe"
           + "bService.ParameterMappingEntryB\003\340A\001\032s\n\013O"
           + "AuthConfig\022\026\n\tclient_id\030\001 \001(\tB\003\340A\002\022\032\n\rcl"
-          + "ient_secret\030\002 \001(\tB\003\340A\002\022\033\n\016token_endpoint"
+          + "ient_secret\030\002 \001(\tB\003\340A\001\022\033\n\016token_endpoint"
           + "\030\003 \001(\tB\003\340A\002\022\023\n\006scopes\030\004 \003(\tB\003\340A\001\0325\n\023Requ"
           + "estHeadersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
           + "\001(\t:\0028\001\0327\n\025ParameterMappingEntry\022\013\n\003key\030"

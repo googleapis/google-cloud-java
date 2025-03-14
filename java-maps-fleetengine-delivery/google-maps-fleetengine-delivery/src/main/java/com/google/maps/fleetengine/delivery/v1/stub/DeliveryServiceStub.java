@@ -25,6 +25,8 @@ import com.google.maps.fleetengine.delivery.v1.BatchCreateTasksRequest;
 import com.google.maps.fleetengine.delivery.v1.BatchCreateTasksResponse;
 import com.google.maps.fleetengine.delivery.v1.CreateDeliveryVehicleRequest;
 import com.google.maps.fleetengine.delivery.v1.CreateTaskRequest;
+import com.google.maps.fleetengine.delivery.v1.DeleteDeliveryVehicleRequest;
+import com.google.maps.fleetengine.delivery.v1.DeleteTaskRequest;
 import com.google.maps.fleetengine.delivery.v1.DeliveryVehicle;
 import com.google.maps.fleetengine.delivery.v1.GetDeliveryVehicleRequest;
 import com.google.maps.fleetengine.delivery.v1.GetTaskRequest;
@@ -37,6 +39,7 @@ import com.google.maps.fleetengine.delivery.v1.Task;
 import com.google.maps.fleetengine.delivery.v1.TaskTrackingInfo;
 import com.google.maps.fleetengine.delivery.v1.UpdateDeliveryVehicleRequest;
 import com.google.maps.fleetengine.delivery.v1.UpdateTaskRequest;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -57,6 +60,10 @@ public abstract class DeliveryServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getDeliveryVehicleCallable()");
   }
 
+  public UnaryCallable<DeleteDeliveryVehicleRequest, Empty> deleteDeliveryVehicleCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDeliveryVehicleCallable()");
+  }
+
   public UnaryCallable<UpdateDeliveryVehicleRequest, DeliveryVehicle>
       updateDeliveryVehicleCallable() {
     throw new UnsupportedOperationException("Not implemented: updateDeliveryVehicleCallable()");
@@ -73,6 +80,10 @@ public abstract class DeliveryServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetTaskRequest, Task> getTaskCallable() {
     throw new UnsupportedOperationException("Not implemented: getTaskCallable()");
+  }
+
+  public UnaryCallable<DeleteTaskRequest, Empty> deleteTaskCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteTaskCallable()");
   }
 
   public UnaryCallable<UpdateTaskRequest, Task> updateTaskCallable() {

@@ -28,31 +28,6 @@ public interface WorkflowInvocationOrBuilder
    *
    *
    * <pre>
-   * Output only. The workflow invocation's name.
-   * </pre>
-   *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The workflow invocation's name.
-   * </pre>
-   *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString getNameBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * Immutable. The name of the compilation result to use for this invocation.
    * Must be in the format
    * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
@@ -143,6 +118,31 @@ public interface WorkflowInvocationOrBuilder
    * @return The bytes for workflowConfig.
    */
   com.google.protobuf.ByteString getWorkflowConfigBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow invocation's name.
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow invocation's name.
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
    *
@@ -251,6 +251,126 @@ public interface WorkflowInvocationOrBuilder
    * </code>
    */
   com.google.type.IntervalOrBuilder getInvocationTimingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resolved compilation result that was used to create this
+   * invocation. Will be in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string resolved_compilation_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The resolvedCompilationResult.
+   */
+  java.lang.String getResolvedCompilationResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resolved compilation result that was used to create this
+   * invocation. Will be in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string resolved_compilation_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for resolvedCompilationResult.
+   */
+  com.google.protobuf.ByteString getResolvedCompilationResultBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Only set if the repository has a KMS Key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataEncryptionState field is set.
+   */
+  boolean hasDataEncryptionState();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Only set if the repository has a KMS Key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataEncryptionState.
+   */
+  com.google.cloud.dataform.v1beta1.DataEncryptionState getDataEncryptionState();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Only set if the repository has a KMS Key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.DataEncryptionState data_encryption_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataform.v1beta1.DataEncryptionStateOrBuilder getDataEncryptionStateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the internalMetadata field is set.
+   */
+  boolean hasInternalMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The internalMetadata.
+   */
+  java.lang.String getInternalMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All the metadata information that is used internally to serve
+   * the resource. For example: timestamps, flags, status fields, etc. The
+   * format of this field is a JSON string.
+   * </pre>
+   *
+   * <code>optional string internal_metadata = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for internalMetadata.
+   */
+  com.google.protobuf.ByteString getInternalMetadataBytes();
 
   com.google.cloud.dataform.v1beta1.WorkflowInvocation.CompilationSourceCase
       getCompilationSourceCase();

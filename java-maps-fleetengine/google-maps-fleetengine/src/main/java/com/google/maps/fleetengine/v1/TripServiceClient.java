@@ -97,6 +97,26 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> DeleteTrip</td>
+ *      <td><p> Deletes a single Trip.
+ * <p>  Returns FAILED_PRECONDITION if the Trip is active and assigned to a vehicle.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteTrip(DeleteTripRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteTrip(TripName name)
+ *           <li><p> deleteTrip(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteTripCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ReportBillableTrip</td>
  *      <td><p> Report billable trip usage.</td>
  *      <td>
@@ -357,6 +377,128 @@ public class TripServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetTripRequest, Trip> getTripCallable() {
     return stub.getTripCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Trip.
+   *
+   * <p>Returns FAILED_PRECONDITION if the Trip is active and assigned to a vehicle.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TripServiceClient tripServiceClient = TripServiceClient.create()) {
+   *   TripName name = TripName.of("[PROVIDER]", "[TRIP]");
+   *   tripServiceClient.deleteTrip(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Must be in the format `providers/{provider}/trips/{trip}`. The provider
+   *     must be the Project ID (for example, `sample-cloud-project`) of the Google Cloud Project of
+   *     which the service account making this call is a member.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTrip(TripName name) {
+    DeleteTripRequest request =
+        DeleteTripRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteTrip(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Trip.
+   *
+   * <p>Returns FAILED_PRECONDITION if the Trip is active and assigned to a vehicle.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TripServiceClient tripServiceClient = TripServiceClient.create()) {
+   *   String name = TripName.of("[PROVIDER]", "[TRIP]").toString();
+   *   tripServiceClient.deleteTrip(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Must be in the format `providers/{provider}/trips/{trip}`. The provider
+   *     must be the Project ID (for example, `sample-cloud-project`) of the Google Cloud Project of
+   *     which the service account making this call is a member.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTrip(String name) {
+    DeleteTripRequest request = DeleteTripRequest.newBuilder().setName(name).build();
+    deleteTrip(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Trip.
+   *
+   * <p>Returns FAILED_PRECONDITION if the Trip is active and assigned to a vehicle.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TripServiceClient tripServiceClient = TripServiceClient.create()) {
+   *   DeleteTripRequest request =
+   *       DeleteTripRequest.newBuilder()
+   *           .setHeader(RequestHeader.newBuilder().build())
+   *           .setName(TripName.of("[PROVIDER]", "[TRIP]").toString())
+   *           .build();
+   *   tripServiceClient.deleteTrip(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTrip(DeleteTripRequest request) {
+    deleteTripCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Trip.
+   *
+   * <p>Returns FAILED_PRECONDITION if the Trip is active and assigned to a vehicle.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TripServiceClient tripServiceClient = TripServiceClient.create()) {
+   *   DeleteTripRequest request =
+   *       DeleteTripRequest.newBuilder()
+   *           .setHeader(RequestHeader.newBuilder().build())
+   *           .setName(TripName.of("[PROVIDER]", "[TRIP]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = tripServiceClient.deleteTripCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteTripRequest, Empty> deleteTripCallable() {
+    return stub.deleteTripCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

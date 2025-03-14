@@ -160,6 +160,16 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      * <code>WEIGHTED_MAGLEV = 254930962;</code>
      */
     WEIGHTED_MAGLEV(254930962),
+    /**
+     *
+     *
+     * <pre>
+     * Per-endpoint weighted round-robin Load Balancing using weights computed from Backend reported Custom Metrics. If set, the Backend Service responses are expected to contain non-standard HTTP response header field X-Endpoint-Load-Metrics. The reported metrics to use for computing the weights are specified via the backends[].customMetrics fields.
+     * </pre>
+     *
+     * <code>WEIGHTED_ROUND_ROBIN = 5584977;</code>
+     */
+    WEIGHTED_ROUND_ROBIN(5584977),
     UNRECOGNIZED(-1),
     ;
 
@@ -245,6 +255,16 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      * <code>WEIGHTED_MAGLEV = 254930962;</code>
      */
     public static final int WEIGHTED_MAGLEV_VALUE = 254930962;
+    /**
+     *
+     *
+     * <pre>
+     * Per-endpoint weighted round-robin Load Balancing using weights computed from Backend reported Custom Metrics. If set, the Backend Service responses are expected to contain non-standard HTTP response header field X-Endpoint-Load-Metrics. The reported metrics to use for computing the weights are specified via the backends[].customMetrics fields.
+     * </pre>
+     *
+     * <code>WEIGHTED_ROUND_ROBIN = 5584977;</code>
+     */
+    public static final int WEIGHTED_ROUND_ROBIN_VALUE = 5584977;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -288,6 +308,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
           return ROUND_ROBIN;
         case 254930962:
           return WEIGHTED_MAGLEV;
+        case 5584977:
+          return WEIGHTED_ROUND_ROBIN;
         default:
           return null;
       }

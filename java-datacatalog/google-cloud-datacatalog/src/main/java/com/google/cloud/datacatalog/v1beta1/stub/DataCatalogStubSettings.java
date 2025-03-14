@@ -146,8 +146,11 @@ import javax.annotation.Generated;
  * Please refer to the [Client Side Retry
  * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
  * additional support in setting retries.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @BetaApi
+@Deprecated
 @Generated("by gapic-generator-java")
 public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSettings> {
   /** The default scopes of the service. */
@@ -404,151 +407,291 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
             }
           };
 
-  /** Returns the object with the settings used for calls to searchCatalog. */
+  /**
+   * Returns the object with the settings used for calls to searchCatalog.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<SearchCatalogRequest, SearchCatalogResponse, SearchCatalogPagedResponse>
       searchCatalogSettings() {
     return searchCatalogSettings;
   }
 
-  /** Returns the object with the settings used for calls to createEntryGroup. */
+  /**
+   * Returns the object with the settings used for calls to createEntryGroup.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateEntryGroupRequest, EntryGroup> createEntryGroupSettings() {
     return createEntryGroupSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateEntryGroup. */
+  /**
+   * Returns the object with the settings used for calls to updateEntryGroup.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupSettings() {
     return updateEntryGroupSettings;
   }
 
-  /** Returns the object with the settings used for calls to getEntryGroup. */
+  /**
+   * Returns the object with the settings used for calls to getEntryGroup.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetEntryGroupRequest, EntryGroup> getEntryGroupSettings() {
     return getEntryGroupSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteEntryGroup. */
+  /**
+   * Returns the object with the settings used for calls to deleteEntryGroup.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteEntryGroupRequest, Empty> deleteEntryGroupSettings() {
     return deleteEntryGroupSettings;
   }
 
-  /** Returns the object with the settings used for calls to listEntryGroups. */
+  /**
+   * Returns the object with the settings used for calls to listEntryGroups.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListEntryGroupsRequest, ListEntryGroupsResponse, ListEntryGroupsPagedResponse>
       listEntryGroupsSettings() {
     return listEntryGroupsSettings;
   }
 
-  /** Returns the object with the settings used for calls to createEntry. */
+  /**
+   * Returns the object with the settings used for calls to createEntry.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateEntryRequest, Entry> createEntrySettings() {
     return createEntrySettings;
   }
 
-  /** Returns the object with the settings used for calls to updateEntry. */
+  /**
+   * Returns the object with the settings used for calls to updateEntry.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateEntryRequest, Entry> updateEntrySettings() {
     return updateEntrySettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteEntry. */
+  /**
+   * Returns the object with the settings used for calls to deleteEntry.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteEntryRequest, Empty> deleteEntrySettings() {
     return deleteEntrySettings;
   }
 
-  /** Returns the object with the settings used for calls to getEntry. */
+  /**
+   * Returns the object with the settings used for calls to getEntry.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetEntryRequest, Entry> getEntrySettings() {
     return getEntrySettings;
   }
 
-  /** Returns the object with the settings used for calls to lookupEntry. */
+  /**
+   * Returns the object with the settings used for calls to lookupEntry.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<LookupEntryRequest, Entry> lookupEntrySettings() {
     return lookupEntrySettings;
   }
 
-  /** Returns the object with the settings used for calls to listEntries. */
+  /**
+   * Returns the object with the settings used for calls to listEntries.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<ListEntriesRequest, ListEntriesResponse, ListEntriesPagedResponse>
       listEntriesSettings() {
     return listEntriesSettings;
   }
 
-  /** Returns the object with the settings used for calls to createTagTemplate. */
+  /**
+   * Returns the object with the settings used for calls to createTagTemplate.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateTagTemplateRequest, TagTemplate> createTagTemplateSettings() {
     return createTagTemplateSettings;
   }
 
-  /** Returns the object with the settings used for calls to getTagTemplate. */
+  /**
+   * Returns the object with the settings used for calls to getTagTemplate.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetTagTemplateRequest, TagTemplate> getTagTemplateSettings() {
     return getTagTemplateSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateTagTemplate. */
+  /**
+   * Returns the object with the settings used for calls to updateTagTemplate.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateTagTemplateRequest, TagTemplate> updateTagTemplateSettings() {
     return updateTagTemplateSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteTagTemplate. */
+  /**
+   * Returns the object with the settings used for calls to deleteTagTemplate.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteTagTemplateRequest, Empty> deleteTagTemplateSettings() {
     return deleteTagTemplateSettings;
   }
 
-  /** Returns the object with the settings used for calls to createTagTemplateField. */
+  /**
+   * Returns the object with the settings used for calls to createTagTemplateField.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateTagTemplateFieldRequest, TagTemplateField>
       createTagTemplateFieldSettings() {
     return createTagTemplateFieldSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateTagTemplateField. */
+  /**
+   * Returns the object with the settings used for calls to updateTagTemplateField.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateTagTemplateFieldRequest, TagTemplateField>
       updateTagTemplateFieldSettings() {
     return updateTagTemplateFieldSettings;
   }
 
-  /** Returns the object with the settings used for calls to renameTagTemplateField. */
+  /**
+   * Returns the object with the settings used for calls to renameTagTemplateField.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<RenameTagTemplateFieldRequest, TagTemplateField>
       renameTagTemplateFieldSettings() {
     return renameTagTemplateFieldSettings;
   }
 
-  /** Returns the object with the settings used for calls to renameTagTemplateFieldEnumValue. */
+  /**
+   * Returns the object with the settings used for calls to renameTagTemplateFieldEnumValue.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
       renameTagTemplateFieldEnumValueSettings() {
     return renameTagTemplateFieldEnumValueSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteTagTemplateField. */
+  /**
+   * Returns the object with the settings used for calls to deleteTagTemplateField.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldSettings() {
     return deleteTagTemplateFieldSettings;
   }
 
-  /** Returns the object with the settings used for calls to createTag. */
+  /**
+   * Returns the object with the settings used for calls to createTag.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateTagRequest, Tag> createTagSettings() {
     return createTagSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateTag. */
+  /**
+   * Returns the object with the settings used for calls to updateTag.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateTagRequest, Tag> updateTagSettings() {
     return updateTagSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteTag. */
+  /**
+   * Returns the object with the settings used for calls to deleteTag.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteTagRequest, Empty> deleteTagSettings() {
     return deleteTagSettings;
   }
 
-  /** Returns the object with the settings used for calls to listTags. */
+  /**
+   * Returns the object with the settings used for calls to listTags.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<ListTagsRequest, ListTagsResponse, ListTagsPagedResponse>
       listTagsSettings() {
     return listTagsSettings;
   }
 
-  /** Returns the object with the settings used for calls to setIamPolicy. */
+  /**
+   * Returns the object with the settings used for calls to setIamPolicy.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
     return setIamPolicySettings;
   }
 
-  /** Returns the object with the settings used for calls to getIamPolicy. */
+  /**
+   * Returns the object with the settings used for calls to getIamPolicy.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
     return getIamPolicySettings;
   }
 
-  /** Returns the object with the settings used for calls to testIamPermissions. */
+  /**
+   * Returns the object with the settings used for calls to testIamPermissions.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return testIamPermissionsSettings;
@@ -1101,158 +1244,298 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to searchCatalog. */
+    /**
+     * Returns the builder for the settings used for calls to searchCatalog.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             SearchCatalogRequest, SearchCatalogResponse, SearchCatalogPagedResponse>
         searchCatalogSettings() {
       return searchCatalogSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createEntryGroup. */
+    /**
+     * Returns the builder for the settings used for calls to createEntryGroup.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateEntryGroupRequest, EntryGroup>
         createEntryGroupSettings() {
       return createEntryGroupSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateEntryGroup. */
+    /**
+     * Returns the builder for the settings used for calls to updateEntryGroup.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateEntryGroupRequest, EntryGroup>
         updateEntryGroupSettings() {
       return updateEntryGroupSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getEntryGroup. */
+    /**
+     * Returns the builder for the settings used for calls to getEntryGroup.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetEntryGroupRequest, EntryGroup> getEntryGroupSettings() {
       return getEntryGroupSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteEntryGroup. */
+    /**
+     * Returns the builder for the settings used for calls to deleteEntryGroup.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteEntryGroupRequest, Empty> deleteEntryGroupSettings() {
       return deleteEntryGroupSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listEntryGroups. */
+    /**
+     * Returns the builder for the settings used for calls to listEntryGroups.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListEntryGroupsRequest, ListEntryGroupsResponse, ListEntryGroupsPagedResponse>
         listEntryGroupsSettings() {
       return listEntryGroupsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createEntry. */
+    /**
+     * Returns the builder for the settings used for calls to createEntry.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateEntryRequest, Entry> createEntrySettings() {
       return createEntrySettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateEntry. */
+    /**
+     * Returns the builder for the settings used for calls to updateEntry.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateEntryRequest, Entry> updateEntrySettings() {
       return updateEntrySettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteEntry. */
+    /**
+     * Returns the builder for the settings used for calls to deleteEntry.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteEntryRequest, Empty> deleteEntrySettings() {
       return deleteEntrySettings;
     }
 
-    /** Returns the builder for the settings used for calls to getEntry. */
+    /**
+     * Returns the builder for the settings used for calls to getEntry.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetEntryRequest, Entry> getEntrySettings() {
       return getEntrySettings;
     }
 
-    /** Returns the builder for the settings used for calls to lookupEntry. */
+    /**
+     * Returns the builder for the settings used for calls to lookupEntry.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<LookupEntryRequest, Entry> lookupEntrySettings() {
       return lookupEntrySettings;
     }
 
-    /** Returns the builder for the settings used for calls to listEntries. */
+    /**
+     * Returns the builder for the settings used for calls to listEntries.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListEntriesRequest, ListEntriesResponse, ListEntriesPagedResponse>
         listEntriesSettings() {
       return listEntriesSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createTagTemplate. */
+    /**
+     * Returns the builder for the settings used for calls to createTagTemplate.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateTagTemplateRequest, TagTemplate>
         createTagTemplateSettings() {
       return createTagTemplateSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getTagTemplate. */
+    /**
+     * Returns the builder for the settings used for calls to getTagTemplate.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetTagTemplateRequest, TagTemplate> getTagTemplateSettings() {
       return getTagTemplateSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateTagTemplate. */
+    /**
+     * Returns the builder for the settings used for calls to updateTagTemplate.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateTagTemplateRequest, TagTemplate>
         updateTagTemplateSettings() {
       return updateTagTemplateSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteTagTemplate. */
+    /**
+     * Returns the builder for the settings used for calls to deleteTagTemplate.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteTagTemplateRequest, Empty> deleteTagTemplateSettings() {
       return deleteTagTemplateSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createTagTemplateField. */
+    /**
+     * Returns the builder for the settings used for calls to createTagTemplateField.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateTagTemplateFieldRequest, TagTemplateField>
         createTagTemplateFieldSettings() {
       return createTagTemplateFieldSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateTagTemplateField. */
+    /**
+     * Returns the builder for the settings used for calls to updateTagTemplateField.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateTagTemplateFieldRequest, TagTemplateField>
         updateTagTemplateFieldSettings() {
       return updateTagTemplateFieldSettings;
     }
 
-    /** Returns the builder for the settings used for calls to renameTagTemplateField. */
+    /**
+     * Returns the builder for the settings used for calls to renameTagTemplateField.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<RenameTagTemplateFieldRequest, TagTemplateField>
         renameTagTemplateFieldSettings() {
       return renameTagTemplateFieldSettings;
     }
 
-    /** Returns the builder for the settings used for calls to renameTagTemplateFieldEnumValue. */
+    /**
+     * Returns the builder for the settings used for calls to renameTagTemplateFieldEnumValue.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
         renameTagTemplateFieldEnumValueSettings() {
       return renameTagTemplateFieldEnumValueSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteTagTemplateField. */
+    /**
+     * Returns the builder for the settings used for calls to deleteTagTemplateField.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteTagTemplateFieldRequest, Empty>
         deleteTagTemplateFieldSettings() {
       return deleteTagTemplateFieldSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createTag. */
+    /**
+     * Returns the builder for the settings used for calls to createTag.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateTagRequest, Tag> createTagSettings() {
       return createTagSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateTag. */
+    /**
+     * Returns the builder for the settings used for calls to updateTag.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateTagRequest, Tag> updateTagSettings() {
       return updateTagSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteTag. */
+    /**
+     * Returns the builder for the settings used for calls to deleteTag.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteTagRequest, Empty> deleteTagSettings() {
       return deleteTagSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listTags. */
+    /**
+     * Returns the builder for the settings used for calls to listTags.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<ListTagsRequest, ListTagsResponse, ListTagsPagedResponse>
         listTagsSettings() {
       return listTagsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    /**
+     * Returns the builder for the settings used for calls to setIamPolicy.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
       return setIamPolicySettings;
     }
 
-    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    /**
+     * Returns the builder for the settings used for calls to getIamPolicy.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
       return getIamPolicySettings;
     }
 
-    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    /**
+     * Returns the builder for the settings used for calls to testIamPermissions.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;

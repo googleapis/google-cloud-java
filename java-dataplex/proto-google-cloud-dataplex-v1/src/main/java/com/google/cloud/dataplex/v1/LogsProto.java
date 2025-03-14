@@ -120,6 +120,10 @@ public final class LogsProto {
       internal_static_google_cloud_dataplex_v1_DataQualityScanRuleResult_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_DataQualityScanRuleResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_BusinessGlossaryEvent_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_BusinessGlossaryEvent_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -316,10 +320,20 @@ public final class LogsProto {
           + "\n\016EvaluationType\022\037\n\033EVALUATION_TYPE_UNSP"
           + "ECIFIED\020\000\022\013\n\007PER_ROW\020\001\022\r\n\tAGGREGATE\020\002\"8\n"
           + "\006Result\022\026\n\022RESULT_UNSPECIFIED\020\000\022\n\n\006PASSE"
-          + "D\020\001\022\n\n\006FAILED\020\002Be\n\034com.google.cloud.data"
-          + "plex.v1B\tLogsProtoP\001Z8cloud.google.com/g"
-          + "o/dataplex/apiv1/dataplexpb;dataplexpbb\006"
-          + "proto3"
+          + "D\020\001\022\n\n\006FAILED\020\002\"\232\003\n\025BusinessGlossaryEven"
+          + "t\022\017\n\007message\030\001 \001(\t\022M\n\nevent_type\030\002 \001(\01629"
+          + ".google.cloud.dataplex.v1.BusinessGlossa"
+          + "ryEvent.EventType\022\020\n\010resource\030\003 \001(\t\"\216\002\n\t"
+          + "EventType\022\032\n\026EVENT_TYPE_UNSPECIFIED\020\000\022\023\n"
+          + "\017GLOSSARY_CREATE\020\001\022\023\n\017GLOSSARY_UPDATE\020\002\022"
+          + "\023\n\017GLOSSARY_DELETE\020\003\022\034\n\030GLOSSARY_CATEGOR"
+          + "Y_CREATE\020\004\022\034\n\030GLOSSARY_CATEGORY_UPDATE\020\005"
+          + "\022\034\n\030GLOSSARY_CATEGORY_DELETE\020\006\022\030\n\024GLOSSA"
+          + "RY_TERM_CREATE\020\007\022\030\n\024GLOSSARY_TERM_UPDATE"
+          + "\020\010\022\030\n\024GLOSSARY_TERM_DELETE\020\tBe\n\034com.goog"
+          + "le.cloud.dataplex.v1B\tLogsProtoP\001Z8cloud"
+          + ".google.com/go/dataplex/apiv1/dataplexpb"
+          + ";dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -581,6 +595,14 @@ public final class LogsProto {
               "PassedRowCount",
               "NullRowCount",
               "AssertionRowCount",
+            });
+    internal_static_google_cloud_dataplex_v1_BusinessGlossaryEvent_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_dataplex_v1_BusinessGlossaryEvent_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_BusinessGlossaryEvent_descriptor,
+            new java.lang.String[] {
+              "Message", "EventType", "Resource",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

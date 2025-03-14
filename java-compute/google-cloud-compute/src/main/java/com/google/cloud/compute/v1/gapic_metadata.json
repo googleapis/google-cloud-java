@@ -907,6 +907,9 @@
             "RemoveResourcePolicies": {
               "methods": ["removeResourcePoliciesAsync", "removeResourcePoliciesAsync", "removeResourcePoliciesOperationCallable", "removeResourcePoliciesCallable"]
             },
+            "ReportHostAsFaulty": {
+              "methods": ["reportHostAsFaultyAsync", "reportHostAsFaultyAsync", "reportHostAsFaultyOperationCallable", "reportHostAsFaultyCallable"]
+            },
             "Reset": {
               "methods": ["resetAsync", "resetAsync", "resetOperationCallable", "resetCallable"]
             },

@@ -438,6 +438,57 @@ public class ParticipantsClientTest {
     ParticipantName participant =
         ParticipantName.ofProjectConversationParticipantName(
             "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
+    AudioInput audioInput = AudioInput.newBuilder().build();
+
+    AnalyzeContentResponse actualResponse = client.analyzeContent(participant, audioInput);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockParticipants.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnalyzeContentRequest actualRequest = ((AnalyzeContentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(participant.toString(), actualRequest.getParticipant());
+    Assert.assertEquals(audioInput, actualRequest.getAudioInput());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void analyzeContentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockParticipants.addException(exception);
+
+    try {
+      ParticipantName participant =
+          ParticipantName.ofProjectConversationParticipantName(
+              "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
+      AudioInput audioInput = AudioInput.newBuilder().build();
+      client.analyzeContent(participant, audioInput);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void analyzeContentTest2() throws Exception {
+    AnalyzeContentResponse expectedResponse =
+        AnalyzeContentResponse.newBuilder()
+            .setReplyText("replyText-433699017")
+            .setReplyAudio(OutputAudio.newBuilder().build())
+            .setAutomatedAgentReply(AutomatedAgentReply.newBuilder().build())
+            .setMessage(Message.newBuilder().build())
+            .addAllHumanAgentSuggestionResults(new ArrayList<SuggestionResult>())
+            .addAllEndUserSuggestionResults(new ArrayList<SuggestionResult>())
+            .setDtmfParameters(DtmfParameters.newBuilder().build())
+            .build();
+    mockParticipants.addResponse(expectedResponse);
+
+    ParticipantName participant =
+        ParticipantName.ofProjectConversationParticipantName(
+            "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
     EventInput eventInput = EventInput.newBuilder().build();
 
     AnalyzeContentResponse actualResponse = client.analyzeContent(participant, eventInput);
@@ -456,7 +507,7 @@ public class ParticipantsClientTest {
   }
 
   @Test
-  public void analyzeContentExceptionTest() throws Exception {
+  public void analyzeContentExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockParticipants.addException(exception);
 
@@ -473,7 +524,7 @@ public class ParticipantsClientTest {
   }
 
   @Test
-  public void analyzeContentTest2() throws Exception {
+  public void analyzeContentTest3() throws Exception {
     AnalyzeContentResponse expectedResponse =
         AnalyzeContentResponse.newBuilder()
             .setReplyText("replyText-433699017")
@@ -507,7 +558,7 @@ public class ParticipantsClientTest {
   }
 
   @Test
-  public void analyzeContentExceptionTest2() throws Exception {
+  public void analyzeContentExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockParticipants.addException(exception);
 
@@ -524,7 +575,54 @@ public class ParticipantsClientTest {
   }
 
   @Test
-  public void analyzeContentTest3() throws Exception {
+  public void analyzeContentTest4() throws Exception {
+    AnalyzeContentResponse expectedResponse =
+        AnalyzeContentResponse.newBuilder()
+            .setReplyText("replyText-433699017")
+            .setReplyAudio(OutputAudio.newBuilder().build())
+            .setAutomatedAgentReply(AutomatedAgentReply.newBuilder().build())
+            .setMessage(Message.newBuilder().build())
+            .addAllHumanAgentSuggestionResults(new ArrayList<SuggestionResult>())
+            .addAllEndUserSuggestionResults(new ArrayList<SuggestionResult>())
+            .setDtmfParameters(DtmfParameters.newBuilder().build())
+            .build();
+    mockParticipants.addResponse(expectedResponse);
+
+    String participant = "participant767422259";
+    AudioInput audioInput = AudioInput.newBuilder().build();
+
+    AnalyzeContentResponse actualResponse = client.analyzeContent(participant, audioInput);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockParticipants.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnalyzeContentRequest actualRequest = ((AnalyzeContentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(participant, actualRequest.getParticipant());
+    Assert.assertEquals(audioInput, actualRequest.getAudioInput());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void analyzeContentExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockParticipants.addException(exception);
+
+    try {
+      String participant = "participant767422259";
+      AudioInput audioInput = AudioInput.newBuilder().build();
+      client.analyzeContent(participant, audioInput);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void analyzeContentTest5() throws Exception {
     AnalyzeContentResponse expectedResponse =
         AnalyzeContentResponse.newBuilder()
             .setReplyText("replyText-433699017")
@@ -556,7 +654,7 @@ public class ParticipantsClientTest {
   }
 
   @Test
-  public void analyzeContentExceptionTest3() throws Exception {
+  public void analyzeContentExceptionTest5() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockParticipants.addException(exception);
 
@@ -571,7 +669,7 @@ public class ParticipantsClientTest {
   }
 
   @Test
-  public void analyzeContentTest4() throws Exception {
+  public void analyzeContentTest6() throws Exception {
     AnalyzeContentResponse expectedResponse =
         AnalyzeContentResponse.newBuilder()
             .setReplyText("replyText-433699017")
@@ -603,7 +701,7 @@ public class ParticipantsClientTest {
   }
 
   @Test
-  public void analyzeContentExceptionTest4() throws Exception {
+  public void analyzeContentExceptionTest6() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockParticipants.addException(exception);
 
@@ -630,6 +728,7 @@ public class ParticipantsClientTest {
             .addAllEndUserSuggestionResults(new ArrayList<SuggestionResult>())
             .setDtmfParameters(DtmfParameters.newBuilder().build())
             .setDebuggingInfo(CloudConversationDebuggingInfo.newBuilder().build())
+            .setSpeechModel("speechModel1755725671")
             .build();
     mockParticipants.addResponse(expectedResponse);
     StreamingAnalyzeContentRequest request =

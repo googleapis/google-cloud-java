@@ -224,9 +224,8 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * The
-   * [promotion](https://support.google.com/merchants/answer/2906014) data
-   * source.
+   * The [promotion](https://support.google.com/merchants/answer/2906014)
+   * data source.
    * </pre>
    *
    * <code>
@@ -240,9 +239,8 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * The
-   * [promotion](https://support.google.com/merchants/answer/2906014) data
-   * source.
+   * The [promotion](https://support.google.com/merchants/answer/2906014)
+   * data source.
    * </pre>
    *
    * <code>
@@ -256,9 +254,8 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * The
-   * [promotion](https://support.google.com/merchants/answer/2906014) data
-   * source.
+   * The [promotion](https://support.google.com/merchants/answer/2906014)
+   * data source.
    * </pre>
    *
    * <code>

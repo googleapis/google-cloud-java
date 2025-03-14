@@ -19,8 +19,8 @@ package com.google.cloud.dataform.v1beta1.samples;
 // [START dataform_v1beta1_generated_Dataform_PushGitCommits_sync]
 import com.google.cloud.dataform.v1beta1.DataformClient;
 import com.google.cloud.dataform.v1beta1.PushGitCommitsRequest;
+import com.google.cloud.dataform.v1beta1.PushGitCommitsResponse;
 import com.google.cloud.dataform.v1beta1.WorkspaceName;
-import com.google.protobuf.Empty;
 
 public class SyncPushGitCommits {
 
@@ -42,7 +42,7 @@ public class SyncPushGitCommits {
                       .toString())
               .setRemoteBranch("remoteBranch-533119608")
               .build();
-      dataformClient.pushGitCommits(request);
+      PushGitCommitsResponse response = dataformClient.pushGitCommits(request);
     }
   }
 }

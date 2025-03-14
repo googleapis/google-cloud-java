@@ -280,6 +280,48 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
+   * Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.AllocationReservationSharingPolicy reservation_sharing_policy = 205970120;
+   * </code>
+   *
+   * @return Whether the reservationSharingPolicy field is set.
+   */
+  boolean hasReservationSharingPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.AllocationReservationSharingPolicy reservation_sharing_policy = 205970120;
+   * </code>
+   *
+   * @return The reservationSharingPolicy.
+   */
+  com.google.cloud.compute.v1.AllocationReservationSharingPolicy getReservationSharingPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.AllocationReservationSharingPolicy reservation_sharing_policy = 205970120;
+   * </code>
+   */
+  com.google.cloud.compute.v1.AllocationReservationSharingPolicyOrBuilder
+      getReservationSharingPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
    * </pre>
    *

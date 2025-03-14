@@ -28,11 +28,11 @@ public interface PrimaryProductDataSourceOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Specifies the type of data source channel.
+   * Optional. Immutable. Specifies the type of data source channel.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Channel channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Channel channel = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for channel.
@@ -42,11 +42,11 @@ public interface PrimaryProductDataSourceOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Specifies the type of data source channel.
+   * Optional. Immutable. Specifies the type of data source channel.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Channel channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Channel channel = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The channel.
@@ -312,4 +312,153 @@ public interface PrimaryProductDataSourceOrBuilder
    */
   com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.DefaultRuleOrBuilder
       getDefaultRuleOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of destinations describing where products of the data
+   * source can be shown.
+   *
+   * When retrieving the data source, the list contains all the destinations
+   * that can be used for the data source, including the ones that are disabled
+   * for the data source but enabled for the account.
+   *
+   * Only destinations that are enabled on the account, for example through
+   * program participation, can be enabled on the data source.
+   *
+   * If unset, during creation, the destinations will be inherited based on the
+   * account level program participation.
+   *
+   * If set, during creation or update, the data source will be set only for the
+   * specified destinations.
+   *
+   * Updating this field requires at least one destination.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination>
+      getDestinationsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of destinations describing where products of the data
+   * source can be shown.
+   *
+   * When retrieving the data source, the list contains all the destinations
+   * that can be used for the data source, including the ones that are disabled
+   * for the data source but enabled for the account.
+   *
+   * Only destinations that are enabled on the account, for example through
+   * program participation, can be enabled on the data source.
+   *
+   * If unset, during creation, the destinations will be inherited based on the
+   * account level program participation.
+   *
+   * If set, during creation or update, the data source will be set only for the
+   * specified destinations.
+   *
+   * Updating this field requires at least one destination.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination
+      getDestinations(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of destinations describing where products of the data
+   * source can be shown.
+   *
+   * When retrieving the data source, the list contains all the destinations
+   * that can be used for the data source, including the ones that are disabled
+   * for the data source but enabled for the account.
+   *
+   * Only destinations that are enabled on the account, for example through
+   * program participation, can be enabled on the data source.
+   *
+   * If unset, during creation, the destinations will be inherited based on the
+   * account level program participation.
+   *
+   * If set, during creation or update, the data source will be set only for the
+   * specified destinations.
+   *
+   * Updating this field requires at least one destination.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getDestinationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of destinations describing where products of the data
+   * source can be shown.
+   *
+   * When retrieving the data source, the list contains all the destinations
+   * that can be used for the data source, including the ones that are disabled
+   * for the data source but enabled for the account.
+   *
+   * Only destinations that are enabled on the account, for example through
+   * program participation, can be enabled on the data source.
+   *
+   * If unset, during creation, the destinations will be inherited based on the
+   * account level program participation.
+   *
+   * If set, during creation or update, the data source will be set only for the
+   * specified destinations.
+   *
+   * Updating this field requires at least one destination.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource
+                  .DestinationOrBuilder>
+      getDestinationsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of destinations describing where products of the data
+   * source can be shown.
+   *
+   * When retrieving the data source, the list contains all the destinations
+   * that can be used for the data source, including the ones that are disabled
+   * for the data source but enabled for the account.
+   *
+   * Only destinations that are enabled on the account, for example through
+   * program participation, can be enabled on the data source.
+   *
+   * If unset, during creation, the destinations will be inherited based on the
+   * account level program participation.
+   *
+   * If set, during creation or update, the data source will be set only for the
+   * specified destinations.
+   *
+   * Updating this field requires at least one destination.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.Destination destinations = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource.DestinationOrBuilder
+      getDestinationsOrBuilder(int index);
 }

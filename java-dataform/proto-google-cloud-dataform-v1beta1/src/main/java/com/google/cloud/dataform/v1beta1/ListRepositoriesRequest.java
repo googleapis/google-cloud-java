@@ -154,8 +154,9 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
    * Optional. Page token received from a previous `ListRepositories` call.
    * Provide this to retrieve the subsequent page.
    *
-   * When paginating, all other parameters provided to `ListRepositories`
-   * must match the call that provided the page token.
+   * When paginating, all other parameters provided to `ListRepositories`,
+   * with the exception of `page_size`, must match the call that provided the
+   * page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -181,8 +182,9 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
    * Optional. Page token received from a previous `ListRepositories` call.
    * Provide this to retrieve the subsequent page.
    *
-   * When paginating, all other parameters provided to `ListRepositories`
-   * must match the call that provided the page token.
+   * When paginating, all other parameters provided to `ListRepositories`,
+   * with the exception of `page_size`, must match the call that provided the
+   * page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -933,8 +935,9 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
      * Optional. Page token received from a previous `ListRepositories` call.
      * Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to `ListRepositories`
-     * must match the call that provided the page token.
+     * When paginating, all other parameters provided to `ListRepositories`,
+     * with the exception of `page_size`, must match the call that provided the
+     * page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -959,8 +962,9 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
      * Optional. Page token received from a previous `ListRepositories` call.
      * Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to `ListRepositories`
-     * must match the call that provided the page token.
+     * When paginating, all other parameters provided to `ListRepositories`,
+     * with the exception of `page_size`, must match the call that provided the
+     * page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -985,8 +989,9 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
      * Optional. Page token received from a previous `ListRepositories` call.
      * Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to `ListRepositories`
-     * must match the call that provided the page token.
+     * When paginating, all other parameters provided to `ListRepositories`,
+     * with the exception of `page_size`, must match the call that provided the
+     * page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1010,8 +1015,9 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
      * Optional. Page token received from a previous `ListRepositories` call.
      * Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to `ListRepositories`
-     * must match the call that provided the page token.
+     * When paginating, all other parameters provided to `ListRepositories`,
+     * with the exception of `page_size`, must match the call that provided the
+     * page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1031,8 +1037,9 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
      * Optional. Page token received from a previous `ListRepositories` call.
      * Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to `ListRepositories`
-     * must match the call that provided the page token.
+     * When paginating, all other parameters provided to `ListRepositories`,
+     * with the exception of `page_size`, must match the call that provided the
+     * page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
