@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.54.0](https://github.com/googleapis/google-cloud-java/compare/v1.53.0...v1.54.0) (2025-03-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* [dataform] remove deprecated v1alpha2 ([#11481](https://github.com/googleapis/google-cloud-java/issues/11481))
+
+### Features
+
+* [dataform] remove deprecated v1alpha2 ([#11481](https://github.com/googleapis/google-cloud-java/issues/11481)) ([c44fcd7](https://github.com/googleapis/google-cloud-java/commit/c44fcd7a952c50c07907af356e5106e3ae40e7f0))
+* next release from main branch is 1.54.0 ([#11468](https://github.com/googleapis/google-cloud-java/issues/11468)) ([cfaba79](https://github.com/googleapis/google-cloud-java/commit/cfaba791c6546337e3de5c6aaec4b6ba50321471))
+
+
+### Bug Fixes
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.45.1 ([#11486](https://github.com/googleapis/google-cloud-java/issues/11486)) ([71f738f](https://github.com/googleapis/google-cloud-java/commit/71f738fe5de4ca9e50af6981e2999c1774c9d985))
+
 ## [1.53.0](https://github.com/googleapis/google-cloud-java/compare/v1.52.0...v1.53.0) (2025-02-26)
 
 
