@@ -797,8 +797,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. Cloud CloudExadataInfrastructure node patching method, either
-   * "ROLLING"
-   *  or "NONROLLING". Default value is ROLLING.
+   * "ROLLING" or "NONROLLING". Default value is ROLLING.
    * </pre>
    *
    * <code>
@@ -816,8 +815,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. Cloud CloudExadataInfrastructure node patching method, either
-   * "ROLLING"
-   *  or "NONROLLING". Default value is ROLLING.
+   * "ROLLING" or "NONROLLING". Default value is ROLLING.
    * </pre>
    *
    * <code>
@@ -2535,8 +2533,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Cloud CloudExadataInfrastructure node patching method, either
-     * "ROLLING"
-     *  or "NONROLLING". Default value is ROLLING.
+     * "ROLLING" or "NONROLLING". Default value is ROLLING.
      * </pre>
      *
      * <code>
@@ -2554,8 +2551,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Cloud CloudExadataInfrastructure node patching method, either
-     * "ROLLING"
-     *  or "NONROLLING". Default value is ROLLING.
+     * "ROLLING" or "NONROLLING". Default value is ROLLING.
      * </pre>
      *
      * <code>
@@ -2576,8 +2572,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Cloud CloudExadataInfrastructure node patching method, either
-     * "ROLLING"
-     *  or "NONROLLING". Default value is ROLLING.
+     * "ROLLING" or "NONROLLING". Default value is ROLLING.
      * </pre>
      *
      * <code>
@@ -2600,8 +2595,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Cloud CloudExadataInfrastructure node patching method, either
-     * "ROLLING"
-     *  or "NONROLLING". Default value is ROLLING.
+     * "ROLLING" or "NONROLLING". Default value is ROLLING.
      * </pre>
      *
      * <code>
@@ -2626,8 +2620,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Cloud CloudExadataInfrastructure node patching method, either
-     * "ROLLING"
-     *  or "NONROLLING". Default value is ROLLING.
+     * "ROLLING" or "NONROLLING". Default value is ROLLING.
      * </pre>
      *
      * <code>
