@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -216,6 +216,57 @@ public final class EndpointServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vertexai.api.UpdateEndpointLongRunningRequest,
+          com.google.longrunning.Operation>
+      getUpdateEndpointLongRunningMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEndpointLongRunning",
+      requestType = com.google.cloud.vertexai.api.UpdateEndpointLongRunningRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vertexai.api.UpdateEndpointLongRunningRequest,
+          com.google.longrunning.Operation>
+      getUpdateEndpointLongRunningMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vertexai.api.UpdateEndpointLongRunningRequest,
+            com.google.longrunning.Operation>
+        getUpdateEndpointLongRunningMethod;
+    if ((getUpdateEndpointLongRunningMethod =
+            EndpointServiceGrpc.getUpdateEndpointLongRunningMethod)
+        == null) {
+      synchronized (EndpointServiceGrpc.class) {
+        if ((getUpdateEndpointLongRunningMethod =
+                EndpointServiceGrpc.getUpdateEndpointLongRunningMethod)
+            == null) {
+          EndpointServiceGrpc.getUpdateEndpointLongRunningMethod =
+              getUpdateEndpointLongRunningMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vertexai.api.UpdateEndpointLongRunningRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateEndpointLongRunning"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vertexai.api.UpdateEndpointLongRunningRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EndpointServiceMethodDescriptorSupplier("UpdateEndpointLongRunning"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateEndpointLongRunningMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vertexai.api.DeleteEndpointRequest, com.google.longrunning.Operation>
       getDeleteEndpointMethod;
 
@@ -405,6 +456,19 @@ public final class EndpointServiceGrpc {
     return EndpointServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EndpointServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EndpointServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EndpointServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public EndpointServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EndpointServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EndpointServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -497,6 +561,20 @@ public final class EndpointServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.vertexai.api.Endpoint> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateEndpointMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Endpoint with a long running operation.
+     * </pre>
+     */
+    default void updateEndpointLongRunning(
+        com.google.cloud.vertexai.api.UpdateEndpointLongRunningRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateEndpointLongRunningMethod(), responseObserver);
     }
 
     /**
@@ -663,6 +741,22 @@ public final class EndpointServiceGrpc {
      *
      *
      * <pre>
+     * Updates an Endpoint with a long running operation.
+     * </pre>
+     */
+    public void updateEndpointLongRunning(
+        com.google.cloud.vertexai.api.UpdateEndpointLongRunningRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateEndpointLongRunningMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes an Endpoint.
      * </pre>
      */
@@ -735,6 +829,148 @@ public final class EndpointServiceGrpc {
    * A service for managing Vertex AI's Endpoints.
    * </pre>
    */
+  public static final class EndpointServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EndpointServiceBlockingV2Stub> {
+    private EndpointServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EndpointServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EndpointServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Endpoint.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createEndpoint(
+        com.google.cloud.vertexai.api.CreateEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Endpoint.
+     * </pre>
+     */
+    public com.google.cloud.vertexai.api.Endpoint getEndpoint(
+        com.google.cloud.vertexai.api.GetEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Endpoints in a Location.
+     * </pre>
+     */
+    public com.google.cloud.vertexai.api.ListEndpointsResponse listEndpoints(
+        com.google.cloud.vertexai.api.ListEndpointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEndpointsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Endpoint.
+     * </pre>
+     */
+    public com.google.cloud.vertexai.api.Endpoint updateEndpoint(
+        com.google.cloud.vertexai.api.UpdateEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Endpoint with a long running operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateEndpointLongRunning(
+        com.google.cloud.vertexai.api.UpdateEndpointLongRunningRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEndpointLongRunningMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Endpoint.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteEndpoint(
+        com.google.cloud.vertexai.api.DeleteEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a Model into this Endpoint, creating a DeployedModel within it.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deployModel(
+        com.google.cloud.vertexai.api.DeployModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeployModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys a Model from an Endpoint, removing a DeployedModel from it, and
+     * freeing all resources it's using.
+     * </pre>
+     */
+    public com.google.longrunning.Operation undeployModel(
+        com.google.cloud.vertexai.api.UndeployModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeployModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing deployed model. Updatable fields include
+     * `min_replica_count`, `max_replica_count`, `autoscaling_metric_specs`,
+     * `disable_container_logging` (v1 only), and `enable_container_logging`
+     * (v1beta1 only).
+     * </pre>
+     */
+    public com.google.longrunning.Operation mutateDeployedModel(
+        com.google.cloud.vertexai.api.MutateDeployedModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMutateDeployedModelMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service EndpointService.
+   *
+   * <pre>
+   * A service for managing Vertex AI's Endpoints.
+   * </pre>
+   */
   public static final class EndpointServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<EndpointServiceBlockingStub> {
     private EndpointServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -797,6 +1033,19 @@ public final class EndpointServiceGrpc {
         com.google.cloud.vertexai.api.UpdateEndpointRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Endpoint with a long running operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateEndpointLongRunning(
+        com.google.cloud.vertexai.api.UpdateEndpointLongRunningRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEndpointLongRunningMethod(), getCallOptions(), request);
     }
 
     /**
@@ -934,6 +1183,20 @@ public final class EndpointServiceGrpc {
      *
      *
      * <pre>
+     * Updates an Endpoint with a long running operation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateEndpointLongRunning(
+            com.google.cloud.vertexai.api.UpdateEndpointLongRunningRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateEndpointLongRunningMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes an Endpoint.
      * </pre>
      */
@@ -991,10 +1254,11 @@ public final class EndpointServiceGrpc {
   private static final int METHODID_GET_ENDPOINT = 1;
   private static final int METHODID_LIST_ENDPOINTS = 2;
   private static final int METHODID_UPDATE_ENDPOINT = 3;
-  private static final int METHODID_DELETE_ENDPOINT = 4;
-  private static final int METHODID_DEPLOY_MODEL = 5;
-  private static final int METHODID_UNDEPLOY_MODEL = 6;
-  private static final int METHODID_MUTATE_DEPLOYED_MODEL = 7;
+  private static final int METHODID_UPDATE_ENDPOINT_LONG_RUNNING = 4;
+  private static final int METHODID_DELETE_ENDPOINT = 5;
+  private static final int METHODID_DEPLOY_MODEL = 6;
+  private static final int METHODID_UNDEPLOY_MODEL = 7;
+  private static final int METHODID_MUTATE_DEPLOYED_MODEL = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1035,6 +1299,11 @@ public final class EndpointServiceGrpc {
               (com.google.cloud.vertexai.api.UpdateEndpointRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.vertexai.api.Endpoint>)
                   responseObserver);
+          break;
+        case METHODID_UPDATE_ENDPOINT_LONG_RUNNING:
+          serviceImpl.updateEndpointLongRunning(
+              (com.google.cloud.vertexai.api.UpdateEndpointLongRunningRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_ENDPOINT:
           serviceImpl.deleteEndpoint(
@@ -1099,6 +1368,13 @@ public final class EndpointServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.vertexai.api.UpdateEndpointRequest,
                     com.google.cloud.vertexai.api.Endpoint>(service, METHODID_UPDATE_ENDPOINT)))
+        .addMethod(
+            getUpdateEndpointLongRunningMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vertexai.api.UpdateEndpointLongRunningRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_ENDPOINT_LONG_RUNNING)))
         .addMethod(
             getDeleteEndpointMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1178,6 +1454,7 @@ public final class EndpointServiceGrpc {
                       .addMethod(getGetEndpointMethod())
                       .addMethod(getListEndpointsMethod())
                       .addMethod(getUpdateEndpointMethod())
+                      .addMethod(getUpdateEndpointLongRunningMethod())
                       .addMethod(getDeleteEndpointMethod())
                       .addMethod(getDeployModelMethod())
                       .addMethod(getUndeployModelMethod())

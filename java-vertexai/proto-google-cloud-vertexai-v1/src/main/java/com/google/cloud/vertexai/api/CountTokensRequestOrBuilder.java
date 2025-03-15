@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -341,4 +341,48 @@ public interface CountTokensRequestOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.ToolOrBuilder getToolsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Generation config that the model will use to generate the
+   * response.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.vertexai.v1.GenerationConfig generation_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the generationConfig field is set.
+   */
+  boolean hasGenerationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Generation config that the model will use to generate the
+   * response.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.vertexai.v1.GenerationConfig generation_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The generationConfig.
+   */
+  com.google.cloud.vertexai.api.GenerationConfig getGenerationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Generation config that the model will use to generate the
+   * response.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.vertexai.v1.GenerationConfig generation_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vertexai.api.GenerationConfigOrBuilder getGenerationConfigOrBuilder();
 }

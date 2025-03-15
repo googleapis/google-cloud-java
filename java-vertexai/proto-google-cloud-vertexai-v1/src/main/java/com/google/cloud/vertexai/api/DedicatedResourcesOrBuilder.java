@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -114,6 +114,24 @@ public interface DedicatedResourcesOrBuilder
    * @return The maxReplicaCount.
    */
   int getMaxReplicaCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Number of required available replicas for the deployment to
+   * succeed. This field is only needed when partial model deployment/mutation
+   * is desired. If set, the model deploy/mutate operation will succeed once
+   * available_replica_count reaches required_replica_count, and the rest of
+   * the replicas will be retried. If not set, the default
+   * required_replica_count will be min_replica_count.
+   * </pre>
+   *
+   * <code>int32 required_replica_count = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The requiredReplicaCount.
+   */
+  int getRequiredReplicaCount();
 
   /**
    *

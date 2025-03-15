@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -103,6 +103,47 @@ public interface CandidateOrBuilder
    * @return The avgLogprobs.
    */
   double getAvgLogprobs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Log-likelihood scores for the response tokens and top tokens
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.LogprobsResult logprobs_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the logprobsResult field is set.
+   */
+  boolean hasLogprobsResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Log-likelihood scores for the response tokens and top tokens
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.LogprobsResult logprobs_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The logprobsResult.
+   */
+  com.google.cloud.vertexai.api.LogprobsResult getLogprobsResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Log-likelihood scores for the response tokens and top tokens
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.LogprobsResult logprobs_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vertexai.api.LogprobsResultOrBuilder getLogprobsResultOrBuilder();
 
   /**
    *

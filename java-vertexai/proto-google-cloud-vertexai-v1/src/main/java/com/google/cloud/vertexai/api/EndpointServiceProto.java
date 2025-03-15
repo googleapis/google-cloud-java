@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,14 @@ public final class EndpointServiceProto {
       internal_static_google_cloud_vertexai_v1_UpdateEndpointRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vertexai_v1_UpdateEndpointRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_UpdateEndpointLongRunningRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_UpdateEndpointLongRunningRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_UpdateEndpointOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_UpdateEndpointOperationMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vertexai_v1_DeleteEndpointRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -139,96 +147,107 @@ public final class EndpointServiceProto {
           + "ointRequest\0229\n\010endpoint\030\001 \001(\0132\".google.c"
           + "loud.vertexai.v1.EndpointB\003\340A\002\0224\n\013update"
           + "_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB"
-          + "\003\340A\002\"Q\n\025DeleteEndpointRequest\0228\n\004name\030\001 "
-          + "\001(\tB*\340A\002\372A$\n\"aiplatform.googleapis.com/E"
-          + "ndpoint\"\244\002\n\022DeployModelRequest\022<\n\010endpoi"
-          + "nt\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.googleapis."
-          + "com/Endpoint\022D\n\016deployed_model\030\002 \001(\0132\'.g"
-          + "oogle.cloud.vertexai.v1.DeployedModelB\003\340"
-          + "A\002\022U\n\rtraffic_split\030\003 \003(\0132>.google.cloud"
-          + ".vertexai.v1.DeployModelRequest.TrafficS"
-          + "plitEntry\0323\n\021TrafficSplitEntry\022\013\n\003key\030\001 "
-          + "\001(\t\022\r\n\005value\030\002 \001(\005:\0028\001\"V\n\023DeployModelRes"
-          + "ponse\022?\n\016deployed_model\030\001 \001(\0132\'.google.c"
-          + "loud.vertexai.v1.DeployedModel\"l\n\034Deploy"
-          + "ModelOperationMetadata\022L\n\020generic_metada"
-          + "ta\030\001 \001(\01322.google.cloud.vertexai.v1.Gene"
-          + "ricOperationMetadata\"\202\002\n\024UndeployModelRe"
-          + "quest\022<\n\010endpoint\030\001 \001(\tB*\340A\002\372A$\n\"aiplatf"
-          + "orm.googleapis.com/Endpoint\022\036\n\021deployed_"
-          + "model_id\030\002 \001(\tB\003\340A\002\022W\n\rtraffic_split\030\003 \003"
-          + "(\0132@.google.cloud.vertexai.v1.UndeployMo"
-          + "delRequest.TrafficSplitEntry\0323\n\021TrafficS"
-          + "plitEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\005:\0028"
-          + "\001\"\027\n\025UndeployModelResponse\"n\n\036UndeployMo"
-          + "delOperationMetadata\022L\n\020generic_metadata"
-          + "\030\001 \001(\01322.google.cloud.vertexai.v1.Generi"
-          + "cOperationMetadata\"\326\001\n\032MutateDeployedMod"
-          + "elRequest\022<\n\010endpoint\030\001 \001(\tB*\340A\002\372A$\n\"aip"
-          + "latform.googleapis.com/Endpoint\022D\n\016deplo"
-          + "yed_model\030\002 \001(\0132\'.google.cloud.vertexai."
-          + "v1.DeployedModelB\003\340A\002\0224\n\013update_mask\030\004 \001"
-          + "(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"^\n\033M"
-          + "utateDeployedModelResponse\022?\n\016deployed_m"
-          + "odel\030\001 \001(\0132\'.google.cloud.vertexai.v1.De"
-          + "ployedModel\"t\n$MutateDeployedModelOperat"
-          + "ionMetadata\022L\n\020generic_metadata\030\001 \001(\01322."
-          + "google.cloud.vertexai.v1.GenericOperatio"
-          + "nMetadata2\230\017\n\017EndpointService\022\200\002\n\016Create"
-          + "Endpoint\022/.google.cloud.vertexai.v1.Crea"
-          + "teEndpointRequest\032\035.google.longrunning.O"
-          + "peration\"\235\001\312A+\n\010Endpoint\022\037CreateEndpoint"
-          + "OperationMetadata\332A\017parent,endpoint\332A\033pa"
-          + "rent,endpoint,endpoint_id\202\323\344\223\0029\"-/v1/{pa"
-          + "rent=projects/*/locations/*}/endpoints:\010"
-          + "endpoint\022\235\001\n\013GetEndpoint\022,.google.cloud."
-          + "vertexai.v1.GetEndpointRequest\032\".google."
-          + "cloud.vertexai.v1.Endpoint\"<\332A\004name\202\323\344\223\002"
-          + "/\022-/v1/{name=projects/*/locations/*/endp"
-          + "oints/*}\022\260\001\n\rListEndpoints\022..google.clou"
-          + "d.vertexai.v1.ListEndpointsRequest\032/.goo"
-          + "gle.cloud.vertexai.v1.ListEndpointsRespo"
-          + "nse\">\332A\006parent\202\323\344\223\002/\022-/v1/{parent=projec"
-          + "ts/*/locations/*}/endpoints\022\306\001\n\016UpdateEn"
-          + "dpoint\022/.google.cloud.vertexai.v1.Update"
-          + "EndpointRequest\032\".google.cloud.vertexai."
-          + "v1.Endpoint\"_\332A\024endpoint,update_mask\202\323\344\223"
-          + "\002B26/v1/{endpoint.name=projects/*/locati"
-          + "ons/*/endpoints/*}:\010endpoint\022\321\001\n\016DeleteE"
-          + "ndpoint\022/.google.cloud.vertexai.v1.Delet"
-          + "eEndpointRequest\032\035.google.longrunning.Op"
-          + "eration\"o\312A0\n\025google.protobuf.Empty\022\027Del"
-          + "eteOperationMetadata\332A\004name\202\323\344\223\002/*-/v1/{"
-          + "name=projects/*/locations/*/endpoints/*}"
-          + "\022\203\002\n\013DeployModel\022,.google.cloud.vertexai"
-          + ".v1.DeployModelRequest\032\035.google.longrunn"
-          + "ing.Operation\"\246\001\312A3\n\023DeployModelResponse"
-          + "\022\034DeployModelOperationMetadata\332A%endpoin"
-          + "t,deployed_model,traffic_split\202\323\344\223\002B\"=/v"
-          + "1/{endpoint=projects/*/locations/*/endpo"
-          + "ints/*}:deployModel:\001*\022\220\002\n\rUndeployModel"
-          + "\022..google.cloud.vertexai.v1.UndeployMode"
-          + "lRequest\032\035.google.longrunning.Operation\""
-          + "\257\001\312A7\n\025UndeployModelResponse\022\036UndeployMo"
-          + "delOperationMetadata\332A(endpoint,deployed"
-          + "_model_id,traffic_split\202\323\344\223\002D\"?/v1/{endp"
-          + "oint=projects/*/locations/*/endpoints/*}"
-          + ":undeployModel:\001*\022\251\002\n\023MutateDeployedMode"
-          + "l\0224.google.cloud.vertexai.v1.MutateDeplo"
-          + "yedModelRequest\032\035.google.longrunning.Ope"
-          + "ration\"\274\001\312AC\n\033MutateDeployedModelRespons"
-          + "e\022$MutateDeployedModelOperationMetadata\332"
-          + "A#endpoint,deployed_model,update_mask\202\323\344"
-          + "\223\002J\"E/v1/{endpoint=projects/*/locations/"
-          + "*/endpoints/*}:mutateDeployedModel:\001*\032M\312"
-          + "A\031aiplatform.googleapis.com\322A.https://ww"
-          + "w.googleapis.com/auth/cloud-platformB\321\001\n"
-          + "\035com.google.cloud.vertexai.apiB\024Endpoint"
-          + "ServiceProtoP\001Z>cloud.google.com/go/aipl"
-          + "atform/apiv1/aiplatformpb;aiplatformpb\252\002"
-          + "\032Google.Cloud.AIPlatform.V1\312\002\032Google\\Clo"
-          + "ud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlat"
-          + "form::V1b\006proto3"
+          + "\003\340A\002\"]\n UpdateEndpointLongRunningRequest"
+          + "\0229\n\010endpoint\030\001 \001(\0132\".google.cloud.vertex"
+          + "ai.v1.EndpointB\003\340A\002\"o\n\037UpdateEndpointOpe"
+          + "rationMetadata\022L\n\020generic_metadata\030\001 \001(\013"
+          + "22.google.cloud.vertexai.v1.GenericOpera"
+          + "tionMetadata\"Q\n\025DeleteEndpointRequest\0228\n"
+          + "\004name\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.googleap"
+          + "is.com/Endpoint\"\244\002\n\022DeployModelRequest\022<"
+          + "\n\010endpoint\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.goo"
+          + "gleapis.com/Endpoint\022D\n\016deployed_model\030\002"
+          + " \001(\0132\'.google.cloud.vertexai.v1.Deployed"
+          + "ModelB\003\340A\002\022U\n\rtraffic_split\030\003 \003(\0132>.goog"
+          + "le.cloud.vertexai.v1.DeployModelRequest."
+          + "TrafficSplitEntry\0323\n\021TrafficSplitEntry\022\013"
+          + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\005:\0028\001\"V\n\023Deploy"
+          + "ModelResponse\022?\n\016deployed_model\030\001 \001(\0132\'."
+          + "google.cloud.vertexai.v1.DeployedModel\"l"
+          + "\n\034DeployModelOperationMetadata\022L\n\020generi"
+          + "c_metadata\030\001 \001(\01322.google.cloud.vertexai"
+          + ".v1.GenericOperationMetadata\"\202\002\n\024Undeplo"
+          + "yModelRequest\022<\n\010endpoint\030\001 \001(\tB*\340A\002\372A$\n"
+          + "\"aiplatform.googleapis.com/Endpoint\022\036\n\021d"
+          + "eployed_model_id\030\002 \001(\tB\003\340A\002\022W\n\rtraffic_s"
+          + "plit\030\003 \003(\0132@.google.cloud.vertexai.v1.Un"
+          + "deployModelRequest.TrafficSplitEntry\0323\n\021"
+          + "TrafficSplitEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
+          + "\002 \001(\005:\0028\001\"\027\n\025UndeployModelResponse\"n\n\036Un"
+          + "deployModelOperationMetadata\022L\n\020generic_"
+          + "metadata\030\001 \001(\01322.google.cloud.vertexai.v"
+          + "1.GenericOperationMetadata\"\326\001\n\032MutateDep"
+          + "loyedModelRequest\022<\n\010endpoint\030\001 \001(\tB*\340A\002"
+          + "\372A$\n\"aiplatform.googleapis.com/Endpoint\022"
+          + "D\n\016deployed_model\030\002 \001(\0132\'.google.cloud.v"
+          + "ertexai.v1.DeployedModelB\003\340A\002\0224\n\013update_"
+          + "mask\030\004 \001(\0132\032.google.protobuf.FieldMaskB\003"
+          + "\340A\002\"^\n\033MutateDeployedModelResponse\022?\n\016de"
+          + "ployed_model\030\001 \001(\0132\'.google.cloud.vertex"
+          + "ai.v1.DeployedModel\"t\n$MutateDeployedMod"
+          + "elOperationMetadata\022L\n\020generic_metadata\030"
+          + "\001 \001(\01322.google.cloud.vertexai.v1.Generic"
+          + "OperationMetadata2\225\021\n\017EndpointService\022\200\002"
+          + "\n\016CreateEndpoint\022/.google.cloud.vertexai"
+          + ".v1.CreateEndpointRequest\032\035.google.longr"
+          + "unning.Operation\"\235\001\312A+\n\010Endpoint\022\037Create"
+          + "EndpointOperationMetadata\332A\017parent,endpo"
+          + "int\332A\033parent,endpoint,endpoint_id\202\323\344\223\0029\""
+          + "-/v1/{parent=projects/*/locations/*}/end"
+          + "points:\010endpoint\022\235\001\n\013GetEndpoint\022,.googl"
+          + "e.cloud.vertexai.v1.GetEndpointRequest\032\""
+          + ".google.cloud.vertexai.v1.Endpoint\"<\332A\004n"
+          + "ame\202\323\344\223\002/\022-/v1/{name=projects/*/location"
+          + "s/*/endpoints/*}\022\260\001\n\rListEndpoints\022..goo"
+          + "gle.cloud.vertexai.v1.ListEndpointsReque"
+          + "st\032/.google.cloud.vertexai.v1.ListEndpoi"
+          + "ntsResponse\">\332A\006parent\202\323\344\223\002/\022-/v1/{paren"
+          + "t=projects/*/locations/*}/endpoints\022\306\001\n\016"
+          + "UpdateEndpoint\022/.google.cloud.vertexai.v"
+          + "1.UpdateEndpointRequest\032\".google.cloud.v"
+          + "ertexai.v1.Endpoint\"_\332A\024endpoint,update_"
+          + "mask\202\323\344\223\002B26/v1/{endpoint.name=projects/"
+          + "*/locations/*/endpoints/*}:\010endpoint\022\372\001\n"
+          + "\031UpdateEndpointLongRunning\022:.google.clou"
+          + "d.vertexai.v1.UpdateEndpointLongRunningR"
+          + "equest\032\035.google.longrunning.Operation\"\201\001"
+          + "\312A+\n\010Endpoint\022\037UpdateEndpointOperationMe"
+          + "tadata\332A\010endpoint\202\323\344\223\002B\"=/v1/{endpoint.n"
+          + "ame=projects/*/locations/*/endpoints/*}:"
+          + "update:\001*\022\321\001\n\016DeleteEndpoint\022/.google.cl"
+          + "oud.vertexai.v1.DeleteEndpointRequest\032\035."
+          + "google.longrunning.Operation\"o\312A0\n\025googl"
+          + "e.protobuf.Empty\022\027DeleteOperationMetadat"
+          + "a\332A\004name\202\323\344\223\002/*-/v1/{name=projects/*/loc"
+          + "ations/*/endpoints/*}\022\203\002\n\013DeployModel\022,."
+          + "google.cloud.vertexai.v1.DeployModelRequ"
+          + "est\032\035.google.longrunning.Operation\"\246\001\312A3"
+          + "\n\023DeployModelResponse\022\034DeployModelOperat"
+          + "ionMetadata\332A%endpoint,deployed_model,tr"
+          + "affic_split\202\323\344\223\002B\"=/v1/{endpoint=project"
+          + "s/*/locations/*/endpoints/*}:deployModel"
+          + ":\001*\022\220\002\n\rUndeployModel\022..google.cloud.ver"
+          + "texai.v1.UndeployModelRequest\032\035.google.l"
+          + "ongrunning.Operation\"\257\001\312A7\n\025UndeployMode"
+          + "lResponse\022\036UndeployModelOperationMetadat"
+          + "a\332A(endpoint,deployed_model_id,traffic_s"
+          + "plit\202\323\344\223\002D\"?/v1/{endpoint=projects/*/loc"
+          + "ations/*/endpoints/*}:undeployModel:\001*\022\251"
+          + "\002\n\023MutateDeployedModel\0224.google.cloud.ve"
+          + "rtexai.v1.MutateDeployedModelRequest\032\035.g"
+          + "oogle.longrunning.Operation\"\274\001\312AC\n\033Mutat"
+          + "eDeployedModelResponse\022$MutateDeployedMo"
+          + "delOperationMetadata\332A#endpoint,deployed"
+          + "_model,update_mask\202\323\344\223\002J\"E/v1/{endpoint="
+          + "projects/*/locations/*/endpoints/*}:muta"
+          + "teDeployedModel:\001*\032M\312A\031aiplatform.google"
+          + "apis.com\322A.https://www.googleapis.com/au"
+          + "th/cloud-platformB\321\001\n\035com.google.cloud.v"
+          + "ertexai.apiB\024EndpointServiceProtoP\001Z>clo"
+          + "ud.google.com/go/aiplatform/apiv1/aiplat"
+          + "formpb;aiplatformpb\252\002\032Google.Cloud.AIPla"
+          + "tform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035"
+          + "Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -292,8 +311,24 @@ public final class EndpointServiceProto {
             new java.lang.String[] {
               "Endpoint", "UpdateMask",
             });
-    internal_static_google_cloud_vertexai_v1_DeleteEndpointRequest_descriptor =
+    internal_static_google_cloud_vertexai_v1_UpdateEndpointLongRunningRequest_descriptor =
         getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_vertexai_v1_UpdateEndpointLongRunningRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_UpdateEndpointLongRunningRequest_descriptor,
+            new java.lang.String[] {
+              "Endpoint",
+            });
+    internal_static_google_cloud_vertexai_v1_UpdateEndpointOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_vertexai_v1_UpdateEndpointOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_UpdateEndpointOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "GenericMetadata",
+            });
+    internal_static_google_cloud_vertexai_v1_DeleteEndpointRequest_descriptor =
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_vertexai_v1_DeleteEndpointRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_DeleteEndpointRequest_descriptor,
@@ -301,7 +336,7 @@ public final class EndpointServiceProto {
               "Name",
             });
     internal_static_google_cloud_vertexai_v1_DeployModelRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_vertexai_v1_DeployModelRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_DeployModelRequest_descriptor,
@@ -319,7 +354,7 @@ public final class EndpointServiceProto {
               "Key", "Value",
             });
     internal_static_google_cloud_vertexai_v1_DeployModelResponse_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_vertexai_v1_DeployModelResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_DeployModelResponse_descriptor,
@@ -327,7 +362,7 @@ public final class EndpointServiceProto {
               "DeployedModel",
             });
     internal_static_google_cloud_vertexai_v1_DeployModelOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_vertexai_v1_DeployModelOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_DeployModelOperationMetadata_descriptor,
@@ -335,7 +370,7 @@ public final class EndpointServiceProto {
               "GenericMetadata",
             });
     internal_static_google_cloud_vertexai_v1_UndeployModelRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_vertexai_v1_UndeployModelRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_UndeployModelRequest_descriptor,
@@ -353,13 +388,13 @@ public final class EndpointServiceProto {
               "Key", "Value",
             });
     internal_static_google_cloud_vertexai_v1_UndeployModelResponse_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_vertexai_v1_UndeployModelResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_UndeployModelResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vertexai_v1_UndeployModelOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_vertexai_v1_UndeployModelOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_UndeployModelOperationMetadata_descriptor,
@@ -367,7 +402,7 @@ public final class EndpointServiceProto {
               "GenericMetadata",
             });
     internal_static_google_cloud_vertexai_v1_MutateDeployedModelRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_vertexai_v1_MutateDeployedModelRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_MutateDeployedModelRequest_descriptor,
@@ -375,7 +410,7 @@ public final class EndpointServiceProto {
               "Endpoint", "DeployedModel", "UpdateMask",
             });
     internal_static_google_cloud_vertexai_v1_MutateDeployedModelResponse_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_vertexai_v1_MutateDeployedModelResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_MutateDeployedModelResponse_descriptor,
@@ -383,7 +418,7 @@ public final class EndpointServiceProto {
               "DeployedModel",
             });
     internal_static_google_cloud_vertexai_v1_MutateDeployedModelOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_vertexai_v1_MutateDeployedModelOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_MutateDeployedModelOperationMetadata_descriptor,

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -99,6 +99,7 @@ public class LlmUtilityServiceClientHttpJsonTest {
         CountTokensResponse.newBuilder()
             .setTotalTokens(730673909)
             .setTotalBillableCharacters(1242495501)
+            .addAllPromptTokensDetails(new ArrayList<ModalityTokenCount>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -148,6 +149,7 @@ public class LlmUtilityServiceClientHttpJsonTest {
         CountTokensResponse.newBuilder()
             .setTotalTokens(730673909)
             .setTotalBillableCharacters(1242495501)
+            .addAllPromptTokensDetails(new ArrayList<ModalityTokenCount>())
             .build();
     mockService.addResponse(expectedResponse);
 

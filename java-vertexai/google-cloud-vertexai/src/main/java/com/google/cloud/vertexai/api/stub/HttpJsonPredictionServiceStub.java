@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -530,7 +530,8 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                           "/ui/{resource=projects/*/locations/*/endpoints/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featureOnlineStores/*}:setIamPolicy",
-                          "/ui/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:setIamPolicy")
+                          "/ui/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:setIamPolicy",
+                          "/ui/{resource=projects/*/locations/*/featureGroups/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -581,7 +582,8 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                           "/ui/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/publishers/*/models/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featureOnlineStores/*}:getIamPolicy",
-                          "/ui/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:getIamPolicy")
+                          "/ui/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:getIamPolicy",
+                          "/ui/{resource=projects/*/locations/*/featureGroups/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -628,7 +630,8 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                           "/ui/{resource=projects/*/locations/*/endpoints/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/featureOnlineStores/*}:testIamPermissions",
-                          "/ui/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:testIamPermissions")
+                          "/ui/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:testIamPermissions",
+                          "/ui/{resource=projects/*/locations/*/featureGroups/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,4 +64,45 @@ public interface ToolConfigOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.FunctionCallingConfigOrBuilder getFunctionCallingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Retrieval config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.RetrievalConfig retrieval_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the retrievalConfig field is set.
+   */
+  boolean hasRetrievalConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Retrieval config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.RetrievalConfig retrieval_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The retrievalConfig.
+   */
+  com.google.cloud.vertexai.api.RetrievalConfig getRetrievalConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Retrieval config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.RetrievalConfig retrieval_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vertexai.api.RetrievalConfigOrBuilder getRetrievalConfigOrBuilder();
 }

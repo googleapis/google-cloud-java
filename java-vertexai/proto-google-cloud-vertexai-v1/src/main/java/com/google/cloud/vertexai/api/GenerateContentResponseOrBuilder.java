@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,6 +85,96 @@ public interface GenerateContentResponseOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.CandidateOrBuilder getCandidatesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The model version used to generate the response.
+   * </pre>
+   *
+   * <code>string model_version = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The modelVersion.
+   */
+  java.lang.String getModelVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The model version used to generate the response.
+   * </pre>
+   *
+   * <code>string model_version = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for modelVersion.
+   */
+  com.google.protobuf.ByteString getModelVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when the request is made to the server.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  boolean hasCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when the request is made to the server.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when the request is made to the server.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. response_id is used to identify each response. It is the
+   * encoding of the event_id.
+   * </pre>
+   *
+   * <code>string response_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The responseId.
+   */
+  java.lang.String getResponseId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. response_id is used to identify each response. It is the
+   * encoding of the event_id.
+   * </pre>
+   *
+   * <code>string response_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for responseId.
+   */
+  com.google.protobuf.ByteString getResponseIdBytes();
 
   /**
    *

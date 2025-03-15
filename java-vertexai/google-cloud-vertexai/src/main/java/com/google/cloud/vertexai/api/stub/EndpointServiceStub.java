@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import com.google.cloud.vertexai.api.MutateDeployedModelResponse;
 import com.google.cloud.vertexai.api.UndeployModelOperationMetadata;
 import com.google.cloud.vertexai.api.UndeployModelRequest;
 import com.google.cloud.vertexai.api.UndeployModelResponse;
+import com.google.cloud.vertexai.api.UpdateEndpointLongRunningRequest;
+import com.google.cloud.vertexai.api.UpdateEndpointOperationMetadata;
 import com.google.cloud.vertexai.api.UpdateEndpointRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -95,6 +97,18 @@ public abstract class EndpointServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateEndpointRequest, Endpoint> updateEndpointCallable() {
     throw new UnsupportedOperationException("Not implemented: updateEndpointCallable()");
+  }
+
+  public OperationCallable<
+          UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateEndpointLongRunningOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateEndpointLongRunningCallable()");
   }
 
   public OperationCallable<DeleteEndpointRequest, Empty, DeleteOperationMetadata>

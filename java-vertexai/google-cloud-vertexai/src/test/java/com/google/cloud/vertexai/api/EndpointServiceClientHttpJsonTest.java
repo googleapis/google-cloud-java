@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -122,6 +122,7 @@ public class EndpointServiceClientHttpJsonTest {
                 PredictRequestResponseLoggingConfig.newBuilder().build())
             .setDedicatedEndpointEnabled(true)
             .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .build();
@@ -194,6 +195,7 @@ public class EndpointServiceClientHttpJsonTest {
                 PredictRequestResponseLoggingConfig.newBuilder().build())
             .setDedicatedEndpointEnabled(true)
             .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .build();
@@ -266,6 +268,7 @@ public class EndpointServiceClientHttpJsonTest {
                 PredictRequestResponseLoggingConfig.newBuilder().build())
             .setDedicatedEndpointEnabled(true)
             .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .build();
@@ -340,6 +343,7 @@ public class EndpointServiceClientHttpJsonTest {
                 PredictRequestResponseLoggingConfig.newBuilder().build())
             .setDedicatedEndpointEnabled(true)
             .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .build();
@@ -414,6 +418,7 @@ public class EndpointServiceClientHttpJsonTest {
                 PredictRequestResponseLoggingConfig.newBuilder().build())
             .setDedicatedEndpointEnabled(true)
             .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .build();
@@ -481,6 +486,7 @@ public class EndpointServiceClientHttpJsonTest {
                 PredictRequestResponseLoggingConfig.newBuilder().build())
             .setDedicatedEndpointEnabled(true)
             .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .build();
@@ -646,6 +652,7 @@ public class EndpointServiceClientHttpJsonTest {
                 PredictRequestResponseLoggingConfig.newBuilder().build())
             .setDedicatedEndpointEnabled(true)
             .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .build();
@@ -673,6 +680,7 @@ public class EndpointServiceClientHttpJsonTest {
                 PredictRequestResponseLoggingConfig.newBuilder().build())
             .setDedicatedEndpointEnabled(true)
             .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .build();
@@ -727,6 +735,7 @@ public class EndpointServiceClientHttpJsonTest {
                   PredictRequestResponseLoggingConfig.newBuilder().build())
               .setDedicatedEndpointEnabled(true)
               .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+              .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
               .setSatisfiesPzs(true)
               .setSatisfiesPzi(true)
               .build();
@@ -735,6 +744,128 @@ public class EndpointServiceClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateEndpointLongRunningTest() throws Exception {
+    Endpoint expectedResponse =
+        Endpoint.newBuilder()
+            .setName(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllDeployedModels(new ArrayList<DeployedModel>())
+            .putAllTrafficSplit(new HashMap<String, Integer>())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setNetwork("network1843485230")
+            .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
+            .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
+            .setPredictRequestResponseLoggingConfig(
+                PredictRequestResponseLoggingConfig.newBuilder().build())
+            .setDedicatedEndpointEnabled(true)
+            .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateEndpointLongRunningTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    Endpoint endpoint =
+        Endpoint.newBuilder()
+            .setName(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllDeployedModels(new ArrayList<DeployedModel>())
+            .putAllTrafficSplit(new HashMap<String, Integer>())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setNetwork("network1843485230")
+            .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
+            .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
+            .setPredictRequestResponseLoggingConfig(
+                PredictRequestResponseLoggingConfig.newBuilder().build())
+            .setDedicatedEndpointEnabled(true)
+            .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .build();
+
+    Endpoint actualResponse = client.updateEndpointLongRunningAsync(endpoint).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateEndpointLongRunningExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Endpoint endpoint =
+          Endpoint.newBuilder()
+              .setName(
+                  EndpointName.ofProjectLocationEndpointName(
+                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                      .toString())
+              .setDisplayName("displayName1714148973")
+              .setDescription("description-1724546052")
+              .addAllDeployedModels(new ArrayList<DeployedModel>())
+              .putAllTrafficSplit(new HashMap<String, Integer>())
+              .setEtag("etag3123477")
+              .putAllLabels(new HashMap<String, String>())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+              .setNetwork("network1843485230")
+              .setEnablePrivateServiceConnect(true)
+              .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
+              .setModelDeploymentMonitoringJob("modelDeploymentMonitoringJob-1178077657")
+              .setPredictRequestResponseLoggingConfig(
+                  PredictRequestResponseLoggingConfig.newBuilder().build())
+              .setDedicatedEndpointEnabled(true)
+              .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+              .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
+              .setSatisfiesPzs(true)
+              .setSatisfiesPzi(true)
+              .build();
+      client.updateEndpointLongRunningAsync(endpoint).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 

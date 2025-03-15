@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,4 +22,41 @@ package com.google.cloud.vertexai.api;
 public interface GoogleSearchRetrievalOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vertexai.v1.GoogleSearchRetrieval)
-    com.google.protobuf.MessageOrBuilder {}
+    com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the dynamic retrieval configuration for the given source.
+   * </pre>
+   *
+   * <code>.google.cloud.vertexai.v1.DynamicRetrievalConfig dynamic_retrieval_config = 2;</code>
+   *
+   * @return Whether the dynamicRetrievalConfig field is set.
+   */
+  boolean hasDynamicRetrievalConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the dynamic retrieval configuration for the given source.
+   * </pre>
+   *
+   * <code>.google.cloud.vertexai.v1.DynamicRetrievalConfig dynamic_retrieval_config = 2;</code>
+   *
+   * @return The dynamicRetrievalConfig.
+   */
+  com.google.cloud.vertexai.api.DynamicRetrievalConfig getDynamicRetrievalConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the dynamic retrieval configuration for the given source.
+   * </pre>
+   *
+   * <code>.google.cloud.vertexai.v1.DynamicRetrievalConfig dynamic_retrieval_config = 2;</code>
+   */
+  com.google.cloud.vertexai.api.DynamicRetrievalConfigOrBuilder
+      getDynamicRetrievalConfigOrBuilder();
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,35 +88,36 @@ public final class MachineResourcesProto {
           + "ypeB\003\340A\005\022\031\n\021accelerator_count\030\003 \001(\005\022\031\n\014t"
           + "pu_topology\030\004 \001(\tB\003\340A\005\022S\n\024reservation_af"
           + "finity\030\005 \001(\0132-.google.cloud.vertexai.v1."
-          + "ReservationAffinityB\006\340A\005\340A\001\"\207\002\n\022Dedicate"
+          + "ReservationAffinityB\006\340A\005\340A\001\"\254\002\n\022Dedicate"
           + "dResources\022C\n\014machine_spec\030\001 \001(\0132%.googl"
           + "e.cloud.vertexai.v1.MachineSpecB\006\340A\002\340A\005\022"
           + "!\n\021min_replica_count\030\002 \001(\005B\006\340A\002\340A\005\022\036\n\021ma"
-          + "x_replica_count\030\003 \001(\005B\003\340A\005\022V\n\030autoscalin"
-          + "g_metric_specs\030\004 \003(\0132/.google.cloud.vert"
-          + "exai.v1.AutoscalingMetricSpecB\003\340A\005\022\021\n\004sp"
-          + "ot\030\005 \001(\010B\003\340A\001\"T\n\022AutomaticResources\022\036\n\021m"
-          + "in_replica_count\030\001 \001(\005B\003\340A\005\022\036\n\021max_repli"
-          + "ca_count\030\002 \001(\005B\003\340A\005\"\243\001\n\027BatchDedicatedRe"
-          + "sources\022C\n\014machine_spec\030\001 \001(\0132%.google.c"
-          + "loud.vertexai.v1.MachineSpecB\006\340A\002\340A\005\022#\n\026"
-          + "starting_replica_count\030\002 \001(\005B\003\340A\005\022\036\n\021max"
-          + "_replica_count\030\003 \001(\005B\003\340A\005\"/\n\021ResourcesCo"
-          + "nsumed\022\032\n\rreplica_hours\030\001 \001(\001B\003\340A\003\"=\n\010Di"
-          + "skSpec\022\026\n\016boot_disk_type\030\001 \001(\t\022\031\n\021boot_d"
-          + "isk_size_gb\030\002 \001(\005\"=\n\022PersistentDiskSpec\022"
-          + "\021\n\tdisk_type\030\001 \001(\t\022\024\n\014disk_size_gb\030\002 \001(\003"
-          + "\"L\n\010NfsMount\022\023\n\006server\030\001 \001(\tB\003\340A\002\022\021\n\004pat"
-          + "h\030\002 \001(\tB\003\340A\002\022\030\n\013mount_point\030\003 \001(\tB\003\340A\002\"A"
-          + "\n\025AutoscalingMetricSpec\022\030\n\013metric_name\030\001"
-          + " \001(\tB\003\340A\002\022\016\n\006target\030\002 \001(\005\".\n\020ShieldedVmC"
-          + "onfig\022\032\n\022enable_secure_boot\030\001 \001(\010B\322\001\n\035co"
-          + "m.google.cloud.vertexai.apiB\025MachineReso"
-          + "urcesProtoP\001Z>cloud.google.com/go/aiplat"
-          + "form/apiv1/aiplatformpb;aiplatformpb\252\002\032G"
-          + "oogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud"
-          + "\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfo"
-          + "rm::V1b\006proto3"
+          + "x_replica_count\030\003 \001(\005B\003\340A\005\022#\n\026required_r"
+          + "eplica_count\030\t \001(\005B\003\340A\001\022V\n\030autoscaling_m"
+          + "etric_specs\030\004 \003(\0132/.google.cloud.vertexa"
+          + "i.v1.AutoscalingMetricSpecB\003\340A\005\022\021\n\004spot\030"
+          + "\005 \001(\010B\003\340A\001\"T\n\022AutomaticResources\022\036\n\021min_"
+          + "replica_count\030\001 \001(\005B\003\340A\005\022\036\n\021max_replica_"
+          + "count\030\002 \001(\005B\003\340A\005\"\243\001\n\027BatchDedicatedResou"
+          + "rces\022C\n\014machine_spec\030\001 \001(\0132%.google.clou"
+          + "d.vertexai.v1.MachineSpecB\006\340A\002\340A\005\022#\n\026sta"
+          + "rting_replica_count\030\002 \001(\005B\003\340A\005\022\036\n\021max_re"
+          + "plica_count\030\003 \001(\005B\003\340A\005\"/\n\021ResourcesConsu"
+          + "med\022\032\n\rreplica_hours\030\001 \001(\001B\003\340A\003\"=\n\010DiskS"
+          + "pec\022\026\n\016boot_disk_type\030\001 \001(\t\022\031\n\021boot_disk"
+          + "_size_gb\030\002 \001(\005\"=\n\022PersistentDiskSpec\022\021\n\t"
+          + "disk_type\030\001 \001(\t\022\024\n\014disk_size_gb\030\002 \001(\003\"L\n"
+          + "\010NfsMount\022\023\n\006server\030\001 \001(\tB\003\340A\002\022\021\n\004path\030\002"
+          + " \001(\tB\003\340A\002\022\030\n\013mount_point\030\003 \001(\tB\003\340A\002\"A\n\025A"
+          + "utoscalingMetricSpec\022\030\n\013metric_name\030\001 \001("
+          + "\tB\003\340A\002\022\016\n\006target\030\002 \001(\005\".\n\020ShieldedVmConf"
+          + "ig\022\032\n\022enable_secure_boot\030\001 \001(\010B\322\001\n\035com.g"
+          + "oogle.cloud.vertexai.apiB\025MachineResourc"
+          + "esProtoP\001Z>cloud.google.com/go/aiplatfor"
+          + "m/apiv1/aiplatformpb;aiplatformpb\252\002\032Goog"
+          + "le.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AI"
+          + "Platform\\V1\352\002\035Google::Cloud::AIPlatform:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -144,7 +145,12 @@ public final class MachineResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_DedicatedResources_descriptor,
             new java.lang.String[] {
-              "MachineSpec", "MinReplicaCount", "MaxReplicaCount", "AutoscalingMetricSpecs", "Spot",
+              "MachineSpec",
+              "MinReplicaCount",
+              "MaxReplicaCount",
+              "RequiredReplicaCount",
+              "AutoscalingMetricSpecs",
+              "Spot",
             });
     internal_static_google_cloud_vertexai_v1_AutomaticResources_descriptor =
         getDescriptor().getMessageTypes().get(2);

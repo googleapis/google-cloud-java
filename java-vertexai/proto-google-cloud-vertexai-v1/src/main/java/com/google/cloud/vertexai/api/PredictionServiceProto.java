@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,6 +113,10 @@ public final class PredictionServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vertexai_v1_GenerateContentRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_GenerateContentRequest_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_GenerateContentRequest_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vertexai_v1_GenerateContentResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vertexai_v1_GenerateContentResponse_fieldAccessorTable;
@@ -143,201 +147,221 @@ public final class PredictionServiceProto {
           + "ai/v1/explanation.proto\032#google/cloud/ve"
           + "rtexai/v1/tool.proto\032$google/cloud/verte"
           + "xai/v1/types.proto\032\034google/protobuf/stru"
-          + "ct.proto\"\252\001\n\016PredictRequest\022<\n\010endpoint\030"
-          + "\001 \001(\tB*\340A\002\372A$\n\"aiplatform.googleapis.com"
-          + "/Endpoint\022.\n\tinstances\030\002 \003(\0132\026.google.pr"
-          + "otobuf.ValueB\003\340A\002\022*\n\nparameters\030\003 \001(\0132\026."
-          + "google.protobuf.Value\"\200\002\n\017PredictRespons"
-          + "e\022+\n\013predictions\030\001 \003(\0132\026.google.protobuf"
-          + ".Value\022\031\n\021deployed_model_id\030\002 \001(\t\0226\n\005mod"
-          + "el\030\003 \001(\tB\'\340A\003\372A!\n\037aiplatform.googleapis."
-          + "com/Model\022\035\n\020model_version_id\030\005 \001(\tB\003\340A\003"
-          + "\022\037\n\022model_display_name\030\004 \001(\tB\003\340A\003\022-\n\010met"
-          + "adata\030\006 \001(\0132\026.google.protobuf.ValueB\003\340A\003"
-          + "\"z\n\021RawPredictRequest\022<\n\010endpoint\030\001 \001(\tB"
-          + "*\340A\002\372A$\n\"aiplatform.googleapis.com/Endpo"
-          + "int\022\'\n\thttp_body\030\002 \001(\0132\024.google.api.Http"
-          + "Body\"\200\001\n\027StreamRawPredictRequest\022<\n\010endp"
-          + "oint\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.googleapi"
-          + "s.com/Endpoint\022\'\n\thttp_body\030\002 \001(\0132\024.goog"
-          + "le.api.HttpBody\"\274\001\n\024DirectPredictRequest"
-          + "\022<\n\010endpoint\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.g"
-          + "oogleapis.com/Endpoint\0220\n\006inputs\030\002 \003(\0132 "
-          + ".google.cloud.vertexai.v1.Tensor\0224\n\npara"
-          + "meters\030\003 \001(\0132 .google.cloud.vertexai.v1."
-          + "Tensor\"\200\001\n\025DirectPredictResponse\0221\n\007outp"
-          + "uts\030\001 \003(\0132 .google.cloud.vertexai.v1.Ten"
-          + "sor\0224\n\nparameters\030\002 \001(\0132 .google.cloud.v"
-          + "ertexai.v1.Tensor\"{\n\027DirectRawPredictReq"
-          + "uest\022<\n\010endpoint\030\001 \001(\tB*\340A\002\372A$\n\"aiplatfo"
-          + "rm.googleapis.com/Endpoint\022\023\n\013method_nam"
-          + "e\030\002 \001(\t\022\r\n\005input\030\003 \001(\014\"*\n\030DirectRawPredi"
-          + "ctResponse\022\016\n\006output\030\001 \001(\014\"\314\001\n\032StreamDir"
-          + "ectPredictRequest\022<\n\010endpoint\030\001 \001(\tB*\340A\002"
-          + "\372A$\n\"aiplatform.googleapis.com/Endpoint\022"
-          + "5\n\006inputs\030\002 \003(\0132 .google.cloud.vertexai."
-          + "v1.TensorB\003\340A\001\0229\n\nparameters\030\003 \001(\0132 .goo"
-          + "gle.cloud.vertexai.v1.TensorB\003\340A\001\"\206\001\n\033St"
-          + "reamDirectPredictResponse\0221\n\007outputs\030\001 \003"
+          + "ct.proto\032\037google/protobuf/timestamp.prot"
+          + "o\"\252\001\n\016PredictRequest\022<\n\010endpoint\030\001 \001(\tB*"
+          + "\340A\002\372A$\n\"aiplatform.googleapis.com/Endpoi"
+          + "nt\022.\n\tinstances\030\002 \003(\0132\026.google.protobuf."
+          + "ValueB\003\340A\002\022*\n\nparameters\030\003 \001(\0132\026.google."
+          + "protobuf.Value\"\200\002\n\017PredictResponse\022+\n\013pr"
+          + "edictions\030\001 \003(\0132\026.google.protobuf.Value\022"
+          + "\031\n\021deployed_model_id\030\002 \001(\t\0226\n\005model\030\003 \001("
+          + "\tB\'\340A\003\372A!\n\037aiplatform.googleapis.com/Mod"
+          + "el\022\035\n\020model_version_id\030\005 \001(\tB\003\340A\003\022\037\n\022mod"
+          + "el_display_name\030\004 \001(\tB\003\340A\003\022-\n\010metadata\030\006"
+          + " \001(\0132\026.google.protobuf.ValueB\003\340A\003\"z\n\021Raw"
+          + "PredictRequest\022<\n\010endpoint\030\001 \001(\tB*\340A\002\372A$"
+          + "\n\"aiplatform.googleapis.com/Endpoint\022\'\n\t"
+          + "http_body\030\002 \001(\0132\024.google.api.HttpBody\"\200\001"
+          + "\n\027StreamRawPredictRequest\022<\n\010endpoint\030\001 "
+          + "\001(\tB*\340A\002\372A$\n\"aiplatform.googleapis.com/E"
+          + "ndpoint\022\'\n\thttp_body\030\002 \001(\0132\024.google.api."
+          + "HttpBody\"\274\001\n\024DirectPredictRequest\022<\n\010end"
+          + "point\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.googleap"
+          + "is.com/Endpoint\0220\n\006inputs\030\002 \003(\0132 .google"
+          + ".cloud.vertexai.v1.Tensor\0224\n\nparameters\030"
+          + "\003 \001(\0132 .google.cloud.vertexai.v1.Tensor\""
+          + "\200\001\n\025DirectPredictResponse\0221\n\007outputs\030\001 \003"
           + "(\0132 .google.cloud.vertexai.v1.Tensor\0224\n\n"
           + "parameters\030\002 \001(\0132 .google.cloud.vertexai"
-          + ".v1.Tensor\"\213\001\n\035StreamDirectRawPredictReq"
-          + "uest\022<\n\010endpoint\030\001 \001(\tB*\340A\002\372A$\n\"aiplatfo"
-          + "rm.googleapis.com/Endpoint\022\030\n\013method_nam"
-          + "e\030\002 \001(\tB\003\340A\001\022\022\n\005input\030\003 \001(\014B\003\340A\001\"0\n\036Stre"
-          + "amDirectRawPredictResponse\022\016\n\006output\030\001 \001"
-          + "(\014\"\277\001\n\027StreamingPredictRequest\022<\n\010endpoi"
-          + "nt\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.googleapis."
-          + "com/Endpoint\0220\n\006inputs\030\002 \003(\0132 .google.cl"
-          + "oud.vertexai.v1.Tensor\0224\n\nparameters\030\003 \001"
-          + "(\0132 .google.cloud.vertexai.v1.Tensor\"\203\001\n"
-          + "\030StreamingPredictResponse\0221\n\007outputs\030\001 \003"
-          + "(\0132 .google.cloud.vertexai.v1.Tensor\0224\n\n"
-          + "parameters\030\002 \001(\0132 .google.cloud.vertexai"
-          + ".v1.Tensor\"~\n\032StreamingRawPredictRequest"
+          + ".v1.Tensor\"{\n\027DirectRawPredictRequest\022<\n"
+          + "\010endpoint\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.goog"
+          + "leapis.com/Endpoint\022\023\n\013method_name\030\002 \001(\t"
+          + "\022\r\n\005input\030\003 \001(\014\"*\n\030DirectRawPredictRespo"
+          + "nse\022\016\n\006output\030\001 \001(\014\"\314\001\n\032StreamDirectPred"
+          + "ictRequest\022<\n\010endpoint\030\001 \001(\tB*\340A\002\372A$\n\"ai"
+          + "platform.googleapis.com/Endpoint\0225\n\006inpu"
+          + "ts\030\002 \003(\0132 .google.cloud.vertexai.v1.Tens"
+          + "orB\003\340A\001\0229\n\nparameters\030\003 \001(\0132 .google.clo"
+          + "ud.vertexai.v1.TensorB\003\340A\001\"\206\001\n\033StreamDir"
+          + "ectPredictResponse\0221\n\007outputs\030\001 \003(\0132 .go"
+          + "ogle.cloud.vertexai.v1.Tensor\0224\n\nparamet"
+          + "ers\030\002 \001(\0132 .google.cloud.vertexai.v1.Ten"
+          + "sor\"\213\001\n\035StreamDirectRawPredictRequest\022<\n"
+          + "\010endpoint\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.goog"
+          + "leapis.com/Endpoint\022\030\n\013method_name\030\002 \001(\t"
+          + "B\003\340A\001\022\022\n\005input\030\003 \001(\014B\003\340A\001\"0\n\036StreamDirec"
+          + "tRawPredictResponse\022\016\n\006output\030\001 \001(\014\"\277\001\n\027"
+          + "StreamingPredictRequest\022<\n\010endpoint\030\001 \001("
+          + "\tB*\340A\002\372A$\n\"aiplatform.googleapis.com/End"
+          + "point\0220\n\006inputs\030\002 \003(\0132 .google.cloud.ver"
+          + "texai.v1.Tensor\0224\n\nparameters\030\003 \001(\0132 .go"
+          + "ogle.cloud.vertexai.v1.Tensor\"\203\001\n\030Stream"
+          + "ingPredictResponse\0221\n\007outputs\030\001 \003(\0132 .go"
+          + "ogle.cloud.vertexai.v1.Tensor\0224\n\nparamet"
+          + "ers\030\002 \001(\0132 .google.cloud.vertexai.v1.Ten"
+          + "sor\"~\n\032StreamingRawPredictRequest\022<\n\010end"
+          + "point\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.googleap"
+          + "is.com/Endpoint\022\023\n\013method_name\030\002 \001(\t\022\r\n\005"
+          + "input\030\003 \001(\014\"-\n\033StreamingRawPredictRespon"
+          + "se\022\016\n\006output\030\001 \001(\014\"\233\002\n\016ExplainRequest\022<\n"
+          + "\010endpoint\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.goog"
+          + "leapis.com/Endpoint\022.\n\tinstances\030\002 \003(\0132\026"
+          + ".google.protobuf.ValueB\003\340A\002\022*\n\nparameter"
+          + "s\030\004 \001(\0132\026.google.protobuf.Value\022T\n\031expla"
+          + "nation_spec_override\030\005 \001(\01321.google.clou"
+          + "d.vertexai.v1.ExplanationSpecOverride\022\031\n"
+          + "\021deployed_model_id\030\003 \001(\t\"\226\001\n\017ExplainResp"
+          + "onse\022;\n\014explanations\030\001 \003(\0132%.google.clou"
+          + "d.vertexai.v1.Explanation\022\031\n\021deployed_mo"
+          + "del_id\030\002 \001(\t\022+\n\013predictions\030\003 \003(\0132\026.goog"
+          + "le.protobuf.Value\"\313\003\n\022CountTokensRequest"
           + "\022<\n\010endpoint\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.g"
-          + "oogleapis.com/Endpoint\022\023\n\013method_name\030\002 "
-          + "\001(\t\022\r\n\005input\030\003 \001(\014\"-\n\033StreamingRawPredic"
-          + "tResponse\022\016\n\006output\030\001 \001(\014\"\233\002\n\016ExplainReq"
-          + "uest\022<\n\010endpoint\030\001 \001(\tB*\340A\002\372A$\n\"aiplatfo"
-          + "rm.googleapis.com/Endpoint\022.\n\tinstances\030"
-          + "\002 \003(\0132\026.google.protobuf.ValueB\003\340A\002\022*\n\npa"
-          + "rameters\030\004 \001(\0132\026.google.protobuf.Value\022T"
-          + "\n\031explanation_spec_override\030\005 \001(\01321.goog"
-          + "le.cloud.vertexai.v1.ExplanationSpecOver"
-          + "ride\022\031\n\021deployed_model_id\030\003 \001(\t\"\226\001\n\017Expl"
-          + "ainResponse\022;\n\014explanations\030\001 \003(\0132%.goog"
-          + "le.cloud.vertexai.v1.Explanation\022\031\n\021depl"
-          + "oyed_model_id\030\002 \001(\t\022+\n\013predictions\030\003 \003(\013"
-          + "2\026.google.protobuf.Value\"\344\002\n\022CountTokens"
-          + "Request\022<\n\010endpoint\030\001 \001(\tB*\340A\002\372A$\n\"aipla"
-          + "tform.googleapis.com/Endpoint\022\022\n\005model\030\003"
-          + " \001(\tB\003\340A\001\022.\n\tinstances\030\002 \003(\0132\026.google.pr"
-          + "otobuf.ValueB\003\340A\001\0228\n\010contents\030\004 \003(\0132!.go"
-          + "ogle.cloud.vertexai.v1.ContentB\003\340A\001\022G\n\022s"
-          + "ystem_instruction\030\005 \001(\0132!.google.cloud.v"
-          + "ertexai.v1.ContentB\003\340A\001H\000\210\001\001\0222\n\005tools\030\006 "
-          + "\003(\0132\036.google.cloud.vertexai.v1.ToolB\003\340A\001"
-          + "B\025\n\023_system_instruction\"N\n\023CountTokensRe"
-          + "sponse\022\024\n\014total_tokens\030\001 \001(\005\022!\n\031total_bi"
-          + "llable_characters\030\002 \001(\005\"\315\003\n\026GenerateCont"
-          + "entRequest\022\022\n\005model\030\005 \001(\tB\003\340A\002\0228\n\010conten"
-          + "ts\030\002 \003(\0132!.google.cloud.vertexai.v1.Cont"
-          + "entB\003\340A\002\022G\n\022system_instruction\030\010 \001(\0132!.g"
-          + "oogle.cloud.vertexai.v1.ContentB\003\340A\001H\000\210\001"
-          + "\001\0222\n\005tools\030\006 \003(\0132\036.google.cloud.vertexai"
-          + ".v1.ToolB\003\340A\001\022>\n\013tool_config\030\007 \001(\0132$.goo"
-          + "gle.cloud.vertexai.v1.ToolConfigB\003\340A\001\022E\n"
-          + "\017safety_settings\030\003 \003(\0132\'.google.cloud.ve"
-          + "rtexai.v1.SafetySettingB\003\340A\001\022J\n\021generati"
-          + "on_config\030\004 \001(\0132*.google.cloud.vertexai."
-          + "v1.GenerationConfigB\003\340A\001B\025\n\023_system_inst"
-          + "ruction\"\315\005\n\027GenerateContentResponse\022<\n\nc"
-          + "andidates\030\002 \003(\0132#.google.cloud.vertexai."
-          + "v1.CandidateB\003\340A\003\022^\n\017prompt_feedback\030\003 \001"
-          + "(\0132@.google.cloud.vertexai.v1.GenerateCo"
-          + "ntentResponse.PromptFeedbackB\003\340A\003\022W\n\016usa"
-          + "ge_metadata\030\004 \001(\0132?.google.cloud.vertexa"
-          + "i.v1.GenerateContentResponse.UsageMetada"
-          + "ta\032\322\002\n\016PromptFeedback\022i\n\014block_reason\030\001 "
-          + "\001(\0162N.google.cloud.vertexai.v1.GenerateC"
-          + "ontentResponse.PromptFeedback.BlockedRea"
-          + "sonB\003\340A\003\022C\n\016safety_ratings\030\002 \003(\0132&.googl"
-          + "e.cloud.vertexai.v1.SafetyRatingB\003\340A\003\022!\n"
-          + "\024block_reason_message\030\003 \001(\tB\003\340A\003\"m\n\rBloc"
-          + "kedReason\022\036\n\032BLOCKED_REASON_UNSPECIFIED\020"
-          + "\000\022\n\n\006SAFETY\020\001\022\t\n\005OTHER\020\002\022\r\n\tBLOCKLIST\020\003\022"
-          + "\026\n\022PROHIBITED_CONTENT\020\004\032f\n\rUsageMetadata"
-          + "\022\032\n\022prompt_token_count\030\001 \001(\005\022\036\n\026candidat"
-          + "es_token_count\030\002 \001(\005\022\031\n\021total_token_coun"
-          + "t\030\003 \001(\0052\301\031\n\021PredictionService\022\220\002\n\007Predic"
-          + "t\022(.google.cloud.vertexai.v1.PredictRequ"
-          + "est\032).google.cloud.vertexai.v1.PredictRe"
-          + "sponse\"\257\001\332A\035endpoint,instances,parameter"
-          + "s\202\323\344\223\002\210\001\"9/v1/{endpoint=projects/*/locat"
-          + "ions/*/endpoints/*}:predict:\001*ZH\"C/v1/{e"
-          + "ndpoint=projects/*/locations/*/publisher"
-          + "s/*/models/*}:predict:\001*\022\374\001\n\nRawPredict\022"
-          + "+.google.cloud.vertexai.v1.RawPredictReq"
-          + "uest\032\024.google.api.HttpBody\"\252\001\332A\022endpoint"
-          + ",http_body\202\323\344\223\002\216\001\"</v1/{endpoint=project"
-          + "s/*/locations/*/endpoints/*}:rawPredict:"
-          + "\001*ZK\"F/v1/{endpoint=projects/*/locations"
-          + "/*/publishers/*/models/*}:rawPredict:\001*\022"
-          + "\226\002\n\020StreamRawPredict\0221.google.cloud.vert"
-          + "exai.v1.StreamRawPredictRequest\032\024.google"
-          + ".api.HttpBody\"\266\001\332A\022endpoint,http_body\202\323\344"
-          + "\223\002\232\001\"B/v1/{endpoint=projects/*/locations"
-          + "/*/endpoints/*}:streamRawPredict:\001*ZQ\"L/"
-          + "v1/{endpoint=projects/*/locations/*/publ"
-          + "ishers/*/models/*}:streamRawPredict:\001*0\001"
-          + "\022\274\001\n\rDirectPredict\022..google.cloud.vertex"
-          + "ai.v1.DirectPredictRequest\032/.google.clou"
-          + "d.vertexai.v1.DirectPredictResponse\"J\202\323\344"
-          + "\223\002D\"?/v1/{endpoint=projects/*/locations/"
-          + "*/endpoints/*}:directPredict:\001*\022\310\001\n\020Dire"
-          + "ctRawPredict\0221.google.cloud.vertexai.v1."
-          + "DirectRawPredictRequest\0322.google.cloud.v"
-          + "ertexai.v1.DirectRawPredictResponse\"M\202\323\344"
-          + "\223\002G\"B/v1/{endpoint=projects/*/locations/"
-          + "*/endpoints/*}:directRawPredict:\001*\022\210\001\n\023S"
-          + "treamDirectPredict\0224.google.cloud.vertex"
-          + "ai.v1.StreamDirectPredictRequest\0325.googl"
-          + "e.cloud.vertexai.v1.StreamDirectPredictR"
-          + "esponse\"\000(\0010\001\022\221\001\n\026StreamDirectRawPredict"
-          + "\0227.google.cloud.vertexai.v1.StreamDirect"
-          + "RawPredictRequest\0328.google.cloud.vertexa"
-          + "i.v1.StreamDirectRawPredictResponse\"\000(\0010"
-          + "\001\022\177\n\020StreamingPredict\0221.google.cloud.ver"
-          + "texai.v1.StreamingPredictRequest\0322.googl"
-          + "e.cloud.vertexai.v1.StreamingPredictResp"
-          + "onse\"\000(\0010\001\022\261\002\n\026ServerStreamingPredict\0221."
-          + "google.cloud.vertexai.v1.StreamingPredic"
-          + "tRequest\0322.google.cloud.vertexai.v1.Stre"
-          + "amingPredictResponse\"\255\001\202\323\344\223\002\246\001\"H/v1/{end"
-          + "point=projects/*/locations/*/endpoints/*"
-          + "}:serverStreamingPredict:\001*ZW\"R/v1/{endp"
-          + "oint=projects/*/locations/*/publishers/*"
-          + "/models/*}:serverStreamingPredict:\001*0\001\022\210"
-          + "\001\n\023StreamingRawPredict\0224.google.cloud.ve"
-          + "rtexai.v1.StreamingRawPredictRequest\0325.g"
-          + "oogle.cloud.vertexai.v1.StreamingRawPred"
-          + "ictResponse\"\000(\0010\001\022\326\001\n\007Explain\022(.google.c"
-          + "loud.vertexai.v1.ExplainRequest\032).google"
-          + ".cloud.vertexai.v1.ExplainResponse\"v\332A/e"
-          + "ndpoint,instances,parameters,deployed_mo"
-          + "del_id\202\323\344\223\002>\"9/v1/{endpoint=projects/*/l"
-          + "ocations/*/endpoints/*}:explain:\001*\022\211\003\n\017G"
-          + "enerateContent\0220.google.cloud.vertexai.v"
-          + "1.GenerateContentRequest\0321.google.cloud."
-          + "vertexai.v1.GenerateContentResponse\"\220\002\332A"
-          + "\016model,contents\202\323\344\223\002\370\001\">/v1/{model=proje"
-          + "cts/*/locations/*/endpoints/*}:generateC"
-          + "ontent:\001*ZM\"H/v1/{model=projects/*/locat"
-          + "ions/*/publishers/*/models/*}:generateCo"
-          + "ntent:\001*Z,\"\'/v1/{model=endpoints/*}:gene"
-          + "rateContent:\001*Z6\"1/v1/{model=publishers/"
-          + "*/models/*}:generateContent:\001*\022\251\003\n\025Strea"
-          + "mGenerateContent\0220.google.cloud.vertexai"
-          + ".v1.GenerateContentRequest\0321.google.clou"
-          + "d.vertexai.v1.GenerateContentResponse\"\250\002"
-          + "\332A\016model,contents\202\323\344\223\002\220\002\"D/v1/{model=pro"
-          + "jects/*/locations/*/endpoints/*}:streamG"
-          + "enerateContent:\001*ZS\"N/v1/{model=projects"
-          + "/*/locations/*/publishers/*/models/*}:st"
-          + "reamGenerateContent:\001*Z2\"-/v1/{model=end"
-          + "points/*}:streamGenerateContent:\001*Z<\"7/v"
-          + "1/{model=publishers/*/models/*}:streamGe"
-          + "nerateContent:\001*0\001\032\206\001\312A\031aiplatform.googl"
-          + "eapis.com\322Aghttps://www.googleapis.com/a"
-          + "uth/cloud-platform,https://www.googleapi"
-          + "s.com/auth/cloud-platform.read-onlyB\323\001\n\035"
-          + "com.google.cloud.vertexai.apiB\026Predictio"
-          + "nServiceProtoP\001Z>cloud.google.com/go/aip"
-          + "latform/apiv1/aiplatformpb;aiplatformpb\252"
-          + "\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\Cl"
-          + "oud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPla"
-          + "tform::V1b\006proto3"
+          + "oogleapis.com/Endpoint\022\022\n\005model\030\003 \001(\tB\003\340"
+          + "A\001\022.\n\tinstances\030\002 \003(\0132\026.google.protobuf."
+          + "ValueB\003\340A\001\0228\n\010contents\030\004 \003(\0132!.google.cl"
+          + "oud.vertexai.v1.ContentB\003\340A\001\022G\n\022system_i"
+          + "nstruction\030\005 \001(\0132!.google.cloud.vertexai"
+          + ".v1.ContentB\003\340A\001H\000\210\001\001\0222\n\005tools\030\006 \003(\0132\036.g"
+          + "oogle.cloud.vertexai.v1.ToolB\003\340A\001\022O\n\021gen"
+          + "eration_config\030\007 \001(\0132*.google.cloud.vert"
+          + "exai.v1.GenerationConfigB\003\340A\001H\001\210\001\001B\025\n\023_s"
+          + "ystem_instructionB\024\n\022_generation_config\""
+          + "\240\001\n\023CountTokensResponse\022\024\n\014total_tokens\030"
+          + "\001 \001(\005\022!\n\031total_billable_characters\030\002 \001(\005"
+          + "\022P\n\025prompt_tokens_details\030\003 \003(\0132,.google"
+          + ".cloud.vertexai.v1.ModalityTokenCountB\003\340"
+          + "A\003\"\230\005\n\026GenerateContentRequest\022\022\n\005model\030\005"
+          + " \001(\tB\003\340A\002\0228\n\010contents\030\002 \003(\0132!.google.clo"
+          + "ud.vertexai.v1.ContentB\003\340A\002\022G\n\022system_in"
+          + "struction\030\010 \001(\0132!.google.cloud.vertexai."
+          + "v1.ContentB\003\340A\001H\000\210\001\001\022G\n\016cached_content\030\t"
+          + " \001(\tB/\340A\001\372A)\n\'aiplatform.googleapis.com/"
+          + "CachedContent\0222\n\005tools\030\006 \003(\0132\036.google.cl"
+          + "oud.vertexai.v1.ToolB\003\340A\001\022>\n\013tool_config"
+          + "\030\007 \001(\0132$.google.cloud.vertexai.v1.ToolCo"
+          + "nfigB\003\340A\001\022Q\n\006labels\030\n \003(\0132<.google.cloud"
+          + ".vertexai.v1.GenerateContentRequest.Labe"
+          + "lsEntryB\003\340A\001\022E\n\017safety_settings\030\003 \003(\0132\'."
+          + "google.cloud.vertexai.v1.SafetySettingB\003"
+          + "\340A\001\022J\n\021generation_config\030\004 \001(\0132*.google."
+          + "cloud.vertexai.v1.GenerationConfigB\003\340A\001\032"
+          + "-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
+          + "(\t:\0028\001B\025\n\023_system_instruction\"\334\010\n\027Genera"
+          + "teContentResponse\022<\n\ncandidates\030\002 \003(\0132#."
+          + "google.cloud.vertexai.v1.CandidateB\003\340A\003\022"
+          + "\032\n\rmodel_version\030\013 \001(\tB\003\340A\003\0224\n\013create_ti"
+          + "me\030\014 \001(\0132\032.google.protobuf.TimestampB\003\340A"
+          + "\003\022\030\n\013response_id\030\r \001(\tB\003\340A\003\022^\n\017prompt_fe"
+          + "edback\030\003 \001(\0132@.google.cloud.vertexai.v1."
+          + "GenerateContentResponse.PromptFeedbackB\003"
+          + "\340A\003\022W\n\016usage_metadata\030\004 \001(\0132?.google.clo"
+          + "ud.vertexai.v1.GenerateContentResponse.U"
+          + "sageMetadata\032\322\002\n\016PromptFeedback\022i\n\014block"
+          + "_reason\030\001 \001(\0162N.google.cloud.vertexai.v1"
+          + ".GenerateContentResponse.PromptFeedback."
+          + "BlockedReasonB\003\340A\003\022C\n\016safety_ratings\030\002 \003"
+          + "(\0132&.google.cloud.vertexai.v1.SafetyRati"
+          + "ngB\003\340A\003\022!\n\024block_reason_message\030\003 \001(\tB\003\340"
+          + "A\003\"m\n\rBlockedReason\022\036\n\032BLOCKED_REASON_UN"
+          + "SPECIFIED\020\000\022\n\n\006SAFETY\020\001\022\t\n\005OTHER\020\002\022\r\n\tBL"
+          + "OCKLIST\020\003\022\026\n\022PROHIBITED_CONTENT\020\004\032\210\003\n\rUs"
+          + "ageMetadata\022\032\n\022prompt_token_count\030\001 \001(\005\022"
+          + "\036\n\026candidates_token_count\030\002 \001(\005\022\031\n\021total"
+          + "_token_count\030\003 \001(\005\022\'\n\032cached_content_tok"
+          + "en_count\030\005 \001(\005B\003\340A\003\022P\n\025prompt_tokens_det"
+          + "ails\030\t \003(\0132,.google.cloud.vertexai.v1.Mo"
+          + "dalityTokenCountB\003\340A\003\022O\n\024cache_tokens_de"
+          + "tails\030\n \003(\0132,.google.cloud.vertexai.v1.M"
+          + "odalityTokenCountB\003\340A\003\022T\n\031candidates_tok"
+          + "ens_details\030\013 \003(\0132,.google.cloud.vertexa"
+          + "i.v1.ModalityTokenCountB\003\340A\0032\301\031\n\021Predict"
+          + "ionService\022\220\002\n\007Predict\022(.google.cloud.ve"
+          + "rtexai.v1.PredictRequest\032).google.cloud."
+          + "vertexai.v1.PredictResponse\"\257\001\332A\035endpoin"
+          + "t,instances,parameters\202\323\344\223\002\210\001\"9/v1/{endp"
+          + "oint=projects/*/locations/*/endpoints/*}"
+          + ":predict:\001*ZH\"C/v1/{endpoint=projects/*/"
+          + "locations/*/publishers/*/models/*}:predi"
+          + "ct:\001*\022\374\001\n\nRawPredict\022+.google.cloud.vert"
+          + "exai.v1.RawPredictRequest\032\024.google.api.H"
+          + "ttpBody\"\252\001\332A\022endpoint,http_body\202\323\344\223\002\216\001\"<"
+          + "/v1/{endpoint=projects/*/locations/*/end"
+          + "points/*}:rawPredict:\001*ZK\"F/v1/{endpoint"
+          + "=projects/*/locations/*/publishers/*/mod"
+          + "els/*}:rawPredict:\001*\022\226\002\n\020StreamRawPredic"
+          + "t\0221.google.cloud.vertexai.v1.StreamRawPr"
+          + "edictRequest\032\024.google.api.HttpBody\"\266\001\332A\022"
+          + "endpoint,http_body\202\323\344\223\002\232\001\"B/v1/{endpoint"
+          + "=projects/*/locations/*/endpoints/*}:str"
+          + "eamRawPredict:\001*ZQ\"L/v1/{endpoint=projec"
+          + "ts/*/locations/*/publishers/*/models/*}:"
+          + "streamRawPredict:\001*0\001\022\274\001\n\rDirectPredict\022"
+          + "..google.cloud.vertexai.v1.DirectPredict"
+          + "Request\032/.google.cloud.vertexai.v1.Direc"
+          + "tPredictResponse\"J\202\323\344\223\002D\"?/v1/{endpoint="
+          + "projects/*/locations/*/endpoints/*}:dire"
+          + "ctPredict:\001*\022\310\001\n\020DirectRawPredict\0221.goog"
+          + "le.cloud.vertexai.v1.DirectRawPredictReq"
+          + "uest\0322.google.cloud.vertexai.v1.DirectRa"
+          + "wPredictResponse\"M\202\323\344\223\002G\"B/v1/{endpoint="
+          + "projects/*/locations/*/endpoints/*}:dire"
+          + "ctRawPredict:\001*\022\210\001\n\023StreamDirectPredict\022"
+          + "4.google.cloud.vertexai.v1.StreamDirectP"
+          + "redictRequest\0325.google.cloud.vertexai.v1"
+          + ".StreamDirectPredictResponse\"\000(\0010\001\022\221\001\n\026S"
+          + "treamDirectRawPredict\0227.google.cloud.ver"
+          + "texai.v1.StreamDirectRawPredictRequest\0328"
+          + ".google.cloud.vertexai.v1.StreamDirectRa"
+          + "wPredictResponse\"\000(\0010\001\022\177\n\020StreamingPredi"
+          + "ct\0221.google.cloud.vertexai.v1.StreamingP"
+          + "redictRequest\0322.google.cloud.vertexai.v1"
+          + ".StreamingPredictResponse\"\000(\0010\001\022\261\002\n\026Serv"
+          + "erStreamingPredict\0221.google.cloud.vertex"
+          + "ai.v1.StreamingPredictRequest\0322.google.c"
+          + "loud.vertexai.v1.StreamingPredictRespons"
+          + "e\"\255\001\202\323\344\223\002\246\001\"H/v1/{endpoint=projects/*/lo"
+          + "cations/*/endpoints/*}:serverStreamingPr"
+          + "edict:\001*ZW\"R/v1/{endpoint=projects/*/loc"
+          + "ations/*/publishers/*/models/*}:serverSt"
+          + "reamingPredict:\001*0\001\022\210\001\n\023StreamingRawPred"
+          + "ict\0224.google.cloud.vertexai.v1.Streaming"
+          + "RawPredictRequest\0325.google.cloud.vertexa"
+          + "i.v1.StreamingRawPredictResponse\"\000(\0010\001\022\326"
+          + "\001\n\007Explain\022(.google.cloud.vertexai.v1.Ex"
+          + "plainRequest\032).google.cloud.vertexai.v1."
+          + "ExplainResponse\"v\332A/endpoint,instances,p"
+          + "arameters,deployed_model_id\202\323\344\223\002>\"9/v1/{"
+          + "endpoint=projects/*/locations/*/endpoint"
+          + "s/*}:explain:\001*\022\211\003\n\017GenerateContent\0220.go"
+          + "ogle.cloud.vertexai.v1.GenerateContentRe"
+          + "quest\0321.google.cloud.vertexai.v1.Generat"
+          + "eContentResponse\"\220\002\332A\016model,contents\202\323\344\223"
+          + "\002\370\001\">/v1/{model=projects/*/locations/*/e"
+          + "ndpoints/*}:generateContent:\001*ZM\"H/v1/{m"
+          + "odel=projects/*/locations/*/publishers/*"
+          + "/models/*}:generateContent:\001*Z,\"\'/v1/{mo"
+          + "del=endpoints/*}:generateContent:\001*Z6\"1/"
+          + "v1/{model=publishers/*/models/*}:generat"
+          + "eContent:\001*\022\251\003\n\025StreamGenerateContent\0220."
+          + "google.cloud.vertexai.v1.GenerateContent"
+          + "Request\0321.google.cloud.vertexai.v1.Gener"
+          + "ateContentResponse\"\250\002\332A\016model,contents\202\323"
+          + "\344\223\002\220\002\"D/v1/{model=projects/*/locations/*"
+          + "/endpoints/*}:streamGenerateContent:\001*ZS"
+          + "\"N/v1/{model=projects/*/locations/*/publ"
+          + "ishers/*/models/*}:streamGenerateContent"
+          + ":\001*Z2\"-/v1/{model=endpoints/*}:streamGen"
+          + "erateContent:\001*Z<\"7/v1/{model=publishers"
+          + "/*/models/*}:streamGenerateContent:\001*0\001\032"
+          + "\206\001\312A\031aiplatform.googleapis.com\322Aghttps:/"
+          + "/www.googleapis.com/auth/cloud-platform,"
+          + "https://www.googleapis.com/auth/cloud-pl"
+          + "atform.read-onlyB\323\001\n\035com.google.cloud.ve"
+          + "rtexai.apiB\026PredictionServiceProtoP\001Z>cl"
+          + "oud.google.com/go/aiplatform/apiv1/aipla"
+          + "tformpb;aiplatformpb\252\002\032Google.Cloud.AIPl"
+          + "atform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002"
+          + "\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -353,6 +377,7 @@ public final class PredictionServiceProto {
               com.google.cloud.vertexai.api.ToolProto.getDescriptor(),
               com.google.cloud.vertexai.api.TypesProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_vertexai_v1_PredictRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -509,7 +534,13 @@ public final class PredictionServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_CountTokensRequest_descriptor,
             new java.lang.String[] {
-              "Endpoint", "Model", "Instances", "Contents", "SystemInstruction", "Tools",
+              "Endpoint",
+              "Model",
+              "Instances",
+              "Contents",
+              "SystemInstruction",
+              "Tools",
+              "GenerationConfig",
             });
     internal_static_google_cloud_vertexai_v1_CountTokensResponse_descriptor =
         getDescriptor().getMessageTypes().get(19);
@@ -517,7 +548,7 @@ public final class PredictionServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_CountTokensResponse_descriptor,
             new java.lang.String[] {
-              "TotalTokens", "TotalBillableCharacters",
+              "TotalTokens", "TotalBillableCharacters", "PromptTokensDetails",
             });
     internal_static_google_cloud_vertexai_v1_GenerateContentRequest_descriptor =
         getDescriptor().getMessageTypes().get(20);
@@ -528,10 +559,22 @@ public final class PredictionServiceProto {
               "Model",
               "Contents",
               "SystemInstruction",
+              "CachedContent",
               "Tools",
               "ToolConfig",
+              "Labels",
               "SafetySettings",
               "GenerationConfig",
+            });
+    internal_static_google_cloud_vertexai_v1_GenerateContentRequest_LabelsEntry_descriptor =
+        internal_static_google_cloud_vertexai_v1_GenerateContentRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_vertexai_v1_GenerateContentRequest_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_GenerateContentRequest_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_vertexai_v1_GenerateContentResponse_descriptor =
         getDescriptor().getMessageTypes().get(21);
@@ -539,7 +582,12 @@ public final class PredictionServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_GenerateContentResponse_descriptor,
             new java.lang.String[] {
-              "Candidates", "PromptFeedback", "UsageMetadata",
+              "Candidates",
+              "ModelVersion",
+              "CreateTime",
+              "ResponseId",
+              "PromptFeedback",
+              "UsageMetadata",
             });
     internal_static_google_cloud_vertexai_v1_GenerateContentResponse_PromptFeedback_descriptor =
         internal_static_google_cloud_vertexai_v1_GenerateContentResponse_descriptor
@@ -559,7 +607,13 @@ public final class PredictionServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_GenerateContentResponse_UsageMetadata_descriptor,
             new java.lang.String[] {
-              "PromptTokenCount", "CandidatesTokenCount", "TotalTokenCount",
+              "PromptTokenCount",
+              "CandidatesTokenCount",
+              "TotalTokenCount",
+              "CachedContentTokenCount",
+              "PromptTokensDetails",
+              "CacheTokensDetails",
+              "CandidatesTokensDetails",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -581,6 +635,7 @@ public final class PredictionServiceProto {
     com.google.cloud.vertexai.api.ToolProto.getDescriptor();
     com.google.cloud.vertexai.api.TypesProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

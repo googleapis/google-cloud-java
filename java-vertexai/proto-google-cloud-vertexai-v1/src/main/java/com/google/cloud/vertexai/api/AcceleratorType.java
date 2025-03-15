@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,6 +131,16 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NVIDIA_H100_80GB = 13;</code>
    */
   NVIDIA_H100_80GB(13),
+  /**
+   *
+   *
+   * <pre>
+   * Nvidia H100 Mega 80Gb GPU.
+   * </pre>
+   *
+   * <code>NVIDIA_H100_MEGA_80GB = 14;</code>
+   */
+  NVIDIA_H100_MEGA_80GB(14),
   /**
    *
    *
@@ -279,6 +289,16 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Nvidia H100 Mega 80Gb GPU.
+   * </pre>
+   *
+   * <code>NVIDIA_H100_MEGA_80GB = 14;</code>
+   */
+  public static final int NVIDIA_H100_MEGA_80GB_VALUE = 14;
+  /**
+   *
+   *
+   * <pre>
    * TPU v2.
    * </pre>
    *
@@ -360,6 +380,8 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
         return NVIDIA_L4;
       case 13:
         return NVIDIA_H100_80GB;
+      case 14:
+        return NVIDIA_H100_MEGA_80GB;
       case 6:
         return TPU_V2;
       case 7:

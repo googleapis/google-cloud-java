@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,9 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
     super(builder);
   }
 
-  private CountTokensResponse() {}
+  private CountTokensResponse() {
+    promptTokensDetails_ = java.util.Collections.emptyList();
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -98,6 +100,89 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
     return totalBillableCharacters_;
   }
 
+  public static final int PROMPT_TOKENS_DETAILS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount> promptTokensDetails_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of modalities that were processed in the request input.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount>
+      getPromptTokensDetailsList() {
+    return promptTokensDetails_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of modalities that were processed in the request input.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+      getPromptTokensDetailsOrBuilderList() {
+    return promptTokensDetails_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of modalities that were processed in the request input.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPromptTokensDetailsCount() {
+    return promptTokensDetails_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of modalities that were processed in the request input.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.ModalityTokenCount getPromptTokensDetails(int index) {
+    return promptTokensDetails_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of modalities that were processed in the request input.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder getPromptTokensDetailsOrBuilder(
+      int index) {
+    return promptTokensDetails_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -118,6 +203,9 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
     if (totalBillableCharacters_ != 0) {
       output.writeInt32(2, totalBillableCharacters_);
     }
+    for (int i = 0; i < promptTokensDetails_.size(); i++) {
+      output.writeMessage(3, promptTokensDetails_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -132,6 +220,10 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
     }
     if (totalBillableCharacters_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, totalBillableCharacters_);
+    }
+    for (int i = 0; i < promptTokensDetails_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, promptTokensDetails_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -151,6 +243,7 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
 
     if (getTotalTokens() != other.getTotalTokens()) return false;
     if (getTotalBillableCharacters() != other.getTotalBillableCharacters()) return false;
+    if (!getPromptTokensDetailsList().equals(other.getPromptTokensDetailsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -166,6 +259,10 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + getTotalTokens();
     hash = (37 * hash) + TOTAL_BILLABLE_CHARACTERS_FIELD_NUMBER;
     hash = (53 * hash) + getTotalBillableCharacters();
+    if (getPromptTokensDetailsCount() > 0) {
+      hash = (37 * hash) + PROMPT_TOKENS_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getPromptTokensDetailsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -307,6 +404,13 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       bitField0_ = 0;
       totalTokens_ = 0;
       totalBillableCharacters_ = 0;
+      if (promptTokensDetailsBuilder_ == null) {
+        promptTokensDetails_ = java.util.Collections.emptyList();
+      } else {
+        promptTokensDetails_ = null;
+        promptTokensDetailsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -334,11 +438,25 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.vertexai.api.CountTokensResponse buildPartial() {
       com.google.cloud.vertexai.api.CountTokensResponse result =
           new com.google.cloud.vertexai.api.CountTokensResponse(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vertexai.api.CountTokensResponse result) {
+      if (promptTokensDetailsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          promptTokensDetails_ = java.util.Collections.unmodifiableList(promptTokensDetails_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.promptTokensDetails_ = promptTokensDetails_;
+      } else {
+        result.promptTokensDetails_ = promptTokensDetailsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.vertexai.api.CountTokensResponse result) {
@@ -403,6 +521,33 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       if (other.getTotalBillableCharacters() != 0) {
         setTotalBillableCharacters(other.getTotalBillableCharacters());
       }
+      if (promptTokensDetailsBuilder_ == null) {
+        if (!other.promptTokensDetails_.isEmpty()) {
+          if (promptTokensDetails_.isEmpty()) {
+            promptTokensDetails_ = other.promptTokensDetails_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensurePromptTokensDetailsIsMutable();
+            promptTokensDetails_.addAll(other.promptTokensDetails_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.promptTokensDetails_.isEmpty()) {
+          if (promptTokensDetailsBuilder_.isEmpty()) {
+            promptTokensDetailsBuilder_.dispose();
+            promptTokensDetailsBuilder_ = null;
+            promptTokensDetails_ = other.promptTokensDetails_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            promptTokensDetailsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPromptTokensDetailsFieldBuilder()
+                    : null;
+          } else {
+            promptTokensDetailsBuilder_.addAllMessages(other.promptTokensDetails_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -441,6 +586,20 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 26:
+              {
+                com.google.cloud.vertexai.api.ModalityTokenCount m =
+                    input.readMessage(
+                        com.google.cloud.vertexai.api.ModalityTokenCount.parser(),
+                        extensionRegistry);
+                if (promptTokensDetailsBuilder_ == null) {
+                  ensurePromptTokensDetailsIsMutable();
+                  promptTokensDetails_.add(m);
+                } else {
+                  promptTokensDetailsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -567,6 +726,404 @@ public final class CountTokensResponse extends com.google.protobuf.GeneratedMess
       totalBillableCharacters_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount> promptTokensDetails_ =
+        java.util.Collections.emptyList();
+
+    private void ensurePromptTokensDetailsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        promptTokensDetails_ =
+            new java.util.ArrayList<com.google.cloud.vertexai.api.ModalityTokenCount>(
+                promptTokensDetails_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vertexai.api.ModalityTokenCount,
+            com.google.cloud.vertexai.api.ModalityTokenCount.Builder,
+            com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+        promptTokensDetailsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount>
+        getPromptTokensDetailsList() {
+      if (promptTokensDetailsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(promptTokensDetails_);
+      } else {
+        return promptTokensDetailsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getPromptTokensDetailsCount() {
+      if (promptTokensDetailsBuilder_ == null) {
+        return promptTokensDetails_.size();
+      } else {
+        return promptTokensDetailsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.ModalityTokenCount getPromptTokensDetails(int index) {
+      if (promptTokensDetailsBuilder_ == null) {
+        return promptTokensDetails_.get(index);
+      } else {
+        return promptTokensDetailsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPromptTokensDetails(
+        int index, com.google.cloud.vertexai.api.ModalityTokenCount value) {
+      if (promptTokensDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePromptTokensDetailsIsMutable();
+        promptTokensDetails_.set(index, value);
+        onChanged();
+      } else {
+        promptTokensDetailsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPromptTokensDetails(
+        int index, com.google.cloud.vertexai.api.ModalityTokenCount.Builder builderForValue) {
+      if (promptTokensDetailsBuilder_ == null) {
+        ensurePromptTokensDetailsIsMutable();
+        promptTokensDetails_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        promptTokensDetailsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPromptTokensDetails(com.google.cloud.vertexai.api.ModalityTokenCount value) {
+      if (promptTokensDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePromptTokensDetailsIsMutable();
+        promptTokensDetails_.add(value);
+        onChanged();
+      } else {
+        promptTokensDetailsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPromptTokensDetails(
+        int index, com.google.cloud.vertexai.api.ModalityTokenCount value) {
+      if (promptTokensDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePromptTokensDetailsIsMutable();
+        promptTokensDetails_.add(index, value);
+        onChanged();
+      } else {
+        promptTokensDetailsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPromptTokensDetails(
+        com.google.cloud.vertexai.api.ModalityTokenCount.Builder builderForValue) {
+      if (promptTokensDetailsBuilder_ == null) {
+        ensurePromptTokensDetailsIsMutable();
+        promptTokensDetails_.add(builderForValue.build());
+        onChanged();
+      } else {
+        promptTokensDetailsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPromptTokensDetails(
+        int index, com.google.cloud.vertexai.api.ModalityTokenCount.Builder builderForValue) {
+      if (promptTokensDetailsBuilder_ == null) {
+        ensurePromptTokensDetailsIsMutable();
+        promptTokensDetails_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        promptTokensDetailsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllPromptTokensDetails(
+        java.lang.Iterable<? extends com.google.cloud.vertexai.api.ModalityTokenCount> values) {
+      if (promptTokensDetailsBuilder_ == null) {
+        ensurePromptTokensDetailsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, promptTokensDetails_);
+        onChanged();
+      } else {
+        promptTokensDetailsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPromptTokensDetails() {
+      if (promptTokensDetailsBuilder_ == null) {
+        promptTokensDetails_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        promptTokensDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removePromptTokensDetails(int index) {
+      if (promptTokensDetailsBuilder_ == null) {
+        ensurePromptTokensDetailsIsMutable();
+        promptTokensDetails_.remove(index);
+        onChanged();
+      } else {
+        promptTokensDetailsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.ModalityTokenCount.Builder getPromptTokensDetailsBuilder(
+        int index) {
+      return getPromptTokensDetailsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder
+        getPromptTokensDetailsOrBuilder(int index) {
+      if (promptTokensDetailsBuilder_ == null) {
+        return promptTokensDetails_.get(index);
+      } else {
+        return promptTokensDetailsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+        getPromptTokensDetailsOrBuilderList() {
+      if (promptTokensDetailsBuilder_ != null) {
+        return promptTokensDetailsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(promptTokensDetails_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.ModalityTokenCount.Builder
+        addPromptTokensDetailsBuilder() {
+      return getPromptTokensDetailsFieldBuilder()
+          .addBuilder(com.google.cloud.vertexai.api.ModalityTokenCount.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.ModalityTokenCount.Builder addPromptTokensDetailsBuilder(
+        int index) {
+      return getPromptTokensDetailsFieldBuilder()
+          .addBuilder(index, com.google.cloud.vertexai.api.ModalityTokenCount.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount.Builder>
+        getPromptTokensDetailsBuilderList() {
+      return getPromptTokensDetailsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vertexai.api.ModalityTokenCount,
+            com.google.cloud.vertexai.api.ModalityTokenCount.Builder,
+            com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+        getPromptTokensDetailsFieldBuilder() {
+      if (promptTokensDetailsBuilder_ == null) {
+        promptTokensDetailsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vertexai.api.ModalityTokenCount,
+                com.google.cloud.vertexai.api.ModalityTokenCount.Builder,
+                com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>(
+                promptTokensDetails_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        promptTokensDetails_ = null;
+      }
+      return promptTokensDetailsBuilder_;
     }
 
     @java.lang.Override

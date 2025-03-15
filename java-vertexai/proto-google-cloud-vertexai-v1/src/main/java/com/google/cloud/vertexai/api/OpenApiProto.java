@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,7 +48,7 @@ public final class OpenApiProto {
       "\n&google/cloud/vertexai/v1/openapi.proto"
           + "\022\030google.cloud.vertexai.v1\032\037google/api/f"
           + "ield_behavior.proto\032\034google/protobuf/str"
-          + "uct.proto\"\317\005\n\006Schema\0221\n\004type\030\001 \001(\0162\036.goo"
+          + "uct.proto\"\246\006\n\006Schema\0221\n\004type\030\001 \001(\0162\036.goo"
           + "gle.cloud.vertexai.v1.TypeB\003\340A\001\022\023\n\006forma"
           + "t\030\007 \001(\tB\003\340A\001\022\022\n\005title\030\030 \001(\tB\003\340A\001\022\030\n\013desc"
           + "ription\030\010 \001(\tB\003\340A\001\022\025\n\010nullable\030\006 \001(\010B\003\340A"
@@ -58,23 +58,25 @@ public final class OpenApiProto {
           + "B\003\340A\001\022\026\n\tmax_items\030\026 \001(\003B\003\340A\001\022\021\n\004enum\030\t "
           + "\003(\tB\003\340A\001\022I\n\nproperties\030\003 \003(\01320.google.cl"
           + "oud.vertexai.v1.Schema.PropertiesEntryB\003"
-          + "\340A\001\022\025\n\010required\030\005 \003(\tB\003\340A\001\022\033\n\016min_proper"
-          + "ties\030\016 \001(\003B\003\340A\001\022\033\n\016max_properties\030\017 \001(\003B"
-          + "\003\340A\001\022\024\n\007minimum\030\020 \001(\001B\003\340A\001\022\024\n\007maximum\030\021 "
-          + "\001(\001B\003\340A\001\022\027\n\nmin_length\030\022 \001(\003B\003\340A\001\022\027\n\nmax"
-          + "_length\030\023 \001(\003B\003\340A\001\022\024\n\007pattern\030\024 \001(\tB\003\340A\001"
-          + "\022,\n\007example\030\004 \001(\0132\026.google.protobuf.Valu"
-          + "eB\003\340A\001\032S\n\017PropertiesEntry\022\013\n\003key\030\001 \001(\t\022/"
-          + "\n\005value\030\002 \001(\0132 .google.cloud.vertexai.v1"
-          + ".Schema:\0028\001*e\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020"
-          + "\000\022\n\n\006STRING\020\001\022\n\n\006NUMBER\020\002\022\013\n\007INTEGER\020\003\022\013"
-          + "\n\007BOOLEAN\020\004\022\t\n\005ARRAY\020\005\022\n\n\006OBJECT\020\006B\311\001\n\035c"
-          + "om.google.cloud.vertexai.apiB\014OpenApiPro"
-          + "toP\001Z>cloud.google.com/go/aiplatform/api"
-          + "v1/aiplatformpb;aiplatformpb\252\002\032Google.Cl"
-          + "oud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatf"
-          + "orm\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006"
-          + "proto3"
+          + "\340A\001\022\036\n\021property_ordering\030\031 \003(\tB\003\340A\001\022\025\n\010r"
+          + "equired\030\005 \003(\tB\003\340A\001\022\033\n\016min_properties\030\016 \001"
+          + "(\003B\003\340A\001\022\033\n\016max_properties\030\017 \001(\003B\003\340A\001\022\024\n\007"
+          + "minimum\030\020 \001(\001B\003\340A\001\022\024\n\007maximum\030\021 \001(\001B\003\340A\001"
+          + "\022\027\n\nmin_length\030\022 \001(\003B\003\340A\001\022\027\n\nmax_length\030"
+          + "\023 \001(\003B\003\340A\001\022\024\n\007pattern\030\024 \001(\tB\003\340A\001\022,\n\007exam"
+          + "ple\030\004 \001(\0132\026.google.protobuf.ValueB\003\340A\001\0225"
+          + "\n\006any_of\030\013 \003(\0132 .google.cloud.vertexai.v"
+          + "1.SchemaB\003\340A\001\032S\n\017PropertiesEntry\022\013\n\003key\030"
+          + "\001 \001(\t\022/\n\005value\030\002 \001(\0132 .google.cloud.vert"
+          + "exai.v1.Schema:\0028\001*e\n\004Type\022\024\n\020TYPE_UNSPE"
+          + "CIFIED\020\000\022\n\n\006STRING\020\001\022\n\n\006NUMBER\020\002\022\013\n\007INTE"
+          + "GER\020\003\022\013\n\007BOOLEAN\020\004\022\t\n\005ARRAY\020\005\022\n\n\006OBJECT\020"
+          + "\006B\311\001\n\035com.google.cloud.vertexai.apiB\014Ope"
+          + "nApiProtoP\001Z>cloud.google.com/go/aiplatf"
+          + "orm/apiv1/aiplatformpb;aiplatformpb\252\002\032Go"
+          + "ogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\"
+          + "AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfor"
+          + "m::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -100,6 +102,7 @@ public final class OpenApiProto {
               "MaxItems",
               "Enum",
               "Properties",
+              "PropertyOrdering",
               "Required",
               "MinProperties",
               "MaxProperties",
@@ -109,6 +112,7 @@ public final class OpenApiProto {
               "MaxLength",
               "Pattern",
               "Example",
+              "AnyOf",
             });
     internal_static_google_cloud_vertexai_v1_Schema_PropertiesEntry_descriptor =
         internal_static_google_cloud_vertexai_v1_Schema_descriptor.getNestedTypes().get(0);

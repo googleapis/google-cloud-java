@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,58 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
             com.google.cloud.vertexai.api.GoogleSearchRetrieval.Builder.class);
   }
 
+  private int bitField0_;
+  public static final int DYNAMIC_RETRIEVAL_CONFIG_FIELD_NUMBER = 2;
+  private com.google.cloud.vertexai.api.DynamicRetrievalConfig dynamicRetrievalConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the dynamic retrieval configuration for the given source.
+   * </pre>
+   *
+   * <code>.google.cloud.vertexai.v1.DynamicRetrievalConfig dynamic_retrieval_config = 2;</code>
+   *
+   * @return Whether the dynamicRetrievalConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDynamicRetrievalConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the dynamic retrieval configuration for the given source.
+   * </pre>
+   *
+   * <code>.google.cloud.vertexai.v1.DynamicRetrievalConfig dynamic_retrieval_config = 2;</code>
+   *
+   * @return The dynamicRetrievalConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.DynamicRetrievalConfig getDynamicRetrievalConfig() {
+    return dynamicRetrievalConfig_ == null
+        ? com.google.cloud.vertexai.api.DynamicRetrievalConfig.getDefaultInstance()
+        : dynamicRetrievalConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the dynamic retrieval configuration for the given source.
+   * </pre>
+   *
+   * <code>.google.cloud.vertexai.v1.DynamicRetrievalConfig dynamic_retrieval_config = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.DynamicRetrievalConfigOrBuilder
+      getDynamicRetrievalConfigOrBuilder() {
+    return dynamicRetrievalConfig_ == null
+        ? com.google.cloud.vertexai.api.DynamicRetrievalConfig.getDefaultInstance()
+        : dynamicRetrievalConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -75,6 +127,9 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(2, getDynamicRetrievalConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -84,6 +139,10 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDynamicRetrievalConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -100,6 +159,10 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
     com.google.cloud.vertexai.api.GoogleSearchRetrieval other =
         (com.google.cloud.vertexai.api.GoogleSearchRetrieval) obj;
 
+    if (hasDynamicRetrievalConfig() != other.hasDynamicRetrievalConfig()) return false;
+    if (hasDynamicRetrievalConfig()) {
+      if (!getDynamicRetrievalConfig().equals(other.getDynamicRetrievalConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -111,6 +174,10 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasDynamicRetrievalConfig()) {
+      hash = (37 * hash) + DYNAMIC_RETRIEVAL_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDynamicRetrievalConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -240,15 +307,30 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using com.google.cloud.vertexai.api.GoogleSearchRetrieval.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDynamicRetrievalConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      dynamicRetrievalConfig_ = null;
+      if (dynamicRetrievalConfigBuilder_ != null) {
+        dynamicRetrievalConfigBuilder_.dispose();
+        dynamicRetrievalConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -276,8 +358,24 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
     public com.google.cloud.vertexai.api.GoogleSearchRetrieval buildPartial() {
       com.google.cloud.vertexai.api.GoogleSearchRetrieval result =
           new com.google.cloud.vertexai.api.GoogleSearchRetrieval(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.vertexai.api.GoogleSearchRetrieval result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dynamicRetrievalConfig_ =
+            dynamicRetrievalConfigBuilder_ == null
+                ? dynamicRetrievalConfig_
+                : dynamicRetrievalConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -326,6 +424,9 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
     public Builder mergeFrom(com.google.cloud.vertexai.api.GoogleSearchRetrieval other) {
       if (other == com.google.cloud.vertexai.api.GoogleSearchRetrieval.getDefaultInstance())
         return this;
+      if (other.hasDynamicRetrievalConfig()) {
+        mergeDynamicRetrievalConfig(other.getDynamicRetrievalConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -352,6 +453,13 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
             case 0:
               done = true;
               break;
+            case 18:
+              {
+                input.readMessage(
+                    getDynamicRetrievalConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -367,6 +475,199 @@ public final class GoogleSearchRetrieval extends com.google.protobuf.GeneratedMe
         onChanged();
       } // finally
       return this;
+    }
+
+    private int bitField0_;
+
+    private com.google.cloud.vertexai.api.DynamicRetrievalConfig dynamicRetrievalConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.DynamicRetrievalConfig,
+            com.google.cloud.vertexai.api.DynamicRetrievalConfig.Builder,
+            com.google.cloud.vertexai.api.DynamicRetrievalConfigOrBuilder>
+        dynamicRetrievalConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the dynamic retrieval configuration for the given source.
+     * </pre>
+     *
+     * <code>.google.cloud.vertexai.v1.DynamicRetrievalConfig dynamic_retrieval_config = 2;</code>
+     *
+     * @return Whether the dynamicRetrievalConfig field is set.
+     */
+    public boolean hasDynamicRetrievalConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the dynamic retrieval configuration for the given source.
+     * </pre>
+     *
+     * <code>.google.cloud.vertexai.v1.DynamicRetrievalConfig dynamic_retrieval_config = 2;</code>
+     *
+     * @return The dynamicRetrievalConfig.
+     */
+    public com.google.cloud.vertexai.api.DynamicRetrievalConfig getDynamicRetrievalConfig() {
+      if (dynamicRetrievalConfigBuilder_ == null) {
+        return dynamicRetrievalConfig_ == null
+            ? com.google.cloud.vertexai.api.DynamicRetrievalConfig.getDefaultInstance()
+            : dynamicRetrievalConfig_;
+      } else {
+        return dynamicRetrievalConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the dynamic retrieval configuration for the given source.
+     * </pre>
+     *
+     * <code>.google.cloud.vertexai.v1.DynamicRetrievalConfig dynamic_retrieval_config = 2;</code>
+     */
+    public Builder setDynamicRetrievalConfig(
+        com.google.cloud.vertexai.api.DynamicRetrievalConfig value) {
+      if (dynamicRetrievalConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dynamicRetrievalConfig_ = value;
+      } else {
+        dynamicRetrievalConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the dynamic retrieval configuration for the given source.
+     * </pre>
+     *
+     * <code>.google.cloud.vertexai.v1.DynamicRetrievalConfig dynamic_retrieval_config = 2;</code>
+     */
+    public Builder setDynamicRetrievalConfig(
+        com.google.cloud.vertexai.api.DynamicRetrievalConfig.Builder builderForValue) {
+      if (dynamicRetrievalConfigBuilder_ == null) {
+        dynamicRetrievalConfig_ = builderForValue.build();
+      } else {
+        dynamicRetrievalConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the dynamic retrieval configuration for the given source.
+     * </pre>
+     *
+     * <code>.google.cloud.vertexai.v1.DynamicRetrievalConfig dynamic_retrieval_config = 2;</code>
+     */
+    public Builder mergeDynamicRetrievalConfig(
+        com.google.cloud.vertexai.api.DynamicRetrievalConfig value) {
+      if (dynamicRetrievalConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && dynamicRetrievalConfig_ != null
+            && dynamicRetrievalConfig_
+                != com.google.cloud.vertexai.api.DynamicRetrievalConfig.getDefaultInstance()) {
+          getDynamicRetrievalConfigBuilder().mergeFrom(value);
+        } else {
+          dynamicRetrievalConfig_ = value;
+        }
+      } else {
+        dynamicRetrievalConfigBuilder_.mergeFrom(value);
+      }
+      if (dynamicRetrievalConfig_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the dynamic retrieval configuration for the given source.
+     * </pre>
+     *
+     * <code>.google.cloud.vertexai.v1.DynamicRetrievalConfig dynamic_retrieval_config = 2;</code>
+     */
+    public Builder clearDynamicRetrievalConfig() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      dynamicRetrievalConfig_ = null;
+      if (dynamicRetrievalConfigBuilder_ != null) {
+        dynamicRetrievalConfigBuilder_.dispose();
+        dynamicRetrievalConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the dynamic retrieval configuration for the given source.
+     * </pre>
+     *
+     * <code>.google.cloud.vertexai.v1.DynamicRetrievalConfig dynamic_retrieval_config = 2;</code>
+     */
+    public com.google.cloud.vertexai.api.DynamicRetrievalConfig.Builder
+        getDynamicRetrievalConfigBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getDynamicRetrievalConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the dynamic retrieval configuration for the given source.
+     * </pre>
+     *
+     * <code>.google.cloud.vertexai.v1.DynamicRetrievalConfig dynamic_retrieval_config = 2;</code>
+     */
+    public com.google.cloud.vertexai.api.DynamicRetrievalConfigOrBuilder
+        getDynamicRetrievalConfigOrBuilder() {
+      if (dynamicRetrievalConfigBuilder_ != null) {
+        return dynamicRetrievalConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return dynamicRetrievalConfig_ == null
+            ? com.google.cloud.vertexai.api.DynamicRetrievalConfig.getDefaultInstance()
+            : dynamicRetrievalConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the dynamic retrieval configuration for the given source.
+     * </pre>
+     *
+     * <code>.google.cloud.vertexai.v1.DynamicRetrievalConfig dynamic_retrieval_config = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.DynamicRetrievalConfig,
+            com.google.cloud.vertexai.api.DynamicRetrievalConfig.Builder,
+            com.google.cloud.vertexai.api.DynamicRetrievalConfigOrBuilder>
+        getDynamicRetrievalConfigFieldBuilder() {
+      if (dynamicRetrievalConfigBuilder_ == null) {
+        dynamicRetrievalConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vertexai.api.DynamicRetrievalConfig,
+                com.google.cloud.vertexai.api.DynamicRetrievalConfig.Builder,
+                com.google.cloud.vertexai.api.DynamicRetrievalConfigOrBuilder>(
+                getDynamicRetrievalConfig(), getParentForChildren(), isClean());
+        dynamicRetrievalConfig_ = null;
+      }
+      return dynamicRetrievalConfigBuilder_;
     }
 
     @java.lang.Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,10 @@ public final class ServiceNetworkingProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_PSCAutomationConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_PSCAutomationConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vertexai_v1_PrivateServiceConnectConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vertexai_v1_PrivateServiceConnectConfig_fieldAccessorTable;
@@ -48,21 +52,23 @@ public final class ServiceNetworkingProto {
       "\n1google/cloud/vertexai/v1/service_netwo"
           + "rking.proto\022\030google.cloud.vertexai.v1\032\037g"
           + "oogle/api/field_behavior.proto\032\031google/a"
-          + "pi/resource.proto\"\206\001\n\033PrivateServiceConn"
-          + "ectConfig\022+\n\036enable_private_service_conn"
-          + "ect\030\001 \001(\010B\003\340A\002\022\031\n\021project_allowlist\030\002 \003("
-          + "\t\022\037\n\022service_attachment\030\005 \001(\tB\003\340A\003\"S\n\025Ps"
-          + "cAutomatedEndpoints\022\022\n\nproject_id\030\001 \001(\t\022"
-          + "\017\n\007network\030\002 \001(\t\022\025\n\rmatch_address\030\003 \001(\tB"
-          + "\314\002\n\035com.google.cloud.vertexai.apiB\026Servi"
-          + "ceNetworkingProtoP\001Z>cloud.google.com/go"
-          + "/aiplatform/apiv1/aiplatformpb;aiplatfor"
-          + "mpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Googl"
-          + "e\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::A"
-          + "IPlatform::V1\352Av\n(compute.googleapis.com"
-          + "/NetworkAttachment\022Jprojects/{project}/r"
-          + "egions/{region}/networkAttachments/{netw"
-          + "orkattachment}b\006proto3"
+          + "pi/resource.proto\"D\n\023PSCAutomationConfig"
+          + "\022\027\n\nproject_id\030\001 \001(\tB\003\340A\002\022\024\n\007network\030\002 \001"
+          + "(\tB\003\340A\002\"\206\001\n\033PrivateServiceConnectConfig\022"
+          + "+\n\036enable_private_service_connect\030\001 \001(\010B"
+          + "\003\340A\002\022\031\n\021project_allowlist\030\002 \003(\t\022\037\n\022servi"
+          + "ce_attachment\030\005 \001(\tB\003\340A\003\"S\n\025PscAutomated"
+          + "Endpoints\022\022\n\nproject_id\030\001 \001(\t\022\017\n\007network"
+          + "\030\002 \001(\t\022\025\n\rmatch_address\030\003 \001(\tB\314\002\n\035com.go"
+          + "ogle.cloud.vertexai.apiB\026ServiceNetworki"
+          + "ngProtoP\001Z>cloud.google.com/go/aiplatfor"
+          + "m/apiv1/aiplatformpb;aiplatformpb\252\002\032Goog"
+          + "le.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AI"
+          + "Platform\\V1\352\002\035Google::Cloud::AIPlatform:"
+          + ":V1\352Av\n(compute.googleapis.com/NetworkAt"
+          + "tachment\022Jprojects/{project}/regions/{re"
+          + "gion}/networkAttachments/{networkattachm"
+          + "ent}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -71,8 +77,16 @@ public final class ServiceNetworkingProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
             });
-    internal_static_google_cloud_vertexai_v1_PrivateServiceConnectConfig_descriptor =
+    internal_static_google_cloud_vertexai_v1_PSCAutomationConfig_descriptor =
         getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_vertexai_v1_PSCAutomationConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_PSCAutomationConfig_descriptor,
+            new java.lang.String[] {
+              "ProjectId", "Network",
+            });
+    internal_static_google_cloud_vertexai_v1_PrivateServiceConnectConfig_descriptor =
+        getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_vertexai_v1_PrivateServiceConnectConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_PrivateServiceConnectConfig_descriptor,
@@ -80,7 +94,7 @@ public final class ServiceNetworkingProto {
               "EnablePrivateServiceConnect", "ProjectAllowlist", "ServiceAttachment",
             });
     internal_static_google_cloud_vertexai_v1_PscAutomatedEndpoints_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_vertexai_v1_PscAutomatedEndpoints_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vertexai_v1_PscAutomatedEndpoints_descriptor,

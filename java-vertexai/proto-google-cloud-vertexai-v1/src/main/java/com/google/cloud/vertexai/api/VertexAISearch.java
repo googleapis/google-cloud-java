@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ package com.google.cloud.vertexai.api;
  *
  * <pre>
  * Retrieve from Vertex AI Search datastore for grounding.
- * See https://cloud.google.com/vertex-ai-search-and-conversation
+ * See https://cloud.google.com/products/agent-builder
  * </pre>
  *
  * Protobuf type {@code google.cloud.vertexai.v1.VertexAISearch}
@@ -72,7 +72,7 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Fully-qualified Vertex AI Search's datastore resource ID.
+   * Required. Fully-qualified Vertex AI Search data store resource ID.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
    * </pre>
@@ -97,7 +97,7 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Fully-qualified Vertex AI Search's datastore resource ID.
+   * Required. Fully-qualified Vertex AI Search data store resource ID.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
    * </pre>
@@ -283,7 +283,7 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Retrieve from Vertex AI Search datastore for grounding.
-   * See https://cloud.google.com/vertex-ai-search-and-conversation
+   * See https://cloud.google.com/products/agent-builder
    * </pre>
    *
    * Protobuf type {@code google.cloud.vertexai.v1.VertexAISearch}
@@ -466,7 +466,7 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Fully-qualified Vertex AI Search's datastore resource ID.
+     * Required. Fully-qualified Vertex AI Search data store resource ID.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
      * </pre>
@@ -490,7 +490,7 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Fully-qualified Vertex AI Search's datastore resource ID.
+     * Required. Fully-qualified Vertex AI Search data store resource ID.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
      * </pre>
@@ -514,7 +514,7 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Fully-qualified Vertex AI Search's datastore resource ID.
+     * Required. Fully-qualified Vertex AI Search data store resource ID.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
      * </pre>
@@ -537,7 +537,7 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Fully-qualified Vertex AI Search's datastore resource ID.
+     * Required. Fully-qualified Vertex AI Search data store resource ID.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
      * </pre>
@@ -556,7 +556,7 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Fully-qualified Vertex AI Search's datastore resource ID.
+     * Required. Fully-qualified Vertex AI Search data store resource ID.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -661,6 +661,19 @@ public final class PredictionServiceGrpc {
     return PredictionServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static PredictionServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<PredictionServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PredictionServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public PredictionServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PredictionServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return PredictionServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1179,6 +1192,234 @@ public final class PredictionServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service PredictionService.
+   *
+   * <pre>
+   * A service for online predictions and explanations.
+   * </pre>
+   */
+  public static final class PredictionServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<PredictionServiceBlockingV2Stub> {
+    private PredictionServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected PredictionServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new PredictionServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform an online prediction.
+     * </pre>
+     */
+    public com.google.cloud.vertexai.api.PredictResponse predict(
+        com.google.cloud.vertexai.api.PredictRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPredictMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform an online prediction with an arbitrary HTTP payload.
+     * The response includes the following HTTP headers:
+     * * `X-Vertex-AI-Endpoint-Id`: ID of the
+     * [Endpoint][google.cloud.aiplatform.v1.Endpoint] that served this
+     * prediction.
+     * * `X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's
+     * [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] that served this
+     * prediction.
+     * </pre>
+     */
+    public com.google.api.HttpBody rawPredict(
+        com.google.cloud.vertexai.api.RawPredictRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRawPredictMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform a streaming online prediction with an arbitrary HTTP payload.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<?, com.google.api.HttpBody> streamRawPredict(
+        com.google.cloud.vertexai.api.StreamRawPredictRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getStreamRawPredictMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform an unary online prediction request to a gRPC model server for
+     * Vertex first-party products and frameworks.
+     * </pre>
+     */
+    public com.google.cloud.vertexai.api.DirectPredictResponse directPredict(
+        com.google.cloud.vertexai.api.DirectPredictRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDirectPredictMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform an unary online prediction request to a gRPC model server for
+     * custom containers.
+     * </pre>
+     */
+    public com.google.cloud.vertexai.api.DirectRawPredictResponse directRawPredict(
+        com.google.cloud.vertexai.api.DirectRawPredictRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDirectRawPredictMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform a streaming online prediction request to a gRPC model server for
+     * Vertex first-party products and frameworks.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.vertexai.api.StreamDirectPredictRequest,
+            com.google.cloud.vertexai.api.StreamDirectPredictResponse>
+        streamDirectPredict() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getStreamDirectPredictMethod(), getCallOptions());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform a streaming online prediction request to a gRPC model server for
+     * custom containers.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.vertexai.api.StreamDirectRawPredictRequest,
+            com.google.cloud.vertexai.api.StreamDirectRawPredictResponse>
+        streamDirectRawPredict() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getStreamDirectRawPredictMethod(), getCallOptions());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform a streaming online prediction request for Vertex first-party
+     * products and frameworks.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.vertexai.api.StreamingPredictRequest,
+            com.google.cloud.vertexai.api.StreamingPredictResponse>
+        streamingPredict() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getStreamingPredictMethod(), getCallOptions());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform a server-side streaming online prediction request for Vertex
+     * LLM streaming.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            ?, com.google.cloud.vertexai.api.StreamingPredictResponse>
+        serverStreamingPredict(com.google.cloud.vertexai.api.StreamingPredictRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getServerStreamingPredictMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform a streaming online prediction request through gRPC.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.vertexai.api.StreamingRawPredictRequest,
+            com.google.cloud.vertexai.api.StreamingRawPredictResponse>
+        streamingRawPredict() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getStreamingRawPredictMethod(), getCallOptions());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform an online explanation.
+     * If
+     * [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id]
+     * is specified, the corresponding DeployModel must have
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * populated. If
+     * [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id]
+     * is not specified, all DeployedModels must have
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * populated.
+     * </pre>
+     */
+    public com.google.cloud.vertexai.api.ExplainResponse explain(
+        com.google.cloud.vertexai.api.ExplainRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExplainMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generate content with multimodal inputs.
+     * </pre>
+     */
+    public com.google.cloud.vertexai.api.GenerateContentResponse generateContent(
+        com.google.cloud.vertexai.api.GenerateContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateContentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generate content with multimodal inputs with streaming support.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<?, com.google.cloud.vertexai.api.GenerateContentResponse>
+        streamGenerateContent(com.google.cloud.vertexai.api.GenerateContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getStreamGenerateContentMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service PredictionService.
    *
    * <pre>
    * A service for online predictions and explanations.

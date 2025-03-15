@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,4 +50,67 @@ public interface CountTokensResponseOrBuilder
    * @return The totalBillableCharacters.
    */
   int getTotalBillableCharacters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of modalities that were processed in the request input.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount> getPromptTokensDetailsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of modalities that were processed in the request input.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vertexai.api.ModalityTokenCount getPromptTokensDetails(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of modalities that were processed in the request input.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getPromptTokensDetailsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of modalities that were processed in the request input.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+      getPromptTokensDetailsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of modalities that were processed in the request input.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder getPromptTokensDetailsOrBuilder(
+      int index);
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -496,6 +496,62 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     return avgLogprobs_;
   }
 
+  public static final int LOGPROBS_RESULT_FIELD_NUMBER = 10;
+  private com.google.cloud.vertexai.api.LogprobsResult logprobsResult_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Log-likelihood scores for the response tokens and top tokens
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.LogprobsResult logprobs_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the logprobsResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasLogprobsResult() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Log-likelihood scores for the response tokens and top tokens
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.LogprobsResult logprobs_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The logprobsResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.LogprobsResult getLogprobsResult() {
+    return logprobsResult_ == null
+        ? com.google.cloud.vertexai.api.LogprobsResult.getDefaultInstance()
+        : logprobsResult_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Log-likelihood scores for the response tokens and top tokens
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.LogprobsResult logprobs_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.LogprobsResultOrBuilder getLogprobsResultOrBuilder() {
+    return logprobsResult_ == null
+        ? com.google.cloud.vertexai.api.LogprobsResult.getDefaultInstance()
+        : logprobsResult_;
+  }
+
   public static final int FINISH_REASON_FIELD_NUMBER = 3;
   private int finishReason_ = 0;
   /**
@@ -648,7 +704,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasFinishMessage() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -716,7 +772,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCitationMetadata() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -772,7 +828,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasGroundingMetadata() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -839,13 +895,13 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < safetyRatings_.size(); i++) {
       output.writeMessage(4, safetyRatings_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, finishMessage_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(6, getCitationMetadata());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(7, getGroundingMetadata());
     }
     if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
@@ -853,6 +909,9 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     }
     if (java.lang.Double.doubleToRawLongBits(avgLogprobs_) != 0) {
       output.writeDouble(9, avgLogprobs_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(10, getLogprobsResult());
     }
     getUnknownFields().writeTo(output);
   }
@@ -877,13 +936,13 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < safetyRatings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, safetyRatings_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, finishMessage_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getCitationMetadata());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getGroundingMetadata());
     }
     if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
@@ -891,6 +950,9 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     }
     if (java.lang.Double.doubleToRawLongBits(avgLogprobs_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(9, avgLogprobs_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getLogprobsResult());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -916,6 +978,10 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         != java.lang.Double.doubleToLongBits(other.getScore())) return false;
     if (java.lang.Double.doubleToLongBits(getAvgLogprobs())
         != java.lang.Double.doubleToLongBits(other.getAvgLogprobs())) return false;
+    if (hasLogprobsResult() != other.hasLogprobsResult()) return false;
+    if (hasLogprobsResult()) {
+      if (!getLogprobsResult().equals(other.getLogprobsResult())) return false;
+    }
     if (finishReason_ != other.finishReason_) return false;
     if (!getSafetyRatingsList().equals(other.getSafetyRatingsList())) return false;
     if (hasFinishMessage() != other.hasFinishMessage()) return false;
@@ -956,6 +1022,10 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         (53 * hash)
             + com.google.protobuf.Internal.hashLong(
                 java.lang.Double.doubleToLongBits(getAvgLogprobs()));
+    if (hasLogprobsResult()) {
+      hash = (37 * hash) + LOGPROBS_RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getLogprobsResult().hashCode();
+    }
     hash = (37 * hash) + FINISH_REASON_FIELD_NUMBER;
     hash = (53 * hash) + finishReason_;
     if (getSafetyRatingsCount() > 0) {
@@ -1115,6 +1185,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getContentFieldBuilder();
+        getLogprobsResultFieldBuilder();
         getSafetyRatingsFieldBuilder();
         getCitationMetadataFieldBuilder();
         getGroundingMetadataFieldBuilder();
@@ -1133,6 +1204,11 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       }
       score_ = 0D;
       avgLogprobs_ = 0D;
+      logprobsResult_ = null;
+      if (logprobsResultBuilder_ != null) {
+        logprobsResultBuilder_.dispose();
+        logprobsResultBuilder_ = null;
+      }
       finishReason_ = 0;
       if (safetyRatingsBuilder_ == null) {
         safetyRatings_ = java.util.Collections.emptyList();
@@ -1140,7 +1216,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         safetyRatings_ = null;
         safetyRatingsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       finishMessage_ = "";
       citationMetadata_ = null;
       if (citationMetadataBuilder_ != null) {
@@ -1189,9 +1265,9 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.vertexai.api.Candidate result) {
       if (safetyRatingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           safetyRatings_ = java.util.Collections.unmodifiableList(safetyRatings_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.safetyRatings_ = safetyRatings_;
       } else {
@@ -1216,23 +1292,28 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         result.avgLogprobs_ = avgLogprobs_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.finishReason_ = finishReason_;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.finishMessage_ = finishMessage_;
+        result.logprobsResult_ =
+            logprobsResultBuilder_ == null ? logprobsResult_ : logprobsResultBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.finishReason_ = finishReason_;
+      }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.citationMetadata_ =
-            citationMetadataBuilder_ == null ? citationMetadata_ : citationMetadataBuilder_.build();
+        result.finishMessage_ = finishMessage_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.citationMetadata_ =
+            citationMetadataBuilder_ == null ? citationMetadata_ : citationMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.groundingMetadata_ =
             groundingMetadataBuilder_ == null
                 ? groundingMetadata_
                 : groundingMetadataBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1294,6 +1375,9 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       if (other.getAvgLogprobs() != 0D) {
         setAvgLogprobs(other.getAvgLogprobs());
       }
+      if (other.hasLogprobsResult()) {
+        mergeLogprobsResult(other.getLogprobsResult());
+      }
       if (other.finishReason_ != 0) {
         setFinishReasonValue(other.getFinishReasonValue());
       }
@@ -1301,7 +1385,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         if (!other.safetyRatings_.isEmpty()) {
           if (safetyRatings_.isEmpty()) {
             safetyRatings_ = other.safetyRatings_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureSafetyRatingsIsMutable();
             safetyRatings_.addAll(other.safetyRatings_);
@@ -1314,7 +1398,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
             safetyRatingsBuilder_.dispose();
             safetyRatingsBuilder_ = null;
             safetyRatings_ = other.safetyRatings_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
             safetyRatingsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSafetyRatingsFieldBuilder()
@@ -1326,7 +1410,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasFinishMessage()) {
         finishMessage_ = other.finishMessage_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasCitationMetadata()) {
@@ -1376,7 +1460,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 finishReason_ = input.readEnum();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 24
             case 34:
@@ -1395,21 +1479,21 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 finishMessage_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getCitationMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     getGroundingMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 58
             case 65:
@@ -1424,6 +1508,12 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 73
+            case 82:
+              {
+                input.readMessage(getLogprobsResultFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1805,6 +1895,211 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.vertexai.api.LogprobsResult logprobsResult_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.LogprobsResult,
+            com.google.cloud.vertexai.api.LogprobsResult.Builder,
+            com.google.cloud.vertexai.api.LogprobsResultOrBuilder>
+        logprobsResultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Log-likelihood scores for the response tokens and top tokens
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.LogprobsResult logprobs_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the logprobsResult field is set.
+     */
+    public boolean hasLogprobsResult() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Log-likelihood scores for the response tokens and top tokens
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.LogprobsResult logprobs_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The logprobsResult.
+     */
+    public com.google.cloud.vertexai.api.LogprobsResult getLogprobsResult() {
+      if (logprobsResultBuilder_ == null) {
+        return logprobsResult_ == null
+            ? com.google.cloud.vertexai.api.LogprobsResult.getDefaultInstance()
+            : logprobsResult_;
+      } else {
+        return logprobsResultBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Log-likelihood scores for the response tokens and top tokens
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.LogprobsResult logprobs_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLogprobsResult(com.google.cloud.vertexai.api.LogprobsResult value) {
+      if (logprobsResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        logprobsResult_ = value;
+      } else {
+        logprobsResultBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Log-likelihood scores for the response tokens and top tokens
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.LogprobsResult logprobs_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLogprobsResult(
+        com.google.cloud.vertexai.api.LogprobsResult.Builder builderForValue) {
+      if (logprobsResultBuilder_ == null) {
+        logprobsResult_ = builderForValue.build();
+      } else {
+        logprobsResultBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Log-likelihood scores for the response tokens and top tokens
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.LogprobsResult logprobs_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeLogprobsResult(com.google.cloud.vertexai.api.LogprobsResult value) {
+      if (logprobsResultBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && logprobsResult_ != null
+            && logprobsResult_
+                != com.google.cloud.vertexai.api.LogprobsResult.getDefaultInstance()) {
+          getLogprobsResultBuilder().mergeFrom(value);
+        } else {
+          logprobsResult_ = value;
+        }
+      } else {
+        logprobsResultBuilder_.mergeFrom(value);
+      }
+      if (logprobsResult_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Log-likelihood scores for the response tokens and top tokens
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.LogprobsResult logprobs_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearLogprobsResult() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      logprobsResult_ = null;
+      if (logprobsResultBuilder_ != null) {
+        logprobsResultBuilder_.dispose();
+        logprobsResultBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Log-likelihood scores for the response tokens and top tokens
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.LogprobsResult logprobs_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.LogprobsResult.Builder getLogprobsResultBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getLogprobsResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Log-likelihood scores for the response tokens and top tokens
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.LogprobsResult logprobs_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.LogprobsResultOrBuilder getLogprobsResultOrBuilder() {
+      if (logprobsResultBuilder_ != null) {
+        return logprobsResultBuilder_.getMessageOrBuilder();
+      } else {
+        return logprobsResult_ == null
+            ? com.google.cloud.vertexai.api.LogprobsResult.getDefaultInstance()
+            : logprobsResult_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Log-likelihood scores for the response tokens and top tokens
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.LogprobsResult logprobs_result = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.LogprobsResult,
+            com.google.cloud.vertexai.api.LogprobsResult.Builder,
+            com.google.cloud.vertexai.api.LogprobsResultOrBuilder>
+        getLogprobsResultFieldBuilder() {
+      if (logprobsResultBuilder_ == null) {
+        logprobsResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vertexai.api.LogprobsResult,
+                com.google.cloud.vertexai.api.LogprobsResult.Builder,
+                com.google.cloud.vertexai.api.LogprobsResultOrBuilder>(
+                getLogprobsResult(), getParentForChildren(), isClean());
+        logprobsResult_ = null;
+      }
+      return logprobsResultBuilder_;
+    }
+
     private int finishReason_ = 0;
     /**
      *
@@ -1841,7 +2136,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setFinishReasonValue(int value) {
       finishReason_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1886,7 +2181,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       finishReason_ = value.getNumber();
       onChanged();
       return this;
@@ -1906,7 +2201,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFinishReason() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       finishReason_ = 0;
       onChanged();
       return this;
@@ -1916,10 +2211,10 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSafetyRatingsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         safetyRatings_ =
             new java.util.ArrayList<com.google.cloud.vertexai.api.SafetyRating>(safetyRatings_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -2179,7 +2474,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSafetyRatings() {
       if (safetyRatingsBuilder_ == null) {
         safetyRatings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         safetyRatingsBuilder_.clear();
@@ -2331,7 +2626,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vertexai.api.SafetyRating.Builder,
                 com.google.cloud.vertexai.api.SafetyRatingOrBuilder>(
                 safetyRatings_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         safetyRatings_ = null;
@@ -2353,7 +2648,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the finishMessage field is set.
      */
     public boolean hasFinishMessage() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2419,7 +2714,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       finishMessage_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2437,7 +2732,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearFinishMessage() {
       finishMessage_ = getDefaultInstance().getFinishMessage();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2460,7 +2755,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       finishMessage_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2485,7 +2780,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the citationMetadata field is set.
      */
     public boolean hasCitationMetadata() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2529,7 +2824,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       } else {
         citationMetadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2551,7 +2846,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       } else {
         citationMetadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2568,7 +2863,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCitationMetadata(com.google.cloud.vertexai.api.CitationMetadata value) {
       if (citationMetadataBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && citationMetadata_ != null
             && citationMetadata_
                 != com.google.cloud.vertexai.api.CitationMetadata.getDefaultInstance()) {
@@ -2580,7 +2875,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         citationMetadataBuilder_.mergeFrom(value);
       }
       if (citationMetadata_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2597,7 +2892,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCitationMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       citationMetadata_ = null;
       if (citationMetadataBuilder_ != null) {
         citationMetadataBuilder_.dispose();
@@ -2618,7 +2913,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.vertexai.api.CitationMetadata.Builder getCitationMetadataBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getCitationMetadataFieldBuilder().getBuilder();
     }
@@ -2690,7 +2985,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the groundingMetadata field is set.
      */
     public boolean hasGroundingMetadata() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2734,7 +3029,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       } else {
         groundingMetadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2756,7 +3051,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       } else {
         groundingMetadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2773,7 +3068,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeGroundingMetadata(com.google.cloud.vertexai.api.GroundingMetadata value) {
       if (groundingMetadataBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && groundingMetadata_ != null
             && groundingMetadata_
                 != com.google.cloud.vertexai.api.GroundingMetadata.getDefaultInstance()) {
@@ -2785,7 +3080,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         groundingMetadataBuilder_.mergeFrom(value);
       }
       if (groundingMetadata_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -2802,7 +3097,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearGroundingMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       groundingMetadata_ = null;
       if (groundingMetadataBuilder_ != null) {
         groundingMetadataBuilder_.dispose();
@@ -2823,7 +3118,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.vertexai.api.GroundingMetadata.Builder getGroundingMetadataBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getGroundingMetadataFieldBuilder().getBuilder();
     }
