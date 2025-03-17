@@ -189,8 +189,11 @@ public final class InsertProductInputRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The primary or supplemental product data source name. If the
    * product already exists and data source provided is different, then the
-   * product will be moved to a new data source. Format:
-   * `accounts/{account}/dataSources/{datasource}`.
+   * product will be moved to a new data source.
+   *
+   * Only API data sources are supported.
+   *
+   * Format: `accounts/{account}/dataSources/{datasource}`.
    * </pre>
    *
    * <code>string data_source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -215,8 +218,11 @@ public final class InsertProductInputRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The primary or supplemental product data source name. If the
    * product already exists and data source provided is different, then the
-   * product will be moved to a new data source. Format:
-   * `accounts/{account}/dataSources/{datasource}`.
+   * product will be moved to a new data source.
+   *
+   * Only API data sources are supported.
+   *
+   * Format: `accounts/{account}/dataSources/{datasource}`.
    * </pre>
    *
    * <code>string data_source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -993,8 +999,11 @@ public final class InsertProductInputRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The primary or supplemental product data source name. If the
      * product already exists and data source provided is different, then the
-     * product will be moved to a new data source. Format:
-     * `accounts/{account}/dataSources/{datasource}`.
+     * product will be moved to a new data source.
+     *
+     * Only API data sources are supported.
+     *
+     * Format: `accounts/{account}/dataSources/{datasource}`.
      * </pre>
      *
      * <code>string data_source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1018,8 +1027,11 @@ public final class InsertProductInputRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The primary or supplemental product data source name. If the
      * product already exists and data source provided is different, then the
-     * product will be moved to a new data source. Format:
-     * `accounts/{account}/dataSources/{datasource}`.
+     * product will be moved to a new data source.
+     *
+     * Only API data sources are supported.
+     *
+     * Format: `accounts/{account}/dataSources/{datasource}`.
      * </pre>
      *
      * <code>string data_source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1043,8 +1055,11 @@ public final class InsertProductInputRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The primary or supplemental product data source name. If the
      * product already exists and data source provided is different, then the
-     * product will be moved to a new data source. Format:
-     * `accounts/{account}/dataSources/{datasource}`.
+     * product will be moved to a new data source.
+     *
+     * Only API data sources are supported.
+     *
+     * Format: `accounts/{account}/dataSources/{datasource}`.
      * </pre>
      *
      * <code>string data_source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1067,8 +1082,11 @@ public final class InsertProductInputRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The primary or supplemental product data source name. If the
      * product already exists and data source provided is different, then the
-     * product will be moved to a new data source. Format:
-     * `accounts/{account}/dataSources/{datasource}`.
+     * product will be moved to a new data source.
+     *
+     * Only API data sources are supported.
+     *
+     * Format: `accounts/{account}/dataSources/{datasource}`.
      * </pre>
      *
      * <code>string data_source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1087,8 +1105,11 @@ public final class InsertProductInputRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The primary or supplemental product data source name. If the
      * product already exists and data source provided is different, then the
-     * product will be moved to a new data source. Format:
-     * `accounts/{account}/dataSources/{datasource}`.
+     * product will be moved to a new data source.
+     *
+     * Only API data sources are supported.
+     *
+     * Format: `accounts/{account}/dataSources/{datasource}`.
      * </pre>
      *
      * <code>string data_source = 3 [(.google.api.field_behavior) = REQUIRED];</code>

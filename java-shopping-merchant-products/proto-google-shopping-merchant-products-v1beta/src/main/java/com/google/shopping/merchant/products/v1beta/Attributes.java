@@ -100,6 +100,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
     cloudExportAdditionalProperties_ = java.util.Collections.emptyList();
     virtualModelLink_ = "";
     certifications_ = java.util.Collections.emptyList();
+    sustainabilityIncentives_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -5896,6 +5897,94 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         : autoPricingMinPrice_;
   }
 
+  public static final int SUSTAINABILITY_INCENTIVES_FIELD_NUMBER = 138;
+
+  @SuppressWarnings("serial")
+  private java.util.List<
+          com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive>
+      sustainabilityIncentives_;
+  /**
+   *
+   *
+   * <pre>
+   * The list of sustainability incentive programs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive>
+      getSustainabilityIncentivesList() {
+    return sustainabilityIncentives_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of sustainability incentive programs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentiveOrBuilder>
+      getSustainabilityIncentivesOrBuilderList() {
+    return sustainabilityIncentives_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of sustainability incentive programs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+   * </code>
+   */
+  @java.lang.Override
+  public int getSustainabilityIncentivesCount() {
+    return sustainabilityIncentives_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of sustainability incentive programs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive
+      getSustainabilityIncentives(int index) {
+    return sustainabilityIncentives_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of sustainability incentive programs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentiveOrBuilder
+      getSustainabilityIncentivesOrBuilder(int index) {
+    return sustainabilityIncentives_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6191,6 +6280,9 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < loyaltyPrograms_.size(); i++) {
       output.writeMessage(136, loyaltyPrograms_.get(i));
+    }
+    for (int i = 0; i < sustainabilityIncentives_.size(); i++) {
+      output.writeMessage(138, sustainabilityIncentives_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -6548,6 +6640,11 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(136, loyaltyPrograms_.get(i));
     }
+    for (int i = 0; i < sustainabilityIncentives_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              138, sustainabilityIncentives_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6878,6 +6975,8 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
     if (hasAutoPricingMinPrice()) {
       if (!getAutoPricingMinPrice().equals(other.getAutoPricingMinPrice())) return false;
     }
+    if (!getSustainabilityIncentivesList().equals(other.getSustainabilityIncentivesList()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -7260,6 +7359,10 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + AUTO_PRICING_MIN_PRICE_FIELD_NUMBER;
       hash = (53 * hash) + getAutoPricingMinPrice().hashCode();
     }
+    if (getSustainabilityIncentivesCount() > 0) {
+      hash = (37 * hash) + SUSTAINABILITY_INCENTIVES_FIELD_NUMBER;
+      hash = (53 * hash) + getSustainabilityIncentivesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -7431,6 +7534,7 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         getStructuredTitleFieldBuilder();
         getStructuredDescriptionFieldBuilder();
         getAutoPricingMinPriceFieldBuilder();
+        getSustainabilityIncentivesFieldBuilder();
       }
     }
 
@@ -7666,6 +7770,13 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         autoPricingMinPriceBuilder_.dispose();
         autoPricingMinPriceBuilder_ = null;
       }
+      if (sustainabilityIncentivesBuilder_ == null) {
+        sustainabilityIncentives_ = java.util.Collections.emptyList();
+      } else {
+        sustainabilityIncentives_ = null;
+        sustainabilityIncentivesBuilder_.clear();
+      }
+      bitField2_ = (bitField2_ & ~0x10000000);
       return this;
     }
 
@@ -7772,6 +7883,16 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         result.certifications_ = certifications_;
       } else {
         result.certifications_ = certificationsBuilder_.build();
+      }
+      if (sustainabilityIncentivesBuilder_ == null) {
+        if (((bitField2_ & 0x10000000) != 0)) {
+          sustainabilityIncentives_ =
+              java.util.Collections.unmodifiableList(sustainabilityIncentives_);
+          bitField2_ = (bitField2_ & ~0x10000000);
+        }
+        result.sustainabilityIncentives_ = sustainabilityIncentives_;
+      } else {
+        result.sustainabilityIncentives_ = sustainabilityIncentivesBuilder_.build();
       }
     }
 
@@ -8827,6 +8948,33 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAutoPricingMinPrice()) {
         mergeAutoPricingMinPrice(other.getAutoPricingMinPrice());
       }
+      if (sustainabilityIncentivesBuilder_ == null) {
+        if (!other.sustainabilityIncentives_.isEmpty()) {
+          if (sustainabilityIncentives_.isEmpty()) {
+            sustainabilityIncentives_ = other.sustainabilityIncentives_;
+            bitField2_ = (bitField2_ & ~0x10000000);
+          } else {
+            ensureSustainabilityIncentivesIsMutable();
+            sustainabilityIncentives_.addAll(other.sustainabilityIncentives_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.sustainabilityIncentives_.isEmpty()) {
+          if (sustainabilityIncentivesBuilder_.isEmpty()) {
+            sustainabilityIncentivesBuilder_.dispose();
+            sustainabilityIncentivesBuilder_ = null;
+            sustainabilityIncentives_ = other.sustainabilityIncentives_;
+            bitField2_ = (bitField2_ & ~0x10000000);
+            sustainabilityIncentivesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSustainabilityIncentivesFieldBuilder()
+                    : null;
+          } else {
+            sustainabilityIncentivesBuilder_.addAllMessages(other.sustainabilityIncentives_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -9481,6 +9629,21 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 1090
+            case 1106:
+              {
+                com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive m =
+                    input.readMessage(
+                        com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive
+                            .parser(),
+                        extensionRegistry);
+                if (sustainabilityIncentivesBuilder_ == null) {
+                  ensureSustainabilityIncentivesIsMutable();
+                  sustainabilityIncentives_.add(m);
+                } else {
+                  sustainabilityIncentivesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 1106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -24937,6 +25100,429 @@ public final class Attributes extends com.google.protobuf.GeneratedMessageV3
         autoPricingMinPrice_ = null;
       }
       return autoPricingMinPriceBuilder_;
+    }
+
+    private java.util.List<
+            com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive>
+        sustainabilityIncentives_ = java.util.Collections.emptyList();
+
+    private void ensureSustainabilityIncentivesIsMutable() {
+      if (!((bitField2_ & 0x10000000) != 0)) {
+        sustainabilityIncentives_ =
+            new java.util.ArrayList<
+                com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive>(
+                sustainabilityIncentives_);
+        bitField2_ |= 0x10000000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive,
+            com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive.Builder,
+            com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentiveOrBuilder>
+        sustainabilityIncentivesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of sustainability incentive programs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+     * </code>
+     */
+    public java.util.List<
+            com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive>
+        getSustainabilityIncentivesList() {
+      if (sustainabilityIncentivesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(sustainabilityIncentives_);
+      } else {
+        return sustainabilityIncentivesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of sustainability incentive programs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+     * </code>
+     */
+    public int getSustainabilityIncentivesCount() {
+      if (sustainabilityIncentivesBuilder_ == null) {
+        return sustainabilityIncentives_.size();
+      } else {
+        return sustainabilityIncentivesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of sustainability incentive programs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive
+        getSustainabilityIncentives(int index) {
+      if (sustainabilityIncentivesBuilder_ == null) {
+        return sustainabilityIncentives_.get(index);
+      } else {
+        return sustainabilityIncentivesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of sustainability incentive programs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+     * </code>
+     */
+    public Builder setSustainabilityIncentives(
+        int index,
+        com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive value) {
+      if (sustainabilityIncentivesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSustainabilityIncentivesIsMutable();
+        sustainabilityIncentives_.set(index, value);
+        onChanged();
+      } else {
+        sustainabilityIncentivesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of sustainability incentive programs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+     * </code>
+     */
+    public Builder setSustainabilityIncentives(
+        int index,
+        com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive.Builder
+            builderForValue) {
+      if (sustainabilityIncentivesBuilder_ == null) {
+        ensureSustainabilityIncentivesIsMutable();
+        sustainabilityIncentives_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        sustainabilityIncentivesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of sustainability incentive programs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+     * </code>
+     */
+    public Builder addSustainabilityIncentives(
+        com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive value) {
+      if (sustainabilityIncentivesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSustainabilityIncentivesIsMutable();
+        sustainabilityIncentives_.add(value);
+        onChanged();
+      } else {
+        sustainabilityIncentivesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of sustainability incentive programs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+     * </code>
+     */
+    public Builder addSustainabilityIncentives(
+        int index,
+        com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive value) {
+      if (sustainabilityIncentivesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSustainabilityIncentivesIsMutable();
+        sustainabilityIncentives_.add(index, value);
+        onChanged();
+      } else {
+        sustainabilityIncentivesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of sustainability incentive programs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+     * </code>
+     */
+    public Builder addSustainabilityIncentives(
+        com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive.Builder
+            builderForValue) {
+      if (sustainabilityIncentivesBuilder_ == null) {
+        ensureSustainabilityIncentivesIsMutable();
+        sustainabilityIncentives_.add(builderForValue.build());
+        onChanged();
+      } else {
+        sustainabilityIncentivesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of sustainability incentive programs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+     * </code>
+     */
+    public Builder addSustainabilityIncentives(
+        int index,
+        com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive.Builder
+            builderForValue) {
+      if (sustainabilityIncentivesBuilder_ == null) {
+        ensureSustainabilityIncentivesIsMutable();
+        sustainabilityIncentives_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        sustainabilityIncentivesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of sustainability incentive programs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+     * </code>
+     */
+    public Builder addAllSustainabilityIncentives(
+        java.lang.Iterable<
+                ? extends
+                    com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive>
+            values) {
+      if (sustainabilityIncentivesBuilder_ == null) {
+        ensureSustainabilityIncentivesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sustainabilityIncentives_);
+        onChanged();
+      } else {
+        sustainabilityIncentivesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of sustainability incentive programs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+     * </code>
+     */
+    public Builder clearSustainabilityIncentives() {
+      if (sustainabilityIncentivesBuilder_ == null) {
+        sustainabilityIncentives_ = java.util.Collections.emptyList();
+        bitField2_ = (bitField2_ & ~0x10000000);
+        onChanged();
+      } else {
+        sustainabilityIncentivesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of sustainability incentive programs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+     * </code>
+     */
+    public Builder removeSustainabilityIncentives(int index) {
+      if (sustainabilityIncentivesBuilder_ == null) {
+        ensureSustainabilityIncentivesIsMutable();
+        sustainabilityIncentives_.remove(index);
+        onChanged();
+      } else {
+        sustainabilityIncentivesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of sustainability incentive programs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive.Builder
+        getSustainabilityIncentivesBuilder(int index) {
+      return getSustainabilityIncentivesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of sustainability incentive programs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentiveOrBuilder
+        getSustainabilityIncentivesOrBuilder(int index) {
+      if (sustainabilityIncentivesBuilder_ == null) {
+        return sustainabilityIncentives_.get(index);
+      } else {
+        return sustainabilityIncentivesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of sustainability incentive programs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.shopping.merchant.products.v1beta
+                    .ProductSustainabilityIncentiveOrBuilder>
+        getSustainabilityIncentivesOrBuilderList() {
+      if (sustainabilityIncentivesBuilder_ != null) {
+        return sustainabilityIncentivesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(sustainabilityIncentives_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of sustainability incentive programs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive.Builder
+        addSustainabilityIncentivesBuilder() {
+      return getSustainabilityIncentivesFieldBuilder()
+          .addBuilder(
+              com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of sustainability incentive programs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive.Builder
+        addSustainabilityIncentivesBuilder(int index) {
+      return getSustainabilityIncentivesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of sustainability incentive programs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+     * </code>
+     */
+    public java.util.List<
+            com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive.Builder>
+        getSustainabilityIncentivesBuilderList() {
+      return getSustainabilityIncentivesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive,
+            com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive.Builder,
+            com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentiveOrBuilder>
+        getSustainabilityIncentivesFieldBuilder() {
+      if (sustainabilityIncentivesBuilder_ == null) {
+        sustainabilityIncentivesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive,
+                com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive.Builder,
+                com.google.shopping.merchant.products.v1beta
+                    .ProductSustainabilityIncentiveOrBuilder>(
+                sustainabilityIncentives_,
+                ((bitField2_ & 0x10000000) != 0),
+                getParentForChildren(),
+                isClean());
+        sustainabilityIncentives_ = null;
+      }
+      return sustainabilityIncentivesBuilder_;
     }
 
     @java.lang.Override
