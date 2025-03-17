@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,8 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
   private GenerateContentResponse() {
     candidates_ = java.util.Collections.emptyList();
+    modelVersion_ = "";
+    responseId_ = "";
   }
 
   @java.lang.Override
@@ -1777,11 +1779,227 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     int getCandidatesTokenCount();
 
     /**
+     *
+     *
+     * <pre>
+     * Total token count for prompt and response candidates.
+     * </pre>
+     *
      * <code>int32 total_token_count = 3;</code>
      *
      * @return The totalTokenCount.
      */
     int getTotalTokenCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of tokens in the cached part in the input (the cached
+     * content).
+     * </pre>
+     *
+     * <code>int32 cached_content_token_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The cachedContentTokenCount.
+     */
+    int getCachedContentTokenCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount> getPromptTokensDetailsList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.vertexai.api.ModalityTokenCount getPromptTokensDetails(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    int getPromptTokensDetailsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+        getPromptTokensDetailsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder getPromptTokensDetailsOrBuilder(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount> getCacheTokensDetailsList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.vertexai.api.ModalityTokenCount getCacheTokensDetails(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    int getCacheTokensDetailsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+        getCacheTokensDetailsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder getCacheTokensDetailsOrBuilder(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount>
+        getCandidatesTokensDetailsList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.vertexai.api.ModalityTokenCount getCandidatesTokensDetails(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    int getCandidatesTokensDetailsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+        getCandidatesTokensDetailsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder getCandidatesTokensDetailsOrBuilder(
+        int index);
   }
   /**
    *
@@ -1802,7 +2020,11 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       super(builder);
     }
 
-    private UsageMetadata() {}
+    private UsageMetadata() {
+      promptTokensDetails_ = java.util.Collections.emptyList();
+      cacheTokensDetails_ = java.util.Collections.emptyList();
+      candidatesTokensDetails_ = java.util.Collections.emptyList();
+    }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
@@ -1866,6 +2088,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     public static final int TOTAL_TOKEN_COUNT_FIELD_NUMBER = 3;
     private int totalTokenCount_ = 0;
     /**
+     *
+     *
+     * <pre>
+     * Total token count for prompt and response candidates.
+     * </pre>
+     *
      * <code>int32 total_token_count = 3;</code>
      *
      * @return The totalTokenCount.
@@ -1873,6 +2101,281 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public int getTotalTokenCount() {
       return totalTokenCount_;
+    }
+
+    public static final int CACHED_CONTENT_TOKEN_COUNT_FIELD_NUMBER = 5;
+    private int cachedContentTokenCount_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of tokens in the cached part in the input (the cached
+     * content).
+     * </pre>
+     *
+     * <code>int32 cached_content_token_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The cachedContentTokenCount.
+     */
+    @java.lang.Override
+    public int getCachedContentTokenCount() {
+      return cachedContentTokenCount_;
+    }
+
+    public static final int PROMPT_TOKENS_DETAILS_FIELD_NUMBER = 9;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount> promptTokensDetails_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount>
+        getPromptTokensDetailsList() {
+      return promptTokensDetails_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+        getPromptTokensDetailsOrBuilderList() {
+      return promptTokensDetails_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public int getPromptTokensDetailsCount() {
+      return promptTokensDetails_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vertexai.api.ModalityTokenCount getPromptTokensDetails(int index) {
+      return promptTokensDetails_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were processed in the request input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder
+        getPromptTokensDetailsOrBuilder(int index) {
+      return promptTokensDetails_.get(index);
+    }
+
+    public static final int CACHE_TOKENS_DETAILS_FIELD_NUMBER = 10;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount> cacheTokensDetails_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount>
+        getCacheTokensDetailsList() {
+      return cacheTokensDetails_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+        getCacheTokensDetailsOrBuilderList() {
+      return cacheTokensDetails_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public int getCacheTokensDetailsCount() {
+      return cacheTokensDetails_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vertexai.api.ModalityTokenCount getCacheTokensDetails(int index) {
+      return cacheTokensDetails_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities of the cached content in the request
+     * input.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder getCacheTokensDetailsOrBuilder(
+        int index) {
+      return cacheTokensDetails_.get(index);
+    }
+
+    public static final int CANDIDATES_TOKENS_DETAILS_FIELD_NUMBER = 11;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount>
+        candidatesTokensDetails_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount>
+        getCandidatesTokensDetailsList() {
+      return candidatesTokensDetails_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+        getCandidatesTokensDetailsOrBuilderList() {
+      return candidatesTokensDetails_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public int getCandidatesTokensDetailsCount() {
+      return candidatesTokensDetails_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vertexai.api.ModalityTokenCount getCandidatesTokensDetails(int index) {
+      return candidatesTokensDetails_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of modalities that were returned in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder
+        getCandidatesTokensDetailsOrBuilder(int index) {
+      return candidatesTokensDetails_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1898,6 +2401,18 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       if (totalTokenCount_ != 0) {
         output.writeInt32(3, totalTokenCount_);
       }
+      if (cachedContentTokenCount_ != 0) {
+        output.writeInt32(5, cachedContentTokenCount_);
+      }
+      for (int i = 0; i < promptTokensDetails_.size(); i++) {
+        output.writeMessage(9, promptTokensDetails_.get(i));
+      }
+      for (int i = 0; i < cacheTokensDetails_.size(); i++) {
+        output.writeMessage(10, cacheTokensDetails_.get(i));
+      }
+      for (int i = 0; i < candidatesTokensDetails_.size(); i++) {
+        output.writeMessage(11, candidatesTokensDetails_.get(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1915,6 +2430,24 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       }
       if (totalTokenCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, totalTokenCount_);
+      }
+      if (cachedContentTokenCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, cachedContentTokenCount_);
+      }
+      for (int i = 0; i < promptTokensDetails_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                9, promptTokensDetails_.get(i));
+      }
+      for (int i = 0; i < cacheTokensDetails_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                10, cacheTokensDetails_.get(i));
+      }
+      for (int i = 0; i < candidatesTokensDetails_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                11, candidatesTokensDetails_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1935,6 +2468,11 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       if (getPromptTokenCount() != other.getPromptTokenCount()) return false;
       if (getCandidatesTokenCount() != other.getCandidatesTokenCount()) return false;
       if (getTotalTokenCount() != other.getTotalTokenCount()) return false;
+      if (getCachedContentTokenCount() != other.getCachedContentTokenCount()) return false;
+      if (!getPromptTokensDetailsList().equals(other.getPromptTokensDetailsList())) return false;
+      if (!getCacheTokensDetailsList().equals(other.getCacheTokensDetailsList())) return false;
+      if (!getCandidatesTokensDetailsList().equals(other.getCandidatesTokensDetailsList()))
+        return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1952,6 +2490,20 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       hash = (53 * hash) + getCandidatesTokenCount();
       hash = (37 * hash) + TOTAL_TOKEN_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getTotalTokenCount();
+      hash = (37 * hash) + CACHED_CONTENT_TOKEN_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getCachedContentTokenCount();
+      if (getPromptTokensDetailsCount() > 0) {
+        hash = (37 * hash) + PROMPT_TOKENS_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getPromptTokensDetailsList().hashCode();
+      }
+      if (getCacheTokensDetailsCount() > 0) {
+        hash = (37 * hash) + CACHE_TOKENS_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getCacheTokensDetailsList().hashCode();
+      }
+      if (getCandidatesTokensDetailsCount() > 0) {
+        hash = (37 * hash) + CANDIDATES_TOKENS_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getCandidatesTokensDetailsList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2099,6 +2651,28 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         promptTokenCount_ = 0;
         candidatesTokenCount_ = 0;
         totalTokenCount_ = 0;
+        cachedContentTokenCount_ = 0;
+        if (promptTokensDetailsBuilder_ == null) {
+          promptTokensDetails_ = java.util.Collections.emptyList();
+        } else {
+          promptTokensDetails_ = null;
+          promptTokensDetailsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        if (cacheTokensDetailsBuilder_ == null) {
+          cacheTokensDetails_ = java.util.Collections.emptyList();
+        } else {
+          cacheTokensDetails_ = null;
+          cacheTokensDetailsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000020);
+        if (candidatesTokensDetailsBuilder_ == null) {
+          candidatesTokensDetails_ = java.util.Collections.emptyList();
+        } else {
+          candidatesTokensDetails_ = null;
+          candidatesTokensDetailsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -2128,11 +2702,44 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       public com.google.cloud.vertexai.api.GenerateContentResponse.UsageMetadata buildPartial() {
         com.google.cloud.vertexai.api.GenerateContentResponse.UsageMetadata result =
             new com.google.cloud.vertexai.api.GenerateContentResponse.UsageMetadata(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.vertexai.api.GenerateContentResponse.UsageMetadata result) {
+        if (promptTokensDetailsBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)) {
+            promptTokensDetails_ = java.util.Collections.unmodifiableList(promptTokensDetails_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.promptTokensDetails_ = promptTokensDetails_;
+        } else {
+          result.promptTokensDetails_ = promptTokensDetailsBuilder_.build();
+        }
+        if (cacheTokensDetailsBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)) {
+            cacheTokensDetails_ = java.util.Collections.unmodifiableList(cacheTokensDetails_);
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.cacheTokensDetails_ = cacheTokensDetails_;
+        } else {
+          result.cacheTokensDetails_ = cacheTokensDetailsBuilder_.build();
+        }
+        if (candidatesTokensDetailsBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0)) {
+            candidatesTokensDetails_ =
+                java.util.Collections.unmodifiableList(candidatesTokensDetails_);
+            bitField0_ = (bitField0_ & ~0x00000040);
+          }
+          result.candidatesTokensDetails_ = candidatesTokensDetails_;
+        } else {
+          result.candidatesTokensDetails_ = candidatesTokensDetailsBuilder_.build();
+        }
       }
 
       private void buildPartial0(
@@ -2146,6 +2753,9 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.totalTokenCount_ = totalTokenCount_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.cachedContentTokenCount_ = cachedContentTokenCount_;
         }
       }
 
@@ -2209,6 +2819,90 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         if (other.getTotalTokenCount() != 0) {
           setTotalTokenCount(other.getTotalTokenCount());
         }
+        if (other.getCachedContentTokenCount() != 0) {
+          setCachedContentTokenCount(other.getCachedContentTokenCount());
+        }
+        if (promptTokensDetailsBuilder_ == null) {
+          if (!other.promptTokensDetails_.isEmpty()) {
+            if (promptTokensDetails_.isEmpty()) {
+              promptTokensDetails_ = other.promptTokensDetails_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensurePromptTokensDetailsIsMutable();
+              promptTokensDetails_.addAll(other.promptTokensDetails_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.promptTokensDetails_.isEmpty()) {
+            if (promptTokensDetailsBuilder_.isEmpty()) {
+              promptTokensDetailsBuilder_.dispose();
+              promptTokensDetailsBuilder_ = null;
+              promptTokensDetails_ = other.promptTokensDetails_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              promptTokensDetailsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getPromptTokensDetailsFieldBuilder()
+                      : null;
+            } else {
+              promptTokensDetailsBuilder_.addAllMessages(other.promptTokensDetails_);
+            }
+          }
+        }
+        if (cacheTokensDetailsBuilder_ == null) {
+          if (!other.cacheTokensDetails_.isEmpty()) {
+            if (cacheTokensDetails_.isEmpty()) {
+              cacheTokensDetails_ = other.cacheTokensDetails_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+            } else {
+              ensureCacheTokensDetailsIsMutable();
+              cacheTokensDetails_.addAll(other.cacheTokensDetails_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.cacheTokensDetails_.isEmpty()) {
+            if (cacheTokensDetailsBuilder_.isEmpty()) {
+              cacheTokensDetailsBuilder_.dispose();
+              cacheTokensDetailsBuilder_ = null;
+              cacheTokensDetails_ = other.cacheTokensDetails_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              cacheTokensDetailsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getCacheTokensDetailsFieldBuilder()
+                      : null;
+            } else {
+              cacheTokensDetailsBuilder_.addAllMessages(other.cacheTokensDetails_);
+            }
+          }
+        }
+        if (candidatesTokensDetailsBuilder_ == null) {
+          if (!other.candidatesTokensDetails_.isEmpty()) {
+            if (candidatesTokensDetails_.isEmpty()) {
+              candidatesTokensDetails_ = other.candidatesTokensDetails_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+            } else {
+              ensureCandidatesTokensDetailsIsMutable();
+              candidatesTokensDetails_.addAll(other.candidatesTokensDetails_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.candidatesTokensDetails_.isEmpty()) {
+            if (candidatesTokensDetailsBuilder_.isEmpty()) {
+              candidatesTokensDetailsBuilder_.dispose();
+              candidatesTokensDetailsBuilder_ = null;
+              candidatesTokensDetails_ = other.candidatesTokensDetails_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+              candidatesTokensDetailsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getCandidatesTokensDetailsFieldBuilder()
+                      : null;
+            } else {
+              candidatesTokensDetailsBuilder_.addAllMessages(other.candidatesTokensDetails_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2253,6 +2947,54 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 24
+              case 40:
+                {
+                  cachedContentTokenCount_ = input.readInt32();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 40
+              case 74:
+                {
+                  com.google.cloud.vertexai.api.ModalityTokenCount m =
+                      input.readMessage(
+                          com.google.cloud.vertexai.api.ModalityTokenCount.parser(),
+                          extensionRegistry);
+                  if (promptTokensDetailsBuilder_ == null) {
+                    ensurePromptTokensDetailsIsMutable();
+                    promptTokensDetails_.add(m);
+                  } else {
+                    promptTokensDetailsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 74
+              case 82:
+                {
+                  com.google.cloud.vertexai.api.ModalityTokenCount m =
+                      input.readMessage(
+                          com.google.cloud.vertexai.api.ModalityTokenCount.parser(),
+                          extensionRegistry);
+                  if (cacheTokensDetailsBuilder_ == null) {
+                    ensureCacheTokensDetailsIsMutable();
+                    cacheTokensDetails_.add(m);
+                  } else {
+                    cacheTokensDetailsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 82
+              case 90:
+                {
+                  com.google.cloud.vertexai.api.ModalityTokenCount m =
+                      input.readMessage(
+                          com.google.cloud.vertexai.api.ModalityTokenCount.parser(),
+                          extensionRegistry);
+                  if (candidatesTokensDetailsBuilder_ == null) {
+                    ensureCandidatesTokensDetailsIsMutable();
+                    candidatesTokensDetails_.add(m);
+                  } else {
+                    candidatesTokensDetailsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 90
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2386,6 +3128,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
       private int totalTokenCount_;
       /**
+       *
+       *
+       * <pre>
+       * Total token count for prompt and response candidates.
+       * </pre>
+       *
        * <code>int32 total_token_count = 3;</code>
        *
        * @return The totalTokenCount.
@@ -2395,6 +3143,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         return totalTokenCount_;
       }
       /**
+       *
+       *
+       * <pre>
+       * Total token count for prompt and response candidates.
+       * </pre>
+       *
        * <code>int32 total_token_count = 3;</code>
        *
        * @param value The totalTokenCount to set.
@@ -2408,6 +3162,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Total token count for prompt and response candidates.
+       * </pre>
+       *
        * <code>int32 total_token_count = 3;</code>
        *
        * @return This builder for chaining.
@@ -2417,6 +3177,1283 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         totalTokenCount_ = 0;
         onChanged();
         return this;
+      }
+
+      private int cachedContentTokenCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of tokens in the cached part in the input (the cached
+       * content).
+       * </pre>
+       *
+       * <code>int32 cached_content_token_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The cachedContentTokenCount.
+       */
+      @java.lang.Override
+      public int getCachedContentTokenCount() {
+        return cachedContentTokenCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of tokens in the cached part in the input (the cached
+       * content).
+       * </pre>
+       *
+       * <code>int32 cached_content_token_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The cachedContentTokenCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCachedContentTokenCount(int value) {
+
+        cachedContentTokenCount_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of tokens in the cached part in the input (the cached
+       * content).
+       * </pre>
+       *
+       * <code>int32 cached_content_token_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCachedContentTokenCount() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        cachedContentTokenCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount>
+          promptTokensDetails_ = java.util.Collections.emptyList();
+
+      private void ensurePromptTokensDetailsIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          promptTokensDetails_ =
+              new java.util.ArrayList<com.google.cloud.vertexai.api.ModalityTokenCount>(
+                  promptTokensDetails_);
+          bitField0_ |= 0x00000010;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.vertexai.api.ModalityTokenCount,
+              com.google.cloud.vertexai.api.ModalityTokenCount.Builder,
+              com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+          promptTokensDetailsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount>
+          getPromptTokensDetailsList() {
+        if (promptTokensDetailsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(promptTokensDetails_);
+        } else {
+          return promptTokensDetailsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public int getPromptTokensDetailsCount() {
+        if (promptTokensDetailsBuilder_ == null) {
+          return promptTokensDetails_.size();
+        } else {
+          return promptTokensDetailsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vertexai.api.ModalityTokenCount getPromptTokensDetails(int index) {
+        if (promptTokensDetailsBuilder_ == null) {
+          return promptTokensDetails_.get(index);
+        } else {
+          return promptTokensDetailsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setPromptTokensDetails(
+          int index, com.google.cloud.vertexai.api.ModalityTokenCount value) {
+        if (promptTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePromptTokensDetailsIsMutable();
+          promptTokensDetails_.set(index, value);
+          onChanged();
+        } else {
+          promptTokensDetailsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setPromptTokensDetails(
+          int index, com.google.cloud.vertexai.api.ModalityTokenCount.Builder builderForValue) {
+        if (promptTokensDetailsBuilder_ == null) {
+          ensurePromptTokensDetailsIsMutable();
+          promptTokensDetails_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          promptTokensDetailsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addPromptTokensDetails(
+          com.google.cloud.vertexai.api.ModalityTokenCount value) {
+        if (promptTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePromptTokensDetailsIsMutable();
+          promptTokensDetails_.add(value);
+          onChanged();
+        } else {
+          promptTokensDetailsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addPromptTokensDetails(
+          int index, com.google.cloud.vertexai.api.ModalityTokenCount value) {
+        if (promptTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePromptTokensDetailsIsMutable();
+          promptTokensDetails_.add(index, value);
+          onChanged();
+        } else {
+          promptTokensDetailsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addPromptTokensDetails(
+          com.google.cloud.vertexai.api.ModalityTokenCount.Builder builderForValue) {
+        if (promptTokensDetailsBuilder_ == null) {
+          ensurePromptTokensDetailsIsMutable();
+          promptTokensDetails_.add(builderForValue.build());
+          onChanged();
+        } else {
+          promptTokensDetailsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addPromptTokensDetails(
+          int index, com.google.cloud.vertexai.api.ModalityTokenCount.Builder builderForValue) {
+        if (promptTokensDetailsBuilder_ == null) {
+          ensurePromptTokensDetailsIsMutable();
+          promptTokensDetails_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          promptTokensDetailsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addAllPromptTokensDetails(
+          java.lang.Iterable<? extends com.google.cloud.vertexai.api.ModalityTokenCount> values) {
+        if (promptTokensDetailsBuilder_ == null) {
+          ensurePromptTokensDetailsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, promptTokensDetails_);
+          onChanged();
+        } else {
+          promptTokensDetailsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearPromptTokensDetails() {
+        if (promptTokensDetailsBuilder_ == null) {
+          promptTokensDetails_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          promptTokensDetailsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder removePromptTokensDetails(int index) {
+        if (promptTokensDetailsBuilder_ == null) {
+          ensurePromptTokensDetailsIsMutable();
+          promptTokensDetails_.remove(index);
+          onChanged();
+        } else {
+          promptTokensDetailsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vertexai.api.ModalityTokenCount.Builder getPromptTokensDetailsBuilder(
+          int index) {
+        return getPromptTokensDetailsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder
+          getPromptTokensDetailsOrBuilder(int index) {
+        if (promptTokensDetailsBuilder_ == null) {
+          return promptTokensDetails_.get(index);
+        } else {
+          return promptTokensDetailsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<? extends com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+          getPromptTokensDetailsOrBuilderList() {
+        if (promptTokensDetailsBuilder_ != null) {
+          return promptTokensDetailsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(promptTokensDetails_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vertexai.api.ModalityTokenCount.Builder
+          addPromptTokensDetailsBuilder() {
+        return getPromptTokensDetailsFieldBuilder()
+            .addBuilder(com.google.cloud.vertexai.api.ModalityTokenCount.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vertexai.api.ModalityTokenCount.Builder addPromptTokensDetailsBuilder(
+          int index) {
+        return getPromptTokensDetailsFieldBuilder()
+            .addBuilder(
+                index, com.google.cloud.vertexai.api.ModalityTokenCount.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were processed in the request input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount prompt_tokens_details = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount.Builder>
+          getPromptTokensDetailsBuilderList() {
+        return getPromptTokensDetailsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.vertexai.api.ModalityTokenCount,
+              com.google.cloud.vertexai.api.ModalityTokenCount.Builder,
+              com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+          getPromptTokensDetailsFieldBuilder() {
+        if (promptTokensDetailsBuilder_ == null) {
+          promptTokensDetailsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.vertexai.api.ModalityTokenCount,
+                  com.google.cloud.vertexai.api.ModalityTokenCount.Builder,
+                  com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>(
+                  promptTokensDetails_,
+                  ((bitField0_ & 0x00000010) != 0),
+                  getParentForChildren(),
+                  isClean());
+          promptTokensDetails_ = null;
+        }
+        return promptTokensDetailsBuilder_;
+      }
+
+      private java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount> cacheTokensDetails_ =
+          java.util.Collections.emptyList();
+
+      private void ensureCacheTokensDetailsIsMutable() {
+        if (!((bitField0_ & 0x00000020) != 0)) {
+          cacheTokensDetails_ =
+              new java.util.ArrayList<com.google.cloud.vertexai.api.ModalityTokenCount>(
+                  cacheTokensDetails_);
+          bitField0_ |= 0x00000020;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.vertexai.api.ModalityTokenCount,
+              com.google.cloud.vertexai.api.ModalityTokenCount.Builder,
+              com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+          cacheTokensDetailsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount>
+          getCacheTokensDetailsList() {
+        if (cacheTokensDetailsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(cacheTokensDetails_);
+        } else {
+          return cacheTokensDetailsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public int getCacheTokensDetailsCount() {
+        if (cacheTokensDetailsBuilder_ == null) {
+          return cacheTokensDetails_.size();
+        } else {
+          return cacheTokensDetailsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vertexai.api.ModalityTokenCount getCacheTokensDetails(int index) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          return cacheTokensDetails_.get(index);
+        } else {
+          return cacheTokensDetailsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setCacheTokensDetails(
+          int index, com.google.cloud.vertexai.api.ModalityTokenCount value) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCacheTokensDetailsIsMutable();
+          cacheTokensDetails_.set(index, value);
+          onChanged();
+        } else {
+          cacheTokensDetailsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setCacheTokensDetails(
+          int index, com.google.cloud.vertexai.api.ModalityTokenCount.Builder builderForValue) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          ensureCacheTokensDetailsIsMutable();
+          cacheTokensDetails_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          cacheTokensDetailsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addCacheTokensDetails(com.google.cloud.vertexai.api.ModalityTokenCount value) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCacheTokensDetailsIsMutable();
+          cacheTokensDetails_.add(value);
+          onChanged();
+        } else {
+          cacheTokensDetailsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addCacheTokensDetails(
+          int index, com.google.cloud.vertexai.api.ModalityTokenCount value) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCacheTokensDetailsIsMutable();
+          cacheTokensDetails_.add(index, value);
+          onChanged();
+        } else {
+          cacheTokensDetailsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addCacheTokensDetails(
+          com.google.cloud.vertexai.api.ModalityTokenCount.Builder builderForValue) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          ensureCacheTokensDetailsIsMutable();
+          cacheTokensDetails_.add(builderForValue.build());
+          onChanged();
+        } else {
+          cacheTokensDetailsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addCacheTokensDetails(
+          int index, com.google.cloud.vertexai.api.ModalityTokenCount.Builder builderForValue) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          ensureCacheTokensDetailsIsMutable();
+          cacheTokensDetails_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          cacheTokensDetailsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addAllCacheTokensDetails(
+          java.lang.Iterable<? extends com.google.cloud.vertexai.api.ModalityTokenCount> values) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          ensureCacheTokensDetailsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cacheTokensDetails_);
+          onChanged();
+        } else {
+          cacheTokensDetailsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearCacheTokensDetails() {
+        if (cacheTokensDetailsBuilder_ == null) {
+          cacheTokensDetails_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          onChanged();
+        } else {
+          cacheTokensDetailsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder removeCacheTokensDetails(int index) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          ensureCacheTokensDetailsIsMutable();
+          cacheTokensDetails_.remove(index);
+          onChanged();
+        } else {
+          cacheTokensDetailsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vertexai.api.ModalityTokenCount.Builder getCacheTokensDetailsBuilder(
+          int index) {
+        return getCacheTokensDetailsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder
+          getCacheTokensDetailsOrBuilder(int index) {
+        if (cacheTokensDetailsBuilder_ == null) {
+          return cacheTokensDetails_.get(index);
+        } else {
+          return cacheTokensDetailsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<? extends com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+          getCacheTokensDetailsOrBuilderList() {
+        if (cacheTokensDetailsBuilder_ != null) {
+          return cacheTokensDetailsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(cacheTokensDetails_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vertexai.api.ModalityTokenCount.Builder
+          addCacheTokensDetailsBuilder() {
+        return getCacheTokensDetailsFieldBuilder()
+            .addBuilder(com.google.cloud.vertexai.api.ModalityTokenCount.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vertexai.api.ModalityTokenCount.Builder addCacheTokensDetailsBuilder(
+          int index) {
+        return getCacheTokensDetailsFieldBuilder()
+            .addBuilder(
+                index, com.google.cloud.vertexai.api.ModalityTokenCount.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities of the cached content in the request
+       * input.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount cache_tokens_details = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount.Builder>
+          getCacheTokensDetailsBuilderList() {
+        return getCacheTokensDetailsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.vertexai.api.ModalityTokenCount,
+              com.google.cloud.vertexai.api.ModalityTokenCount.Builder,
+              com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+          getCacheTokensDetailsFieldBuilder() {
+        if (cacheTokensDetailsBuilder_ == null) {
+          cacheTokensDetailsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.vertexai.api.ModalityTokenCount,
+                  com.google.cloud.vertexai.api.ModalityTokenCount.Builder,
+                  com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>(
+                  cacheTokensDetails_,
+                  ((bitField0_ & 0x00000020) != 0),
+                  getParentForChildren(),
+                  isClean());
+          cacheTokensDetails_ = null;
+        }
+        return cacheTokensDetailsBuilder_;
+      }
+
+      private java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount>
+          candidatesTokensDetails_ = java.util.Collections.emptyList();
+
+      private void ensureCandidatesTokensDetailsIsMutable() {
+        if (!((bitField0_ & 0x00000040) != 0)) {
+          candidatesTokensDetails_ =
+              new java.util.ArrayList<com.google.cloud.vertexai.api.ModalityTokenCount>(
+                  candidatesTokensDetails_);
+          bitField0_ |= 0x00000040;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.vertexai.api.ModalityTokenCount,
+              com.google.cloud.vertexai.api.ModalityTokenCount.Builder,
+              com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+          candidatesTokensDetailsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount>
+          getCandidatesTokensDetailsList() {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(candidatesTokensDetails_);
+        } else {
+          return candidatesTokensDetailsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public int getCandidatesTokensDetailsCount() {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          return candidatesTokensDetails_.size();
+        } else {
+          return candidatesTokensDetailsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vertexai.api.ModalityTokenCount getCandidatesTokensDetails(
+          int index) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          return candidatesTokensDetails_.get(index);
+        } else {
+          return candidatesTokensDetailsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setCandidatesTokensDetails(
+          int index, com.google.cloud.vertexai.api.ModalityTokenCount value) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCandidatesTokensDetailsIsMutable();
+          candidatesTokensDetails_.set(index, value);
+          onChanged();
+        } else {
+          candidatesTokensDetailsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setCandidatesTokensDetails(
+          int index, com.google.cloud.vertexai.api.ModalityTokenCount.Builder builderForValue) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          ensureCandidatesTokensDetailsIsMutable();
+          candidatesTokensDetails_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          candidatesTokensDetailsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addCandidatesTokensDetails(
+          com.google.cloud.vertexai.api.ModalityTokenCount value) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCandidatesTokensDetailsIsMutable();
+          candidatesTokensDetails_.add(value);
+          onChanged();
+        } else {
+          candidatesTokensDetailsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addCandidatesTokensDetails(
+          int index, com.google.cloud.vertexai.api.ModalityTokenCount value) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCandidatesTokensDetailsIsMutable();
+          candidatesTokensDetails_.add(index, value);
+          onChanged();
+        } else {
+          candidatesTokensDetailsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addCandidatesTokensDetails(
+          com.google.cloud.vertexai.api.ModalityTokenCount.Builder builderForValue) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          ensureCandidatesTokensDetailsIsMutable();
+          candidatesTokensDetails_.add(builderForValue.build());
+          onChanged();
+        } else {
+          candidatesTokensDetailsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addCandidatesTokensDetails(
+          int index, com.google.cloud.vertexai.api.ModalityTokenCount.Builder builderForValue) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          ensureCandidatesTokensDetailsIsMutable();
+          candidatesTokensDetails_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          candidatesTokensDetailsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addAllCandidatesTokensDetails(
+          java.lang.Iterable<? extends com.google.cloud.vertexai.api.ModalityTokenCount> values) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          ensureCandidatesTokensDetailsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, candidatesTokensDetails_);
+          onChanged();
+        } else {
+          candidatesTokensDetailsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearCandidatesTokensDetails() {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          candidatesTokensDetails_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+        } else {
+          candidatesTokensDetailsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder removeCandidatesTokensDetails(int index) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          ensureCandidatesTokensDetailsIsMutable();
+          candidatesTokensDetails_.remove(index);
+          onChanged();
+        } else {
+          candidatesTokensDetailsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vertexai.api.ModalityTokenCount.Builder
+          getCandidatesTokensDetailsBuilder(int index) {
+        return getCandidatesTokensDetailsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder
+          getCandidatesTokensDetailsOrBuilder(int index) {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          return candidatesTokensDetails_.get(index);
+        } else {
+          return candidatesTokensDetailsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<? extends com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+          getCandidatesTokensDetailsOrBuilderList() {
+        if (candidatesTokensDetailsBuilder_ != null) {
+          return candidatesTokensDetailsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(candidatesTokensDetails_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vertexai.api.ModalityTokenCount.Builder
+          addCandidatesTokensDetailsBuilder() {
+        return getCandidatesTokensDetailsFieldBuilder()
+            .addBuilder(com.google.cloud.vertexai.api.ModalityTokenCount.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vertexai.api.ModalityTokenCount.Builder
+          addCandidatesTokensDetailsBuilder(int index) {
+        return getCandidatesTokensDetailsFieldBuilder()
+            .addBuilder(
+                index, com.google.cloud.vertexai.api.ModalityTokenCount.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. List of modalities that were returned in the response.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vertexai.v1.ModalityTokenCount candidates_tokens_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount.Builder>
+          getCandidatesTokensDetailsBuilderList() {
+        return getCandidatesTokensDetailsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.vertexai.api.ModalityTokenCount,
+              com.google.cloud.vertexai.api.ModalityTokenCount.Builder,
+              com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
+          getCandidatesTokensDetailsFieldBuilder() {
+        if (candidatesTokensDetailsBuilder_ == null) {
+          candidatesTokensDetailsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.vertexai.api.ModalityTokenCount,
+                  com.google.cloud.vertexai.api.ModalityTokenCount.Builder,
+                  com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>(
+                  candidatesTokensDetails_,
+                  ((bitField0_ & 0x00000040) != 0),
+                  getParentForChildren(),
+                  isClean());
+          candidatesTokensDetails_ = null;
+        }
+        return candidatesTokensDetailsBuilder_;
       }
 
       @java.lang.Override
@@ -2568,6 +4605,159 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     return candidates_.get(index);
   }
 
+  public static final int MODEL_VERSION_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object modelVersion_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The model version used to generate the response.
+   * </pre>
+   *
+   * <code>string model_version = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The modelVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getModelVersion() {
+    java.lang.Object ref = modelVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      modelVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The model version used to generate the response.
+   * </pre>
+   *
+   * <code>string model_version = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for modelVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getModelVersionBytes() {
+    java.lang.Object ref = modelVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      modelVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CREATE_TIME_FIELD_NUMBER = 12;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when the request is made to the server.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when the request is made to the server.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when the request is made to the server.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+
+  public static final int RESPONSE_ID_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object responseId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. response_id is used to identify each response. It is the
+   * encoding of the event_id.
+   * </pre>
+   *
+   * <code>string response_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The responseId.
+   */
+  @java.lang.Override
+  public java.lang.String getResponseId() {
+    java.lang.Object ref = responseId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      responseId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. response_id is used to identify each response. It is the
+   * encoding of the event_id.
+   * </pre>
+   *
+   * <code>string response_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for responseId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getResponseIdBytes() {
+    java.lang.Object ref = responseId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      responseId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PROMPT_FEEDBACK_FIELD_NUMBER = 3;
   private com.google.cloud.vertexai.api.GenerateContentResponse.PromptFeedback promptFeedback_;
   /**
@@ -2587,7 +4777,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasPromptFeedback() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -2647,7 +4837,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasUsageMetadata() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -2702,11 +4892,20 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     for (int i = 0; i < candidates_.size(); i++) {
       output.writeMessage(2, candidates_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(3, getPromptFeedback());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getUsageMetadata());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, modelVersion_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(12, getCreateTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(responseId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, responseId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2720,11 +4919,20 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     for (int i = 0; i < candidates_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, candidates_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getPromptFeedback());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUsageMetadata());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, modelVersion_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getCreateTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(responseId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, responseId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2743,6 +4951,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         (com.google.cloud.vertexai.api.GenerateContentResponse) obj;
 
     if (!getCandidatesList().equals(other.getCandidatesList())) return false;
+    if (!getModelVersion().equals(other.getModelVersion())) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (!getResponseId().equals(other.getResponseId())) return false;
     if (hasPromptFeedback() != other.hasPromptFeedback()) return false;
     if (hasPromptFeedback()) {
       if (!getPromptFeedback().equals(other.getPromptFeedback())) return false;
@@ -2766,6 +4980,14 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       hash = (37 * hash) + CANDIDATES_FIELD_NUMBER;
       hash = (53 * hash) + getCandidatesList().hashCode();
     }
+    hash = (37 * hash) + MODEL_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getModelVersion().hashCode();
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    hash = (37 * hash) + RESPONSE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getResponseId().hashCode();
     if (hasPromptFeedback()) {
       hash = (37 * hash) + PROMPT_FEEDBACK_FIELD_NUMBER;
       hash = (53 * hash) + getPromptFeedback().hashCode();
@@ -2916,6 +5138,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCandidatesFieldBuilder();
+        getCreateTimeFieldBuilder();
         getPromptFeedbackFieldBuilder();
         getUsageMetadataFieldBuilder();
       }
@@ -2932,6 +5155,13 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         candidatesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      modelVersion_ = "";
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      responseId_ = "";
       promptFeedback_ = null;
       if (promptFeedbackBuilder_ != null) {
         promptFeedbackBuilder_.dispose();
@@ -2992,16 +5222,26 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
     private void buildPartial0(com.google.cloud.vertexai.api.GenerateContentResponse result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.promptFeedback_ =
-            promptFeedbackBuilder_ == null ? promptFeedback_ : promptFeedbackBuilder_.build();
+        result.modelVersion_ = modelVersion_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.responseId_ = responseId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.promptFeedback_ =
+            promptFeedbackBuilder_ == null ? promptFeedback_ : promptFeedbackBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.usageMetadata_ =
             usageMetadataBuilder_ == null ? usageMetadata_ : usageMetadataBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3079,6 +5319,19 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           }
         }
       }
+      if (!other.getModelVersion().isEmpty()) {
+        modelVersion_ = other.modelVersion_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
+      if (!other.getResponseId().isEmpty()) {
+        responseId_ = other.responseId_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       if (other.hasPromptFeedback()) {
         mergePromptFeedback(other.getPromptFeedback());
       }
@@ -3127,15 +5380,33 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
             case 26:
               {
                 input.readMessage(getPromptFeedbackFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getUsageMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
+            case 90:
+              {
+                modelVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 98
+            case 106:
+              {
+                responseId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3540,6 +5811,426 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       return candidatesBuilder_;
     }
 
+    private java.lang.Object modelVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The model version used to generate the response.
+     * </pre>
+     *
+     * <code>string model_version = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The modelVersion.
+     */
+    public java.lang.String getModelVersion() {
+      java.lang.Object ref = modelVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The model version used to generate the response.
+     * </pre>
+     *
+     * <code>string model_version = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for modelVersion.
+     */
+    public com.google.protobuf.ByteString getModelVersionBytes() {
+      java.lang.Object ref = modelVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modelVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The model version used to generate the response.
+     * </pre>
+     *
+     * <code>string model_version = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The modelVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      modelVersion_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The model version used to generate the response.
+     * </pre>
+     *
+     * <code>string model_version = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModelVersion() {
+      modelVersion_ = getDefaultInstance().getModelVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The model version used to generate the response.
+     * </pre>
+     *
+     * <code>string model_version = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for modelVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      modelVersion_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the request is made to the server.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the request is made to the server.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the request is made to the server.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the request is made to the server.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the request is made to the server.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
+        } else {
+          createTime_ = value;
+        }
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+      if (createTime_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the request is made to the server.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateTime() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the request is made to the server.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the request is made to the server.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the request is made to the server.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
+    }
+
+    private java.lang.Object responseId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. response_id is used to identify each response. It is the
+     * encoding of the event_id.
+     * </pre>
+     *
+     * <code>string response_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The responseId.
+     */
+    public java.lang.String getResponseId() {
+      java.lang.Object ref = responseId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        responseId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. response_id is used to identify each response. It is the
+     * encoding of the event_id.
+     * </pre>
+     *
+     * <code>string response_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for responseId.
+     */
+    public com.google.protobuf.ByteString getResponseIdBytes() {
+      java.lang.Object ref = responseId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        responseId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. response_id is used to identify each response. It is the
+     * encoding of the event_id.
+     * </pre>
+     *
+     * <code>string response_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The responseId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResponseId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      responseId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. response_id is used to identify each response. It is the
+     * encoding of the event_id.
+     * </pre>
+     *
+     * <code>string response_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResponseId() {
+      responseId_ = getDefaultInstance().getResponseId();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. response_id is used to identify each response. It is the
+     * encoding of the event_id.
+     * </pre>
+     *
+     * <code>string response_id = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for responseId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResponseIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      responseId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.vertexai.api.GenerateContentResponse.PromptFeedback promptFeedback_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vertexai.api.GenerateContentResponse.PromptFeedback,
@@ -3562,7 +6253,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      * @return Whether the promptFeedback field is set.
      */
     public boolean hasPromptFeedback() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -3613,7 +6304,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       } else {
         promptFeedbackBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3638,7 +6329,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       } else {
         promptFeedbackBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3658,7 +6349,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     public Builder mergePromptFeedback(
         com.google.cloud.vertexai.api.GenerateContentResponse.PromptFeedback value) {
       if (promptFeedbackBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && promptFeedback_ != null
             && promptFeedback_
                 != com.google.cloud.vertexai.api.GenerateContentResponse.PromptFeedback
@@ -3671,7 +6362,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         promptFeedbackBuilder_.mergeFrom(value);
       }
       if (promptFeedback_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -3690,7 +6381,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearPromptFeedback() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       promptFeedback_ = null;
       if (promptFeedbackBuilder_ != null) {
         promptFeedbackBuilder_.dispose();
@@ -3714,7 +6405,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      */
     public com.google.cloud.vertexai.api.GenerateContentResponse.PromptFeedback.Builder
         getPromptFeedbackBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getPromptFeedbackFieldBuilder().getBuilder();
     }
@@ -3791,7 +6482,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      * @return Whether the usageMetadata field is set.
      */
     public boolean hasUsageMetadata() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3835,7 +6526,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       } else {
         usageMetadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3857,7 +6548,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       } else {
         usageMetadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3874,7 +6565,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     public Builder mergeUsageMetadata(
         com.google.cloud.vertexai.api.GenerateContentResponse.UsageMetadata value) {
       if (usageMetadataBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && usageMetadata_ != null
             && usageMetadata_
                 != com.google.cloud.vertexai.api.GenerateContentResponse.UsageMetadata
@@ -3887,7 +6578,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         usageMetadataBuilder_.mergeFrom(value);
       }
       if (usageMetadata_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -3903,7 +6594,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearUsageMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       usageMetadata_ = null;
       if (usageMetadataBuilder_ != null) {
         usageMetadataBuilder_.dispose();
@@ -3924,7 +6615,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      */
     public com.google.cloud.vertexai.api.GenerateContentResponse.UsageMetadata.Builder
         getUsageMetadataBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getUsageMetadataFieldBuilder().getBuilder();
     }

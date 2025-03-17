@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -251,9 +251,12 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Possible values of the element of Type.STRING with enum format.
-   * For example we can define an Enum Direction as :
+   * Optional. Possible values of the element of primitive type with enum
+   * format. Examples:
+   * 1. We can define direction as :
    * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+   * 2. We can define apartment number as :
+   * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
    * </pre>
    *
    * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -265,9 +268,12 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Possible values of the element of Type.STRING with enum format.
-   * For example we can define an Enum Direction as :
+   * Optional. Possible values of the element of primitive type with enum
+   * format. Examples:
+   * 1. We can define direction as :
    * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+   * 2. We can define apartment number as :
+   * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
    * </pre>
    *
    * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -279,9 +285,12 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Possible values of the element of Type.STRING with enum format.
-   * For example we can define an Enum Direction as :
+   * Optional. Possible values of the element of primitive type with enum
+   * format. Examples:
+   * 1. We can define direction as :
    * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+   * 2. We can define apartment number as :
+   * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
    * </pre>
    *
    * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -294,9 +303,12 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Possible values of the element of Type.STRING with enum format.
-   * For example we can define an Enum Direction as :
+   * Optional. Possible values of the element of primitive type with enum
+   * format. Examples:
+   * 1. We can define direction as :
    * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+   * 2. We can define apartment number as :
+   * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
    * </pre>
    *
    * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -378,6 +390,65 @@ public interface SchemaOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.Schema getPropertiesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The order of the properties.
+   * Not a standard field in open api spec. Only used to support the order of
+   * the properties.
+   * </pre>
+   *
+   * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the propertyOrdering.
+   */
+  java.util.List<java.lang.String> getPropertyOrderingList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The order of the properties.
+   * Not a standard field in open api spec. Only used to support the order of
+   * the properties.
+   * </pre>
+   *
+   * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of propertyOrdering.
+   */
+  int getPropertyOrderingCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The order of the properties.
+   * Not a standard field in open api spec. Only used to support the order of
+   * the properties.
+   * </pre>
+   *
+   * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The propertyOrdering at the given index.
+   */
+  java.lang.String getPropertyOrdering(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The order of the properties.
+   * Not a standard field in open api spec. Only used to support the order of
+   * the properties.
+   * </pre>
+   *
+   * <code>repeated string property_ordering = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the propertyOrdering at the given index.
+   */
+  com.google.protobuf.ByteString getPropertyOrderingBytes(int index);
 
   /**
    *
@@ -574,4 +645,70 @@ public interface SchemaOrBuilder
    * <code>.google.protobuf.Value example = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.ValueOrBuilder getExampleOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.vertexai.api.Schema> getAnyOfList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vertexai.api.Schema getAnyOf(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAnyOfCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.vertexai.api.SchemaOrBuilder> getAnyOfOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value should be validated against any (one or more) of the
+   * subschemas in the list.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vertexai.v1.Schema any_of = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vertexai.api.SchemaOrBuilder getAnyOfOrBuilder(int index);
 }

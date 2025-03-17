@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -30,6 +30,21 @@ option (google.api.resource_definition) = {
   type: "compute.googleapis.com/NetworkAttachment"
   pattern: "projects/{project}/regions/{region}/networkAttachments/{networkattachment}"
 };
+
+// PSC config that is used to automatically create forwarding rule via
+// ServiceConnectionMap.
+message PSCAutomationConfig {
+  // Required. Project id used to create forwarding rule.
+  string project_id = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Required. The full name of the Google Compute Engine
+  // [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
+  // [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
+  // `projects/{project}/global/networks/{network}`.
+  // Where {project} is a project number, as in '12345', and {network} is
+  // network name.
+  string network = 2 [(google.api.field_behavior) = REQUIRED];
+}
 
 // Represents configuration for private service connect.
 message PrivateServiceConnectConfig {

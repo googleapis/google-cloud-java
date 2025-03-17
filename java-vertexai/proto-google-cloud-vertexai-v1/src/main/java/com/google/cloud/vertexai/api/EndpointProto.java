@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,14 @@ public final class EndpointProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vertexai_v1_DeployedModel_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_DeployedModel_Status_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_DeployedModel_Status_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_DeployedModel_SystemLabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_DeployedModel_SystemLabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vertexai_v1_PrivateEndpoints_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vertexai_v1_PrivateEndpoints_fieldAccessorTable;
@@ -52,6 +60,26 @@ public final class EndpointProto {
       internal_static_google_cloud_vertexai_v1_PredictRequestResponseLoggingConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vertexai_v1_PredictRequestResponseLoggingConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_ClientConnectionConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_ClientConnectionConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_FasterDeploymentConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_FasterDeploymentConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_SpeculativeDecodingSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_SpeculativeDecodingSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_SpeculativeDecodingSpec_DraftModelSpeculation_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_SpeculativeDecodingSpec_DraftModelSpeculation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vertexai_v1_SpeculativeDecodingSpec_NgramSpeculation_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vertexai_v1_SpeculativeDecodingSpec_NgramSpeculation_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -69,72 +97,101 @@ public final class EndpointProto {
           + "1/explanation.proto\032!google/cloud/vertex"
           + "ai/v1/io.proto\0320google/cloud/vertexai/v1"
           + "/machine_resources.proto\0321google/cloud/v"
-          + "ertexai/v1/service_networking.proto\032\037goo"
-          + "gle/protobuf/timestamp.proto\"\235\n\n\010Endpoin"
-          + "t\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001"
-          + "(\tB\003\340A\002\022\023\n\013description\030\003 \001(\t\022E\n\017deployed"
-          + "_models\030\004 \003(\0132\'.google.cloud.vertexai.v1"
-          + ".DeployedModelB\003\340A\003\022K\n\rtraffic_split\030\005 \003"
-          + "(\01324.google.cloud.vertexai.v1.Endpoint.T"
-          + "rafficSplitEntry\022\014\n\004etag\030\006 \001(\t\022>\n\006labels"
-          + "\030\007 \003(\0132..google.cloud.vertexai.v1.Endpoi"
-          + "nt.LabelsEntry\0224\n\013create_time\030\010 \001(\0132\032.go"
-          + "ogle.protobuf.TimestampB\003\340A\003\0224\n\013update_t"
-          + "ime\030\t \001(\0132\032.google.protobuf.TimestampB\003\340"
-          + "A\003\022A\n\017encryption_spec\030\n \001(\0132(.google.clo"
-          + "ud.vertexai.v1.EncryptionSpec\0227\n\007network"
-          + "\030\r \001(\tB&\340A\001\372A \n\036compute.googleapis.com/N"
-          + "etwork\022*\n\036enable_private_service_connect"
-          + "\030\021 \001(\010B\002\030\001\022b\n\036private_service_connect_co"
-          + "nfig\030\025 \001(\01325.google.cloud.vertexai.v1.Pr"
-          + "ivateServiceConnectConfigB\003\340A\001\022g\n\037model_"
-          + "deployment_monitoring_job\030\016 \001(\tB>\340A\003\372A8\n"
-          + "6aiplatform.googleapis.com/ModelDeployme"
-          + "ntMonitoringJob\022n\n\'predict_request_respo"
-          + "nse_logging_config\030\022 \001(\0132=.google.cloud."
-          + "vertexai.v1.PredictRequestResponseLoggin"
-          + "gConfig\022\"\n\032dedicated_endpoint_enabled\030\030 "
-          + "\001(\010\022#\n\026dedicated_endpoint_dns\030\031 \001(\tB\003\340A\003"
-          + "\022\032\n\rsatisfies_pzs\030\033 \001(\010B\003\340A\003\022\032\n\rsatisfie"
-          + "s_pzi\030\034 \001(\010B\003\340A\003\0323\n\021TrafficSplitEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\005:\0028\001\032-\n\013LabelsE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\265\001\352"
-          + "A\261\001\n\"aiplatform.googleapis.com/Endpoint\022"
-          + "<projects/{project}/locations/{location}"
-          + "/endpoints/{endpoint}\022Mprojects/{project"
-          + "}/locations/{location}/publishers/{publi"
-          + "sher}/models/{model}\"\322\005\n\rDeployedModel\022K"
-          + "\n\023dedicated_resources\030\007 \001(\0132,.google.clo"
-          + "ud.vertexai.v1.DedicatedResourcesH\000\022K\n\023a"
-          + "utomatic_resources\030\010 \001(\0132,.google.cloud."
-          + "vertexai.v1.AutomaticResourcesH\000\022Q\n\020shar"
-          + "ed_resources\030\021 \001(\tB5\372A2\n0aiplatform.goog"
-          + "leapis.com/DeploymentResourcePoolH\000\022\017\n\002i"
-          + "d\030\001 \001(\tB\003\340A\005\0226\n\005model\030\002 \001(\tB\'\340A\002\372A!\n\037aip"
-          + "latform.googleapis.com/Model\022\035\n\020model_ve"
-          + "rsion_id\030\022 \001(\tB\003\340A\003\022\024\n\014display_name\030\003 \001("
-          + "\t\0224\n\013create_time\030\006 \001(\0132\032.google.protobuf"
-          + ".TimestampB\003\340A\003\022C\n\020explanation_spec\030\t \001("
-          + "\0132).google.cloud.vertexai.v1.Explanation"
-          + "Spec\022\034\n\024disable_explanations\030\023 \001(\010\022\027\n\017se"
-          + "rvice_account\030\013 \001(\t\022!\n\031disable_container"
-          + "_logging\030\017 \001(\010\022\035\n\025enable_access_logging\030"
-          + "\r \001(\010\022J\n\021private_endpoints\030\016 \001(\0132*.googl"
-          + "e.cloud.vertexai.v1.PrivateEndpointsB\003\340A"
-          + "\003B\026\n\024prediction_resources\"\217\001\n\020PrivateEnd"
-          + "points\022\035\n\020predict_http_uri\030\001 \001(\tB\003\340A\003\022\035\n"
-          + "\020explain_http_uri\030\002 \001(\tB\003\340A\003\022\034\n\017health_h"
-          + "ttp_uri\030\003 \001(\tB\003\340A\003\022\037\n\022service_attachment"
-          + "\030\004 \001(\tB\003\340A\003\"\232\001\n#PredictRequestResponseLo"
-          + "ggingConfig\022\017\n\007enabled\030\001 \001(\010\022\025\n\rsampling"
-          + "_rate\030\002 \001(\001\022K\n\024bigquery_destination\030\003 \001("
-          + "\0132-.google.cloud.vertexai.v1.BigQueryDes"
-          + "tinationB\312\001\n\035com.google.cloud.vertexai.a"
-          + "piB\rEndpointProtoP\001Z>cloud.google.com/go"
-          + "/aiplatform/apiv1/aiplatformpb;aiplatfor"
-          + "mpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Googl"
-          + "e\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::A"
-          + "IPlatform::V1b\006proto3"
+          + "ertexai/v1/service_networking.proto\032\036goo"
+          + "gle/protobuf/duration.proto\032\037google/prot"
+          + "obuf/timestamp.proto\"\361\n\n\010Endpoint\022\021\n\004nam"
+          + "e\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022"
+          + "\023\n\013description\030\003 \001(\t\022E\n\017deployed_models\030"
+          + "\004 \003(\0132\'.google.cloud.vertexai.v1.Deploye"
+          + "dModelB\003\340A\003\022K\n\rtraffic_split\030\005 \003(\01324.goo"
+          + "gle.cloud.vertexai.v1.Endpoint.TrafficSp"
+          + "litEntry\022\014\n\004etag\030\006 \001(\t\022>\n\006labels\030\007 \003(\0132."
+          + ".google.cloud.vertexai.v1.Endpoint.Label"
+          + "sEntry\0224\n\013create_time\030\010 \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\003\340A\003\0224\n\013update_time\030\t \001("
+          + "\0132\032.google.protobuf.TimestampB\003\340A\003\022A\n\017en"
+          + "cryption_spec\030\n \001(\0132(.google.cloud.verte"
+          + "xai.v1.EncryptionSpec\0227\n\007network\030\r \001(\tB&"
+          + "\340A\001\372A \n\036compute.googleapis.com/Network\022*"
+          + "\n\036enable_private_service_connect\030\021 \001(\010B\002"
+          + "\030\001\022b\n\036private_service_connect_config\030\025 \001"
+          + "(\01325.google.cloud.vertexai.v1.PrivateSer"
+          + "viceConnectConfigB\003\340A\001\022g\n\037model_deployme"
+          + "nt_monitoring_job\030\016 \001(\tB>\340A\003\372A8\n6aiplatf"
+          + "orm.googleapis.com/ModelDeploymentMonito"
+          + "ringJob\022n\n\'predict_request_response_logg"
+          + "ing_config\030\022 \001(\0132=.google.cloud.vertexai"
+          + ".v1.PredictRequestResponseLoggingConfig\022"
+          + "\"\n\032dedicated_endpoint_enabled\030\030 \001(\010\022#\n\026d"
+          + "edicated_endpoint_dns\030\031 \001(\tB\003\340A\003\022R\n\030clie"
+          + "nt_connection_config\030\027 \001(\01320.google.clou"
+          + "d.vertexai.v1.ClientConnectionConfig\022\032\n\r"
+          + "satisfies_pzs\030\033 \001(\010B\003\340A\003\022\032\n\rsatisfies_pz"
+          + "i\030\034 \001(\010B\003\340A\003\0323\n\021TrafficSplitEntry\022\013\n\003key"
+          + "\030\001 \001(\t\022\r\n\005value\030\002 \001(\005:\0028\001\032-\n\013LabelsEntry"
+          + "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\265\001\352A\261\001\n"
+          + "\"aiplatform.googleapis.com/Endpoint\022<pro"
+          + "jects/{project}/locations/{location}/end"
+          + "points/{endpoint}\022Mprojects/{project}/lo"
+          + "cations/{location}/publishers/{publisher"
+          + "}/models/{model}\"\316\t\n\rDeployedModel\022K\n\023de"
+          + "dicated_resources\030\007 \001(\0132,.google.cloud.v"
+          + "ertexai.v1.DedicatedResourcesH\000\022K\n\023autom"
+          + "atic_resources\030\010 \001(\0132,.google.cloud.vert"
+          + "exai.v1.AutomaticResourcesH\000\022Q\n\020shared_r"
+          + "esources\030\021 \001(\tB5\372A2\n0aiplatform.googleap"
+          + "is.com/DeploymentResourcePoolH\000\022\017\n\002id\030\001 "
+          + "\001(\tB\003\340A\005\0226\n\005model\030\002 \001(\tB\'\340A\002\372A!\n\037aiplatf"
+          + "orm.googleapis.com/Model\022\035\n\020model_versio"
+          + "n_id\030\022 \001(\tB\003\340A\003\022\024\n\014display_name\030\003 \001(\t\0224\n"
+          + "\013create_time\030\006 \001(\0132\032.google.protobuf.Tim"
+          + "estampB\003\340A\003\022C\n\020explanation_spec\030\t \001(\0132)."
+          + "google.cloud.vertexai.v1.ExplanationSpec"
+          + "\022\034\n\024disable_explanations\030\023 \001(\010\022\027\n\017servic"
+          + "e_account\030\013 \001(\t\022!\n\031disable_container_log"
+          + "ging\030\017 \001(\010\022\035\n\025enable_access_logging\030\r \001("
+          + "\010\022J\n\021private_endpoints\030\016 \001(\0132*.google.cl"
+          + "oud.vertexai.v1.PrivateEndpointsB\003\340A\003\022R\n"
+          + "\030faster_deployment_config\030\027 \001(\01320.google"
+          + ".cloud.vertexai.v1.FasterDeploymentConfi"
+          + "g\022C\n\006status\030\032 \001(\0132..google.cloud.vertexa"
+          + "i.v1.DeployedModel.StatusB\003\340A\003\022P\n\rsystem"
+          + "_labels\030\034 \003(\01329.google.cloud.vertexai.v1"
+          + ".DeployedModel.SystemLabelsEntry\022Y\n\031spec"
+          + "ulative_decoding_spec\030\036 \001(\01321.google.clo"
+          + "ud.vertexai.v1.SpeculativeDecodingSpecB\003"
+          + "\340A\001\032\177\n\006Status\022\024\n\007message\030\001 \001(\tB\003\340A\003\0229\n\020l"
+          + "ast_update_time\030\002 \001(\0132\032.google.protobuf."
+          + "TimestampB\003\340A\003\022$\n\027available_replica_coun"
+          + "t\030\003 \001(\005B\003\340A\003\0323\n\021SystemLabelsEntry\022\013\n\003key"
+          + "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\026\n\024prediction_"
+          + "resources\"\217\001\n\020PrivateEndpoints\022\035\n\020predic"
+          + "t_http_uri\030\001 \001(\tB\003\340A\003\022\035\n\020explain_http_ur"
+          + "i\030\002 \001(\tB\003\340A\003\022\034\n\017health_http_uri\030\003 \001(\tB\003\340"
+          + "A\003\022\037\n\022service_attachment\030\004 \001(\tB\003\340A\003\"\232\001\n#"
+          + "PredictRequestResponseLoggingConfig\022\017\n\007e"
+          + "nabled\030\001 \001(\010\022\025\n\rsampling_rate\030\002 \001(\001\022K\n\024b"
+          + "igquery_destination\030\003 \001(\0132-.google.cloud"
+          + ".vertexai.v1.BigQueryDestination\"N\n\026Clie"
+          + "ntConnectionConfig\0224\n\021inference_timeout\030"
+          + "\001 \001(\0132\031.google.protobuf.Duration\"5\n\026Fast"
+          + "erDeploymentConfig\022\033\n\023fast_tryout_enable"
+          + "d\030\002 \001(\010\"\225\003\n\027SpeculativeDecodingSpec\022j\n\027d"
+          + "raft_model_speculation\030\002 \001(\0132G.google.cl"
+          + "oud.vertexai.v1.SpeculativeDecodingSpec."
+          + "DraftModelSpeculationH\000\022_\n\021ngram_specula"
+          + "tion\030\003 \001(\0132B.google.cloud.vertexai.v1.Sp"
+          + "eculativeDecodingSpec.NgramSpeculationH\000"
+          + "\022\037\n\027speculative_token_count\030\001 \001(\005\032U\n\025Dra"
+          + "ftModelSpeculation\022<\n\013draft_model\030\001 \001(\tB"
+          + "\'\340A\002\372A!\n\037aiplatform.googleapis.com/Model"
+          + "\032&\n\020NgramSpeculation\022\022\n\nngram_size\030\001 \001(\005"
+          + "B\r\n\013speculationB\312\001\n\035com.google.cloud.ver"
+          + "texai.apiB\rEndpointProtoP\001Z>cloud.google"
+          + ".com/go/aiplatform/apiv1/aiplatformpb;ai"
+          + "platformpb\252\002\032Google.Cloud.AIPlatform.V1\312"
+          + "\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::C"
+          + "loud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -147,6 +204,7 @@ public final class EndpointProto {
               com.google.cloud.vertexai.api.IoProto.getDescriptor(),
               com.google.cloud.vertexai.api.MachineResourcesProto.getDescriptor(),
               com.google.cloud.vertexai.api.ServiceNetworkingProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_vertexai_v1_Endpoint_descriptor =
@@ -172,6 +230,7 @@ public final class EndpointProto {
               "PredictRequestResponseLoggingConfig",
               "DedicatedEndpointEnabled",
               "DedicatedEndpointDns",
+              "ClientConnectionConfig",
               "SatisfiesPzs",
               "SatisfiesPzi",
             });
@@ -211,7 +270,27 @@ public final class EndpointProto {
               "DisableContainerLogging",
               "EnableAccessLogging",
               "PrivateEndpoints",
+              "FasterDeploymentConfig",
+              "Status",
+              "SystemLabels",
+              "SpeculativeDecodingSpec",
               "PredictionResources",
+            });
+    internal_static_google_cloud_vertexai_v1_DeployedModel_Status_descriptor =
+        internal_static_google_cloud_vertexai_v1_DeployedModel_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_vertexai_v1_DeployedModel_Status_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_DeployedModel_Status_descriptor,
+            new java.lang.String[] {
+              "Message", "LastUpdateTime", "AvailableReplicaCount",
+            });
+    internal_static_google_cloud_vertexai_v1_DeployedModel_SystemLabelsEntry_descriptor =
+        internal_static_google_cloud_vertexai_v1_DeployedModel_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_vertexai_v1_DeployedModel_SystemLabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_DeployedModel_SystemLabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_vertexai_v1_PrivateEndpoints_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -229,6 +308,50 @@ public final class EndpointProto {
             new java.lang.String[] {
               "Enabled", "SamplingRate", "BigqueryDestination",
             });
+    internal_static_google_cloud_vertexai_v1_ClientConnectionConfig_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_vertexai_v1_ClientConnectionConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_ClientConnectionConfig_descriptor,
+            new java.lang.String[] {
+              "InferenceTimeout",
+            });
+    internal_static_google_cloud_vertexai_v1_FasterDeploymentConfig_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_vertexai_v1_FasterDeploymentConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_FasterDeploymentConfig_descriptor,
+            new java.lang.String[] {
+              "FastTryoutEnabled",
+            });
+    internal_static_google_cloud_vertexai_v1_SpeculativeDecodingSpec_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_vertexai_v1_SpeculativeDecodingSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_SpeculativeDecodingSpec_descriptor,
+            new java.lang.String[] {
+              "DraftModelSpeculation", "NgramSpeculation", "SpeculativeTokenCount", "Speculation",
+            });
+    internal_static_google_cloud_vertexai_v1_SpeculativeDecodingSpec_DraftModelSpeculation_descriptor =
+        internal_static_google_cloud_vertexai_v1_SpeculativeDecodingSpec_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_vertexai_v1_SpeculativeDecodingSpec_DraftModelSpeculation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_SpeculativeDecodingSpec_DraftModelSpeculation_descriptor,
+            new java.lang.String[] {
+              "DraftModel",
+            });
+    internal_static_google_cloud_vertexai_v1_SpeculativeDecodingSpec_NgramSpeculation_descriptor =
+        internal_static_google_cloud_vertexai_v1_SpeculativeDecodingSpec_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_vertexai_v1_SpeculativeDecodingSpec_NgramSpeculation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vertexai_v1_SpeculativeDecodingSpec_NgramSpeculation_descriptor,
+            new java.lang.String[] {
+              "NgramSize",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
@@ -243,6 +366,7 @@ public final class EndpointProto {
     com.google.cloud.vertexai.api.IoProto.getDescriptor();
     com.google.cloud.vertexai.api.MachineResourcesProto.getDescriptor();
     com.google.cloud.vertexai.api.ServiceNetworkingProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

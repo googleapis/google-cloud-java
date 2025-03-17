@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,21 +37,21 @@ public final class AcceleratorTypeProto {
   static {
     java.lang.String[] descriptorData = {
       "\n/google/cloud/vertexai/v1/accelerator_t"
-          + "ype.proto\022\030google.cloud.vertexai.v1*\263\002\n\017"
+          + "ype.proto\022\030google.cloud.vertexai.v1*\316\002\n\017"
           + "AcceleratorType\022 \n\034ACCELERATOR_TYPE_UNSP"
           + "ECIFIED\020\000\022\030\n\020NVIDIA_TESLA_K80\020\001\032\002\010\001\022\025\n\021N"
           + "VIDIA_TESLA_P100\020\002\022\025\n\021NVIDIA_TESLA_V100\020"
           + "\003\022\023\n\017NVIDIA_TESLA_P4\020\004\022\023\n\017NVIDIA_TESLA_T"
           + "4\020\005\022\025\n\021NVIDIA_TESLA_A100\020\010\022\024\n\020NVIDIA_A10"
           + "0_80GB\020\t\022\r\n\tNVIDIA_L4\020\013\022\024\n\020NVIDIA_H100_8"
-          + "0GB\020\r\022\n\n\006TPU_V2\020\006\022\n\n\006TPU_V3\020\007\022\016\n\nTPU_V4_"
-          + "POD\020\n\022\022\n\016TPU_V5_LITEPOD\020\014B\321\001\n\035com.google"
-          + ".cloud.vertexai.apiB\024AcceleratorTypeProt"
-          + "oP\001Z>cloud.google.com/go/aiplatform/apiv"
-          + "1/aiplatformpb;aiplatformpb\252\002\032Google.Clo"
-          + "ud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatfo"
-          + "rm\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006p"
-          + "roto3"
+          + "0GB\020\r\022\031\n\025NVIDIA_H100_MEGA_80GB\020\016\022\n\n\006TPU_"
+          + "V2\020\006\022\n\n\006TPU_V3\020\007\022\016\n\nTPU_V4_POD\020\n\022\022\n\016TPU_"
+          + "V5_LITEPOD\020\014B\321\001\n\035com.google.cloud.vertex"
+          + "ai.apiB\024AcceleratorTypeProtoP\001Z>cloud.go"
+          + "ogle.com/go/aiplatform/apiv1/aiplatformp"
+          + "b;aiplatformpb\252\002\032Google.Cloud.AIPlatform"
+          + ".V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Googl"
+          + "e::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

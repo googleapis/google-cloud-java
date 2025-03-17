@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -127,6 +127,9 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The function response in JSON object format.
+   * Use "output" key to specify function output and "error" key to specify
+   * error details (if any). If "output" and "error" keys are not specified,
+   * then whole "response" is treated as function output.
    * </pre>
    *
    * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -142,6 +145,9 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The function response in JSON object format.
+   * Use "output" key to specify function output and "error" key to specify
+   * error details (if any). If "output" and "error" keys are not specified,
+   * then whole "response" is treated as function output.
    * </pre>
    *
    * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -157,6 +163,9 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The function response in JSON object format.
+   * Use "output" key to specify function output and "error" key to specify
+   * error details (if any). If "output" and "error" keys are not specified,
+   * then whole "response" is treated as function output.
    * </pre>
    *
    * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -675,6 +684,9 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The function response in JSON object format.
+     * Use "output" key to specify function output and "error" key to specify
+     * error details (if any). If "output" and "error" keys are not specified,
+     * then whole "response" is treated as function output.
      * </pre>
      *
      * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -689,6 +701,9 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The function response in JSON object format.
+     * Use "output" key to specify function output and "error" key to specify
+     * error details (if any). If "output" and "error" keys are not specified,
+     * then whole "response" is treated as function output.
      * </pre>
      *
      * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -707,6 +722,9 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The function response in JSON object format.
+     * Use "output" key to specify function output and "error" key to specify
+     * error details (if any). If "output" and "error" keys are not specified,
+     * then whole "response" is treated as function output.
      * </pre>
      *
      * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -729,6 +747,9 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The function response in JSON object format.
+     * Use "output" key to specify function output and "error" key to specify
+     * error details (if any). If "output" and "error" keys are not specified,
+     * then whole "response" is treated as function output.
      * </pre>
      *
      * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -748,6 +769,9 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The function response in JSON object format.
+     * Use "output" key to specify function output and "error" key to specify
+     * error details (if any). If "output" and "error" keys are not specified,
+     * then whole "response" is treated as function output.
      * </pre>
      *
      * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -775,6 +799,9 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The function response in JSON object format.
+     * Use "output" key to specify function output and "error" key to specify
+     * error details (if any). If "output" and "error" keys are not specified,
+     * then whole "response" is treated as function output.
      * </pre>
      *
      * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -794,6 +821,9 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The function response in JSON object format.
+     * Use "output" key to specify function output and "error" key to specify
+     * error details (if any). If "output" and "error" keys are not specified,
+     * then whole "response" is treated as function output.
      * </pre>
      *
      * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -808,6 +838,9 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The function response in JSON object format.
+     * Use "output" key to specify function output and "error" key to specify
+     * error details (if any). If "output" and "error" keys are not specified,
+     * then whole "response" is treated as function output.
      * </pre>
      *
      * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -824,6 +857,9 @@ public final class FunctionResponse extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The function response in JSON object format.
+     * Use "output" key to specify function output and "error" key to specify
+     * error details (if any). If "output" and "error" keys are not specified,
+     * then whole "response" is treated as function output.
      * </pre>
      *
      * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>

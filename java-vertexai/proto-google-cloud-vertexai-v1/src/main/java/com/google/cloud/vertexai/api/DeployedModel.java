@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,18 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_cloud_vertexai_v1_DeployedModel_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 28:
+        return internalGetSystemLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -65,6 +77,1102 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.vertexai.api.DeployedModel.class,
             com.google.cloud.vertexai.api.DeployedModel.Builder.class);
+  }
+
+  public interface StatusOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.vertexai.v1.DeployedModel.Status)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest deployed model's status message (if any).
+     * </pre>
+     *
+     * <code>string message = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The message.
+     */
+    java.lang.String getMessage();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest deployed model's status message (if any).
+     * </pre>
+     *
+     * <code>string message = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString getMessageBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which the status was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the lastUpdateTime field is set.
+     */
+    boolean hasLastUpdateTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which the status was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The lastUpdateTime.
+     */
+    com.google.protobuf.Timestamp getLastUpdateTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which the status was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of available replicas of the deployed model.
+     * </pre>
+     *
+     * <code>int32 available_replica_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The availableReplicaCount.
+     */
+    int getAvailableReplicaCount();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Runtime status of the deployed model.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.vertexai.v1.DeployedModel.Status}
+   */
+  public static final class Status extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.DeployedModel.Status)
+      StatusOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Status.newBuilder() to construct.
+    private Status(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Status() {
+      message_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Status();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vertexai.api.EndpointProto
+          .internal_static_google_cloud_vertexai_v1_DeployedModel_Status_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.vertexai.api.EndpointProto
+          .internal_static_google_cloud_vertexai_v1_DeployedModel_Status_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.vertexai.api.DeployedModel.Status.class,
+              com.google.cloud.vertexai.api.DeployedModel.Status.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int MESSAGE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object message_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest deployed model's status message (if any).
+     * </pre>
+     *
+     * <code>string message = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The message.
+     */
+    @java.lang.Override
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The latest deployed model's status message (if any).
+     * </pre>
+     *
+     * <code>string message = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LAST_UPDATE_TIME_FIELD_NUMBER = 2;
+    private com.google.protobuf.Timestamp lastUpdateTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which the status was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the lastUpdateTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasLastUpdateTime() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which the status was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The lastUpdateTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getLastUpdateTime() {
+      return lastUpdateTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : lastUpdateTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which the status was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder() {
+      return lastUpdateTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : lastUpdateTime_;
+    }
+
+    public static final int AVAILABLE_REPLICA_COUNT_FIELD_NUMBER = 3;
+    private int availableReplicaCount_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of available replicas of the deployed model.
+     * </pre>
+     *
+     * <code>int32 available_replica_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The availableReplicaCount.
+     */
+    @java.lang.Override
+    public int getAvailableReplicaCount() {
+      return availableReplicaCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getLastUpdateTime());
+      }
+      if (availableReplicaCount_ != 0) {
+        output.writeInt32(3, availableReplicaCount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getLastUpdateTime());
+      }
+      if (availableReplicaCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, availableReplicaCount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.vertexai.api.DeployedModel.Status)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.vertexai.api.DeployedModel.Status other =
+          (com.google.cloud.vertexai.api.DeployedModel.Status) obj;
+
+      if (!getMessage().equals(other.getMessage())) return false;
+      if (hasLastUpdateTime() != other.hasLastUpdateTime()) return false;
+      if (hasLastUpdateTime()) {
+        if (!getLastUpdateTime().equals(other.getLastUpdateTime())) return false;
+      }
+      if (getAvailableReplicaCount() != other.getAvailableReplicaCount()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      if (hasLastUpdateTime()) {
+        hash = (37 * hash) + LAST_UPDATE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getLastUpdateTime().hashCode();
+      }
+      hash = (37 * hash) + AVAILABLE_REPLICA_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAvailableReplicaCount();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.vertexai.api.DeployedModel.Status parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vertexai.api.DeployedModel.Status parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vertexai.api.DeployedModel.Status parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vertexai.api.DeployedModel.Status parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vertexai.api.DeployedModel.Status parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vertexai.api.DeployedModel.Status parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vertexai.api.DeployedModel.Status parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vertexai.api.DeployedModel.Status parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vertexai.api.DeployedModel.Status parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vertexai.api.DeployedModel.Status parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vertexai.api.DeployedModel.Status parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vertexai.api.DeployedModel.Status parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.vertexai.api.DeployedModel.Status prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Runtime status of the deployed model.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.vertexai.v1.DeployedModel.Status}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.vertexai.v1.DeployedModel.Status)
+        com.google.cloud.vertexai.api.DeployedModel.StatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vertexai.api.EndpointProto
+            .internal_static_google_cloud_vertexai_v1_DeployedModel_Status_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.vertexai.api.EndpointProto
+            .internal_static_google_cloud_vertexai_v1_DeployedModel_Status_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.vertexai.api.DeployedModel.Status.class,
+                com.google.cloud.vertexai.api.DeployedModel.Status.Builder.class);
+      }
+
+      // Construct using com.google.cloud.vertexai.api.DeployedModel.Status.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getLastUpdateTimeFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        message_ = "";
+        lastUpdateTime_ = null;
+        if (lastUpdateTimeBuilder_ != null) {
+          lastUpdateTimeBuilder_.dispose();
+          lastUpdateTimeBuilder_ = null;
+        }
+        availableReplicaCount_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.vertexai.api.EndpointProto
+            .internal_static_google_cloud_vertexai_v1_DeployedModel_Status_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vertexai.api.DeployedModel.Status getDefaultInstanceForType() {
+        return com.google.cloud.vertexai.api.DeployedModel.Status.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vertexai.api.DeployedModel.Status build() {
+        com.google.cloud.vertexai.api.DeployedModel.Status result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vertexai.api.DeployedModel.Status buildPartial() {
+        com.google.cloud.vertexai.api.DeployedModel.Status result =
+            new com.google.cloud.vertexai.api.DeployedModel.Status(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.vertexai.api.DeployedModel.Status result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.message_ = message_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.lastUpdateTime_ =
+              lastUpdateTimeBuilder_ == null ? lastUpdateTime_ : lastUpdateTimeBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.availableReplicaCount_ = availableReplicaCount_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.vertexai.api.DeployedModel.Status) {
+          return mergeFrom((com.google.cloud.vertexai.api.DeployedModel.Status) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.vertexai.api.DeployedModel.Status other) {
+        if (other == com.google.cloud.vertexai.api.DeployedModel.Status.getDefaultInstance())
+          return this;
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasLastUpdateTime()) {
+          mergeLastUpdateTime(other.getLastUpdateTime());
+        }
+        if (other.getAvailableReplicaCount() != 0) {
+          setAvailableReplicaCount(other.getAvailableReplicaCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  message_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getLastUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 24:
+                {
+                  availableReplicaCount_ = input.readInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object message_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The latest deployed model's status message (if any).
+       * </pre>
+       *
+       * <code>string message = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The message.
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The latest deployed model's status message (if any).
+       * </pre>
+       *
+       * <code>string message = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for message.
+       */
+      public com.google.protobuf.ByteString getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The latest deployed model's status message (if any).
+       * </pre>
+       *
+       * <code>string message = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        message_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The latest deployed model's status message (if any).
+       * </pre>
+       *
+       * <code>string message = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        message_ = getDefaultInstance().getMessage();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The latest deployed model's status message (if any).
+       * </pre>
+       *
+       * <code>string message = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        message_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp lastUpdateTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          lastUpdateTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which the status was last updated.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the lastUpdateTime field is set.
+       */
+      public boolean hasLastUpdateTime() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which the status was last updated.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The lastUpdateTime.
+       */
+      public com.google.protobuf.Timestamp getLastUpdateTime() {
+        if (lastUpdateTimeBuilder_ == null) {
+          return lastUpdateTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : lastUpdateTime_;
+        } else {
+          return lastUpdateTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which the status was last updated.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setLastUpdateTime(com.google.protobuf.Timestamp value) {
+        if (lastUpdateTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          lastUpdateTime_ = value;
+        } else {
+          lastUpdateTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which the status was last updated.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setLastUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (lastUpdateTimeBuilder_ == null) {
+          lastUpdateTime_ = builderForValue.build();
+        } else {
+          lastUpdateTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which the status was last updated.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeLastUpdateTime(com.google.protobuf.Timestamp value) {
+        if (lastUpdateTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && lastUpdateTime_ != null
+              && lastUpdateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getLastUpdateTimeBuilder().mergeFrom(value);
+          } else {
+            lastUpdateTime_ = value;
+          }
+        } else {
+          lastUpdateTimeBuilder_.mergeFrom(value);
+        }
+        if (lastUpdateTime_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which the status was last updated.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearLastUpdateTime() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        lastUpdateTime_ = null;
+        if (lastUpdateTimeBuilder_ != null) {
+          lastUpdateTimeBuilder_.dispose();
+          lastUpdateTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which the status was last updated.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getLastUpdateTimeBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getLastUpdateTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which the status was last updated.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder() {
+        if (lastUpdateTimeBuilder_ != null) {
+          return lastUpdateTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return lastUpdateTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : lastUpdateTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which the status was last updated.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getLastUpdateTimeFieldBuilder() {
+        if (lastUpdateTimeBuilder_ == null) {
+          lastUpdateTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getLastUpdateTime(), getParentForChildren(), isClean());
+          lastUpdateTime_ = null;
+        }
+        return lastUpdateTimeBuilder_;
+      }
+
+      private int availableReplicaCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of available replicas of the deployed model.
+       * </pre>
+       *
+       * <code>int32 available_replica_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The availableReplicaCount.
+       */
+      @java.lang.Override
+      public int getAvailableReplicaCount() {
+        return availableReplicaCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of available replicas of the deployed model.
+       * </pre>
+       *
+       * <code>int32 available_replica_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The availableReplicaCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAvailableReplicaCount(int value) {
+
+        availableReplicaCount_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of available replicas of the deployed model.
+       * </pre>
+       *
+       * <code>int32 available_replica_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAvailableReplicaCount() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        availableReplicaCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.vertexai.v1.DeployedModel.Status)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.vertexai.v1.DeployedModel.Status)
+    private static final com.google.cloud.vertexai.api.DeployedModel.Status DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.vertexai.api.DeployedModel.Status();
+    }
+
+    public static com.google.cloud.vertexai.api.DeployedModel.Status getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Status> PARSER =
+        new com.google.protobuf.AbstractParser<Status>() {
+          @java.lang.Override
+          public Status parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Status> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Status> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.vertexai.api.DeployedModel.Status getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   private int bitField0_;
@@ -886,6 +1994,278 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         : privateEndpoints_;
   }
 
+  public static final int FASTER_DEPLOYMENT_CONFIG_FIELD_NUMBER = 23;
+  private com.google.cloud.vertexai.api.FasterDeploymentConfig fasterDeploymentConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.vertexai.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+   *
+   * @return Whether the fasterDeploymentConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasFasterDeploymentConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.vertexai.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+   *
+   * @return The fasterDeploymentConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.FasterDeploymentConfig getFasterDeploymentConfig() {
+    return fasterDeploymentConfig_ == null
+        ? com.google.cloud.vertexai.api.FasterDeploymentConfig.getDefaultInstance()
+        : fasterDeploymentConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.vertexai.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.FasterDeploymentConfigOrBuilder
+      getFasterDeploymentConfigOrBuilder() {
+    return fasterDeploymentConfig_ == null
+        ? com.google.cloud.vertexai.api.FasterDeploymentConfig.getDefaultInstance()
+        : fasterDeploymentConfig_;
+  }
+
+  public static final int STATUS_FIELD_NUMBER = 26;
+  private com.google.cloud.vertexai.api.DeployedModel.Status status_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime status of the deployed model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.DeployedModel.Status status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime status of the deployed model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.DeployedModel.Status status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The status.
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.DeployedModel.Status getStatus() {
+    return status_ == null
+        ? com.google.cloud.vertexai.api.DeployedModel.Status.getDefaultInstance()
+        : status_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime status of the deployed model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.DeployedModel.Status status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.DeployedModel.StatusOrBuilder getStatusOrBuilder() {
+    return status_ == null
+        ? com.google.cloud.vertexai.api.DeployedModel.Status.getDefaultInstance()
+        : status_;
+  }
+
+  public static final int SYSTEM_LABELS_FIELD_NUMBER = 28;
+
+  private static final class SystemLabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.vertexai.api.EndpointProto
+                .internal_static_google_cloud_vertexai_v1_DeployedModel_SystemLabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> systemLabels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetSystemLabels() {
+    if (systemLabels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          SystemLabelsDefaultEntryHolder.defaultEntry);
+    }
+    return systemLabels_;
+  }
+
+  public int getSystemLabelsCount() {
+    return internalGetSystemLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * System labels to apply to Model Garden deployments.
+   * System labels are managed by Google for internal use only.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; system_labels = 28;</code>
+   */
+  @java.lang.Override
+  public boolean containsSystemLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetSystemLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getSystemLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getSystemLabels() {
+    return getSystemLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * System labels to apply to Model Garden deployments.
+   * System labels are managed by Google for internal use only.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; system_labels = 28;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getSystemLabelsMap() {
+    return internalGetSystemLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * System labels to apply to Model Garden deployments.
+   * System labels are managed by Google for internal use only.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; system_labels = 28;</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getSystemLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetSystemLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * System labels to apply to Model Garden deployments.
+   * System labels are managed by Google for internal use only.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; system_labels = 28;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getSystemLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetSystemLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int SPECULATIVE_DECODING_SPEC_FIELD_NUMBER = 30;
+  private com.google.cloud.vertexai.api.SpeculativeDecodingSpec speculativeDecodingSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spec for configuring speculative decoding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the speculativeDecodingSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpeculativeDecodingSpec() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spec for configuring speculative decoding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speculativeDecodingSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.SpeculativeDecodingSpec getSpeculativeDecodingSpec() {
+    return speculativeDecodingSpec_ == null
+        ? com.google.cloud.vertexai.api.SpeculativeDecodingSpec.getDefaultInstance()
+        : speculativeDecodingSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spec for configuring speculative decoding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.SpeculativeDecodingSpecOrBuilder
+      getSpeculativeDecodingSpecOrBuilder() {
+    return speculativeDecodingSpec_ == null
+        ? com.google.cloud.vertexai.api.SpeculativeDecodingSpec.getDefaultInstance()
+        : speculativeDecodingSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -944,6 +2324,17 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (disableExplanations_ != false) {
       output.writeBool(19, disableExplanations_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(23, getFasterDeploymentConfig());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(26, getStatus());
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetSystemLabels(), SystemLabelsDefaultEntryHolder.defaultEntry, 28);
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(30, getSpeculativeDecodingSpec());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -999,6 +2390,28 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (disableExplanations_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, disableExplanations_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(23, getFasterDeploymentConfig());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(26, getStatus());
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetSystemLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> systemLabels__ =
+          SystemLabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, systemLabels__);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              30, getSpeculativeDecodingSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1034,6 +2447,19 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (hasPrivateEndpoints() != other.hasPrivateEndpoints()) return false;
     if (hasPrivateEndpoints()) {
       if (!getPrivateEndpoints().equals(other.getPrivateEndpoints())) return false;
+    }
+    if (hasFasterDeploymentConfig() != other.hasFasterDeploymentConfig()) return false;
+    if (hasFasterDeploymentConfig()) {
+      if (!getFasterDeploymentConfig().equals(other.getFasterDeploymentConfig())) return false;
+    }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (!getStatus().equals(other.getStatus())) return false;
+    }
+    if (!internalGetSystemLabels().equals(other.internalGetSystemLabels())) return false;
+    if (hasSpeculativeDecodingSpec() != other.hasSpeculativeDecodingSpec()) return false;
+    if (hasSpeculativeDecodingSpec()) {
+      if (!getSpeculativeDecodingSpec().equals(other.getSpeculativeDecodingSpec())) return false;
     }
     if (!getPredictionResourcesCase().equals(other.getPredictionResourcesCase())) return false;
     switch (predictionResourcesCase_) {
@@ -1087,6 +2513,22 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (hasPrivateEndpoints()) {
       hash = (37 * hash) + PRIVATE_ENDPOINTS_FIELD_NUMBER;
       hash = (53 * hash) + getPrivateEndpoints().hashCode();
+    }
+    if (hasFasterDeploymentConfig()) {
+      hash = (37 * hash) + FASTER_DEPLOYMENT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getFasterDeploymentConfig().hashCode();
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+    }
+    if (!internalGetSystemLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + SYSTEM_LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetSystemLabels().hashCode();
+    }
+    if (hasSpeculativeDecodingSpec()) {
+      hash = (37 * hash) + SPECULATIVE_DECODING_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeculativeDecodingSpec().hashCode();
     }
     switch (predictionResourcesCase_) {
       case 7:
@@ -1222,6 +2664,28 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_vertexai_v1_DeployedModel_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 28:
+          return internalGetSystemLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 28:
+          return internalGetMutableSystemLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1247,6 +2711,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         getCreateTimeFieldBuilder();
         getExplanationSpecFieldBuilder();
         getPrivateEndpointsFieldBuilder();
+        getFasterDeploymentConfigFieldBuilder();
+        getStatusFieldBuilder();
+        getSpeculativeDecodingSpecFieldBuilder();
       }
     }
 
@@ -1282,6 +2749,22 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       if (privateEndpointsBuilder_ != null) {
         privateEndpointsBuilder_.dispose();
         privateEndpointsBuilder_ = null;
+      }
+      fasterDeploymentConfig_ = null;
+      if (fasterDeploymentConfigBuilder_ != null) {
+        fasterDeploymentConfigBuilder_.dispose();
+        fasterDeploymentConfigBuilder_ = null;
+      }
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
+        statusBuilder_ = null;
+      }
+      internalGetMutableSystemLabels().clear();
+      speculativeDecodingSpec_ = null;
+      if (speculativeDecodingSpecBuilder_ != null) {
+        speculativeDecodingSpecBuilder_.dispose();
+        speculativeDecodingSpecBuilder_ = null;
       }
       predictionResourcesCase_ = 0;
       predictionResources_ = null;
@@ -1360,6 +2843,28 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         result.privateEndpoints_ =
             privateEndpointsBuilder_ == null ? privateEndpoints_ : privateEndpointsBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.fasterDeploymentConfig_ =
+            fasterDeploymentConfigBuilder_ == null
+                ? fasterDeploymentConfig_
+                : fasterDeploymentConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.systemLabels_ = internalGetSystemLabels();
+        result.systemLabels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.speculativeDecodingSpec_ =
+            speculativeDecodingSpecBuilder_ == null
+                ? speculativeDecodingSpec_
+                : speculativeDecodingSpecBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1462,6 +2967,17 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPrivateEndpoints()) {
         mergePrivateEndpoints(other.getPrivateEndpoints());
+      }
+      if (other.hasFasterDeploymentConfig()) {
+        mergeFasterDeploymentConfig(other.getFasterDeploymentConfig());
+      }
+      if (other.hasStatus()) {
+        mergeStatus(other.getStatus());
+      }
+      internalGetMutableSystemLabels().mergeFrom(other.internalGetSystemLabels());
+      bitField0_ |= 0x00010000;
+      if (other.hasSpeculativeDecodingSpec()) {
+        mergeSpeculativeDecodingSpec(other.getSpeculativeDecodingSpec());
       }
       switch (other.getPredictionResourcesCase()) {
         case DEDICATED_RESOURCES:
@@ -1600,6 +3116,38 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 152
+            case 186:
+              {
+                input.readMessage(
+                    getFasterDeploymentConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 186
+            case 210:
+              {
+                input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 210
+            case 226:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> systemLabels__ =
+                    input.readMessage(
+                        SystemLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableSystemLabels()
+                    .getMutableMap()
+                    .put(systemLabels__.getKey(), systemLabels__.getValue());
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 226
+            case 242:
+              {
+                input.readMessage(
+                    getSpeculativeDecodingSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 242
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3830,6 +5378,783 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         privateEndpoints_ = null;
       }
       return privateEndpointsBuilder_;
+    }
+
+    private com.google.cloud.vertexai.api.FasterDeploymentConfig fasterDeploymentConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.FasterDeploymentConfig,
+            com.google.cloud.vertexai.api.FasterDeploymentConfig.Builder,
+            com.google.cloud.vertexai.api.FasterDeploymentConfigOrBuilder>
+        fasterDeploymentConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.vertexai.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+     *
+     * @return Whether the fasterDeploymentConfig field is set.
+     */
+    public boolean hasFasterDeploymentConfig() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.vertexai.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+     *
+     * @return The fasterDeploymentConfig.
+     */
+    public com.google.cloud.vertexai.api.FasterDeploymentConfig getFasterDeploymentConfig() {
+      if (fasterDeploymentConfigBuilder_ == null) {
+        return fasterDeploymentConfig_ == null
+            ? com.google.cloud.vertexai.api.FasterDeploymentConfig.getDefaultInstance()
+            : fasterDeploymentConfig_;
+      } else {
+        return fasterDeploymentConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.vertexai.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+     */
+    public Builder setFasterDeploymentConfig(
+        com.google.cloud.vertexai.api.FasterDeploymentConfig value) {
+      if (fasterDeploymentConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fasterDeploymentConfig_ = value;
+      } else {
+        fasterDeploymentConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.vertexai.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+     */
+    public Builder setFasterDeploymentConfig(
+        com.google.cloud.vertexai.api.FasterDeploymentConfig.Builder builderForValue) {
+      if (fasterDeploymentConfigBuilder_ == null) {
+        fasterDeploymentConfig_ = builderForValue.build();
+      } else {
+        fasterDeploymentConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.vertexai.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+     */
+    public Builder mergeFasterDeploymentConfig(
+        com.google.cloud.vertexai.api.FasterDeploymentConfig value) {
+      if (fasterDeploymentConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && fasterDeploymentConfig_ != null
+            && fasterDeploymentConfig_
+                != com.google.cloud.vertexai.api.FasterDeploymentConfig.getDefaultInstance()) {
+          getFasterDeploymentConfigBuilder().mergeFrom(value);
+        } else {
+          fasterDeploymentConfig_ = value;
+        }
+      } else {
+        fasterDeploymentConfigBuilder_.mergeFrom(value);
+      }
+      if (fasterDeploymentConfig_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.vertexai.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+     */
+    public Builder clearFasterDeploymentConfig() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      fasterDeploymentConfig_ = null;
+      if (fasterDeploymentConfigBuilder_ != null) {
+        fasterDeploymentConfigBuilder_.dispose();
+        fasterDeploymentConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.vertexai.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+     */
+    public com.google.cloud.vertexai.api.FasterDeploymentConfig.Builder
+        getFasterDeploymentConfigBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getFasterDeploymentConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.vertexai.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+     */
+    public com.google.cloud.vertexai.api.FasterDeploymentConfigOrBuilder
+        getFasterDeploymentConfigOrBuilder() {
+      if (fasterDeploymentConfigBuilder_ != null) {
+        return fasterDeploymentConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return fasterDeploymentConfig_ == null
+            ? com.google.cloud.vertexai.api.FasterDeploymentConfig.getDefaultInstance()
+            : fasterDeploymentConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for faster model deployment.
+     * </pre>
+     *
+     * <code>.google.cloud.vertexai.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.FasterDeploymentConfig,
+            com.google.cloud.vertexai.api.FasterDeploymentConfig.Builder,
+            com.google.cloud.vertexai.api.FasterDeploymentConfigOrBuilder>
+        getFasterDeploymentConfigFieldBuilder() {
+      if (fasterDeploymentConfigBuilder_ == null) {
+        fasterDeploymentConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vertexai.api.FasterDeploymentConfig,
+                com.google.cloud.vertexai.api.FasterDeploymentConfig.Builder,
+                com.google.cloud.vertexai.api.FasterDeploymentConfigOrBuilder>(
+                getFasterDeploymentConfig(), getParentForChildren(), isClean());
+        fasterDeploymentConfig_ = null;
+      }
+      return fasterDeploymentConfigBuilder_;
+    }
+
+    private com.google.cloud.vertexai.api.DeployedModel.Status status_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.DeployedModel.Status,
+            com.google.cloud.vertexai.api.DeployedModel.Status.Builder,
+            com.google.cloud.vertexai.api.DeployedModel.StatusOrBuilder>
+        statusBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime status of the deployed model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.DeployedModel.Status status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the status field is set.
+     */
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime status of the deployed model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.DeployedModel.Status status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The status.
+     */
+    public com.google.cloud.vertexai.api.DeployedModel.Status getStatus() {
+      if (statusBuilder_ == null) {
+        return status_ == null
+            ? com.google.cloud.vertexai.api.DeployedModel.Status.getDefaultInstance()
+            : status_;
+      } else {
+        return statusBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime status of the deployed model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.DeployedModel.Status status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setStatus(com.google.cloud.vertexai.api.DeployedModel.Status value) {
+      if (statusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        status_ = value;
+      } else {
+        statusBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime status of the deployed model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.DeployedModel.Status status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setStatus(
+        com.google.cloud.vertexai.api.DeployedModel.Status.Builder builderForValue) {
+      if (statusBuilder_ == null) {
+        status_ = builderForValue.build();
+      } else {
+        statusBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime status of the deployed model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.DeployedModel.Status status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeStatus(com.google.cloud.vertexai.api.DeployedModel.Status value) {
+      if (statusBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && status_ != null
+            && status_ != com.google.cloud.vertexai.api.DeployedModel.Status.getDefaultInstance()) {
+          getStatusBuilder().mergeFrom(value);
+        } else {
+          status_ = value;
+        }
+      } else {
+        statusBuilder_.mergeFrom(value);
+      }
+      if (status_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime status of the deployed model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.DeployedModel.Status status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
+        statusBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime status of the deployed model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.DeployedModel.Status status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.DeployedModel.Status.Builder getStatusBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return getStatusFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime status of the deployed model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.DeployedModel.Status status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.DeployedModel.StatusOrBuilder getStatusOrBuilder() {
+      if (statusBuilder_ != null) {
+        return statusBuilder_.getMessageOrBuilder();
+      } else {
+        return status_ == null
+            ? com.google.cloud.vertexai.api.DeployedModel.Status.getDefaultInstance()
+            : status_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Runtime status of the deployed model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.DeployedModel.Status status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.DeployedModel.Status,
+            com.google.cloud.vertexai.api.DeployedModel.Status.Builder,
+            com.google.cloud.vertexai.api.DeployedModel.StatusOrBuilder>
+        getStatusFieldBuilder() {
+      if (statusBuilder_ == null) {
+        statusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vertexai.api.DeployedModel.Status,
+                com.google.cloud.vertexai.api.DeployedModel.Status.Builder,
+                com.google.cloud.vertexai.api.DeployedModel.StatusOrBuilder>(
+                getStatus(), getParentForChildren(), isClean());
+        status_ = null;
+      }
+      return statusBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> systemLabels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetSystemLabels() {
+      if (systemLabels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            SystemLabelsDefaultEntryHolder.defaultEntry);
+      }
+      return systemLabels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableSystemLabels() {
+      if (systemLabels_ == null) {
+        systemLabels_ =
+            com.google.protobuf.MapField.newMapField(SystemLabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!systemLabels_.isMutable()) {
+        systemLabels_ = systemLabels_.copy();
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return systemLabels_;
+    }
+
+    public int getSystemLabelsCount() {
+      return internalGetSystemLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * System labels to apply to Model Garden deployments.
+     * System labels are managed by Google for internal use only.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; system_labels = 28;</code>
+     */
+    @java.lang.Override
+    public boolean containsSystemLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetSystemLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getSystemLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getSystemLabels() {
+      return getSystemLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * System labels to apply to Model Garden deployments.
+     * System labels are managed by Google for internal use only.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; system_labels = 28;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getSystemLabelsMap() {
+      return internalGetSystemLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * System labels to apply to Model Garden deployments.
+     * System labels are managed by Google for internal use only.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; system_labels = 28;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getSystemLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetSystemLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * System labels to apply to Model Garden deployments.
+     * System labels are managed by Google for internal use only.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; system_labels = 28;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getSystemLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetSystemLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearSystemLabels() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      internalGetMutableSystemLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * System labels to apply to Model Garden deployments.
+     * System labels are managed by Google for internal use only.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; system_labels = 28;</code>
+     */
+    public Builder removeSystemLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableSystemLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableSystemLabels() {
+      bitField0_ |= 0x00010000;
+      return internalGetMutableSystemLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * System labels to apply to Model Garden deployments.
+     * System labels are managed by Google for internal use only.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; system_labels = 28;</code>
+     */
+    public Builder putSystemLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableSystemLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00010000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * System labels to apply to Model Garden deployments.
+     * System labels are managed by Google for internal use only.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; system_labels = 28;</code>
+     */
+    public Builder putAllSystemLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableSystemLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00010000;
+      return this;
+    }
+
+    private com.google.cloud.vertexai.api.SpeculativeDecodingSpec speculativeDecodingSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.SpeculativeDecodingSpec,
+            com.google.cloud.vertexai.api.SpeculativeDecodingSpec.Builder,
+            com.google.cloud.vertexai.api.SpeculativeDecodingSpecOrBuilder>
+        speculativeDecodingSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the speculativeDecodingSpec field is set.
+     */
+    public boolean hasSpeculativeDecodingSpec() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The speculativeDecodingSpec.
+     */
+    public com.google.cloud.vertexai.api.SpeculativeDecodingSpec getSpeculativeDecodingSpec() {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        return speculativeDecodingSpec_ == null
+            ? com.google.cloud.vertexai.api.SpeculativeDecodingSpec.getDefaultInstance()
+            : speculativeDecodingSpec_;
+      } else {
+        return speculativeDecodingSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSpeculativeDecodingSpec(
+        com.google.cloud.vertexai.api.SpeculativeDecodingSpec value) {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        speculativeDecodingSpec_ = value;
+      } else {
+        speculativeDecodingSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSpeculativeDecodingSpec(
+        com.google.cloud.vertexai.api.SpeculativeDecodingSpec.Builder builderForValue) {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        speculativeDecodingSpec_ = builderForValue.build();
+      } else {
+        speculativeDecodingSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSpeculativeDecodingSpec(
+        com.google.cloud.vertexai.api.SpeculativeDecodingSpec value) {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && speculativeDecodingSpec_ != null
+            && speculativeDecodingSpec_
+                != com.google.cloud.vertexai.api.SpeculativeDecodingSpec.getDefaultInstance()) {
+          getSpeculativeDecodingSpecBuilder().mergeFrom(value);
+        } else {
+          speculativeDecodingSpec_ = value;
+        }
+      } else {
+        speculativeDecodingSpecBuilder_.mergeFrom(value);
+      }
+      if (speculativeDecodingSpec_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSpeculativeDecodingSpec() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      speculativeDecodingSpec_ = null;
+      if (speculativeDecodingSpecBuilder_ != null) {
+        speculativeDecodingSpecBuilder_.dispose();
+        speculativeDecodingSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.SpeculativeDecodingSpec.Builder
+        getSpeculativeDecodingSpecBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getSpeculativeDecodingSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.SpeculativeDecodingSpecOrBuilder
+        getSpeculativeDecodingSpecOrBuilder() {
+      if (speculativeDecodingSpecBuilder_ != null) {
+        return speculativeDecodingSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return speculativeDecodingSpec_ == null
+            ? com.google.cloud.vertexai.api.SpeculativeDecodingSpec.getDefaultInstance()
+            : speculativeDecodingSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spec for configuring speculative decoding.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.SpeculativeDecodingSpec,
+            com.google.cloud.vertexai.api.SpeculativeDecodingSpec.Builder,
+            com.google.cloud.vertexai.api.SpeculativeDecodingSpecOrBuilder>
+        getSpeculativeDecodingSpecFieldBuilder() {
+      if (speculativeDecodingSpecBuilder_ == null) {
+        speculativeDecodingSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vertexai.api.SpeculativeDecodingSpec,
+                com.google.cloud.vertexai.api.SpeculativeDecodingSpec.Builder,
+                com.google.cloud.vertexai.api.SpeculativeDecodingSpecOrBuilder>(
+                getSpeculativeDecodingSpec(), getParentForChildren(), isClean());
+        speculativeDecodingSpec_ = null;
+      }
+      return speculativeDecodingSpecBuilder_;
     }
 
     @java.lang.Override

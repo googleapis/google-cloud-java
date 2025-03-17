@@ -48,6 +48,9 @@
             },
             "UpdateEndpoint": {
               "methods": ["updateEndpoint", "updateEndpoint", "updateEndpointCallable"]
+            },
+            "UpdateEndpointLongRunning": {
+              "methods": ["updateEndpointLongRunningAsync", "updateEndpointLongRunningAsync", "updateEndpointLongRunningOperationCallable", "updateEndpointLongRunningCallable"]
             }
           }
         }
