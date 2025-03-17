@@ -18,7 +18,6 @@ on:
   schedule:
   - cron: '0 2 * * *'
   workflow_dispatch:
-
 jobs:
   update-generation-config:
     runs-on: ubuntu-22.04
@@ -28,15 +27,16 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
+        fetch-depth: 0
         token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
     - name: Update params in generation config to latest
       shell: bash
       run: |
-        set -ex
+        set -x
         [ -z "$(git config user.email)" ] && git config --global user.email "cloud-java-bot@google.com"
         [ -z "$(git config user.name)" ] && git config --global user.name "cloud-java-bot"
         bash .github/scripts/update_generation_config.sh \
-          --base_branch "${base_branch}"\
+          --base_branch "${base_branch}" \
           --repo ${{ github.repository }}
       env:
         GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
