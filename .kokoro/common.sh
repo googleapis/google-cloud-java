@@ -161,7 +161,8 @@ function generate_modified_modules_list() {
   # grep returns 1 (error code) and exits the pipeline if there is no match
   # If there is no match, it will return true so the rest of the commands can run
   git config --global --add safe.directory $(realpath .)
-  modified_files=$(git diff --name-only "${KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH}...${KOKORO_GITHUB_PULL_REQUEST_COMMIT}")
+  modified_files=$(git diff --name-only \
+    "origin/${KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH}...${KOKORO_GITHUB_PULL_REQUEST_COMMIT}" --)
   printf "Modified files:\n%s\n" "${modified_files}"
 
   # Generate the list of valid maven modules
