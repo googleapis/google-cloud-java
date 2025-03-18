@@ -828,3 +828,6 @@ grpc-google-cloud-parametermanager-v1:0.3.0:0.4.0-SNAPSHOT
 google-cloud-modelarmor:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-modelarmor-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-modelarmor-v1:0.0.0:0.0.1-SNAPSHOT
+google-cloud-financialservices:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-financialservices-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-financialservices-v1:0.0.0:0.0.1-SNAPSHOT
