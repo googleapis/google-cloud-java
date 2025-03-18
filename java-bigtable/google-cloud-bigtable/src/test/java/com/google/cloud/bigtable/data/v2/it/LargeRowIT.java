@@ -33,7 +33,7 @@ import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.models.TableId;
-import com.google.cloud.bigtable.test_helpers.env.CloudEnv;
+import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.collect.ImmutableList;
@@ -48,7 +48,6 @@ import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.ClassRule;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -147,15 +146,18 @@ public class LargeRowIT {
     }
   }
 
-  // TODO: remove the ignore annotation once the server code (large row error with metadata) is
-  // released on prod
   @Test
-  @Ignore("large-row-error with metadata yet to be released on prod")
   public void read() throws Throwable {
     assume()
         .withMessage("Large row read errors are not supported by emulator")
         .that(testEnvRule.env())
-        .isInstanceOf(CloudEnv.class);
+        .isNotInstanceOf(EmulatorEnv.class);
+
+    //    TODO: remove this once skip large row for read is released
+    assume()
+        .withMessage("Skip large row for read is not released yet")
+        .that(System.getProperty("bigtable.testSkipLargeRowIntegrationTests"))
+        .isEqualTo("true");
 
     BigtableDataClient client = testEnvRule.env().getDataClient();
     String tableId = table.getId();
