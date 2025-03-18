@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.56.0](https://github.com/googleapis/java-bigtable/compare/v2.55.0...v2.56.0) (2025-03-18)
+
+
+### Features
+
+* **bigtable:** Add support for Logical Views in Admin API ([#2519](https://github.com/googleapis/java-bigtable/issues/2519)) ([6dac3fd](https://github.com/googleapis/java-bigtable/commit/6dac3fd6443e94674af88a1dc97bedd9b3b0c834))
+* **bigtable:** Add support for Materialized Views in Admin API ([#2511](https://github.com/googleapis/java-bigtable/issues/2511)) ([55cd719](https://github.com/googleapis/java-bigtable/commit/55cd719df277a2ae1988c7cd53286558ad86835b))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.55.1 ([7992af0](https://github.com/googleapis/java-bigtable/commit/7992af08b4eb2f408ecb739a73fbdc36ca7af2b5))
+
+
+### Dependencies
+
+* Sdk-platform-java-config 3.45.1 ([#2517](https://github.com/googleapis/java-bigtable/issues/2517)) ([b2af258](https://github.com/googleapis/java-bigtable/commit/b2af258ed72d29644c8bd1079b1d0f223206d75b))
+
 ## [2.55.0](https://github.com/googleapis/java-bigtable/compare/v2.54.0...v2.55.0) (2025-03-11)
 
 
