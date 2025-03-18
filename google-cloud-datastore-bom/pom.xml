@@ -8,7 +8,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>sdk-platform-java-config</artifactId>
-    <version>3.44.0</version>
+    <version>3.45.1</version>
   </parent>
 
   <name>Google Cloud datastore BOM</name>
