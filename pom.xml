@@ -134,6 +134,7 @@
     <module>java-meet</module>
     <module>java-memcache</module>
     <module>java-migrationcenter</module>
+    <module>java-modelarmor</module>
     <module>java-monitoring</module>
     <module>java-monitoring-dashboards</module>
     <module>java-monitoring-metricsscope</module>

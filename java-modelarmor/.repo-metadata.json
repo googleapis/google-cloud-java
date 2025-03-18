@@ -1,0 +1,16 @@
+{
+  "api_shortname": "modelarmor",
+  "name_pretty": "Model Armor API",
+  "product_documentation": "https://cloud.google.com/security-command-center/docs/model-armor-overview",
+  "api_description": "Model Armor helps you protect against risks like prompt injection, harmful content, and data leakage in generative AI applications by letting you define policies that filter user prompts and model responses.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-modelarmor/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-modelarmor",
+  "distribution_name": "com.google.cloud:google-cloud-modelarmor",
+  "api_id": "modelarmor.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
