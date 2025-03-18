@@ -1,0 +1,138 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.financialservices.v1",
+  "libraryPackage": "com.google.cloud.financialservices.v1",
+  "services": {
+    "AML": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AMLClient",
+          "rpcs": {
+            "CreateBacktestResult": {
+              "methods": ["createBacktestResultAsync", "createBacktestResultAsync", "createBacktestResultAsync", "createBacktestResultOperationCallable", "createBacktestResultCallable"]
+            },
+            "CreateDataset": {
+              "methods": ["createDatasetAsync", "createDatasetAsync", "createDatasetAsync", "createDatasetOperationCallable", "createDatasetCallable"]
+            },
+            "CreateEngineConfig": {
+              "methods": ["createEngineConfigAsync", "createEngineConfigAsync", "createEngineConfigAsync", "createEngineConfigOperationCallable", "createEngineConfigCallable"]
+            },
+            "CreateInstance": {
+              "methods": ["createInstanceAsync", "createInstanceAsync", "createInstanceAsync", "createInstanceOperationCallable", "createInstanceCallable"]
+            },
+            "CreateModel": {
+              "methods": ["createModelAsync", "createModelAsync", "createModelAsync", "createModelOperationCallable", "createModelCallable"]
+            },
+            "CreatePredictionResult": {
+              "methods": ["createPredictionResultAsync", "createPredictionResultAsync", "createPredictionResultAsync", "createPredictionResultOperationCallable", "createPredictionResultCallable"]
+            },
+            "DeleteBacktestResult": {
+              "methods": ["deleteBacktestResultAsync", "deleteBacktestResultAsync", "deleteBacktestResultAsync", "deleteBacktestResultOperationCallable", "deleteBacktestResultCallable"]
+            },
+            "DeleteDataset": {
+              "methods": ["deleteDatasetAsync", "deleteDatasetAsync", "deleteDatasetAsync", "deleteDatasetOperationCallable", "deleteDatasetCallable"]
+            },
+            "DeleteEngineConfig": {
+              "methods": ["deleteEngineConfigAsync", "deleteEngineConfigAsync", "deleteEngineConfigAsync", "deleteEngineConfigOperationCallable", "deleteEngineConfigCallable"]
+            },
+            "DeleteInstance": {
+              "methods": ["deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceOperationCallable", "deleteInstanceCallable"]
+            },
+            "DeleteModel": {
+              "methods": ["deleteModelAsync", "deleteModelAsync", "deleteModelAsync", "deleteModelOperationCallable", "deleteModelCallable"]
+            },
+            "DeletePredictionResult": {
+              "methods": ["deletePredictionResultAsync", "deletePredictionResultAsync", "deletePredictionResultAsync", "deletePredictionResultOperationCallable", "deletePredictionResultCallable"]
+            },
+            "ExportBacktestResultMetadata": {
+              "methods": ["exportBacktestResultMetadataAsync", "exportBacktestResultMetadataAsync", "exportBacktestResultMetadataAsync", "exportBacktestResultMetadataOperationCallable", "exportBacktestResultMetadataCallable"]
+            },
+            "ExportEngineConfigMetadata": {
+              "methods": ["exportEngineConfigMetadataAsync", "exportEngineConfigMetadataAsync", "exportEngineConfigMetadataAsync", "exportEngineConfigMetadataOperationCallable", "exportEngineConfigMetadataCallable"]
+            },
+            "ExportModelMetadata": {
+              "methods": ["exportModelMetadataAsync", "exportModelMetadataAsync", "exportModelMetadataAsync", "exportModelMetadataOperationCallable", "exportModelMetadataCallable"]
+            },
+            "ExportPredictionResultMetadata": {
+              "methods": ["exportPredictionResultMetadataAsync", "exportPredictionResultMetadataAsync", "exportPredictionResultMetadataAsync", "exportPredictionResultMetadataOperationCallable", "exportPredictionResultMetadataCallable"]
+            },
+            "ExportRegisteredParties": {
+              "methods": ["exportRegisteredPartiesAsync", "exportRegisteredPartiesAsync", "exportRegisteredPartiesAsync", "exportRegisteredPartiesOperationCallable", "exportRegisteredPartiesCallable"]
+            },
+            "GetBacktestResult": {
+              "methods": ["getBacktestResult", "getBacktestResult", "getBacktestResult", "getBacktestResultCallable"]
+            },
+            "GetDataset": {
+              "methods": ["getDataset", "getDataset", "getDataset", "getDatasetCallable"]
+            },
+            "GetEngineConfig": {
+              "methods": ["getEngineConfig", "getEngineConfig", "getEngineConfig", "getEngineConfigCallable"]
+            },
+            "GetEngineVersion": {
+              "methods": ["getEngineVersion", "getEngineVersion", "getEngineVersion", "getEngineVersionCallable"]
+            },
+            "GetInstance": {
+              "methods": ["getInstance", "getInstance", "getInstance", "getInstanceCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetModel": {
+              "methods": ["getModel", "getModel", "getModel", "getModelCallable"]
+            },
+            "GetPredictionResult": {
+              "methods": ["getPredictionResult", "getPredictionResult", "getPredictionResult", "getPredictionResultCallable"]
+            },
+            "ImportRegisteredParties": {
+              "methods": ["importRegisteredPartiesAsync", "importRegisteredPartiesAsync", "importRegisteredPartiesAsync", "importRegisteredPartiesOperationCallable", "importRegisteredPartiesCallable"]
+            },
+            "ListBacktestResults": {
+              "methods": ["listBacktestResults", "listBacktestResults", "listBacktestResults", "listBacktestResultsPagedCallable", "listBacktestResultsCallable"]
+            },
+            "ListDatasets": {
+              "methods": ["listDatasets", "listDatasets", "listDatasets", "listDatasetsPagedCallable", "listDatasetsCallable"]
+            },
+            "ListEngineConfigs": {
+              "methods": ["listEngineConfigs", "listEngineConfigs", "listEngineConfigs", "listEngineConfigsPagedCallable", "listEngineConfigsCallable"]
+            },
+            "ListEngineVersions": {
+              "methods": ["listEngineVersions", "listEngineVersions", "listEngineVersions", "listEngineVersionsPagedCallable", "listEngineVersionsCallable"]
+            },
+            "ListInstances": {
+              "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListModels": {
+              "methods": ["listModels", "listModels", "listModels", "listModelsPagedCallable", "listModelsCallable"]
+            },
+            "ListPredictionResults": {
+              "methods": ["listPredictionResults", "listPredictionResults", "listPredictionResults", "listPredictionResultsPagedCallable", "listPredictionResultsCallable"]
+            },
+            "UpdateBacktestResult": {
+              "methods": ["updateBacktestResultAsync", "updateBacktestResultAsync", "updateBacktestResultOperationCallable", "updateBacktestResultCallable"]
+            },
+            "UpdateDataset": {
+              "methods": ["updateDatasetAsync", "updateDatasetAsync", "updateDatasetOperationCallable", "updateDatasetCallable"]
+            },
+            "UpdateEngineConfig": {
+              "methods": ["updateEngineConfigAsync", "updateEngineConfigAsync", "updateEngineConfigOperationCallable", "updateEngineConfigCallable"]
+            },
+            "UpdateInstance": {
+              "methods": ["updateInstanceAsync", "updateInstanceAsync", "updateInstanceOperationCallable", "updateInstanceCallable"]
+            },
+            "UpdateModel": {
+              "methods": ["updateModelAsync", "updateModelAsync", "updateModelOperationCallable", "updateModelCallable"]
+            },
+            "UpdatePredictionResult": {
+              "methods": ["updatePredictionResultAsync", "updatePredictionResultAsync", "updatePredictionResultOperationCallable", "updatePredictionResultCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
