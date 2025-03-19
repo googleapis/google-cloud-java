@@ -16,6 +16,9 @@ jobs:
 
   changelog-generation:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     if: |
       github.event.sender.login == 'release-please[bot]' && github.head_ref == 'release-please--branches--main' &&
       contains(github.event.pull_request.labels.*.name, 'autorelease: pending')
