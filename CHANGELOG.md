@@ -1,5 +1,71 @@
 # Changelog
 
+## [1.54.0](https://github.com/googleapis/google-cloud-java/compare/v1.53.0...v1.54.0) (2025-03-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* [aiplatform] remove VertexAISearch.engine option
+* [aiplatform] An existing google.api.http annotation `http_uri` is changed for method `DeployPublisherModel` in service `ModelGardenService`
+* [dataform] remove deprecated v1alpha2 ([#11481](https://github.com/googleapis/google-cloud-java/issues/11481))
+
+### Features
+
+* [aiplatform] add EnterpriseWebSearch tool option ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [aiplatform] add function_call.id and function_response.id ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [aiplatform] add Layout Parser to RAG v1 API ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [aiplatform] Add multihost_gpu_node_count to Vertex SDK for multihost GPU support ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [aiplatform] add reranker config to RAG v1 API ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [aiplatform] add VertexAISearch.engine option ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [aiplatform] allowing users to specify the version id of the Model Garden model ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [aiplatform] allowing users to specify the version id of the Model Garden model ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [analytics-admin] added support for KeyEvents AdminAPI ChangeHistory ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [chat] Addition of space notification setting Chat API ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [compute] Update Compute Engine API to revision 20250302 ([#987](https://github.com/googleapis/google-cloud-java/issues/987)) ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [datacatalog] mark DataCatalog service deprecated, use Dataplex Catalog instead ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [dataform] Added new field `internal_metadata` to all resources to export all the metadata information that is used internally to serve the resource ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [dataform] remove deprecated v1alpha2 ([#11481](https://github.com/googleapis/google-cloud-java/issues/11481)) ([c44fcd7](https://github.com/googleapis/google-cloud-java/commit/c44fcd7a952c50c07907af356e5106e3ae40e7f0))
+* [dataplex] Add custom BigQuery dataset location support in Auto Discovery ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [dialogflow-cx] Change client_secret in OAuthConfig from required to optional ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [dialogflow-cx] exposed Zone Separation & Zone Isolation status of an agent ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [dialogflow-cx] exposed Zone Separation & Zone Isolation status of an agent ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [dialogflow] Add new RPC IngestContextReferences, GenerateSuggestions ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [dialogflow] Add new RPC IngestContextReferences, GenerateSuggestions ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [dialogflow] added support for TelephonyConnectionInfo, country_code and ControlPoint ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [filestore] add PromoteReplica API ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [filestore] Added REGIONAL tier support in the v1 API ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [financialservices] new module for financialservices ([#11501](https://github.com/googleapis/google-cloud-java/issues/11501)) ([86b5f2b](https://github.com/googleapis/google-cloud-java/commit/86b5f2bf85154361deacb04f4f38864ac9f6bae3))
+* [maps-fleetengine-delivery] A new field `past_locations` is added to message `.maps.fleetengine.delivery.v1.DeliveryVehicle` ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [maps-fleetengine-delivery] Added Fleet Engine Delete APIs ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [modelarmor] new module for modelarmor ([#11500](https://github.com/googleapis/google-cloud-java/issues/11500)) ([ff645e0](https://github.com/googleapis/google-cloud-java/commit/ff645e0bfdc0fadf4f634ee8669a822de784a95e))
+* [recaptchaenterprise] A new field `ja4` is added to message `Event` ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [shopping-merchant-accounts] A new message `SeasonalOverride` is added ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [shopping-merchant-accounts] Add AutomaticImprovements service ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [shopping-merchant-datasources] Add a new destinations field ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [vertexai] Update GAPIC library to include new features ([#11473](https://github.com/googleapis/google-cloud-java/issues/11473)) ([4ebc716](https://github.com/googleapis/google-cloud-java/commit/4ebc71640257ff32cee8038388039cfce6ab5105))
+* next release from main branch is 1.54.0 ([#11468](https://github.com/googleapis/google-cloud-java/issues/11468)) ([cfaba79](https://github.com/googleapis/google-cloud-java/commit/cfaba791c6546337e3de5c6aaec4b6ba50321471))
+
+
+### Bug Fixes
+
+* [aiplatform] An existing google.api.http annotation `http_uri` is changed for method `DeployPublisherModel` in service `ModelGardenService` ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [aiplatform] remove VertexAISearch.engine option ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [managedkafka] An existing google.api.http annotation `http_uri` is changed for method `GetConsumerGroup` in service `ManagedKafka` ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.55.1 ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.45.1 ([#11486](https://github.com/googleapis/google-cloud-java/issues/11486)) ([71f738f](https://github.com/googleapis/google-cloud-java/commit/71f738fe5de4ca9e50af6981e2999c1774c9d985))
+
+
+### Documentation
+
+* [cloudquotas] improved comment clarity ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [datacatalog] Mark DataCatalog v1beta1 service and corresponding methods as deprecated ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [dialogflow-cx] A comment for field `name` in message `.google.cloud.dialogflow.cx.v3beta1.Tool` is changed ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [dialogflow] clarified wording around document_correctness ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [eventarc-publishing] Documentation improvements for the Publisher service ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [eventarc-publishing] Minor documentation improvements ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [maps-places] Change comments in some fields in Places API ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+* [orchestration-airflow] fix Composer 3 image version format in API docs ([104305e](https://github.com/googleapis/google-cloud-java/commit/104305e4f1264e8d420897fcdfa5988076318bf5))
+
 ## [1.53.0](https://github.com/googleapis/google-cloud-java/compare/v1.52.0...v1.53.0) (2025-02-26)
 
 
