@@ -25,6 +25,8 @@ import static org.mockito.Mockito.when;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.vertexai.api.LlmUtilityServiceClient;
+import com.google.cloud.vertexai.api.LlmUtilityServiceSettings;
 import com.google.cloud.vertexai.api.PredictionServiceClient;
 import com.google.cloud.vertexai.api.PredictionServiceSettings;
 import com.google.common.collect.ImmutableList;
@@ -57,6 +59,8 @@ public final class VertexAITest {
   @Mock private GoogleCredentials mockGoogleCredentials;
 
   @Mock private PredictionServiceClient mockPredictionServiceClient;
+
+  @Mock private LlmUtilityServiceClient mockLlmUtilityServiceClient;
 
   @Mock private GoogleCredentialsProvider.Builder mockCredentialsProviderBuilder;
 
@@ -425,6 +429,20 @@ public final class VertexAITest {
             Constants.USER_AGENT_HEADER,
             GaxProperties.getLibraryVersion(PredictionServiceSettings.class)));
     assertThat(vertexAi.getHeaders()).isEqualTo(expectedHeaders);
+
+    // make sure the custom headers are set correctly in the prediction service client
+    try (MockedStatic mockStatic = mockStatic(PredictionServiceClient.class)) {
+      mockStatic
+          .when(() -> PredictionServiceClient.create(any(PredictionServiceSettings.class)))
+          .thenReturn(mockPredictionServiceClient);
+      PredictionServiceClient unused = vertexAi.getPredictionServiceClient();
+
+      ArgumentCaptor<PredictionServiceSettings> settings =
+          ArgumentCaptor.forClass(PredictionServiceSettings.class);
+      mockStatic.verify(() -> PredictionServiceClient.create(settings.capture()));
+
+      assertThat(settings.getValue().getHeaderProvider().getHeaders()).isEqualTo(expectedHeaders);
+    }
   }
 
   @Test
@@ -454,5 +472,19 @@ public final class VertexAITest {
             GaxProperties.getLibraryVersion(PredictionServiceSettings.class),
             "test_value"));
     assertThat(vertexAi.getHeaders()).isEqualTo(expectedHeaders);
+
+    // make sure the custom headers are set correctly in the llm utility service client
+    try (MockedStatic mockStatic = mockStatic(LlmUtilityServiceClient.class)) {
+      mockStatic
+          .when(() -> LlmUtilityServiceClient.create(any(LlmUtilityServiceSettings.class)))
+          .thenReturn(mockLlmUtilityServiceClient);
+      LlmUtilityServiceClient unused = vertexAi.getLlmUtilityClient();
+
+      ArgumentCaptor<LlmUtilityServiceSettings> settings =
+          ArgumentCaptor.forClass(LlmUtilityServiceSettings.class);
+      mockStatic.verify(() -> LlmUtilityServiceClient.create(settings.capture()));
+
+      assertThat(settings.getValue().getHeaderProvider().getHeaders()).isEqualTo(expectedHeaders);
+    }
   }
 }
