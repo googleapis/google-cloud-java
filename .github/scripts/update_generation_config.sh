@@ -15,8 +15,15 @@ set -e
 function get_latest_released_version() {
     local group_id=$1
     local artifact_id=$2
-    latest=$(curl -s "https://search.maven.org/solrsearch/select?q=g:${group_id}+AND+a:${artifact_id}&core=gav&rows=500&wt=json" | jq -r '.response.docs[] | select(.v | test("^[0-9]+(\\.[0-9]+)*$")) | .v' | sort -V | tail -n 1)
-    echo "${latest}"
+    json_content=$(curl -s "https://search.maven.org/solrsearch/select?q=g:${group_id}+AND+a:${artifact_id}&core=gav&rows=500&wt=json")
+    latest=$(jq -r '.response.docs[] | select(.v | test("^[0-9]+(\\.[0-9]+)*$")) | .v' <<< "${json_content}" | sort -V | tail -n 1)
+    if [[ -z "${latest}" ]]; then
+        echo "The latest version of ${group_id}:${artifact_id} is empty."
+        echo "The returned json from maven.org is invalid: ${json_content}"
+        exit 1
+    else
+        echo "${latest}"
+    fi
 }
 
 # Update a key to a new value in the generation config.
@@ -95,15 +102,23 @@ fi
 current_branch="generate-libraries-${base_branch}"
 title="chore: Update generation configuration at $(date)"
 
+git checkout "${base_branch}"
 # Try to find a open pull request associated with the branch
 pr_num=$(gh pr list -s open -H "${current_branch}" -q . --json number | jq ".[] | .number")
 # Create a branch if there's no open pull request associated with the
 # branch; otherwise checkout the pull request.
 if [ -z "${pr_num}" ]; then
   git checkout -b "${current_branch}"
+  # Push the current branch to remote so that we can
+  # compare the commits later.
+  git push -u origin "${current_branch}"
 else
   gh pr checkout "${pr_num}"
 fi
+
+# Only allow fast-forward merging; exit with non-zero result if there's merging
+# conflict.
+git merge -m "chore: merge ${base_branch} into ${current_branch}" "${base_branch}"
 
 mkdir tmp-googleapis
 # Use partial clone because only commit history is needed.
@@ -133,12 +148,25 @@ changed_files=$(git diff --cached --name-only)
 if [[ "${changed_files}" == "" ]]; then
     echo "The latest generation config is not changed."
     echo "Skip committing to the pull request."
+else
+    git commit -m "${title}"
+fi
+
+# There are potentially at most two commits: merge commit and change commit.
+# We want to exit the script if no commit happens (otherwise this will be an
+# infinite loop).
+# `git cherry` is a way to find whether the local branch has commits that are
+# not in the remote branch.
+# If we find any such commit, push them to remote branch.
+unpushed_commit=$(git cherry -v "origin/${current_branch}" | wc -l)
+if [[ "${unpushed_commit}" -eq 0 ]]; then
+    echo "No unpushed commits, exit"
     exit 0
 fi
-git commit -m "${title}"
+
 if [ -z "${pr_num}" ]; then
   git remote add remote_repo https://cloud-java-bot:"${GH_TOKEN}@github.com/${repo}.git"
-  git fetch -q --unshallow remote_repo
+  git fetch -q remote_repo
   git push -f remote_repo "${current_branch}"
   gh pr create --title "${title}" --head "${current_branch}" --body "${title}" --base "${base_branch}"
 else
