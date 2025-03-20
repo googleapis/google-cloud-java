@@ -91,7 +91,16 @@
         "^com.fasterxml.jackson.core"
       ],
       "groupName": "jackson dependencies"
-    }
+    },
+    {
+      "matchPackageNames": [
+        "com.google.cloud:google-cloud-datacatalog-bom",
+        "com.google.cloud:google-cloud-bigqueryconnection-v1",
+        "com.google.cloud:google-cloud-bigqueryconnection"
+      ],
+      "groupName": "Google Cloud Java Monorepo Updates",
+      "groupSlug": "google-cloud-java-monorepo-release-updates"
+    }    
   ],
   "semanticCommits": true,
   "dependencyDashboard": true,
