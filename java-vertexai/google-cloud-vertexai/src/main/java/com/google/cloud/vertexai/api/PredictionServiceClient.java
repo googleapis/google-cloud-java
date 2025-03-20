@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1413,8 +1413,11 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .addAllContents(new ArrayList<Content>())
    *           .setSystemInstruction(Content.newBuilder().build())
+   *           .setCachedContent(
+   *               CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
    *           .addAllTools(new ArrayList<Tool>())
    *           .setToolConfig(ToolConfig.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .addAllSafetySettings(new ArrayList<SafetySetting>())
    *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();
@@ -1447,8 +1450,11 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .addAllContents(new ArrayList<Content>())
    *           .setSystemInstruction(Content.newBuilder().build())
+   *           .setCachedContent(
+   *               CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
    *           .addAllTools(new ArrayList<Tool>())
    *           .setToolConfig(ToolConfig.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .addAllSafetySettings(new ArrayList<SafetySetting>())
    *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();
@@ -1482,8 +1488,11 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .addAllContents(new ArrayList<Content>())
    *           .setSystemInstruction(Content.newBuilder().build())
+   *           .setCachedContent(
+   *               CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
    *           .addAllTools(new ArrayList<Tool>())
    *           .setToolConfig(ToolConfig.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .addAllSafetySettings(new ArrayList<SafetySetting>())
    *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();

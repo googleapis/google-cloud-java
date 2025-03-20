@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -156,6 +156,25 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> updateEndpointCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateEndpointLongRunning</td>
+ *      <td><p> Updates an Endpoint with a long running operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateEndpointLongRunningAsync(UpdateEndpointLongRunningRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateEndpointLongRunningAsync(Endpoint endpoint)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateEndpointLongRunningOperationCallable()
+ *           <li><p> updateEndpointLongRunningCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1075,6 +1094,124 @@ public class EndpointServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateEndpointRequest, Endpoint> updateEndpointCallable() {
     return stub.updateEndpointCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an Endpoint with a long running operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   Endpoint endpoint = Endpoint.newBuilder().build();
+   *   Endpoint response = endpointServiceClient.updateEndpointLongRunningAsync(endpoint).get();
+   * }
+   * }</pre>
+   *
+   * @param endpoint Required. The Endpoint which replaces the resource on the server. Currently we
+   *     only support updating the `client_connection_config` field, all the other fields' update
+   *     will be blocked.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningAsync(Endpoint endpoint) {
+    UpdateEndpointLongRunningRequest request =
+        UpdateEndpointLongRunningRequest.newBuilder().setEndpoint(endpoint).build();
+    return updateEndpointLongRunningAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an Endpoint with a long running operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   UpdateEndpointLongRunningRequest request =
+   *       UpdateEndpointLongRunningRequest.newBuilder()
+   *           .setEndpoint(Endpoint.newBuilder().build())
+   *           .build();
+   *   Endpoint response = endpointServiceClient.updateEndpointLongRunningAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningAsync(UpdateEndpointLongRunningRequest request) {
+    return updateEndpointLongRunningOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an Endpoint with a long running operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   UpdateEndpointLongRunningRequest request =
+   *       UpdateEndpointLongRunningRequest.newBuilder()
+   *           .setEndpoint(Endpoint.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Endpoint, UpdateEndpointOperationMetadata> future =
+   *       endpointServiceClient.updateEndpointLongRunningOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Endpoint response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningOperationCallable() {
+    return stub.updateEndpointLongRunningOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an Endpoint with a long running operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   UpdateEndpointLongRunningRequest request =
+   *       UpdateEndpointLongRunningRequest.newBuilder()
+   *           .setEndpoint(Endpoint.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       endpointServiceClient.updateEndpointLongRunningCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningCallable() {
+    return stub.updateEndpointLongRunningCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

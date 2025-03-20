@@ -975,6 +975,24 @@ libraries:
   - proto_path: google/cloud/filestore/v1
   - proto_path: google/cloud/filestore/v1beta1
 
+- api_shortname: financialservices
+  name_pretty: Financial Services API
+  product_documentation: 
+    https://cloud.google.com/financial-services/anti-money-laundering/docs/concepts/overview
+  api_description: Google Cloud's Anti Money Laundering AI (AML AI) product is an
+    API that scores AML risk. Use it to identify more risk, more defensibly, with
+    fewer false positives and reduced time per review.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-financialservices/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-financialservices
+  api_id: financialservices.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/financialservices/v1
+  requires_billing: true
 - api_shortname: cloudfunctions
   name_pretty: Cloud Functions
   product_documentation: https://cloud.google.com/functions
@@ -1443,6 +1461,23 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/migrationcenter/v1
 
+- api_shortname: modelarmor
+  name_pretty: Model Armor API
+  product_documentation: https://cloud.google.com/security-command-center/docs/model-armor-overview
+  api_description: Model Armor helps you protect against risks like prompt injection,
+    harmful content, and data leakage in generative AI applications by letting you
+    define policies that filter user prompts and model responses.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-modelarmor/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-modelarmor
+  api_id: modelarmor.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/modelarmor/v1
+  requires_billing: true
 - api_shortname: monitoring
   name_pretty: Stackdriver Monitoring
   product_documentation: https://cloud.google.com/monitoring/docs

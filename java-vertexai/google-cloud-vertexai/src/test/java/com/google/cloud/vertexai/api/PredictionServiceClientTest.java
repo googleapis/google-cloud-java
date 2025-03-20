@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,7 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import com.google.protobuf.Value;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -877,6 +878,9 @@ public class PredictionServiceClientTest {
     GenerateContentResponse expectedResponse =
         GenerateContentResponse.newBuilder()
             .addAllCandidates(new ArrayList<Candidate>())
+            .setModelVersion("modelVersion212437359")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setResponseId("responseId-633138884")
             .setPromptFeedback(GenerateContentResponse.PromptFeedback.newBuilder().build())
             .setUsageMetadata(GenerateContentResponse.UsageMetadata.newBuilder().build())
             .build();
@@ -920,6 +924,9 @@ public class PredictionServiceClientTest {
     GenerateContentResponse expectedResponse =
         GenerateContentResponse.newBuilder()
             .addAllCandidates(new ArrayList<Candidate>())
+            .setModelVersion("modelVersion212437359")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setResponseId("responseId-633138884")
             .setPromptFeedback(GenerateContentResponse.PromptFeedback.newBuilder().build())
             .setUsageMetadata(GenerateContentResponse.UsageMetadata.newBuilder().build())
             .build();
@@ -929,8 +936,11 @@ public class PredictionServiceClientTest {
             .setModel("model104069929")
             .addAllContents(new ArrayList<Content>())
             .setSystemInstruction(Content.newBuilder().build())
+            .setCachedContent(
+                CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
             .addAllTools(new ArrayList<Tool>())
             .setToolConfig(ToolConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .addAllSafetySettings(new ArrayList<SafetySetting>())
             .setGenerationConfig(GenerationConfig.newBuilder().build())
             .build();
@@ -955,8 +965,11 @@ public class PredictionServiceClientTest {
             .setModel("model104069929")
             .addAllContents(new ArrayList<Content>())
             .setSystemInstruction(Content.newBuilder().build())
+            .setCachedContent(
+                CachedContentName.of("[PROJECT]", "[LOCATION]", "[CACHED_CONTENT]").toString())
             .addAllTools(new ArrayList<Tool>())
             .setToolConfig(ToolConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .addAllSafetySettings(new ArrayList<SafetySetting>())
             .setGenerationConfig(GenerationConfig.newBuilder().build())
             .build();

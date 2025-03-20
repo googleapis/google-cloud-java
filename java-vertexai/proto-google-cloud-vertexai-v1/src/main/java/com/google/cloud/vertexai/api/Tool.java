@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,6 +69,860 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.Tool.Builder.class);
   }
 
+  public interface GoogleSearchOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.vertexai.v1.Tool.GoogleSearch)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * GoogleSearch tool type.
+   * Tool to support Google Search in Model. Powered by Google.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.vertexai.v1.Tool.GoogleSearch}
+   */
+  public static final class GoogleSearch extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.Tool.GoogleSearch)
+      GoogleSearchOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use GoogleSearch.newBuilder() to construct.
+    private GoogleSearch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GoogleSearch() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GoogleSearch();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vertexai.api.ToolProto
+          .internal_static_google_cloud_vertexai_v1_Tool_GoogleSearch_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.vertexai.api.ToolProto
+          .internal_static_google_cloud_vertexai_v1_Tool_GoogleSearch_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.vertexai.api.Tool.GoogleSearch.class,
+              com.google.cloud.vertexai.api.Tool.GoogleSearch.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.vertexai.api.Tool.GoogleSearch)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.vertexai.api.Tool.GoogleSearch other =
+          (com.google.cloud.vertexai.api.Tool.GoogleSearch) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.GoogleSearch parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.GoogleSearch parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.GoogleSearch parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.GoogleSearch parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.GoogleSearch parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.GoogleSearch parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.GoogleSearch parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.GoogleSearch parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.GoogleSearch parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.GoogleSearch parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.GoogleSearch parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.GoogleSearch parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.vertexai.api.Tool.GoogleSearch prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GoogleSearch tool type.
+     * Tool to support Google Search in Model. Powered by Google.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.vertexai.v1.Tool.GoogleSearch}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.vertexai.v1.Tool.GoogleSearch)
+        com.google.cloud.vertexai.api.Tool.GoogleSearchOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vertexai.api.ToolProto
+            .internal_static_google_cloud_vertexai_v1_Tool_GoogleSearch_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.vertexai.api.ToolProto
+            .internal_static_google_cloud_vertexai_v1_Tool_GoogleSearch_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.vertexai.api.Tool.GoogleSearch.class,
+                com.google.cloud.vertexai.api.Tool.GoogleSearch.Builder.class);
+      }
+
+      // Construct using com.google.cloud.vertexai.api.Tool.GoogleSearch.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.vertexai.api.ToolProto
+            .internal_static_google_cloud_vertexai_v1_Tool_GoogleSearch_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vertexai.api.Tool.GoogleSearch getDefaultInstanceForType() {
+        return com.google.cloud.vertexai.api.Tool.GoogleSearch.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vertexai.api.Tool.GoogleSearch build() {
+        com.google.cloud.vertexai.api.Tool.GoogleSearch result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vertexai.api.Tool.GoogleSearch buildPartial() {
+        com.google.cloud.vertexai.api.Tool.GoogleSearch result =
+            new com.google.cloud.vertexai.api.Tool.GoogleSearch(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.vertexai.api.Tool.GoogleSearch) {
+          return mergeFrom((com.google.cloud.vertexai.api.Tool.GoogleSearch) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.vertexai.api.Tool.GoogleSearch other) {
+        if (other == com.google.cloud.vertexai.api.Tool.GoogleSearch.getDefaultInstance())
+          return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.vertexai.v1.Tool.GoogleSearch)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.vertexai.v1.Tool.GoogleSearch)
+    private static final com.google.cloud.vertexai.api.Tool.GoogleSearch DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.vertexai.api.Tool.GoogleSearch();
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.GoogleSearch getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GoogleSearch> PARSER =
+        new com.google.protobuf.AbstractParser<GoogleSearch>() {
+          @java.lang.Override
+          public GoogleSearch parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GoogleSearch> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GoogleSearch> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.vertexai.api.Tool.GoogleSearch getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface CodeExecutionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.vertexai.v1.Tool.CodeExecution)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Tool that executes code generated by the model, and automatically returns
+   * the result to the model.
+   *
+   * See also [ExecutableCode]and [CodeExecutionResult] which are input and
+   * output to this tool.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.vertexai.v1.Tool.CodeExecution}
+   */
+  public static final class CodeExecution extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.Tool.CodeExecution)
+      CodeExecutionOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use CodeExecution.newBuilder() to construct.
+    private CodeExecution(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private CodeExecution() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CodeExecution();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vertexai.api.ToolProto
+          .internal_static_google_cloud_vertexai_v1_Tool_CodeExecution_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.vertexai.api.ToolProto
+          .internal_static_google_cloud_vertexai_v1_Tool_CodeExecution_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.vertexai.api.Tool.CodeExecution.class,
+              com.google.cloud.vertexai.api.Tool.CodeExecution.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.vertexai.api.Tool.CodeExecution)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.vertexai.api.Tool.CodeExecution other =
+          (com.google.cloud.vertexai.api.Tool.CodeExecution) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.CodeExecution parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.CodeExecution parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.CodeExecution parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.CodeExecution parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.CodeExecution parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.CodeExecution parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.CodeExecution parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.CodeExecution parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.CodeExecution parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.CodeExecution parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.CodeExecution parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.CodeExecution parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.vertexai.api.Tool.CodeExecution prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Tool that executes code generated by the model, and automatically returns
+     * the result to the model.
+     *
+     * See also [ExecutableCode]and [CodeExecutionResult] which are input and
+     * output to this tool.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.vertexai.v1.Tool.CodeExecution}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.vertexai.v1.Tool.CodeExecution)
+        com.google.cloud.vertexai.api.Tool.CodeExecutionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vertexai.api.ToolProto
+            .internal_static_google_cloud_vertexai_v1_Tool_CodeExecution_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.vertexai.api.ToolProto
+            .internal_static_google_cloud_vertexai_v1_Tool_CodeExecution_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.vertexai.api.Tool.CodeExecution.class,
+                com.google.cloud.vertexai.api.Tool.CodeExecution.Builder.class);
+      }
+
+      // Construct using com.google.cloud.vertexai.api.Tool.CodeExecution.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.vertexai.api.ToolProto
+            .internal_static_google_cloud_vertexai_v1_Tool_CodeExecution_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vertexai.api.Tool.CodeExecution getDefaultInstanceForType() {
+        return com.google.cloud.vertexai.api.Tool.CodeExecution.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vertexai.api.Tool.CodeExecution build() {
+        com.google.cloud.vertexai.api.Tool.CodeExecution result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vertexai.api.Tool.CodeExecution buildPartial() {
+        com.google.cloud.vertexai.api.Tool.CodeExecution result =
+            new com.google.cloud.vertexai.api.Tool.CodeExecution(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.vertexai.api.Tool.CodeExecution) {
+          return mergeFrom((com.google.cloud.vertexai.api.Tool.CodeExecution) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.vertexai.api.Tool.CodeExecution other) {
+        if (other == com.google.cloud.vertexai.api.Tool.CodeExecution.getDefaultInstance())
+          return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.vertexai.v1.Tool.CodeExecution)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.vertexai.v1.Tool.CodeExecution)
+    private static final com.google.cloud.vertexai.api.Tool.CodeExecution DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.vertexai.api.Tool.CodeExecution();
+    }
+
+    public static com.google.cloud.vertexai.api.Tool.CodeExecution getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CodeExecution> PARSER =
+        new com.google.protobuf.AbstractParser<CodeExecution>() {
+          @java.lang.Override
+          public CodeExecution parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<CodeExecution> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CodeExecution> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.vertexai.api.Tool.CodeExecution getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int FUNCTION_DECLARATIONS_FIELD_NUMBER = 1;
 
@@ -81,11 +935,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * Optional. Function tool type.
    * One or more function declarations to be passed to the model along with the
    * current user query. Model may decide to call a subset of these functions
-   * by populating [FunctionCall][content.part.function_call] in the response.
-   * User should provide a [FunctionResponse][content.part.function_response]
-   * for each function call in the next turn. Based on the function responses,
-   * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+   * in the response. User should provide a
+   * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+   * each function call in the next turn. Based on the function responses, Model
+   * will generate the final response back to the user. Maximum 128 function
+   * declarations can be provided.
    * </pre>
    *
    * <code>
@@ -104,11 +959,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * Optional. Function tool type.
    * One or more function declarations to be passed to the model along with the
    * current user query. Model may decide to call a subset of these functions
-   * by populating [FunctionCall][content.part.function_call] in the response.
-   * User should provide a [FunctionResponse][content.part.function_response]
-   * for each function call in the next turn. Based on the function responses,
-   * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+   * in the response. User should provide a
+   * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+   * each function call in the next turn. Based on the function responses, Model
+   * will generate the final response back to the user. Maximum 128 function
+   * declarations can be provided.
    * </pre>
    *
    * <code>
@@ -127,11 +983,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * Optional. Function tool type.
    * One or more function declarations to be passed to the model along with the
    * current user query. Model may decide to call a subset of these functions
-   * by populating [FunctionCall][content.part.function_call] in the response.
-   * User should provide a [FunctionResponse][content.part.function_response]
-   * for each function call in the next turn. Based on the function responses,
-   * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+   * in the response. User should provide a
+   * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+   * each function call in the next turn. Based on the function responses, Model
+   * will generate the final response back to the user. Maximum 128 function
+   * declarations can be provided.
    * </pre>
    *
    * <code>
@@ -149,11 +1006,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * Optional. Function tool type.
    * One or more function declarations to be passed to the model along with the
    * current user query. Model may decide to call a subset of these functions
-   * by populating [FunctionCall][content.part.function_call] in the response.
-   * User should provide a [FunctionResponse][content.part.function_response]
-   * for each function call in the next turn. Based on the function responses,
-   * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+   * in the response. User should provide a
+   * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+   * each function call in the next turn. Based on the function responses, Model
+   * will generate the final response back to the user. Maximum 128 function
+   * declarations can be provided.
    * </pre>
    *
    * <code>
@@ -171,11 +1029,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * Optional. Function tool type.
    * One or more function declarations to be passed to the model along with the
    * current user query. Model may decide to call a subset of these functions
-   * by populating [FunctionCall][content.part.function_call] in the response.
-   * User should provide a [FunctionResponse][content.part.function_response]
-   * for each function call in the next turn. Based on the function responses,
-   * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+   * in the response. User should provide a
+   * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+   * each function call in the next turn. Based on the function responses, Model
+   * will generate the final response back to the user. Maximum 128 function
+   * declarations can be provided.
    * </pre>
    *
    * <code>
@@ -253,6 +1112,65 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         : retrieval_;
   }
 
+  public static final int GOOGLE_SEARCH_FIELD_NUMBER = 7;
+  private com.google.cloud.vertexai.api.Tool.GoogleSearch googleSearch_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. GoogleSearch tool type.
+   * Tool to support Google Search in Model. Powered by Google.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.Tool.GoogleSearch google_search = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the googleSearch field is set.
+   */
+  @java.lang.Override
+  public boolean hasGoogleSearch() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. GoogleSearch tool type.
+   * Tool to support Google Search in Model. Powered by Google.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.Tool.GoogleSearch google_search = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The googleSearch.
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.Tool.GoogleSearch getGoogleSearch() {
+    return googleSearch_ == null
+        ? com.google.cloud.vertexai.api.Tool.GoogleSearch.getDefaultInstance()
+        : googleSearch_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. GoogleSearch tool type.
+   * Tool to support Google Search in Model. Powered by Google.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.Tool.GoogleSearch google_search = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.Tool.GoogleSearchOrBuilder getGoogleSearchOrBuilder() {
+    return googleSearch_ == null
+        ? com.google.cloud.vertexai.api.Tool.GoogleSearch.getDefaultInstance()
+        : googleSearch_;
+  }
+
   public static final int GOOGLE_SEARCH_RETRIEVAL_FIELD_NUMBER = 3;
   private com.google.cloud.vertexai.api.GoogleSearchRetrieval googleSearchRetrieval_;
   /**
@@ -271,7 +1189,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasGoogleSearchRetrieval() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -313,6 +1231,125 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         : googleSearchRetrieval_;
   }
 
+  public static final int ENTERPRISE_WEB_SEARCH_FIELD_NUMBER = 6;
+  private com.google.cloud.vertexai.api.EnterpriseWebSearch enterpriseWebSearch_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool to support searching public web data, powered by Vertex AI
+   * Search and Sec4 compliance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the enterpriseWebSearch field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnterpriseWebSearch() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool to support searching public web data, powered by Vertex AI
+   * Search and Sec4 compliance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enterpriseWebSearch.
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.EnterpriseWebSearch getEnterpriseWebSearch() {
+    return enterpriseWebSearch_ == null
+        ? com.google.cloud.vertexai.api.EnterpriseWebSearch.getDefaultInstance()
+        : enterpriseWebSearch_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool to support searching public web data, powered by Vertex AI
+   * Search and Sec4 compliance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.EnterpriseWebSearchOrBuilder
+      getEnterpriseWebSearchOrBuilder() {
+    return enterpriseWebSearch_ == null
+        ? com.google.cloud.vertexai.api.EnterpriseWebSearch.getDefaultInstance()
+        : enterpriseWebSearch_;
+  }
+
+  public static final int CODE_EXECUTION_FIELD_NUMBER = 4;
+  private com.google.cloud.vertexai.api.Tool.CodeExecution codeExecution_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CodeExecution tool type.
+   * Enables the model to execute code as part of generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the codeExecution field is set.
+   */
+  @java.lang.Override
+  public boolean hasCodeExecution() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CodeExecution tool type.
+   * Enables the model to execute code as part of generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The codeExecution.
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.Tool.CodeExecution getCodeExecution() {
+    return codeExecution_ == null
+        ? com.google.cloud.vertexai.api.Tool.CodeExecution.getDefaultInstance()
+        : codeExecution_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CodeExecution tool type.
+   * Enables the model to execute code as part of generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.Tool.CodeExecutionOrBuilder getCodeExecutionOrBuilder() {
+    return codeExecution_ == null
+        ? com.google.cloud.vertexai.api.Tool.CodeExecution.getDefaultInstance()
+        : codeExecution_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -333,8 +1370,17 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getRetrieval());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(3, getGoogleSearchRetrieval());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(4, getCodeExecution());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(6, getEnterpriseWebSearch());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(7, getGoogleSearch());
     }
     getUnknownFields().writeTo(output);
   }
@@ -352,9 +1398,18 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRetrieval());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, getGoogleSearchRetrieval());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCodeExecution());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getEnterpriseWebSearch());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getGoogleSearch());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -376,9 +1431,21 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     if (hasRetrieval()) {
       if (!getRetrieval().equals(other.getRetrieval())) return false;
     }
+    if (hasGoogleSearch() != other.hasGoogleSearch()) return false;
+    if (hasGoogleSearch()) {
+      if (!getGoogleSearch().equals(other.getGoogleSearch())) return false;
+    }
     if (hasGoogleSearchRetrieval() != other.hasGoogleSearchRetrieval()) return false;
     if (hasGoogleSearchRetrieval()) {
       if (!getGoogleSearchRetrieval().equals(other.getGoogleSearchRetrieval())) return false;
+    }
+    if (hasEnterpriseWebSearch() != other.hasEnterpriseWebSearch()) return false;
+    if (hasEnterpriseWebSearch()) {
+      if (!getEnterpriseWebSearch().equals(other.getEnterpriseWebSearch())) return false;
+    }
+    if (hasCodeExecution() != other.hasCodeExecution()) return false;
+    if (hasCodeExecution()) {
+      if (!getCodeExecution().equals(other.getCodeExecution())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -399,9 +1466,21 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RETRIEVAL_FIELD_NUMBER;
       hash = (53 * hash) + getRetrieval().hashCode();
     }
+    if (hasGoogleSearch()) {
+      hash = (37 * hash) + GOOGLE_SEARCH_FIELD_NUMBER;
+      hash = (53 * hash) + getGoogleSearch().hashCode();
+    }
     if (hasGoogleSearchRetrieval()) {
       hash = (37 * hash) + GOOGLE_SEARCH_RETRIEVAL_FIELD_NUMBER;
       hash = (53 * hash) + getGoogleSearchRetrieval().hashCode();
+    }
+    if (hasEnterpriseWebSearch()) {
+      hash = (37 * hash) + ENTERPRISE_WEB_SEARCH_FIELD_NUMBER;
+      hash = (53 * hash) + getEnterpriseWebSearch().hashCode();
+    }
+    if (hasCodeExecution()) {
+      hash = (37 * hash) + CODE_EXECUTION_FIELD_NUMBER;
+      hash = (53 * hash) + getCodeExecution().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -550,7 +1629,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getFunctionDeclarationsFieldBuilder();
         getRetrievalFieldBuilder();
+        getGoogleSearchFieldBuilder();
         getGoogleSearchRetrievalFieldBuilder();
+        getEnterpriseWebSearchFieldBuilder();
+        getCodeExecutionFieldBuilder();
       }
     }
 
@@ -570,10 +1652,25 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         retrievalBuilder_.dispose();
         retrievalBuilder_ = null;
       }
+      googleSearch_ = null;
+      if (googleSearchBuilder_ != null) {
+        googleSearchBuilder_.dispose();
+        googleSearchBuilder_ = null;
+      }
       googleSearchRetrieval_ = null;
       if (googleSearchRetrievalBuilder_ != null) {
         googleSearchRetrievalBuilder_.dispose();
         googleSearchRetrievalBuilder_ = null;
+      }
+      enterpriseWebSearch_ = null;
+      if (enterpriseWebSearchBuilder_ != null) {
+        enterpriseWebSearchBuilder_.dispose();
+        enterpriseWebSearchBuilder_ = null;
+      }
+      codeExecution_ = null;
+      if (codeExecutionBuilder_ != null) {
+        codeExecutionBuilder_.dispose();
+        codeExecutionBuilder_ = null;
       }
       return this;
     }
@@ -629,11 +1726,28 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.googleSearch_ =
+            googleSearchBuilder_ == null ? googleSearch_ : googleSearchBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.googleSearchRetrieval_ =
             googleSearchRetrievalBuilder_ == null
                 ? googleSearchRetrieval_
                 : googleSearchRetrievalBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.enterpriseWebSearch_ =
+            enterpriseWebSearchBuilder_ == null
+                ? enterpriseWebSearch_
+                : enterpriseWebSearchBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.codeExecution_ =
+            codeExecutionBuilder_ == null ? codeExecution_ : codeExecutionBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -713,8 +1827,17 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (other.hasRetrieval()) {
         mergeRetrieval(other.getRetrieval());
       }
+      if (other.hasGoogleSearch()) {
+        mergeGoogleSearch(other.getGoogleSearch());
+      }
       if (other.hasGoogleSearchRetrieval()) {
         mergeGoogleSearchRetrieval(other.getGoogleSearchRetrieval());
+      }
+      if (other.hasEnterpriseWebSearch()) {
+        mergeEnterpriseWebSearch(other.getEnterpriseWebSearch());
+      }
+      if (other.hasCodeExecution()) {
+        mergeCodeExecution(other.getCodeExecution());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -766,9 +1889,28 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getGoogleSearchRetrievalFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getCodeExecutionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 34
+            case 50:
+              {
+                input.readMessage(
+                    getEnterpriseWebSearchFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getGoogleSearchFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -813,11 +1955,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * Optional. Function tool type.
      * One or more function declarations to be passed to the model along with the
      * current user query. Model may decide to call a subset of these functions
-     * by populating [FunctionCall][content.part.function_call] in the response.
-     * User should provide a [FunctionResponse][content.part.function_response]
-     * for each function call in the next turn. Based on the function responses,
-     * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+     * in the response. User should provide a
+     * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+     * each function call in the next turn. Based on the function responses, Model
+     * will generate the final response back to the user. Maximum 128 function
+     * declarations can be provided.
      * </pre>
      *
      * <code>
@@ -839,11 +1982,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * Optional. Function tool type.
      * One or more function declarations to be passed to the model along with the
      * current user query. Model may decide to call a subset of these functions
-     * by populating [FunctionCall][content.part.function_call] in the response.
-     * User should provide a [FunctionResponse][content.part.function_response]
-     * for each function call in the next turn. Based on the function responses,
-     * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+     * in the response. User should provide a
+     * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+     * each function call in the next turn. Based on the function responses, Model
+     * will generate the final response back to the user. Maximum 128 function
+     * declarations can be provided.
      * </pre>
      *
      * <code>
@@ -864,11 +2008,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * Optional. Function tool type.
      * One or more function declarations to be passed to the model along with the
      * current user query. Model may decide to call a subset of these functions
-     * by populating [FunctionCall][content.part.function_call] in the response.
-     * User should provide a [FunctionResponse][content.part.function_response]
-     * for each function call in the next turn. Based on the function responses,
-     * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+     * in the response. User should provide a
+     * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+     * each function call in the next turn. Based on the function responses, Model
+     * will generate the final response back to the user. Maximum 128 function
+     * declarations can be provided.
      * </pre>
      *
      * <code>
@@ -889,11 +2034,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * Optional. Function tool type.
      * One or more function declarations to be passed to the model along with the
      * current user query. Model may decide to call a subset of these functions
-     * by populating [FunctionCall][content.part.function_call] in the response.
-     * User should provide a [FunctionResponse][content.part.function_response]
-     * for each function call in the next turn. Based on the function responses,
-     * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+     * in the response. User should provide a
+     * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+     * each function call in the next turn. Based on the function responses, Model
+     * will generate the final response back to the user. Maximum 128 function
+     * declarations can be provided.
      * </pre>
      *
      * <code>
@@ -921,11 +2067,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * Optional. Function tool type.
      * One or more function declarations to be passed to the model along with the
      * current user query. Model may decide to call a subset of these functions
-     * by populating [FunctionCall][content.part.function_call] in the response.
-     * User should provide a [FunctionResponse][content.part.function_response]
-     * for each function call in the next turn. Based on the function responses,
-     * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+     * in the response. User should provide a
+     * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+     * each function call in the next turn. Based on the function responses, Model
+     * will generate the final response back to the user. Maximum 128 function
+     * declarations can be provided.
      * </pre>
      *
      * <code>
@@ -950,11 +2097,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * Optional. Function tool type.
      * One or more function declarations to be passed to the model along with the
      * current user query. Model may decide to call a subset of these functions
-     * by populating [FunctionCall][content.part.function_call] in the response.
-     * User should provide a [FunctionResponse][content.part.function_response]
-     * for each function call in the next turn. Based on the function responses,
-     * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+     * in the response. User should provide a
+     * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+     * each function call in the next turn. Based on the function responses, Model
+     * will generate the final response back to the user. Maximum 128 function
+     * declarations can be provided.
      * </pre>
      *
      * <code>
@@ -982,11 +2130,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * Optional. Function tool type.
      * One or more function declarations to be passed to the model along with the
      * current user query. Model may decide to call a subset of these functions
-     * by populating [FunctionCall][content.part.function_call] in the response.
-     * User should provide a [FunctionResponse][content.part.function_response]
-     * for each function call in the next turn. Based on the function responses,
-     * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+     * in the response. User should provide a
+     * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+     * each function call in the next turn. Based on the function responses, Model
+     * will generate the final response back to the user. Maximum 128 function
+     * declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1014,11 +2163,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * Optional. Function tool type.
      * One or more function declarations to be passed to the model along with the
      * current user query. Model may decide to call a subset of these functions
-     * by populating [FunctionCall][content.part.function_call] in the response.
-     * User should provide a [FunctionResponse][content.part.function_response]
-     * for each function call in the next turn. Based on the function responses,
-     * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+     * in the response. User should provide a
+     * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+     * each function call in the next turn. Based on the function responses, Model
+     * will generate the final response back to the user. Maximum 128 function
+     * declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1043,11 +2193,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * Optional. Function tool type.
      * One or more function declarations to be passed to the model along with the
      * current user query. Model may decide to call a subset of these functions
-     * by populating [FunctionCall][content.part.function_call] in the response.
-     * User should provide a [FunctionResponse][content.part.function_response]
-     * for each function call in the next turn. Based on the function responses,
-     * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+     * in the response. User should provide a
+     * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+     * each function call in the next turn. Based on the function responses, Model
+     * will generate the final response back to the user. Maximum 128 function
+     * declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1072,11 +2223,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * Optional. Function tool type.
      * One or more function declarations to be passed to the model along with the
      * current user query. Model may decide to call a subset of these functions
-     * by populating [FunctionCall][content.part.function_call] in the response.
-     * User should provide a [FunctionResponse][content.part.function_response]
-     * for each function call in the next turn. Based on the function responses,
-     * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+     * in the response. User should provide a
+     * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+     * each function call in the next turn. Based on the function responses, Model
+     * will generate the final response back to the user. Maximum 128 function
+     * declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1101,11 +2253,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * Optional. Function tool type.
      * One or more function declarations to be passed to the model along with the
      * current user query. Model may decide to call a subset of these functions
-     * by populating [FunctionCall][content.part.function_call] in the response.
-     * User should provide a [FunctionResponse][content.part.function_response]
-     * for each function call in the next turn. Based on the function responses,
-     * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+     * in the response. User should provide a
+     * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+     * each function call in the next turn. Based on the function responses, Model
+     * will generate the final response back to the user. Maximum 128 function
+     * declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1129,11 +2282,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * Optional. Function tool type.
      * One or more function declarations to be passed to the model along with the
      * current user query. Model may decide to call a subset of these functions
-     * by populating [FunctionCall][content.part.function_call] in the response.
-     * User should provide a [FunctionResponse][content.part.function_response]
-     * for each function call in the next turn. Based on the function responses,
-     * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+     * in the response. User should provide a
+     * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+     * each function call in the next turn. Based on the function responses, Model
+     * will generate the final response back to the user. Maximum 128 function
+     * declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1157,11 +2311,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * Optional. Function tool type.
      * One or more function declarations to be passed to the model along with the
      * current user query. Model may decide to call a subset of these functions
-     * by populating [FunctionCall][content.part.function_call] in the response.
-     * User should provide a [FunctionResponse][content.part.function_response]
-     * for each function call in the next turn. Based on the function responses,
-     * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+     * in the response. User should provide a
+     * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+     * each function call in the next turn. Based on the function responses, Model
+     * will generate the final response back to the user. Maximum 128 function
+     * declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1179,11 +2334,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * Optional. Function tool type.
      * One or more function declarations to be passed to the model along with the
      * current user query. Model may decide to call a subset of these functions
-     * by populating [FunctionCall][content.part.function_call] in the response.
-     * User should provide a [FunctionResponse][content.part.function_response]
-     * for each function call in the next turn. Based on the function responses,
-     * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+     * in the response. User should provide a
+     * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+     * each function call in the next turn. Based on the function responses, Model
+     * will generate the final response back to the user. Maximum 128 function
+     * declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1205,11 +2361,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * Optional. Function tool type.
      * One or more function declarations to be passed to the model along with the
      * current user query. Model may decide to call a subset of these functions
-     * by populating [FunctionCall][content.part.function_call] in the response.
-     * User should provide a [FunctionResponse][content.part.function_response]
-     * for each function call in the next turn. Based on the function responses,
-     * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+     * in the response. User should provide a
+     * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+     * each function call in the next turn. Based on the function responses, Model
+     * will generate the final response back to the user. Maximum 128 function
+     * declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1231,11 +2388,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * Optional. Function tool type.
      * One or more function declarations to be passed to the model along with the
      * current user query. Model may decide to call a subset of these functions
-     * by populating [FunctionCall][content.part.function_call] in the response.
-     * User should provide a [FunctionResponse][content.part.function_response]
-     * for each function call in the next turn. Based on the function responses,
-     * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+     * in the response. User should provide a
+     * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+     * each function call in the next turn. Based on the function responses, Model
+     * will generate the final response back to the user. Maximum 128 function
+     * declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1254,11 +2412,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * Optional. Function tool type.
      * One or more function declarations to be passed to the model along with the
      * current user query. Model may decide to call a subset of these functions
-     * by populating [FunctionCall][content.part.function_call] in the response.
-     * User should provide a [FunctionResponse][content.part.function_response]
-     * for each function call in the next turn. Based on the function responses,
-     * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+     * in the response. User should provide a
+     * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+     * each function call in the next turn. Based on the function responses, Model
+     * will generate the final response back to the user. Maximum 128 function
+     * declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1278,11 +2437,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * Optional. Function tool type.
      * One or more function declarations to be passed to the model along with the
      * current user query. Model may decide to call a subset of these functions
-     * by populating [FunctionCall][content.part.function_call] in the response.
-     * User should provide a [FunctionResponse][content.part.function_response]
-     * for each function call in the next turn. Based on the function responses,
-     * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * by populating [FunctionCall][google.cloud.aiplatform.v1.Part.function_call]
+     * in the response. User should provide a
+     * [FunctionResponse][google.cloud.aiplatform.v1.Part.function_response] for
+     * each function call in the next turn. Based on the function responses, Model
+     * will generate the final response back to the user. Maximum 128 function
+     * declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1544,6 +2704,220 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       return retrievalBuilder_;
     }
 
+    private com.google.cloud.vertexai.api.Tool.GoogleSearch googleSearch_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.Tool.GoogleSearch,
+            com.google.cloud.vertexai.api.Tool.GoogleSearch.Builder,
+            com.google.cloud.vertexai.api.Tool.GoogleSearchOrBuilder>
+        googleSearchBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleSearch tool type.
+     * Tool to support Google Search in Model. Powered by Google.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Tool.GoogleSearch google_search = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the googleSearch field is set.
+     */
+    public boolean hasGoogleSearch() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleSearch tool type.
+     * Tool to support Google Search in Model. Powered by Google.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Tool.GoogleSearch google_search = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The googleSearch.
+     */
+    public com.google.cloud.vertexai.api.Tool.GoogleSearch getGoogleSearch() {
+      if (googleSearchBuilder_ == null) {
+        return googleSearch_ == null
+            ? com.google.cloud.vertexai.api.Tool.GoogleSearch.getDefaultInstance()
+            : googleSearch_;
+      } else {
+        return googleSearchBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleSearch tool type.
+     * Tool to support Google Search in Model. Powered by Google.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Tool.GoogleSearch google_search = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGoogleSearch(com.google.cloud.vertexai.api.Tool.GoogleSearch value) {
+      if (googleSearchBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        googleSearch_ = value;
+      } else {
+        googleSearchBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleSearch tool type.
+     * Tool to support Google Search in Model. Powered by Google.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Tool.GoogleSearch google_search = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGoogleSearch(
+        com.google.cloud.vertexai.api.Tool.GoogleSearch.Builder builderForValue) {
+      if (googleSearchBuilder_ == null) {
+        googleSearch_ = builderForValue.build();
+      } else {
+        googleSearchBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleSearch tool type.
+     * Tool to support Google Search in Model. Powered by Google.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Tool.GoogleSearch google_search = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGoogleSearch(com.google.cloud.vertexai.api.Tool.GoogleSearch value) {
+      if (googleSearchBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && googleSearch_ != null
+            && googleSearch_
+                != com.google.cloud.vertexai.api.Tool.GoogleSearch.getDefaultInstance()) {
+          getGoogleSearchBuilder().mergeFrom(value);
+        } else {
+          googleSearch_ = value;
+        }
+      } else {
+        googleSearchBuilder_.mergeFrom(value);
+      }
+      if (googleSearch_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleSearch tool type.
+     * Tool to support Google Search in Model. Powered by Google.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Tool.GoogleSearch google_search = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGoogleSearch() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      googleSearch_ = null;
+      if (googleSearchBuilder_ != null) {
+        googleSearchBuilder_.dispose();
+        googleSearchBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleSearch tool type.
+     * Tool to support Google Search in Model. Powered by Google.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Tool.GoogleSearch google_search = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.Tool.GoogleSearch.Builder getGoogleSearchBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getGoogleSearchFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleSearch tool type.
+     * Tool to support Google Search in Model. Powered by Google.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Tool.GoogleSearch google_search = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.Tool.GoogleSearchOrBuilder getGoogleSearchOrBuilder() {
+      if (googleSearchBuilder_ != null) {
+        return googleSearchBuilder_.getMessageOrBuilder();
+      } else {
+        return googleSearch_ == null
+            ? com.google.cloud.vertexai.api.Tool.GoogleSearch.getDefaultInstance()
+            : googleSearch_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleSearch tool type.
+     * Tool to support Google Search in Model. Powered by Google.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Tool.GoogleSearch google_search = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.Tool.GoogleSearch,
+            com.google.cloud.vertexai.api.Tool.GoogleSearch.Builder,
+            com.google.cloud.vertexai.api.Tool.GoogleSearchOrBuilder>
+        getGoogleSearchFieldBuilder() {
+      if (googleSearchBuilder_ == null) {
+        googleSearchBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vertexai.api.Tool.GoogleSearch,
+                com.google.cloud.vertexai.api.Tool.GoogleSearch.Builder,
+                com.google.cloud.vertexai.api.Tool.GoogleSearchOrBuilder>(
+                getGoogleSearch(), getParentForChildren(), isClean());
+        googleSearch_ = null;
+      }
+      return googleSearchBuilder_;
+    }
+
     private com.google.cloud.vertexai.api.GoogleSearchRetrieval googleSearchRetrieval_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vertexai.api.GoogleSearchRetrieval,
@@ -1565,7 +2939,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the googleSearchRetrieval field is set.
      */
     public boolean hasGoogleSearchRetrieval() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1612,7 +2986,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       } else {
         googleSearchRetrievalBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1635,7 +3009,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       } else {
         googleSearchRetrievalBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1654,7 +3028,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeGoogleSearchRetrieval(
         com.google.cloud.vertexai.api.GoogleSearchRetrieval value) {
       if (googleSearchRetrievalBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && googleSearchRetrieval_ != null
             && googleSearchRetrieval_
                 != com.google.cloud.vertexai.api.GoogleSearchRetrieval.getDefaultInstance()) {
@@ -1666,7 +3040,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         googleSearchRetrievalBuilder_.mergeFrom(value);
       }
       if (googleSearchRetrieval_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1684,7 +3058,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearGoogleSearchRetrieval() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       googleSearchRetrieval_ = null;
       if (googleSearchRetrievalBuilder_ != null) {
         googleSearchRetrievalBuilder_.dispose();
@@ -1707,7 +3081,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.vertexai.api.GoogleSearchRetrieval.Builder
         getGoogleSearchRetrievalBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getGoogleSearchRetrievalFieldBuilder().getBuilder();
     }
@@ -1760,6 +3134,437 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         googleSearchRetrieval_ = null;
       }
       return googleSearchRetrievalBuilder_;
+    }
+
+    private com.google.cloud.vertexai.api.EnterpriseWebSearch enterpriseWebSearch_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.EnterpriseWebSearch,
+            com.google.cloud.vertexai.api.EnterpriseWebSearch.Builder,
+            com.google.cloud.vertexai.api.EnterpriseWebSearchOrBuilder>
+        enterpriseWebSearchBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support searching public web data, powered by Vertex AI
+     * Search and Sec4 compliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the enterpriseWebSearch field is set.
+     */
+    public boolean hasEnterpriseWebSearch() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support searching public web data, powered by Vertex AI
+     * Search and Sec4 compliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enterpriseWebSearch.
+     */
+    public com.google.cloud.vertexai.api.EnterpriseWebSearch getEnterpriseWebSearch() {
+      if (enterpriseWebSearchBuilder_ == null) {
+        return enterpriseWebSearch_ == null
+            ? com.google.cloud.vertexai.api.EnterpriseWebSearch.getDefaultInstance()
+            : enterpriseWebSearch_;
+      } else {
+        return enterpriseWebSearchBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support searching public web data, powered by Vertex AI
+     * Search and Sec4 compliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEnterpriseWebSearch(com.google.cloud.vertexai.api.EnterpriseWebSearch value) {
+      if (enterpriseWebSearchBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        enterpriseWebSearch_ = value;
+      } else {
+        enterpriseWebSearchBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support searching public web data, powered by Vertex AI
+     * Search and Sec4 compliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEnterpriseWebSearch(
+        com.google.cloud.vertexai.api.EnterpriseWebSearch.Builder builderForValue) {
+      if (enterpriseWebSearchBuilder_ == null) {
+        enterpriseWebSearch_ = builderForValue.build();
+      } else {
+        enterpriseWebSearchBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support searching public web data, powered by Vertex AI
+     * Search and Sec4 compliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEnterpriseWebSearch(
+        com.google.cloud.vertexai.api.EnterpriseWebSearch value) {
+      if (enterpriseWebSearchBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && enterpriseWebSearch_ != null
+            && enterpriseWebSearch_
+                != com.google.cloud.vertexai.api.EnterpriseWebSearch.getDefaultInstance()) {
+          getEnterpriseWebSearchBuilder().mergeFrom(value);
+        } else {
+          enterpriseWebSearch_ = value;
+        }
+      } else {
+        enterpriseWebSearchBuilder_.mergeFrom(value);
+      }
+      if (enterpriseWebSearch_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support searching public web data, powered by Vertex AI
+     * Search and Sec4 compliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEnterpriseWebSearch() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      enterpriseWebSearch_ = null;
+      if (enterpriseWebSearchBuilder_ != null) {
+        enterpriseWebSearchBuilder_.dispose();
+        enterpriseWebSearchBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support searching public web data, powered by Vertex AI
+     * Search and Sec4 compliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.EnterpriseWebSearch.Builder
+        getEnterpriseWebSearchBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getEnterpriseWebSearchFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support searching public web data, powered by Vertex AI
+     * Search and Sec4 compliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.EnterpriseWebSearchOrBuilder
+        getEnterpriseWebSearchOrBuilder() {
+      if (enterpriseWebSearchBuilder_ != null) {
+        return enterpriseWebSearchBuilder_.getMessageOrBuilder();
+      } else {
+        return enterpriseWebSearch_ == null
+            ? com.google.cloud.vertexai.api.EnterpriseWebSearch.getDefaultInstance()
+            : enterpriseWebSearch_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support searching public web data, powered by Vertex AI
+     * Search and Sec4 compliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.EnterpriseWebSearch enterprise_web_search = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.EnterpriseWebSearch,
+            com.google.cloud.vertexai.api.EnterpriseWebSearch.Builder,
+            com.google.cloud.vertexai.api.EnterpriseWebSearchOrBuilder>
+        getEnterpriseWebSearchFieldBuilder() {
+      if (enterpriseWebSearchBuilder_ == null) {
+        enterpriseWebSearchBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vertexai.api.EnterpriseWebSearch,
+                com.google.cloud.vertexai.api.EnterpriseWebSearch.Builder,
+                com.google.cloud.vertexai.api.EnterpriseWebSearchOrBuilder>(
+                getEnterpriseWebSearch(), getParentForChildren(), isClean());
+        enterpriseWebSearch_ = null;
+      }
+      return enterpriseWebSearchBuilder_;
+    }
+
+    private com.google.cloud.vertexai.api.Tool.CodeExecution codeExecution_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.Tool.CodeExecution,
+            com.google.cloud.vertexai.api.Tool.CodeExecution.Builder,
+            com.google.cloud.vertexai.api.Tool.CodeExecutionOrBuilder>
+        codeExecutionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CodeExecution tool type.
+     * Enables the model to execute code as part of generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the codeExecution field is set.
+     */
+    public boolean hasCodeExecution() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CodeExecution tool type.
+     * Enables the model to execute code as part of generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The codeExecution.
+     */
+    public com.google.cloud.vertexai.api.Tool.CodeExecution getCodeExecution() {
+      if (codeExecutionBuilder_ == null) {
+        return codeExecution_ == null
+            ? com.google.cloud.vertexai.api.Tool.CodeExecution.getDefaultInstance()
+            : codeExecution_;
+      } else {
+        return codeExecutionBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CodeExecution tool type.
+     * Enables the model to execute code as part of generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCodeExecution(com.google.cloud.vertexai.api.Tool.CodeExecution value) {
+      if (codeExecutionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        codeExecution_ = value;
+      } else {
+        codeExecutionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CodeExecution tool type.
+     * Enables the model to execute code as part of generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCodeExecution(
+        com.google.cloud.vertexai.api.Tool.CodeExecution.Builder builderForValue) {
+      if (codeExecutionBuilder_ == null) {
+        codeExecution_ = builderForValue.build();
+      } else {
+        codeExecutionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CodeExecution tool type.
+     * Enables the model to execute code as part of generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCodeExecution(com.google.cloud.vertexai.api.Tool.CodeExecution value) {
+      if (codeExecutionBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && codeExecution_ != null
+            && codeExecution_
+                != com.google.cloud.vertexai.api.Tool.CodeExecution.getDefaultInstance()) {
+          getCodeExecutionBuilder().mergeFrom(value);
+        } else {
+          codeExecution_ = value;
+        }
+      } else {
+        codeExecutionBuilder_.mergeFrom(value);
+      }
+      if (codeExecution_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CodeExecution tool type.
+     * Enables the model to execute code as part of generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCodeExecution() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      codeExecution_ = null;
+      if (codeExecutionBuilder_ != null) {
+        codeExecutionBuilder_.dispose();
+        codeExecutionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CodeExecution tool type.
+     * Enables the model to execute code as part of generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.Tool.CodeExecution.Builder getCodeExecutionBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getCodeExecutionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CodeExecution tool type.
+     * Enables the model to execute code as part of generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.Tool.CodeExecutionOrBuilder getCodeExecutionOrBuilder() {
+      if (codeExecutionBuilder_ != null) {
+        return codeExecutionBuilder_.getMessageOrBuilder();
+      } else {
+        return codeExecution_ == null
+            ? com.google.cloud.vertexai.api.Tool.CodeExecution.getDefaultInstance()
+            : codeExecution_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CodeExecution tool type.
+     * Enables the model to execute code as part of generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.Tool.CodeExecution,
+            com.google.cloud.vertexai.api.Tool.CodeExecution.Builder,
+            com.google.cloud.vertexai.api.Tool.CodeExecutionOrBuilder>
+        getCodeExecutionFieldBuilder() {
+      if (codeExecutionBuilder_ == null) {
+        codeExecutionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vertexai.api.Tool.CodeExecution,
+                com.google.cloud.vertexai.api.Tool.CodeExecution.Builder,
+                com.google.cloud.vertexai.api.Tool.CodeExecutionOrBuilder>(
+                getCodeExecution(), getParentForChildren(), isClean());
+        codeExecution_ = null;
+      }
+      return codeExecutionBuilder_;
     }
 
     @java.lang.Override

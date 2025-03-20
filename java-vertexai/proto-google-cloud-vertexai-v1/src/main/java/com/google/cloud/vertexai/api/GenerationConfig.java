@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -3270,6 +3270,72 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     return stopSequences_.getByteString(index);
   }
 
+  public static final int RESPONSE_LOGPROBS_FIELD_NUMBER = 18;
+  private boolean responseLogprobs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, export the logprobs results in response.
+   * </pre>
+   *
+   * <code>optional bool response_logprobs = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the responseLogprobs field is set.
+   */
+  @java.lang.Override
+  public boolean hasResponseLogprobs() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, export the logprobs results in response.
+   * </pre>
+   *
+   * <code>optional bool response_logprobs = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The responseLogprobs.
+   */
+  @java.lang.Override
+  public boolean getResponseLogprobs() {
+    return responseLogprobs_;
+  }
+
+  public static final int LOGPROBS_FIELD_NUMBER = 7;
+  private int logprobs_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Logit probabilities.
+   * </pre>
+   *
+   * <code>optional int32 logprobs = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the logprobs field is set.
+   */
+  @java.lang.Override
+  public boolean hasLogprobs() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Logit probabilities.
+   * </pre>
+   *
+   * <code>optional int32 logprobs = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The logprobs.
+   */
+  @java.lang.Override
+  public int getLogprobs() {
+    return logprobs_;
+  }
+
   public static final int PRESENCE_PENALTY_FIELD_NUMBER = 8;
   private float presencePenalty_ = 0F;
   /**
@@ -3285,7 +3351,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPresencePenalty() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -3318,7 +3384,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasFrequencyPenalty() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -3351,7 +3417,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSeed() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -3455,7 +3521,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasResponseSchema() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -3523,7 +3589,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRoutingConfig() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -3595,23 +3661,29 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < stopSequences_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, stopSequences_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeFloat(8, presencePenalty_);
-    }
     if (((bitField0_ & 0x00000040) != 0)) {
-      output.writeFloat(9, frequencyPenalty_);
+      output.writeInt32(7, logprobs_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeFloat(8, presencePenalty_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeFloat(9, frequencyPenalty_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeInt32(12, seed_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(responseMimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, responseMimeType_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(16, getResponseSchema());
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(17, getRoutingConfig());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeBool(18, responseLogprobs_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3645,23 +3717,29 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 1 * getStopSequencesList().size();
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeFloatSize(8, presencePenalty_);
-    }
     if (((bitField0_ & 0x00000040) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeFloatSize(9, frequencyPenalty_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, logprobs_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(8, presencePenalty_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(9, frequencyPenalty_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, seed_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(responseMimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, responseMimeType_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getResponseSchema());
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getRoutingConfig());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, responseLogprobs_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3703,6 +3781,14 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       if (getMaxOutputTokens() != other.getMaxOutputTokens()) return false;
     }
     if (!getStopSequencesList().equals(other.getStopSequencesList())) return false;
+    if (hasResponseLogprobs() != other.hasResponseLogprobs()) return false;
+    if (hasResponseLogprobs()) {
+      if (getResponseLogprobs() != other.getResponseLogprobs()) return false;
+    }
+    if (hasLogprobs() != other.hasLogprobs()) return false;
+    if (hasLogprobs()) {
+      if (getLogprobs() != other.getLogprobs()) return false;
+    }
     if (hasPresencePenalty() != other.hasPresencePenalty()) return false;
     if (hasPresencePenalty()) {
       if (java.lang.Float.floatToIntBits(getPresencePenalty())
@@ -3760,6 +3846,14 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (getStopSequencesCount() > 0) {
       hash = (37 * hash) + STOP_SEQUENCES_FIELD_NUMBER;
       hash = (53 * hash) + getStopSequencesList().hashCode();
+    }
+    if (hasResponseLogprobs()) {
+      hash = (37 * hash) + RESPONSE_LOGPROBS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getResponseLogprobs());
+    }
+    if (hasLogprobs()) {
+      hash = (37 * hash) + LOGPROBS_FIELD_NUMBER;
+      hash = (53 * hash) + getLogprobs();
     }
     if (hasPresencePenalty()) {
       hash = (37 * hash) + PRESENCE_PENALTY_FIELD_NUMBER;
@@ -3938,6 +4032,8 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       candidateCount_ = 0;
       maxOutputTokens_ = 0;
       stopSequences_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      responseLogprobs_ = false;
+      logprobs_ = 0;
       presencePenalty_ = 0F;
       frequencyPenalty_ = 0F;
       seed_ = 0;
@@ -4014,29 +4110,37 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         result.stopSequences_ = stopSequences_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.presencePenalty_ = presencePenalty_;
+        result.responseLogprobs_ = responseLogprobs_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.frequencyPenalty_ = frequencyPenalty_;
+        result.logprobs_ = logprobs_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.seed_ = seed_;
+        result.presencePenalty_ = presencePenalty_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.responseMimeType_ = responseMimeType_;
-      }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.responseSchema_ =
-            responseSchemaBuilder_ == null ? responseSchema_ : responseSchemaBuilder_.build();
+        result.frequencyPenalty_ = frequencyPenalty_;
         to_bitField0_ |= 0x00000100;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.seed_ = seed_;
+        to_bitField0_ |= 0x00000200;
+      }
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.responseMimeType_ = responseMimeType_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.responseSchema_ =
+            responseSchemaBuilder_ == null ? responseSchema_ : responseSchemaBuilder_.build();
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.routingConfig_ =
             routingConfigBuilder_ == null ? routingConfig_ : routingConfigBuilder_.build();
-        to_bitField0_ |= 0x00000200;
+        to_bitField0_ |= 0x00000800;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4111,6 +4215,12 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         }
         onChanged();
       }
+      if (other.hasResponseLogprobs()) {
+        setResponseLogprobs(other.getResponseLogprobs());
+      }
+      if (other.hasLogprobs()) {
+        setLogprobs(other.getLogprobs());
+      }
       if (other.hasPresencePenalty()) {
         setPresencePenalty(other.getPresencePenalty());
       }
@@ -4122,7 +4232,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getResponseMimeType().isEmpty()) {
         responseMimeType_ = other.responseMimeType_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasResponseSchema()) {
@@ -4194,42 +4304,54 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
                 stopSequences_.add(s);
                 break;
               } // case 50
+            case 56:
+              {
+                logprobs_ = input.readInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 56
             case 69:
               {
                 presencePenalty_ = input.readFloat();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 69
             case 77:
               {
                 frequencyPenalty_ = input.readFloat();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 77
             case 96:
               {
                 seed_ = input.readInt32();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 96
             case 106:
               {
                 responseMimeType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 106
             case 130:
               {
                 input.readMessage(getResponseSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 130
             case 138:
               {
                 input.readMessage(getRoutingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 138
+            case 144:
+              {
+                responseLogprobs_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 144
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4763,6 +4885,142 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private boolean responseLogprobs_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, export the logprobs results in response.
+     * </pre>
+     *
+     * <code>optional bool response_logprobs = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the responseLogprobs field is set.
+     */
+    @java.lang.Override
+    public boolean hasResponseLogprobs() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, export the logprobs results in response.
+     * </pre>
+     *
+     * <code>optional bool response_logprobs = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The responseLogprobs.
+     */
+    @java.lang.Override
+    public boolean getResponseLogprobs() {
+      return responseLogprobs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, export the logprobs results in response.
+     * </pre>
+     *
+     * <code>optional bool response_logprobs = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The responseLogprobs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResponseLogprobs(boolean value) {
+
+      responseLogprobs_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, export the logprobs results in response.
+     * </pre>
+     *
+     * <code>optional bool response_logprobs = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResponseLogprobs() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      responseLogprobs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int logprobs_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Logit probabilities.
+     * </pre>
+     *
+     * <code>optional int32 logprobs = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the logprobs field is set.
+     */
+    @java.lang.Override
+    public boolean hasLogprobs() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Logit probabilities.
+     * </pre>
+     *
+     * <code>optional int32 logprobs = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The logprobs.
+     */
+    @java.lang.Override
+    public int getLogprobs() {
+      return logprobs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Logit probabilities.
+     * </pre>
+     *
+     * <code>optional int32 logprobs = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The logprobs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLogprobs(int value) {
+
+      logprobs_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Logit probabilities.
+     * </pre>
+     *
+     * <code>optional int32 logprobs = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLogprobs() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      logprobs_ = 0;
+      onChanged();
+      return this;
+    }
+
     private float presencePenalty_;
     /**
      *
@@ -4777,7 +5035,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPresencePenalty() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -4809,7 +5067,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public Builder setPresencePenalty(float value) {
 
       presencePenalty_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4825,7 +5083,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPresencePenalty() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       presencePenalty_ = 0F;
       onChanged();
       return this;
@@ -4845,7 +5103,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasFrequencyPenalty() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -4877,7 +5135,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public Builder setFrequencyPenalty(float value) {
 
       frequencyPenalty_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4893,7 +5151,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearFrequencyPenalty() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       frequencyPenalty_ = 0F;
       onChanged();
       return this;
@@ -4913,7 +5171,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasSeed() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -4945,7 +5203,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public Builder setSeed(int value) {
 
       seed_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4961,7 +5219,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSeed() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       seed_ = 0;
       onChanged();
       return this;
@@ -5047,7 +5305,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       responseMimeType_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5070,7 +5328,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearResponseMimeType() {
       responseMimeType_ = getDefaultInstance().getResponseMimeType();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -5098,7 +5356,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       responseMimeType_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5129,7 +5387,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the responseSchema field is set.
      */
     public boolean hasResponseSchema() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -5185,7 +5443,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         responseSchemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5212,7 +5470,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         responseSchemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5235,7 +5493,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeResponseSchema(com.google.cloud.vertexai.api.Schema value) {
       if (responseSchemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && responseSchema_ != null
             && responseSchema_ != com.google.cloud.vertexai.api.Schema.getDefaultInstance()) {
           getResponseSchemaBuilder().mergeFrom(value);
@@ -5246,7 +5504,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         responseSchemaBuilder_.mergeFrom(value);
       }
       if (responseSchema_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -5269,7 +5527,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearResponseSchema() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       responseSchema_ = null;
       if (responseSchemaBuilder_ != null) {
         responseSchemaBuilder_.dispose();
@@ -5296,7 +5554,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.vertexai.api.Schema.Builder getResponseSchemaBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getResponseSchemaFieldBuilder().getBuilder();
     }
@@ -5380,7 +5638,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the routingConfig field is set.
      */
     public boolean hasRoutingConfig() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -5425,7 +5683,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         routingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5447,7 +5705,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         routingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5465,7 +5723,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeRoutingConfig(
         com.google.cloud.vertexai.api.GenerationConfig.RoutingConfig value) {
       if (routingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && routingConfig_ != null
             && routingConfig_
                 != com.google.cloud.vertexai.api.GenerationConfig.RoutingConfig
@@ -5478,7 +5736,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         routingConfigBuilder_.mergeFrom(value);
       }
       if (routingConfig_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -5495,7 +5753,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearRoutingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       routingConfig_ = null;
       if (routingConfigBuilder_ != null) {
         routingConfigBuilder_.dispose();
@@ -5517,7 +5775,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.vertexai.api.GenerationConfig.RoutingConfig.Builder
         getRoutingConfigBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getRoutingConfigFieldBuilder().getBuilder();
     }

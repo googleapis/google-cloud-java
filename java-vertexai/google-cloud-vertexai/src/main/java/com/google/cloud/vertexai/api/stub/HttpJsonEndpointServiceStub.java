@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,8 @@ import com.google.cloud.vertexai.api.MutateDeployedModelResponse;
 import com.google.cloud.vertexai.api.UndeployModelOperationMetadata;
 import com.google.cloud.vertexai.api.UndeployModelRequest;
 import com.google.cloud.vertexai.api.UndeployModelResponse;
+import com.google.cloud.vertexai.api.UpdateEndpointLongRunningRequest;
+import com.google.cloud.vertexai.api.UpdateEndpointOperationMetadata;
 import com.google.cloud.vertexai.api.UpdateEndpointRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -88,6 +90,7 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
           .add(DeployModelOperationMetadata.getDescriptor())
           .add(Empty.getDescriptor())
           .add(DeployModelResponse.getDescriptor())
+          .add(UpdateEndpointOperationMetadata.getDescriptor())
           .add(MutateDeployedModelOperationMetadata.getDescriptor())
           .add(DeleteOperationMetadata.getDescriptor())
           .add(CreateEndpointOperationMetadata.getDescriptor())
@@ -247,6 +250,48 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                       .setDefaultInstance(Endpoint.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningMethodDescriptor =
+          ApiMethodDescriptor.<UpdateEndpointLongRunningRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.vertexai.v1.EndpointService/UpdateEndpointLongRunning")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateEndpointLongRunningRequest>newBuilder()
+                      .setPath(
+                          "/v1/{endpoint.name=projects/*/locations/*/endpoints/*}:update",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateEndpointLongRunningRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "endpoint.name", request.getEndpoint().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateEndpointLongRunningRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateEndpointLongRunningRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
               .build();
 
   private static final ApiMethodDescriptor<DeleteEndpointRequest, Operation>
@@ -505,7 +550,8 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                           "/ui/{resource=projects/*/locations/*/endpoints/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featureOnlineStores/*}:setIamPolicy",
-                          "/ui/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:setIamPolicy")
+                          "/ui/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:setIamPolicy",
+                          "/ui/{resource=projects/*/locations/*/featureGroups/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -556,7 +602,8 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                           "/ui/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/publishers/*/models/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featureOnlineStores/*}:getIamPolicy",
-                          "/ui/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:getIamPolicy")
+                          "/ui/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:getIamPolicy",
+                          "/ui/{resource=projects/*/locations/*/featureGroups/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -603,7 +650,8 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                           "/ui/{resource=projects/*/locations/*/endpoints/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/featureOnlineStores/*}:testIamPermissions",
-                          "/ui/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:testIamPermissions")
+                          "/ui/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:testIamPermissions",
+                          "/ui/{resource=projects/*/locations/*/featureGroups/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -629,6 +677,11 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
   private final UnaryCallable<ListEndpointsRequest, ListEndpointsPagedResponse>
       listEndpointsPagedCallable;
   private final UnaryCallable<UpdateEndpointRequest, Endpoint> updateEndpointCallable;
+  private final UnaryCallable<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningCallable;
+  private final OperationCallable<
+          UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningOperationCallable;
   private final UnaryCallable<DeleteEndpointRequest, Operation> deleteEndpointCallable;
   private final OperationCallable<DeleteEndpointRequest, Empty, DeleteOperationMetadata>
       deleteEndpointOperationCallable;
@@ -1074,6 +1127,21 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
+                                    "/v1/{name=projects/*/locations/*/ragCorpora/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/ragCorpora/*/ragFiles/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/reasoningEngines/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
                                     "/v1/{name=projects/*/locations/*/studies/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
@@ -1358,6 +1426,11 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
+                                    "/ui/{name=projects/*/locations/*/featureGroups/*/featureMonitors/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete(
                                     "/ui/{name=projects/*/locations/*/featureOnlineStores/*/featureViews/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
@@ -1493,6 +1566,21 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             HttpRule.newBuilder()
                                 .setDelete(
                                     "/v1/{name=projects/*/locations/*/notebookRuntimeTemplates/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete(
+                                    "/v1/{name=projects/*/locations/*/ragCorpora/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete(
+                                    "/v1/{name=projects/*/locations/*/ragCorpora/*/ragFiles/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete(
+                                    "/v1/{name=projects/*/locations/*/reasoningEngines/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -1815,6 +1903,11 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/ui/{name=projects/*/locations/*/featureGroups/*/featureMonitors/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1/{name=projects/*/locations/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
@@ -1948,6 +2041,21 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1/{name=projects/*/locations/*/notebookRuntimeTemplates/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/ragCorpora/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/ragCorpora/*/ragFiles/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/reasoningEngines/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -2259,6 +2367,11 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/ui/{name=projects/*/locations/*/featureGroups/*/featureMonitors/*/operations/*}:wait")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1/{name=projects/*/locations/*}/operations")
                                 .build())
                         .addAdditionalBindings(
@@ -2392,6 +2505,11 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/reasoningEngines/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1/{name=projects/*/locations/*/studies/*}/operations")
                                 .build())
                         .addAdditionalBindings(
@@ -2413,6 +2531,15 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1/{name=projects/*/locations/*/pipelineJobs/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=projects/*/locations/*/ragCorpora/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/ragCorpora/*/ragFiles/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -2710,6 +2837,11 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setPost(
+                                    "/ui/{name=projects/*/locations/*/featureGroups/*/featureMonitors/*/operations/*}:wait")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setPost("/v1/{name=projects/*/locations/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
@@ -2845,6 +2977,21 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
+                                    "/v1/{name=projects/*/locations/*/ragCorpora/*/operations/*}:wait")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/ragCorpora/*/ragFiles/*/operations/*}:wait")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/reasoningEngines/*/operations/*}:wait")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
                                     "/v1/{name=projects/*/locations/*/studies/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
@@ -2965,6 +3112,18 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<UpdateEndpointLongRunningRequest, Operation>
+        updateEndpointLongRunningTransportSettings =
+            HttpJsonCallSettings.<UpdateEndpointLongRunningRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateEndpointLongRunningMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("endpoint.name", String.valueOf(request.getEndpoint().getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<DeleteEndpointRequest, Operation> deleteEndpointTransportSettings =
         HttpJsonCallSettings.<DeleteEndpointRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteEndpointMethodDescriptor)
@@ -3089,6 +3248,17 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
     this.updateEndpointCallable =
         callableFactory.createUnaryCallable(
             updateEndpointTransportSettings, settings.updateEndpointSettings(), clientContext);
+    this.updateEndpointLongRunningCallable =
+        callableFactory.createUnaryCallable(
+            updateEndpointLongRunningTransportSettings,
+            settings.updateEndpointLongRunningSettings(),
+            clientContext);
+    this.updateEndpointLongRunningOperationCallable =
+        callableFactory.createOperationCallable(
+            updateEndpointLongRunningTransportSettings,
+            settings.updateEndpointLongRunningOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteEndpointCallable =
         callableFactory.createUnaryCallable(
             deleteEndpointTransportSettings, settings.deleteEndpointSettings(), clientContext);
@@ -3159,6 +3329,7 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
     methodDescriptors.add(getEndpointMethodDescriptor);
     methodDescriptors.add(listEndpointsMethodDescriptor);
     methodDescriptors.add(updateEndpointMethodDescriptor);
+    methodDescriptors.add(updateEndpointLongRunningMethodDescriptor);
     methodDescriptors.add(deleteEndpointMethodDescriptor);
     methodDescriptors.add(deployModelMethodDescriptor);
     methodDescriptors.add(undeployModelMethodDescriptor);
@@ -3205,6 +3376,19 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
   @Override
   public UnaryCallable<UpdateEndpointRequest, Endpoint> updateEndpointCallable() {
     return updateEndpointCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningCallable() {
+    return updateEndpointLongRunningCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningOperationCallable() {
+    return updateEndpointLongRunningOperationCallable;
   }
 
   @Override
