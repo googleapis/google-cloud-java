@@ -444,8 +444,8 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
        * Optional. Whether to propagate the Kubernetes Service to the route
        * destination clusters. The Service will always be deployed to the Target
        * cluster even if the HTTPRoute is not. This option may be used to
-       * facilitiate successful DNS lookup in the route destination clusters.
-       * Can only be set to true if destinations are specified.
+       * facilitate successful DNS lookup in the route destination clusters. Can
+       * only be set to true if destinations are specified.
        * </pre>
        *
        * <code>bool propagate_service = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -586,8 +586,8 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
        * Optional. Whether to propagate the Kubernetes Service to the route
        * destination clusters. The Service will always be deployed to the Target
        * cluster even if the HTTPRoute is not. This option may be used to
-       * facilitiate successful DNS lookup in the route destination clusters.
-       * Can only be set to true if destinations are specified.
+       * facilitate successful DNS lookup in the route destination clusters. Can
+       * only be set to true if destinations are specified.
        * </pre>
        *
        * <code>bool propagate_service = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1231,8 +1231,8 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
          * Optional. Whether to propagate the Kubernetes Service to the route
          * destination clusters. The Service will always be deployed to the Target
          * cluster even if the HTTPRoute is not. This option may be used to
-         * facilitiate successful DNS lookup in the route destination clusters.
-         * Can only be set to true if destinations are specified.
+         * facilitate successful DNS lookup in the route destination clusters. Can
+         * only be set to true if destinations are specified.
          * </pre>
          *
          * <code>bool propagate_service = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1250,8 +1250,8 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
          * Optional. Whether to propagate the Kubernetes Service to the route
          * destination clusters. The Service will always be deployed to the Target
          * cluster even if the HTTPRoute is not. This option may be used to
-         * facilitiate successful DNS lookup in the route destination clusters.
-         * Can only be set to true if destinations are specified.
+         * facilitate successful DNS lookup in the route destination clusters. Can
+         * only be set to true if destinations are specified.
          * </pre>
          *
          * <code>bool propagate_service = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1273,8 +1273,8 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
          * Optional. Whether to propagate the Kubernetes Service to the route
          * destination clusters. The Service will always be deployed to the Target
          * cluster even if the HTTPRoute is not. This option may be used to
-         * facilitiate successful DNS lookup in the route destination clusters.
-         * Can only be set to true if destinations are specified.
+         * facilitate successful DNS lookup in the route destination clusters. Can
+         * only be set to true if destinations are specified.
          * </pre>
          *
          * <code>bool propagate_service = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
