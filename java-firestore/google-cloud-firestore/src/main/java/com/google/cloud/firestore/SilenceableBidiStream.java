@@ -63,7 +63,7 @@ final class SilenceableBidiStream<RequestT, ResponseT>
   }
 
   public void send(RequestT request) {
-    LOGGER.fine(stream.toString());
+    LOGGER.fine(stream::toString);
     stream.send(request);
   }
 

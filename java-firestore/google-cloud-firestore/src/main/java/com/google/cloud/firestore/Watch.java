@@ -474,7 +474,7 @@ final class Watch implements BidiStreamObserver<ListenRequest, ListenResponse> {
     if (!hasPushed || !changes.isEmpty()) {
       final QuerySnapshot querySnapshot =
           QuerySnapshot.withChanges(query, readTime, documentSet, changes);
-      LOGGER.fine(querySnapshot.toString());
+      LOGGER.fine(querySnapshot::toString);
       userCallbackExecutor.execute(() -> listener.onEvent(querySnapshot, null));
       hasPushed = true;
     }
