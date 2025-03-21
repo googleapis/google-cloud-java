@@ -1099,6 +1099,9 @@
             "DeployPublisherModel": {
               "methods": ["deployPublisherModelAsync", "deployPublisherModelOperationCallable", "deployPublisherModelCallable"]
             },
+            "ExportPublisherModel": {
+              "methods": ["exportPublisherModelAsync", "exportPublisherModelOperationCallable", "exportPublisherModelCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },
