@@ -2598,8 +2598,7 @@ public final class OsLoginProto {
      *
      * <pre>
      * Public key text in SSH format, defined by
-     * &lt;a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank"&gt;RFC4253&lt;/a&gt;
-     * section 6.6.
+     * [RFC4253](https://www.ietf.org/rfc/rfc4253.txt) section 6.6.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -2612,8 +2611,7 @@ public final class OsLoginProto {
      *
      * <pre>
      * Public key text in SSH format, defined by
-     * &lt;a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank"&gt;RFC4253&lt;/a&gt;
-     * section 6.6.
+     * [RFC4253](https://www.ietf.org/rfc/rfc4253.txt) section 6.6.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -2740,8 +2738,7 @@ public final class OsLoginProto {
      *
      * <pre>
      * Public key text in SSH format, defined by
-     * &lt;a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank"&gt;RFC4253&lt;/a&gt;
-     * section 6.6.
+     * [RFC4253](https://www.ietf.org/rfc/rfc4253.txt) section 6.6.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -2765,8 +2762,7 @@ public final class OsLoginProto {
      *
      * <pre>
      * Public key text in SSH format, defined by
-     * &lt;a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank"&gt;RFC4253&lt;/a&gt;
-     * section 6.6.
+     * [RFC4253](https://www.ietf.org/rfc/rfc4253.txt) section 6.6.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -3329,8 +3325,7 @@ public final class OsLoginProto {
        *
        * <pre>
        * Public key text in SSH format, defined by
-       * &lt;a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank"&gt;RFC4253&lt;/a&gt;
-       * section 6.6.
+       * [RFC4253](https://www.ietf.org/rfc/rfc4253.txt) section 6.6.
        * </pre>
        *
        * <code>string key = 1;</code>
@@ -3353,8 +3348,7 @@ public final class OsLoginProto {
        *
        * <pre>
        * Public key text in SSH format, defined by
-       * &lt;a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank"&gt;RFC4253&lt;/a&gt;
-       * section 6.6.
+       * [RFC4253](https://www.ietf.org/rfc/rfc4253.txt) section 6.6.
        * </pre>
        *
        * <code>string key = 1;</code>
@@ -3377,8 +3371,7 @@ public final class OsLoginProto {
        *
        * <pre>
        * Public key text in SSH format, defined by
-       * &lt;a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank"&gt;RFC4253&lt;/a&gt;
-       * section 6.6.
+       * [RFC4253](https://www.ietf.org/rfc/rfc4253.txt) section 6.6.
        * </pre>
        *
        * <code>string key = 1;</code>
@@ -3400,8 +3393,7 @@ public final class OsLoginProto {
        *
        * <pre>
        * Public key text in SSH format, defined by
-       * &lt;a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank"&gt;RFC4253&lt;/a&gt;
-       * section 6.6.
+       * [RFC4253](https://www.ietf.org/rfc/rfc4253.txt) section 6.6.
        * </pre>
        *
        * <code>string key = 1;</code>
@@ -3419,8 +3411,7 @@ public final class OsLoginProto {
        *
        * <pre>
        * Public key text in SSH format, defined by
-       * &lt;a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank"&gt;RFC4253&lt;/a&gt;
-       * section 6.6.
+       * [RFC4253](https://www.ietf.org/rfc/rfc4253.txt) section 6.6.
        * </pre>
        *
        * <code>string key = 1;</code>
