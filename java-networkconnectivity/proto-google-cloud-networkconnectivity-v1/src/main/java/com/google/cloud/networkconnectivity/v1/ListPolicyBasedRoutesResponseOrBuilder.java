@@ -28,7 +28,7 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -40,7 +40,7 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -51,7 +51,7 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -62,7 +62,7 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -74,7 +74,7 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;

@@ -192,6 +192,7 @@ public class ParameterManagerClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setFormat(ParameterFormat.forNumber(0))
             .setPolicyMember(ResourcePolicyMember.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockParameterManager.addResponse(expectedResponse);
 
@@ -235,6 +236,7 @@ public class ParameterManagerClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setFormat(ParameterFormat.forNumber(0))
             .setPolicyMember(ResourcePolicyMember.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockParameterManager.addResponse(expectedResponse);
 
@@ -278,6 +280,7 @@ public class ParameterManagerClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setFormat(ParameterFormat.forNumber(0))
             .setPolicyMember(ResourcePolicyMember.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockParameterManager.addResponse(expectedResponse);
 
@@ -327,6 +330,7 @@ public class ParameterManagerClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setFormat(ParameterFormat.forNumber(0))
             .setPolicyMember(ResourcePolicyMember.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockParameterManager.addResponse(expectedResponse);
 
@@ -376,6 +380,7 @@ public class ParameterManagerClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setFormat(ParameterFormat.forNumber(0))
             .setPolicyMember(ResourcePolicyMember.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockParameterManager.addResponse(expectedResponse);
 
@@ -582,6 +587,7 @@ public class ParameterManagerClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisabled(true)
             .setPayload(ParameterVersionPayload.newBuilder().build())
+            .setKmsKeyVersion("kmsKeyVersion2084784042")
             .build();
     mockParameterManager.addResponse(expectedResponse);
 
@@ -629,6 +635,7 @@ public class ParameterManagerClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisabled(true)
             .setPayload(ParameterVersionPayload.newBuilder().build())
+            .setKmsKeyVersion("kmsKeyVersion2084784042")
             .build();
     mockParameterManager.addResponse(expectedResponse);
 
@@ -764,6 +771,7 @@ public class ParameterManagerClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisabled(true)
             .setPayload(ParameterVersionPayload.newBuilder().build())
+            .setKmsKeyVersion("kmsKeyVersion2084784042")
             .build();
     mockParameterManager.addResponse(expectedResponse);
 
@@ -817,6 +825,7 @@ public class ParameterManagerClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisabled(true)
             .setPayload(ParameterVersionPayload.newBuilder().build())
+            .setKmsKeyVersion("kmsKeyVersion2084784042")
             .build();
     mockParameterManager.addResponse(expectedResponse);
 
@@ -870,6 +879,7 @@ public class ParameterManagerClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisabled(true)
             .setPayload(ParameterVersionPayload.newBuilder().build())
+            .setKmsKeyVersion("kmsKeyVersion2084784042")
             .build();
     mockParameterManager.addResponse(expectedResponse);
 

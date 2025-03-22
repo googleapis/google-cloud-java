@@ -277,7 +277,7 @@ public final class VertexRagDataProto {
           + "iplatform.v1beta1.RagFileChunkingConfigB"
           + "\002\030\001\022d\n\036rag_file_transformation_config\030\003 "
           + "\001(\0132<.google.cloud.aiplatform.v1beta1.Ra"
-          + "gFileTransformationConfig\"\273\007\n\024ImportRagF"
+          + "gFileTransformationConfig\"\201\t\n\024ImportRagF"
           + "ilesConfig\022@\n\ngcs_source\030\002 \001(\0132*.google."
           + "cloud.aiplatform.v1beta1.GcsSourceH\000\022Q\n\023"
           + "google_drive_source\030\003 \001(\01322.google.cloud"
@@ -292,22 +292,27 @@ public final class VertexRagDataProto {
           + ".v1beta1.GcsDestinationB\002\030\001H\001\022a\n\035partial"
           + "_failure_bigquery_sink\030\014 \001(\01324.google.cl"
           + "oud.aiplatform.v1beta1.BigQueryDestinati"
-          + "onB\002\030\001H\001\022\\\n\030rag_file_chunking_config\030\004 \001"
-          + "(\01326.google.cloud.aiplatform.v1beta1.Rag"
-          + "FileChunkingConfigB\002\030\001\022d\n\036rag_file_trans"
-          + "formation_config\030\020 \001(\0132<.google.cloud.ai"
-          + "platform.v1beta1.RagFileTransformationCo"
-          + "nfig\022[\n\027rag_file_parsing_config\030\010 \001(\01325."
-          + "google.cloud.aiplatform.v1beta1.RagFileP"
-          + "arsingConfigB\003\340A\001\022+\n\036max_embedding_reque"
-          + "sts_per_min\030\005 \001(\005B\003\340A\001B\017\n\rimport_sourceB"
-          + "\026\n\024partial_failure_sinkB\351\001\n#com.google.c"
-          + "loud.aiplatform.v1beta1B\022VertexRagDataPr"
-          + "otoP\001ZCcloud.google.com/go/aiplatform/ap"
-          + "iv1beta1/aiplatformpb;aiplatformpb\252\002\037Goo"
-          + "gle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cl"
-          + "oud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::"
-          + "AIPlatform::V1beta1b\006proto3"
+          + "onB\002\030\001H\001\022Q\n\026import_result_gcs_sink\030\016 \001(\013"
+          + "2/.google.cloud.aiplatform.v1beta1.GcsDe"
+          + "stinationH\002\022[\n\033import_result_bigquery_si"
+          + "nk\030\017 \001(\01324.google.cloud.aiplatform.v1bet"
+          + "a1.BigQueryDestinationH\002\022\\\n\030rag_file_chu"
+          + "nking_config\030\004 \001(\01326.google.cloud.aiplat"
+          + "form.v1beta1.RagFileChunkingConfigB\002\030\001\022d"
+          + "\n\036rag_file_transformation_config\030\020 \001(\0132<"
+          + ".google.cloud.aiplatform.v1beta1.RagFile"
+          + "TransformationConfig\022[\n\027rag_file_parsing"
+          + "_config\030\010 \001(\01325.google.cloud.aiplatform."
+          + "v1beta1.RagFileParsingConfigB\003\340A\001\022+\n\036max"
+          + "_embedding_requests_per_min\030\005 \001(\005B\003\340A\001B\017"
+          + "\n\rimport_sourceB\026\n\024partial_failure_sinkB"
+          + "\024\n\022import_result_sinkB\351\001\n#com.google.clo"
+          + "ud.aiplatform.v1beta1B\022VertexRagDataProt"
+          + "oP\001ZCcloud.google.com/go/aiplatform/apiv"
+          + "1beta1/aiplatformpb;aiplatformpb\252\002\037Googl"
+          + "e.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clou"
+          + "d\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AI"
+          + "Platform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -580,12 +585,15 @@ public final class VertexRagDataProto {
               "SharePointSources",
               "PartialFailureGcsSink",
               "PartialFailureBigquerySink",
+              "ImportResultGcsSink",
+              "ImportResultBigquerySink",
               "RagFileChunkingConfig",
               "RagFileTransformationConfig",
               "RagFileParsingConfig",
               "MaxEmbeddingRequestsPerMin",
               "ImportSource",
               "PartialFailureSink",
+              "ImportResultSink",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

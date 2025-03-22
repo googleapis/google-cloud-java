@@ -29,7 +29,8 @@ public interface WorkflowOrBuilder
    *
    * <pre>
    * The resource name of the workflow.
-   * Format: projects/{project}/locations/{location}/workflows/{workflow}
+   * Format: projects/{project}/locations/{location}/workflows/{workflow}.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -42,7 +43,8 @@ public interface WorkflowOrBuilder
    *
    * <pre>
    * The resource name of the workflow.
-   * Format: projects/{project}/locations/{location}/workflows/{workflow}
+   * Format: projects/{project}/locations/{location}/workflows/{workflow}.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -56,7 +58,8 @@ public interface WorkflowOrBuilder
    *
    * <pre>
    * Description of the workflow provided by the user.
-   * Must be at most 1000 unicode characters long.
+   * Must be at most 1000 Unicode characters long.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -69,7 +72,8 @@ public interface WorkflowOrBuilder
    *
    * <pre>
    * Description of the workflow provided by the user.
-   * Must be at most 1000 unicode characters long.
+   * Must be at most 1000 Unicode characters long.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -157,6 +161,7 @@ public interface WorkflowOrBuilder
    *
    * <pre>
    * Output only. The timestamp for when the workflow was created.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -170,6 +175,7 @@ public interface WorkflowOrBuilder
    *
    * <pre>
    * Output only. The timestamp for when the workflow was created.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -183,6 +189,7 @@ public interface WorkflowOrBuilder
    *
    * <pre>
    * Output only. The timestamp for when the workflow was created.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -195,6 +202,7 @@ public interface WorkflowOrBuilder
    *
    * <pre>
    * Output only. The timestamp for when the workflow was last updated.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -208,6 +216,7 @@ public interface WorkflowOrBuilder
    *
    * <pre>
    * Output only. The timestamp for when the workflow was last updated.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -221,6 +230,7 @@ public interface WorkflowOrBuilder
    *
    * <pre>
    * Output only. The timestamp for when the workflow was last updated.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -281,6 +291,7 @@ public interface WorkflowOrBuilder
    * than 63 characters and can only contain lowercase letters, numeric
    * characters, underscores, and dashes. Label keys must start with a letter.
    * International characters are allowed.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -295,6 +306,7 @@ public interface WorkflowOrBuilder
    * than 63 characters and can only contain lowercase letters, numeric
    * characters, underscores, and dashes. Label keys must start with a letter.
    * International characters are allowed.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -312,6 +324,7 @@ public interface WorkflowOrBuilder
    * than 63 characters and can only contain lowercase letters, numeric
    * characters, underscores, and dashes. Label keys must start with a letter.
    * International characters are allowed.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -326,6 +339,7 @@ public interface WorkflowOrBuilder
    * than 63 characters and can only contain lowercase letters, numeric
    * characters, underscores, and dashes. Label keys must start with a letter.
    * International characters are allowed.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -344,6 +358,7 @@ public interface WorkflowOrBuilder
    * than 63 characters and can only contain lowercase letters, numeric
    * characters, underscores, and dashes. Label keys must start with a letter.
    * International characters are allowed.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -571,8 +586,8 @@ public interface WorkflowOrBuilder
    * <pre>
    * Optional. User-defined environment variables associated with this workflow
    * revision. This map has a maximum length of 20. Each string can take up to
-   * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
-   * “WORKFLOWS".
+   * 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or
+   * "WORKFLOWS".
    * </pre>
    *
    * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
@@ -585,8 +600,8 @@ public interface WorkflowOrBuilder
    * <pre>
    * Optional. User-defined environment variables associated with this workflow
    * revision. This map has a maximum length of 20. Each string can take up to
-   * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
-   * “WORKFLOWS".
+   * 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or
+   * "WORKFLOWS".
    * </pre>
    *
    * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
@@ -602,8 +617,8 @@ public interface WorkflowOrBuilder
    * <pre>
    * Optional. User-defined environment variables associated with this workflow
    * revision. This map has a maximum length of 20. Each string can take up to
-   * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
-   * “WORKFLOWS".
+   * 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or
+   * "WORKFLOWS".
    * </pre>
    *
    * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
@@ -616,8 +631,8 @@ public interface WorkflowOrBuilder
    * <pre>
    * Optional. User-defined environment variables associated with this workflow
    * revision. This map has a maximum length of 20. Each string can take up to
-   * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
-   * “WORKFLOWS".
+   * 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or
+   * "WORKFLOWS".
    * </pre>
    *
    * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
@@ -634,14 +649,274 @@ public interface WorkflowOrBuilder
    * <pre>
    * Optional. User-defined environment variables associated with this workflow
    * revision. This map has a maximum length of 20. Each string can take up to
-   * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
-   * “WORKFLOWS".
+   * 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or
+   * "WORKFLOWS".
    * </pre>
    *
    * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.lang.String getUserEnvVarsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the execution history level to apply to this workflow.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.v1.ExecutionHistoryLevel execution_history_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for executionHistoryLevel.
+   */
+  int getExecutionHistoryLevelValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the execution history level to apply to this workflow.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.v1.ExecutionHistoryLevel execution_history_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The executionHistoryLevel.
+   */
+  com.google.cloud.workflows.v1.ExecutionHistoryLevel getExecutionHistoryLevel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
+   * data associated with the workflow.
+   * </pre>
+   *
+   * <code>
+   * repeated string all_kms_keys = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the allKmsKeys.
+   */
+  java.util.List<java.lang.String> getAllKmsKeysList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
+   * data associated with the workflow.
+   * </pre>
+   *
+   * <code>
+   * repeated string all_kms_keys = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of allKmsKeys.
+   */
+  int getAllKmsKeysCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
+   * data associated with the workflow.
+   * </pre>
+   *
+   * <code>
+   * repeated string all_kms_keys = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The allKmsKeys at the given index.
+   */
+  java.lang.String getAllKmsKeys(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
+   * data associated with the workflow.
+   * </pre>
+   *
+   * <code>
+   * repeated string all_kms_keys = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the allKmsKeys at the given index.
+   */
+  com.google.protobuf.ByteString getAllKmsKeysBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of all KMS crypto key versions used to encrypt or
+   * decrypt the data associated with the workflow.
+   * </pre>
+   *
+   * <code>
+   * repeated string all_kms_keys_versions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the allKmsKeysVersions.
+   */
+  java.util.List<java.lang.String> getAllKmsKeysVersionsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of all KMS crypto key versions used to encrypt or
+   * decrypt the data associated with the workflow.
+   * </pre>
+   *
+   * <code>
+   * repeated string all_kms_keys_versions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of allKmsKeysVersions.
+   */
+  int getAllKmsKeysVersionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of all KMS crypto key versions used to encrypt or
+   * decrypt the data associated with the workflow.
+   * </pre>
+   *
+   * <code>
+   * repeated string all_kms_keys_versions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The allKmsKeysVersions at the given index.
+   */
+  java.lang.String getAllKmsKeysVersions(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of all KMS crypto key versions used to encrypt or
+   * decrypt the data associated with the workflow.
+   * </pre>
+   *
+   * <code>
+   * repeated string all_kms_keys_versions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the allKmsKeysVersions at the given index.
+   */
+  com.google.protobuf.ByteString getAllKmsKeysVersionsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of a KMS crypto key version used to encrypt
+   * or decrypt the data associated with the workflow.
+   *
+   * Format:
+   * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}/cryptoKeyVersions/{cryptoKeyVersion}
+   * </pre>
+   *
+   * <code>
+   * string crypto_key_version = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The cryptoKeyVersion.
+   */
+  java.lang.String getCryptoKeyVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of a KMS crypto key version used to encrypt
+   * or decrypt the data associated with the workflow.
+   *
+   * Format:
+   * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}/cryptoKeyVersions/{cryptoKeyVersion}
+   * </pre>
+   *
+   * <code>
+   * string crypto_key_version = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for cryptoKeyVersion.
+   */
+  com.google.protobuf.ByteString getCryptoKeyVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tags associated with this workflow.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 19 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tags associated with this workflow.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 19 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsTags(java.lang.String key);
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getTags();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tags associated with this workflow.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 19 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tags associated with this workflow.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 19 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tags associated with this workflow.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 19 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getTagsOrThrow(java.lang.String key);
 
   com.google.cloud.workflows.v1.Workflow.SourceCodeCase getSourceCodeCase();
 }

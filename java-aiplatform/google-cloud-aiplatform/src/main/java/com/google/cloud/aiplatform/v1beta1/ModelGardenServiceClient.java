@@ -145,6 +145,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ExportPublisherModel</td>
+ *      <td><p> Exports a publisher model to a user provided Google Cloud Storage bucket.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportPublisherModelAsync(ExportPublisherModelRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportPublisherModelOperationCallable()
+ *           <li><p> exportPublisherModelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -807,6 +822,103 @@ public class ModelGardenServiceClient implements BackgroundResource {
   public final UnaryCallable<DeployPublisherModelRequest, Operation>
       deployPublisherModelCallable() {
     return stub.deployPublisherModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports a publisher model to a user provided Google Cloud Storage bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   ExportPublisherModelRequest request =
+   *       ExportPublisherModelRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setDestination(GcsDestination.newBuilder().build())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ExportPublisherModelResponse response =
+   *       modelGardenServiceClient.exportPublisherModelAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportPublisherModelResponse, ExportPublisherModelOperationMetadata>
+      exportPublisherModelAsync(ExportPublisherModelRequest request) {
+    return exportPublisherModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports a publisher model to a user provided Google Cloud Storage bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   ExportPublisherModelRequest request =
+   *       ExportPublisherModelRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setDestination(GcsDestination.newBuilder().build())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   OperationFuture<ExportPublisherModelResponse, ExportPublisherModelOperationMetadata> future =
+   *       modelGardenServiceClient.exportPublisherModelOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportPublisherModelResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ExportPublisherModelRequest,
+          ExportPublisherModelResponse,
+          ExportPublisherModelOperationMetadata>
+      exportPublisherModelOperationCallable() {
+    return stub.exportPublisherModelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports a publisher model to a user provided Google Cloud Storage bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   ExportPublisherModelRequest request =
+   *       ExportPublisherModelRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setDestination(GcsDestination.newBuilder().build())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       modelGardenServiceClient.exportPublisherModelCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportPublisherModelRequest, Operation>
+      exportPublisherModelCallable() {
+    return stub.exportPublisherModelCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -46,6 +46,9 @@
             "ExecuteSql": {
               "methods": ["executeSql", "executeSql", "executeSql", "executeSqlCallable"]
             },
+            "ExportCluster": {
+              "methods": ["exportClusterAsync", "exportClusterAsync", "exportClusterAsync", "exportClusterOperationCallable", "exportClusterCallable"]
+            },
             "FailoverInstance": {
               "methods": ["failoverInstanceAsync", "failoverInstanceAsync", "failoverInstanceAsync", "failoverInstanceOperationCallable", "failoverInstanceCallable"]
             },

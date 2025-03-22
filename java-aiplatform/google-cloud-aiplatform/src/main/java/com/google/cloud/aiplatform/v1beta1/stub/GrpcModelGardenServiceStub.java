@@ -34,6 +34,9 @@ import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest;
 import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelResponse;
 import com.google.cloud.aiplatform.v1beta1.DeployRequest;
 import com.google.cloud.aiplatform.v1beta1.DeployResponse;
+import com.google.cloud.aiplatform.v1beta1.ExportPublisherModelOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest;
+import com.google.cloud.aiplatform.v1beta1.ExportPublisherModelResponse;
 import com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse;
@@ -106,6 +109,17 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ExportPublisherModelRequest, Operation>
+      exportPublisherModelMethodDescriptor =
+          MethodDescriptor.<ExportPublisherModelRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.ModelGardenService/ExportPublisherModel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportPublisherModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -166,6 +180,12 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
           DeployPublisherModelResponse,
           DeployPublisherModelOperationMetadata>
       deployPublisherModelOperationCallable;
+  private final UnaryCallable<ExportPublisherModelRequest, Operation> exportPublisherModelCallable;
+  private final OperationCallable<
+          ExportPublisherModelRequest,
+          ExportPublisherModelResponse,
+          ExportPublisherModelOperationMetadata>
+      exportPublisherModelOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -260,6 +280,17 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ExportPublisherModelRequest, Operation> exportPublisherModelTransportSettings =
+        GrpcCallSettings.<ExportPublisherModelRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportPublisherModelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -347,6 +378,17 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
             settings.deployPublisherModelOperationSettings(),
             clientContext,
             operationsStub);
+    this.exportPublisherModelCallable =
+        callableFactory.createUnaryCallable(
+            exportPublisherModelTransportSettings,
+            settings.exportPublisherModelSettings(),
+            clientContext);
+    this.exportPublisherModelOperationCallable =
+        callableFactory.createOperationCallable(
+            exportPublisherModelTransportSettings,
+            settings.exportPublisherModelOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -416,6 +458,20 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
           DeployPublisherModelOperationMetadata>
       deployPublisherModelOperationCallable() {
     return deployPublisherModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportPublisherModelRequest, Operation> exportPublisherModelCallable() {
+    return exportPublisherModelCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ExportPublisherModelRequest,
+          ExportPublisherModelResponse,
+          ExportPublisherModelOperationMetadata>
+      exportPublisherModelOperationCallable() {
+    return exportPublisherModelOperationCallable;
   }
 
   @Override

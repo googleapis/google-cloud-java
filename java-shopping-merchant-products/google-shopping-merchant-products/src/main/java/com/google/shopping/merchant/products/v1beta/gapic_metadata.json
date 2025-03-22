@@ -15,6 +15,9 @@
             },
             "InsertProductInput": {
               "methods": ["insertProductInput", "insertProductInputCallable"]
+            },
+            "UpdateProductInput": {
+              "methods": ["updateProductInput", "updateProductInput", "updateProductInputCallable"]
             }
           }
         }

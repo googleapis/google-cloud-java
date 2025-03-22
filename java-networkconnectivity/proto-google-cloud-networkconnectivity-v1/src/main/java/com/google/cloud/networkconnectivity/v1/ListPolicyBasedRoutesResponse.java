@@ -23,7 +23,9 @@ package com.google.cloud.networkconnectivity.v1;
  *
  *
  * <pre>
- * Response for [PolicyBasedRouting.ListPolicyBasedRoutes][] method.
+ * Response for
+ * [PolicyBasedRoutingService.ListPolicyBasedRoutes][google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.ListPolicyBasedRoutes]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkconnectivity.v1.ListPolicyBasedRoutesResponse}
@@ -74,7 +76,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -89,7 +91,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -104,7 +106,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -118,7 +120,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -132,7 +134,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -454,7 +456,9 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Response for [PolicyBasedRouting.ListPolicyBasedRoutes][] method.
+   * Response for
+   * [PolicyBasedRoutingService.ListPolicyBasedRoutes][google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.ListPolicyBasedRoutes]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.ListPolicyBasedRoutesResponse}
@@ -746,7 +750,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -764,7 +768,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -781,7 +785,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -799,7 +803,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -823,7 +827,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -845,7 +849,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -869,7 +873,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -893,7 +897,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -914,7 +918,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -936,7 +940,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -958,7 +962,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -978,7 +982,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -998,7 +1002,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -1012,7 +1016,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -1030,7 +1034,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -1049,7 +1053,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -1065,7 +1069,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -1081,7 +1085,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;

@@ -57,6 +57,8 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeResponse;
+import com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest;
+import com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateResponse;
 import com.google.cloud.networkconnectivity.v1.CreateHubRequest;
 import com.google.cloud.networkconnectivity.v1.CreateSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.DeleteHubRequest;
@@ -86,6 +88,8 @@ import com.google.cloud.networkconnectivity.v1.QueryHubStatusRequest;
 import com.google.cloud.networkconnectivity.v1.QueryHubStatusResponse;
 import com.google.cloud.networkconnectivity.v1.RejectHubSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.RejectHubSpokeResponse;
+import com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateRequest;
+import com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateResponse;
 import com.google.cloud.networkconnectivity.v1.Route;
 import com.google.cloud.networkconnectivity.v1.RouteTable;
 import com.google.cloud.networkconnectivity.v1.Spoke;
@@ -224,6 +228,14 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
   private final OperationCallSettings<
           AcceptHubSpokeRequest, AcceptHubSpokeResponse, OperationMetadata>
       acceptHubSpokeOperationSettings;
+  private final UnaryCallSettings<AcceptSpokeUpdateRequest, Operation> acceptSpokeUpdateSettings;
+  private final OperationCallSettings<
+          AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+      acceptSpokeUpdateOperationSettings;
+  private final UnaryCallSettings<RejectSpokeUpdateRequest, Operation> rejectSpokeUpdateSettings;
+  private final OperationCallSettings<
+          RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+      rejectSpokeUpdateOperationSettings;
   private final UnaryCallSettings<DeleteSpokeRequest, Operation> deleteSpokeSettings;
   private final OperationCallSettings<DeleteSpokeRequest, Empty, OperationMetadata>
       deleteSpokeOperationSettings;
@@ -775,6 +787,30 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     return acceptHubSpokeOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to acceptSpokeUpdate. */
+  public UnaryCallSettings<AcceptSpokeUpdateRequest, Operation> acceptSpokeUpdateSettings() {
+    return acceptSpokeUpdateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to acceptSpokeUpdate. */
+  public OperationCallSettings<
+          AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+      acceptSpokeUpdateOperationSettings() {
+    return acceptSpokeUpdateOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rejectSpokeUpdate. */
+  public UnaryCallSettings<RejectSpokeUpdateRequest, Operation> rejectSpokeUpdateSettings() {
+    return rejectSpokeUpdateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rejectSpokeUpdate. */
+  public OperationCallSettings<
+          RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+      rejectSpokeUpdateOperationSettings() {
+    return rejectSpokeUpdateOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteSpoke. */
   public UnaryCallSettings<DeleteSpokeRequest, Operation> deleteSpokeSettings() {
     return deleteSpokeSettings;
@@ -959,6 +995,12 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     rejectHubSpokeOperationSettings = settingsBuilder.rejectHubSpokeOperationSettings().build();
     acceptHubSpokeSettings = settingsBuilder.acceptHubSpokeSettings().build();
     acceptHubSpokeOperationSettings = settingsBuilder.acceptHubSpokeOperationSettings().build();
+    acceptSpokeUpdateSettings = settingsBuilder.acceptSpokeUpdateSettings().build();
+    acceptSpokeUpdateOperationSettings =
+        settingsBuilder.acceptSpokeUpdateOperationSettings().build();
+    rejectSpokeUpdateSettings = settingsBuilder.rejectSpokeUpdateSettings().build();
+    rejectSpokeUpdateOperationSettings =
+        settingsBuilder.rejectSpokeUpdateOperationSettings().build();
     deleteSpokeSettings = settingsBuilder.deleteSpokeSettings().build();
     deleteSpokeOperationSettings = settingsBuilder.deleteSpokeOperationSettings().build();
     getRouteTableSettings = settingsBuilder.getRouteTableSettings().build();
@@ -1018,6 +1060,16 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     private final OperationCallSettings.Builder<
             AcceptHubSpokeRequest, AcceptHubSpokeResponse, OperationMetadata>
         acceptHubSpokeOperationSettings;
+    private final UnaryCallSettings.Builder<AcceptSpokeUpdateRequest, Operation>
+        acceptSpokeUpdateSettings;
+    private final OperationCallSettings.Builder<
+            AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+        acceptSpokeUpdateOperationSettings;
+    private final UnaryCallSettings.Builder<RejectSpokeUpdateRequest, Operation>
+        rejectSpokeUpdateSettings;
+    private final OperationCallSettings.Builder<
+            RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+        rejectSpokeUpdateOperationSettings;
     private final UnaryCallSettings.Builder<DeleteSpokeRequest, Operation> deleteSpokeSettings;
     private final OperationCallSettings.Builder<DeleteSpokeRequest, Empty, OperationMetadata>
         deleteSpokeOperationSettings;
@@ -1112,6 +1164,10 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
       rejectHubSpokeOperationSettings = OperationCallSettings.newBuilder();
       acceptHubSpokeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       acceptHubSpokeOperationSettings = OperationCallSettings.newBuilder();
+      acceptSpokeUpdateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      acceptSpokeUpdateOperationSettings = OperationCallSettings.newBuilder();
+      rejectSpokeUpdateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rejectSpokeUpdateOperationSettings = OperationCallSettings.newBuilder();
       deleteSpokeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSpokeOperationSettings = OperationCallSettings.newBuilder();
       getRouteTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1143,6 +1199,8 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
               updateSpokeSettings,
               rejectHubSpokeSettings,
               acceptHubSpokeSettings,
+              acceptSpokeUpdateSettings,
+              rejectSpokeUpdateSettings,
               deleteSpokeSettings,
               getRouteTableSettings,
               getRouteSettings,
@@ -1182,6 +1240,10 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
       rejectHubSpokeOperationSettings = settings.rejectHubSpokeOperationSettings.toBuilder();
       acceptHubSpokeSettings = settings.acceptHubSpokeSettings.toBuilder();
       acceptHubSpokeOperationSettings = settings.acceptHubSpokeOperationSettings.toBuilder();
+      acceptSpokeUpdateSettings = settings.acceptSpokeUpdateSettings.toBuilder();
+      acceptSpokeUpdateOperationSettings = settings.acceptSpokeUpdateOperationSettings.toBuilder();
+      rejectSpokeUpdateSettings = settings.rejectSpokeUpdateSettings.toBuilder();
+      rejectSpokeUpdateOperationSettings = settings.rejectSpokeUpdateOperationSettings.toBuilder();
       deleteSpokeSettings = settings.deleteSpokeSettings.toBuilder();
       deleteSpokeOperationSettings = settings.deleteSpokeOperationSettings.toBuilder();
       getRouteTableSettings = settings.getRouteTableSettings.toBuilder();
@@ -1213,6 +1275,8 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
               updateSpokeSettings,
               rejectHubSpokeSettings,
               acceptHubSpokeSettings,
+              acceptSpokeUpdateSettings,
+              rejectSpokeUpdateSettings,
               deleteSpokeSettings,
               getRouteTableSettings,
               getRouteSettings,
@@ -1303,6 +1367,16 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
 
       builder
           .acceptHubSpokeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .acceptSpokeUpdateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .rejectSpokeUpdateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1533,6 +1607,56 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
                       .build()));
 
       builder
+          .acceptSpokeUpdateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AcceptSpokeUpdateRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  AcceptSpokeUpdateResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .rejectSpokeUpdateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RejectSpokeUpdateRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  RejectSpokeUpdateResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteSpokeOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<DeleteSpokeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
@@ -1709,6 +1833,32 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
             AcceptHubSpokeRequest, AcceptHubSpokeResponse, OperationMetadata>
         acceptHubSpokeOperationSettings() {
       return acceptHubSpokeOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to acceptSpokeUpdate. */
+    public UnaryCallSettings.Builder<AcceptSpokeUpdateRequest, Operation>
+        acceptSpokeUpdateSettings() {
+      return acceptSpokeUpdateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to acceptSpokeUpdate. */
+    public OperationCallSettings.Builder<
+            AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+        acceptSpokeUpdateOperationSettings() {
+      return acceptSpokeUpdateOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rejectSpokeUpdate. */
+    public UnaryCallSettings.Builder<RejectSpokeUpdateRequest, Operation>
+        rejectSpokeUpdateSettings() {
+      return rejectSpokeUpdateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rejectSpokeUpdate. */
+    public OperationCallSettings.Builder<
+            RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+        rejectSpokeUpdateOperationSettings() {
+      return rejectSpokeUpdateOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteSpoke. */

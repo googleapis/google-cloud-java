@@ -101,6 +101,7 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
     TRAJECTORY_PRECISION_RESULTS(35),
     TRAJECTORY_RECALL_RESULTS(36),
     TRAJECTORY_SINGLE_TOOL_USE_RESULTS(37),
+    RUBRIC_BASED_INSTRUCTION_FOLLOWING_RESULT(38),
     EVALUATIONRESULTS_NOT_SET(0);
     private final int value;
 
@@ -181,6 +182,8 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
           return TRAJECTORY_RECALL_RESULTS;
         case 37:
           return TRAJECTORY_SINGLE_TOOL_USE_RESULTS;
+        case 38:
+          return RUBRIC_BASED_INSTRUCTION_FOLLOWING_RESULT;
         case 0:
           return EVALUATIONRESULTS_NOT_SET;
         default:
@@ -1979,6 +1982,69 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
     return com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseResults.getDefaultInstance();
   }
 
+  public static final int RUBRIC_BASED_INSTRUCTION_FOLLOWING_RESULT_FIELD_NUMBER = 38;
+  /**
+   *
+   *
+   * <pre>
+   * Result for rubric based instruction following metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult rubric_based_instruction_following_result = 38;
+   * </code>
+   *
+   * @return Whether the rubricBasedInstructionFollowingResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasRubricBasedInstructionFollowingResult() {
+    return evaluationResultsCase_ == 38;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Result for rubric based instruction following metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult rubric_based_instruction_following_result = 38;
+   * </code>
+   *
+   * @return The rubricBasedInstructionFollowingResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult
+      getRubricBasedInstructionFollowingResult() {
+    if (evaluationResultsCase_ == 38) {
+      return (com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult)
+          evaluationResults_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Result for rubric based instruction following metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult rubric_based_instruction_following_result = 38;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResultOrBuilder
+      getRubricBasedInstructionFollowingResultOrBuilder() {
+    if (evaluationResultsCase_ == 38) {
+      return (com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult)
+          evaluationResults_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult
+        .getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2129,6 +2195,12 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       output.writeMessage(
           37,
           (com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseResults) evaluationResults_);
+    }
+    if (evaluationResultsCase_ == 38) {
+      output.writeMessage(
+          38,
+          (com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult)
+              evaluationResults_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2322,6 +2394,13 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
               (com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseResults)
                   evaluationResults_);
     }
+    if (evaluationResultsCase_ == 38) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              38,
+              (com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult)
+                  evaluationResults_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2448,6 +2527,10 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       case 37:
         if (!getTrajectorySingleToolUseResults().equals(other.getTrajectorySingleToolUseResults()))
           return false;
+        break;
+      case 38:
+        if (!getRubricBasedInstructionFollowingResult()
+            .equals(other.getRubricBasedInstructionFollowingResult())) return false;
         break;
       case 0:
       default:
@@ -2587,6 +2670,10 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       case 37:
         hash = (37 * hash) + TRAJECTORY_SINGLE_TOOL_USE_RESULTS_FIELD_NUMBER;
         hash = (53 * hash) + getTrajectorySingleToolUseResults().hashCode();
+        break;
+      case 38:
+        hash = (37 * hash) + RUBRIC_BASED_INSTRUCTION_FOLLOWING_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getRubricBasedInstructionFollowingResult().hashCode();
         break;
       case 0:
       default:
@@ -2824,6 +2911,9 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       if (trajectorySingleToolUseResultsBuilder_ != null) {
         trajectorySingleToolUseResultsBuilder_.clear();
       }
+      if (rubricBasedInstructionFollowingResultBuilder_ != null) {
+        rubricBasedInstructionFollowingResultBuilder_.clear();
+      }
       evaluationResultsCase_ = 0;
       evaluationResults_ = null;
       return this;
@@ -2963,6 +3053,9 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       }
       if (evaluationResultsCase_ == 37 && trajectorySingleToolUseResultsBuilder_ != null) {
         result.evaluationResults_ = trajectorySingleToolUseResultsBuilder_.build();
+      }
+      if (evaluationResultsCase_ == 38 && rubricBasedInstructionFollowingResultBuilder_ != null) {
+        result.evaluationResults_ = rubricBasedInstructionFollowingResultBuilder_.build();
       }
     }
 
@@ -3168,6 +3261,12 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
         case TRAJECTORY_SINGLE_TOOL_USE_RESULTS:
           {
             mergeTrajectorySingleToolUseResults(other.getTrajectorySingleToolUseResults());
+            break;
+          }
+        case RUBRIC_BASED_INSTRUCTION_FOLLOWING_RESULT:
+          {
+            mergeRubricBasedInstructionFollowingResult(
+                other.getRubricBasedInstructionFollowingResult());
             break;
           }
         case EVALUATIONRESULTS_NOT_SET:
@@ -3420,6 +3519,14 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
                 evaluationResultsCase_ = 37;
                 break;
               } // case 298
+            case 306:
+              {
+                input.readMessage(
+                    getRubricBasedInstructionFollowingResultFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                evaluationResultsCase_ = 38;
+                break;
+              } // case 306
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10656,6 +10763,251 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       evaluationResultsCase_ = 37;
       onChanged();
       return trajectorySingleToolUseResultsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult,
+            com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult.Builder,
+            com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResultOrBuilder>
+        rubricBasedInstructionFollowingResultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Result for rubric based instruction following metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult rubric_based_instruction_following_result = 38;
+     * </code>
+     *
+     * @return Whether the rubricBasedInstructionFollowingResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasRubricBasedInstructionFollowingResult() {
+      return evaluationResultsCase_ == 38;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result for rubric based instruction following metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult rubric_based_instruction_following_result = 38;
+     * </code>
+     *
+     * @return The rubricBasedInstructionFollowingResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult
+        getRubricBasedInstructionFollowingResult() {
+      if (rubricBasedInstructionFollowingResultBuilder_ == null) {
+        if (evaluationResultsCase_ == 38) {
+          return (com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult)
+              evaluationResults_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult
+            .getDefaultInstance();
+      } else {
+        if (evaluationResultsCase_ == 38) {
+          return rubricBasedInstructionFollowingResultBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result for rubric based instruction following metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult rubric_based_instruction_following_result = 38;
+     * </code>
+     */
+    public Builder setRubricBasedInstructionFollowingResult(
+        com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult value) {
+      if (rubricBasedInstructionFollowingResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        evaluationResults_ = value;
+        onChanged();
+      } else {
+        rubricBasedInstructionFollowingResultBuilder_.setMessage(value);
+      }
+      evaluationResultsCase_ = 38;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result for rubric based instruction following metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult rubric_based_instruction_following_result = 38;
+     * </code>
+     */
+    public Builder setRubricBasedInstructionFollowingResult(
+        com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult.Builder
+            builderForValue) {
+      if (rubricBasedInstructionFollowingResultBuilder_ == null) {
+        evaluationResults_ = builderForValue.build();
+        onChanged();
+      } else {
+        rubricBasedInstructionFollowingResultBuilder_.setMessage(builderForValue.build());
+      }
+      evaluationResultsCase_ = 38;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result for rubric based instruction following metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult rubric_based_instruction_following_result = 38;
+     * </code>
+     */
+    public Builder mergeRubricBasedInstructionFollowingResult(
+        com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult value) {
+      if (rubricBasedInstructionFollowingResultBuilder_ == null) {
+        if (evaluationResultsCase_ == 38
+            && evaluationResults_
+                != com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult
+                    .getDefaultInstance()) {
+          evaluationResults_ =
+              com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult)
+                          evaluationResults_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          evaluationResults_ = value;
+        }
+        onChanged();
+      } else {
+        if (evaluationResultsCase_ == 38) {
+          rubricBasedInstructionFollowingResultBuilder_.mergeFrom(value);
+        } else {
+          rubricBasedInstructionFollowingResultBuilder_.setMessage(value);
+        }
+      }
+      evaluationResultsCase_ = 38;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result for rubric based instruction following metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult rubric_based_instruction_following_result = 38;
+     * </code>
+     */
+    public Builder clearRubricBasedInstructionFollowingResult() {
+      if (rubricBasedInstructionFollowingResultBuilder_ == null) {
+        if (evaluationResultsCase_ == 38) {
+          evaluationResultsCase_ = 0;
+          evaluationResults_ = null;
+          onChanged();
+        }
+      } else {
+        if (evaluationResultsCase_ == 38) {
+          evaluationResultsCase_ = 0;
+          evaluationResults_ = null;
+        }
+        rubricBasedInstructionFollowingResultBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result for rubric based instruction following metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult rubric_based_instruction_following_result = 38;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult.Builder
+        getRubricBasedInstructionFollowingResultBuilder() {
+      return getRubricBasedInstructionFollowingResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result for rubric based instruction following metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult rubric_based_instruction_following_result = 38;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResultOrBuilder
+        getRubricBasedInstructionFollowingResultOrBuilder() {
+      if ((evaluationResultsCase_ == 38)
+          && (rubricBasedInstructionFollowingResultBuilder_ != null)) {
+        return rubricBasedInstructionFollowingResultBuilder_.getMessageOrBuilder();
+      } else {
+        if (evaluationResultsCase_ == 38) {
+          return (com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult)
+              evaluationResults_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Result for rubric based instruction following metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult rubric_based_instruction_following_result = 38;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult,
+            com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult.Builder,
+            com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResultOrBuilder>
+        getRubricBasedInstructionFollowingResultFieldBuilder() {
+      if (rubricBasedInstructionFollowingResultBuilder_ == null) {
+        if (!(evaluationResultsCase_ == 38)) {
+          evaluationResults_ =
+              com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult
+                  .getDefaultInstance();
+        }
+        rubricBasedInstructionFollowingResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult,
+                com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult.Builder,
+                com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResultOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult)
+                    evaluationResults_,
+                getParentForChildren(),
+                isClean());
+        evaluationResults_ = null;
+      }
+      evaluationResultsCase_ = 38;
+      onChanged();
+      return rubricBasedInstructionFollowingResultBuilder_;
     }
 
     @java.lang.Override

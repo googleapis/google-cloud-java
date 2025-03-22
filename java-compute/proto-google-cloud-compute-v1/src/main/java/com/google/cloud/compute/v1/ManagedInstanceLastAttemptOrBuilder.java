@@ -31,7 +31,8 @@ public interface ManagedInstanceLastAttemptOrBuilder
    * [Output Only] Encountered errors during the last attempt to create or delete the instance.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Errors errors = 315977579;</code>
+   * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttemptErrors errors = 315977579;
+   * </code>
    *
    * @return Whether the errors field is set.
    */
@@ -43,11 +44,12 @@ public interface ManagedInstanceLastAttemptOrBuilder
    * [Output Only] Encountered errors during the last attempt to create or delete the instance.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Errors errors = 315977579;</code>
+   * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttemptErrors errors = 315977579;
+   * </code>
    *
    * @return The errors.
    */
-  com.google.cloud.compute.v1.Errors getErrors();
+  com.google.cloud.compute.v1.ManagedInstanceLastAttemptErrors getErrors();
   /**
    *
    *
@@ -55,7 +57,8 @@ public interface ManagedInstanceLastAttemptOrBuilder
    * [Output Only] Encountered errors during the last attempt to create or delete the instance.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Errors errors = 315977579;</code>
+   * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttemptErrors errors = 315977579;
+   * </code>
    */
-  com.google.cloud.compute.v1.ErrorsOrBuilder getErrorsOrBuilder();
+  com.google.cloud.compute.v1.ManagedInstanceLastAttemptErrorsOrBuilder getErrorsOrBuilder();
 }

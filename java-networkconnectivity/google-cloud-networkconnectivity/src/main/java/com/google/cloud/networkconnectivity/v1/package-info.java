@@ -19,6 +19,27 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= CrossNetworkAutomationServiceClient =======================
+ *
+ * <p>Service Description: The service for CrossNetworkAutomation resources.
+ *
+ * <p>Sample for CrossNetworkAutomationServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (CrossNetworkAutomationServiceClient crossNetworkAutomationServiceClient =
+ *     CrossNetworkAutomationServiceClient.create()) {
+ *   ServiceConnectionMapName name =
+ *       ServiceConnectionMapName.of("[PROJECT]", "[LOCATION]", "[SERVICE_CONNECTION_MAP]");
+ *   ServiceConnectionMap response =
+ *       crossNetworkAutomationServiceClient.getServiceConnectionMap(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= HubServiceClient =======================
  *
  * <p>Service Description: Network Connectivity Center is a hub-and-spoke abstraction for network

@@ -20,6 +20,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.shopping.merchant.products.v1beta.stub.ProductInputsServiceStub;
 import com.google.shopping.merchant.products.v1beta.stub.ProductInputsServiceStubSettings;
 import java.io.IOException;
@@ -75,6 +76,25 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> insertProductInputCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateProductInput</td>
+ *      <td><p> Updates the existing product input in your Merchant Center account.
+ * <p>  After inserting, updating, or deleting a product input, it may take several minutes before the processed product can be retrieved.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateProductInput(UpdateProductInputRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateProductInput(ProductInput productInput, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateProductInputCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -275,6 +295,121 @@ public class ProductInputsServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<InsertProductInputRequest, ProductInput> insertProductInputCallable() {
     return stub.insertProductInputCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the existing product input in your Merchant Center account.
+   *
+   * <p>After inserting, updating, or deleting a product input, it may take several minutes before
+   * the processed product can be retrieved.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProductInputsServiceClient productInputsServiceClient =
+   *     ProductInputsServiceClient.create()) {
+   *   ProductInput productInput = ProductInput.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ProductInput response =
+   *       productInputsServiceClient.updateProductInput(productInput, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param productInput Required. The product input resource to update. Information you submit will
+   *     be applied to the processed product as well.
+   * @param updateMask Optional. The list of product attributes to be updated.
+   *     <p>If the update mask is omitted, then it is treated as implied field mask equivalent to
+   *     all fields that are populated (have a non-empty value).
+   *     <p>Attributes specified in the update mask without a value specified in the body will be
+   *     deleted from the product.
+   *     <p>Update mask can only be specified for top level fields in attributes and custom
+   *     attributes.
+   *     <p>To specify the update mask for custom attributes you need to add the `custom_attribute.`
+   *     prefix.
+   *     <p>Providing special "&#42;" value for full product replacement is not supported.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProductInput updateProductInput(ProductInput productInput, FieldMask updateMask) {
+    UpdateProductInputRequest request =
+        UpdateProductInputRequest.newBuilder()
+            .setProductInput(productInput)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateProductInput(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the existing product input in your Merchant Center account.
+   *
+   * <p>After inserting, updating, or deleting a product input, it may take several minutes before
+   * the processed product can be retrieved.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProductInputsServiceClient productInputsServiceClient =
+   *     ProductInputsServiceClient.create()) {
+   *   UpdateProductInputRequest request =
+   *       UpdateProductInputRequest.newBuilder()
+   *           .setProductInput(ProductInput.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDataSource("dataSource1272470629")
+   *           .build();
+   *   ProductInput response = productInputsServiceClient.updateProductInput(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProductInput updateProductInput(UpdateProductInputRequest request) {
+    return updateProductInputCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the existing product input in your Merchant Center account.
+   *
+   * <p>After inserting, updating, or deleting a product input, it may take several minutes before
+   * the processed product can be retrieved.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProductInputsServiceClient productInputsServiceClient =
+   *     ProductInputsServiceClient.create()) {
+   *   UpdateProductInputRequest request =
+   *       UpdateProductInputRequest.newBuilder()
+   *           .setProductInput(ProductInput.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDataSource("dataSource1272470629")
+   *           .build();
+   *   ApiFuture<ProductInput> future =
+   *       productInputsServiceClient.updateProductInputCallable().futureCall(request);
+   *   // Do something.
+   *   ProductInput response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateProductInputRequest, ProductInput> updateProductInputCallable() {
+    return stub.updateProductInputCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -23,7 +23,7 @@ package com.google.cloud.deploy.v1;
  *
  *
  * <pre>
- * ListRolloutsResponse is the response object reutrned by `ListRollouts`.
+ * ListRolloutsResponse is the response object returned by `ListRollouts`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.deploy.v1.ListRolloutsResponse}
@@ -443,7 +443,7 @@ public final class ListRolloutsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * ListRolloutsResponse is the response object reutrned by `ListRollouts`.
+   * ListRolloutsResponse is the response object returned by `ListRollouts`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.deploy.v1.ListRolloutsResponse}

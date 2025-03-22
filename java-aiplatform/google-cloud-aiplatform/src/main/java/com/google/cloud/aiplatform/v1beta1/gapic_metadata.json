@@ -10,6 +10,12 @@
         "grpc": {
           "libraryClient": "DatasetServiceClient",
           "rpcs": {
+            "AssembleData": {
+              "methods": ["assembleDataAsync", "assembleDataOperationCallable", "assembleDataCallable"]
+            },
+            "AssessData": {
+              "methods": ["assessDataAsync", "assessDataOperationCallable", "assessDataCallable"]
+            },
             "CreateDataset": {
               "methods": ["createDatasetAsync", "createDatasetAsync", "createDatasetAsync", "createDatasetOperationCallable", "createDatasetCallable"]
             },
@@ -1092,6 +1098,9 @@
             },
             "DeployPublisherModel": {
               "methods": ["deployPublisherModelAsync", "deployPublisherModelOperationCallable", "deployPublisherModelCallable"]
+            },
+            "ExportPublisherModel": {
+              "methods": ["exportPublisherModelAsync", "exportPublisherModelOperationCallable", "exportPublisherModelCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]

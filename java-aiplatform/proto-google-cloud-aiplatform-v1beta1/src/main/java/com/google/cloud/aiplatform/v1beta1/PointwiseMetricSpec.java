@@ -200,6 +200,82 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int CUSTOM_OUTPUT_FORMAT_CONFIG_FIELD_NUMBER = 3;
+  private com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig customOutputFormatConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CustomOutputFormatConfig allows customization of metric output.
+   * By default, metrics return a score and explanation.
+   * When this config is set, the default output is replaced with either:
+   *  - The raw output string.
+   *  - A parsed output based on a user-defined schema.
+   * If a custom format is chosen, the `score` and `explanation` fields in the
+   * corresponding metric result will be empty.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig custom_output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customOutputFormatConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomOutputFormatConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CustomOutputFormatConfig allows customization of metric output.
+   * By default, metrics return a score and explanation.
+   * When this config is set, the default output is replaced with either:
+   *  - The raw output string.
+   *  - A parsed output based on a user-defined schema.
+   * If a custom format is chosen, the `score` and `explanation` fields in the
+   * corresponding metric result will be empty.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig custom_output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customOutputFormatConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig
+      getCustomOutputFormatConfig() {
+    return customOutputFormatConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig.getDefaultInstance()
+        : customOutputFormatConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CustomOutputFormatConfig allows customization of metric output.
+   * By default, metrics return a score and explanation.
+   * When this config is set, the default output is replaced with either:
+   *  - The raw output string.
+   *  - A parsed output based on a user-defined schema.
+   * If a custom format is chosen, the `score` and `explanation` fields in the
+   * corresponding metric result will be empty.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig custom_output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfigOrBuilder
+      getCustomOutputFormatConfigOrBuilder() {
+    return customOutputFormatConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig.getDefaultInstance()
+        : customOutputFormatConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -220,6 +296,9 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, systemInstruction_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(3, getCustomOutputFormatConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -234,6 +313,11 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, systemInstruction_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, getCustomOutputFormatConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -259,6 +343,10 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
     if (hasSystemInstruction()) {
       if (!getSystemInstruction().equals(other.getSystemInstruction())) return false;
     }
+    if (hasCustomOutputFormatConfig() != other.hasCustomOutputFormatConfig()) return false;
+    if (hasCustomOutputFormatConfig()) {
+      if (!getCustomOutputFormatConfig().equals(other.getCustomOutputFormatConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -277,6 +365,10 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
     if (hasSystemInstruction()) {
       hash = (37 * hash) + SYSTEM_INSTRUCTION_FIELD_NUMBER;
       hash = (53 * hash) + getSystemInstruction().hashCode();
+    }
+    if (hasCustomOutputFormatConfig()) {
+      hash = (37 * hash) + CUSTOM_OUTPUT_FORMAT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomOutputFormatConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -408,10 +500,19 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.PointwiseMetricSpec.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getCustomOutputFormatConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -420,6 +521,11 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
       bitField0_ = 0;
       metricPromptTemplate_ = "";
       systemInstruction_ = "";
+      customOutputFormatConfig_ = null;
+      if (customOutputFormatConfigBuilder_ != null) {
+        customOutputFormatConfigBuilder_.dispose();
+        customOutputFormatConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -464,6 +570,13 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.systemInstruction_ = systemInstruction_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.customOutputFormatConfig_ =
+            customOutputFormatConfigBuilder_ == null
+                ? customOutputFormatConfig_
+                : customOutputFormatConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -524,6 +637,9 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasCustomOutputFormatConfig()) {
+        mergeCustomOutputFormatConfig(other.getCustomOutputFormatConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -562,6 +678,13 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getCustomOutputFormatConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -831,6 +954,271 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig customOutputFormatConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig,
+            com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfigOrBuilder>
+        customOutputFormatConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CustomOutputFormatConfig allows customization of metric output.
+     * By default, metrics return a score and explanation.
+     * When this config is set, the default output is replaced with either:
+     *  - The raw output string.
+     *  - A parsed output based on a user-defined schema.
+     * If a custom format is chosen, the `score` and `explanation` fields in the
+     * corresponding metric result will be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig custom_output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customOutputFormatConfig field is set.
+     */
+    public boolean hasCustomOutputFormatConfig() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CustomOutputFormatConfig allows customization of metric output.
+     * By default, metrics return a score and explanation.
+     * When this config is set, the default output is replaced with either:
+     *  - The raw output string.
+     *  - A parsed output based on a user-defined schema.
+     * If a custom format is chosen, the `score` and `explanation` fields in the
+     * corresponding metric result will be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig custom_output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customOutputFormatConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig
+        getCustomOutputFormatConfig() {
+      if (customOutputFormatConfigBuilder_ == null) {
+        return customOutputFormatConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig.getDefaultInstance()
+            : customOutputFormatConfig_;
+      } else {
+        return customOutputFormatConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CustomOutputFormatConfig allows customization of metric output.
+     * By default, metrics return a score and explanation.
+     * When this config is set, the default output is replaced with either:
+     *  - The raw output string.
+     *  - A parsed output based on a user-defined schema.
+     * If a custom format is chosen, the `score` and `explanation` fields in the
+     * corresponding metric result will be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig custom_output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomOutputFormatConfig(
+        com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig value) {
+      if (customOutputFormatConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customOutputFormatConfig_ = value;
+      } else {
+        customOutputFormatConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CustomOutputFormatConfig allows customization of metric output.
+     * By default, metrics return a score and explanation.
+     * When this config is set, the default output is replaced with either:
+     *  - The raw output string.
+     *  - A parsed output based on a user-defined schema.
+     * If a custom format is chosen, the `score` and `explanation` fields in the
+     * corresponding metric result will be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig custom_output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomOutputFormatConfig(
+        com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig.Builder builderForValue) {
+      if (customOutputFormatConfigBuilder_ == null) {
+        customOutputFormatConfig_ = builderForValue.build();
+      } else {
+        customOutputFormatConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CustomOutputFormatConfig allows customization of metric output.
+     * By default, metrics return a score and explanation.
+     * When this config is set, the default output is replaced with either:
+     *  - The raw output string.
+     *  - A parsed output based on a user-defined schema.
+     * If a custom format is chosen, the `score` and `explanation` fields in the
+     * corresponding metric result will be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig custom_output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCustomOutputFormatConfig(
+        com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig value) {
+      if (customOutputFormatConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && customOutputFormatConfig_ != null
+            && customOutputFormatConfig_
+                != com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig
+                    .getDefaultInstance()) {
+          getCustomOutputFormatConfigBuilder().mergeFrom(value);
+        } else {
+          customOutputFormatConfig_ = value;
+        }
+      } else {
+        customOutputFormatConfigBuilder_.mergeFrom(value);
+      }
+      if (customOutputFormatConfig_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CustomOutputFormatConfig allows customization of metric output.
+     * By default, metrics return a score and explanation.
+     * When this config is set, the default output is replaced with either:
+     *  - The raw output string.
+     *  - A parsed output based on a user-defined schema.
+     * If a custom format is chosen, the `score` and `explanation` fields in the
+     * corresponding metric result will be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig custom_output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCustomOutputFormatConfig() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      customOutputFormatConfig_ = null;
+      if (customOutputFormatConfigBuilder_ != null) {
+        customOutputFormatConfigBuilder_.dispose();
+        customOutputFormatConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CustomOutputFormatConfig allows customization of metric output.
+     * By default, metrics return a score and explanation.
+     * When this config is set, the default output is replaced with either:
+     *  - The raw output string.
+     *  - A parsed output based on a user-defined schema.
+     * If a custom format is chosen, the `score` and `explanation` fields in the
+     * corresponding metric result will be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig custom_output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig.Builder
+        getCustomOutputFormatConfigBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getCustomOutputFormatConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CustomOutputFormatConfig allows customization of metric output.
+     * By default, metrics return a score and explanation.
+     * When this config is set, the default output is replaced with either:
+     *  - The raw output string.
+     *  - A parsed output based on a user-defined schema.
+     * If a custom format is chosen, the `score` and `explanation` fields in the
+     * corresponding metric result will be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig custom_output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfigOrBuilder
+        getCustomOutputFormatConfigOrBuilder() {
+      if (customOutputFormatConfigBuilder_ != null) {
+        return customOutputFormatConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return customOutputFormatConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig.getDefaultInstance()
+            : customOutputFormatConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CustomOutputFormatConfig allows customization of metric output.
+     * By default, metrics return a score and explanation.
+     * When this config is set, the default output is replaced with either:
+     *  - The raw output string.
+     *  - A parsed output based on a user-defined schema.
+     * If a custom format is chosen, the `score` and `explanation` fields in the
+     * corresponding metric result will be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig custom_output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig,
+            com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfigOrBuilder>
+        getCustomOutputFormatConfigFieldBuilder() {
+      if (customOutputFormatConfigBuilder_ == null) {
+        customOutputFormatConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig,
+                com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfigOrBuilder>(
+                getCustomOutputFormatConfig(), getParentForChildren(), isClean());
+        customOutputFormatConfig_ = null;
+      }
+      return customOutputFormatConfigBuilder_;
     }
 
     @java.lang.Override

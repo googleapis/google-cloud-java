@@ -565,6 +565,134 @@ public class AlloyDBAdminClientTest {
   }
 
   @Test
+  public void exportClusterTest() throws Exception {
+    ExportClusterResponse expectedResponse = ExportClusterResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAlloyDBAdmin.addResponse(resultOperation);
+
+    ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+    String database = "database1789464955";
+    ExportClusterRequest.CsvExportOptions csvExportOptions =
+        ExportClusterRequest.CsvExportOptions.newBuilder().build();
+    ExportClusterRequest.SqlExportOptions sqlExportOptions =
+        ExportClusterRequest.SqlExportOptions.newBuilder().build();
+
+    ExportClusterResponse actualResponse =
+        client
+            .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlloyDBAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportClusterRequest actualRequest = ((ExportClusterRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(gcsDestination, actualRequest.getGcsDestination());
+    Assert.assertEquals(database, actualRequest.getDatabase());
+    Assert.assertEquals(csvExportOptions, actualRequest.getCsvExportOptions());
+    Assert.assertEquals(sqlExportOptions, actualRequest.getSqlExportOptions());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportClusterExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlloyDBAdmin.addException(exception);
+
+    try {
+      ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+      String database = "database1789464955";
+      ExportClusterRequest.CsvExportOptions csvExportOptions =
+          ExportClusterRequest.CsvExportOptions.newBuilder().build();
+      ExportClusterRequest.SqlExportOptions sqlExportOptions =
+          ExportClusterRequest.SqlExportOptions.newBuilder().build();
+      client
+          .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void exportClusterTest2() throws Exception {
+    ExportClusterResponse expectedResponse = ExportClusterResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAlloyDBAdmin.addResponse(resultOperation);
+
+    String name = "name3373707";
+    GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+    String database = "database1789464955";
+    ExportClusterRequest.CsvExportOptions csvExportOptions =
+        ExportClusterRequest.CsvExportOptions.newBuilder().build();
+    ExportClusterRequest.SqlExportOptions sqlExportOptions =
+        ExportClusterRequest.SqlExportOptions.newBuilder().build();
+
+    ExportClusterResponse actualResponse =
+        client
+            .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlloyDBAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportClusterRequest actualRequest = ((ExportClusterRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(gcsDestination, actualRequest.getGcsDestination());
+    Assert.assertEquals(database, actualRequest.getDatabase());
+    Assert.assertEquals(csvExportOptions, actualRequest.getCsvExportOptions());
+    Assert.assertEquals(sqlExportOptions, actualRequest.getSqlExportOptions());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportClusterExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlloyDBAdmin.addException(exception);
+
+    try {
+      String name = "name3373707";
+      GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+      String database = "database1789464955";
+      ExportClusterRequest.CsvExportOptions csvExportOptions =
+          ExportClusterRequest.CsvExportOptions.newBuilder().build();
+      ExportClusterRequest.SqlExportOptions sqlExportOptions =
+          ExportClusterRequest.SqlExportOptions.newBuilder().build();
+      client
+          .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void upgradeClusterTest() throws Exception {
     UpgradeClusterResponse expectedResponse =
         UpgradeClusterResponse.newBuilder()

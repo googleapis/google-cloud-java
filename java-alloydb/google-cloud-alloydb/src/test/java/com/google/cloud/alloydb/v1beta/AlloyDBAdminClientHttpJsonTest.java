@@ -648,6 +648,132 @@ public class AlloyDBAdminClientHttpJsonTest {
   }
 
   @Test
+  public void exportClusterTest() throws Exception {
+    ExportClusterResponse expectedResponse = ExportClusterResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+    String database = "database1789464955";
+    ExportClusterRequest.CsvExportOptions csvExportOptions =
+        ExportClusterRequest.CsvExportOptions.newBuilder().build();
+    ExportClusterRequest.SqlExportOptions sqlExportOptions =
+        ExportClusterRequest.SqlExportOptions.newBuilder().build();
+
+    ExportClusterResponse actualResponse =
+        client
+            .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportClusterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+      String database = "database1789464955";
+      ExportClusterRequest.CsvExportOptions csvExportOptions =
+          ExportClusterRequest.CsvExportOptions.newBuilder().build();
+      ExportClusterRequest.SqlExportOptions sqlExportOptions =
+          ExportClusterRequest.SqlExportOptions.newBuilder().build();
+      client
+          .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void exportClusterTest2() throws Exception {
+    ExportClusterResponse expectedResponse = ExportClusterResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+    GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+    String database = "database1789464955";
+    ExportClusterRequest.CsvExportOptions csvExportOptions =
+        ExportClusterRequest.CsvExportOptions.newBuilder().build();
+    ExportClusterRequest.SqlExportOptions sqlExportOptions =
+        ExportClusterRequest.SqlExportOptions.newBuilder().build();
+
+    ExportClusterResponse actualResponse =
+        client
+            .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportClusterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+      GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+      String database = "database1789464955";
+      ExportClusterRequest.CsvExportOptions csvExportOptions =
+          ExportClusterRequest.CsvExportOptions.newBuilder().build();
+      ExportClusterRequest.SqlExportOptions sqlExportOptions =
+          ExportClusterRequest.SqlExportOptions.newBuilder().build();
+      client
+          .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void upgradeClusterTest() throws Exception {
     UpgradeClusterResponse expectedResponse =
         UpgradeClusterResponse.newBuilder()

@@ -264,12 +264,12 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the VPC network used by the Autonomous Database in
+   * Optional. The name of the VPC network used by the Autonomous Database in
    * the following format: projects/{project}/global/networks/{network}
    * </pre>
    *
    * <code>
-   * string network = 9 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The network.
@@ -279,12 +279,12 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the VPC network used by the Autonomous Database in
+   * Optional. The name of the VPC network used by the Autonomous Database in
    * the following format: projects/{project}/global/networks/{network}
    * </pre>
    *
    * <code>
-   * string network = 9 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for network.
@@ -295,10 +295,10 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Required. The subnet CIDR range for the Autonmous Database.
+   * Optional. The subnet CIDR range for the Autonmous Database.
    * </pre>
    *
-   * <code>string cidr = 10 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The cidr.
    */
@@ -307,10 +307,10 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Required. The subnet CIDR range for the Autonmous Database.
+   * Optional. The subnet CIDR range for the Autonmous Database.
    * </pre>
    *
-   * <code>string cidr = 10 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for cidr.
    */

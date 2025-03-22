@@ -152,4 +152,58 @@ public interface PairwiseMetricSpecOrBuilder
    * @return The bytes for systemInstruction.
    */
   com.google.protobuf.ByteString getSystemInstructionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CustomOutputFormatConfig allows customization of metric output.
+   * When this config is set, the default output is replaced with
+   * the raw output string.
+   * If a custom format is chosen, the `pairwise_choice` and `explanation`
+   * fields in the corresponding metric result will be empty.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig custom_output_format_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customOutputFormatConfig field is set.
+   */
+  boolean hasCustomOutputFormatConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CustomOutputFormatConfig allows customization of metric output.
+   * When this config is set, the default output is replaced with
+   * the raw output string.
+   * If a custom format is chosen, the `pairwise_choice` and `explanation`
+   * fields in the corresponding metric result will be empty.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig custom_output_format_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customOutputFormatConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig getCustomOutputFormatConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CustomOutputFormatConfig allows customization of metric output.
+   * When this config is set, the default output is replaced with
+   * the raw output string.
+   * If a custom format is chosen, the `pairwise_choice` and `explanation`
+   * fields in the corresponding metric result will be empty.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig custom_output_format_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfigOrBuilder
+      getCustomOutputFormatConfigOrBuilder();
 }

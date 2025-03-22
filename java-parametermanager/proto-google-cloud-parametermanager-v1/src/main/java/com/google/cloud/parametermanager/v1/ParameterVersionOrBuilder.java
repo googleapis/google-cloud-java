@@ -190,4 +190,56 @@ public interface ParameterVersionOrBuilder
    * </code>
    */
   com.google.cloud.parametermanager.v1.ParameterVersionPayloadOrBuilder getPayloadOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. [Output only] The resource name of the KMS key
+   * version used to encrypt the ParameterVersion payload. This field is
+   * populated only if the Parameter resource has customer managed encryption
+   * key (CMEK) configured.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the kmsKeyVersion field is set.
+   */
+  boolean hasKmsKeyVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. [Output only] The resource name of the KMS key
+   * version used to encrypt the ParameterVersion payload. This field is
+   * populated only if the Parameter resource has customer managed encryption
+   * key (CMEK) configured.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The kmsKeyVersion.
+   */
+  java.lang.String getKmsKeyVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. [Output only] The resource name of the KMS key
+   * version used to encrypt the ParameterVersion payload. This field is
+   * populated only if the Parameter resource has customer managed encryption
+   * key (CMEK) configured.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for kmsKeyVersion.
+   */
+  com.google.protobuf.ByteString getKmsKeyVersionBytes();
 }

@@ -218,6 +218,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The infoType is typically used in Czechia.
+     * </pre>
+     *
+     * <code>CZECHIA = 52;</code>
+     */
+    CZECHIA(52),
+    /**
+     *
+     *
+     * <pre>
      * The infoType is typically used in Denmark.
      * </pre>
      *
@@ -732,6 +742,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The infoType is typically used in Czechia.
+     * </pre>
+     *
+     * <code>CZECHIA = 52;</code>
+     */
+    public static final int CZECHIA_VALUE = 52;
+    /**
+     *
+     *
+     * <pre>
      * The infoType is typically used in Denmark.
      * </pre>
      *
@@ -1151,6 +1171,8 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
           return COLOMBIA;
         case 42:
           return CROATIA;
+        case 52:
+          return CZECHIA;
         case 10:
           return DENMARK;
         case 11:

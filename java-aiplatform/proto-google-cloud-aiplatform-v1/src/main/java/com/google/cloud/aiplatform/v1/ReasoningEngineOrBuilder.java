@@ -103,11 +103,11 @@ public interface ReasoningEngineOrBuilder
    *
    *
    * <pre>
-   * Required. Configurations of the ReasoningEngine
+   * Optional. Configurations of the ReasoningEngine
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the spec field is set.
@@ -117,11 +117,11 @@ public interface ReasoningEngineOrBuilder
    *
    *
    * <pre>
-   * Required. Configurations of the ReasoningEngine
+   * Optional. Configurations of the ReasoningEngine
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The spec.
@@ -131,11 +131,11 @@ public interface ReasoningEngineOrBuilder
    *
    *
    * <pre>
-   * Required. Configurations of the ReasoningEngine
+   * Optional. Configurations of the ReasoningEngine
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.aiplatform.v1.ReasoningEngineSpecOrBuilder getSpecOrBuilder();

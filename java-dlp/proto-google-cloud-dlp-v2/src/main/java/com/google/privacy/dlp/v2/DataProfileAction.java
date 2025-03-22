@@ -380,6 +380,59 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * <code>.google.privacy.dlp.v2.BigQueryTable profile_table = 1;</code>
      */
     com.google.privacy.dlp.v2.BigQueryTableOrBuilder getProfileTableOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Store sample [data profile
+     * findings][google.privacy.dlp.v2.DataProfileFinding] in an existing table
+     * or a new table in an existing dataset. Each regeneration will result in
+     * new rows in BigQuery. Data is inserted using [streaming
+     * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+     * and so data may be in the buffer for a period of time after the profile
+     * has finished.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 2;</code>
+     *
+     * @return Whether the sampleFindingsTable field is set.
+     */
+    boolean hasSampleFindingsTable();
+    /**
+     *
+     *
+     * <pre>
+     * Store sample [data profile
+     * findings][google.privacy.dlp.v2.DataProfileFinding] in an existing table
+     * or a new table in an existing dataset. Each regeneration will result in
+     * new rows in BigQuery. Data is inserted using [streaming
+     * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+     * and so data may be in the buffer for a period of time after the profile
+     * has finished.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 2;</code>
+     *
+     * @return The sampleFindingsTable.
+     */
+    com.google.privacy.dlp.v2.BigQueryTable getSampleFindingsTable();
+    /**
+     *
+     *
+     * <pre>
+     * Store sample [data profile
+     * findings][google.privacy.dlp.v2.DataProfileFinding] in an existing table
+     * or a new table in an existing dataset. Each regeneration will result in
+     * new rows in BigQuery. Data is inserted using [streaming
+     * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+     * and so data may be in the buffer for a period of time after the profile
+     * has finished.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 2;</code>
+     */
+    com.google.privacy.dlp.v2.BigQueryTableOrBuilder getSampleFindingsTableOrBuilder();
   }
   /**
    *
@@ -550,6 +603,74 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           : profileTable_;
     }
 
+    public static final int SAMPLE_FINDINGS_TABLE_FIELD_NUMBER = 2;
+    private com.google.privacy.dlp.v2.BigQueryTable sampleFindingsTable_;
+    /**
+     *
+     *
+     * <pre>
+     * Store sample [data profile
+     * findings][google.privacy.dlp.v2.DataProfileFinding] in an existing table
+     * or a new table in an existing dataset. Each regeneration will result in
+     * new rows in BigQuery. Data is inserted using [streaming
+     * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+     * and so data may be in the buffer for a period of time after the profile
+     * has finished.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 2;</code>
+     *
+     * @return Whether the sampleFindingsTable field is set.
+     */
+    @java.lang.Override
+    public boolean hasSampleFindingsTable() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Store sample [data profile
+     * findings][google.privacy.dlp.v2.DataProfileFinding] in an existing table
+     * or a new table in an existing dataset. Each regeneration will result in
+     * new rows in BigQuery. Data is inserted using [streaming
+     * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+     * and so data may be in the buffer for a period of time after the profile
+     * has finished.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 2;</code>
+     *
+     * @return The sampleFindingsTable.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.BigQueryTable getSampleFindingsTable() {
+      return sampleFindingsTable_ == null
+          ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
+          : sampleFindingsTable_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Store sample [data profile
+     * findings][google.privacy.dlp.v2.DataProfileFinding] in an existing table
+     * or a new table in an existing dataset. Each regeneration will result in
+     * new rows in BigQuery. Data is inserted using [streaming
+     * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+     * and so data may be in the buffer for a period of time after the profile
+     * has finished.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getSampleFindingsTableOrBuilder() {
+      return sampleFindingsTable_ == null
+          ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
+          : sampleFindingsTable_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -567,6 +688,9 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(1, getProfileTable());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getSampleFindingsTable());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -578,6 +702,10 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getProfileTable());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSampleFindingsTable());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -599,6 +727,10 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       if (hasProfileTable()) {
         if (!getProfileTable().equals(other.getProfileTable())) return false;
       }
+      if (hasSampleFindingsTable() != other.hasSampleFindingsTable()) return false;
+      if (hasSampleFindingsTable()) {
+        if (!getSampleFindingsTable().equals(other.getSampleFindingsTable())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -613,6 +745,10 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       if (hasProfileTable()) {
         hash = (37 * hash) + PROFILE_TABLE_FIELD_NUMBER;
         hash = (53 * hash) + getProfileTable().hashCode();
+      }
+      if (hasSampleFindingsTable()) {
+        hash = (37 * hash) + SAMPLE_FINDINGS_TABLE_FIELD_NUMBER;
+        hash = (53 * hash) + getSampleFindingsTable().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -758,6 +894,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getProfileTableFieldBuilder();
+          getSampleFindingsTableFieldBuilder();
         }
       }
 
@@ -769,6 +906,11 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         if (profileTableBuilder_ != null) {
           profileTableBuilder_.dispose();
           profileTableBuilder_ = null;
+        }
+        sampleFindingsTable_ = null;
+        if (sampleFindingsTableBuilder_ != null) {
+          sampleFindingsTableBuilder_.dispose();
+          sampleFindingsTableBuilder_ = null;
         }
         return this;
       }
@@ -811,6 +953,13 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           result.profileTable_ =
               profileTableBuilder_ == null ? profileTable_ : profileTableBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.sampleFindingsTable_ =
+              sampleFindingsTableBuilder_ == null
+                  ? sampleFindingsTable_
+                  : sampleFindingsTableBuilder_.build();
+          to_bitField0_ |= 0x00000002;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -866,6 +1015,9 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         if (other.hasProfileTable()) {
           mergeProfileTable(other.getProfileTable());
         }
+        if (other.hasSampleFindingsTable()) {
+          mergeSampleFindingsTable(other.getSampleFindingsTable());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -898,6 +1050,13 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getSampleFindingsTableFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1326,6 +1485,247 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           profileTable_ = null;
         }
         return profileTableBuilder_;
+      }
+
+      private com.google.privacy.dlp.v2.BigQueryTable sampleFindingsTable_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.privacy.dlp.v2.BigQueryTable,
+              com.google.privacy.dlp.v2.BigQueryTable.Builder,
+              com.google.privacy.dlp.v2.BigQueryTableOrBuilder>
+          sampleFindingsTableBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Store sample [data profile
+       * findings][google.privacy.dlp.v2.DataProfileFinding] in an existing table
+       * or a new table in an existing dataset. Each regeneration will result in
+       * new rows in BigQuery. Data is inserted using [streaming
+       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       * and so data may be in the buffer for a period of time after the profile
+       * has finished.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 2;</code>
+       *
+       * @return Whether the sampleFindingsTable field is set.
+       */
+      public boolean hasSampleFindingsTable() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Store sample [data profile
+       * findings][google.privacy.dlp.v2.DataProfileFinding] in an existing table
+       * or a new table in an existing dataset. Each regeneration will result in
+       * new rows in BigQuery. Data is inserted using [streaming
+       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       * and so data may be in the buffer for a period of time after the profile
+       * has finished.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 2;</code>
+       *
+       * @return The sampleFindingsTable.
+       */
+      public com.google.privacy.dlp.v2.BigQueryTable getSampleFindingsTable() {
+        if (sampleFindingsTableBuilder_ == null) {
+          return sampleFindingsTable_ == null
+              ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
+              : sampleFindingsTable_;
+        } else {
+          return sampleFindingsTableBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Store sample [data profile
+       * findings][google.privacy.dlp.v2.DataProfileFinding] in an existing table
+       * or a new table in an existing dataset. Each regeneration will result in
+       * new rows in BigQuery. Data is inserted using [streaming
+       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       * and so data may be in the buffer for a period of time after the profile
+       * has finished.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 2;</code>
+       */
+      public Builder setSampleFindingsTable(com.google.privacy.dlp.v2.BigQueryTable value) {
+        if (sampleFindingsTableBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sampleFindingsTable_ = value;
+        } else {
+          sampleFindingsTableBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Store sample [data profile
+       * findings][google.privacy.dlp.v2.DataProfileFinding] in an existing table
+       * or a new table in an existing dataset. Each regeneration will result in
+       * new rows in BigQuery. Data is inserted using [streaming
+       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       * and so data may be in the buffer for a period of time after the profile
+       * has finished.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 2;</code>
+       */
+      public Builder setSampleFindingsTable(
+          com.google.privacy.dlp.v2.BigQueryTable.Builder builderForValue) {
+        if (sampleFindingsTableBuilder_ == null) {
+          sampleFindingsTable_ = builderForValue.build();
+        } else {
+          sampleFindingsTableBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Store sample [data profile
+       * findings][google.privacy.dlp.v2.DataProfileFinding] in an existing table
+       * or a new table in an existing dataset. Each regeneration will result in
+       * new rows in BigQuery. Data is inserted using [streaming
+       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       * and so data may be in the buffer for a period of time after the profile
+       * has finished.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 2;</code>
+       */
+      public Builder mergeSampleFindingsTable(com.google.privacy.dlp.v2.BigQueryTable value) {
+        if (sampleFindingsTableBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && sampleFindingsTable_ != null
+              && sampleFindingsTable_
+                  != com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()) {
+            getSampleFindingsTableBuilder().mergeFrom(value);
+          } else {
+            sampleFindingsTable_ = value;
+          }
+        } else {
+          sampleFindingsTableBuilder_.mergeFrom(value);
+        }
+        if (sampleFindingsTable_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Store sample [data profile
+       * findings][google.privacy.dlp.v2.DataProfileFinding] in an existing table
+       * or a new table in an existing dataset. Each regeneration will result in
+       * new rows in BigQuery. Data is inserted using [streaming
+       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       * and so data may be in the buffer for a period of time after the profile
+       * has finished.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 2;</code>
+       */
+      public Builder clearSampleFindingsTable() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        sampleFindingsTable_ = null;
+        if (sampleFindingsTableBuilder_ != null) {
+          sampleFindingsTableBuilder_.dispose();
+          sampleFindingsTableBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Store sample [data profile
+       * findings][google.privacy.dlp.v2.DataProfileFinding] in an existing table
+       * or a new table in an existing dataset. Each regeneration will result in
+       * new rows in BigQuery. Data is inserted using [streaming
+       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       * and so data may be in the buffer for a period of time after the profile
+       * has finished.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 2;</code>
+       */
+      public com.google.privacy.dlp.v2.BigQueryTable.Builder getSampleFindingsTableBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getSampleFindingsTableFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Store sample [data profile
+       * findings][google.privacy.dlp.v2.DataProfileFinding] in an existing table
+       * or a new table in an existing dataset. Each regeneration will result in
+       * new rows in BigQuery. Data is inserted using [streaming
+       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       * and so data may be in the buffer for a period of time after the profile
+       * has finished.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 2;</code>
+       */
+      public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getSampleFindingsTableOrBuilder() {
+        if (sampleFindingsTableBuilder_ != null) {
+          return sampleFindingsTableBuilder_.getMessageOrBuilder();
+        } else {
+          return sampleFindingsTable_ == null
+              ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
+              : sampleFindingsTable_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Store sample [data profile
+       * findings][google.privacy.dlp.v2.DataProfileFinding] in an existing table
+       * or a new table in an existing dataset. Each regeneration will result in
+       * new rows in BigQuery. Data is inserted using [streaming
+       * insert](https://cloud.google.com/blog/products/bigquery/life-of-a-bigquery-streaming-insert)
+       * and so data may be in the buffer for a period of time after the profile
+       * has finished.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.privacy.dlp.v2.BigQueryTable,
+              com.google.privacy.dlp.v2.BigQueryTable.Builder,
+              com.google.privacy.dlp.v2.BigQueryTableOrBuilder>
+          getSampleFindingsTableFieldBuilder() {
+        if (sampleFindingsTableBuilder_ == null) {
+          sampleFindingsTableBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.BigQueryTable,
+                  com.google.privacy.dlp.v2.BigQueryTable.Builder,
+                  com.google.privacy.dlp.v2.BigQueryTableOrBuilder>(
+                  getSampleFindingsTable(), getParentForChildren(), isClean());
+          sampleFindingsTable_ = null;
+        }
+        return sampleFindingsTableBuilder_;
       }
 
       @java.lang.Override

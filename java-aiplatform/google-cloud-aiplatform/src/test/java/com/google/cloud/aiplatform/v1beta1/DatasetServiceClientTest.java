@@ -1857,6 +1857,115 @@ public class DatasetServiceClientTest {
   }
 
   @Test
+  public void assessDataTest() throws Exception {
+    AssessDataResponse expectedResponse = AssessDataResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("assessDataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDatasetService.addResponse(resultOperation);
+
+    AssessDataRequest request =
+        AssessDataRequest.newBuilder()
+            .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .build();
+
+    AssessDataResponse actualResponse = client.assessDataAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AssessDataRequest actualRequest = ((AssessDataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(
+        request.getTuningValidationAssessmentConfig(),
+        actualRequest.getTuningValidationAssessmentConfig());
+    Assert.assertEquals(
+        request.getTuningResourceUsageAssessmentConfig(),
+        actualRequest.getTuningResourceUsageAssessmentConfig());
+    Assert.assertEquals(request.getGeminiTemplateConfig(), actualRequest.getGeminiTemplateConfig());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void assessDataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      AssessDataRequest request =
+          AssessDataRequest.newBuilder()
+              .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+              .build();
+      client.assessDataAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void assembleDataTest() throws Exception {
+    AssembleDataResponse expectedResponse =
+        AssembleDataResponse.newBuilder()
+            .setBigqueryDestination("bigqueryDestination1980924710")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("assembleDataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDatasetService.addResponse(resultOperation);
+
+    AssembleDataRequest request =
+        AssembleDataRequest.newBuilder()
+            .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .build();
+
+    AssembleDataResponse actualResponse = client.assembleDataAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AssembleDataRequest actualRequest = ((AssembleDataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getGeminiTemplateConfig(), actualRequest.getGeminiTemplateConfig());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void assembleDataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      AssembleDataRequest request =
+          AssembleDataRequest.newBuilder()
+              .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+              .build();
+      client.assembleDataAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

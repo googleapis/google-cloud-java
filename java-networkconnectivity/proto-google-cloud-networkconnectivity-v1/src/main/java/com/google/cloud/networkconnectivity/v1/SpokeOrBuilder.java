@@ -201,10 +201,10 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * An optional description of the spoke.
+   * Optional. An optional description of the spoke.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -213,10 +213,10 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * An optional description of the spoke.
+   * Optional. An optional description of the spoke.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -284,10 +284,12 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * VPN tunnels that are associated with the spoke.
+   * Optional. VPN tunnels that are associated with the spoke.
    * </pre>
    *
-   * <code>.google.cloud.networkconnectivity.v1.LinkedVpnTunnels linked_vpn_tunnels = 17;</code>
+   * <code>
+   * .google.cloud.networkconnectivity.v1.LinkedVpnTunnels linked_vpn_tunnels = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the linkedVpnTunnels field is set.
    */
@@ -296,10 +298,12 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * VPN tunnels that are associated with the spoke.
+   * Optional. VPN tunnels that are associated with the spoke.
    * </pre>
    *
-   * <code>.google.cloud.networkconnectivity.v1.LinkedVpnTunnels linked_vpn_tunnels = 17;</code>
+   * <code>
+   * .google.cloud.networkconnectivity.v1.LinkedVpnTunnels linked_vpn_tunnels = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The linkedVpnTunnels.
    */
@@ -308,10 +312,12 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * VPN tunnels that are associated with the spoke.
+   * Optional. VPN tunnels that are associated with the spoke.
    * </pre>
    *
-   * <code>.google.cloud.networkconnectivity.v1.LinkedVpnTunnels linked_vpn_tunnels = 17;</code>
+   * <code>
+   * .google.cloud.networkconnectivity.v1.LinkedVpnTunnels linked_vpn_tunnels = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.networkconnectivity.v1.LinkedVpnTunnelsOrBuilder getLinkedVpnTunnelsOrBuilder();
 
@@ -319,11 +325,11 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * VLAN attachments that are associated with the spoke.
+   * Optional. VLAN attachments that are associated with the spoke.
    * </pre>
    *
    * <code>
-   * .google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments linked_interconnect_attachments = 18;
+   * .google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments linked_interconnect_attachments = 18 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the linkedInterconnectAttachments field is set.
@@ -333,11 +339,11 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * VLAN attachments that are associated with the spoke.
+   * Optional. VLAN attachments that are associated with the spoke.
    * </pre>
    *
    * <code>
-   * .google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments linked_interconnect_attachments = 18;
+   * .google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments linked_interconnect_attachments = 18 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The linkedInterconnectAttachments.
@@ -348,11 +354,11 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * VLAN attachments that are associated with the spoke.
+   * Optional. VLAN attachments that are associated with the spoke.
    * </pre>
    *
    * <code>
-   * .google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments linked_interconnect_attachments = 18;
+   * .google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments linked_interconnect_attachments = 18 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.networkconnectivity.v1.LinkedInterconnectAttachmentsOrBuilder
@@ -362,11 +368,11 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Router appliance instances that are associated with the spoke.
+   * Optional. Router appliance instances that are associated with the spoke.
    * </pre>
    *
    * <code>
-   * .google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstances linked_router_appliance_instances = 19;
+   * .google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstances linked_router_appliance_instances = 19 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the linkedRouterApplianceInstances field is set.
@@ -376,11 +382,11 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Router appliance instances that are associated with the spoke.
+   * Optional. Router appliance instances that are associated with the spoke.
    * </pre>
    *
    * <code>
-   * .google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstances linked_router_appliance_instances = 19;
+   * .google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstances linked_router_appliance_instances = 19 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The linkedRouterApplianceInstances.
@@ -391,11 +397,11 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Router appliance instances that are associated with the spoke.
+   * Optional. Router appliance instances that are associated with the spoke.
    * </pre>
    *
    * <code>
-   * .google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstances linked_router_appliance_instances = 19;
+   * .google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstances linked_router_appliance_instances = 19 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.networkconnectivity.v1.LinkedRouterApplianceInstancesOrBuilder
@@ -546,8 +552,7 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Output only. The reasons for current state of the spoke. Only present when
-   * the spoke is in the `INACTIVE` state.
+   * Output only. The reasons for current state of the spoke.
    * </pre>
    *
    * <code>
@@ -559,8 +564,7 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Output only. The reasons for current state of the spoke. Only present when
-   * the spoke is in the `INACTIVE` state.
+   * Output only. The reasons for current state of the spoke.
    * </pre>
    *
    * <code>
@@ -572,8 +576,7 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Output only. The reasons for current state of the spoke. Only present when
-   * the spoke is in the `INACTIVE` state.
+   * Output only. The reasons for current state of the spoke.
    * </pre>
    *
    * <code>
@@ -585,8 +588,7 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Output only. The reasons for current state of the spoke. Only present when
-   * the spoke is in the `INACTIVE` state.
+   * Output only. The reasons for current state of the spoke.
    * </pre>
    *
    * <code>
@@ -599,8 +601,7 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Output only. The reasons for current state of the spoke. Only present when
-   * the spoke is in the `INACTIVE` state.
+   * Output only. The reasons for current state of the spoke.
    * </pre>
    *
    * <code>
@@ -637,4 +638,92 @@ public interface SpokeOrBuilder
    * @return The spokeType.
    */
   com.google.cloud.networkconnectivity.v1.SpokeType getSpokeType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This checksum is computed by the server based on the value of
+   * other fields, and may be sent on update and delete requests to ensure the
+   * client has an up-to-date value before proceeding.
+   * </pre>
+   *
+   * <code>string etag = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This checksum is computed by the server based on the value of
+   * other fields, and may be sent on update and delete requests to ensure the
+   * client has an up-to-date value before proceeding.
+   * </pre>
+   *
+   * <code>string etag = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of fields waiting for hub administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the fieldPathsPendingUpdate.
+   */
+  java.util.List<java.lang.String> getFieldPathsPendingUpdateList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of fields waiting for hub administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of fieldPathsPendingUpdate.
+   */
+  int getFieldPathsPendingUpdateCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of fields waiting for hub administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The fieldPathsPendingUpdate at the given index.
+   */
+  java.lang.String getFieldPathsPendingUpdate(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of fields waiting for hub administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the fieldPathsPendingUpdate at the given index.
+   */
+  com.google.protobuf.ByteString getFieldPathsPendingUpdateBytes(int index);
 }

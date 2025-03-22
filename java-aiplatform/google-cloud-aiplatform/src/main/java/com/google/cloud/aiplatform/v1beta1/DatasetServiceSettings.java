@@ -290,6 +290,29 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
     return ((DatasetServiceStubSettings) getStubSettings()).listAnnotationsSettings();
   }
 
+  /** Returns the object with the settings used for calls to assessData. */
+  public UnaryCallSettings<AssessDataRequest, Operation> assessDataSettings() {
+    return ((DatasetServiceStubSettings) getStubSettings()).assessDataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to assessData. */
+  public OperationCallSettings<AssessDataRequest, AssessDataResponse, AssessDataOperationMetadata>
+      assessDataOperationSettings() {
+    return ((DatasetServiceStubSettings) getStubSettings()).assessDataOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to assembleData. */
+  public UnaryCallSettings<AssembleDataRequest, Operation> assembleDataSettings() {
+    return ((DatasetServiceStubSettings) getStubSettings()).assembleDataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to assembleData. */
+  public OperationCallSettings<
+          AssembleDataRequest, AssembleDataResponse, AssembleDataOperationMetadata>
+      assembleDataOperationSettings() {
+    return ((DatasetServiceStubSettings) getStubSettings()).assembleDataOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -581,6 +604,30 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
             ListAnnotationsRequest, ListAnnotationsResponse, ListAnnotationsPagedResponse>
         listAnnotationsSettings() {
       return getStubSettingsBuilder().listAnnotationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to assessData. */
+    public UnaryCallSettings.Builder<AssessDataRequest, Operation> assessDataSettings() {
+      return getStubSettingsBuilder().assessDataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to assessData. */
+    public OperationCallSettings.Builder<
+            AssessDataRequest, AssessDataResponse, AssessDataOperationMetadata>
+        assessDataOperationSettings() {
+      return getStubSettingsBuilder().assessDataOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to assembleData. */
+    public UnaryCallSettings.Builder<AssembleDataRequest, Operation> assembleDataSettings() {
+      return getStubSettingsBuilder().assembleDataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to assembleData. */
+    public OperationCallSettings.Builder<
+            AssembleDataRequest, AssembleDataResponse, AssembleDataOperationMetadata>
+        assembleDataOperationSettings() {
+      return getStubSettingsBuilder().assembleDataOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

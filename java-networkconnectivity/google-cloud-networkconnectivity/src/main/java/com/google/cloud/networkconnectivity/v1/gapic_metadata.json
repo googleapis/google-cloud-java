@@ -5,6 +5,84 @@
   "protoPackage": "google.cloud.networkconnectivity.v1",
   "libraryPackage": "com.google.cloud.networkconnectivity.v1",
   "services": {
+    "CrossNetworkAutomationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CrossNetworkAutomationServiceClient",
+          "rpcs": {
+            "CreateServiceConnectionMap": {
+              "methods": ["createServiceConnectionMapAsync", "createServiceConnectionMapAsync", "createServiceConnectionMapAsync", "createServiceConnectionMapOperationCallable", "createServiceConnectionMapCallable"]
+            },
+            "CreateServiceConnectionPolicy": {
+              "methods": ["createServiceConnectionPolicyAsync", "createServiceConnectionPolicyAsync", "createServiceConnectionPolicyAsync", "createServiceConnectionPolicyOperationCallable", "createServiceConnectionPolicyCallable"]
+            },
+            "CreateServiceConnectionToken": {
+              "methods": ["createServiceConnectionTokenAsync", "createServiceConnectionTokenAsync", "createServiceConnectionTokenAsync", "createServiceConnectionTokenOperationCallable", "createServiceConnectionTokenCallable"]
+            },
+            "DeleteServiceClass": {
+              "methods": ["deleteServiceClassAsync", "deleteServiceClassAsync", "deleteServiceClassAsync", "deleteServiceClassOperationCallable", "deleteServiceClassCallable"]
+            },
+            "DeleteServiceConnectionMap": {
+              "methods": ["deleteServiceConnectionMapAsync", "deleteServiceConnectionMapAsync", "deleteServiceConnectionMapAsync", "deleteServiceConnectionMapOperationCallable", "deleteServiceConnectionMapCallable"]
+            },
+            "DeleteServiceConnectionPolicy": {
+              "methods": ["deleteServiceConnectionPolicyAsync", "deleteServiceConnectionPolicyAsync", "deleteServiceConnectionPolicyAsync", "deleteServiceConnectionPolicyOperationCallable", "deleteServiceConnectionPolicyCallable"]
+            },
+            "DeleteServiceConnectionToken": {
+              "methods": ["deleteServiceConnectionTokenAsync", "deleteServiceConnectionTokenAsync", "deleteServiceConnectionTokenAsync", "deleteServiceConnectionTokenOperationCallable", "deleteServiceConnectionTokenCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetServiceClass": {
+              "methods": ["getServiceClass", "getServiceClass", "getServiceClass", "getServiceClassCallable"]
+            },
+            "GetServiceConnectionMap": {
+              "methods": ["getServiceConnectionMap", "getServiceConnectionMap", "getServiceConnectionMap", "getServiceConnectionMapCallable"]
+            },
+            "GetServiceConnectionPolicy": {
+              "methods": ["getServiceConnectionPolicy", "getServiceConnectionPolicy", "getServiceConnectionPolicy", "getServiceConnectionPolicyCallable"]
+            },
+            "GetServiceConnectionToken": {
+              "methods": ["getServiceConnectionToken", "getServiceConnectionToken", "getServiceConnectionToken", "getServiceConnectionTokenCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListServiceClasses": {
+              "methods": ["listServiceClasses", "listServiceClasses", "listServiceClasses", "listServiceClassesPagedCallable", "listServiceClassesCallable"]
+            },
+            "ListServiceConnectionMaps": {
+              "methods": ["listServiceConnectionMaps", "listServiceConnectionMaps", "listServiceConnectionMaps", "listServiceConnectionMapsPagedCallable", "listServiceConnectionMapsCallable"]
+            },
+            "ListServiceConnectionPolicies": {
+              "methods": ["listServiceConnectionPolicies", "listServiceConnectionPolicies", "listServiceConnectionPolicies", "listServiceConnectionPoliciesPagedCallable", "listServiceConnectionPoliciesCallable"]
+            },
+            "ListServiceConnectionTokens": {
+              "methods": ["listServiceConnectionTokens", "listServiceConnectionTokens", "listServiceConnectionTokens", "listServiceConnectionTokensPagedCallable", "listServiceConnectionTokensCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateServiceClass": {
+              "methods": ["updateServiceClassAsync", "updateServiceClassAsync", "updateServiceClassOperationCallable", "updateServiceClassCallable"]
+            },
+            "UpdateServiceConnectionMap": {
+              "methods": ["updateServiceConnectionMapAsync", "updateServiceConnectionMapAsync", "updateServiceConnectionMapOperationCallable", "updateServiceConnectionMapCallable"]
+            },
+            "UpdateServiceConnectionPolicy": {
+              "methods": ["updateServiceConnectionPolicyAsync", "updateServiceConnectionPolicyAsync", "updateServiceConnectionPolicyOperationCallable", "updateServiceConnectionPolicyCallable"]
+            }
+          }
+        }
+      }
+    },
     "HubService": {
       "clients": {
         "grpc": {
@@ -12,6 +90,9 @@
           "rpcs": {
             "AcceptHubSpoke": {
               "methods": ["acceptHubSpokeAsync", "acceptHubSpokeAsync", "acceptHubSpokeAsync", "acceptHubSpokeAsync", "acceptHubSpokeAsync", "acceptHubSpokeOperationCallable", "acceptHubSpokeCallable"]
+            },
+            "AcceptSpokeUpdate": {
+              "methods": ["acceptSpokeUpdateAsync", "acceptSpokeUpdateAsync", "acceptSpokeUpdateAsync", "acceptSpokeUpdateAsync", "acceptSpokeUpdateAsync", "acceptSpokeUpdateOperationCallable", "acceptSpokeUpdateCallable"]
             },
             "CreateHub": {
               "methods": ["createHubAsync", "createHubAsync", "createHubAsync", "createHubOperationCallable", "createHubCallable"]
@@ -72,6 +153,9 @@
             },
             "RejectHubSpoke": {
               "methods": ["rejectHubSpokeAsync", "rejectHubSpokeAsync", "rejectHubSpokeAsync", "rejectHubSpokeAsync", "rejectHubSpokeAsync", "rejectHubSpokeOperationCallable", "rejectHubSpokeCallable"]
+            },
+            "RejectSpokeUpdate": {
+              "methods": ["rejectSpokeUpdateAsync", "rejectSpokeUpdateAsync", "rejectSpokeUpdateAsync", "rejectSpokeUpdateAsync", "rejectSpokeUpdateAsync", "rejectSpokeUpdateOperationCallable", "rejectSpokeUpdateCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]

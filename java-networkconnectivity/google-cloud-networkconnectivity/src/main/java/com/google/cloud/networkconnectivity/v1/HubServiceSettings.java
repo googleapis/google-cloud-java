@@ -242,6 +242,30 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
     return ((HubServiceStubSettings) getStubSettings()).acceptHubSpokeOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to acceptSpokeUpdate. */
+  public UnaryCallSettings<AcceptSpokeUpdateRequest, Operation> acceptSpokeUpdateSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).acceptSpokeUpdateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to acceptSpokeUpdate. */
+  public OperationCallSettings<
+          AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+      acceptSpokeUpdateOperationSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).acceptSpokeUpdateOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rejectSpokeUpdate. */
+  public UnaryCallSettings<RejectSpokeUpdateRequest, Operation> rejectSpokeUpdateSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).rejectSpokeUpdateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rejectSpokeUpdate. */
+  public OperationCallSettings<
+          RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+      rejectSpokeUpdateOperationSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).rejectSpokeUpdateOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteSpoke. */
   public UnaryCallSettings<DeleteSpokeRequest, Operation> deleteSpokeSettings() {
     return ((HubServiceStubSettings) getStubSettings()).deleteSpokeSettings();
@@ -533,6 +557,32 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
             AcceptHubSpokeRequest, AcceptHubSpokeResponse, OperationMetadata>
         acceptHubSpokeOperationSettings() {
       return getStubSettingsBuilder().acceptHubSpokeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to acceptSpokeUpdate. */
+    public UnaryCallSettings.Builder<AcceptSpokeUpdateRequest, Operation>
+        acceptSpokeUpdateSettings() {
+      return getStubSettingsBuilder().acceptSpokeUpdateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to acceptSpokeUpdate. */
+    public OperationCallSettings.Builder<
+            AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+        acceptSpokeUpdateOperationSettings() {
+      return getStubSettingsBuilder().acceptSpokeUpdateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rejectSpokeUpdate. */
+    public UnaryCallSettings.Builder<RejectSpokeUpdateRequest, Operation>
+        rejectSpokeUpdateSettings() {
+      return getStubSettingsBuilder().rejectSpokeUpdateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rejectSpokeUpdate. */
+    public OperationCallSettings.Builder<
+            RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+        rejectSpokeUpdateOperationSettings() {
+      return getStubSettingsBuilder().rejectSpokeUpdateOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteSpoke. */

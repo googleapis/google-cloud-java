@@ -52,7 +52,7 @@ public final class CommonProto {
           + "\001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016status_me"
           + "ssage\030\005 \001(\tB\003\340A\003\022#\n\026requested_cancellati"
           + "on\030\006 \001(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB\003\340A\003B"
-          + "\332\003\n\'com.google.cloud.networkconnectivity"
+          + "\270\005\n\'com.google.cloud.networkconnectivity"
           + ".v1B\013CommonProtoP\001ZYcloud.google.com/go/"
           + "networkconnectivity/apiv1/networkconnect"
           + "ivitypb;networkconnectivitypb\252\002#Google.C"
@@ -63,8 +63,13 @@ public final class CommonProto {
           + "ojects/{project}/regions/{region}/interc"
           + "onnectAttachments/{resource_id}\352AR\n\036comp"
           + "ute.googleapis.com/Network\0220projects/{pr"
-          + "oject}/global/networks/{resource_id}b\006pr"
-          + "oto3"
+          + "oject}/global/networks/{resource_id}\352Aa\n"
+          + "!compute.googleapis.com/Subnetwork\022<proj"
+          + "ects/{project}/regions/{region}/subnetwo"
+          + "rks/{subnetwork}\352Aw\n(compute.googleapis."
+          + "com/ServiceAttachment\022Kprojects/{project"
+          + "}/regions/{region}/serviceAttachments/{s"
+          + "ervice_attachment}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

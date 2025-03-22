@@ -896,6 +896,41 @@ public interface FileStoreDataProfileOrBuilder
    *
    *
    * <pre>
+   * The BigQuery table to which the sample findings are written.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 22;</code>
+   *
+   * @return Whether the sampleFindingsTable field is set.
+   */
+  boolean hasSampleFindingsTable();
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery table to which the sample findings are written.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 22;</code>
+   *
+   * @return The sampleFindingsTable.
+   */
+  com.google.privacy.dlp.v2.BigQueryTable getSampleFindingsTable();
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery table to which the sample findings are written.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 22;</code>
+   */
+  com.google.privacy.dlp.v2.BigQueryTableOrBuilder getSampleFindingsTableOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The file store does not have any files.
    * </pre>
    *
@@ -904,6 +939,62 @@ public interface FileStoreDataProfileOrBuilder
    * @return The fileStoreIsEmpty.
    */
   boolean getFileStoreIsEmpty();
+
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the resource, including any tags attached during
+   * profiling.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 25;</code>
+   */
+  java.util.List<com.google.privacy.dlp.v2.Tag> getTagsList();
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the resource, including any tags attached during
+   * profiling.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 25;</code>
+   */
+  com.google.privacy.dlp.v2.Tag getTags(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the resource, including any tags attached during
+   * profiling.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 25;</code>
+   */
+  int getTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the resource, including any tags attached during
+   * profiling.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 25;</code>
+   */
+  java.util.List<? extends com.google.privacy.dlp.v2.TagOrBuilder> getTagsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the resource, including any tags attached during
+   * profiling.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 25;</code>
+   */
+  com.google.privacy.dlp.v2.TagOrBuilder getTagsOrBuilder(int index);
 
   /**
    *
