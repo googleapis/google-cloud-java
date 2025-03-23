@@ -16,8 +16,6 @@
 
 package com.google.cloud.vertexai.api;
 
-import static com.google.cloud.vertexai.api.LlmUtilityServiceClient.ListLocationsPagedResponse;
-
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -34,6 +32,7 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.vertexai.api.LlmUtilityServiceClient.ListLocationsPagedResponse;
 import com.google.cloud.vertexai.api.stub.LlmUtilityServiceStubSettings;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
