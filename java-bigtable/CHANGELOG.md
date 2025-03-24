@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.57.0](https://github.com/googleapis/java-bigtable/compare/v2.56.0...v2.57.0) (2025-03-24)
+
+
+### Features
+
+* Add PreparedStatement and update ExecuteQuery API to use it ([#2534](https://github.com/googleapis/java-bigtable/issues/2534)) ([49d4d09](https://github.com/googleapis/java-bigtable/commit/49d4d09fd16a1eb4eb566227a049bca2aaaa61e3))
+
 ## [2.56.0](https://github.com/googleapis/java-bigtable/compare/v2.55.0...v2.56.0) (2025-03-18)
 
 
