@@ -15,11 +15,9 @@
  */
 package com.google.cloud.bigtable.data.v2.models.sql;
 
-import com.google.api.core.BetaApi;
 import java.util.List;
 
 /** Provides information about the schema of a {@link ResultSet}. */
-@BetaApi
 public interface ResultSetMetadata {
 
   /** @return full list of {@link ColumnMetadata} for each column in the {@link ResultSet}. */

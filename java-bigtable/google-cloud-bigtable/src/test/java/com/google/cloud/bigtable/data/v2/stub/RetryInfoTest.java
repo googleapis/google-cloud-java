@@ -15,6 +15,9 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.columnMetadata;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.metadata;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringType;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
@@ -32,6 +35,8 @@ import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsResponse;
+import com.google.bigtable.v2.PrepareQueryRequest;
+import com.google.bigtable.v2.PrepareQueryResponse;
 import com.google.bigtable.v2.ReadChangeStreamRequest;
 import com.google.bigtable.v2.ReadChangeStreamResponse;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
@@ -71,6 +76,7 @@ import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Queue;
 import java.util.Set;
@@ -195,6 +201,9 @@ public class RetryInfoTest {
     verifyRetryInfoIsUsed(
         () -> client.generateInitialChangeStreamPartitions("table").iterator().hasNext(), true);
 
+    attemptCounter.set(0);
+    verifyRetryInfoIsUsed(
+        () -> client.prepareStatement("SELECT * FROM table", new HashMap<>()), true);
     // Verify that the new data API methods are tested or excluded. This is enforced by
     // introspecting grpc
     // method descriptors.
@@ -205,8 +214,7 @@ public class RetryInfoTest {
 
     // Exclude methods that don't support retry info
     methods.add("PingAndWarm");
-    methods.add("ExecuteQuery");
-    methods.add("PrepareQuery");
+    methods.add("ExecuteQuery"); // TODO remove when retries are implemented
 
     assertThat(methods).containsExactlyElementsIn(expected);
   }
@@ -538,6 +546,39 @@ public class RetryInfoTest {
     }
   }
 
+  @Test
+  public void testPrepareQueryNonRetryableErrorWithRetryInfo() {
+    verifyRetryInfoIsUsed(
+        () -> client.prepareStatement("SELECT * FROM table", new HashMap<>()), false);
+  }
+
+  @Test
+  public void testPrepareQueryDisableRetryInfo() throws IOException {
+    settings.stubSettings().setEnableRetryInfo(false);
+
+    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
+
+      verifyRetryInfoCanBeDisabled(
+          () -> newClient.prepareStatement("SELECT * FROM table", new HashMap<>()));
+    }
+  }
+
+  @Test
+  public void testPrepareQueryServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(() -> client.prepareStatement("SELECT * FROM table", new HashMap<>()), true);
+  }
+
+  @Test
+  public void testPrepareQueryServerNotReturningRetryInfoClientDisabledHandling()
+      throws IOException {
+    settings.stubSettings().setEnableRetryInfo(false);
+
+    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
+      verifyNoRetryInfo(
+          () -> newClient.prepareStatement("SELECT * FROM table", new HashMap<>()), true);
+    }
+  }
+
   // Test the case where server returns retry info and client enables handling of retry info
   private void verifyRetryInfoIsUsed(Runnable runnable, boolean retryableError) {
     if (retryableError) {
@@ -796,6 +837,23 @@ public class RetryInfoTest {
         responseObserver.onNext(
             ReadChangeStreamResponse.newBuilder()
                 .setCloseStream(ReadChangeStreamResponse.CloseStream.getDefaultInstance())
+                .build());
+        responseObserver.onCompleted();
+      } else {
+        Exception expectedRpc = expectations.poll();
+        responseObserver.onError(expectedRpc);
+      }
+    }
+
+    @Override
+    public void prepareQuery(
+        PrepareQueryRequest request, StreamObserver<PrepareQueryResponse> responseObserver) {
+      attemptCounter.incrementAndGet();
+      if (expectations.isEmpty()) {
+        responseObserver.onNext(
+            // Need to set metadata for response to parse
+            PrepareQueryResponse.newBuilder()
+                .setMetadata(metadata(columnMetadata("foo", stringType())))
                 .build());
         responseObserver.onCompleted();
       } else {

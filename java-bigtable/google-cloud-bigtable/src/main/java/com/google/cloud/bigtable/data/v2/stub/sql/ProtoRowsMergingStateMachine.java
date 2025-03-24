@@ -26,11 +26,18 @@ import com.google.cloud.bigtable.data.v2.models.sql.ResultSetMetadata;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
+import com.google.common.hash.HashCode;
+import com.google.common.hash.HashFunction;
+import com.google.common.hash.Hashing;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Queue;
+import java.util.function.Supplier;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
  * Used to transform a stream of {@link com.google.bigtable.v2.ProtoRowsBatch} bytes chunks into
@@ -41,7 +48,7 @@ import java.util.Queue;
  *
  * <ul>
  *   <li>Add results with {@link #addPartialResultSet(PartialResultSet)} until {@link
- *       #hasCompleteBatch()} is true
+ *       #hasCompleteBatches()} is true
  *   <li>Call {@link #populateQueue(Queue)} to materialize results from the complete batch.
  *   <li>Repeat until all {@link PartialResultSet}s have been processed
  *   <li>Ensure that there is no incomplete data using {@link #isBatchInProgress()}
@@ -52,75 +59,119 @@ import java.util.Queue;
 @InternalApi
 final class ProtoRowsMergingStateMachine {
   enum State {
-    /** Waiting for the first chunk of bytes for a new batch */
-    AWAITING_NEW_BATCH,
-    /** Waiting for the next chunk of bytes, to combine with the bytes currently being buffered. */
-    AWAITING_PARTIAL_BATCH,
-    /** Buffering a complete batch of rows, waiting for populateQueue to be called for the batch */
+    /** Waiting for data to be added to the state machine */
+    AWAITING_NEW_DATA,
+    /** Buffering a complete set of rows, waiting for populateQueue to be called */
     AWAITING_BATCH_CONSUME,
   }
 
-  private final ResultSetMetadata metadata;
+  private static final HashFunction CRC32C = Hashing.crc32c();
+
+  private final Supplier<ResultSetMetadata> metadataSupplier;
+  private @Nullable ResultSetMetadata metadata;
   private State state;
   private ByteString batchBuffer;
-  private ProtoRows completeBatch;
+  private List<List<Value>> parsedBatches;
+  private boolean hasReceivedFirstResumeToken;
 
-  ProtoRowsMergingStateMachine(ResultSetMetadata metadata) {
-    this.metadata = metadata;
-    state = State.AWAITING_NEW_BATCH;
+  ProtoRowsMergingStateMachine(Supplier<ResultSetMetadata> metadataSupplier) {
+    this.metadataSupplier = metadataSupplier;
+    state = State.AWAITING_NEW_DATA;
     batchBuffer = ByteString.empty();
+    parsedBatches = new ArrayList<>();
+    hasReceivedFirstResumeToken = false;
   }
 
   /**
    * Adds the bytes from the given PartialResultSet to the current buffer. If a resume token is
    * present, attempts to parse the bytes to the underlying protobuf row format
+   *
+   * <p>See the comments on {@link PartialResultSet} protobuf message definition for explanation of
+   * the protocol implemented below.
+   *
+   * <pre>Translated to use local variable names the expected logic is as follows:
+   * if results.reset {
+   *   reset batchBuffer
+   *   reset parsedBatches
+   * }
+   * if results.proto_rows_batch is set {
+   *   append result.proto_rows_batch.batch_data to batchBuffer
+   * }
+   * if results.batch_checksum is set {
+   *   validate the checksum matches the crc32c hash of batchBuffer
+   *   parse batchBuffer as a ProtoRows message, clearing batchBuffer
+   *   add the parsed data to parsedBatches
+   * }
+   * if results.resume_token is set {
+   *   yield the results in parsedBatches to the row merger.
+   *   this is controlled by the AWAITING_BATCH_CONSUME state.
+   * }
+   * </pre>
    */
   void addPartialResultSet(PartialResultSet results) {
     Preconditions.checkState(
         state != State.AWAITING_BATCH_CONSUME,
         "Attempting to add partial result set to state machine in state AWAITING_BATCH_CONSUME");
+    // If the API indicates we should reset we need to clear buffered data
+    if (results.getReset()) {
+      batchBuffer = ByteString.EMPTY;
+      parsedBatches.clear();
+    }
     // ByteString has an efficient concat which generally involves no copying
     batchBuffer = batchBuffer.concat(results.getProtoRowsBatch().getBatchData());
-    state = State.AWAITING_PARTIAL_BATCH;
-    if (results.getResumeToken().isEmpty()) {
-      return;
-    }
-    // A resume token means the batch is complete and safe to yield
-    // We can receive resume tokens with no new data. In this case we yield an empty batch.
-    if (batchBuffer.isEmpty()) {
-      completeBatch = ProtoRows.getDefaultInstance();
-    } else {
+    if (results.hasBatchChecksum()) {
+      HashCode hash = CRC32C.hashBytes(batchBuffer.toByteArray());
+      Preconditions.checkState(
+          hash.hashCode() == results.getBatchChecksum(), "Unexpected checksum mismatch");
       try {
-        completeBatch = ProtoRows.parseFrom(batchBuffer);
+        ProtoRows completeBatch = ProtoRows.parseFrom(batchBuffer);
+        batchBuffer = ByteString.EMPTY;
+        parsedBatches.add(completeBatch.getValuesList());
       } catch (InvalidProtocolBufferException e) {
         throw new InternalError("Unexpected exception parsing response protobuf", e);
       }
     }
-    // Empty buffers can benefit from resetting because ByteString.concat builds a rope
-    batchBuffer = ByteString.empty();
-    state = State.AWAITING_BATCH_CONSUME;
+    boolean hasResumeToken = !results.getResumeToken().isEmpty();
+    if (hasResumeToken) {
+      if (!hasReceivedFirstResumeToken) {
+        // Don't resolve the metadata until we receive the first resume token.
+        // This is safe because we only use the metadata in populateQueue, which can't be called
+        // until we receive a resume token. For details on why this is necessary, see
+        // MetadataResolvingCallable
+        metadata = metadataSupplier.get();
+        hasReceivedFirstResumeToken = true;
+      }
+      Preconditions.checkState(
+          batchBuffer.isEmpty(), "Received resumeToken with buffered data and no checksum");
+      state = State.AWAITING_BATCH_CONSUME;
+    }
   }
 
-  /** Returns true if there is a complete batch buffered, false otherwise */
-  boolean hasCompleteBatch() {
+  /** Returns true if there are complete batches, ready to yield. False otherwise */
+  boolean hasCompleteBatches() {
     return state == State.AWAITING_BATCH_CONSUME;
   }
 
   /** Returns true if there is a partial or complete batch buffered, false otherwise */
   boolean isBatchInProgress() {
-    return hasCompleteBatch() || state == State.AWAITING_PARTIAL_BATCH;
+    boolean hasBufferedData = !batchBuffer.isEmpty() || !parsedBatches.isEmpty();
+    return hasCompleteBatches() || hasBufferedData;
   }
 
   /**
-   * Populates the given queue with the complete batch of rows
+   * Populates the given queue with the currently buffered rows of rows
    *
-   * @throws IllegalStateException if there is not a complete batch
+   * @throws IllegalStateException if there is no yieldable data
    */
   void populateQueue(Queue<SqlRow> queue) {
     Preconditions.checkState(
         state == State.AWAITING_BATCH_CONSUME,
         "Attempting to populate Queue from state machine without completed batch");
-    Iterator<Value> valuesIterator = completeBatch.getValuesList().iterator();
+    Preconditions.checkState(
+        batchBuffer.isEmpty(), "Unexpected buffered partial batch while consuming rows.");
+    Preconditions.checkNotNull(metadata, "Unexpected empty metadata when parsing response");
+
+    Iterator<Value> valuesIterator = Iterables.concat(parsedBatches).iterator();
     while (valuesIterator.hasNext()) {
       ImmutableList.Builder<Value> rowDataBuilder = ImmutableList.builder();
       for (ColumnMetadata c : metadata.getColumns()) {
@@ -132,9 +183,8 @@ final class ProtoRowsMergingStateMachine {
       }
       queue.add(ProtoSqlRow.create(metadata, rowDataBuilder.build()));
     }
-    // reset the batch to be empty
-    completeBatch = ProtoRows.getDefaultInstance();
-    state = State.AWAITING_NEW_BATCH;
+    this.parsedBatches = new ArrayList<>();
+    state = State.AWAITING_NEW_DATA;
   }
 
   @InternalApi("VisibleForTestingOnly")

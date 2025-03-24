@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,16 @@
  */
 package com.google.cloud.bigtable.data.v2.models.sql;
 
-/** Represents the metadata for a column in a {@link ResultSet} */
-public interface ColumnMetadata {
-  /** The name of the column. Returns Empty string if the column has no name */
-  String name();
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.rpc.ApiException;
+import io.grpc.Status.Code;
 
-  /** The {@link SqlType} of the column */
-  SqlType<?> type();
+/**
+ * Error thrown when an executeQuery attempt hits the attempt deadline waiting for {@link
+ * PreparedStatement} to refresh it's underlying plan.
+ */
+public class PreparedStatementRefreshTimeoutException extends ApiException {
+  public PreparedStatementRefreshTimeoutException(String message) {
+    super(message, null, GrpcStatusCode.of(Code.DEADLINE_EXCEEDED), true);
+  }
 }

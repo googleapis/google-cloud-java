@@ -18,13 +18,13 @@ package com.google.cloud.bigtable.data.v2.stub.sql;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.ExecuteQueryResponse;
 import com.google.bigtable.v2.PartialResultSet;
-import com.google.cloud.bigtable.data.v2.internal.ProtoResultSetMetadata;
 import com.google.cloud.bigtable.data.v2.internal.SqlRow;
 import com.google.cloud.bigtable.data.v2.models.sql.ResultSetMetadata;
 import com.google.cloud.bigtable.gaxx.reframing.Reframer;
 import com.google.common.base.Preconditions;
 import java.util.ArrayDeque;
 import java.util.Queue;
+import java.util.function.Supplier;
 
 /**
  * Used to transform a stream of ExecuteQueryResponse objects into rows. This class is not thread
@@ -33,18 +33,17 @@ import java.util.Queue;
 @InternalApi
 public final class SqlRowMerger implements Reframer<SqlRow, ExecuteQueryResponse> {
 
-  enum State {
-    AWAITING_METADATA,
-    PROCESSING_DATA,
-  }
-
   private final Queue<SqlRow> queue;
-  private ProtoRowsMergingStateMachine stateMachine;
-  private State currentState;
+  private final ProtoRowsMergingStateMachine stateMachine;
 
-  public SqlRowMerger() {
+  /**
+   * @param metadataSupplier a supplier of {@link ResultSetMetadata}. This is expected to return
+   *     successfully once the first call to push has been made.
+   *     <p>This exists to facilitate plan refresh that can happen after creation of the row merger.
+   */
+  public SqlRowMerger(Supplier<ResultSetMetadata> metadataSupplier) {
     queue = new ArrayDeque<>();
-    currentState = State.AWAITING_METADATA;
+    stateMachine = new ProtoRowsMergingStateMachine(metadataSupplier);
   }
 
   /**
@@ -52,38 +51,19 @@ public final class SqlRowMerger implements Reframer<SqlRow, ExecuteQueryResponse
    *
    * @param response the next response in the stream of query responses
    */
-  // Suppress this because it won't be forced to be exhaustive once it is open-sourced, so we want a
-  // default.
-  @SuppressWarnings("UnnecessaryDefaultInEnumSwitch")
   @Override
   public void push(ExecuteQueryResponse response) {
-    switch (currentState) {
-      case AWAITING_METADATA:
-        Preconditions.checkState(
-            response.hasMetadata(),
-            "Expected metadata response, but received: %s",
-            response.getResponseCase().name());
-        ResultSetMetadata responseMetadata =
-            ProtoResultSetMetadata.fromProto(response.getMetadata());
-        stateMachine = new ProtoRowsMergingStateMachine(responseMetadata);
-        currentState = State.PROCESSING_DATA;
-        break;
-      case PROCESSING_DATA:
-        Preconditions.checkState(
-            response.hasResults(),
-            "Expected results response, but received: %s",
-            response.getResponseCase().name());
-        PartialResultSet results = response.getResults();
-        processProtoRows(results);
-        break;
-      default:
-        throw new IllegalStateException("Unknown State: " + currentState.name());
-    }
+    Preconditions.checkState(
+        response.hasResults(),
+        "Expected results response, but received: %s",
+        response.getResponseCase().name());
+    PartialResultSet results = response.getResults();
+    processProtoRows(results);
   }
 
   private void processProtoRows(PartialResultSet results) {
     stateMachine.addPartialResultSet(results);
-    if (stateMachine.hasCompleteBatch()) {
+    if (stateMachine.hasCompleteBatches()) {
       stateMachine.populateQueue(queue);
     }
   }
@@ -105,14 +85,7 @@ public final class SqlRowMerger implements Reframer<SqlRow, ExecuteQueryResponse
    */
   @Override
   public boolean hasPartialFrame() {
-    switch (currentState) {
-      case AWAITING_METADATA:
-        return false;
-      case PROCESSING_DATA:
-        return hasFullFrame() || stateMachine.isBatchInProgress();
-      default:
-        throw new IllegalStateException("Unknown State: " + currentState.name());
-    }
+    return hasFullFrame() || stateMachine.isBatchInProgress();
   }
 
   /** pops a completed row from the FIFO queue built from the given responses. */

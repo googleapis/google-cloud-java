@@ -15,6 +15,10 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.columnMetadata;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.metadata;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.preparedStatement;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringType;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.batching.Batcher;
@@ -27,6 +31,8 @@ import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsResponse;
+import com.google.bigtable.v2.PrepareQueryRequest;
+import com.google.bigtable.v2.PrepareQueryResponse;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadModifyWriteRowResponse;
 import com.google.bigtable.v2.ReadRowsRequest;
@@ -42,7 +48,7 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
-import com.google.cloud.bigtable.data.v2.models.sql.Statement;
+import com.google.cloud.bigtable.data.v2.models.sql.PreparedStatement;
 import com.google.rpc.Status;
 import io.grpc.Metadata;
 import io.grpc.Server;
@@ -50,6 +56,7 @@ import io.grpc.ServerCall;
 import io.grpc.ServerCallHandler;
 import io.grpc.ServerInterceptor;
 import io.grpc.stub.StreamObserver;
+import java.util.HashMap;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import org.junit.After;
@@ -165,7 +172,15 @@ public class HeadersTest {
 
   @Test
   public void executeQueryTest() {
-    client.executeQuery(Statement.of("SELECT * FROM table"));
+    PreparedStatement preparedStatement =
+        preparedStatement(metadata(columnMetadata("foo", stringType())));
+    client.executeQuery(preparedStatement.bind().build());
+    verifyHeaderSent(true);
+  }
+
+  @Test
+  public void prepareQueryTest() {
+    client.prepareStatement("SELECT * FROM table", new HashMap<>());
     verifyHeaderSent(true);
   }
 
@@ -257,6 +272,17 @@ public class HeadersTest {
         ReadModifyWriteRowRequest request,
         StreamObserver<ReadModifyWriteRowResponse> responseObserver) {
       responseObserver.onNext(ReadModifyWriteRowResponse.getDefaultInstance());
+      responseObserver.onCompleted();
+    }
+
+    @Override
+    public void prepareQuery(
+        PrepareQueryRequest request, StreamObserver<PrepareQueryResponse> responseObserver) {
+      responseObserver.onNext(
+          // Need to set metadata for response to parse
+          PrepareQueryResponse.newBuilder()
+              .setMetadata(metadata(columnMetadata("foo", stringType())))
+              .build());
       responseObserver.onCompleted();
     }
   }

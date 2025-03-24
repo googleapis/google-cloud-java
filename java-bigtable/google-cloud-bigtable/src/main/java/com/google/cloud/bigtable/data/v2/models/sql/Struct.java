@@ -15,12 +15,10 @@
  */
 package com.google.cloud.bigtable.data.v2.models.sql;
 
-import com.google.api.core.BetaApi;
 import java.io.Serializable;
 
 /**
  * The representation of a SQL Struct type. Data can be accessed using the methods from the {@code
  * StructReader} interface.
  */
-@BetaApi
 public interface Struct extends StructReader, Serializable {}

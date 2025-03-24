@@ -17,6 +17,9 @@ package com.google.cloud.bigtable.data.v2.stub.sql;
 
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.columnMetadata;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.metadata;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.partialResultSetWithToken;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.partialResultSetWithoutToken;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.prepareResponse;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringType;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringValue;
 import static com.google.common.truth.Truth.assertThat;
@@ -24,28 +27,27 @@ import static org.junit.Assert.assertThrows;
 
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.DeadlineExceededException;
-import com.google.api.gax.rpc.UnavailableException;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.ExecuteQueryRequest;
 import com.google.bigtable.v2.ExecuteQueryResponse;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
+import com.google.cloud.bigtable.data.v2.internal.PrepareResponse;
+import com.google.cloud.bigtable.data.v2.internal.PreparedStatementImpl;
 import com.google.cloud.bigtable.data.v2.internal.ProtoResultSetMetadata;
 import com.google.cloud.bigtable.data.v2.internal.ProtoSqlRow;
-import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.internal.SqlRow;
-import com.google.cloud.bigtable.data.v2.models.sql.Statement;
+import com.google.cloud.bigtable.data.v2.models.sql.PreparedStatement;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi.ServerStreamingStashCallable;
 import io.grpc.Context;
 import io.grpc.Deadline;
 import io.grpc.Server;
-import io.grpc.Status;
-import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
@@ -57,8 +59,27 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ExecuteQueryCallableTest {
 
-  private static final RequestContext REQUEST_CONTEXT =
-      RequestContext.create("fake-project", "fake-instance", "fake-profile");
+  private static final class FakePreparedStatement extends PreparedStatementImpl {
+
+    public FakePreparedStatement() {
+      super(
+          PrepareResponse.fromProto(prepareResponse(metadata(columnMetadata("foo", stringType())))),
+          new HashMap<>(),
+          null,
+          null);
+    }
+
+    @Override
+    public PreparedQueryData markExpiredAndStartRefresh(
+        PreparedQueryVersion expiredPreparedQueryVersion) {
+      return getLatestPrepareResponse();
+    }
+
+    @Override
+    public void assertUsingSameStub(EnhancedBigtableStub stub) {}
+  }
+
+  private static final PreparedStatement PREPARED_STATEMENT = new FakePreparedStatement();
 
   private Server server;
   private FakeService fakeService = new FakeService();
@@ -87,13 +108,12 @@ public class ExecuteQueryCallableTest {
   public void testCallContextAndServerStreamSetup() {
     SqlRow row =
         ProtoSqlRow.create(
-            ProtoResultSetMetadata.fromProto(
-                metadata(columnMetadata("test", stringType())).getMetadata()),
+            ProtoResultSetMetadata.fromProto(metadata(columnMetadata("test", stringType()))),
             Collections.singletonList(stringValue("foo")));
     ServerStreamingStashCallable<ExecuteQueryCallContext, SqlRow> innerCallable =
         new ServerStreamingStashCallable<>(Collections.singletonList(row));
-    ExecuteQueryCallable callable = new ExecuteQueryCallable(innerCallable, REQUEST_CONTEXT);
-    SqlServerStream stream = callable.call(Statement.of("SELECT * FROM table"));
+    ExecuteQueryCallable callable = new ExecuteQueryCallable(innerCallable);
+    SqlServerStream stream = callable.call(PREPARED_STATEMENT.bind().build());
 
     assertThat(stream.metadataFuture())
         .isEqualTo(innerCallable.getActualRequest().resultSetMetadataFuture());
@@ -103,48 +123,17 @@ public class ExecuteQueryCallableTest {
   }
 
   @Test
-  public void testExecuteQueryRequestsAreNotRetried() {
-    // TODO: retries for execute query is currently disabled. This test should be
-    // updated once resumption token is in place.
-    SqlServerStream stream = stub.executeQueryCallable().call(Statement.of("SELECT * FROM table"));
-
-    Iterator<SqlRow> iterator = stream.rows().iterator();
-
-    assertThrows(UnavailableException.class, iterator::next).getCause();
-    assertThat(fakeService.attempts).isEqualTo(1);
-  }
-
-  @Test
-  public void testExecuteQueryRequestsIgnoreOverriddenMaxAttempts() throws IOException {
-    BigtableDataSettings.Builder overrideSettings =
-        BigtableDataSettings.newBuilderForEmulator(server.getPort())
-            .setProjectId("fake-project")
-            .setInstanceId("fake-instance");
-    overrideSettings
-        .stubSettings()
-        .executeQuerySettings()
-        .setRetrySettings(RetrySettings.newBuilder().setMaxAttempts(10).build());
-
-    try (EnhancedBigtableStub overrideStub =
-        EnhancedBigtableStub.create(overrideSettings.build().getStubSettings())) {
-      SqlServerStream stream =
-          overrideStub.executeQueryCallable().call(Statement.of("SELECT * FROM table"));
-      Iterator<SqlRow> iterator = stream.rows().iterator();
-
-      assertThrows(UnavailableException.class, iterator::next).getCause();
-      assertThat(fakeService.attempts).isEqualTo(1);
-    }
-  }
-
-  @Test
   public void testExecuteQueryRequestsSetDefaultDeadline() {
-    SqlServerStream stream = stub.executeQueryCallable().call(Statement.of("SELECT * FROM table"));
-    Iterator<SqlRow> iterator = stream.rows().iterator();
-    // We don't care about this but are reusing the fake service that tests retries
-    assertThrows(UnavailableException.class, iterator::next).getCause();
-    // We have 30s default, we give it a wide range to avoid flakiness, this is mostly just checking
-    // that some default is set
-    assertThat(fakeService.deadlineMillisRemaining).isLessThan(30001L);
+    SqlServerStream stream = stub.executeQueryCallable().call(PREPARED_STATEMENT.bind().build());
+    // We don't care about this, just assert we get a response
+    boolean rowReceived = false;
+    for (SqlRow sqlRow : stream.rows()) {
+      rowReceived = true;
+    }
+    assertThat(rowReceived).isTrue();
+    // We have 30m default, we give it a wide range to avoid flakiness, this is mostly just
+    // checking that some default is set
+    assertThat(fakeService.deadlineMillisRemaining).isLessThan(1800000L);
   }
 
   @Test
@@ -165,7 +154,7 @@ public class ExecuteQueryCallableTest {
     try (EnhancedBigtableStub overrideDeadline =
         EnhancedBigtableStub.create(overrideSettings.build().getStubSettings())) {
       SqlServerStream streamOverride =
-          overrideDeadline.executeQueryCallable().call(Statement.of("SELECT * FROM table"));
+          overrideDeadline.executeQueryCallable().call(PREPARED_STATEMENT.bind().build());
       Iterator<SqlRow> overrideIterator = streamOverride.rows().iterator();
       // We don't care about this but are reusing the fake service that tests retries
       assertThrows(DeadlineExceededException.class, overrideIterator::next).getCause();
@@ -174,7 +163,6 @@ public class ExecuteQueryCallableTest {
 
   private static class FakeService extends BigtableGrpc.BigtableImplBase {
 
-    private int attempts = 0;
     private long deadlineMillisRemaining;
 
     @Override
@@ -193,9 +181,9 @@ public class ExecuteQueryCallableTest {
       } catch (InterruptedException e) {
         throw new RuntimeException(e);
       }
-      attempts++;
-      responseObserver.onNext(metadata(columnMetadata("test", stringType())));
-      responseObserver.onError(new StatusRuntimeException(Status.UNAVAILABLE));
+      responseObserver.onNext(partialResultSetWithoutToken(stringValue("foo")));
+      responseObserver.onNext(partialResultSetWithToken(stringValue("bar")));
+      responseObserver.onCompleted();
     }
   }
 }

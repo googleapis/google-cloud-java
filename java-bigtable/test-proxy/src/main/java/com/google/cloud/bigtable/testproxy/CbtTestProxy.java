@@ -32,6 +32,7 @@ import com.google.auto.value.AutoValue;
 import com.google.bigtable.v2.Column;
 import com.google.bigtable.v2.Family;
 import com.google.bigtable.v2.Row;
+import com.google.bigtable.v2.Value;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
@@ -42,7 +43,9 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.sql.PreparedStatement;
 import com.google.cloud.bigtable.data.v2.models.sql.ResultSet;
+import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.cloud.bigtable.testproxy.CloudBigtableV2TestProxyGrpc.CloudBigtableV2TestProxyImplBase;
 import com.google.common.base.Preconditions;
@@ -61,6 +64,7 @@ import java.io.ByteArrayInputStream;
 import java.io.Closeable;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -124,6 +128,8 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
         settingsBuilder.stubSettings().sampleRowKeysSettings().retrySettings(), newTimeout);
     updateTimeout(
         settingsBuilder.stubSettings().executeQuerySettings().retrySettings(), newTimeout);
+    updateTimeout(
+        settingsBuilder.stubSettings().prepareQuerySettings().retrySettings(), newTimeout);
 
     return settingsBuilder;
   }
@@ -687,8 +693,19 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       responseObserver.onError(e);
       return;
     }
-    try (ResultSet resultSet =
-        client.dataClient().executeQuery(StatementDeserializer.toStatement(request))) {
+    ResultSet resultSet = null;
+    try {
+      Map<String, SqlType<?>> paramTypes = new HashMap<>();
+      for (Map.Entry<String, Value> entry : request.getRequest().getParamsMap().entrySet()) {
+        paramTypes.put(entry.getKey(), SqlType.fromProto(entry.getValue().getType()));
+      }
+      PreparedStatement preparedStatement =
+          client.dataClient().prepareStatement(request.getRequest().getQuery(), paramTypes);
+      resultSet =
+          client
+              .dataClient()
+              .executeQuery(
+                  BoundStatementDeserializer.toBoundStatement(preparedStatement, request));
       responseObserver.onNext(ResultSetSerializer.toExecuteQueryResult(resultSet));
     } catch (InterruptedException e) {
       responseObserver.onError(e);
@@ -730,9 +747,12 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
               .build());
       responseObserver.onCompleted();
       return;
+    } finally {
+      if (resultSet != null) {
+        resultSet.close();
+      }
     }
     responseObserver.onCompleted();
-    return;
   }
 
   @Override

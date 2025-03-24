@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2.models.sql;
 
-import com.google.api.core.BetaApi;
 import com.google.cloud.Date;
 import com.google.protobuf.ByteString;
 import java.time.Instant;
@@ -36,7 +35,6 @@ import java.util.Map;
  * a {@code NullPointerException}; {@link #isNull(int)} & {@link #isNull(String)} can be used to
  * check for null values.
  */
-@BetaApi
 public interface StructReader {
   /**
    * @param columnIndex index of the column

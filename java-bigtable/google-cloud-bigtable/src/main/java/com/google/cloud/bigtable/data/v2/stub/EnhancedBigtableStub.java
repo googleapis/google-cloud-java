@@ -45,7 +45,6 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
-import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.tracing.ApiTracerFactory;
@@ -69,6 +68,8 @@ import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
+import com.google.cloud.bigtable.data.v2.internal.PrepareQueryRequest;
+import com.google.cloud.bigtable.data.v2.internal.PrepareResponse;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.internal.SqlRow;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
@@ -90,7 +91,7 @@ import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.models.SampleRowKeysRequest;
 import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.models.TargetId;
-import com.google.cloud.bigtable.data.v2.models.sql.Statement;
+import com.google.cloud.bigtable.data.v2.models.sql.BoundStatement;
 import com.google.cloud.bigtable.data.v2.stub.changestream.ChangeStreamRecordMergingCallable;
 import com.google.cloud.bigtable.data.v2.stub.changestream.GenerateInitialChangeStreamPartitionsUserCallable;
 import com.google.cloud.bigtable.data.v2.stub.changestream.ReadChangeStreamResumptionStrategy;
@@ -119,7 +120,9 @@ import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsUserCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.RowMergingCallable;
 import com.google.cloud.bigtable.data.v2.stub.sql.ExecuteQueryCallContext;
 import com.google.cloud.bigtable.data.v2.stub.sql.ExecuteQueryCallable;
-import com.google.cloud.bigtable.data.v2.stub.sql.MetadataResolvingCallable;
+import com.google.cloud.bigtable.data.v2.stub.sql.ExecuteQueryResumptionStrategy;
+import com.google.cloud.bigtable.data.v2.stub.sql.MetadataErrorHandlingCallable;
+import com.google.cloud.bigtable.data.v2.stub.sql.PlanRefreshingCallable;
 import com.google.cloud.bigtable.data.v2.stub.sql.SqlRowMergingCallable;
 import com.google.cloud.bigtable.gaxx.retrying.ApiResultRetryAlgorithm;
 import com.google.cloud.bigtable.gaxx.retrying.RetryInfoRetryAlgorithm;
@@ -142,10 +145,8 @@ import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.Attributes;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import javax.annotation.Nonnull;
@@ -198,6 +199,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
       readChangeStreamCallable;
 
   private final ExecuteQueryCallable executeQueryCallable;
+  private final UnaryCallable<PrepareQueryRequest, PrepareResponse> prepareQueryCallable;
 
   public static EnhancedBigtableStub create(EnhancedBigtableStubSettings settings)
       throws IOException {
@@ -324,6 +326,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     readChangeStreamCallable =
         createReadChangeStreamCallable(new DefaultChangeStreamRecordAdapter());
     executeQueryCallable = createExecuteQueryCallable();
+    prepareQueryCallable = createPrepareQueryCallable();
   }
 
   // <editor-fold desc="Callable creators">
@@ -1135,11 +1138,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * Creates a callable chain to handle streaming ExecuteQuery RPCs. The chain will:
    *
    * <ul>
-   *   <li>Convert a {@link Statement} into a {@link ExecuteQueryCallContext}, which passes the
-   *       {@link Statement} & a future for the {@link
+   *   <li>Convert a {@link BoundStatement} into a {@link ExecuteQueryCallContext}, which passes the
+   *       {@link BoundStatement} & a future for the {@link
    *       com.google.cloud.bigtable.data.v2.models.sql.ResultSetMetadata} up the call chain.
-   *   <li>Upon receiving the response stream, it will set the metadata future and translate the
+   *   <li>Refresh expired {@link PrepareResponse} when the server returns a specific error}
+   *   <li>Add retry/resume on failures
+   *   <li>Upon receiving the first resume_token, it will set the metadata future and translate the
    *       {@link com.google.bigtable.v2.PartialResultSet}s into {@link SqlRow}s
+   *   <li>Pass through non-retryable errors to the metadata future
    *   <li>Add tracing & metrics.
    *   <li>Wrap the metadata future & row stream into a {@link
    *       com.google.cloud.bigtable.data.v2.stub.sql.SqlServerStream}
@@ -1147,9 +1153,6 @@ public class EnhancedBigtableStub implements AutoCloseable {
    */
   @InternalApi("For internal use only")
   public ExecuteQueryCallable createExecuteQueryCallable() {
-    // TODO support resumption
-    // TODO update codes once resumption is implemented
-    Set<Code> retryableCodes = Collections.emptySet();
     ServerStreamingCallable<ExecuteQueryRequest, ExecuteQueryResponse> base =
         GrpcRawCallableFactory.createServerStreamingCallable(
             GrpcCallSettings.<ExecuteQueryRequest, ExecuteQueryResponse>newBuilder()
@@ -1164,61 +1167,76 @@ public class EnhancedBigtableStub implements AutoCloseable {
                       }
                     })
                 .build(),
-            retryableCodes);
+            settings.executeQuerySettings().getRetryableCodes());
 
     ServerStreamingCallable<ExecuteQueryRequest, ExecuteQueryResponse> withStatsHeaders =
         new StatsHeadersServerStreamingCallable<>(base);
 
-    ServerStreamingCallSettings<ExecuteQueryRequest, ExecuteQueryResponse> watchdogSettings =
-        ServerStreamingCallSettings.<ExecuteQueryRequest, ExecuteQueryResponse>newBuilder()
+    ServerStreamingCallable<ExecuteQueryCallContext, ExecuteQueryResponse> withPlanRefresh =
+        new PlanRefreshingCallable(withStatsHeaders, requestContext);
+
+    // Sometimes ExecuteQuery connections are disconnected via an RST frame. This error is transient
+    // and should be treated similar to UNAVAILABLE. However, this exception has an INTERNAL error
+    // code which by default is not retryable. Convert the exception, so it can be retried in the
+    // client.
+    ServerStreamingCallable<ExecuteQueryCallContext, ExecuteQueryResponse> convertException =
+        new ConvertExceptionCallable<>(withPlanRefresh);
+
+    ServerStreamingCallSettings<ExecuteQueryCallContext, ExecuteQueryResponse> retrySettings =
+        ServerStreamingCallSettings.<ExecuteQueryCallContext, ExecuteQueryResponse>newBuilder()
+            .setResumptionStrategy(new ExecuteQueryResumptionStrategy())
+            .setRetryableCodes(settings.executeQuerySettings().getRetryableCodes())
+            .setRetrySettings(settings.executeQuerySettings().getRetrySettings())
             .setIdleTimeout(settings.executeQuerySettings().getIdleTimeout())
             .setWaitTimeout(settings.executeQuerySettings().getWaitTimeout())
             .build();
 
-    // Watchdog needs to stay above the metadata observer so that watchdog errors
-    // are passed through to the metadata future.
-    ServerStreamingCallable<ExecuteQueryRequest, ExecuteQueryResponse> watched =
-        Callables.watched(withStatsHeaders, watchdogSettings, clientContext);
-
-    ServerStreamingCallable<ExecuteQueryCallContext, ExecuteQueryResponse> withMetadataObserver =
-        new MetadataResolvingCallable(watched);
+    // Retries need to happen before row merging, because the resumeToken is part
+    // of the ExecuteQueryResponse. This is okay because the first response in every
+    // attempt stream will have reset set to true, so any unyielded data from the previous
+    // attempt will be reset properly
+    ServerStreamingCallable<ExecuteQueryCallContext, ExecuteQueryResponse> retries =
+        withRetries(convertException, retrySettings);
 
     ServerStreamingCallable<ExecuteQueryCallContext, SqlRow> merging =
-        new SqlRowMergingCallable(withMetadataObserver);
+        new SqlRowMergingCallable(retries);
 
-    ServerStreamingCallable<ExecuteQueryCallContext, SqlRow> withBigtableTracer =
-        new BigtableTracerStreamingCallable<>(merging);
-
-    ServerStreamingCallSettings<ExecuteQueryCallContext, SqlRow> retrySettings =
+    ServerStreamingCallSettings<ExecuteQueryCallContext, SqlRow> watchdogSettings =
         ServerStreamingCallSettings.<ExecuteQueryCallContext, SqlRow>newBuilder()
-            // TODO add resumption strategy and pass through retry settings unchanged
-            // we pass through retry settings to use the deadlines now but don't
-            // support retries
-            .setRetrySettings(
-                settings
-                    .executeQuerySettings()
-                    .getRetrySettings()
-                    .toBuilder()
-                    // override maxAttempts as a safeguard against changes from user
-                    .setMaxAttempts(1)
-                    .build())
+            .setIdleTimeout(settings.executeQuerySettings().getIdleTimeout())
+            .setWaitTimeout(settings.executeQuerySettings().getWaitTimeout())
             .build();
 
-    // Adding RetryingCallable to the callable chain so that client side metrics can be
-    // measured correctly and deadlines are set. Retries are currently disabled.
-    ServerStreamingCallable<ExecuteQueryCallContext, SqlRow> retries =
-        withRetries(withBigtableTracer, retrySettings);
+    // Watchdog needs to stay above the metadata error handling so that watchdog errors
+    // are passed through to the metadata future.
+    ServerStreamingCallable<ExecuteQueryCallContext, SqlRow> watched =
+        Callables.watched(merging, watchdogSettings, clientContext);
+
+    ServerStreamingCallable<ExecuteQueryCallContext, SqlRow> passingThroughErrorsToMetadata =
+        new MetadataErrorHandlingCallable(watched);
+
+    ServerStreamingCallable<ExecuteQueryCallContext, SqlRow> withBigtableTracer =
+        new BigtableTracerStreamingCallable<>(passingThroughErrorsToMetadata);
 
     SpanName span = getSpanName("ExecuteQuery");
     ServerStreamingCallable<ExecuteQueryCallContext, SqlRow> traced =
-        new TracedServerStreamingCallable<>(retries, clientContext.getTracerFactory(), span);
+        new TracedServerStreamingCallable<>(
+            withBigtableTracer, clientContext.getTracerFactory(), span);
 
     return new ExecuteQueryCallable(
         traced.withDefaultCallContext(
             clientContext
                 .getDefaultCallContext()
-                .withRetrySettings(settings.executeQuerySettings().getRetrySettings())),
-        requestContext);
+                .withRetrySettings(settings.executeQuerySettings().getRetrySettings())));
+  }
+
+  private UnaryCallable<PrepareQueryRequest, PrepareResponse> createPrepareQueryCallable() {
+    return createUnaryCallable(
+        BigtableGrpc.getPrepareQueryMethod(),
+        req -> composeInstanceLevelRequestParams(req.getInstanceName(), req.getAppProfileId()),
+        settings.prepareQuerySettings(),
+        req -> req.toProto(requestContext),
+        PrepareResponse::fromProto);
   }
 
   /**
@@ -1240,6 +1258,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
       tableName = NameUtil.extractTableNameFromAuthorizedViewName(authorizedViewName);
     }
     return ImmutableMap.of("table_name", tableName, "app_profile_id", appProfileId);
+  }
+
+  private Map<String, String> composeInstanceLevelRequestParams(
+      String instanceName, String appProfileId) {
+    return ImmutableMap.of("name", instanceName, "app_profile_id", appProfileId);
   }
 
   private <BaseReqT, BaseRespT, ReqT, RespT> UnaryCallable<ReqT, RespT> createUnaryCallable(
@@ -1472,6 +1495,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return executeQueryCallable;
   }
 
+  @InternalApi
+  public UnaryCallable<PrepareQueryRequest, PrepareResponse> prepareQueryCallable() {
+    return prepareQueryCallable;
+  }
   // </editor-fold>
 
   private SpanName getSpanName(String methodName) {

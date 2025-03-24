@@ -20,21 +20,30 @@ import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.arrayTy
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.arrayValue;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.bytesType;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.bytesValue;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.checksum;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.columnMetadata;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.int64Type;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.int64Value;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.mapElement;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.mapType;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.mapValue;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.metadata;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.partialResultSetWithToken;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.partialResultSetWithoutToken;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.partialResultSets;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringType;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringValue;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.structType;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.structValue;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.tokenOnlyResultSet;
 import static com.google.common.truth.Truth.assertWithMessage;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertTrue;
 
+import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.rpc.ApiExceptions;
+import com.google.bigtable.v2.ExecuteQueryResponse;
 import com.google.bigtable.v2.PartialResultSet;
 import com.google.bigtable.v2.ProtoRows;
 import com.google.bigtable.v2.ProtoRowsBatch;
@@ -47,6 +56,7 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import java.util.ArrayDeque;
+import java.util.List;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
@@ -60,52 +70,47 @@ public final class ProtoRowsMergingStateMachineTest {
 
   public static final class IndividualTests {
     @Test
-    public void stateMachine_hasCompleteBatch_falseWhenEmpty() {
+    public void stateMachine_hasCompleteBatches_falseWhenEmpty() {
       ResultSetMetadata metadata =
-          ProtoResultSetMetadata.fromProto(
-              metadata(columnMetadata("a", stringType())).getMetadata());
-      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(metadata);
-      assertThat(stateMachine).hasCompleteBatch(false);
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
+      assertThat(stateMachine).hasCompleteBatches(false);
     }
 
     @Test
-    public void stateMachine_hasCompleteBatch_falseWhenAwaitingPartialBatch() {
+    public void stateMachine_hasCompleteBatches_falseWhenAwaitingPartialBatch() {
       ResultSetMetadata metadata =
-          ProtoResultSetMetadata.fromProto(
-              metadata(columnMetadata("a", stringType())).getMetadata());
-      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(metadata);
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
       stateMachine.addPartialResultSet(
           partialResultSetWithoutToken(stringValue("foo")).getResults());
-      assertThat(stateMachine).hasCompleteBatch(false);
+      assertThat(stateMachine).hasCompleteBatches(false);
     }
 
     @Test
-    public void stateMachine_hasCompleteBatch_trueWhenAwaitingBatchConsume() {
+    public void stateMachine_hasCompleteBatches_trueWhenAwaitingBatchConsume() {
       ResultSetMetadata metadata =
-          ProtoResultSetMetadata.fromProto(
-              metadata(columnMetadata("a", stringType())).getMetadata());
-      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(metadata);
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
       stateMachine.addPartialResultSet(
           partialResultSetWithoutToken(stringValue("foo")).getResults());
       stateMachine.addPartialResultSet(partialResultSetWithToken(stringValue("bar")).getResults());
-      assertThat(stateMachine).hasCompleteBatch(true);
+      assertThat(stateMachine).hasCompleteBatches(true);
     }
 
     @Test
     public void stateMachine_isBatchInProgress_falseWhenEmpty() {
       ResultSetMetadata metadata =
-          ProtoResultSetMetadata.fromProto(
-              metadata(columnMetadata("a", stringType())).getMetadata());
-      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(metadata);
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
       assertThat(stateMachine).isBatchInProgress(false);
     }
 
     @Test
     public void stateMachine_isBatchInProgress_trueWhenAwaitingPartialBatch() {
       ResultSetMetadata metadata =
-          ProtoResultSetMetadata.fromProto(
-              metadata(columnMetadata("a", stringType())).getMetadata());
-      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(metadata);
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
       stateMachine.addPartialResultSet(
           partialResultSetWithoutToken(stringValue("foo")).getResults());
       assertThat(stateMachine).isBatchInProgress(true);
@@ -114,9 +119,8 @@ public final class ProtoRowsMergingStateMachineTest {
     @Test
     public void stateMachine_isBatchInProgress_trueWhenAwaitingBatchConsume() {
       ResultSetMetadata metadata =
-          ProtoResultSetMetadata.fromProto(
-              metadata(columnMetadata("a", stringType())).getMetadata());
-      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(metadata);
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
       stateMachine.addPartialResultSet(
           partialResultSetWithoutToken(stringValue("foo")).getResults());
       assertThat(stateMachine).isBatchInProgress(true);
@@ -126,9 +130,8 @@ public final class ProtoRowsMergingStateMachineTest {
     public void stateMachine_consumeRow_throwsExceptionWhenColumnsArentComplete() {
       ResultSetMetadata metadata =
           ProtoResultSetMetadata.fromProto(
-              metadata(columnMetadata("a", stringType()), columnMetadata("b", stringType()))
-                  .getMetadata());
-      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(metadata);
+              metadata(columnMetadata("a", stringType()), columnMetadata("b", stringType())));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
       // this is a valid partial result set so we don't expect an error until we call populateQueue
       stateMachine.addPartialResultSet(partialResultSetWithToken(stringValue("foo")).getResults());
       assertThrows(
@@ -138,9 +141,8 @@ public final class ProtoRowsMergingStateMachineTest {
     @Test
     public void stateMachine_consumeRow_throwsExceptionWhenAwaitingPartialBatch() {
       ResultSetMetadata metadata =
-          ProtoResultSetMetadata.fromProto(
-              metadata(columnMetadata("a", stringType())).getMetadata());
-      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(metadata);
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
       // this doesn't have a token so we shouldn't allow results to be processed
       stateMachine.addPartialResultSet(
           partialResultSetWithoutToken(stringValue("foo")).getResults());
@@ -151,14 +153,13 @@ public final class ProtoRowsMergingStateMachineTest {
     @Test
     public void stateMachine_mergesPartialBatches() {
       ResultSetMetadata metadata =
-          ProtoResultSetMetadata.fromProto(
-              metadata(columnMetadata("a", stringType())).getMetadata());
-      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(metadata);
-      stateMachine.addPartialResultSet(
-          partialResultSetWithoutToken(stringValue("foo")).getResults());
-      stateMachine.addPartialResultSet(
-          partialResultSetWithoutToken(stringValue("bar")).getResults());
-      stateMachine.addPartialResultSet(partialResultSetWithToken(stringValue("baz")).getResults());
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
+      List<ExecuteQueryResponse> partialBatches =
+          partialResultSets(3, stringValue("foo"), stringValue("bar"), stringValue("baz"));
+      for (ExecuteQueryResponse res : partialBatches) {
+        stateMachine.addPartialResultSet(res.getResults());
+      }
 
       assertThat(stateMachine)
           .populateQueueYields(
@@ -171,8 +172,8 @@ public final class ProtoRowsMergingStateMachineTest {
     public void stateMachine_mergesPartialBatches_withRandomChunks() {
       ResultSetMetadata metadata =
           ProtoResultSetMetadata.fromProto(
-              metadata(columnMetadata("map", mapType(stringType(), bytesType()))).getMetadata());
-      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(metadata);
+              metadata(columnMetadata("map", mapType(stringType(), bytesType()))));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
       Value mapVal =
           mapValue(
               mapElement(
@@ -190,6 +191,7 @@ public final class ProtoRowsMergingStateMachineTest {
           PartialResultSet.newBuilder()
               .setResumeToken(ByteString.copyFromUtf8("token"))
               .setProtoRowsBatch(ProtoRowsBatch.newBuilder().setBatchData(chunk2).build())
+              .setBatchChecksum(checksum(rows.toByteString()))
               .build());
 
       assertThat(stateMachine)
@@ -201,12 +203,11 @@ public final class ProtoRowsMergingStateMachineTest {
       ResultSetMetadata metadata =
           ProtoResultSetMetadata.fromProto(
               metadata(
-                      columnMetadata("a", stringType()),
-                      columnMetadata("b", bytesType()),
-                      columnMetadata("c", arrayType(stringType())),
-                      columnMetadata("d", mapType(stringType(), bytesType())))
-                  .getMetadata());
-      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(metadata);
+                  columnMetadata("a", stringType()),
+                  columnMetadata("b", bytesType()),
+                  columnMetadata("c", arrayType(stringType())),
+                  columnMetadata("d", mapType(stringType(), bytesType()))));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
 
       Value stringVal = stringValue("test");
       stateMachine.addPartialResultSet(partialResultSetWithoutToken(stringVal).getResults());
@@ -220,14 +221,14 @@ public final class ProtoRowsMergingStateMachineTest {
               mapElement(stringValue("b"), bytesValue("bVal")));
       stateMachine.addPartialResultSet(partialResultSetWithToken(mapVal).getResults());
 
-      assertThat(stateMachine).hasCompleteBatch(true);
+      assertThat(stateMachine).hasCompleteBatches(true);
       assertThat(stateMachine)
           .populateQueueYields(
               ProtoSqlRow.create(
                   metadata, ImmutableList.of(stringVal, bytesVal, arrayVal, mapVal)));
 
       // Once we consume a completed row the state machine should be reset
-      assertThat(stateMachine).hasCompleteBatch(false);
+      assertThat(stateMachine).hasCompleteBatches(false);
       assertThrows(
           IllegalStateException.class, () -> stateMachine.populateQueue(new ArrayDeque<>()));
       assertThat(stateMachine).isBatchInProgress(false);
@@ -237,9 +238,8 @@ public final class ProtoRowsMergingStateMachineTest {
     public void stateMachine_throwsExceptionWhenValuesDontMatchSchema() {
       ResultSetMetadata metadata =
           ProtoResultSetMetadata.fromProto(
-              metadata(columnMetadata("a", stringType()), columnMetadata("b", bytesType()))
-                  .getMetadata());
-      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(metadata);
+              metadata(columnMetadata("a", stringType()), columnMetadata("b", bytesType())));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
 
       // values in wrong order
       stateMachine.addPartialResultSet(
@@ -251,9 +251,8 @@ public final class ProtoRowsMergingStateMachineTest {
     @Test
     public void stateMachine_handlesResumeTokenWithNoValues() {
       ResultSetMetadata metadata =
-          ProtoResultSetMetadata.fromProto(
-              metadata(columnMetadata("a", stringType())).getMetadata());
-      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(metadata);
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
 
       stateMachine.addPartialResultSet(partialResultSetWithToken().getResults());
       assertThat(stateMachine).populateQueueYields(new ProtoSqlRow[] {});
@@ -262,9 +261,8 @@ public final class ProtoRowsMergingStateMachineTest {
     @Test
     public void stateMachine_handlesResumeTokenWithOpenBatch() {
       ResultSetMetadata metadata =
-          ProtoResultSetMetadata.fromProto(
-              metadata(columnMetadata("a", stringType())).getMetadata());
-      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(metadata);
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
 
       stateMachine.addPartialResultSet(
           partialResultSetWithoutToken(stringValue("test")).getResults());
@@ -277,9 +275,8 @@ public final class ProtoRowsMergingStateMachineTest {
     @Test
     public void addPartialResultSet_throwsExceptionWhenAwaitingRowConsume() {
       ResultSetMetadata metadata =
-          ProtoResultSetMetadata.fromProto(
-              metadata(columnMetadata("a", stringType())).getMetadata());
-      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(metadata);
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
       stateMachine.addPartialResultSet(partialResultSetWithToken(stringValue("test")).getResults());
 
       assertThrows(
@@ -287,6 +284,242 @@ public final class ProtoRowsMergingStateMachineTest {
           () ->
               stateMachine.addPartialResultSet(
                   partialResultSetWithToken(stringValue("test2")).getResults()));
+    }
+
+    @Test
+    public void stateMachine_throwsExceptionOnChecksumMismatch() {
+      ResultSetMetadata metadata =
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      List<ExecuteQueryResponse> responses =
+          partialResultSets(3, stringValue("foo"), stringValue("bar"), stringValue("baz"));
+
+      // Override the checksum of the final response
+      PartialResultSet lastResultsWithBadChecksum =
+          responses.get(2).getResults().toBuilder().setBatchChecksum(1234).build();
+
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
+      stateMachine.addPartialResultSet(responses.get(0).getResults());
+      stateMachine.addPartialResultSet(responses.get(1).getResults());
+
+      assertThrows(
+          IllegalStateException.class,
+          () -> stateMachine.addPartialResultSet(lastResultsWithBadChecksum));
+    }
+
+    @Test
+    public void stateMachine_handlesResetOnPartialBatch() {
+      ResultSetMetadata metadata =
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      // Initial response here has reset bit set
+      List<ExecuteQueryResponse> responses =
+          partialResultSets(3, stringValue("foo"), stringValue("bar"), stringValue("baz"));
+
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
+      stateMachine.addPartialResultSet(responses.get(0).getResults());
+      stateMachine.addPartialResultSet(responses.get(1).getResults());
+
+      // The two results above should be discarded by reset
+      for (ExecuteQueryResponse response : responses) {
+        stateMachine.addPartialResultSet(response.getResults());
+      }
+
+      assertThat(stateMachine)
+          .populateQueueYields(
+              ProtoSqlRow.create(metadata, ImmutableList.of(stringValue("foo"))),
+              ProtoSqlRow.create(metadata, ImmutableList.of(stringValue("bar"))),
+              ProtoSqlRow.create(metadata, ImmutableList.of(stringValue("baz"))));
+    }
+
+    @Test
+    public void stateMachine_handlesResetWithUncommittedBatches() {
+      ResultSetMetadata metadata =
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      // Create 2 batches split into multiple chunks. Neither containing a resume token
+      List<ExecuteQueryResponse> firstBatch =
+          partialResultSets(
+              2,
+              true,
+              ByteString.EMPTY,
+              stringValue("foo"),
+              stringValue("bar"),
+              stringValue("baz"));
+      List<ExecuteQueryResponse> secondBatch =
+          partialResultSets(
+              3, false, ByteString.EMPTY, stringValue("a"), stringValue("b"), stringValue("c"));
+
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
+      for (ExecuteQueryResponse res : firstBatch) {
+        stateMachine.addPartialResultSet(res.getResults());
+      }
+      for (ExecuteQueryResponse res : secondBatch) {
+        stateMachine.addPartialResultSet(res.getResults());
+      }
+      // Nothing should be yielded yet
+      assertThrows(
+          IllegalStateException.class, () -> stateMachine.populateQueue(new ArrayDeque<>()));
+
+      List<ExecuteQueryResponse> resetBatch =
+          partialResultSets(
+              2,
+              true,
+              ByteString.EMPTY,
+              stringValue("foo2"),
+              stringValue("bar2"),
+              stringValue("baz2"));
+      List<ExecuteQueryResponse> batchAfterReset =
+          partialResultSets(
+              3,
+              false,
+              ByteString.copyFromUtf8("token"),
+              stringValue("a2"),
+              stringValue("b2"),
+              stringValue("c2"));
+      for (ExecuteQueryResponse res : resetBatch) {
+        stateMachine.addPartialResultSet(res.getResults());
+      }
+      for (ExecuteQueryResponse res : batchAfterReset) {
+        stateMachine.addPartialResultSet(res.getResults());
+      }
+      assertThat(stateMachine)
+          .populateQueueYields(
+              ProtoSqlRow.create(metadata, ImmutableList.of(stringValue("foo2"))),
+              ProtoSqlRow.create(metadata, ImmutableList.of(stringValue("bar2"))),
+              ProtoSqlRow.create(metadata, ImmutableList.of(stringValue("baz2"))),
+              ProtoSqlRow.create(metadata, ImmutableList.of(stringValue("a2"))),
+              ProtoSqlRow.create(metadata, ImmutableList.of(stringValue("b2"))),
+              ProtoSqlRow.create(metadata, ImmutableList.of(stringValue("c2"))));
+    }
+
+    @Test
+    public void stateMachine_handlesMultipleCompleteBatchesBeforeToken() {
+      ResultSetMetadata metadata =
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      // Create 2 batches split into multiple chunks. Neither containing a resume token
+      List<ExecuteQueryResponse> firstBatch =
+          partialResultSets(
+              2,
+              true,
+              ByteString.EMPTY,
+              stringValue("foo"),
+              stringValue("bar"),
+              stringValue("baz"));
+      List<ExecuteQueryResponse> secondBatch =
+          partialResultSets(
+              3, false, ByteString.EMPTY, stringValue("a"), stringValue("b"), stringValue("c"));
+
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
+      for (ExecuteQueryResponse res : firstBatch) {
+        stateMachine.addPartialResultSet(res.getResults());
+      }
+      for (ExecuteQueryResponse res : secondBatch) {
+        stateMachine.addPartialResultSet(res.getResults());
+      }
+      // Nothing should be yielded yet
+      assertThrows(
+          IllegalStateException.class, () -> stateMachine.populateQueue(new ArrayDeque<>()));
+      ExecuteQueryResponse resultWithToken = partialResultSetWithToken(stringValue("final"));
+      stateMachine.addPartialResultSet(resultWithToken.getResults());
+      assertThat(stateMachine)
+          .populateQueueYields(
+              ProtoSqlRow.create(metadata, ImmutableList.of(stringValue("foo"))),
+              ProtoSqlRow.create(metadata, ImmutableList.of(stringValue("bar"))),
+              ProtoSqlRow.create(metadata, ImmutableList.of(stringValue("baz"))),
+              ProtoSqlRow.create(metadata, ImmutableList.of(stringValue("a"))),
+              ProtoSqlRow.create(metadata, ImmutableList.of(stringValue("b"))),
+              ProtoSqlRow.create(metadata, ImmutableList.of(stringValue("c"))),
+              ProtoSqlRow.create(metadata, ImmutableList.of(stringValue("final"))));
+    }
+
+    @Test
+    public void stateMachine_throwsExceptionWithChecksumButNoData() {
+      ResultSetMetadata metadata =
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
+
+      PartialResultSet invalid = PartialResultSet.newBuilder().setBatchChecksum(1234).build();
+      assertThrows(IllegalStateException.class, () -> stateMachine.addPartialResultSet(invalid));
+    }
+
+    @Test
+    public void stateMachine_resolvesMetadataOnlyAfterFirstToken() {
+      final boolean[] metadataHasBeenAccessed = {false};
+      ResultSetMetadata metadata =
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      ProtoRowsMergingStateMachine stateMachine =
+          new ProtoRowsMergingStateMachine(
+              () -> {
+                // hacky way to check if supplier has been resolved
+                // This is in an array so the variable can be final
+                metadataHasBeenAccessed[0] = true;
+                return metadata;
+              });
+
+      stateMachine.addPartialResultSet(partialResultSetWithoutToken(stringValue("s")).getResults());
+      assertFalse(metadataHasBeenAccessed[0]);
+      stateMachine.addPartialResultSet(partialResultSetWithToken(stringValue("b")).getResults());
+      assertTrue(metadataHasBeenAccessed[0]);
+    }
+
+    @Test
+    public void stateMachine_handlesSchemaChangeAfterResetOfInitialBatch() {
+      SettableApiFuture<ResultSetMetadata> mdFuture = SettableApiFuture.create();
+      ProtoRowsMergingStateMachine stateMachine =
+          new ProtoRowsMergingStateMachine(
+              () -> ApiExceptions.callAndTranslateApiException(mdFuture));
+      stateMachine.addPartialResultSet(
+          partialResultSetWithoutToken(stringValue("discard")).getResults());
+
+      ResultSetMetadata metadata =
+          ProtoResultSetMetadata.fromProto(
+              metadata(columnMetadata("a", bytesType()), columnMetadata("b", int64Type())));
+      mdFuture.set(metadata);
+      List<ExecuteQueryResponse> retryResponses =
+          partialResultSets(2, bytesValue("bytes"), int64Value(123));
+      for (ExecuteQueryResponse res : retryResponses) {
+        stateMachine.addPartialResultSet(res.getResults());
+      }
+      assertThat(stateMachine)
+          .populateQueueYields(
+              ProtoSqlRow.create(metadata, ImmutableList.of(bytesValue("bytes"), int64Value(123))));
+    }
+
+    @Test
+    public void stateMachine_throwsExceptionWithTokenAndIncompleteBatch() {
+      ResultSetMetadata metadata =
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
+
+      List<ExecuteQueryResponse> responses =
+          partialResultSets(2, stringValue("foo"), stringValue("bar"));
+      stateMachine.addPartialResultSet(responses.get(0).getResults());
+      // We haven't added the second response above, this should error
+      assertThrows(
+          IllegalStateException.class,
+          () ->
+              stateMachine.addPartialResultSet(
+                  tokenOnlyResultSet(ByteString.copyFromUtf8("token")).getResults()));
+    }
+
+    @Test
+    public void isBatchInProgress_trueWithUncommitedCompleteBatches() {
+      ResultSetMetadata metadata =
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
+
+      stateMachine.addPartialResultSet(
+          partialResultSetWithoutToken(stringValue("foo")).getResults());
+      assertThat(stateMachine).isBatchInProgress(true);
+    }
+
+    @Test
+    public void hasCompleteBatches_falseWithUncommitedCompleteBatches() {
+      ResultSetMetadata metadata =
+          ProtoResultSetMetadata.fromProto(metadata(columnMetadata("a", stringType())));
+      ProtoRowsMergingStateMachine stateMachine = new ProtoRowsMergingStateMachine(() -> metadata);
+
+      stateMachine.addPartialResultSet(
+          partialResultSetWithoutToken(stringValue("foo")).getResults());
+      assertThat(stateMachine).hasCompleteBatches(false);
     }
   }
 

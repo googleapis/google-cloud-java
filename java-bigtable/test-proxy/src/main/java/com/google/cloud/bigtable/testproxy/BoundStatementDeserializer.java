@@ -18,92 +18,94 @@ package com.google.cloud.bigtable.testproxy;
 import com.google.bigtable.v2.Value;
 import com.google.bigtable.v2.Value.KindCase;
 import com.google.cloud.Date;
+import com.google.cloud.bigtable.data.v2.models.sql.BoundStatement;
+import com.google.cloud.bigtable.data.v2.models.sql.PreparedStatement;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
-import com.google.cloud.bigtable.data.v2.models.sql.Statement;
 import com.google.protobuf.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class StatementDeserializer {
+public class BoundStatementDeserializer {
 
-  static Statement toStatement(ExecuteQueryRequest request) {
-    Statement.Builder statementBuilder = Statement.newBuilder(request.getRequest().getQuery());
+  static BoundStatement toBoundStatement(
+      PreparedStatement preparedStatement, ExecuteQueryRequest request) {
+    BoundStatement.Builder boundStatementBuilder = preparedStatement.bind();
     for (Map.Entry<String, Value> paramEntry : request.getRequest().getParamsMap().entrySet()) {
       String name = paramEntry.getKey();
       Value value = paramEntry.getValue();
       switch (value.getType().getKindCase()) {
         case BYTES_TYPE:
           if (value.getKindCase().equals(KindCase.KIND_NOT_SET)) {
-            statementBuilder.setBytesParam(name, null);
+            boundStatementBuilder.setBytesParam(name, null);
           } else if (value.getKindCase().equals(KindCase.BYTES_VALUE)) {
-            statementBuilder.setBytesParam(name, value.getBytesValue());
+            boundStatementBuilder.setBytesParam(name, value.getBytesValue());
           } else {
             throw new IllegalArgumentException("Unexpected bytes value: " + value);
           }
           break;
         case STRING_TYPE:
           if (value.getKindCase().equals(KindCase.KIND_NOT_SET)) {
-            statementBuilder.setStringParam(name, null);
+            boundStatementBuilder.setStringParam(name, null);
           } else if (value.getKindCase().equals(KindCase.STRING_VALUE)) {
-            statementBuilder.setStringParam(name, value.getStringValue());
+            boundStatementBuilder.setStringParam(name, value.getStringValue());
           } else {
             throw new IllegalArgumentException("Malformed string value: " + value);
           }
           break;
         case INT64_TYPE:
           if (value.getKindCase().equals(KindCase.KIND_NOT_SET)) {
-            statementBuilder.setLongParam(name, null);
+            boundStatementBuilder.setLongParam(name, null);
           } else if (value.getKindCase().equals(KindCase.INT_VALUE)) {
-            statementBuilder.setLongParam(name, value.getIntValue());
+            boundStatementBuilder.setLongParam(name, value.getIntValue());
           } else {
             throw new IllegalArgumentException("Malformed int64 value: " + value);
           }
           break;
         case FLOAT32_TYPE:
           if (value.getKindCase().equals(KindCase.KIND_NOT_SET)) {
-            statementBuilder.setFloatParam(name, null);
+            boundStatementBuilder.setFloatParam(name, null);
           } else if (value.getKindCase().equals(KindCase.FLOAT_VALUE)) {
-            statementBuilder.setFloatParam(name, (float) value.getFloatValue());
+            boundStatementBuilder.setFloatParam(name, (float) value.getFloatValue());
           } else {
             throw new IllegalArgumentException("Malformed float32 value: " + value);
           }
           break;
         case FLOAT64_TYPE:
           if (value.getKindCase().equals(KindCase.KIND_NOT_SET)) {
-            statementBuilder.setDoubleParam(name, null);
+            boundStatementBuilder.setDoubleParam(name, null);
           } else if (value.getKindCase().equals(KindCase.FLOAT_VALUE)) {
-            statementBuilder.setDoubleParam(name, value.getFloatValue());
+            boundStatementBuilder.setDoubleParam(name, value.getFloatValue());
           } else {
             throw new IllegalArgumentException("Malformed float64 value: " + value);
           }
           break;
         case BOOL_TYPE:
           if (value.getKindCase().equals(KindCase.KIND_NOT_SET)) {
-            statementBuilder.setBooleanParam(name, null);
+            boundStatementBuilder.setBooleanParam(name, null);
           } else if (value.getKindCase().equals(KindCase.BOOL_VALUE)) {
-            statementBuilder.setBooleanParam(name, value.getBoolValue());
+            boundStatementBuilder.setBooleanParam(name, value.getBoolValue());
           } else {
             throw new IllegalArgumentException("Malformed boolean value: " + value);
           }
           break;
         case TIMESTAMP_TYPE:
           if (value.getKindCase().equals(KindCase.KIND_NOT_SET)) {
-            statementBuilder.setTimestampParam(name, null);
+            boundStatementBuilder.setTimestampParam(name, null);
           } else if (value.getKindCase().equals(KindCase.TIMESTAMP_VALUE)) {
             Timestamp ts = value.getTimestampValue();
-            statementBuilder.setTimestampParam(name, toInstant(ts));
+            boundStatementBuilder.setTimestampParam(name, toInstant(ts));
           } else {
             throw new IllegalArgumentException("Malformed timestamp value: " + value);
           }
           break;
         case DATE_TYPE:
           if (value.getKindCase().equals(KindCase.KIND_NOT_SET)) {
-            statementBuilder.setDateParam(name, null);
+            boundStatementBuilder.setDateParam(name, null);
           } else if (value.getKindCase().equals(KindCase.DATE_VALUE)) {
             com.google.type.Date protoDate = value.getDateValue();
-            statementBuilder.setDateParam(name, fromProto(protoDate));
+            boundStatementBuilder.setDateParam(name, fromProto(protoDate));
           } else {
             throw new IllegalArgumentException("Malformed boolean value: " + value);
           }
@@ -111,13 +113,13 @@ public class StatementDeserializer {
         case ARRAY_TYPE:
           SqlType.Array sqlType = (SqlType.Array) SqlType.fromProto(value.getType());
           if (value.getKindCase().equals(KindCase.KIND_NOT_SET)) {
-            statementBuilder.setListParam(name, null, sqlType);
+            boundStatementBuilder.setListParam(name, null, sqlType);
           } else if (value.getKindCase().equals(KindCase.ARRAY_VALUE)) {
             List<Object> array = new ArrayList<>();
             for (Value elem : value.getArrayValue().getValuesList()) {
               array.add(decodeArrayElement(elem, sqlType.getElementType()));
             }
-            statementBuilder.setListParam(name, array, sqlType);
+            boundStatementBuilder.setListParam(name, array, sqlType);
           } else {
             throw new IllegalArgumentException("Malformed array value: " + value);
           }
@@ -126,7 +128,7 @@ public class StatementDeserializer {
           throw new IllegalArgumentException("Unexpected query param type in param: " + value);
       }
     }
-    return statementBuilder.build();
+    return boundStatementBuilder.build();
   }
 
   static Object decodeArrayElement(Value value, SqlType<?> elemType) {

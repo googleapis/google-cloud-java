@@ -25,6 +25,7 @@ import com.google.common.collect.Queues;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import javax.annotation.Nullable;
 
 public class MockStreamingApi {
   public static class MockServerStreamingCallable<RequestT, ResponseT>
@@ -36,7 +37,7 @@ public class MockStreamingApi {
     public void call(
         RequestT request, ResponseObserver<ResponseT> responseObserver, ApiCallContext context) {
       MockStreamController<ResponseT> controller = new MockStreamController<>(responseObserver);
-      calls.add(new MockServerStreamingCall<>(request, controller));
+      calls.add(new MockServerStreamingCall<>(request, controller, context));
       responseObserver.onStart(controller);
     }
 
@@ -52,10 +53,15 @@ public class MockStreamingApi {
   public static class MockServerStreamingCall<RequestT, ResponseT> {
     private final RequestT request;
     private final MockStreamController<ResponseT> controller;
+    private final ApiCallContext apiCallContext;
 
-    public MockServerStreamingCall(RequestT request, MockStreamController<ResponseT> controller) {
+    public MockServerStreamingCall(
+        RequestT request,
+        MockStreamController<ResponseT> controller,
+        @Nullable ApiCallContext apiCallContext) {
       this.request = request;
       this.controller = controller;
+      this.apiCallContext = apiCallContext;
     }
 
     public RequestT getRequest() {
@@ -64,6 +70,10 @@ public class MockStreamingApi {
 
     public MockStreamController<ResponseT> getController() {
       return controller;
+    }
+
+    public ApiCallContext getApiCallContext() {
+      return apiCallContext;
     }
   }
 

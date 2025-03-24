@@ -16,6 +16,9 @@
 package com.google.cloud.bigtable.data.v2.stub;
 
 import static com.google.cloud.bigtable.data.v2.MetadataSubject.assertThat;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.columnMetadata;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.metadata;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringType;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.retrying.RetrySettings;
@@ -29,6 +32,8 @@ import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsResponse;
+import com.google.bigtable.v2.PrepareQueryRequest;
+import com.google.bigtable.v2.PrepareQueryResponse;
 import com.google.bigtable.v2.ReadChangeStreamRequest;
 import com.google.bigtable.v2.ReadChangeStreamResponse;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
@@ -64,6 +69,7 @@ import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -337,6 +343,28 @@ public class CookiesHolderTest {
   }
 
   @Test
+  public void testPrepareQuery() {
+    client.prepareStatement("SELECT * FROM table", new HashMap<>());
+
+    assertThat(fakeService.count.get()).isGreaterThan(1);
+    assertThat(serverMetadata).hasSize(fakeService.count.get());
+
+    Metadata lastMetadata = serverMetadata.get(fakeService.count.get() - 1);
+
+    assertThat(lastMetadata)
+        .containsAtLeast(
+            ROUTING_COOKIE_1.name(),
+            "prepareQuery",
+            ROUTING_COOKIE_2.name(),
+            testCookie,
+            ROUTING_COOKIE_HEADER.name(),
+            testHeaderCookie);
+    assertThat(lastMetadata).doesNotContainKeys(BAD_KEY.name());
+
+    serverMetadata.clear();
+  }
+
+  @Test
   public void testNoCookieSucceedReadRows() {
     fakeService.returnCookie = false;
 
@@ -462,6 +490,23 @@ public class CookiesHolderTest {
   }
 
   @Test
+  public void testNoCookieSucceedPrepareQuery() {
+    fakeService.returnCookie = false;
+
+    client.prepareStatement("SELECT * FROM table", new HashMap<>());
+
+    assertThat(fakeService.count.get()).isGreaterThan(1);
+    assertThat(serverMetadata).hasSize(fakeService.count.get());
+
+    Metadata lastMetadata = serverMetadata.get(fakeService.count.get() - 1);
+
+    assertThat(lastMetadata).doesNotContainKeys(ROUTING_COOKIE_2.name(), BAD_KEY.name());
+    assertThat(lastMetadata).containsAtLeast(ROUTING_COOKIE_1.name(), routingCookie1Header);
+
+    serverMetadata.clear();
+  }
+
+  @Test
   public void testCookiesInHeaders() throws Exception {
     // Send 2 cookies in the headers, with routingCookieKey and ROUTING_COOKIE_2. ROUTING_COOKIE_2
     // is also sent in the trailers so the value should be overridden.
@@ -551,6 +596,9 @@ public class CookiesHolderTest {
     for (ChangeStreamRecord record :
         client.readChangeStream(ReadChangeStreamQuery.create("fake-table"))) {}
 
+    fakeService.count.set(0);
+    client.prepareStatement("SELECT * FROM table", new HashMap<>());
+
     Set<String> expected =
         BigtableGrpc.getServiceDescriptor().getMethods().stream()
             .map(MethodDescriptor::getBareMethodName)
@@ -558,8 +606,7 @@ public class CookiesHolderTest {
 
     // Exclude methods that are not supported by routing cookie
     methods.add("PingAndWarm");
-    methods.add("ExecuteQuery");
-    methods.add("PrepareQuery");
+    methods.add("ExecuteQuery"); // TODO remove when retries are implemented
 
     assertThat(methods).containsExactlyElementsIn(expected);
   }
@@ -793,6 +840,24 @@ public class CookiesHolderTest {
         return;
       }
       responseObserver.onNext(GenerateInitialChangeStreamPartitionsResponse.getDefaultInstance());
+      responseObserver.onCompleted();
+    }
+
+    @Override
+    public void prepareQuery(
+        PrepareQueryRequest request, StreamObserver<PrepareQueryResponse> responseObserver) {
+      if (count.getAndIncrement() < 1) {
+        Metadata trailers = new Metadata();
+        maybePopulateCookie(trailers, "prepareQuery");
+        StatusRuntimeException exception = new StatusRuntimeException(Status.UNAVAILABLE, trailers);
+        responseObserver.onError(exception);
+        return;
+      }
+      responseObserver.onNext(
+          // Need to set metadata for response to parse
+          PrepareQueryResponse.newBuilder()
+              .setMetadata(metadata(columnMetadata("foo", stringType())))
+              .build());
       responseObserver.onCompleted();
     }
 

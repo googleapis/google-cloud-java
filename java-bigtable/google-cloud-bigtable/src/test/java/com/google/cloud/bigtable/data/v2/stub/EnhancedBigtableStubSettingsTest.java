@@ -28,13 +28,15 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.WatchdogProvider;
 import com.google.auth.Credentials;
 import com.google.bigtable.v2.PingAndWarmRequest;
+import com.google.cloud.bigtable.data.v2.internal.PrepareQueryRequest;
+import com.google.cloud.bigtable.data.v2.internal.PrepareResponse;
 import com.google.cloud.bigtable.data.v2.internal.SqlRow;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
-import com.google.cloud.bigtable.data.v2.models.sql.Statement;
+import com.google.cloud.bigtable.data.v2.models.sql.BoundStatement;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Range;
@@ -43,7 +45,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.net.URI;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -826,24 +827,66 @@ public class EnhancedBigtableStubSettingsTest {
 
   @Test
   public void executeQueryHasSaneDefaults() {
-    ServerStreamingCallSettings.Builder<Statement, SqlRow> builder =
+    ServerStreamingCallSettings.Builder<BoundStatement, SqlRow> builder =
         EnhancedBigtableStubSettings.newBuilder().executeQuerySettings();
 
     // Retries aren't supported right now
     // call verifyRetrySettingAreSane when we do
-    assertThat(builder.getRetryableCodes()).containsExactlyElementsIn(Collections.emptySet());
-    assertThat(builder.getRetrySettings().getInitialRpcTimeout()).isEqualTo(Duration.ofSeconds(30));
-    assertThat(builder.getRetrySettings().getMaxRpcTimeout()).isEqualTo(Duration.ofSeconds(30));
-    assertThat(builder.getRetrySettings().getMaxAttempts()).isEqualTo(1);
+    assertThat(builder.getRetryableCodes())
+        .containsAtLeast(Code.ABORTED, Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE);
+    assertThat(builder.getRetrySettings().getInitialRpcTimeout()).isEqualTo(Duration.ofMinutes(30));
+    assertThat(builder.getRetrySettings().getMaxRpcTimeout()).isEqualTo(Duration.ofMinutes(30));
+    assertThat(builder.getRetrySettings().getMaxAttempts()).isEqualTo(10);
   }
 
   @Test
-  public void executeQueryRetriesAreDisabled() {
-    ServerStreamingCallSettings.Builder<Statement, SqlRow> builder =
-        EnhancedBigtableStubSettings.newBuilder().executeQuerySettings();
+  public void prepareQuerySettingsAreNotLost() {
+    String dummyProjectId = "my-project";
+    String dummyInstanceId = "my-instance";
 
-    assertThat(builder.getRetrySettings().getMaxAttempts()).isAtMost(1);
-    assertThat(builder.getRetrySettings().getInitialRpcTimeout()).isAtMost(Duration.ofSeconds(30));
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId(dummyProjectId)
+            .setInstanceId(dummyInstanceId)
+            // Here and everywhere in this test, disable channel priming so we won't need
+            // authentication for sending the prime request since we're only testing the settings.
+            .setRefreshingChannel(false);
+
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setMaxAttempts(10)
+            .setTotalTimeout(Duration.ofHours(1))
+            .setInitialRpcTimeout(Duration.ofSeconds(10))
+            .setRpcTimeoutMultiplier(1)
+            .setMaxRpcTimeout(Duration.ofSeconds(10))
+            .setJittered(true)
+            .build();
+
+    builder
+        .prepareQuerySettings()
+        .setRetryableCodes(Code.ABORTED, Code.DEADLINE_EXCEEDED)
+        .setRetrySettings(retrySettings)
+        .build();
+
+    assertThat(builder.prepareQuerySettings().getRetryableCodes())
+        .containsAtLeast(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.prepareQuerySettings().getRetrySettings()).isEqualTo(retrySettings);
+
+    assertThat(builder.build().prepareQuerySettings().getRetryableCodes())
+        .containsAtLeast(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.build().prepareQuerySettings().getRetrySettings()).isEqualTo(retrySettings);
+
+    assertThat(builder.build().toBuilder().prepareQuerySettings().getRetryableCodes())
+        .containsAtLeast(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.build().toBuilder().prepareQuerySettings().getRetrySettings())
+        .isEqualTo(retrySettings);
+  }
+
+  @Test
+  public void prepareQueryHasSaneDefaults() {
+    UnaryCallSettings.Builder<PrepareQueryRequest, PrepareResponse> builder =
+        EnhancedBigtableStubSettings.newBuilder().prepareQuerySettings();
+    verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());
   }
 
   private void verifyRetrySettingAreSane(Set<Code> retryCodes, RetrySettings retrySettings) {
@@ -974,6 +1017,7 @@ public class EnhancedBigtableStubSettingsTest {
     "readChangeStreamSettings",
     "pingAndWarmSettings",
     "executeQuerySettings",
+    "prepareQuerySettings",
     "metricsProvider",
     "metricsEndpoint",
   };

@@ -15,8 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2.models.sql;
 
-import com.google.api.core.BetaApi;
-
 /**
  * A set of SQL data, generated as the result of an ExecuteQuery request.
  *
@@ -38,7 +36,6 @@ import com.google.api.core.BetaApi;
  * <p>{@code ResultSet} implementations are not required to be thread-safe: the thread that asked
  * for a ResultSet must be the one that interacts with it.
  */
-@BetaApi
 public interface ResultSet extends StructReader, AutoCloseable {
 
   /**

@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.stub.sql;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.bigtable.v2.ExecuteQueryResponse;
@@ -38,7 +39,10 @@ public class SqlRowMergingCallable
       ExecuteQueryCallContext callContext,
       ResponseObserver<SqlRow> responseObserver,
       ApiCallContext apiCallContext) {
-    SqlRowMerger merger = new SqlRowMerger();
+    SqlRowMerger merger =
+        new SqlRowMerger(
+            () ->
+                ApiExceptions.callAndTranslateApiException(callContext.resultSetMetadataFuture()));
     ReframingResponseObserver<ExecuteQueryResponse, SqlRow> observer =
         new ReframingResponseObserver<>(responseObserver, merger);
     inner.call(callContext, observer, apiCallContext);

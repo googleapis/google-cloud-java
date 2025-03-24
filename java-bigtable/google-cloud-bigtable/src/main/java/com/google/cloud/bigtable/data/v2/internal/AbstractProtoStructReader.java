@@ -24,7 +24,6 @@ import com.google.cloud.bigtable.data.v2.models.sql.Struct;
 import com.google.cloud.bigtable.data.v2.models.sql.StructReader;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -169,7 +168,7 @@ public abstract class AbstractProtoStructReader implements StructReader {
   public Instant getTimestamp(int columnIndex) {
     checkNonNullOfType(columnIndex, SqlType.timestamp(), columnIndex);
     Value value = values().get(columnIndex);
-    return toInstant(value.getTimestampValue());
+    return TimestampUtil.toInstant(value.getTimestampValue());
   }
 
   @Override
@@ -177,7 +176,7 @@ public abstract class AbstractProtoStructReader implements StructReader {
     int columnIndex = getColumnIndex(columnName);
     checkNonNullOfType(columnIndex, SqlType.timestamp(), columnName);
     Value value = values().get(columnIndex);
-    return toInstant(value.getTimestampValue());
+    return TimestampUtil.toInstant(value.getTimestampValue());
   }
 
   @Override
@@ -275,7 +274,7 @@ public abstract class AbstractProtoStructReader implements StructReader {
       case BOOL:
         return value.getBoolValue();
       case TIMESTAMP:
-        return toInstant(value.getTimestampValue());
+        return TimestampUtil.toInstant(value.getTimestampValue());
       case DATE:
         return fromProto(value.getDateValue());
       case STRUCT:
@@ -327,10 +326,6 @@ public abstract class AbstractProtoStructReader implements StructReader {
     if (isNull(columnIndex)) {
       throw new NullPointerException("Column " + columnNameForError + " contains NULL value");
     }
-  }
-
-  private Instant toInstant(Timestamp timestamp) {
-    return Instant.ofEpochSecond(timestamp.getSeconds(), timestamp.getNanos());
   }
 
   private Date fromProto(com.google.type.Date proto) {

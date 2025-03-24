@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,13 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.models.sql;
+package com.google.cloud.bigtable.data.v2.internal;
 
-/** Represents the metadata for a column in a {@link ResultSet} */
-public interface ColumnMetadata {
-  /** The name of the column. Returns Empty string if the column has no name */
-  String name();
+import com.google.api.core.InternalApi;
+import com.google.protobuf.Timestamp;
+import java.time.Instant;
 
-  /** The {@link SqlType} of the column */
-  SqlType<?> type();
+/** For internal use only. Utility for converting proto timestamps to appropriate Java types. */
+@InternalApi("For internal use only")
+public class TimestampUtil {
+  public static Instant toInstant(Timestamp timestamp) {
+    return Instant.ofEpochSecond(timestamp.getSeconds(), timestamp.getNanos());
+  }
 }

@@ -46,11 +46,11 @@ public final class ProtoRowsMergingStateMachineSubject extends Subject {
     return assertAbout(stateMachine()).that(actual);
   }
 
-  public void hasCompleteBatch(boolean expectation) {
+  public void hasCompleteBatches(boolean expectation) {
     if (expectation) {
-      check("hasCompleteBatch()").that(actual.hasCompleteBatch()).isTrue();
+      check("hasCompleteBatch()").that(actual.hasCompleteBatches()).isTrue();
     } else {
-      check("hasCompleteBatch()").that(actual.hasCompleteBatch()).isFalse();
+      check("hasCompleteBatch()").that(actual.hasCompleteBatches()).isFalse();
     }
   }
 

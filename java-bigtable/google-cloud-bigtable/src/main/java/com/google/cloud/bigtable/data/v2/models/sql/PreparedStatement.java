@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,18 @@
  */
 package com.google.cloud.bigtable.data.v2.models.sql;
 
-/** Represents the metadata for a column in a {@link ResultSet} */
-public interface ColumnMetadata {
-  /** The name of the column. Returns Empty string if the column has no name */
-  String name();
+/**
+ * The results of query preparation that can be used to create {@link BoundStatement}s to execute
+ * queries.
+ *
+ * <p>Whenever possible this should be shared across different instances of the same query, in order
+ * to amortize query preparation costs.
+ */
+public interface PreparedStatement {
 
-  /** The {@link SqlType} of the column */
-  SqlType<?> type();
+  /**
+   * @return {@link BoundStatement.Builder} to bind query params to and pass to {@link
+   *     com.google.cloud.bigtable.data.v2.BigtableDataClient#executeQuery(BoundStatement)}
+   */
+  BoundStatement.Builder bind();
 }

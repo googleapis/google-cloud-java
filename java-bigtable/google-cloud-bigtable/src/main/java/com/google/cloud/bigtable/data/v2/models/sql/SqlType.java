@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2.models.sql;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.cloud.Date;
 import com.google.cloud.bigtable.common.Type;
@@ -34,7 +33,6 @@ import java.util.List;
  *
  * @param <T> the corresponding java type
  */
-@BetaApi
 public interface SqlType<T> extends Serializable {
 
   /* Enumeration of the types */

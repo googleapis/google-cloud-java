@@ -21,9 +21,12 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.batching.Batcher;
+import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.bigtable.data.v2.internal.PrepareQueryRequest;
+import com.google.cloud.bigtable.data.v2.internal.PrepareResponse;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.ChangeStreamRecord;
@@ -42,12 +45,15 @@ import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.models.SampleRowKeysRequest;
 import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.models.TargetId;
+import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -73,6 +79,7 @@ public class BigtableDataClientTests {
   @Rule public MockitoRule mockitoRule = MockitoJUnit.rule().strictness(Strictness.WARN);
 
   @Mock private EnhancedBigtableStub mockStub;
+  @Mock private ClientContext mockContext;
 
   @Mock(answer = Answers.RETURNS_DEEP_STUBS)
   private ServerStreamingCallable<Query, Row> mockReadRowsCallable;
@@ -89,6 +96,7 @@ public class BigtableDataClientTests {
   @Mock private UnaryCallable<BulkMutation, Void> mockBulkMutateRowsCallable;
   @Mock private Batcher<RowMutationEntry, Void> mockBulkMutationBatcher;
   @Mock private Batcher<ByteString, Row> mockBulkReadRowsBatcher;
+  @Mock private UnaryCallable<PrepareQueryRequest, PrepareResponse> mockPrepareQueryCallable;
 
   @Mock(answer = Answers.RETURNS_DEEP_STUBS)
   private ServerStreamingCallable<String, ByteStringRange>
@@ -1058,5 +1066,25 @@ public class BigtableDataClientTests {
 
     assertThat(bigtableDataClient.readModifyWriteRowCallable())
         .isSameInstanceAs(mockReadModifyWriteRowCallable);
+  }
+
+  @Test
+  public void prepareQueryTest() {
+    Mockito.when(mockStub.prepareQueryCallable()).thenReturn(mockPrepareQueryCallable);
+
+    String query = "SELECT * FROM table";
+    Map<String, SqlType<?>> paramTypes = new HashMap<>();
+    bigtableDataClient.prepareStatement(query, paramTypes);
+    Mockito.verify(mockPrepareQueryCallable).call(PrepareQueryRequest.create(query, paramTypes));
+  }
+
+  @Test
+  public void executeQueryMustUseSameClientAsPrepare() {
+    Mockito.when(mockStub.prepareQueryCallable()).thenReturn(mockPrepareQueryCallable);
+
+    String query = "SELECT * FROM table";
+    Map<String, SqlType<?>> paramTypes = new HashMap<>();
+    bigtableDataClient.prepareStatement(query, paramTypes);
+    Mockito.verify(mockPrepareQueryCallable).call(PrepareQueryRequest.create(query, paramTypes));
   }
 }

@@ -107,8 +107,7 @@ public class AbstractProtoStructReaderTest {
       TestProtoStruct structWithMap =
           TestProtoStruct.create(
               ProtoResultSetMetadata.fromProto(
-                  metadata(columnMetadata("testField", mapType(bytesType(), stringType())))
-                      .getMetadata()),
+                  metadata(columnMetadata("testField", mapType(bytesType(), stringType())))),
               Collections.singletonList(
                   mapValue(
                       mapElement(bytesValue("foo"), stringValue("bar")),
@@ -143,15 +142,14 @@ public class AbstractProtoStructReaderTest {
           TestProtoStruct.create(
               ProtoResultSetMetadata.fromProto(
                   metadata(
-                          columnMetadata(
-                              "testField",
-                              mapType(
-                                  bytesType(),
-                                  arrayType(
-                                      structType(
-                                          structField("timestamp", timestampType()),
-                                          structField("value", bytesType()))))))
-                      .getMetadata()),
+                      columnMetadata(
+                          "testField",
+                          mapType(
+                              bytesType(),
+                              arrayType(
+                                  structType(
+                                      structField("timestamp", timestampType()),
+                                      structField("value", bytesType()))))))),
               Collections.singletonList(
                   mapValue(
                       mapElement(
@@ -205,7 +203,7 @@ public class AbstractProtoStructReaderTest {
       TestProtoStruct structWithList =
           TestProtoStruct.create(
               ProtoResultSetMetadata.fromProto(
-                  metadata(columnMetadata("testField", arrayType(stringType()))).getMetadata()),
+                  metadata(columnMetadata("testField", arrayType(stringType())))),
               Collections.singletonList(arrayValue(stringValue("foo"), stringValue("bar"))));
       List<String> expectedList = Arrays.asList("foo", "bar");
 
@@ -229,7 +227,7 @@ public class AbstractProtoStructReaderTest {
       TestProtoStruct structWithList =
           TestProtoStruct.create(
               ProtoResultSetMetadata.fromProto(
-                  metadata(columnMetadata("testField", arrayType(float32Type()))).getMetadata()),
+                  metadata(columnMetadata("testField", arrayType(float32Type())))),
               Collections.singletonList(arrayValue(floatValue(1.1f), floatValue(1.2f))));
 
       List<Float> floatList =
@@ -565,8 +563,7 @@ public class AbstractProtoStructReaderTest {
 
     private TestProtoStruct getTestRow() {
       return TestProtoStruct.create(
-          ProtoResultSetMetadata.fromProto(
-              metadata(schema.toArray(new ColumnMetadata[] {})).getMetadata()),
+          ProtoResultSetMetadata.fromProto(metadata(schema.toArray(new ColumnMetadata[] {}))),
           values);
     }
 
@@ -632,7 +629,7 @@ public class AbstractProtoStructReaderTest {
       TestProtoStruct row =
           TestProtoStruct.create(
               ProtoResultSetMetadata.fromProto(
-                  metadata(updatedSchema.toArray(new ColumnMetadata[] {})).getMetadata()),
+                  metadata(updatedSchema.toArray(new ColumnMetadata[] {}))),
               updatedValues);
 
       assertThrows(IllegalStateException.class, () -> getByIndex.apply(row, index));
@@ -654,7 +651,7 @@ public class AbstractProtoStructReaderTest {
       TestProtoStruct row =
           TestProtoStruct.create(
               ProtoResultSetMetadata.fromProto(
-                  metadata(updatedSchema.toArray(new ColumnMetadata[] {})).getMetadata()),
+                  metadata(updatedSchema.toArray(new ColumnMetadata[] {}))),
               updatedValues);
 
       assertThrows(IllegalStateException.class, () -> getByColumn.apply(row, columnName));
@@ -693,7 +690,7 @@ public class AbstractProtoStructReaderTest {
       duplicatedSchema.addAll(schema);
       ResultSetMetadata metadata =
           ProtoResultSetMetadata.fromProto(
-              metadata(duplicatedSchema.toArray(new ColumnMetadata[] {})).getMetadata());
+              metadata(duplicatedSchema.toArray(new ColumnMetadata[] {})));
       List<Value> duplicatedValues = new ArrayList<>(values);
       duplicatedValues.addAll(values);
       TestProtoStruct row = TestProtoStruct.create(metadata, duplicatedValues);
@@ -708,7 +705,7 @@ public class AbstractProtoStructReaderTest {
       duplicatedSchema.addAll(schema);
       ResultSetMetadata metadata =
           ProtoResultSetMetadata.fromProto(
-              metadata(duplicatedSchema.toArray(new ColumnMetadata[] {})).getMetadata());
+              metadata(duplicatedSchema.toArray(new ColumnMetadata[] {})));
       List<Value> duplicatedValues = new ArrayList<>(values);
       duplicatedValues.addAll(values);
       TestProtoStruct row = TestProtoStruct.create(metadata, duplicatedValues);

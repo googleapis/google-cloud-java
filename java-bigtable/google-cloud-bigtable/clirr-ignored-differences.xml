@@ -283,20 +283,6 @@
         <to>java.time.Instant</to>
     </difference>
     <difference>
-        <!-- BetaApi was updated -->
-        <differenceType>7006</differenceType>
-        <className>com/google/cloud/bigtable/data/v2/models/sql/StructReader</className>
-        <method>*getTimestamp(*)</method>
-        <to>java.time.Instant</to>
-    </difference>
-    <difference>
-        <!-- BetaApi was updated -->
-        <differenceType>7005</differenceType>
-        <className>com/google/cloud/bigtable/data/v2/models/sql/Statement$Builder</className>
-        <method>*setTimestampParam(java.lang.String, org.threeten.bp.Instant)</method>
-        <to>*setTimestampParam(java.lang.String, java.time.Instant)</to>
-    </difference>
-    <difference>
         <!-- ChangeStream api is internal, only used by apache/beam-->
         <differenceType>7013</differenceType>
         <className>com/google/cloud/bigtable/data/v2/models/ChangeStreamMutation</className>
@@ -319,5 +305,81 @@
         <differenceType>7009</differenceType>
         <className>com/google/cloud/bigtable/data/v2/stub/metrics/BigtableCloudMonitoringExporter</className>
         <method>*</method>
+    </difference>
+    <difference>
+        <!-- BetaApi was updated -->
+        <differenceType>7005</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/BigtableDataClient</className>
+        <method>*executeQuery*</method>
+        <to>*</to>
+    </difference>
+    <difference>
+        <!-- BetaApi was renamed -->
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/sql/Statement</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <!-- BetaApi was renamed -->
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/sql/Statement$Builder</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <!-- BetaApi was renamed -->
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/sql/Statement$Builder</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/internal/SqlRowMergerUtil</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/sql/ExecuteQueryCallContext</className>
+        <method>*ExecuteQueryCallContext*</method>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7009</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/sql/ExecuteQueryCallContext</className>
+        <method>*ExecuteQueryCallContext*</method>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7005</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/sql/ExecuteQueryCallContext</className>
+        <method>*create*</method>
+        <to>*</to>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/sql/ExecuteQueryCallable</className>
+        <method>*ExecuteQueryCallable*</method>
+        <to>*</to>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7005</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/sql/ExecuteQueryCallable</className>
+        <method>*call*</method>
+        <to>*</to>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/sql/MetadataResolvingCallable</className>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/sql/SqlRowMerger</className>
+        <method>*</method>
+        <to>*</to>
     </difference>
 </differences>

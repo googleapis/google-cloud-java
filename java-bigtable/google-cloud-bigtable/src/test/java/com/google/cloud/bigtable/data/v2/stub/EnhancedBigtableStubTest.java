@@ -18,6 +18,8 @@ package com.google.cloud.bigtable.data.v2.stub;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.columnMetadata;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.metadata;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.partialResultSetWithToken;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.prepareResponse;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.preparedStatement;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringType;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringValue;
 import static com.google.common.truth.Truth.assertThat;
@@ -56,6 +58,8 @@ import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsResponse;
 import com.google.bigtable.v2.PingAndWarmRequest;
 import com.google.bigtable.v2.PingAndWarmResponse;
+import com.google.bigtable.v2.PrepareQueryRequest;
+import com.google.bigtable.v2.PrepareQueryResponse;
 import com.google.bigtable.v2.ReadChangeStreamRequest;
 import com.google.bigtable.v2.ReadChangeStreamResponse;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
@@ -67,6 +71,8 @@ import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
+import com.google.cloud.bigtable.data.v2.internal.PrepareResponse;
+import com.google.cloud.bigtable.data.v2.internal.ProtoResultSetMetadata;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.internal.SqlRow;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
@@ -82,10 +88,11 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.models.TableId;
+import com.google.cloud.bigtable.data.v2.models.sql.PreparedStatement;
 import com.google.cloud.bigtable.data.v2.models.sql.ResultSetMetadata;
-import com.google.cloud.bigtable.data.v2.models.sql.Statement;
 import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import com.google.cloud.bigtable.data.v2.stub.sql.ExecuteQueryCallable;
+import com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory;
 import com.google.cloud.bigtable.data.v2.stub.sql.SqlServerStream;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -94,6 +101,7 @@ import com.google.common.io.BaseEncoding;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.BytesValue;
 import com.google.protobuf.StringValue;
+import com.google.protobuf.Timestamp;
 import com.google.rpc.Code;
 import com.google.rpc.Status;
 import io.grpc.CallOptions;
@@ -120,8 +128,10 @@ import java.io.IOException;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
+import java.time.Instant;
 import java.util.Base64;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -141,6 +151,7 @@ public class EnhancedBigtableStubTest {
 
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
+  private static final String INSTANCE_NAME = NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID);
   private static final String TABLE_ID = "fake-table";
   private static final String TABLE_NAME =
       NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID);
@@ -148,6 +159,13 @@ public class EnhancedBigtableStubTest {
   private static final String WAIT_TIME_TABLE_ID = "test-wait-timeout";
   private static final String WAIT_TIME_QUERY = "test-wait-timeout";
   private static final Duration WATCHDOG_CHECK_DURATION = Duration.ofMillis(100);
+  private static final PrepareResponse PREPARE_RESPONSE =
+      PrepareResponse.fromProto(
+          prepareResponse(
+              ByteString.copyFromUtf8(WAIT_TIME_QUERY),
+              metadata(columnMetadata("foo", stringType()))));
+  private static final PreparedStatement WAIT_TIME_PREPARED_STATEMENT =
+      preparedStatement(PREPARE_RESPONSE, new HashMap<>());
 
   private Server server;
   private MetadataInterceptor metadataInterceptor;
@@ -398,6 +416,82 @@ public class EnhancedBigtableStubTest {
 
     RowMutation req = RowMutation.create(TableId.of(TABLE_ID), "my-key").deleteRow();
     ApiFuture<Void> f = enhancedBigtableStub.mutateRowCallable().futureCall(req, null);
+
+    ExecutionException e = assertThrows(ExecutionException.class, f::get);
+    assertThat(e.getCause()).isInstanceOf(FailedPreconditionException.class);
+    assertThat(invocationCount.get()).isEqualTo(2);
+  }
+
+  @Test
+  public void testPrepareQueryRequestResponseConversion()
+      throws ExecutionException, InterruptedException {
+    com.google.cloud.bigtable.data.v2.internal.PrepareQueryRequest req =
+        com.google.cloud.bigtable.data.v2.internal.PrepareQueryRequest.create(
+            "SELECT * FROM TABLE", new HashMap<>());
+    CallOptions.Key<String> testKey = CallOptions.Key.create("test-key");
+
+    GrpcCallContext ctx =
+        GrpcCallContext.createDefault()
+            .withCallOptions(CallOptions.DEFAULT.withOption(testKey, "callopt-value"));
+    ApiFuture<PrepareResponse> f = enhancedBigtableStub.prepareQueryCallable().futureCall(req, ctx);
+    f.get();
+
+    PrepareQueryRequest protoReq = fakeDataService.prepareRequests.poll(1, TimeUnit.SECONDS);
+    assertThat(protoReq)
+        .isEqualTo(req.toProto(RequestContext.create(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID)));
+    assertThat(f.get().resultSetMetadata())
+        .isEqualTo(ProtoResultSetMetadata.fromProto(metadata(columnMetadata("foo", stringType()))));
+    assertThat(f.get().preparedQuery()).isEqualTo(ByteString.copyFromUtf8("foo"));
+    assertThat(f.get().validUntil()).isEqualTo(Instant.ofEpochSecond(1000, 1000));
+  }
+
+  @Test
+  public void testPrepareQueryRequestParams() throws ExecutionException, InterruptedException {
+    com.google.cloud.bigtable.data.v2.internal.PrepareQueryRequest req =
+        com.google.cloud.bigtable.data.v2.internal.PrepareQueryRequest.create(
+            "SELECT * FROM TABLE", new HashMap<>());
+
+    ApiFuture<PrepareResponse> f =
+        enhancedBigtableStub.prepareQueryCallable().futureCall(req, null);
+    f.get();
+
+    Metadata reqMetadata = metadataInterceptor.headers.poll(1, TimeUnit.SECONDS);
+
+    // RequestParamsExtractor
+    String reqParams =
+        reqMetadata.get(Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER));
+    assertThat(reqParams).contains("name=" + INSTANCE_NAME.replace("/", "%2F"));
+    assertThat(reqParams).contains(String.format("app_profile_id=%s", APP_PROFILE_ID));
+
+    // StatsHeadersUnaryCallable
+    assertThat(reqMetadata.keys()).contains("bigtable-client-attempt-epoch-usec");
+
+    assertThat(f.get().resultSetMetadata())
+        .isEqualTo(ProtoResultSetMetadata.fromProto(metadata(columnMetadata("foo", stringType()))));
+    assertThat(f.get().preparedQuery()).isEqualTo(ByteString.copyFromUtf8("foo"));
+    assertThat(f.get().validUntil()).isEqualTo(Instant.ofEpochSecond(1000, 1000));
+  }
+
+  @Test
+  public void testPrepareQueryErrorPropagation() {
+    AtomicInteger invocationCount = new AtomicInteger();
+    Mockito.doAnswer(
+            invocationOnMock -> {
+              StreamObserver<PrepareQueryResponse> observer = invocationOnMock.getArgument(1);
+              if (invocationCount.getAndIncrement() == 0) {
+                observer.onError(io.grpc.Status.UNAVAILABLE.asRuntimeException());
+              } else {
+                observer.onError(io.grpc.Status.FAILED_PRECONDITION.asRuntimeException());
+              }
+              return null;
+            })
+        .when(fakeDataService)
+        .prepareQuery(Mockito.any(), Mockito.any(StreamObserver.class));
+    com.google.cloud.bigtable.data.v2.internal.PrepareQueryRequest req =
+        com.google.cloud.bigtable.data.v2.internal.PrepareQueryRequest.create(
+            "SELECT * FROM TABLE", new HashMap<>());
+    ApiFuture<PrepareResponse> f =
+        enhancedBigtableStub.prepareQueryCallable().futureCall(req, null);
 
     ExecutionException e = assertThrows(ExecutionException.class, f::get);
     assertThat(e.getCause()).isInstanceOf(FailedPreconditionException.class);
@@ -806,13 +900,17 @@ public class EnhancedBigtableStubTest {
   @Test
   public void testCreateExecuteQueryCallable() throws InterruptedException {
     ExecuteQueryCallable streamingCallable = enhancedBigtableStub.createExecuteQueryCallable();
-
-    SqlServerStream sqlServerStream = streamingCallable.call(Statement.of("SELECT * FROM table"));
+    PrepareResponse prepareResponse =
+        PrepareResponse.fromProto(
+            SqlProtoFactory.prepareResponse(
+                ByteString.copyFromUtf8("abc"), metadata(columnMetadata("foo", stringType()))));
+    PreparedStatement preparedStatement = preparedStatement(prepareResponse, new HashMap<>());
+    SqlServerStream sqlServerStream = streamingCallable.call(preparedStatement.bind().build());
     ExecuteQueryRequest expectedRequest =
         ExecuteQueryRequest.newBuilder()
             .setInstanceName(NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID))
             .setAppProfileId(APP_PROFILE_ID)
-            .setQuery("SELECT * FROM table")
+            .setPreparedQuery(ByteString.copyFromUtf8("abc"))
             .build();
     assertThat(sqlServerStream.rows().iterator().next()).isNotNull();
     assertThat(sqlServerStream.metadataFuture().isDone()).isTrue();
@@ -829,7 +927,10 @@ public class EnhancedBigtableStubTest {
 
     EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build());
     Iterator<SqlRow> iterator =
-        stub.executeQueryCallable().call(Statement.of(WAIT_TIME_QUERY)).rows().iterator();
+        stub.executeQueryCallable()
+            .call(WAIT_TIME_PREPARED_STATEMENT.bind().build())
+            .rows()
+            .iterator();
     WatchdogTimeoutException e = assertThrows(WatchdogTimeoutException.class, iterator::next);
     assertThat(e).hasMessageThat().contains("Canceled due to timeout waiting for next response");
   }
@@ -845,7 +946,9 @@ public class EnhancedBigtableStubTest {
 
     try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build())) {
       ApiFuture<ResultSetMetadata> future =
-          stub.executeQueryCallable().call(Statement.of(WAIT_TIME_QUERY)).metadataFuture();
+          stub.executeQueryCallable()
+              .call(WAIT_TIME_PREPARED_STATEMENT.bind().build())
+              .metadataFuture();
 
       ExecutionException e = assertThrows(ExecutionException.class, future::get);
       assertThat(e.getCause()).isInstanceOf(WatchdogTimeoutException.class);
@@ -891,6 +994,7 @@ public class EnhancedBigtableStubTest {
     final BlockingQueue<CheckAndMutateRowRequest> checkAndMutateRowRequests =
         Queues.newLinkedBlockingDeque();
     final BlockingQueue<ReadModifyWriteRowRequest> rmwRequests = Queues.newLinkedBlockingDeque();
+    final BlockingQueue<PrepareQueryRequest> prepareRequests = Queues.newLinkedBlockingDeque();
 
     @SuppressWarnings("unchecked")
     ReadRowsRequest popLastRequest() throws InterruptedException {
@@ -996,7 +1100,7 @@ public class EnhancedBigtableStubTest {
     @Override
     public void executeQuery(
         ExecuteQueryRequest request, StreamObserver<ExecuteQueryResponse> responseObserver) {
-      if (request.getQuery().contains(WAIT_TIME_QUERY)) {
+      if (request.getPreparedQuery().startsWith(ByteString.copyFromUtf8(WAIT_TIME_QUERY))) {
         try {
           Thread.sleep(WATCHDOG_CHECK_DURATION.toMillis() * 2);
         } catch (Exception e) {
@@ -1004,8 +1108,28 @@ public class EnhancedBigtableStubTest {
         }
       }
       executeQueryRequests.add(request);
-      responseObserver.onNext(metadata(columnMetadata("foo", stringType())));
       responseObserver.onNext(partialResultSetWithToken(stringValue("test")));
+      responseObserver.onCompleted();
+    }
+
+    @Override
+    public void prepareQuery(
+        PrepareQueryRequest request, StreamObserver<PrepareQueryResponse> responseObserver) {
+      if (request.getQuery().contains(WAIT_TIME_QUERY)) {
+        try {
+          Thread.sleep(WATCHDOG_CHECK_DURATION.toMillis() * 2);
+        } catch (Exception e) {
+
+        }
+      }
+      prepareRequests.add(request);
+      responseObserver.onNext(
+          PrepareQueryResponse.newBuilder()
+              .setPreparedQuery(ByteString.copyFromUtf8("foo"))
+              .setMetadata(metadata(columnMetadata("foo", stringType())))
+              .setValidUntil(Timestamp.newBuilder().setSeconds(1000).setNanos(1000).build())
+              .build());
+      responseObserver.onCompleted();
     }
   }
 }

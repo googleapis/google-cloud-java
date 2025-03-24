@@ -18,6 +18,9 @@ package com.google.cloud.bigtable.data.v2.stub.sql;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.partialResultSetWithToken;
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ErrorDetails;
+import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.bigtable.v2.ExecuteQueryResponse;
 import com.google.bigtable.v2.PartialResultSet;
 import com.google.bigtable.v2.ProtoRows;
@@ -43,5 +46,17 @@ public final class SqlProtoFactoryTest {
     assertThat(protoRows.getValuesList().get(0).getStringValue()).isEqualTo("string");
     assertThat(protoRows.getValuesList().get(1).getBytesValue())
         .isEqualTo(ByteString.copyFromUtf8("bytes"));
+  }
+
+  @Test
+  public void testPlanRefreshError() {
+    ApiException planRefreshError = SqlProtoFactory.planRefreshError();
+    assertThat(planRefreshError.getStatusCode().getCode()).isEqualTo(Code.FAILED_PRECONDITION);
+    ErrorDetails details = planRefreshError.getErrorDetails();
+    assertThat(details.getPreconditionFailure()).isNotNull();
+    assertThat(details.getPreconditionFailure().getViolationsList()).isNotEmpty();
+    assertThat(details.getPreconditionFailure().getViolationsList().get(0).getType())
+        .isEqualTo("PREPARED_QUERY_EXPIRED");
+    assertThat(PlanRefreshingCallable.isPlanRefreshError(planRefreshError)).isTrue();
   }
 }
