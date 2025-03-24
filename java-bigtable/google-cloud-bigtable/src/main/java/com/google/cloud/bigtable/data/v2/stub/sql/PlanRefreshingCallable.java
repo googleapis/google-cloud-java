@@ -31,6 +31,7 @@ import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.sql.PreparedStatementRefreshTimeoutException;
 import com.google.cloud.bigtable.data.v2.models.sql.ResultSetMetadata;
 import com.google.cloud.bigtable.data.v2.stub.SafeResponseObserver;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.rpc.PreconditionFailure;
 import com.google.rpc.PreconditionFailure.Violation;
 import io.grpc.Deadline;
@@ -104,7 +105,8 @@ public class PlanRefreshingCallable
 
   // Checks for an attempt timeout first, then a total timeout. If found, converts the timeout
   // to an absolute deadline. Adjusts totalTimeout based on the time since startTimeOfOverallRequest
-  private static @Nullable Deadline getDeadline(
+  @VisibleForTesting
+  static @Nullable Deadline getDeadline(
       GrpcCallContext grpcCallContext, Instant startTimeOfOverallRequest) {
     Optional<Deadline> attemptDeadline =
         Optional.ofNullable(grpcCallContext)
@@ -123,7 +125,7 @@ public class PlanRefreshingCallable
               Duration elapsedTime = Duration.between(startTimeOfOverallRequest, Instant.now());
               Duration remaining = d.minus(elapsedTime);
               // zero is treated as no deadline, so if full deadline is elapsed pass 1 nano
-              long adjusted = Math.max(remaining.getNano(), 1);
+              long adjusted = Math.max(remaining.toNanos(), 1);
               return Deadline.after(adjusted, TimeUnit.NANOSECONDS);
             })
         .orElse(null);

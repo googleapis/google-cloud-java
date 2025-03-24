@@ -60,6 +60,7 @@ import com.google.protobuf.ByteString;
 import io.grpc.Deadline;
 import io.grpc.Status.Code;
 import java.time.Duration;
+import java.time.Instant;
 import java.util.Collections;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
@@ -281,5 +282,48 @@ public class PlanRefreshingCallableTest {
         (GrpcCallContext) innerCallable.popLastCall().getApiCallContext();
     Deadline executeDeadline = grpcCallContext.getCallOptions().getDeadline();
     assertThat(executeDeadline.isBefore(paddedDeadlineAtStartOfCall)).isTrue();
+  }
+
+  @Test
+  public void testGetDeadlineWithAttemptTimeout() {
+    GrpcCallContext callContext =
+        GrpcCallContext.createDefault().withTimeoutDuration(Duration.ofMinutes(1));
+    // startTimeOfOverallRequest doesn't matter here
+    Deadline deadline = PlanRefreshingCallable.getDeadline(callContext, Instant.now());
+    long millisRemaining = deadline.timeRemaining(TimeUnit.MILLISECONDS);
+    assertThat(millisRemaining).isLessThan((60 * 1000) + 1);
+    // Give some padding in case tests are very slow
+    assertThat(millisRemaining).isGreaterThan(58 * 1000);
+  }
+
+  @Test
+  public void testGetDeadlineWithTotalTimeout() {
+    GrpcCallContext callContext =
+        GrpcCallContext.createDefault()
+            .withRetrySettings(
+                RetrySettings.newBuilder()
+                    .setTotalTimeout(org.threeten.bp.Duration.ofMinutes(1))
+                    .build());
+    Deadline deadline = PlanRefreshingCallable.getDeadline(callContext, Instant.now());
+    long millisRemaining = deadline.timeRemaining(TimeUnit.MILLISECONDS);
+    assertThat(millisRemaining).isLessThan((60 * 1000) + 1);
+    // Give some padding in case tests are very slow
+    assertThat(millisRemaining).isGreaterThan(58 * 1000);
+  }
+
+  @Test
+  public void testAttemptTimeoutUsedOverTotalTimeout() {
+    GrpcCallContext callContext =
+        GrpcCallContext.createDefault()
+            .withTimeoutDuration(Duration.ofMinutes(1))
+            .withRetrySettings(
+                RetrySettings.newBuilder()
+                    .setTotalTimeout(org.threeten.bp.Duration.ofHours(1))
+                    .build());
+    Deadline deadline = PlanRefreshingCallable.getDeadline(callContext, Instant.now());
+    long millisRemaining = deadline.timeRemaining(TimeUnit.MILLISECONDS);
+    assertThat(millisRemaining).isLessThan((60 * 1000) + 1);
+    // Give some padding in case tests are very slow
+    assertThat(millisRemaining).isGreaterThan(58 * 1000);
   }
 }
