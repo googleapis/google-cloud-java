@@ -63,7 +63,7 @@ popd
 
 # Run showcase tests with `native` profile
 pushd sdk-platform-java/java-showcase
-mvn test -Pnative,-showcase -Denforcer.skip=true -ntp -B
+mvn test -Pnative,showcase -Denforcer.skip=true -ntp -B
 popd
 
 exit $RETURN_CODE
