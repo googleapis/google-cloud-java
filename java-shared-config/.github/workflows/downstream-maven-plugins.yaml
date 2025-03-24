@@ -20,10 +20,30 @@ jobs:
         - java-bigtable
         job-type:
         - test  # maven-surefire-plugin
-        - lint  # fmt-maven-plugin and google-java-format
         - clirr # clirr-maven-plugin
         - javadoc # maven-javadoc-plugin
         - javadoc-with-doclet # test javadoc generation with doclet
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+    - uses: actions/setup-java@v4
+      with:
+        distribution: zulu
+        java-version: ${{matrix.java}}
+    - run: java -version
+    - run: sudo apt-get update -y
+    - run: sudo apt-get install libxml2-utils
+    - run: .kokoro/client-library-check.sh ${{matrix.repo}} ${{matrix.job-type}}
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [17, 21]
+        repo:
+        - java-bigquery
+        - java-bigtable
+        job-type:
+        - lint  # fmt-maven-plugin and google-java-format
     steps:
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
     - uses: actions/setup-java@v4

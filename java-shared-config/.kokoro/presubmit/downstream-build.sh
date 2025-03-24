@@ -42,14 +42,14 @@ cp settings.xml "${HOME}/.m2"
 git clone "https://github.com/googleapis/sdk-platform-java" --depth=1
 
 # Update the shared-config version in showcase
-pushd sdk-platform-java/showcase
+pushd sdk-platform-java/java-showcase
 modify_shared_config
 popd
 
 pushd sdk-platform-java
 mvn -B -ntp install --projects '!gapic-generator-java' -Dcheckstyle.skip -Dfmt.skip -DskipTests
 popd
-pushd sdk-platform-java/showcase/gapic-showcase
+pushd sdk-platform-java/java-showcase/gapic-showcase
 SHOWCASE_VERSION=$(mvn help:evaluate -Dexpression=gapic-showcase.version -q -DforceStdout)
 popd
 
@@ -62,7 +62,7 @@ tar -xf showcase-*
 popd
 
 # Run showcase tests with `native` profile
-pushd sdk-platform-java/showcase
+pushd sdk-platform-java/java-showcase
 mvn test -Pnative,-showcase -Denforcer.skip=true -ntp -B
 popd
 

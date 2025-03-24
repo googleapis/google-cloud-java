@@ -155,6 +155,10 @@ flatten-plugin)
     popd
     ;;
 *)
+    # Here we replace the com.coveo fmt plugin with the spotify version.
+	# This `sed` won't be needed once downstream repositories update
+	# `.kokoro/build.sh` to use the `com.spotify.fmt` group ID.
+    sed -i 's/com.coveo:fmt-maven-plugin/com.spotify.fmt:fmt-maven-plugin/' .kokoro/build.sh
     # This reads the JOB_TYPE environmental variable
     .kokoro/build.sh
     RETURN_CODE=$?
