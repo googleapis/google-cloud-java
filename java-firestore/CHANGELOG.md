@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.30.12](https://github.com/googleapis/java-firestore/compare/v3.30.11...v3.30.12) (2025-03-22)
+
+
+### Bug Fixes
+
+* Elide string processing of 'fine' level log messages unless they will actually be logged ([#2055](https://github.com/googleapis/java-firestore/issues/2055)) ([22a41a2](https://github.com/googleapis/java-firestore/commit/22a41a265a24070ae08e88213319a7df6dd82759))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud.opentelemetry:exporter-trace to v0.34.0 ([#2046](https://github.com/googleapis/java-firestore/issues/2046)) ([cd610f3](https://github.com/googleapis/java-firestore/commit/cd610f3bea6ff676a943363b2fa40067a7705914))
+
 ## [3.30.11](https://github.com/googleapis/java-firestore/compare/v3.30.10...v3.30.11) (2025-03-20)
 
 
