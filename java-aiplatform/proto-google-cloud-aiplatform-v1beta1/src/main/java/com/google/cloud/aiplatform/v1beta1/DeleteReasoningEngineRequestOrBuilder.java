@@ -56,4 +56,19 @@ public interface DeleteReasoningEngineRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, child resources of this reasoning engine will
+   * also be deleted. Otherwise, the request will fail with FAILED_PRECONDITION
+   * error when the reasoning engine has undeleted child resources.
+   * </pre>
+   *
+   * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The force.
+   */
+  boolean getForce();
 }

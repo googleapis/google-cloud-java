@@ -118,7 +118,7 @@ public interface CreateDocumentRequestOrBuilder
    * Otherwise, an `ALREADY_EXISTS` error is returned.
    *
    * This field must conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-   * standard with a length limit of 63 characters. Otherwise, an
+   * standard with a length limit of 128 characters. Otherwise, an
    * `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
@@ -146,7 +146,7 @@ public interface CreateDocumentRequestOrBuilder
    * Otherwise, an `ALREADY_EXISTS` error is returned.
    *
    * This field must conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-   * standard with a length limit of 63 characters. Otherwise, an
+   * standard with a length limit of 128 characters. Otherwise, an
    * `INVALID_ARGUMENT` error is returned.
    * </pre>
    *

@@ -218,6 +218,7 @@ public class GroundedGenerationServiceClientTest {
         CheckGroundingResponse.newBuilder()
             .setSupportScore(-635385310)
             .addAllCitedChunks(new ArrayList<FactChunk>())
+            .addAllCitedFacts(new ArrayList<CheckGroundingResponse.CheckGroundingFactChunk>())
             .addAllClaims(new ArrayList<CheckGroundingResponse.Claim>())
             .build();
     mockGroundedGenerationService.addResponse(expectedResponse);

@@ -156,6 +156,16 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
      * <code>GOOGLE_KEEP = 7;</code>
      */
     GOOGLE_KEEP(7),
+    /**
+     *
+     *
+     * <pre>
+     * Workspace Data Store contains People data
+     * </pre>
+     *
+     * <code>GOOGLE_PEOPLE = 8;</code>
+     */
+    GOOGLE_PEOPLE(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -239,6 +249,16 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
      * <code>GOOGLE_KEEP = 7;</code>
      */
     public static final int GOOGLE_KEEP_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Workspace Data Store contains People data
+     * </pre>
+     *
+     * <code>GOOGLE_PEOPLE = 8;</code>
+     */
+    public static final int GOOGLE_PEOPLE_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -280,6 +300,8 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessageV
           return GOOGLE_GROUPS;
         case 7:
           return GOOGLE_KEEP;
+        case 8:
+          return GOOGLE_PEOPLE;
         default:
           return null;
       }

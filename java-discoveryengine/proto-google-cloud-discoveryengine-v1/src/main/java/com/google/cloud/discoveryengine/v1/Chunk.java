@@ -3852,7 +3852,8 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
    * Output only. Represents the relevance score based on similarity.
    * Higher score indicates higher chunk relevance.
    * The score is in range [-1.0, 1.0].
-   * Only populated on [SearchService.SearchResponse][].
+   * Only populated on
+   * [SearchResponse][google.cloud.discoveryengine.v1.SearchResponse].
    * </pre>
    *
    * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3870,7 +3871,8 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
    * Output only. Represents the relevance score based on similarity.
    * Higher score indicates higher chunk relevance.
    * The score is in range [-1.0, 1.0].
-   * Only populated on [SearchService.SearchResponse][].
+   * Only populated on
+   * [SearchResponse][google.cloud.discoveryengine.v1.SearchResponse].
    * </pre>
    *
    * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5021,7 +5023,8 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * Output only. Represents the relevance score based on similarity.
      * Higher score indicates higher chunk relevance.
      * The score is in range [-1.0, 1.0].
-     * Only populated on [SearchService.SearchResponse][].
+     * Only populated on
+     * [SearchResponse][google.cloud.discoveryengine.v1.SearchResponse].
      * </pre>
      *
      * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5040,7 +5043,8 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * Output only. Represents the relevance score based on similarity.
      * Higher score indicates higher chunk relevance.
      * The score is in range [-1.0, 1.0].
-     * Only populated on [SearchService.SearchResponse][].
+     * Only populated on
+     * [SearchResponse][google.cloud.discoveryengine.v1.SearchResponse].
      * </pre>
      *
      * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5059,7 +5063,8 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * Output only. Represents the relevance score based on similarity.
      * Higher score indicates higher chunk relevance.
      * The score is in range [-1.0, 1.0].
-     * Only populated on [SearchService.SearchResponse][].
+     * Only populated on
+     * [SearchResponse][google.cloud.discoveryengine.v1.SearchResponse].
      * </pre>
      *
      * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5082,7 +5087,8 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * Output only. Represents the relevance score based on similarity.
      * Higher score indicates higher chunk relevance.
      * The score is in range [-1.0, 1.0].
-     * Only populated on [SearchService.SearchResponse][].
+     * Only populated on
+     * [SearchResponse][google.cloud.discoveryengine.v1.SearchResponse].
      * </pre>
      *
      * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
