@@ -457,7 +457,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
                     .setCreationTime(tablePb.getCreationTime())
                     .setTimePartitioning(tablePb.getTimePartitioning())
                     .setRangePartitioning(tablePb.getRangePartitioning())
-                    .setClustering(tablePb.getClustering());
+                    .setClustering(tablePb.getClustering())
+                    .setLabels(tablePb.getLabels());
               }
             }));
   }

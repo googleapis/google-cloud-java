@@ -132,6 +132,7 @@ public class BigQueryImplTest {
           .setField("timestampField");
   private static final TimePartitioning TIME_PARTITIONING_NULL_TYPE =
       TimePartitioning.fromPb(PB_TIMEPARTITIONING);
+  private static final ImmutableMap<String, String> LABELS = ImmutableMap.of("key", "value");
   private static final StandardTableDefinition TABLE_DEFINITION_WITH_PARTITIONING =
       StandardTableDefinition.newBuilder()
           .setSchema(TABLE_SCHEMA)
@@ -155,6 +156,8 @@ public class BigQueryImplTest {
       TableInfo.of(TABLE_ID, TABLE_DEFINITION_WITH_RANGE_PARTITIONING);
   private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID, TABLE_DEFINITION);
   private static final TableInfo OTHER_TABLE_INFO = TableInfo.of(OTHER_TABLE_ID, TABLE_DEFINITION);
+  private static final TableInfo OTHER_TABLE_WITH_LABELS_INFO =
+      TableInfo.newBuilder(OTHER_TABLE_ID, TABLE_DEFINITION).setLabels(LABELS).build();
   private static final TableInfo TABLE_INFO_WITH_PROJECT =
       TableInfo.of(TABLE_ID_WITH_PROJECT, TABLE_DEFINITION);
   private static final TableInfo MODEL_TABLE_INFO_WITH_PROJECT =
@@ -1149,6 +1152,23 @@ public class BigQueryImplTest {
     assertArrayEquals(tableList.toArray(), Iterables.toArray(page.getValues(), Table.class));
     verify(bigqueryRpcMock)
         .listTablesSkipExceptionTranslation(OTHER_PROJECT, DATASET, EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
+  public void testListTablesWithLabels() throws IOException {
+    bigquery = options.getService();
+    ImmutableList<Table> tableList =
+        ImmutableList.of(
+            new Table(bigquery, new TableInfo.BuilderImpl(OTHER_TABLE_WITH_LABELS_INFO)));
+    Tuple<String, Iterable<com.google.api.services.bigquery.model.Table>> result =
+        Tuple.of(CURSOR, Iterables.transform(tableList, TableInfo.TO_PB_FUNCTION));
+    when(bigqueryRpcMock.listTablesSkipExceptionTranslation(PROJECT, DATASET, EMPTY_RPC_OPTIONS))
+        .thenReturn(result);
+    Page<Table> page = bigquery.listTables(DATASET);
+    assertEquals(CURSOR, page.getNextPageToken());
+    assertArrayEquals(tableList.toArray(), Iterables.toArray(page.getValues(), Table.class));
+    verify(bigqueryRpcMock).listTablesSkipExceptionTranslation(PROJECT, DATASET, EMPTY_RPC_OPTIONS);
+    assertEquals(LABELS, page.getValues().iterator().next().getLabels());
   }
 
   @Test
