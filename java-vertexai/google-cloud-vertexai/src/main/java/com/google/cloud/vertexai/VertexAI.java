@@ -360,13 +360,6 @@ public class VertexAI implements AutoCloseable {
     builder.setEndpoint(String.format("%s:443", apiEndpoint));
     builder.setCredentialsProvider(credentialsProvider);
 
-    HeaderProvider headerProvider =
-        FixedHeaderProvider.create(
-            "user-agent",
-            String.format(
-                "%s/%s",
-                Constants.USER_AGENT_HEADER,
-                GaxProperties.getLibraryVersion(PredictionServiceSettings.class)));
     builder.setHeaderProvider(headerProvider);
     return builder.build();
   }
@@ -435,13 +428,6 @@ public class VertexAI implements AutoCloseable {
     settingsBuilder.setEndpoint(String.format("%s:443", apiEndpoint));
     settingsBuilder.setCredentialsProvider(credentialsProvider);
 
-    HeaderProvider headerProvider =
-        FixedHeaderProvider.create(
-            "user-agent",
-            String.format(
-                "%s/%s",
-                Constants.USER_AGENT_HEADER,
-                GaxProperties.getLibraryVersion(LlmUtilityServiceSettings.class)));
     settingsBuilder.setHeaderProvider(headerProvider);
     return settingsBuilder.build();
   }
