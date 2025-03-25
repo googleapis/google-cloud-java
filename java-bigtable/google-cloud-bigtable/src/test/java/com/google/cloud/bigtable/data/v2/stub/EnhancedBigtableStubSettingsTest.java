@@ -1020,6 +1020,7 @@ public class EnhancedBigtableStubSettingsTest {
     "prepareQuerySettings",
     "metricsProvider",
     "metricsEndpoint",
+    "areInternalMetricsEnabled",
   };
 
   @Test

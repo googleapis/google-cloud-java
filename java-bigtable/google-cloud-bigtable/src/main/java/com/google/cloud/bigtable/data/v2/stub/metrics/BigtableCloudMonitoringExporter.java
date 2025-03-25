@@ -296,7 +296,7 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
     private final String taskId;
 
     PublicTimeSeriesConverter() {
-      this(BigtableExporterUtils.DEFAULT_TABLE_VALUE.get());
+      this(BigtableExporterUtils.DEFAULT_TASK_VALUE.get());
     }
 
     PublicTimeSeriesConverter(String taskId) {
@@ -326,7 +326,7 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
     private final Supplier<MonitoredResource> monitoredResource;
 
     InternalTimeSeriesConverter(Supplier<MonitoredResource> monitoredResource) {
-      this(monitoredResource, BigtableExporterUtils.DEFAULT_TABLE_VALUE.get());
+      this(monitoredResource, BigtableExporterUtils.DEFAULT_TASK_VALUE.get());
     }
 
     InternalTimeSeriesConverter(Supplier<MonitoredResource> monitoredResource, String taskId) {

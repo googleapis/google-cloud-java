@@ -89,9 +89,9 @@ public class ErrorCountPerConnectionTest {
     SdkMeterProviderBuilder meterProvider =
         SdkMeterProvider.builder().registerMetricReader(metricReader);
 
-    for (Map.Entry<InstrumentSelector, View> entry :
-        BuiltinMetricsConstants.getAllViews().entrySet()) {
-      meterProvider.registerView(entry.getKey(), entry.getValue());
+    for (Map.Entry<InstrumentSelector, View> e :
+        BuiltinMetricsConstants.getInternalViews().entrySet()) {
+      meterProvider.registerView(e.getKey(), e.getValue());
     }
 
     OpenTelemetrySdk otel =
@@ -103,7 +103,8 @@ public class ErrorCountPerConnectionTest {
             .setBackgroundExecutorProvider(FixedExecutorProvider.create(executors))
             .setProjectId("fake-project")
             .setInstanceId("fake-instance")
-            .setMetricsProvider(CustomOpenTelemetryMetricsProvider.create(otel));
+            .setMetricsProvider(NoopMetricsProvider.INSTANCE)
+            .setInternalMetricsProvider((ignored1, ignored2) -> otel);
 
     runnableCaptor = ArgumentCaptor.forClass(Runnable.class);
     when(executors.scheduleAtFixedRate(runnableCaptor.capture(), anyLong(), anyLong(), any()))

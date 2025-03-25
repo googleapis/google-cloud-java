@@ -140,6 +140,20 @@ public class BuiltinMetricsConstants {
     viewMap.put(selector, view);
   }
 
+  public static Map<InstrumentSelector, View> getInternalViews() {
+    ImmutableMap.Builder<InstrumentSelector, View> views = ImmutableMap.builder();
+    defineView(
+        views,
+        PER_CONNECTION_ERROR_COUNT_NAME,
+        AGGREGATION_PER_CONNECTION_ERROR_COUNT_HISTOGRAM,
+        InstrumentType.HISTOGRAM,
+        "1",
+        ImmutableSet.<AttributeKey>builder()
+            .add(BIGTABLE_PROJECT_ID_KEY, INSTANCE_ID_KEY, APP_PROFILE_KEY, CLIENT_NAME_KEY)
+            .build());
+    return views.build();
+  }
+
   public static Map<InstrumentSelector, View> getAllViews() {
     ImmutableMap.Builder<InstrumentSelector, View> views = ImmutableMap.builder();
 
@@ -205,16 +219,6 @@ public class BuiltinMetricsConstants {
         InstrumentType.COUNTER,
         "1",
         ImmutableSet.<AttributeKey>builder().addAll(COMMON_ATTRIBUTES).add(STATUS_KEY).build());
-
-    defineView(
-        views,
-        PER_CONNECTION_ERROR_COUNT_NAME,
-        AGGREGATION_PER_CONNECTION_ERROR_COUNT_HISTOGRAM,
-        InstrumentType.HISTOGRAM,
-        "1",
-        ImmutableSet.<AttributeKey>builder()
-            .add(BIGTABLE_PROJECT_ID_KEY, INSTANCE_ID_KEY, APP_PROFILE_KEY, CLIENT_NAME_KEY)
-            .build());
     defineView(
         views,
         REMAINING_DEADLINE_NAME,

@@ -128,6 +128,7 @@ public final class BigtableDataSettings {
         // disable channel refreshing when creating an emulator
         .setRefreshingChannel(false)
         .setMetricsProvider(NoopMetricsProvider.INSTANCE) // disable exporting metrics for emulator
+        .disableInternalMetrics()
         .setTransportChannelProvider(
             InstantiatingGrpcChannelProvider.newBuilder()
                 .setMaxInboundMessageSize(256 * 1024 * 1024)
@@ -295,6 +296,11 @@ public final class BigtableDataSettings {
   /** Gets the {@link MetricsProvider}. * */
   public MetricsProvider getMetricsProvider() {
     return stubSettings.getMetricsProvider();
+  }
+
+  /** Checks if internal metrics are enabled */
+  public boolean areInternalMetricsEnabled() {
+    return stubSettings.areInternalMetricsEnabled();
   }
 
   /** Returns the underlying RPC settings. */
@@ -568,6 +574,15 @@ public final class BigtableDataSettings {
     /** Gets the {@link MetricsProvider}. */
     public MetricsProvider getMetricsProvider() {
       return stubSettings.getMetricsProvider();
+    }
+
+    public Builder disableInternalMetrics() {
+      stubSettings.disableInternalMetrics();
+      return this;
+    }
+
+    public boolean areInternalMetricsEnabled() {
+      return stubSettings.areInternalMetricsEnabled();
     }
 
     /**

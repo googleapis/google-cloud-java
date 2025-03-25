@@ -33,6 +33,7 @@ import com.google.cloud.bigtable.data.v2.stub.metrics.MetricsProvider;
 import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import io.grpc.ManagedChannelBuilder;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -50,6 +51,7 @@ public class BigtableClientContext {
   private static final Logger logger = Logger.getLogger(BigtableClientContext.class.getName());
 
   @Nullable private final OpenTelemetry openTelemetry;
+  @Nullable private final OpenTelemetrySdk internalOpenTelemetry;
   private final ClientContext clientContext;
 
   public static BigtableClientContext create(EnhancedBigtableStubSettings settings)
@@ -84,18 +86,31 @@ public class BigtableClientContext {
             ? ((InstantiatingGrpcChannelProvider) builder.getTransportChannelProvider()).toBuilder()
             : null;
 
-    ErrorCountPerConnectionMetricTracker errorCountPerConnectionMetricTracker = null;
+    @Nullable OpenTelemetrySdk internalOtel = null;
+    @Nullable ErrorCountPerConnectionMetricTracker errorCountPerConnectionMetricTracker = null;
+
+    // Internal metrics are scoped to the connections, so we need a mutable transportProvider,
+    // otherwise there is
+    // no reason to build the internal OtelProvider
+    if (transportProvider != null) {
+      internalOtel =
+          settings
+              .getInternalMetricsProvider()
+              .createOtelProvider(credentials, settings.getMetricsEndpoint());
+      if (internalOtel != null) {
+        // Set up per connection error count tracker if all dependencies are met:
+        // a configurable transport provider + otel
+        errorCountPerConnectionMetricTracker =
+            setupPerConnectionErrorTracer(builder, transportProvider, internalOtel);
+      }
+    }
 
     if (transportProvider != null) {
       // Set up cookie holder if routing cookie is enabled
       if (builder.getEnableRoutingCookie()) {
         setupCookieHolder(transportProvider);
       }
-      // Set up per connection error count tracker if OpenTelemetry is not null
-      if (openTelemetry != null) {
-        errorCountPerConnectionMetricTracker =
-            setupPerConnectionErrorTracer(builder, transportProvider, openTelemetry);
-      }
+
       // Inject channel priming if enabled
       if (builder.isRefreshingChannel()) {
         transportProvider.setChannelPrimer(
@@ -117,12 +132,16 @@ public class BigtableClientContext {
           clientContext.getExecutor());
     }
 
-    return new BigtableClientContext(clientContext, openTelemetry);
+    return new BigtableClientContext(clientContext, openTelemetry, internalOtel);
   }
 
-  private BigtableClientContext(ClientContext clientContext, OpenTelemetry openTelemetry) {
+  private BigtableClientContext(
+      ClientContext clientContext,
+      OpenTelemetry openTelemetry,
+      @Nullable OpenTelemetrySdk internalOtel) {
     this.clientContext = clientContext;
     this.openTelemetry = openTelemetry;
+    this.internalOpenTelemetry = internalOtel;
   }
 
   public OpenTelemetry getOpenTelemetry() {
@@ -136,6 +155,9 @@ public class BigtableClientContext {
   public void close() throws Exception {
     for (BackgroundResource resource : clientContext.getBackgroundResources()) {
       resource.close();
+    }
+    if (internalOpenTelemetry != null) {
+      internalOpenTelemetry.close();
     }
   }
 

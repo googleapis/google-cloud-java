@@ -102,6 +102,7 @@ import java.net.SocketAddress;
 import java.nio.charset.Charset;
 import java.time.Duration;
 import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -968,11 +969,12 @@ public class BuiltinMetricsTracerTest {
 
     Duration getCurrentDelayUsed() {
       Instant local = lastProxyDelay;
-      // If the delay was never injected
+      // If the delay was never injected - add 1 ms for channel establishment
       if (local == null) {
-        return Duration.ZERO;
+        return Duration.ofMillis(1);
       }
-      Duration duration = Duration.between(local, Instant.now());
+      Duration duration =
+          Duration.between(local, Instant.now()).plus(Duration.of(10, ChronoUnit.MICROS));
 
       assertWithMessage("test burned through all channel blocking latency during setup")
           .that(duration)
