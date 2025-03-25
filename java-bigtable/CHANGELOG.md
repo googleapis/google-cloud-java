@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.57.1](https://github.com/googleapis/java-bigtable/compare/v2.57.0...v2.57.1) (2025-03-24)
+
+
+### Bug Fixes
+
+* Handling of totalTimeout on sql plan refresh ([#2541](https://github.com/googleapis/java-bigtable/issues/2541)) ([bf49cf9](https://github.com/googleapis/java-bigtable/commit/bf49cf93f9a3b9cbdb155bb6cbb7a9f763b6f738))
+
 ## [2.57.0](https://github.com/googleapis/java-bigtable/compare/v2.56.0...v2.57.0) (2025-03-24)
 
 
