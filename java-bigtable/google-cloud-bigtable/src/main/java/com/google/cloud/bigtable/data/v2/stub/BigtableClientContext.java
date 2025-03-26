@@ -94,9 +94,7 @@ public class BigtableClientContext {
     // no reason to build the internal OtelProvider
     if (transportProvider != null) {
       internalOtel =
-          settings
-              .getInternalMetricsProvider()
-              .createOtelProvider(credentials, settings.getMetricsEndpoint());
+          settings.getInternalMetricsProvider().createOtelProvider(settings, credentials);
       if (internalOtel != null) {
         // Set up per connection error count tracker if all dependencies are met:
         // a configurable transport provider + otel

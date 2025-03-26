@@ -1346,8 +1346,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   @FunctionalInterface
   public interface InternalMetricsProvider {
     @Nullable
-    OpenTelemetrySdk createOtelProvider(Credentials creds, @Nullable String endpoint)
-        throws IOException;
+    OpenTelemetrySdk createOtelProvider(
+        EnhancedBigtableStubSettings userSettings, Credentials creds) throws IOException;
   }
 
   private static final InternalMetricsProvider DEFAULT_INTERNAL_OTEL_PROVIDER =

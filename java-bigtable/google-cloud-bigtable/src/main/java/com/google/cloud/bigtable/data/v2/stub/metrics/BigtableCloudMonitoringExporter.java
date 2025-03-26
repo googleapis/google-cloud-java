@@ -322,16 +322,10 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
             .map(m -> METER_NAME + m)
             .collect(ImmutableList.toImmutableList());
 
-    private final String taskId;
     private final Supplier<MonitoredResource> monitoredResource;
 
     InternalTimeSeriesConverter(Supplier<MonitoredResource> monitoredResource) {
-      this(monitoredResource, BigtableExporterUtils.DEFAULT_TASK_VALUE.get());
-    }
-
-    InternalTimeSeriesConverter(Supplier<MonitoredResource> monitoredResource, String taskId) {
       this.monitoredResource = monitoredResource;
-      this.taskId = taskId;
     }
 
     @Override
@@ -352,7 +346,7 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
       return ImmutableMap.of(
           ProjectName.of(monitoredResource.getLabelsOrThrow(APPLICATION_RESOURCE_PROJECT_ID)),
           BigtableExporterUtils.convertToApplicationResourceTimeSeries(
-              relevantData, taskId, monitoredResource));
+              relevantData, monitoredResource));
     }
   }
 }

@@ -315,11 +315,18 @@ public class BigtableCloudMonitoringExporterTest {
             new BigtableCloudMonitoringExporter.InternalTimeSeriesConverter(
                 Suppliers.ofInstance(
                     MonitoredResource.newBuilder()
-                        .setType("gce-instance")
-                        .putLabels("some-gce-key", "some-gce-value")
+                        .setType("bigtable_client")
                         .putLabels("project_id", gceProjectId)
-                        .build()),
-                taskId));
+                        .putLabels("instance", "resource-instance")
+                        .putLabels("app_profile", "resource-app-profile")
+                        .putLabels("client_project", "client-project")
+                        .putLabels("region", "cleint-region")
+                        .putLabels("cloud_platform", "gce_instance")
+                        .putLabels("host_id", "1234567890")
+                        .putLabels("host_name", "harold")
+                        .putLabels("client_name", "java/1234")
+                        .putLabels("uuid", "something")
+                        .build())));
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 
@@ -371,21 +378,28 @@ public class BigtableCloudMonitoringExporterTest {
     com.google.monitoring.v3.TimeSeries timeSeries = request.getTimeSeriesList().get(0);
 
     assertThat(timeSeries.getResource().getLabelsMap())
-        .containsExactly("some-gce-key", "some-gce-value", "project_id", gceProjectId);
+        .isEqualTo(
+            ImmutableMap.<String, String>builder()
+                .put("project_id", gceProjectId)
+                .put("instance", "resource-instance")
+                .put("app_profile", "resource-app-profile")
+                .put("client_project", "client-project")
+                .put("region", "cleint-region")
+                .put("cloud_platform", "gce_instance")
+                .put("host_id", "1234567890")
+                .put("host_name", "harold")
+                .put("client_name", "java/1234")
+                .put("uuid", "something")
+                .build());
 
-    assertThat(timeSeries.getMetric().getLabelsMap()).hasSize(5);
     assertThat(timeSeries.getMetric().getLabelsMap())
-        .containsAtLeast(
-            BIGTABLE_PROJECT_ID_KEY.getKey(),
-            projectId,
-            INSTANCE_ID_KEY.getKey(),
-            instanceId,
-            APP_PROFILE_KEY.getKey(),
-            appProfileId,
-            CLIENT_NAME_KEY.getKey(),
-            clientName,
-            CLIENT_UID_KEY.getKey(),
-            taskId);
+        .isEqualTo(
+            ImmutableMap.builder()
+                .put(BIGTABLE_PROJECT_ID_KEY.getKey(), projectId)
+                .put(INSTANCE_ID_KEY.getKey(), instanceId)
+                .put(APP_PROFILE_KEY.getKey(), appProfileId)
+                .put(CLIENT_NAME_KEY.getKey(), clientName)
+                .build());
   }
 
   @Test

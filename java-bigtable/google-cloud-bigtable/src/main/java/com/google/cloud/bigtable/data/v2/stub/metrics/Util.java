@@ -34,6 +34,7 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ResponseParams;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.TableName;
+import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -248,7 +249,7 @@ public class Util {
   }
 
   public static OpenTelemetrySdk newInternalOpentelemetry(
-      Credentials credentials, @Nullable String metricsEndpoint) throws IOException {
+      EnhancedBigtableStubSettings settings, Credentials credentials) throws IOException {
     SdkMeterProviderBuilder meterProviderBuilder = SdkMeterProvider.builder();
 
     for (Map.Entry<InstrumentSelector, View> e :
@@ -261,9 +262,10 @@ public class Util {
             BigtableCloudMonitoringExporter.create(
                 "application metrics",
                 credentials,
-                metricsEndpoint,
+                settings.getMetricsEndpoint(),
                 new BigtableCloudMonitoringExporter.InternalTimeSeriesConverter(
-                    Suppliers.memoize(BigtableExporterUtils::detectResourceSafe)))));
+                    Suppliers.memoize(
+                        () -> BigtableExporterUtils.createInternalMonitoredResource(settings))))));
     return OpenTelemetrySdk.builder().setMeterProvider(meterProviderBuilder.build()).build();
   }
 }
