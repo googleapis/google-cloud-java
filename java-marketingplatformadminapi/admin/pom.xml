@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.ads-marketingplatform</groupId>
   <artifactId>admin</artifactId>
-  <version>0.10.0-SNAPSHOT</version><!-- {x-version-update:admin:current} -->
+  <version>0.10.0</version><!-- {x-version-update:admin:current} -->
   <packaging>jar</packaging>
   <name>Google Google Marketing Platform Admin API</name>
   <description>Google Marketing Platform Admin API The Google Marketing Platform Admin API allows for programmatic access to the Google Marketing Platform configuration data. You can use the Google Marketing Platform Admin API to manage links between your Google Marketing Platform organization and Google Analytics accounts, and to set the service level of your GA4 properties.</description>
   <parent>
     <groupId>com.google.ads-marketingplatform</groupId>
     <artifactId>admin-parent</artifactId>
-    <version>0.10.0-SNAPSHOT</version><!-- {x-version-update:admin:current} -->
+    <version>0.10.0</version><!-- {x-version-update:admin:current} -->
   </parent>
   <properties>
     <site.installationModule>admin</site.installationModule>
