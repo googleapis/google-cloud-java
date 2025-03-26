@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.54.0</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.55.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -49,7 +49,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-speech-v1p1beta1</artifactId>
-        <version>2.55.0</version><!-- {x-version-update:proto-google-cloud-speech-v1p1beta1:current} -->
+        <version>2.56.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-speech-v1p1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -59,7 +59,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-speech-v1p1beta1</artifactId>
-        <version>2.55.0</version><!-- {x-version-update:grpc-google-cloud-speech-v1p1beta1:current} -->
+        <version>2.56.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-speech-v1p1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
