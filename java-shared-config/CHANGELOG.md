@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.1](https://github.com/googleapis/java-shared-config/compare/v1.15.0...v1.15.1) (2025-03-26)
+
+
+### Dependencies
+
+* Update google-java-format to the latest ([aa78b13](https://github.com/googleapis/java-shared-config/commit/aa78b13e765259d70c20e8a50bde92b3ab33a8a1))
+
 ## [1.15.0](https://github.com/googleapis/java-shared-config/compare/v1.14.4...v1.15.0) (2025-03-04)
 
 
