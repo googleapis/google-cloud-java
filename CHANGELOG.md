@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.55.0](https://github.com/googleapis/google-cloud-java/compare/v1.54.0...v1.55.0) (2025-03-26)
+
+
+### Bug Fixes
+
+* customHeaders are not passed to the VertexAI clients ([#11506](https://github.com/googleapis/google-cloud-java/issues/11506)) ([55bb607](https://github.com/googleapis/google-cloud-java/commit/55bb607f7700eae95c1e28d335834141559ec4db))
+
 ## [1.54.0](https://github.com/googleapis/google-cloud-java/compare/v1.53.0...v1.54.0) (2025-03-19)
 
 
