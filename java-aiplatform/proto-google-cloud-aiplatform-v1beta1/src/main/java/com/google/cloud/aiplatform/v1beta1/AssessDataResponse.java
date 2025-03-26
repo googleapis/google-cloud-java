@@ -1595,6 +1595,1217 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public interface BatchPredictionValidationAssessmentResultOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * The result of the batch prediction validation assessment.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult}
+   */
+  public static final class BatchPredictionValidationAssessmentResult
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult)
+      BatchPredictionValidationAssessmentResultOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use BatchPredictionValidationAssessmentResult.newBuilder() to construct.
+    private BatchPredictionValidationAssessmentResult(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BatchPredictionValidationAssessmentResult() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BatchPredictionValidationAssessmentResult();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionValidationAssessmentResult_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionValidationAssessmentResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                  .BatchPredictionValidationAssessmentResult.class,
+              com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                  .BatchPredictionValidationAssessmentResult.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+              .BatchPredictionValidationAssessmentResult)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+              .BatchPredictionValidationAssessmentResult
+          other =
+              (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                      .BatchPredictionValidationAssessmentResult)
+                  obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionValidationAssessmentResult
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The result of the batch prediction validation assessment.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult)
+        com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionValidationAssessmentResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionValidationAssessmentResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                    .BatchPredictionValidationAssessmentResult.class,
+                com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                    .BatchPredictionValidationAssessmentResult.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionValidationAssessmentResult_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+              .BatchPredictionValidationAssessmentResult
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+              .BatchPredictionValidationAssessmentResult
+          build() {
+        com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionValidationAssessmentResult
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+              .BatchPredictionValidationAssessmentResult
+          buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionValidationAssessmentResult
+            result =
+                new com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                    .BatchPredictionValidationAssessmentResult(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionValidationAssessmentResult) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                      .BatchPredictionValidationAssessmentResult)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                  .BatchPredictionValidationAssessmentResult
+              other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionValidationAssessmentResult.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult)
+    private static final com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+              .BatchPredictionValidationAssessmentResult();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BatchPredictionValidationAssessmentResult>
+        PARSER =
+            new com.google.protobuf.AbstractParser<BatchPredictionValidationAssessmentResult>() {
+              @java.lang.Override
+              public BatchPredictionValidationAssessmentResult parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+    public static com.google.protobuf.Parser<BatchPredictionValidationAssessmentResult> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BatchPredictionValidationAssessmentResult>
+        getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface BatchPredictionResourceUsageAssessmentResultOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of tokens in the batch prediction dataset.
+     * </pre>
+     *
+     * <code>int64 token_count = 1;</code>
+     *
+     * @return The tokenCount.
+     */
+    long getTokenCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of audio tokens in the batch prediction dataset.
+     * </pre>
+     *
+     * <code>int64 audio_token_count = 2;</code>
+     *
+     * @return The audioTokenCount.
+     */
+    long getAudioTokenCount();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The result of the batch prediction resource usage assessment.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult}
+   */
+  public static final class BatchPredictionResourceUsageAssessmentResult
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult)
+      BatchPredictionResourceUsageAssessmentResultOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use BatchPredictionResourceUsageAssessmentResult.newBuilder() to construct.
+    private BatchPredictionResourceUsageAssessmentResult(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BatchPredictionResourceUsageAssessmentResult() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BatchPredictionResourceUsageAssessmentResult();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionResourceUsageAssessmentResult_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionResourceUsageAssessmentResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                  .BatchPredictionResourceUsageAssessmentResult.class,
+              com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                  .BatchPredictionResourceUsageAssessmentResult.Builder.class);
+    }
+
+    public static final int TOKEN_COUNT_FIELD_NUMBER = 1;
+    private long tokenCount_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Number of tokens in the batch prediction dataset.
+     * </pre>
+     *
+     * <code>int64 token_count = 1;</code>
+     *
+     * @return The tokenCount.
+     */
+    @java.lang.Override
+    public long getTokenCount() {
+      return tokenCount_;
+    }
+
+    public static final int AUDIO_TOKEN_COUNT_FIELD_NUMBER = 2;
+    private long audioTokenCount_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Number of audio tokens in the batch prediction dataset.
+     * </pre>
+     *
+     * <code>int64 audio_token_count = 2;</code>
+     *
+     * @return The audioTokenCount.
+     */
+    @java.lang.Override
+    public long getAudioTokenCount() {
+      return audioTokenCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (tokenCount_ != 0L) {
+        output.writeInt64(1, tokenCount_);
+      }
+      if (audioTokenCount_ != 0L) {
+        output.writeInt64(2, audioTokenCount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (tokenCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, tokenCount_);
+      }
+      if (audioTokenCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, audioTokenCount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+              .BatchPredictionResourceUsageAssessmentResult)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+              .BatchPredictionResourceUsageAssessmentResult
+          other =
+              (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                      .BatchPredictionResourceUsageAssessmentResult)
+                  obj;
+
+      if (getTokenCount() != other.getTokenCount()) return false;
+      if (getAudioTokenCount() != other.getAudioTokenCount()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOKEN_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTokenCount());
+      hash = (37 * hash) + AUDIO_TOKEN_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAudioTokenCount());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionResourceUsageAssessmentResult
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The result of the batch prediction resource usage assessment.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult)
+        com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionResourceUsageAssessmentResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionResourceUsageAssessmentResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                    .BatchPredictionResourceUsageAssessmentResult.class,
+                com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                    .BatchPredictionResourceUsageAssessmentResult.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        tokenCount_ = 0L;
+        audioTokenCount_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionResourceUsageAssessmentResult_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+              .BatchPredictionResourceUsageAssessmentResult
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+              .BatchPredictionResourceUsageAssessmentResult
+          build() {
+        com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionResourceUsageAssessmentResult
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+              .BatchPredictionResourceUsageAssessmentResult
+          buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionResourceUsageAssessmentResult
+            result =
+                new com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                    .BatchPredictionResourceUsageAssessmentResult(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                  .BatchPredictionResourceUsageAssessmentResult
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.tokenCount_ = tokenCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.audioTokenCount_ = audioTokenCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionResourceUsageAssessmentResult) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                      .BatchPredictionResourceUsageAssessmentResult)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                  .BatchPredictionResourceUsageAssessmentResult
+              other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionResourceUsageAssessmentResult.getDefaultInstance()) return this;
+        if (other.getTokenCount() != 0L) {
+          setTokenCount(other.getTokenCount());
+        }
+        if (other.getAudioTokenCount() != 0L) {
+          setAudioTokenCount(other.getAudioTokenCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  tokenCount_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  audioTokenCount_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long tokenCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of tokens in the batch prediction dataset.
+       * </pre>
+       *
+       * <code>int64 token_count = 1;</code>
+       *
+       * @return The tokenCount.
+       */
+      @java.lang.Override
+      public long getTokenCount() {
+        return tokenCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of tokens in the batch prediction dataset.
+       * </pre>
+       *
+       * <code>int64 token_count = 1;</code>
+       *
+       * @param value The tokenCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTokenCount(long value) {
+
+        tokenCount_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of tokens in the batch prediction dataset.
+       * </pre>
+       *
+       * <code>int64 token_count = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTokenCount() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        tokenCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long audioTokenCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of audio tokens in the batch prediction dataset.
+       * </pre>
+       *
+       * <code>int64 audio_token_count = 2;</code>
+       *
+       * @return The audioTokenCount.
+       */
+      @java.lang.Override
+      public long getAudioTokenCount() {
+        return audioTokenCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of audio tokens in the batch prediction dataset.
+       * </pre>
+       *
+       * <code>int64 audio_token_count = 2;</code>
+       *
+       * @param value The audioTokenCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAudioTokenCount(long value) {
+
+        audioTokenCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of audio tokens in the batch prediction dataset.
+       * </pre>
+       *
+       * <code>int64 audio_token_count = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAudioTokenCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        audioTokenCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult)
+    private static final com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+              .BatchPredictionResourceUsageAssessmentResult();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BatchPredictionResourceUsageAssessmentResult>
+        PARSER =
+            new com.google.protobuf.AbstractParser<BatchPredictionResourceUsageAssessmentResult>() {
+              @java.lang.Override
+              public BatchPredictionResourceUsageAssessmentResult parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+    public static com.google.protobuf.Parser<BatchPredictionResourceUsageAssessmentResult>
+        parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BatchPredictionResourceUsageAssessmentResult>
+        getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int assessmentResultCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -1606,6 +2817,8 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TUNING_VALIDATION_ASSESSMENT_RESULT(1),
     TUNING_RESOURCE_USAGE_ASSESSMENT_RESULT(2),
+    BATCH_PREDICTION_VALIDATION_ASSESSMENT_RESULT(3),
+    BATCH_PREDICTION_RESOURCE_USAGE_ASSESSMENT_RESULT(4),
     ASSESSMENTRESULT_NOT_SET(0);
     private final int value;
 
@@ -1628,6 +2841,10 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
           return TUNING_VALIDATION_ASSESSMENT_RESULT;
         case 2:
           return TUNING_RESOURCE_USAGE_ASSESSMENT_RESULT;
+        case 3:
+          return BATCH_PREDICTION_VALIDATION_ASSESSMENT_RESULT;
+        case 4:
+          return BATCH_PREDICTION_RESOURCE_USAGE_ASSESSMENT_RESULT;
         case 0:
           return ASSESSMENTRESULT_NOT_SET;
         default:
@@ -1776,6 +2993,140 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
         .TuningResourceUsageAssessmentResult.getDefaultInstance();
   }
 
+  public static final int BATCH_PREDICTION_VALIDATION_ASSESSMENT_RESULT_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The result of the batch prediction validation assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult batch_prediction_validation_assessment_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the batchPredictionValidationAssessmentResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasBatchPredictionValidationAssessmentResult() {
+    return assessmentResultCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The result of the batch prediction validation assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult batch_prediction_validation_assessment_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The batchPredictionValidationAssessmentResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+          .BatchPredictionValidationAssessmentResult
+      getBatchPredictionValidationAssessmentResult() {
+    if (assessmentResultCase_ == 3) {
+      return (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+              .BatchPredictionValidationAssessmentResult)
+          assessmentResult_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+        .BatchPredictionValidationAssessmentResult.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The result of the batch prediction validation assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult batch_prediction_validation_assessment_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+          .BatchPredictionValidationAssessmentResultOrBuilder
+      getBatchPredictionValidationAssessmentResultOrBuilder() {
+    if (assessmentResultCase_ == 3) {
+      return (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+              .BatchPredictionValidationAssessmentResult)
+          assessmentResult_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+        .BatchPredictionValidationAssessmentResult.getDefaultInstance();
+  }
+
+  public static final int BATCH_PREDICTION_RESOURCE_USAGE_ASSESSMENT_RESULT_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The result of the batch prediction resource usage assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult batch_prediction_resource_usage_assessment_result = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the batchPredictionResourceUsageAssessmentResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasBatchPredictionResourceUsageAssessmentResult() {
+    return assessmentResultCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The result of the batch prediction resource usage assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult batch_prediction_resource_usage_assessment_result = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The batchPredictionResourceUsageAssessmentResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+          .BatchPredictionResourceUsageAssessmentResult
+      getBatchPredictionResourceUsageAssessmentResult() {
+    if (assessmentResultCase_ == 4) {
+      return (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+              .BatchPredictionResourceUsageAssessmentResult)
+          assessmentResult_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+        .BatchPredictionResourceUsageAssessmentResult.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The result of the batch prediction resource usage assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult batch_prediction_resource_usage_assessment_result = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+          .BatchPredictionResourceUsageAssessmentResultOrBuilder
+      getBatchPredictionResourceUsageAssessmentResultOrBuilder() {
+    if (assessmentResultCase_ == 4) {
+      return (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+              .BatchPredictionResourceUsageAssessmentResult)
+          assessmentResult_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+        .BatchPredictionResourceUsageAssessmentResult.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1803,6 +3154,20 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
                   .TuningResourceUsageAssessmentResult)
               assessmentResult_);
     }
+    if (assessmentResultCase_ == 3) {
+      output.writeMessage(
+          3,
+          (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                  .BatchPredictionValidationAssessmentResult)
+              assessmentResult_);
+    }
+    if (assessmentResultCase_ == 4) {
+      output.writeMessage(
+          4,
+          (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                  .BatchPredictionResourceUsageAssessmentResult)
+              assessmentResult_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1826,6 +3191,22 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
               2,
               (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
                       .TuningResourceUsageAssessmentResult)
+                  assessmentResult_);
+    }
+    if (assessmentResultCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3,
+              (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                      .BatchPredictionValidationAssessmentResult)
+                  assessmentResult_);
+    }
+    if (assessmentResultCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4,
+              (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                      .BatchPredictionResourceUsageAssessmentResult)
                   assessmentResult_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -1854,6 +3235,14 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
         if (!getTuningResourceUsageAssessmentResult()
             .equals(other.getTuningResourceUsageAssessmentResult())) return false;
         break;
+      case 3:
+        if (!getBatchPredictionValidationAssessmentResult()
+            .equals(other.getBatchPredictionValidationAssessmentResult())) return false;
+        break;
+      case 4:
+        if (!getBatchPredictionResourceUsageAssessmentResult()
+            .equals(other.getBatchPredictionResourceUsageAssessmentResult())) return false;
+        break;
       case 0:
       default:
     }
@@ -1876,6 +3265,14 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       case 2:
         hash = (37 * hash) + TUNING_RESOURCE_USAGE_ASSESSMENT_RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getTuningResourceUsageAssessmentResult().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + BATCH_PREDICTION_VALIDATION_ASSESSMENT_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getBatchPredictionValidationAssessmentResult().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + BATCH_PREDICTION_RESOURCE_USAGE_ASSESSMENT_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getBatchPredictionResourceUsageAssessmentResult().hashCode();
         break;
       case 0:
       default:
@@ -2027,6 +3424,12 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       if (tuningResourceUsageAssessmentResultBuilder_ != null) {
         tuningResourceUsageAssessmentResultBuilder_.clear();
       }
+      if (batchPredictionValidationAssessmentResultBuilder_ != null) {
+        batchPredictionValidationAssessmentResultBuilder_.clear();
+      }
+      if (batchPredictionResourceUsageAssessmentResultBuilder_ != null) {
+        batchPredictionResourceUsageAssessmentResultBuilder_.clear();
+      }
       assessmentResultCase_ = 0;
       assessmentResult_ = null;
       return this;
@@ -2076,6 +3479,13 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       }
       if (assessmentResultCase_ == 2 && tuningResourceUsageAssessmentResultBuilder_ != null) {
         result.assessmentResult_ = tuningResourceUsageAssessmentResultBuilder_.build();
+      }
+      if (assessmentResultCase_ == 3 && batchPredictionValidationAssessmentResultBuilder_ != null) {
+        result.assessmentResult_ = batchPredictionValidationAssessmentResultBuilder_.build();
+      }
+      if (assessmentResultCase_ == 4
+          && batchPredictionResourceUsageAssessmentResultBuilder_ != null) {
+        result.assessmentResult_ = batchPredictionResourceUsageAssessmentResultBuilder_.build();
       }
     }
 
@@ -2137,6 +3547,18 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
                 other.getTuningResourceUsageAssessmentResult());
             break;
           }
+        case BATCH_PREDICTION_VALIDATION_ASSESSMENT_RESULT:
+          {
+            mergeBatchPredictionValidationAssessmentResult(
+                other.getBatchPredictionValidationAssessmentResult());
+            break;
+          }
+        case BATCH_PREDICTION_RESOURCE_USAGE_ASSESSMENT_RESULT:
+          {
+            mergeBatchPredictionResourceUsageAssessmentResult(
+                other.getBatchPredictionResourceUsageAssessmentResult());
+            break;
+          }
         case ASSESSMENTRESULT_NOT_SET:
           {
             break;
@@ -2184,6 +3606,22 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
                 assessmentResultCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getBatchPredictionValidationAssessmentResultFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                assessmentResultCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getBatchPredictionResourceUsageAssessmentResultFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                assessmentResultCase_ = 4;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2740,6 +4178,540 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       assessmentResultCase_ = 2;
       onChanged();
       return tuningResourceUsageAssessmentResultBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionValidationAssessmentResult,
+            com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionValidationAssessmentResult.Builder,
+            com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionValidationAssessmentResultOrBuilder>
+        batchPredictionValidationAssessmentResultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The result of the batch prediction validation assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult batch_prediction_validation_assessment_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the batchPredictionValidationAssessmentResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasBatchPredictionValidationAssessmentResult() {
+      return assessmentResultCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The result of the batch prediction validation assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult batch_prediction_validation_assessment_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The batchPredictionValidationAssessmentResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult
+        getBatchPredictionValidationAssessmentResult() {
+      if (batchPredictionValidationAssessmentResultBuilder_ == null) {
+        if (assessmentResultCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                  .BatchPredictionValidationAssessmentResult)
+              assessmentResult_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult.getDefaultInstance();
+      } else {
+        if (assessmentResultCase_ == 3) {
+          return batchPredictionValidationAssessmentResultBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The result of the batch prediction validation assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult batch_prediction_validation_assessment_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBatchPredictionValidationAssessmentResult(
+        com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionValidationAssessmentResult
+            value) {
+      if (batchPredictionValidationAssessmentResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        assessmentResult_ = value;
+        onChanged();
+      } else {
+        batchPredictionValidationAssessmentResultBuilder_.setMessage(value);
+      }
+      assessmentResultCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The result of the batch prediction validation assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult batch_prediction_validation_assessment_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBatchPredictionValidationAssessmentResult(
+        com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionValidationAssessmentResult.Builder
+            builderForValue) {
+      if (batchPredictionValidationAssessmentResultBuilder_ == null) {
+        assessmentResult_ = builderForValue.build();
+        onChanged();
+      } else {
+        batchPredictionValidationAssessmentResultBuilder_.setMessage(builderForValue.build());
+      }
+      assessmentResultCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The result of the batch prediction validation assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult batch_prediction_validation_assessment_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBatchPredictionValidationAssessmentResult(
+        com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionValidationAssessmentResult
+            value) {
+      if (batchPredictionValidationAssessmentResultBuilder_ == null) {
+        if (assessmentResultCase_ == 3
+            && assessmentResult_
+                != com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                    .BatchPredictionValidationAssessmentResult.getDefaultInstance()) {
+          assessmentResult_ =
+              com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                  .BatchPredictionValidationAssessmentResult.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                              .BatchPredictionValidationAssessmentResult)
+                          assessmentResult_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          assessmentResult_ = value;
+        }
+        onChanged();
+      } else {
+        if (assessmentResultCase_ == 3) {
+          batchPredictionValidationAssessmentResultBuilder_.mergeFrom(value);
+        } else {
+          batchPredictionValidationAssessmentResultBuilder_.setMessage(value);
+        }
+      }
+      assessmentResultCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The result of the batch prediction validation assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult batch_prediction_validation_assessment_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBatchPredictionValidationAssessmentResult() {
+      if (batchPredictionValidationAssessmentResultBuilder_ == null) {
+        if (assessmentResultCase_ == 3) {
+          assessmentResultCase_ = 0;
+          assessmentResult_ = null;
+          onChanged();
+        }
+      } else {
+        if (assessmentResultCase_ == 3) {
+          assessmentResultCase_ = 0;
+          assessmentResult_ = null;
+        }
+        batchPredictionValidationAssessmentResultBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The result of the batch prediction validation assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult batch_prediction_validation_assessment_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult.Builder
+        getBatchPredictionValidationAssessmentResultBuilder() {
+      return getBatchPredictionValidationAssessmentResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The result of the batch prediction validation assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult batch_prediction_validation_assessment_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResultOrBuilder
+        getBatchPredictionValidationAssessmentResultOrBuilder() {
+      if ((assessmentResultCase_ == 3)
+          && (batchPredictionValidationAssessmentResultBuilder_ != null)) {
+        return batchPredictionValidationAssessmentResultBuilder_.getMessageOrBuilder();
+      } else {
+        if (assessmentResultCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                  .BatchPredictionValidationAssessmentResult)
+              assessmentResult_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionValidationAssessmentResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The result of the batch prediction validation assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult batch_prediction_validation_assessment_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionValidationAssessmentResult,
+            com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionValidationAssessmentResult.Builder,
+            com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionValidationAssessmentResultOrBuilder>
+        getBatchPredictionValidationAssessmentResultFieldBuilder() {
+      if (batchPredictionValidationAssessmentResultBuilder_ == null) {
+        if (!(assessmentResultCase_ == 3)) {
+          assessmentResult_ =
+              com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                  .BatchPredictionValidationAssessmentResult.getDefaultInstance();
+        }
+        batchPredictionValidationAssessmentResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                    .BatchPredictionValidationAssessmentResult,
+                com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                    .BatchPredictionValidationAssessmentResult.Builder,
+                com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                    .BatchPredictionValidationAssessmentResultOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                        .BatchPredictionValidationAssessmentResult)
+                    assessmentResult_,
+                getParentForChildren(),
+                isClean());
+        assessmentResult_ = null;
+      }
+      assessmentResultCase_ = 3;
+      onChanged();
+      return batchPredictionValidationAssessmentResultBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionResourceUsageAssessmentResult,
+            com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionResourceUsageAssessmentResult.Builder,
+            com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionResourceUsageAssessmentResultOrBuilder>
+        batchPredictionResourceUsageAssessmentResultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The result of the batch prediction resource usage assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult batch_prediction_resource_usage_assessment_result = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the batchPredictionResourceUsageAssessmentResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasBatchPredictionResourceUsageAssessmentResult() {
+      return assessmentResultCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The result of the batch prediction resource usage assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult batch_prediction_resource_usage_assessment_result = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The batchPredictionResourceUsageAssessmentResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult
+        getBatchPredictionResourceUsageAssessmentResult() {
+      if (batchPredictionResourceUsageAssessmentResultBuilder_ == null) {
+        if (assessmentResultCase_ == 4) {
+          return (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                  .BatchPredictionResourceUsageAssessmentResult)
+              assessmentResult_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult.getDefaultInstance();
+      } else {
+        if (assessmentResultCase_ == 4) {
+          return batchPredictionResourceUsageAssessmentResultBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The result of the batch prediction resource usage assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult batch_prediction_resource_usage_assessment_result = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBatchPredictionResourceUsageAssessmentResult(
+        com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionResourceUsageAssessmentResult
+            value) {
+      if (batchPredictionResourceUsageAssessmentResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        assessmentResult_ = value;
+        onChanged();
+      } else {
+        batchPredictionResourceUsageAssessmentResultBuilder_.setMessage(value);
+      }
+      assessmentResultCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The result of the batch prediction resource usage assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult batch_prediction_resource_usage_assessment_result = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBatchPredictionResourceUsageAssessmentResult(
+        com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionResourceUsageAssessmentResult.Builder
+            builderForValue) {
+      if (batchPredictionResourceUsageAssessmentResultBuilder_ == null) {
+        assessmentResult_ = builderForValue.build();
+        onChanged();
+      } else {
+        batchPredictionResourceUsageAssessmentResultBuilder_.setMessage(builderForValue.build());
+      }
+      assessmentResultCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The result of the batch prediction resource usage assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult batch_prediction_resource_usage_assessment_result = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBatchPredictionResourceUsageAssessmentResult(
+        com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionResourceUsageAssessmentResult
+            value) {
+      if (batchPredictionResourceUsageAssessmentResultBuilder_ == null) {
+        if (assessmentResultCase_ == 4
+            && assessmentResult_
+                != com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                    .BatchPredictionResourceUsageAssessmentResult.getDefaultInstance()) {
+          assessmentResult_ =
+              com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                  .BatchPredictionResourceUsageAssessmentResult.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                              .BatchPredictionResourceUsageAssessmentResult)
+                          assessmentResult_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          assessmentResult_ = value;
+        }
+        onChanged();
+      } else {
+        if (assessmentResultCase_ == 4) {
+          batchPredictionResourceUsageAssessmentResultBuilder_.mergeFrom(value);
+        } else {
+          batchPredictionResourceUsageAssessmentResultBuilder_.setMessage(value);
+        }
+      }
+      assessmentResultCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The result of the batch prediction resource usage assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult batch_prediction_resource_usage_assessment_result = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBatchPredictionResourceUsageAssessmentResult() {
+      if (batchPredictionResourceUsageAssessmentResultBuilder_ == null) {
+        if (assessmentResultCase_ == 4) {
+          assessmentResultCase_ = 0;
+          assessmentResult_ = null;
+          onChanged();
+        }
+      } else {
+        if (assessmentResultCase_ == 4) {
+          assessmentResultCase_ = 0;
+          assessmentResult_ = null;
+        }
+        batchPredictionResourceUsageAssessmentResultBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The result of the batch prediction resource usage assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult batch_prediction_resource_usage_assessment_result = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult.Builder
+        getBatchPredictionResourceUsageAssessmentResultBuilder() {
+      return getBatchPredictionResourceUsageAssessmentResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The result of the batch prediction resource usage assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult batch_prediction_resource_usage_assessment_result = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResultOrBuilder
+        getBatchPredictionResourceUsageAssessmentResultOrBuilder() {
+      if ((assessmentResultCase_ == 4)
+          && (batchPredictionResourceUsageAssessmentResultBuilder_ != null)) {
+        return batchPredictionResourceUsageAssessmentResultBuilder_.getMessageOrBuilder();
+      } else {
+        if (assessmentResultCase_ == 4) {
+          return (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                  .BatchPredictionResourceUsageAssessmentResult)
+              assessmentResult_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+            .BatchPredictionResourceUsageAssessmentResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The result of the batch prediction resource usage assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult batch_prediction_resource_usage_assessment_result = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionResourceUsageAssessmentResult,
+            com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionResourceUsageAssessmentResult.Builder,
+            com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                .BatchPredictionResourceUsageAssessmentResultOrBuilder>
+        getBatchPredictionResourceUsageAssessmentResultFieldBuilder() {
+      if (batchPredictionResourceUsageAssessmentResultBuilder_ == null) {
+        if (!(assessmentResultCase_ == 4)) {
+          assessmentResult_ =
+              com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                  .BatchPredictionResourceUsageAssessmentResult.getDefaultInstance();
+        }
+        batchPredictionResourceUsageAssessmentResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                    .BatchPredictionResourceUsageAssessmentResult,
+                com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                    .BatchPredictionResourceUsageAssessmentResult.Builder,
+                com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                    .BatchPredictionResourceUsageAssessmentResultOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+                        .BatchPredictionResourceUsageAssessmentResult)
+                    assessmentResult_,
+                getParentForChildren(),
+                isClean());
+        assessmentResult_ = null;
+      }
+      assessmentResultCase_ = 4;
+      onChanged();
+      return batchPredictionResourceUsageAssessmentResultBuilder_;
     }
 
     @java.lang.Override

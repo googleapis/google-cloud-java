@@ -177,6 +177,14 @@ public final class DatasetServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_TuningResourceUsageAssessmentConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionValidationAssessmentConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionValidationAssessmentConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionResourceUsageAssessmentConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionResourceUsageAssessmentConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_fieldAccessorTable;
@@ -188,6 +196,14 @@ public final class DatasetServiceProto {
       internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_TuningResourceUsageAssessmentResult_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_TuningResourceUsageAssessmentResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionValidationAssessmentResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionValidationAssessmentResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionResourceUsageAssessmentResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionResourceUsageAssessmentResult_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_AssessDataOperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -372,70 +388,95 @@ public final class DatasetServiceProto {
           + "y\030\006 \001(\t\"t\n\027ListAnnotationsResponse\022@\n\013an"
           + "notations\030\001 \003(\0132+.google.cloud.aiplatfor"
           + "m.v1beta1.Annotation\022\027\n\017next_page_token\030"
-          + "\002 \001(\t\"\272\006\n\021AssessDataRequest\022\207\001\n#tuning_v"
+          + "\002 \001(\t\"\256\n\n\021AssessDataRequest\022\207\001\n#tuning_v"
           + "alidation_assessment_config\030\002 \001(\0132S.goog"
           + "le.cloud.aiplatform.v1beta1.AssessDataRe"
           + "quest.TuningValidationAssessmentConfigB\003"
           + "\340A\001H\000\022\216\001\n\'tuning_resource_usage_assessme"
           + "nt_config\030\003 \001(\0132V.google.cloud.aiplatfor"
           + "m.v1beta1.AssessDataRequest.TuningResour"
-          + "ceUsageAssessmentConfigB\003\340A\001H\000\022\\\n\026gemini"
-          + "_template_config\030\004 \001(\01325.google.cloud.ai"
-          + "platform.v1beta1.GeminiTemplateConfigB\003\340"
-          + "A\001H\001\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!aiplatform.g"
-          + "oogleapis.com/Dataset\032\216\002\n TuningValidati"
-          + "onAssessmentConfig\022\027\n\nmodel_name\030\001 \001(\tB\003"
-          + "\340A\002\022|\n\rdataset_usage\030\002 \001(\0162`.google.clou"
-          + "d.aiplatform.v1beta1.AssessDataRequest.T"
-          + "uningValidationAssessmentConfig.DatasetU"
-          + "sageB\003\340A\002\"S\n\014DatasetUsage\022\035\n\031DATASET_USA"
-          + "GE_UNSPECIFIED\020\000\022\020\n\014SFT_TRAINING\020\001\022\022\n\016SF"
-          + "T_VALIDATION\020\002\032>\n#TuningResourceUsageAss"
-          + "essmentConfig\022\027\n\nmodel_name\030\001 \001(\tB\003\340A\002B\023"
-          + "\n\021assessment_configB\r\n\013read_config\"\335\003\n\022A"
-          + "ssessDataResponse\022\210\001\n#tuning_validation_"
-          + "assessment_result\030\001 \001(\0132T.google.cloud.a"
-          + "iplatform.v1beta1.AssessDataResponse.Tun"
-          + "ingValidationAssessmentResultB\003\340A\001H\000\022\217\001\n"
-          + "\'tuning_resource_usage_assessment_result"
-          + "\030\002 \001(\0132W.google.cloud.aiplatform.v1beta1"
-          + ".AssessDataResponse.TuningResourceUsageA"
-          + "ssessmentResultB\003\340A\001H\000\0327\n TuningValidati"
-          + "onAssessmentResult\022\023\n\006errors\030\001 \003(\tB\003\340A\001\032"
-          + "\\\n#TuningResourceUsageAssessmentResult\022\023"
-          + "\n\013token_count\030\001 \001(\003\022 \n\030billable_characte"
-          + "r_count\030\002 \001(\003B\023\n\021assessment_result\"r\n\033As"
-          + "sessDataOperationMetadata\022S\n\020generic_met"
-          + "adata\030\001 \001(\01329.google.cloud.aiplatform.v1"
-          + "beta1.GenericOperationMetadata\"\375\001\n\024Gemin"
-          + "iTemplateConfig\022K\n\016gemini_example\030\001 \001(\0132"
-          + "..google.cloud.aiplatform.v1beta1.Gemini"
-          + "ExampleB\003\340A\002\022c\n\rfield_mapping\030\002 \003(\0132G.go"
-          + "ogle.cloud.aiplatform.v1beta1.GeminiTemp"
-          + "lateConfig.FieldMappingEntryB\003\340A\002\0323\n\021Fie"
-          + "ldMappingEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
-          + "(\t:\0028\001\"\336\005\n\rGeminiExample\0229\n\005model\030\001 \001(\tB"
-          + "*\340A\001\372A$\n\"aiplatform.googleapis.com/Endpo"
-          + "int\022?\n\010contents\030\002 \003(\0132(.google.cloud.aip"
-          + "latform.v1beta1.ContentB\003\340A\002\022N\n\022system_i"
-          + "nstruction\030\010 \001(\0132(.google.cloud.aiplatfo"
-          + "rm.v1beta1.ContentB\003\340A\001H\000\210\001\001\022G\n\016cached_c"
-          + "ontent\030\t \001(\tB/\340A\001\372A)\n\'aiplatform.googlea"
-          + "pis.com/CachedContent\0229\n\005tools\030\006 \003(\0132%.g"
-          + "oogle.cloud.aiplatform.v1beta1.ToolB\003\340A\001"
-          + "\022E\n\013tool_config\030\007 \001(\0132+.google.cloud.aip"
-          + "latform.v1beta1.ToolConfigB\003\340A\001\022O\n\006label"
-          + "s\030\n \003(\0132:.google.cloud.aiplatform.v1beta"
-          + "1.GeminiExample.LabelsEntryB\003\340A\001\022L\n\017safe"
-          + "ty_settings\030\003 \003(\0132..google.cloud.aiplatf"
-          + "orm.v1beta1.SafetySettingB\003\340A\001\022Q\n\021genera"
-          + "tion_config\030\004 \001(\01321.google.cloud.aiplatf"
-          + "orm.v1beta1.GenerationConfigB\003\340A\001\032-\n\013Lab"
-          + "elsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
-          + "B\025\n\023_system_instruction\"\273\001\n\023AssembleData"
-          + "Request\022\\\n\026gemini_template_config\030\002 \001(\0132"
-          + "5.google.cloud.aiplatform.v1beta1.Gemini"
-          + "TemplateConfigB\003\340A\001H\000\0227\n\004name\030\001 \001(\tB)\340A\002"
+          + "ceUsageAssessmentConfigB\003\340A\001H\000\022\232\001\n-batch"
+          + "_prediction_validation_assessment_config"
+          + "\030\006 \001(\0132\\.google.cloud.aiplatform.v1beta1"
+          + ".AssessDataRequest.BatchPredictionValida"
+          + "tionAssessmentConfigB\003\340A\001H\000\022\241\001\n1batch_pr"
+          + "ediction_resource_usage_assessment_confi"
+          + "g\030\007 \001(\0132_.google.cloud.aiplatform.v1beta"
+          + "1.AssessDataRequest.BatchPredictionResou"
+          + "rceUsageAssessmentConfigB\003\340A\001H\000\022\\\n\026gemin"
+          + "i_template_config\030\004 \001(\01325.google.cloud.a"
+          + "iplatform.v1beta1.GeminiTemplateConfigB\003"
+          + "\340A\001H\001\022\"\n\023request_column_name\030\005 \001(\tB\003\340A\001H"
+          + "\001\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!aiplatform.goog"
+          + "leapis.com/Dataset\032\216\002\n TuningValidationA"
+          + "ssessmentConfig\022\027\n\nmodel_name\030\001 \001(\tB\003\340A\002"
+          + "\022|\n\rdataset_usage\030\002 \001(\0162`.google.cloud.a"
+          + "iplatform.v1beta1.AssessDataRequest.Tuni"
+          + "ngValidationAssessmentConfig.DatasetUsag"
+          + "eB\003\340A\002\"S\n\014DatasetUsage\022\035\n\031DATASET_USAGE_"
+          + "UNSPECIFIED\020\000\022\020\n\014SFT_TRAINING\020\001\022\022\n\016SFT_V"
+          + "ALIDATION\020\002\032>\n#TuningResourceUsageAssess"
+          + "mentConfig\022\027\n\nmodel_name\030\001 \001(\tB\003\340A\002\032D\n)B"
+          + "atchPredictionValidationAssessmentConfig"
+          + "\022\027\n\nmodel_name\030\001 \001(\tB\003\340A\002\032G\n,BatchPredic"
+          + "tionResourceUsageAssessmentConfig\022\027\n\nmod"
+          + "el_name\030\001 \001(\tB\003\340A\002B\023\n\021assessment_configB"
+          + "\r\n\013read_config\"\255\007\n\022AssessDataResponse\022\210\001"
+          + "\n#tuning_validation_assessment_result\030\001 "
+          + "\001(\0132T.google.cloud.aiplatform.v1beta1.As"
+          + "sessDataResponse.TuningValidationAssessm"
+          + "entResultB\003\340A\001H\000\022\217\001\n\'tuning_resource_usa"
+          + "ge_assessment_result\030\002 \001(\0132W.google.clou"
+          + "d.aiplatform.v1beta1.AssessDataResponse."
+          + "TuningResourceUsageAssessmentResultB\003\340A\001"
+          + "H\000\022\233\001\n-batch_prediction_validation_asses"
+          + "sment_result\030\003 \001(\0132].google.cloud.aiplat"
+          + "form.v1beta1.AssessDataResponse.BatchPre"
+          + "dictionValidationAssessmentResultB\003\340A\001H\000"
+          + "\022\242\001\n1batch_prediction_resource_usage_ass"
+          + "essment_result\030\004 \001(\0132`.google.cloud.aipl"
+          + "atform.v1beta1.AssessDataResponse.BatchP"
+          + "redictionResourceUsageAssessmentResultB\003"
+          + "\340A\001H\000\0327\n TuningValidationAssessmentResul"
+          + "t\022\023\n\006errors\030\001 \003(\tB\003\340A\001\032\\\n#TuningResource"
+          + "UsageAssessmentResult\022\023\n\013token_count\030\001 \001"
+          + "(\003\022 \n\030billable_character_count\030\002 \001(\003\032+\n)"
+          + "BatchPredictionValidationAssessmentResul"
+          + "t\032^\n,BatchPredictionResourceUsageAssessm"
+          + "entResult\022\023\n\013token_count\030\001 \001(\003\022\031\n\021audio_"
+          + "token_count\030\002 \001(\003B\023\n\021assessment_result\"r"
+          + "\n\033AssessDataOperationMetadata\022S\n\020generic"
+          + "_metadata\030\001 \001(\01329.google.cloud.aiplatfor"
+          + "m.v1beta1.GenericOperationMetadata\"\375\001\n\024G"
+          + "eminiTemplateConfig\022K\n\016gemini_example\030\001 "
+          + "\001(\0132..google.cloud.aiplatform.v1beta1.Ge"
+          + "miniExampleB\003\340A\002\022c\n\rfield_mapping\030\002 \003(\0132"
+          + "G.google.cloud.aiplatform.v1beta1.Gemini"
+          + "TemplateConfig.FieldMappingEntryB\003\340A\002\0323\n"
+          + "\021FieldMappingEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value"
+          + "\030\002 \001(\t:\0028\001\"\336\005\n\rGeminiExample\0229\n\005model\030\001 "
+          + "\001(\tB*\340A\001\372A$\n\"aiplatform.googleapis.com/E"
+          + "ndpoint\022?\n\010contents\030\002 \003(\0132(.google.cloud"
+          + ".aiplatform.v1beta1.ContentB\003\340A\002\022N\n\022syst"
+          + "em_instruction\030\010 \001(\0132(.google.cloud.aipl"
+          + "atform.v1beta1.ContentB\003\340A\001H\000\210\001\001\022G\n\016cach"
+          + "ed_content\030\t \001(\tB/\340A\001\372A)\n\'aiplatform.goo"
+          + "gleapis.com/CachedContent\0229\n\005tools\030\006 \003(\013"
+          + "2%.google.cloud.aiplatform.v1beta1.ToolB"
+          + "\003\340A\001\022E\n\013tool_config\030\007 \001(\0132+.google.cloud"
+          + ".aiplatform.v1beta1.ToolConfigB\003\340A\001\022O\n\006l"
+          + "abels\030\n \003(\0132:.google.cloud.aiplatform.v1"
+          + "beta1.GeminiExample.LabelsEntryB\003\340A\001\022L\n\017"
+          + "safety_settings\030\003 \003(\0132..google.cloud.aip"
+          + "latform.v1beta1.SafetySettingB\003\340A\001\022Q\n\021ge"
+          + "neration_config\030\004 \001(\01321.google.cloud.aip"
+          + "latform.v1beta1.GenerationConfigB\003\340A\001\032-\n"
+          + "\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
+          + ":\0028\001B\025\n\023_system_instruction\"\337\001\n\023Assemble"
+          + "DataRequest\022\\\n\026gemini_template_config\030\002 "
+          + "\001(\01325.google.cloud.aiplatform.v1beta1.Ge"
+          + "miniTemplateConfigB\003\340A\001H\000\022\"\n\023request_col"
+          + "umn_name\030\005 \001(\tB\003\340A\001H\000\0227\n\004name\030\001 \001(\tB)\340A\002"
           + "\372A#\n!aiplatform.googleapis.com/DatasetB\r"
           + "\n\013read_config\"4\n\024AssembleDataResponse\022\034\n"
           + "\024bigquery_destination\030\001 \001(\t\"t\n\035AssembleD"
@@ -900,7 +941,10 @@ public final class DatasetServiceProto {
             new java.lang.String[] {
               "TuningValidationAssessmentConfig",
               "TuningResourceUsageAssessmentConfig",
+              "BatchPredictionValidationAssessmentConfig",
+              "BatchPredictionResourceUsageAssessmentConfig",
               "GeminiTemplateConfig",
+              "RequestColumnName",
               "Name",
               "AssessmentConfig",
               "ReadConfig",
@@ -925,6 +969,26 @@ public final class DatasetServiceProto {
             new java.lang.String[] {
               "ModelName",
             });
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionValidationAssessmentConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionValidationAssessmentConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionValidationAssessmentConfig_descriptor,
+            new java.lang.String[] {
+              "ModelName",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionResourceUsageAssessmentConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionResourceUsageAssessmentConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionResourceUsageAssessmentConfig_descriptor,
+            new java.lang.String[] {
+              "ModelName",
+            });
     internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_descriptor =
         getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_fieldAccessorTable =
@@ -933,6 +997,8 @@ public final class DatasetServiceProto {
             new java.lang.String[] {
               "TuningValidationAssessmentResult",
               "TuningResourceUsageAssessmentResult",
+              "BatchPredictionValidationAssessmentResult",
+              "BatchPredictionResourceUsageAssessmentResult",
               "AssessmentResult",
             });
     internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_TuningValidationAssessmentResult_descriptor =
@@ -954,6 +1020,24 @@ public final class DatasetServiceProto {
             internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_TuningResourceUsageAssessmentResult_descriptor,
             new java.lang.String[] {
               "TokenCount", "BillableCharacterCount",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionValidationAssessmentResult_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionValidationAssessmentResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionValidationAssessmentResult_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionResourceUsageAssessmentResult_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionResourceUsageAssessmentResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionResourceUsageAssessmentResult_descriptor,
+            new java.lang.String[] {
+              "TokenCount", "AudioTokenCount",
             });
     internal_static_google_cloud_aiplatform_v1beta1_AssessDataOperationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(35);
@@ -1013,7 +1097,7 @@ public final class DatasetServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_AssembleDataRequest_descriptor,
             new java.lang.String[] {
-              "GeminiTemplateConfig", "Name", "ReadConfig",
+              "GeminiTemplateConfig", "RequestColumnName", "Name", "ReadConfig",
             });
     internal_static_google_cloud_aiplatform_v1beta1_AssembleDataResponse_descriptor =
         getDescriptor().getMessageTypes().get(39);

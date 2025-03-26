@@ -111,6 +111,95 @@ public interface AssessDataResponseOrBuilder
           .TuningResourceUsageAssessmentResultOrBuilder
       getTuningResourceUsageAssessmentResultOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The result of the batch prediction validation assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult batch_prediction_validation_assessment_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the batchPredictionValidationAssessmentResult field is set.
+   */
+  boolean hasBatchPredictionValidationAssessmentResult();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The result of the batch prediction validation assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult batch_prediction_validation_assessment_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The batchPredictionValidationAssessmentResult.
+   */
+  com.google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult
+      getBatchPredictionValidationAssessmentResult();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The result of the batch prediction validation assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult batch_prediction_validation_assessment_result = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+          .BatchPredictionValidationAssessmentResultOrBuilder
+      getBatchPredictionValidationAssessmentResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The result of the batch prediction resource usage assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult batch_prediction_resource_usage_assessment_result = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the batchPredictionResourceUsageAssessmentResult field is set.
+   */
+  boolean hasBatchPredictionResourceUsageAssessmentResult();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The result of the batch prediction resource usage assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult batch_prediction_resource_usage_assessment_result = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The batchPredictionResourceUsageAssessmentResult.
+   */
+  com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+          .BatchPredictionResourceUsageAssessmentResult
+      getBatchPredictionResourceUsageAssessmentResult();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The result of the batch prediction resource usage assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult batch_prediction_resource_usage_assessment_result = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.AssessDataResponse
+          .BatchPredictionResourceUsageAssessmentResultOrBuilder
+      getBatchPredictionResourceUsageAssessmentResultOrBuilder();
+
   com.google.cloud.aiplatform.v1beta1.AssessDataResponse.AssessmentResultCase
       getAssessmentResultCase();
 }

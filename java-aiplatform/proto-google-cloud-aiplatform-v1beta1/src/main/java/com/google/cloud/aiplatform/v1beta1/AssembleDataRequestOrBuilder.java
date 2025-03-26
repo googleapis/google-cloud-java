@@ -70,6 +70,49 @@ public interface AssembleDataRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. The column name in the underlying table that contains already
+   * fully assembled requests. If this field is set, the original request will
+   * be copied to the output table.
+   * </pre>
+   *
+   * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the requestColumnName field is set.
+   */
+  boolean hasRequestColumnName();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The column name in the underlying table that contains already
+   * fully assembled requests. If this field is set, the original request will
+   * be copied to the output table.
+   * </pre>
+   *
+   * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The requestColumnName.
+   */
+  java.lang.String getRequestColumnName();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The column name in the underlying table that contains already
+   * fully assembled requests. If this field is set, the original request will
+   * be copied to the output table.
+   * </pre>
+   *
+   * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for requestColumnName.
+   */
+  com.google.protobuf.ByteString getRequestColumnNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The name of the Dataset resource (used only for MULTIMODAL
    * datasets). Format:
    * `projects/{project}/locations/{location}/datasets/{dataset}`

@@ -114,6 +114,97 @@ public interface AssessDataRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for the batch prediction validation assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig batch_prediction_validation_assessment_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the batchPredictionValidationAssessmentConfig field is set.
+   */
+  boolean hasBatchPredictionValidationAssessmentConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the batch prediction validation assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig batch_prediction_validation_assessment_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The batchPredictionValidationAssessmentConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig
+      getBatchPredictionValidationAssessmentConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the batch prediction validation assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig batch_prediction_validation_assessment_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+          .BatchPredictionValidationAssessmentConfigOrBuilder
+      getBatchPredictionValidationAssessmentConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the batch prediction resource usage
+   * assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig batch_prediction_resource_usage_assessment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the batchPredictionResourceUsageAssessmentConfig field is set.
+   */
+  boolean hasBatchPredictionResourceUsageAssessmentConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the batch prediction resource usage
+   * assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig batch_prediction_resource_usage_assessment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The batchPredictionResourceUsageAssessmentConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig
+      getBatchPredictionResourceUsageAssessmentConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the batch prediction resource usage
+   * assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig batch_prediction_resource_usage_assessment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+          .BatchPredictionResourceUsageAssessmentConfigOrBuilder
+      getBatchPredictionResourceUsageAssessmentConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Config for assembling templates with a Gemini API structure to
    * assess assembled data.
    * </pre>
@@ -154,6 +245,46 @@ public interface AssessDataRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfigOrBuilder
       getGeminiTemplateConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The column name in the underlying table that contains already
+   * fully assembled requests.
+   * </pre>
+   *
+   * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the requestColumnName field is set.
+   */
+  boolean hasRequestColumnName();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The column name in the underlying table that contains already
+   * fully assembled requests.
+   * </pre>
+   *
+   * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The requestColumnName.
+   */
+  java.lang.String getRequestColumnName();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The column name in the underlying table that contains already
+   * fully assembled requests.
+   * </pre>
+   *
+   * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for requestColumnName.
+   */
+  com.google.protobuf.ByteString getRequestColumnNameBytes();
 
   /**
    *

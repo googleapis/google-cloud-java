@@ -1848,6 +1848,1435 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public interface BatchPredictionValidationAssessmentConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the model used for batch prediction.
+     * </pre>
+     *
+     * <code>string model_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The modelName.
+     */
+    java.lang.String getModelName();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the model used for batch prediction.
+     * </pre>
+     *
+     * <code>string model_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for modelName.
+     */
+    com.google.protobuf.ByteString getModelNameBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the batch prediction validation assessment.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig}
+   */
+  public static final class BatchPredictionValidationAssessmentConfig
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig)
+      BatchPredictionValidationAssessmentConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use BatchPredictionValidationAssessmentConfig.newBuilder() to construct.
+    private BatchPredictionValidationAssessmentConfig(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BatchPredictionValidationAssessmentConfig() {
+      modelName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BatchPredictionValidationAssessmentConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionValidationAssessmentConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionValidationAssessmentConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                  .BatchPredictionValidationAssessmentConfig.class,
+              com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                  .BatchPredictionValidationAssessmentConfig.Builder.class);
+    }
+
+    public static final int MODEL_NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object modelName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the model used for batch prediction.
+     * </pre>
+     *
+     * <code>string model_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The modelName.
+     */
+    @java.lang.Override
+    public java.lang.String getModelName() {
+      java.lang.Object ref = modelName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the model used for batch prediction.
+     * </pre>
+     *
+     * <code>string model_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for modelName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getModelNameBytes() {
+      java.lang.Object ref = modelName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modelName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, modelName_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, modelName_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+              .BatchPredictionValidationAssessmentConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+              .BatchPredictionValidationAssessmentConfig
+          other =
+              (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                      .BatchPredictionValidationAssessmentConfig)
+                  obj;
+
+      if (!getModelName().equals(other.getModelName())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MODEL_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getModelName().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionValidationAssessmentConfig
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the batch prediction validation assessment.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig)
+        com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionValidationAssessmentConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionValidationAssessmentConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                    .BatchPredictionValidationAssessmentConfig.class,
+                com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                    .BatchPredictionValidationAssessmentConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        modelName_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionValidationAssessmentConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+              .BatchPredictionValidationAssessmentConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+              .BatchPredictionValidationAssessmentConfig
+          build() {
+        com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionValidationAssessmentConfig
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+              .BatchPredictionValidationAssessmentConfig
+          buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionValidationAssessmentConfig
+            result =
+                new com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                    .BatchPredictionValidationAssessmentConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                  .BatchPredictionValidationAssessmentConfig
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.modelName_ = modelName_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionValidationAssessmentConfig) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                      .BatchPredictionValidationAssessmentConfig)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                  .BatchPredictionValidationAssessmentConfig
+              other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionValidationAssessmentConfig.getDefaultInstance()) return this;
+        if (!other.getModelName().isEmpty()) {
+          modelName_ = other.modelName_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  modelName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object modelName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the model used for batch prediction.
+       * </pre>
+       *
+       * <code>string model_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The modelName.
+       */
+      public java.lang.String getModelName() {
+        java.lang.Object ref = modelName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the model used for batch prediction.
+       * </pre>
+       *
+       * <code>string model_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for modelName.
+       */
+      public com.google.protobuf.ByteString getModelNameBytes() {
+        java.lang.Object ref = modelName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          modelName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the model used for batch prediction.
+       * </pre>
+       *
+       * <code>string model_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The modelName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the model used for batch prediction.
+       * </pre>
+       *
+       * <code>string model_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearModelName() {
+        modelName_ = getDefaultInstance().getModelName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the model used for batch prediction.
+       * </pre>
+       *
+       * <code>string model_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for modelName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        modelName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig)
+    private static final com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+              .BatchPredictionValidationAssessmentConfig();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BatchPredictionValidationAssessmentConfig>
+        PARSER =
+            new com.google.protobuf.AbstractParser<BatchPredictionValidationAssessmentConfig>() {
+              @java.lang.Override
+              public BatchPredictionValidationAssessmentConfig parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+    public static com.google.protobuf.Parser<BatchPredictionValidationAssessmentConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BatchPredictionValidationAssessmentConfig>
+        getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface BatchPredictionResourceUsageAssessmentConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the model used for batch prediction.
+     * </pre>
+     *
+     * <code>string model_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The modelName.
+     */
+    java.lang.String getModelName();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the model used for batch prediction.
+     * </pre>
+     *
+     * <code>string model_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for modelName.
+     */
+    com.google.protobuf.ByteString getModelNameBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the batch prediction resource usage assessment.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig}
+   */
+  public static final class BatchPredictionResourceUsageAssessmentConfig
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig)
+      BatchPredictionResourceUsageAssessmentConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use BatchPredictionResourceUsageAssessmentConfig.newBuilder() to construct.
+    private BatchPredictionResourceUsageAssessmentConfig(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BatchPredictionResourceUsageAssessmentConfig() {
+      modelName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BatchPredictionResourceUsageAssessmentConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionResourceUsageAssessmentConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionResourceUsageAssessmentConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                  .BatchPredictionResourceUsageAssessmentConfig.class,
+              com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                  .BatchPredictionResourceUsageAssessmentConfig.Builder.class);
+    }
+
+    public static final int MODEL_NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object modelName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the model used for batch prediction.
+     * </pre>
+     *
+     * <code>string model_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The modelName.
+     */
+    @java.lang.Override
+    public java.lang.String getModelName() {
+      java.lang.Object ref = modelName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the model used for batch prediction.
+     * </pre>
+     *
+     * <code>string model_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for modelName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getModelNameBytes() {
+      java.lang.Object ref = modelName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modelName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, modelName_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, modelName_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+              .BatchPredictionResourceUsageAssessmentConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+              .BatchPredictionResourceUsageAssessmentConfig
+          other =
+              (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                      .BatchPredictionResourceUsageAssessmentConfig)
+                  obj;
+
+      if (!getModelName().equals(other.getModelName())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MODEL_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getModelName().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionResourceUsageAssessmentConfig
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the batch prediction resource usage assessment.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig)
+        com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionResourceUsageAssessmentConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionResourceUsageAssessmentConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                    .BatchPredictionResourceUsageAssessmentConfig.class,
+                com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                    .BatchPredictionResourceUsageAssessmentConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        modelName_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.DatasetServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionResourceUsageAssessmentConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+              .BatchPredictionResourceUsageAssessmentConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+              .BatchPredictionResourceUsageAssessmentConfig
+          build() {
+        com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionResourceUsageAssessmentConfig
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+              .BatchPredictionResourceUsageAssessmentConfig
+          buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionResourceUsageAssessmentConfig
+            result =
+                new com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                    .BatchPredictionResourceUsageAssessmentConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                  .BatchPredictionResourceUsageAssessmentConfig
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.modelName_ = modelName_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionResourceUsageAssessmentConfig) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                      .BatchPredictionResourceUsageAssessmentConfig)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                  .BatchPredictionResourceUsageAssessmentConfig
+              other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionResourceUsageAssessmentConfig.getDefaultInstance()) return this;
+        if (!other.getModelName().isEmpty()) {
+          modelName_ = other.modelName_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  modelName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object modelName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the model used for batch prediction.
+       * </pre>
+       *
+       * <code>string model_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The modelName.
+       */
+      public java.lang.String getModelName() {
+        java.lang.Object ref = modelName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the model used for batch prediction.
+       * </pre>
+       *
+       * <code>string model_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for modelName.
+       */
+      public com.google.protobuf.ByteString getModelNameBytes() {
+        java.lang.Object ref = modelName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          modelName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the model used for batch prediction.
+       * </pre>
+       *
+       * <code>string model_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The modelName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the model used for batch prediction.
+       * </pre>
+       *
+       * <code>string model_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearModelName() {
+        modelName_ = getDefaultInstance().getModelName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the model used for batch prediction.
+       * </pre>
+       *
+       * <code>string model_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for modelName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        modelName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig)
+    private static final com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+              .BatchPredictionResourceUsageAssessmentConfig();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BatchPredictionResourceUsageAssessmentConfig>
+        PARSER =
+            new com.google.protobuf.AbstractParser<BatchPredictionResourceUsageAssessmentConfig>() {
+              @java.lang.Override
+              public BatchPredictionResourceUsageAssessmentConfig parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+    public static com.google.protobuf.Parser<BatchPredictionResourceUsageAssessmentConfig>
+        parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BatchPredictionResourceUsageAssessmentConfig>
+        getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int assessmentConfigCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -1859,6 +3288,8 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TUNING_VALIDATION_ASSESSMENT_CONFIG(2),
     TUNING_RESOURCE_USAGE_ASSESSMENT_CONFIG(3),
+    BATCH_PREDICTION_VALIDATION_ASSESSMENT_CONFIG(6),
+    BATCH_PREDICTION_RESOURCE_USAGE_ASSESSMENT_CONFIG(7),
     ASSESSMENTCONFIG_NOT_SET(0);
     private final int value;
 
@@ -1881,6 +3312,10 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
           return TUNING_VALIDATION_ASSESSMENT_CONFIG;
         case 3:
           return TUNING_RESOURCE_USAGE_ASSESSMENT_CONFIG;
+        case 6:
+          return BATCH_PREDICTION_VALIDATION_ASSESSMENT_CONFIG;
+        case 7:
+          return BATCH_PREDICTION_RESOURCE_USAGE_ASSESSMENT_CONFIG;
         case 0:
           return ASSESSMENTCONFIG_NOT_SET;
         default:
@@ -1907,6 +3342,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GEMINI_TEMPLATE_CONFIG(4),
+    REQUEST_COLUMN_NAME(5),
     READCONFIG_NOT_SET(0);
     private final int value;
 
@@ -1927,6 +3363,8 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       switch (value) {
         case 4:
           return GEMINI_TEMPLATE_CONFIG;
+        case 5:
+          return REQUEST_COLUMN_NAME;
         case 0:
           return READCONFIG_NOT_SET;
         default:
@@ -2075,6 +3513,143 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         .getDefaultInstance();
   }
 
+  public static final int BATCH_PREDICTION_VALIDATION_ASSESSMENT_CONFIG_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the batch prediction validation assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig batch_prediction_validation_assessment_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the batchPredictionValidationAssessmentConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasBatchPredictionValidationAssessmentConfig() {
+    return assessmentConfigCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the batch prediction validation assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig batch_prediction_validation_assessment_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The batchPredictionValidationAssessmentConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+          .BatchPredictionValidationAssessmentConfig
+      getBatchPredictionValidationAssessmentConfig() {
+    if (assessmentConfigCase_ == 6) {
+      return (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+              .BatchPredictionValidationAssessmentConfig)
+          assessmentConfig_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+        .BatchPredictionValidationAssessmentConfig.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the batch prediction validation assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig batch_prediction_validation_assessment_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+          .BatchPredictionValidationAssessmentConfigOrBuilder
+      getBatchPredictionValidationAssessmentConfigOrBuilder() {
+    if (assessmentConfigCase_ == 6) {
+      return (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+              .BatchPredictionValidationAssessmentConfig)
+          assessmentConfig_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+        .BatchPredictionValidationAssessmentConfig.getDefaultInstance();
+  }
+
+  public static final int BATCH_PREDICTION_RESOURCE_USAGE_ASSESSMENT_CONFIG_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the batch prediction resource usage
+   * assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig batch_prediction_resource_usage_assessment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the batchPredictionResourceUsageAssessmentConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasBatchPredictionResourceUsageAssessmentConfig() {
+    return assessmentConfigCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the batch prediction resource usage
+   * assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig batch_prediction_resource_usage_assessment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The batchPredictionResourceUsageAssessmentConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+          .BatchPredictionResourceUsageAssessmentConfig
+      getBatchPredictionResourceUsageAssessmentConfig() {
+    if (assessmentConfigCase_ == 7) {
+      return (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+              .BatchPredictionResourceUsageAssessmentConfig)
+          assessmentConfig_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+        .BatchPredictionResourceUsageAssessmentConfig.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the batch prediction resource usage
+   * assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig batch_prediction_resource_usage_assessment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+          .BatchPredictionResourceUsageAssessmentConfigOrBuilder
+      getBatchPredictionResourceUsageAssessmentConfigOrBuilder() {
+    if (assessmentConfigCase_ == 7) {
+      return (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+              .BatchPredictionResourceUsageAssessmentConfig)
+          assessmentConfig_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+        .BatchPredictionResourceUsageAssessmentConfig.getDefaultInstance();
+  }
+
   public static final int GEMINI_TEMPLATE_CONFIG_FIELD_NUMBER = 4;
   /**
    *
@@ -2134,6 +3709,79 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       return (com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig) readConfig_;
     }
     return com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.getDefaultInstance();
+  }
+
+  public static final int REQUEST_COLUMN_NAME_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The column name in the underlying table that contains already
+   * fully assembled requests.
+   * </pre>
+   *
+   * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the requestColumnName field is set.
+   */
+  public boolean hasRequestColumnName() {
+    return readConfigCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The column name in the underlying table that contains already
+   * fully assembled requests.
+   * </pre>
+   *
+   * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The requestColumnName.
+   */
+  public java.lang.String getRequestColumnName() {
+    java.lang.Object ref = "";
+    if (readConfigCase_ == 5) {
+      ref = readConfig_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (readConfigCase_ == 5) {
+        readConfig_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The column name in the underlying table that contains already
+   * fully assembled requests.
+   * </pre>
+   *
+   * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for requestColumnName.
+   */
+  public com.google.protobuf.ByteString getRequestColumnNameBytes() {
+    java.lang.Object ref = "";
+    if (readConfigCase_ == 5) {
+      ref = readConfig_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (readConfigCase_ == 5) {
+        readConfig_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -2229,6 +3877,23 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       output.writeMessage(
           4, (com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig) readConfig_);
     }
+    if (readConfigCase_ == 5) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, readConfig_);
+    }
+    if (assessmentConfigCase_ == 6) {
+      output.writeMessage(
+          6,
+          (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                  .BatchPredictionValidationAssessmentConfig)
+              assessmentConfig_);
+    }
+    if (assessmentConfigCase_ == 7) {
+      output.writeMessage(
+          7,
+          (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                  .BatchPredictionResourceUsageAssessmentConfig)
+              assessmentConfig_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2262,6 +3927,25 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig) readConfig_);
     }
+    if (readConfigCase_ == 5) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, readConfig_);
+    }
+    if (assessmentConfigCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6,
+              (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                      .BatchPredictionValidationAssessmentConfig)
+                  assessmentConfig_);
+    }
+    if (assessmentConfigCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7,
+              (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                      .BatchPredictionResourceUsageAssessmentConfig)
+                  assessmentConfig_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2289,6 +3973,14 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         if (!getTuningResourceUsageAssessmentConfig()
             .equals(other.getTuningResourceUsageAssessmentConfig())) return false;
         break;
+      case 6:
+        if (!getBatchPredictionValidationAssessmentConfig()
+            .equals(other.getBatchPredictionValidationAssessmentConfig())) return false;
+        break;
+      case 7:
+        if (!getBatchPredictionResourceUsageAssessmentConfig()
+            .equals(other.getBatchPredictionResourceUsageAssessmentConfig())) return false;
+        break;
       case 0:
       default:
     }
@@ -2296,6 +3988,9 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     switch (readConfigCase_) {
       case 4:
         if (!getGeminiTemplateConfig().equals(other.getGeminiTemplateConfig())) return false;
+        break;
+      case 5:
+        if (!getRequestColumnName().equals(other.getRequestColumnName())) return false;
         break;
       case 0:
       default:
@@ -2322,6 +4017,14 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         hash = (37 * hash) + TUNING_RESOURCE_USAGE_ASSESSMENT_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getTuningResourceUsageAssessmentConfig().hashCode();
         break;
+      case 6:
+        hash = (37 * hash) + BATCH_PREDICTION_VALIDATION_ASSESSMENT_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getBatchPredictionValidationAssessmentConfig().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + BATCH_PREDICTION_RESOURCE_USAGE_ASSESSMENT_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getBatchPredictionResourceUsageAssessmentConfig().hashCode();
+        break;
       case 0:
       default:
     }
@@ -2329,6 +4032,10 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       case 4:
         hash = (37 * hash) + GEMINI_TEMPLATE_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getGeminiTemplateConfig().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + REQUEST_COLUMN_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getRequestColumnName().hashCode();
         break;
       case 0:
       default:
@@ -2481,6 +4188,12 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       if (tuningResourceUsageAssessmentConfigBuilder_ != null) {
         tuningResourceUsageAssessmentConfigBuilder_.clear();
       }
+      if (batchPredictionValidationAssessmentConfigBuilder_ != null) {
+        batchPredictionValidationAssessmentConfigBuilder_.clear();
+      }
+      if (batchPredictionResourceUsageAssessmentConfigBuilder_ != null) {
+        batchPredictionResourceUsageAssessmentConfigBuilder_.clear();
+      }
       if (geminiTemplateConfigBuilder_ != null) {
         geminiTemplateConfigBuilder_.clear();
       }
@@ -2526,7 +4239,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.AssessDataRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.name_ = name_;
       }
     }
@@ -2539,6 +4252,13 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       }
       if (assessmentConfigCase_ == 3 && tuningResourceUsageAssessmentConfigBuilder_ != null) {
         result.assessmentConfig_ = tuningResourceUsageAssessmentConfigBuilder_.build();
+      }
+      if (assessmentConfigCase_ == 6 && batchPredictionValidationAssessmentConfigBuilder_ != null) {
+        result.assessmentConfig_ = batchPredictionValidationAssessmentConfigBuilder_.build();
+      }
+      if (assessmentConfigCase_ == 7
+          && batchPredictionResourceUsageAssessmentConfigBuilder_ != null) {
+        result.assessmentConfig_ = batchPredictionResourceUsageAssessmentConfigBuilder_.build();
       }
       result.readConfigCase_ = readConfigCase_;
       result.readConfig_ = this.readConfig_;
@@ -2595,7 +4315,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       switch (other.getAssessmentConfigCase()) {
@@ -2610,6 +4330,18 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
                 other.getTuningResourceUsageAssessmentConfig());
             break;
           }
+        case BATCH_PREDICTION_VALIDATION_ASSESSMENT_CONFIG:
+          {
+            mergeBatchPredictionValidationAssessmentConfig(
+                other.getBatchPredictionValidationAssessmentConfig());
+            break;
+          }
+        case BATCH_PREDICTION_RESOURCE_USAGE_ASSESSMENT_CONFIG:
+          {
+            mergeBatchPredictionResourceUsageAssessmentConfig(
+                other.getBatchPredictionResourceUsageAssessmentConfig());
+            break;
+          }
         case ASSESSMENTCONFIG_NOT_SET:
           {
             break;
@@ -2619,6 +4351,13 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         case GEMINI_TEMPLATE_CONFIG:
           {
             mergeGeminiTemplateConfig(other.getGeminiTemplateConfig());
+            break;
+          }
+        case REQUEST_COLUMN_NAME:
+          {
+            readConfigCase_ = 5;
+            readConfig_ = other.readConfig_;
+            onChanged();
             break;
           }
         case READCONFIG_NOT_SET:
@@ -2655,7 +4394,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 10
             case 18:
@@ -2681,6 +4420,29 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
                 readConfigCase_ = 4;
                 break;
               } // case 34
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                readConfigCase_ = 5;
+                readConfig_ = s;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getBatchPredictionValidationAssessmentConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                assessmentConfigCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getBatchPredictionResourceUsageAssessmentConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                assessmentConfigCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3253,6 +5015,549 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionValidationAssessmentConfig,
+            com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionValidationAssessmentConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionValidationAssessmentConfigOrBuilder>
+        batchPredictionValidationAssessmentConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the batch prediction validation assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig batch_prediction_validation_assessment_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the batchPredictionValidationAssessmentConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasBatchPredictionValidationAssessmentConfig() {
+      return assessmentConfigCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the batch prediction validation assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig batch_prediction_validation_assessment_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The batchPredictionValidationAssessmentConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig
+        getBatchPredictionValidationAssessmentConfig() {
+      if (batchPredictionValidationAssessmentConfigBuilder_ == null) {
+        if (assessmentConfigCase_ == 6) {
+          return (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                  .BatchPredictionValidationAssessmentConfig)
+              assessmentConfig_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig.getDefaultInstance();
+      } else {
+        if (assessmentConfigCase_ == 6) {
+          return batchPredictionValidationAssessmentConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the batch prediction validation assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig batch_prediction_validation_assessment_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBatchPredictionValidationAssessmentConfig(
+        com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionValidationAssessmentConfig
+            value) {
+      if (batchPredictionValidationAssessmentConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        assessmentConfig_ = value;
+        onChanged();
+      } else {
+        batchPredictionValidationAssessmentConfigBuilder_.setMessage(value);
+      }
+      assessmentConfigCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the batch prediction validation assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig batch_prediction_validation_assessment_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBatchPredictionValidationAssessmentConfig(
+        com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionValidationAssessmentConfig.Builder
+            builderForValue) {
+      if (batchPredictionValidationAssessmentConfigBuilder_ == null) {
+        assessmentConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        batchPredictionValidationAssessmentConfigBuilder_.setMessage(builderForValue.build());
+      }
+      assessmentConfigCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the batch prediction validation assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig batch_prediction_validation_assessment_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBatchPredictionValidationAssessmentConfig(
+        com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionValidationAssessmentConfig
+            value) {
+      if (batchPredictionValidationAssessmentConfigBuilder_ == null) {
+        if (assessmentConfigCase_ == 6
+            && assessmentConfig_
+                != com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                    .BatchPredictionValidationAssessmentConfig.getDefaultInstance()) {
+          assessmentConfig_ =
+              com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                  .BatchPredictionValidationAssessmentConfig.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                              .BatchPredictionValidationAssessmentConfig)
+                          assessmentConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          assessmentConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (assessmentConfigCase_ == 6) {
+          batchPredictionValidationAssessmentConfigBuilder_.mergeFrom(value);
+        } else {
+          batchPredictionValidationAssessmentConfigBuilder_.setMessage(value);
+        }
+      }
+      assessmentConfigCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the batch prediction validation assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig batch_prediction_validation_assessment_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBatchPredictionValidationAssessmentConfig() {
+      if (batchPredictionValidationAssessmentConfigBuilder_ == null) {
+        if (assessmentConfigCase_ == 6) {
+          assessmentConfigCase_ = 0;
+          assessmentConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (assessmentConfigCase_ == 6) {
+          assessmentConfigCase_ = 0;
+          assessmentConfig_ = null;
+        }
+        batchPredictionValidationAssessmentConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the batch prediction validation assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig batch_prediction_validation_assessment_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig.Builder
+        getBatchPredictionValidationAssessmentConfigBuilder() {
+      return getBatchPredictionValidationAssessmentConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the batch prediction validation assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig batch_prediction_validation_assessment_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfigOrBuilder
+        getBatchPredictionValidationAssessmentConfigOrBuilder() {
+      if ((assessmentConfigCase_ == 6)
+          && (batchPredictionValidationAssessmentConfigBuilder_ != null)) {
+        return batchPredictionValidationAssessmentConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (assessmentConfigCase_ == 6) {
+          return (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                  .BatchPredictionValidationAssessmentConfig)
+              assessmentConfig_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionValidationAssessmentConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the batch prediction validation assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig batch_prediction_validation_assessment_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionValidationAssessmentConfig,
+            com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionValidationAssessmentConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionValidationAssessmentConfigOrBuilder>
+        getBatchPredictionValidationAssessmentConfigFieldBuilder() {
+      if (batchPredictionValidationAssessmentConfigBuilder_ == null) {
+        if (!(assessmentConfigCase_ == 6)) {
+          assessmentConfig_ =
+              com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                  .BatchPredictionValidationAssessmentConfig.getDefaultInstance();
+        }
+        batchPredictionValidationAssessmentConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                    .BatchPredictionValidationAssessmentConfig,
+                com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                    .BatchPredictionValidationAssessmentConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                    .BatchPredictionValidationAssessmentConfigOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                        .BatchPredictionValidationAssessmentConfig)
+                    assessmentConfig_,
+                getParentForChildren(),
+                isClean());
+        assessmentConfig_ = null;
+      }
+      assessmentConfigCase_ = 6;
+      onChanged();
+      return batchPredictionValidationAssessmentConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionResourceUsageAssessmentConfig,
+            com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionResourceUsageAssessmentConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionResourceUsageAssessmentConfigOrBuilder>
+        batchPredictionResourceUsageAssessmentConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the batch prediction resource usage
+     * assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig batch_prediction_resource_usage_assessment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the batchPredictionResourceUsageAssessmentConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasBatchPredictionResourceUsageAssessmentConfig() {
+      return assessmentConfigCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the batch prediction resource usage
+     * assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig batch_prediction_resource_usage_assessment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The batchPredictionResourceUsageAssessmentConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig
+        getBatchPredictionResourceUsageAssessmentConfig() {
+      if (batchPredictionResourceUsageAssessmentConfigBuilder_ == null) {
+        if (assessmentConfigCase_ == 7) {
+          return (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                  .BatchPredictionResourceUsageAssessmentConfig)
+              assessmentConfig_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig.getDefaultInstance();
+      } else {
+        if (assessmentConfigCase_ == 7) {
+          return batchPredictionResourceUsageAssessmentConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the batch prediction resource usage
+     * assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig batch_prediction_resource_usage_assessment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBatchPredictionResourceUsageAssessmentConfig(
+        com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionResourceUsageAssessmentConfig
+            value) {
+      if (batchPredictionResourceUsageAssessmentConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        assessmentConfig_ = value;
+        onChanged();
+      } else {
+        batchPredictionResourceUsageAssessmentConfigBuilder_.setMessage(value);
+      }
+      assessmentConfigCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the batch prediction resource usage
+     * assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig batch_prediction_resource_usage_assessment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBatchPredictionResourceUsageAssessmentConfig(
+        com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionResourceUsageAssessmentConfig.Builder
+            builderForValue) {
+      if (batchPredictionResourceUsageAssessmentConfigBuilder_ == null) {
+        assessmentConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        batchPredictionResourceUsageAssessmentConfigBuilder_.setMessage(builderForValue.build());
+      }
+      assessmentConfigCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the batch prediction resource usage
+     * assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig batch_prediction_resource_usage_assessment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBatchPredictionResourceUsageAssessmentConfig(
+        com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionResourceUsageAssessmentConfig
+            value) {
+      if (batchPredictionResourceUsageAssessmentConfigBuilder_ == null) {
+        if (assessmentConfigCase_ == 7
+            && assessmentConfig_
+                != com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                    .BatchPredictionResourceUsageAssessmentConfig.getDefaultInstance()) {
+          assessmentConfig_ =
+              com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                  .BatchPredictionResourceUsageAssessmentConfig.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                              .BatchPredictionResourceUsageAssessmentConfig)
+                          assessmentConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          assessmentConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (assessmentConfigCase_ == 7) {
+          batchPredictionResourceUsageAssessmentConfigBuilder_.mergeFrom(value);
+        } else {
+          batchPredictionResourceUsageAssessmentConfigBuilder_.setMessage(value);
+        }
+      }
+      assessmentConfigCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the batch prediction resource usage
+     * assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig batch_prediction_resource_usage_assessment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBatchPredictionResourceUsageAssessmentConfig() {
+      if (batchPredictionResourceUsageAssessmentConfigBuilder_ == null) {
+        if (assessmentConfigCase_ == 7) {
+          assessmentConfigCase_ = 0;
+          assessmentConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (assessmentConfigCase_ == 7) {
+          assessmentConfigCase_ = 0;
+          assessmentConfig_ = null;
+        }
+        batchPredictionResourceUsageAssessmentConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the batch prediction resource usage
+     * assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig batch_prediction_resource_usage_assessment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig.Builder
+        getBatchPredictionResourceUsageAssessmentConfigBuilder() {
+      return getBatchPredictionResourceUsageAssessmentConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the batch prediction resource usage
+     * assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig batch_prediction_resource_usage_assessment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfigOrBuilder
+        getBatchPredictionResourceUsageAssessmentConfigOrBuilder() {
+      if ((assessmentConfigCase_ == 7)
+          && (batchPredictionResourceUsageAssessmentConfigBuilder_ != null)) {
+        return batchPredictionResourceUsageAssessmentConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (assessmentConfigCase_ == 7) {
+          return (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                  .BatchPredictionResourceUsageAssessmentConfig)
+              assessmentConfig_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+            .BatchPredictionResourceUsageAssessmentConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the batch prediction resource usage
+     * assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig batch_prediction_resource_usage_assessment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionResourceUsageAssessmentConfig,
+            com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionResourceUsageAssessmentConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                .BatchPredictionResourceUsageAssessmentConfigOrBuilder>
+        getBatchPredictionResourceUsageAssessmentConfigFieldBuilder() {
+      if (batchPredictionResourceUsageAssessmentConfigBuilder_ == null) {
+        if (!(assessmentConfigCase_ == 7)) {
+          assessmentConfig_ =
+              com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                  .BatchPredictionResourceUsageAssessmentConfig.getDefaultInstance();
+        }
+        batchPredictionResourceUsageAssessmentConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                    .BatchPredictionResourceUsageAssessmentConfig,
+                com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                    .BatchPredictionResourceUsageAssessmentConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                    .BatchPredictionResourceUsageAssessmentConfigOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                        .BatchPredictionResourceUsageAssessmentConfig)
+                    assessmentConfig_,
+                getParentForChildren(),
+                isClean());
+        assessmentConfig_ = null;
+      }
+      assessmentConfigCase_ = 7;
+      onChanged();
+      return batchPredictionResourceUsageAssessmentConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig,
             com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfigOrBuilder>
@@ -3494,6 +5799,146 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       return geminiTemplateConfigBuilder_;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The column name in the underlying table that contains already
+     * fully assembled requests.
+     * </pre>
+     *
+     * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the requestColumnName field is set.
+     */
+    @java.lang.Override
+    public boolean hasRequestColumnName() {
+      return readConfigCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The column name in the underlying table that contains already
+     * fully assembled requests.
+     * </pre>
+     *
+     * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The requestColumnName.
+     */
+    @java.lang.Override
+    public java.lang.String getRequestColumnName() {
+      java.lang.Object ref = "";
+      if (readConfigCase_ == 5) {
+        ref = readConfig_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (readConfigCase_ == 5) {
+          readConfig_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The column name in the underlying table that contains already
+     * fully assembled requests.
+     * </pre>
+     *
+     * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for requestColumnName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRequestColumnNameBytes() {
+      java.lang.Object ref = "";
+      if (readConfigCase_ == 5) {
+        ref = readConfig_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (readConfigCase_ == 5) {
+          readConfig_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The column name in the underlying table that contains already
+     * fully assembled requests.
+     * </pre>
+     *
+     * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The requestColumnName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestColumnName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      readConfigCase_ = 5;
+      readConfig_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The column name in the underlying table that contains already
+     * fully assembled requests.
+     * </pre>
+     *
+     * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestColumnName() {
+      if (readConfigCase_ == 5) {
+        readConfigCase_ = 0;
+        readConfig_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The column name in the underlying table that contains already
+     * fully assembled requests.
+     * </pre>
+     *
+     * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for requestColumnName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestColumnNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      readConfigCase_ = 5;
+      readConfig_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -3568,7 +6013,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3589,7 +6034,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3615,7 +6060,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

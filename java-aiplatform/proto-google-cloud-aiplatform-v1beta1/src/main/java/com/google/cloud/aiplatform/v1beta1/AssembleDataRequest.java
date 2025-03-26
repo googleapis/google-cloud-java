@@ -75,6 +75,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GEMINI_TEMPLATE_CONFIG(2),
+    REQUEST_COLUMN_NAME(5),
     READCONFIG_NOT_SET(0);
     private final int value;
 
@@ -95,6 +96,8 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       switch (value) {
         case 2:
           return GEMINI_TEMPLATE_CONFIG;
+        case 5:
+          return REQUEST_COLUMN_NAME;
         case 0:
           return READCONFIG_NOT_SET;
         default:
@@ -167,6 +170,82 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       return (com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig) readConfig_;
     }
     return com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.getDefaultInstance();
+  }
+
+  public static final int REQUEST_COLUMN_NAME_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The column name in the underlying table that contains already
+   * fully assembled requests. If this field is set, the original request will
+   * be copied to the output table.
+   * </pre>
+   *
+   * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the requestColumnName field is set.
+   */
+  public boolean hasRequestColumnName() {
+    return readConfigCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The column name in the underlying table that contains already
+   * fully assembled requests. If this field is set, the original request will
+   * be copied to the output table.
+   * </pre>
+   *
+   * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The requestColumnName.
+   */
+  public java.lang.String getRequestColumnName() {
+    java.lang.Object ref = "";
+    if (readConfigCase_ == 5) {
+      ref = readConfig_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (readConfigCase_ == 5) {
+        readConfig_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The column name in the underlying table that contains already
+   * fully assembled requests. If this field is set, the original request will
+   * be copied to the output table.
+   * </pre>
+   *
+   * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for requestColumnName.
+   */
+  public com.google.protobuf.ByteString getRequestColumnNameBytes() {
+    java.lang.Object ref = "";
+    if (readConfigCase_ == 5) {
+      ref = readConfig_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (readConfigCase_ == 5) {
+        readConfig_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -249,6 +328,9 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       output.writeMessage(
           2, (com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig) readConfig_);
     }
+    if (readConfigCase_ == 5) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, readConfig_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -265,6 +347,9 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig) readConfig_);
+    }
+    if (readConfigCase_ == 5) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, readConfig_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -288,6 +373,9 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       case 2:
         if (!getGeminiTemplateConfig().equals(other.getGeminiTemplateConfig())) return false;
         break;
+      case 5:
+        if (!getRequestColumnName().equals(other.getRequestColumnName())) return false;
+        break;
       case 0:
       default:
     }
@@ -308,6 +396,10 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       case 2:
         hash = (37 * hash) + GEMINI_TEMPLATE_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getGeminiTemplateConfig().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + REQUEST_COLUMN_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getRequestColumnName().hashCode();
         break;
       case 0:
       default:
@@ -497,7 +589,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.AssembleDataRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.name_ = name_;
       }
     }
@@ -559,13 +651,20 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       switch (other.getReadConfigCase()) {
         case GEMINI_TEMPLATE_CONFIG:
           {
             mergeGeminiTemplateConfig(other.getGeminiTemplateConfig());
+            break;
+          }
+        case REQUEST_COLUMN_NAME:
+          {
+            readConfigCase_ = 5;
+            readConfig_ = other.readConfig_;
+            onChanged();
             break;
           }
         case READCONFIG_NOT_SET:
@@ -602,7 +701,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
@@ -612,6 +711,13 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
                 readConfigCase_ = 2;
                 break;
               } // case 18
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                readConfigCase_ = 5;
+                readConfig_ = s;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -878,6 +984,152 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       return geminiTemplateConfigBuilder_;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The column name in the underlying table that contains already
+     * fully assembled requests. If this field is set, the original request will
+     * be copied to the output table.
+     * </pre>
+     *
+     * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the requestColumnName field is set.
+     */
+    @java.lang.Override
+    public boolean hasRequestColumnName() {
+      return readConfigCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The column name in the underlying table that contains already
+     * fully assembled requests. If this field is set, the original request will
+     * be copied to the output table.
+     * </pre>
+     *
+     * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The requestColumnName.
+     */
+    @java.lang.Override
+    public java.lang.String getRequestColumnName() {
+      java.lang.Object ref = "";
+      if (readConfigCase_ == 5) {
+        ref = readConfig_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (readConfigCase_ == 5) {
+          readConfig_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The column name in the underlying table that contains already
+     * fully assembled requests. If this field is set, the original request will
+     * be copied to the output table.
+     * </pre>
+     *
+     * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for requestColumnName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRequestColumnNameBytes() {
+      java.lang.Object ref = "";
+      if (readConfigCase_ == 5) {
+        ref = readConfig_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (readConfigCase_ == 5) {
+          readConfig_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The column name in the underlying table that contains already
+     * fully assembled requests. If this field is set, the original request will
+     * be copied to the output table.
+     * </pre>
+     *
+     * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The requestColumnName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestColumnName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      readConfigCase_ = 5;
+      readConfig_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The column name in the underlying table that contains already
+     * fully assembled requests. If this field is set, the original request will
+     * be copied to the output table.
+     * </pre>
+     *
+     * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestColumnName() {
+      if (readConfigCase_ == 5) {
+        readConfigCase_ = 0;
+        readConfig_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The column name in the underlying table that contains already
+     * fully assembled requests. If this field is set, the original request will
+     * be copied to the output table.
+     * </pre>
+     *
+     * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for requestColumnName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestColumnNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      readConfigCase_ = 5;
+      readConfig_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -952,7 +1204,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -973,7 +1225,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -999,7 +1251,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

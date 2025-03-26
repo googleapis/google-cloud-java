@@ -1885,7 +1885,14 @@ public class DatasetServiceClientTest {
     Assert.assertEquals(
         request.getTuningResourceUsageAssessmentConfig(),
         actualRequest.getTuningResourceUsageAssessmentConfig());
+    Assert.assertEquals(
+        request.getBatchPredictionValidationAssessmentConfig(),
+        actualRequest.getBatchPredictionValidationAssessmentConfig());
+    Assert.assertEquals(
+        request.getBatchPredictionResourceUsageAssessmentConfig(),
+        actualRequest.getBatchPredictionResourceUsageAssessmentConfig());
     Assert.assertEquals(request.getGeminiTemplateConfig(), actualRequest.getGeminiTemplateConfig());
+    Assert.assertEquals(request.getRequestColumnName(), actualRequest.getRequestColumnName());
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -1939,6 +1946,7 @@ public class DatasetServiceClientTest {
     AssembleDataRequest actualRequest = ((AssembleDataRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getGeminiTemplateConfig(), actualRequest.getGeminiTemplateConfig());
+    Assert.assertEquals(request.getRequestColumnName(), actualRequest.getRequestColumnName());
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
