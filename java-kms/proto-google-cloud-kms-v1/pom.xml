@@ -66,8 +66,10 @@
                   <shadedPattern>com.shaded.google.protobuf</shadedPattern>
                   <excludes>
                     <exclude>com.google.protobuf.AbstractMessage</exclude>
+                    <exclude>com.google.protobuf.AbstractMessage$*</exclude>
                     <exclude>com.google.protobuf.AbstractMessage$Builder*</exclude>
                     <exclude>com.google.protobuf.AbstractMessageLite</exclude>
+                    <exclude>com.google.protobuf.AbstractMessageLite$*</exclude>
                     <exclude>com.google.protobuf.AbstractMessageLite$Builder*</exclude>
                     <exclude>com.google.protobuf.AbstractParser</exclude>
                     <exclude>com.google.protobuf.AbstractProtobufList</exclude>
@@ -179,22 +181,29 @@
                     <exclude>com.google.protobuf.UnsafeUtil</exclude>
                     <exclude>com.google.protobuf.Utf8</exclude>
                     <exclude>com.google.protobuf.WireFormat</exclude>
+                    <exclude>com.google.protobuf.WireFormat$*</exclude>
                     <exclude>com.google.protobuf.Writer</exclude>
                     <exclude>com.google.protobuf.Any</exclude>
                     <exclude>com.google.protobuf.Api</exclude>
                     <exclude>com.google.protobuf.BoolValue</exclude>
+                    <exclude>com.google.protobuf.BoolValue$*</exclude>
                     <exclude>com.google.protobuf.BoolValue$Builder*</exclude>
                     <exclude>com.google.protobuf.BytesValue</exclude>
+                    <exclude>com.google.protobuf.BytesValue$*</exclude>
                     <exclude>com.google.protobuf.BytesValue$Builder*</exclude>
                     <exclude>com.google.protobuf.DoubleValue</exclude>
+                    <exclude>com.google.protobuf.DoubleValue$*</exclude>
                     <exclude>com.google.protobuf.DoubleValue$Builder*</exclude>
                     <exclude>com.google.protobuf.Duration</exclude>
+                    <exclude>com.google.protobuf.Duration$*</exclude>
                     <exclude>com.google.protobuf.DurationOrBuilder</exclude>
                     <exclude>com.google.protobuf.Duration$Builder*</exclude>
                     <exclude>com.google.protobuf.Empty</exclude>
                     <exclude>com.google.protobuf.Enum</exclude>
+                    <exclude>com.google.protobuf.Enum$*</exclude>
                     <exclude>com.google.protobuf.Enum$Builder*</exclude>
                     <exclude>com.google.protobuf.EnumValue</exclude>
+                    <exclude>com.google.protobuf.EnumValue$*</exclude>
                     <exclude>com.google.protobuf.EnumValue$Builder*</exclude>
                     <exclude>com.google.protobuf.Field</exclude>
                     <exclude>com.google.protobuf.Field.Cardinal</exclude>
@@ -202,33 +211,44 @@
                     <exclude>com.google.protobuf.FieldMask</exclude>
                     <exclude>com.google.protobuf.FieldMask*</exclude>
                     <exclude>com.google.protobuf.FloatValue</exclude>
+                    <exclude>com.google.protobuf.FloatValue$*</exclude>
                     <exclude>com.google.protobuf.FloatValue$Builder*</exclude>
                     <exclude>com.google.protobuf.Int32Value</exclude>
+                    <exclude>com.google.protobuf.Int32Value$*</exclude>
                     <exclude>com.google.protobuf.Int32ValueOrBuilder</exclude>
                     <exclude>com.google.protobuf.Int32Value$Builder*</exclude>
                     <exclude>com.google.protobuf.Int64Value</exclude>
+                    <exclude>com.google.protobuf.Int64Value$*</exclude>
                     <exclude>com.google.protobuf.Int64ValueOrBuilder</exclude>
                     <exclude>com.google.protobuf.Int64Value$Builder*</exclude>
                     <exclude>com.google.protobuf.ListValue</exclude>
+                    <exclude>com.google.protobuf.ListValue$*</exclude>
                     <exclude>com.google.protobuf.Method</exclude>
                     <exclude>com.google.protobuf.Mixin</exclude>
                     <exclude>com.google.protobuf.NullValue</exclude>
                     <exclude>com.google.protobuf.Option</exclude>
                     <exclude>com.google.protobuf.SourceContext</exclude>
                     <exclude>com.google.protobuf.StringValue</exclude>
+                    <exclude>com.google.protobuf.StringValue$*</exclude>
                     <exclude>com.google.protobuf.Struct</exclude>
+                    <exclude>com.google.protobuf.Struct$*</exclude>
+                    <exclude>com.google.protobuf.StructProto</exclude>
                     <exclude>com.google.protobuf.Syntax</exclude>
                     <exclude>com.google.protobuf.Timestamp</exclude>
+                    <exclude>com.google.protobuf.Timestamp$*</exclude>
                     <exclude>com.google.protobuf.TimestampOrBuilder</exclude>
                     <exclude>com.google.protobuf.Timestamp$Builder*</exclude>
                     <exclude>com.google.protobuf.Type</exclude>
                     <exclude>com.google.protobuf.UInt32Value</exclude>
+                    <exclude>com.google.protobuf.UInt32Value$*</exclude>
                     <exclude>com.google.protobuf.UInt32ValueOrBuilder</exclude>
                     <exclude>com.google.protobuf.UInt32Value$Builder*</exclude>
                     <exclude>com.google.protobuf.UInt64Value</exclude>
+                    <exclude>com.google.protobuf.UInt64Value$*</exclude>
                     <exclude>com.google.protobuf.UInt64ValueOrBuilder</exclude>
                     <exclude>com.google.protobuf.UInt64Value$Builder*</exclude>
                     <exclude>com.google.protobuf.Value</exclude>
+                    <exclude>com.google.protobuf.Value$*</exclude>
                     <exclude>com.google.protobuf.WrappersProto</exclude>
                     <exclude>com.google.protobuf.DurationProto</exclude>
                     <exclude>com.google.protobuf.TimestampProto</exclude>
