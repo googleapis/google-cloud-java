@@ -255,9 +255,10 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Specifications that define the specific [DataStore]s to be searched, along
-   * with configurations for those data stores. This is only considered for
-   * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+   * Specifications that define the specific
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+   * along with configurations for those data stores. This is only considered
+   * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
    * stores. For engines with a single data store, the specs directly under
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
    * used.
@@ -273,9 +274,10 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Specifications that define the specific [DataStore]s to be searched, along
-   * with configurations for those data stores. This is only considered for
-   * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+   * Specifications that define the specific
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+   * along with configurations for those data stores. This is only considered
+   * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
    * stores. For engines with a single data store, the specs directly under
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
    * used.
@@ -290,9 +292,10 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Specifications that define the specific [DataStore]s to be searched, along
-   * with configurations for those data stores. This is only considered for
-   * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+   * Specifications that define the specific
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+   * along with configurations for those data stores. This is only considered
+   * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
    * stores. For engines with a single data store, the specs directly under
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
    * used.
@@ -307,9 +310,10 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Specifications that define the specific [DataStore]s to be searched, along
-   * with configurations for those data stores. This is only considered for
-   * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+   * Specifications that define the specific
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+   * along with configurations for those data stores. This is only considered
+   * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
    * stores. For engines with a single data store, the specs directly under
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
    * used.
@@ -325,9 +329,10 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Specifications that define the specific [DataStore]s to be searched, along
-   * with configurations for those data stores. This is only considered for
-   * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+   * Specifications that define the specific
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+   * along with configurations for those data stores. This is only considered
+   * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
    * stores. For engines with a single data store, the specs directly under
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
    * used.

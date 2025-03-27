@@ -77,6 +77,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     VECTOR_DB_CONFIG(9),
+    VERTEX_AI_SEARCH_CONFIG(10),
     BACKENDCONFIG_NOT_SET(0);
     private final int value;
 
@@ -97,6 +98,8 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 9:
           return VECTOR_DB_CONFIG;
+        case 10:
+          return VERTEX_AI_SEARCH_CONFIG;
         case 0:
           return BACKENDCONFIG_NOT_SET;
         default:
@@ -481,6 +484,64 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.aiplatform.v1.RagVectorDbConfig.getDefaultInstance();
   }
 
+  public static final int VERTEX_AI_SEARCH_CONFIG_FIELD_NUMBER = 10;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vertex AI Search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the vertexAiSearchConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasVertexAiSearchConfig() {
+    return backendConfigCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vertex AI Search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The vertexAiSearchConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.VertexAiSearchConfig getVertexAiSearchConfig() {
+    if (backendConfigCase_ == 10) {
+      return (com.google.cloud.aiplatform.v1.VertexAiSearchConfig) backendConfig_;
+    }
+    return com.google.cloud.aiplatform.v1.VertexAiSearchConfig.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vertex AI Search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.VertexAiSearchConfigOrBuilder
+      getVertexAiSearchConfigOrBuilder() {
+    if (backendConfigCase_ == 10) {
+      return (com.google.cloud.aiplatform.v1.VertexAiSearchConfig) backendConfig_;
+    }
+    return com.google.cloud.aiplatform.v1.VertexAiSearchConfig.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -516,6 +577,9 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     if (backendConfigCase_ == 9) {
       output.writeMessage(9, (com.google.cloud.aiplatform.v1.RagVectorDbConfig) backendConfig_);
     }
+    if (backendConfigCase_ == 10) {
+      output.writeMessage(10, (com.google.cloud.aiplatform.v1.VertexAiSearchConfig) backendConfig_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -547,6 +611,11 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, (com.google.cloud.aiplatform.v1.RagVectorDbConfig) backendConfig_);
+    }
+    if (backendConfigCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.cloud.aiplatform.v1.VertexAiSearchConfig) backendConfig_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -582,6 +651,9 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     switch (backendConfigCase_) {
       case 9:
         if (!getVectorDbConfig().equals(other.getVectorDbConfig())) return false;
+        break;
+      case 10:
+        if (!getVertexAiSearchConfig().equals(other.getVertexAiSearchConfig())) return false;
         break;
       case 0:
       default:
@@ -619,6 +691,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       case 9:
         hash = (37 * hash) + VECTOR_DB_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getVectorDbConfig().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + VERTEX_AI_SEARCH_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getVertexAiSearchConfig().hashCode();
         break;
       case 0:
       default:
@@ -795,6 +871,9 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       if (vectorDbConfigBuilder_ != null) {
         vectorDbConfigBuilder_.clear();
       }
+      if (vertexAiSearchConfigBuilder_ != null) {
+        vertexAiSearchConfigBuilder_.clear();
+      }
       backendConfigCase_ = 0;
       backendConfig_ = null;
       return this;
@@ -865,6 +944,9 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       result.backendConfig_ = this.backendConfig_;
       if (backendConfigCase_ == 9 && vectorDbConfigBuilder_ != null) {
         result.backendConfig_ = vectorDbConfigBuilder_.build();
+      }
+      if (backendConfigCase_ == 10 && vertexAiSearchConfigBuilder_ != null) {
+        result.backendConfig_ = vertexAiSearchConfigBuilder_.build();
       }
     }
 
@@ -943,6 +1025,11 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
             mergeVectorDbConfig(other.getVectorDbConfig());
             break;
           }
+        case VERTEX_AI_SEARCH_CONFIG:
+          {
+            mergeVertexAiSearchConfig(other.getVertexAiSearchConfig());
+            break;
+          }
         case BACKENDCONFIG_NOT_SET:
           {
             break;
@@ -1016,6 +1103,13 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
                 backendConfigCase_ = 9;
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getVertexAiSearchConfigFieldBuilder().getBuilder(), extensionRegistry);
+                backendConfigCase_ = 10;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2213,6 +2307,238 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       backendConfigCase_ = 9;
       onChanged();
       return vectorDbConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.VertexAiSearchConfig,
+            com.google.cloud.aiplatform.v1.VertexAiSearchConfig.Builder,
+            com.google.cloud.aiplatform.v1.VertexAiSearchConfigOrBuilder>
+        vertexAiSearchConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vertex AI Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the vertexAiSearchConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasVertexAiSearchConfig() {
+      return backendConfigCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vertex AI Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The vertexAiSearchConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.VertexAiSearchConfig getVertexAiSearchConfig() {
+      if (vertexAiSearchConfigBuilder_ == null) {
+        if (backendConfigCase_ == 10) {
+          return (com.google.cloud.aiplatform.v1.VertexAiSearchConfig) backendConfig_;
+        }
+        return com.google.cloud.aiplatform.v1.VertexAiSearchConfig.getDefaultInstance();
+      } else {
+        if (backendConfigCase_ == 10) {
+          return vertexAiSearchConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1.VertexAiSearchConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vertex AI Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setVertexAiSearchConfig(
+        com.google.cloud.aiplatform.v1.VertexAiSearchConfig value) {
+      if (vertexAiSearchConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        backendConfig_ = value;
+        onChanged();
+      } else {
+        vertexAiSearchConfigBuilder_.setMessage(value);
+      }
+      backendConfigCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vertex AI Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setVertexAiSearchConfig(
+        com.google.cloud.aiplatform.v1.VertexAiSearchConfig.Builder builderForValue) {
+      if (vertexAiSearchConfigBuilder_ == null) {
+        backendConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        vertexAiSearchConfigBuilder_.setMessage(builderForValue.build());
+      }
+      backendConfigCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vertex AI Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeVertexAiSearchConfig(
+        com.google.cloud.aiplatform.v1.VertexAiSearchConfig value) {
+      if (vertexAiSearchConfigBuilder_ == null) {
+        if (backendConfigCase_ == 10
+            && backendConfig_
+                != com.google.cloud.aiplatform.v1.VertexAiSearchConfig.getDefaultInstance()) {
+          backendConfig_ =
+              com.google.cloud.aiplatform.v1.VertexAiSearchConfig.newBuilder(
+                      (com.google.cloud.aiplatform.v1.VertexAiSearchConfig) backendConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          backendConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (backendConfigCase_ == 10) {
+          vertexAiSearchConfigBuilder_.mergeFrom(value);
+        } else {
+          vertexAiSearchConfigBuilder_.setMessage(value);
+        }
+      }
+      backendConfigCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vertex AI Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearVertexAiSearchConfig() {
+      if (vertexAiSearchConfigBuilder_ == null) {
+        if (backendConfigCase_ == 10) {
+          backendConfigCase_ = 0;
+          backendConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (backendConfigCase_ == 10) {
+          backendConfigCase_ = 0;
+          backendConfig_ = null;
+        }
+        vertexAiSearchConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vertex AI Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.VertexAiSearchConfig.Builder
+        getVertexAiSearchConfigBuilder() {
+      return getVertexAiSearchConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vertex AI Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.VertexAiSearchConfigOrBuilder
+        getVertexAiSearchConfigOrBuilder() {
+      if ((backendConfigCase_ == 10) && (vertexAiSearchConfigBuilder_ != null)) {
+        return vertexAiSearchConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (backendConfigCase_ == 10) {
+          return (com.google.cloud.aiplatform.v1.VertexAiSearchConfig) backendConfig_;
+        }
+        return com.google.cloud.aiplatform.v1.VertexAiSearchConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vertex AI Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.VertexAiSearchConfig,
+            com.google.cloud.aiplatform.v1.VertexAiSearchConfig.Builder,
+            com.google.cloud.aiplatform.v1.VertexAiSearchConfigOrBuilder>
+        getVertexAiSearchConfigFieldBuilder() {
+      if (vertexAiSearchConfigBuilder_ == null) {
+        if (!(backendConfigCase_ == 10)) {
+          backendConfig_ = com.google.cloud.aiplatform.v1.VertexAiSearchConfig.getDefaultInstance();
+        }
+        vertexAiSearchConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.VertexAiSearchConfig,
+                com.google.cloud.aiplatform.v1.VertexAiSearchConfig.Builder,
+                com.google.cloud.aiplatform.v1.VertexAiSearchConfigOrBuilder>(
+                (com.google.cloud.aiplatform.v1.VertexAiSearchConfig) backendConfig_,
+                getParentForChildren(),
+                isClean());
+        backendConfig_ = null;
+      }
+      backendConfigCase_ = 10;
+      onChanged();
+      return vertexAiSearchConfigBuilder_;
     }
 
     @java.lang.Override

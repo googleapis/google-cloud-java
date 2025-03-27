@@ -7336,7 +7336,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a document matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -7352,7 +7352,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a document matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -7368,7 +7368,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a document matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -7383,7 +7383,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a document matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -7402,7 +7402,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a document matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -11995,7 +11995,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a document matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -12015,7 +12015,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a document matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -12037,7 +12037,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a document matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -12055,7 +12055,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a document matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -12074,7 +12074,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a document matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -12518,7 +12518,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a document matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -12541,7 +12541,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a document matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -12562,7 +12562,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a document matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -12584,7 +12584,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a document matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -12613,7 +12613,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a document matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -12640,7 +12640,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a document matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -12668,7 +12668,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a document matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -12697,7 +12697,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a document matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -12723,7 +12723,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a document matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -12750,7 +12750,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a document matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -12779,7 +12779,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a document matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -12803,7 +12803,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a document matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -12827,7 +12827,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a document matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -12845,7 +12845,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a document matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -12867,7 +12867,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a document matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -12892,7 +12892,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a document matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -12913,7 +12913,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a document matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -12935,7 +12935,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a document matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -27790,9 +27790,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifications that define the specific [DataStore]s to be searched, along
-   * with configurations for those data stores. This is only considered for
-   * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+   * Specifications that define the specific
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+   * along with configurations for those data stores. This is only considered
+   * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
    * stores. For engines with a single data store, the specs directly under
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
    * used.
@@ -27811,9 +27812,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifications that define the specific [DataStore]s to be searched, along
-   * with configurations for those data stores. This is only considered for
-   * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+   * Specifications that define the specific
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+   * along with configurations for those data stores. This is only considered
+   * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
    * stores. For engines with a single data store, the specs directly under
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
    * used.
@@ -27833,9 +27835,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifications that define the specific [DataStore]s to be searched, along
-   * with configurations for those data stores. This is only considered for
-   * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+   * Specifications that define the specific
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+   * along with configurations for those data stores. This is only considered
+   * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
    * stores. For engines with a single data store, the specs directly under
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
    * used.
@@ -27853,9 +27856,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifications that define the specific [DataStore]s to be searched, along
-   * with configurations for those data stores. This is only considered for
-   * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+   * Specifications that define the specific
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+   * along with configurations for those data stores. This is only considered
+   * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
    * stores. For engines with a single data store, the specs directly under
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
    * used.
@@ -27874,9 +27878,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifications that define the specific [DataStore]s to be searched, along
-   * with configurations for those data stores. This is only considered for
-   * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+   * Specifications that define the specific
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+   * along with configurations for those data stores. This is only considered
+   * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
    * stores. For engines with a single data store, the specs directly under
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
    * used.
@@ -31599,9 +31604,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifications that define the specific [DataStore]s to be searched, along
-     * with configurations for those data stores. This is only considered for
-     * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+     * Specifications that define the specific
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+     * along with configurations for those data stores. This is only considered
+     * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
      * stores. For engines with a single data store, the specs directly under
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
      * used.
@@ -31623,9 +31629,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifications that define the specific [DataStore]s to be searched, along
-     * with configurations for those data stores. This is only considered for
-     * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+     * Specifications that define the specific
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+     * along with configurations for those data stores. This is only considered
+     * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
      * stores. For engines with a single data store, the specs directly under
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
      * used.
@@ -31646,9 +31653,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifications that define the specific [DataStore]s to be searched, along
-     * with configurations for those data stores. This is only considered for
-     * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+     * Specifications that define the specific
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+     * along with configurations for those data stores. This is only considered
+     * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
      * stores. For engines with a single data store, the specs directly under
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
      * used.
@@ -31670,9 +31678,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifications that define the specific [DataStore]s to be searched, along
-     * with configurations for those data stores. This is only considered for
-     * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+     * Specifications that define the specific
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+     * along with configurations for those data stores. This is only considered
+     * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
      * stores. For engines with a single data store, the specs directly under
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
      * used.
@@ -31700,9 +31709,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifications that define the specific [DataStore]s to be searched, along
-     * with configurations for those data stores. This is only considered for
-     * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+     * Specifications that define the specific
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+     * along with configurations for those data stores. This is only considered
+     * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
      * stores. For engines with a single data store, the specs directly under
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
      * used.
@@ -31728,9 +31738,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifications that define the specific [DataStore]s to be searched, along
-     * with configurations for those data stores. This is only considered for
-     * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+     * Specifications that define the specific
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+     * along with configurations for those data stores. This is only considered
+     * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
      * stores. For engines with a single data store, the specs directly under
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
      * used.
@@ -31758,9 +31769,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifications that define the specific [DataStore]s to be searched, along
-     * with configurations for those data stores. This is only considered for
-     * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+     * Specifications that define the specific
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+     * along with configurations for those data stores. This is only considered
+     * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
      * stores. For engines with a single data store, the specs directly under
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
      * used.
@@ -31788,9 +31800,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifications that define the specific [DataStore]s to be searched, along
-     * with configurations for those data stores. This is only considered for
-     * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+     * Specifications that define the specific
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+     * along with configurations for those data stores. This is only considered
+     * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
      * stores. For engines with a single data store, the specs directly under
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
      * used.
@@ -31815,9 +31828,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifications that define the specific [DataStore]s to be searched, along
-     * with configurations for those data stores. This is only considered for
-     * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+     * Specifications that define the specific
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+     * along with configurations for those data stores. This is only considered
+     * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
      * stores. For engines with a single data store, the specs directly under
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
      * used.
@@ -31843,9 +31857,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifications that define the specific [DataStore]s to be searched, along
-     * with configurations for those data stores. This is only considered for
-     * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+     * Specifications that define the specific
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+     * along with configurations for those data stores. This is only considered
+     * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
      * stores. For engines with a single data store, the specs directly under
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
      * used.
@@ -31872,9 +31887,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifications that define the specific [DataStore]s to be searched, along
-     * with configurations for those data stores. This is only considered for
-     * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+     * Specifications that define the specific
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+     * along with configurations for those data stores. This is only considered
+     * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
      * stores. For engines with a single data store, the specs directly under
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
      * used.
@@ -31898,9 +31914,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifications that define the specific [DataStore]s to be searched, along
-     * with configurations for those data stores. This is only considered for
-     * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+     * Specifications that define the specific
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+     * along with configurations for those data stores. This is only considered
+     * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
      * stores. For engines with a single data store, the specs directly under
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
      * used.
@@ -31924,9 +31941,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifications that define the specific [DataStore]s to be searched, along
-     * with configurations for those data stores. This is only considered for
-     * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+     * Specifications that define the specific
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+     * along with configurations for those data stores. This is only considered
+     * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
      * stores. For engines with a single data store, the specs directly under
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
      * used.
@@ -31944,9 +31962,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifications that define the specific [DataStore]s to be searched, along
-     * with configurations for those data stores. This is only considered for
-     * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+     * Specifications that define the specific
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+     * along with configurations for those data stores. This is only considered
+     * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
      * stores. For engines with a single data store, the specs directly under
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
      * used.
@@ -31968,9 +31987,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifications that define the specific [DataStore]s to be searched, along
-     * with configurations for those data stores. This is only considered for
-     * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+     * Specifications that define the specific
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+     * along with configurations for those data stores. This is only considered
+     * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
      * stores. For engines with a single data store, the specs directly under
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
      * used.
@@ -31993,9 +32013,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifications that define the specific [DataStore]s to be searched, along
-     * with configurations for those data stores. This is only considered for
-     * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+     * Specifications that define the specific
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+     * along with configurations for those data stores. This is only considered
+     * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
      * stores. For engines with a single data store, the specs directly under
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
      * used.
@@ -32015,9 +32036,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifications that define the specific [DataStore]s to be searched, along
-     * with configurations for those data stores. This is only considered for
-     * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+     * Specifications that define the specific
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+     * along with configurations for those data stores. This is only considered
+     * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
      * stores. For engines with a single data store, the specs directly under
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
      * used.
@@ -32038,9 +32060,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifications that define the specific [DataStore]s to be searched, along
-     * with configurations for those data stores. This is only considered for
-     * [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+     * Specifications that define the specific
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+     * along with configurations for those data stores. This is only considered
+     * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
      * stores. For engines with a single data store, the specs directly under
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
      * used.

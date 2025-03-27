@@ -215,6 +215,57 @@
         }
       }
     },
+    "ExampleStoreService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ExampleStoreServiceClient",
+          "rpcs": {
+            "CreateExampleStore": {
+              "methods": ["createExampleStoreAsync", "createExampleStoreAsync", "createExampleStoreAsync", "createExampleStoreOperationCallable", "createExampleStoreCallable"]
+            },
+            "DeleteExampleStore": {
+              "methods": ["deleteExampleStoreAsync", "deleteExampleStoreAsync", "deleteExampleStoreAsync", "deleteExampleStoreOperationCallable", "deleteExampleStoreCallable"]
+            },
+            "FetchExamples": {
+              "methods": ["fetchExamples", "fetchExamplesPagedCallable", "fetchExamplesCallable"]
+            },
+            "GetExampleStore": {
+              "methods": ["getExampleStore", "getExampleStore", "getExampleStore", "getExampleStoreCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListExampleStores": {
+              "methods": ["listExampleStores", "listExampleStores", "listExampleStores", "listExampleStoresPagedCallable", "listExampleStoresCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RemoveExamples": {
+              "methods": ["removeExamples", "removeExamplesCallable"]
+            },
+            "SearchExamples": {
+              "methods": ["searchExamples", "searchExamplesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateExampleStore": {
+              "methods": ["updateExampleStoreAsync", "updateExampleStoreAsync", "updateExampleStoreOperationCallable", "updateExampleStoreCallable"]
+            },
+            "UpsertExamples": {
+              "methods": ["upsertExamples", "upsertExamplesCallable"]
+            }
+          }
+        }
+      }
+    },
     "ExtensionExecutionService": {
       "clients": {
         "grpc": {
