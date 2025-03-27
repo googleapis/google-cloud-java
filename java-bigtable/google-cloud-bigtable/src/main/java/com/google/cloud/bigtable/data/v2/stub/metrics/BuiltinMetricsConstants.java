@@ -50,6 +50,8 @@ public class BuiltinMetricsConstants {
   static final AttributeKey<String> STATUS_KEY = AttributeKey.stringKey("status");
   static final AttributeKey<String> CLIENT_UID_KEY = AttributeKey.stringKey("client_uid");
 
+  public static final String METER_NAME = "bigtable.googleapis.com/internal/client/";
+
   // Metric names
   public static final String OPERATION_LATENCIES_NAME = "operation_latencies";
   public static final String ATTEMPT_LATENCIES_NAME = "attempt_latencies";
@@ -61,6 +63,38 @@ public class BuiltinMetricsConstants {
   static final String REMAINING_DEADLINE_NAME = "remaining_deadline";
   static final String CLIENT_BLOCKING_LATENCIES_NAME = "throttling_latencies";
   static final String PER_CONNECTION_ERROR_COUNT_NAME = "per_connection_error_count";
+
+  public static final Map<String, Set<String>> GRPC_METRICS =
+      ImmutableMap.<String, Set<String>>builder()
+          .put(
+              "grpc.client.attempt.duration",
+              ImmutableSet.of("grpc.lb.locality", "grpc.method", "grpc.target", "grpc.status"))
+          .put(
+              "grpc.lb.rls.default_target_picks",
+              ImmutableSet.of("grpc.lb.rls.data_plane_target", "grpc.lb.pick_result"))
+          .put(
+              "grpc.lb.rls.target_picks",
+              ImmutableSet.of(
+                  "grpc.target",
+                  "grpc.lb.rls.server_target",
+                  "grpc.lb.rls.data_plane_target",
+                  "grpc.lb.pick_result"))
+          .put(
+              "grpc.lb.rls.failed_picks",
+              ImmutableSet.of("grpc.target", "grpc.lb.rls.server_target"))
+          // TODO: "grpc.xds_client.connected"
+          .put("grpc.xds_client.server_failure", ImmutableSet.of("grpc.target", "grpc.xds.server"))
+          // TODO: "grpc.xds_client.resource_updates_valid",
+          .put(
+              "grpc.xds_client.resource_updates_invalid",
+              ImmutableSet.of("grpc.target", "grpc.xds.server", "grpc.xds.resource_type"))
+          // TODO: "grpc.xds_client.resources"
+          .build();
+
+  public static final Set<String> INTERNAL_METRICS =
+      ImmutableSet.of(PER_CONNECTION_ERROR_COUNT_NAME).stream()
+          .map(m -> METER_NAME + m)
+          .collect(ImmutableSet.toImmutableSet());
 
   // Buckets under 100,000 are identical to buckets for server side metrics handler_latencies.
   // Extending client side bucket to up to 3,200,000.
@@ -96,8 +130,6 @@ public class BuiltinMetricsConstants {
               250_000.0,
               500_000.0,
               1_000_000.0));
-
-  public static final String METER_NAME = "bigtable.googleapis.com/internal/client/";
 
   static final Set<AttributeKey> COMMON_ATTRIBUTES =
       ImmutableSet.of(

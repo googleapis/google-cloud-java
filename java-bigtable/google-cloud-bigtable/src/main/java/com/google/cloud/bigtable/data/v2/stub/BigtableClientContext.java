@@ -26,12 +26,14 @@ import com.google.auth.Credentials;
 import com.google.auth.oauth2.ServiceAccountJwtAccessCredentials;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.internal.JwtCredentialsWithAudience;
+import com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants;
 import com.google.cloud.bigtable.data.v2.stub.metrics.CustomOpenTelemetryMetricsProvider;
 import com.google.cloud.bigtable.data.v2.stub.metrics.DefaultMetricsProvider;
 import com.google.cloud.bigtable.data.v2.stub.metrics.ErrorCountPerConnectionMetricTracker;
 import com.google.cloud.bigtable.data.v2.stub.metrics.MetricsProvider;
 import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.opentelemetry.GrpcOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import java.io.IOException;
@@ -100,6 +102,9 @@ public class BigtableClientContext {
         // a configurable transport provider + otel
         errorCountPerConnectionMetricTracker =
             setupPerConnectionErrorTracer(builder, transportProvider, internalOtel);
+
+        // Configure grpc metrics
+        configureGrpcOtel(transportProvider, internalOtel);
       }
     }
 
@@ -131,6 +136,33 @@ public class BigtableClientContext {
     }
 
     return new BigtableClientContext(clientContext, openTelemetry, internalOtel);
+  }
+
+  private static void configureGrpcOtel(
+      InstantiatingGrpcChannelProvider.Builder transportProvider, OpenTelemetrySdk otel) {
+
+    GrpcOpenTelemetry grpcOtel =
+        GrpcOpenTelemetry.newBuilder()
+            .sdk(otel)
+            .addOptionalLabel("grpc.lb.locality")
+            // Disable default grpc metrics
+            .disableAllMetrics()
+            // Enable specific grpc metrics
+            .enableMetrics(BuiltinMetricsConstants.GRPC_METRICS.keySet())
+            .build();
+
+    @SuppressWarnings("rawtypes")
+    ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> oldConfigurator =
+        transportProvider.getChannelConfigurator();
+
+    transportProvider.setChannelConfigurator(
+        b -> {
+          if (oldConfigurator != null) {
+            b = oldConfigurator.apply(b);
+          }
+          grpcOtel.configureChannelBuilder(b);
+          return b;
+        });
   }
 
   private BigtableClientContext(

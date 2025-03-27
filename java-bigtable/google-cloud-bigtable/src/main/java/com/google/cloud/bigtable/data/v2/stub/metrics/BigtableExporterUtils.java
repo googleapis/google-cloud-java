@@ -28,7 +28,9 @@ import static com.google.api.MetricDescriptor.ValueType.INT64;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.BIGTABLE_PROJECT_ID_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLIENT_UID_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLUSTER_ID_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.GRPC_METRICS;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.INSTANCE_ID_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.INTERNAL_METRICS;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.METER_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.TABLE_ID_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ZONE_ID_KEY;
@@ -74,6 +76,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 import java.util.logging.Level;
@@ -164,16 +167,12 @@ class BigtableExporterUtils {
         "convert application metrics is called when the supported resource is not detected");
     List<TimeSeries> allTimeSeries = new ArrayList<>();
     for (MetricData metricData : collection) {
-      if (!metricData.getInstrumentationScopeInfo().getName().equals(METER_NAME)) {
-        // Filter out metric data for instruments that are not part of the bigtable builtin metrics
-        continue;
-      }
       metricData.getData().getPoints().stream()
           .map(
               pointData ->
-                  convertPointToApplicationResourceTimeSeries(
-                      metricData, pointData, applicationResource))
-          .forEach(allTimeSeries::add);
+                  createInternalMetricsTimeSeries(metricData, pointData, applicationResource))
+          .filter(Optional::isPresent)
+          .forEach(ts -> ts.ifPresent(allTimeSeries::add));
     }
     return allTimeSeries;
   }
@@ -290,7 +289,7 @@ class BigtableExporterUtils {
     return builder.build();
   }
 
-  private static TimeSeries convertPointToApplicationResourceTimeSeries(
+  private static Optional<TimeSeries> createInternalMetricsTimeSeries(
       MetricData metricData, PointData pointData, MonitoredResource applicationResource) {
     TimeSeries.Builder builder =
         TimeSeries.newBuilder()
@@ -298,11 +297,20 @@ class BigtableExporterUtils {
             .setValueType(convertValueType(metricData.getType()))
             .setResource(applicationResource);
 
-    Metric.Builder metricBuilder = Metric.newBuilder().setType(metricData.getName());
-
-    Attributes attributes = pointData.getAttributes();
-    for (AttributeKey<?> key : attributes.asMap().keySet()) {
-      metricBuilder.putLabels(key.getKey(), String.valueOf(attributes.get(key)));
+    final Metric.Builder metricBuilder;
+    // TODO: clean this up
+    // Internal metrics are based on views that include the metric prefix
+    // gRPC metrics dont have views and are dot encoded
+    // To unify these:
+    // - the useless views should be removed
+    // - internal metrics should use relative metric names w/o the prefix
+    if (INTERNAL_METRICS.contains(metricData.getName())) {
+      metricBuilder = newApplicationMetricBuilder(metricData.getName(), pointData.getAttributes());
+    } else if (GRPC_METRICS.containsKey(metricData.getName())) {
+      metricBuilder = newGrpcMetricBuilder(metricData.getName(), pointData.getAttributes());
+    } else {
+      logger.fine("Skipping unexpected internal metric: " + metricData.getName());
+      return Optional.empty();
     }
 
     builder.setMetric(metricBuilder.build());
@@ -314,7 +322,42 @@ class BigtableExporterUtils {
             .build();
 
     builder.addPoints(createPoint(metricData.getType(), pointData, timeInterval));
-    return builder.build();
+    return Optional.of(builder.build());
+  }
+
+  private static Metric.Builder newApplicationMetricBuilder(
+      String metricName, Attributes attributes) {
+    // TODO: unify handling of metric prefixes
+    Metric.Builder metricBuilder = Metric.newBuilder().setType(metricName);
+    for (Map.Entry<AttributeKey<?>, Object> e : attributes.asMap().entrySet()) {
+      metricBuilder.putLabels(e.getKey().getKey(), String.valueOf(e.getValue()));
+    }
+    return metricBuilder;
+  }
+
+  private static Metric.Builder newGrpcMetricBuilder(String grpcMetricName, Attributes attributes) {
+    Set<String> allowedAttrs = GRPC_METRICS.get(grpcMetricName);
+
+    Metric.Builder metricBuilder =
+        Metric.newBuilder()
+            .setType("bigtable.googleapis.com/internal/client/" + grpcMetricName.replace('.', '/'));
+    for (Map.Entry<AttributeKey<?>, Object> e : attributes.asMap().entrySet()) {
+      String attrKey = e.getKey().getKey();
+      Object attrValue = e.getValue();
+
+      // gRPC metrics are experimental and can change attribute names, to avoid incompatibility with
+      // the predefined
+      // metric schemas in stackdriver, filter out unknown keys
+      if (!allowedAttrs.contains(attrKey)) {
+        continue;
+      }
+      // translate grpc key format to be compatible with cloud monitoring:
+      // grpc.xds_client.server_failure -> grpc_xds_client_server_failure
+      String normalizedKey = attrKey.replace('.', '_');
+      metricBuilder.putLabels(normalizedKey, String.valueOf(attrValue));
+    }
+
+    return metricBuilder;
   }
 
   private static MetricKind convertMetricKind(MetricData metricData) {

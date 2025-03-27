@@ -172,8 +172,10 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
 
     // Skips exporting if there's none
     if (bigtableTimeSeries.isEmpty()) {
+      System.out.println("skipping empty metrics: " + this.exporterName);
       return CompletableResultCode.ofSuccess();
     }
+    System.out.println(bigtableTimeSeries);
 
     CompletableResultCode exportCode = new CompletableResultCode();
     bigtableTimeSeries.forEach(
@@ -335,18 +337,10 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
         return ImmutableMap.of();
       }
 
-      List<MetricData> relevantData =
-          metricData.stream()
-              .filter(md -> APPLICATION_METRICS.contains(md.getName()))
-              .collect(Collectors.toList());
-      if (relevantData.isEmpty()) {
-        return ImmutableMap.of();
-      }
-
       return ImmutableMap.of(
           ProjectName.of(monitoredResource.getLabelsOrThrow(APPLICATION_RESOURCE_PROJECT_ID)),
           BigtableExporterUtils.convertToApplicationResourceTimeSeries(
-              relevantData, monitoredResource));
+              metricData, monitoredResource));
     }
   }
 }
