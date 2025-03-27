@@ -61,6 +61,12 @@
       <artifactId>grpc-google-common-protos</artifactId>
       <version>protobuf-shading-within-module</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.protobuf</groupId>
+          <artifactId>protobuf-java</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -95,6 +101,12 @@
       <artifactId>grpc-google-iam-v1</artifactId>
       <version>protobuf-shading-within-module</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.protobuf</groupId>
+          <artifactId>protobuf-java</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
