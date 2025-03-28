@@ -73,6 +73,14 @@ public final class VertexRagDataProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_RagFile_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_RagChunk_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_RagChunk_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_RagChunk_PageSpan_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_RagChunk_PageSpan_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_RagFileChunkingConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_RagFileChunkingConfig_fieldAccessorTable;
@@ -147,18 +155,18 @@ public final class VertexRagDataProto {
           + "oud.aiplatform.v1.CorpusStatus.StateB\003\340A"
           + "\003\022\031\n\014error_status\030\002 \001(\tB\003\340A\003\"<\n\005State\022\013\n"
           + "\007UNKNOWN\020\000\022\017\n\013INITIALIZED\020\001\022\n\n\006ACTIVE\020\002\022"
-          + "\t\n\005ERROR\020\003\"\312\004\n\tRagCorpus\022\021\n\004name\030\001 \001(\tB\003"
-          + "\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022\030\n\013descri"
-          + "ption\030\003 \001(\tB\003\340A\001\0224\n\013create_time\030\004 \001(\0132\032."
-          + "google.protobuf.TimestampB\003\340A\003\0224\n\013update"
-          + "_time\030\005 \001(\0132\032.google.protobuf.TimestampB"
-          + "\003\340A\003\022D\n\rcorpus_status\030\010 \001(\0132(.google.clo"
-          + "ud.aiplatform.v1.CorpusStatusB\003\340A\003\022Q\n\020ve"
-          + "ctor_db_config\030\t \001(\0132-.google.cloud.aipl"
-          + "atform.v1.RagVectorDbConfigB\006\340A\001\340A\005H\000\022[\n"
-          + "\027vertex_ai_search_config\030\n \001(\01320.google."
-          + "cloud.aiplatform.v1.VertexAiSearchConfig"
-          + "B\006\340A\001\340A\005H\000:\200\001\352A}\n#aiplatform.googleapis."
+          + "\t\n\005ERROR\020\003\"\312\004\n\tRagCorpus\022Q\n\020vector_db_co"
+          + "nfig\030\t \001(\0132-.google.cloud.aiplatform.v1."
+          + "RagVectorDbConfigB\006\340A\001\340A\005H\000\022[\n\027vertex_ai"
+          + "_search_config\030\n \001(\01320.google.cloud.aipl"
+          + "atform.v1.VertexAiSearchConfigB\006\340A\001\340A\005H\000"
+          + "\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001("
+          + "\tB\003\340A\002\022\030\n\013description\030\003 \001(\tB\003\340A\001\0224\n\013crea"
+          + "te_time\030\004 \001(\0132\032.google.protobuf.Timestam"
+          + "pB\003\340A\003\0224\n\013update_time\030\005 \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\003\340A\003\022D\n\rcorpus_status\030\010 "
+          + "\001(\0132(.google.cloud.aiplatform.v1.CorpusS"
+          + "tatusB\003\340A\003:\200\001\352A}\n#aiplatform.googleapis."
           + "com/RagCorpus\022?projects/{project}/locati"
           + "ons/{location}/ragCorpora/{rag_corpus}*\n"
           + "ragCorpora2\tragCorpusB\020\n\016backend_config\""
@@ -183,54 +191,58 @@ public final class VertexRagDataProto {
           + "gleapis.com/RagFile\022Sprojects/{project}/"
           + "locations/{location}/ragCorpora/{rag_cor"
           + "pus}/ragFiles/{rag_file}*\010ragFiles2\007ragF"
-          + "ileB\021\n\017rag_file_source\"\324\001\n\025RagFileChunki"
-          + "ngConfig\022f\n\025fixed_length_chunking\030\003 \001(\0132"
-          + "E.google.cloud.aiplatform.v1.RagFileChun"
-          + "kingConfig.FixedLengthChunkingH\000\032@\n\023Fixe"
-          + "dLengthChunking\022\022\n\nchunk_size\030\001 \001(\005\022\025\n\rc"
-          + "hunk_overlap\030\002 \001(\005B\021\n\017chunking_config\"r\n"
-          + "\033RagFileTransformationConfig\022S\n\030rag_file"
-          + "_chunking_config\030\001 \001(\01321.google.cloud.ai"
-          + "platform.v1.RagFileChunkingConfig\"\306\001\n\024Ra"
-          + "gFileParsingConfig\022V\n\rlayout_parser\030\004 \001("
-          + "\0132=.google.cloud.aiplatform.v1.RagFilePa"
-          + "rsingConfig.LayoutParserH\000\032L\n\014LayoutPars"
-          + "er\022\026\n\016processor_name\030\001 \001(\t\022$\n\034max_parsin"
-          + "g_requests_per_min\030\002 \001(\005B\010\n\006parser\"v\n\023Up"
-          + "loadRagFileConfig\022_\n\036rag_file_transforma"
-          + "tion_config\030\003 \001(\01327.google.cloud.aiplatf"
-          + "orm.v1.RagFileTransformationConfig\"\354\007\n\024I"
-          + "mportRagFilesConfig\022;\n\ngcs_source\030\002 \001(\0132"
-          + "%.google.cloud.aiplatform.v1.GcsSourceH\000"
-          + "\022L\n\023google_drive_source\030\003 \001(\0132-.google.c"
-          + "loud.aiplatform.v1.GoogleDriveSourceH\000\022?"
-          + "\n\014slack_source\030\006 \001(\0132\'.google.cloud.aipl"
-          + "atform.v1.SlackSourceH\000\022=\n\013jira_source\030\007"
-          + " \001(\0132&.google.cloud.aiplatform.v1.JiraSo"
-          + "urceH\000\022L\n\023share_point_sources\030\r \001(\0132-.go"
-          + "ogle.cloud.aiplatform.v1.SharePointSourc"
-          + "esH\000\022R\n\030partial_failure_gcs_sink\030\013 \001(\0132*"
-          + ".google.cloud.aiplatform.v1.GcsDestinati"
-          + "onB\002\030\001H\001\022\\\n\035partial_failure_bigquery_sin"
-          + "k\030\014 \001(\0132/.google.cloud.aiplatform.v1.Big"
-          + "QueryDestinationB\002\030\001H\001\022L\n\026import_result_"
-          + "gcs_sink\030\016 \001(\0132*.google.cloud.aiplatform"
-          + ".v1.GcsDestinationH\002\022V\n\033import_result_bi"
-          + "gquery_sink\030\017 \001(\0132/.google.cloud.aiplatf"
-          + "orm.v1.BigQueryDestinationH\002\022_\n\036rag_file"
-          + "_transformation_config\030\020 \001(\01327.google.cl"
-          + "oud.aiplatform.v1.RagFileTransformationC"
-          + "onfig\022V\n\027rag_file_parsing_config\030\010 \001(\01320"
-          + ".google.cloud.aiplatform.v1.RagFileParsi"
-          + "ngConfigB\003\340A\001\022+\n\036max_embedding_requests_"
-          + "per_min\030\005 \001(\005B\003\340A\001B\017\n\rimport_sourceB\026\n\024p"
-          + "artial_failure_sinkB\024\n\022import_result_sin"
-          + "kB\320\001\n\036com.google.cloud.aiplatform.v1B\022Ve"
-          + "rtexRagDataProtoP\001Z>cloud.google.com/go/"
-          + "aiplatform/apiv1/aiplatformpb;aiplatform"
-          + "pb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google"
-          + "\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AI"
-          + "Platform::V1b\006proto3"
+          + "ileB\021\n\017rag_file_source\"\240\001\n\010RagChunk\022\014\n\004t"
+          + "ext\030\001 \001(\t\022E\n\tpage_span\030\002 \001(\0132-.google.cl"
+          + "oud.aiplatform.v1.RagChunk.PageSpanH\000\210\001\001"
+          + "\0321\n\010PageSpan\022\022\n\nfirst_page\030\001 \001(\005\022\021\n\tlast"
+          + "_page\030\002 \001(\005B\014\n\n_page_span\"\324\001\n\025RagFileChu"
+          + "nkingConfig\022f\n\025fixed_length_chunking\030\003 \001"
+          + "(\0132E.google.cloud.aiplatform.v1.RagFileC"
+          + "hunkingConfig.FixedLengthChunkingH\000\032@\n\023F"
+          + "ixedLengthChunking\022\022\n\nchunk_size\030\001 \001(\005\022\025"
+          + "\n\rchunk_overlap\030\002 \001(\005B\021\n\017chunking_config"
+          + "\"r\n\033RagFileTransformationConfig\022S\n\030rag_f"
+          + "ile_chunking_config\030\001 \001(\01321.google.cloud"
+          + ".aiplatform.v1.RagFileChunkingConfig\"\306\001\n"
+          + "\024RagFileParsingConfig\022V\n\rlayout_parser\030\004"
+          + " \001(\0132=.google.cloud.aiplatform.v1.RagFil"
+          + "eParsingConfig.LayoutParserH\000\032L\n\014LayoutP"
+          + "arser\022\026\n\016processor_name\030\001 \001(\t\022$\n\034max_par"
+          + "sing_requests_per_min\030\002 \001(\005B\010\n\006parser\"v\n"
+          + "\023UploadRagFileConfig\022_\n\036rag_file_transfo"
+          + "rmation_config\030\003 \001(\01327.google.cloud.aipl"
+          + "atform.v1.RagFileTransformationConfig\"\354\007"
+          + "\n\024ImportRagFilesConfig\022;\n\ngcs_source\030\002 \001"
+          + "(\0132%.google.cloud.aiplatform.v1.GcsSourc"
+          + "eH\000\022L\n\023google_drive_source\030\003 \001(\0132-.googl"
+          + "e.cloud.aiplatform.v1.GoogleDriveSourceH"
+          + "\000\022?\n\014slack_source\030\006 \001(\0132\'.google.cloud.a"
+          + "iplatform.v1.SlackSourceH\000\022=\n\013jira_sourc"
+          + "e\030\007 \001(\0132&.google.cloud.aiplatform.v1.Jir"
+          + "aSourceH\000\022L\n\023share_point_sources\030\r \001(\0132-"
+          + ".google.cloud.aiplatform.v1.SharePointSo"
+          + "urcesH\000\022R\n\030partial_failure_gcs_sink\030\013 \001("
+          + "\0132*.google.cloud.aiplatform.v1.GcsDestin"
+          + "ationB\002\030\001H\001\022\\\n\035partial_failure_bigquery_"
+          + "sink\030\014 \001(\0132/.google.cloud.aiplatform.v1."
+          + "BigQueryDestinationB\002\030\001H\001\022L\n\026import_resu"
+          + "lt_gcs_sink\030\016 \001(\0132*.google.cloud.aiplatf"
+          + "orm.v1.GcsDestinationH\002\022V\n\033import_result"
+          + "_bigquery_sink\030\017 \001(\0132/.google.cloud.aipl"
+          + "atform.v1.BigQueryDestinationH\002\022_\n\036rag_f"
+          + "ile_transformation_config\030\020 \001(\01327.google"
+          + ".cloud.aiplatform.v1.RagFileTransformati"
+          + "onConfig\022V\n\027rag_file_parsing_config\030\010 \001("
+          + "\01320.google.cloud.aiplatform.v1.RagFilePa"
+          + "rsingConfigB\003\340A\001\022+\n\036max_embedding_reques"
+          + "ts_per_min\030\005 \001(\005B\003\340A\001B\017\n\rimport_sourceB\026"
+          + "\n\024partial_failure_sinkB\024\n\022import_result_"
+          + "sinkB\320\001\n\036com.google.cloud.aiplatform.v1B"
+          + "\022VertexRagDataProtoP\001Z>cloud.google.com/"
+          + "go/aiplatform/apiv1/aiplatformpb;aiplatf"
+          + "ormpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Goo"
+          + "gle\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud:"
+          + ":AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -331,14 +343,14 @@ public final class VertexRagDataProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_RagCorpus_descriptor,
             new java.lang.String[] {
+              "VectorDbConfig",
+              "VertexAiSearchConfig",
               "Name",
               "DisplayName",
               "Description",
               "CreateTime",
               "UpdateTime",
               "CorpusStatus",
-              "VectorDbConfig",
-              "VertexAiSearchConfig",
               "BackendConfig",
             });
     internal_static_google_cloud_aiplatform_v1_RagFile_descriptor =
@@ -361,8 +373,24 @@ public final class VertexRagDataProto {
               "FileStatus",
               "RagFileSource",
             });
-    internal_static_google_cloud_aiplatform_v1_RagFileChunkingConfig_descriptor =
+    internal_static_google_cloud_aiplatform_v1_RagChunk_descriptor =
         getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_aiplatform_v1_RagChunk_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_RagChunk_descriptor,
+            new java.lang.String[] {
+              "Text", "PageSpan",
+            });
+    internal_static_google_cloud_aiplatform_v1_RagChunk_PageSpan_descriptor =
+        internal_static_google_cloud_aiplatform_v1_RagChunk_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_aiplatform_v1_RagChunk_PageSpan_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_RagChunk_PageSpan_descriptor,
+            new java.lang.String[] {
+              "FirstPage", "LastPage",
+            });
+    internal_static_google_cloud_aiplatform_v1_RagFileChunkingConfig_descriptor =
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_aiplatform_v1_RagFileChunkingConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_RagFileChunkingConfig_descriptor,
@@ -380,7 +408,7 @@ public final class VertexRagDataProto {
               "ChunkSize", "ChunkOverlap",
             });
     internal_static_google_cloud_aiplatform_v1_RagFileTransformationConfig_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_aiplatform_v1_RagFileTransformationConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_RagFileTransformationConfig_descriptor,
@@ -388,7 +416,7 @@ public final class VertexRagDataProto {
               "RagFileChunkingConfig",
             });
     internal_static_google_cloud_aiplatform_v1_RagFileParsingConfig_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_aiplatform_v1_RagFileParsingConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_RagFileParsingConfig_descriptor,
@@ -406,7 +434,7 @@ public final class VertexRagDataProto {
               "ProcessorName", "MaxParsingRequestsPerMin",
             });
     internal_static_google_cloud_aiplatform_v1_UploadRagFileConfig_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_aiplatform_v1_UploadRagFileConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_UploadRagFileConfig_descriptor,
@@ -414,7 +442,7 @@ public final class VertexRagDataProto {
               "RagFileTransformationConfig",
             });
     internal_static_google_cloud_aiplatform_v1_ImportRagFilesConfig_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_aiplatform_v1_ImportRagFilesConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ImportRagFilesConfig_descriptor,
