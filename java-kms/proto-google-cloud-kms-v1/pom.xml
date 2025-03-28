@@ -124,6 +124,7 @@
                     <exclude>com.google.protobuf.LongArrayList</exclude>
                     <exclude>com.google.protobuf.ManifestSchemaFactory</exclude>
                     <exclude>com.google.protobuf.MapEntry</exclude>
+                    <exclude>com.google.protobuf.MapEntry$*</exclude>
                     <exclude>com.google.protobuf.MapEntryLite</exclude>
                     <exclude>com.google.protobuf.MapField</exclude>
                     <exclude>com.google.protobuf.MapFieldLite</exclude>
@@ -211,6 +212,7 @@
                     <exclude>com.google.protobuf.FieldMask</exclude>
                     <exclude>com.google.protobuf.FieldMask*</exclude>
                     <exclude>com.google.protobuf.FloatValue</exclude>
+                    <exclude>com.google.protobuf.FloatValueOrBuilder</exclude>
                     <exclude>com.google.protobuf.FloatValue$*</exclude>
                     <exclude>com.google.protobuf.FloatValue$Builder*</exclude>
                     <exclude>com.google.protobuf.Int32Value</exclude>
