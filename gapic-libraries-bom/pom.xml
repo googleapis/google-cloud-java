@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>gapic-libraries-bom</artifactId>
   <packaging>pom</packaging>
-  <version>1.54.0</version><!-- {x-version-update:google-cloud-java:current} -->
+  <version>1.54.1</version><!-- {x-version-update:google-cloud-java:current} -->
   <name>Google Cloud Java BOM</name>
   <description>
     BOM for the libraries in google-cloud-java repository. Users should not
@@ -15,7 +15,7 @@
   <parent>
     <artifactId>google-cloud-pom-parent</artifactId>
     <groupId>com.google.cloud</groupId>
-    <version>1.54.0</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.54.1</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -1182,7 +1182,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-vertexai-bom</artifactId>
-        <version>1.20.0</version><!-- {x-version-update:google-cloud-vertexai:current} -->
+        <version>1.20.1</version><!-- {x-version-update:google-cloud-vertexai:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
