@@ -78,11 +78,13 @@ import javax.annotation.Generated;
  *           .setSafeSearch(true)
  *           .putAllUserLabels(new HashMap<String, String>())
  *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+ *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
  *           .setSession(
  *               SessionName.ofProjectLocationDataStoreSessionName(
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
  *                   .toString())
  *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+ *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
@@ -282,11 +284,13 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
    *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+   *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
    *           .setSession(
    *               SessionName.ofProjectLocationDataStoreSessionName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
    *           .build();
    *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -346,11 +350,13 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
    *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+   *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
    *           .setSession(
    *               SessionName.ofProjectLocationDataStoreSessionName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
    *       searchServiceClient.searchPagedCallable().futureCall(request);
@@ -410,11 +416,13 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
    *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+   *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
    *           .setSession(
    *               SessionName.ofProjectLocationDataStoreSessionName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
    *           .build();
    *   while (true) {
    *     SearchResponse response = searchServiceClient.searchCallable().call(request);
@@ -490,11 +498,13 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
    *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+   *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
    *           .setSession(
    *               SessionName.ofProjectLocationDataStoreSessionName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
    *           .build();
    *   for (SearchResponse.SearchResult element :
    *       searchServiceClient.searchLite(request).iterateAll()) {
@@ -565,11 +575,13 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
    *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+   *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
    *           .setSession(
    *               SessionName.ofProjectLocationDataStoreSessionName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
    *       searchServiceClient.searchLitePagedCallable().futureCall(request);
@@ -639,11 +651,13 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
    *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+   *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
    *           .setSession(
    *               SessionName.ofProjectLocationDataStoreSessionName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
    *           .build();
    *   while (true) {
    *     SearchResponse response = searchServiceClient.searchLiteCallable().call(request);

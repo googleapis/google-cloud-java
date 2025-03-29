@@ -203,6 +203,8 @@ public class DatastreamClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatastream.addResponse(expectedResponse);
 
@@ -250,6 +252,8 @@ public class DatastreamClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatastream.addResponse(expectedResponse);
 
@@ -295,6 +299,8 @@ public class DatastreamClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -355,6 +361,8 @@ public class DatastreamClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -415,6 +423,8 @@ public class DatastreamClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -703,6 +713,8 @@ public class DatastreamClientTest {
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
             .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatastream.addResponse(expectedResponse);
 
@@ -750,6 +762,8 @@ public class DatastreamClientTest {
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
             .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatastream.addResponse(expectedResponse);
 
@@ -797,6 +811,8 @@ public class DatastreamClientTest {
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
             .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -858,6 +874,8 @@ public class DatastreamClientTest {
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
             .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -919,6 +937,8 @@ public class DatastreamClientTest {
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
             .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1061,6 +1081,8 @@ public class DatastreamClientTest {
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
             .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1596,6 +1618,8 @@ public class DatastreamClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setError(Error.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1658,6 +1682,8 @@ public class DatastreamClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setError(Error.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1720,6 +1746,8 @@ public class DatastreamClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setError(Error.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
             .build();
     mockDatastream.addResponse(expectedResponse);
@@ -1769,6 +1797,8 @@ public class DatastreamClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setError(Error.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
             .build();
     mockDatastream.addResponse(expectedResponse);

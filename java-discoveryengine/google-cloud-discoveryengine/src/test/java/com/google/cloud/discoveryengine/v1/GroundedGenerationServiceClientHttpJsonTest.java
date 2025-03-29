@@ -145,6 +145,7 @@ public class GroundedGenerationServiceClientHttpJsonTest {
         CheckGroundingResponse.newBuilder()
             .setSupportScore(-635385310)
             .addAllCitedChunks(new ArrayList<FactChunk>())
+            .addAllCitedFacts(new ArrayList<CheckGroundingResponse.CheckGroundingFactChunk>())
             .addAllClaims(new ArrayList<CheckGroundingResponse.Claim>())
             .build();
     mockService.addResponse(expectedResponse);

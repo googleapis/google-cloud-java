@@ -2076,15 +2076,15 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. If set to false, a uri_pattern is generated to include all
-   * pages whose address contains the provided_uri_pattern. If set to true, an
+   * Immutable. If set to false, a uri_pattern is generated to include all pages
+   * whose address contains the provided_uri_pattern. If set to true, an
    * uri_pattern is generated to try to be an exact match of the
    * provided_uri_pattern or just the specific page if the provided_uri_pattern
    * is a specific one. provided_uri_pattern is always normalized to
    * generate the URI pattern to be used by the search engine.
    * </pre>
    *
-   * <code>bool exact_match = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>bool exact_match = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The exactMatch.
    */
@@ -3336,15 +3336,15 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. If set to false, a uri_pattern is generated to include all
-     * pages whose address contains the provided_uri_pattern. If set to true, an
+     * Immutable. If set to false, a uri_pattern is generated to include all pages
+     * whose address contains the provided_uri_pattern. If set to true, an
      * uri_pattern is generated to try to be an exact match of the
      * provided_uri_pattern or just the specific page if the provided_uri_pattern
      * is a specific one. provided_uri_pattern is always normalized to
      * generate the URI pattern to be used by the search engine.
      * </pre>
      *
-     * <code>bool exact_match = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>bool exact_match = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The exactMatch.
      */
@@ -3356,15 +3356,15 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. If set to false, a uri_pattern is generated to include all
-     * pages whose address contains the provided_uri_pattern. If set to true, an
+     * Immutable. If set to false, a uri_pattern is generated to include all pages
+     * whose address contains the provided_uri_pattern. If set to true, an
      * uri_pattern is generated to try to be an exact match of the
      * provided_uri_pattern or just the specific page if the provided_uri_pattern
      * is a specific one. provided_uri_pattern is always normalized to
      * generate the URI pattern to be used by the search engine.
      * </pre>
      *
-     * <code>bool exact_match = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>bool exact_match = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @param value The exactMatch to set.
      * @return This builder for chaining.
@@ -3380,15 +3380,15 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. If set to false, a uri_pattern is generated to include all
-     * pages whose address contains the provided_uri_pattern. If set to true, an
+     * Immutable. If set to false, a uri_pattern is generated to include all pages
+     * whose address contains the provided_uri_pattern. If set to true, an
      * uri_pattern is generated to try to be an exact match of the
      * provided_uri_pattern or just the specific page if the provided_uri_pattern
      * is a specific one. provided_uri_pattern is always normalized to
      * generate the URI pattern to be used by the search engine.
      * </pre>
      *
-     * <code>bool exact_match = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>bool exact_match = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return This builder for chaining.
      */

@@ -169,6 +169,22 @@ public final class HubProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_networkconnectivity_v1_RejectHubSpokeResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkconnectivity_v1_AcceptSpokeUpdateRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkconnectivity_v1_AcceptSpokeUpdateRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkconnectivity_v1_AcceptSpokeUpdateResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkconnectivity_v1_AcceptSpokeUpdateResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkconnectivity_v1_RejectSpokeUpdateRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkconnectivity_v1_RejectSpokeUpdateRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkconnectivity_v1_RejectSpokeUpdateResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkconnectivity_v1_RejectSpokeUpdateResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_networkconnectivity_v1_GetRouteTableRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_networkconnectivity_v1_GetRouteTableRequest_fieldAccessorTable;
@@ -287,454 +303,492 @@ public final class HubProto {
           + "google/longrunning/operations.proto\032\033goo"
           + "gle/protobuf/empty.proto\032 google/protobu"
           + "f/field_mask.proto\032\037google/protobuf/time"
-          + "stamp.proto\"\277\006\n\003Hub\022\021\n\004name\030\001 \001(\tB\003\340A\005\0224"
+          + "stamp.proto\"\304\006\n\003Hub\022\021\n\004name\030\001 \001(\tB\003\340A\005\0224"
           + "\n\013create_time\030\002 \001(\0132\032.google.protobuf.Ti"
           + "mestampB\003\340A\003\0224\n\013update_time\030\003 \001(\0132\032.goog"
           + "le.protobuf.TimestampB\003\340A\003\022D\n\006labels\030\004 \003"
           + "(\01324.google.cloud.networkconnectivity.v1"
-          + ".Hub.LabelsEntry\022\023\n\013description\030\005 \001(\t\022\026\n"
-          + "\tunique_id\030\010 \001(\tB\003\340A\003\022>\n\005state\030\t \001(\0162*.g"
-          + "oogle.cloud.networkconnectivity.v1.State"
-          + "B\003\340A\003\022E\n\014routing_vpcs\030\n \003(\0132/.google.clo"
-          + "ud.networkconnectivity.v1.RoutingVPC\022\031\n\014"
-          + "route_tables\030\013 \003(\tB\003\340A\003\022M\n\rspoke_summary"
-          + "\030\014 \001(\01321.google.cloud.networkconnectivit"
-          + "y.v1.SpokeSummaryB\003\340A\003\022I\n\013policy_mode\030\r "
-          + "\001(\0162/.google.cloud.networkconnectivity.v"
-          + "1.PolicyModeB\003\340A\001\022Q\n\017preset_topology\030\016 \001"
-          + "(\01623.google.cloud.networkconnectivity.v1"
-          + ".PresetTopologyB\003\340A\001\022\034\n\nexport_psc\030\017 \001(\010"
-          + "B\003\340A\001H\000\210\001\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r"
-          + "\n\005value\030\002 \001(\t:\0028\001:[\352AX\n&networkconnectiv"
-          + "ity.googleapis.com/Hub\022.projects/{projec"
-          + "t}/locations/global/hubs/{hub}B\r\n\013_expor"
-          + "t_psc\"\177\n\nRoutingVPC\0220\n\003uri\030\001 \001(\tB#\372A \n\036c"
-          + "ompute.googleapis.com/Network\022?\n2require"
-          + "d_for_new_site_to_site_data_transfer_spo"
-          + "kes\030\002 \001(\010B\003\340A\003\"\261\013\n\005Spoke\022\021\n\004name\030\001 \001(\tB\003"
-          + "\340A\005\0224\n\013create_time\030\002 \001(\0132\032.google.protob"
-          + "uf.TimestampB\003\340A\003\0224\n\013update_time\030\003 \001(\0132\032"
-          + ".google.protobuf.TimestampB\003\340A\003\022F\n\006label"
-          + "s\030\004 \003(\01326.google.cloud.networkconnectivi"
-          + "ty.v1.Spoke.LabelsEntry\022\023\n\013description\030\005"
-          + " \001(\t\022;\n\003hub\030\006 \001(\tB.\340A\005\372A(\n&networkconnec"
-          + "tivity.googleapis.com/Hub\022?\n\005group\030\027 \001(\t"
-          + "B0\340A\001\372A*\n(networkconnectivity.googleapis"
-          + ".com/Group\022Q\n\022linked_vpn_tunnels\030\021 \001(\01325"
-          + ".google.cloud.networkconnectivity.v1.Lin"
-          + "kedVpnTunnels\022k\n\037linked_interconnect_att"
-          + "achments\030\022 \001(\0132B.google.cloud.networkcon"
-          + "nectivity.v1.LinkedInterconnectAttachmen"
-          + "ts\022n\n!linked_router_appliance_instances\030"
-          + "\023 \001(\0132C.google.cloud.networkconnectivity"
-          + ".v1.LinkedRouterApplianceInstances\022V\n\022li"
-          + "nked_vpc_network\030\024 \001(\01325.google.cloud.ne"
-          + "tworkconnectivity.v1.LinkedVpcNetworkB\003\340"
-          + "A\001\022g\n\033linked_producer_vpc_network\030\032 \001(\0132"
-          + "=.google.cloud.networkconnectivity.v1.Li"
-          + "nkedProducerVpcNetworkB\003\340A\001\022\026\n\tunique_id"
-          + "\030\013 \001(\tB\003\340A\003\022>\n\005state\030\017 \001(\0162*.google.clou"
-          + "d.networkconnectivity.v1.StateB\003\340A\003\022L\n\007r"
-          + "easons\030\025 \003(\01326.google.cloud.networkconne"
-          + "ctivity.v1.Spoke.StateReasonB\003\340A\003\022G\n\nspo"
-          + "ke_type\030\026 \001(\0162..google.cloud.networkconn"
-          + "ectivity.v1.SpokeTypeB\003\340A\003\032\327\001\n\013StateReas"
-          + "on\022I\n\004code\030\001 \001(\0162;.google.cloud.networkc"
-          + "onnectivity.v1.Spoke.StateReason.Code\022\017\n"
-          + "\007message\030\002 \001(\t\022\024\n\014user_details\030\003 \001(\t\"V\n\004"
-          + "Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\022\n\016PENDING_RE"
-          + "VIEW\020\001\022\014\n\010REJECTED\020\002\022\n\n\006PAUSED\020\003\022\n\n\006FAIL"
-          + "ED\020\004\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
-          + "e\030\002 \001(\t:\0028\001:e\352Ab\n(networkconnectivity.go"
-          + "ogleapis.com/Spoke\0226projects/{project}/l"
-          + "ocations/{location}/spokes/{spoke}\"\354\003\n\nR"
-          + "outeTable\022\021\n\004name\030\001 \001(\tB\003\340A\005\0224\n\013create_t"
-          + "ime\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340"
-          + "A\003\0224\n\013update_time\030\003 \001(\0132\032.google.protobu"
-          + "f.TimestampB\003\340A\003\022K\n\006labels\030\004 \003(\0132;.googl"
-          + "e.cloud.networkconnectivity.v1.RouteTabl"
-          + "e.LabelsEntry\022\023\n\013description\030\005 \001(\t\022\020\n\003ui"
-          + "d\030\006 \001(\tB\003\340A\003\022>\n\005state\030\007 \001(\0162*.google.clo"
-          + "ud.networkconnectivity.v1.StateB\003\340A\003\032-\n\013"
-          + "LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
-          + "\0028\001:|\352Ay\n-networkconnectivity.googleapis"
-          + ".com/RouteTable\022Hprojects/{project}/loca"
-          + "tions/global/hubs/{hub}/routeTables/{rou"
-          + "te_table}\"\327\010\n\005Route\022\021\n\004name\030\003 \001(\tB\003\340A\005\0224"
-          + "\n\013create_time\030\004 \001(\0132\032.google.protobuf.Ti"
-          + "mestampB\003\340A\003\0224\n\013update_time\030\005 \001(\0132\032.goog"
-          + "le.protobuf.TimestampB\003\340A\003\022\025\n\rip_cidr_ra"
-          + "nge\030\001 \001(\t\022A\n\004type\030\n \001(\0162..google.cloud.n"
-          + "etworkconnectivity.v1.RouteTypeB\003\340A\003\022Y\n\024"
-          + "next_hop_vpc_network\030\002 \001(\01326.google.clou"
-          + "d.networkconnectivity.v1.NextHopVpcNetwo"
-          + "rkB\003\340A\005\022F\n\006labels\030\006 \003(\01326.google.cloud.n"
-          + "etworkconnectivity.v1.Route.LabelsEntry\022"
-          + "\023\n\013description\030\007 \001(\t\022\020\n\003uid\030\010 \001(\tB\003\340A\003\022>"
-          + "\n\005state\030\t \001(\0162*.google.cloud.networkconn"
-          + "ectivity.v1.StateB\003\340A\003\022?\n\005spoke\030\013 \001(\tB0\340"
-          + "A\005\372A*\n(networkconnectivity.googleapis.co"
-          + "m/Spoke\022\025\n\010location\030\014 \001(\tB\003\340A\003\022\025\n\010priori"
-          + "ty\030\r \001(\003B\003\340A\003\022W\n\023next_hop_vpn_tunnel\030\016 \001"
-          + "(\01325.google.cloud.networkconnectivity.v1"
-          + ".NextHopVPNTunnelB\003\340A\005\022t\n\"next_hop_route"
-          + "r_appliance_instance\030\017 \001(\0132C.google.clou"
-          + "d.networkconnectivity.v1.NextHopRouterAp"
-          + "plianceInstanceB\003\340A\005\022q\n next_hop_interco"
-          + "nnect_attachment\030\020 \001(\0132B.google.cloud.ne"
-          + "tworkconnectivity.v1.NextHopInterconnect"
-          + "AttachmentB\003\340A\005\032-\n\013LabelsEntry\022\013\n\003key\030\001 "
-          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\212\001\352A\206\001\n+networkco"
-          + "nnectivity.googleapis.com/HubRoute\022Wproj"
-          + "ects/{project}/locations/global/hubs/{hu"
-          + "b}/routeTables/{route_table}/routes/{rou"
-          + "te}\"\301\004\n\005Group\022\021\n\004name\030\001 \001(\tB\003\340A\005\0224\n\013crea"
-          + "te_time\030\002 \001(\0132\032.google.protobuf.Timestam"
-          + "pB\003\340A\003\0224\n\013update_time\030\003 \001(\0132\032.google.pro"
-          + "tobuf.TimestampB\003\340A\003\022K\n\006labels\030\004 \003(\01326.g"
-          + "oogle.cloud.networkconnectivity.v1.Group"
-          + ".LabelsEntryB\003\340A\001\022\030\n\013description\030\005 \001(\tB\003"
-          + "\340A\001\022\020\n\003uid\030\006 \001(\tB\003\340A\003\022>\n\005state\030\007 \001(\0162*.g"
-          + "oogle.cloud.networkconnectivity.v1.State"
-          + "B\003\340A\003\022I\n\013auto_accept\030\010 \001(\0132/.google.clou"
-          + "d.networkconnectivity.v1.AutoAcceptB\003\340A\001"
-          + "\022\030\n\013route_table\030\t \001(\tB\003\340A\003\032-\n\013LabelsEntr"
-          + "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:l\352Ai\n("
-          + "networkconnectivity.googleapis.com/Group"
-          + "\022=projects/{project}/locations/global/hu"
-          + "bs/{hub}/groups/{group}\"*\n\nAutoAccept\022\034\n"
-          + "\024auto_accept_projects\030\001 \003(\t\"\225\001\n\017ListHubs"
-          + "Request\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locatio"
-          + "ns.googleapis.com/Location\022\021\n\tpage_size\030"
-          + "\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001("
-          + "\t\022\020\n\010order_by\030\005 \001(\t\"x\n\020ListHubsResponse\022"
-          + "6\n\004hubs\030\001 \003(\0132(.google.cloud.networkconn"
-          + "ectivity.v1.Hub\022\027\n\017next_page_token\030\002 \001(\t"
-          + "\022\023\n\013unreachable\030\003 \003(\t\"M\n\rGetHubRequest\022<"
-          + "\n\004name\030\001 \001(\tB.\340A\002\372A(\n&networkconnectivit"
-          + "y.googleapis.com/Hub\"\267\001\n\020CreateHubReques"
-          + "t\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.goo"
-          + "gleapis.com/Location\022\023\n\006hub_id\030\002 \001(\tB\003\340A"
-          + "\002\022:\n\003hub\030\003 \001(\0132(.google.cloud.networkcon"
-          + "nectivity.v1.HubB\003\340A\002\022\027\n\nrequest_id\030\004 \001("
-          + "\tB\003\340A\001\"\235\001\n\020UpdateHubRequest\0224\n\013update_ma"
-          + "sk\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A"
-          + "\001\022:\n\003hub\030\002 \001(\0132(.google.cloud.networkcon"
-          + "nectivity.v1.HubB\003\340A\002\022\027\n\nrequest_id\030\003 \001("
-          + "\tB\003\340A\001\"i\n\020DeleteHubRequest\022<\n\004name\030\001 \001(\t"
-          + "B.\340A\002\372A(\n&networkconnectivity.googleapis"
-          + ".com/Hub\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\"\313\002\n\024Li"
-          + "stHubSpokesRequest\022<\n\004name\030\001 \001(\tB.\340A\002\372A("
-          + "\n&networkconnectivity.googleapis.com/Hub"
-          + "\022\027\n\017spoke_locations\030\002 \003(\t\022\021\n\tpage_size\030\003"
-          + " \001(\005\022\022\n\npage_token\030\004 \001(\t\022\016\n\006filter\030\005 \001(\t"
-          + "\022\020\n\010order_by\030\006 \001(\t\022Q\n\004view\030\007 \001(\0162C.googl"
-          + "e.cloud.networkconnectivity.v1.ListHubSp"
-          + "okesRequest.SpokeView\"@\n\tSpokeView\022\032\n\026SP"
-          + "OKE_VIEW_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\014\n\010DET"
-          + "AILED\020\002\"\201\001\n\025ListHubSpokesResponse\022:\n\006spo"
-          + "kes\030\001 \003(\0132*.google.cloud.networkconnecti"
-          + "vity.v1.Spoke\022\027\n\017next_page_token\030\002 \001(\t\022\023"
-          + "\n\013unreachable\030\003 \003(\t\"\311\001\n\025QueryHubStatusRe"
-          + "quest\022<\n\004name\030\001 \001(\tB.\340A\002\372A(\n&networkconn"
-          + "ectivity.googleapis.com/Hub\022\026\n\tpage_size"
-          + "\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006"
-          + "filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001"
-          + "\022\025\n\010group_by\030\006 \001(\tB\003\340A\001\"\202\001\n\026QueryHubStat"
-          + "usResponse\022O\n\022hub_status_entries\030\001 \003(\01323"
-          + ".google.cloud.networkconnectivity.v1.Hub"
-          + "StatusEntry\022\027\n\017next_page_token\030\002 \001(\t\"\214\001\n"
-          + "\016HubStatusEntry\022\r\n\005count\030\001 \001(\005\022\020\n\010group_"
-          + "by\030\002 \001(\t\022Y\n\026psc_propagation_status\030\003 \001(\013"
-          + "29.google.cloud.networkconnectivity.v1.P"
-          + "scPropagationStatus\"\322\003\n\024PscPropagationSt"
-          + "atus\022\024\n\014source_spoke\030\001 \001(\t\022\024\n\014source_gro"
-          + "up\030\002 \001(\t\022\036\n\026source_forwarding_rule\030\003 \001(\t"
-          + "\022\024\n\014target_spoke\030\004 \001(\t\022\024\n\014target_group\030\005"
-          + " \001(\t\022L\n\004code\030\006 \001(\0162>.google.cloud.networ"
-          + "kconnectivity.v1.PscPropagationStatus.Co"
-          + "de\022\017\n\007message\030\007 \001(\t\"\342\001\n\004Code\022\024\n\020CODE_UNS"
-          + "PECIFIED\020\000\022\t\n\005READY\020\001\022\017\n\013PROPAGATING\020\002\0227"
-          + "\n3ERROR_PRODUCER_PROPAGATED_CONNECTION_L"
-          + "IMIT_EXCEEDED\020\003\022)\n%ERROR_PRODUCER_NAT_IP"
-          + "_SPACE_EXHAUSTED\020\004\022!\n\035ERROR_PRODUCER_QUO"
-          + "TA_EXCEEDED\020\005\022!\n\035ERROR_CONSUMER_QUOTA_EX"
-          + "CEEDED\020\006\"\227\001\n\021ListSpokesRequest\0229\n\006parent"
-          + "\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis.com"
-          + "/Location\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_tok"
-          + "en\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001"
-          + "(\t\"~\n\022ListSpokesResponse\022:\n\006spokes\030\001 \003(\013"
-          + "2*.google.cloud.networkconnectivity.v1.S"
-          + "poke\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreach"
-          + "able\030\003 \003(\t\"Q\n\017GetSpokeRequest\022>\n\004name\030\001 "
-          + "\001(\tB0\340A\002\372A*\n(networkconnectivity.googlea"
-          + "pis.com/Spoke\"\277\001\n\022CreateSpokeRequest\0229\n\006"
-          + "parent\030\001 \001(\tB)\340A\002\372A#\n!locations.googleap"
-          + "is.com/Location\022\025\n\010spoke_id\030\002 \001(\tB\003\340A\002\022>"
-          + "\n\005spoke\030\003 \001(\0132*.google.cloud.networkconn"
-          + "ectivity.v1.SpokeB\003\340A\002\022\027\n\nrequest_id\030\004 \001"
-          + "(\tB\003\340A\001\"\243\001\n\022UpdateSpokeRequest\0224\n\013update"
-          + "_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB"
-          + "\003\340A\001\022>\n\005spoke\030\002 \001(\0132*.google.cloud.netwo"
-          + "rkconnectivity.v1.SpokeB\003\340A\002\022\027\n\nrequest_"
-          + "id\030\003 \001(\tB\003\340A\001\"m\n\022DeleteSpokeRequest\022>\n\004n"
-          + "ame\030\001 \001(\tB0\340A\002\372A*\n(networkconnectivity.g"
-          + "oogleapis.com/Spoke\022\027\n\nrequest_id\030\002 \001(\tB"
-          + "\003\340A\001\"\263\001\n\025AcceptHubSpokeRequest\022<\n\004name\030\001"
-          + " \001(\tB.\340A\002\372A(\n&networkconnectivity.google"
-          + "apis.com/Hub\022C\n\tspoke_uri\030\002 \001(\tB0\340A\002\372A*\n"
-          + "(networkconnectivity.googleapis.com/Spok"
-          + "e\022\027\n\nrequest_id\030\003 \001(\tB\003\340A\001\"S\n\026AcceptHubS"
-          + "pokeResponse\0229\n\005spoke\030\001 \001(\0132*.google.clo"
-          + "ud.networkconnectivity.v1.Spoke\"\311\001\n\025Reje"
-          + "ctHubSpokeRequest\022<\n\004name\030\001 \001(\tB.\340A\002\372A(\n"
-          + "&networkconnectivity.googleapis.com/Hub\022"
-          + "C\n\tspoke_uri\030\002 \001(\tB0\340A\002\372A*\n(networkconne"
-          + "ctivity.googleapis.com/Spoke\022\027\n\nrequest_"
-          + "id\030\003 \001(\tB\003\340A\001\022\024\n\007details\030\004 \001(\tB\003\340A\001\"S\n\026R"
-          + "ejectHubSpokeResponse\0229\n\005spoke\030\001 \001(\0132*.g"
-          + "oogle.cloud.networkconnectivity.v1.Spoke"
-          + "\"[\n\024GetRouteTableRequest\022C\n\004name\030\001 \001(\tB5"
-          + "\340A\002\372A/\n-networkconnectivity.googleapis.c"
-          + "om/RouteTable\"T\n\017GetRouteRequest\022A\n\004name"
-          + "\030\001 \001(\tB3\340A\002\372A-\n+networkconnectivity.goog"
-          + "leapis.com/HubRoute\"\243\001\n\021ListRoutesReques"
-          + "t\022E\n\006parent\030\001 \001(\tB5\340A\002\372A/\n-networkconnec"
-          + "tivity.googleapis.com/RouteTable\022\021\n\tpage"
-          + "_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filte"
-          + "r\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"~\n\022ListRoutesR"
-          + "esponse\022:\n\006routes\030\001 \003(\0132*.google.cloud.n"
-          + "etworkconnectivity.v1.Route\022\027\n\017next_page"
-          + "_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"\241\001\n\026Li"
-          + "stRouteTablesRequest\022>\n\006parent\030\001 \001(\tB.\340A"
-          + "\002\372A(\n&networkconnectivity.googleapis.com"
-          + "/Hub\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 "
-          + "\001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\216\001"
-          + "\n\027ListRouteTablesResponse\022E\n\014route_table"
-          + "s\030\001 \003(\0132/.google.cloud.networkconnectivi"
-          + "ty.v1.RouteTable\022\027\n\017next_page_token\030\002 \001("
-          + "\t\022\023\n\013unreachable\030\003 \003(\t\"\234\001\n\021ListGroupsReq"
-          + "uest\022>\n\006parent\030\001 \001(\tB.\340A\002\372A(\n&networkcon"
-          + "nectivity.googleapis.com/Hub\022\021\n\tpage_siz"
-          + "e\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 "
-          + "\001(\t\022\020\n\010order_by\030\005 \001(\t\"~\n\022ListGroupsRespo"
-          + "nse\022:\n\006groups\030\001 \003(\0132*.google.cloud.netwo"
-          + "rkconnectivity.v1.Group\022\027\n\017next_page_tok"
-          + "en\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"\314\001\n\020Linked"
-          + "VpnTunnels\0223\n\004uris\030\001 \003(\tB%\372A\"\n compute.g"
-          + "oogleapis.com/VpnTunnel\022\"\n\032site_to_site_"
-          + "data_transfer\030\002 \001(\010\022;\n\013vpc_network\030\003 \001(\t"
-          + "B&\340A\003\372A \n\036compute.googleapis.com/Network"
-          + "\022\"\n\025include_import_ranges\030\005 \003(\tB\003\340A\001\"\346\001\n"
-          + "\035LinkedInterconnectAttachments\022@\n\004uris\030\001"
-          + " \003(\tB2\372A/\n-compute.googleapis.com/Interc"
-          + "onnectAttachment\022\"\n\032site_to_site_data_tr"
-          + "ansfer\030\002 \001(\010\022;\n\013vpc_network\030\003 \001(\tB&\340A\003\372A"
-          + " \n\036compute.googleapis.com/Network\022\"\n\025inc"
-          + "lude_import_ranges\030\005 \003(\tB\003\340A\001\"\366\001\n\036Linked"
-          + "RouterApplianceInstances\022O\n\tinstances\030\001 "
-          + "\003(\0132<.google.cloud.networkconnectivity.v"
-          + "1.RouterApplianceInstance\022\"\n\032site_to_sit"
-          + "e_data_transfer\030\002 \001(\010\022;\n\013vpc_network\030\003 \001"
-          + "(\tB&\340A\003\372A \n\036compute.googleapis.com/Netwo"
-          + "rk\022\"\n\025include_import_ranges\030\005 \003(\tB\003\340A\001\"\336"
-          + "\001\n\020LinkedVpcNetwork\0223\n\003uri\030\001 \001(\tB&\340A\002\372A "
-          + "\n\036compute.googleapis.com/Network\022\"\n\025excl"
-          + "ude_export_ranges\030\002 \003(\tB\003\340A\001\022\"\n\025include_"
-          + "export_ranges\030\003 \003(\tB\003\340A\001\022M\n\023producer_vpc"
-          + "_spokes\030\004 \003(\tB0\340A\003\372A*\n(networkconnectivi"
-          + "ty.googleapis.com/Spoke\"\311\002\n\030LinkedProduc"
-          + "erVpcNetwork\0227\n\007network\030\001 \001(\tB&\340A\005\372A \n\036c"
-          + "ompute.googleapis.com/Network\022T\n\032service"
-          + "_consumer_vpc_spoke\030\006 \001(\tB0\340A\003\372A*\n(netwo"
-          + "rkconnectivity.googleapis.com/Spoke\022\024\n\007p"
-          + "eering\030\002 \001(\tB\003\340A\005\022@\n\020producer_network\030\005 "
-          + "\001(\tB&\340A\003\372A \n\036compute.googleapis.com/Netw"
-          + "ork\022\"\n\025exclude_export_ranges\030\003 \003(\tB\003\340A\001\022"
-          + "\"\n\025include_export_ranges\030\004 \003(\tB\003\340A\001\"l\n\027R"
-          + "outerApplianceInstance\022=\n\017virtual_machin"
-          + "e\030\001 \001(\tB$\372A!\n\037compute.googleapis.com/Ins"
-          + "tance\022\022\n\nip_address\030\003 \001(\t\"c\n\020LocationMet"
-          + "adata\022O\n\021location_features\030\001 \003(\01624.googl"
-          + "e.cloud.networkconnectivity.v1.LocationF"
-          + "eature\"E\n\021NextHopVpcNetwork\0220\n\003uri\030\001 \001(\t"
-          + "B#\372A \n\036compute.googleapis.com/Network\"\244\001"
-          + "\n\020NextHopVPNTunnel\0222\n\003uri\030\001 \001(\tB%\372A\"\n co"
-          + "mpute.googleapis.com/VpnTunnel\0228\n\013vpc_ne"
-          + "twork\030\002 \001(\tB#\372A \n\036compute.googleapis.com"
-          + "/Network\022\"\n\032site_to_site_data_transfer\030\003"
-          + " \001(\010\"\261\001\n\036NextHopRouterApplianceInstance\022"
-          + "1\n\003uri\030\001 \001(\tB$\372A!\n\037compute.googleapis.co"
-          + "m/Instance\0228\n\013vpc_network\030\002 \001(\tB#\372A \n\036co"
-          + "mpute.googleapis.com/Network\022\"\n\032site_to_"
-          + "site_data_transfer\030\003 \001(\010\"\276\001\n\035NextHopInte"
-          + "rconnectAttachment\022?\n\003uri\030\001 \001(\tB2\372A/\n-co"
-          + "mpute.googleapis.com/InterconnectAttachm"
-          + "ent\0228\n\013vpc_network\030\002 \001(\tB#\372A \n\036compute.g"
-          + "oogleapis.com/Network\022\"\n\032site_to_site_da"
-          + "ta_transfer\030\003 \001(\010\"\246\005\n\014SpokeSummary\022`\n\021sp"
-          + "oke_type_counts\030\001 \003(\0132@.google.cloud.net"
-          + "workconnectivity.v1.SpokeSummary.SpokeTy"
-          + "peCountB\003\340A\003\022b\n\022spoke_state_counts\030\002 \003(\013"
-          + "2A.google.cloud.networkconnectivity.v1.S"
-          + "pokeSummary.SpokeStateCountB\003\340A\003\022o\n\031spok"
-          + "e_state_reason_counts\030\003 \003(\0132G.google.clo"
-          + "ud.networkconnectivity.v1.SpokeSummary.S"
-          + "pokeStateReasonCountB\003\340A\003\032m\n\016SpokeTypeCo"
-          + "unt\022G\n\nspoke_type\030\001 \001(\0162..google.cloud.n"
-          + "etworkconnectivity.v1.SpokeTypeB\003\340A\003\022\022\n\005"
-          + "count\030\002 \001(\003B\003\340A\003\032e\n\017SpokeStateCount\022>\n\005s"
-          + "tate\030\001 \001(\0162*.google.cloud.networkconnect"
-          + "ivity.v1.StateB\003\340A\003\022\022\n\005count\030\002 \001(\003B\003\340A\003\032"
-          + "\210\001\n\025SpokeStateReasonCount\022[\n\021state_reaso"
-          + "n_code\030\001 \001(\0162;.google.cloud.networkconne"
-          + "ctivity.v1.Spoke.StateReason.CodeB\003\340A\003\022\022"
-          + "\n\005count\030\002 \001(\003B\003\340A\003\"Q\n\017GetGroupRequest\022>\n"
-          + "\004name\030\001 \001(\tB0\340A\002\372A*\n(networkconnectivity"
-          + ".googleapis.com/Group\"\243\001\n\022UpdateGroupReq"
-          + "uest\0224\n\013update_mask\030\001 \001(\0132\032.google.proto"
-          + "buf.FieldMaskB\003\340A\001\022>\n\005group\030\002 \001(\0132*.goog"
-          + "le.cloud.networkconnectivity.v1.GroupB\003\340"
-          + "A\002\022\027\n\nrequest_id\030\003 \001(\tB\003\340A\001*f\n\017LocationF"
-          + "eature\022 \n\034LOCATION_FEATURE_UNSPECIFIED\020\000"
-          + "\022\030\n\024SITE_TO_CLOUD_SPOKES\020\001\022\027\n\023SITE_TO_SI"
-          + "TE_SPOKES\020\002*l\n\tRouteType\022\032\n\026ROUTE_TYPE_U"
-          + "NSPECIFIED\020\000\022\026\n\022VPC_PRIMARY_SUBNET\020\001\022\030\n\024"
-          + "VPC_SECONDARY_SUBNET\020\002\022\021\n\rDYNAMIC_ROUTE\020"
-          + "\003*\216\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CR"
-          + "EATING\020\001\022\n\n\006ACTIVE\020\002\022\014\n\010DELETING\020\003\022\r\n\tAC"
-          + "CEPTING\020\010\022\r\n\tREJECTING\020\t\022\014\n\010UPDATING\020\006\022\014"
-          + "\n\010INACTIVE\020\007\022\014\n\010OBSOLETE\020\n*\225\001\n\tSpokeType"
-          + "\022\032\n\026SPOKE_TYPE_UNSPECIFIED\020\000\022\016\n\nVPN_TUNN"
-          + "EL\020\001\022\033\n\027INTERCONNECT_ATTACHMENT\020\002\022\024\n\020ROU"
-          + "TER_APPLIANCE\020\003\022\017\n\013VPC_NETWORK\020\004\022\030\n\024PROD"
-          + "UCER_VPC_NETWORK\020\007*5\n\nPolicyMode\022\033\n\027POLI"
-          + "CY_MODE_UNSPECIFIED\020\000\022\n\n\006PRESET\020\001*E\n\016Pre"
-          + "setTopology\022\037\n\033PRESET_TOPOLOGY_UNSPECIFI"
-          + "ED\020\000\022\010\n\004MESH\020\002\022\010\n\004STAR\020\0032\324\"\n\nHubService\022"
-          + "\267\001\n\010ListHubs\0224.google.cloud.networkconne"
-          + "ctivity.v1.ListHubsRequest\0325.google.clou"
-          + "d.networkconnectivity.v1.ListHubsRespons"
-          + "e\">\332A\006parent\202\323\344\223\002/\022-/v1/{parent=projects"
-          + "/*/locations/global}/hubs\022\244\001\n\006GetHub\0222.g"
-          + "oogle.cloud.networkconnectivity.v1.GetHu"
-          + "bRequest\032(.google.cloud.networkconnectiv"
-          + "ity.v1.Hub\"<\332A\004name\202\323\344\223\002/\022-/v1/{name=pro"
-          + "jects/*/locations/global/hubs/*}\022\314\001\n\tCre"
-          + "ateHub\0225.google.cloud.networkconnectivit"
-          + "y.v1.CreateHubRequest\032\035.google.longrunni"
-          + "ng.Operation\"i\312A\030\n\003Hub\022\021OperationMetadat"
-          + "a\332A\021parent,hub,hub_id\202\323\344\223\0024\"-/v1/{parent"
-          + "=projects/*/locations/global}/hubs:\003hub\022"
-          + "\316\001\n\tUpdateHub\0225.google.cloud.networkconn"
-          + "ectivity.v1.UpdateHubRequest\032\035.google.lo"
-          + "ngrunning.Operation\"k\312A\030\n\003Hub\022\021Operation"
-          + "Metadata\332A\017hub,update_mask\202\323\344\223\002821/v1/{h"
-          + "ub.name=projects/*/locations/global/hubs"
-          + "/*}:\003hub\022\314\001\n\tDeleteHub\0225.google.cloud.ne"
-          + "tworkconnectivity.v1.DeleteHubRequest\032\035."
-          + "google.longrunning.Operation\"i\312A*\n\025googl"
+          + ".Hub.LabelsEntry\022\030\n\013description\030\005 \001(\tB\003\340"
+          + "A\001\022\026\n\tunique_id\030\010 \001(\tB\003\340A\003\022>\n\005state\030\t \001("
+          + "\0162*.google.cloud.networkconnectivity.v1."
+          + "StateB\003\340A\003\022E\n\014routing_vpcs\030\n \003(\0132/.googl"
+          + "e.cloud.networkconnectivity.v1.RoutingVP"
+          + "C\022\031\n\014route_tables\030\013 \003(\tB\003\340A\003\022M\n\rspoke_su"
+          + "mmary\030\014 \001(\01321.google.cloud.networkconnec"
+          + "tivity.v1.SpokeSummaryB\003\340A\003\022I\n\013policy_mo"
+          + "de\030\r \001(\0162/.google.cloud.networkconnectiv"
+          + "ity.v1.PolicyModeB\003\340A\001\022Q\n\017preset_topolog"
+          + "y\030\016 \001(\01623.google.cloud.networkconnectivi"
+          + "ty.v1.PresetTopologyB\003\340A\001\022\034\n\nexport_psc\030"
+          + "\017 \001(\010B\003\340A\001H\000\210\001\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:[\352AX\n&networkconn"
+          + "ectivity.googleapis.com/Hub\022.projects/{p"
+          + "roject}/locations/global/hubs/{hub}B\r\n\013_"
+          + "export_psc\"\177\n\nRoutingVPC\0220\n\003uri\030\001 \001(\tB#\372"
+          + "A \n\036compute.googleapis.com/Network\022?\n2re"
+          + "quired_for_new_site_to_site_data_transfe"
+          + "r_spokes\030\002 \001(\010B\003\340A\003\"\305\014\n\005Spoke\022\021\n\004name\030\001 "
+          + "\001(\tB\003\340A\005\0224\n\013create_time\030\002 \001(\0132\032.google.p"
+          + "rotobuf.TimestampB\003\340A\003\0224\n\013update_time\030\003 "
+          + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\022F\n\006"
+          + "labels\030\004 \003(\01326.google.cloud.networkconne"
+          + "ctivity.v1.Spoke.LabelsEntry\022\030\n\013descript"
+          + "ion\030\005 \001(\tB\003\340A\001\022;\n\003hub\030\006 \001(\tB.\340A\005\372A(\n&net"
+          + "workconnectivity.googleapis.com/Hub\022?\n\005g"
+          + "roup\030\027 \001(\tB0\340A\001\372A*\n(networkconnectivity."
+          + "googleapis.com/Group\022V\n\022linked_vpn_tunne"
+          + "ls\030\021 \001(\01325.google.cloud.networkconnectiv"
+          + "ity.v1.LinkedVpnTunnelsB\003\340A\001\022p\n\037linked_i"
+          + "nterconnect_attachments\030\022 \001(\0132B.google.c"
+          + "loud.networkconnectivity.v1.LinkedInterc"
+          + "onnectAttachmentsB\003\340A\001\022s\n!linked_router_"
+          + "appliance_instances\030\023 \001(\0132C.google.cloud"
+          + ".networkconnectivity.v1.LinkedRouterAppl"
+          + "ianceInstancesB\003\340A\001\022V\n\022linked_vpc_networ"
+          + "k\030\024 \001(\01325.google.cloud.networkconnectivi"
+          + "ty.v1.LinkedVpcNetworkB\003\340A\001\022g\n\033linked_pr"
+          + "oducer_vpc_network\030\032 \001(\0132=.google.cloud."
+          + "networkconnectivity.v1.LinkedProducerVpc"
+          + "NetworkB\003\340A\001\022\026\n\tunique_id\030\013 \001(\tB\003\340A\003\022>\n\005"
+          + "state\030\017 \001(\0162*.google.cloud.networkconnec"
+          + "tivity.v1.StateB\003\340A\003\022L\n\007reasons\030\025 \003(\01326."
+          + "google.cloud.networkconnectivity.v1.Spok"
+          + "e.StateReasonB\003\340A\003\022G\n\nspoke_type\030\026 \001(\0162."
+          + ".google.cloud.networkconnectivity.v1.Spo"
+          + "keTypeB\003\340A\003\022\021\n\004etag\030\033 \001(\tB\003\340A\001\022\'\n\032field_"
+          + "paths_pending_update\030\034 \003(\tB\003\340A\001\032\233\002\n\013Stat"
+          + "eReason\022I\n\004code\030\001 \001(\0162;.google.cloud.net"
+          + "workconnectivity.v1.Spoke.StateReason.Co"
+          + "de\022\017\n\007message\030\002 \001(\t\022\024\n\014user_details\030\003 \001("
+          + "\t\"\231\001\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\022\n\016PEND"
+          + "ING_REVIEW\020\001\022\014\n\010REJECTED\020\002\022\n\n\006PAUSED\020\003\022\n"
+          + "\n\006FAILED\020\004\022\031\n\025UPDATE_PENDING_REVIEW\020\005\022\023\n"
+          + "\017UPDATE_REJECTED\020\006\022\021\n\rUPDATE_FAILED\020\007\032-\n"
+          + "\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
+          + ":\0028\001:e\352Ab\n(networkconnectivity.googleapi"
+          + "s.com/Spoke\0226projects/{project}/location"
+          + "s/{location}/spokes/{spoke}\"\354\003\n\nRouteTab"
+          + "le\022\021\n\004name\030\001 \001(\tB\003\340A\005\0224\n\013create_time\030\002 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013u"
+          + "pdate_time\030\003 \001(\0132\032.google.protobuf.Times"
+          + "tampB\003\340A\003\022K\n\006labels\030\004 \003(\0132;.google.cloud"
+          + ".networkconnectivity.v1.RouteTable.Label"
+          + "sEntry\022\023\n\013description\030\005 \001(\t\022\020\n\003uid\030\006 \001(\t"
+          + "B\003\340A\003\022>\n\005state\030\007 \001(\0162*.google.cloud.netw"
+          + "orkconnectivity.v1.StateB\003\340A\003\032-\n\013LabelsE"
+          + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:|\352A"
+          + "y\n-networkconnectivity.googleapis.com/Ro"
+          + "uteTable\022Hprojects/{project}/locations/g"
+          + "lobal/hubs/{hub}/routeTables/{route_tabl"
+          + "e}\"\327\010\n\005Route\022\021\n\004name\030\003 \001(\tB\003\340A\005\0224\n\013creat"
+          + "e_time\030\004 \001(\0132\032.google.protobuf.Timestamp"
+          + "B\003\340A\003\0224\n\013update_time\030\005 \001(\0132\032.google.prot"
+          + "obuf.TimestampB\003\340A\003\022\025\n\rip_cidr_range\030\001 \001"
+          + "(\t\022A\n\004type\030\n \001(\0162..google.cloud.networkc"
+          + "onnectivity.v1.RouteTypeB\003\340A\003\022Y\n\024next_ho"
+          + "p_vpc_network\030\002 \001(\01326.google.cloud.netwo"
+          + "rkconnectivity.v1.NextHopVpcNetworkB\003\340A\005"
+          + "\022F\n\006labels\030\006 \003(\01326.google.cloud.networkc"
+          + "onnectivity.v1.Route.LabelsEntry\022\023\n\013desc"
+          + "ription\030\007 \001(\t\022\020\n\003uid\030\010 \001(\tB\003\340A\003\022>\n\005state"
+          + "\030\t \001(\0162*.google.cloud.networkconnectivit"
+          + "y.v1.StateB\003\340A\003\022?\n\005spoke\030\013 \001(\tB0\340A\005\372A*\n("
+          + "networkconnectivity.googleapis.com/Spoke"
+          + "\022\025\n\010location\030\014 \001(\tB\003\340A\003\022\025\n\010priority\030\r \001("
+          + "\003B\003\340A\003\022W\n\023next_hop_vpn_tunnel\030\016 \001(\01325.go"
+          + "ogle.cloud.networkconnectivity.v1.NextHo"
+          + "pVPNTunnelB\003\340A\005\022t\n\"next_hop_router_appli"
+          + "ance_instance\030\017 \001(\0132C.google.cloud.netwo"
+          + "rkconnectivity.v1.NextHopRouterAppliance"
+          + "InstanceB\003\340A\005\022q\n next_hop_interconnect_a"
+          + "ttachment\030\020 \001(\0132B.google.cloud.networkco"
+          + "nnectivity.v1.NextHopInterconnectAttachm"
+          + "entB\003\340A\005\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
+          + "value\030\002 \001(\t:\0028\001:\212\001\352A\206\001\n+networkconnectiv"
+          + "ity.googleapis.com/HubRoute\022Wprojects/{p"
+          + "roject}/locations/global/hubs/{hub}/rout"
+          + "eTables/{route_table}/routes/{route}\"\301\004\n"
+          + "\005Group\022\021\n\004name\030\001 \001(\tB\003\340A\005\0224\n\013create_time"
+          + "\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
+          + "4\n\013update_time\030\003 \001(\0132\032.google.protobuf.T"
+          + "imestampB\003\340A\003\022K\n\006labels\030\004 \003(\01326.google.c"
+          + "loud.networkconnectivity.v1.Group.Labels"
+          + "EntryB\003\340A\001\022\030\n\013description\030\005 \001(\tB\003\340A\001\022\020\n\003"
+          + "uid\030\006 \001(\tB\003\340A\003\022>\n\005state\030\007 \001(\0162*.google.c"
+          + "loud.networkconnectivity.v1.StateB\003\340A\003\022I"
+          + "\n\013auto_accept\030\010 \001(\0132/.google.cloud.netwo"
+          + "rkconnectivity.v1.AutoAcceptB\003\340A\001\022\030\n\013rou"
+          + "te_table\030\t \001(\tB\003\340A\003\032-\n\013LabelsEntry\022\013\n\003ke"
+          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:l\352Ai\n(network"
+          + "connectivity.googleapis.com/Group\022=proje"
+          + "cts/{project}/locations/global/hubs/{hub"
+          + "}/groups/{group}\"/\n\nAutoAccept\022!\n\024auto_a"
+          + "ccept_projects\030\001 \003(\tB\003\340A\001\"\225\001\n\017ListHubsRe"
+          + "quest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations"
+          + ".googleapis.com/Location\022\021\n\tpage_size\030\002 "
+          + "\001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022"
+          + "\020\n\010order_by\030\005 \001(\t\"x\n\020ListHubsResponse\0226\n"
+          + "\004hubs\030\001 \003(\0132(.google.cloud.networkconnec"
+          + "tivity.v1.Hub\022\027\n\017next_page_token\030\002 \001(\t\022\023"
+          + "\n\013unreachable\030\003 \003(\t\"M\n\rGetHubRequest\022<\n\004"
+          + "name\030\001 \001(\tB.\340A\002\372A(\n&networkconnectivity."
+          + "googleapis.com/Hub\"\267\001\n\020CreateHubRequest\022"
+          + "9\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.googl"
+          + "eapis.com/Location\022\023\n\006hub_id\030\002 \001(\tB\003\340A\002\022"
+          + ":\n\003hub\030\003 \001(\0132(.google.cloud.networkconne"
+          + "ctivity.v1.HubB\003\340A\002\022\027\n\nrequest_id\030\004 \001(\tB"
+          + "\003\340A\001\"\235\001\n\020UpdateHubRequest\0224\n\013update_mask"
+          + "\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022"
+          + ":\n\003hub\030\002 \001(\0132(.google.cloud.networkconne"
+          + "ctivity.v1.HubB\003\340A\002\022\027\n\nrequest_id\030\003 \001(\tB"
+          + "\003\340A\001\"i\n\020DeleteHubRequest\022<\n\004name\030\001 \001(\tB."
+          + "\340A\002\372A(\n&networkconnectivity.googleapis.c"
+          + "om/Hub\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\"\313\002\n\024List"
+          + "HubSpokesRequest\022<\n\004name\030\001 \001(\tB.\340A\002\372A(\n&"
+          + "networkconnectivity.googleapis.com/Hub\022\027"
+          + "\n\017spoke_locations\030\002 \003(\t\022\021\n\tpage_size\030\003 \001"
+          + "(\005\022\022\n\npage_token\030\004 \001(\t\022\016\n\006filter\030\005 \001(\t\022\020"
+          + "\n\010order_by\030\006 \001(\t\022Q\n\004view\030\007 \001(\0162C.google."
+          + "cloud.networkconnectivity.v1.ListHubSpok"
+          + "esRequest.SpokeView\"@\n\tSpokeView\022\032\n\026SPOK"
+          + "E_VIEW_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\014\n\010DETAI"
+          + "LED\020\002\"\201\001\n\025ListHubSpokesResponse\022:\n\006spoke"
+          + "s\030\001 \003(\0132*.google.cloud.networkconnectivi"
+          + "ty.v1.Spoke\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013"
+          + "unreachable\030\003 \003(\t\"\311\001\n\025QueryHubStatusRequ"
+          + "est\022<\n\004name\030\001 \001(\tB.\340A\002\372A(\n&networkconnec"
+          + "tivity.googleapis.com/Hub\022\026\n\tpage_size\030\002"
+          + " \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006fi"
+          + "lter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\022\025"
+          + "\n\010group_by\030\006 \001(\tB\003\340A\001\"\202\001\n\026QueryHubStatus"
+          + "Response\022O\n\022hub_status_entries\030\001 \003(\01323.g"
+          + "oogle.cloud.networkconnectivity.v1.HubSt"
+          + "atusEntry\022\027\n\017next_page_token\030\002 \001(\t\"\214\001\n\016H"
+          + "ubStatusEntry\022\r\n\005count\030\001 \001(\005\022\020\n\010group_by"
+          + "\030\002 \001(\t\022Y\n\026psc_propagation_status\030\003 \001(\01329"
+          + ".google.cloud.networkconnectivity.v1.Psc"
+          + "PropagationStatus\"\322\003\n\024PscPropagationStat"
+          + "us\022\024\n\014source_spoke\030\001 \001(\t\022\024\n\014source_group"
+          + "\030\002 \001(\t\022\036\n\026source_forwarding_rule\030\003 \001(\t\022\024"
+          + "\n\014target_spoke\030\004 \001(\t\022\024\n\014target_group\030\005 \001"
+          + "(\t\022L\n\004code\030\006 \001(\0162>.google.cloud.networkc"
+          + "onnectivity.v1.PscPropagationStatus.Code"
+          + "\022\017\n\007message\030\007 \001(\t\"\342\001\n\004Code\022\024\n\020CODE_UNSPE"
+          + "CIFIED\020\000\022\t\n\005READY\020\001\022\017\n\013PROPAGATING\020\002\0227\n3"
+          + "ERROR_PRODUCER_PROPAGATED_CONNECTION_LIM"
+          + "IT_EXCEEDED\020\003\022)\n%ERROR_PRODUCER_NAT_IP_S"
+          + "PACE_EXHAUSTED\020\004\022!\n\035ERROR_PRODUCER_QUOTA"
+          + "_EXCEEDED\020\005\022!\n\035ERROR_CONSUMER_QUOTA_EXCE"
+          + "EDED\020\006\"\227\001\n\021ListSpokesRequest\0229\n\006parent\030\001"
+          + " \001(\tB)\340A\002\372A#\n!locations.googleapis.com/L"
+          + "ocation\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token"
+          + "\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t"
+          + "\"~\n\022ListSpokesResponse\022:\n\006spokes\030\001 \003(\0132*"
+          + ".google.cloud.networkconnectivity.v1.Spo"
+          + "ke\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachab"
+          + "le\030\003 \003(\t\"Q\n\017GetSpokeRequest\022>\n\004name\030\001 \001("
+          + "\tB0\340A\002\372A*\n(networkconnectivity.googleapi"
+          + "s.com/Spoke\"\277\001\n\022CreateSpokeRequest\0229\n\006pa"
+          + "rent\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis"
+          + ".com/Location\022\025\n\010spoke_id\030\002 \001(\tB\003\340A\002\022>\n\005"
+          + "spoke\030\003 \001(\0132*.google.cloud.networkconnec"
+          + "tivity.v1.SpokeB\003\340A\002\022\027\n\nrequest_id\030\004 \001(\t"
+          + "B\003\340A\001\"\243\001\n\022UpdateSpokeRequest\0224\n\013update_m"
+          + "ask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340"
+          + "A\001\022>\n\005spoke\030\002 \001(\0132*.google.cloud.network"
+          + "connectivity.v1.SpokeB\003\340A\002\022\027\n\nrequest_id"
+          + "\030\003 \001(\tB\003\340A\001\"m\n\022DeleteSpokeRequest\022>\n\004nam"
+          + "e\030\001 \001(\tB0\340A\002\372A*\n(networkconnectivity.goo"
+          + "gleapis.com/Spoke\022\027\n\nrequest_id\030\002 \001(\tB\003\340"
+          + "A\001\"\263\001\n\025AcceptHubSpokeRequest\022<\n\004name\030\001 \001"
+          + "(\tB.\340A\002\372A(\n&networkconnectivity.googleap"
+          + "is.com/Hub\022C\n\tspoke_uri\030\002 \001(\tB0\340A\002\372A*\n(n"
+          + "etworkconnectivity.googleapis.com/Spoke\022"
+          + "\027\n\nrequest_id\030\003 \001(\tB\003\340A\001\"S\n\026AcceptHubSpo"
+          + "keResponse\0229\n\005spoke\030\001 \001(\0132*.google.cloud"
+          + ".networkconnectivity.v1.Spoke\"\311\001\n\025Reject"
+          + "HubSpokeRequest\022<\n\004name\030\001 \001(\tB.\340A\002\372A(\n&n"
+          + "etworkconnectivity.googleapis.com/Hub\022C\n"
+          + "\tspoke_uri\030\002 \001(\tB0\340A\002\372A*\n(networkconnect"
+          + "ivity.googleapis.com/Spoke\022\027\n\nrequest_id"
+          + "\030\003 \001(\tB\003\340A\001\022\024\n\007details\030\004 \001(\tB\003\340A\001\"S\n\026Rej"
+          + "ectHubSpokeResponse\0229\n\005spoke\030\001 \001(\0132*.goo"
+          + "gle.cloud.networkconnectivity.v1.Spoke\"\327"
+          + "\001\n\030AcceptSpokeUpdateRequest\022<\n\004name\030\001 \001("
+          + "\tB.\340A\002\372A(\n&networkconnectivity.googleapi"
+          + "s.com/Hub\022C\n\tspoke_uri\030\002 \001(\tB0\340A\002\372A*\n(ne"
+          + "tworkconnectivity.googleapis.com/Spoke\022\027"
+          + "\n\nspoke_etag\030\003 \001(\tB\003\340A\002\022\037\n\nrequest_id\030\004 "
+          + "\001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"V\n\031AcceptSpokeUpdateRes"
+          + "ponse\0229\n\005spoke\030\001 \001(\0132*.google.cloud.netw"
+          + "orkconnectivity.v1.Spoke\"\355\001\n\030RejectSpoke"
+          + "UpdateRequest\022<\n\004name\030\001 \001(\tB.\340A\002\372A(\n&net"
+          + "workconnectivity.googleapis.com/Hub\022C\n\ts"
+          + "poke_uri\030\002 \001(\tB0\340A\002\372A*\n(networkconnectiv"
+          + "ity.googleapis.com/Spoke\022\027\n\nspoke_etag\030\003"
+          + " \001(\tB\003\340A\002\022\024\n\007details\030\004 \001(\tB\003\340A\001\022\037\n\nreque"
+          + "st_id\030\005 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"V\n\031RejectSpokeU"
+          + "pdateResponse\0229\n\005spoke\030\001 \001(\0132*.google.cl"
+          + "oud.networkconnectivity.v1.Spoke\"[\n\024GetR"
+          + "outeTableRequest\022C\n\004name\030\001 \001(\tB5\340A\002\372A/\n-"
+          + "networkconnectivity.googleapis.com/Route"
+          + "Table\"T\n\017GetRouteRequest\022A\n\004name\030\001 \001(\tB3"
+          + "\340A\002\372A-\n+networkconnectivity.googleapis.c"
+          + "om/HubRoute\"\243\001\n\021ListRoutesRequest\022E\n\006par"
+          + "ent\030\001 \001(\tB5\340A\002\372A/\n-networkconnectivity.g"
+          + "oogleapis.com/RouteTable\022\021\n\tpage_size\030\002 "
+          + "\001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022"
+          + "\020\n\010order_by\030\005 \001(\t\"~\n\022ListRoutesResponse\022"
+          + ":\n\006routes\030\001 \003(\0132*.google.cloud.networkco"
+          + "nnectivity.v1.Route\022\027\n\017next_page_token\030\002"
+          + " \001(\t\022\023\n\013unreachable\030\003 \003(\t\"\241\001\n\026ListRouteT"
+          + "ablesRequest\022>\n\006parent\030\001 \001(\tB.\340A\002\372A(\n&ne"
+          + "tworkconnectivity.googleapis.com/Hub\022\021\n\t"
+          + "page_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006f"
+          + "ilter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\216\001\n\027ListRo"
+          + "uteTablesResponse\022E\n\014route_tables\030\001 \003(\0132"
+          + "/.google.cloud.networkconnectivity.v1.Ro"
+          + "uteTable\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unr"
+          + "eachable\030\003 \003(\t\"\234\001\n\021ListGroupsRequest\022>\n\006"
+          + "parent\030\001 \001(\tB.\340A\002\372A(\n&networkconnectivit"
+          + "y.googleapis.com/Hub\022\021\n\tpage_size\030\002 \001(\005\022"
+          + "\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010o"
+          + "rder_by\030\005 \001(\t\"~\n\022ListGroupsResponse\022:\n\006g"
+          + "roups\030\001 \003(\0132*.google.cloud.networkconnec"
+          + "tivity.v1.Group\022\027\n\017next_page_token\030\002 \001(\t"
+          + "\022\023\n\013unreachable\030\003 \003(\t\"\314\001\n\020LinkedVpnTunne"
+          + "ls\0223\n\004uris\030\001 \003(\tB%\372A\"\n compute.googleapi"
+          + "s.com/VpnTunnel\022\"\n\032site_to_site_data_tra"
+          + "nsfer\030\002 \001(\010\022;\n\013vpc_network\030\003 \001(\tB&\340A\003\372A "
+          + "\n\036compute.googleapis.com/Network\022\"\n\025incl"
+          + "ude_import_ranges\030\005 \003(\tB\003\340A\001\"\346\001\n\035LinkedI"
+          + "nterconnectAttachments\022@\n\004uris\030\001 \003(\tB2\372A"
+          + "/\n-compute.googleapis.com/InterconnectAt"
+          + "tachment\022\"\n\032site_to_site_data_transfer\030\002"
+          + " \001(\010\022;\n\013vpc_network\030\003 \001(\tB&\340A\003\372A \n\036compu"
+          + "te.googleapis.com/Network\022\"\n\025include_imp"
+          + "ort_ranges\030\005 \003(\tB\003\340A\001\"\366\001\n\036LinkedRouterAp"
+          + "plianceInstances\022O\n\tinstances\030\001 \003(\0132<.go"
+          + "ogle.cloud.networkconnectivity.v1.Router"
+          + "ApplianceInstance\022\"\n\032site_to_site_data_t"
+          + "ransfer\030\002 \001(\010\022;\n\013vpc_network\030\003 \001(\tB&\340A\003\372"
+          + "A \n\036compute.googleapis.com/Network\022\"\n\025in"
+          + "clude_import_ranges\030\005 \003(\tB\003\340A\001\"\270\002\n\020Linke"
+          + "dVpcNetwork\0223\n\003uri\030\001 \001(\tB&\340A\002\372A \n\036comput"
+          + "e.googleapis.com/Network\022\"\n\025exclude_expo"
+          + "rt_ranges\030\002 \003(\tB\003\340A\001\022\"\n\025include_export_r"
+          + "anges\030\003 \003(\tB\003\340A\001\022+\n\036proposed_include_exp"
+          + "ort_ranges\030\005 \003(\tB\003\340A\001\022+\n\036proposed_exclud"
+          + "e_export_ranges\030\006 \003(\tB\003\340A\003\022M\n\023producer_v"
+          + "pc_spokes\030\004 \003(\tB0\340A\003\372A*\n(networkconnecti"
+          + "vity.googleapis.com/Spoke\"\243\003\n\030LinkedProd"
+          + "ucerVpcNetwork\0227\n\007network\030\001 \001(\tB&\340A\005\372A \n"
+          + "\036compute.googleapis.com/Network\022T\n\032servi"
+          + "ce_consumer_vpc_spoke\030\006 \001(\tB0\340A\003\372A*\n(net"
+          + "workconnectivity.googleapis.com/Spoke\022\024\n"
+          + "\007peering\030\002 \001(\tB\003\340A\005\022@\n\020producer_network\030"
+          + "\005 \001(\tB&\340A\003\372A \n\036compute.googleapis.com/Ne"
+          + "twork\022\"\n\025exclude_export_ranges\030\003 \003(\tB\003\340A"
+          + "\001\022\"\n\025include_export_ranges\030\004 \003(\tB\003\340A\001\022+\n"
+          + "\036proposed_include_export_ranges\030\007 \003(\tB\003\340"
+          + "A\001\022+\n\036proposed_exclude_export_ranges\030\010 \003"
+          + "(\tB\003\340A\003\"l\n\027RouterApplianceInstance\022=\n\017vi"
+          + "rtual_machine\030\001 \001(\tB$\372A!\n\037compute.google"
+          + "apis.com/Instance\022\022\n\nip_address\030\003 \001(\t\"c\n"
+          + "\020LocationMetadata\022O\n\021location_features\030\001"
+          + " \003(\01624.google.cloud.networkconnectivity."
+          + "v1.LocationFeature\"E\n\021NextHopVpcNetwork\022"
+          + "0\n\003uri\030\001 \001(\tB#\372A \n\036compute.googleapis.co"
+          + "m/Network\"\244\001\n\020NextHopVPNTunnel\0222\n\003uri\030\001 "
+          + "\001(\tB%\372A\"\n compute.googleapis.com/VpnTunn"
+          + "el\0228\n\013vpc_network\030\002 \001(\tB#\372A \n\036compute.go"
+          + "ogleapis.com/Network\022\"\n\032site_to_site_dat"
+          + "a_transfer\030\003 \001(\010\"\261\001\n\036NextHopRouterApplia"
+          + "nceInstance\0221\n\003uri\030\001 \001(\tB$\372A!\n\037compute.g"
+          + "oogleapis.com/Instance\0228\n\013vpc_network\030\002 "
+          + "\001(\tB#\372A \n\036compute.googleapis.com/Network"
+          + "\022\"\n\032site_to_site_data_transfer\030\003 \001(\010\"\276\001\n"
+          + "\035NextHopInterconnectAttachment\022?\n\003uri\030\001 "
+          + "\001(\tB2\372A/\n-compute.googleapis.com/Interco"
+          + "nnectAttachment\0228\n\013vpc_network\030\002 \001(\tB#\372A"
+          + " \n\036compute.googleapis.com/Network\022\"\n\032sit"
+          + "e_to_site_data_transfer\030\003 \001(\010\"\246\005\n\014SpokeS"
+          + "ummary\022`\n\021spoke_type_counts\030\001 \003(\0132@.goog"
+          + "le.cloud.networkconnectivity.v1.SpokeSum"
+          + "mary.SpokeTypeCountB\003\340A\003\022b\n\022spoke_state_"
+          + "counts\030\002 \003(\0132A.google.cloud.networkconne"
+          + "ctivity.v1.SpokeSummary.SpokeStateCountB"
+          + "\003\340A\003\022o\n\031spoke_state_reason_counts\030\003 \003(\0132"
+          + "G.google.cloud.networkconnectivity.v1.Sp"
+          + "okeSummary.SpokeStateReasonCountB\003\340A\003\032m\n"
+          + "\016SpokeTypeCount\022G\n\nspoke_type\030\001 \001(\0162..go"
+          + "ogle.cloud.networkconnectivity.v1.SpokeT"
+          + "ypeB\003\340A\003\022\022\n\005count\030\002 \001(\003B\003\340A\003\032e\n\017SpokeSta"
+          + "teCount\022>\n\005state\030\001 \001(\0162*.google.cloud.ne"
+          + "tworkconnectivity.v1.StateB\003\340A\003\022\022\n\005count"
+          + "\030\002 \001(\003B\003\340A\003\032\210\001\n\025SpokeStateReasonCount\022[\n"
+          + "\021state_reason_code\030\001 \001(\0162;.google.cloud."
+          + "networkconnectivity.v1.Spoke.StateReason"
+          + ".CodeB\003\340A\003\022\022\n\005count\030\002 \001(\003B\003\340A\003\"Q\n\017GetGro"
+          + "upRequest\022>\n\004name\030\001 \001(\tB0\340A\002\372A*\n(network"
+          + "connectivity.googleapis.com/Group\"\243\001\n\022Up"
+          + "dateGroupRequest\0224\n\013update_mask\030\001 \001(\0132\032."
+          + "google.protobuf.FieldMaskB\003\340A\001\022>\n\005group\030"
+          + "\002 \001(\0132*.google.cloud.networkconnectivity"
+          + ".v1.GroupB\003\340A\002\022\027\n\nrequest_id\030\003 \001(\tB\003\340A\001*"
+          + "f\n\017LocationFeature\022 \n\034LOCATION_FEATURE_U"
+          + "NSPECIFIED\020\000\022\030\n\024SITE_TO_CLOUD_SPOKES\020\001\022\027"
+          + "\n\023SITE_TO_SITE_SPOKES\020\002*l\n\tRouteType\022\032\n\026"
+          + "ROUTE_TYPE_UNSPECIFIED\020\000\022\026\n\022VPC_PRIMARY_"
+          + "SUBNET\020\001\022\030\n\024VPC_SECONDARY_SUBNET\020\002\022\021\n\rDY"
+          + "NAMIC_ROUTE\020\003*\232\001\n\005State\022\025\n\021STATE_UNSPECI"
+          + "FIED\020\000\022\014\n\010CREATING\020\001\022\n\n\006ACTIVE\020\002\022\014\n\010DELE"
+          + "TING\020\003\022\r\n\tACCEPTING\020\010\022\r\n\tREJECTING\020\t\022\014\n\010"
+          + "UPDATING\020\006\022\014\n\010INACTIVE\020\007\022\014\n\010OBSOLETE\020\n\022\n"
+          + "\n\006FAILED\020\013*\225\001\n\tSpokeType\022\032\n\026SPOKE_TYPE_U"
+          + "NSPECIFIED\020\000\022\016\n\nVPN_TUNNEL\020\001\022\033\n\027INTERCON"
+          + "NECT_ATTACHMENT\020\002\022\024\n\020ROUTER_APPLIANCE\020\003\022"
+          + "\017\n\013VPC_NETWORK\020\004\022\030\n\024PRODUCER_VPC_NETWORK"
+          + "\020\007*5\n\nPolicyMode\022\033\n\027POLICY_MODE_UNSPECIF"
+          + "IED\020\000\022\n\n\006PRESET\020\001*E\n\016PresetTopology\022\037\n\033P"
+          + "RESET_TOPOLOGY_UNSPECIFIED\020\000\022\010\n\004MESH\020\002\022\010"
+          + "\n\004STAR\020\0032\360&\n\nHubService\022\267\001\n\010ListHubs\0224.g"
+          + "oogle.cloud.networkconnectivity.v1.ListH"
+          + "ubsRequest\0325.google.cloud.networkconnect"
+          + "ivity.v1.ListHubsResponse\">\332A\006parent\202\323\344\223"
+          + "\002/\022-/v1/{parent=projects/*/locations/glo"
+          + "bal}/hubs\022\244\001\n\006GetHub\0222.google.cloud.netw"
+          + "orkconnectivity.v1.GetHubRequest\032(.googl"
+          + "e.cloud.networkconnectivity.v1.Hub\"<\332A\004n"
+          + "ame\202\323\344\223\002/\022-/v1/{name=projects/*/location"
+          + "s/global/hubs/*}\022\314\001\n\tCreateHub\0225.google."
+          + "cloud.networkconnectivity.v1.CreateHubRe"
+          + "quest\032\035.google.longrunning.Operation\"i\312A"
+          + "\030\n\003Hub\022\021OperationMetadata\332A\021parent,hub,h"
+          + "ub_id\202\323\344\223\0024\"-/v1/{parent=projects/*/loca"
+          + "tions/global}/hubs:\003hub\022\316\001\n\tUpdateHub\0225."
+          + "google.cloud.networkconnectivity.v1.Upda"
+          + "teHubRequest\032\035.google.longrunning.Operat"
+          + "ion\"k\312A\030\n\003Hub\022\021OperationMetadata\332A\017hub,u"
+          + "pdate_mask\202\323\344\223\002821/v1/{hub.name=projects"
+          + "/*/locations/global/hubs/*}:\003hub\022\314\001\n\tDel"
+          + "eteHub\0225.google.cloud.networkconnectivit"
+          + "y.v1.DeleteHubRequest\032\035.google.longrunni"
+          + "ng.Operation\"i\312A*\n\025google.protobuf.Empty"
+          + "\022\021OperationMetadata\332A\004name\202\323\344\223\002/*-/v1/{n"
+          + "ame=projects/*/locations/global/hubs/*}\022"
+          + "\317\001\n\rListHubSpokes\0229.google.cloud.network"
+          + "connectivity.v1.ListHubSpokesRequest\032:.g"
+          + "oogle.cloud.networkconnectivity.v1.ListH"
+          + "ubSpokesResponse\"G\332A\004name\202\323\344\223\002:\0228/v1/{na"
+          + "me=projects/*/locations/global/hubs/*}:l"
+          + "istSpokes\022\323\001\n\016QueryHubStatus\022:.google.cl"
+          + "oud.networkconnectivity.v1.QueryHubStatu"
+          + "sRequest\032;.google.cloud.networkconnectiv"
+          + "ity.v1.QueryHubStatusResponse\"H\332A\004name\202\323"
+          + "\344\223\002;\0229/v1/{name=projects/*/locations/glo"
+          + "bal/hubs/*}:queryStatus\022\272\001\n\nListSpokes\0226"
+          + ".google.cloud.networkconnectivity.v1.Lis"
+          + "tSpokesRequest\0327.google.cloud.networkcon"
+          + "nectivity.v1.ListSpokesResponse\";\332A\006pare"
+          + "nt\202\323\344\223\002,\022*/v1/{parent=projects/*/locatio"
+          + "ns/*}/spokes\022\247\001\n\010GetSpoke\0224.google.cloud",
+      ".networkconnectivity.v1.GetSpokeRequest\032"
+          + "*.google.cloud.networkconnectivity.v1.Sp"
+          + "oke\"9\332A\004name\202\323\344\223\002,\022*/v1/{name=projects/*"
+          + "/locations/*/spokes/*}\022\325\001\n\013CreateSpoke\0227"
+          + ".google.cloud.networkconnectivity.v1.Cre"
+          + "ateSpokeRequest\032\035.google.longrunning.Ope"
+          + "ration\"n\312A\032\n\005Spoke\022\021OperationMetadata\332A\025"
+          + "parent,spoke,spoke_id\202\323\344\223\0023\"*/v1/{parent"
+          + "=projects/*/locations/*}/spokes:\005spoke\022\327"
+          + "\001\n\013UpdateSpoke\0227.google.cloud.networkcon"
+          + "nectivity.v1.UpdateSpokeRequest\032\035.google"
+          + ".longrunning.Operation\"p\312A\032\n\005Spoke\022\021Oper"
+          + "ationMetadata\332A\021spoke,update_mask\202\323\344\223\00292"
+          + "0/v1/{spoke.name=projects/*/locations/*/"
+          + "spokes/*}:\005spoke\022\361\001\n\016RejectHubSpoke\022:.go"
+          + "ogle.cloud.networkconnectivity.v1.Reject"
+          + "HubSpokeRequest\032\035.google.longrunning.Ope"
+          + "ration\"\203\001\312A+\n\026RejectHubSpokeResponse\022\021Op"
+          + "erationMetadata\332A\016name,spoke_uri\202\323\344\223\002>\"9"
+          + "/v1/{name=projects/*/locations/global/hu"
+          + "bs/*}:rejectSpoke:\001*\022\361\001\n\016AcceptHubSpoke\022"
+          + ":.google.cloud.networkconnectivity.v1.Ac"
+          + "ceptHubSpokeRequest\032\035.google.longrunning"
+          + ".Operation\"\203\001\312A+\n\026AcceptHubSpokeResponse"
+          + "\022\021OperationMetadata\332A\016name,spoke_uri\202\323\344\223"
+          + "\002>\"9/v1/{name=projects/*/locations/globa"
+          + "l/hubs/*}:acceptSpoke:\001*\022\213\002\n\021AcceptSpoke"
+          + "Update\022=.google.cloud.networkconnectivit"
+          + "y.v1.AcceptSpokeUpdateRequest\032\035.google.l"
+          + "ongrunning.Operation\"\227\001\312A.\n\031AcceptSpokeU"
+          + "pdateResponse\022\021OperationMetadata\332A\031name,"
+          + "spoke_uri,spoke_etag\202\323\344\223\002D\"?/v1/{name=pr"
+          + "ojects/*/locations/global/hubs/*}:accept"
+          + "SpokeUpdate:\001*\022\213\002\n\021RejectSpokeUpdate\022=.g"
+          + "oogle.cloud.networkconnectivity.v1.Rejec"
+          + "tSpokeUpdateRequest\032\035.google.longrunning"
+          + ".Operation\"\227\001\312A.\n\031RejectSpokeUpdateRespo"
+          + "nse\022\021OperationMetadata\332A\031name,spoke_uri,"
+          + "spoke_etag\202\323\344\223\002D\"?/v1/{name=projects/*/l"
+          + "ocations/global/hubs/*}:rejectSpokeUpdat"
+          + "e:\001*\022\315\001\n\013DeleteSpoke\0227.google.cloud.netw"
+          + "orkconnectivity.v1.DeleteSpokeRequest\032\035."
+          + "google.longrunning.Operation\"f\312A*\n\025googl"
           + "e.protobuf.Empty\022\021OperationMetadata\332A\004na"
-          + "me\202\323\344\223\002/*-/v1/{name=projects/*/locations"
-          + "/global/hubs/*}\022\317\001\n\rListHubSpokes\0229.goog"
-          + "le.cloud.networkconnectivity.v1.ListHubS"
-          + "pokesRequest\032:.google.cloud.networkconne"
-          + "ctivity.v1.ListHubSpokesResponse\"G\332A\004nam"
-          + "e\202\323\344\223\002:\0228/v1/{name=projects/*/locations/"
-          + "global/hubs/*}:listSpokes\022\323\001\n\016QueryHubSt"
-          + "atus\022:.google.cloud.networkconnectivity."
-          + "v1.QueryHubStatusRequest\032;.google.cloud."
-          + "networkconnectivity.v1.QueryHubStatusRes"
-          + "ponse\"H\332A\004name\202\323\344\223\002;\0229/v1/{name=projects"
-          + "/*/locations/global/hubs/*}:queryStatus\022"
-          + "\272\001\n\nListSpokes\0226.google.cloud.networkcon"
-          + "nectivity.v1.ListSpokesRequest\0327.google."
-          + "cloud.networkconnectivity.v1.ListSpokesR"
-          + "esponse\";\332A\006parent\202\323\344\223\002,\022*/v1/{parent=pr"
-          + "ojects/*/locations/*}/spokes\022\247\001\n\010GetSpok"
-          + "e\0224.google.cloud.networkconnectivity.v1."
-          + "GetSpokeRequest\032*.google.cloud.networkco"
-          + "nnectivity.v1.Spoke\"9\332A\004name\202\323\344\223\002,\022*/v1/"
-          + "{name=projects/*/locations/*/spokes/*}\022\325"
-          + "\001\n\013CreateSpoke\0227.google.cloud.networkcon"
-          + "nectivity.v1.CreateSpokeRequest\032\035.google"
-          + ".longrunning.Operation\"n\312A\032\n\005Spoke\022\021Oper"
-          + "ationMetadata\332A\025parent,spoke,spoke_id\202\323\344"
-          + "\223\0023\"*/v1/{parent=projects/*/locations/*}"
-          + "/spokes:\005spoke\022\327\001\n\013UpdateSpoke\0227.google."
-          + "cloud.networkconnectivity.v1.UpdateSpoke"
-          + "Request\032\035.google.longrunning.Operation\"p"
-          + "\312A\032\n\005Spoke\022\021OperationMetadata\332A\021spoke,up"
-          + "date_mask\202\323\344\223\002920/v1/{spoke.name=project"
-          + "s/*/locations/*/spokes/*}:\005spoke\022\361\001\n\016Rej"
-          + "ectHubSpoke\022:.google.cloud.networkconnec"
-          + "tivity.v1.RejectHubSpokeRequest\032\035.google"
-          + ".longrunning.Operation\"\203\001\312A+\n\026RejectHubS"
-          + "pokeResponse\022\021OperationMetadata\332A\016name,s"
-          + "poke_uri\202\323\344\223\002>\"9/v1/{name=projects/*/loc"
-          + "ations/global/hubs/*}:rejectSpoke:\001*\022\361\001\n"
-          + "\016AcceptHubSpoke\022:.google.cloud.networkco"
-          + "nnectivity.v1.AcceptHubSpokeRequest\032\035.go"
-          + "ogle.longrunning.Operation\"\203\001\312A+\n\026Accept"
-          + "HubSpokeResponse\022\021OperationMetadata\332A\016na",
-      "me,spoke_uri\202\323\344\223\002>\"9/v1/{name=projects/*"
-          + "/locations/global/hubs/*}:acceptSpoke:\001*"
-          + "\022\315\001\n\013DeleteSpoke\0227.google.cloud.networkc"
-          + "onnectivity.v1.DeleteSpokeRequest\032\035.goog"
-          + "le.longrunning.Operation\"f\312A*\n\025google.pr"
-          + "otobuf.Empty\022\021OperationMetadata\332A\004name\202\323"
-          + "\344\223\002,**/v1/{name=projects/*/locations/*/s"
-          + "pokes/*}\022\307\001\n\rGetRouteTable\0229.google.clou"
-          + "d.networkconnectivity.v1.GetRouteTableRe"
-          + "quest\032/.google.cloud.networkconnectivity"
-          + ".v1.RouteTable\"J\332A\004name\202\323\344\223\002=\022;/v1/{name"
-          + "=projects/*/locations/global/hubs/*/rout"
-          + "eTables/*}\022\301\001\n\010GetRoute\0224.google.cloud.n"
-          + "etworkconnectivity.v1.GetRouteRequest\032*."
-          + "google.cloud.networkconnectivity.v1.Rout"
-          + "e\"S\332A\004name\202\323\344\223\002F\022D/v1/{name=projects/*/l"
-          + "ocations/global/hubs/*/routeTables/*/rou"
-          + "tes/*}\022\324\001\n\nListRoutes\0226.google.cloud.net"
-          + "workconnectivity.v1.ListRoutesRequest\0327."
-          + "google.cloud.networkconnectivity.v1.List"
-          + "RoutesResponse\"U\332A\006parent\202\323\344\223\002F\022D/v1/{pa"
-          + "rent=projects/*/locations/global/hubs/*/"
-          + "routeTables/*}/routes\022\332\001\n\017ListRouteTable"
-          + "s\022;.google.cloud.networkconnectivity.v1."
-          + "ListRouteTablesRequest\032<.google.cloud.ne"
-          + "tworkconnectivity.v1.ListRouteTablesResp"
-          + "onse\"L\332A\006parent\202\323\344\223\002=\022;/v1/{parent=proje"
-          + "cts/*/locations/global/hubs/*}/routeTabl"
-          + "es\022\263\001\n\010GetGroup\0224.google.cloud.networkco"
-          + "nnectivity.v1.GetGroupRequest\032*.google.c"
-          + "loud.networkconnectivity.v1.Group\"E\332A\004na"
-          + "me\202\323\344\223\0028\0226/v1/{name=projects/*/locations"
-          + "/global/hubs/*/groups/*}\022\306\001\n\nListGroups\022"
-          + "6.google.cloud.networkconnectivity.v1.Li"
-          + "stGroupsRequest\0327.google.cloud.networkco"
-          + "nnectivity.v1.ListGroupsResponse\"G\332A\006par"
-          + "ent\202\323\344\223\0028\0226/v1/{parent=projects/*/locati"
-          + "ons/global/hubs/*}/groups\022\343\001\n\013UpdateGrou"
-          + "p\0227.google.cloud.networkconnectivity.v1."
-          + "UpdateGroupRequest\032\035.google.longrunning."
-          + "Operation\"|\312A\032\n\005Group\022\021OperationMetadata"
-          + "\332A\021group,update_mask\202\323\344\223\002E2</v1/{group.n"
-          + "ame=projects/*/locations/global/hubs/*/g"
-          + "roups/*}:\005group\032V\312A\"networkconnectivity."
-          + "googleapis.com\322A.https://www.googleapis."
-          + "com/auth/cloud-platformB\302\003\n\'com.google.c"
-          + "loud.networkconnectivity.v1B\010HubProtoP\001Z"
-          + "Ycloud.google.com/go/networkconnectivity"
-          + "/apiv1/networkconnectivitypb;networkconn"
-          + "ectivitypb\252\002#Google.Cloud.NetworkConnect"
-          + "ivity.V1\312\002#Google\\Cloud\\NetworkConnectiv"
-          + "ity\\V1\352\002&Google::Cloud::NetworkConnectiv"
-          + "ity::V1\352A`\n compute.googleapis.com/VpnTu"
-          + "nnel\022<projects/{project}/regions/{region"
-          + "}/vpnTunnels/{resource_id}\352AW\n\037compute.g"
-          + "oogleapis.com/Instance\0224projects/{projec"
-          + "t}/zones/{zone}/instances/{instance}b\006pr"
-          + "oto3"
+          + "me\202\323\344\223\002,**/v1/{name=projects/*/locations"
+          + "/*/spokes/*}\022\307\001\n\rGetRouteTable\0229.google."
+          + "cloud.networkconnectivity.v1.GetRouteTab"
+          + "leRequest\032/.google.cloud.networkconnecti"
+          + "vity.v1.RouteTable\"J\332A\004name\202\323\344\223\002=\022;/v1/{"
+          + "name=projects/*/locations/global/hubs/*/"
+          + "routeTables/*}\022\301\001\n\010GetRoute\0224.google.clo"
+          + "ud.networkconnectivity.v1.GetRouteReques"
+          + "t\032*.google.cloud.networkconnectivity.v1."
+          + "Route\"S\332A\004name\202\323\344\223\002F\022D/v1/{name=projects"
+          + "/*/locations/global/hubs/*/routeTables/*"
+          + "/routes/*}\022\324\001\n\nListRoutes\0226.google.cloud"
+          + ".networkconnectivity.v1.ListRoutesReques"
+          + "t\0327.google.cloud.networkconnectivity.v1."
+          + "ListRoutesResponse\"U\332A\006parent\202\323\344\223\002F\022D/v1"
+          + "/{parent=projects/*/locations/global/hub"
+          + "s/*/routeTables/*}/routes\022\332\001\n\017ListRouteT"
+          + "ables\022;.google.cloud.networkconnectivity"
+          + ".v1.ListRouteTablesRequest\032<.google.clou"
+          + "d.networkconnectivity.v1.ListRouteTables"
+          + "Response\"L\332A\006parent\202\323\344\223\002=\022;/v1/{parent=p"
+          + "rojects/*/locations/global/hubs/*}/route"
+          + "Tables\022\263\001\n\010GetGroup\0224.google.cloud.netwo"
+          + "rkconnectivity.v1.GetGroupRequest\032*.goog"
+          + "le.cloud.networkconnectivity.v1.Group\"E\332"
+          + "A\004name\202\323\344\223\0028\0226/v1/{name=projects/*/locat"
+          + "ions/global/hubs/*/groups/*}\022\306\001\n\nListGro"
+          + "ups\0226.google.cloud.networkconnectivity.v"
+          + "1.ListGroupsRequest\0327.google.cloud.netwo"
+          + "rkconnectivity.v1.ListGroupsResponse\"G\332A"
+          + "\006parent\202\323\344\223\0028\0226/v1/{parent=projects/*/lo"
+          + "cations/global/hubs/*}/groups\022\343\001\n\013Update"
+          + "Group\0227.google.cloud.networkconnectivity"
+          + ".v1.UpdateGroupRequest\032\035.google.longrunn"
+          + "ing.Operation\"|\312A\032\n\005Group\022\021OperationMeta"
+          + "data\332A\021group,update_mask\202\323\344\223\002E2</v1/{gro"
+          + "up.name=projects/*/locations/global/hubs"
+          + "/*/groups/*}:\005group\032V\312A\"networkconnectiv"
+          + "ity.googleapis.com\322A.https://www.googlea"
+          + "pis.com/auth/cloud-platformB\302\003\n\'com.goog"
+          + "le.cloud.networkconnectivity.v1B\010HubProt"
+          + "oP\001ZYcloud.google.com/go/networkconnecti"
+          + "vity/apiv1/networkconnectivitypb;network"
+          + "connectivitypb\252\002#Google.Cloud.NetworkCon"
+          + "nectivity.V1\312\002#Google\\Cloud\\NetworkConne"
+          + "ctivity\\V1\352\002&Google::Cloud::NetworkConne"
+          + "ctivity::V1\352A`\n compute.googleapis.com/V"
+          + "pnTunnel\022<projects/{project}/regions/{re"
+          + "gion}/vpnTunnels/{resource_id}\352AW\n\037compu"
+          + "te.googleapis.com/Instance\0224projects/{pr"
+          + "oject}/zones/{zone}/instances/{instance}"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -809,6 +863,8 @@ public final class HubProto {
               "State",
               "Reasons",
               "SpokeType",
+              "Etag",
+              "FieldPathsPendingUpdate",
             });
     internal_static_google_cloud_networkconnectivity_v1_Spoke_StateReason_descriptor =
         internal_static_google_cloud_networkconnectivity_v1_Spoke_descriptor
@@ -1097,8 +1153,40 @@ public final class HubProto {
             new java.lang.String[] {
               "Spoke",
             });
-    internal_static_google_cloud_networkconnectivity_v1_GetRouteTableRequest_descriptor =
+    internal_static_google_cloud_networkconnectivity_v1_AcceptSpokeUpdateRequest_descriptor =
         getDescriptor().getMessageTypes().get(29);
+    internal_static_google_cloud_networkconnectivity_v1_AcceptSpokeUpdateRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkconnectivity_v1_AcceptSpokeUpdateRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "SpokeUri", "SpokeEtag", "RequestId",
+            });
+    internal_static_google_cloud_networkconnectivity_v1_AcceptSpokeUpdateResponse_descriptor =
+        getDescriptor().getMessageTypes().get(30);
+    internal_static_google_cloud_networkconnectivity_v1_AcceptSpokeUpdateResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkconnectivity_v1_AcceptSpokeUpdateResponse_descriptor,
+            new java.lang.String[] {
+              "Spoke",
+            });
+    internal_static_google_cloud_networkconnectivity_v1_RejectSpokeUpdateRequest_descriptor =
+        getDescriptor().getMessageTypes().get(31);
+    internal_static_google_cloud_networkconnectivity_v1_RejectSpokeUpdateRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkconnectivity_v1_RejectSpokeUpdateRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "SpokeUri", "SpokeEtag", "Details", "RequestId",
+            });
+    internal_static_google_cloud_networkconnectivity_v1_RejectSpokeUpdateResponse_descriptor =
+        getDescriptor().getMessageTypes().get(32);
+    internal_static_google_cloud_networkconnectivity_v1_RejectSpokeUpdateResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkconnectivity_v1_RejectSpokeUpdateResponse_descriptor,
+            new java.lang.String[] {
+              "Spoke",
+            });
+    internal_static_google_cloud_networkconnectivity_v1_GetRouteTableRequest_descriptor =
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_networkconnectivity_v1_GetRouteTableRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_GetRouteTableRequest_descriptor,
@@ -1106,7 +1194,7 @@ public final class HubProto {
               "Name",
             });
     internal_static_google_cloud_networkconnectivity_v1_GetRouteRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_networkconnectivity_v1_GetRouteRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_GetRouteRequest_descriptor,
@@ -1114,7 +1202,7 @@ public final class HubProto {
               "Name",
             });
     internal_static_google_cloud_networkconnectivity_v1_ListRoutesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_networkconnectivity_v1_ListRoutesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_ListRoutesRequest_descriptor,
@@ -1122,7 +1210,7 @@ public final class HubProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_networkconnectivity_v1_ListRoutesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_networkconnectivity_v1_ListRoutesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_ListRoutesResponse_descriptor,
@@ -1130,7 +1218,7 @@ public final class HubProto {
               "Routes", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_networkconnectivity_v1_ListRouteTablesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_networkconnectivity_v1_ListRouteTablesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_ListRouteTablesRequest_descriptor,
@@ -1138,7 +1226,7 @@ public final class HubProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_networkconnectivity_v1_ListRouteTablesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_networkconnectivity_v1_ListRouteTablesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_ListRouteTablesResponse_descriptor,
@@ -1146,7 +1234,7 @@ public final class HubProto {
               "RouteTables", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_networkconnectivity_v1_ListGroupsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_networkconnectivity_v1_ListGroupsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_ListGroupsRequest_descriptor,
@@ -1154,7 +1242,7 @@ public final class HubProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_networkconnectivity_v1_ListGroupsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_networkconnectivity_v1_ListGroupsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_ListGroupsResponse_descriptor,
@@ -1162,7 +1250,7 @@ public final class HubProto {
               "Groups", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_networkconnectivity_v1_LinkedVpnTunnels_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_networkconnectivity_v1_LinkedVpnTunnels_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_LinkedVpnTunnels_descriptor,
@@ -1170,7 +1258,7 @@ public final class HubProto {
               "Uris", "SiteToSiteDataTransfer", "VpcNetwork", "IncludeImportRanges",
             });
     internal_static_google_cloud_networkconnectivity_v1_LinkedInterconnectAttachments_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_networkconnectivity_v1_LinkedInterconnectAttachments_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_LinkedInterconnectAttachments_descriptor,
@@ -1178,7 +1266,7 @@ public final class HubProto {
               "Uris", "SiteToSiteDataTransfer", "VpcNetwork", "IncludeImportRanges",
             });
     internal_static_google_cloud_networkconnectivity_v1_LinkedRouterApplianceInstances_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_cloud_networkconnectivity_v1_LinkedRouterApplianceInstances_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_LinkedRouterApplianceInstances_descriptor,
@@ -1186,15 +1274,20 @@ public final class HubProto {
               "Instances", "SiteToSiteDataTransfer", "VpcNetwork", "IncludeImportRanges",
             });
     internal_static_google_cloud_networkconnectivity_v1_LinkedVpcNetwork_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_cloud_networkconnectivity_v1_LinkedVpcNetwork_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_LinkedVpcNetwork_descriptor,
             new java.lang.String[] {
-              "Uri", "ExcludeExportRanges", "IncludeExportRanges", "ProducerVpcSpokes",
+              "Uri",
+              "ExcludeExportRanges",
+              "IncludeExportRanges",
+              "ProposedIncludeExportRanges",
+              "ProposedExcludeExportRanges",
+              "ProducerVpcSpokes",
             });
     internal_static_google_cloud_networkconnectivity_v1_LinkedProducerVpcNetwork_descriptor =
-        getDescriptor().getMessageTypes().get(41);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_cloud_networkconnectivity_v1_LinkedProducerVpcNetwork_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_LinkedProducerVpcNetwork_descriptor,
@@ -1205,9 +1298,11 @@ public final class HubProto {
               "ProducerNetwork",
               "ExcludeExportRanges",
               "IncludeExportRanges",
+              "ProposedIncludeExportRanges",
+              "ProposedExcludeExportRanges",
             });
     internal_static_google_cloud_networkconnectivity_v1_RouterApplianceInstance_descriptor =
-        getDescriptor().getMessageTypes().get(42);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_cloud_networkconnectivity_v1_RouterApplianceInstance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_RouterApplianceInstance_descriptor,
@@ -1215,7 +1310,7 @@ public final class HubProto {
               "VirtualMachine", "IpAddress",
             });
     internal_static_google_cloud_networkconnectivity_v1_LocationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(43);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_cloud_networkconnectivity_v1_LocationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_LocationMetadata_descriptor,
@@ -1223,7 +1318,7 @@ public final class HubProto {
               "LocationFeatures",
             });
     internal_static_google_cloud_networkconnectivity_v1_NextHopVpcNetwork_descriptor =
-        getDescriptor().getMessageTypes().get(44);
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_cloud_networkconnectivity_v1_NextHopVpcNetwork_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_NextHopVpcNetwork_descriptor,
@@ -1231,7 +1326,7 @@ public final class HubProto {
               "Uri",
             });
     internal_static_google_cloud_networkconnectivity_v1_NextHopVPNTunnel_descriptor =
-        getDescriptor().getMessageTypes().get(45);
+        getDescriptor().getMessageTypes().get(49);
     internal_static_google_cloud_networkconnectivity_v1_NextHopVPNTunnel_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_NextHopVPNTunnel_descriptor,
@@ -1239,7 +1334,7 @@ public final class HubProto {
               "Uri", "VpcNetwork", "SiteToSiteDataTransfer",
             });
     internal_static_google_cloud_networkconnectivity_v1_NextHopRouterApplianceInstance_descriptor =
-        getDescriptor().getMessageTypes().get(46);
+        getDescriptor().getMessageTypes().get(50);
     internal_static_google_cloud_networkconnectivity_v1_NextHopRouterApplianceInstance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_NextHopRouterApplianceInstance_descriptor,
@@ -1247,7 +1342,7 @@ public final class HubProto {
               "Uri", "VpcNetwork", "SiteToSiteDataTransfer",
             });
     internal_static_google_cloud_networkconnectivity_v1_NextHopInterconnectAttachment_descriptor =
-        getDescriptor().getMessageTypes().get(47);
+        getDescriptor().getMessageTypes().get(51);
     internal_static_google_cloud_networkconnectivity_v1_NextHopInterconnectAttachment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_NextHopInterconnectAttachment_descriptor,
@@ -1255,7 +1350,7 @@ public final class HubProto {
               "Uri", "VpcNetwork", "SiteToSiteDataTransfer",
             });
     internal_static_google_cloud_networkconnectivity_v1_SpokeSummary_descriptor =
-        getDescriptor().getMessageTypes().get(48);
+        getDescriptor().getMessageTypes().get(52);
     internal_static_google_cloud_networkconnectivity_v1_SpokeSummary_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_SpokeSummary_descriptor,
@@ -1293,7 +1388,7 @@ public final class HubProto {
               "StateReasonCode", "Count",
             });
     internal_static_google_cloud_networkconnectivity_v1_GetGroupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(49);
+        getDescriptor().getMessageTypes().get(53);
     internal_static_google_cloud_networkconnectivity_v1_GetGroupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_GetGroupRequest_descriptor,
@@ -1301,7 +1396,7 @@ public final class HubProto {
               "Name",
             });
     internal_static_google_cloud_networkconnectivity_v1_UpdateGroupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(50);
+        getDescriptor().getMessageTypes().get(54);
     internal_static_google_cloud_networkconnectivity_v1_UpdateGroupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1_UpdateGroupRequest_descriptor,
@@ -1312,6 +1407,7 @@ public final class HubProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.FieldInfoProto.fieldInfo);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);

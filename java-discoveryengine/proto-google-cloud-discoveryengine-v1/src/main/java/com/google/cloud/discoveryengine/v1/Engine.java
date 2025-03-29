@@ -1328,6 +1328,30 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for dialogflowAgentToLink.
      */
     com.google.protobuf.ByteString getDialogflowAgentToLinkBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the flag set to true, we allow the agent and engine are in
+     * different locations, otherwise the agent and engine are required to be in
+     * the same location. The flag is set to false by default.
+     *
+     * Note that the `allow_cross_region` are one-time consumed by and
+     * passed to
+     * [EngineService.CreateEngine][google.cloud.discoveryengine.v1.EngineService.CreateEngine].
+     * It means they cannot be retrieved using
+     * [EngineService.GetEngine][google.cloud.discoveryengine.v1.EngineService.GetEngine]
+     * or
+     * [EngineService.ListEngines][google.cloud.discoveryengine.v1.EngineService.ListEngines]
+     * API after engine creation.
+     * </pre>
+     *
+     * <code>bool allow_cross_region = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The allowCrossRegion.
+     */
+    boolean getAllowCrossRegion();
   }
   /**
    *
@@ -2933,6 +2957,35 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int ALLOW_CROSS_REGION_FIELD_NUMBER = 3;
+    private boolean allowCrossRegion_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the flag set to true, we allow the agent and engine are in
+     * different locations, otherwise the agent and engine are required to be in
+     * the same location. The flag is set to false by default.
+     *
+     * Note that the `allow_cross_region` are one-time consumed by and
+     * passed to
+     * [EngineService.CreateEngine][google.cloud.discoveryengine.v1.EngineService.CreateEngine].
+     * It means they cannot be retrieved using
+     * [EngineService.GetEngine][google.cloud.discoveryengine.v1.EngineService.GetEngine]
+     * or
+     * [EngineService.ListEngines][google.cloud.discoveryengine.v1.EngineService.ListEngines]
+     * API after engine creation.
+     * </pre>
+     *
+     * <code>bool allow_cross_region = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The allowCrossRegion.
+     */
+    @java.lang.Override
+    public boolean getAllowCrossRegion() {
+      return allowCrossRegion_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2953,6 +3006,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dialogflowAgentToLink_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, dialogflowAgentToLink_);
       }
+      if (allowCrossRegion_ != false) {
+        output.writeBool(3, allowCrossRegion_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2968,6 +3024,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dialogflowAgentToLink_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, dialogflowAgentToLink_);
+      }
+      if (allowCrossRegion_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, allowCrossRegion_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2990,6 +3049,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
         if (!getAgentCreationConfig().equals(other.getAgentCreationConfig())) return false;
       }
       if (!getDialogflowAgentToLink().equals(other.getDialogflowAgentToLink())) return false;
+      if (getAllowCrossRegion() != other.getAllowCrossRegion()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3007,6 +3067,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
       }
       hash = (37 * hash) + DIALOGFLOW_AGENT_TO_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getDialogflowAgentToLink().hashCode();
+      hash = (37 * hash) + ALLOW_CROSS_REGION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowCrossRegion());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3164,6 +3226,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
           agentCreationConfigBuilder_ = null;
         }
         dialogflowAgentToLink_ = "";
+        allowCrossRegion_ = false;
         return this;
       }
 
@@ -3212,6 +3275,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.dialogflowAgentToLink_ = dialogflowAgentToLink_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.allowCrossRegion_ = allowCrossRegion_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -3273,6 +3339,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (other.getAllowCrossRegion() != false) {
+          setAllowCrossRegion(other.getAllowCrossRegion());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -3312,6 +3381,12 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 24:
+                {
+                  allowCrossRegion_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3797,6 +3872,92 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         dialogflowAgentToLink_ = value;
         bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private boolean allowCrossRegion_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If the flag set to true, we allow the agent and engine are in
+       * different locations, otherwise the agent and engine are required to be in
+       * the same location. The flag is set to false by default.
+       *
+       * Note that the `allow_cross_region` are one-time consumed by and
+       * passed to
+       * [EngineService.CreateEngine][google.cloud.discoveryengine.v1.EngineService.CreateEngine].
+       * It means they cannot be retrieved using
+       * [EngineService.GetEngine][google.cloud.discoveryengine.v1.EngineService.GetEngine]
+       * or
+       * [EngineService.ListEngines][google.cloud.discoveryengine.v1.EngineService.ListEngines]
+       * API after engine creation.
+       * </pre>
+       *
+       * <code>bool allow_cross_region = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The allowCrossRegion.
+       */
+      @java.lang.Override
+      public boolean getAllowCrossRegion() {
+        return allowCrossRegion_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If the flag set to true, we allow the agent and engine are in
+       * different locations, otherwise the agent and engine are required to be in
+       * the same location. The flag is set to false by default.
+       *
+       * Note that the `allow_cross_region` are one-time consumed by and
+       * passed to
+       * [EngineService.CreateEngine][google.cloud.discoveryengine.v1.EngineService.CreateEngine].
+       * It means they cannot be retrieved using
+       * [EngineService.GetEngine][google.cloud.discoveryengine.v1.EngineService.GetEngine]
+       * or
+       * [EngineService.ListEngines][google.cloud.discoveryengine.v1.EngineService.ListEngines]
+       * API after engine creation.
+       * </pre>
+       *
+       * <code>bool allow_cross_region = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The allowCrossRegion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllowCrossRegion(boolean value) {
+
+        allowCrossRegion_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If the flag set to true, we allow the agent and engine are in
+       * different locations, otherwise the agent and engine are required to be in
+       * the same location. The flag is set to false by default.
+       *
+       * Note that the `allow_cross_region` are one-time consumed by and
+       * passed to
+       * [EngineService.CreateEngine][google.cloud.discoveryengine.v1.EngineService.CreateEngine].
+       * It means they cannot be retrieved using
+       * [EngineService.GetEngine][google.cloud.discoveryengine.v1.EngineService.GetEngine]
+       * or
+       * [EngineService.ListEngines][google.cloud.discoveryengine.v1.EngineService.ListEngines]
+       * API after engine creation.
+       * </pre>
+       *
+       * <code>bool allow_cross_region = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAllowCrossRegion() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        allowCrossRegion_ = false;
         onChanged();
         return this;
       }
@@ -5883,9 +6044,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The industry vertical that the engine registers.
    * The restriction of the Engine industry vertical is based on
-   * [DataStore][google.cloud.discoveryengine.v1.DataStore]: If unspecified,
-   * default to `GENERIC`. Vertical on Engine has to match vertical of the
-   * DataStore linked to the engine.
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore]: Vertical on Engine
+   * has to match vertical of the DataStore linked to the engine.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.IndustryVertical industry_vertical = 16;</code>
@@ -5902,9 +6062,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The industry vertical that the engine registers.
    * The restriction of the Engine industry vertical is based on
-   * [DataStore][google.cloud.discoveryengine.v1.DataStore]: If unspecified,
-   * default to `GENERIC`. Vertical on Engine has to match vertical of the
-   * DataStore linked to the engine.
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore]: Vertical on Engine
+   * has to match vertical of the DataStore linked to the engine.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.IndustryVertical industry_vertical = 16;</code>
@@ -8595,9 +8754,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The industry vertical that the engine registers.
      * The restriction of the Engine industry vertical is based on
-     * [DataStore][google.cloud.discoveryengine.v1.DataStore]: If unspecified,
-     * default to `GENERIC`. Vertical on Engine has to match vertical of the
-     * DataStore linked to the engine.
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]: Vertical on Engine
+     * has to match vertical of the DataStore linked to the engine.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.IndustryVertical industry_vertical = 16;</code>
@@ -8614,9 +8772,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The industry vertical that the engine registers.
      * The restriction of the Engine industry vertical is based on
-     * [DataStore][google.cloud.discoveryengine.v1.DataStore]: If unspecified,
-     * default to `GENERIC`. Vertical on Engine has to match vertical of the
-     * DataStore linked to the engine.
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]: Vertical on Engine
+     * has to match vertical of the DataStore linked to the engine.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.IndustryVertical industry_vertical = 16;</code>
@@ -8636,9 +8793,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The industry vertical that the engine registers.
      * The restriction of the Engine industry vertical is based on
-     * [DataStore][google.cloud.discoveryengine.v1.DataStore]: If unspecified,
-     * default to `GENERIC`. Vertical on Engine has to match vertical of the
-     * DataStore linked to the engine.
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]: Vertical on Engine
+     * has to match vertical of the DataStore linked to the engine.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.IndustryVertical industry_vertical = 16;</code>
@@ -8659,9 +8815,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The industry vertical that the engine registers.
      * The restriction of the Engine industry vertical is based on
-     * [DataStore][google.cloud.discoveryengine.v1.DataStore]: If unspecified,
-     * default to `GENERIC`. Vertical on Engine has to match vertical of the
-     * DataStore linked to the engine.
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]: Vertical on Engine
+     * has to match vertical of the DataStore linked to the engine.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.IndustryVertical industry_vertical = 16;</code>
@@ -8684,9 +8839,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The industry vertical that the engine registers.
      * The restriction of the Engine industry vertical is based on
-     * [DataStore][google.cloud.discoveryengine.v1.DataStore]: If unspecified,
-     * default to `GENERIC`. Vertical on Engine has to match vertical of the
-     * DataStore linked to the engine.
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]: Vertical on Engine
+     * has to match vertical of the DataStore linked to the engine.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.IndustryVertical industry_vertical = 16;</code>

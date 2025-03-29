@@ -93,6 +93,11 @@ public class ProductInputsServiceSettings extends ClientSettings<ProductInputsSe
     return ((ProductInputsServiceStubSettings) getStubSettings()).insertProductInputSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateProductInput. */
+  public UnaryCallSettings<UpdateProductInputRequest, ProductInput> updateProductInputSettings() {
+    return ((ProductInputsServiceStubSettings) getStubSettings()).updateProductInputSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteProductInput. */
   public UnaryCallSettings<DeleteProductInputRequest, Empty> deleteProductInputSettings() {
     return ((ProductInputsServiceStubSettings) getStubSettings()).deleteProductInputSettings();
@@ -215,6 +220,12 @@ public class ProductInputsServiceSettings extends ClientSettings<ProductInputsSe
     public UnaryCallSettings.Builder<InsertProductInputRequest, ProductInput>
         insertProductInputSettings() {
       return getStubSettingsBuilder().insertProductInputSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateProductInput. */
+    public UnaryCallSettings.Builder<UpdateProductInputRequest, ProductInput>
+        updateProductInputSettings() {
+      return getStubSettingsBuilder().updateProductInputSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteProductInput. */

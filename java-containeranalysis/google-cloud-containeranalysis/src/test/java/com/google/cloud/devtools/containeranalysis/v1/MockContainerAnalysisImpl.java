@@ -18,6 +18,8 @@ package com.google.cloud.devtools.containeranalysis.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.containeranalysis.v1.ContainerAnalysisGrpc.ContainerAnalysisImplBase;
+import com.google.containeranalysis.v1.ExportSBOMRequest;
+import com.google.containeranalysis.v1.ExportSBOMResponse;
 import com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest;
 import com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -145,6 +147,27 @@ public class MockContainerAnalysisImpl extends ContainerAnalysisImplBase {
                   "Unrecognized response type %s for method GetVulnerabilityOccurrencesSummary, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   VulnerabilityOccurrencesSummary.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void exportSBOM(
+      ExportSBOMRequest request, StreamObserver<ExportSBOMResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExportSBOMResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ExportSBOMResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExportSBOM, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExportSBOMResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

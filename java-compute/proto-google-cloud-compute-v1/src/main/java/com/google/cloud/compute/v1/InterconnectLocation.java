@@ -254,6 +254,16 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * <code>LINK_TYPE_ETHERNET_10G_LR = 236739749;</code>
      */
     LINK_TYPE_ETHERNET_10G_LR(236739749),
+    /**
+     *
+     *
+     * <pre>
+     * 400G Ethernet, LR4 Optics.
+     * </pre>
+     *
+     * <code>LINK_TYPE_ETHERNET_400G_LR4 = 127023690;</code>
+     */
+    LINK_TYPE_ETHERNET_400G_LR4(127023690),
     UNRECOGNIZED(-1),
     ;
 
@@ -287,6 +297,16 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * <code>LINK_TYPE_ETHERNET_10G_LR = 236739749;</code>
      */
     public static final int LINK_TYPE_ETHERNET_10G_LR_VALUE = 236739749;
+    /**
+     *
+     *
+     * <pre>
+     * 400G Ethernet, LR4 Optics.
+     * </pre>
+     *
+     * <code>LINK_TYPE_ETHERNET_400G_LR4 = 127023690;</code>
+     */
+    public static final int LINK_TYPE_ETHERNET_400G_LR4_VALUE = 127023690;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -318,6 +338,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
           return LINK_TYPE_ETHERNET_100G_LR;
         case 236739749:
           return LINK_TYPE_ETHERNET_10G_LR;
+        case 127023690:
+          return LINK_TYPE_ETHERNET_400G_LR4;
         default:
           return null;
       }

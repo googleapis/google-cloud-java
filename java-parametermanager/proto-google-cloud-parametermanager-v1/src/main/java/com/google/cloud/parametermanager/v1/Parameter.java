@@ -41,6 +41,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
   private Parameter() {
     name_ = "";
     format_ = 0;
+    kmsKey_ = "";
   }
 
   @java.lang.Override
@@ -430,6 +431,84 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         : policyMember_;
   }
 
+  public static final int KMS_KEY_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKey_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * Parameter Versions. If not set, the default Google-managed encryption key
+   * will be used. Cloud KMS CryptoKeys must reside in the same location as the
+   * Parameter. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the kmsKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasKmsKey() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * Parameter Versions. If not set, the default Google-managed encryption key
+   * will be used. Cloud KMS CryptoKeys must reside in the same location as the
+   * Parameter. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The kmsKey.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKey() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKey_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * Parameter Versions. If not set, the default Google-managed encryption key
+   * will be used. Cloud KMS CryptoKeys must reside in the same location as the
+   * Parameter. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for kmsKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyBytes() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -462,6 +541,9 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(6, getPolicyMember());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, kmsKey_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -499,6 +581,9 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getPolicyMember());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, kmsKey_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -530,6 +615,10 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     if (hasPolicyMember()) {
       if (!getPolicyMember().equals(other.getPolicyMember())) return false;
     }
+    if (hasKmsKey() != other.hasKmsKey()) return false;
+    if (hasKmsKey()) {
+      if (!getKmsKey().equals(other.getKmsKey())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -560,6 +649,10 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     if (hasPolicyMember()) {
       hash = (37 * hash) + POLICY_MEMBER_FIELD_NUMBER;
       hash = (53 * hash) + getPolicyMember().hashCode();
+    }
+    if (hasKmsKey()) {
+      hash = (37 * hash) + KMS_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKmsKey().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -751,6 +844,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         policyMemberBuilder_.dispose();
         policyMemberBuilder_ = null;
       }
+      kmsKey_ = "";
       return this;
     }
 
@@ -810,6 +904,10 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         result.policyMember_ =
             policyMemberBuilder_ == null ? policyMember_ : policyMemberBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.kmsKey_ = kmsKey_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -877,6 +975,11 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPolicyMember()) {
         mergePolicyMember(other.getPolicyMember());
+      }
+      if (other.hasKmsKey()) {
+        kmsKey_ = other.kmsKey_;
+        bitField0_ |= 0x00000040;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -946,6 +1049,12 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                kmsKey_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1957,6 +2066,150 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
         policyMember_ = null;
       }
       return policyMemberBuilder_;
+    }
+
+    private java.lang.Object kmsKey_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+     * Parameter Versions. If not set, the default Google-managed encryption key
+     * will be used. Cloud KMS CryptoKeys must reside in the same location as the
+     * Parameter. The expected format is
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the kmsKey field is set.
+     */
+    public boolean hasKmsKey() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+     * Parameter Versions. If not set, the default Google-managed encryption key
+     * will be used. Cloud KMS CryptoKeys must reside in the same location as the
+     * Parameter. The expected format is
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The kmsKey.
+     */
+    public java.lang.String getKmsKey() {
+      java.lang.Object ref = kmsKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+     * Parameter Versions. If not set, the default Google-managed encryption key
+     * will be used. Cloud KMS CryptoKeys must reside in the same location as the
+     * Parameter. The expected format is
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for kmsKey.
+     */
+    public com.google.protobuf.ByteString getKmsKeyBytes() {
+      java.lang.Object ref = kmsKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+     * Parameter Versions. If not set, the default Google-managed encryption key
+     * will be used. Cloud KMS CryptoKeys must reside in the same location as the
+     * Parameter. The expected format is
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKey(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKey_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+     * Parameter Versions. If not set, the default Google-managed encryption key
+     * will be used. Cloud KMS CryptoKeys must reside in the same location as the
+     * Parameter. The expected format is
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKey() {
+      kmsKey_ = getDefaultInstance().getKmsKey();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+     * Parameter Versions. If not set, the default Google-managed encryption key
+     * will be used. Cloud KMS CryptoKeys must reside in the same location as the
+     * Parameter. The expected format is
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKey_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

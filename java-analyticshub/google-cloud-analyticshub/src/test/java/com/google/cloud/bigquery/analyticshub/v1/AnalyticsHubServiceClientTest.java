@@ -247,6 +247,7 @@ public class AnalyticsHubServiceClientTest {
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -293,6 +294,7 @@ public class AnalyticsHubServiceClientTest {
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -339,6 +341,7 @@ public class AnalyticsHubServiceClientTest {
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -388,6 +391,7 @@ public class AnalyticsHubServiceClientTest {
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -437,6 +441,7 @@ public class AnalyticsHubServiceClientTest {
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -647,6 +652,8 @@ public class AnalyticsHubServiceClientTest {
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -698,6 +705,8 @@ public class AnalyticsHubServiceClientTest {
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -749,6 +758,8 @@ public class AnalyticsHubServiceClientTest {
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -803,6 +814,8 @@ public class AnalyticsHubServiceClientTest {
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -857,6 +870,8 @@ public class AnalyticsHubServiceClientTest {
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -1234,6 +1249,9 @@ public class AnalyticsHubServiceClientTest {
             .setOrganizationDisplayName("organizationDisplayName-1353817286")
             .putAllLinkedDatasetMap(new HashMap<String, Subscription.LinkedResource>())
             .setSubscriberContact("subscriberContact-847205736")
+            .addAllLinkedResources(new ArrayList<Subscription.LinkedResource>())
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -1278,6 +1296,9 @@ public class AnalyticsHubServiceClientTest {
             .setOrganizationDisplayName("organizationDisplayName-1353817286")
             .putAllLinkedDatasetMap(new HashMap<String, Subscription.LinkedResource>())
             .setSubscriberContact("subscriberContact-847205736")
+            .addAllLinkedResources(new ArrayList<Subscription.LinkedResource>())
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 

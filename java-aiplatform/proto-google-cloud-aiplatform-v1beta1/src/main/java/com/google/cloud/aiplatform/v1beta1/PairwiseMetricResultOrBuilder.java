@@ -77,4 +77,45 @@ public interface PairwiseMetricResultOrBuilder
    * @return The bytes for explanation.
    */
   com.google.protobuf.ByteString getExplanationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Spec for custom output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CustomOutput custom_output = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the customOutput field is set.
+   */
+  boolean hasCustomOutput();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Spec for custom output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CustomOutput custom_output = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The customOutput.
+   */
+  com.google.cloud.aiplatform.v1beta1.CustomOutput getCustomOutput();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Spec for custom output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CustomOutput custom_output = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.CustomOutputOrBuilder getCustomOutputOrBuilder();
 }

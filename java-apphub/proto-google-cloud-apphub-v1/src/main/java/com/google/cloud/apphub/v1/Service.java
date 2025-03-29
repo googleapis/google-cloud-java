@@ -24,8 +24,8 @@ package com.google.cloud.apphub.v1;
  *
  * <pre>
  * Service is an App Hub data model that contains a discovered service, which
- * represents a network/api interface that exposes some functionality to clients
- * for consumption over the network.
+ * represents a network or API interface that exposes some functionality to
+ * clients for consumption over the network.
  * </pre>
  *
  * Protobuf type {@code google.cloud.apphub.v1.Service}
@@ -281,7 +281,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. The resource name of a Service. Format:
-   * "projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"
+   * `"projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -305,7 +305,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. The resource name of a Service. Format:
-   * "projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"
+   * `"projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1131,8 +1131,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Service is an App Hub data model that contains a discovered service, which
-   * represents a network/api interface that exposes some functionality to clients
-   * for consumption over the network.
+   * represents a network or API interface that exposes some functionality to
+   * clients for consumption over the network.
    * </pre>
    *
    * Protobuf type {@code google.cloud.apphub.v1.Service}
@@ -1499,7 +1499,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of a Service. Format:
-     * "projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"
+     * `"projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1522,7 +1522,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of a Service. Format:
-     * "projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"
+     * `"projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1545,7 +1545,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of a Service. Format:
-     * "projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"
+     * `"projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1567,7 +1567,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of a Service. Format:
-     * "projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"
+     * `"projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1585,7 +1585,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of a Service. Format:
-     * "projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"
+     * `"projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>

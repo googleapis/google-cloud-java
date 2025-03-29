@@ -74,11 +74,13 @@ public class AsyncSearchPaged {
               .setSafeSearch(true)
               .putAllUserLabels(new HashMap<String, String>())
               .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+              .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
               .setSession(
                   SessionName.ofProjectLocationDataStoreSessionName(
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+              .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
               .build();
       while (true) {
         SearchResponse response = searchServiceClient.searchCallable().call(request);

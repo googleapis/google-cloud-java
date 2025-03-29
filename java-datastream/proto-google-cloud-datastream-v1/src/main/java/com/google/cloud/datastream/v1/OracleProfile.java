@@ -24,7 +24,6 @@ package com.google.cloud.datastream.v1;
  *
  * <pre>
  * Oracle database profile.
- * Next ID: 10.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.OracleProfile}
@@ -838,7 +837,6 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Oracle database profile.
-   * Next ID: 10.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.OracleProfile}

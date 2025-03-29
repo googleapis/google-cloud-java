@@ -28,6 +28,8 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.containeranalysis.v1.ExportSBOMRequest;
+import com.google.containeranalysis.v1.ExportSBOMResponse;
 import com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest;
 import com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -72,7 +74,10 @@ public class HttpJsonContainerAnalysisStub extends ContainerAnalysisStub {
                             serializer.putPathParam(fields, "resource", request.getResource());
                             return fields;
                           })
-                      .setAdditionalPaths("/v1/{resource=projects/*/occurrences/*}:setIamPolicy")
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/occurrences/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/notes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/occurrences/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -111,7 +116,10 @@ public class HttpJsonContainerAnalysisStub extends ContainerAnalysisStub {
                             serializer.putPathParam(fields, "resource", request.getResource());
                             return fields;
                           })
-                      .setAdditionalPaths("/v1/{resource=projects/*/occurrences/*}:getIamPolicy")
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/occurrences/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/notes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/occurrences/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -151,7 +159,9 @@ public class HttpJsonContainerAnalysisStub extends ContainerAnalysisStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{resource=projects/*/occurrences/*}:testIamPermissions")
+                          "/v1/{resource=projects/*/occurrences/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/notes/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/occurrences/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -194,6 +204,8 @@ public class HttpJsonContainerAnalysisStub extends ContainerAnalysisStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{parent=projects/*/locations/*}/occurrences:vulnerabilitySummary")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -212,6 +224,46 @@ public class HttpJsonContainerAnalysisStub extends ContainerAnalysisStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ExportSBOMRequest, ExportSBOMResponse>
+      exportSBOMMethodDescriptor =
+          ApiMethodDescriptor.<ExportSBOMRequest, ExportSBOMResponse>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.containeranalysis.v1.ContainerAnalysis/ExportSBOM")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExportSBOMRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/resources/**}:exportSBOM",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportSBOMRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*/resources/**}:exportSBOM")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportSBOMRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ExportSBOMResponse>newBuilder()
+                      .setDefaultInstance(ExportSBOMResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -219,6 +271,7 @@ public class HttpJsonContainerAnalysisStub extends ContainerAnalysisStub {
   private final UnaryCallable<
           GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
       getVulnerabilityOccurrencesSummaryCallable;
+  private final UnaryCallable<ExportSBOMRequest, ExportSBOMResponse> exportSBOMCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -310,6 +363,17 @@ public class HttpJsonContainerAnalysisStub extends ContainerAnalysisStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<ExportSBOMRequest, ExportSBOMResponse> exportSBOMTransportSettings =
+        HttpJsonCallSettings.<ExportSBOMRequest, ExportSBOMResponse>newBuilder()
+            .setMethodDescriptor(exportSBOMMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
@@ -327,6 +391,9 @@ public class HttpJsonContainerAnalysisStub extends ContainerAnalysisStub {
             getVulnerabilityOccurrencesSummaryTransportSettings,
             settings.getVulnerabilityOccurrencesSummarySettings(),
             clientContext);
+    this.exportSBOMCallable =
+        callableFactory.createUnaryCallable(
+            exportSBOMTransportSettings, settings.exportSBOMSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -339,6 +406,7 @@ public class HttpJsonContainerAnalysisStub extends ContainerAnalysisStub {
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(getVulnerabilityOccurrencesSummaryMethodDescriptor);
+    methodDescriptors.add(exportSBOMMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -362,6 +430,11 @@ public class HttpJsonContainerAnalysisStub extends ContainerAnalysisStub {
   public UnaryCallable<GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
       getVulnerabilityOccurrencesSummaryCallable() {
     return getVulnerabilityOccurrencesSummaryCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportSBOMRequest, ExportSBOMResponse> exportSBOMCallable() {
+    return exportSBOMCallable;
   }
 
   @Override

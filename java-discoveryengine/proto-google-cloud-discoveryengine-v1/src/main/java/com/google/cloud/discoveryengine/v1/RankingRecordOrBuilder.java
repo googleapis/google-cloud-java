@@ -120,6 +120,8 @@ public interface RankingRecordOrBuilder
    *
    * <pre>
    * The score of this record based on the given query and selected model.
+   * The score will be rounded to 2 decimal places. If the score is close to 0,
+   * it will be rounded to 0.0001 to avoid returning unset.
    * </pre>
    *
    * <code>float score = 4;</code>

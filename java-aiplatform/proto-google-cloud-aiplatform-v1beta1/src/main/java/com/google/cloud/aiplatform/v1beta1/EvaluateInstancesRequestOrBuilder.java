@@ -1261,6 +1261,49 @@ public interface EvaluateInstancesRequestOrBuilder
    *
    *
    * <pre>
+   * Rubric Based Instruction Following metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingInput rubric_based_instruction_following_input = 40;
+   * </code>
+   *
+   * @return Whether the rubricBasedInstructionFollowingInput field is set.
+   */
+  boolean hasRubricBasedInstructionFollowingInput();
+  /**
+   *
+   *
+   * <pre>
+   * Rubric Based Instruction Following metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingInput rubric_based_instruction_following_input = 40;
+   * </code>
+   *
+   * @return The rubricBasedInstructionFollowingInput.
+   */
+  com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingInput
+      getRubricBasedInstructionFollowingInput();
+  /**
+   *
+   *
+   * <pre>
+   * Rubric Based Instruction Following metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingInput rubric_based_instruction_following_input = 40;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingInputOrBuilder
+      getRubricBasedInstructionFollowingInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The resource name of the Location to evaluate the instances.
    * Format: `projects/{project}/locations/{location}`
    * </pre>

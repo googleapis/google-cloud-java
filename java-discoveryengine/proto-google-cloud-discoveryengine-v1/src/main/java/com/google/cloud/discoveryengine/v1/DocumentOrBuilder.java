@@ -150,7 +150,7 @@ public interface DocumentOrBuilder
    * Immutable. The identifier of the document.
    *
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-   * standard with a length limit of 63 characters.
+   * standard with a length limit of 128 characters.
    * </pre>
    *
    * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -165,7 +165,7 @@ public interface DocumentOrBuilder
    * Immutable. The identifier of the document.
    *
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-   * standard with a length limit of 63 characters.
+   * standard with a length limit of 128 characters.
    * </pre>
    *
    * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -376,7 +376,8 @@ public interface DocumentOrBuilder
    * * If document is indexed successfully, the index_time field is populated.
    * * Otherwise, if document is not indexed due to errors, the error_samples
    *   field is populated.
-   * * Otherwise, index_status is unset.
+   * * Otherwise, if document's index is in progress, the pending_message field
+   *   is populated.
    * </pre>
    *
    * <code>
@@ -395,7 +396,8 @@ public interface DocumentOrBuilder
    * * If document is indexed successfully, the index_time field is populated.
    * * Otherwise, if document is not indexed due to errors, the error_samples
    *   field is populated.
-   * * Otherwise, index_status is unset.
+   * * Otherwise, if document's index is in progress, the pending_message field
+   *   is populated.
    * </pre>
    *
    * <code>
@@ -414,7 +416,8 @@ public interface DocumentOrBuilder
    * * If document is indexed successfully, the index_time field is populated.
    * * Otherwise, if document is not indexed due to errors, the error_samples
    *   field is populated.
-   * * Otherwise, index_status is unset.
+   * * Otherwise, if document's index is in progress, the pending_message field
+   *   is populated.
    * </pre>
    *
    * <code>

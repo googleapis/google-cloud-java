@@ -131,9 +131,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The ID of the listing to create.
-   * Must contain only Unicode letters, numbers (0-9), underscores (_).
-   * Should not use characters that require URL-escaping, or characters
-   * outside of ASCII, spaces.
+   * Must contain only ASCII letters, numbers (0-9), underscores (_).
    * Max length: 100 bytes.
    * </pre>
    *
@@ -158,9 +156,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The ID of the listing to create.
-   * Must contain only Unicode letters, numbers (0-9), underscores (_).
-   * Should not use characters that require URL-escaping, or characters
-   * outside of ASCII, spaces.
+   * Must contain only ASCII letters, numbers (0-9), underscores (_).
    * Max length: 100 bytes.
    * </pre>
    *
@@ -777,9 +773,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The ID of the listing to create.
-     * Must contain only Unicode letters, numbers (0-9), underscores (_).
-     * Should not use characters that require URL-escaping, or characters
-     * outside of ASCII, spaces.
+     * Must contain only ASCII letters, numbers (0-9), underscores (_).
      * Max length: 100 bytes.
      * </pre>
      *
@@ -803,9 +797,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The ID of the listing to create.
-     * Must contain only Unicode letters, numbers (0-9), underscores (_).
-     * Should not use characters that require URL-escaping, or characters
-     * outside of ASCII, spaces.
+     * Must contain only ASCII letters, numbers (0-9), underscores (_).
      * Max length: 100 bytes.
      * </pre>
      *
@@ -829,9 +821,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The ID of the listing to create.
-     * Must contain only Unicode letters, numbers (0-9), underscores (_).
-     * Should not use characters that require URL-escaping, or characters
-     * outside of ASCII, spaces.
+     * Must contain only ASCII letters, numbers (0-9), underscores (_).
      * Max length: 100 bytes.
      * </pre>
      *
@@ -854,9 +844,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The ID of the listing to create.
-     * Must contain only Unicode letters, numbers (0-9), underscores (_).
-     * Should not use characters that require URL-escaping, or characters
-     * outside of ASCII, spaces.
+     * Must contain only ASCII letters, numbers (0-9), underscores (_).
      * Max length: 100 bytes.
      * </pre>
      *
@@ -875,9 +863,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The ID of the listing to create.
-     * Must contain only Unicode letters, numbers (0-9), underscores (_).
-     * Should not use characters that require URL-escaping, or characters
-     * outside of ASCII, spaces.
+     * Must contain only ASCII letters, numbers (0-9), underscores (_).
      * Max length: 100 bytes.
      * </pre>
      *

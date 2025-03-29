@@ -81,6 +81,42 @@ public final class SiteSearchEngineServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_BatchCreateTargetSitesResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_CreateSitemapRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_CreateSitemapRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_DeleteSitemapRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_DeleteSitemapRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_FetchSitemapsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_FetchSitemapsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_FetchSitemapsRequest_UrisMatcher_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_FetchSitemapsRequest_UrisMatcher_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_FetchSitemapsRequest_Matcher_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_FetchSitemapsRequest_Matcher_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_CreateSitemapMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_CreateSitemapMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_DeleteSitemapMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_DeleteSitemapMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_FetchSitemapsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_FetchSitemapsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_FetchSitemapsResponse_SitemapMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_FetchSitemapsResponse_SitemapMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1_EnableAdvancedSiteSearchRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_EnableAdvancedSiteSearchRequest_fieldAccessorTable;
@@ -203,188 +239,246 @@ public final class SiteSearchEngineServiceProto {
           + "e.protobuf.Timestamp\"c\n\036BatchCreateTarge"
           + "tSitesResponse\022A\n\014target_sites\030\001 \003(\0132+.g"
           + "oogle.cloud.discoveryengine.v1.TargetSit"
-          + "e\"v\n\037EnableAdvancedSiteSearchRequest\022S\n\022"
-          + "site_search_engine\030\001 \001(\tB7\340A\002\372A1\n/discov"
-          + "eryengine.googleapis.com/SiteSearchEngin"
-          + "e\"\"\n EnableAdvancedSiteSearchResponse\"\204\001"
-          + "\n EnableAdvancedSiteSearchMetadata\022/\n\013cr"
-          + "eate_time\030\001 \001(\0132\032.google.protobuf.Timest"
-          + "amp\022/\n\013update_time\030\002 \001(\0132\032.google.protob"
-          + "uf.Timestamp\"w\n DisableAdvancedSiteSearc"
-          + "hRequest\022S\n\022site_search_engine\030\001 \001(\tB7\340A"
-          + "\002\372A1\n/discoveryengine.googleapis.com/Sit"
-          + "eSearchEngine\"#\n!DisableAdvancedSiteSear"
-          + "chResponse\"\205\001\n!DisableAdvancedSiteSearch"
-          + "Metadata\022/\n\013create_time\030\001 \001(\0132\032.google.p"
-          + "rotobuf.Timestamp\022/\n\013update_time\030\002 \001(\0132\032"
-          + ".google.protobuf.Timestamp\"\232\001\n\022RecrawlUr"
-          + "isRequest\022S\n\022site_search_engine\030\001 \001(\tB7\340"
-          + "A\002\372A1\n/discoveryengine.googleapis.com/Si"
-          + "teSearchEngine\022\021\n\004uris\030\002 \003(\tB\003\340A\002\022\034\n\017sit"
-          + "e_credential\030\005 \001(\tB\003\340A\001\"\350\003\n\023RecrawlUrisR"
-          + "esponse\022Y\n\017failure_samples\030\001 \003(\0132@.googl"
-          + "e.cloud.discoveryengine.v1.RecrawlUrisRe"
-          + "sponse.FailureInfo\022\023\n\013failed_uris\030\002 \003(\t\032"
-          + "\340\002\n\013FailureInfo\022\013\n\003uri\030\001 \001(\t\022g\n\017failure_"
-          + "reasons\030\002 \003(\0132N.google.cloud.discoveryen"
-          + "gine.v1.RecrawlUrisResponse.FailureInfo."
-          + "FailureReason\032\332\001\n\rFailureReason\022n\n\013corpu"
-          + "s_type\030\001 \001(\0162Y.google.cloud.discoveryeng"
-          + "ine.v1.RecrawlUrisResponse.FailureInfo.F"
-          + "ailureReason.CorpusType\022\025\n\rerror_message"
-          + "\030\002 \001(\t\"B\n\nCorpusType\022\033\n\027CORPUS_TYPE_UNSP"
-          + "ECIFIED\020\000\022\013\n\007DESKTOP\020\001\022\n\n\006MOBILE\020\002\"\363\001\n\023R"
-          + "ecrawlUrisMetadata\022/\n\013create_time\030\001 \001(\0132"
-          + "\032.google.protobuf.Timestamp\022/\n\013update_ti"
-          + "me\030\002 \001(\0132\032.google.protobuf.Timestamp\022\024\n\014"
-          + "invalid_uris\030\003 \003(\t\022\030\n\020valid_uris_count\030\004"
-          + " \001(\005\022\025\n\rsuccess_count\030\005 \001(\005\022\025\n\rpending_c"
-          + "ount\030\006 \001(\005\022\034\n\024quota_exceeded_count\030\007 \001(\005"
-          + "\"h\n\035BatchVerifyTargetSitesRequest\022G\n\006par"
-          + "ent\030\001 \001(\tB7\340A\002\372A1\n/discoveryengine.googl"
-          + "eapis.com/SiteSearchEngine\" \n\036BatchVerif"
-          + "yTargetSitesResponse\"\202\001\n\036BatchVerifyTarg"
-          + "etSitesMetadata\022/\n\013create_time\030\001 \001(\0132\032.g"
-          + "oogle.protobuf.Timestamp\022/\n\013update_time\030"
-          + "\002 \001(\0132\032.google.protobuf.Timestamp\"\242\001\n$Fe"
-          + "tchDomainVerificationStatusRequest\022S\n\022si"
-          + "te_search_engine\030\001 \001(\tB7\340A\002\372A1\n/discover"
-          + "yengine.googleapis.com/SiteSearchEngine\022"
-          + "\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\227"
-          + "\001\n%FetchDomainVerificationStatusResponse"
-          + "\022A\n\014target_sites\030\001 \003(\0132+.google.cloud.di"
-          + "scoveryengine.v1.TargetSite\022\027\n\017next_page"
-          + "_token\030\002 \001(\t\022\022\n\ntotal_size\030\003 \001(\0052\265&\n\027Sit"
-          + "eSearchEngineService\022\250\002\n\023GetSiteSearchEn"
-          + "gine\022;.google.cloud.discoveryengine.v1.G"
-          + "etSiteSearchEngineRequest\0321.google.cloud"
-          + ".discoveryengine.v1.SiteSearchEngine\"\240\001\332"
-          + "A\004name\202\323\344\223\002\222\001\022?/v1/{name=projects/*/loca"
-          + "tions/*/dataStores/*/siteSearchEngine}ZO"
-          + "\022M/v1/{name=projects/*/locations/*/colle"
-          + "ctions/*/dataStores/*/siteSearchEngine}\022"
-          + "\273\003\n\020CreateTargetSite\0228.google.cloud.disc"
-          + "overyengine.v1.CreateTargetSiteRequest\032\035"
-          + ".google.longrunning.Operation\"\315\002\312Af\n*goo"
-          + "gle.cloud.discoveryengine.v1.TargetSite\022"
-          + "8google.cloud.discoveryengine.v1.CreateT"
-          + "argetSiteMetadata\332A\022parent,target_site\202\323"
-          + "\344\223\002\310\001\"M/v1/{parent=projects/*/locations/"
-          + "*/dataStores/*/siteSearchEngine}/targetS"
-          + "ites:\013target_siteZj\"[/v1/{parent=project"
-          + "s/*/locations/*/collections/*/dataStores"
-          + "/*/siteSearchEngine}/targetSites:\013target"
-          + "_site\022\317\003\n\026BatchCreateTargetSites\022>.googl"
-          + "e.cloud.discoveryengine.v1.BatchCreateTa"
-          + "rgetSitesRequest\032\035.google.longrunning.Op"
-          + "eration\"\325\002\312A\177\n>google.cloud.discoveryeng"
-          + "ine.v1.BatchCreateTargetSitesResponse\022=g"
-          + "oogle.cloud.discoveryengine.v1.BatchCrea"
-          + "teTargetSiteMetadata\202\323\344\223\002\314\001\"Y/v1/{parent"
-          + "=projects/*/locations/*/dataStores/*/sit"
-          + "eSearchEngine}/targetSites:batchCreate:\001"
-          + "*Zl\"g/v1/{parent=projects/*/locations/*/"
-          + "collections/*/dataStores/*/siteSearchEng"
-          + "ine}/targetSites:batchCreate:\001*\022\262\002\n\rGetT"
-          + "argetSite\0225.google.cloud.discoveryengine"
-          + ".v1.GetTargetSiteRequest\032+.google.cloud."
-          + "discoveryengine.v1.TargetSite\"\274\001\332A\004name\202"
-          + "\323\344\223\002\256\001\022M/v1/{name=projects/*/locations/*"
-          + "/dataStores/*/siteSearchEngine/targetSit"
-          + "es/*}Z]\022[/v1/{name=projects/*/locations/"
+          + "e\"\237\001\n\024CreateSitemapRequest\022G\n\006parent\030\001 \001"
+          + "(\tB7\340A\002\372A1\n/discoveryengine.googleapis.c"
+          + "om/SiteSearchEngine\022>\n\007sitemap\030\002 \001(\0132(.g"
+          + "oogle.cloud.discoveryengine.v1.SitemapB\003"
+          + "\340A\002\"T\n\024DeleteSitemapRequest\022<\n\004name\030\001 \001("
+          + "\tB.\340A\002\372A(\n&discoveryengine.googleapis.co"
+          + "m/Sitemap\"\302\002\n\024FetchSitemapsRequest\022G\n\006pa"
+          + "rent\030\001 \001(\tB7\340A\002\372A1\n/discoveryengine.goog"
+          + "leapis.com/SiteSearchEngine\022S\n\007matcher\030\002"
+          + " \001(\0132=.google.cloud.discoveryengine.v1.F"
+          + "etchSitemapsRequest.MatcherB\003\340A\001\032\033\n\013Uris"
+          + "Matcher\022\014\n\004uris\030\001 \003(\t\032o\n\007Matcher\022Y\n\014uris"
+          + "_matcher\030\001 \001(\0132A.google.cloud.discoverye"
+          + "ngine.v1.FetchSitemapsRequest.UrisMatche"
+          + "rH\000B\t\n\007matcher\"y\n\025CreateSitemapMetadata\022"
+          + "/\n\013create_time\030\001 \001(\0132\032.google.protobuf.T"
+          + "imestamp\022/\n\013update_time\030\002 \001(\0132\032.google.p"
+          + "rotobuf.Timestamp\"y\n\025DeleteSitemapMetada"
+          + "ta\022/\n\013create_time\030\001 \001(\0132\032.google.protobu"
+          + "f.Timestamp\022/\n\013update_time\030\002 \001(\0132\032.googl"
+          + "e.protobuf.Timestamp\"\310\001\n\025FetchSitemapsRe"
+          + "sponse\022a\n\021sitemaps_metadata\030\001 \003(\0132F.goog"
+          + "le.cloud.discoveryengine.v1.FetchSitemap"
+          + "sResponse.SitemapMetadata\032L\n\017SitemapMeta"
+          + "data\0229\n\007sitemap\030\001 \001(\0132(.google.cloud.dis"
+          + "coveryengine.v1.Sitemap\"v\n\037EnableAdvance"
+          + "dSiteSearchRequest\022S\n\022site_search_engine"
+          + "\030\001 \001(\tB7\340A\002\372A1\n/discoveryengine.googleap"
+          + "is.com/SiteSearchEngine\"\"\n EnableAdvance"
+          + "dSiteSearchResponse\"\204\001\n EnableAdvancedSi"
+          + "teSearchMetadata\022/\n\013create_time\030\001 \001(\0132\032."
+          + "google.protobuf.Timestamp\022/\n\013update_time"
+          + "\030\002 \001(\0132\032.google.protobuf.Timestamp\"w\n Di"
+          + "sableAdvancedSiteSearchRequest\022S\n\022site_s"
+          + "earch_engine\030\001 \001(\tB7\340A\002\372A1\n/discoveryeng"
+          + "ine.googleapis.com/SiteSearchEngine\"#\n!D"
+          + "isableAdvancedSiteSearchResponse\"\205\001\n!Dis"
+          + "ableAdvancedSiteSearchMetadata\022/\n\013create"
+          + "_time\030\001 \001(\0132\032.google.protobuf.Timestamp\022"
+          + "/\n\013update_time\030\002 \001(\0132\032.google.protobuf.T"
+          + "imestamp\"\232\001\n\022RecrawlUrisRequest\022S\n\022site_"
+          + "search_engine\030\001 \001(\tB7\340A\002\372A1\n/discoveryen"
+          + "gine.googleapis.com/SiteSearchEngine\022\021\n\004"
+          + "uris\030\002 \003(\tB\003\340A\002\022\034\n\017site_credential\030\005 \001(\t"
+          + "B\003\340A\001\"\350\003\n\023RecrawlUrisResponse\022Y\n\017failure"
+          + "_samples\030\001 \003(\0132@.google.cloud.discoverye"
+          + "ngine.v1.RecrawlUrisResponse.FailureInfo"
+          + "\022\023\n\013failed_uris\030\002 \003(\t\032\340\002\n\013FailureInfo\022\013\n"
+          + "\003uri\030\001 \001(\t\022g\n\017failure_reasons\030\002 \003(\0132N.go"
+          + "ogle.cloud.discoveryengine.v1.RecrawlUri"
+          + "sResponse.FailureInfo.FailureReason\032\332\001\n\r"
+          + "FailureReason\022n\n\013corpus_type\030\001 \001(\0162Y.goo"
+          + "gle.cloud.discoveryengine.v1.RecrawlUris"
+          + "Response.FailureInfo.FailureReason.Corpu"
+          + "sType\022\025\n\rerror_message\030\002 \001(\t\"B\n\nCorpusTy"
+          + "pe\022\033\n\027CORPUS_TYPE_UNSPECIFIED\020\000\022\013\n\007DESKT"
+          + "OP\020\001\022\n\n\006MOBILE\020\002\"\227\003\n\023RecrawlUrisMetadata"
+          + "\022/\n\013create_time\030\001 \001(\0132\032.google.protobuf."
+          + "Timestamp\022/\n\013update_time\030\002 \001(\0132\032.google."
+          + "protobuf.Timestamp\022\024\n\014invalid_uris\030\003 \003(\t"
+          + "\022\032\n\022invalid_uris_count\030\010 \001(\005\022\024\n\014noindex_"
+          + "uris\030\013 \003(\t\022\032\n\022noindex_uris_count\030\014 \001(\005\022&"
+          + "\n\036uris_not_matching_target_sites\030\t \003(\t\022,"
+          + "\n$uris_not_matching_target_sites_count\030\n"
+          + " \001(\005\022\030\n\020valid_uris_count\030\004 \001(\005\022\025\n\rsucces"
+          + "s_count\030\005 \001(\005\022\025\n\rpending_count\030\006 \001(\005\022\034\n\024"
+          + "quota_exceeded_count\030\007 \001(\005\"h\n\035BatchVerif"
+          + "yTargetSitesRequest\022G\n\006parent\030\001 \001(\tB7\340A\002"
+          + "\372A1\n/discoveryengine.googleapis.com/Site"
+          + "SearchEngine\" \n\036BatchVerifyTargetSitesRe"
+          + "sponse\"\202\001\n\036BatchVerifyTargetSitesMetadat"
+          + "a\022/\n\013create_time\030\001 \001(\0132\032.google.protobuf"
+          + ".Timestamp\022/\n\013update_time\030\002 \001(\0132\032.google"
+          + ".protobuf.Timestamp\"\242\001\n$FetchDomainVerif"
+          + "icationStatusRequest\022S\n\022site_search_engi"
+          + "ne\030\001 \001(\tB7\340A\002\372A1\n/discoveryengine.google"
+          + "apis.com/SiteSearchEngine\022\021\n\tpage_size\030\002"
+          + " \001(\005\022\022\n\npage_token\030\003 \001(\t\"\227\001\n%FetchDomain"
+          + "VerificationStatusResponse\022A\n\014target_sit"
+          + "es\030\001 \003(\0132+.google.cloud.discoveryengine."
+          + "v1.TargetSite\022\027\n\017next_page_token\030\002 \001(\t\022\022"
+          + "\n\ntotal_size\030\003 \001(\0052\217/\n\027SiteSearchEngineS"
+          + "ervice\022\250\002\n\023GetSiteSearchEngine\022;.google."
+          + "cloud.discoveryengine.v1.GetSiteSearchEn"
+          + "gineRequest\0321.google.cloud.discoveryengi"
+          + "ne.v1.SiteSearchEngine\"\240\001\332A\004name\202\323\344\223\002\222\001\022"
+          + "?/v1/{name=projects/*/locations/*/dataSt"
+          + "ores/*/siteSearchEngine}ZO\022M/v1/{name=pr"
+          + "ojects/*/locations/*/collections/*/dataS"
+          + "tores/*/siteSearchEngine}\022\273\003\n\020CreateTarg"
+          + "etSite\0228.google.cloud.discoveryengine.v1"
+          + ".CreateTargetSiteRequest\032\035.google.longru"
+          + "nning.Operation\"\315\002\312Af\n*google.cloud.disc"
+          + "overyengine.v1.TargetSite\0228google.cloud."
+          + "discoveryengine.v1.CreateTargetSiteMetad"
+          + "ata\332A\022parent,target_site\202\323\344\223\002\310\001\"M/v1/{pa"
+          + "rent=projects/*/locations/*/dataStores/*"
+          + "/siteSearchEngine}/targetSites:\013target_s"
+          + "iteZj\"[/v1/{parent=projects/*/locations/"
           + "*/collections/*/dataStores/*/siteSearchE"
-          + "ngine/targetSites/*}\022\314\003\n\020UpdateTargetSit"
-          + "e\0228.google.cloud.discoveryengine.v1.Upda"
-          + "teTargetSiteRequest\032\035.google.longrunning"
-          + ".Operation\"\336\002\312Af\n*google.cloud.discovery"
-          + "engine.v1.TargetSite\0228google.cloud.disco"
-          + "veryengine.v1.UpdateTargetSiteMetadata\332A"
-          + "\013target_site\202\323\344\223\002\340\0012Y/v1/{target_site.na"
-          + "me=projects/*/locations/*/dataStores/*/s"
-          + "iteSearchEngine/targetSites/*}:\013target_s"
-          + "iteZv2g/v1/{target_site.name=projects/*/"
-          + "locations/*/collections/*/dataStores/*/s"
-          + "iteSearchEngine/targetSites/*}:\013target_s"
-          + "ite\022\376\002\n\020DeleteTargetSite\0228.google.cloud."
-          + "discoveryengine.v1.DeleteTargetSiteReque"
-          + "st\032\035.google.longrunning.Operation\"\220\002\312AQ\n"
-          + "\025google.protobuf.Empty\0228google.cloud.dis"
-          + "coveryengine.v1.DeleteTargetSiteMetadata"
-          + "\332A\004name\202\323\344\223\002\256\001*M/v1/{name=projects/*/loc"
-          + "ations/*/dataStores/*/siteSearchEngine/t"
-          + "argetSites/*}Z]*[/v1/{name=projects/*/lo"
-          + "cations/*/collections/*/dataStores/*/sit"
-          + "eSearchEngine/targetSites/*}\022\305\002\n\017ListTar"
-          + "getSites\0227.google.cloud.discoveryengine."
-          + "v1.ListTargetSitesRequest\0328.google.cloud"
-          + ".discoveryengine.v1.ListTargetSitesRespo"
-          + "nse\"\276\001\332A\006parent\202\323\344\223\002\256\001\022M/v1/{parent=proj"
-          + "ects/*/locations/*/dataStores/*/siteSear"
-          + "chEngine}/targetSitesZ]\022[/v1/{parent=pro"
-          + "jects/*/locations/*/collections/*/dataSt"
-          + "ores/*/siteSearchEngine}/targetSites\022\363\003\n"
-          + "\030EnableAdvancedSiteSearch\022@.google.cloud"
-          + ".discoveryengine.v1.EnableAdvancedSiteSe"
-          + "archRequest\032\035.google.longrunning.Operati"
-          + "on\"\365\002\312A\204\001\n@google.cloud.discoveryengine."
-          + "v1.EnableAdvancedSiteSearchResponse\022@goo"
-          + "gle.cloud.discoveryengine.v1.EnableAdvan"
-          + "cedSiteSearchMetadata\202\323\344\223\002\346\001\"f/v1/{site_"
-          + "search_engine=projects/*/locations/*/dat"
-          + "aStores/*/siteSearchEngine}:enableAdvanc"
-          + "edSiteSearch:\001*Zy\"t/v1/{site_search_engi"
-          + "ne=projects/*/locations/*/collections/*/"
-          + "dataStores/*/siteSearchEngine}:enableAdv"
-          + "ancedSiteSearch:\001*\022\371\003\n\031DisableAdvancedSi"
-          + "teSearch\022A.google.cloud.discoveryengine."
-          + "v1.DisableAdvancedSiteSearchRequest\032\035.go"
-          + "ogle.longrunning.Operation\"\371\002\312A\206\001\nAgoogl"
-          + "e.cloud.discoveryengine.v1.DisableAdvanc"
-          + "edSiteSearchResponse\022Agoogle.cloud.disco"
-          + "veryengine.v1.DisableAdvancedSiteSearchM"
-          + "etadata\202\323\344\223\002\350\001\"g/v1/{site_search_engine="
-          + "projects/*/locations/*/dataStores/*/site"
-          + "SearchEngine}:disableAdvancedSiteSearch:"
-          + "\001*Zz\"u/v1/{site_search_engine=projects/*"
-          + "/locations/*/collections/*/dataStores/*/"
-          + "siteSearchEngine}:disableAdvancedSiteSea"
-          + "rch:\001*\022\244\003\n\013RecrawlUris\0223.google.cloud.di"
-          + "scoveryengine.v1.RecrawlUrisRequest\032\035.go"
-          + "ogle.longrunning.Operation\"\300\002\312Aj\n3google"
-          + ".cloud.discoveryengine.v1.RecrawlUrisRes"
-          + "ponse\0223google.cloud.discoveryengine.v1.R"
-          + "ecrawlUrisMetadata\202\323\344\223\002\314\001\"Y/v1/{site_sea"
-          + "rch_engine=projects/*/locations/*/dataSt"
-          + "ores/*/siteSearchEngine}:recrawlUris:\001*Z"
-          + "l\"g/v1/{site_search_engine=projects/*/lo"
-          + "cations/*/collections/*/dataStores/*/sit"
-          + "eSearchEngine}:recrawlUris:\001*\022\357\002\n\026BatchV"
-          + "erifyTargetSites\022>.google.cloud.discover"
-          + "yengine.v1.BatchVerifyTargetSitesRequest"
-          + "\032\035.google.longrunning.Operation\"\365\001\312A\200\001\n>"
-          + "google.cloud.discoveryengine.v1.BatchVer"
-          + "ifyTargetSitesResponse\022>google.cloud.dis"
-          + "coveryengine.v1.BatchVerifyTargetSitesMe"
-          + "tadata\202\323\344\223\002k\"f/v1/{parent=projects/*/loc"
-          + "ations/*/collections/*/dataStores/*/site"
-          + "SearchEngine}:batchVerifyTargetSites:\001*\022"
-          + "\262\002\n\035FetchDomainVerificationStatus\022E.goog"
-          + "le.cloud.discoveryengine.v1.FetchDomainV"
-          + "erificationStatusRequest\032F.google.cloud."
-          + "discoveryengine.v1.FetchDomainVerificati"
-          + "onStatusResponse\"\201\001\202\323\344\223\002{\022y/v1/{site_sea"
-          + "rch_engine=projects/*/locations/*/collec"
-          + "tions/*/dataStores/*/siteSearchEngine}:f"
-          + "etchDomainVerificationStatus\032R\312A\036discove"
-          + "ryengine.googleapis.com\322A.https://www.go"
-          + "ogleapis.com/auth/cloud-platformB\217\002\n#com"
-          + ".google.cloud.discoveryengine.v1B\034SiteSe"
-          + "archEngineServiceProtoP\001ZMcloud.google.c"
-          + "om/go/discoveryengine/apiv1/discoveryeng"
-          + "inepb;discoveryenginepb\242\002\017DISCOVERYENGIN"
-          + "E\252\002\037Google.Cloud.DiscoveryEngine.V1\312\002\037Go"
-          + "ogle\\Cloud\\DiscoveryEngine\\V1\352\002\"Google::"
-          + "Cloud::DiscoveryEngine::V1b\006proto3"
+          + "ngine}/targetSites:\013target_site\022\317\003\n\026Batc"
+          + "hCreateTargetSites\022>.google.cloud.discov"
+          + "eryengine.v1.BatchCreateTargetSitesReque"
+          + "st\032\035.google.longrunning.Operation\"\325\002\312A\177\n"
+          + ">google.cloud.discoveryengine.v1.BatchCr"
+          + "eateTargetSitesResponse\022=google.cloud.di"
+          + "scoveryengine.v1.BatchCreateTargetSiteMe"
+          + "tadata\202\323\344\223\002\314\001\"Y/v1/{parent=projects/*/lo"
+          + "cations/*/dataStores/*/siteSearchEngine}"
+          + "/targetSites:batchCreate:\001*Zl\"g/v1/{pare"
+          + "nt=projects/*/locations/*/collections/*/"
+          + "dataStores/*/siteSearchEngine}/targetSit"
+          + "es:batchCreate:\001*\022\262\002\n\rGetTargetSite\0225.go"
+          + "ogle.cloud.discoveryengine.v1.GetTargetS"
+          + "iteRequest\032+.google.cloud.discoveryengin"
+          + "e.v1.TargetSite\"\274\001\332A\004name\202\323\344\223\002\256\001\022M/v1/{n"
+          + "ame=projects/*/locations/*/dataStores/*/"
+          + "siteSearchEngine/targetSites/*}Z]\022[/v1/{"
+          + "name=projects/*/locations/*/collections/"
+          + "*/dataStores/*/siteSearchEngine/targetSi"
+          + "tes/*}\022\314\003\n\020UpdateTargetSite\0228.google.clo"
+          + "ud.discoveryengine.v1.UpdateTargetSiteRe"
+          + "quest\032\035.google.longrunning.Operation\"\336\002\312"
+          + "Af\n*google.cloud.discoveryengine.v1.Targ"
+          + "etSite\0228google.cloud.discoveryengine.v1."
+          + "UpdateTargetSiteMetadata\332A\013target_site\202\323"
+          + "\344\223\002\340\0012Y/v1/{target_site.name=projects/*/"
+          + "locations/*/dataStores/*/siteSearchEngin"
+          + "e/targetSites/*}:\013target_siteZv2g/v1/{ta"
+          + "rget_site.name=projects/*/locations/*/co"
+          + "llections/*/dataStores/*/siteSearchEngin"
+          + "e/targetSites/*}:\013target_site\022\376\002\n\020Delete"
+          + "TargetSite\0228.google.cloud.discoveryengin"
+          + "e.v1.DeleteTargetSiteRequest\032\035.google.lo"
+          + "ngrunning.Operation\"\220\002\312AQ\n\025google.protob"
+          + "uf.Empty\0228google.cloud.discoveryengine.v"
+          + "1.DeleteTargetSiteMetadata\332A\004name\202\323\344\223\002\256\001"
+          + "*M/v1/{name=projects/*/locations/*/dataS"
+          + "tores/*/siteSearchEngine/targetSites/*}Z"
+          + "]*[/v1/{name=projects/*/locations/*/coll"
+          + "ections/*/dataStores/*/siteSearchEngine/"
+          + "targetSites/*}\022\305\002\n\017ListTargetSites\0227.goo"
+          + "gle.cloud.discoveryengine.v1.ListTargetS"
+          + "itesRequest\0328.google.cloud.discoveryengi"
+          + "ne.v1.ListTargetSitesResponse\"\276\001\332A\006paren"
+          + "t\202\323\344\223\002\256\001\022M/v1/{parent=projects/*/locatio"
+          + "ns/*/dataStores/*/siteSearchEngine}/targ"
+          + "etSitesZ]\022[/v1/{parent=projects/*/locati"
+          + "ons/*/collections/*/dataStores/*/siteSea"
+          + "rchEngine}/targetSites\022\235\003\n\rCreateSitemap"
+          + "\0225.google.cloud.discoveryengine.v1.Creat"
+          + "eSitemapRequest\032\035.google.longrunning.Ope"
+          + "ration\"\265\002\312A`\n\'google.cloud.discoveryengi"
+          + "ne.v1.Sitemap\0225google.cloud.discoveryeng"
+          + "ine.v1.CreateSitemapMetadata\332A\016parent,si"
+          + "temap\202\323\344\223\002\272\001\"J/v1/{parent=projects/*/loc"
+          + "ations/*/dataStores/*/siteSearchEngine}/"
+          + "sitemaps:\007sitemapZc\"X/v1/{parent=project"
+          + "s/*/locations/*/collections/*/dataStores"
+          + "/*/siteSearchEngine}/sitemaps:\007sitemap\022\357"
+          + "\002\n\rDeleteSitemap\0225.google.cloud.discover"
+          + "yengine.v1.DeleteSitemapRequest\032\035.google"
+          + ".longrunning.Operation\"\207\002\312AN\n\025google.pro"
+          + "tobuf.Empty\0225google.cloud.discoveryengin"
+          + "e.v1.DeleteSitemapMetadata\332A\004name\202\323\344\223\002\250\001"
+          + "*J/v1/{name=projects/*/locations/*/dataS"
+          + "tores/*/siteSearchEngine/sitemaps/*}ZZ*X"
+          + "/v1/{name=projects/*/locations/*/collect"
+          + "ions/*/dataStores/*/siteSearchEngine/sit"
+          + "emaps/*}\022\305\002\n\rFetchSitemaps\0225.google.clou"
+          + "d.discoveryengine.v1.FetchSitemapsReques"
+          + "t\0326.google.cloud.discoveryengine.v1.Fetc"
+          + "hSitemapsResponse\"\304\001\332A\006parent\202\323\344\223\002\264\001\022P/v"
+          + "1/{parent=projects/*/locations/*/dataSto"
+          + "res/*/siteSearchEngine}/sitemaps:fetchZ`"
+          + "\022^/v1/{parent=projects/*/locations/*/col"
+          + "lections/*/dataStores/*/siteSearchEngine"
+          + "}/sitemaps:fetch\022\363\003\n\030EnableAdvancedSiteS"
+          + "earch\022@.google.cloud.discoveryengine.v1."
+          + "EnableAdvancedSiteSearchRequest\032\035.google"
+          + ".longrunning.Operation\"\365\002\312A\204\001\n@google.cl"
+          + "oud.discoveryengine.v1.EnableAdvancedSit"
+          + "eSearchResponse\022@google.cloud.discoverye"
+          + "ngine.v1.EnableAdvancedSiteSearchMetadat"
+          + "a\202\323\344\223\002\346\001\"f/v1/{site_search_engine=projec"
+          + "ts/*/locations/*/dataStores/*/siteSearch"
+          + "Engine}:enableAdvancedSiteSearch:\001*Zy\"t/"
+          + "v1/{site_search_engine=projects/*/locati"
+          + "ons/*/collections/*/dataStores/*/siteSea"
+          + "rchEngine}:enableAdvancedSiteSearch:\001*\022\371"
+          + "\003\n\031DisableAdvancedSiteSearch\022A.google.cl"
+          + "oud.discoveryengine.v1.DisableAdvancedSi"
+          + "teSearchRequest\032\035.google.longrunning.Ope"
+          + "ration\"\371\002\312A\206\001\nAgoogle.cloud.discoveryeng"
+          + "ine.v1.DisableAdvancedSiteSearchResponse"
+          + "\022Agoogle.cloud.discoveryengine.v1.Disabl"
+          + "eAdvancedSiteSearchMetadata\202\323\344\223\002\350\001\"g/v1/"
+          + "{site_search_engine=projects/*/locations"
+          + "/*/dataStores/*/siteSearchEngine}:disabl"
+          + "eAdvancedSiteSearch:\001*Zz\"u/v1/{site_sear"
+          + "ch_engine=projects/*/locations/*/collect"
+          + "ions/*/dataStores/*/siteSearchEngine}:di"
+          + "sableAdvancedSiteSearch:\001*\022\244\003\n\013RecrawlUr"
+          + "is\0223.google.cloud.discoveryengine.v1.Rec"
+          + "rawlUrisRequest\032\035.google.longrunning.Ope"
+          + "ration\"\300\002\312Aj\n3google.cloud.discoveryengi"
+          + "ne.v1.RecrawlUrisResponse\0223google.cloud."
+          + "discoveryengine.v1.RecrawlUrisMetadata\202\323"
+          + "\344\223\002\314\001\"Y/v1/{site_search_engine=projects/"
+          + "*/locations/*/dataStores/*/siteSearchEng"
+          + "ine}:recrawlUris:\001*Zl\"g/v1/{site_search_"
+          + "engine=projects/*/locations/*/collection"
+          + "s/*/dataStores/*/siteSearchEngine}:recra"
+          + "wlUris:\001*\022\357\002\n\026BatchVerifyTargetSites\022>.g"
+          + "oogle.cloud.discoveryengine.v1.BatchVeri"
+          + "fyTargetSitesRequest\032\035.google.longrunnin"
+          + "g.Operation\"\365\001\312A\200\001\n>google.cloud.discove"
+          + "ryengine.v1.BatchVerifyTargetSitesRespon"
+          + "se\022>google.cloud.discoveryengine.v1.Batc"
+          + "hVerifyTargetSitesMetadata\202\323\344\223\002k\"f/v1/{p"
+          + "arent=projects/*/locations/*/collections"
+          + "/*/dataStores/*/siteSearchEngine}:batchV"
+          + "erifyTargetSites:\001*\022\262\002\n\035FetchDomainVerif"
+          + "icationStatus\022E.google.cloud.discoveryen"
+          + "gine.v1.FetchDomainVerificationStatusReq"
+          + "uest\032F.google.cloud.discoveryengine.v1.F"
+          + "etchDomainVerificationStatusResponse\"\201\001\202"
+          + "\323\344\223\002{\022y/v1/{site_search_engine=projects/"
+          + "*/locations/*/collections/*/dataStores/*"
+          + "/siteSearchEngine}:fetchDomainVerificati"
+          + "onStatus\032R\312A\036discoveryengine.googleapis."
+          + "com\322A.https://www.googleapis.com/auth/cl"
+          + "oud-platformB\217\002\n#com.google.cloud.discov"
+          + "eryengine.v1B\034SiteSearchEngineServicePro"
+          + "toP\001ZMcloud.google.com/go/discoveryengin"
+          + "e/apiv1/discoveryenginepb;discoveryengin"
+          + "epb\242\002\017DISCOVERYENGINE\252\002\037Google.Cloud.Dis"
+          + "coveryEngine.V1\312\002\037Google\\Cloud\\Discovery"
+          + "Engine\\V1\352\002\"Google::Cloud::DiscoveryEngi"
+          + "ne::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -503,8 +597,86 @@ public final class SiteSearchEngineServiceProto {
             new java.lang.String[] {
               "TargetSites",
             });
-    internal_static_google_cloud_discoveryengine_v1_EnableAdvancedSiteSearchRequest_descriptor =
+    internal_static_google_cloud_discoveryengine_v1_CreateSitemapRequest_descriptor =
         getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_discoveryengine_v1_CreateSitemapRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_CreateSitemapRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Sitemap",
+            });
+    internal_static_google_cloud_discoveryengine_v1_DeleteSitemapRequest_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_discoveryengine_v1_DeleteSitemapRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_DeleteSitemapRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_discoveryengine_v1_FetchSitemapsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_discoveryengine_v1_FetchSitemapsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_FetchSitemapsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Matcher",
+            });
+    internal_static_google_cloud_discoveryengine_v1_FetchSitemapsRequest_UrisMatcher_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_FetchSitemapsRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1_FetchSitemapsRequest_UrisMatcher_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_FetchSitemapsRequest_UrisMatcher_descriptor,
+            new java.lang.String[] {
+              "Uris",
+            });
+    internal_static_google_cloud_discoveryengine_v1_FetchSitemapsRequest_Matcher_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_FetchSitemapsRequest_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_discoveryengine_v1_FetchSitemapsRequest_Matcher_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_FetchSitemapsRequest_Matcher_descriptor,
+            new java.lang.String[] {
+              "UrisMatcher", "Matcher",
+            });
+    internal_static_google_cloud_discoveryengine_v1_CreateSitemapMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(16);
+    internal_static_google_cloud_discoveryengine_v1_CreateSitemapMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_CreateSitemapMetadata_descriptor,
+            new java.lang.String[] {
+              "CreateTime", "UpdateTime",
+            });
+    internal_static_google_cloud_discoveryengine_v1_DeleteSitemapMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(17);
+    internal_static_google_cloud_discoveryengine_v1_DeleteSitemapMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_DeleteSitemapMetadata_descriptor,
+            new java.lang.String[] {
+              "CreateTime", "UpdateTime",
+            });
+    internal_static_google_cloud_discoveryengine_v1_FetchSitemapsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_discoveryengine_v1_FetchSitemapsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_FetchSitemapsResponse_descriptor,
+            new java.lang.String[] {
+              "SitemapsMetadata",
+            });
+    internal_static_google_cloud_discoveryengine_v1_FetchSitemapsResponse_SitemapMetadata_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_FetchSitemapsResponse_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1_FetchSitemapsResponse_SitemapMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_FetchSitemapsResponse_SitemapMetadata_descriptor,
+            new java.lang.String[] {
+              "Sitemap",
+            });
+    internal_static_google_cloud_discoveryengine_v1_EnableAdvancedSiteSearchRequest_descriptor =
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_discoveryengine_v1_EnableAdvancedSiteSearchRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_EnableAdvancedSiteSearchRequest_descriptor,
@@ -512,13 +684,13 @@ public final class SiteSearchEngineServiceProto {
               "SiteSearchEngine",
             });
     internal_static_google_cloud_discoveryengine_v1_EnableAdvancedSiteSearchResponse_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_discoveryengine_v1_EnableAdvancedSiteSearchResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_EnableAdvancedSiteSearchResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_discoveryengine_v1_EnableAdvancedSiteSearchMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_discoveryengine_v1_EnableAdvancedSiteSearchMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_EnableAdvancedSiteSearchMetadata_descriptor,
@@ -526,7 +698,7 @@ public final class SiteSearchEngineServiceProto {
               "CreateTime", "UpdateTime",
             });
     internal_static_google_cloud_discoveryengine_v1_DisableAdvancedSiteSearchRequest_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_discoveryengine_v1_DisableAdvancedSiteSearchRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_DisableAdvancedSiteSearchRequest_descriptor,
@@ -534,13 +706,13 @@ public final class SiteSearchEngineServiceProto {
               "SiteSearchEngine",
             });
     internal_static_google_cloud_discoveryengine_v1_DisableAdvancedSiteSearchResponse_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_discoveryengine_v1_DisableAdvancedSiteSearchResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_DisableAdvancedSiteSearchResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_discoveryengine_v1_DisableAdvancedSiteSearchMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_discoveryengine_v1_DisableAdvancedSiteSearchMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_DisableAdvancedSiteSearchMetadata_descriptor,
@@ -548,7 +720,7 @@ public final class SiteSearchEngineServiceProto {
               "CreateTime", "UpdateTime",
             });
     internal_static_google_cloud_discoveryengine_v1_RecrawlUrisRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_discoveryengine_v1_RecrawlUrisRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_RecrawlUrisRequest_descriptor,
@@ -556,7 +728,7 @@ public final class SiteSearchEngineServiceProto {
               "SiteSearchEngine", "Uris", "SiteCredential",
             });
     internal_static_google_cloud_discoveryengine_v1_RecrawlUrisResponse_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_discoveryengine_v1_RecrawlUrisResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_RecrawlUrisResponse_descriptor,
@@ -584,21 +756,26 @@ public final class SiteSearchEngineServiceProto {
               "CorpusType", "ErrorMessage",
             });
     internal_static_google_cloud_discoveryengine_v1_RecrawlUrisMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_discoveryengine_v1_RecrawlUrisMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_RecrawlUrisMetadata_descriptor,
             new java.lang.String[] {
               "CreateTime",
               "UpdateTime",
-              "InvalidUris",
+              "InvalidUris3",
+              "InvalidUrisCount8",
+              "NoindexUris11",
+              "NoindexUrisCount12",
+              "UrisNotMatchingTargetSites9",
+              "UrisNotMatchingTargetSitesCount10",
               "ValidUrisCount",
               "SuccessCount",
               "PendingCount",
               "QuotaExceededCount",
             });
     internal_static_google_cloud_discoveryengine_v1_BatchVerifyTargetSitesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_discoveryengine_v1_BatchVerifyTargetSitesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_BatchVerifyTargetSitesRequest_descriptor,
@@ -606,13 +783,13 @@ public final class SiteSearchEngineServiceProto {
               "Parent",
             });
     internal_static_google_cloud_discoveryengine_v1_BatchVerifyTargetSitesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_discoveryengine_v1_BatchVerifyTargetSitesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_BatchVerifyTargetSitesResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_discoveryengine_v1_BatchVerifyTargetSitesMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_discoveryengine_v1_BatchVerifyTargetSitesMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_BatchVerifyTargetSitesMetadata_descriptor,
@@ -620,7 +797,7 @@ public final class SiteSearchEngineServiceProto {
               "CreateTime", "UpdateTime",
             });
     internal_static_google_cloud_discoveryengine_v1_FetchDomainVerificationStatusRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_discoveryengine_v1_FetchDomainVerificationStatusRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_FetchDomainVerificationStatusRequest_descriptor,
@@ -628,7 +805,7 @@ public final class SiteSearchEngineServiceProto {
               "SiteSearchEngine", "PageSize", "PageToken",
             });
     internal_static_google_cloud_discoveryengine_v1_FetchDomainVerificationStatusResponse_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_discoveryengine_v1_FetchDomainVerificationStatusResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_FetchDomainVerificationStatusResponse_descriptor,

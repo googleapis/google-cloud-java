@@ -47,6 +47,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     redirectUri_ = "";
     nextPageToken_ = "";
     correctedQuery_ = "";
+    searchLinkPromotions_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -183,6 +184,76 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1.Chunk chunk = 18;</code>
      */
     com.google.cloud.discoveryengine.v1.ChunkOrBuilder getChunkOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Google provided available scores.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    int getModelScoresCount();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Google provided available scores.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    boolean containsModelScores(java.lang.String key);
+    /** Use {@link #getModelScoresMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList>
+        getModelScores();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Google provided available scores.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList>
+        getModelScoresMap();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Google provided available scores.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    /* nullable */
+    com.google.cloud.discoveryengine.v1.DoubleList getModelScoresOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.discoveryengine.v1.DoubleList defaultValue);
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Google provided available scores.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.DoubleList getModelScoresOrThrow(java.lang.String key);
   }
   /**
    *
@@ -216,6 +287,18 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.discoveryengine.v1.SearchServiceProto
           .internal_static_google_cloud_discoveryengine_v1_SearchResponse_SearchResult_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetModelScores();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
     }
 
     @java.lang.Override
@@ -394,6 +477,130 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           : chunk_;
     }
 
+    public static final int MODEL_SCORES_FIELD_NUMBER = 4;
+
+    private static final class ModelScoresDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList>
+          defaultEntry =
+              com.google.protobuf.MapEntry
+                  .<java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList>
+                      newDefaultInstance(
+                          com.google.cloud.discoveryengine.v1.SearchServiceProto
+                              .internal_static_google_cloud_discoveryengine_v1_SearchResponse_SearchResult_ModelScoresEntry_descriptor,
+                          com.google.protobuf.WireFormat.FieldType.STRING,
+                          "",
+                          com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                          com.google.cloud.discoveryengine.v1.DoubleList.getDefaultInstance());
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList>
+        modelScores_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList>
+        internalGetModelScores() {
+      if (modelScores_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ModelScoresDefaultEntryHolder.defaultEntry);
+      }
+      return modelScores_;
+    }
+
+    public int getModelScoresCount() {
+      return internalGetModelScores().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Google provided available scores.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsModelScores(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetModelScores().getMap().containsKey(key);
+    }
+    /** Use {@link #getModelScoresMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList>
+        getModelScores() {
+      return getModelScoresMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Google provided available scores.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList>
+        getModelScoresMap() {
+      return internalGetModelScores().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Google provided available scores.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.discoveryengine.v1.DoubleList getModelScoresOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.discoveryengine.v1.DoubleList defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList> map =
+          internalGetModelScores().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Google provided available scores.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.DoubleList getModelScoresOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList> map =
+          internalGetModelScores().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -414,6 +621,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(2, getDocument());
       }
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetModelScores(), ModelScoresDefaultEntryHolder.defaultEntry, 4);
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(18, getChunk());
       }
@@ -431,6 +640,18 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDocument());
+      }
+      for (java.util.Map.Entry<java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList>
+          entry : internalGetModelScores().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<
+                java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList>
+            modelScores__ =
+                ModelScoresDefaultEntryHolder.defaultEntry
+                    .newBuilderForType()
+                    .setKey(entry.getKey())
+                    .setValue(entry.getValue())
+                    .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, modelScores__);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getChunk());
@@ -460,6 +681,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (hasChunk()) {
         if (!getChunk().equals(other.getChunk())) return false;
       }
+      if (!internalGetModelScores().equals(other.internalGetModelScores())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -480,6 +702,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (hasChunk()) {
         hash = (37 * hash) + CHUNK_FIELD_NUMBER;
         hash = (53 * hash) + getChunk().hashCode();
+      }
+      if (!internalGetModelScores().getMap().isEmpty()) {
+        hash = (37 * hash) + MODEL_SCORES_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetModelScores().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -603,6 +829,28 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             .internal_static_google_cloud_discoveryengine_v1_SearchResponse_SearchResult_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 4:
+            return internalGetModelScores();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 4:
+            return internalGetMutableModelScores();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -646,6 +894,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           chunkBuilder_.dispose();
           chunkBuilder_ = null;
         }
+        internalGetMutableModelScores().clear();
         return this;
       }
 
@@ -695,6 +944,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.chunk_ = chunkBuilder_ == null ? chunk_ : chunkBuilder_.build();
           to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.modelScores_ =
+              internalGetModelScores().build(ModelScoresDefaultEntryHolder.defaultEntry);
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -760,6 +1013,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (other.hasChunk()) {
           mergeChunk(other.getChunk());
         }
+        internalGetMutableModelScores().mergeFrom(other.internalGetModelScores());
+        bitField0_ |= 0x00000008;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -798,6 +1053,20 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 34:
+                {
+                  com.google.protobuf.MapEntry<
+                          java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList>
+                      modelScores__ =
+                          input.readMessage(
+                              ModelScoresDefaultEntryHolder.defaultEntry.getParserForType(),
+                              extensionRegistry);
+                  internalGetMutableModelScores()
+                      .ensureBuilderMap()
+                      .put(modelScores__.getKey(), modelScores__.getValue());
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
               case 146:
                 {
                   input.readMessage(getChunkFieldBuilder().getBuilder(), extensionRegistry);
@@ -1339,6 +1608,258 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           chunk_ = null;
         }
         return chunkBuilder_;
+      }
+
+      private static final class ModelScoresConverter
+          implements com.google.protobuf.MapFieldBuilder.Converter<
+              java.lang.String,
+              com.google.cloud.discoveryengine.v1.DoubleListOrBuilder,
+              com.google.cloud.discoveryengine.v1.DoubleList> {
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.DoubleList build(
+            com.google.cloud.discoveryengine.v1.DoubleListOrBuilder val) {
+          if (val instanceof com.google.cloud.discoveryengine.v1.DoubleList) {
+            return (com.google.cloud.discoveryengine.v1.DoubleList) val;
+          }
+          return ((com.google.cloud.discoveryengine.v1.DoubleList.Builder) val).build();
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.MapEntry<
+                java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList>
+            defaultEntry() {
+          return ModelScoresDefaultEntryHolder.defaultEntry;
+        }
+      };
+
+      private static final ModelScoresConverter modelScoresConverter = new ModelScoresConverter();
+
+      private com.google.protobuf.MapFieldBuilder<
+              java.lang.String,
+              com.google.cloud.discoveryengine.v1.DoubleListOrBuilder,
+              com.google.cloud.discoveryengine.v1.DoubleList,
+              com.google.cloud.discoveryengine.v1.DoubleList.Builder>
+          modelScores_;
+
+      private com.google.protobuf.MapFieldBuilder<
+              java.lang.String,
+              com.google.cloud.discoveryengine.v1.DoubleListOrBuilder,
+              com.google.cloud.discoveryengine.v1.DoubleList,
+              com.google.cloud.discoveryengine.v1.DoubleList.Builder>
+          internalGetModelScores() {
+        if (modelScores_ == null) {
+          return new com.google.protobuf.MapFieldBuilder<>(modelScoresConverter);
+        }
+        return modelScores_;
+      }
+
+      private com.google.protobuf.MapFieldBuilder<
+              java.lang.String,
+              com.google.cloud.discoveryengine.v1.DoubleListOrBuilder,
+              com.google.cloud.discoveryengine.v1.DoubleList,
+              com.google.cloud.discoveryengine.v1.DoubleList.Builder>
+          internalGetMutableModelScores() {
+        if (modelScores_ == null) {
+          modelScores_ = new com.google.protobuf.MapFieldBuilder<>(modelScoresConverter);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return modelScores_;
+      }
+
+      public int getModelScoresCount() {
+        return internalGetModelScores().ensureBuilderMap().size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Google provided available scores.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.discoveryengine.v1.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public boolean containsModelScores(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetModelScores().ensureBuilderMap().containsKey(key);
+      }
+      /** Use {@link #getModelScoresMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList>
+          getModelScores() {
+        return getModelScoresMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Google provided available scores.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.discoveryengine.v1.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList>
+          getModelScoresMap() {
+        return internalGetModelScores().getImmutableMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Google provided available scores.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.discoveryengine.v1.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public /* nullable */ com.google.cloud.discoveryengine.v1.DoubleList getModelScoresOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.discoveryengine.v1.DoubleList defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.DoubleListOrBuilder>
+            map = internalGetMutableModelScores().ensureBuilderMap();
+        return map.containsKey(key) ? modelScoresConverter.build(map.get(key)) : defaultValue;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Google provided available scores.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.discoveryengine.v1.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.DoubleList getModelScoresOrThrow(
+          java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.DoubleListOrBuilder>
+            map = internalGetMutableModelScores().ensureBuilderMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return modelScoresConverter.build(map.get(key));
+      }
+
+      public Builder clearModelScores() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        internalGetMutableModelScores().clear();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Google provided available scores.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.discoveryengine.v1.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder removeModelScores(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableModelScores().ensureBuilderMap().remove(key);
+        return this;
+      }
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList>
+          getMutableModelScores() {
+        bitField0_ |= 0x00000008;
+        return internalGetMutableModelScores().ensureMessageMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Google provided available scores.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.discoveryengine.v1.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder putModelScores(
+          java.lang.String key, com.google.cloud.discoveryengine.v1.DoubleList value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableModelScores().ensureBuilderMap().put(key, value);
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Google provided available scores.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.discoveryengine.v1.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder putAllModelScores(
+          java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList> values) {
+        for (java.util.Map.Entry<java.lang.String, com.google.cloud.discoveryengine.v1.DoubleList>
+            e : values.entrySet()) {
+          if (e.getKey() == null || e.getValue() == null) {
+            throw new NullPointerException();
+          }
+        }
+        internalGetMutableModelScores().ensureBuilderMap().putAll(values);
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Google provided available scores.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.discoveryengine.v1.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.DoubleList.Builder putModelScoresBuilderIfAbsent(
+          java.lang.String key) {
+        java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.DoubleListOrBuilder>
+            builderMap = internalGetMutableModelScores().ensureBuilderMap();
+        com.google.cloud.discoveryengine.v1.DoubleListOrBuilder entry = builderMap.get(key);
+        if (entry == null) {
+          entry = com.google.cloud.discoveryengine.v1.DoubleList.newBuilder();
+          builderMap.put(key, entry);
+        }
+        if (entry instanceof com.google.cloud.discoveryengine.v1.DoubleList) {
+          entry = ((com.google.cloud.discoveryengine.v1.DoubleList) entry).toBuilder();
+          builderMap.put(key, entry);
+        }
+        return (com.google.cloud.discoveryengine.v1.DoubleList.Builder) entry;
       }
 
       @java.lang.Override
@@ -4436,6 +4957,18 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>NON_SUMMARY_SEEKING_QUERY_IGNORED_V2 = 9;</code>
        */
       NON_SUMMARY_SEEKING_QUERY_IGNORED_V2(9),
+      /**
+       *
+       *
+       * <pre>
+       * The time out case.
+       *
+       * Google skips the summary if the time out.
+       * </pre>
+       *
+       * <code>TIME_OUT = 10;</code>
+       */
+      TIME_OUT(10),
       UNRECOGNIZED(-1),
       ;
 
@@ -4573,6 +5106,18 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * <code>NON_SUMMARY_SEEKING_QUERY_IGNORED_V2 = 9;</code>
        */
       public static final int NON_SUMMARY_SEEKING_QUERY_IGNORED_V2_VALUE = 9;
+      /**
+       *
+       *
+       * <pre>
+       * The time out case.
+       *
+       * Google skips the summary if the time out.
+       * </pre>
+       *
+       * <code>TIME_OUT = 10;</code>
+       */
+      public static final int TIME_OUT_VALUE = 10;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -4618,6 +5163,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             return CUSTOMER_POLICY_VIOLATION;
           case 9:
             return NON_SUMMARY_SEEKING_QUERY_IGNORED_V2;
+          case 10:
+            return TIME_OUT;
           default:
             return null;
         }
@@ -17068,6 +17615,91 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         : sessionInfo_;
   }
 
+  public static final int SEARCH_LINK_PROMOTIONS_FIELD_NUMBER = 23;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.discoveryengine.v1.SearchLinkPromotion>
+      searchLinkPromotions_;
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.discoveryengine.v1.SearchLinkPromotion>
+      getSearchLinkPromotionsList() {
+    return searchLinkPromotions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.discoveryengine.v1.SearchLinkPromotionOrBuilder>
+      getSearchLinkPromotionsOrBuilderList() {
+    return searchLinkPromotions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  @java.lang.Override
+  public int getSearchLinkPromotionsCount() {
+    return searchLinkPromotions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchLinkPromotion getSearchLinkPromotions(
+      int index) {
+    return searchLinkPromotions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchLinkPromotionOrBuilder
+      getSearchLinkPromotionsOrBuilder(int index) {
+    return searchLinkPromotions_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -17112,6 +17744,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(19, getSessionInfo());
     }
+    for (int i = 0; i < searchLinkPromotions_.size(); i++) {
+      output.writeMessage(23, searchLinkPromotions_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -17151,6 +17786,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getSessionInfo());
     }
+    for (int i = 0; i < searchLinkPromotions_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              23, searchLinkPromotions_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -17186,6 +17826,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (hasSessionInfo()) {
       if (!getSessionInfo().equals(other.getSessionInfo())) return false;
     }
+    if (!getSearchLinkPromotionsList().equals(other.getSearchLinkPromotionsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -17226,6 +17867,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (hasSessionInfo()) {
       hash = (37 * hash) + SESSION_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getSessionInfo().hashCode();
+    }
+    if (getSearchLinkPromotionsCount() > 0) {
+      hash = (37 * hash) + SEARCH_LINK_PROMOTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getSearchLinkPromotionsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -17374,6 +18019,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         getSummaryFieldBuilder();
         getQueryExpansionInfoFieldBuilder();
         getSessionInfoFieldBuilder();
+        getSearchLinkPromotionsFieldBuilder();
       }
     }
 
@@ -17415,6 +18061,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         sessionInfoBuilder_.dispose();
         sessionInfoBuilder_ = null;
       }
+      if (searchLinkPromotionsBuilder_ == null) {
+        searchLinkPromotions_ = java.util.Collections.emptyList();
+      } else {
+        searchLinkPromotions_ = null;
+        searchLinkPromotionsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -17469,6 +18122,15 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         result.facets_ = facets_;
       } else {
         result.facets_ = facetsBuilder_.build();
+      }
+      if (searchLinkPromotionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)) {
+          searchLinkPromotions_ = java.util.Collections.unmodifiableList(searchLinkPromotions_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.searchLinkPromotions_ = searchLinkPromotions_;
+      } else {
+        result.searchLinkPromotions_ = searchLinkPromotionsBuilder_.build();
       }
     }
 
@@ -17641,6 +18303,33 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSessionInfo()) {
         mergeSessionInfo(other.getSessionInfo());
       }
+      if (searchLinkPromotionsBuilder_ == null) {
+        if (!other.searchLinkPromotions_.isEmpty()) {
+          if (searchLinkPromotions_.isEmpty()) {
+            searchLinkPromotions_ = other.searchLinkPromotions_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureSearchLinkPromotionsIsMutable();
+            searchLinkPromotions_.addAll(other.searchLinkPromotions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.searchLinkPromotions_.isEmpty()) {
+          if (searchLinkPromotionsBuilder_.isEmpty()) {
+            searchLinkPromotionsBuilder_.dispose();
+            searchLinkPromotionsBuilder_ = null;
+            searchLinkPromotions_ = other.searchLinkPromotions_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            searchLinkPromotionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSearchLinkPromotionsFieldBuilder()
+                    : null;
+          } else {
+            searchLinkPromotionsBuilder_.addAllMessages(other.searchLinkPromotions_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -17744,6 +18433,20 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 154
+            case 186:
+              {
+                com.google.cloud.discoveryengine.v1.SearchLinkPromotion m =
+                    input.readMessage(
+                        com.google.cloud.discoveryengine.v1.SearchLinkPromotion.parser(),
+                        extensionRegistry);
+                if (searchLinkPromotionsBuilder_ == null) {
+                  ensureSearchLinkPromotionsIsMutable();
+                  searchLinkPromotions_.add(m);
+                } else {
+                  searchLinkPromotionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -19729,6 +20432,411 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         sessionInfo_ = null;
       }
       return sessionInfoBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.discoveryengine.v1.SearchLinkPromotion>
+        searchLinkPromotions_ = java.util.Collections.emptyList();
+
+    private void ensureSearchLinkPromotionsIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        searchLinkPromotions_ =
+            new java.util.ArrayList<com.google.cloud.discoveryengine.v1.SearchLinkPromotion>(
+                searchLinkPromotions_);
+        bitField0_ |= 0x00000400;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.SearchLinkPromotion,
+            com.google.cloud.discoveryengine.v1.SearchLinkPromotion.Builder,
+            com.google.cloud.discoveryengine.v1.SearchLinkPromotionOrBuilder>
+        searchLinkPromotionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.discoveryengine.v1.SearchLinkPromotion>
+        getSearchLinkPromotionsList() {
+      if (searchLinkPromotionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(searchLinkPromotions_);
+      } else {
+        return searchLinkPromotionsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public int getSearchLinkPromotionsCount() {
+      if (searchLinkPromotionsBuilder_ == null) {
+        return searchLinkPromotions_.size();
+      } else {
+        return searchLinkPromotionsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchLinkPromotion getSearchLinkPromotions(
+        int index) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        return searchLinkPromotions_.get(index);
+      } else {
+        return searchLinkPromotionsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public Builder setSearchLinkPromotions(
+        int index, com.google.cloud.discoveryengine.v1.SearchLinkPromotion value) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSearchLinkPromotionsIsMutable();
+        searchLinkPromotions_.set(index, value);
+        onChanged();
+      } else {
+        searchLinkPromotionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public Builder setSearchLinkPromotions(
+        int index,
+        com.google.cloud.discoveryengine.v1.SearchLinkPromotion.Builder builderForValue) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        ensureSearchLinkPromotionsIsMutable();
+        searchLinkPromotions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        searchLinkPromotionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public Builder addSearchLinkPromotions(
+        com.google.cloud.discoveryengine.v1.SearchLinkPromotion value) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSearchLinkPromotionsIsMutable();
+        searchLinkPromotions_.add(value);
+        onChanged();
+      } else {
+        searchLinkPromotionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public Builder addSearchLinkPromotions(
+        int index, com.google.cloud.discoveryengine.v1.SearchLinkPromotion value) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSearchLinkPromotionsIsMutable();
+        searchLinkPromotions_.add(index, value);
+        onChanged();
+      } else {
+        searchLinkPromotionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public Builder addSearchLinkPromotions(
+        com.google.cloud.discoveryengine.v1.SearchLinkPromotion.Builder builderForValue) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        ensureSearchLinkPromotionsIsMutable();
+        searchLinkPromotions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        searchLinkPromotionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public Builder addSearchLinkPromotions(
+        int index,
+        com.google.cloud.discoveryengine.v1.SearchLinkPromotion.Builder builderForValue) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        ensureSearchLinkPromotionsIsMutable();
+        searchLinkPromotions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        searchLinkPromotionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public Builder addAllSearchLinkPromotions(
+        java.lang.Iterable<? extends com.google.cloud.discoveryengine.v1.SearchLinkPromotion>
+            values) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        ensureSearchLinkPromotionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, searchLinkPromotions_);
+        onChanged();
+      } else {
+        searchLinkPromotionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public Builder clearSearchLinkPromotions() {
+      if (searchLinkPromotionsBuilder_ == null) {
+        searchLinkPromotions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        searchLinkPromotionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public Builder removeSearchLinkPromotions(int index) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        ensureSearchLinkPromotionsIsMutable();
+        searchLinkPromotions_.remove(index);
+        onChanged();
+      } else {
+        searchLinkPromotionsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchLinkPromotion.Builder
+        getSearchLinkPromotionsBuilder(int index) {
+      return getSearchLinkPromotionsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchLinkPromotionOrBuilder
+        getSearchLinkPromotionsOrBuilder(int index) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        return searchLinkPromotions_.get(index);
+      } else {
+        return searchLinkPromotionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.discoveryengine.v1.SearchLinkPromotionOrBuilder>
+        getSearchLinkPromotionsOrBuilderList() {
+      if (searchLinkPromotionsBuilder_ != null) {
+        return searchLinkPromotionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(searchLinkPromotions_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchLinkPromotion.Builder
+        addSearchLinkPromotionsBuilder() {
+      return getSearchLinkPromotionsFieldBuilder()
+          .addBuilder(com.google.cloud.discoveryengine.v1.SearchLinkPromotion.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SearchLinkPromotion.Builder
+        addSearchLinkPromotionsBuilder(int index) {
+      return getSearchLinkPromotionsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.discoveryengine.v1.SearchLinkPromotion.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.discoveryengine.v1.SearchLinkPromotion.Builder>
+        getSearchLinkPromotionsBuilderList() {
+      return getSearchLinkPromotionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.SearchLinkPromotion,
+            com.google.cloud.discoveryengine.v1.SearchLinkPromotion.Builder,
+            com.google.cloud.discoveryengine.v1.SearchLinkPromotionOrBuilder>
+        getSearchLinkPromotionsFieldBuilder() {
+      if (searchLinkPromotionsBuilder_ == null) {
+        searchLinkPromotionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.SearchLinkPromotion,
+                com.google.cloud.discoveryengine.v1.SearchLinkPromotion.Builder,
+                com.google.cloud.discoveryengine.v1.SearchLinkPromotionOrBuilder>(
+                searchLinkPromotions_,
+                ((bitField0_ & 0x00000400) != 0),
+                getParentForChildren(),
+                isClean());
+        searchLinkPromotions_ = null;
+      }
+      return searchLinkPromotionsBuilder_;
     }
 
     @java.lang.Override

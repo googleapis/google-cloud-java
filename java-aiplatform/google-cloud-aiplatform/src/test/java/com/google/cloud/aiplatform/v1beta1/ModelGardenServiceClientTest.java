@@ -380,6 +380,66 @@ public class ModelGardenServiceClientTest {
   }
 
   @Test
+  public void exportPublisherModelTest() throws Exception {
+    ExportPublisherModelResponse expectedResponse =
+        ExportPublisherModelResponse.newBuilder()
+            .setPublisherModel("publisherModel999114381")
+            .setDestinationUri("destinationUri912975486")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportPublisherModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockModelGardenService.addResponse(resultOperation);
+
+    ExportPublisherModelRequest request =
+        ExportPublisherModelRequest.newBuilder()
+            .setName("name3373707")
+            .setDestination(GcsDestination.newBuilder().build())
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .build();
+
+    ExportPublisherModelResponse actualResponse = client.exportPublisherModelAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelGardenService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportPublisherModelRequest actualRequest =
+        ((ExportPublisherModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getDestination(), actualRequest.getDestination());
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportPublisherModelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelGardenService.addException(exception);
+
+    try {
+      ExportPublisherModelRequest request =
+          ExportPublisherModelRequest.newBuilder()
+              .setName("name3373707")
+              .setDestination(GcsDestination.newBuilder().build())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .build();
+      client.exportPublisherModelAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

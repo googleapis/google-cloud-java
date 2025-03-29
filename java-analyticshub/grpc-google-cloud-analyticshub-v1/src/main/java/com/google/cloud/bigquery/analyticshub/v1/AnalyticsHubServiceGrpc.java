@@ -1327,8 +1327,8 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a Subscription to a Data Exchange. This is a long-running operation
-     * as it will create one or more linked datasets.
+     * Creates a Subscription to a Data Clean Room. This is a long-running
+     * operation as it will create one or more linked datasets.
      * </pre>
      */
     default void subscribeDataExchange(
@@ -1732,8 +1732,8 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a Subscription to a Data Exchange. This is a long-running operation
-     * as it will create one or more linked datasets.
+     * Creates a Subscription to a Data Clean Room. This is a long-running
+     * operation as it will create one or more linked datasets.
      * </pre>
      */
     public void subscribeDataExchange(
@@ -2091,8 +2091,8 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a Subscription to a Data Exchange. This is a long-running operation
-     * as it will create one or more linked datasets.
+     * Creates a Subscription to a Data Clean Room. This is a long-running
+     * operation as it will create one or more linked datasets.
      * </pre>
      */
     public com.google.longrunning.Operation subscribeDataExchange(
@@ -2427,8 +2427,8 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a Subscription to a Data Exchange. This is a long-running operation
-     * as it will create one or more linked datasets.
+     * Creates a Subscription to a Data Clean Room. This is a long-running
+     * operation as it will create one or more linked datasets.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

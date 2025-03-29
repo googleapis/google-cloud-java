@@ -43,10 +43,12 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
     state_ = 0;
     answerText_ = "";
     citations_ = java.util.Collections.emptyList();
+    groundingSupports_ = java.util.Collections.emptyList();
     references_ = java.util.Collections.emptyList();
     relatedQuestions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     steps_ = java.util.Collections.emptyList();
     answerSkippedReasons_ = java.util.Collections.emptyList();
+    safetyRatings_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -120,6 +122,16 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 3;</code>
      */
     SUCCEEDED(3),
+    /**
+     *
+     *
+     * <pre>
+     * Answer generation is currently in progress.
+     * </pre>
+     *
+     * <code>STREAMING = 4;</code>
+     */
+    STREAMING(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -163,6 +175,16 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 3;</code>
      */
     public static final int SUCCEEDED_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Answer generation is currently in progress.
+     * </pre>
+     *
+     * <code>STREAMING = 4;</code>
+     */
+    public static final int STREAMING_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -196,6 +218,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           return FAILED;
         case 3:
           return SUCCEEDED;
+        case 4:
+          return STREAMING;
         default:
           return null;
       }
@@ -617,7 +641,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Index indicates the start of the segment, measured in bytes (UTF-8
-     * unicode).
+     * unicode). If there are multi-byte characters,such as non-ASCII
+     * characters, the index measurement is longer than the string length.
      * </pre>
      *
      * <code>int64 start_index = 1;</code>
@@ -630,7 +655,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End of the attributed segment, exclusive.
+     * End of the attributed segment, exclusive. Measured in bytes (UTF-8
+     * unicode). If there are multi-byte characters,such as non-ASCII
+     * characters, the index measurement is longer than the string length.
      * </pre>
      *
      * <code>int64 end_index = 2;</code>
@@ -743,7 +770,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Index indicates the start of the segment, measured in bytes (UTF-8
-     * unicode).
+     * unicode). If there are multi-byte characters,such as non-ASCII
+     * characters, the index measurement is longer than the string length.
      * </pre>
      *
      * <code>int64 start_index = 1;</code>
@@ -761,7 +789,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End of the attributed segment, exclusive.
+     * End of the attributed segment, exclusive. Measured in bytes (UTF-8
+     * unicode). If there are multi-byte characters,such as non-ASCII
+     * characters, the index measurement is longer than the string length.
      * </pre>
      *
      * <code>int64 end_index = 2;</code>
@@ -1293,7 +1323,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Index indicates the start of the segment, measured in bytes (UTF-8
-       * unicode).
+       * unicode). If there are multi-byte characters,such as non-ASCII
+       * characters, the index measurement is longer than the string length.
        * </pre>
        *
        * <code>int64 start_index = 1;</code>
@@ -1309,7 +1340,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Index indicates the start of the segment, measured in bytes (UTF-8
-       * unicode).
+       * unicode). If there are multi-byte characters,such as non-ASCII
+       * characters, the index measurement is longer than the string length.
        * </pre>
        *
        * <code>int64 start_index = 1;</code>
@@ -1329,7 +1361,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Index indicates the start of the segment, measured in bytes (UTF-8
-       * unicode).
+       * unicode). If there are multi-byte characters,such as non-ASCII
+       * characters, the index measurement is longer than the string length.
        * </pre>
        *
        * <code>int64 start_index = 1;</code>
@@ -1348,7 +1381,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * End of the attributed segment, exclusive.
+       * End of the attributed segment, exclusive. Measured in bytes (UTF-8
+       * unicode). If there are multi-byte characters,such as non-ASCII
+       * characters, the index measurement is longer than the string length.
        * </pre>
        *
        * <code>int64 end_index = 2;</code>
@@ -1363,7 +1398,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * End of the attributed segment, exclusive.
+       * End of the attributed segment, exclusive. Measured in bytes (UTF-8
+       * unicode). If there are multi-byte characters,such as non-ASCII
+       * characters, the index measurement is longer than the string length.
        * </pre>
        *
        * <code>int64 end_index = 2;</code>
@@ -1382,7 +1419,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * End of the attributed segment, exclusive.
+       * End of the attributed segment, exclusive. Measured in bytes (UTF-8
+       * unicode). If there are multi-byte characters,such as non-ASCII
+       * characters, the index measurement is longer than the string length.
        * </pre>
        *
        * <code>int64 end_index = 2;</code>
@@ -2463,6 +2502,1655 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.cloud.discoveryengine.v1.Answer.CitationSource getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface GroundingSupportOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.Answer.GroundingSupport)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Index indicates the start of the claim, measured in bytes
+     * (UTF-8 unicode).
+     * </pre>
+     *
+     * <code>int64 start_index = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The startIndex.
+     */
+    long getStartIndex();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. End of the claim, exclusive.
+     * </pre>
+     *
+     * <code>int64 end_index = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The endIndex.
+     */
+    long getEndIndex();
+
+    /**
+     *
+     *
+     * <pre>
+     * A score in the range of [0, 1] describing how grounded is a specific
+     * claim by the references.
+     * Higher value means that the claim is better supported by the reference
+     * chunks.
+     * </pre>
+     *
+     * <code>optional double grounding_score = 3;</code>
+     *
+     * @return Whether the groundingScore field is set.
+     */
+    boolean hasGroundingScore();
+    /**
+     *
+     *
+     * <pre>
+     * A score in the range of [0, 1] describing how grounded is a specific
+     * claim by the references.
+     * Higher value means that the claim is better supported by the reference
+     * chunks.
+     * </pre>
+     *
+     * <code>optional double grounding_score = 3;</code>
+     *
+     * @return The groundingScore.
+     */
+    double getGroundingScore();
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that this claim required grounding check. When the
+     * system decided this claim didn't require attribution/grounding check,
+     * this field is set to false. In that case, no grounding check was
+     * done for the claim and therefore `grounding_score`, `sources` is not
+     * returned.
+     * </pre>
+     *
+     * <code>optional bool grounding_check_required = 4;</code>
+     *
+     * @return Whether the groundingCheckRequired field is set.
+     */
+    boolean hasGroundingCheckRequired();
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that this claim required grounding check. When the
+     * system decided this claim didn't require attribution/grounding check,
+     * this field is set to false. In that case, no grounding check was
+     * done for the claim and therefore `grounding_score`, `sources` is not
+     * returned.
+     * </pre>
+     *
+     * <code>optional bool grounding_check_required = 4;</code>
+     *
+     * @return The groundingCheckRequired.
+     */
+    boolean getGroundingCheckRequired();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Citation sources for the claim.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<com.google.cloud.discoveryengine.v1.Answer.CitationSource> getSourcesList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Citation sources for the claim.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.Answer.CitationSource getSources(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Citation sources for the claim.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getSourcesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Citation sources for the claim.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.discoveryengine.v1.Answer.CitationSourceOrBuilder>
+        getSourcesOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Citation sources for the claim.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.Answer.CitationSourceOrBuilder getSourcesOrBuilder(
+        int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Grounding support for a claim in `answer_text`.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1.Answer.GroundingSupport}
+   */
+  public static final class GroundingSupport extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.Answer.GroundingSupport)
+      GroundingSupportOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use GroundingSupport.newBuilder() to construct.
+    private GroundingSupport(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GroundingSupport() {
+      sources_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GroundingSupport();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1.AnswerProto
+          .internal_static_google_cloud_discoveryengine_v1_Answer_GroundingSupport_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1.AnswerProto
+          .internal_static_google_cloud_discoveryengine_v1_Answer_GroundingSupport_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.class,
+              com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int START_INDEX_FIELD_NUMBER = 1;
+    private long startIndex_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Index indicates the start of the claim, measured in bytes
+     * (UTF-8 unicode).
+     * </pre>
+     *
+     * <code>int64 start_index = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The startIndex.
+     */
+    @java.lang.Override
+    public long getStartIndex() {
+      return startIndex_;
+    }
+
+    public static final int END_INDEX_FIELD_NUMBER = 2;
+    private long endIndex_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Required. End of the claim, exclusive.
+     * </pre>
+     *
+     * <code>int64 end_index = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The endIndex.
+     */
+    @java.lang.Override
+    public long getEndIndex() {
+      return endIndex_;
+    }
+
+    public static final int GROUNDING_SCORE_FIELD_NUMBER = 3;
+    private double groundingScore_ = 0D;
+    /**
+     *
+     *
+     * <pre>
+     * A score in the range of [0, 1] describing how grounded is a specific
+     * claim by the references.
+     * Higher value means that the claim is better supported by the reference
+     * chunks.
+     * </pre>
+     *
+     * <code>optional double grounding_score = 3;</code>
+     *
+     * @return Whether the groundingScore field is set.
+     */
+    @java.lang.Override
+    public boolean hasGroundingScore() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A score in the range of [0, 1] describing how grounded is a specific
+     * claim by the references.
+     * Higher value means that the claim is better supported by the reference
+     * chunks.
+     * </pre>
+     *
+     * <code>optional double grounding_score = 3;</code>
+     *
+     * @return The groundingScore.
+     */
+    @java.lang.Override
+    public double getGroundingScore() {
+      return groundingScore_;
+    }
+
+    public static final int GROUNDING_CHECK_REQUIRED_FIELD_NUMBER = 4;
+    private boolean groundingCheckRequired_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that this claim required grounding check. When the
+     * system decided this claim didn't require attribution/grounding check,
+     * this field is set to false. In that case, no grounding check was
+     * done for the claim and therefore `grounding_score`, `sources` is not
+     * returned.
+     * </pre>
+     *
+     * <code>optional bool grounding_check_required = 4;</code>
+     *
+     * @return Whether the groundingCheckRequired field is set.
+     */
+    @java.lang.Override
+    public boolean hasGroundingCheckRequired() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that this claim required grounding check. When the
+     * system decided this claim didn't require attribution/grounding check,
+     * this field is set to false. In that case, no grounding check was
+     * done for the claim and therefore `grounding_score`, `sources` is not
+     * returned.
+     * </pre>
+     *
+     * <code>optional bool grounding_check_required = 4;</code>
+     *
+     * @return The groundingCheckRequired.
+     */
+    @java.lang.Override
+    public boolean getGroundingCheckRequired() {
+      return groundingCheckRequired_;
+    }
+
+    public static final int SOURCES_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.discoveryengine.v1.Answer.CitationSource> sources_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Citation sources for the claim.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.discoveryengine.v1.Answer.CitationSource>
+        getSourcesList() {
+      return sources_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Citation sources for the claim.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.cloud.discoveryengine.v1.Answer.CitationSourceOrBuilder>
+        getSourcesOrBuilderList() {
+      return sources_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Citation sources for the claim.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getSourcesCount() {
+      return sources_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Citation sources for the claim.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.Answer.CitationSource getSources(int index) {
+      return sources_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Citation sources for the claim.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.Answer.CitationSourceOrBuilder getSourcesOrBuilder(
+        int index) {
+      return sources_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (startIndex_ != 0L) {
+        output.writeInt64(1, startIndex_);
+      }
+      if (endIndex_ != 0L) {
+        output.writeInt64(2, endIndex_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeDouble(3, groundingScore_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeBool(4, groundingCheckRequired_);
+      }
+      for (int i = 0; i < sources_.size(); i++) {
+        output.writeMessage(5, sources_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (startIndex_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, startIndex_);
+      }
+      if (endIndex_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, endIndex_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, groundingScore_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, groundingCheckRequired_);
+      }
+      for (int i = 0; i < sources_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, sources_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1.Answer.GroundingSupport)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1.Answer.GroundingSupport other =
+          (com.google.cloud.discoveryengine.v1.Answer.GroundingSupport) obj;
+
+      if (getStartIndex() != other.getStartIndex()) return false;
+      if (getEndIndex() != other.getEndIndex()) return false;
+      if (hasGroundingScore() != other.hasGroundingScore()) return false;
+      if (hasGroundingScore()) {
+        if (java.lang.Double.doubleToLongBits(getGroundingScore())
+            != java.lang.Double.doubleToLongBits(other.getGroundingScore())) return false;
+      }
+      if (hasGroundingCheckRequired() != other.hasGroundingCheckRequired()) return false;
+      if (hasGroundingCheckRequired()) {
+        if (getGroundingCheckRequired() != other.getGroundingCheckRequired()) return false;
+      }
+      if (!getSourcesList().equals(other.getSourcesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + START_INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getStartIndex());
+      hash = (37 * hash) + END_INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEndIndex());
+      if (hasGroundingScore()) {
+        hash = (37 * hash) + GROUNDING_SCORE_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getGroundingScore()));
+      }
+      if (hasGroundingCheckRequired()) {
+        hash = (37 * hash) + GROUNDING_CHECK_REQUIRED_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGroundingCheckRequired());
+      }
+      if (getSourcesCount() > 0) {
+        hash = (37 * hash) + SOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + getSourcesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Answer.GroundingSupport parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Answer.GroundingSupport parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Answer.GroundingSupport parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Answer.GroundingSupport parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Answer.GroundingSupport parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Answer.GroundingSupport parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Answer.GroundingSupport parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Answer.GroundingSupport parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Answer.GroundingSupport parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Answer.GroundingSupport parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Answer.GroundingSupport parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Answer.GroundingSupport parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1.Answer.GroundingSupport prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Grounding support for a claim in `answer_text`.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1.Answer.GroundingSupport}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.Answer.GroundingSupport)
+        com.google.cloud.discoveryengine.v1.Answer.GroundingSupportOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.AnswerProto
+            .internal_static_google_cloud_discoveryengine_v1_Answer_GroundingSupport_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.AnswerProto
+            .internal_static_google_cloud_discoveryengine_v1_Answer_GroundingSupport_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.class,
+                com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.Builder.class);
+      }
+
+      // Construct using com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        startIndex_ = 0L;
+        endIndex_ = 0L;
+        groundingScore_ = 0D;
+        groundingCheckRequired_ = false;
+        if (sourcesBuilder_ == null) {
+          sources_ = java.util.Collections.emptyList();
+        } else {
+          sources_ = null;
+          sourcesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1.AnswerProto
+            .internal_static_google_cloud_discoveryengine_v1_Answer_GroundingSupport_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.Answer.GroundingSupport
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.Answer.GroundingSupport build() {
+        com.google.cloud.discoveryengine.v1.Answer.GroundingSupport result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.Answer.GroundingSupport buildPartial() {
+        com.google.cloud.discoveryengine.v1.Answer.GroundingSupport result =
+            new com.google.cloud.discoveryengine.v1.Answer.GroundingSupport(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.discoveryengine.v1.Answer.GroundingSupport result) {
+        if (sourcesBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)) {
+            sources_ = java.util.Collections.unmodifiableList(sources_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.sources_ = sources_;
+        } else {
+          result.sources_ = sourcesBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1.Answer.GroundingSupport result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.startIndex_ = startIndex_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.endIndex_ = endIndex_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.groundingScore_ = groundingScore_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.groundingCheckRequired_ = groundingCheckRequired_;
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.discoveryengine.v1.Answer.GroundingSupport) {
+          return mergeFrom((com.google.cloud.discoveryengine.v1.Answer.GroundingSupport) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.discoveryengine.v1.Answer.GroundingSupport other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.getDefaultInstance())
+          return this;
+        if (other.getStartIndex() != 0L) {
+          setStartIndex(other.getStartIndex());
+        }
+        if (other.getEndIndex() != 0L) {
+          setEndIndex(other.getEndIndex());
+        }
+        if (other.hasGroundingScore()) {
+          setGroundingScore(other.getGroundingScore());
+        }
+        if (other.hasGroundingCheckRequired()) {
+          setGroundingCheckRequired(other.getGroundingCheckRequired());
+        }
+        if (sourcesBuilder_ == null) {
+          if (!other.sources_.isEmpty()) {
+            if (sources_.isEmpty()) {
+              sources_ = other.sources_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureSourcesIsMutable();
+              sources_.addAll(other.sources_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.sources_.isEmpty()) {
+            if (sourcesBuilder_.isEmpty()) {
+              sourcesBuilder_.dispose();
+              sourcesBuilder_ = null;
+              sources_ = other.sources_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              sourcesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getSourcesFieldBuilder()
+                      : null;
+            } else {
+              sourcesBuilder_.addAllMessages(other.sources_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  startIndex_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  endIndex_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 25:
+                {
+                  groundingScore_ = input.readDouble();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 25
+              case 32:
+                {
+                  groundingCheckRequired_ = input.readBool();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              case 42:
+                {
+                  com.google.cloud.discoveryengine.v1.Answer.CitationSource m =
+                      input.readMessage(
+                          com.google.cloud.discoveryengine.v1.Answer.CitationSource.parser(),
+                          extensionRegistry);
+                  if (sourcesBuilder_ == null) {
+                    ensureSourcesIsMutable();
+                    sources_.add(m);
+                  } else {
+                    sourcesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long startIndex_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Index indicates the start of the claim, measured in bytes
+       * (UTF-8 unicode).
+       * </pre>
+       *
+       * <code>int64 start_index = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The startIndex.
+       */
+      @java.lang.Override
+      public long getStartIndex() {
+        return startIndex_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Index indicates the start of the claim, measured in bytes
+       * (UTF-8 unicode).
+       * </pre>
+       *
+       * <code>int64 start_index = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The startIndex to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartIndex(long value) {
+
+        startIndex_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Index indicates the start of the claim, measured in bytes
+       * (UTF-8 unicode).
+       * </pre>
+       *
+       * <code>int64 start_index = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStartIndex() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        startIndex_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long endIndex_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. End of the claim, exclusive.
+       * </pre>
+       *
+       * <code>int64 end_index = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The endIndex.
+       */
+      @java.lang.Override
+      public long getEndIndex() {
+        return endIndex_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. End of the claim, exclusive.
+       * </pre>
+       *
+       * <code>int64 end_index = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The endIndex to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndIndex(long value) {
+
+        endIndex_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. End of the claim, exclusive.
+       * </pre>
+       *
+       * <code>int64 end_index = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEndIndex() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        endIndex_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private double groundingScore_;
+      /**
+       *
+       *
+       * <pre>
+       * A score in the range of [0, 1] describing how grounded is a specific
+       * claim by the references.
+       * Higher value means that the claim is better supported by the reference
+       * chunks.
+       * </pre>
+       *
+       * <code>optional double grounding_score = 3;</code>
+       *
+       * @return Whether the groundingScore field is set.
+       */
+      @java.lang.Override
+      public boolean hasGroundingScore() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A score in the range of [0, 1] describing how grounded is a specific
+       * claim by the references.
+       * Higher value means that the claim is better supported by the reference
+       * chunks.
+       * </pre>
+       *
+       * <code>optional double grounding_score = 3;</code>
+       *
+       * @return The groundingScore.
+       */
+      @java.lang.Override
+      public double getGroundingScore() {
+        return groundingScore_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A score in the range of [0, 1] describing how grounded is a specific
+       * claim by the references.
+       * Higher value means that the claim is better supported by the reference
+       * chunks.
+       * </pre>
+       *
+       * <code>optional double grounding_score = 3;</code>
+       *
+       * @param value The groundingScore to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroundingScore(double value) {
+
+        groundingScore_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A score in the range of [0, 1] describing how grounded is a specific
+       * claim by the references.
+       * Higher value means that the claim is better supported by the reference
+       * chunks.
+       * </pre>
+       *
+       * <code>optional double grounding_score = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGroundingScore() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        groundingScore_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private boolean groundingCheckRequired_;
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that this claim required grounding check. When the
+       * system decided this claim didn't require attribution/grounding check,
+       * this field is set to false. In that case, no grounding check was
+       * done for the claim and therefore `grounding_score`, `sources` is not
+       * returned.
+       * </pre>
+       *
+       * <code>optional bool grounding_check_required = 4;</code>
+       *
+       * @return Whether the groundingCheckRequired field is set.
+       */
+      @java.lang.Override
+      public boolean hasGroundingCheckRequired() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that this claim required grounding check. When the
+       * system decided this claim didn't require attribution/grounding check,
+       * this field is set to false. In that case, no grounding check was
+       * done for the claim and therefore `grounding_score`, `sources` is not
+       * returned.
+       * </pre>
+       *
+       * <code>optional bool grounding_check_required = 4;</code>
+       *
+       * @return The groundingCheckRequired.
+       */
+      @java.lang.Override
+      public boolean getGroundingCheckRequired() {
+        return groundingCheckRequired_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that this claim required grounding check. When the
+       * system decided this claim didn't require attribution/grounding check,
+       * this field is set to false. In that case, no grounding check was
+       * done for the claim and therefore `grounding_score`, `sources` is not
+       * returned.
+       * </pre>
+       *
+       * <code>optional bool grounding_check_required = 4;</code>
+       *
+       * @param value The groundingCheckRequired to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroundingCheckRequired(boolean value) {
+
+        groundingCheckRequired_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that this claim required grounding check. When the
+       * system decided this claim didn't require attribution/grounding check,
+       * this field is set to false. In that case, no grounding check was
+       * done for the claim and therefore `grounding_score`, `sources` is not
+       * returned.
+       * </pre>
+       *
+       * <code>optional bool grounding_check_required = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGroundingCheckRequired() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        groundingCheckRequired_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.cloud.discoveryengine.v1.Answer.CitationSource> sources_ =
+          java.util.Collections.emptyList();
+
+      private void ensureSourcesIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          sources_ =
+              new java.util.ArrayList<com.google.cloud.discoveryengine.v1.Answer.CitationSource>(
+                  sources_);
+          bitField0_ |= 0x00000010;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.Answer.CitationSource,
+              com.google.cloud.discoveryengine.v1.Answer.CitationSource.Builder,
+              com.google.cloud.discoveryengine.v1.Answer.CitationSourceOrBuilder>
+          sourcesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Citation sources for the claim.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.discoveryengine.v1.Answer.CitationSource>
+          getSourcesList() {
+        if (sourcesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(sources_);
+        } else {
+          return sourcesBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Citation sources for the claim.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public int getSourcesCount() {
+        if (sourcesBuilder_ == null) {
+          return sources_.size();
+        } else {
+          return sourcesBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Citation sources for the claim.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.Answer.CitationSource getSources(int index) {
+        if (sourcesBuilder_ == null) {
+          return sources_.get(index);
+        } else {
+          return sourcesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Citation sources for the claim.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSources(
+          int index, com.google.cloud.discoveryengine.v1.Answer.CitationSource value) {
+        if (sourcesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSourcesIsMutable();
+          sources_.set(index, value);
+          onChanged();
+        } else {
+          sourcesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Citation sources for the claim.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSources(
+          int index,
+          com.google.cloud.discoveryengine.v1.Answer.CitationSource.Builder builderForValue) {
+        if (sourcesBuilder_ == null) {
+          ensureSourcesIsMutable();
+          sources_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          sourcesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Citation sources for the claim.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addSources(com.google.cloud.discoveryengine.v1.Answer.CitationSource value) {
+        if (sourcesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSourcesIsMutable();
+          sources_.add(value);
+          onChanged();
+        } else {
+          sourcesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Citation sources for the claim.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addSources(
+          int index, com.google.cloud.discoveryengine.v1.Answer.CitationSource value) {
+        if (sourcesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSourcesIsMutable();
+          sources_.add(index, value);
+          onChanged();
+        } else {
+          sourcesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Citation sources for the claim.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addSources(
+          com.google.cloud.discoveryengine.v1.Answer.CitationSource.Builder builderForValue) {
+        if (sourcesBuilder_ == null) {
+          ensureSourcesIsMutable();
+          sources_.add(builderForValue.build());
+          onChanged();
+        } else {
+          sourcesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Citation sources for the claim.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addSources(
+          int index,
+          com.google.cloud.discoveryengine.v1.Answer.CitationSource.Builder builderForValue) {
+        if (sourcesBuilder_ == null) {
+          ensureSourcesIsMutable();
+          sources_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          sourcesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Citation sources for the claim.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAllSources(
+          java.lang.Iterable<? extends com.google.cloud.discoveryengine.v1.Answer.CitationSource>
+              values) {
+        if (sourcesBuilder_ == null) {
+          ensureSourcesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sources_);
+          onChanged();
+        } else {
+          sourcesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Citation sources for the claim.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSources() {
+        if (sourcesBuilder_ == null) {
+          sources_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          sourcesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Citation sources for the claim.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeSources(int index) {
+        if (sourcesBuilder_ == null) {
+          ensureSourcesIsMutable();
+          sources_.remove(index);
+          onChanged();
+        } else {
+          sourcesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Citation sources for the claim.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.Answer.CitationSource.Builder getSourcesBuilder(
+          int index) {
+        return getSourcesFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Citation sources for the claim.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.Answer.CitationSourceOrBuilder getSourcesOrBuilder(
+          int index) {
+        if (sourcesBuilder_ == null) {
+          return sources_.get(index);
+        } else {
+          return sourcesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Citation sources for the claim.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.discoveryengine.v1.Answer.CitationSourceOrBuilder>
+          getSourcesOrBuilderList() {
+        if (sourcesBuilder_ != null) {
+          return sourcesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(sources_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Citation sources for the claim.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.Answer.CitationSource.Builder addSourcesBuilder() {
+        return getSourcesFieldBuilder()
+            .addBuilder(
+                com.google.cloud.discoveryengine.v1.Answer.CitationSource.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Citation sources for the claim.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.Answer.CitationSource.Builder addSourcesBuilder(
+          int index) {
+        return getSourcesFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.discoveryengine.v1.Answer.CitationSource.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Citation sources for the claim.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Answer.CitationSource sources = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.discoveryengine.v1.Answer.CitationSource.Builder>
+          getSourcesBuilderList() {
+        return getSourcesFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.Answer.CitationSource,
+              com.google.cloud.discoveryengine.v1.Answer.CitationSource.Builder,
+              com.google.cloud.discoveryengine.v1.Answer.CitationSourceOrBuilder>
+          getSourcesFieldBuilder() {
+        if (sourcesBuilder_ == null) {
+          sourcesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.Answer.CitationSource,
+                  com.google.cloud.discoveryengine.v1.Answer.CitationSource.Builder,
+                  com.google.cloud.discoveryengine.v1.Answer.CitationSourceOrBuilder>(
+                  sources_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+          sources_ = null;
+        }
+        return sourcesBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.Answer.GroundingSupport)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.Answer.GroundingSupport)
+    private static final com.google.cloud.discoveryengine.v1.Answer.GroundingSupport
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.discoveryengine.v1.Answer.GroundingSupport();
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Answer.GroundingSupport getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GroundingSupport> PARSER =
+        new com.google.protobuf.AbstractParser<GroundingSupport>() {
+          @java.lang.Override
+          public GroundingSupport parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GroundingSupport> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GroundingSupport> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.Answer.GroundingSupport getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -8996,6 +10684,56 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Struct struct_data = 2;</code>
        */
       com.google.protobuf.StructOrBuilder getStructDataOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The title of the document.
+       * </pre>
+       *
+       * <code>string title = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The title.
+       */
+      java.lang.String getTitle();
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The title of the document.
+       * </pre>
+       *
+       * <code>string title = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for title.
+       */
+      com.google.protobuf.ByteString getTitleBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The URI of the document.
+       * </pre>
+       *
+       * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The uri.
+       */
+      java.lang.String getUri();
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The URI of the document.
+       * </pre>
+       *
+       * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for uri.
+       */
+      com.google.protobuf.ByteString getUriBytes();
     }
     /**
      *
@@ -9018,6 +10756,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
 
       private StructuredDocumentInfo() {
         document_ = "";
+        title_ = "";
+        uri_ = "";
       }
 
       @java.lang.Override
@@ -9140,6 +10880,108 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         return structData_ == null ? com.google.protobuf.Struct.getDefaultInstance() : structData_;
       }
 
+      public static final int TITLE_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object title_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The title of the document.
+       * </pre>
+       *
+       * <code>string title = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The title.
+       */
+      @java.lang.Override
+      public java.lang.String getTitle() {
+        java.lang.Object ref = title_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          title_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The title of the document.
+       * </pre>
+       *
+       * <code>string title = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for title.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getTitleBytes() {
+        java.lang.Object ref = title_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          title_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int URI_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object uri_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The URI of the document.
+       * </pre>
+       *
+       * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The uri.
+       */
+      @java.lang.Override
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The URI of the document.
+       * </pre>
+       *
+       * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for uri.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -9160,6 +11002,12 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000001) != 0)) {
           output.writeMessage(2, getStructData());
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, title_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, uri_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -9174,6 +11022,12 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         }
         if (((bitField0_ & 0x00000001) != 0)) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getStructData());
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, title_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, uri_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -9198,6 +11052,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         if (hasStructData()) {
           if (!getStructData().equals(other.getStructData())) return false;
         }
+        if (!getTitle().equals(other.getTitle())) return false;
+        if (!getUri().equals(other.getUri())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -9215,6 +11071,10 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + STRUCT_DATA_FIELD_NUMBER;
           hash = (53 * hash) + getStructData().hashCode();
         }
+        hash = (37 * hash) + TITLE_FIELD_NUMBER;
+        hash = (53 * hash) + getTitle().hashCode();
+        hash = (37 * hash) + URI_FIELD_NUMBER;
+        hash = (53 * hash) + getUri().hashCode();
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -9383,6 +11243,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             structDataBuilder_.dispose();
             structDataBuilder_ = null;
           }
+          title_ = "";
+          uri_ = "";
           return this;
         }
 
@@ -9432,6 +11294,12 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             result.structData_ =
                 structDataBuilder_ == null ? structData_ : structDataBuilder_.build();
             to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.title_ = title_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.uri_ = uri_;
           }
           result.bitField0_ |= to_bitField0_;
         }
@@ -9498,6 +11366,16 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           if (other.hasStructData()) {
             mergeStructData(other.getStructData());
           }
+          if (!other.getTitle().isEmpty()) {
+            title_ = other.title_;
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          if (!other.getUri().isEmpty()) {
+            uri_ = other.uri_;
+            bitField0_ |= 0x00000008;
+            onChanged();
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -9536,6 +11414,18 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000002;
                     break;
                   } // case 18
+                case 26:
+                  {
+                    title_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    uri_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 34
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9844,6 +11734,218 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             structData_ = null;
           }
           return structDataBuilder_;
+        }
+
+        private java.lang.Object title_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The title of the document.
+         * </pre>
+         *
+         * <code>string title = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The title.
+         */
+        public java.lang.String getTitle() {
+          java.lang.Object ref = title_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            title_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The title of the document.
+         * </pre>
+         *
+         * <code>string title = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for title.
+         */
+        public com.google.protobuf.ByteString getTitleBytes() {
+          java.lang.Object ref = title_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            title_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The title of the document.
+         * </pre>
+         *
+         * <code>string title = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The title to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTitle(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          title_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The title of the document.
+         * </pre>
+         *
+         * <code>string title = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTitle() {
+          title_ = getDefaultInstance().getTitle();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The title of the document.
+         * </pre>
+         *
+         * <code>string title = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The bytes for title to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTitleBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          title_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object uri_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The URI of the document.
+         * </pre>
+         *
+         * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The uri.
+         */
+        public java.lang.String getUri() {
+          java.lang.Object ref = uri_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            uri_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The URI of the document.
+         * </pre>
+         *
+         * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for uri.
+         */
+        public com.google.protobuf.ByteString getUriBytes() {
+          java.lang.Object ref = uri_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            uri_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The URI of the document.
+         * </pre>
+         *
+         * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The uri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUri(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          uri_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The URI of the document.
+         * </pre>
+         *
+         * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearUri() {
+          uri_ = getDefaultInstance().getUri();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The URI of the document.
+         * </pre>
+         *
+         * <code>string uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The bytes for uri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUriBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          uri_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
         }
 
         @java.lang.Override
@@ -23459,6 +25561,41 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int GROUNDING_SCORE_FIELD_NUMBER = 12;
+  private double groundingScore_ = 0D;
+  /**
+   *
+   *
+   * <pre>
+   * A score in the range of [0, 1] describing how grounded the answer is by the
+   * reference chunks.
+   * </pre>
+   *
+   * <code>optional double grounding_score = 12;</code>
+   *
+   * @return Whether the groundingScore field is set.
+   */
+  @java.lang.Override
+  public boolean hasGroundingScore() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A score in the range of [0, 1] describing how grounded the answer is by the
+   * reference chunks.
+   * </pre>
+   *
+   * <code>optional double grounding_score = 12;</code>
+   *
+   * @return The groundingScore.
+   */
+  @java.lang.Override
+  public double getGroundingScore() {
+    return groundingScore_;
+  }
+
   public static final int CITATIONS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
@@ -23529,6 +25666,92 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.discoveryengine.v1.Answer.CitationOrBuilder getCitationsOrBuilder(
       int index) {
     return citations_.get(index);
+  }
+
+  public static final int GROUNDING_SUPPORTS_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.discoveryengine.v1.Answer.GroundingSupport>
+      groundingSupports_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Grounding supports.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.discoveryengine.v1.Answer.GroundingSupport>
+      getGroundingSupportsList() {
+    return groundingSupports_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Grounding supports.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.discoveryengine.v1.Answer.GroundingSupportOrBuilder>
+      getGroundingSupportsOrBuilderList() {
+    return groundingSupports_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Grounding supports.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getGroundingSupportsCount() {
+    return groundingSupports_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Grounding supports.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.Answer.GroundingSupport getGroundingSupports(
+      int index) {
+    return groundingSupports_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Grounding supports.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.Answer.GroundingSupportOrBuilder
+      getGroundingSupportsOrBuilder(int index) {
+    return groundingSupports_.get(index);
   }
 
   public static final int REFERENCES_FIELD_NUMBER = 5;
@@ -23755,7 +25978,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasQueryUnderstandingInfo() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -23930,7 +26153,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -23980,7 +26203,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCompleteTime() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -24019,6 +26242,88 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         : completeTime_;
   }
 
+  public static final int SAFETY_RATINGS_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.discoveryengine.v1.SafetyRating> safetyRatings_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Safety ratings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.discoveryengine.v1.SafetyRating> getSafetyRatingsList() {
+    return safetyRatings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Safety ratings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.discoveryengine.v1.SafetyRatingOrBuilder>
+      getSafetyRatingsOrBuilderList() {
+    return safetyRatings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Safety ratings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getSafetyRatingsCount() {
+    return safetyRatings_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Safety ratings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SafetyRating getSafetyRatings(int index) {
+    return safetyRatings_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Safety ratings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SafetyRatingOrBuilder getSafetyRatingsOrBuilder(
+      int index) {
+    return safetyRatings_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -24055,13 +26360,13 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < steps_.size(); i++) {
       output.writeMessage(7, steps_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(8, getCreateTime());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(9, getCompleteTime());
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(10, getQueryUnderstandingInfo());
     }
     if (getAnswerSkippedReasonsList().size() > 0) {
@@ -24070,6 +26375,15 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < answerSkippedReasons_.size(); i++) {
       output.writeEnumNoTag(answerSkippedReasons_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeDouble(12, groundingScore_);
+    }
+    for (int i = 0; i < groundingSupports_.size(); i++) {
+      output.writeMessage(13, groundingSupports_.get(i));
+    }
+    for (int i = 0; i < safetyRatings_.size(); i++) {
+      output.writeMessage(14, safetyRatings_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -24106,13 +26420,13 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < steps_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, steps_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getCreateTime());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getCompleteTime());
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(10, getQueryUnderstandingInfo());
     }
@@ -24129,6 +26443,16 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
       }
       answerSkippedReasonsMemoizedSerializedSize = dataSize;
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(12, groundingScore_);
+    }
+    for (int i = 0; i < groundingSupports_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(13, groundingSupports_.get(i));
+    }
+    for (int i = 0; i < safetyRatings_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, safetyRatings_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -24149,7 +26473,13 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (state_ != other.state_) return false;
     if (!getAnswerText().equals(other.getAnswerText())) return false;
+    if (hasGroundingScore() != other.hasGroundingScore()) return false;
+    if (hasGroundingScore()) {
+      if (java.lang.Double.doubleToLongBits(getGroundingScore())
+          != java.lang.Double.doubleToLongBits(other.getGroundingScore())) return false;
+    }
     if (!getCitationsList().equals(other.getCitationsList())) return false;
+    if (!getGroundingSupportsList().equals(other.getGroundingSupportsList())) return false;
     if (!getReferencesList().equals(other.getReferencesList())) return false;
     if (!getRelatedQuestionsList().equals(other.getRelatedQuestionsList())) return false;
     if (!getStepsList().equals(other.getStepsList())) return false;
@@ -24166,6 +26496,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
     if (hasCompleteTime()) {
       if (!getCompleteTime().equals(other.getCompleteTime())) return false;
     }
+    if (!getSafetyRatingsList().equals(other.getSafetyRatingsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -24183,9 +26514,20 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + state_;
     hash = (37 * hash) + ANSWER_TEXT_FIELD_NUMBER;
     hash = (53 * hash) + getAnswerText().hashCode();
+    if (hasGroundingScore()) {
+      hash = (37 * hash) + GROUNDING_SCORE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getGroundingScore()));
+    }
     if (getCitationsCount() > 0) {
       hash = (37 * hash) + CITATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getCitationsList().hashCode();
+    }
+    if (getGroundingSupportsCount() > 0) {
+      hash = (37 * hash) + GROUNDING_SUPPORTS_FIELD_NUMBER;
+      hash = (53 * hash) + getGroundingSupportsList().hashCode();
     }
     if (getReferencesCount() > 0) {
       hash = (37 * hash) + REFERENCES_FIELD_NUMBER;
@@ -24214,6 +26556,10 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
     if (hasCompleteTime()) {
       hash = (37 * hash) + COMPLETE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCompleteTime().hashCode();
+    }
+    if (getSafetyRatingsCount() > 0) {
+      hash = (37 * hash) + SAFETY_RATINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getSafetyRatingsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -24356,11 +26702,13 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCitationsFieldBuilder();
+        getGroundingSupportsFieldBuilder();
         getReferencesFieldBuilder();
         getStepsFieldBuilder();
         getQueryUnderstandingInfoFieldBuilder();
         getCreateTimeFieldBuilder();
         getCompleteTimeFieldBuilder();
+        getSafetyRatingsFieldBuilder();
       }
     }
 
@@ -24371,20 +26719,28 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       state_ = 0;
       answerText_ = "";
+      groundingScore_ = 0D;
       if (citationsBuilder_ == null) {
         citations_ = java.util.Collections.emptyList();
       } else {
         citations_ = null;
         citationsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
+      if (groundingSupportsBuilder_ == null) {
+        groundingSupports_ = java.util.Collections.emptyList();
+      } else {
+        groundingSupports_ = null;
+        groundingSupportsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (referencesBuilder_ == null) {
         references_ = java.util.Collections.emptyList();
       } else {
         references_ = null;
         referencesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       relatedQuestions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (stepsBuilder_ == null) {
         steps_ = java.util.Collections.emptyList();
@@ -24392,14 +26748,14 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         steps_ = null;
         stepsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       queryUnderstandingInfo_ = null;
       if (queryUnderstandingInfoBuilder_ != null) {
         queryUnderstandingInfoBuilder_.dispose();
         queryUnderstandingInfoBuilder_ = null;
       }
       answerSkippedReasons_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -24410,6 +26766,13 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         completeTimeBuilder_.dispose();
         completeTimeBuilder_ = null;
       }
+      if (safetyRatingsBuilder_ == null) {
+        safetyRatings_ = java.util.Collections.emptyList();
+      } else {
+        safetyRatings_ = null;
+        safetyRatingsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
 
@@ -24447,37 +26810,55 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.discoveryengine.v1.Answer result) {
       if (citationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           citations_ = java.util.Collections.unmodifiableList(citations_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.citations_ = citations_;
       } else {
         result.citations_ = citationsBuilder_.build();
       }
+      if (groundingSupportsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          groundingSupports_ = java.util.Collections.unmodifiableList(groundingSupports_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.groundingSupports_ = groundingSupports_;
+      } else {
+        result.groundingSupports_ = groundingSupportsBuilder_.build();
+      }
       if (referencesBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           references_ = java.util.Collections.unmodifiableList(references_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.references_ = references_;
       } else {
         result.references_ = referencesBuilder_.build();
       }
       if (stepsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           steps_ = java.util.Collections.unmodifiableList(steps_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.steps_ = steps_;
       } else {
         result.steps_ = stepsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         answerSkippedReasons_ = java.util.Collections.unmodifiableList(answerSkippedReasons_);
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000400);
       }
       result.answerSkippedReasons_ = answerSkippedReasons_;
+      if (safetyRatingsBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)) {
+          safetyRatings_ = java.util.Collections.unmodifiableList(safetyRatings_);
+          bitField0_ = (bitField0_ & ~0x00002000);
+        }
+        result.safetyRatings_ = safetyRatings_;
+      } else {
+        result.safetyRatings_ = safetyRatingsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.discoveryengine.v1.Answer result) {
@@ -24491,26 +26872,30 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.answerText_ = answerText_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.groundingScore_ = groundingScore_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         relatedQuestions_.makeImmutable();
         result.relatedQuestions_ = relatedQuestions_;
       }
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.queryUnderstandingInfo_ =
             queryUnderstandingInfoBuilder_ == null
                 ? queryUnderstandingInfo_
                 : queryUnderstandingInfoBuilder_.build();
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.completeTime_ =
             completeTimeBuilder_ == null ? completeTime_ : completeTimeBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -24573,11 +26958,14 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.hasGroundingScore()) {
+        setGroundingScore(other.getGroundingScore());
+      }
       if (citationsBuilder_ == null) {
         if (!other.citations_.isEmpty()) {
           if (citations_.isEmpty()) {
             citations_ = other.citations_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureCitationsIsMutable();
             citations_.addAll(other.citations_);
@@ -24590,7 +26978,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             citationsBuilder_.dispose();
             citationsBuilder_ = null;
             citations_ = other.citations_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             citationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCitationsFieldBuilder()
@@ -24600,11 +26988,38 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (groundingSupportsBuilder_ == null) {
+        if (!other.groundingSupports_.isEmpty()) {
+          if (groundingSupports_.isEmpty()) {
+            groundingSupports_ = other.groundingSupports_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureGroundingSupportsIsMutable();
+            groundingSupports_.addAll(other.groundingSupports_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.groundingSupports_.isEmpty()) {
+          if (groundingSupportsBuilder_.isEmpty()) {
+            groundingSupportsBuilder_.dispose();
+            groundingSupportsBuilder_ = null;
+            groundingSupports_ = other.groundingSupports_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            groundingSupportsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getGroundingSupportsFieldBuilder()
+                    : null;
+          } else {
+            groundingSupportsBuilder_.addAllMessages(other.groundingSupports_);
+          }
+        }
+      }
       if (referencesBuilder_ == null) {
         if (!other.references_.isEmpty()) {
           if (references_.isEmpty()) {
             references_ = other.references_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureReferencesIsMutable();
             references_.addAll(other.references_);
@@ -24617,7 +27032,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             referencesBuilder_.dispose();
             referencesBuilder_ = null;
             references_ = other.references_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000040);
             referencesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getReferencesFieldBuilder()
@@ -24630,7 +27045,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
       if (!other.relatedQuestions_.isEmpty()) {
         if (relatedQuestions_.isEmpty()) {
           relatedQuestions_ = other.relatedQuestions_;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000080;
         } else {
           ensureRelatedQuestionsIsMutable();
           relatedQuestions_.addAll(other.relatedQuestions_);
@@ -24641,7 +27056,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         if (!other.steps_.isEmpty()) {
           if (steps_.isEmpty()) {
             steps_ = other.steps_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureStepsIsMutable();
             steps_.addAll(other.steps_);
@@ -24654,7 +27069,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             stepsBuilder_.dispose();
             stepsBuilder_ = null;
             steps_ = other.steps_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000100);
             stepsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStepsFieldBuilder()
@@ -24670,7 +27085,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
       if (!other.answerSkippedReasons_.isEmpty()) {
         if (answerSkippedReasons_.isEmpty()) {
           answerSkippedReasons_ = other.answerSkippedReasons_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureAnswerSkippedReasonsIsMutable();
           answerSkippedReasons_.addAll(other.answerSkippedReasons_);
@@ -24682,6 +27097,33 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasCompleteTime()) {
         mergeCompleteTime(other.getCompleteTime());
+      }
+      if (safetyRatingsBuilder_ == null) {
+        if (!other.safetyRatings_.isEmpty()) {
+          if (safetyRatings_.isEmpty()) {
+            safetyRatings_ = other.safetyRatings_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+          } else {
+            ensureSafetyRatingsIsMutable();
+            safetyRatings_.addAll(other.safetyRatings_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.safetyRatings_.isEmpty()) {
+          if (safetyRatingsBuilder_.isEmpty()) {
+            safetyRatingsBuilder_.dispose();
+            safetyRatingsBuilder_ = null;
+            safetyRatings_ = other.safetyRatings_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+            safetyRatingsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSafetyRatingsFieldBuilder()
+                    : null;
+          } else {
+            safetyRatingsBuilder_.addAllMessages(other.safetyRatings_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -24779,20 +27221,20 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getCompleteTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(
                     getQueryUnderstandingInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 88:
@@ -24814,6 +27256,40 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                 input.popLimit(oldLimit);
                 break;
               } // case 90
+            case 97:
+              {
+                groundingScore_ = input.readDouble();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 97
+            case 106:
+              {
+                com.google.cloud.discoveryengine.v1.Answer.GroundingSupport m =
+                    input.readMessage(
+                        com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.parser(),
+                        extensionRegistry);
+                if (groundingSupportsBuilder_ == null) {
+                  ensureGroundingSupportsIsMutable();
+                  groundingSupports_.add(m);
+                } else {
+                  groundingSupportsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
+            case 114:
+              {
+                com.google.cloud.discoveryengine.v1.SafetyRating m =
+                    input.readMessage(
+                        com.google.cloud.discoveryengine.v1.SafetyRating.parser(),
+                        extensionRegistry);
+                if (safetyRatingsBuilder_ == null) {
+                  ensureSafetyRatingsIsMutable();
+                  safetyRatings_.add(m);
+                } else {
+                  safetyRatingsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -25142,15 +27618,87 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private double groundingScore_;
+    /**
+     *
+     *
+     * <pre>
+     * A score in the range of [0, 1] describing how grounded the answer is by the
+     * reference chunks.
+     * </pre>
+     *
+     * <code>optional double grounding_score = 12;</code>
+     *
+     * @return Whether the groundingScore field is set.
+     */
+    @java.lang.Override
+    public boolean hasGroundingScore() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A score in the range of [0, 1] describing how grounded the answer is by the
+     * reference chunks.
+     * </pre>
+     *
+     * <code>optional double grounding_score = 12;</code>
+     *
+     * @return The groundingScore.
+     */
+    @java.lang.Override
+    public double getGroundingScore() {
+      return groundingScore_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A score in the range of [0, 1] describing how grounded the answer is by the
+     * reference chunks.
+     * </pre>
+     *
+     * <code>optional double grounding_score = 12;</code>
+     *
+     * @param value The groundingScore to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGroundingScore(double value) {
+
+      groundingScore_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A score in the range of [0, 1] describing how grounded the answer is by the
+     * reference chunks.
+     * </pre>
+     *
+     * <code>optional double grounding_score = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGroundingScore() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      groundingScore_ = 0D;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.discoveryengine.v1.Answer.Citation> citations_ =
         java.util.Collections.emptyList();
 
     private void ensureCitationsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         citations_ =
             new java.util.ArrayList<com.google.cloud.discoveryengine.v1.Answer.Citation>(
                 citations_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -25368,7 +27916,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCitations() {
       if (citationsBuilder_ == null) {
         citations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         citationsBuilder_.clear();
@@ -25494,21 +28042,428 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.discoveryengine.v1.Answer.Citation,
                 com.google.cloud.discoveryengine.v1.Answer.Citation.Builder,
                 com.google.cloud.discoveryengine.v1.Answer.CitationOrBuilder>(
-                citations_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                citations_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         citations_ = null;
       }
       return citationsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.discoveryengine.v1.Answer.GroundingSupport>
+        groundingSupports_ = java.util.Collections.emptyList();
+
+    private void ensureGroundingSupportsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        groundingSupports_ =
+            new java.util.ArrayList<com.google.cloud.discoveryengine.v1.Answer.GroundingSupport>(
+                groundingSupports_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.Answer.GroundingSupport,
+            com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.Builder,
+            com.google.cloud.discoveryengine.v1.Answer.GroundingSupportOrBuilder>
+        groundingSupportsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding supports.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.discoveryengine.v1.Answer.GroundingSupport>
+        getGroundingSupportsList() {
+      if (groundingSupportsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(groundingSupports_);
+      } else {
+        return groundingSupportsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding supports.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getGroundingSupportsCount() {
+      if (groundingSupportsBuilder_ == null) {
+        return groundingSupports_.size();
+      } else {
+        return groundingSupportsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding supports.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.Answer.GroundingSupport getGroundingSupports(
+        int index) {
+      if (groundingSupportsBuilder_ == null) {
+        return groundingSupports_.get(index);
+      } else {
+        return groundingSupportsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding supports.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGroundingSupports(
+        int index, com.google.cloud.discoveryengine.v1.Answer.GroundingSupport value) {
+      if (groundingSupportsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGroundingSupportsIsMutable();
+        groundingSupports_.set(index, value);
+        onChanged();
+      } else {
+        groundingSupportsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding supports.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGroundingSupports(
+        int index,
+        com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.Builder builderForValue) {
+      if (groundingSupportsBuilder_ == null) {
+        ensureGroundingSupportsIsMutable();
+        groundingSupports_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        groundingSupportsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding supports.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGroundingSupports(
+        com.google.cloud.discoveryengine.v1.Answer.GroundingSupport value) {
+      if (groundingSupportsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGroundingSupportsIsMutable();
+        groundingSupports_.add(value);
+        onChanged();
+      } else {
+        groundingSupportsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding supports.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGroundingSupports(
+        int index, com.google.cloud.discoveryengine.v1.Answer.GroundingSupport value) {
+      if (groundingSupportsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGroundingSupportsIsMutable();
+        groundingSupports_.add(index, value);
+        onChanged();
+      } else {
+        groundingSupportsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding supports.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGroundingSupports(
+        com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.Builder builderForValue) {
+      if (groundingSupportsBuilder_ == null) {
+        ensureGroundingSupportsIsMutable();
+        groundingSupports_.add(builderForValue.build());
+        onChanged();
+      } else {
+        groundingSupportsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding supports.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGroundingSupports(
+        int index,
+        com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.Builder builderForValue) {
+      if (groundingSupportsBuilder_ == null) {
+        ensureGroundingSupportsIsMutable();
+        groundingSupports_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        groundingSupportsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding supports.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllGroundingSupports(
+        java.lang.Iterable<? extends com.google.cloud.discoveryengine.v1.Answer.GroundingSupport>
+            values) {
+      if (groundingSupportsBuilder_ == null) {
+        ensureGroundingSupportsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, groundingSupports_);
+        onChanged();
+      } else {
+        groundingSupportsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding supports.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGroundingSupports() {
+      if (groundingSupportsBuilder_ == null) {
+        groundingSupports_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        groundingSupportsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding supports.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeGroundingSupports(int index) {
+      if (groundingSupportsBuilder_ == null) {
+        ensureGroundingSupportsIsMutable();
+        groundingSupports_.remove(index);
+        onChanged();
+      } else {
+        groundingSupportsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding supports.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.Builder
+        getGroundingSupportsBuilder(int index) {
+      return getGroundingSupportsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding supports.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.Answer.GroundingSupportOrBuilder
+        getGroundingSupportsOrBuilder(int index) {
+      if (groundingSupportsBuilder_ == null) {
+        return groundingSupports_.get(index);
+      } else {
+        return groundingSupportsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding supports.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.discoveryengine.v1.Answer.GroundingSupportOrBuilder>
+        getGroundingSupportsOrBuilderList() {
+      if (groundingSupportsBuilder_ != null) {
+        return groundingSupportsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(groundingSupports_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding supports.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.Builder
+        addGroundingSupportsBuilder() {
+      return getGroundingSupportsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding supports.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.Builder
+        addGroundingSupportsBuilder(int index) {
+      return getGroundingSupportsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Grounding supports.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.Builder>
+        getGroundingSupportsBuilderList() {
+      return getGroundingSupportsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.Answer.GroundingSupport,
+            com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.Builder,
+            com.google.cloud.discoveryengine.v1.Answer.GroundingSupportOrBuilder>
+        getGroundingSupportsFieldBuilder() {
+      if (groundingSupportsBuilder_ == null) {
+        groundingSupportsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.Answer.GroundingSupport,
+                com.google.cloud.discoveryengine.v1.Answer.GroundingSupport.Builder,
+                com.google.cloud.discoveryengine.v1.Answer.GroundingSupportOrBuilder>(
+                groundingSupports_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        groundingSupports_ = null;
+      }
+      return groundingSupportsBuilder_;
     }
 
     private java.util.List<com.google.cloud.discoveryengine.v1.Answer.Reference> references_ =
         java.util.Collections.emptyList();
 
     private void ensureReferencesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         references_ =
             new java.util.ArrayList<com.google.cloud.discoveryengine.v1.Answer.Reference>(
                 references_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -25727,7 +28682,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
     public Builder clearReferences() {
       if (referencesBuilder_ == null) {
         references_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         referencesBuilder_.clear();
@@ -25853,7 +28808,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.discoveryengine.v1.Answer.Reference,
                 com.google.cloud.discoveryengine.v1.Answer.Reference.Builder,
                 com.google.cloud.discoveryengine.v1.Answer.ReferenceOrBuilder>(
-                references_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                references_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
         references_ = null;
       }
       return referencesBuilder_;
@@ -25866,7 +28821,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
       if (!relatedQuestions_.isModifiable()) {
         relatedQuestions_ = new com.google.protobuf.LazyStringArrayList(relatedQuestions_);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -25946,7 +28901,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRelatedQuestionsIsMutable();
       relatedQuestions_.set(index, value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -25968,7 +28923,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRelatedQuestionsIsMutable();
       relatedQuestions_.add(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -25987,7 +28942,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllRelatedQuestions(java.lang.Iterable<java.lang.String> values) {
       ensureRelatedQuestionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, relatedQuestions_);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -26004,7 +28959,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRelatedQuestions() {
       relatedQuestions_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       ;
       onChanged();
       return this;
@@ -26028,7 +28983,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureRelatedQuestionsIsMutable();
       relatedQuestions_.add(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -26037,9 +28992,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStepsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         steps_ = new java.util.ArrayList<com.google.cloud.discoveryengine.v1.Answer.Step>(steps_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -26255,7 +29210,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSteps() {
       if (stepsBuilder_ == null) {
         steps_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         stepsBuilder_.clear();
@@ -26377,7 +29332,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.discoveryengine.v1.Answer.Step,
                 com.google.cloud.discoveryengine.v1.Answer.Step.Builder,
                 com.google.cloud.discoveryengine.v1.Answer.StepOrBuilder>(
-                steps_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+                steps_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
         steps_ = null;
       }
       return stepsBuilder_;
@@ -26404,7 +29359,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the queryUnderstandingInfo field is set.
      */
     public boolean hasQueryUnderstandingInfo() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -26450,7 +29405,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
       } else {
         queryUnderstandingInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -26472,7 +29427,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
       } else {
         queryUnderstandingInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -26490,7 +29445,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeQueryUnderstandingInfo(
         com.google.cloud.discoveryengine.v1.Answer.QueryUnderstandingInfo value) {
       if (queryUnderstandingInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && queryUnderstandingInfo_ != null
             && queryUnderstandingInfo_
                 != com.google.cloud.discoveryengine.v1.Answer.QueryUnderstandingInfo
@@ -26503,7 +29458,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         queryUnderstandingInfoBuilder_.mergeFrom(value);
       }
       if (queryUnderstandingInfo_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -26520,7 +29475,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearQueryUnderstandingInfo() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       queryUnderstandingInfo_ = null;
       if (queryUnderstandingInfoBuilder_ != null) {
         queryUnderstandingInfoBuilder_.dispose();
@@ -26542,7 +29497,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1.Answer.QueryUnderstandingInfo.Builder
         getQueryUnderstandingInfoBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getQueryUnderstandingInfoFieldBuilder().getBuilder();
     }
@@ -26599,9 +29554,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAnswerSkippedReasonsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         answerSkippedReasons_ = new java.util.ArrayList<java.lang.Integer>(answerSkippedReasons_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
       }
     }
     /**
@@ -26752,7 +29707,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAnswerSkippedReasons() {
       answerSkippedReasons_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -26878,7 +29833,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -26922,7 +29877,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -26943,7 +29898,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -26960,7 +29915,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -26971,7 +29926,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -26988,7 +29943,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -27009,7 +29964,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -27081,7 +30036,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the completeTime field is set.
      */
     public boolean hasCompleteTime() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -27125,7 +30080,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
       } else {
         completeTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -27146,7 +30101,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
       } else {
         completeTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -27163,7 +30118,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCompleteTime(com.google.protobuf.Timestamp value) {
       if (completeTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && completeTime_ != null
             && completeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCompleteTimeBuilder().mergeFrom(value);
@@ -27174,7 +30129,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         completeTimeBuilder_.mergeFrom(value);
       }
       if (completeTime_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -27191,7 +30146,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCompleteTime() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       completeTime_ = null;
       if (completeTimeBuilder_ != null) {
         completeTimeBuilder_.dispose();
@@ -27212,7 +30167,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCompleteTimeBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getCompleteTimeFieldBuilder().getBuilder();
     }
@@ -27262,6 +30217,402 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
         completeTime_ = null;
       }
       return completeTimeBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.discoveryengine.v1.SafetyRating> safetyRatings_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSafetyRatingsIsMutable() {
+      if (!((bitField0_ & 0x00002000) != 0)) {
+        safetyRatings_ =
+            new java.util.ArrayList<com.google.cloud.discoveryengine.v1.SafetyRating>(
+                safetyRatings_);
+        bitField0_ |= 0x00002000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.SafetyRating,
+            com.google.cloud.discoveryengine.v1.SafetyRating.Builder,
+            com.google.cloud.discoveryengine.v1.SafetyRatingOrBuilder>
+        safetyRatingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Safety ratings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.discoveryengine.v1.SafetyRating> getSafetyRatingsList() {
+      if (safetyRatingsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(safetyRatings_);
+      } else {
+        return safetyRatingsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Safety ratings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getSafetyRatingsCount() {
+      if (safetyRatingsBuilder_ == null) {
+        return safetyRatings_.size();
+      } else {
+        return safetyRatingsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Safety ratings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SafetyRating getSafetyRatings(int index) {
+      if (safetyRatingsBuilder_ == null) {
+        return safetyRatings_.get(index);
+      } else {
+        return safetyRatingsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Safety ratings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSafetyRatings(
+        int index, com.google.cloud.discoveryengine.v1.SafetyRating value) {
+      if (safetyRatingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSafetyRatingsIsMutable();
+        safetyRatings_.set(index, value);
+        onChanged();
+      } else {
+        safetyRatingsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Safety ratings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSafetyRatings(
+        int index, com.google.cloud.discoveryengine.v1.SafetyRating.Builder builderForValue) {
+      if (safetyRatingsBuilder_ == null) {
+        ensureSafetyRatingsIsMutable();
+        safetyRatings_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        safetyRatingsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Safety ratings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSafetyRatings(com.google.cloud.discoveryengine.v1.SafetyRating value) {
+      if (safetyRatingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSafetyRatingsIsMutable();
+        safetyRatings_.add(value);
+        onChanged();
+      } else {
+        safetyRatingsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Safety ratings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSafetyRatings(
+        int index, com.google.cloud.discoveryengine.v1.SafetyRating value) {
+      if (safetyRatingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSafetyRatingsIsMutable();
+        safetyRatings_.add(index, value);
+        onChanged();
+      } else {
+        safetyRatingsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Safety ratings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSafetyRatings(
+        com.google.cloud.discoveryengine.v1.SafetyRating.Builder builderForValue) {
+      if (safetyRatingsBuilder_ == null) {
+        ensureSafetyRatingsIsMutable();
+        safetyRatings_.add(builderForValue.build());
+        onChanged();
+      } else {
+        safetyRatingsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Safety ratings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSafetyRatings(
+        int index, com.google.cloud.discoveryengine.v1.SafetyRating.Builder builderForValue) {
+      if (safetyRatingsBuilder_ == null) {
+        ensureSafetyRatingsIsMutable();
+        safetyRatings_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        safetyRatingsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Safety ratings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllSafetyRatings(
+        java.lang.Iterable<? extends com.google.cloud.discoveryengine.v1.SafetyRating> values) {
+      if (safetyRatingsBuilder_ == null) {
+        ensureSafetyRatingsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, safetyRatings_);
+        onChanged();
+      } else {
+        safetyRatingsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Safety ratings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSafetyRatings() {
+      if (safetyRatingsBuilder_ == null) {
+        safetyRatings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00002000);
+        onChanged();
+      } else {
+        safetyRatingsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Safety ratings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeSafetyRatings(int index) {
+      if (safetyRatingsBuilder_ == null) {
+        ensureSafetyRatingsIsMutable();
+        safetyRatings_.remove(index);
+        onChanged();
+      } else {
+        safetyRatingsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Safety ratings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SafetyRating.Builder getSafetyRatingsBuilder(
+        int index) {
+      return getSafetyRatingsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Safety ratings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SafetyRatingOrBuilder getSafetyRatingsOrBuilder(
+        int index) {
+      if (safetyRatingsBuilder_ == null) {
+        return safetyRatings_.get(index);
+      } else {
+        return safetyRatingsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Safety ratings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.discoveryengine.v1.SafetyRatingOrBuilder>
+        getSafetyRatingsOrBuilderList() {
+      if (safetyRatingsBuilder_ != null) {
+        return safetyRatingsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(safetyRatings_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Safety ratings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SafetyRating.Builder addSafetyRatingsBuilder() {
+      return getSafetyRatingsFieldBuilder()
+          .addBuilder(com.google.cloud.discoveryengine.v1.SafetyRating.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Safety ratings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.SafetyRating.Builder addSafetyRatingsBuilder(
+        int index) {
+      return getSafetyRatingsFieldBuilder()
+          .addBuilder(index, com.google.cloud.discoveryengine.v1.SafetyRating.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Safety ratings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.discoveryengine.v1.SafetyRating.Builder>
+        getSafetyRatingsBuilderList() {
+      return getSafetyRatingsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.SafetyRating,
+            com.google.cloud.discoveryengine.v1.SafetyRating.Builder,
+            com.google.cloud.discoveryengine.v1.SafetyRatingOrBuilder>
+        getSafetyRatingsFieldBuilder() {
+      if (safetyRatingsBuilder_ == null) {
+        safetyRatingsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.SafetyRating,
+                com.google.cloud.discoveryengine.v1.SafetyRating.Builder,
+                com.google.cloud.discoveryengine.v1.SafetyRatingOrBuilder>(
+                safetyRatings_,
+                ((bitField0_ & 0x00002000) != 0),
+                getParentForChildren(),
+                isClean());
+        safetyRatings_ = null;
+      }
+      return safetyRatingsBuilder_;
     }
 
     @java.lang.Override

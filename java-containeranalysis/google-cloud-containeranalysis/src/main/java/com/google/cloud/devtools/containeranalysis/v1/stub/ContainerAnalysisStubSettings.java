@@ -39,6 +39,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.containeranalysis.v1.ExportSBOMRequest;
+import com.google.containeranalysis.v1.ExportSBOMResponse;
 import com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest;
 import com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -116,6 +118,7 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
   private final UnaryCallSettings<
           GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
       getVulnerabilityOccurrencesSummarySettings;
+  private final UnaryCallSettings<ExportSBOMRequest, ExportSBOMResponse> exportSBOMSettings;
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
@@ -138,6 +141,11 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
           GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
       getVulnerabilityOccurrencesSummarySettings() {
     return getVulnerabilityOccurrencesSummarySettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportSBOM. */
+  public UnaryCallSettings<ExportSBOMRequest, ExportSBOMResponse> exportSBOMSettings() {
+    return exportSBOMSettings;
   }
 
   public ContainerAnalysisStub createStub() throws IOException {
@@ -256,6 +264,7 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     getVulnerabilityOccurrencesSummarySettings =
         settingsBuilder.getVulnerabilityOccurrencesSummarySettings().build();
+    exportSBOMSettings = settingsBuilder.exportSBOMSettings().build();
   }
 
   /** Builder for ContainerAnalysisStubSettings. */
@@ -268,6 +277,8 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
     private final UnaryCallSettings.Builder<
             GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
         getVulnerabilityOccurrencesSummarySettings;
+    private final UnaryCallSettings.Builder<ExportSBOMRequest, ExportSBOMResponse>
+        exportSBOMSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -309,13 +320,15 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getVulnerabilityOccurrencesSummarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportSBOMSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings,
-              getVulnerabilityOccurrencesSummarySettings);
+              getVulnerabilityOccurrencesSummarySettings,
+              exportSBOMSettings);
       initDefaults(this);
     }
 
@@ -327,13 +340,15 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       getVulnerabilityOccurrencesSummarySettings =
           settings.getVulnerabilityOccurrencesSummarySettings.toBuilder();
+      exportSBOMSettings = settings.exportSBOMSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings,
-              getVulnerabilityOccurrencesSummarySettings);
+              getVulnerabilityOccurrencesSummarySettings,
+              exportSBOMSettings);
     }
 
     private static Builder createDefault() {
@@ -381,6 +396,11 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
+      builder
+          .exportSBOMSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       return builder;
     }
 
@@ -422,6 +442,11 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
             GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
         getVulnerabilityOccurrencesSummarySettings() {
       return getVulnerabilityOccurrencesSummarySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportSBOM. */
+    public UnaryCallSettings.Builder<ExportSBOMRequest, ExportSBOMResponse> exportSBOMSettings() {
+      return exportSBOMSettings;
     }
 
     @Override

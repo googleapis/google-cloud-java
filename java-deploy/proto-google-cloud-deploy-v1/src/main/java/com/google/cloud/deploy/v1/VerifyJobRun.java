@@ -114,7 +114,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The verify job run did not complete within the alloted time.
+     * The verify job run did not complete within the allotted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>
@@ -181,7 +181,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The verify job run did not complete within the alloted time.
+     * The verify job run did not complete within the allotted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>

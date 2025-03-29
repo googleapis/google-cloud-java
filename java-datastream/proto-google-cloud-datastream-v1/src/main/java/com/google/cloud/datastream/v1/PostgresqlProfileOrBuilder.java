@@ -143,6 +143,37 @@ public interface PostgresqlProfileOrBuilder
    *
    *
    * <pre>
+   * Optional. A reference to a Secret Manager resource name storing the
+   * PostgreSQL connection password. Mutually exclusive with the `password`
+   * field.
+   * </pre>
+   *
+   * <code>string secret_manager_stored_password = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The secretManagerStoredPassword.
+   */
+  java.lang.String getSecretManagerStoredPassword();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A reference to a Secret Manager resource name storing the
+   * PostgreSQL connection password. Mutually exclusive with the `password`
+   * field.
+   * </pre>
+   *
+   * <code>string secret_manager_stored_password = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for secretManagerStoredPassword.
+   */
+  com.google.protobuf.ByteString getSecretManagerStoredPasswordBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. SSL configuration for the PostgreSQL connection.
    * In case PostgresqlSslConfig is not set, the connection will use the default
    * SSL mode, which is `prefer` (i.e. this mode will only use encryption if

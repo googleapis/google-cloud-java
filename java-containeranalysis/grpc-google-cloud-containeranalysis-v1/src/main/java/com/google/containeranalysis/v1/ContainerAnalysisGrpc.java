@@ -222,6 +222,53 @@ public final class ContainerAnalysisGrpc {
     return getGetVulnerabilityOccurrencesSummaryMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.containeranalysis.v1.ExportSBOMRequest,
+          com.google.containeranalysis.v1.ExportSBOMResponse>
+      getExportSBOMMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportSBOM",
+      requestType = com.google.containeranalysis.v1.ExportSBOMRequest.class,
+      responseType = com.google.containeranalysis.v1.ExportSBOMResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.containeranalysis.v1.ExportSBOMRequest,
+          com.google.containeranalysis.v1.ExportSBOMResponse>
+      getExportSBOMMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.containeranalysis.v1.ExportSBOMRequest,
+            com.google.containeranalysis.v1.ExportSBOMResponse>
+        getExportSBOMMethod;
+    if ((getExportSBOMMethod = ContainerAnalysisGrpc.getExportSBOMMethod) == null) {
+      synchronized (ContainerAnalysisGrpc.class) {
+        if ((getExportSBOMMethod = ContainerAnalysisGrpc.getExportSBOMMethod) == null) {
+          ContainerAnalysisGrpc.getExportSBOMMethod =
+              getExportSBOMMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.containeranalysis.v1.ExportSBOMRequest,
+                          com.google.containeranalysis.v1.ExportSBOMResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportSBOM"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.containeranalysis.v1.ExportSBOMRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.containeranalysis.v1.ExportSBOMResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ContainerAnalysisMethodDescriptorSupplier("ExportSBOM"))
+                      .build();
+        }
+      }
+    }
+    return getExportSBOMMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ContainerAnalysisStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ContainerAnalysisStub> factory =
@@ -355,6 +402,20 @@ public final class ContainerAnalysisGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetVulnerabilityOccurrencesSummaryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an SBOM for the given resource.
+     * </pre>
+     */
+    default void exportSBOM(
+        com.google.containeranalysis.v1.ExportSBOMRequest request,
+        io.grpc.stub.StreamObserver<com.google.containeranalysis.v1.ExportSBOMResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExportSBOMMethod(), responseObserver);
     }
   }
 
@@ -495,6 +556,21 @@ public final class ContainerAnalysisGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an SBOM for the given resource.
+     * </pre>
+     */
+    public void exportSBOM(
+        com.google.containeranalysis.v1.ExportSBOMRequest request,
+        io.grpc.stub.StreamObserver<com.google.containeranalysis.v1.ExportSBOMResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportSBOMMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -593,6 +669,19 @@ public final class ContainerAnalysisGrpc {
             com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetVulnerabilityOccurrencesSummaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an SBOM for the given resource.
+     * </pre>
+     */
+    public com.google.containeranalysis.v1.ExportSBOMResponse exportSBOM(
+        com.google.containeranalysis.v1.ExportSBOMRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportSBOMMethod(), getCallOptions(), request);
     }
   }
 
@@ -697,12 +786,27 @@ public final class ContainerAnalysisGrpc {
           getChannel().newCall(getGetVulnerabilityOccurrencesSummaryMethod(), getCallOptions()),
           request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an SBOM for the given resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.containeranalysis.v1.ExportSBOMResponse>
+        exportSBOM(com.google.containeranalysis.v1.ExportSBOMRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportSBOMMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SET_IAM_POLICY = 0;
   private static final int METHODID_GET_IAM_POLICY = 1;
   private static final int METHODID_TEST_IAM_PERMISSIONS = 2;
   private static final int METHODID_GET_VULNERABILITY_OCCURRENCES_SUMMARY = 3;
+  private static final int METHODID_EXPORT_SBOM = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -742,6 +846,12 @@ public final class ContainerAnalysisGrpc {
               (com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary>)
+                  responseObserver);
+          break;
+        case METHODID_EXPORT_SBOM:
+          serviceImpl.exportSBOM(
+              (com.google.containeranalysis.v1.ExportSBOMRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.containeranalysis.v1.ExportSBOMResponse>)
                   responseObserver);
           break;
         default:
@@ -786,6 +896,13 @@ public final class ContainerAnalysisGrpc {
                     com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest,
                     com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary>(
                     service, METHODID_GET_VULNERABILITY_OCCURRENCES_SUMMARY)))
+        .addMethod(
+            getExportSBOMMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.containeranalysis.v1.ExportSBOMRequest,
+                    com.google.containeranalysis.v1.ExportSBOMResponse>(
+                    service, METHODID_EXPORT_SBOM)))
         .build();
   }
 
@@ -841,6 +958,7 @@ public final class ContainerAnalysisGrpc {
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())
                       .addMethod(getGetVulnerabilityOccurrencesSummaryMethod())
+                      .addMethod(getExportSBOMMethod())
                       .build();
         }
       }

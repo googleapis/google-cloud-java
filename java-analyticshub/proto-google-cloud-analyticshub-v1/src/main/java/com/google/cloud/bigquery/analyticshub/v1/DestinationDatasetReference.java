@@ -19,15 +19,7 @@
 // Protobuf Java Version: 3.25.5
 package com.google.cloud.bigquery.analyticshub.v1;
 
-/**
- *
- *
- * <pre>
- * Contains the reference that identifies a destination bigquery dataset.
- * </pre>
- *
- * Protobuf type {@code google.cloud.bigquery.analyticshub.v1.DestinationDatasetReference}
- */
+/** Protobuf type {@code google.cloud.bigquery.analyticshub.v1.DestinationDatasetReference} */
 public final class DestinationDatasetReference extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.DestinationDatasetReference)
@@ -340,15 +332,7 @@ public final class DestinationDatasetReference extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-  /**
-   *
-   *
-   * <pre>
-   * Contains the reference that identifies a destination bigquery dataset.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.bigquery.analyticshub.v1.DestinationDatasetReference}
-   */
+  /** Protobuf type {@code google.cloud.bigquery.analyticshub.v1.DestinationDatasetReference} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.analyticshub.v1.DestinationDatasetReference)

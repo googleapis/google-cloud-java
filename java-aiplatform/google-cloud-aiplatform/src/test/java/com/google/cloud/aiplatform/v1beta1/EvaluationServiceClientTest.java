@@ -176,6 +176,9 @@ public class EvaluationServiceClientTest {
         request.getTrajectoryRecallInput(), actualRequest.getTrajectoryRecallInput());
     Assert.assertEquals(
         request.getTrajectorySingleToolUseInput(), actualRequest.getTrajectorySingleToolUseInput());
+    Assert.assertEquals(
+        request.getRubricBasedInstructionFollowingInput(),
+        actualRequest.getRubricBasedInstructionFollowingInput());
     Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
     Assert.assertEquals(request.getAutoraterConfig(), actualRequest.getAutoraterConfig());
     Assert.assertTrue(

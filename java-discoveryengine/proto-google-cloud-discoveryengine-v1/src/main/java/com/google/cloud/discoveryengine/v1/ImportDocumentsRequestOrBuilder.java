@@ -611,5 +611,22 @@ public interface ImportDocumentsRequestOrBuilder
    */
   com.google.protobuf.ByteString getIdFieldBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to force refresh the unstructured content of the
+   * documents.
+   *
+   * If set to `true`, the content part of the documents will be refreshed
+   * regardless of the update status of the referencing content.
+   * </pre>
+   *
+   * <code>bool force_refresh_content = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The forceRefreshContent.
+   */
+  boolean getForceRefreshContent();
+
   com.google.cloud.discoveryengine.v1.ImportDocumentsRequest.SourceCase getSourceCase();
 }

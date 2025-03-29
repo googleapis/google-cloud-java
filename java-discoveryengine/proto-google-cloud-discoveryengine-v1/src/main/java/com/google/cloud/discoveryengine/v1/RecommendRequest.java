@@ -302,9 +302,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    * attribute-based expressions are expected instead of the above described
    * tag-based syntax. Examples:
    *
-   *  * (launguage: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
+   *  * (language: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
    *  * (available: true) AND
-   *    (launguage: ANY("en", "es")) OR (categories: ANY("Movie"))
+   *    (language: ANY("en", "es")) OR (categories: ANY("Movie"))
    *
    * If your filter blocks all results, the API returns generic
    * (unfiltered) popular Documents. If you only want results strictly matching
@@ -351,9 +351,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    * attribute-based expressions are expected instead of the above described
    * tag-based syntax. Examples:
    *
-   *  * (launguage: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
+   *  * (language: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
    *  * (available: true) AND
-   *    (launguage: ANY("en", "es")) OR (categories: ANY("Movie"))
+   *    (language: ANY("en", "es")) OR (categories: ANY("Movie"))
    *
    * If your filter blocks all results, the API returns generic
    * (unfiltered) popular Documents. If you only want results strictly matching
@@ -1929,9 +1929,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * attribute-based expressions are expected instead of the above described
      * tag-based syntax. Examples:
      *
-     *  * (launguage: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
+     *  * (language: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
      *  * (available: true) AND
-     *    (launguage: ANY("en", "es")) OR (categories: ANY("Movie"))
+     *    (language: ANY("en", "es")) OR (categories: ANY("Movie"))
      *
      * If your filter blocks all results, the API returns generic
      * (unfiltered) popular Documents. If you only want results strictly matching
@@ -1977,9 +1977,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * attribute-based expressions are expected instead of the above described
      * tag-based syntax. Examples:
      *
-     *  * (launguage: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
+     *  * (language: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
      *  * (available: true) AND
-     *    (launguage: ANY("en", "es")) OR (categories: ANY("Movie"))
+     *    (language: ANY("en", "es")) OR (categories: ANY("Movie"))
      *
      * If your filter blocks all results, the API returns generic
      * (unfiltered) popular Documents. If you only want results strictly matching
@@ -2025,9 +2025,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * attribute-based expressions are expected instead of the above described
      * tag-based syntax. Examples:
      *
-     *  * (launguage: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
+     *  * (language: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
      *  * (available: true) AND
-     *    (launguage: ANY("en", "es")) OR (categories: ANY("Movie"))
+     *    (language: ANY("en", "es")) OR (categories: ANY("Movie"))
      *
      * If your filter blocks all results, the API returns generic
      * (unfiltered) popular Documents. If you only want results strictly matching
@@ -2072,9 +2072,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * attribute-based expressions are expected instead of the above described
      * tag-based syntax. Examples:
      *
-     *  * (launguage: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
+     *  * (language: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
      *  * (available: true) AND
-     *    (launguage: ANY("en", "es")) OR (categories: ANY("Movie"))
+     *    (language: ANY("en", "es")) OR (categories: ANY("Movie"))
      *
      * If your filter blocks all results, the API returns generic
      * (unfiltered) popular Documents. If you only want results strictly matching
@@ -2115,9 +2115,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * attribute-based expressions are expected instead of the above described
      * tag-based syntax. Examples:
      *
-     *  * (launguage: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
+     *  * (language: ANY("en", "es")) AND NOT (categories: ANY("Movie"))
      *  * (available: true) AND
-     *    (launguage: ANY("en", "es")) OR (categories: ANY("Movie"))
+     *    (language: ANY("en", "es")) OR (categories: ANY("Movie"))
      *
      * If your filter blocks all results, the API returns generic
      * (unfiltered) popular Documents. If you only want results strictly matching

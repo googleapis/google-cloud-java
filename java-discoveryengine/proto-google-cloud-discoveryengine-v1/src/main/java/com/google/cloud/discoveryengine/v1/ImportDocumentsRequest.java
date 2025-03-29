@@ -2245,6 +2245,28 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int FORCE_REFRESH_CONTENT_FIELD_NUMBER = 16;
+  private boolean forceRefreshContent_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to force refresh the unstructured content of the
+   * documents.
+   *
+   * If set to `true`, the content part of the documents will be refreshed
+   * regardless of the update status of the referencing content.
+   * </pre>
+   *
+   * <code>bool force_refresh_content = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The forceRefreshContent.
+   */
+  @java.lang.Override
+  public boolean getForceRefreshContent() {
+    return forceRefreshContent_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2307,6 +2329,9 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
     if (sourceCase_ == 15) {
       output.writeMessage(15, (com.google.cloud.discoveryengine.v1.BigtableSource) source_);
+    }
+    if (forceRefreshContent_ != false) {
+      output.writeBool(16, forceRefreshContent_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2383,6 +2408,9 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               15, (com.google.cloud.discoveryengine.v1.BigtableSource) source_);
     }
+    if (forceRefreshContent_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, forceRefreshContent_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2411,6 +2439,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
     if (getAutoGenerateIds() != other.getAutoGenerateIds()) return false;
     if (!getIdField().equals(other.getIdField())) return false;
+    if (getForceRefreshContent() != other.getForceRefreshContent()) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 2:
@@ -2470,6 +2499,8 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoGenerateIds());
     hash = (37 * hash) + ID_FIELD_FIELD_NUMBER;
     hash = (53 * hash) + getIdField().hashCode();
+    hash = (37 * hash) + FORCE_REFRESH_CONTENT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForceRefreshContent());
     switch (sourceCase_) {
       case 2:
         hash = (37 * hash) + INLINE_SOURCE_FIELD_NUMBER;
@@ -2701,6 +2732,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       autoGenerateIds_ = false;
       idField_ = "";
+      forceRefreshContent_ = false;
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -2761,6 +2793,9 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.idField_ = idField_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.forceRefreshContent_ = forceRefreshContent_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2865,6 +2900,9 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         idField_ = other.idField_;
         bitField0_ |= 0x00004000;
         onChanged();
+      }
+      if (other.getForceRefreshContent() != false) {
+        setForceRefreshContent(other.getForceRefreshContent());
       }
       switch (other.getSourceCase()) {
         case INLINE_SOURCE:
@@ -3033,6 +3071,12 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
                 sourceCase_ = 15;
                 break;
               } // case 122
+            case 128:
+              {
+                forceRefreshContent_ = input.readBool();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 128
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5993,6 +6037,71 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       idField_ = value;
       bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    private boolean forceRefreshContent_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to force refresh the unstructured content of the
+     * documents.
+     *
+     * If set to `true`, the content part of the documents will be refreshed
+     * regardless of the update status of the referencing content.
+     * </pre>
+     *
+     * <code>bool force_refresh_content = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The forceRefreshContent.
+     */
+    @java.lang.Override
+    public boolean getForceRefreshContent() {
+      return forceRefreshContent_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to force refresh the unstructured content of the
+     * documents.
+     *
+     * If set to `true`, the content part of the documents will be refreshed
+     * regardless of the update status of the referencing content.
+     * </pre>
+     *
+     * <code>bool force_refresh_content = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The forceRefreshContent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForceRefreshContent(boolean value) {
+
+      forceRefreshContent_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to force refresh the unstructured content of the
+     * documents.
+     *
+     * If set to `true`, the content part of the documents will be refreshed
+     * regardless of the update status of the referencing content.
+     * </pre>
+     *
+     * <code>bool force_refresh_content = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForceRefreshContent() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      forceRefreshContent_ = false;
       onChanged();
       return this;
     }

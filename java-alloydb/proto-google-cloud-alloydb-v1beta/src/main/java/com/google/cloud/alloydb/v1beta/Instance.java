@@ -1294,10 +1294,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Compute Engine zone of the VM e.g. "us-central1-b".
+     * Output only. The Compute Engine zone of the VM e.g. "us-central1-b".
      * </pre>
      *
-     * <code>string zone_id = 1;</code>
+     * <code>string zone_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The zoneId.
      */
@@ -1306,10 +1306,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Compute Engine zone of the VM e.g. "us-central1-b".
+     * Output only. The Compute Engine zone of the VM e.g. "us-central1-b".
      * </pre>
      *
-     * <code>string zone_id = 1;</code>
+     * <code>string zone_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for zoneId.
      */
@@ -1319,10 +1319,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The identifier of the VM e.g. "test-read-0601-407e52be-ms3l".
+     * Output only. The identifier of the VM e.g.
+     * "test-read-0601-407e52be-ms3l".
      * </pre>
      *
-     * <code>string id = 2;</code>
+     * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The id.
      */
@@ -1331,10 +1332,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The identifier of the VM e.g. "test-read-0601-407e52be-ms3l".
+     * Output only. The identifier of the VM e.g.
+     * "test-read-0601-407e52be-ms3l".
      * </pre>
      *
-     * <code>string id = 2;</code>
+     * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for id.
      */
@@ -1344,10 +1346,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IP address of the VM e.g. "10.57.0.34".
+     * Output only. The private IP address of the VM e.g. "10.57.0.34".
      * </pre>
      *
-     * <code>string ip = 3;</code>
+     * <code>string ip = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The ip.
      */
@@ -1356,10 +1358,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IP address of the VM e.g. "10.57.0.34".
+     * Output only. The private IP address of the VM e.g. "10.57.0.34".
      * </pre>
      *
-     * <code>string ip = 3;</code>
+     * <code>string ip = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for ip.
      */
@@ -1369,13 +1371,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Determined by state of the compute VM and postgres-service health.
-     * Compute VM state can have values listed in
+     * Output only. Determined by state of the compute VM and postgres-service
+     * health. Compute VM state can have values listed in
      * https://cloud.google.com/compute/docs/instances/instance-life-cycle and
      * postgres-service health can have values: HEALTHY and UNHEALTHY.
      * </pre>
      *
-     * <code>string state = 4;</code>
+     * <code>string state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The state.
      */
@@ -1384,13 +1386,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Determined by state of the compute VM and postgres-service health.
-     * Compute VM state can have values listed in
+     * Output only. Determined by state of the compute VM and postgres-service
+     * health. Compute VM state can have values listed in
      * https://cloud.google.com/compute/docs/instances/instance-life-cycle and
      * postgres-service health can have values: HEALTHY and UNHEALTHY.
      * </pre>
      *
-     * <code>string state = 4;</code>
+     * <code>string state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for state.
      */
@@ -1453,10 +1455,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Compute Engine zone of the VM e.g. "us-central1-b".
+     * Output only. The Compute Engine zone of the VM e.g. "us-central1-b".
      * </pre>
      *
-     * <code>string zone_id = 1;</code>
+     * <code>string zone_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The zoneId.
      */
@@ -1476,10 +1478,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Compute Engine zone of the VM e.g. "us-central1-b".
+     * Output only. The Compute Engine zone of the VM e.g. "us-central1-b".
      * </pre>
      *
-     * <code>string zone_id = 1;</code>
+     * <code>string zone_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for zoneId.
      */
@@ -1504,10 +1506,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The identifier of the VM e.g. "test-read-0601-407e52be-ms3l".
+     * Output only. The identifier of the VM e.g.
+     * "test-read-0601-407e52be-ms3l".
      * </pre>
      *
-     * <code>string id = 2;</code>
+     * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The id.
      */
@@ -1527,10 +1530,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The identifier of the VM e.g. "test-read-0601-407e52be-ms3l".
+     * Output only. The identifier of the VM e.g.
+     * "test-read-0601-407e52be-ms3l".
      * </pre>
      *
-     * <code>string id = 2;</code>
+     * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for id.
      */
@@ -1555,10 +1559,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IP address of the VM e.g. "10.57.0.34".
+     * Output only. The private IP address of the VM e.g. "10.57.0.34".
      * </pre>
      *
-     * <code>string ip = 3;</code>
+     * <code>string ip = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The ip.
      */
@@ -1578,10 +1582,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IP address of the VM e.g. "10.57.0.34".
+     * Output only. The private IP address of the VM e.g. "10.57.0.34".
      * </pre>
      *
-     * <code>string ip = 3;</code>
+     * <code>string ip = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for ip.
      */
@@ -1606,13 +1610,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Determined by state of the compute VM and postgres-service health.
-     * Compute VM state can have values listed in
+     * Output only. Determined by state of the compute VM and postgres-service
+     * health. Compute VM state can have values listed in
      * https://cloud.google.com/compute/docs/instances/instance-life-cycle and
      * postgres-service health can have values: HEALTHY and UNHEALTHY.
      * </pre>
      *
-     * <code>string state = 4;</code>
+     * <code>string state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The state.
      */
@@ -1632,13 +1636,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Determined by state of the compute VM and postgres-service health.
-     * Compute VM state can have values listed in
+     * Output only. Determined by state of the compute VM and postgres-service
+     * health. Compute VM state can have values listed in
      * https://cloud.google.com/compute/docs/instances/instance-life-cycle and
      * postgres-service health can have values: HEALTHY and UNHEALTHY.
      * </pre>
      *
-     * <code>string state = 4;</code>
+     * <code>string state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for state.
      */
@@ -2080,10 +2084,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Compute Engine zone of the VM e.g. "us-central1-b".
+       * Output only. The Compute Engine zone of the VM e.g. "us-central1-b".
        * </pre>
        *
-       * <code>string zone_id = 1;</code>
+       * <code>string zone_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The zoneId.
        */
@@ -2102,10 +2106,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Compute Engine zone of the VM e.g. "us-central1-b".
+       * Output only. The Compute Engine zone of the VM e.g. "us-central1-b".
        * </pre>
        *
-       * <code>string zone_id = 1;</code>
+       * <code>string zone_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for zoneId.
        */
@@ -2124,10 +2128,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Compute Engine zone of the VM e.g. "us-central1-b".
+       * Output only. The Compute Engine zone of the VM e.g. "us-central1-b".
        * </pre>
        *
-       * <code>string zone_id = 1;</code>
+       * <code>string zone_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The zoneId to set.
        * @return This builder for chaining.
@@ -2145,10 +2149,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Compute Engine zone of the VM e.g. "us-central1-b".
+       * Output only. The Compute Engine zone of the VM e.g. "us-central1-b".
        * </pre>
        *
-       * <code>string zone_id = 1;</code>
+       * <code>string zone_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -2162,10 +2166,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Compute Engine zone of the VM e.g. "us-central1-b".
+       * Output only. The Compute Engine zone of the VM e.g. "us-central1-b".
        * </pre>
        *
-       * <code>string zone_id = 1;</code>
+       * <code>string zone_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The bytes for zoneId to set.
        * @return This builder for chaining.
@@ -2186,10 +2190,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The identifier of the VM e.g. "test-read-0601-407e52be-ms3l".
+       * Output only. The identifier of the VM e.g.
+       * "test-read-0601-407e52be-ms3l".
        * </pre>
        *
-       * <code>string id = 2;</code>
+       * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The id.
        */
@@ -2208,10 +2213,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The identifier of the VM e.g. "test-read-0601-407e52be-ms3l".
+       * Output only. The identifier of the VM e.g.
+       * "test-read-0601-407e52be-ms3l".
        * </pre>
        *
-       * <code>string id = 2;</code>
+       * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for id.
        */
@@ -2230,10 +2236,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The identifier of the VM e.g. "test-read-0601-407e52be-ms3l".
+       * Output only. The identifier of the VM e.g.
+       * "test-read-0601-407e52be-ms3l".
        * </pre>
        *
-       * <code>string id = 2;</code>
+       * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The id to set.
        * @return This builder for chaining.
@@ -2251,10 +2258,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The identifier of the VM e.g. "test-read-0601-407e52be-ms3l".
+       * Output only. The identifier of the VM e.g.
+       * "test-read-0601-407e52be-ms3l".
        * </pre>
        *
-       * <code>string id = 2;</code>
+       * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -2268,10 +2276,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The identifier of the VM e.g. "test-read-0601-407e52be-ms3l".
+       * Output only. The identifier of the VM e.g.
+       * "test-read-0601-407e52be-ms3l".
        * </pre>
        *
-       * <code>string id = 2;</code>
+       * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The bytes for id to set.
        * @return This builder for chaining.
@@ -2292,10 +2301,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The private IP address of the VM e.g. "10.57.0.34".
+       * Output only. The private IP address of the VM e.g. "10.57.0.34".
        * </pre>
        *
-       * <code>string ip = 3;</code>
+       * <code>string ip = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The ip.
        */
@@ -2314,10 +2323,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The private IP address of the VM e.g. "10.57.0.34".
+       * Output only. The private IP address of the VM e.g. "10.57.0.34".
        * </pre>
        *
-       * <code>string ip = 3;</code>
+       * <code>string ip = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for ip.
        */
@@ -2336,10 +2345,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The private IP address of the VM e.g. "10.57.0.34".
+       * Output only. The private IP address of the VM e.g. "10.57.0.34".
        * </pre>
        *
-       * <code>string ip = 3;</code>
+       * <code>string ip = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The ip to set.
        * @return This builder for chaining.
@@ -2357,10 +2366,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The private IP address of the VM e.g. "10.57.0.34".
+       * Output only. The private IP address of the VM e.g. "10.57.0.34".
        * </pre>
        *
-       * <code>string ip = 3;</code>
+       * <code>string ip = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -2374,10 +2383,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The private IP address of the VM e.g. "10.57.0.34".
+       * Output only. The private IP address of the VM e.g. "10.57.0.34".
        * </pre>
        *
-       * <code>string ip = 3;</code>
+       * <code>string ip = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The bytes for ip to set.
        * @return This builder for chaining.
@@ -2398,13 +2407,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Determined by state of the compute VM and postgres-service health.
-       * Compute VM state can have values listed in
+       * Output only. Determined by state of the compute VM and postgres-service
+       * health. Compute VM state can have values listed in
        * https://cloud.google.com/compute/docs/instances/instance-life-cycle and
        * postgres-service health can have values: HEALTHY and UNHEALTHY.
        * </pre>
        *
-       * <code>string state = 4;</code>
+       * <code>string state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The state.
        */
@@ -2423,13 +2432,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Determined by state of the compute VM and postgres-service health.
-       * Compute VM state can have values listed in
+       * Output only. Determined by state of the compute VM and postgres-service
+       * health. Compute VM state can have values listed in
        * https://cloud.google.com/compute/docs/instances/instance-life-cycle and
        * postgres-service health can have values: HEALTHY and UNHEALTHY.
        * </pre>
        *
-       * <code>string state = 4;</code>
+       * <code>string state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for state.
        */
@@ -2448,13 +2457,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Determined by state of the compute VM and postgres-service health.
-       * Compute VM state can have values listed in
+       * Output only. Determined by state of the compute VM and postgres-service
+       * health. Compute VM state can have values listed in
        * https://cloud.google.com/compute/docs/instances/instance-life-cycle and
        * postgres-service health can have values: HEALTHY and UNHEALTHY.
        * </pre>
        *
-       * <code>string state = 4;</code>
+       * <code>string state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The state to set.
        * @return This builder for chaining.
@@ -2472,13 +2481,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Determined by state of the compute VM and postgres-service health.
-       * Compute VM state can have values listed in
+       * Output only. Determined by state of the compute VM and postgres-service
+       * health. Compute VM state can have values listed in
        * https://cloud.google.com/compute/docs/instances/instance-life-cycle and
        * postgres-service health can have values: HEALTHY and UNHEALTHY.
        * </pre>
        *
-       * <code>string state = 4;</code>
+       * <code>string state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -2492,13 +2501,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Determined by state of the compute VM and postgres-service health.
-       * Compute VM state can have values listed in
+       * Output only. Determined by state of the compute VM and postgres-service
+       * health. Compute VM state can have values listed in
        * https://cloud.google.com/compute/docs/instances/instance-life-cycle and
        * postgres-service health can have values: HEALTHY and UNHEALTHY.
        * </pre>
        *
-       * <code>string state = 4;</code>
+       * <code>string state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The bytes for state to set.
        * @return This builder for chaining.
@@ -11779,11 +11788,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Database flags. Set at instance level.
-   *  * They are copied from primary instance on read instance creation.
-   *  * Read instances can set new or override existing flags that are relevant
-   *    for reads, e.g. for enabling columnar cache on a read instance. Flags
-   *    set on read instance may or may not be present on primary.
+   * Database flags. Set at the instance level.
+   * They are copied from the primary instance on secondary instance creation.
+   * Flags that have restrictions default to the value at primary
+   * instance on read instances during creation. Read instances can set new
+   * flags or override existing flags that are relevant for reads, for example,
+   * for enabling columnar cache on a read instance. Flags set on read instance
+   * might or might not be present on the primary instance.
    *
    *
    * This is a list of "key": "value" pairs.
@@ -11814,11 +11825,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Database flags. Set at instance level.
-   *  * They are copied from primary instance on read instance creation.
-   *  * Read instances can set new or override existing flags that are relevant
-   *    for reads, e.g. for enabling columnar cache on a read instance. Flags
-   *    set on read instance may or may not be present on primary.
+   * Database flags. Set at the instance level.
+   * They are copied from the primary instance on secondary instance creation.
+   * Flags that have restrictions default to the value at primary
+   * instance on read instances during creation. Read instances can set new
+   * flags or override existing flags that are relevant for reads, for example,
+   * for enabling columnar cache on a read instance. Flags set on read instance
+   * might or might not be present on the primary instance.
    *
    *
    * This is a list of "key": "value" pairs.
@@ -11840,11 +11853,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Database flags. Set at instance level.
-   *  * They are copied from primary instance on read instance creation.
-   *  * Read instances can set new or override existing flags that are relevant
-   *    for reads, e.g. for enabling columnar cache on a read instance. Flags
-   *    set on read instance may or may not be present on primary.
+   * Database flags. Set at the instance level.
+   * They are copied from the primary instance on secondary instance creation.
+   * Flags that have restrictions default to the value at primary
+   * instance on read instances during creation. Read instances can set new
+   * flags or override existing flags that are relevant for reads, for example,
+   * for enabling columnar cache on a read instance. Flags set on read instance
+   * might or might not be present on the primary instance.
    *
    *
    * This is a list of "key": "value" pairs.
@@ -11873,11 +11888,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Database flags. Set at instance level.
-   *  * They are copied from primary instance on read instance creation.
-   *  * Read instances can set new or override existing flags that are relevant
-   *    for reads, e.g. for enabling columnar cache on a read instance. Flags
-   *    set on read instance may or may not be present on primary.
+   * Database flags. Set at the instance level.
+   * They are copied from the primary instance on secondary instance creation.
+   * Flags that have restrictions default to the value at primary
+   * instance on read instances during creation. Read instances can set new
+   * flags or override existing flags that are relevant for reads, for example,
+   * for enabling columnar cache on a read instance. Flags set on read instance
+   * might or might not be present on the primary instance.
    *
    *
    * This is a list of "key": "value" pairs.
@@ -16031,11 +16048,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Database flags. Set at instance level.
-     *  * They are copied from primary instance on read instance creation.
-     *  * Read instances can set new or override existing flags that are relevant
-     *    for reads, e.g. for enabling columnar cache on a read instance. Flags
-     *    set on read instance may or may not be present on primary.
+     * Database flags. Set at the instance level.
+     * They are copied from the primary instance on secondary instance creation.
+     * Flags that have restrictions default to the value at primary
+     * instance on read instances during creation. Read instances can set new
+     * flags or override existing flags that are relevant for reads, for example,
+     * for enabling columnar cache on a read instance. Flags set on read instance
+     * might or might not be present on the primary instance.
      *
      *
      * This is a list of "key": "value" pairs.
@@ -16066,11 +16085,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Database flags. Set at instance level.
-     *  * They are copied from primary instance on read instance creation.
-     *  * Read instances can set new or override existing flags that are relevant
-     *    for reads, e.g. for enabling columnar cache on a read instance. Flags
-     *    set on read instance may or may not be present on primary.
+     * Database flags. Set at the instance level.
+     * They are copied from the primary instance on secondary instance creation.
+     * Flags that have restrictions default to the value at primary
+     * instance on read instances during creation. Read instances can set new
+     * flags or override existing flags that are relevant for reads, for example,
+     * for enabling columnar cache on a read instance. Flags set on read instance
+     * might or might not be present on the primary instance.
      *
      *
      * This is a list of "key": "value" pairs.
@@ -16092,11 +16113,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Database flags. Set at instance level.
-     *  * They are copied from primary instance on read instance creation.
-     *  * Read instances can set new or override existing flags that are relevant
-     *    for reads, e.g. for enabling columnar cache on a read instance. Flags
-     *    set on read instance may or may not be present on primary.
+     * Database flags. Set at the instance level.
+     * They are copied from the primary instance on secondary instance creation.
+     * Flags that have restrictions default to the value at primary
+     * instance on read instances during creation. Read instances can set new
+     * flags or override existing flags that are relevant for reads, for example,
+     * for enabling columnar cache on a read instance. Flags set on read instance
+     * might or might not be present on the primary instance.
      *
      *
      * This is a list of "key": "value" pairs.
@@ -16125,11 +16148,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Database flags. Set at instance level.
-     *  * They are copied from primary instance on read instance creation.
-     *  * Read instances can set new or override existing flags that are relevant
-     *    for reads, e.g. for enabling columnar cache on a read instance. Flags
-     *    set on read instance may or may not be present on primary.
+     * Database flags. Set at the instance level.
+     * They are copied from the primary instance on secondary instance creation.
+     * Flags that have restrictions default to the value at primary
+     * instance on read instances during creation. Read instances can set new
+     * flags or override existing flags that are relevant for reads, for example,
+     * for enabling columnar cache on a read instance. Flags set on read instance
+     * might or might not be present on the primary instance.
      *
      *
      * This is a list of "key": "value" pairs.
@@ -16164,11 +16189,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Database flags. Set at instance level.
-     *  * They are copied from primary instance on read instance creation.
-     *  * Read instances can set new or override existing flags that are relevant
-     *    for reads, e.g. for enabling columnar cache on a read instance. Flags
-     *    set on read instance may or may not be present on primary.
+     * Database flags. Set at the instance level.
+     * They are copied from the primary instance on secondary instance creation.
+     * Flags that have restrictions default to the value at primary
+     * instance on read instances during creation. Read instances can set new
+     * flags or override existing flags that are relevant for reads, for example,
+     * for enabling columnar cache on a read instance. Flags set on read instance
+     * might or might not be present on the primary instance.
      *
      *
      * This is a list of "key": "value" pairs.
@@ -16199,11 +16226,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Database flags. Set at instance level.
-     *  * They are copied from primary instance on read instance creation.
-     *  * Read instances can set new or override existing flags that are relevant
-     *    for reads, e.g. for enabling columnar cache on a read instance. Flags
-     *    set on read instance may or may not be present on primary.
+     * Database flags. Set at the instance level.
+     * They are copied from the primary instance on secondary instance creation.
+     * Flags that have restrictions default to the value at primary
+     * instance on read instances during creation. Read instances can set new
+     * flags or override existing flags that are relevant for reads, for example,
+     * for enabling columnar cache on a read instance. Flags set on read instance
+     * might or might not be present on the primary instance.
      *
      *
      * This is a list of "key": "value" pairs.
@@ -16232,11 +16261,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Database flags. Set at instance level.
-     *  * They are copied from primary instance on read instance creation.
-     *  * Read instances can set new or override existing flags that are relevant
-     *    for reads, e.g. for enabling columnar cache on a read instance. Flags
-     *    set on read instance may or may not be present on primary.
+     * Database flags. Set at the instance level.
+     * They are copied from the primary instance on secondary instance creation.
+     * Flags that have restrictions default to the value at primary
+     * instance on read instances during creation. Read instances can set new
+     * flags or override existing flags that are relevant for reads, for example,
+     * for enabling columnar cache on a read instance. Flags set on read instance
+     * might or might not be present on the primary instance.
      *
      *
      * This is a list of "key": "value" pairs.

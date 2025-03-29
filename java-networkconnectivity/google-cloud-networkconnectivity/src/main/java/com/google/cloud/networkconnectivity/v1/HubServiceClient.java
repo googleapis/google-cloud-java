@@ -339,6 +339,50 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> AcceptSpokeUpdate</td>
+ *      <td><p> Accepts a proposal to update a Network Connectivity Center spoke in a hub.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> acceptSpokeUpdateAsync(AcceptSpokeUpdateRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> acceptSpokeUpdateAsync(HubName name, SpokeName spokeUri, String spokeEtag)
+ *           <li><p> acceptSpokeUpdateAsync(HubName name, String spokeUri, String spokeEtag)
+ *           <li><p> acceptSpokeUpdateAsync(String name, SpokeName spokeUri, String spokeEtag)
+ *           <li><p> acceptSpokeUpdateAsync(String name, String spokeUri, String spokeEtag)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> acceptSpokeUpdateOperationCallable()
+ *           <li><p> acceptSpokeUpdateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RejectSpokeUpdate</td>
+ *      <td><p> Rejects a proposal to update a Network Connectivity Center spoke in a hub.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> rejectSpokeUpdateAsync(RejectSpokeUpdateRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> rejectSpokeUpdateAsync(HubName name, SpokeName spokeUri, String spokeEtag)
+ *           <li><p> rejectSpokeUpdateAsync(HubName name, String spokeUri, String spokeEtag)
+ *           <li><p> rejectSpokeUpdateAsync(String name, SpokeName spokeUri, String spokeEtag)
+ *           <li><p> rejectSpokeUpdateAsync(String name, String spokeUri, String spokeEtag)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> rejectSpokeUpdateOperationCallable()
+ *           <li><p> rejectSpokeUpdateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteSpoke</td>
  *      <td><p> Deletes a Network Connectivity Center spoke.</td>
  *      <td>
@@ -2724,6 +2768,497 @@ public class HubServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<AcceptHubSpokeRequest, Operation> acceptHubSpokeCallable() {
     return stub.acceptHubSpokeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+   *   SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+   *   String spokeEtag = "spokeEtag-1185145407";
+   *   AcceptSpokeUpdateResponse response =
+   *       hubServiceClient.acceptSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub to accept spoke update.
+   * @param spokeUri Required. The URI of the spoke to accept update.
+   * @param spokeEtag Required. The etag of the spoke to accept update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AcceptSpokeUpdateResponse, OperationMetadata> acceptSpokeUpdateAsync(
+      HubName name, SpokeName spokeUri, String spokeEtag) {
+    AcceptSpokeUpdateRequest request =
+        AcceptSpokeUpdateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setSpokeUri(spokeUri == null ? null : spokeUri.toString())
+            .setSpokeEtag(spokeEtag)
+            .build();
+    return acceptSpokeUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+   *   String spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString();
+   *   String spokeEtag = "spokeEtag-1185145407";
+   *   AcceptSpokeUpdateResponse response =
+   *       hubServiceClient.acceptSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub to accept spoke update.
+   * @param spokeUri Required. The URI of the spoke to accept update.
+   * @param spokeEtag Required. The etag of the spoke to accept update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AcceptSpokeUpdateResponse, OperationMetadata> acceptSpokeUpdateAsync(
+      HubName name, String spokeUri, String spokeEtag) {
+    AcceptSpokeUpdateRequest request =
+        AcceptSpokeUpdateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setSpokeUri(spokeUri)
+            .setSpokeEtag(spokeEtag)
+            .build();
+    return acceptSpokeUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+   *   String spokeEtag = "spokeEtag-1185145407";
+   *   AcceptSpokeUpdateResponse response =
+   *       hubServiceClient.acceptSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub to accept spoke update.
+   * @param spokeUri Required. The URI of the spoke to accept update.
+   * @param spokeEtag Required. The etag of the spoke to accept update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AcceptSpokeUpdateResponse, OperationMetadata> acceptSpokeUpdateAsync(
+      String name, SpokeName spokeUri, String spokeEtag) {
+    AcceptSpokeUpdateRequest request =
+        AcceptSpokeUpdateRequest.newBuilder()
+            .setName(name)
+            .setSpokeUri(spokeUri == null ? null : spokeUri.toString())
+            .setSpokeEtag(spokeEtag)
+            .build();
+    return acceptSpokeUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   String spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString();
+   *   String spokeEtag = "spokeEtag-1185145407";
+   *   AcceptSpokeUpdateResponse response =
+   *       hubServiceClient.acceptSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub to accept spoke update.
+   * @param spokeUri Required. The URI of the spoke to accept update.
+   * @param spokeEtag Required. The etag of the spoke to accept update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AcceptSpokeUpdateResponse, OperationMetadata> acceptSpokeUpdateAsync(
+      String name, String spokeUri, String spokeEtag) {
+    AcceptSpokeUpdateRequest request =
+        AcceptSpokeUpdateRequest.newBuilder()
+            .setName(name)
+            .setSpokeUri(spokeUri)
+            .setSpokeEtag(spokeEtag)
+            .build();
+    return acceptSpokeUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   AcceptSpokeUpdateRequest request =
+   *       AcceptSpokeUpdateRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setSpokeUri(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setSpokeEtag("spokeEtag-1185145407")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   AcceptSpokeUpdateResponse response = hubServiceClient.acceptSpokeUpdateAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AcceptSpokeUpdateResponse, OperationMetadata> acceptSpokeUpdateAsync(
+      AcceptSpokeUpdateRequest request) {
+    return acceptSpokeUpdateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   AcceptSpokeUpdateRequest request =
+   *       AcceptSpokeUpdateRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setSpokeUri(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setSpokeEtag("spokeEtag-1185145407")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<AcceptSpokeUpdateResponse, OperationMetadata> future =
+   *       hubServiceClient.acceptSpokeUpdateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AcceptSpokeUpdateResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+      acceptSpokeUpdateOperationCallable() {
+    return stub.acceptSpokeUpdateOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   AcceptSpokeUpdateRequest request =
+   *       AcceptSpokeUpdateRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setSpokeUri(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setSpokeEtag("spokeEtag-1185145407")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       hubServiceClient.acceptSpokeUpdateCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AcceptSpokeUpdateRequest, Operation> acceptSpokeUpdateCallable() {
+    return stub.acceptSpokeUpdateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+   *   SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+   *   String spokeEtag = "spokeEtag-1185145407";
+   *   RejectSpokeUpdateResponse response =
+   *       hubServiceClient.rejectSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub to reject spoke update.
+   * @param spokeUri Required. The URI of the spoke to reject update.
+   * @param spokeEtag Required. The etag of the spoke to reject update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RejectSpokeUpdateResponse, OperationMetadata> rejectSpokeUpdateAsync(
+      HubName name, SpokeName spokeUri, String spokeEtag) {
+    RejectSpokeUpdateRequest request =
+        RejectSpokeUpdateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setSpokeUri(spokeUri == null ? null : spokeUri.toString())
+            .setSpokeEtag(spokeEtag)
+            .build();
+    return rejectSpokeUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+   *   String spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString();
+   *   String spokeEtag = "spokeEtag-1185145407";
+   *   RejectSpokeUpdateResponse response =
+   *       hubServiceClient.rejectSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub to reject spoke update.
+   * @param spokeUri Required. The URI of the spoke to reject update.
+   * @param spokeEtag Required. The etag of the spoke to reject update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RejectSpokeUpdateResponse, OperationMetadata> rejectSpokeUpdateAsync(
+      HubName name, String spokeUri, String spokeEtag) {
+    RejectSpokeUpdateRequest request =
+        RejectSpokeUpdateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setSpokeUri(spokeUri)
+            .setSpokeEtag(spokeEtag)
+            .build();
+    return rejectSpokeUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+   *   String spokeEtag = "spokeEtag-1185145407";
+   *   RejectSpokeUpdateResponse response =
+   *       hubServiceClient.rejectSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub to reject spoke update.
+   * @param spokeUri Required. The URI of the spoke to reject update.
+   * @param spokeEtag Required. The etag of the spoke to reject update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RejectSpokeUpdateResponse, OperationMetadata> rejectSpokeUpdateAsync(
+      String name, SpokeName spokeUri, String spokeEtag) {
+    RejectSpokeUpdateRequest request =
+        RejectSpokeUpdateRequest.newBuilder()
+            .setName(name)
+            .setSpokeUri(spokeUri == null ? null : spokeUri.toString())
+            .setSpokeEtag(spokeEtag)
+            .build();
+    return rejectSpokeUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   String spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString();
+   *   String spokeEtag = "spokeEtag-1185145407";
+   *   RejectSpokeUpdateResponse response =
+   *       hubServiceClient.rejectSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub to reject spoke update.
+   * @param spokeUri Required. The URI of the spoke to reject update.
+   * @param spokeEtag Required. The etag of the spoke to reject update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RejectSpokeUpdateResponse, OperationMetadata> rejectSpokeUpdateAsync(
+      String name, String spokeUri, String spokeEtag) {
+    RejectSpokeUpdateRequest request =
+        RejectSpokeUpdateRequest.newBuilder()
+            .setName(name)
+            .setSpokeUri(spokeUri)
+            .setSpokeEtag(spokeEtag)
+            .build();
+    return rejectSpokeUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   RejectSpokeUpdateRequest request =
+   *       RejectSpokeUpdateRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setSpokeUri(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setSpokeEtag("spokeEtag-1185145407")
+   *           .setDetails("details1557721666")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   RejectSpokeUpdateResponse response = hubServiceClient.rejectSpokeUpdateAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RejectSpokeUpdateResponse, OperationMetadata> rejectSpokeUpdateAsync(
+      RejectSpokeUpdateRequest request) {
+    return rejectSpokeUpdateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   RejectSpokeUpdateRequest request =
+   *       RejectSpokeUpdateRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setSpokeUri(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setSpokeEtag("spokeEtag-1185145407")
+   *           .setDetails("details1557721666")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<RejectSpokeUpdateResponse, OperationMetadata> future =
+   *       hubServiceClient.rejectSpokeUpdateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RejectSpokeUpdateResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+      rejectSpokeUpdateOperationCallable() {
+    return stub.rejectSpokeUpdateOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   RejectSpokeUpdateRequest request =
+   *       RejectSpokeUpdateRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setSpokeUri(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setSpokeEtag("spokeEtag-1185145407")
+   *           .setDetails("details1557721666")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       hubServiceClient.rejectSpokeUpdateCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RejectSpokeUpdateRequest, Operation> rejectSpokeUpdateCallable() {
+    return stub.rejectSpokeUpdateCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

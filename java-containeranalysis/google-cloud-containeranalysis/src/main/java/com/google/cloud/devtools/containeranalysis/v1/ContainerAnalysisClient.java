@@ -21,6 +21,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.devtools.containeranalysis.v1.stub.ContainerAnalysisStub;
 import com.google.cloud.devtools.containeranalysis.v1.stub.ContainerAnalysisStubSettings;
+import com.google.containeranalysis.v1.ExportSBOMRequest;
+import com.google.containeranalysis.v1.ExportSBOMResponse;
 import com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest;
 import com.google.containeranalysis.v1.ProjectName;
 import com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary;
@@ -170,6 +172,20 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getVulnerabilityOccurrencesSummaryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExportSBOM</td>
+ *      <td><p> Generates an SBOM for the given resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportSBOM(ExportSBOMRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportSBOMCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -902,6 +918,56 @@ public class ContainerAnalysisClient implements BackgroundResource {
           GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
       getVulnerabilityOccurrencesSummaryCallable() {
     return stub.getVulnerabilityOccurrencesSummaryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates an SBOM for the given resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   ExportSBOMRequest request = ExportSBOMRequest.newBuilder().setName("name3373707").build();
+   *   ExportSBOMResponse response = containerAnalysisClient.exportSBOM(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExportSBOMResponse exportSBOM(ExportSBOMRequest request) {
+    return exportSBOMCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates an SBOM for the given resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
+   *   ExportSBOMRequest request = ExportSBOMRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<ExportSBOMResponse> future =
+   *       containerAnalysisClient.exportSBOMCallable().futureCall(request);
+   *   // Do something.
+   *   ExportSBOMResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportSBOMRequest, ExportSBOMResponse> exportSBOMCallable() {
+    return stub.exportSBOMCallable();
   }
 
   @Override

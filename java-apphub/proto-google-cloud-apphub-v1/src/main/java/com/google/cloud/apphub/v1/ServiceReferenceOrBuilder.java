@@ -28,8 +28,8 @@ public interface ServiceReferenceOrBuilder
    *
    *
    * <pre>
-   * Output only. The underlying resource URI (For example, URI of Forwarding
-   * Rule, URL Map, and Backend Service).
+   * Output only. The underlying resource URI. For example, URI of Forwarding
+   * Rule, URL Map, and Backend Service.
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -41,8 +41,8 @@ public interface ServiceReferenceOrBuilder
    *
    *
    * <pre>
-   * Output only. The underlying resource URI (For example, URI of Forwarding
-   * Rule, URL Map, and Backend Service).
+   * Output only. The underlying resource URI. For example, URI of Forwarding
+   * Rule, URL Map, and Backend Service.
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -29,7 +29,7 @@ public interface DiscoveredServiceOrBuilder
    *
    * <pre>
    * Identifier. The resource name of the discovered service. Format:
-   * "projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}""
+   * `"projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -42,7 +42,7 @@ public interface DiscoveredServiceOrBuilder
    *
    * <pre>
    * Identifier. The resource name of the discovered service. Format:
-   * "projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}""
+   * `"projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>

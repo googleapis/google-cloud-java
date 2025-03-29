@@ -1274,6 +1274,49 @@ public interface EvaluateInstancesResponseOrBuilder
   com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseResultsOrBuilder
       getTrajectorySingleToolUseResultsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Result for rubric based instruction following metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult rubric_based_instruction_following_result = 38;
+   * </code>
+   *
+   * @return Whether the rubricBasedInstructionFollowingResult field is set.
+   */
+  boolean hasRubricBasedInstructionFollowingResult();
+  /**
+   *
+   *
+   * <pre>
+   * Result for rubric based instruction following metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult rubric_based_instruction_following_result = 38;
+   * </code>
+   *
+   * @return The rubricBasedInstructionFollowingResult.
+   */
+  com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult
+      getRubricBasedInstructionFollowingResult();
+  /**
+   *
+   *
+   * <pre>
+   * Result for rubric based instruction following metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult rubric_based_instruction_following_result = 38;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResultOrBuilder
+      getRubricBasedInstructionFollowingResultOrBuilder();
+
   com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse.EvaluationResultsCase
       getEvaluationResultsCase();
 }

@@ -45,6 +45,8 @@ import com.google.cloud.alloydb.v1beta.DeleteInstanceRequest;
 import com.google.cloud.alloydb.v1beta.DeleteUserRequest;
 import com.google.cloud.alloydb.v1beta.ExecuteSqlRequest;
 import com.google.cloud.alloydb.v1beta.ExecuteSqlResponse;
+import com.google.cloud.alloydb.v1beta.ExportClusterRequest;
+import com.google.cloud.alloydb.v1beta.ExportClusterResponse;
 import com.google.cloud.alloydb.v1beta.FailoverInstanceRequest;
 import com.google.cloud.alloydb.v1beta.GenerateClientCertificateRequest;
 import com.google.cloud.alloydb.v1beta.GenerateClientCertificateResponse;
@@ -134,6 +136,15 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
 
   public UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: updateClusterCallable()");
+  }
+
+  public OperationCallable<ExportClusterRequest, ExportClusterResponse, OperationMetadata>
+      exportClusterOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportClusterOperationCallable()");
+  }
+
+  public UnaryCallable<ExportClusterRequest, Operation> exportClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportClusterCallable()");
   }
 
   public OperationCallable<UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>

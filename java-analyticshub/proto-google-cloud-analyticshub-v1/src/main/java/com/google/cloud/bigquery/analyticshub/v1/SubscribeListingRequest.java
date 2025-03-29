@@ -73,6 +73,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DESTINATION_DATASET(3),
+    DESTINATION_PUBSUB_SUBSCRIPTION(5),
     DESTINATION_NOT_SET(0);
     private final int value;
 
@@ -93,6 +94,8 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       switch (value) {
         case 3:
           return DESTINATION_DATASET;
+        case 5:
+          return DESTINATION_PUBSUB_SUBSCRIPTION;
         case 0:
           return DESTINATION_NOT_SET;
         default:
@@ -165,6 +168,70 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       return (com.google.cloud.bigquery.analyticshub.v1.DestinationDataset) destination_;
     }
     return com.google.cloud.bigquery.analyticshub.v1.DestinationDataset.getDefaultInstance();
+  }
+
+  public static final int DESTINATION_PUBSUB_SUBSCRIPTION_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Destination Pub/Sub subscription to create for the
+   * subscriber.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription destination_pubsub_subscription = 5 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the destinationPubsubSubscription field is set.
+   */
+  @java.lang.Override
+  public boolean hasDestinationPubsubSubscription() {
+    return destinationCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Destination Pub/Sub subscription to create for the
+   * subscriber.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription destination_pubsub_subscription = 5 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The destinationPubsubSubscription.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription
+      getDestinationPubsubSubscription() {
+    if (destinationCase_ == 5) {
+      return (com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription) destination_;
+    }
+    return com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Destination Pub/Sub subscription to create for the
+   * subscriber.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription destination_pubsub_subscription = 5 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscriptionOrBuilder
+      getDestinationPubsubSubscriptionOrBuilder() {
+    if (destinationCase_ == 5) {
+      return (com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription) destination_;
+    }
+    return com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription
+        .getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -245,6 +312,11 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       output.writeMessage(
           3, (com.google.cloud.bigquery.analyticshub.v1.DestinationDataset) destination_);
     }
+    if (destinationCase_ == 5) {
+      output.writeMessage(
+          5,
+          (com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription) destination_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -261,6 +333,13 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.cloud.bigquery.analyticshub.v1.DestinationDataset) destination_);
+    }
+    if (destinationCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5,
+              (com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription)
+                  destination_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -284,6 +363,10 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       case 3:
         if (!getDestinationDataset().equals(other.getDestinationDataset())) return false;
         break;
+      case 5:
+        if (!getDestinationPubsubSubscription().equals(other.getDestinationPubsubSubscription()))
+          return false;
+        break;
       case 0:
       default:
     }
@@ -304,6 +387,10 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       case 3:
         hash = (37 * hash) + DESTINATION_DATASET_FIELD_NUMBER;
         hash = (53 * hash) + getDestinationDataset().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + DESTINATION_PUBSUB_SUBSCRIPTION_FIELD_NUMBER;
+        hash = (53 * hash) + getDestinationPubsubSubscription().hashCode();
         break;
       case 0:
       default:
@@ -453,6 +540,9 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       if (destinationDatasetBuilder_ != null) {
         destinationDatasetBuilder_.clear();
       }
+      if (destinationPubsubSubscriptionBuilder_ != null) {
+        destinationPubsubSubscriptionBuilder_.clear();
+      }
       name_ = "";
       destinationCase_ = 0;
       destination_ = null;
@@ -495,7 +585,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
     private void buildPartial0(
         com.google.cloud.bigquery.analyticshub.v1.SubscribeListingRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.name_ = name_;
       }
     }
@@ -506,6 +596,9 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       result.destination_ = this.destination_;
       if (destinationCase_ == 3 && destinationDatasetBuilder_ != null) {
         result.destination_ = destinationDatasetBuilder_.build();
+      }
+      if (destinationCase_ == 5 && destinationPubsubSubscriptionBuilder_ != null) {
+        result.destination_ = destinationPubsubSubscriptionBuilder_.build();
       }
     }
 
@@ -559,13 +652,18 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       switch (other.getDestinationCase()) {
         case DESTINATION_DATASET:
           {
             mergeDestinationDataset(other.getDestinationDataset());
+            break;
+          }
+        case DESTINATION_PUBSUB_SUBSCRIPTION:
+          {
+            mergeDestinationPubsubSubscription(other.getDestinationPubsubSubscription());
             break;
           }
         case DESTINATION_NOT_SET:
@@ -602,7 +700,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 26:
@@ -612,6 +710,13 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
                 destinationCase_ = 3;
                 break;
               } // case 26
+            case 42:
+              {
+                input.readMessage(
+                    getDestinationPubsubSubscriptionFieldBuilder().getBuilder(), extensionRegistry);
+                destinationCase_ = 5;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -879,6 +984,259 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       return destinationDatasetBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription,
+            com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription.Builder,
+            com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscriptionOrBuilder>
+        destinationPubsubSubscriptionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Destination Pub/Sub subscription to create for the
+     * subscriber.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription destination_pubsub_subscription = 5 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the destinationPubsubSubscription field is set.
+     */
+    @java.lang.Override
+    public boolean hasDestinationPubsubSubscription() {
+      return destinationCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Destination Pub/Sub subscription to create for the
+     * subscriber.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription destination_pubsub_subscription = 5 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The destinationPubsubSubscription.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription
+        getDestinationPubsubSubscription() {
+      if (destinationPubsubSubscriptionBuilder_ == null) {
+        if (destinationCase_ == 5) {
+          return (com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription)
+              destination_;
+        }
+        return com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription
+            .getDefaultInstance();
+      } else {
+        if (destinationCase_ == 5) {
+          return destinationPubsubSubscriptionBuilder_.getMessage();
+        }
+        return com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Destination Pub/Sub subscription to create for the
+     * subscriber.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription destination_pubsub_subscription = 5 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setDestinationPubsubSubscription(
+        com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription value) {
+      if (destinationPubsubSubscriptionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        destination_ = value;
+        onChanged();
+      } else {
+        destinationPubsubSubscriptionBuilder_.setMessage(value);
+      }
+      destinationCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Destination Pub/Sub subscription to create for the
+     * subscriber.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription destination_pubsub_subscription = 5 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setDestinationPubsubSubscription(
+        com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription.Builder
+            builderForValue) {
+      if (destinationPubsubSubscriptionBuilder_ == null) {
+        destination_ = builderForValue.build();
+        onChanged();
+      } else {
+        destinationPubsubSubscriptionBuilder_.setMessage(builderForValue.build());
+      }
+      destinationCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Destination Pub/Sub subscription to create for the
+     * subscriber.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription destination_pubsub_subscription = 5 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDestinationPubsubSubscription(
+        com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription value) {
+      if (destinationPubsubSubscriptionBuilder_ == null) {
+        if (destinationCase_ == 5
+            && destination_
+                != com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription
+                    .getDefaultInstance()) {
+          destination_ =
+              com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription.newBuilder(
+                      (com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription)
+                          destination_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          destination_ = value;
+        }
+        onChanged();
+      } else {
+        if (destinationCase_ == 5) {
+          destinationPubsubSubscriptionBuilder_.mergeFrom(value);
+        } else {
+          destinationPubsubSubscriptionBuilder_.setMessage(value);
+        }
+      }
+      destinationCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Destination Pub/Sub subscription to create for the
+     * subscriber.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription destination_pubsub_subscription = 5 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDestinationPubsubSubscription() {
+      if (destinationPubsubSubscriptionBuilder_ == null) {
+        if (destinationCase_ == 5) {
+          destinationCase_ = 0;
+          destination_ = null;
+          onChanged();
+        }
+      } else {
+        if (destinationCase_ == 5) {
+          destinationCase_ = 0;
+          destination_ = null;
+        }
+        destinationPubsubSubscriptionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Destination Pub/Sub subscription to create for the
+     * subscriber.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription destination_pubsub_subscription = 5 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription.Builder
+        getDestinationPubsubSubscriptionBuilder() {
+      return getDestinationPubsubSubscriptionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Destination Pub/Sub subscription to create for the
+     * subscriber.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription destination_pubsub_subscription = 5 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscriptionOrBuilder
+        getDestinationPubsubSubscriptionOrBuilder() {
+      if ((destinationCase_ == 5) && (destinationPubsubSubscriptionBuilder_ != null)) {
+        return destinationPubsubSubscriptionBuilder_.getMessageOrBuilder();
+      } else {
+        if (destinationCase_ == 5) {
+          return (com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription)
+              destination_;
+        }
+        return com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Destination Pub/Sub subscription to create for the
+     * subscriber.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription destination_pubsub_subscription = 5 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription,
+            com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription.Builder,
+            com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscriptionOrBuilder>
+        getDestinationPubsubSubscriptionFieldBuilder() {
+      if (destinationPubsubSubscriptionBuilder_ == null) {
+        if (!(destinationCase_ == 5)) {
+          destination_ =
+              com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription
+                  .getDefaultInstance();
+        }
+        destinationPubsubSubscriptionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription,
+                com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription.Builder,
+                com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscriptionOrBuilder>(
+                (com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription)
+                    destination_,
+                getParentForChildren(),
+                isClean());
+        destination_ = null;
+      }
+      destinationCase_ = 5;
+      onChanged();
+      return destinationPubsubSubscriptionBuilder_;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -950,7 +1308,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -970,7 +1328,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -995,7 +1353,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

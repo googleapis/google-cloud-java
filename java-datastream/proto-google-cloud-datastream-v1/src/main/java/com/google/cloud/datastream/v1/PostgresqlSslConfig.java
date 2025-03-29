@@ -788,14 +788,14 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Input only. PEM-encoded private key associated with the client
+     * Optional. Input only. PEM-encoded private key associated with the client
      * certificate. This value will be used during the SSL/TLS handshake,
      * allowing the PostgreSQL server to authenticate the client's identity,
      * i.e. identity of the Datastream.
      * </pre>
      *
      * <code>
-     * string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The clientKey.
@@ -805,14 +805,14 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Input only. PEM-encoded private key associated with the client
+     * Optional. Input only. PEM-encoded private key associated with the client
      * certificate. This value will be used during the SSL/TLS handshake,
      * allowing the PostgreSQL server to authenticate the client's identity,
      * i.e. identity of the Datastream.
      * </pre>
      *
      * <code>
-     * string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The bytes for clientKey.
@@ -973,14 +973,14 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Input only. PEM-encoded private key associated with the client
+     * Optional. Input only. PEM-encoded private key associated with the client
      * certificate. This value will be used during the SSL/TLS handshake,
      * allowing the PostgreSQL server to authenticate the client's identity,
      * i.e. identity of the Datastream.
      * </pre>
      *
      * <code>
-     * string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The clientKey.
@@ -1001,14 +1001,14 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Input only. PEM-encoded private key associated with the client
+     * Optional. Input only. PEM-encoded private key associated with the client
      * certificate. This value will be used during the SSL/TLS handshake,
      * allowing the PostgreSQL server to authenticate the client's identity,
      * i.e. identity of the Datastream.
      * </pre>
      *
      * <code>
-     * string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The bytes for clientKey.
@@ -1650,14 +1650,14 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. Input only. PEM-encoded private key associated with the client
+       * Optional. Input only. PEM-encoded private key associated with the client
        * certificate. This value will be used during the SSL/TLS handshake,
        * allowing the PostgreSQL server to authenticate the client's identity,
        * i.e. identity of the Datastream.
        * </pre>
        *
        * <code>
-       * string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+       * string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The clientKey.
@@ -1677,14 +1677,14 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. Input only. PEM-encoded private key associated with the client
+       * Optional. Input only. PEM-encoded private key associated with the client
        * certificate. This value will be used during the SSL/TLS handshake,
        * allowing the PostgreSQL server to authenticate the client's identity,
        * i.e. identity of the Datastream.
        * </pre>
        *
        * <code>
-       * string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+       * string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The bytes for clientKey.
@@ -1704,14 +1704,14 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. Input only. PEM-encoded private key associated with the client
+       * Optional. Input only. PEM-encoded private key associated with the client
        * certificate. This value will be used during the SSL/TLS handshake,
        * allowing the PostgreSQL server to authenticate the client's identity,
        * i.e. identity of the Datastream.
        * </pre>
        *
        * <code>
-       * string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+       * string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @param value The clientKey to set.
@@ -1730,14 +1730,14 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. Input only. PEM-encoded private key associated with the client
+       * Optional. Input only. PEM-encoded private key associated with the client
        * certificate. This value will be used during the SSL/TLS handshake,
        * allowing the PostgreSQL server to authenticate the client's identity,
        * i.e. identity of the Datastream.
        * </pre>
        *
        * <code>
-       * string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+       * string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return This builder for chaining.
@@ -1752,14 +1752,14 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. Input only. PEM-encoded private key associated with the client
+       * Optional. Input only. PEM-encoded private key associated with the client
        * certificate. This value will be used during the SSL/TLS handshake,
        * allowing the PostgreSQL server to authenticate the client's identity,
        * i.e. identity of the Datastream.
        * </pre>
        *
        * <code>
-       * string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+       * string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @param value The bytes for clientKey to set.

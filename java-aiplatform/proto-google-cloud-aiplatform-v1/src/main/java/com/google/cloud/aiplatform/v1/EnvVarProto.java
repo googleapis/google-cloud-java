@@ -32,6 +32,14 @@ public final class EnvVarProto {
       internal_static_google_cloud_aiplatform_v1_EnvVar_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_EnvVar_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_SecretRef_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_SecretRef_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_SecretEnvVar_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_SecretEnvVar_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -43,21 +51,23 @@ public final class EnvVarProto {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/aiplatform/v1/env_var.pro"
           + "to\022\032google.cloud.aiplatform.v1\032\037google/a"
-          + "pi/field_behavior.proto\032\031google/api/reso"
-          + "urce.proto\"/\n\006EnvVar\022\021\n\004name\030\001 \001(\tB\003\340A\002\022"
-          + "\022\n\005value\030\002 \001(\tB\003\340A\002B\311\001\n\036com.google.cloud"
-          + ".aiplatform.v1B\013EnvVarProtoP\001Z>cloud.goo"
-          + "gle.com/go/aiplatform/apiv1/aiplatformpb"
-          + ";aiplatformpb\252\002\032Google.Cloud.AIPlatform."
-          + "V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google"
-          + "::Cloud::AIPlatform::V1b\006proto3"
+          + "pi/field_behavior.proto\"/\n\006EnvVar\022\021\n\004nam"
+          + "e\030\001 \001(\tB\003\340A\002\022\022\n\005value\030\002 \001(\tB\003\340A\002\"1\n\tSecr"
+          + "etRef\022\023\n\006secret\030\001 \001(\tB\003\340A\002\022\017\n\007version\030\002 "
+          + "\001(\t\"a\n\014SecretEnvVar\022\021\n\004name\030\001 \001(\tB\003\340A\002\022>"
+          + "\n\nsecret_ref\030\002 \001(\0132%.google.cloud.aiplat"
+          + "form.v1.SecretRefB\003\340A\002B\311\001\n\036com.google.cl"
+          + "oud.aiplatform.v1B\013EnvVarProtoP\001Z>cloud."
+          + "google.com/go/aiplatform/apiv1/aiplatfor"
+          + "mpb;aiplatformpb\252\002\032Google.Cloud.AIPlatfo"
+          + "rm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goo"
+          + "gle::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
-              com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_EnvVar_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -67,13 +77,28 @@ public final class EnvVarProto {
             new java.lang.String[] {
               "Name", "Value",
             });
+    internal_static_google_cloud_aiplatform_v1_SecretRef_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_aiplatform_v1_SecretRef_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_SecretRef_descriptor,
+            new java.lang.String[] {
+              "Secret", "Version",
+            });
+    internal_static_google_cloud_aiplatform_v1_SecretEnvVar_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_aiplatform_v1_SecretEnvVar_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_SecretEnvVar_descriptor,
+            new java.lang.String[] {
+              "Name", "SecretRef",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
-    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

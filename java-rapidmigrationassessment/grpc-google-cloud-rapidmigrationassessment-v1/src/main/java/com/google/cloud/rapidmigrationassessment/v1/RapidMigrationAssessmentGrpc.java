@@ -658,7 +658,7 @@ public final class RapidMigrationAssessmentGrpc {
      *
      * <pre>
      * Deletes a single Collector - changes state of collector to "Deleting".
-     * Background jobs does final deletion thorugh producer api.
+     * Background jobs does final deletion through producer API.
      * </pre>
      */
     default void deleteCollector(
@@ -852,7 +852,7 @@ public final class RapidMigrationAssessmentGrpc {
      *
      * <pre>
      * Deletes a single Collector - changes state of collector to "Deleting".
-     * Background jobs does final deletion thorugh producer api.
+     * Background jobs does final deletion through producer API.
      * </pre>
      */
     public void deleteCollector(
@@ -1017,7 +1017,7 @@ public final class RapidMigrationAssessmentGrpc {
      *
      * <pre>
      * Deletes a single Collector - changes state of collector to "Deleting".
-     * Background jobs does final deletion thorugh producer api.
+     * Background jobs does final deletion through producer API.
      * </pre>
      */
     public com.google.longrunning.Operation deleteCollector(
@@ -1177,7 +1177,7 @@ public final class RapidMigrationAssessmentGrpc {
      *
      * <pre>
      * Deletes a single Collector - changes state of collector to "Deleting".
-     * Background jobs does final deletion thorugh producer api.
+     * Background jobs does final deletion through producer API.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

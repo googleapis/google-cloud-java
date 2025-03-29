@@ -17,6 +17,7 @@
 package com.google.cloud.workflows.v1.stub;
 
 import static com.google.cloud.workflows.v1.WorkflowsClient.ListLocationsPagedResponse;
+import static com.google.cloud.workflows.v1.WorkflowsClient.ListWorkflowRevisionsPagedResponse;
 import static com.google.cloud.workflows.v1.WorkflowsClient.ListWorkflowsPagedResponse;
 
 import com.google.api.HttpRule;
@@ -42,6 +43,8 @@ import com.google.cloud.location.Location;
 import com.google.cloud.workflows.v1.CreateWorkflowRequest;
 import com.google.cloud.workflows.v1.DeleteWorkflowRequest;
 import com.google.cloud.workflows.v1.GetWorkflowRequest;
+import com.google.cloud.workflows.v1.ListWorkflowRevisionsRequest;
+import com.google.cloud.workflows.v1.ListWorkflowRevisionsResponse;
 import com.google.cloud.workflows.v1.ListWorkflowsRequest;
 import com.google.cloud.workflows.v1.ListWorkflowsResponse;
 import com.google.cloud.workflows.v1.OperationMetadata;
@@ -267,6 +270,44 @@ public class HttpJsonWorkflowsStub extends WorkflowsStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<
+          ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse>
+      listWorkflowRevisionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.workflows.v1.Workflows/ListWorkflowRevisions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListWorkflowRevisionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/workflows/*}:listRevisions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListWorkflowRevisionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListWorkflowRevisionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListWorkflowRevisionsResponse>newBuilder()
+                      .setDefaultInstance(ListWorkflowRevisionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -348,6 +389,10 @@ public class HttpJsonWorkflowsStub extends WorkflowsStub {
   private final UnaryCallable<UpdateWorkflowRequest, Operation> updateWorkflowCallable;
   private final OperationCallable<UpdateWorkflowRequest, Workflow, OperationMetadata>
       updateWorkflowOperationCallable;
+  private final UnaryCallable<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse>
+      listWorkflowRevisionsCallable;
+  private final UnaryCallable<ListWorkflowRevisionsRequest, ListWorkflowRevisionsPagedResponse>
+      listWorkflowRevisionsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -473,6 +518,19 @@ public class HttpJsonWorkflowsStub extends WorkflowsStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse>
+        listWorkflowRevisionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse>newBuilder()
+                .setMethodDescriptor(listWorkflowRevisionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -533,6 +591,16 @@ public class HttpJsonWorkflowsStub extends WorkflowsStub {
             settings.updateWorkflowOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listWorkflowRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            listWorkflowRevisionsTransportSettings,
+            settings.listWorkflowRevisionsSettings(),
+            clientContext);
+    this.listWorkflowRevisionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listWorkflowRevisionsTransportSettings,
+            settings.listWorkflowRevisionsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -555,6 +623,7 @@ public class HttpJsonWorkflowsStub extends WorkflowsStub {
     methodDescriptors.add(createWorkflowMethodDescriptor);
     methodDescriptors.add(deleteWorkflowMethodDescriptor);
     methodDescriptors.add(updateWorkflowMethodDescriptor);
+    methodDescriptors.add(listWorkflowRevisionsMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -611,6 +680,18 @@ public class HttpJsonWorkflowsStub extends WorkflowsStub {
   public OperationCallable<UpdateWorkflowRequest, Workflow, OperationMetadata>
       updateWorkflowOperationCallable() {
     return updateWorkflowOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse>
+      listWorkflowRevisionsCallable() {
+    return listWorkflowRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWorkflowRevisionsRequest, ListWorkflowRevisionsPagedResponse>
+      listWorkflowRevisionsPagedCallable() {
+    return listWorkflowRevisionsPagedCallable;
   }
 
   @Override

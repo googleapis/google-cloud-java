@@ -81,6 +81,27 @@ public class MockProductInputsServiceImpl extends ProductInputsServiceImplBase {
   }
 
   @Override
+  public void updateProductInput(
+      UpdateProductInputRequest request, StreamObserver<ProductInput> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ProductInput) {
+      requests.add(request);
+      responseObserver.onNext(((ProductInput) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateProductInput, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ProductInput.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteProductInput(
       DeleteProductInputRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.poll();

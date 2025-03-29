@@ -28,6 +28,8 @@ import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.devtools.containeranalysis.v1.stub.ContainerAnalysisStubSettings;
+import com.google.containeranalysis.v1.ExportSBOMRequest;
+import com.google.containeranalysis.v1.ExportSBOMResponse;
 import com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest;
 import com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -115,6 +117,11 @@ public class ContainerAnalysisSettings extends ClientSettings<ContainerAnalysisS
       getVulnerabilityOccurrencesSummarySettings() {
     return ((ContainerAnalysisStubSettings) getStubSettings())
         .getVulnerabilityOccurrencesSummarySettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportSBOM. */
+  public UnaryCallSettings<ExportSBOMRequest, ExportSBOMResponse> exportSBOMSettings() {
+    return ((ContainerAnalysisStubSettings) getStubSettings()).exportSBOMSettings();
   }
 
   public static final ContainerAnalysisSettings create(ContainerAnalysisStubSettings stub)
@@ -252,6 +259,11 @@ public class ContainerAnalysisSettings extends ClientSettings<ContainerAnalysisS
             GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
         getVulnerabilityOccurrencesSummarySettings() {
       return getStubSettingsBuilder().getVulnerabilityOccurrencesSummarySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportSBOM. */
+    public UnaryCallSettings.Builder<ExportSBOMRequest, ExportSBOMResponse> exportSBOMSettings() {
+      return getStubSettingsBuilder().exportSBOMSettings();
     }
 
     @Override

@@ -1473,6 +1473,33 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.rpc.Status error_samples = 2;</code>
      */
     com.google.rpc.StatusOrBuilder getErrorSamplesOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The message indicates the document index is in progress.
+     * If this field is populated, the document index is pending.
+     * </pre>
+     *
+     * <code>string pending_message = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The pendingMessage.
+     */
+    java.lang.String getPendingMessage();
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The message indicates the document index is in progress.
+     * If this field is populated, the document index is pending.
+     * </pre>
+     *
+     * <code>string pending_message = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for pendingMessage.
+     */
+    com.google.protobuf.ByteString getPendingMessageBytes();
   }
   /**
    *
@@ -1495,6 +1522,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
     private IndexStatus() {
       errorSamples_ = java.util.Collections.emptyList();
+      pendingMessage_ = "";
     }
 
     @java.lang.Override
@@ -1643,6 +1671,59 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return errorSamples_.get(index);
     }
 
+    public static final int PENDING_MESSAGE_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pendingMessage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The message indicates the document index is in progress.
+     * If this field is populated, the document index is pending.
+     * </pre>
+     *
+     * <code>string pending_message = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The pendingMessage.
+     */
+    @java.lang.Override
+    public java.lang.String getPendingMessage() {
+      java.lang.Object ref = pendingMessage_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pendingMessage_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The message indicates the document index is in progress.
+     * If this field is populated, the document index is pending.
+     * </pre>
+     *
+     * <code>string pending_message = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for pendingMessage.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPendingMessageBytes() {
+      java.lang.Object ref = pendingMessage_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pendingMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1663,6 +1744,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < errorSamples_.size(); i++) {
         output.writeMessage(2, errorSamples_.get(i));
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pendingMessage_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pendingMessage_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1677,6 +1761,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       for (int i = 0; i < errorSamples_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, errorSamples_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pendingMessage_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pendingMessage_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1699,6 +1786,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!getIndexTime().equals(other.getIndexTime())) return false;
       }
       if (!getErrorSamplesList().equals(other.getErrorSamplesList())) return false;
+      if (!getPendingMessage().equals(other.getPendingMessage())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1718,6 +1806,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + ERROR_SAMPLES_FIELD_NUMBER;
         hash = (53 * hash) + getErrorSamplesList().hashCode();
       }
+      hash = (37 * hash) + PENDING_MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getPendingMessage().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1882,6 +1972,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           errorSamplesBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
+        pendingMessage_ = "";
         return this;
       }
 
@@ -1936,6 +2027,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.indexTime_ = indexTimeBuilder_ == null ? indexTime_ : indexTimeBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.pendingMessage_ = pendingMessage_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -2018,6 +2112,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
+        if (!other.getPendingMessage().isEmpty()) {
+          pendingMessage_ = other.pendingMessage_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2062,6 +2161,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                   }
                   break;
                 } // case 18
+              case 26:
+                {
+                  pendingMessage_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2637,6 +2742,117 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return errorSamplesBuilder_;
       }
 
+      private java.lang.Object pendingMessage_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The message indicates the document index is in progress.
+       * If this field is populated, the document index is pending.
+       * </pre>
+       *
+       * <code>string pending_message = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return The pendingMessage.
+       */
+      public java.lang.String getPendingMessage() {
+        java.lang.Object ref = pendingMessage_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pendingMessage_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The message indicates the document index is in progress.
+       * If this field is populated, the document index is pending.
+       * </pre>
+       *
+       * <code>string pending_message = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return The bytes for pendingMessage.
+       */
+      public com.google.protobuf.ByteString getPendingMessageBytes() {
+        java.lang.Object ref = pendingMessage_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          pendingMessage_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The message indicates the document index is in progress.
+       * If this field is populated, the document index is pending.
+       * </pre>
+       *
+       * <code>string pending_message = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @param value The pendingMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPendingMessage(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pendingMessage_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The message indicates the document index is in progress.
+       * If this field is populated, the document index is pending.
+       * </pre>
+       *
+       * <code>string pending_message = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPendingMessage() {
+        pendingMessage_ = getDefaultInstance().getPendingMessage();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The message indicates the document index is in progress.
+       * If this field is populated, the document index is pending.
+       * </pre>
+       *
+       * <code>string pending_message = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @param value The bytes for pendingMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPendingMessageBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        pendingMessage_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2956,7 +3172,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * Immutable. The identifier of the document.
    *
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-   * standard with a length limit of 63 characters.
+   * standard with a length limit of 128 characters.
    * </pre>
    *
    * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2982,7 +3198,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * Immutable. The identifier of the document.
    *
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-   * standard with a length limit of 63 characters.
+   * standard with a length limit of 128 characters.
    * </pre>
    *
    * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3299,7 +3515,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * * If document is indexed successfully, the index_time field is populated.
    * * Otherwise, if document is not indexed due to errors, the error_samples
    *   field is populated.
-   * * Otherwise, index_status is unset.
+   * * Otherwise, if document's index is in progress, the pending_message field
+   *   is populated.
    * </pre>
    *
    * <code>
@@ -3321,7 +3538,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * * If document is indexed successfully, the index_time field is populated.
    * * Otherwise, if document is not indexed due to errors, the error_samples
    *   field is populated.
-   * * Otherwise, index_status is unset.
+   * * Otherwise, if document's index is in progress, the pending_message field
+   *   is populated.
    * </pre>
    *
    * <code>
@@ -3345,7 +3563,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * * If document is indexed successfully, the index_time field is populated.
    * * Otherwise, if document is not indexed due to errors, the error_samples
    *   field is populated.
-   * * Otherwise, index_status is unset.
+   * * Otherwise, if document's index is in progress, the pending_message field
+   *   is populated.
    * </pre>
    *
    * <code>
@@ -4524,7 +4743,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Immutable. The identifier of the document.
      *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-     * standard with a length limit of 63 characters.
+     * standard with a length limit of 128 characters.
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4549,7 +4768,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Immutable. The identifier of the document.
      *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-     * standard with a length limit of 63 characters.
+     * standard with a length limit of 128 characters.
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4574,7 +4793,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Immutable. The identifier of the document.
      *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-     * standard with a length limit of 63 characters.
+     * standard with a length limit of 128 characters.
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4598,7 +4817,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Immutable. The identifier of the document.
      *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-     * standard with a length limit of 63 characters.
+     * standard with a length limit of 128 characters.
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4618,7 +4837,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Immutable. The identifier of the document.
      *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-     * standard with a length limit of 63 characters.
+     * standard with a length limit of 128 characters.
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -5536,7 +5755,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * * If document is indexed successfully, the index_time field is populated.
      * * Otherwise, if document is not indexed due to errors, the error_samples
      *   field is populated.
-     * * Otherwise, index_status is unset.
+     * * Otherwise, if document's index is in progress, the pending_message field
+     *   is populated.
      * </pre>
      *
      * <code>
@@ -5557,7 +5777,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * * If document is indexed successfully, the index_time field is populated.
      * * Otherwise, if document is not indexed due to errors, the error_samples
      *   field is populated.
-     * * Otherwise, index_status is unset.
+     * * Otherwise, if document's index is in progress, the pending_message field
+     *   is populated.
      * </pre>
      *
      * <code>
@@ -5584,7 +5805,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * * If document is indexed successfully, the index_time field is populated.
      * * Otherwise, if document is not indexed due to errors, the error_samples
      *   field is populated.
-     * * Otherwise, index_status is unset.
+     * * Otherwise, if document's index is in progress, the pending_message field
+     *   is populated.
      * </pre>
      *
      * <code>
@@ -5613,7 +5835,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * * If document is indexed successfully, the index_time field is populated.
      * * Otherwise, if document is not indexed due to errors, the error_samples
      *   field is populated.
-     * * Otherwise, index_status is unset.
+     * * Otherwise, if document's index is in progress, the pending_message field
+     *   is populated.
      * </pre>
      *
      * <code>
@@ -5640,7 +5863,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * * If document is indexed successfully, the index_time field is populated.
      * * Otherwise, if document is not indexed due to errors, the error_samples
      *   field is populated.
-     * * Otherwise, index_status is unset.
+     * * Otherwise, if document's index is in progress, the pending_message field
+     *   is populated.
      * </pre>
      *
      * <code>
@@ -5676,7 +5900,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * * If document is indexed successfully, the index_time field is populated.
      * * Otherwise, if document is not indexed due to errors, the error_samples
      *   field is populated.
-     * * Otherwise, index_status is unset.
+     * * Otherwise, if document's index is in progress, the pending_message field
+     *   is populated.
      * </pre>
      *
      * <code>
@@ -5702,7 +5927,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * * If document is indexed successfully, the index_time field is populated.
      * * Otherwise, if document is not indexed due to errors, the error_samples
      *   field is populated.
-     * * Otherwise, index_status is unset.
+     * * Otherwise, if document's index is in progress, the pending_message field
+     *   is populated.
      * </pre>
      *
      * <code>
@@ -5724,7 +5950,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * * If document is indexed successfully, the index_time field is populated.
      * * Otherwise, if document is not indexed due to errors, the error_samples
      *   field is populated.
-     * * Otherwise, index_status is unset.
+     * * Otherwise, if document's index is in progress, the pending_message field
+     *   is populated.
      * </pre>
      *
      * <code>
@@ -5750,7 +5977,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * * If document is indexed successfully, the index_time field is populated.
      * * Otherwise, if document is not indexed due to errors, the error_samples
      *   field is populated.
-     * * Otherwise, index_status is unset.
+     * * Otherwise, if document's index is in progress, the pending_message field
+     *   is populated.
      * </pre>
      *
      * <code>

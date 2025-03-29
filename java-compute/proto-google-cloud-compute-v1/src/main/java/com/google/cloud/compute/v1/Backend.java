@@ -729,7 +729,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported.
+   * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported. If haPolicy is specified, backends must refer to NEG resources of type GCE_VM_IP.
    * </pre>
    *
    * <code>optional string group = 98629247;</code>
@@ -744,7 +744,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported.
+   * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported. If haPolicy is specified, backends must refer to NEG resources of type GCE_VM_IP.
    * </pre>
    *
    * <code>optional string group = 98629247;</code>
@@ -767,7 +767,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported.
+   * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported. If haPolicy is specified, backends must refer to NEG resources of type GCE_VM_IP.
    * </pre>
    *
    * <code>optional string group = 98629247;</code>
@@ -2623,7 +2623,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported.
+     * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported. If haPolicy is specified, backends must refer to NEG resources of type GCE_VM_IP.
      * </pre>
      *
      * <code>optional string group = 98629247;</code>
@@ -2637,7 +2637,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported.
+     * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported. If haPolicy is specified, backends must refer to NEG resources of type GCE_VM_IP.
      * </pre>
      *
      * <code>optional string group = 98629247;</code>
@@ -2659,7 +2659,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported.
+     * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported. If haPolicy is specified, backends must refer to NEG resources of type GCE_VM_IP.
      * </pre>
      *
      * <code>optional string group = 98629247;</code>
@@ -2681,7 +2681,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported.
+     * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported. If haPolicy is specified, backends must refer to NEG resources of type GCE_VM_IP.
      * </pre>
      *
      * <code>optional string group = 98629247;</code>
@@ -2702,7 +2702,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported.
+     * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported. If haPolicy is specified, backends must refer to NEG resources of type GCE_VM_IP.
      * </pre>
      *
      * <code>optional string group = 98629247;</code>
@@ -2719,7 +2719,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported.
+     * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported. If haPolicy is specified, backends must refer to NEG resources of type GCE_VM_IP.
      * </pre>
      *
      * <code>optional string group = 98629247;</code>

@@ -20,6 +20,7 @@ package com.google.cloud.bigquery.analyticshub.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient;
 import com.google.cloud.bigquery.analyticshub.v1.DataExchangeName;
+import com.google.cloud.bigquery.analyticshub.v1.DestinationDataset;
 import com.google.cloud.bigquery.analyticshub.v1.LocationName;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest;
 import com.google.longrunning.Operation;
@@ -41,6 +42,7 @@ public class AsyncSubscribeDataExchange {
           SubscribeDataExchangeRequest.newBuilder()
               .setName(DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString())
               .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setDestinationDataset(DestinationDataset.newBuilder().build())
               .setSubscription("subscription341203229")
               .setSubscriberContact("subscriberContact-847205736")
               .build();

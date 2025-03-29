@@ -43,6 +43,7 @@ public class AsyncDeleteReasoningEngineLRO {
               .setName(
                   ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
                       .toString())
+              .setForce(true)
               .build();
       OperationFuture<Empty, DeleteOperationMetadata> future =
           reasoningEngineServiceClient.deleteReasoningEngineOperationCallable().futureCall(request);

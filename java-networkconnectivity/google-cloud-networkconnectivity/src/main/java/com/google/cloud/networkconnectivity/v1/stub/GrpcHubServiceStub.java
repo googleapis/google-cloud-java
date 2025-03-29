@@ -39,6 +39,8 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeResponse;
+import com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest;
+import com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateResponse;
 import com.google.cloud.networkconnectivity.v1.CreateHubRequest;
 import com.google.cloud.networkconnectivity.v1.CreateSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.DeleteHubRequest;
@@ -67,6 +69,8 @@ import com.google.cloud.networkconnectivity.v1.QueryHubStatusRequest;
 import com.google.cloud.networkconnectivity.v1.QueryHubStatusResponse;
 import com.google.cloud.networkconnectivity.v1.RejectHubSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.RejectHubSpokeResponse;
+import com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateRequest;
+import com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateResponse;
 import com.google.cloud.networkconnectivity.v1.Route;
 import com.google.cloud.networkconnectivity.v1.RouteTable;
 import com.google.cloud.networkconnectivity.v1.Spoke;
@@ -208,6 +212,26 @@ public class GrpcHubServiceStub extends HubServiceStub {
               .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/AcceptHubSpoke")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AcceptHubSpokeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<AcceptSpokeUpdateRequest, Operation>
+      acceptSpokeUpdateMethodDescriptor =
+          MethodDescriptor.<AcceptSpokeUpdateRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/AcceptSpokeUpdate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AcceptSpokeUpdateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RejectSpokeUpdateRequest, Operation>
+      rejectSpokeUpdateMethodDescriptor =
+          MethodDescriptor.<RejectSpokeUpdateRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/RejectSpokeUpdate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RejectSpokeUpdateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -361,6 +385,14 @@ public class GrpcHubServiceStub extends HubServiceStub {
   private final UnaryCallable<AcceptHubSpokeRequest, Operation> acceptHubSpokeCallable;
   private final OperationCallable<AcceptHubSpokeRequest, AcceptHubSpokeResponse, OperationMetadata>
       acceptHubSpokeOperationCallable;
+  private final UnaryCallable<AcceptSpokeUpdateRequest, Operation> acceptSpokeUpdateCallable;
+  private final OperationCallable<
+          AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+      acceptSpokeUpdateOperationCallable;
+  private final UnaryCallable<RejectSpokeUpdateRequest, Operation> rejectSpokeUpdateCallable;
+  private final OperationCallable<
+          RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+      rejectSpokeUpdateOperationCallable;
   private final UnaryCallable<DeleteSpokeRequest, Operation> deleteSpokeCallable;
   private final OperationCallable<DeleteSpokeRequest, Empty, OperationMetadata>
       deleteSpokeOperationCallable;
@@ -553,6 +585,26 @@ public class GrpcHubServiceStub extends HubServiceStub {
     GrpcCallSettings<AcceptHubSpokeRequest, Operation> acceptHubSpokeTransportSettings =
         GrpcCallSettings.<AcceptHubSpokeRequest, Operation>newBuilder()
             .setMethodDescriptor(acceptHubSpokeMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<AcceptSpokeUpdateRequest, Operation> acceptSpokeUpdateTransportSettings =
+        GrpcCallSettings.<AcceptSpokeUpdateRequest, Operation>newBuilder()
+            .setMethodDescriptor(acceptSpokeUpdateMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<RejectSpokeUpdateRequest, Operation> rejectSpokeUpdateTransportSettings =
+        GrpcCallSettings.<RejectSpokeUpdateRequest, Operation>newBuilder()
+            .setMethodDescriptor(rejectSpokeUpdateMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -786,6 +838,28 @@ public class GrpcHubServiceStub extends HubServiceStub {
             settings.acceptHubSpokeOperationSettings(),
             clientContext,
             operationsStub);
+    this.acceptSpokeUpdateCallable =
+        callableFactory.createUnaryCallable(
+            acceptSpokeUpdateTransportSettings,
+            settings.acceptSpokeUpdateSettings(),
+            clientContext);
+    this.acceptSpokeUpdateOperationCallable =
+        callableFactory.createOperationCallable(
+            acceptSpokeUpdateTransportSettings,
+            settings.acceptSpokeUpdateOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.rejectSpokeUpdateCallable =
+        callableFactory.createUnaryCallable(
+            rejectSpokeUpdateTransportSettings,
+            settings.rejectSpokeUpdateSettings(),
+            clientContext);
+    this.rejectSpokeUpdateOperationCallable =
+        callableFactory.createOperationCallable(
+            rejectSpokeUpdateTransportSettings,
+            settings.rejectSpokeUpdateOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteSpokeCallable =
         callableFactory.createUnaryCallable(
             deleteSpokeTransportSettings, settings.deleteSpokeSettings(), clientContext);
@@ -985,6 +1059,28 @@ public class GrpcHubServiceStub extends HubServiceStub {
   public OperationCallable<AcceptHubSpokeRequest, AcceptHubSpokeResponse, OperationMetadata>
       acceptHubSpokeOperationCallable() {
     return acceptHubSpokeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<AcceptSpokeUpdateRequest, Operation> acceptSpokeUpdateCallable() {
+    return acceptSpokeUpdateCallable;
+  }
+
+  @Override
+  public OperationCallable<AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+      acceptSpokeUpdateOperationCallable() {
+    return acceptSpokeUpdateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RejectSpokeUpdateRequest, Operation> rejectSpokeUpdateCallable() {
+    return rejectSpokeUpdateCallable;
+  }
+
+  @Override
+  public OperationCallable<RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+      rejectSpokeUpdateOperationCallable() {
+    return rejectSpokeUpdateOperationCallable;
   }
 
   @Override

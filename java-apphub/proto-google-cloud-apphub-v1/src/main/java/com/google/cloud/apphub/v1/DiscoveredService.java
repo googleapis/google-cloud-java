@@ -23,9 +23,9 @@ package com.google.cloud.apphub.v1;
  *
  *
  * <pre>
- * DiscoveredService is a network/api interface that exposes some functionality
- * to clients for consumption over the network. A discovered service can be
- * registered to a App Hub service.
+ * DiscoveredService is a network or API interface that exposes some
+ * functionality to clients for consumption over the network. A discovered
+ * service can be registered to a App Hub service.
  * </pre>
  *
  * Protobuf type {@code google.cloud.apphub.v1.DiscoveredService}
@@ -75,7 +75,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Identifier. The resource name of the discovered service. Format:
-   * "projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}""
+   * `"projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -99,7 +99,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Identifier. The resource name of the discovered service. Format:
-   * "projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}""
+   * `"projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -428,9 +428,9 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * DiscoveredService is a network/api interface that exposes some functionality
-   * to clients for consumption over the network. A discovered service can be
-   * registered to a App Hub service.
+   * DiscoveredService is a network or API interface that exposes some
+   * functionality to clients for consumption over the network. A discovered
+   * service can be registered to a App Hub service.
    * </pre>
    *
    * Protobuf type {@code google.cloud.apphub.v1.DiscoveredService}
@@ -668,7 +668,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Identifier. The resource name of the discovered service. Format:
-     * "projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}""
+     * `"projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -691,7 +691,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Identifier. The resource name of the discovered service. Format:
-     * "projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}""
+     * `"projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -714,7 +714,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Identifier. The resource name of the discovered service. Format:
-     * "projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}""
+     * `"projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -736,7 +736,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Identifier. The resource name of the discovered service. Format:
-     * "projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}""
+     * `"projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -754,7 +754,7 @@ public final class DiscoveredService extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Identifier. The resource name of the discovered service. Format:
-     * "projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}""
+     * `"projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>

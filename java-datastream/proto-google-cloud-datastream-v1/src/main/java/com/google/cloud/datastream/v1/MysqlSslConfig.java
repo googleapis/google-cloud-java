@@ -73,12 +73,14 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. PEM-encoded private key associated with the Client Certificate.
-   * If this field is used then the 'client_certificate' and the
+   * Optional. Input only. PEM-encoded private key associated with the Client
+   * Certificate. If this field is used then the 'client_certificate' and the
    * 'ca_certificate' fields are mandatory.
    * </pre>
    *
-   * <code>string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>
+   * string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The clientKey.
    */
@@ -98,12 +100,14 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. PEM-encoded private key associated with the Client Certificate.
-   * If this field is used then the 'client_certificate' and the
+   * Optional. Input only. PEM-encoded private key associated with the Client
+   * Certificate. If this field is used then the 'client_certificate' and the
    * 'ca_certificate' fields are mandatory.
    * </pre>
    *
-   * <code>string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>
+   * string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The bytes for clientKey.
    */
@@ -146,12 +150,15 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. PEM-encoded certificate that will be used by the replica to
-   * authenticate against the source database server. If this field is used
-   * then the 'client_key' and the 'ca_certificate' fields are mandatory.
+   * Optional. Input only. PEM-encoded certificate that will be used by the
+   * replica to authenticate against the source database server. If this field
+   * is used then the 'client_key' and the 'ca_certificate' fields are
+   * mandatory.
    * </pre>
    *
-   * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>
+   * string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The clientCertificate.
    */
@@ -171,12 +178,15 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. PEM-encoded certificate that will be used by the replica to
-   * authenticate against the source database server. If this field is used
-   * then the 'client_key' and the 'ca_certificate' fields are mandatory.
+   * Optional. Input only. PEM-encoded certificate that will be used by the
+   * replica to authenticate against the source database server. If this field
+   * is used then the 'client_key' and the 'ca_certificate' fields are
+   * mandatory.
    * </pre>
    *
-   * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>
+   * string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The bytes for clientCertificate.
    */
@@ -742,12 +752,14 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. PEM-encoded private key associated with the Client Certificate.
-     * If this field is used then the 'client_certificate' and the
+     * Optional. Input only. PEM-encoded private key associated with the Client
+     * Certificate. If this field is used then the 'client_certificate' and the
      * 'ca_certificate' fields are mandatory.
      * </pre>
      *
-     * <code>string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The clientKey.
      */
@@ -766,12 +778,14 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. PEM-encoded private key associated with the Client Certificate.
-     * If this field is used then the 'client_certificate' and the
+     * Optional. Input only. PEM-encoded private key associated with the Client
+     * Certificate. If this field is used then the 'client_certificate' and the
      * 'ca_certificate' fields are mandatory.
      * </pre>
      *
-     * <code>string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The bytes for clientKey.
      */
@@ -790,12 +804,14 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. PEM-encoded private key associated with the Client Certificate.
-     * If this field is used then the 'client_certificate' and the
+     * Optional. Input only. PEM-encoded private key associated with the Client
+     * Certificate. If this field is used then the 'client_certificate' and the
      * 'ca_certificate' fields are mandatory.
      * </pre>
      *
-     * <code>string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The clientKey to set.
      * @return This builder for chaining.
@@ -813,12 +829,14 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. PEM-encoded private key associated with the Client Certificate.
-     * If this field is used then the 'client_certificate' and the
+     * Optional. Input only. PEM-encoded private key associated with the Client
+     * Certificate. If this field is used then the 'client_certificate' and the
      * 'ca_certificate' fields are mandatory.
      * </pre>
      *
-     * <code>string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -832,12 +850,14 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. PEM-encoded private key associated with the Client Certificate.
-     * If this field is used then the 'client_certificate' and the
+     * Optional. Input only. PEM-encoded private key associated with the Client
+     * Certificate. If this field is used then the 'client_certificate' and the
      * 'ca_certificate' fields are mandatory.
      * </pre>
      *
-     * <code>string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_key = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes for clientKey to set.
      * @return This builder for chaining.
@@ -911,12 +931,15 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. PEM-encoded certificate that will be used by the replica to
-     * authenticate against the source database server. If this field is used
-     * then the 'client_key' and the 'ca_certificate' fields are mandatory.
+     * Optional. Input only. PEM-encoded certificate that will be used by the
+     * replica to authenticate against the source database server. If this field
+     * is used then the 'client_key' and the 'ca_certificate' fields are
+     * mandatory.
      * </pre>
      *
-     * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The clientCertificate.
      */
@@ -935,12 +958,15 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. PEM-encoded certificate that will be used by the replica to
-     * authenticate against the source database server. If this field is used
-     * then the 'client_key' and the 'ca_certificate' fields are mandatory.
+     * Optional. Input only. PEM-encoded certificate that will be used by the
+     * replica to authenticate against the source database server. If this field
+     * is used then the 'client_key' and the 'ca_certificate' fields are
+     * mandatory.
      * </pre>
      *
-     * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The bytes for clientCertificate.
      */
@@ -959,12 +985,15 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. PEM-encoded certificate that will be used by the replica to
-     * authenticate against the source database server. If this field is used
-     * then the 'client_key' and the 'ca_certificate' fields are mandatory.
+     * Optional. Input only. PEM-encoded certificate that will be used by the
+     * replica to authenticate against the source database server. If this field
+     * is used then the 'client_key' and the 'ca_certificate' fields are
+     * mandatory.
      * </pre>
      *
-     * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The clientCertificate to set.
      * @return This builder for chaining.
@@ -982,12 +1011,15 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. PEM-encoded certificate that will be used by the replica to
-     * authenticate against the source database server. If this field is used
-     * then the 'client_key' and the 'ca_certificate' fields are mandatory.
+     * Optional. Input only. PEM-encoded certificate that will be used by the
+     * replica to authenticate against the source database server. If this field
+     * is used then the 'client_key' and the 'ca_certificate' fields are
+     * mandatory.
      * </pre>
      *
-     * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1001,12 +1033,15 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. PEM-encoded certificate that will be used by the replica to
-     * authenticate against the source database server. If this field is used
-     * then the 'client_key' and the 'ca_certificate' fields are mandatory.
+     * Optional. Input only. PEM-encoded certificate that will be used by the
+     * replica to authenticate against the source database server. If this field
+     * is used then the 'client_key' and the 'ca_certificate' fields are
+     * mandatory.
      * </pre>
      *
-     * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>
+     * string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes for clientCertificate to set.
      * @return This builder for chaining.

@@ -198,6 +198,7 @@ public class ParameterManagerClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setFormat(ParameterFormat.forNumber(0))
             .setPolicyMember(ResourcePolicyMember.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -247,6 +248,7 @@ public class ParameterManagerClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setFormat(ParameterFormat.forNumber(0))
             .setPolicyMember(ResourcePolicyMember.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -296,6 +298,7 @@ public class ParameterManagerClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setFormat(ParameterFormat.forNumber(0))
             .setPolicyMember(ResourcePolicyMember.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -349,6 +352,7 @@ public class ParameterManagerClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setFormat(ParameterFormat.forNumber(0))
             .setPolicyMember(ResourcePolicyMember.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -402,6 +406,7 @@ public class ParameterManagerClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setFormat(ParameterFormat.forNumber(0))
             .setPolicyMember(ResourcePolicyMember.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -413,6 +418,7 @@ public class ParameterManagerClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setFormat(ParameterFormat.forNumber(0))
             .setPolicyMember(ResourcePolicyMember.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -450,6 +456,7 @@ public class ParameterManagerClientHttpJsonTest {
               .putAllLabels(new HashMap<String, String>())
               .setFormat(ParameterFormat.forNumber(0))
               .setPolicyMember(ResourcePolicyMember.newBuilder().build())
+              .setKmsKey("kmsKey-1127483058")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateParameter(parameter, updateMask);
@@ -651,6 +658,7 @@ public class ParameterManagerClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisabled(true)
             .setPayload(ParameterVersionPayload.newBuilder().build())
+            .setKmsKeyVersion("kmsKeyVersion2084784042")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -704,6 +712,7 @@ public class ParameterManagerClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisabled(true)
             .setPayload(ParameterVersionPayload.newBuilder().build())
+            .setKmsKeyVersion("kmsKeyVersion2084784042")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -859,6 +868,7 @@ public class ParameterManagerClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisabled(true)
             .setPayload(ParameterVersionPayload.newBuilder().build())
+            .setKmsKeyVersion("kmsKeyVersion2084784042")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -915,6 +925,7 @@ public class ParameterManagerClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisabled(true)
             .setPayload(ParameterVersionPayload.newBuilder().build())
+            .setKmsKeyVersion("kmsKeyVersion2084784042")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -971,6 +982,7 @@ public class ParameterManagerClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisabled(true)
             .setPayload(ParameterVersionPayload.newBuilder().build())
+            .setKmsKeyVersion("kmsKeyVersion2084784042")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -984,6 +996,7 @@ public class ParameterManagerClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisabled(true)
             .setPayload(ParameterVersionPayload.newBuilder().build())
+            .setKmsKeyVersion("kmsKeyVersion2084784042")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1023,6 +1036,7 @@ public class ParameterManagerClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .setDisabled(true)
               .setPayload(ParameterVersionPayload.newBuilder().build())
+              .setKmsKeyVersion("kmsKeyVersion2084784042")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateParameterVersion(parameterVersion, updateMask);

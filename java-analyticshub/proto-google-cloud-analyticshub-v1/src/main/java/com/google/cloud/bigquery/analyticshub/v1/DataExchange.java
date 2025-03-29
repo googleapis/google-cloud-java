@@ -508,6 +508,47 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int LOG_LINKED_DATASET_QUERY_USER_EMAIL_FIELD_NUMBER = 10;
+  private boolean logLinkedDatasetQueryUserEmail_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. By default, false.
+   * If true, the DataExchange has an email sharing mandate enabled.
+   * Publishers can view the logged email of the subscriber.
+   * </pre>
+   *
+   * <code>
+   * optional bool log_linked_dataset_query_user_email = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the logLinkedDatasetQueryUserEmail field is set.
+   */
+  @java.lang.Override
+  public boolean hasLogLinkedDatasetQueryUserEmail() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. By default, false.
+   * If true, the DataExchange has an email sharing mandate enabled.
+   * Publishers can view the logged email of the subscriber.
+   * </pre>
+   *
+   * <code>
+   * optional bool log_linked_dataset_query_user_email = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The logLinkedDatasetQueryUserEmail.
+   */
+  @java.lang.Override
+  public boolean getLogLinkedDatasetQueryUserEmail() {
+    return logLinkedDatasetQueryUserEmail_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -549,6 +590,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeEnum(9, discoveryType_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(10, logLinkedDatasetQueryUserEmail_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -587,6 +631,11 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, discoveryType_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              10, logLinkedDatasetQueryUserEmail_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -617,6 +666,12 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     if (hasDiscoveryType() != other.hasDiscoveryType()) return false;
     if (hasDiscoveryType()) {
       if (discoveryType_ != other.discoveryType_) return false;
+    }
+    if (hasLogLinkedDatasetQueryUserEmail() != other.hasLogLinkedDatasetQueryUserEmail())
+      return false;
+    if (hasLogLinkedDatasetQueryUserEmail()) {
+      if (getLogLinkedDatasetQueryUserEmail() != other.getLogLinkedDatasetQueryUserEmail())
+        return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -650,6 +705,12 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     if (hasDiscoveryType()) {
       hash = (37 * hash) + DISCOVERY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + discoveryType_;
+    }
+    if (hasLogLinkedDatasetQueryUserEmail()) {
+      hash = (37 * hash) + LOG_LINKED_DATASET_QUERY_USER_EMAIL_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getLogLinkedDatasetQueryUserEmail());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -815,6 +876,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
         sharingEnvironmentConfigBuilder_ = null;
       }
       discoveryType_ = 0;
+      logLinkedDatasetQueryUserEmail_ = false;
       return this;
     }
 
@@ -883,6 +945,10 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.discoveryType_ = discoveryType_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.logLinkedDatasetQueryUserEmail_ = logLinkedDatasetQueryUserEmail_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -970,6 +1036,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDiscoveryType()) {
         setDiscoveryType(other.getDiscoveryType());
       }
+      if (other.hasLogLinkedDatasetQueryUserEmail()) {
+        setLogLinkedDatasetQueryUserEmail(other.getLogLinkedDatasetQueryUserEmail());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1051,6 +1120,12 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 72
+            case 80:
+              {
+                logLinkedDatasetQueryUserEmail_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2107,6 +2182,90 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDiscoveryType() {
       bitField0_ = (bitField0_ & ~0x00000100);
       discoveryType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean logLinkedDatasetQueryUserEmail_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, false.
+     * If true, the DataExchange has an email sharing mandate enabled.
+     * Publishers can view the logged email of the subscriber.
+     * </pre>
+     *
+     * <code>
+     * optional bool log_linked_dataset_query_user_email = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the logLinkedDatasetQueryUserEmail field is set.
+     */
+    @java.lang.Override
+    public boolean hasLogLinkedDatasetQueryUserEmail() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, false.
+     * If true, the DataExchange has an email sharing mandate enabled.
+     * Publishers can view the logged email of the subscriber.
+     * </pre>
+     *
+     * <code>
+     * optional bool log_linked_dataset_query_user_email = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The logLinkedDatasetQueryUserEmail.
+     */
+    @java.lang.Override
+    public boolean getLogLinkedDatasetQueryUserEmail() {
+      return logLinkedDatasetQueryUserEmail_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, false.
+     * If true, the DataExchange has an email sharing mandate enabled.
+     * Publishers can view the logged email of the subscriber.
+     * </pre>
+     *
+     * <code>
+     * optional bool log_linked_dataset_query_user_email = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The logLinkedDatasetQueryUserEmail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLogLinkedDatasetQueryUserEmail(boolean value) {
+
+      logLinkedDatasetQueryUserEmail_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, false.
+     * If true, the DataExchange has an email sharing mandate enabled.
+     * Publishers can view the logged email of the subscriber.
+     * </pre>
+     *
+     * <code>
+     * optional bool log_linked_dataset_query_user_email = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLogLinkedDatasetQueryUserEmail() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      logLinkedDatasetQueryUserEmail_ = false;
       onChanged();
       return this;
     }

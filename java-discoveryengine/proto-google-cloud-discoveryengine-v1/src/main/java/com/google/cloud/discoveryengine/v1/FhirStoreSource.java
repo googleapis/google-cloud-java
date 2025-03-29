@@ -255,6 +255,33 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
     return resourceTypes_.getByteString(index);
   }
 
+  public static final int UPDATE_FROM_LATEST_PREDEFINED_SCHEMA_FIELD_NUMBER = 4;
+  private boolean updateFromLatestPredefinedSchema_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to update the DataStore schema to the latest predefined
+   * schema.
+   *
+   * If true, the DataStore schema will be updated to include any FHIR fields
+   * or resource types that have been added since the last import and
+   * corresponding FHIR resources will be imported from the FHIR store.
+   *
+   * Note this field cannot be used in conjunction with `resource_types`. It
+   * should be used after initial import.
+   * </pre>
+   *
+   * <code>bool update_from_latest_predefined_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The updateFromLatestPredefinedSchema.
+   */
+  @java.lang.Override
+  public boolean getUpdateFromLatestPredefinedSchema() {
+    return updateFromLatestPredefinedSchema_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -277,6 +304,9 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
     }
     for (int i = 0; i < resourceTypes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, resourceTypes_.getRaw(i));
+    }
+    if (updateFromLatestPredefinedSchema_ != false) {
+      output.writeBool(4, updateFromLatestPredefinedSchema_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -301,6 +331,11 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
       size += dataSize;
       size += 1 * getResourceTypesList().size();
     }
+    if (updateFromLatestPredefinedSchema_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              4, updateFromLatestPredefinedSchema_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -320,6 +355,8 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
     if (!getFhirStore().equals(other.getFhirStore())) return false;
     if (!getGcsStagingDir().equals(other.getGcsStagingDir())) return false;
     if (!getResourceTypesList().equals(other.getResourceTypesList())) return false;
+    if (getUpdateFromLatestPredefinedSchema() != other.getUpdateFromLatestPredefinedSchema())
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -339,6 +376,10 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + RESOURCE_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + getResourceTypesList().hashCode();
     }
+    hash = (37 * hash) + UPDATE_FROM_LATEST_PREDEFINED_SCHEMA_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashBoolean(getUpdateFromLatestPredefinedSchema());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -481,6 +522,7 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
       fhirStore_ = "";
       gcsStagingDir_ = "";
       resourceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      updateFromLatestPredefinedSchema_ = false;
       return this;
     }
 
@@ -526,6 +568,9 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
       if (((from_bitField0_ & 0x00000004) != 0)) {
         resourceTypes_.makeImmutable();
         result.resourceTypes_ = resourceTypes_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.updateFromLatestPredefinedSchema_ = updateFromLatestPredefinedSchema_;
       }
     }
 
@@ -595,6 +640,9 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
         }
         onChanged();
       }
+      if (other.getUpdateFromLatestPredefinedSchema() != false) {
+        setUpdateFromLatestPredefinedSchema(other.getUpdateFromLatestPredefinedSchema());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -640,6 +688,12 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
                 resourceTypes_.add(s);
                 break;
               } // case 26
+            case 32:
+              {
+                updateFromLatestPredefinedSchema_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1098,6 +1152,89 @@ public final class FhirStoreSource extends com.google.protobuf.GeneratedMessageV
       ensureResourceTypesIsMutable();
       resourceTypes_.add(value);
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private boolean updateFromLatestPredefinedSchema_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to update the DataStore schema to the latest predefined
+     * schema.
+     *
+     * If true, the DataStore schema will be updated to include any FHIR fields
+     * or resource types that have been added since the last import and
+     * corresponding FHIR resources will be imported from the FHIR store.
+     *
+     * Note this field cannot be used in conjunction with `resource_types`. It
+     * should be used after initial import.
+     * </pre>
+     *
+     * <code>
+     * bool update_from_latest_predefined_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The updateFromLatestPredefinedSchema.
+     */
+    @java.lang.Override
+    public boolean getUpdateFromLatestPredefinedSchema() {
+      return updateFromLatestPredefinedSchema_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to update the DataStore schema to the latest predefined
+     * schema.
+     *
+     * If true, the DataStore schema will be updated to include any FHIR fields
+     * or resource types that have been added since the last import and
+     * corresponding FHIR resources will be imported from the FHIR store.
+     *
+     * Note this field cannot be used in conjunction with `resource_types`. It
+     * should be used after initial import.
+     * </pre>
+     *
+     * <code>
+     * bool update_from_latest_predefined_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The updateFromLatestPredefinedSchema to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpdateFromLatestPredefinedSchema(boolean value) {
+
+      updateFromLatestPredefinedSchema_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to update the DataStore schema to the latest predefined
+     * schema.
+     *
+     * If true, the DataStore schema will be updated to include any FHIR fields
+     * or resource types that have been added since the last import and
+     * corresponding FHIR resources will be imported from the FHIR store.
+     *
+     * Note this field cannot be used in conjunction with `resource_types`. It
+     * should be used after initial import.
+     * </pre>
+     *
+     * <code>
+     * bool update_from_latest_predefined_schema = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUpdateFromLatestPredefinedSchema() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      updateFromLatestPredefinedSchema_ = false;
       onChanged();
       return this;
     }

@@ -3488,6 +3488,853 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface ModelConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Feature selection preference.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.FeatureSelectionPreference feature_selection_preference = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for featureSelectionPreference.
+     */
+    int getFeatureSelectionPreferenceValue();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Feature selection preference.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.FeatureSelectionPreference feature_selection_preference = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The featureSelectionPreference.
+     */
+    com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.FeatureSelectionPreference
+        getFeatureSelectionPreference();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config for model selection.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig}
+   */
+  public static final class ModelConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig)
+      ModelConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ModelConfig.newBuilder() to construct.
+    private ModelConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ModelConfig() {
+      featureSelectionPreference_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ModelConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ContentProto
+          .internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ModelConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ContentProto
+          .internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ModelConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.class,
+              com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Options for feature selection preference.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.FeatureSelectionPreference}
+     */
+    public enum FeatureSelectionPreference implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified feature selection preference.
+       * </pre>
+       *
+       * <code>FEATURE_SELECTION_PREFERENCE_UNSPECIFIED = 0;</code>
+       */
+      FEATURE_SELECTION_PREFERENCE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Prefer higher quality over lower cost.
+       * </pre>
+       *
+       * <code>PRIORITIZE_QUALITY = 1;</code>
+       */
+      PRIORITIZE_QUALITY(1),
+      /**
+       *
+       *
+       * <pre>
+       * Balanced feature selection preference.
+       * </pre>
+       *
+       * <code>BALANCED = 2;</code>
+       */
+      BALANCED(2),
+      /**
+       *
+       *
+       * <pre>
+       * Prefer lower cost over higher quality.
+       * </pre>
+       *
+       * <code>PRIORITIZE_COST = 3;</code>
+       */
+      PRIORITIZE_COST(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified feature selection preference.
+       * </pre>
+       *
+       * <code>FEATURE_SELECTION_PREFERENCE_UNSPECIFIED = 0;</code>
+       */
+      public static final int FEATURE_SELECTION_PREFERENCE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Prefer higher quality over lower cost.
+       * </pre>
+       *
+       * <code>PRIORITIZE_QUALITY = 1;</code>
+       */
+      public static final int PRIORITIZE_QUALITY_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Balanced feature selection preference.
+       * </pre>
+       *
+       * <code>BALANCED = 2;</code>
+       */
+      public static final int BALANCED_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Prefer lower cost over higher quality.
+       * </pre>
+       *
+       * <code>PRIORITIZE_COST = 3;</code>
+       */
+      public static final int PRIORITIZE_COST_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static FeatureSelectionPreference valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static FeatureSelectionPreference forNumber(int value) {
+        switch (value) {
+          case 0:
+            return FEATURE_SELECTION_PREFERENCE_UNSPECIFIED;
+          case 1:
+            return PRIORITIZE_QUALITY;
+          case 2:
+            return BALANCED;
+          case 3:
+            return PRIORITIZE_COST;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<FeatureSelectionPreference>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<FeatureSelectionPreference>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<FeatureSelectionPreference>() {
+                public FeatureSelectionPreference findValueByNumber(int number) {
+                  return FeatureSelectionPreference.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final FeatureSelectionPreference[] VALUES = values();
+
+      public static FeatureSelectionPreference valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private FeatureSelectionPreference(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.FeatureSelectionPreference)
+    }
+
+    public static final int FEATURE_SELECTION_PREFERENCE_FIELD_NUMBER = 1;
+    private int featureSelectionPreference_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Feature selection preference.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.FeatureSelectionPreference feature_selection_preference = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for featureSelectionPreference.
+     */
+    @java.lang.Override
+    public int getFeatureSelectionPreferenceValue() {
+      return featureSelectionPreference_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Feature selection preference.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.FeatureSelectionPreference feature_selection_preference = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The featureSelectionPreference.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
+            .FeatureSelectionPreference
+        getFeatureSelectionPreference() {
+      com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.FeatureSelectionPreference
+          result =
+              com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
+                  .FeatureSelectionPreference.forNumber(featureSelectionPreference_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
+              .FeatureSelectionPreference.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (featureSelectionPreference_
+          != com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
+              .FeatureSelectionPreference.FEATURE_SELECTION_PREFERENCE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, featureSelectionPreference_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (featureSelectionPreference_
+          != com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
+              .FeatureSelectionPreference.FEATURE_SELECTION_PREFERENCE_UNSPECIFIED
+              .getNumber()) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeEnumSize(1, featureSelectionPreference_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig other =
+          (com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig) obj;
+
+      if (featureSelectionPreference_ != other.featureSelectionPreference_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FEATURE_SELECTION_PREFERENCE_FIELD_NUMBER;
+      hash = (53 * hash) + featureSelectionPreference_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for model selection.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig)
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ModelConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ModelConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.class,
+                com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        featureSelectionPreference_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GenerationConfig_ModelConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig build() {
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig result =
+            new com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.featureSelectionPreference_ = featureSelectionPreference_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
+                .getDefaultInstance()) return this;
+        if (other.featureSelectionPreference_ != 0) {
+          setFeatureSelectionPreferenceValue(other.getFeatureSelectionPreferenceValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  featureSelectionPreference_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int featureSelectionPreference_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Feature selection preference.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.FeatureSelectionPreference feature_selection_preference = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for featureSelectionPreference.
+       */
+      @java.lang.Override
+      public int getFeatureSelectionPreferenceValue() {
+        return featureSelectionPreference_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Feature selection preference.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.FeatureSelectionPreference feature_selection_preference = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for featureSelectionPreference to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFeatureSelectionPreferenceValue(int value) {
+        featureSelectionPreference_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Feature selection preference.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.FeatureSelectionPreference feature_selection_preference = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The featureSelectionPreference.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
+              .FeatureSelectionPreference
+          getFeatureSelectionPreference() {
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.FeatureSelectionPreference
+            result =
+                com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
+                    .FeatureSelectionPreference.forNumber(featureSelectionPreference_);
+        return result == null
+            ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
+                .FeatureSelectionPreference.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Feature selection preference.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.FeatureSelectionPreference feature_selection_preference = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The featureSelectionPreference to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFeatureSelectionPreference(
+          com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
+                  .FeatureSelectionPreference
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        featureSelectionPreference_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Feature selection preference.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.FeatureSelectionPreference feature_selection_preference = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFeatureSelectionPreference() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        featureSelectionPreference_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig)
+    private static final com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ModelConfig> PARSER =
+        new com.google.protobuf.AbstractParser<ModelConfig>() {
+          @java.lang.Override
+          public ModelConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ModelConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ModelConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int TEMPERATURE_FIELD_NUMBER = 1;
   private float temperature_ = 0F;
@@ -4340,6 +5187,63 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         : speechConfig_;
   }
 
+  public static final int MODEL_CONFIG_FIELD_NUMBER = 27;
+  private com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig modelConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for model selection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig model_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the modelConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasModelConfig() {
+    return ((bitField0_ & 0x00008000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for model selection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig model_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The modelConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig getModelConfig() {
+    return modelConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.getDefaultInstance()
+        : modelConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for model selection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig model_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfigOrBuilder
+      getModelConfigOrBuilder() {
+    return modelConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.getDefaultInstance()
+        : modelConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4412,6 +5316,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00004000) != 0)) {
       output.writeMessage(23, getSpeechConfig());
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      output.writeMessage(27, getModelConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4490,6 +5397,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getSpeechConfig());
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, getModelConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -4575,6 +5485,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (hasSpeechConfig()) {
       if (!getSpeechConfig().equals(other.getSpeechConfig())) return false;
     }
+    if (hasModelConfig() != other.hasModelConfig()) return false;
+    if (hasModelConfig()) {
+      if (!getModelConfig().equals(other.getModelConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4655,6 +5569,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (hasSpeechConfig()) {
       hash = (37 * hash) + SPEECH_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSpeechConfig().hashCode();
+    }
+    if (hasModelConfig()) {
+      hash = (37 * hash) + MODEL_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getModelConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4799,6 +5717,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         getResponseSchemaFieldBuilder();
         getRoutingConfigFieldBuilder();
         getSpeechConfigFieldBuilder();
+        getModelConfigFieldBuilder();
       }
     }
 
@@ -4836,6 +5755,11 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       if (speechConfigBuilder_ != null) {
         speechConfigBuilder_.dispose();
         speechConfigBuilder_ = null;
+      }
+      modelConfig_ = null;
+      if (modelConfigBuilder_ != null) {
+        modelConfigBuilder_.dispose();
+        modelConfigBuilder_ = null;
       }
       return this;
     }
@@ -4953,6 +5877,11 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         result.speechConfig_ =
             speechConfigBuilder_ == null ? speechConfig_ : speechConfigBuilder_.build();
         to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.modelConfig_ =
+            modelConfigBuilder_ == null ? modelConfig_ : modelConfigBuilder_.build();
+        to_bitField0_ |= 0x00008000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5072,6 +6001,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasSpeechConfig()) {
         mergeSpeechConfig(other.getSpeechConfig());
+      }
+      if (other.hasModelConfig()) {
+        mergeModelConfig(other.getModelConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5221,6 +6153,12 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00020000;
                 break;
               } // case 186
+            case 218:
+              {
+                input.readMessage(getModelConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 218
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7349,6 +8287,216 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         speechConfig_ = null;
       }
       return speechConfigBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig modelConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfigOrBuilder>
+        modelConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for model selection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig model_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the modelConfig field is set.
+     */
+    public boolean hasModelConfig() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for model selection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig model_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The modelConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig getModelConfig() {
+      if (modelConfigBuilder_ == null) {
+        return modelConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.getDefaultInstance()
+            : modelConfig_;
+      } else {
+        return modelConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for model selection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig model_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setModelConfig(
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig value) {
+      if (modelConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelConfig_ = value;
+      } else {
+        modelConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for model selection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig model_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setModelConfig(
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.Builder builderForValue) {
+      if (modelConfigBuilder_ == null) {
+        modelConfig_ = builderForValue.build();
+      } else {
+        modelConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for model selection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig model_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeModelConfig(
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig value) {
+      if (modelConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0)
+            && modelConfig_ != null
+            && modelConfig_
+                != com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig
+                    .getDefaultInstance()) {
+          getModelConfigBuilder().mergeFrom(value);
+        } else {
+          modelConfig_ = value;
+        }
+      } else {
+        modelConfigBuilder_.mergeFrom(value);
+      }
+      if (modelConfig_ != null) {
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for model selection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig model_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearModelConfig() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      modelConfig_ = null;
+      if (modelConfigBuilder_ != null) {
+        modelConfigBuilder_.dispose();
+        modelConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for model selection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig model_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.Builder
+        getModelConfigBuilder() {
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return getModelConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for model selection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig model_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfigOrBuilder
+        getModelConfigOrBuilder() {
+      if (modelConfigBuilder_ != null) {
+        return modelConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return modelConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.getDefaultInstance()
+            : modelConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for model selection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig model_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfigOrBuilder>
+        getModelConfigFieldBuilder() {
+      if (modelConfigBuilder_ == null) {
+        modelConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig,
+                com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfigOrBuilder>(
+                getModelConfig(), getParentForChildren(), isClean());
+        modelConfig_ = null;
+      }
+      return modelConfigBuilder_;
     }
 
     @java.lang.Override

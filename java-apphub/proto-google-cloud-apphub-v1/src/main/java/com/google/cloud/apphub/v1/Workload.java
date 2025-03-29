@@ -282,7 +282,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. The resource name of the Workload. Format:
-   * "projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"
+   * `"projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -306,7 +306,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. The resource name of the Workload. Format:
-   * "projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"
+   * `"projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1503,7 +1503,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the Workload. Format:
-     * "projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"
+     * `"projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1526,7 +1526,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the Workload. Format:
-     * "projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"
+     * `"projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1549,7 +1549,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the Workload. Format:
-     * "projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"
+     * `"projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1571,7 +1571,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the Workload. Format:
-     * "projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"
+     * `"projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1589,7 +1589,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of the Workload. Format:
-     * "projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"
+     * `"projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>

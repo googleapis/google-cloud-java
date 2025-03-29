@@ -40,6 +40,7 @@ public final class ParameterVersion extends com.google.protobuf.GeneratedMessage
 
   private ParameterVersion() {
     name_ = "";
+    kmsKeyVersion_ = "";
   }
 
   @java.lang.Override
@@ -300,6 +301,87 @@ public final class ParameterVersion extends com.google.protobuf.GeneratedMessage
         : payload_;
   }
 
+  public static final int KMS_KEY_VERSION_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyVersion_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. [Output only] The resource name of the KMS key
+   * version used to encrypt the ParameterVersion payload. This field is
+   * populated only if the Parameter resource has customer managed encryption
+   * key (CMEK) configured.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the kmsKeyVersion field is set.
+   */
+  @java.lang.Override
+  public boolean hasKmsKeyVersion() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. [Output only] The resource name of the KMS key
+   * version used to encrypt the ParameterVersion payload. This field is
+   * populated only if the Parameter resource has customer managed encryption
+   * key (CMEK) configured.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The kmsKeyVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKeyVersion() {
+    java.lang.Object ref = kmsKeyVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKeyVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. [Output only] The resource name of the KMS key
+   * version used to encrypt the ParameterVersion payload. This field is
+   * populated only if the Parameter resource has customer managed encryption
+   * key (CMEK) configured.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for kmsKeyVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyVersionBytes() {
+    java.lang.Object ref = kmsKeyVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKeyVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -329,6 +411,9 @@ public final class ParameterVersion extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(5, getPayload());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, kmsKeyVersion_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -352,6 +437,9 @@ public final class ParameterVersion extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getPayload());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, kmsKeyVersion_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -383,6 +471,10 @@ public final class ParameterVersion extends com.google.protobuf.GeneratedMessage
     if (hasPayload()) {
       if (!getPayload().equals(other.getPayload())) return false;
     }
+    if (hasKmsKeyVersion() != other.hasKmsKeyVersion()) return false;
+    if (hasKmsKeyVersion()) {
+      if (!getKmsKeyVersion().equals(other.getKmsKeyVersion())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -409,6 +501,10 @@ public final class ParameterVersion extends com.google.protobuf.GeneratedMessage
     if (hasPayload()) {
       hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
       hash = (53 * hash) + getPayload().hashCode();
+    }
+    if (hasKmsKeyVersion()) {
+      hash = (37 * hash) + KMS_KEY_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getKmsKeyVersion().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -578,6 +674,7 @@ public final class ParameterVersion extends com.google.protobuf.GeneratedMessage
         payloadBuilder_.dispose();
         payloadBuilder_ = null;
       }
+      kmsKeyVersion_ = "";
       return this;
     }
 
@@ -632,6 +729,10 @@ public final class ParameterVersion extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.payload_ = payloadBuilder_ == null ? payload_ : payloadBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.kmsKeyVersion_ = kmsKeyVersion_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -699,6 +800,11 @@ public final class ParameterVersion extends com.google.protobuf.GeneratedMessage
       if (other.hasPayload()) {
         mergePayload(other.getPayload());
       }
+      if (other.hasKmsKeyVersion()) {
+        kmsKeyVersion_ = other.kmsKeyVersion_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -755,6 +861,12 @@ public final class ParameterVersion extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                kmsKeyVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1581,6 +1693,156 @@ public final class ParameterVersion extends com.google.protobuf.GeneratedMessage
         payload_ = null;
       }
       return payloadBuilder_;
+    }
+
+    private java.lang.Object kmsKeyVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. [Output only] The resource name of the KMS key
+     * version used to encrypt the ParameterVersion payload. This field is
+     * populated only if the Parameter resource has customer managed encryption
+     * key (CMEK) configured.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the kmsKeyVersion field is set.
+     */
+    public boolean hasKmsKeyVersion() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. [Output only] The resource name of the KMS key
+     * version used to encrypt the ParameterVersion payload. This field is
+     * populated only if the Parameter resource has customer managed encryption
+     * key (CMEK) configured.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The kmsKeyVersion.
+     */
+    public java.lang.String getKmsKeyVersion() {
+      java.lang.Object ref = kmsKeyVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKeyVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. [Output only] The resource name of the KMS key
+     * version used to encrypt the ParameterVersion payload. This field is
+     * populated only if the Parameter resource has customer managed encryption
+     * key (CMEK) configured.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for kmsKeyVersion.
+     */
+    public com.google.protobuf.ByteString getKmsKeyVersionBytes() {
+      java.lang.Object ref = kmsKeyVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKeyVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. [Output only] The resource name of the KMS key
+     * version used to encrypt the ParameterVersion payload. This field is
+     * populated only if the Parameter resource has customer managed encryption
+     * key (CMEK) configured.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The kmsKeyVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKeyVersion_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. [Output only] The resource name of the KMS key
+     * version used to encrypt the ParameterVersion payload. This field is
+     * populated only if the Parameter resource has customer managed encryption
+     * key (CMEK) configured.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKeyVersion() {
+      kmsKeyVersion_ = getDefaultInstance().getKmsKeyVersion();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. [Output only] The resource name of the KMS key
+     * version used to encrypt the ParameterVersion payload. This field is
+     * populated only if the Parameter resource has customer managed encryption
+     * key (CMEK) configured.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for kmsKeyVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKeyVersion_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

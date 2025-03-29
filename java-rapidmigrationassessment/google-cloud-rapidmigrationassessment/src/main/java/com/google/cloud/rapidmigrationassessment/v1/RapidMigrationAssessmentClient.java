@@ -192,7 +192,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteCollector</td>
- *      <td><p> Deletes a single Collector - changes state of collector to "Deleting". Background jobs does final deletion thorugh producer api.</td>
+ *      <td><p> Deletes a single Collector - changes state of collector to "Deleting". Background jobs does final deletion through producer API.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1313,7 +1313,7 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Collector - changes state of collector to "Deleting". Background jobs does
-   * final deletion thorugh producer api.
+   * final deletion through producer API.
    *
    * <p>Sample code:
    *
@@ -1343,7 +1343,7 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Collector - changes state of collector to "Deleting". Background jobs does
-   * final deletion thorugh producer api.
+   * final deletion through producer API.
    *
    * <p>Sample code:
    *
@@ -1371,7 +1371,7 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Collector - changes state of collector to "Deleting". Background jobs does
-   * final deletion thorugh producer api.
+   * final deletion through producer API.
    *
    * <p>Sample code:
    *
@@ -1403,7 +1403,7 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Collector - changes state of collector to "Deleting". Background jobs does
-   * final deletion thorugh producer api.
+   * final deletion through producer API.
    *
    * <p>Sample code:
    *
@@ -1435,7 +1435,7 @@ public class RapidMigrationAssessmentClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Collector - changes state of collector to "Deleting". Background jobs does
-   * final deletion thorugh producer api.
+   * final deletion through producer API.
    *
    * <p>Sample code:
    *

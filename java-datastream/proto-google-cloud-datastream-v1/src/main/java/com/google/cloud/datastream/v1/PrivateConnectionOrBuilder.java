@@ -286,6 +286,56 @@ public interface PrivateConnectionOrBuilder
    *
    *
    * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  boolean hasSatisfiesPzi();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
    * VPC Peering Config.
    * </pre>
    *

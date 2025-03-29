@@ -158,6 +158,48 @@ public interface BigQueryDestinationConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Big Lake Managed Tables (BLMT) configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the blmtConfig field is set.
+   */
+  boolean hasBlmtConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Big Lake Managed Tables (BLMT) configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The blmtConfig.
+   */
+  com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig getBlmtConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Big Lake Managed Tables (BLMT) configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfigOrBuilder
+      getBlmtConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The standard mode
    * </pre>
    *

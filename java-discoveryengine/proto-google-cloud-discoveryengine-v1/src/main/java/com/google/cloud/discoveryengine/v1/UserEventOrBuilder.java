@@ -37,6 +37,7 @@ public interface UserEventOrBuilder
    * * `view-item-list`: View of a panel or ordered list of Documents.
    * * `view-home-page`: View of the home page.
    * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
+   * * `add-feedback`: Add a user feedback.
    *
    * Retail-related values:
    *
@@ -47,6 +48,10 @@ public interface UserEventOrBuilder
    *
    * * `media-play`: Start/resume watching a video, playing a song, etc.
    * * `media-complete`: Finished or stopped midway through a video, song, etc.
+   *
+   * Custom conversion value:
+   *
+   * * `conversion`: Customer defined conversion event.
    * </pre>
    *
    * <code>string event_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -67,6 +72,7 @@ public interface UserEventOrBuilder
    * * `view-item-list`: View of a panel or ordered list of Documents.
    * * `view-home-page`: View of the home page.
    * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
+   * * `add-feedback`: Add a user feedback.
    *
    * Retail-related values:
    *
@@ -77,6 +83,10 @@ public interface UserEventOrBuilder
    *
    * * `media-play`: Start/resume watching a video, playing a song, etc.
    * * `media-complete`: Finished or stopped midway through a video, song, etc.
+   *
+   * Custom conversion value:
+   *
+   * * `conversion`: Customer defined conversion event.
    * </pre>
    *
    * <code>string event_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -84,6 +94,51 @@ public interface UserEventOrBuilder
    * @return The bytes for eventType.
    */
   com.google.protobuf.ByteString getEventTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Conversion type.
+   *
+   * Required if
+   * [UserEvent.event_type][google.cloud.discoveryengine.v1.UserEvent.event_type]
+   * is `conversion`. This is a customer-defined conversion name in lowercase
+   * letters or numbers separated by "-", such as "watch", "good-visit" etc.
+   *
+   * Do not set the field if
+   * [UserEvent.event_type][google.cloud.discoveryengine.v1.UserEvent.event_type]
+   * is not `conversion`. This mixes the custom conversion event with predefined
+   * events like `search`, `view-item` etc.
+   * </pre>
+   *
+   * <code>string conversion_type = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The conversionType.
+   */
+  java.lang.String getConversionType();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Conversion type.
+   *
+   * Required if
+   * [UserEvent.event_type][google.cloud.discoveryengine.v1.UserEvent.event_type]
+   * is `conversion`. This is a customer-defined conversion name in lowercase
+   * letters or numbers separated by "-", such as "watch", "good-visit" etc.
+   *
+   * Do not set the field if
+   * [UserEvent.event_type][google.cloud.discoveryengine.v1.UserEvent.event_type]
+   * is not `conversion`. This mixes the custom conversion event with predefined
+   * events like `search`, `view-item` etc.
+   * </pre>
+   *
+   * <code>string conversion_type = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for conversionType.
+   */
+  com.google.protobuf.ByteString getConversionTypeBytes();
 
   /**
    *
@@ -1164,4 +1219,71 @@ public interface UserEventOrBuilder
    * <code>.google.cloud.discoveryengine.v1.MediaInfo media_info = 18;</code>
    */
   com.google.cloud.discoveryengine.v1.MediaInfoOrBuilder getMediaInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of panels associated with this event.
+   * Used for page-level impression data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1.PanelInfo> getPanelsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of panels associated with this event.
+   * Used for page-level impression data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.PanelInfo getPanels(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of panels associated with this event.
+   * Used for page-level impression data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getPanelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of panels associated with this event.
+   * Used for page-level impression data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.discoveryengine.v1.PanelInfoOrBuilder>
+      getPanelsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of panels associated with this event.
+   * Used for page-level impression data.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.PanelInfo panels = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.PanelInfoOrBuilder getPanelsOrBuilder(int index);
 }

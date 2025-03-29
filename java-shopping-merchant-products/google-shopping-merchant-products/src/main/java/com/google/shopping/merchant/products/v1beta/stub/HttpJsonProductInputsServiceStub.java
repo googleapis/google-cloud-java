@@ -34,6 +34,7 @@ import com.google.protobuf.TypeRegistry;
 import com.google.shopping.merchant.products.v1beta.DeleteProductInputRequest;
 import com.google.shopping.merchant.products.v1beta.InsertProductInputRequest;
 import com.google.shopping.merchant.products.v1beta.ProductInput;
+import com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -92,6 +93,47 @@ public class HttpJsonProductInputsServiceStub extends ProductInputsServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdateProductInputRequest, ProductInput>
+      updateProductInputMethodDescriptor =
+          ApiMethodDescriptor.<UpdateProductInputRequest, ProductInput>newBuilder()
+              .setFullMethodName(
+                  "google.shopping.merchant.products.v1beta.ProductInputsService/UpdateProductInput")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateProductInputRequest>newBuilder()
+                      .setPath(
+                          "/products/v1beta/{productInput.name=accounts/*/productInputs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateProductInputRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "productInput.name", request.getProductInput().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateProductInputRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "dataSource", request.getDataSource());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("productInput", request.getProductInput(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ProductInput>newBuilder()
+                      .setDefaultInstance(ProductInput.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<DeleteProductInputRequest, Empty>
       deleteProductInputMethodDescriptor =
           ApiMethodDescriptor.<DeleteProductInputRequest, Empty>newBuilder()
@@ -129,6 +171,7 @@ public class HttpJsonProductInputsServiceStub extends ProductInputsServiceStub {
               .build();
 
   private final UnaryCallable<InsertProductInputRequest, ProductInput> insertProductInputCallable;
+  private final UnaryCallable<UpdateProductInputRequest, ProductInput> updateProductInputCallable;
   private final UnaryCallable<DeleteProductInputRequest, Empty> deleteProductInputCallable;
 
   private final BackgroundResource backgroundResources;
@@ -187,6 +230,20 @@ public class HttpJsonProductInputsServiceStub extends ProductInputsServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<UpdateProductInputRequest, ProductInput>
+        updateProductInputTransportSettings =
+            HttpJsonCallSettings.<UpdateProductInputRequest, ProductInput>newBuilder()
+                .setMethodDescriptor(updateProductInputMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "product_input.name",
+                          String.valueOf(request.getProductInput().getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<DeleteProductInputRequest, Empty> deleteProductInputTransportSettings =
         HttpJsonCallSettings.<DeleteProductInputRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteProductInputMethodDescriptor)
@@ -204,6 +261,11 @@ public class HttpJsonProductInputsServiceStub extends ProductInputsServiceStub {
             insertProductInputTransportSettings,
             settings.insertProductInputSettings(),
             clientContext);
+    this.updateProductInputCallable =
+        callableFactory.createUnaryCallable(
+            updateProductInputTransportSettings,
+            settings.updateProductInputSettings(),
+            clientContext);
     this.deleteProductInputCallable =
         callableFactory.createUnaryCallable(
             deleteProductInputTransportSettings,
@@ -218,6 +280,7 @@ public class HttpJsonProductInputsServiceStub extends ProductInputsServiceStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(insertProductInputMethodDescriptor);
+    methodDescriptors.add(updateProductInputMethodDescriptor);
     methodDescriptors.add(deleteProductInputMethodDescriptor);
     return methodDescriptors;
   }
@@ -225,6 +288,11 @@ public class HttpJsonProductInputsServiceStub extends ProductInputsServiceStub {
   @Override
   public UnaryCallable<InsertProductInputRequest, ProductInput> insertProductInputCallable() {
     return insertProductInputCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateProductInputRequest, ProductInput> updateProductInputCallable() {
+    return updateProductInputCallable;
   }
 
   @Override

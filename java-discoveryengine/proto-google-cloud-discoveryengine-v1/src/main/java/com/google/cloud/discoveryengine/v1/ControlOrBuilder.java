@@ -171,6 +171,47 @@ public interface ControlOrBuilder
    *
    *
    * <pre>
+   * Promote certain links based on predefined trigger queries.
+   *
+   * This now only supports basic site search.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
+   *
+   * @return Whether the promoteAction field is set.
+   */
+  boolean hasPromoteAction();
+  /**
+   *
+   *
+   * <pre>
+   * Promote certain links based on predefined trigger queries.
+   *
+   * This now only supports basic site search.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
+   *
+   * @return The promoteAction.
+   */
+  com.google.cloud.discoveryengine.v1.Control.PromoteAction getPromoteAction();
+  /**
+   *
+   *
+   * <pre>
+   * Promote certain links based on predefined trigger queries.
+   *
+   * This now only supports basic site search.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
+   */
+  com.google.cloud.discoveryengine.v1.Control.PromoteActionOrBuilder getPromoteActionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Immutable. Fully qualified name
    * `projects/&#42;&#47;locations/global/dataStore/&#42;&#47;controls/&#42;`
    * </pre>

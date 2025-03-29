@@ -88,6 +88,42 @@ public final class ResourcesProto {
       internal_static_google_cloud_managedkafka_v1_OperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_managedkafka_v1_OperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_ConnectCluster_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_ConnectCluster_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_ConnectCluster_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_ConnectCluster_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_ConnectCluster_ConfigEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_ConnectCluster_ConfigEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_ConnectNetworkConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_ConnectNetworkConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_ConnectAccessConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_ConnectAccessConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_ConnectGcpConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_ConnectGcpConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_Connector_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_Connector_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_Connector_ConfigsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_Connector_ConfigsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_managedkafka_v1_TaskRetryPolicy_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_managedkafka_v1_TaskRetryPolicy_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -100,86 +136,140 @@ public final class ResourcesProto {
       "\n,google/cloud/managedkafka/v1/resources"
           + ".proto\022\034google.cloud.managedkafka.v1\032\037go"
           + "ogle/api/field_behavior.proto\032\031google/ap"
-          + "i/resource.proto\032\037google/protobuf/timest"
-          + "amp.proto\"\330\006\n\007Cluster\022B\n\ngcp_config\030\t \001("
-          + "\0132\'.google.cloud.managedkafka.v1.GcpConf"
-          + "igB\003\340A\002H\000\022\021\n\004name\030\001 \001(\tB\003\340A\010\0224\n\013create_t"
-          + "ime\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340"
-          + "A\003\0224\n\013update_time\030\003 \001(\0132\032.google.protobu"
-          + "f.TimestampB\003\340A\003\022F\n\006labels\030\004 \003(\01321.googl"
-          + "e.cloud.managedkafka.v1.Cluster.LabelsEn"
-          + "tryB\003\340A\001\022J\n\017capacity_config\030\005 \001(\0132,.goog"
-          + "le.cloud.managedkafka.v1.CapacityConfigB"
-          + "\003\340A\002\022L\n\020rebalance_config\030\010 \001(\0132-.google."
-          + "cloud.managedkafka.v1.RebalanceConfigB\003\340"
-          + "A\001\022?\n\005state\030\n \001(\0162+.google.cloud.managed"
-          + "kafka.v1.Cluster.StateB\003\340A\003\022\037\n\rsatisfies"
-          + "_pzi\030\013 \001(\010B\003\340A\003H\001\210\001\001\022\037\n\rsatisfies_pzs\030\014 "
-          + "\001(\010B\003\340A\003H\002\210\001\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001("
-          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"F\n\005State\022\025\n\021STATE_U"
-          + "NSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\n\n\006ACTIVE\020\002\022\014"
-          + "\n\010DELETING\020\003:w\352At\n#managedkafka.googleap"
-          + "is.com/Cluster\022:projects/{project}/locat"
-          + "ions/{location}/clusters/{cluster}*\010clus"
-          + "ters2\007clusterB\021\n\017platform_configB\020\n\016_sat"
-          + "isfies_pziB\020\n\016_satisfies_pzs\"D\n\016Capacity"
-          + "Config\022\027\n\nvcpu_count\030\001 \001(\003B\003\340A\002\022\031\n\014memor"
-          + "y_bytes\030\002 \001(\003B\003\340A\002\"\250\001\n\017RebalanceConfig\022E"
-          + "\n\004mode\030\001 \001(\01622.google.cloud.managedkafka"
-          + ".v1.RebalanceConfig.ModeB\003\340A\001\"N\n\004Mode\022\024\n"
-          + "\020MODE_UNSPECIFIED\020\000\022\020\n\014NO_REBALANCE\020\001\022\036\n"
-          + "\032AUTO_REBALANCE_ON_SCALE_UP\020\002\"$\n\rNetwork"
-          + "Config\022\023\n\006subnet\030\002 \001(\tB\003\340A\002\"Y\n\014AccessCon"
-          + "fig\022I\n\017network_configs\030\001 \003(\0132+.google.cl"
-          + "oud.managedkafka.v1.NetworkConfigB\003\340A\002\"\222"
-          + "\001\n\tGcpConfig\022F\n\raccess_config\030\003 \001(\0132*.go"
-          + "ogle.cloud.managedkafka.v1.AccessConfigB"
-          + "\003\340A\002\022=\n\007kms_key\030\002 \001(\tB,\340A\001\340A\005\372A#\n!cloudk"
-          + "ms.googleapis.com/CryptoKey\"\327\002\n\005Topic\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\010\022\034\n\017partition_count\030\002 \001("
-          + "\005B\003\340A\002\022\"\n\022replication_factor\030\003 \001(\005B\006\340A\002\340"
-          + "A\005\022F\n\007configs\030\004 \003(\01320.google.cloud.manag"
-          + "edkafka.v1.Topic.ConfigsEntryB\003\340A\001\032.\n\014Co"
-          + "nfigsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
-          + "8\001:\200\001\352A}\n!managedkafka.googleapis.com/To"
-          + "pic\022Iprojects/{project}/locations/{locat"
-          + "ion}/clusters/{cluster}/topics/{topic}*\006"
-          + "topics2\005topic\"\341\001\n\025ConsumerTopicMetadata\022"
-          + "\\\n\npartitions\030\001 \003(\0132C.google.cloud.manag"
-          + "edkafka.v1.ConsumerTopicMetadata.Partiti"
-          + "onsEntryB\003\340A\001\032j\n\017PartitionsEntry\022\013\n\003key\030"
-          + "\001 \001(\005\022F\n\005value\030\002 \001(\01327.google.cloud.mana"
-          + "gedkafka.v1.ConsumerPartitionMetadata:\0028"
-          + "\001\"G\n\031ConsumerPartitionMetadata\022\023\n\006offset"
-          + "\030\001 \001(\003B\003\340A\002\022\025\n\010metadata\030\002 \001(\tB\003\340A\001\"\201\003\n\rC"
-          + "onsumerGroup\022\021\n\004name\030\001 \001(\tB\003\340A\010\022L\n\006topic"
-          + "s\030\002 \003(\01327.google.cloud.managedkafka.v1.C"
-          + "onsumerGroup.TopicsEntryB\003\340A\001\032b\n\013TopicsE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022B\n\005value\030\002 \001(\01323.googl"
-          + "e.cloud.managedkafka.v1.ConsumerTopicMet"
-          + "adata:\0028\001:\252\001\352A\246\001\n)managedkafka.googleapi"
-          + "s.com/ConsumerGroup\022Zprojects/{project}/"
-          + "locations/{location}/clusters/{cluster}/"
-          + "consumerGroups/{consumer_group}*\016consume"
-          + "rGroups2\rconsumerGroup\"\200\002\n\021OperationMeta"
-          + "data\0224\n\013create_time\030\001 \001(\0132\032.google.proto"
-          + "buf.TimestampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032.g"
-          + "oogle.protobuf.TimestampB\003\340A\003\022\023\n\006target\030"
-          + "\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016status_"
-          + "message\030\005 \001(\tB\003\340A\003\022#\n\026requested_cancella"
-          + "tion\030\006 \001(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB\003\340A"
-          + "\003B\303\003\n com.google.cloud.managedkafka.v1B\016"
-          + "ResourcesProtoP\001ZDcloud.google.com/go/ma"
-          + "nagedkafka/apiv1/managedkafkapb;managedk"
-          + "afkapb\252\002\034Google.Cloud.ManagedKafka.V1\312\002\034"
-          + "Google\\Cloud\\ManagedKafka\\V1\352\002\037Google::C"
-          + "loud::ManagedKafka::V1\352Ax\n!cloudkms.goog"
-          + "leapis.com/CryptoKey\022Sprojects/{project}"
-          + "/locations/{location}/keyRings/{key_ring"
-          + "}/cryptoKeys/{crypto_key}\352Ak\n*secretmana"
-          + "ger.googleapis.com/SecretVersion\022=projec"
-          + "ts/{project}/secrets/{secret}/versions/{"
-          + "secret_version}b\006proto3"
+          + "i/resource.proto\032\036google/protobuf/durati"
+          + "on.proto\032\037google/protobuf/timestamp.prot"
+          + "o\"\330\006\n\007Cluster\022B\n\ngcp_config\030\t \001(\0132\'.goog"
+          + "le.cloud.managedkafka.v1.GcpConfigB\003\340A\002H"
+          + "\000\022\021\n\004name\030\001 \001(\tB\003\340A\010\0224\n\013create_time\030\002 \001("
+          + "\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013up"
+          + "date_time\030\003 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\003\340A\003\022F\n\006labels\030\004 \003(\01321.google.cloud."
+          + "managedkafka.v1.Cluster.LabelsEntryB\003\340A\001"
+          + "\022J\n\017capacity_config\030\005 \001(\0132,.google.cloud"
+          + ".managedkafka.v1.CapacityConfigB\003\340A\002\022L\n\020"
+          + "rebalance_config\030\010 \001(\0132-.google.cloud.ma"
+          + "nagedkafka.v1.RebalanceConfigB\003\340A\001\022?\n\005st"
+          + "ate\030\n \001(\0162+.google.cloud.managedkafka.v1"
+          + ".Cluster.StateB\003\340A\003\022\037\n\rsatisfies_pzi\030\013 \001"
+          + "(\010B\003\340A\003H\001\210\001\001\022\037\n\rsatisfies_pzs\030\014 \001(\010B\003\340A\003"
+          + "H\002\210\001\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
+          + "ue\030\002 \001(\t:\0028\001\"F\n\005State\022\025\n\021STATE_UNSPECIFI"
+          + "ED\020\000\022\014\n\010CREATING\020\001\022\n\n\006ACTIVE\020\002\022\014\n\010DELETI"
+          + "NG\020\003:w\352At\n#managedkafka.googleapis.com/C"
+          + "luster\022:projects/{project}/locations/{lo"
+          + "cation}/clusters/{cluster}*\010clusters2\007cl"
+          + "usterB\021\n\017platform_configB\020\n\016_satisfies_p"
+          + "ziB\020\n\016_satisfies_pzs\"D\n\016CapacityConfig\022\027"
+          + "\n\nvcpu_count\030\001 \001(\003B\003\340A\002\022\031\n\014memory_bytes\030"
+          + "\002 \001(\003B\003\340A\002\"\250\001\n\017RebalanceConfig\022E\n\004mode\030\001"
+          + " \001(\01622.google.cloud.managedkafka.v1.Reba"
+          + "lanceConfig.ModeB\003\340A\001\"N\n\004Mode\022\024\n\020MODE_UN"
+          + "SPECIFIED\020\000\022\020\n\014NO_REBALANCE\020\001\022\036\n\032AUTO_RE"
+          + "BALANCE_ON_SCALE_UP\020\002\"$\n\rNetworkConfig\022\023"
+          + "\n\006subnet\030\002 \001(\tB\003\340A\002\"Y\n\014AccessConfig\022I\n\017n"
+          + "etwork_configs\030\001 \003(\0132+.google.cloud.mana"
+          + "gedkafka.v1.NetworkConfigB\003\340A\002\"\222\001\n\tGcpCo"
+          + "nfig\022F\n\raccess_config\030\003 \001(\0132*.google.clo"
+          + "ud.managedkafka.v1.AccessConfigB\003\340A\002\022=\n\007"
+          + "kms_key\030\002 \001(\tB,\340A\001\340A\005\372A#\n!cloudkms.googl"
+          + "eapis.com/CryptoKey\"\327\002\n\005Topic\022\021\n\004name\030\001 "
+          + "\001(\tB\003\340A\010\022\034\n\017partition_count\030\002 \001(\005B\003\340A\002\022\""
+          + "\n\022replication_factor\030\003 \001(\005B\006\340A\002\340A\005\022F\n\007co"
+          + "nfigs\030\004 \003(\01320.google.cloud.managedkafka."
+          + "v1.Topic.ConfigsEntryB\003\340A\001\032.\n\014ConfigsEnt"
+          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\200\001\352A}"
+          + "\n!managedkafka.googleapis.com/Topic\022Ipro"
+          + "jects/{project}/locations/{location}/clu"
+          + "sters/{cluster}/topics/{topic}*\006topics2\005"
+          + "topic\"\341\001\n\025ConsumerTopicMetadata\022\\\n\nparti"
+          + "tions\030\001 \003(\0132C.google.cloud.managedkafka."
+          + "v1.ConsumerTopicMetadata.PartitionsEntry"
+          + "B\003\340A\001\032j\n\017PartitionsEntry\022\013\n\003key\030\001 \001(\005\022F\n"
+          + "\005value\030\002 \001(\01327.google.cloud.managedkafka"
+          + ".v1.ConsumerPartitionMetadata:\0028\001\"G\n\031Con"
+          + "sumerPartitionMetadata\022\023\n\006offset\030\001 \001(\003B\003"
+          + "\340A\002\022\025\n\010metadata\030\002 \001(\tB\003\340A\001\"\201\003\n\rConsumerG"
+          + "roup\022\021\n\004name\030\001 \001(\tB\003\340A\010\022L\n\006topics\030\002 \003(\0132"
+          + "7.google.cloud.managedkafka.v1.ConsumerG"
+          + "roup.TopicsEntryB\003\340A\001\032b\n\013TopicsEntry\022\013\n\003"
+          + "key\030\001 \001(\t\022B\n\005value\030\002 \001(\01323.google.cloud."
+          + "managedkafka.v1.ConsumerTopicMetadata:\0028"
+          + "\001:\252\001\352A\246\001\n)managedkafka.googleapis.com/Co"
+          + "nsumerGroup\022Zprojects/{project}/location"
+          + "s/{location}/clusters/{cluster}/consumer"
+          + "Groups/{consumer_group}*\016consumerGroups2"
+          + "\rconsumerGroup\"\200\002\n\021OperationMetadata\0224\n\013"
+          + "create_time\030\001 \001(\0132\032.google.protobuf.Time"
+          + "stampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032.google.pr"
+          + "otobuf.TimestampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340"
+          + "A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016status_message\030"
+          + "\005 \001(\tB\003\340A\003\022#\n\026requested_cancellation\030\006 \001"
+          + "(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB\003\340A\003\"\203\007\n\016Co"
+          + "nnectCluster\022I\n\ngcp_config\030\007 \001(\0132..googl"
+          + "e.cloud.managedkafka.v1.ConnectGcpConfig"
+          + "B\003\340A\002H\000\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\035\n\rkafka_clus"
+          + "ter\030\002 \001(\tB\006\340A\002\340A\005\0224\n\013create_time\030\003 \001(\0132\032"
+          + ".google.protobuf.TimestampB\003\340A\003\0224\n\013updat"
+          + "e_time\030\004 \001(\0132\032.google.protobuf.Timestamp"
+          + "B\003\340A\003\022M\n\006labels\030\005 \003(\01328.google.cloud.man"
+          + "agedkafka.v1.ConnectCluster.LabelsEntryB"
+          + "\003\340A\001\022J\n\017capacity_config\030\006 \001(\0132,.google.c"
+          + "loud.managedkafka.v1.CapacityConfigB\003\340A\002"
+          + "\022F\n\005state\030\010 \001(\01622.google.cloud.managedka"
+          + "fka.v1.ConnectCluster.StateB\003\340A\003\022M\n\006conf"
+          + "ig\030\t \003(\01328.google.cloud.managedkafka.v1."
+          + "ConnectCluster.ConfigEntryB\003\340A\001\032-\n\013Label"
+          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032-"
+          + "\n\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
+          + "\t:\0028\001\"F\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n"
+          + "\010CREATING\020\001\022\n\n\006ACTIVE\020\002\022\014\n\010DELETING\020\003:\234\001"
+          + "\352A\230\001\n*managedkafka.googleapis.com/Connec"
+          + "tCluster\022Iprojects/{project}/locations/{"
+          + "location}/connectClusters/{connect_clust"
+          + "er}*\017connectClusters2\016connectClusterB\021\n\017"
+          + "platform_config\"s\n\024ConnectNetworkConfig\022"
+          + "\033\n\016primary_subnet\030\003 \001(\tB\003\340A\002\022\037\n\022addition"
+          + "al_subnets\030\004 \003(\tB\003\340A\001\022\035\n\020dns_domain_name"
+          + "s\030\002 \003(\tB\003\340A\001\"g\n\023ConnectAccessConfig\022P\n\017n"
+          + "etwork_configs\030\001 \003(\01322.google.cloud.mana"
+          + "gedkafka.v1.ConnectNetworkConfigB\003\340A\002\"\253\001"
+          + "\n\020ConnectGcpConfig\022M\n\raccess_config\030\001 \001("
+          + "\01321.google.cloud.managedkafka.v1.Connect"
+          + "AccessConfigB\003\340A\002\022H\n\014secret_paths\030\002 \003(\tB"
+          + "2\340A\001\372A,\n*secretmanager.googleapis.com/Se"
+          + "cretVersion\"\333\004\n\tConnector\022Q\n\023task_restar"
+          + "t_policy\030\004 \001(\0132-.google.cloud.managedkaf"
+          + "ka.v1.TaskRetryPolicyB\003\340A\001H\000\022\021\n\004name\030\001 \001"
+          + "(\tB\003\340A\010\022J\n\007configs\030\002 \003(\01324.google.cloud."
+          + "managedkafka.v1.Connector.ConfigsEntryB\003"
+          + "\340A\001\022A\n\005state\030\003 \001(\0162-.google.cloud.manage"
+          + "dkafka.v1.Connector.StateB\003\340A\003\032.\n\014Config"
+          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"p"
+          + "\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\016\n\nUNASSI"
+          + "GNED\020\001\022\013\n\007RUNNING\020\002\022\n\n\006PAUSED\020\003\022\n\n\006FAILE"
+          + "D\020\004\022\016\n\nRESTARTING\020\005\022\013\n\007STOPPED\020\006:\244\001\352A\240\001\n"
+          + "%managedkafka.googleapis.com/Connector\022`"
+          + "projects/{project}/locations/{location}/"
+          + "connectClusters/{connect_cluster}/connec"
+          + "tors/{connector}*\nconnectors2\tconnectorB"
+          + "\020\n\016restart_policy\"\203\001\n\017TaskRetryPolicy\0227\n"
+          + "\017minimum_backoff\030\001 \001(\0132\031.google.protobuf"
+          + ".DurationB\003\340A\001\0227\n\017maximum_backoff\030\002 \001(\0132"
+          + "\031.google.protobuf.DurationB\003\340A\001B\242\004\n com."
+          + "google.cloud.managedkafka.v1B\016ResourcesP"
+          + "rotoP\001ZDcloud.google.com/go/managedkafka"
+          + "/apiv1/managedkafkapb;managedkafkapb\252\002\034G"
+          + "oogle.Cloud.ManagedKafka.V1\312\002\034Google\\Clo"
+          + "ud\\ManagedKafka\\V1\352\002\037Google::Cloud::Mana"
+          + "gedKafka::V1\352Ax\n!cloudkms.googleapis.com"
+          + "/CryptoKey\022Sprojects/{project}/locations"
+          + "/{location}/keyRings/{key_ring}/cryptoKe"
+          + "ys/{crypto_key}\352Ak\n*secretmanager.google"
+          + "apis.com/SecretVersion\022=projects/{projec"
+          + "t}/secrets/{secret}/versions/{secret_ver"
+          + "sion}\352A\\\n\037privateca.googleapis.com/CaPoo"
+          + "l\0229projects/{project}/locations/{locatio"
+          + "n}/caPools/{ca_pool}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -187,6 +277,7 @@ public final class ResourcesProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_managedkafka_v1_Cluster_descriptor =
@@ -329,6 +420,91 @@ public final class ResourcesProto {
               "RequestedCancellation",
               "ApiVersion",
             });
+    internal_static_google_cloud_managedkafka_v1_ConnectCluster_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_managedkafka_v1_ConnectCluster_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_ConnectCluster_descriptor,
+            new java.lang.String[] {
+              "GcpConfig",
+              "Name",
+              "KafkaCluster",
+              "CreateTime",
+              "UpdateTime",
+              "Labels",
+              "CapacityConfig",
+              "State",
+              "Config",
+              "PlatformConfig",
+            });
+    internal_static_google_cloud_managedkafka_v1_ConnectCluster_LabelsEntry_descriptor =
+        internal_static_google_cloud_managedkafka_v1_ConnectCluster_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_managedkafka_v1_ConnectCluster_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_ConnectCluster_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_managedkafka_v1_ConnectCluster_ConfigEntry_descriptor =
+        internal_static_google_cloud_managedkafka_v1_ConnectCluster_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_managedkafka_v1_ConnectCluster_ConfigEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_ConnectCluster_ConfigEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_managedkafka_v1_ConnectNetworkConfig_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_managedkafka_v1_ConnectNetworkConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_ConnectNetworkConfig_descriptor,
+            new java.lang.String[] {
+              "PrimarySubnet", "AdditionalSubnets", "DnsDomainNames",
+            });
+    internal_static_google_cloud_managedkafka_v1_ConnectAccessConfig_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_managedkafka_v1_ConnectAccessConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_ConnectAccessConfig_descriptor,
+            new java.lang.String[] {
+              "NetworkConfigs",
+            });
+    internal_static_google_cloud_managedkafka_v1_ConnectGcpConfig_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_managedkafka_v1_ConnectGcpConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_ConnectGcpConfig_descriptor,
+            new java.lang.String[] {
+              "AccessConfig", "SecretPaths",
+            });
+    internal_static_google_cloud_managedkafka_v1_Connector_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_managedkafka_v1_Connector_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_Connector_descriptor,
+            new java.lang.String[] {
+              "TaskRestartPolicy", "Name", "Configs", "State", "RestartPolicy",
+            });
+    internal_static_google_cloud_managedkafka_v1_Connector_ConfigsEntry_descriptor =
+        internal_static_google_cloud_managedkafka_v1_Connector_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_managedkafka_v1_Connector_ConfigsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_Connector_ConfigsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_managedkafka_v1_TaskRetryPolicy_descriptor =
+        getDescriptor().getMessageTypes().get(16);
+    internal_static_google_cloud_managedkafka_v1_TaskRetryPolicy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_managedkafka_v1_TaskRetryPolicy_descriptor,
+            new java.lang.String[] {
+              "MinimumBackoff", "MaximumBackoff",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
@@ -339,6 +515,7 @@ public final class ResourcesProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

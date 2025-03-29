@@ -194,7 +194,8 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> RedactImage</td>
  *      <td><p> Redacts potentially sensitive info from an image. This method has limits on input size, processing time, and output size. See https://cloud.google.com/sensitive-data-protection/docs/redacting-sensitive-data-images to learn more.
- * <p>  When no InfoTypes or CustomInfoTypes are specified in this request, the system will automatically choose what detectors to run. By default this may be all types, but may change over time as detectors are updated.</td>
+ * <p>  When no InfoTypes or CustomInfoTypes are specified in this request, the system will automatically choose what detectors to run. By default this may be all types, but may change over time as detectors are updated.
+ * <p>  Only the first frame of each multiframe image is redacted. Metadata and other frames are omitted in the response.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1429,6 +1430,9 @@ public class DlpServiceClient implements BackgroundResource {
    * automatically choose what detectors to run. By default this may be all types, but may change
    * over time as detectors are updated.
    *
+   * <p>Only the first frame of each multiframe image is redacted. Metadata and other frames are
+   * omitted in the response.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1468,6 +1472,9 @@ public class DlpServiceClient implements BackgroundResource {
    * <p>When no InfoTypes or CustomInfoTypes are specified in this request, the system will
    * automatically choose what detectors to run. By default this may be all types, but may change
    * over time as detectors are updated.
+   *
+   * <p>Only the first frame of each multiframe image is redacted. Metadata and other frames are
+   * omitted in the response.
    *
    * <p>Sample code:
    *

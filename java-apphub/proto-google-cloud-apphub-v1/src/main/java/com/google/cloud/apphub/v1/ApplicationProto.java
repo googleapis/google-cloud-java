@@ -65,15 +65,15 @@ public final class ApplicationProto {
           + "CTIVE\020\002\022\014\n\010DELETING\020\003:\206\001\352A\202\001\n!apphub.goo"
           + "gleapis.com/Application\022Bprojects/{proje"
           + "ct}/locations/{location}/applications/{a"
-          + "pplication}*\014applications2\013application\"j"
+          + "pplication}*\014applications2\013application\"v"
           + "\n\005Scope\0225\n\004type\030\001 \001(\0162\".google.cloud.app"
-          + "hub.v1.Scope.TypeB\003\340A\002\"*\n\004Type\022\024\n\020TYPE_U"
-          + "NSPECIFIED\020\000\022\014\n\010REGIONAL\020\001B\262\001\n\032com.googl"
-          + "e.cloud.apphub.v1B\020ApplicationProtoP\001Z2c"
-          + "loud.google.com/go/apphub/apiv1/apphubpb"
-          + ";apphubpb\252\002\026Google.Cloud.AppHub.V1\312\002\026Goo"
-          + "gle\\Cloud\\AppHub\\V1\352\002\031Google::Cloud::App"
-          + "Hub::V1b\006proto3"
+          + "hub.v1.Scope.TypeB\003\340A\002\"6\n\004Type\022\024\n\020TYPE_U"
+          + "NSPECIFIED\020\000\022\014\n\010REGIONAL\020\001\022\n\n\006GLOBAL\020\002B\262"
+          + "\001\n\032com.google.cloud.apphub.v1B\020Applicati"
+          + "onProtoP\001Z2cloud.google.com/go/apphub/ap"
+          + "iv1/apphubpb;apphubpb\252\002\026Google.Cloud.App"
+          + "Hub.V1\312\002\026Google\\Cloud\\AppHub\\V1\352\002\031Google"
+          + "::Cloud::AppHub::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

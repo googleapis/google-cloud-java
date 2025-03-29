@@ -252,6 +252,55 @@ public final class WorkflowsGrpc {
     return getUpdateWorkflowMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.workflows.v1.ListWorkflowRevisionsRequest,
+          com.google.cloud.workflows.v1.ListWorkflowRevisionsResponse>
+      getListWorkflowRevisionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListWorkflowRevisions",
+      requestType = com.google.cloud.workflows.v1.ListWorkflowRevisionsRequest.class,
+      responseType = com.google.cloud.workflows.v1.ListWorkflowRevisionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.workflows.v1.ListWorkflowRevisionsRequest,
+          com.google.cloud.workflows.v1.ListWorkflowRevisionsResponse>
+      getListWorkflowRevisionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.workflows.v1.ListWorkflowRevisionsRequest,
+            com.google.cloud.workflows.v1.ListWorkflowRevisionsResponse>
+        getListWorkflowRevisionsMethod;
+    if ((getListWorkflowRevisionsMethod = WorkflowsGrpc.getListWorkflowRevisionsMethod) == null) {
+      synchronized (WorkflowsGrpc.class) {
+        if ((getListWorkflowRevisionsMethod = WorkflowsGrpc.getListWorkflowRevisionsMethod)
+            == null) {
+          WorkflowsGrpc.getListWorkflowRevisionsMethod =
+              getListWorkflowRevisionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.workflows.v1.ListWorkflowRevisionsRequest,
+                          com.google.cloud.workflows.v1.ListWorkflowRevisionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListWorkflowRevisions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.workflows.v1.ListWorkflowRevisionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.workflows.v1.ListWorkflowRevisionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new WorkflowsMethodDescriptorSupplier("ListWorkflowRevisions"))
+                      .build();
+        }
+      }
+    }
+    return getListWorkflowRevisionsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static WorkflowsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<WorkflowsStub> factory =
@@ -382,6 +431,21 @@ public final class WorkflowsGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateWorkflowMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists revisions for a given workflow.
+     * </pre>
+     */
+    default void listWorkflowRevisions(
+        com.google.cloud.workflows.v1.ListWorkflowRevisionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.workflows.v1.ListWorkflowRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListWorkflowRevisionsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -509,6 +573,23 @@ public final class WorkflowsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists revisions for a given workflow.
+     * </pre>
+     */
+    public void listWorkflowRevisions(
+        com.google.cloud.workflows.v1.ListWorkflowRevisionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.workflows.v1.ListWorkflowRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListWorkflowRevisionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -604,6 +685,19 @@ public final class WorkflowsGrpc {
         com.google.cloud.workflows.v1.UpdateWorkflowRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateWorkflowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists revisions for a given workflow.
+     * </pre>
+     */
+    public com.google.cloud.workflows.v1.ListWorkflowRevisionsResponse listWorkflowRevisions(
+        com.google.cloud.workflows.v1.ListWorkflowRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWorkflowRevisionsMethod(), getCallOptions(), request);
     }
   }
 
@@ -702,6 +796,20 @@ public final class WorkflowsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateWorkflowMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists revisions for a given workflow.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.workflows.v1.ListWorkflowRevisionsResponse>
+        listWorkflowRevisions(com.google.cloud.workflows.v1.ListWorkflowRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListWorkflowRevisionsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_WORKFLOWS = 0;
@@ -709,6 +817,7 @@ public final class WorkflowsGrpc {
   private static final int METHODID_CREATE_WORKFLOW = 2;
   private static final int METHODID_DELETE_WORKFLOW = 3;
   private static final int METHODID_UPDATE_WORKFLOW = 4;
+  private static final int METHODID_LIST_WORKFLOW_REVISIONS = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -753,6 +862,13 @@ public final class WorkflowsGrpc {
           serviceImpl.updateWorkflow(
               (com.google.cloud.workflows.v1.UpdateWorkflowRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_WORKFLOW_REVISIONS:
+          serviceImpl.listWorkflowRevisions(
+              (com.google.cloud.workflows.v1.ListWorkflowRevisionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.workflows.v1.ListWorkflowRevisionsResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -803,6 +919,13 @@ public final class WorkflowsGrpc {
                 new MethodHandlers<
                     com.google.cloud.workflows.v1.UpdateWorkflowRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_WORKFLOW)))
+        .addMethod(
+            getListWorkflowRevisionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workflows.v1.ListWorkflowRevisionsRequest,
+                    com.google.cloud.workflows.v1.ListWorkflowRevisionsResponse>(
+                    service, METHODID_LIST_WORKFLOW_REVISIONS)))
         .build();
   }
 
@@ -859,6 +982,7 @@ public final class WorkflowsGrpc {
                       .addMethod(getCreateWorkflowMethod())
                       .addMethod(getDeleteWorkflowMethod())
                       .addMethod(getUpdateWorkflowMethod())
+                      .addMethod(getListWorkflowRevisionsMethod())
                       .build();
         }
       }

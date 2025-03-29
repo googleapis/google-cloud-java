@@ -24,7 +24,6 @@ package com.google.cloud.datastream.v1;
  *
  * <pre>
  * Configuration for Oracle Automatic Storage Management (ASM) connection.
- * .
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.OracleAsmConfig}
@@ -44,6 +43,7 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
     username_ = "";
     password_ = "";
     asmService_ = "";
+    secretManagerStoredPassword_ = "";
   }
 
   @java.lang.Override
@@ -208,7 +208,8 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Password for the Oracle ASM connection.
+   * Optional. Password for the Oracle ASM connection. Mutually exclusive with
+   * the `secret_manager_stored_password` field.
    * </pre>
    *
    * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -231,7 +232,8 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Password for the Oracle ASM connection.
+   * Optional. Password for the Oracle ASM connection. Mutually exclusive with
+   * the `secret_manager_stored_password` field.
    * </pre>
    *
    * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -472,6 +474,61 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
         : oracleSslConfig_;
   }
 
+  public static final int SECRET_MANAGER_STORED_PASSWORD_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object secretManagerStoredPassword_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A reference to a Secret Manager resource name storing the Oracle
+   * ASM connection password. Mutually exclusive with the `password` field.
+   * </pre>
+   *
+   * <code>string secret_manager_stored_password = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The secretManagerStoredPassword.
+   */
+  @java.lang.Override
+  public java.lang.String getSecretManagerStoredPassword() {
+    java.lang.Object ref = secretManagerStoredPassword_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      secretManagerStoredPassword_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A reference to a Secret Manager resource name storing the Oracle
+   * ASM connection password. Mutually exclusive with the `password` field.
+   * </pre>
+   *
+   * <code>string secret_manager_stored_password = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for secretManagerStoredPassword.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSecretManagerStoredPasswordBytes() {
+    java.lang.Object ref = secretManagerStoredPassword_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      secretManagerStoredPassword_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -508,6 +565,9 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
         6);
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(7, getOracleSslConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretManagerStoredPassword_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, secretManagerStoredPassword_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -546,6 +606,10 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getOracleSslConfig());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretManagerStoredPassword_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(8, secretManagerStoredPassword_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -573,6 +637,8 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
     if (hasOracleSslConfig()) {
       if (!getOracleSslConfig().equals(other.getOracleSslConfig())) return false;
     }
+    if (!getSecretManagerStoredPassword().equals(other.getSecretManagerStoredPassword()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -602,6 +668,8 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + ORACLE_SSL_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getOracleSslConfig().hashCode();
     }
+    hash = (37 * hash) + SECRET_MANAGER_STORED_PASSWORD_FIELD_NUMBER;
+    hash = (53 * hash) + getSecretManagerStoredPassword().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -707,7 +775,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Configuration for Oracle Automatic Storage Management (ASM) connection.
-   * .
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.OracleAsmConfig}
@@ -784,6 +851,7 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
         oracleSslConfigBuilder_.dispose();
         oracleSslConfigBuilder_ = null;
       }
+      secretManagerStoredPassword_ = "";
       return this;
     }
 
@@ -844,6 +912,9 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
         result.oracleSslConfig_ =
             oracleSslConfigBuilder_ == null ? oracleSslConfig_ : oracleSslConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.secretManagerStoredPassword_ = secretManagerStoredPassword_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -921,6 +992,11 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       if (other.hasOracleSslConfig()) {
         mergeOracleSslConfig(other.getOracleSslConfig());
       }
+      if (!other.getSecretManagerStoredPassword().isEmpty()) {
+        secretManagerStoredPassword_ = other.secretManagerStoredPassword_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -996,6 +1072,12 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                secretManagerStoredPassword_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1285,7 +1367,8 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Password for the Oracle ASM connection.
+     * Optional. Password for the Oracle ASM connection. Mutually exclusive with
+     * the `secret_manager_stored_password` field.
      * </pre>
      *
      * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1307,7 +1390,8 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Password for the Oracle ASM connection.
+     * Optional. Password for the Oracle ASM connection. Mutually exclusive with
+     * the `secret_manager_stored_password` field.
      * </pre>
      *
      * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1329,7 +1413,8 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Password for the Oracle ASM connection.
+     * Optional. Password for the Oracle ASM connection. Mutually exclusive with
+     * the `secret_manager_stored_password` field.
      * </pre>
      *
      * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1350,7 +1435,8 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Password for the Oracle ASM connection.
+     * Optional. Password for the Oracle ASM connection. Mutually exclusive with
+     * the `secret_manager_stored_password` field.
      * </pre>
      *
      * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1367,7 +1453,8 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Password for the Oracle ASM connection.
+     * Optional. Password for the Oracle ASM connection. Mutually exclusive with
+     * the `secret_manager_stored_password` field.
      * </pre>
      *
      * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1879,6 +1966,122 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
         oracleSslConfig_ = null;
       }
       return oracleSslConfigBuilder_;
+    }
+
+    private java.lang.Object secretManagerStoredPassword_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A reference to a Secret Manager resource name storing the Oracle
+     * ASM connection password. Mutually exclusive with the `password` field.
+     * </pre>
+     *
+     * <code>string secret_manager_stored_password = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The secretManagerStoredPassword.
+     */
+    public java.lang.String getSecretManagerStoredPassword() {
+      java.lang.Object ref = secretManagerStoredPassword_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        secretManagerStoredPassword_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A reference to a Secret Manager resource name storing the Oracle
+     * ASM connection password. Mutually exclusive with the `password` field.
+     * </pre>
+     *
+     * <code>string secret_manager_stored_password = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for secretManagerStoredPassword.
+     */
+    public com.google.protobuf.ByteString getSecretManagerStoredPasswordBytes() {
+      java.lang.Object ref = secretManagerStoredPassword_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        secretManagerStoredPassword_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A reference to a Secret Manager resource name storing the Oracle
+     * ASM connection password. Mutually exclusive with the `password` field.
+     * </pre>
+     *
+     * <code>string secret_manager_stored_password = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The secretManagerStoredPassword to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecretManagerStoredPassword(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      secretManagerStoredPassword_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A reference to a Secret Manager resource name storing the Oracle
+     * ASM connection password. Mutually exclusive with the `password` field.
+     * </pre>
+     *
+     * <code>string secret_manager_stored_password = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSecretManagerStoredPassword() {
+      secretManagerStoredPassword_ = getDefaultInstance().getSecretManagerStoredPassword();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A reference to a Secret Manager resource name storing the Oracle
+     * ASM connection password. Mutually exclusive with the `password` field.
+     * </pre>
+     *
+     * <code>string secret_manager_stored_password = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for secretManagerStoredPassword to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecretManagerStoredPasswordBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      secretManagerStoredPassword_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

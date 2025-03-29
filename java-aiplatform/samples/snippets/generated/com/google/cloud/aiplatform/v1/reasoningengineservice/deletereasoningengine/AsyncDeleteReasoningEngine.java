@@ -42,6 +42,7 @@ public class AsyncDeleteReasoningEngine {
               .setName(
                   ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
                       .toString())
+              .setForce(true)
               .build();
       ApiFuture<Operation> future =
           reasoningEngineServiceClient.deleteReasoningEngineCallable().futureCall(request);

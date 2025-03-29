@@ -111,8 +111,6 @@ public interface GenerateGroundedContentRequestOrBuilder
    * For single-turn queries, this is a single instance. For multi-turn queries,
    * this is a repeated field that contains conversation history + latest
    * request.
-   *
-   * Only a single-turn query is supported currently.
    * </pre>
    *
    * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;</code>
@@ -127,8 +125,6 @@ public interface GenerateGroundedContentRequestOrBuilder
    * For single-turn queries, this is a single instance. For multi-turn queries,
    * this is a repeated field that contains conversation history + latest
    * request.
-   *
-   * Only a single-turn query is supported currently.
    * </pre>
    *
    * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;</code>
@@ -143,8 +139,6 @@ public interface GenerateGroundedContentRequestOrBuilder
    * For single-turn queries, this is a single instance. For multi-turn queries,
    * this is a repeated field that contains conversation history + latest
    * request.
-   *
-   * Only a single-turn query is supported currently.
    * </pre>
    *
    * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;</code>
@@ -159,8 +153,6 @@ public interface GenerateGroundedContentRequestOrBuilder
    * For single-turn queries, this is a single instance. For multi-turn queries,
    * this is a repeated field that contains conversation history + latest
    * request.
-   *
-   * Only a single-turn query is supported currently.
    * </pre>
    *
    * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;</code>
@@ -176,8 +168,6 @@ public interface GenerateGroundedContentRequestOrBuilder
    * For single-turn queries, this is a single instance. For multi-turn queries,
    * this is a repeated field that contains conversation history + latest
    * request.
-   *
-   * Only a single-turn query is supported currently.
    * </pre>
    *
    * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;</code>

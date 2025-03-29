@@ -176,6 +176,7 @@ public class RegionBackendServicesClientTest {
             .setEnableCDN(true)
             .setFailoverPolicy(BackendServiceFailoverPolicy.newBuilder().build())
             .setFingerprint("fingerprint-1375934236")
+            .setHaPolicy(BackendServiceHAPolicy.newBuilder().build())
             .addAllHealthChecks(new ArrayList<String>())
             .setIap(BackendServiceIAP.newBuilder().build())
             .setId(3355)

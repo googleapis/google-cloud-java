@@ -1458,7 +1458,8 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The name of a LLM model used for parsing.
-     * Format: `gemini-1.5-pro-002`
+     * Format:
+     * * `projects/{project_id}/locations/{location}/publishers/{publisher}/models/{model}`
      * </pre>
      *
      * <code>string model_name = 1;</code>
@@ -1471,7 +1472,8 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The name of a LLM model used for parsing.
-     * Format: `gemini-1.5-pro-002`
+     * Format:
+     * * `projects/{project_id}/locations/{location}/publishers/{publisher}/models/{model}`
      * </pre>
      *
      * <code>string model_name = 1;</code>
@@ -1578,7 +1580,8 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The name of a LLM model used for parsing.
-     * Format: `gemini-1.5-pro-002`
+     * Format:
+     * * `projects/{project_id}/locations/{location}/publishers/{publisher}/models/{model}`
      * </pre>
      *
      * <code>string model_name = 1;</code>
@@ -1602,7 +1605,8 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The name of a LLM model used for parsing.
-     * Format: `gemini-1.5-pro-002`
+     * Format:
+     * * `projects/{project_id}/locations/{location}/publishers/{publisher}/models/{model}`
      * </pre>
      *
      * <code>string model_name = 1;</code>
@@ -2105,7 +2109,8 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The name of a LLM model used for parsing.
-       * Format: `gemini-1.5-pro-002`
+       * Format:
+       * * `projects/{project_id}/locations/{location}/publishers/{publisher}/models/{model}`
        * </pre>
        *
        * <code>string model_name = 1;</code>
@@ -2128,7 +2133,8 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The name of a LLM model used for parsing.
-       * Format: `gemini-1.5-pro-002`
+       * Format:
+       * * `projects/{project_id}/locations/{location}/publishers/{publisher}/models/{model}`
        * </pre>
        *
        * <code>string model_name = 1;</code>
@@ -2151,7 +2157,8 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The name of a LLM model used for parsing.
-       * Format: `gemini-1.5-pro-002`
+       * Format:
+       * * `projects/{project_id}/locations/{location}/publishers/{publisher}/models/{model}`
        * </pre>
        *
        * <code>string model_name = 1;</code>
@@ -2173,7 +2180,8 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The name of a LLM model used for parsing.
-       * Format: `gemini-1.5-pro-002`
+       * Format:
+       * * `projects/{project_id}/locations/{location}/publishers/{publisher}/models/{model}`
        * </pre>
        *
        * <code>string model_name = 1;</code>
@@ -2191,7 +2199,8 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
        *
        * <pre>
        * The name of a LLM model used for parsing.
-       * Format: `gemini-1.5-pro-002`
+       * Format:
+       * * `projects/{project_id}/locations/{location}/publishers/{publisher}/models/{model}`
        * </pre>
        *
        * <code>string model_name = 1;</code>
@@ -2684,7 +2693,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
    * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=475
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=496
    * @return The useAdvancedPdfParsing.
    */
   @java.lang.Override
@@ -3875,7 +3884,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=475
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=496
      * @return The useAdvancedPdfParsing.
      */
     @java.lang.Override
@@ -3893,7 +3902,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=475
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=496
      * @param value The useAdvancedPdfParsing to set.
      * @return This builder for chaining.
      */
@@ -3915,7 +3924,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=475
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=496
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

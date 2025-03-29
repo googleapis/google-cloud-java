@@ -388,6 +388,57 @@ public final class ConversationalSearchServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.AnswerQueryRequest,
+          com.google.cloud.discoveryengine.v1.AnswerQueryResponse>
+      getStreamAnswerQueryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StreamAnswerQuery",
+      requestType = com.google.cloud.discoveryengine.v1.AnswerQueryRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1.AnswerQueryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.AnswerQueryRequest,
+          com.google.cloud.discoveryengine.v1.AnswerQueryResponse>
+      getStreamAnswerQueryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1.AnswerQueryRequest,
+            com.google.cloud.discoveryengine.v1.AnswerQueryResponse>
+        getStreamAnswerQueryMethod;
+    if ((getStreamAnswerQueryMethod = ConversationalSearchServiceGrpc.getStreamAnswerQueryMethod)
+        == null) {
+      synchronized (ConversationalSearchServiceGrpc.class) {
+        if ((getStreamAnswerQueryMethod =
+                ConversationalSearchServiceGrpc.getStreamAnswerQueryMethod)
+            == null) {
+          ConversationalSearchServiceGrpc.getStreamAnswerQueryMethod =
+              getStreamAnswerQueryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1.AnswerQueryRequest,
+                          com.google.cloud.discoveryengine.v1.AnswerQueryResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StreamAnswerQuery"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.AnswerQueryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.AnswerQueryResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConversationalSearchServiceMethodDescriptorSupplier(
+                              "StreamAnswerQuery"))
+                      .build();
+        }
+      }
+    }
+    return getStreamAnswerQueryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.discoveryengine.v1.GetAnswerRequest,
           com.google.cloud.discoveryengine.v1.Answer>
       getGetAnswerMethod;
@@ -833,6 +884,26 @@ public final class ConversationalSearchServiceGrpc {
      *
      *
      * <pre>
+     * Answer query method (streaming).
+     * It takes one
+     * [AnswerQueryRequest][google.cloud.discoveryengine.v1.AnswerQueryRequest]
+     * and returns multiple
+     * [AnswerQueryResponse][google.cloud.discoveryengine.v1.AnswerQueryResponse]
+     * messages in a stream.
+     * </pre>
+     */
+    default void streamAnswerQuery(
+        com.google.cloud.discoveryengine.v1.AnswerQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.AnswerQueryResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStreamAnswerQueryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a Answer.
      * </pre>
      */
@@ -1089,6 +1160,28 @@ public final class ConversationalSearchServiceGrpc {
      *
      *
      * <pre>
+     * Answer query method (streaming).
+     * It takes one
+     * [AnswerQueryRequest][google.cloud.discoveryengine.v1.AnswerQueryRequest]
+     * and returns multiple
+     * [AnswerQueryResponse][google.cloud.discoveryengine.v1.AnswerQueryResponse]
+     * messages in a stream.
+     * </pre>
+     */
+    public void streamAnswerQuery(
+        com.google.cloud.discoveryengine.v1.AnswerQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.AnswerQueryResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getStreamAnswerQueryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a Answer.
      * </pre>
      */
@@ -1305,6 +1398,24 @@ public final class ConversationalSearchServiceGrpc {
         com.google.cloud.discoveryengine.v1.AnswerQueryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAnswerQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Answer query method (streaming).
+     * It takes one
+     * [AnswerQueryRequest][google.cloud.discoveryengine.v1.AnswerQueryRequest]
+     * and returns multiple
+     * [AnswerQueryResponse][google.cloud.discoveryengine.v1.AnswerQueryResponse]
+     * messages in a stream.
+     * </pre>
+     */
+    public java.util.Iterator<com.google.cloud.discoveryengine.v1.AnswerQueryResponse>
+        streamAnswerQuery(com.google.cloud.discoveryengine.v1.AnswerQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getStreamAnswerQueryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1621,12 +1732,13 @@ public final class ConversationalSearchServiceGrpc {
   private static final int METHODID_GET_CONVERSATION = 4;
   private static final int METHODID_LIST_CONVERSATIONS = 5;
   private static final int METHODID_ANSWER_QUERY = 6;
-  private static final int METHODID_GET_ANSWER = 7;
-  private static final int METHODID_CREATE_SESSION = 8;
-  private static final int METHODID_DELETE_SESSION = 9;
-  private static final int METHODID_UPDATE_SESSION = 10;
-  private static final int METHODID_GET_SESSION = 11;
-  private static final int METHODID_LIST_SESSIONS = 12;
+  private static final int METHODID_STREAM_ANSWER_QUERY = 7;
+  private static final int METHODID_GET_ANSWER = 8;
+  private static final int METHODID_CREATE_SESSION = 9;
+  private static final int METHODID_DELETE_SESSION = 10;
+  private static final int METHODID_UPDATE_SESSION = 11;
+  private static final int METHODID_GET_SESSION = 12;
+  private static final int METHODID_LIST_SESSIONS = 13;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1684,6 +1796,12 @@ public final class ConversationalSearchServiceGrpc {
           break;
         case METHODID_ANSWER_QUERY:
           serviceImpl.answerQuery(
+              (com.google.cloud.discoveryengine.v1.AnswerQueryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.AnswerQueryResponse>)
+                  responseObserver);
+          break;
+        case METHODID_STREAM_ANSWER_QUERY:
+          serviceImpl.streamAnswerQuery(
               (com.google.cloud.discoveryengine.v1.AnswerQueryRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.AnswerQueryResponse>)
                   responseObserver);
@@ -1791,6 +1909,13 @@ public final class ConversationalSearchServiceGrpc {
                     com.google.cloud.discoveryengine.v1.AnswerQueryResponse>(
                     service, METHODID_ANSWER_QUERY)))
         .addMethod(
+            getStreamAnswerQueryMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1.AnswerQueryRequest,
+                    com.google.cloud.discoveryengine.v1.AnswerQueryResponse>(
+                    service, METHODID_STREAM_ANSWER_QUERY)))
+        .addMethod(
             getGetAnswerMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1885,6 +2010,7 @@ public final class ConversationalSearchServiceGrpc {
                       .addMethod(getGetConversationMethod())
                       .addMethod(getListConversationsMethod())
                       .addMethod(getAnswerQueryMethod())
+                      .addMethod(getStreamAnswerQueryMethod())
                       .addMethod(getGetAnswerMethod())
                       .addMethod(getCreateSessionMethod())
                       .addMethod(getDeleteSessionMethod())

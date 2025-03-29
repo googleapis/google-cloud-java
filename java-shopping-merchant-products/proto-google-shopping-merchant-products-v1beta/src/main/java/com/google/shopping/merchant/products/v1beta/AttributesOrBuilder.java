@@ -3864,4 +3864,71 @@ public interface AttributesOrBuilder
    * <code>.google.shopping.type.Price auto_pricing_min_price = 124;</code>
    */
   com.google.shopping.type.PriceOrBuilder getAutoPricingMinPriceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of sustainability incentive programs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+   * </code>
+   */
+  java.util.List<com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive>
+      getSustainabilityIncentivesList();
+  /**
+   *
+   *
+   * <pre>
+   * The list of sustainability incentive programs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive
+      getSustainabilityIncentives(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The list of sustainability incentive programs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+   * </code>
+   */
+  int getSustainabilityIncentivesCount();
+  /**
+   *
+   *
+   * <pre>
+   * The list of sustainability incentive programs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentiveOrBuilder>
+      getSustainabilityIncentivesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The list of sustainability incentive programs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1beta.ProductSustainabilityIncentive sustainability_incentives = 138;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1beta.ProductSustainabilityIncentiveOrBuilder
+      getSustainabilityIncentivesOrBuilder(int index);
 }

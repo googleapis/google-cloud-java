@@ -91,6 +91,9 @@
             "ListSessions": {
               "methods": ["listSessions", "listSessions", "listSessions", "listSessionsPagedCallable", "listSessionsCallable"]
             },
+            "StreamAnswerQuery": {
+              "methods": ["streamAnswerQueryCallable"]
+            },
             "UpdateConversation": {
               "methods": ["updateConversation", "updateConversation", "updateConversationCallable"]
             },
@@ -290,6 +293,18 @@
         }
       }
     },
+    "ServingConfigService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ServingConfigServiceClient",
+          "rpcs": {
+            "UpdateServingConfig": {
+              "methods": ["updateServingConfig", "updateServingConfig", "updateServingConfigCallable"]
+            }
+          }
+        }
+      }
+    },
     "SiteSearchEngineService": {
       "clients": {
         "grpc": {
@@ -301,8 +316,14 @@
             "BatchVerifyTargetSites": {
               "methods": ["batchVerifyTargetSitesAsync", "batchVerifyTargetSitesOperationCallable", "batchVerifyTargetSitesCallable"]
             },
+            "CreateSitemap": {
+              "methods": ["createSitemapAsync", "createSitemapAsync", "createSitemapAsync", "createSitemapOperationCallable", "createSitemapCallable"]
+            },
             "CreateTargetSite": {
               "methods": ["createTargetSiteAsync", "createTargetSiteAsync", "createTargetSiteAsync", "createTargetSiteOperationCallable", "createTargetSiteCallable"]
+            },
+            "DeleteSitemap": {
+              "methods": ["deleteSitemapAsync", "deleteSitemapAsync", "deleteSitemapAsync", "deleteSitemapOperationCallable", "deleteSitemapCallable"]
             },
             "DeleteTargetSite": {
               "methods": ["deleteTargetSiteAsync", "deleteTargetSiteAsync", "deleteTargetSiteAsync", "deleteTargetSiteOperationCallable", "deleteTargetSiteCallable"]
@@ -315,6 +336,9 @@
             },
             "FetchDomainVerificationStatus": {
               "methods": ["fetchDomainVerificationStatus", "fetchDomainVerificationStatusPagedCallable", "fetchDomainVerificationStatusCallable"]
+            },
+            "FetchSitemaps": {
+              "methods": ["fetchSitemaps", "fetchSitemaps", "fetchSitemaps", "fetchSitemapsCallable"]
             },
             "GetSiteSearchEngine": {
               "methods": ["getSiteSearchEngine", "getSiteSearchEngine", "getSiteSearchEngine", "getSiteSearchEngineCallable"]

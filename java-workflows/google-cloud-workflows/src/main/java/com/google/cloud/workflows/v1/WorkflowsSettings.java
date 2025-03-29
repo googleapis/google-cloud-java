@@ -17,6 +17,7 @@
 package com.google.cloud.workflows.v1;
 
 import static com.google.cloud.workflows.v1.WorkflowsClient.ListLocationsPagedResponse;
+import static com.google.cloud.workflows.v1.WorkflowsClient.ListWorkflowRevisionsPagedResponse;
 import static com.google.cloud.workflows.v1.WorkflowsClient.ListWorkflowsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -162,6 +163,15 @@ public class WorkflowsSettings extends ClientSettings<WorkflowsSettings> {
   public OperationCallSettings<UpdateWorkflowRequest, Workflow, OperationMetadata>
       updateWorkflowOperationSettings() {
     return ((WorkflowsStubSettings) getStubSettings()).updateWorkflowOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listWorkflowRevisions. */
+  public PagedCallSettings<
+          ListWorkflowRevisionsRequest,
+          ListWorkflowRevisionsResponse,
+          ListWorkflowRevisionsPagedResponse>
+      listWorkflowRevisionsSettings() {
+    return ((WorkflowsStubSettings) getStubSettings()).listWorkflowRevisionsSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -329,6 +339,15 @@ public class WorkflowsSettings extends ClientSettings<WorkflowsSettings> {
     public OperationCallSettings.Builder<UpdateWorkflowRequest, Workflow, OperationMetadata>
         updateWorkflowOperationSettings() {
       return getStubSettingsBuilder().updateWorkflowOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listWorkflowRevisions. */
+    public PagedCallSettings.Builder<
+            ListWorkflowRevisionsRequest,
+            ListWorkflowRevisionsResponse,
+            ListWorkflowRevisionsPagedResponse>
+        listWorkflowRevisionsSettings() {
+      return getStubSettingsBuilder().listWorkflowRevisionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

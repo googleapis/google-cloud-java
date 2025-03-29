@@ -27,6 +27,8 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.devtools.containeranalysis.v1.stub.HttpJsonContainerAnalysisStub;
+import com.google.containeranalysis.v1.ExportSBOMRequest;
+import com.google.containeranalysis.v1.ExportSBOMResponse;
 import com.google.containeranalysis.v1.ProjectName;
 import com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary;
 import com.google.iam.v1.AuditConfig;
@@ -558,6 +560,56 @@ public class ContainerAnalysisClientHttpJsonTest {
       String parent = "projects/project-2353";
       String filter = "filter-1274492040";
       client.getVulnerabilityOccurrencesSummary(parent, filter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void exportSBOMTest() throws Exception {
+    ExportSBOMResponse expectedResponse =
+        ExportSBOMResponse.newBuilder()
+            .setDiscoveryOccurrence("discoveryOccurrence1120661409")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ExportSBOMRequest request =
+        ExportSBOMRequest.newBuilder()
+            .setName("projects/project-9721/resources/resource-9721")
+            .build();
+
+    ExportSBOMResponse actualResponse = client.exportSBOM(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportSBOMExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExportSBOMRequest request =
+          ExportSBOMRequest.newBuilder()
+              .setName("projects/project-9721/resources/resource-9721")
+              .build();
+      client.exportSBOM(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

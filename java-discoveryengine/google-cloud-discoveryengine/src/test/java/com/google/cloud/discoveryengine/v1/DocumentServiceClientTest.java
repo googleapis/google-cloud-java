@@ -543,6 +543,7 @@ public class DocumentServiceClientTest {
             .setUpdateMask(FieldMask.newBuilder().build())
             .setAutoGenerateIds(true)
             .setIdField("idField1629396127")
+            .setForceRefreshContent(true)
             .build();
 
     ImportDocumentsResponse actualResponse = client.importDocumentsAsync(request).get();
@@ -567,6 +568,7 @@ public class DocumentServiceClientTest {
     Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
     Assert.assertEquals(request.getAutoGenerateIds(), actualRequest.getAutoGenerateIds());
     Assert.assertEquals(request.getIdField(), actualRequest.getIdField());
+    Assert.assertEquals(request.getForceRefreshContent(), actualRequest.getForceRefreshContent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -589,6 +591,7 @@ public class DocumentServiceClientTest {
               .setUpdateMask(FieldMask.newBuilder().build())
               .setAutoGenerateIds(true)
               .setIdField("idField1629396127")
+              .setForceRefreshContent(true)
               .build();
       client.importDocumentsAsync(request).get();
       Assert.fail("No exception raised");

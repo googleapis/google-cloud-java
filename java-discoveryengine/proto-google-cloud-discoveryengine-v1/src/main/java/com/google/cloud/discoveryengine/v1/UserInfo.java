@@ -41,6 +41,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
   private UserInfo() {
     userId_ = "";
     userAgent_ = "";
+    timeZone_ = "";
   }
 
   @java.lang.Override
@@ -206,6 +207,57 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int TIME_ZONE_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object timeZone_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IANA time zone, e.g. Europe/Budapest.
+   * </pre>
+   *
+   * <code>string time_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The timeZone.
+   */
+  @java.lang.Override
+  public java.lang.String getTimeZone() {
+    java.lang.Object ref = timeZone_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      timeZone_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IANA time zone, e.g. Europe/Budapest.
+   * </pre>
+   *
+   * <code>string time_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for timeZone.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTimeZoneBytes() {
+    java.lang.Object ref = timeZone_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      timeZone_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -226,6 +278,9 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userAgent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userAgent_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, timeZone_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -240,6 +295,9 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userAgent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userAgent_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, timeZone_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -259,6 +317,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
 
     if (!getUserId().equals(other.getUserId())) return false;
     if (!getUserAgent().equals(other.getUserAgent())) return false;
+    if (!getTimeZone().equals(other.getTimeZone())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -274,6 +333,8 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getUserId().hashCode();
     hash = (37 * hash) + USER_AGENT_FIELD_NUMBER;
     hash = (53 * hash) + getUserAgent().hashCode();
+    hash = (37 * hash) + TIME_ZONE_FIELD_NUMBER;
+    hash = (53 * hash) + getTimeZone().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -415,6 +476,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       userId_ = "";
       userAgent_ = "";
+      timeZone_ = "";
       return this;
     }
 
@@ -456,6 +518,9 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.userAgent_ = userAgent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.timeZone_ = timeZone_;
       }
     }
 
@@ -514,6 +579,11 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getTimeZone().isEmpty()) {
+        timeZone_ = other.timeZone_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -552,6 +622,12 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                timeZone_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -879,6 +955,112 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       userAgent_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object timeZone_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IANA time zone, e.g. Europe/Budapest.
+     * </pre>
+     *
+     * <code>string time_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The timeZone.
+     */
+    public java.lang.String getTimeZone() {
+      java.lang.Object ref = timeZone_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        timeZone_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IANA time zone, e.g. Europe/Budapest.
+     * </pre>
+     *
+     * <code>string time_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for timeZone.
+     */
+    public com.google.protobuf.ByteString getTimeZoneBytes() {
+      java.lang.Object ref = timeZone_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        timeZone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IANA time zone, e.g. Europe/Budapest.
+     * </pre>
+     *
+     * <code>string time_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The timeZone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTimeZone(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      timeZone_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IANA time zone, e.g. Europe/Budapest.
+     * </pre>
+     *
+     * <code>string time_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTimeZone() {
+      timeZone_ = getDefaultInstance().getTimeZone();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IANA time zone, e.g. Europe/Budapest.
+     * </pre>
+     *
+     * <code>string time_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for timeZone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTimeZoneBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      timeZone_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

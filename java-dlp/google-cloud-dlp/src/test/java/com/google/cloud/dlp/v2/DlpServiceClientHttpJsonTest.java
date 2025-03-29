@@ -42,6 +42,7 @@ import com.google.cloud.dlp.v2.stub.HttpJsonDlpServiceStub;
 import com.google.common.collect.Lists;
 import com.google.privacy.dlp.v2.ActionDetails;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
+import com.google.privacy.dlp.v2.BigQueryTable;
 import com.google.privacy.dlp.v2.ByteContentItem;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.ColumnDataProfile;
@@ -122,6 +123,7 @@ import com.google.privacy.dlp.v2.StoredInfoTypeName;
 import com.google.privacy.dlp.v2.StoredInfoTypeVersion;
 import com.google.privacy.dlp.v2.TableDataProfile;
 import com.google.privacy.dlp.v2.TableDataProfileName;
+import com.google.privacy.dlp.v2.Tag;
 import com.google.privacy.dlp.v2.TransformationOverview;
 import com.google.privacy.dlp.v2.UniquenessScoreLevel;
 import com.google.privacy.dlp.v2.Value;
@@ -5672,7 +5674,9 @@ public class DlpServiceClientHttpJsonTest {
             .putAllResourceAttributes(new HashMap<String, Value>())
             .putAllResourceLabels(new HashMap<String, String>())
             .addAllFileStoreInfoTypeSummaries(new ArrayList<FileStoreInfoTypeSummary>())
+            .setSampleFindingsTable(BigQueryTable.newBuilder().build())
             .setFileStoreIsEmpty(true)
+            .addAllTags(new ArrayList<Tag>())
             .addAllRelatedResources(new ArrayList<RelatedResource>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -5745,7 +5749,9 @@ public class DlpServiceClientHttpJsonTest {
             .putAllResourceAttributes(new HashMap<String, Value>())
             .putAllResourceLabels(new HashMap<String, String>())
             .addAllFileStoreInfoTypeSummaries(new ArrayList<FileStoreInfoTypeSummary>())
+            .setSampleFindingsTable(BigQueryTable.newBuilder().build())
             .setFileStoreIsEmpty(true)
+            .addAllTags(new ArrayList<Tag>())
             .addAllRelatedResources(new ArrayList<RelatedResource>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -5906,6 +5912,8 @@ public class DlpServiceClientHttpJsonTest {
             .setProfileLastGenerated(Timestamp.newBuilder().build())
             .putAllResourceLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setSampleFindingsTable(BigQueryTable.newBuilder().build())
+            .addAllTags(new ArrayList<Tag>())
             .addAllRelatedResources(new ArrayList<RelatedResource>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -5982,6 +5990,8 @@ public class DlpServiceClientHttpJsonTest {
             .setProfileLastGenerated(Timestamp.newBuilder().build())
             .putAllResourceLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setSampleFindingsTable(BigQueryTable.newBuilder().build())
+            .addAllTags(new ArrayList<Tag>())
             .addAllRelatedResources(new ArrayList<RelatedResource>())
             .build();
     mockService.addResponse(expectedResponse);

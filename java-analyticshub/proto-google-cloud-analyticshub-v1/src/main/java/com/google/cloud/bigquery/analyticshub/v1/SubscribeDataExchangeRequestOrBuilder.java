@@ -90,6 +90,48 @@ public interface SubscribeDataExchangeRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. BigQuery destination dataset to create for the subscriber.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the destinationDataset field is set.
+   */
+  boolean hasDestinationDataset();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. BigQuery destination dataset to create for the subscriber.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The destinationDataset.
+   */
+  com.google.cloud.bigquery.analyticshub.v1.DestinationDataset getDestinationDataset();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. BigQuery destination dataset to create for the subscriber.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetOrBuilder
+      getDestinationDatasetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. Name of the subscription to create.
    * e.g. `subscription1`
    * </pre>
