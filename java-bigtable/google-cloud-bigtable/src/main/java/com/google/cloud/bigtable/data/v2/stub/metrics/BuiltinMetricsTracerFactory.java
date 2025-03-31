@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.APPLICATION_BLOCKING_LATENCIES_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ATTEMPT_LATENCIES2_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ATTEMPT_LATENCIES_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLIENT_BLOCKING_LATENCIES_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CONNECTIVITY_ERROR_COUNT_NAME;
@@ -52,6 +53,7 @@ public class BuiltinMetricsTracerFactory extends BaseApiTracerFactory {
 
   private final DoubleHistogram operationLatenciesHistogram;
   private final DoubleHistogram attemptLatenciesHistogram;
+  private final DoubleHistogram attemptLatencies2Histogram;
   private final DoubleHistogram serverLatenciesHistogram;
   private final DoubleHistogram firstResponseLatenciesHistogram;
   private final DoubleHistogram clientBlockingLatenciesHistogram;
@@ -80,6 +82,12 @@ public class BuiltinMetricsTracerFactory extends BaseApiTracerFactory {
         meter
             .histogramBuilder(ATTEMPT_LATENCIES_NAME)
             .setDescription("Client observed latency per RPC attempt.")
+            .setUnit(MILLISECOND)
+            .build();
+    attemptLatencies2Histogram =
+        meter
+            .histogramBuilder(ATTEMPT_LATENCIES2_NAME)
+            .setDescription("Client observed latency per RPC attempt with transport labels.")
             .setUnit(MILLISECOND)
             .build();
     serverLatenciesHistogram =
@@ -140,6 +148,7 @@ public class BuiltinMetricsTracerFactory extends BaseApiTracerFactory {
         attributes,
         operationLatenciesHistogram,
         attemptLatenciesHistogram,
+        attemptLatencies2Histogram,
         serverLatenciesHistogram,
         firstResponseLatenciesHistogram,
         clientBlockingLatenciesHistogram,

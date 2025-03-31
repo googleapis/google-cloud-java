@@ -23,24 +23,34 @@ import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConst
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.STATUS_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.STREAMING_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.TABLE_ID_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.TRANSPORT_REGION;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.TRANSPORT_SUBZONE;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.TRANSPORT_TYPE;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.TRANSPORT_ZONE;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ZONE_ID_KEY;
 
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.retrying.ServerStreamingAttemptException;
 import com.google.api.gax.tracing.SpanName;
+import com.google.auto.value.AutoValue;
 import com.google.cloud.bigtable.Version;
 import com.google.common.base.Stopwatch;
+import com.google.common.base.Strings;
 import com.google.common.math.IntMath;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import io.grpc.Deadline;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.metrics.DoubleHistogram;
 import io.opentelemetry.api.metrics.LongCounter;
 import java.time.Duration;
+import java.util.Map;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
@@ -49,8 +59,23 @@ import javax.annotation.Nullable;
  * bigtable.googleapis.com/client namespace
  */
 class BuiltinMetricsTracer extends BigtableTracer {
+  @AutoValue
+  abstract static class TransportAttrs {
+    @Nullable
+    abstract String getLocality();
+
+    @Nullable
+    abstract String getBackendService();
+
+    static TransportAttrs create(@Nullable String locality, @Nullable String backendService) {
+      return new AutoValue_BuiltinMetricsTracer_TransportAttrs(locality, backendService);
+    }
+  }
 
   private static final Logger logger = Logger.getLogger(BuiltinMetricsTracer.class.getName());
+  private static final Gson GSON = new Gson();
+  private static final TypeToken<Map<String, String>> LOCALITY_TYPE =
+      new TypeToken<Map<String, String>>() {};
 
   private static final String NAME = "java-bigtable/" + Version.VERSION;
   private final OperationType operationType;
@@ -95,12 +120,15 @@ class BuiltinMetricsTracer extends BigtableTracer {
   private Deadline operationDeadline = null;
   private volatile long remainingDeadlineAtAttemptStart = 0;
 
+  private TransportAttrs transportAttrs = null;
+
   // OpenCensus (and server) histogram buckets use [start, end), however OpenTelemetry uses (start,
   // end]. To work around this, we measure all the latencies in nanoseconds and convert them
   // to milliseconds and use DoubleHistogram. This should minimize the chance of a data
   // point fall on the bucket boundary that causes off by one errors.
   private final DoubleHistogram operationLatenciesHistogram;
   private final DoubleHistogram attemptLatenciesHistogram;
+  private final DoubleHistogram attemptLatencies2Histogram;
   private final DoubleHistogram serverLatenciesHistogram;
   private final DoubleHistogram firstResponseLatenciesHistogram;
   private final DoubleHistogram clientBlockingLatenciesHistogram;
@@ -115,6 +143,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
       Attributes attributes,
       DoubleHistogram operationLatenciesHistogram,
       DoubleHistogram attemptLatenciesHistogram,
+      DoubleHistogram attemptLatencies2Histogram,
       DoubleHistogram serverLatenciesHistogram,
       DoubleHistogram firstResponseLatenciesHistogram,
       DoubleHistogram clientBlockingLatenciesHistogram,
@@ -128,6 +157,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
 
     this.operationLatenciesHistogram = operationLatenciesHistogram;
     this.attemptLatenciesHistogram = attemptLatenciesHistogram;
+    this.attemptLatencies2Histogram = attemptLatencies2Histogram;
     this.serverLatenciesHistogram = serverLatenciesHistogram;
     this.firstResponseLatenciesHistogram = firstResponseLatenciesHistogram;
     this.clientBlockingLatenciesHistogram = clientBlockingLatenciesHistogram;
@@ -302,6 +332,11 @@ class BuiltinMetricsTracer extends BigtableTracer {
   }
 
   @Override
+  public void setTransportAttrs(TransportAttrs attrs) {
+    this.transportAttrs = attrs;
+  }
+
+  @Override
   public void batchRequestThrottled(long throttledTimeNanos) {
     totalClientBlockingTime.addAndGet(java.time.Duration.ofNanos(throttledTimeNanos).toMillis());
   }
@@ -416,6 +451,35 @@ class BuiltinMetricsTracer extends BigtableTracer {
 
     attemptLatenciesHistogram.record(
         convertToMs(attemptTimer.elapsed(TimeUnit.NANOSECONDS)), attributes);
+
+    String transportType = "cloudpath";
+    String transportRegion = "";
+    String transportZone = "";
+    String transportSubzone = "";
+
+    try {
+      if (transportAttrs != null && !Strings.isNullOrEmpty(transportAttrs.getLocality())) {
+        // only directpath has locality
+        transportType = "directpath";
+        Map<String, String> localityMap =
+            GSON.fromJson(transportAttrs.getLocality(), LOCALITY_TYPE);
+        transportRegion = localityMap.getOrDefault("region", "");
+        transportZone = localityMap.getOrDefault("zone", "");
+        transportSubzone = localityMap.getOrDefault("sub_zone", "");
+      }
+    } catch (RuntimeException e) {
+      logger.log(
+          Level.WARNING, "Failed to parse transport locality: " + transportAttrs.getLocality(), e);
+    }
+    attemptLatencies2Histogram.record(
+        convertToMs(attemptTimer.elapsed(TimeUnit.NANOSECONDS)),
+        attributes
+            .toBuilder()
+            .put(TRANSPORT_TYPE, transportType)
+            .put(TRANSPORT_REGION, transportRegion)
+            .put(TRANSPORT_ZONE, transportZone)
+            .put(TRANSPORT_SUBZONE, transportSubzone)
+            .build());
 
     // When operationDeadline is set, it's possible that the deadline is passed by the time we send
     // a new attempt. In this case we'll record 0.

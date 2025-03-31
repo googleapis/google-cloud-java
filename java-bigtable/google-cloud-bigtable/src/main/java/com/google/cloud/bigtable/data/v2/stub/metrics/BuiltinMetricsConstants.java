@@ -50,11 +50,18 @@ public class BuiltinMetricsConstants {
   static final AttributeKey<String> STATUS_KEY = AttributeKey.stringKey("status");
   static final AttributeKey<String> CLIENT_UID_KEY = AttributeKey.stringKey("client_uid");
 
+  static final AttributeKey<String> TRANSPORT_TYPE = AttributeKey.stringKey("transport_type");
+  static final AttributeKey<String> TRANSPORT_REGION = AttributeKey.stringKey("transport_region");
+  static final AttributeKey<String> TRANSPORT_ZONE = AttributeKey.stringKey("transport_zone");
+  static final AttributeKey<String> TRANSPORT_SUBZONE = AttributeKey.stringKey("transport_subzone");
+
   public static final String METER_NAME = "bigtable.googleapis.com/internal/client/";
 
   // Metric names
   public static final String OPERATION_LATENCIES_NAME = "operation_latencies";
   public static final String ATTEMPT_LATENCIES_NAME = "attempt_latencies";
+  // Temporary workaround for not being able to add new labels to ATTEMPT_LATENCIES_NAME
+  public static final String ATTEMPT_LATENCIES2_NAME = "attempt_latencies2";
   static final String RETRY_COUNT_NAME = "retry_count";
   static final String CONNECTIVITY_ERROR_COUNT_NAME = "connectivity_error_count";
   static final String SERVER_LATENCIES_NAME = "server_latencies";
@@ -210,6 +217,22 @@ public class BuiltinMetricsConstants {
         ImmutableSet.<AttributeKey>builder()
             .addAll(COMMON_ATTRIBUTES)
             .add(STREAMING_KEY, STATUS_KEY)
+            .build());
+    defineView(
+        views,
+        ATTEMPT_LATENCIES2_NAME,
+        AGGREGATION_WITH_MILLIS_HISTOGRAM,
+        InstrumentType.HISTOGRAM,
+        "ms",
+        ImmutableSet.<AttributeKey>builder()
+            .addAll(COMMON_ATTRIBUTES)
+            .add(
+                STREAMING_KEY,
+                STATUS_KEY,
+                TRANSPORT_TYPE,
+                TRANSPORT_REGION,
+                TRANSPORT_ZONE,
+                TRANSPORT_SUBZONE)
             .build());
     defineView(
         views,

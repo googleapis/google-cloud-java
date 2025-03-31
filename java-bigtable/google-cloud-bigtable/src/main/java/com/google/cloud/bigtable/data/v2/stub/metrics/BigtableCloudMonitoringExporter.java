@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.APPLICATION_BLOCKING_LATENCIES_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ATTEMPT_LATENCIES2_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ATTEMPT_LATENCIES_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLIENT_BLOCKING_LATENCIES_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CONNECTIVITY_ERROR_COUNT_NAME;
@@ -284,6 +285,7 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
         ImmutableSet.of(
                 OPERATION_LATENCIES_NAME,
                 ATTEMPT_LATENCIES_NAME,
+                ATTEMPT_LATENCIES2_NAME,
                 SERVER_LATENCIES_NAME,
                 FIRST_RESPONSE_LATENCIES_NAME,
                 CLIENT_BLOCKING_LATENCIES_NAME,

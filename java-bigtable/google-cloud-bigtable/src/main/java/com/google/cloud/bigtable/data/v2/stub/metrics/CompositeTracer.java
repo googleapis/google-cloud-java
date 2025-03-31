@@ -219,6 +219,13 @@ class CompositeTracer extends BigtableTracer {
   }
 
   @Override
+  public void setTransportAttrs(BuiltinMetricsTracer.TransportAttrs attrs) {
+    for (BigtableTracer tracer : bigtableTracers) {
+      tracer.setTransportAttrs(attrs);
+    }
+  }
+
+  @Override
   public void onRequest(int requestCount) {
     for (BigtableTracer tracer : bigtableTracers) {
       tracer.onRequest(requestCount);
