@@ -64,6 +64,7 @@ public class BuiltinMetricsConstants {
   static final String CLIENT_BLOCKING_LATENCIES_NAME = "throttling_latencies";
   static final String PER_CONNECTION_ERROR_COUNT_NAME = "per_connection_error_count";
 
+  // Start allow list of metrics that will be exported as internal
   public static final Map<String, Set<String>> GRPC_METRICS =
       ImmutableMap.<String, Set<String>>builder()
           .put(
@@ -95,6 +96,7 @@ public class BuiltinMetricsConstants {
       ImmutableSet.of(PER_CONNECTION_ERROR_COUNT_NAME).stream()
           .map(m -> METER_NAME + m)
           .collect(ImmutableSet.toImmutableSet());
+  // End allow list of metrics that will be exported
 
   // Buckets under 100,000 are identical to buckets for server side metrics handler_latencies.
   // Extending client side bucket to up to 3,200,000.
