@@ -38,6 +38,7 @@ public interface CreateBackupRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreateBackupRequestOrBuilder
    * @return The backupId.
    */
   java.lang.String getBackupId();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface CreateBackupRequestOrBuilder
    * @return Whether the backup field is set.
    */
   boolean hasBackup();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface CreateBackupRequestOrBuilder
    * @return The backup.
    */
   com.google.cloud.alloydb.v1.Backup getBackup();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface CreateBackupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

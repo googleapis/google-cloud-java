@@ -33,6 +33,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1.PromoteClusterRequest)
     PromoteClusterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PromoteClusterRequest.newBuilder() to construct.
   private PromoteClusterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -201,6 +206,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -226,6 +232,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -254,6 +261,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -457,6 +465,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -684,6 +693,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -709,6 +719,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -734,6 +745,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -758,6 +770,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +791,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +819,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -839,6 +854,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -873,6 +889,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -906,6 +923,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +953,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -971,6 +990,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -995,6 +1015,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1019,6 +1040,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1042,6 +1064,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1084,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1087,6 +1111,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1103,6 +1128,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1123,6 +1149,7 @@ public final class PromoteClusterRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

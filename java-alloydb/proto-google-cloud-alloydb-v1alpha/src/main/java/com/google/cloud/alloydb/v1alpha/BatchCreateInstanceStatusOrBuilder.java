@@ -43,6 +43,7 @@ public interface BatchCreateInstanceStatusOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface BatchCreateInstanceStatusOrBuilder
    * @return The errorMsg.
    */
   java.lang.String getErrorMsg();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface BatchCreateInstanceStatusOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface BatchCreateInstanceStatusOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public interface BatchCreateInstanceStatusOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    * <code>.google.cloud.alloydb.v1alpha.Instance.InstanceType type = 3;</code>
    *

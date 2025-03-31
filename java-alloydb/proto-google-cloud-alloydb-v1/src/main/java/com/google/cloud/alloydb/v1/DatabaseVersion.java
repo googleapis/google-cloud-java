@@ -73,6 +73,7 @@ public enum DatabaseVersion implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DATABASE_VERSION_UNSPECIFIED = 0;</code>
    */
   public static final int DATABASE_VERSION_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public enum DatabaseVersion implements com.google.protobuf.ProtocolMessageEnum {
    * <code>POSTGRES_13 = 1 [deprecated = true];</code>
    */
   @java.lang.Deprecated public static final int POSTGRES_13_VALUE = 1;
+
   /**
    *
    *
