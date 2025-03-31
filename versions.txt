@@ -1,7 +1,7 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-java:1.54.1:1.54.1
+google-cloud-java:1.54.2:1.54.2
 google-cloud-accessapproval:2.61.0:2.61.0
 grpc-google-cloud-accessapproval-v1:2.61.0:2.61.0
 proto-google-cloud-accessapproval-v1:2.61.0:2.61.0
@@ -776,9 +776,9 @@ grpc-google-cloud-developerconnect-v1:0.17.0:0.17.0
 google-cloud-iap:0.16.0:0.16.0
 proto-google-cloud-iap-v1:0.16.0:0.16.0
 grpc-google-cloud-iap-v1:0.16.0:0.16.0
-google-cloud-managedkafka:0.16.0:0.16.0
-proto-google-cloud-managedkafka-v1:0.16.0:0.16.0
-grpc-google-cloud-managedkafka-v1:0.16.0:0.16.0
+google-cloud-managedkafka:0.16.1:0.16.1
+proto-google-cloud-managedkafka-v1:0.16.1:0.16.1
+grpc-google-cloud-managedkafka-v1:0.16.1:0.16.1
 google-cloud-networkservices:0.16.0:0.16.0
 proto-google-cloud-networkservices-v1:0.16.0:0.16.0
 grpc-google-cloud-networkservices-v1:0.16.0:0.16.0
