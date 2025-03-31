@@ -476,6 +476,21 @@ class MessageDispatcher {
     synchronized (outstandingReceipts) {
       outstandingReceipts.remove(ackRequestData.getAckId());
     }
+
+    // When notifying that an ack/modack has failed, due to a non-retryable error,
+    // we attempt to remove the message from the pending messages and release it from the flow
+    // controller so that we no longer attempt to extend the message's ack deadline.
+    if (pendingMessages.remove(ackRequestData.getAckId()) == null) {
+      /*
+       * We're forgetting the message for the second time. This may occur on modacks because the message passed
+       * its total expiration and was forgotten and then the user finishes working on the message
+       * which forgets the message again. Additionally, when a failed ack occurs, we will have already forgotten
+       * the message, so we don't need to here. Turns the second forget into a no-op so we don't free twice.
+       */
+      return;
+    }
+    flowController.release(1, ackRequestData.getMessageWrapper().getSerializedSize());
+    messagesWaiter.incrementPendingCount(-1);
   }
 
   private void processBatch(List<OutstandingMessage> batch) {

@@ -133,6 +133,10 @@ public class PubsubMessageWrapper {
     return message.getData().size();
   }
 
+  int getSerializedSize() {
+    return message.getSerializedSize();
+  }
+
   String getOrderingKey() {
     return message.getOrderingKey();
   }

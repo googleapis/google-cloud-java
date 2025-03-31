@@ -25,6 +25,26 @@ final class StatusUtil {
     // Static class, not instantiable.
   }
 
+  static AckResponse getFailedAckResponse(Throwable t) {
+    if (!(t instanceof ApiException)) {
+      return AckResponse.OTHER;
+    }
+
+    ApiException apiException = (ApiException) t;
+    AckResponse failedAckResponse;
+    switch (apiException.getStatusCode().getCode()) {
+      case FAILED_PRECONDITION:
+        failedAckResponse = AckResponse.FAILED_PRECONDITION;
+        break;
+      case PERMISSION_DENIED:
+        failedAckResponse = AckResponse.PERMISSION_DENIED;
+        break;
+      default:
+        failedAckResponse = AckResponse.OTHER;
+    }
+    return failedAckResponse;
+  }
+
   static boolean isRetryable(Throwable error) {
     if (!(error instanceof ApiException)) {
       return true;

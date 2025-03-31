@@ -17,6 +17,7 @@
 package com.google.cloud.pubsub.v1;
 
 import static org.junit.Assert.*;
+import static org.mockito.ArgumentMatchers.argThat;
 import static org.mockito.Mockito.*;
 
 import com.google.api.core.ApiFutures;
@@ -24,6 +25,8 @@ import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.Distribution;
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.pubsub.v1.stub.SubscriberStub;
 import com.google.common.collect.Lists;
@@ -32,6 +35,7 @@ import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.rpc.ErrorInfo;
 import com.google.rpc.Status;
+import io.grpc.Status.Code;
 import io.grpc.StatusException;
 import io.grpc.protobuf.StatusProto;
 import java.time.Duration;
@@ -65,6 +69,8 @@ public class StreamingSubscriberConnectionTest {
       "MOCK-ACK-ID-TRANSIENT-FAILURE-SERVICE-UNAVAILABLE-THEN-SUCCESS";
   private static final String MOCK_ACK_ID_INVALID = "MOCK-ACK-ID-INVALID";
   private static final String MOCK_ACK_ID_OTHER = "MOCK-ACK-ID-OTHER";
+  private static final String MOCK_ACK_ID_NO_METADATA_MAP_INTERNAL_ERROR_THEN_PERMISSION_DENIED =
+      "MOCK-ACK-ID-NO-METADATA-MAP-INTERNAL-ERROR";
 
   private static final String PERMANENT_FAILURE_INVALID_ACK_ID = "PERMANENT_FAILURE_INVALID_ACK_ID";
   private static final String TRANSIENT_FAILURE_UNORDERED_ACK_ID =
@@ -392,6 +398,62 @@ public class StreamingSubscriberConnectionTest {
           AckResponse.SUCCESSFUL, messageFutureTransientFailureServiceUnavailableThenSuccess.get());
       assertEquals(
           AckResponse.SUCCESSFUL, messageFutureTransientFailureUnorderedAckIdThenSuccess.get());
+    } catch (InterruptedException | ExecutionException e) {
+      // In case something goes wrong retrieving the futures
+      throw new AssertionError();
+    }
+  }
+
+  @Test
+  public void testSendAckOperationsExactlyOnceEnabledErrorWithEmptyMetadataMap() {
+    // Setup
+
+    // The list(s) of ackIds allows us to mock the grpc response(s)
+    List<String> ackIdsRequest = new ArrayList<>();
+    List<AckRequestData> ackRequestDataList = new ArrayList<AckRequestData>();
+
+    // Initial) INTERNAL error, retryable
+    // Retry) PERMISSION_DENIED, not retryable
+    SettableApiFuture<AckResponse> messageInternalErrorThenPermissionDenied =
+        SettableApiFuture.create();
+    ackRequestDataList.add(
+        AckRequestData.newBuilder(MOCK_ACK_ID_NO_METADATA_MAP_INTERNAL_ERROR_THEN_PERMISSION_DENIED)
+            .setMessageFuture(messageInternalErrorThenPermissionDenied)
+            .build());
+    ackIdsRequest.add(MOCK_ACK_ID_NO_METADATA_MAP_INTERNAL_ERROR_THEN_PERMISSION_DENIED);
+
+    // Build our request so we can set our mock responses
+    AcknowledgeRequest acknowledgeRequest =
+        AcknowledgeRequest.newBuilder()
+            .setSubscription(MOCK_SUBSCRIPTION_NAME)
+            .addAllAckIds(ackIdsRequest)
+            .build();
+
+    ApiException internalError =
+        new ApiException("internal", null, GrpcStatusCode.of(Code.INTERNAL), true);
+    ApiException permissionDeniedError =
+        new ApiException(
+            "permission_denied", null, GrpcStatusCode.of(Code.PERMISSION_DENIED), false);
+    // Set mock grpc responses
+    when(mockSubscriberStub.acknowledgeCallable().futureCall(acknowledgeRequest))
+        .thenReturn(ApiFutures.immediateFailedFuture(internalError))
+        .thenReturn(ApiFutures.immediateFailedFuture(permissionDeniedError));
+
+    // Instantiate class and run operation(s)
+    StreamingSubscriberConnection streamingSubscriberConnection =
+        getStreamingSubscriberConnection(true);
+
+    streamingSubscriberConnection.sendAckOperations(ackRequestDataList);
+
+    // Backoff
+    systemExecutor.advanceTime(Duration.ofMillis(200));
+
+    // Assert expected behavior;
+    verify(mockSubscriberStub.acknowledgeCallable(), times(2)).futureCall(acknowledgeRequest);
+    verify(mockSubscriberStub, never()).modifyAckDeadlineCallable();
+
+    try {
+      assertEquals(AckResponse.PERMISSION_DENIED, messageInternalErrorThenPermissionDenied.get());
     } catch (InterruptedException | ExecutionException e) {
       // In case something goes wrong retrieving the futures
       throw new AssertionError();

@@ -408,21 +408,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     AckResponse ackResponse;
 
     if (getExactlyOnceDeliveryEnabled()) {
-      if (!(t instanceof ApiException)) {
-        ackResponse = AckResponse.OTHER;
-      }
-
-      ApiException apiException = (ApiException) t;
-      switch (apiException.getStatusCode().getCode()) {
-        case FAILED_PRECONDITION:
-          ackResponse = AckResponse.FAILED_PRECONDITION;
-          break;
-        case PERMISSION_DENIED:
-          ackResponse = AckResponse.PERMISSION_DENIED;
-          break;
-        default:
-          ackResponse = AckResponse.OTHER;
-      }
+      ackResponse = StatusUtil.getFailedAckResponse(t);
     } else {
       // We should set success regardless if ExactlyOnceDelivery is not enabled
       ackResponse = AckResponse.SUCCESSFUL;
@@ -504,7 +490,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                 modackRequestData.getIsReceiptModack());
         ApiFutureCallback<Empty> callback =
             getCallback(
-                modackRequestData.getAckRequestData(),
+                ackRequestDataInRequestList,
                 deadlineExtensionSeconds,
                 true,
                 currentBackoffMillis,
@@ -611,23 +597,14 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
         List<AckRequestData> ackRequestDataArrayRetryList = new ArrayList<>();
         try {
           Map<String, String> metadataMap = getMetadataMapFromThrowable(t);
-          ackRequestDataList.forEach(
-              ackRequestData -> {
-                String ackId = ackRequestData.getAckId();
-                if (metadataMap.containsKey(ackId)) {
-                  // An error occured
-                  String errorMessage = metadataMap.get(ackId);
-                  if (errorMessage.startsWith(TRANSIENT_FAILURE_METADATA_PREFIX)) {
-                    // Retry all "TRANSIENT_*" error messages - do not set message future
-                    logger.log(Level.INFO, "Transient error message, will resend", errorMessage);
-                    ackRequestDataArrayRetryList.add(ackRequestData);
-                  } else if (errorMessage.equals(PERMANENT_FAILURE_INVALID_ACK_ID_METADATA)) {
-                    // Permanent failure, send
-                    logger.log(
-                        Level.INFO,
-                        "Permanent error invalid ack id message, will not resend",
-                        errorMessage);
-                    ackRequestData.setResponse(AckResponse.INVALID, setResponseOnSuccess);
+          if (metadataMap.isEmpty()) {
+            String operation = isModack ? "ModifyAckDeadline" : "Acknowledge";
+            if (!StatusUtil.isRetryable(t)) {
+              logger.log(Level.WARNING, "Un-retryable error on " + operation, t);
+              ackRequestDataList.forEach(
+                  ackRequestData -> {
+                    AckResponse failedAckResponse = StatusUtil.getFailedAckResponse(t);
+                    ackRequestData.setResponse(failedAckResponse, setResponseOnSuccess);
                     messageDispatcher.notifyAckFailed(ackRequestData);
                     tracer.addEndRpcEvent(
                         ackRequestData.getMessageWrapper(),
@@ -635,35 +612,76 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                         isModack,
                         deadlineExtensionSeconds);
                     tracer.setSubscriberSpanException(
-                        ackRequestData.getMessageWrapper(), t, "Invalid ack ID");
-                  } else {
-                    logger.log(Level.INFO, "Unknown error message, will not resend", errorMessage);
-                    ackRequestData.setResponse(AckResponse.OTHER, setResponseOnSuccess);
-                    messageDispatcher.notifyAckFailed(ackRequestData);
-                    tracer.addEndRpcEvent(
-                        ackRequestData.getMessageWrapper(),
-                        rpcSpanSampled,
-                        isModack,
-                        deadlineExtensionSeconds);
-                    tracer.setSubscriberSpanException(
-                        ackRequestData.getMessageWrapper(), t, "Unknown error message");
+                        ackRequestData.getMessageWrapper(), t, "Error with no metadata map");
                     ackRequestData
                         .getMessageWrapper()
-                        .setSubscriberSpanException(t, "Unknown error message");
+                        .setSubscriberSpanException(t, "Error with no metadata map");
+                    pendingRequests.remove(ackRequestData);
+                  });
+            } else {
+              logger.log(Level.INFO, "Retryable error on " + operation + ", will resend", t);
+              ackRequestDataArrayRetryList.addAll(ackRequestDataList);
+              ackRequestDataList.forEach(
+                  ackRequestData -> {
+                    pendingRequests.remove(ackRequestData);
+                  });
+            }
+          } else {
+            ackRequestDataList.forEach(
+                ackRequestData -> {
+                  String ackId = ackRequestData.getAckId();
+                  if (metadataMap.containsKey(ackId)) {
+                    // An error occured
+                    String errorMessage = metadataMap.get(ackId);
+                    if (errorMessage.startsWith(TRANSIENT_FAILURE_METADATA_PREFIX)) {
+                      // Retry all "TRANSIENT_*" error messages - do not set message future
+                      logger.log(Level.INFO, "Transient error message, will resend", errorMessage);
+                      ackRequestDataArrayRetryList.add(ackRequestData);
+                    } else if (errorMessage.equals(PERMANENT_FAILURE_INVALID_ACK_ID_METADATA)) {
+                      // Permanent failure
+                      logger.log(
+                          Level.INFO,
+                          "Permanent error invalid ack id message, will not resend",
+                          errorMessage);
+                      ackRequestData.setResponse(AckResponse.INVALID, setResponseOnSuccess);
+                      messageDispatcher.notifyAckFailed(ackRequestData);
+                      tracer.addEndRpcEvent(
+                          ackRequestData.getMessageWrapper(),
+                          rpcSpanSampled,
+                          isModack,
+                          deadlineExtensionSeconds);
+                      tracer.setSubscriberSpanException(
+                          ackRequestData.getMessageWrapper(), t, "Invalid ack ID");
+                    } else {
+                      logger.log(
+                          Level.INFO, "Unknown error message, will not resend", errorMessage);
+                      ackRequestData.setResponse(AckResponse.OTHER, setResponseOnSuccess);
+                      messageDispatcher.notifyAckFailed(ackRequestData);
+                      tracer.addEndRpcEvent(
+                          ackRequestData.getMessageWrapper(),
+                          rpcSpanSampled,
+                          isModack,
+                          deadlineExtensionSeconds);
+                      tracer.setSubscriberSpanException(
+                          ackRequestData.getMessageWrapper(), t, "Unknown error message");
+                      ackRequestData
+                          .getMessageWrapper()
+                          .setSubscriberSpanException(t, "Unknown error message");
+                    }
+                  } else {
+                    ackRequestData.setResponse(AckResponse.SUCCESSFUL, setResponseOnSuccess);
+                    messageDispatcher.notifyAckSuccess(ackRequestData);
+                    tracer.endSubscriberSpan(ackRequestData.getMessageWrapper());
+                    tracer.addEndRpcEvent(
+                        ackRequestData.getMessageWrapper(),
+                        rpcSpanSampled,
+                        isModack,
+                        deadlineExtensionSeconds);
                   }
-                } else {
-                  ackRequestData.setResponse(AckResponse.SUCCESSFUL, setResponseOnSuccess);
-                  messageDispatcher.notifyAckSuccess(ackRequestData);
-                  tracer.endSubscriberSpan(ackRequestData.getMessageWrapper());
-                  tracer.addEndRpcEvent(
-                      ackRequestData.getMessageWrapper(),
-                      rpcSpanSampled,
-                      isModack,
-                      deadlineExtensionSeconds);
-                }
-                // Remove from our pending
-                pendingRequests.remove(ackRequestData);
-              });
+                  // Remove from our pending
+                  pendingRequests.remove(ackRequestData);
+                });
+          }
         } catch (InvalidProtocolBufferException e) {
           // If we fail to parse out the errorInfo, we should retry all
           logger.log(
