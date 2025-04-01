@@ -173,10 +173,8 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
 
     // Skips exporting if there's none
     if (bigtableTimeSeries.isEmpty()) {
-      System.out.println("skipping empty metrics: " + this.exporterName);
       return CompletableResultCode.ofSuccess();
     }
-    System.out.println(bigtableTimeSeries);
 
     CompletableResultCode exportCode = new CompletableResultCode();
     bigtableTimeSeries.forEach(
