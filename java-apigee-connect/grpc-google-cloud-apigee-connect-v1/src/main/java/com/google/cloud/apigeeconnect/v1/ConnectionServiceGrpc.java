@@ -96,19 +96,6 @@ public final class ConnectionServiceGrpc {
     return ConnectionServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static ConnectionServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<ConnectionServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<ConnectionServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public ConnectionServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new ConnectionServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return ConnectionServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -219,41 +206,6 @@ public final class ConnectionServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ConnectionService.
-   *
-   * <pre>
-   * Service Interface for the Apigee Connect connection management APIs.
-   * </pre>
-   */
-  public static final class ConnectionServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<ConnectionServiceBlockingV2Stub> {
-    private ConnectionServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected ConnectionServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new ConnectionServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists connections that are currently active for the given Apigee Connect
-     * endpoint.
-     * </pre>
-     */
-    public com.google.cloud.apigeeconnect.v1.ListConnectionsResponse listConnections(
-        com.google.cloud.apigeeconnect.v1.ListConnectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListConnectionsMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service ConnectionService.
    *
    * <pre>
    * Service Interface for the Apigee Connect connection management APIs.

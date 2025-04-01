@@ -94,19 +94,6 @@ public final class TetherGrpc {
     return TetherStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static TetherBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<TetherBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<TetherBlockingV2Stub>() {
-          @java.lang.Override
-          public TetherBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new TetherBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return TetherBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -226,49 +213,6 @@ public final class TetherGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Tether.
-   *
-   * <pre>
-   * Tether provides a way for the control plane to send HTTP API requests to
-   * services in data planes that runs in a remote datacenter without
-   * requiring customers to open firewalls on their runtime plane.
-   * </pre>
-   */
-  public static final class TetherBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<TetherBlockingV2Stub> {
-    private TetherBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected TetherBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new TetherBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Egress streams egress requests and responses. Logically, this is not
-     * actually a streaming request, but uses streaming as a mechanism to flip
-     * the client-server relationship of gRPC so that the server can act as a
-     * client.
-     * The listener, the RPC server, accepts connections from the dialer,
-     * the RPC client.
-     * The listener streams http requests and the dialer streams http responses.
-     * </pre>
-     */
-    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
-    public io.grpc.stub.BlockingClientCall<
-            com.google.cloud.apigeeconnect.v1.EgressResponse,
-            com.google.cloud.apigeeconnect.v1.EgressRequest>
-        egress() {
-      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
-          getChannel(), getEgressMethod(), getCallOptions());
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service Tether.
    *
    * <pre>
    * Tether provides a way for the control plane to send HTTP API requests to
