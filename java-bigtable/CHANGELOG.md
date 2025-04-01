@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.57.3](https://github.com/googleapis/java-bigtable/compare/v2.57.2...v2.57.3) (2025-04-01)
+
+
+### Bug Fixes
+
+* Remove debug messages ([#2552](https://github.com/googleapis/java-bigtable/issues/2552)) ([6359834](https://github.com/googleapis/java-bigtable/commit/63598346ca39767d59d254fce2c718d1258e27d5))
+
 ## [2.57.2](https://github.com/googleapis/java-bigtable/compare/v2.57.1...v2.57.2) (2025-03-31)
 
 
