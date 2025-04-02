@@ -16,24 +16,38 @@
 
 package com.google.cloud.alloydb.v1beta.samples;
 
-// [START alloydb_v1beta_generated_AlloyDBAdmin_Create_SetCredentialsProvider1_sync]
-import com.google.cloud.alloydb.v1beta.AlloyDBAdminClient;
+// [START alloydb_v1beta_generated_AlloyDBAdminSettings_CreateCluster_sync]
+import com.google.api.gax.longrunning.OperationalTimedPollAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.TimedRetryAlgorithm;
 import com.google.cloud.alloydb.v1beta.AlloyDBAdminSettings;
+import java.time.Duration;
 
-public class SyncCreateSetCredentialsProvider1 {
+public class SyncCreateCluster {
 
   public static void main(String[] args) throws Exception {
-    syncCreateSetCredentialsProvider1();
+    syncCreateCluster();
   }
 
-  public static void syncCreateSetCredentialsProvider1() throws Exception {
+  public static void syncCreateCluster() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    AlloyDBAdminSettings alloyDBAdminSettings = AlloyDBAdminSettings.newHttpJsonBuilder().build();
-    AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create(alloyDBAdminSettings);
+    AlloyDBAdminSettings.Builder alloyDBAdminSettingsBuilder = AlloyDBAdminSettings.newBuilder();
+    TimedRetryAlgorithm timedRetryAlgorithm =
+        OperationalTimedPollAlgorithm.create(
+            RetrySettings.newBuilder()
+                .setInitialRetryDelayDuration(Duration.ofMillis(500))
+                .setRetryDelayMultiplier(1.5)
+                .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+                .setTotalTimeoutDuration(Duration.ofHours(24))
+                .build());
+    alloyDBAdminSettingsBuilder
+        .createClusterOperationSettings()
+        .setPollingAlgorithm(timedRetryAlgorithm)
+        .build();
   }
 }
-// [END alloydb_v1beta_generated_AlloyDBAdmin_Create_SetCredentialsProvider1_sync]
+// [END alloydb_v1beta_generated_AlloyDBAdminSettings_CreateCluster_sync]

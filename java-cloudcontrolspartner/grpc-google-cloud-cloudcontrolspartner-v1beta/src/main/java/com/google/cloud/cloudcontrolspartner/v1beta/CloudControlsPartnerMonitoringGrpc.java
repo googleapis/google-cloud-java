@@ -149,6 +149,20 @@ public final class CloudControlsPartnerMonitoringGrpc {
     return CloudControlsPartnerMonitoringStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CloudControlsPartnerMonitoringBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CloudControlsPartnerMonitoringBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudControlsPartnerMonitoringBlockingV2Stub>() {
+          @java.lang.Override
+          public CloudControlsPartnerMonitoringBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudControlsPartnerMonitoringBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CloudControlsPartnerMonitoringBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -305,6 +319,60 @@ public final class CloudControlsPartnerMonitoringGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CloudControlsPartnerMonitoring.
+   *
+   * <pre>
+   * Service describing handlers for resources
+   * </pre>
+   */
+  public static final class CloudControlsPartnerMonitoringBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CloudControlsPartnerMonitoringBlockingV2Stub> {
+    private CloudControlsPartnerMonitoringBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CloudControlsPartnerMonitoringBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CloudControlsPartnerMonitoringBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Violations for a workload
+     * Callers may also choose to read across multiple Customers or for a single
+     * customer as per
+     * [AIP-159](https://google.aip.dev/159) by using '-' (the hyphen or dash
+     * character) as a wildcard character instead of {customer} &amp; {workload}.
+     * Format:
+     * `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}`
+     * </pre>
+     */
+    public com.google.cloud.cloudcontrolspartner.v1beta.ListViolationsResponse listViolations(
+        com.google.cloud.cloudcontrolspartner.v1beta.ListViolationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListViolationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Violation.
+     * </pre>
+     */
+    public com.google.cloud.cloudcontrolspartner.v1beta.Violation getViolation(
+        com.google.cloud.cloudcontrolspartner.v1beta.GetViolationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetViolationMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * CloudControlsPartnerMonitoring.
    *
    * <pre>
    * Service describing handlers for resources

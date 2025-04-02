@@ -444,6 +444,19 @@ public final class CloudControlsPartnerCoreGrpc {
     return CloudControlsPartnerCoreStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CloudControlsPartnerCoreBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CloudControlsPartnerCoreBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudControlsPartnerCoreBlockingV2Stub>() {
+          @java.lang.Override
+          public CloudControlsPartnerCoreBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudControlsPartnerCoreBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CloudControlsPartnerCoreBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -775,6 +788,133 @@ public final class CloudControlsPartnerCoreGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CloudControlsPartnerCore.
+   *
+   * <pre>
+   * Service describing handlers for resources
+   * </pre>
+   */
+  public static final class CloudControlsPartnerCoreBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CloudControlsPartnerCoreBlockingV2Stub> {
+    private CloudControlsPartnerCoreBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CloudControlsPartnerCoreBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CloudControlsPartnerCoreBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single workload
+     * </pre>
+     */
+    public com.google.cloud.cloudcontrolspartner.v1.Workload getWorkload(
+        com.google.cloud.cloudcontrolspartner.v1.GetWorkloadRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetWorkloadMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists customer workloads for a given customer org id
+     * </pre>
+     */
+    public com.google.cloud.cloudcontrolspartner.v1.ListWorkloadsResponse listWorkloads(
+        com.google.cloud.cloudcontrolspartner.v1.ListWorkloadsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWorkloadsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single customer
+     * </pre>
+     */
+    public com.google.cloud.cloudcontrolspartner.v1.Customer getCustomer(
+        com.google.cloud.cloudcontrolspartner.v1.GetCustomerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCustomerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists customers of a partner identified by its Google Cloud organization ID
+     * </pre>
+     */
+    public com.google.cloud.cloudcontrolspartner.v1.ListCustomersResponse listCustomers(
+        com.google.cloud.cloudcontrolspartner.v1.ListCustomersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCustomersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the EKM connections associated with a workload
+     * </pre>
+     */
+    public com.google.cloud.cloudcontrolspartner.v1.EkmConnections getEkmConnections(
+        com.google.cloud.cloudcontrolspartner.v1.GetEkmConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEkmConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the partner permissions granted for a workload
+     * </pre>
+     */
+    public com.google.cloud.cloudcontrolspartner.v1.PartnerPermissions getPartnerPermissions(
+        com.google.cloud.cloudcontrolspartner.v1.GetPartnerPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPartnerPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists access requests associated with a workload
+     * </pre>
+     */
+    public com.google.cloud.cloudcontrolspartner.v1.ListAccessApprovalRequestsResponse
+        listAccessApprovalRequests(
+            com.google.cloud.cloudcontrolspartner.v1.ListAccessApprovalRequestsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAccessApprovalRequestsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get details of a Partner.
+     * </pre>
+     */
+    public com.google.cloud.cloudcontrolspartner.v1.Partner getPartner(
+        com.google.cloud.cloudcontrolspartner.v1.GetPartnerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPartnerMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * CloudControlsPartnerCore.
    *
    * <pre>
    * Service describing handlers for resources

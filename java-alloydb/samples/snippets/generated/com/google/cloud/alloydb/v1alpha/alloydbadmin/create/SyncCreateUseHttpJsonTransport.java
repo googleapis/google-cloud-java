@@ -14,28 +14,26 @@
  * limitations under the License.
  */
 
-package com.google.cloud.cloudcontrolspartner.v1.samples;
+package com.google.cloud.alloydb.v1alpha.samples;
 
-// [START cloudcontrolspartner_v1_generated_CloudControlsPartnerMonitoring_Create_SetCredentialsProvider1_sync]
-import com.google.cloud.cloudcontrolspartner.v1.CloudControlsPartnerMonitoringClient;
-import com.google.cloud.cloudcontrolspartner.v1.CloudControlsPartnerMonitoringSettings;
+// [START alloydb_v1alpha_generated_AlloyDBAdmin_Create_UseHttpJsonTransport_sync]
+import com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient;
+import com.google.cloud.alloydb.v1alpha.AlloyDBAdminSettings;
 
-public class SyncCreateSetCredentialsProvider1 {
+public class SyncCreateUseHttpJsonTransport {
 
   public static void main(String[] args) throws Exception {
-    syncCreateSetCredentialsProvider1();
+    syncCreateUseHttpJsonTransport();
   }
 
-  public static void syncCreateSetCredentialsProvider1() throws Exception {
+  public static void syncCreateUseHttpJsonTransport() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    CloudControlsPartnerMonitoringSettings cloudControlsPartnerMonitoringSettings =
-        CloudControlsPartnerMonitoringSettings.newHttpJsonBuilder().build();
-    CloudControlsPartnerMonitoringClient cloudControlsPartnerMonitoringClient =
-        CloudControlsPartnerMonitoringClient.create(cloudControlsPartnerMonitoringSettings);
+    AlloyDBAdminSettings alloyDBAdminSettings = AlloyDBAdminSettings.newHttpJsonBuilder().build();
+    AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create(alloyDBAdminSettings);
   }
 }
-// [END cloudcontrolspartner_v1_generated_CloudControlsPartnerMonitoring_Create_SetCredentialsProvider1_sync]
+// [END alloydb_v1alpha_generated_AlloyDBAdmin_Create_UseHttpJsonTransport_sync]

@@ -14,26 +14,28 @@
  * limitations under the License.
  */
 
-package com.google.cloud.alloydb.v1alpha.samples;
+package com.google.cloud.cloudcontrolspartner.v1beta.samples;
 
-// [START alloydb_v1alpha_generated_AlloyDBAdmin_Create_SetCredentialsProvider1_sync]
-import com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient;
-import com.google.cloud.alloydb.v1alpha.AlloyDBAdminSettings;
+// [START cloudcontrolspartner_v1beta_generated_CloudControlsPartnerCore_Create_UseHttpJsonTransport_sync]
+import com.google.cloud.cloudcontrolspartner.v1beta.CloudControlsPartnerCoreClient;
+import com.google.cloud.cloudcontrolspartner.v1beta.CloudControlsPartnerCoreSettings;
 
-public class SyncCreateSetCredentialsProvider1 {
+public class SyncCreateUseHttpJsonTransport {
 
   public static void main(String[] args) throws Exception {
-    syncCreateSetCredentialsProvider1();
+    syncCreateUseHttpJsonTransport();
   }
 
-  public static void syncCreateSetCredentialsProvider1() throws Exception {
+  public static void syncCreateUseHttpJsonTransport() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    AlloyDBAdminSettings alloyDBAdminSettings = AlloyDBAdminSettings.newHttpJsonBuilder().build();
-    AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create(alloyDBAdminSettings);
+    CloudControlsPartnerCoreSettings cloudControlsPartnerCoreSettings =
+        CloudControlsPartnerCoreSettings.newHttpJsonBuilder().build();
+    CloudControlsPartnerCoreClient cloudControlsPartnerCoreClient =
+        CloudControlsPartnerCoreClient.create(cloudControlsPartnerCoreSettings);
   }
 }
-// [END alloydb_v1alpha_generated_AlloyDBAdmin_Create_SetCredentialsProvider1_sync]
+// [END cloudcontrolspartner_v1beta_generated_CloudControlsPartnerCore_Create_UseHttpJsonTransport_sync]

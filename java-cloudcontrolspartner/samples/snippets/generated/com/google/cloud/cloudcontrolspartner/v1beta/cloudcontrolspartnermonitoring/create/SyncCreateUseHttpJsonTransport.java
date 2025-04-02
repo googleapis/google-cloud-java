@@ -16,17 +16,17 @@
 
 package com.google.cloud.cloudcontrolspartner.v1beta.samples;
 
-// [START cloudcontrolspartner_v1beta_generated_CloudControlsPartnerMonitoring_Create_SetCredentialsProvider1_sync]
+// [START cloudcontrolspartner_v1beta_generated_CloudControlsPartnerMonitoring_Create_UseHttpJsonTransport_sync]
 import com.google.cloud.cloudcontrolspartner.v1beta.CloudControlsPartnerMonitoringClient;
 import com.google.cloud.cloudcontrolspartner.v1beta.CloudControlsPartnerMonitoringSettings;
 
-public class SyncCreateSetCredentialsProvider1 {
+public class SyncCreateUseHttpJsonTransport {
 
   public static void main(String[] args) throws Exception {
-    syncCreateSetCredentialsProvider1();
+    syncCreateUseHttpJsonTransport();
   }
 
-  public static void syncCreateSetCredentialsProvider1() throws Exception {
+  public static void syncCreateUseHttpJsonTransport() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
@@ -38,4 +38,4 @@ public class SyncCreateSetCredentialsProvider1 {
         CloudControlsPartnerMonitoringClient.create(cloudControlsPartnerMonitoringSettings);
   }
 }
-// [END cloudcontrolspartner_v1beta_generated_CloudControlsPartnerMonitoring_Create_SetCredentialsProvider1_sync]
+// [END cloudcontrolspartner_v1beta_generated_CloudControlsPartnerMonitoring_Create_UseHttpJsonTransport_sync]

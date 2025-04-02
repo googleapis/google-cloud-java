@@ -16,42 +16,26 @@
 
 package com.google.cloud.cloudcontrolspartner.v1.samples;
 
-// [START cloudcontrolspartner_v1_generated_CloudControlsPartnerCoreSettings_GetWorkload_sync]
+// [START cloudcontrolspartner_v1_generated_CloudControlsPartnerCore_Create_UseHttpJsonTransport_sync]
+import com.google.cloud.cloudcontrolspartner.v1.CloudControlsPartnerCoreClient;
 import com.google.cloud.cloudcontrolspartner.v1.CloudControlsPartnerCoreSettings;
-import java.time.Duration;
 
-public class SyncGetWorkload {
+public class SyncCreateUseHttpJsonTransport {
 
   public static void main(String[] args) throws Exception {
-    syncGetWorkload();
+    syncCreateUseHttpJsonTransport();
   }
 
-  public static void syncGetWorkload() throws Exception {
+  public static void syncCreateUseHttpJsonTransport() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    CloudControlsPartnerCoreSettings.Builder cloudControlsPartnerCoreSettingsBuilder =
-        CloudControlsPartnerCoreSettings.newBuilder();
-    cloudControlsPartnerCoreSettingsBuilder
-        .getWorkloadSettings()
-        .setRetrySettings(
-            cloudControlsPartnerCoreSettingsBuilder
-                .getWorkloadSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setInitialRetryDelayDuration(Duration.ofSeconds(1))
-                .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
-                .setMaxAttempts(5)
-                .setMaxRetryDelayDuration(Duration.ofSeconds(30))
-                .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
-                .setRetryDelayMultiplier(1.3)
-                .setRpcTimeoutMultiplier(1.5)
-                .setTotalTimeoutDuration(Duration.ofSeconds(300))
-                .build());
     CloudControlsPartnerCoreSettings cloudControlsPartnerCoreSettings =
-        cloudControlsPartnerCoreSettingsBuilder.build();
+        CloudControlsPartnerCoreSettings.newHttpJsonBuilder().build();
+    CloudControlsPartnerCoreClient cloudControlsPartnerCoreClient =
+        CloudControlsPartnerCoreClient.create(cloudControlsPartnerCoreSettings);
   }
 }
-// [END cloudcontrolspartner_v1_generated_CloudControlsPartnerCoreSettings_GetWorkload_sync]
+// [END cloudcontrolspartner_v1_generated_CloudControlsPartnerCore_Create_UseHttpJsonTransport_sync]

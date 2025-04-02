@@ -14,42 +14,40 @@
  * limitations under the License.
  */
 
-package com.google.cloud.alloydb.v1.samples;
+package com.google.cloud.alloydb.v1alpha.samples;
 
-// [START alloydb_v1_generated_AlloyDBAdminSettings_GetCluster_sync]
-import com.google.cloud.alloydb.v1.AlloyDBAdminSettings;
+// [START alloydb_v1alpha_generated_AlloyDBAdminSettings_CreateCluster_sync]
+import com.google.api.gax.longrunning.OperationalTimedPollAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.TimedRetryAlgorithm;
+import com.google.cloud.alloydb.v1alpha.AlloyDBAdminSettings;
 import java.time.Duration;
 
-public class SyncGetCluster {
+public class SyncCreateCluster {
 
   public static void main(String[] args) throws Exception {
-    syncGetCluster();
+    syncCreateCluster();
   }
 
-  public static void syncGetCluster() throws Exception {
+  public static void syncCreateCluster() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     AlloyDBAdminSettings.Builder alloyDBAdminSettingsBuilder = AlloyDBAdminSettings.newBuilder();
-    alloyDBAdminSettingsBuilder
-        .getClusterSettings()
-        .setRetrySettings(
-            alloyDBAdminSettingsBuilder
-                .getClusterSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setInitialRetryDelayDuration(Duration.ofSeconds(1))
-                .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
-                .setMaxAttempts(5)
-                .setMaxRetryDelayDuration(Duration.ofSeconds(30))
-                .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
-                .setRetryDelayMultiplier(1.3)
-                .setRpcTimeoutMultiplier(1.5)
-                .setTotalTimeoutDuration(Duration.ofSeconds(300))
+    TimedRetryAlgorithm timedRetryAlgorithm =
+        OperationalTimedPollAlgorithm.create(
+            RetrySettings.newBuilder()
+                .setInitialRetryDelayDuration(Duration.ofMillis(500))
+                .setRetryDelayMultiplier(1.5)
+                .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+                .setTotalTimeoutDuration(Duration.ofHours(24))
                 .build());
-    AlloyDBAdminSettings alloyDBAdminSettings = alloyDBAdminSettingsBuilder.build();
+    alloyDBAdminSettingsBuilder
+        .createClusterOperationSettings()
+        .setPollingAlgorithm(timedRetryAlgorithm)
+        .build();
   }
 }
-// [END alloydb_v1_generated_AlloyDBAdminSettings_GetCluster_sync]
+// [END alloydb_v1alpha_generated_AlloyDBAdminSettings_CreateCluster_sync]
