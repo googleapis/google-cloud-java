@@ -113,9 +113,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
    *
    * <pre>
    * The raw text to be synthesized. It is recommended that each input
-   * contains complete, terminating sentences, as this will likely result in
-   * better prosody in the output audio. That being said, users are free to
-   * input text however they please.
+   * contains complete, terminating sentences, which results in better prosody
+   * in the output audio.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -130,9 +129,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
    *
    * <pre>
    * The raw text to be synthesized. It is recommended that each input
-   * contains complete, terminating sentences, as this will likely result in
-   * better prosody in the output audio. That being said, users are free to
-   * input text however they please.
+   * contains complete, terminating sentences, which results in better prosody
+   * in the output audio.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -160,9 +158,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
    *
    * <pre>
    * The raw text to be synthesized. It is recommended that each input
-   * contains complete, terminating sentences, as this will likely result in
-   * better prosody in the output audio. That being said, users are free to
-   * input text however they please.
+   * contains complete, terminating sentences, which results in better prosody
+   * in the output audio.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -575,9 +572,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
      *
      * <pre>
      * The raw text to be synthesized. It is recommended that each input
-     * contains complete, terminating sentences, as this will likely result in
-     * better prosody in the output audio. That being said, users are free to
-     * input text however they please.
+     * contains complete, terminating sentences, which results in better prosody
+     * in the output audio.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -593,9 +589,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
      *
      * <pre>
      * The raw text to be synthesized. It is recommended that each input
-     * contains complete, terminating sentences, as this will likely result in
-     * better prosody in the output audio. That being said, users are free to
-     * input text however they please.
+     * contains complete, terminating sentences, which results in better prosody
+     * in the output audio.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -624,9 +619,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
      *
      * <pre>
      * The raw text to be synthesized. It is recommended that each input
-     * contains complete, terminating sentences, as this will likely result in
-     * better prosody in the output audio. That being said, users are free to
-     * input text however they please.
+     * contains complete, terminating sentences, which results in better prosody
+     * in the output audio.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -655,9 +649,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
      *
      * <pre>
      * The raw text to be synthesized. It is recommended that each input
-     * contains complete, terminating sentences, as this will likely result in
-     * better prosody in the output audio. That being said, users are free to
-     * input text however they please.
+     * contains complete, terminating sentences, which results in better prosody
+     * in the output audio.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -679,9 +672,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
      *
      * <pre>
      * The raw text to be synthesized. It is recommended that each input
-     * contains complete, terminating sentences, as this will likely result in
-     * better prosody in the output audio. That being said, users are free to
-     * input text however they please.
+     * contains complete, terminating sentences, which results in better prosody
+     * in the output audio.
      * </pre>
      *
      * <code>string text = 1;</code>
@@ -701,9 +693,8 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
      *
      * <pre>
      * The raw text to be synthesized. It is recommended that each input
-     * contains complete, terminating sentences, as this will likely result in
-     * better prosody in the output audio. That being said, users are free to
-     * input text however they please.
+     * contains complete, terminating sentences, which results in better prosody
+     * in the output audio.
      * </pre>
      *
      * <code>string text = 1;</code>

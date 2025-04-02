@@ -28,7 +28,7 @@ public interface CustomPronunciationsOrBuilder
    *
    *
    * <pre>
-   * The pronunciation customizations to be applied.
+   * The pronunciation customizations are applied.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -40,7 +40,7 @@ public interface CustomPronunciationsOrBuilder
    *
    *
    * <pre>
-   * The pronunciation customizations to be applied.
+   * The pronunciation customizations are applied.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -51,7 +51,7 @@ public interface CustomPronunciationsOrBuilder
    *
    *
    * <pre>
-   * The pronunciation customizations to be applied.
+   * The pronunciation customizations are applied.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -62,7 +62,7 @@ public interface CustomPronunciationsOrBuilder
    *
    *
    * <pre>
-   * The pronunciation customizations to be applied.
+   * The pronunciation customizations are applied.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -74,7 +74,7 @@ public interface CustomPronunciationsOrBuilder
    *
    *
    * <pre>
-   * The pronunciation customizations to be applied.
+   * The pronunciation customizations are applied.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;

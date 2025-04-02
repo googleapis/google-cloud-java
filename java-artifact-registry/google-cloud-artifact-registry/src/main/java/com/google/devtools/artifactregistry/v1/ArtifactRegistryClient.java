@@ -3916,8 +3916,9 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent The name of the repository holding all requested versions.
-   * @param names Required. The names of the versions to delete. A maximum of 10000 versions can be
-   *     deleted in a batch.
+   * @param names Required. The names of the versions to delete. The maximum number of versions
+   *     deleted per batch is determined by the service and is dependent on the available resources
+   *     in the region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, BatchDeleteVersionsMetadata> batchDeleteVersionsAsync(
@@ -3952,8 +3953,9 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent The name of the repository holding all requested versions.
-   * @param names Required. The names of the versions to delete. A maximum of 10000 versions can be
-   *     deleted in a batch.
+   * @param names Required. The names of the versions to delete. The maximum number of versions
+   *     deleted per batch is determined by the service and is dependent on the available resources
+   *     in the region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, BatchDeleteVersionsMetadata> batchDeleteVersionsAsync(

@@ -28,9 +28,9 @@ public interface CustomPronunciationParamsOrBuilder
    *
    *
    * <pre>
-   * The phrase to which the customization will be applied.
-   * The phrase can be multiple words (in the case of proper nouns etc), but
-   * should not span to a whole sentence.
+   * The phrase to which the customization is applied.
+   * The phrase can be multiple words, such as proper nouns, but shouldn't span
+   * the length of the sentence.
    * </pre>
    *
    * <code>optional string phrase = 1;</code>
@@ -42,9 +42,9 @@ public interface CustomPronunciationParamsOrBuilder
    *
    *
    * <pre>
-   * The phrase to which the customization will be applied.
-   * The phrase can be multiple words (in the case of proper nouns etc), but
-   * should not span to a whole sentence.
+   * The phrase to which the customization is applied.
+   * The phrase can be multiple words, such as proper nouns, but shouldn't span
+   * the length of the sentence.
    * </pre>
    *
    * <code>optional string phrase = 1;</code>
@@ -56,9 +56,9 @@ public interface CustomPronunciationParamsOrBuilder
    *
    *
    * <pre>
-   * The phrase to which the customization will be applied.
-   * The phrase can be multiple words (in the case of proper nouns etc), but
-   * should not span to a whole sentence.
+   * The phrase to which the customization is applied.
+   * The phrase can be multiple words, such as proper nouns, but shouldn't span
+   * the length of the sentence.
    * </pre>
    *
    * <code>optional string phrase = 1;</code>
