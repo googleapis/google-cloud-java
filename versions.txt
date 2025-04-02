@@ -1,7 +1,7 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-java:1.54.2:1.54.2
+google-cloud-java:1.54.3:1.54.3
 google-cloud-accessapproval:2.61.0:2.61.0
 grpc-google-cloud-accessapproval-v1:2.61.0:2.61.0
 proto-google-cloud-accessapproval-v1:2.61.0:2.61.0
@@ -831,3 +831,6 @@ grpc-google-cloud-modelarmor-v1:0.1.0:0.1.0
 google-cloud-financialservices:0.1.0:0.1.0
 proto-google-cloud-financialservices-v1:0.1.0:0.1.0
 grpc-google-cloud-financialservices-v1:0.1.0:0.1.0
+google-cloud-spanneradapter:0.0.1:0.0.1
+proto-google-cloud-spanneradapter-v1:0.0.1:0.0.1
+grpc-google-cloud-spanneradapter-v1:0.0.1:0.0.1
