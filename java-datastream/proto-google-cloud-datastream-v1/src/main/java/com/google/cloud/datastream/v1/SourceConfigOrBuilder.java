@@ -28,7 +28,7 @@ public interface SourceConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Source connection profile resoource.
+   * Required. Source connection profile resource.
    * Format: `projects/{project}/locations/{location}/connectionProfiles/{name}`
    * </pre>
    *
@@ -43,7 +43,7 @@ public interface SourceConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Source connection profile resoource.
+   * Required. Source connection profile resource.
    * Format: `projects/{project}/locations/{location}/connectionProfiles/{name}`
    * </pre>
    *
@@ -195,6 +195,42 @@ public interface SourceConfigOrBuilder
    * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;</code>
    */
   com.google.cloud.datastream.v1.SqlServerSourceConfigOrBuilder getSqlServerSourceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceSourceConfig salesforce_source_config = 104;</code>
+   *
+   * @return Whether the salesforceSourceConfig field is set.
+   */
+  boolean hasSalesforceSourceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceSourceConfig salesforce_source_config = 104;</code>
+   *
+   * @return The salesforceSourceConfig.
+   */
+  com.google.cloud.datastream.v1.SalesforceSourceConfig getSalesforceSourceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceSourceConfig salesforce_source_config = 104;</code>
+   */
+  com.google.cloud.datastream.v1.SalesforceSourceConfigOrBuilder
+      getSalesforceSourceConfigOrBuilder();
 
   com.google.cloud.datastream.v1.SourceConfig.SourceStreamConfigCase getSourceStreamConfigCase();
 }

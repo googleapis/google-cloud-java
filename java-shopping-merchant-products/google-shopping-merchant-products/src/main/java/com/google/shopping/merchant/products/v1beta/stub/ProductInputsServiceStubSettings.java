@@ -43,6 +43,7 @@ import com.google.protobuf.Empty;
 import com.google.shopping.merchant.products.v1beta.DeleteProductInputRequest;
 import com.google.shopping.merchant.products.v1beta.InsertProductInputRequest;
 import com.google.shopping.merchant.products.v1beta.ProductInput;
+import com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
@@ -109,11 +110,18 @@ public class ProductInputsServiceStubSettings
 
   private final UnaryCallSettings<InsertProductInputRequest, ProductInput>
       insertProductInputSettings;
+  private final UnaryCallSettings<UpdateProductInputRequest, ProductInput>
+      updateProductInputSettings;
   private final UnaryCallSettings<DeleteProductInputRequest, Empty> deleteProductInputSettings;
 
   /** Returns the object with the settings used for calls to insertProductInput. */
   public UnaryCallSettings<InsertProductInputRequest, ProductInput> insertProductInputSettings() {
     return insertProductInputSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateProductInput. */
+  public UnaryCallSettings<UpdateProductInputRequest, ProductInput> updateProductInputSettings() {
+    return updateProductInputSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteProductInput. */
@@ -233,6 +241,7 @@ public class ProductInputsServiceStubSettings
     super(settingsBuilder);
 
     insertProductInputSettings = settingsBuilder.insertProductInputSettings().build();
+    updateProductInputSettings = settingsBuilder.updateProductInputSettings().build();
     deleteProductInputSettings = settingsBuilder.deleteProductInputSettings().build();
   }
 
@@ -242,6 +251,8 @@ public class ProductInputsServiceStubSettings
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<InsertProductInputRequest, ProductInput>
         insertProductInputSettings;
+    private final UnaryCallSettings.Builder<UpdateProductInputRequest, ProductInput>
+        updateProductInputSettings;
     private final UnaryCallSettings.Builder<DeleteProductInputRequest, Empty>
         deleteProductInputSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -283,11 +294,12 @@ public class ProductInputsServiceStubSettings
       super(clientContext);
 
       insertProductInputSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateProductInputSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteProductInputSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              insertProductInputSettings, deleteProductInputSettings);
+              insertProductInputSettings, updateProductInputSettings, deleteProductInputSettings);
       initDefaults(this);
     }
 
@@ -295,11 +307,12 @@ public class ProductInputsServiceStubSettings
       super(settings);
 
       insertProductInputSettings = settings.insertProductInputSettings.toBuilder();
+      updateProductInputSettings = settings.updateProductInputSettings.toBuilder();
       deleteProductInputSettings = settings.deleteProductInputSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              insertProductInputSettings, deleteProductInputSettings);
+              insertProductInputSettings, updateProductInputSettings, deleteProductInputSettings);
     }
 
     private static Builder createDefault() {
@@ -333,6 +346,11 @@ public class ProductInputsServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .updateProductInputSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .deleteProductInputSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -359,6 +377,12 @@ public class ProductInputsServiceStubSettings
     public UnaryCallSettings.Builder<InsertProductInputRequest, ProductInput>
         insertProductInputSettings() {
       return insertProductInputSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateProductInput. */
+    public UnaryCallSettings.Builder<UpdateProductInputRequest, ProductInput>
+        updateProductInputSettings() {
+      return updateProductInputSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteProductInput. */

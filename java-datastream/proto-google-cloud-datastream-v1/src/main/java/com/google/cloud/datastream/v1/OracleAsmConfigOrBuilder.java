@@ -91,7 +91,8 @@ public interface OracleAsmConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Password for the Oracle ASM connection.
+   * Optional. Password for the Oracle ASM connection. Mutually exclusive with
+   * the `secret_manager_stored_password` field.
    * </pre>
    *
    * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -103,7 +104,8 @@ public interface OracleAsmConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Password for the Oracle ASM connection.
+   * Optional. Password for the Oracle ASM connection. Mutually exclusive with
+   * the `secret_manager_stored_password` field.
    * </pre>
    *
    * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -245,4 +247,33 @@ public interface OracleAsmConfigOrBuilder
    * </code>
    */
   com.google.cloud.datastream.v1.OracleSslConfigOrBuilder getOracleSslConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A reference to a Secret Manager resource name storing the Oracle
+   * ASM connection password. Mutually exclusive with the `password` field.
+   * </pre>
+   *
+   * <code>string secret_manager_stored_password = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The secretManagerStoredPassword.
+   */
+  java.lang.String getSecretManagerStoredPassword();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A reference to a Secret Manager resource name storing the Oracle
+   * ASM connection password. Mutually exclusive with the `password` field.
+   * </pre>
+   *
+   * <code>string secret_manager_stored_password = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for secretManagerStoredPassword.
+   */
+  com.google.protobuf.ByteString getSecretManagerStoredPasswordBytes();
 }

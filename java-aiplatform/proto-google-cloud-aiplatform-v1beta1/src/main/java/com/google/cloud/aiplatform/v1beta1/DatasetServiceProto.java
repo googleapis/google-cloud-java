@@ -164,6 +164,78 @@ public final class DatasetServiceProto {
       internal_static_google_cloud_aiplatform_v1beta1_ListAnnotationsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ListAnnotationsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_TuningValidationAssessmentConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_TuningValidationAssessmentConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_TuningResourceUsageAssessmentConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_TuningResourceUsageAssessmentConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionValidationAssessmentConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionValidationAssessmentConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionResourceUsageAssessmentConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionResourceUsageAssessmentConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_TuningValidationAssessmentResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_TuningValidationAssessmentResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_TuningResourceUsageAssessmentResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_TuningResourceUsageAssessmentResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionValidationAssessmentResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionValidationAssessmentResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionResourceUsageAssessmentResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionResourceUsageAssessmentResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AssessDataOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_GeminiTemplateConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_GeminiTemplateConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_GeminiTemplateConfig_FieldMappingEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_GeminiTemplateConfig_FieldMappingEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_GeminiExample_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_GeminiExample_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_GeminiExample_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_GeminiExample_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AssembleDataRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AssembleDataRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AssembleDataResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AssembleDataResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AssembleDataOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AssembleDataOperationMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -180,272 +252,380 @@ public final class DatasetServiceProto {
           + "d_behavior.proto\032\031google/api/resource.pr"
           + "oto\0320google/cloud/aiplatform/v1beta1/ann"
           + "otation.proto\0325google/cloud/aiplatform/v"
-          + "1beta1/annotation_spec.proto\032/google/clo"
-          + "ud/aiplatform/v1beta1/data_item.proto\032-g"
-          + "oogle/cloud/aiplatform/v1beta1/dataset.p"
-          + "roto\0325google/cloud/aiplatform/v1beta1/da"
-          + "taset_version.proto\032/google/cloud/aiplat"
-          + "form/v1beta1/operation.proto\0321google/clo"
-          + "ud/aiplatform/v1beta1/saved_query.proto\032"
-          + "#google/longrunning/operations.proto\032\033go"
-          + "ogle/protobuf/empty.proto\032 google/protob"
-          + "uf/field_mask.proto\"\221\001\n\024CreateDatasetReq"
-          + "uest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations."
-          + "googleapis.com/Location\022>\n\007dataset\030\002 \001(\013"
-          + "2(.google.cloud.aiplatform.v1beta1.Datas"
-          + "etB\003\340A\002\"u\n\036CreateDatasetOperationMetadat"
-          + "a\022S\n\020generic_metadata\030\001 \001(\01329.google.clo"
-          + "ud.aiplatform.v1beta1.GenericOperationMe"
-          + "tadata\"{\n\021GetDatasetRequest\0227\n\004name\030\001 \001("
-          + "\tB)\340A\002\372A#\n!aiplatform.googleapis.com/Dat"
-          + "aset\022-\n\tread_mask\030\002 \001(\0132\032.google.protobu"
-          + "f.FieldMask\"\214\001\n\024UpdateDatasetRequest\022>\n\007"
-          + "dataset\030\001 \001(\0132(.google.cloud.aiplatform."
-          + "v1beta1.DatasetB\003\340A\002\0224\n\013update_mask\030\002 \001("
-          + "\0132\032.google.protobuf.FieldMaskB\003\340A\002\"\242\001\n\033U"
-          + "pdateDatasetVersionRequest\022M\n\017dataset_ve"
-          + "rsion\030\001 \001(\0132/.google.cloud.aiplatform.v1"
-          + "beta1.DatasetVersionB\003\340A\002\0224\n\013update_mask"
-          + "\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\""
-          + "\310\001\n\023ListDatasetsRequest\0229\n\006parent\030\001 \001(\tB"
-          + ")\340A\002\372A#\n!locations.googleapis.com/Locati"
-          + "on\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n"
-          + "\npage_token\030\004 \001(\t\022-\n\tread_mask\030\005 \001(\0132\032.g"
-          + "oogle.protobuf.FieldMask\022\020\n\010order_by\030\006 \001"
-          + "(\t\"k\n\024ListDatasetsResponse\022:\n\010datasets\030\001"
-          + " \003(\0132(.google.cloud.aiplatform.v1beta1.D"
-          + "ataset\022\027\n\017next_page_token\030\002 \001(\t\"O\n\024Delet"
-          + "eDatasetRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!a"
-          + "iplatform.googleapis.com/Dataset\"\234\001\n\021Imp"
-          + "ortDataRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!ai"
-          + "platform.googleapis.com/Dataset\022N\n\016impor"
-          + "t_configs\030\002 \003(\01321.google.cloud.aiplatfor"
-          + "m.v1beta1.ImportDataConfigB\003\340A\002\"\024\n\022Impor"
-          + "tDataResponse\"r\n\033ImportDataOperationMeta"
-          + "data\022S\n\020generic_metadata\030\001 \001(\01329.google."
-          + "cloud.aiplatform.v1beta1.GenericOperatio"
-          + "nMetadata\"\233\001\n\021ExportDataRequest\0227\n\004name\030"
-          + "\001 \001(\tB)\340A\002\372A#\n!aiplatform.googleapis.com"
-          + "/Dataset\022M\n\rexport_config\030\002 \001(\01321.google"
-          + ".cloud.aiplatform.v1beta1.ExportDataConf"
-          + "igB\003\340A\002\",\n\022ExportDataResponse\022\026\n\016exporte"
-          + "d_files\030\001 \003(\t\"\220\001\n\033ExportDataOperationMet"
-          + "adata\022S\n\020generic_metadata\030\001 \001(\01329.google"
-          + ".cloud.aiplatform.v1beta1.GenericOperati"
-          + "onMetadata\022\034\n\024gcs_output_directory\030\002 \001(\t"
-          + "\"\247\001\n\033CreateDatasetVersionRequest\0229\n\006pare"
-          + "nt\030\001 \001(\tB)\340A\002\372A#\n!aiplatform.googleapis."
-          + "com/Dataset\022M\n\017dataset_version\030\002 \001(\0132/.g"
-          + "oogle.cloud.aiplatform.v1beta1.DatasetVe"
-          + "rsionB\003\340A\002\"|\n%CreateDatasetVersionOperat"
-          + "ionMetadata\022S\n\020generic_metadata\030\001 \001(\01329."
-          + "google.cloud.aiplatform.v1beta1.GenericO"
-          + "perationMetadata\"]\n\033DeleteDatasetVersion"
-          + "Request\022>\n\004name\030\001 \001(\tB0\340A\002\372A*\n(aiplatfor"
-          + "m.googleapis.com/DatasetVersion\"\211\001\n\030GetD"
-          + "atasetVersionRequest\022>\n\004name\030\001 \001(\tB0\340A\002\372"
-          + "A*\n(aiplatform.googleapis.com/DatasetVer"
-          + "sion\022-\n\tread_mask\030\002 \001(\0132\032.google.protobu"
-          + "f.FieldMask\"\350\001\n\032ListDatasetVersionsReque"
-          + "st\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!aiplatform.g"
-          + "oogleapis.com/Dataset\022\023\n\006filter\030\002 \001(\tB\003\340"
-          + "A\001\022\026\n\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\npage_token"
-          + "\030\004 \001(\tB\003\340A\001\0222\n\tread_mask\030\005 \001(\0132\032.google."
-          + "protobuf.FieldMaskB\003\340A\001\022\025\n\010order_by\030\006 \001("
-          + "\tB\003\340A\001\"\201\001\n\033ListDatasetVersionsResponse\022I"
-          + "\n\020dataset_versions\030\001 \003(\0132/.google.cloud."
-          + "aiplatform.v1beta1.DatasetVersion\022\027\n\017nex"
-          + "t_page_token\030\002 \001(\t\"^\n\034RestoreDatasetVers"
-          + "ionRequest\022>\n\004name\030\001 \001(\tB0\340A\002\372A*\n(aiplat"
-          + "form.googleapis.com/DatasetVersion\"}\n&Re"
-          + "storeDatasetVersionOperationMetadata\022S\n\020"
-          + "generic_metadata\030\001 \001(\01329.google.cloud.ai"
-          + "platform.v1beta1.GenericOperationMetadat"
-          + "a\"\311\001\n\024ListDataItemsRequest\0229\n\006parent\030\001 \001"
-          + "(\tB)\340A\002\372A#\n!aiplatform.googleapis.com/Da"
-          + "taset\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005"
-          + "\022\022\n\npage_token\030\004 \001(\t\022-\n\tread_mask\030\005 \001(\0132"
-          + "\032.google.protobuf.FieldMask\022\020\n\010order_by\030"
-          + "\006 \001(\t\"o\n\025ListDataItemsResponse\022=\n\ndata_i"
-          + "tems\030\001 \003(\0132).google.cloud.aiplatform.v1b"
-          + "eta1.DataItem\022\027\n\017next_page_token\030\002 \001(\t\"\341"
-          + "\004\n\026SearchDataItemsRequest\022\034\n\022order_by_da"
-          + "ta_item\030\014 \001(\tH\000\022h\n\023order_by_annotation\030\r"
-          + " \001(\0132I.google.cloud.aiplatform.v1beta1.S"
-          + "earchDataItemsRequest.OrderByAnnotationH"
-          + "\000\022:\n\007dataset\030\001 \001(\tB)\340A\002\372A#\n!aiplatform.g"
-          + "oogleapis.com/Dataset\022@\n\013saved_query\030\002 \001"
-          + "(\tB+\030\001\372A&\n$aiplatform.googleapis.com/Sav"
-          + "edQuery\022\031\n\021data_labeling_job\030\003 \001(\t\022\030\n\020da"
-          + "ta_item_filter\030\004 \001(\t\022\036\n\022annotations_filt"
-          + "er\030\005 \001(\tB\002\030\001\022\032\n\022annotation_filters\030\013 \003(\t"
-          + "\022.\n\nfield_mask\030\006 \001(\0132\032.google.protobuf.F"
-          + "ieldMask\022\031\n\021annotations_limit\030\007 \001(\005\022\021\n\tp"
-          + "age_size\030\010 \001(\005\022\024\n\010order_by\030\t \001(\tB\002\030\001\022\022\n\n"
-          + "page_token\030\n \001(\t\032?\n\021OrderByAnnotation\022\030\n"
-          + "\013saved_query\030\001 \001(\tB\003\340A\002\022\020\n\010order_by\030\002 \001("
-          + "\tB\007\n\005order\"z\n\027SearchDataItemsResponse\022F\n"
-          + "\017data_item_views\030\001 \003(\0132-.google.cloud.ai"
-          + "platform.v1beta1.DataItemView\022\027\n\017next_pa"
-          + "ge_token\030\002 \001(\t\"\261\001\n\014DataItemView\022<\n\tdata_"
-          + "item\030\001 \001(\0132).google.cloud.aiplatform.v1b"
-          + "eta1.DataItem\022@\n\013annotations\030\002 \003(\0132+.goo"
-          + "gle.cloud.aiplatform.v1beta1.Annotation\022"
-          + "!\n\031has_truncated_annotations\030\003 \001(\010\"\314\001\n\027L"
-          + "istSavedQueriesRequest\0229\n\006parent\030\001 \001(\tB)"
-          + "\340A\002\372A#\n!aiplatform.googleapis.com/Datase"
-          + "t\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\n"
-          + "page_token\030\004 \001(\t\022-\n\tread_mask\030\005 \001(\0132\032.go"
-          + "ogle.protobuf.FieldMask\022\020\n\010order_by\030\006 \001("
-          + "\t\"w\n\030ListSavedQueriesResponse\022B\n\rsaved_q"
-          + "ueries\030\001 \003(\0132+.google.cloud.aiplatform.v"
-          + "1beta1.SavedQuery\022\027\n\017next_page_token\030\002 \001"
-          + "(\t\"U\n\027DeleteSavedQueryRequest\022:\n\004name\030\001 "
-          + "\001(\tB,\340A\002\372A&\n$aiplatform.googleapis.com/S"
-          + "avedQuery\"\211\001\n\030GetAnnotationSpecRequest\022>"
-          + "\n\004name\030\001 \001(\tB0\340A\002\372A*\n(aiplatform.googlea"
-          + "pis.com/AnnotationSpec\022-\n\tread_mask\030\002 \001("
-          + "\0132\032.google.protobuf.FieldMask\"\314\001\n\026ListAn"
-          + "notationsRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$"
-          + "\n\"aiplatform.googleapis.com/DataItem\022\016\n\006"
-          + "filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_"
-          + "token\030\004 \001(\t\022-\n\tread_mask\030\005 \001(\0132\032.google."
-          + "protobuf.FieldMask\022\020\n\010order_by\030\006 \001(\t\"t\n\027"
-          + "ListAnnotationsResponse\022@\n\013annotations\030\001"
-          + " \003(\0132+.google.cloud.aiplatform.v1beta1.A"
-          + "nnotation\022\027\n\017next_page_token\030\002 \001(\t2\211\'\n\016D"
-          + "atasetService\022\205\002\n\rCreateDataset\0225.google"
-          + ".cloud.aiplatform.v1beta1.CreateDatasetR"
-          + "equest\032\035.google.longrunning.Operation\"\235\001"
-          + "\312A)\n\007Dataset\022\036CreateDatasetOperationMeta"
-          + "data\332A\016parent,dataset\202\323\344\223\002Z\"1/v1beta1/{p"
-          + "arent=projects/*/locations/*}/datasets:\007"
-          + "datasetZ\034\"\021/v1beta1/datasets:\007dataset\022\312\001"
-          + "\n\nGetDataset\0222.google.cloud.aiplatform.v"
-          + "1beta1.GetDatasetRequest\032(.google.cloud."
-          + "aiplatform.v1beta1.Dataset\"^\332A\004name\202\323\344\223\002"
-          + "Q\0221/v1beta1/{name=projects/*/locations/*"
-          + "/datasets/*}Z\034\022\032/v1beta1/{name=datasets/"
-          + "*}\022\202\002\n\rUpdateDataset\0225.google.cloud.aipl"
-          + "atform.v1beta1.UpdateDatasetRequest\032(.go"
-          + "ogle.cloud.aiplatform.v1beta1.Dataset\"\217\001"
-          + "\332A\023dataset,update_mask\202\323\344\223\002s29/v1beta1/{"
-          + "dataset.name=projects/*/locations/*/data"
-          + "sets/*}:\007datasetZ-2\"/v1beta1/{dataset.na"
-          + "me=datasets/*}:\007dataset\022\324\001\n\014ListDatasets"
-          + "\0224.google.cloud.aiplatform.v1beta1.ListD"
-          + "atasetsRequest\0325.google.cloud.aiplatform"
-          + ".v1beta1.ListDatasetsResponse\"W\332A\006parent"
-          + "\202\323\344\223\002H\0221/v1beta1/{parent=projects/*/loca"
-          + "tions/*}/datasetsZ\023\022\021/v1beta1/datasets\022\371"
-          + "\001\n\rDeleteDataset\0225.google.cloud.aiplatfo"
-          + "rm.v1beta1.DeleteDatasetRequest\032\035.google"
-          + ".longrunning.Operation\"\221\001\312A0\n\025google.pro"
-          + "tobuf.Empty\022\027DeleteOperationMetadata\332A\004n"
-          + "ame\202\323\344\223\002Q*1/v1beta1/{name=projects/*/loc"
-          + "ations/*/datasets/*}Z\034*\032/v1beta1/{name=d"
-          + "atasets/*}\022\357\001\n\nImportData\0222.google.cloud"
-          + ".aiplatform.v1beta1.ImportDataRequest\032\035."
-          + "google.longrunning.Operation\"\215\001\312A1\n\022Impo"
-          + "rtDataResponse\022\033ImportDataOperationMetad"
-          + "ata\332A\023name,import_configs\202\323\344\223\002=\"8/v1beta"
-          + "1/{name=projects/*/locations/*/datasets/"
-          + "*}:import:\001*\022\356\001\n\nExportData\0222.google.clo"
-          + "ud.aiplatform.v1beta1.ExportDataRequest\032"
-          + "\035.google.longrunning.Operation\"\214\001\312A1\n\022Ex"
-          + "portDataResponse\022\033ExportDataOperationMet"
-          + "adata\332A\022name,export_config\202\323\344\223\002=\"8/v1bet"
+          + "1beta1/annotation_spec.proto\032-google/clo"
+          + "ud/aiplatform/v1beta1/content.proto\032/goo"
+          + "gle/cloud/aiplatform/v1beta1/data_item.p"
+          + "roto\032-google/cloud/aiplatform/v1beta1/da"
+          + "taset.proto\0325google/cloud/aiplatform/v1b"
+          + "eta1/dataset_version.proto\032/google/cloud"
+          + "/aiplatform/v1beta1/operation.proto\0321goo"
+          + "gle/cloud/aiplatform/v1beta1/saved_query"
+          + ".proto\032*google/cloud/aiplatform/v1beta1/"
+          + "tool.proto\032#google/longrunning/operation"
+          + "s.proto\032\033google/protobuf/empty.proto\032 go"
+          + "ogle/protobuf/field_mask.proto\"\221\001\n\024Creat"
+          + "eDatasetRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022>\n\007da"
+          + "taset\030\002 \001(\0132(.google.cloud.aiplatform.v1"
+          + "beta1.DatasetB\003\340A\002\"u\n\036CreateDatasetOpera"
+          + "tionMetadata\022S\n\020generic_metadata\030\001 \001(\01329"
+          + ".google.cloud.aiplatform.v1beta1.Generic"
+          + "OperationMetadata\"{\n\021GetDatasetRequest\0227"
+          + "\n\004name\030\001 \001(\tB)\340A\002\372A#\n!aiplatform.googlea"
+          + "pis.com/Dataset\022-\n\tread_mask\030\002 \001(\0132\032.goo"
+          + "gle.protobuf.FieldMask\"\214\001\n\024UpdateDataset"
+          + "Request\022>\n\007dataset\030\001 \001(\0132(.google.cloud."
+          + "aiplatform.v1beta1.DatasetB\003\340A\002\0224\n\013updat"
+          + "e_mask\030\002 \001(\0132\032.google.protobuf.FieldMask"
+          + "B\003\340A\002\"\242\001\n\033UpdateDatasetVersionRequest\022M\n"
+          + "\017dataset_version\030\001 \001(\0132/.google.cloud.ai"
+          + "platform.v1beta1.DatasetVersionB\003\340A\002\0224\n\013"
+          + "update_mask\030\002 \001(\0132\032.google.protobuf.Fiel"
+          + "dMaskB\003\340A\002\"\310\001\n\023ListDatasetsRequest\0229\n\006pa"
+          + "rent\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis"
+          + ".com/Location\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_si"
+          + "ze\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\022-\n\tread_mas"
+          + "k\030\005 \001(\0132\032.google.protobuf.FieldMask\022\020\n\010o"
+          + "rder_by\030\006 \001(\t\"k\n\024ListDatasetsResponse\022:\n"
+          + "\010datasets\030\001 \003(\0132(.google.cloud.aiplatfor"
+          + "m.v1beta1.Dataset\022\027\n\017next_page_token\030\002 \001"
+          + "(\t\"O\n\024DeleteDatasetRequest\0227\n\004name\030\001 \001(\t"
+          + "B)\340A\002\372A#\n!aiplatform.googleapis.com/Data"
+          + "set\"\234\001\n\021ImportDataRequest\0227\n\004name\030\001 \001(\tB"
+          + ")\340A\002\372A#\n!aiplatform.googleapis.com/Datas"
+          + "et\022N\n\016import_configs\030\002 \003(\01321.google.clou"
+          + "d.aiplatform.v1beta1.ImportDataConfigB\003\340"
+          + "A\002\"\024\n\022ImportDataResponse\"r\n\033ImportDataOp"
+          + "erationMetadata\022S\n\020generic_metadata\030\001 \001("
+          + "\01329.google.cloud.aiplatform.v1beta1.Gene"
+          + "ricOperationMetadata\"\233\001\n\021ExportDataReque"
+          + "st\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!aiplatform.goo"
+          + "gleapis.com/Dataset\022M\n\rexport_config\030\002 \001"
+          + "(\01321.google.cloud.aiplatform.v1beta1.Exp"
+          + "ortDataConfigB\003\340A\002\",\n\022ExportDataResponse"
+          + "\022\026\n\016exported_files\030\001 \003(\t\"\220\001\n\033ExportDataO"
+          + "perationMetadata\022S\n\020generic_metadata\030\001 \001"
+          + "(\01329.google.cloud.aiplatform.v1beta1.Gen"
+          + "ericOperationMetadata\022\034\n\024gcs_output_dire"
+          + "ctory\030\002 \001(\t\"\247\001\n\033CreateDatasetVersionRequ"
+          + "est\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!aiplatform."
+          + "googleapis.com/Dataset\022M\n\017dataset_versio"
+          + "n\030\002 \001(\0132/.google.cloud.aiplatform.v1beta"
+          + "1.DatasetVersionB\003\340A\002\"|\n%CreateDatasetVe"
+          + "rsionOperationMetadata\022S\n\020generic_metada"
+          + "ta\030\001 \001(\01329.google.cloud.aiplatform.v1bet"
+          + "a1.GenericOperationMetadata\"]\n\033DeleteDat"
+          + "asetVersionRequest\022>\n\004name\030\001 \001(\tB0\340A\002\372A*"
+          + "\n(aiplatform.googleapis.com/DatasetVersi"
+          + "on\"\211\001\n\030GetDatasetVersionRequest\022>\n\004name\030"
+          + "\001 \001(\tB0\340A\002\372A*\n(aiplatform.googleapis.com"
+          + "/DatasetVersion\022-\n\tread_mask\030\002 \001(\0132\032.goo"
+          + "gle.protobuf.FieldMask\"\350\001\n\032ListDatasetVe"
+          + "rsionsRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!a"
+          + "iplatform.googleapis.com/Dataset\022\023\n\006filt"
+          + "er\030\002 \001(\tB\003\340A\001\022\026\n\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n"
+          + "\npage_token\030\004 \001(\tB\003\340A\001\0222\n\tread_mask\030\005 \001("
+          + "\0132\032.google.protobuf.FieldMaskB\003\340A\001\022\025\n\010or"
+          + "der_by\030\006 \001(\tB\003\340A\001\"\201\001\n\033ListDatasetVersion"
+          + "sResponse\022I\n\020dataset_versions\030\001 \003(\0132/.go"
+          + "ogle.cloud.aiplatform.v1beta1.DatasetVer"
+          + "sion\022\027\n\017next_page_token\030\002 \001(\t\"^\n\034Restore"
+          + "DatasetVersionRequest\022>\n\004name\030\001 \001(\tB0\340A\002"
+          + "\372A*\n(aiplatform.googleapis.com/DatasetVe"
+          + "rsion\"}\n&RestoreDatasetVersionOperationM"
+          + "etadata\022S\n\020generic_metadata\030\001 \001(\01329.goog"
+          + "le.cloud.aiplatform.v1beta1.GenericOpera"
+          + "tionMetadata\"\311\001\n\024ListDataItemsRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n!aiplatform.google"
+          + "apis.com/Dataset\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage"
+          + "_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\022-\n\tread_"
+          + "mask\030\005 \001(\0132\032.google.protobuf.FieldMask\022\020"
+          + "\n\010order_by\030\006 \001(\t\"o\n\025ListDataItemsRespons"
+          + "e\022=\n\ndata_items\030\001 \003(\0132).google.cloud.aip"
+          + "latform.v1beta1.DataItem\022\027\n\017next_page_to"
+          + "ken\030\002 \001(\t\"\341\004\n\026SearchDataItemsRequest\022\034\n\022"
+          + "order_by_data_item\030\014 \001(\tH\000\022h\n\023order_by_a"
+          + "nnotation\030\r \001(\0132I.google.cloud.aiplatfor"
+          + "m.v1beta1.SearchDataItemsRequest.OrderBy"
+          + "AnnotationH\000\022:\n\007dataset\030\001 \001(\tB)\340A\002\372A#\n!a"
+          + "iplatform.googleapis.com/Dataset\022@\n\013save"
+          + "d_query\030\002 \001(\tB+\030\001\372A&\n$aiplatform.googlea"
+          + "pis.com/SavedQuery\022\031\n\021data_labeling_job\030"
+          + "\003 \001(\t\022\030\n\020data_item_filter\030\004 \001(\t\022\036\n\022annot"
+          + "ations_filter\030\005 \001(\tB\002\030\001\022\032\n\022annotation_fi"
+          + "lters\030\013 \003(\t\022.\n\nfield_mask\030\006 \001(\0132\032.google"
+          + ".protobuf.FieldMask\022\031\n\021annotations_limit"
+          + "\030\007 \001(\005\022\021\n\tpage_size\030\010 \001(\005\022\024\n\010order_by\030\t "
+          + "\001(\tB\002\030\001\022\022\n\npage_token\030\n \001(\t\032?\n\021OrderByAn"
+          + "notation\022\030\n\013saved_query\030\001 \001(\tB\003\340A\002\022\020\n\010or"
+          + "der_by\030\002 \001(\tB\007\n\005order\"z\n\027SearchDataItems"
+          + "Response\022F\n\017data_item_views\030\001 \003(\0132-.goog"
+          + "le.cloud.aiplatform.v1beta1.DataItemView"
+          + "\022\027\n\017next_page_token\030\002 \001(\t\"\261\001\n\014DataItemVi"
+          + "ew\022<\n\tdata_item\030\001 \001(\0132).google.cloud.aip"
+          + "latform.v1beta1.DataItem\022@\n\013annotations\030"
+          + "\002 \003(\0132+.google.cloud.aiplatform.v1beta1."
+          + "Annotation\022!\n\031has_truncated_annotations\030"
+          + "\003 \001(\010\"\314\001\n\027ListSavedQueriesRequest\0229\n\006par"
+          + "ent\030\001 \001(\tB)\340A\002\372A#\n!aiplatform.googleapis"
+          + ".com/Dataset\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_siz"
+          + "e\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\022-\n\tread_mask"
+          + "\030\005 \001(\0132\032.google.protobuf.FieldMask\022\020\n\010or"
+          + "der_by\030\006 \001(\t\"w\n\030ListSavedQueriesResponse"
+          + "\022B\n\rsaved_queries\030\001 \003(\0132+.google.cloud.a"
+          + "iplatform.v1beta1.SavedQuery\022\027\n\017next_pag"
+          + "e_token\030\002 \001(\t\"U\n\027DeleteSavedQueryRequest"
+          + "\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$aiplatform.googl"
+          + "eapis.com/SavedQuery\"\211\001\n\030GetAnnotationSp"
+          + "ecRequest\022>\n\004name\030\001 \001(\tB0\340A\002\372A*\n(aiplatf"
+          + "orm.googleapis.com/AnnotationSpec\022-\n\trea"
+          + "d_mask\030\002 \001(\0132\032.google.protobuf.FieldMask"
+          + "\"\314\001\n\026ListAnnotationsRequest\022:\n\006parent\030\001 "
+          + "\001(\tB*\340A\002\372A$\n\"aiplatform.googleapis.com/D"
+          + "ataItem\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001"
+          + "(\005\022\022\n\npage_token\030\004 \001(\t\022-\n\tread_mask\030\005 \001("
+          + "\0132\032.google.protobuf.FieldMask\022\020\n\010order_b"
+          + "y\030\006 \001(\t\"t\n\027ListAnnotationsResponse\022@\n\013an"
+          + "notations\030\001 \003(\0132+.google.cloud.aiplatfor"
+          + "m.v1beta1.Annotation\022\027\n\017next_page_token\030"
+          + "\002 \001(\t\"\256\n\n\021AssessDataRequest\022\207\001\n#tuning_v"
+          + "alidation_assessment_config\030\002 \001(\0132S.goog"
+          + "le.cloud.aiplatform.v1beta1.AssessDataRe"
+          + "quest.TuningValidationAssessmentConfigB\003"
+          + "\340A\001H\000\022\216\001\n\'tuning_resource_usage_assessme"
+          + "nt_config\030\003 \001(\0132V.google.cloud.aiplatfor"
+          + "m.v1beta1.AssessDataRequest.TuningResour"
+          + "ceUsageAssessmentConfigB\003\340A\001H\000\022\232\001\n-batch"
+          + "_prediction_validation_assessment_config"
+          + "\030\006 \001(\0132\\.google.cloud.aiplatform.v1beta1"
+          + ".AssessDataRequest.BatchPredictionValida"
+          + "tionAssessmentConfigB\003\340A\001H\000\022\241\001\n1batch_pr"
+          + "ediction_resource_usage_assessment_confi"
+          + "g\030\007 \001(\0132_.google.cloud.aiplatform.v1beta"
+          + "1.AssessDataRequest.BatchPredictionResou"
+          + "rceUsageAssessmentConfigB\003\340A\001H\000\022\\\n\026gemin"
+          + "i_template_config\030\004 \001(\01325.google.cloud.a"
+          + "iplatform.v1beta1.GeminiTemplateConfigB\003"
+          + "\340A\001H\001\022\"\n\023request_column_name\030\005 \001(\tB\003\340A\001H"
+          + "\001\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!aiplatform.goog"
+          + "leapis.com/Dataset\032\216\002\n TuningValidationA"
+          + "ssessmentConfig\022\027\n\nmodel_name\030\001 \001(\tB\003\340A\002"
+          + "\022|\n\rdataset_usage\030\002 \001(\0162`.google.cloud.a"
+          + "iplatform.v1beta1.AssessDataRequest.Tuni"
+          + "ngValidationAssessmentConfig.DatasetUsag"
+          + "eB\003\340A\002\"S\n\014DatasetUsage\022\035\n\031DATASET_USAGE_"
+          + "UNSPECIFIED\020\000\022\020\n\014SFT_TRAINING\020\001\022\022\n\016SFT_V"
+          + "ALIDATION\020\002\032>\n#TuningResourceUsageAssess"
+          + "mentConfig\022\027\n\nmodel_name\030\001 \001(\tB\003\340A\002\032D\n)B"
+          + "atchPredictionValidationAssessmentConfig"
+          + "\022\027\n\nmodel_name\030\001 \001(\tB\003\340A\002\032G\n,BatchPredic"
+          + "tionResourceUsageAssessmentConfig\022\027\n\nmod"
+          + "el_name\030\001 \001(\tB\003\340A\002B\023\n\021assessment_configB"
+          + "\r\n\013read_config\"\255\007\n\022AssessDataResponse\022\210\001"
+          + "\n#tuning_validation_assessment_result\030\001 "
+          + "\001(\0132T.google.cloud.aiplatform.v1beta1.As"
+          + "sessDataResponse.TuningValidationAssessm"
+          + "entResultB\003\340A\001H\000\022\217\001\n\'tuning_resource_usa"
+          + "ge_assessment_result\030\002 \001(\0132W.google.clou"
+          + "d.aiplatform.v1beta1.AssessDataResponse."
+          + "TuningResourceUsageAssessmentResultB\003\340A\001"
+          + "H\000\022\233\001\n-batch_prediction_validation_asses"
+          + "sment_result\030\003 \001(\0132].google.cloud.aiplat"
+          + "form.v1beta1.AssessDataResponse.BatchPre"
+          + "dictionValidationAssessmentResultB\003\340A\001H\000"
+          + "\022\242\001\n1batch_prediction_resource_usage_ass"
+          + "essment_result\030\004 \001(\0132`.google.cloud.aipl"
+          + "atform.v1beta1.AssessDataResponse.BatchP"
+          + "redictionResourceUsageAssessmentResultB\003"
+          + "\340A\001H\000\0327\n TuningValidationAssessmentResul"
+          + "t\022\023\n\006errors\030\001 \003(\tB\003\340A\001\032\\\n#TuningResource"
+          + "UsageAssessmentResult\022\023\n\013token_count\030\001 \001"
+          + "(\003\022 \n\030billable_character_count\030\002 \001(\003\032+\n)"
+          + "BatchPredictionValidationAssessmentResul"
+          + "t\032^\n,BatchPredictionResourceUsageAssessm"
+          + "entResult\022\023\n\013token_count\030\001 \001(\003\022\031\n\021audio_"
+          + "token_count\030\002 \001(\003B\023\n\021assessment_result\"r"
+          + "\n\033AssessDataOperationMetadata\022S\n\020generic"
+          + "_metadata\030\001 \001(\01329.google.cloud.aiplatfor"
+          + "m.v1beta1.GenericOperationMetadata\"\375\001\n\024G"
+          + "eminiTemplateConfig\022K\n\016gemini_example\030\001 "
+          + "\001(\0132..google.cloud.aiplatform.v1beta1.Ge"
+          + "miniExampleB\003\340A\002\022c\n\rfield_mapping\030\002 \003(\0132"
+          + "G.google.cloud.aiplatform.v1beta1.Gemini"
+          + "TemplateConfig.FieldMappingEntryB\003\340A\002\0323\n"
+          + "\021FieldMappingEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value"
+          + "\030\002 \001(\t:\0028\001\"\336\005\n\rGeminiExample\0229\n\005model\030\001 "
+          + "\001(\tB*\340A\001\372A$\n\"aiplatform.googleapis.com/E"
+          + "ndpoint\022?\n\010contents\030\002 \003(\0132(.google.cloud"
+          + ".aiplatform.v1beta1.ContentB\003\340A\002\022N\n\022syst"
+          + "em_instruction\030\010 \001(\0132(.google.cloud.aipl"
+          + "atform.v1beta1.ContentB\003\340A\001H\000\210\001\001\022G\n\016cach"
+          + "ed_content\030\t \001(\tB/\340A\001\372A)\n\'aiplatform.goo"
+          + "gleapis.com/CachedContent\0229\n\005tools\030\006 \003(\013"
+          + "2%.google.cloud.aiplatform.v1beta1.ToolB"
+          + "\003\340A\001\022E\n\013tool_config\030\007 \001(\0132+.google.cloud"
+          + ".aiplatform.v1beta1.ToolConfigB\003\340A\001\022O\n\006l"
+          + "abels\030\n \003(\0132:.google.cloud.aiplatform.v1"
+          + "beta1.GeminiExample.LabelsEntryB\003\340A\001\022L\n\017"
+          + "safety_settings\030\003 \003(\0132..google.cloud.aip"
+          + "latform.v1beta1.SafetySettingB\003\340A\001\022Q\n\021ge"
+          + "neration_config\030\004 \001(\01321.google.cloud.aip"
+          + "latform.v1beta1.GenerationConfigB\003\340A\001\032-\n"
+          + "\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
+          + ":\0028\001B\025\n\023_system_instruction\"\337\001\n\023Assemble"
+          + "DataRequest\022\\\n\026gemini_template_config\030\002 "
+          + "\001(\01325.google.cloud.aiplatform.v1beta1.Ge"
+          + "miniTemplateConfigB\003\340A\001H\000\022\"\n\023request_col"
+          + "umn_name\030\005 \001(\tB\003\340A\001H\000\0227\n\004name\030\001 \001(\tB)\340A\002"
+          + "\372A#\n!aiplatform.googleapis.com/DatasetB\r"
+          + "\n\013read_config\"4\n\024AssembleDataResponse\022\034\n"
+          + "\024bigquery_destination\030\001 \001(\t\"t\n\035AssembleD"
+          + "ataOperationMetadata\022S\n\020generic_metadata"
+          + "\030\001 \001(\01329.google.cloud.aiplatform.v1beta1"
+          + ".GenericOperationMetadata2\311*\n\016DatasetSer"
+          + "vice\022\205\002\n\rCreateDataset\0225.google.cloud.ai"
+          + "platform.v1beta1.CreateDatasetRequest\032\035."
+          + "google.longrunning.Operation\"\235\001\312A)\n\007Data"
+          + "set\022\036CreateDatasetOperationMetadata\332A\016pa"
+          + "rent,dataset\202\323\344\223\002Z\"1/v1beta1/{parent=pro"
+          + "jects/*/locations/*}/datasets:\007datasetZ\034"
+          + "\"\021/v1beta1/datasets:\007dataset\022\312\001\n\nGetData"
+          + "set\0222.google.cloud.aiplatform.v1beta1.Ge"
+          + "tDatasetRequest\032(.google.cloud.aiplatfor"
+          + "m.v1beta1.Dataset\"^\332A\004name\202\323\344\223\002Q\0221/v1bet"
           + "a1/{name=projects/*/locations/*/datasets"
-          + "/*}:export:\001*\022\347\002\n\024CreateDatasetVersion\022<"
-          + ".google.cloud.aiplatform.v1beta1.CreateD"
-          + "atasetVersionRequest\032\035.google.longrunnin"
-          + "g.Operation\"\361\001\312A7\n\016DatasetVersion\022%Creat"
-          + "eDatasetVersionOperationMetadata\332A\026paren"
-          + "t,dataset_version\202\323\344\223\002\227\001\"C/v1beta1/{pare"
-          + "nt=projects/*/locations/*/datasets/*}/da"
-          + "tasetVersions:\017dataset_versionZ?\",/v1bet"
-          + "a1/{parent=datasets/*}/datasetVersions:\017"
-          + "dataset_version\022\344\002\n\024UpdateDatasetVersion"
-          + "\022<.google.cloud.aiplatform.v1beta1.Updat"
-          + "eDatasetVersionRequest\032/.google.cloud.ai"
-          + "platform.v1beta1.DatasetVersion\"\334\001\332A\033dat"
-          + "aset_version,update_mask\202\323\344\223\002\267\0012S/v1beta"
-          + "1/{dataset_version.name=projects/*/locat"
-          + "ions/*/datasets/*/datasetVersions/*}:\017da"
-          + "taset_versionZO2</v1beta1/{dataset_versi"
-          + "on.name=datasets/*/datasetVersions/*}:\017d"
-          + "ataset_version\022\253\002\n\024DeleteDatasetVersion\022"
-          + "<.google.cloud.aiplatform.v1beta1.Delete"
+          + "/*}Z\034\022\032/v1beta1/{name=datasets/*}\022\202\002\n\rUp"
+          + "dateDataset\0225.google.cloud.aiplatform.v1"
+          + "beta1.UpdateDatasetRequest\032(.google.clou"
+          + "d.aiplatform.v1beta1.Dataset\"\217\001\332A\023datase"
+          + "t,update_mask\202\323\344\223\002s29/v1beta1/{dataset.n"
+          + "ame=projects/*/locations/*/datasets/*}:\007"
+          + "datasetZ-2\"/v1beta1/{dataset.name=datase"
+          + "ts/*}:\007dataset\022\324\001\n\014ListDatasets\0224.google"
+          + ".cloud.aiplatform.v1beta1.ListDatasetsRe"
+          + "quest\0325.google.cloud.aiplatform.v1beta1."
+          + "ListDatasetsResponse\"W\332A\006parent\202\323\344\223\002H\0221/"
+          + "v1beta1/{parent=projects/*/locations/*}/"
+          + "datasetsZ\023\022\021/v1beta1/datasets\022\371\001\n\rDelete"
+          + "Dataset\0225.google.cloud.aiplatform.v1beta"
+          + "1.DeleteDatasetRequest\032\035.google.longrunn"
+          + "ing.Operation\"\221\001\312A0\n\025google.protobuf.Emp"
+          + "ty\022\027DeleteOperationMetadata\332A\004name\202\323\344\223\002Q"
+          + "*1/v1beta1/{name=projects/*/locations/*/"
+          + "datasets/*}Z\034*\032/v1beta1/{name=datasets/*"
+          + "}\022\357\001\n\nImportData\0222.google.cloud.aiplatfo"
+          + "rm.v1beta1.ImportDataRequest\032\035.google.lo"
+          + "ngrunning.Operation\"\215\001\312A1\n\022ImportDataRes"
+          + "ponse\022\033ImportDataOperationMetadata\332A\023nam"
+          + "e,import_configs\202\323\344\223\002=\"8/v1beta1/{name=p"
+          + "rojects/*/locations/*/datasets/*}:import"
+          + ":\001*\022\356\001\n\nExportData\0222.google.cloud.aiplat"
+          + "form.v1beta1.ExportDataRequest\032\035.google."
+          + "longrunning.Operation\"\214\001\312A1\n\022ExportDataR"
+          + "esponse\022\033ExportDataOperationMetadata\332A\022n"
+          + "ame,export_config\202\323\344\223\002=\"8/v1beta1/{name="
+          + "projects/*/locations/*/datasets/*}:expor"
+          + "t:\001*\022\347\002\n\024CreateDatasetVersion\022<.google.c"
+          + "loud.aiplatform.v1beta1.CreateDatasetVer"
+          + "sionRequest\032\035.google.longrunning.Operati"
+          + "on\"\361\001\312A7\n\016DatasetVersion\022%CreateDatasetV"
+          + "ersionOperationMetadata\332A\026parent,dataset"
+          + "_version\202\323\344\223\002\227\001\"C/v1beta1/{parent=projec"
+          + "ts/*/locations/*/datasets/*}/datasetVers"
+          + "ions:\017dataset_versionZ?\",/v1beta1/{paren"
+          + "t=datasets/*}/datasetVersions:\017dataset_v"
+          + "ersion\022\344\002\n\024UpdateDatasetVersion\022<.google"
+          + ".cloud.aiplatform.v1beta1.UpdateDatasetV"
+          + "ersionRequest\032/.google.cloud.aiplatform."
+          + "v1beta1.DatasetVersion\"\334\001\332A\033dataset_vers"
+          + "ion,update_mask\202\323\344\223\002\267\0012S/v1beta1/{datase"
+          + "t_version.name=projects/*/locations/*/da"
+          + "tasets/*/datasetVersions/*}:\017dataset_ver"
+          + "sionZO2</v1beta1/{dataset_version.name=d"
+          + "atasets/*/datasetVersions/*}:\017dataset_ve"
+          + "rsion\022\253\002\n\024DeleteDatasetVersion\022<.google."
+          + "cloud.aiplatform.v1beta1.DeleteDatasetVe"
+          + "rsionRequest\032\035.google.longrunning.Operat"
+          + "ion\"\265\001\312A0\n\025google.protobuf.Empty\022\027Delete"
+          + "OperationMetadata\332A\004name\202\323\344\223\002u*C/v1beta1"
+          + "/{name=projects/*/locations/*/datasets/*"
+          + "/datasetVersions/*}Z.*,/v1beta1/{name=da"
+          + "tasets/*/datasetVersions/*}\022\204\002\n\021GetDatas"
+          + "etVersion\0229.google.cloud.aiplatform.v1be"
+          + "ta1.GetDatasetVersionRequest\032/.google.cl"
+          + "oud.aiplatform.v1beta1.DatasetVersion\"\202\001"
+          + "\332A\004name\202\323\344\223\002u\022C/v1beta1/{name=projects/*"
+          + "/locations/*/datasets/*/datasetVersions/"
+          + "*}Z.\022,/v1beta1/{name=datasets/*/datasetV"
+          + "ersions/*}\022\227\002\n\023ListDatasetVersions\022;.goo"
+          + "gle.cloud.aiplatform.v1beta1.ListDataset"
+          + "VersionsRequest\032<.google.cloud.aiplatfor"
+          + "m.v1beta1.ListDatasetVersionsResponse\"\204\001"
+          + "\332A\006parent\202\323\344\223\002u\022C/v1beta1/{parent=projec"
+          + "ts/*/locations/*/datasets/*}/datasetVers"
+          + "ionsZ.\022,/v1beta1/{parent=datasets/*}/dat"
+          + "asetVersions\022\306\002\n\025RestoreDatasetVersion\022="
+          + ".google.cloud.aiplatform.v1beta1.Restore"
           + "DatasetVersionRequest\032\035.google.longrunni"
-          + "ng.Operation\"\265\001\312A0\n\025google.protobuf.Empt"
-          + "y\022\027DeleteOperationMetadata\332A\004name\202\323\344\223\002u*"
-          + "C/v1beta1/{name=projects/*/locations/*/d"
-          + "atasets/*/datasetVersions/*}Z.*,/v1beta1"
-          + "/{name=datasets/*/datasetVersions/*}\022\204\002\n"
-          + "\021GetDatasetVersion\0229.google.cloud.aiplat"
-          + "form.v1beta1.GetDatasetVersionRequest\032/."
-          + "google.cloud.aiplatform.v1beta1.DatasetV"
-          + "ersion\"\202\001\332A\004name\202\323\344\223\002u\022C/v1beta1/{name=p"
-          + "rojects/*/locations/*/datasets/*/dataset"
-          + "Versions/*}Z.\022,/v1beta1/{name=datasets/*"
-          + "/datasetVersions/*}\022\227\002\n\023ListDatasetVersi"
-          + "ons\022;.google.cloud.aiplatform.v1beta1.Li"
-          + "stDatasetVersionsRequest\032<.google.cloud."
-          + "aiplatform.v1beta1.ListDatasetVersionsRe"
-          + "sponse\"\204\001\332A\006parent\202\323\344\223\002u\022C/v1beta1/{pare"
-          + "nt=projects/*/locations/*/datasets/*}/da"
-          + "tasetVersionsZ.\022,/v1beta1/{parent=datase"
-          + "ts/*}/datasetVersions\022\306\002\n\025RestoreDataset"
-          + "Version\022=.google.cloud.aiplatform.v1beta"
-          + "1.RestoreDatasetVersionRequest\032\035.google."
-          + "longrunning.Operation\"\316\001\312A8\n\016DatasetVers"
-          + "ion\022&RestoreDatasetVersionOperationMetad"
-          + "ata\332A\004name\202\323\344\223\002\205\001\022K/v1beta1/{name=projec"
-          + "ts/*/locations/*/datasets/*/datasetVersi"
-          + "ons/*}:restoreZ6\0224/v1beta1/{name=dataset"
-          + "s/*/datasetVersions/*}:restore\022\316\001\n\rListD"
-          + "ataItems\0225.google.cloud.aiplatform.v1bet"
-          + "a1.ListDataItemsRequest\0326.google.cloud.a"
-          + "iplatform.v1beta1.ListDataItemsResponse\""
-          + "N\332A\006parent\202\323\344\223\002?\022=/v1beta1/{parent=proje"
-          + "cts/*/locations/*/datasets/*}/dataItems\022"
-          + "\322\001\n\017SearchDataItems\0227.google.cloud.aipla"
-          + "tform.v1beta1.SearchDataItemsRequest\0328.g"
-          + "oogle.cloud.aiplatform.v1beta1.SearchDat"
-          + "aItemsResponse\"L\202\323\344\223\002F\022D/v1beta1/{datase"
-          + "t=projects/*/locations/*/datasets/*}:sea"
-          + "rchDataItems\022\332\001\n\020ListSavedQueries\0228.goog"
-          + "le.cloud.aiplatform.v1beta1.ListSavedQue"
-          + "riesRequest\0329.google.cloud.aiplatform.v1"
-          + "beta1.ListSavedQueriesResponse\"Q\332A\006paren"
-          + "t\202\323\344\223\002B\022@/v1beta1/{parent=projects/*/loc"
-          + "ations/*/datasets/*}/savedQueries\022\360\001\n\020De"
-          + "leteSavedQuery\0228.google.cloud.aiplatform"
-          + ".v1beta1.DeleteSavedQueryRequest\032\035.googl"
-          + "e.longrunning.Operation\"\202\001\312A0\n\025google.pr"
-          + "otobuf.Empty\022\027DeleteOperationMetadata\332A\004"
-          + "name\202\323\344\223\002B*@/v1beta1/{name=projects/*/lo"
-          + "cations/*/datasets/*/savedQueries/*}\022\323\001\n"
-          + "\021GetAnnotationSpec\0229.google.cloud.aiplat"
-          + "form.v1beta1.GetAnnotationSpecRequest\032/."
-          + "google.cloud.aiplatform.v1beta1.Annotati"
-          + "onSpec\"R\332A\004name\202\323\344\223\002E\022C/v1beta1/{name=pr"
-          + "ojects/*/locations/*/datasets/*/annotati"
-          + "onSpecs/*}\022\342\001\n\017ListAnnotations\0227.google."
-          + "cloud.aiplatform.v1beta1.ListAnnotations"
-          + "Request\0328.google.cloud.aiplatform.v1beta"
-          + "1.ListAnnotationsResponse\"\\\332A\006parent\202\323\344\223"
-          + "\002M\022K/v1beta1/{parent=projects/*/location"
-          + "s/*/datasets/*/dataItems/*}/annotations\032"
-          + "M\312A\031aiplatform.googleapis.com\322A.https://"
-          + "www.googleapis.com/auth/cloud-platformB\352"
-          + "\001\n#com.google.cloud.aiplatform.v1beta1B\023"
-          + "DatasetServiceProtoP\001ZCcloud.google.com/"
-          + "go/aiplatform/apiv1beta1/aiplatformpb;ai"
-          + "platformpb\252\002\037Google.Cloud.AIPlatform.V1B"
-          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
-          + "\"Google::Cloud::AIPlatform::V1beta1b\006pro"
-          + "to3"
+          + "ng.Operation\"\316\001\312A8\n\016DatasetVersion\022&Rest"
+          + "oreDatasetVersionOperationMetadata\332A\004nam"
+          + "e\202\323\344\223\002\205\001\022K/v1beta1/{name=projects/*/loca"
+          + "tions/*/datasets/*/datasetVersions/*}:re"
+          + "storeZ6\0224/v1beta1/{name=datasets/*/datas"
+          + "etVersions/*}:restore\022\316\001\n\rListDataItems\022"
+          + "5.google.cloud.aiplatform.v1beta1.ListDa"
+          + "taItemsRequest\0326.google.cloud.aiplatform"
+          + ".v1beta1.ListDataItemsResponse\"N\332A\006paren"
+          + "t\202\323\344\223\002?\022=/v1beta1/{parent=projects/*/loc"
+          + "ations/*/datasets/*}/dataItems\022\322\001\n\017Searc"
+          + "hDataItems\0227.google.cloud.aiplatform.v1b"
+          + "eta1.SearchDataItemsRequest\0328.google.clo"
+          + "ud.aiplatform.v1beta1.SearchDataItemsRes"
+          + "ponse\"L\202\323\344\223\002F\022D/v1beta1/{dataset=project"
+          + "s/*/locations/*/datasets/*}:searchDataIt"
+          + "ems\022\332\001\n\020ListSavedQueries\0228.google.cloud."
+          + "aiplatform.v1beta1.ListSavedQueriesReque"
+          + "st\0329.google.cloud.aiplatform.v1beta1.Lis"
+          + "tSavedQueriesResponse\"Q\332A\006parent\202\323\344\223\002B\022@"
+          + "/v1beta1/{parent=projects/*/locations/*/"
+          + "datasets/*}/savedQueries\022\360\001\n\020DeleteSaved"
+          + "Query\0228.google.cloud.aiplatform.v1beta1."
+          + "DeleteSavedQueryRequest\032\035.google.longrun"
+          + "ning.Operation\"\202\001\312A0\n\025google.protobuf.Em"
+          + "pty\022\027DeleteOperationMetadata\332A\004name\202\323\344\223\002"
+          + "B*@/v1beta1/{name=projects/*/locations/*"
+          + "/datasets/*/savedQueries/*}\022\323\001\n\021GetAnnot"
+          + "ationSpec\0229.google.cloud.aiplatform.v1be"
+          + "ta1.GetAnnotationSpecRequest\032/.google.cl"
+          + "oud.aiplatform.v1beta1.AnnotationSpec\"R\332"
+          + "A\004name\202\323\344\223\002E\022C/v1beta1/{name=projects/*/"
+          + "locations/*/datasets/*/annotationSpecs/*"
+          + "}\022\342\001\n\017ListAnnotations\0227.google.cloud.aip"
+          + "latform.v1beta1.ListAnnotationsRequest\0328"
+          + ".google.cloud.aiplatform.v1beta1.ListAnn"
+          + "otationsResponse\"\\\332A\006parent\202\323\344\223\002M\022K/v1be"
+          + "ta1/{parent=projects/*/locations/*/datas"
+          + "ets/*/dataItems/*}/annotations\022\330\001\n\nAsses"
+          + "sData\0222.google.cloud.aiplatform.v1beta1."
+          + "AssessDataRequest\032\035.google.longrunning.O"
+          + "peration\"w\312A1\n\022AssessDataResponse\022\033Asses"
+          + "sDataOperationMetadata\202\323\344\223\002=\"8/v1beta1/{"
+          + "name=projects/*/locations/*/datasets/*}:"
+          + "assess:\001*\022\342\001\n\014AssembleData\0224.google.clou"
+          + "d.aiplatform.v1beta1.AssembleDataRequest"
+          + "\032\035.google.longrunning.Operation\"}\312A5\n\024As"
+          + "sembleDataResponse\022\035AssembleDataOperatio"
+          + "nMetadata\202\323\344\223\002?\":/v1beta1/{name=projects"
+          + "/*/locations/*/datasets/*}:assemble:\001*\032M"
+          + "\312A\031aiplatform.googleapis.com\322A.https://w"
+          + "ww.googleapis.com/auth/cloud-platformB\352\001"
+          + "\n#com.google.cloud.aiplatform.v1beta1B\023D"
+          + "atasetServiceProtoP\001ZCcloud.google.com/g"
+          + "o/aiplatform/apiv1beta1/aiplatformpb;aip"
+          + "latformpb\252\002\037Google.Cloud.AIPlatform.V1Be"
+          + "ta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\""
+          + "Google::Cloud::AIPlatform::V1beta1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -457,11 +637,13 @@ public final class DatasetServiceProto {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.AnnotationProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.AnnotationSpecProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.ContentProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.DataItemProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.DatasetProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.DatasetVersionProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.OperationProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.SavedQueryProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.ToolProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
@@ -751,6 +933,188 @@ public final class DatasetServiceProto {
             new java.lang.String[] {
               "Annotations", "NextPageToken",
             });
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_descriptor =
+        getDescriptor().getMessageTypes().get(33);
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_descriptor,
+            new java.lang.String[] {
+              "TuningValidationAssessmentConfig",
+              "TuningResourceUsageAssessmentConfig",
+              "BatchPredictionValidationAssessmentConfig",
+              "BatchPredictionResourceUsageAssessmentConfig",
+              "GeminiTemplateConfig",
+              "RequestColumnName",
+              "Name",
+              "AssessmentConfig",
+              "ReadConfig",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_TuningValidationAssessmentConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_TuningValidationAssessmentConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_TuningValidationAssessmentConfig_descriptor,
+            new java.lang.String[] {
+              "ModelName", "DatasetUsage",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_TuningResourceUsageAssessmentConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_TuningResourceUsageAssessmentConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_TuningResourceUsageAssessmentConfig_descriptor,
+            new java.lang.String[] {
+              "ModelName",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionValidationAssessmentConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionValidationAssessmentConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionValidationAssessmentConfig_descriptor,
+            new java.lang.String[] {
+              "ModelName",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionResourceUsageAssessmentConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionResourceUsageAssessmentConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AssessDataRequest_BatchPredictionResourceUsageAssessmentConfig_descriptor,
+            new java.lang.String[] {
+              "ModelName",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_descriptor =
+        getDescriptor().getMessageTypes().get(34);
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_descriptor,
+            new java.lang.String[] {
+              "TuningValidationAssessmentResult",
+              "TuningResourceUsageAssessmentResult",
+              "BatchPredictionValidationAssessmentResult",
+              "BatchPredictionResourceUsageAssessmentResult",
+              "AssessmentResult",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_TuningValidationAssessmentResult_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_TuningValidationAssessmentResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_TuningValidationAssessmentResult_descriptor,
+            new java.lang.String[] {
+              "Errors",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_TuningResourceUsageAssessmentResult_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_TuningResourceUsageAssessmentResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_TuningResourceUsageAssessmentResult_descriptor,
+            new java.lang.String[] {
+              "TokenCount", "BillableCharacterCount",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionValidationAssessmentResult_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionValidationAssessmentResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionValidationAssessmentResult_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionResourceUsageAssessmentResult_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionResourceUsageAssessmentResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AssessDataResponse_BatchPredictionResourceUsageAssessmentResult_descriptor,
+            new java.lang.String[] {
+              "TokenCount", "AudioTokenCount",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(35);
+    internal_static_google_cloud_aiplatform_v1beta1_AssessDataOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AssessDataOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "GenericMetadata",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_GeminiTemplateConfig_descriptor =
+        getDescriptor().getMessageTypes().get(36);
+    internal_static_google_cloud_aiplatform_v1beta1_GeminiTemplateConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_GeminiTemplateConfig_descriptor,
+            new java.lang.String[] {
+              "GeminiExample", "FieldMapping",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_GeminiTemplateConfig_FieldMappingEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_GeminiTemplateConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_GeminiTemplateConfig_FieldMappingEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_GeminiTemplateConfig_FieldMappingEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_GeminiExample_descriptor =
+        getDescriptor().getMessageTypes().get(37);
+    internal_static_google_cloud_aiplatform_v1beta1_GeminiExample_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_GeminiExample_descriptor,
+            new java.lang.String[] {
+              "Model",
+              "Contents",
+              "SystemInstruction",
+              "CachedContent",
+              "Tools",
+              "ToolConfig",
+              "Labels",
+              "SafetySettings",
+              "GenerationConfig",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_GeminiExample_LabelsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_GeminiExample_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_GeminiExample_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_GeminiExample_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AssembleDataRequest_descriptor =
+        getDescriptor().getMessageTypes().get(38);
+    internal_static_google_cloud_aiplatform_v1beta1_AssembleDataRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AssembleDataRequest_descriptor,
+            new java.lang.String[] {
+              "GeminiTemplateConfig", "RequestColumnName", "Name", "ReadConfig",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AssembleDataResponse_descriptor =
+        getDescriptor().getMessageTypes().get(39);
+    internal_static_google_cloud_aiplatform_v1beta1_AssembleDataResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AssembleDataResponse_descriptor,
+            new java.lang.String[] {
+              "BigqueryDestination",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AssembleDataOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(40);
+    internal_static_google_cloud_aiplatform_v1beta1_AssembleDataOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AssembleDataOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "GenericMetadata",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -768,11 +1132,13 @@ public final class DatasetServiceProto {
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.AnnotationProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.AnnotationSpecProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.ContentProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.DataItemProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.DatasetProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.DatasetVersionProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.OperationProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.SavedQueryProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.ToolProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();

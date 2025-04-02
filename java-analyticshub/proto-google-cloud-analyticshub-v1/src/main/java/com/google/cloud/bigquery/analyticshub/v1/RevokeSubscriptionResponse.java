@@ -24,6 +24,7 @@ package com.google.cloud.bigquery.analyticshub.v1;
  *
  * <pre>
  * Message for response when you revoke a subscription.
+ * Empty for now.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse}
@@ -218,6 +219,7 @@ public final class RevokeSubscriptionResponse extends com.google.protobuf.Genera
    *
    * <pre>
    * Message for response when you revoke a subscription.
+   * Empty for now.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse}

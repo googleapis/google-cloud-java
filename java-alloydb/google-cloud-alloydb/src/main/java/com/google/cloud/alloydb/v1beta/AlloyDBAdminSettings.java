@@ -159,6 +159,17 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
     return ((AlloyDBAdminStubSettings) getStubSettings()).updateClusterOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to exportCluster. */
+  public UnaryCallSettings<ExportClusterRequest, Operation> exportClusterSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).exportClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportCluster. */
+  public OperationCallSettings<ExportClusterRequest, ExportClusterResponse, OperationMetadata>
+      exportClusterOperationSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).exportClusterOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to upgradeCluster. */
   public UnaryCallSettings<UpgradeClusterRequest, Operation> upgradeClusterSettings() {
     return ((AlloyDBAdminStubSettings) getStubSettings()).upgradeClusterSettings();
@@ -584,6 +595,18 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
     public OperationCallSettings.Builder<UpdateClusterRequest, Cluster, OperationMetadata>
         updateClusterOperationSettings() {
       return getStubSettingsBuilder().updateClusterOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportCluster. */
+    public UnaryCallSettings.Builder<ExportClusterRequest, Operation> exportClusterSettings() {
+      return getStubSettingsBuilder().exportClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportCluster. */
+    public OperationCallSettings.Builder<
+            ExportClusterRequest, ExportClusterResponse, OperationMetadata>
+        exportClusterOperationSettings() {
+      return getStubSettingsBuilder().exportClusterOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to upgradeCluster. */

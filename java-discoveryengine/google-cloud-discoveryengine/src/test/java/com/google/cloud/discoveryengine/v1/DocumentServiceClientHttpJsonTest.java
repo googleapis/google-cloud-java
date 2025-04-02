@@ -619,6 +619,7 @@ public class DocumentServiceClientHttpJsonTest {
             .setUpdateMask(FieldMask.newBuilder().build())
             .setAutoGenerateIds(true)
             .setIdField("idField1629396127")
+            .setForceRefreshContent(true)
             .build();
 
     ImportDocumentsResponse actualResponse = client.importDocumentsAsync(request).get();
@@ -657,6 +658,7 @@ public class DocumentServiceClientHttpJsonTest {
               .setUpdateMask(FieldMask.newBuilder().build())
               .setAutoGenerateIds(true)
               .setIdField("idField1629396127")
+              .setForceRefreshContent(true)
               .build();
       client.importDocumentsAsync(request).get();
       Assert.fail("No exception raised");

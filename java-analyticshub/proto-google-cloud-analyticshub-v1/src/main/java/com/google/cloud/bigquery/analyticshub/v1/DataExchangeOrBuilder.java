@@ -287,4 +287,37 @@ public interface DataExchangeOrBuilder
    * @return The discoveryType.
    */
   com.google.cloud.bigquery.analyticshub.v1.DiscoveryType getDiscoveryType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. By default, false.
+   * If true, the DataExchange has an email sharing mandate enabled.
+   * Publishers can view the logged email of the subscriber.
+   * </pre>
+   *
+   * <code>
+   * optional bool log_linked_dataset_query_user_email = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the logLinkedDatasetQueryUserEmail field is set.
+   */
+  boolean hasLogLinkedDatasetQueryUserEmail();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. By default, false.
+   * If true, the DataExchange has an email sharing mandate enabled.
+   * Publishers can view the logged email of the subscriber.
+   * </pre>
+   *
+   * <code>
+   * optional bool log_linked_dataset_query_user_email = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The logLinkedDatasetQueryUserEmail.
+   */
+  boolean getLogLinkedDatasetQueryUserEmail();
 }

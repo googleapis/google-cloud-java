@@ -819,6 +819,102 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
+   * The BigQuery table to which the sample findings are written.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 37;</code>
+   *
+   * @return Whether the sampleFindingsTable field is set.
+   */
+  boolean hasSampleFindingsTable();
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery table to which the sample findings are written.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 37;</code>
+   *
+   * @return The sampleFindingsTable.
+   */
+  com.google.privacy.dlp.v2.BigQueryTable getSampleFindingsTable();
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery table to which the sample findings are written.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 37;</code>
+   */
+  com.google.privacy.dlp.v2.BigQueryTableOrBuilder getSampleFindingsTableOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the table, including any tags attached during
+   * profiling. Because tags are attached to Cloud SQL instances rather than
+   * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+   */
+  java.util.List<com.google.privacy.dlp.v2.Tag> getTagsList();
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the table, including any tags attached during
+   * profiling. Because tags are attached to Cloud SQL instances rather than
+   * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+   */
+  com.google.privacy.dlp.v2.Tag getTags(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the table, including any tags attached during
+   * profiling. Because tags are attached to Cloud SQL instances rather than
+   * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+   */
+  int getTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the table, including any tags attached during
+   * profiling. Because tags are attached to Cloud SQL instances rather than
+   * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+   */
+  java.util.List<? extends com.google.privacy.dlp.v2.TagOrBuilder> getTagsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the table, including any tags attached during
+   * profiling. Because tags are attached to Cloud SQL instances rather than
+   * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+   */
+  com.google.privacy.dlp.v2.TagOrBuilder getTagsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Resources related to this profile.
    * </pre>
    *

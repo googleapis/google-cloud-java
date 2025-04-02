@@ -73,16 +73,20 @@ public interface PurgeUserEventsRequestOrBuilder
    * * `userId`: Double quoted string. Specifying this will delete all events
    *   associated with a user.
    *
+   * Note: This API only supports purging a max range of 30 days.
+   *
    * Examples:
    *
    * * Deleting all events in a time range:
    *   `eventTime &gt; "2012-04-23T18:25:43.511Z"
    *   eventTime &lt; "2012-04-23T18:30:43.511Z"`
-   * * Deleting specific eventType:
-   *   `eventType = "search"`
-   * * Deleting all events for a specific visitor:
-   *   `userPseudoId = "visitor1024"`
-   * * Deleting all events inside a DataStore:
+   * * Deleting specific eventType in a time range:
+   *   `eventTime &gt; "2012-04-23T18:25:43.511Z"
+   *   eventTime &lt; "2012-04-23T18:30:43.511Z" eventType = "search"`
+   * * Deleting all events for a specific visitor in a time range:
+   *   `eventTime &gt; "2012-04-23T18:25:43.511Z"
+   *   eventTime &lt; "2012-04-23T18:30:43.511Z" userPseudoId = "visitor1024"`
+   * * Deleting the past 30 days of events inside a DataStore:
    *   `*`
    *
    * The filtering fields are assumed to have an implicit AND.
@@ -109,16 +113,20 @@ public interface PurgeUserEventsRequestOrBuilder
    * * `userId`: Double quoted string. Specifying this will delete all events
    *   associated with a user.
    *
+   * Note: This API only supports purging a max range of 30 days.
+   *
    * Examples:
    *
    * * Deleting all events in a time range:
    *   `eventTime &gt; "2012-04-23T18:25:43.511Z"
    *   eventTime &lt; "2012-04-23T18:30:43.511Z"`
-   * * Deleting specific eventType:
-   *   `eventType = "search"`
-   * * Deleting all events for a specific visitor:
-   *   `userPseudoId = "visitor1024"`
-   * * Deleting all events inside a DataStore:
+   * * Deleting specific eventType in a time range:
+   *   `eventTime &gt; "2012-04-23T18:25:43.511Z"
+   *   eventTime &lt; "2012-04-23T18:30:43.511Z" eventType = "search"`
+   * * Deleting all events for a specific visitor in a time range:
+   *   `eventTime &gt; "2012-04-23T18:25:43.511Z"
+   *   eventTime &lt; "2012-04-23T18:30:43.511Z" userPseudoId = "visitor1024"`
+   * * Deleting the past 30 days of events inside a DataStore:
    *   `*`
    *
    * The filtering fields are assumed to have an implicit AND.

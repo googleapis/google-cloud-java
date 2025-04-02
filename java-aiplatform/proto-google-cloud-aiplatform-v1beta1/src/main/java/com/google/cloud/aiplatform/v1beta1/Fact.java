@@ -343,7 +343,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
    * <code>optional double vector_distance = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Fact.vector_distance is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=314
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=318
    * @return Whether the vectorDistance field is set.
    */
   @java.lang.Override
@@ -361,7 +361,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
    * <code>optional double vector_distance = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Fact.vector_distance is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=314
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=318
    * @return The vectorDistance.
    */
   @java.lang.Override
@@ -417,6 +417,56 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     return score_;
   }
 
+  public static final int CHUNK_FIELD_NUMBER = 7;
+  private com.google.cloud.aiplatform.v1beta1.RagChunk chunk_;
+  /**
+   *
+   *
+   * <pre>
+   * If present, chunk properties.
+   * </pre>
+   *
+   * <code>optional .google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+   *
+   * @return Whether the chunk field is set.
+   */
+  @java.lang.Override
+  public boolean hasChunk() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If present, chunk properties.
+   * </pre>
+   *
+   * <code>optional .google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+   *
+   * @return The chunk.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagChunk getChunk() {
+    return chunk_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RagChunk.getDefaultInstance()
+        : chunk_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If present, chunk properties.
+   * </pre>
+   *
+   * <code>optional .google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder getChunkOrBuilder() {
+    return chunk_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RagChunk.getDefaultInstance()
+        : chunk_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -449,6 +499,9 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeDouble(6, score_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(7, getChunk());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -475,6 +528,9 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(6, score_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getChunk());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -517,6 +573,10 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       if (java.lang.Double.doubleToLongBits(getScore())
           != java.lang.Double.doubleToLongBits(other.getScore())) return false;
     }
+    if (hasChunk() != other.hasChunk()) return false;
+    if (hasChunk()) {
+      if (!getChunk().equals(other.getChunk())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -557,6 +617,10 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getScore()));
+    }
+    if (hasChunk()) {
+      hash = (37 * hash) + CHUNK_FIELD_NUMBER;
+      hash = (53 * hash) + getChunk().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -687,10 +751,19 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.Fact.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getChunkFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -703,6 +776,11 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       summary_ = "";
       vectorDistance_ = 0D;
       score_ = 0D;
+      chunk_ = null;
+      if (chunkBuilder_ != null) {
+        chunkBuilder_.dispose();
+        chunkBuilder_ = null;
+      }
       return this;
     }
 
@@ -763,6 +841,10 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.score_ = score_;
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.chunk_ = chunkBuilder_ == null ? chunk_ : chunkBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -838,6 +920,9 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       if (other.hasScore()) {
         setScore(other.getScore());
       }
+      if (other.hasChunk()) {
+        mergeChunk(other.getChunk());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -900,6 +985,12 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 49
+            case 58:
+              {
+                input.readMessage(getChunkFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1410,7 +1501,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
      * <code>optional double vector_distance = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Fact.vector_distance is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=314
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=318
      * @return Whether the vectorDistance field is set.
      */
     @java.lang.Override
@@ -1428,7 +1519,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
      * <code>optional double vector_distance = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Fact.vector_distance is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=314
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=318
      * @return The vectorDistance.
      */
     @java.lang.Override
@@ -1446,7 +1537,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
      * <code>optional double vector_distance = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Fact.vector_distance is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=314
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=318
      * @param value The vectorDistance to set.
      * @return This builder for chaining.
      */
@@ -1468,7 +1559,7 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
      * <code>optional double vector_distance = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Fact.vector_distance is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=314
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=318
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1573,6 +1664,191 @@ public final class Fact extends com.google.protobuf.GeneratedMessageV3
       score_ = 0D;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.RagChunk chunk_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagChunk,
+            com.google.cloud.aiplatform.v1beta1.RagChunk.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder>
+        chunkBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If present, chunk properties.
+     * </pre>
+     *
+     * <code>optional .google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+     *
+     * @return Whether the chunk field is set.
+     */
+    public boolean hasChunk() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, chunk properties.
+     * </pre>
+     *
+     * <code>optional .google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+     *
+     * @return The chunk.
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagChunk getChunk() {
+      if (chunkBuilder_ == null) {
+        return chunk_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RagChunk.getDefaultInstance()
+            : chunk_;
+      } else {
+        return chunkBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, chunk properties.
+     * </pre>
+     *
+     * <code>optional .google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+     */
+    public Builder setChunk(com.google.cloud.aiplatform.v1beta1.RagChunk value) {
+      if (chunkBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        chunk_ = value;
+      } else {
+        chunkBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, chunk properties.
+     * </pre>
+     *
+     * <code>optional .google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+     */
+    public Builder setChunk(com.google.cloud.aiplatform.v1beta1.RagChunk.Builder builderForValue) {
+      if (chunkBuilder_ == null) {
+        chunk_ = builderForValue.build();
+      } else {
+        chunkBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, chunk properties.
+     * </pre>
+     *
+     * <code>optional .google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+     */
+    public Builder mergeChunk(com.google.cloud.aiplatform.v1beta1.RagChunk value) {
+      if (chunkBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && chunk_ != null
+            && chunk_ != com.google.cloud.aiplatform.v1beta1.RagChunk.getDefaultInstance()) {
+          getChunkBuilder().mergeFrom(value);
+        } else {
+          chunk_ = value;
+        }
+      } else {
+        chunkBuilder_.mergeFrom(value);
+      }
+      if (chunk_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, chunk properties.
+     * </pre>
+     *
+     * <code>optional .google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+     */
+    public Builder clearChunk() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      chunk_ = null;
+      if (chunkBuilder_ != null) {
+        chunkBuilder_.dispose();
+        chunkBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, chunk properties.
+     * </pre>
+     *
+     * <code>optional .google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagChunk.Builder getChunkBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getChunkFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, chunk properties.
+     * </pre>
+     *
+     * <code>optional .google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder getChunkOrBuilder() {
+      if (chunkBuilder_ != null) {
+        return chunkBuilder_.getMessageOrBuilder();
+      } else {
+        return chunk_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RagChunk.getDefaultInstance()
+            : chunk_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, chunk properties.
+     * </pre>
+     *
+     * <code>optional .google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagChunk,
+            com.google.cloud.aiplatform.v1beta1.RagChunk.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder>
+        getChunkFieldBuilder() {
+      if (chunkBuilder_ == null) {
+        chunkBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RagChunk,
+                com.google.cloud.aiplatform.v1beta1.RagChunk.Builder,
+                com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder>(
+                getChunk(), getParentForChildren(), isClean());
+        chunk_ = null;
+      }
+      return chunkBuilder_;
     }
 
     @java.lang.Override

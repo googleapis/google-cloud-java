@@ -72,7 +72,7 @@ public interface RagQueryOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.similarity_top_k is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=91
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=92
    * @return The similarityTopK.
    */
   @java.lang.Deprecated
@@ -90,7 +90,7 @@ public interface RagQueryOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.ranking is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=95
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=96
    * @return Whether the ranking field is set.
    */
   @java.lang.Deprecated
@@ -107,7 +107,7 @@ public interface RagQueryOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.ranking is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=95
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=96
    * @return The ranking.
    */
   @java.lang.Deprecated

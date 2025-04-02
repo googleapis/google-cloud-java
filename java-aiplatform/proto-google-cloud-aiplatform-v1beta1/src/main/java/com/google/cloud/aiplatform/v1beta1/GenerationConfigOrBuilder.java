@@ -647,4 +647,46 @@ public interface GenerationConfigOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.SpeechConfigOrBuilder getSpeechConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for model selection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig model_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the modelConfig field is set.
+   */
+  boolean hasModelConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for model selection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig model_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The modelConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig getModelConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for model selection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfig model_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.GenerationConfig.ModelConfigOrBuilder
+      getModelConfigOrBuilder();
 }

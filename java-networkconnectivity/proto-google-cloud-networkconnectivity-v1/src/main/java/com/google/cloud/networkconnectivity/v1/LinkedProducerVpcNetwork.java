@@ -37,6 +37,8 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     producerNetwork_ = "";
     excludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     includeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    proposedIncludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    proposedExcludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -418,6 +420,158 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     return includeExportRanges_.getByteString(index);
   }
 
+  public static final int PROPOSED_INCLUDE_EXPORT_RANGES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList proposedIncludeExportRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The proposed include export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the proposedIncludeExportRanges.
+   */
+  public com.google.protobuf.ProtocolStringList getProposedIncludeExportRangesList() {
+    return proposedIncludeExportRanges_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The proposed include export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of proposedIncludeExportRanges.
+   */
+  public int getProposedIncludeExportRangesCount() {
+    return proposedIncludeExportRanges_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The proposed include export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The proposedIncludeExportRanges at the given index.
+   */
+  public java.lang.String getProposedIncludeExportRanges(int index) {
+    return proposedIncludeExportRanges_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The proposed include export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the proposedIncludeExportRanges at the given index.
+   */
+  public com.google.protobuf.ByteString getProposedIncludeExportRangesBytes(int index) {
+    return proposedIncludeExportRanges_.getByteString(index);
+  }
+
+  public static final int PROPOSED_EXCLUDE_EXPORT_RANGES_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList proposedExcludeExportRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_export_ranges = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the proposedExcludeExportRanges.
+   */
+  public com.google.protobuf.ProtocolStringList getProposedExcludeExportRangesList() {
+    return proposedExcludeExportRanges_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_export_ranges = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of proposedExcludeExportRanges.
+   */
+  public int getProposedExcludeExportRangesCount() {
+    return proposedExcludeExportRanges_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_export_ranges = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The proposedExcludeExportRanges at the given index.
+   */
+  public java.lang.String getProposedExcludeExportRanges(int index) {
+    return proposedExcludeExportRanges_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_export_ranges = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the proposedExcludeExportRanges at the given index.
+   */
+  public com.google.protobuf.ByteString getProposedExcludeExportRangesBytes(int index) {
+    return proposedExcludeExportRanges_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -449,6 +603,14 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceConsumerVpcSpoke_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, serviceConsumerVpcSpoke_);
+    }
+    for (int i = 0; i < proposedIncludeExportRanges_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 7, proposedIncludeExportRanges_.getRaw(i));
+    }
+    for (int i = 0; i < proposedExcludeExportRanges_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 8, proposedExcludeExportRanges_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -487,6 +649,22 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceConsumerVpcSpoke_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, serviceConsumerVpcSpoke_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < proposedIncludeExportRanges_.size(); i++) {
+        dataSize += computeStringSizeNoTag(proposedIncludeExportRanges_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getProposedIncludeExportRangesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < proposedExcludeExportRanges_.size(); i++) {
+        dataSize += computeStringSizeNoTag(proposedExcludeExportRanges_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getProposedExcludeExportRangesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -509,6 +687,10 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     if (!getProducerNetwork().equals(other.getProducerNetwork())) return false;
     if (!getExcludeExportRangesList().equals(other.getExcludeExportRangesList())) return false;
     if (!getIncludeExportRangesList().equals(other.getIncludeExportRangesList())) return false;
+    if (!getProposedIncludeExportRangesList().equals(other.getProposedIncludeExportRangesList()))
+      return false;
+    if (!getProposedExcludeExportRangesList().equals(other.getProposedExcludeExportRangesList()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -535,6 +717,14 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
     if (getIncludeExportRangesCount() > 0) {
       hash = (37 * hash) + INCLUDE_EXPORT_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getIncludeExportRangesList().hashCode();
+    }
+    if (getProposedIncludeExportRangesCount() > 0) {
+      hash = (37 * hash) + PROPOSED_INCLUDE_EXPORT_RANGES_FIELD_NUMBER;
+      hash = (53 * hash) + getProposedIncludeExportRangesList().hashCode();
+    }
+    if (getProposedExcludeExportRangesCount() > 0) {
+      hash = (37 * hash) + PROPOSED_EXCLUDE_EXPORT_RANGES_FIELD_NUMBER;
+      hash = (53 * hash) + getProposedExcludeExportRangesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -674,6 +864,8 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       producerNetwork_ = "";
       excludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       includeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      proposedIncludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      proposedExcludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -731,6 +923,14 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       if (((from_bitField0_ & 0x00000020) != 0)) {
         includeExportRanges_.makeImmutable();
         result.includeExportRanges_ = includeExportRanges_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        proposedIncludeExportRanges_.makeImmutable();
+        result.proposedIncludeExportRanges_ = proposedIncludeExportRanges_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        proposedExcludeExportRanges_.makeImmutable();
+        result.proposedExcludeExportRanges_ = proposedExcludeExportRanges_;
       }
     }
 
@@ -822,6 +1022,26 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
         }
         onChanged();
       }
+      if (!other.proposedIncludeExportRanges_.isEmpty()) {
+        if (proposedIncludeExportRanges_.isEmpty()) {
+          proposedIncludeExportRanges_ = other.proposedIncludeExportRanges_;
+          bitField0_ |= 0x00000040;
+        } else {
+          ensureProposedIncludeExportRangesIsMutable();
+          proposedIncludeExportRanges_.addAll(other.proposedIncludeExportRanges_);
+        }
+        onChanged();
+      }
+      if (!other.proposedExcludeExportRanges_.isEmpty()) {
+        if (proposedExcludeExportRanges_.isEmpty()) {
+          proposedExcludeExportRanges_ = other.proposedExcludeExportRanges_;
+          bitField0_ |= 0x00000080;
+        } else {
+          ensureProposedExcludeExportRangesIsMutable();
+          proposedExcludeExportRanges_.addAll(other.proposedExcludeExportRanges_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -886,6 +1106,20 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000002;
                 break;
               } // case 50
+            case 58:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureProposedIncludeExportRangesIsMutable();
+                proposedIncludeExportRanges_.add(s);
+                break;
+              } // case 58
+            case 66:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureProposedExcludeExportRangesIsMutable();
+                proposedExcludeExportRanges_.add(s);
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1736,6 +1970,410 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
       ensureIncludeExportRangesIsMutable();
       includeExportRanges_.add(value);
       bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList proposedIncludeExportRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureProposedIncludeExportRangesIsMutable() {
+      if (!proposedIncludeExportRanges_.isModifiable()) {
+        proposedIncludeExportRanges_ =
+            new com.google.protobuf.LazyStringArrayList(proposedIncludeExportRanges_);
+      }
+      bitField0_ |= 0x00000040;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The proposed include export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the proposedIncludeExportRanges.
+     */
+    public com.google.protobuf.ProtocolStringList getProposedIncludeExportRangesList() {
+      proposedIncludeExportRanges_.makeImmutable();
+      return proposedIncludeExportRanges_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The proposed include export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of proposedIncludeExportRanges.
+     */
+    public int getProposedIncludeExportRangesCount() {
+      return proposedIncludeExportRanges_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The proposed include export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The proposedIncludeExportRanges at the given index.
+     */
+    public java.lang.String getProposedIncludeExportRanges(int index) {
+      return proposedIncludeExportRanges_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The proposed include export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the proposedIncludeExportRanges at the given index.
+     */
+    public com.google.protobuf.ByteString getProposedIncludeExportRangesBytes(int index) {
+      return proposedIncludeExportRanges_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The proposed include export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The proposedIncludeExportRanges to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProposedIncludeExportRanges(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureProposedIncludeExportRangesIsMutable();
+      proposedIncludeExportRanges_.set(index, value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The proposed include export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The proposedIncludeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProposedIncludeExportRanges(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureProposedIncludeExportRangesIsMutable();
+      proposedIncludeExportRanges_.add(value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The proposed include export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The proposedIncludeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllProposedIncludeExportRanges(java.lang.Iterable<java.lang.String> values) {
+      ensureProposedIncludeExportRangesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, proposedIncludeExportRanges_);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The proposed include export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProposedIncludeExportRanges() {
+      proposedIncludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The proposed include export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the proposedIncludeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProposedIncludeExportRangesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureProposedIncludeExportRangesIsMutable();
+      proposedIncludeExportRanges_.add(value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList proposedExcludeExportRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureProposedExcludeExportRangesIsMutable() {
+      if (!proposedExcludeExportRanges_.isModifiable()) {
+        proposedExcludeExportRanges_ =
+            new com.google.protobuf.LazyStringArrayList(proposedExcludeExportRanges_);
+      }
+      bitField0_ |= 0x00000080;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The proposed exclude export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_exclude_export_ranges = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the proposedExcludeExportRanges.
+     */
+    public com.google.protobuf.ProtocolStringList getProposedExcludeExportRangesList() {
+      proposedExcludeExportRanges_.makeImmutable();
+      return proposedExcludeExportRanges_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The proposed exclude export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_exclude_export_ranges = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of proposedExcludeExportRanges.
+     */
+    public int getProposedExcludeExportRangesCount() {
+      return proposedExcludeExportRanges_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The proposed exclude export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_exclude_export_ranges = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The proposedExcludeExportRanges at the given index.
+     */
+    public java.lang.String getProposedExcludeExportRanges(int index) {
+      return proposedExcludeExportRanges_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The proposed exclude export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_exclude_export_ranges = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the proposedExcludeExportRanges at the given index.
+     */
+    public com.google.protobuf.ByteString getProposedExcludeExportRangesBytes(int index) {
+      return proposedExcludeExportRanges_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The proposed exclude export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_exclude_export_ranges = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The proposedExcludeExportRanges to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProposedExcludeExportRanges(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureProposedExcludeExportRangesIsMutable();
+      proposedExcludeExportRanges_.set(index, value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The proposed exclude export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_exclude_export_ranges = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The proposedExcludeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProposedExcludeExportRanges(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureProposedExcludeExportRangesIsMutable();
+      proposedExcludeExportRanges_.add(value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The proposed exclude export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_exclude_export_ranges = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The proposedExcludeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllProposedExcludeExportRanges(java.lang.Iterable<java.lang.String> values) {
+      ensureProposedExcludeExportRangesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, proposedExcludeExportRanges_);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The proposed exclude export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_exclude_export_ranges = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProposedExcludeExportRanges() {
+      proposedExcludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The proposed exclude export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_exclude_export_ranges = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes of the proposedExcludeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProposedExcludeExportRangesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureProposedExcludeExportRangesIsMutable();
+      proposedExcludeExportRanges_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
