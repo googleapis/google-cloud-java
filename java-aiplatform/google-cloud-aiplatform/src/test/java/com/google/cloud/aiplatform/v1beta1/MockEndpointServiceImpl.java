@@ -245,4 +245,47 @@ public class MockEndpointServiceImpl extends EndpointServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void setPublisherModelConfig(
+      SetPublisherModelConfigRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetPublisherModelConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchPublisherModelConfig(
+      FetchPublisherModelConfigRequest request,
+      StreamObserver<PublisherModelConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PublisherModelConfig) {
+      requests.add(request);
+      responseObserver.onNext(((PublisherModelConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchPublisherModelConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PublisherModelConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

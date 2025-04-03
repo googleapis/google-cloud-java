@@ -148,6 +148,9 @@
             "DeployModel": {
               "methods": ["deployModelAsync", "deployModelAsync", "deployModelAsync", "deployModelOperationCallable", "deployModelCallable"]
             },
+            "FetchPublisherModelConfig": {
+              "methods": ["fetchPublisherModelConfig", "fetchPublisherModelConfig", "fetchPublisherModelConfig", "fetchPublisherModelConfigCallable"]
+            },
             "GetEndpoint": {
               "methods": ["getEndpoint", "getEndpoint", "getEndpoint", "getEndpointCallable"]
             },
@@ -168,6 +171,9 @@
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "SetPublisherModelConfig": {
+              "methods": ["setPublisherModelConfigAsync", "setPublisherModelConfigAsync", "setPublisherModelConfigAsync", "setPublisherModelConfigOperationCallable", "setPublisherModelConfigCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]

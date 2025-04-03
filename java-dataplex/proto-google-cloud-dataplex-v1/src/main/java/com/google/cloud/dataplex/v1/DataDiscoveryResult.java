@@ -70,9 +70,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The BigQuery dataset to publish to. It takes the form
-     * `projects/{project_id}/datasets/{dataset_id}`.
-     * If not set, the service creates a default publishing dataset.
+     * Output only. The BigQuery dataset the discovered tables are published to.
      * </pre>
      *
      * <code>
@@ -86,9 +84,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The BigQuery dataset to publish to. It takes the form
-     * `projects/{project_id}/datasets/{dataset_id}`.
-     * If not set, the service creates a default publishing dataset.
+     * Output only. The BigQuery dataset the discovered tables are published to.
      * </pre>
      *
      * <code>
@@ -151,9 +147,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The BigQuery dataset to publish to. It takes the form
-     * `projects/{project_id}/datasets/{dataset_id}`.
-     * If not set, the service creates a default publishing dataset.
+     * Output only. The BigQuery dataset the discovered tables are published to.
      * </pre>
      *
      * <code>
@@ -178,9 +172,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The BigQuery dataset to publish to. It takes the form
-     * `projects/{project_id}/datasets/{dataset_id}`.
-     * If not set, the service creates a default publishing dataset.
+     * Output only. The BigQuery dataset the discovered tables are published to.
      * </pre>
      *
      * <code>
@@ -562,9 +554,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Output only. The BigQuery dataset to publish to. It takes the form
-       * `projects/{project_id}/datasets/{dataset_id}`.
-       * If not set, the service creates a default publishing dataset.
+       * Output only. The BigQuery dataset the discovered tables are published to.
        * </pre>
        *
        * <code>
@@ -588,9 +578,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Output only. The BigQuery dataset to publish to. It takes the form
-       * `projects/{project_id}/datasets/{dataset_id}`.
-       * If not set, the service creates a default publishing dataset.
+       * Output only. The BigQuery dataset the discovered tables are published to.
        * </pre>
        *
        * <code>
@@ -614,9 +602,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Output only. The BigQuery dataset to publish to. It takes the form
-       * `projects/{project_id}/datasets/{dataset_id}`.
-       * If not set, the service creates a default publishing dataset.
+       * Output only. The BigQuery dataset the discovered tables are published to.
        * </pre>
        *
        * <code>
@@ -639,9 +625,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Output only. The BigQuery dataset to publish to. It takes the form
-       * `projects/{project_id}/datasets/{dataset_id}`.
-       * If not set, the service creates a default publishing dataset.
+       * Output only. The BigQuery dataset the discovered tables are published to.
        * </pre>
        *
        * <code>
@@ -660,9 +644,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Output only. The BigQuery dataset to publish to. It takes the form
-       * `projects/{project_id}/datasets/{dataset_id}`.
-       * If not set, the service creates a default publishing dataset.
+       * Output only. The BigQuery dataset the discovered tables are published to.
        * </pre>
        *
        * <code>

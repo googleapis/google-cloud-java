@@ -456,6 +456,108 @@ public final class EndpointServiceGrpc {
     return getMutateDeployedModelMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.SetPublisherModelConfigRequest,
+          com.google.longrunning.Operation>
+      getSetPublisherModelConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetPublisherModelConfig",
+      requestType = com.google.cloud.aiplatform.v1beta1.SetPublisherModelConfigRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.SetPublisherModelConfigRequest,
+          com.google.longrunning.Operation>
+      getSetPublisherModelConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.SetPublisherModelConfigRequest,
+            com.google.longrunning.Operation>
+        getSetPublisherModelConfigMethod;
+    if ((getSetPublisherModelConfigMethod = EndpointServiceGrpc.getSetPublisherModelConfigMethod)
+        == null) {
+      synchronized (EndpointServiceGrpc.class) {
+        if ((getSetPublisherModelConfigMethod =
+                EndpointServiceGrpc.getSetPublisherModelConfigMethod)
+            == null) {
+          EndpointServiceGrpc.getSetPublisherModelConfigMethod =
+              getSetPublisherModelConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.SetPublisherModelConfigRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SetPublisherModelConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.SetPublisherModelConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EndpointServiceMethodDescriptorSupplier("SetPublisherModelConfig"))
+                      .build();
+        }
+      }
+    }
+    return getSetPublisherModelConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.FetchPublisherModelConfigRequest,
+          com.google.cloud.aiplatform.v1beta1.PublisherModelConfig>
+      getFetchPublisherModelConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchPublisherModelConfig",
+      requestType = com.google.cloud.aiplatform.v1beta1.FetchPublisherModelConfigRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.PublisherModelConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.FetchPublisherModelConfigRequest,
+          com.google.cloud.aiplatform.v1beta1.PublisherModelConfig>
+      getFetchPublisherModelConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.FetchPublisherModelConfigRequest,
+            com.google.cloud.aiplatform.v1beta1.PublisherModelConfig>
+        getFetchPublisherModelConfigMethod;
+    if ((getFetchPublisherModelConfigMethod =
+            EndpointServiceGrpc.getFetchPublisherModelConfigMethod)
+        == null) {
+      synchronized (EndpointServiceGrpc.class) {
+        if ((getFetchPublisherModelConfigMethod =
+                EndpointServiceGrpc.getFetchPublisherModelConfigMethod)
+            == null) {
+          EndpointServiceGrpc.getFetchPublisherModelConfigMethod =
+              getFetchPublisherModelConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.FetchPublisherModelConfigRequest,
+                          com.google.cloud.aiplatform.v1beta1.PublisherModelConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FetchPublisherModelConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.FetchPublisherModelConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.PublisherModelConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EndpointServiceMethodDescriptorSupplier("FetchPublisherModelConfig"))
+                      .build();
+        }
+      }
+    }
+    return getFetchPublisherModelConfigMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EndpointServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EndpointServiceStub> factory =
@@ -637,6 +739,36 @@ public final class EndpointServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getMutateDeployedModelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets (creates or updates) configs of publisher models. For example, sets
+     * the request/response logging config.
+     * </pre>
+     */
+    default void setPublisherModelConfig(
+        com.google.cloud.aiplatform.v1beta1.SetPublisherModelConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetPublisherModelConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches the configs of publisher models.
+     * </pre>
+     */
+    default void fetchPublisherModelConfig(
+        com.google.cloud.aiplatform.v1beta1.FetchPublisherModelConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PublisherModelConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchPublisherModelConfigMethod(), responseObserver);
     }
   }
 
@@ -824,6 +956,40 @@ public final class EndpointServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets (creates or updates) configs of publisher models. For example, sets
+     * the request/response logging config.
+     * </pre>
+     */
+    public void setPublisherModelConfig(
+        com.google.cloud.aiplatform.v1beta1.SetPublisherModelConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSetPublisherModelConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches the configs of publisher models.
+     * </pre>
+     */
+    public void fetchPublisherModelConfig(
+        com.google.cloud.aiplatform.v1beta1.FetchPublisherModelConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PublisherModelConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchPublisherModelConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -964,6 +1130,33 @@ public final class EndpointServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.MutateDeployedModelRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMutateDeployedModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets (creates or updates) configs of publisher models. For example, sets
+     * the request/response logging config.
+     * </pre>
+     */
+    public com.google.longrunning.Operation setPublisherModelConfig(
+        com.google.cloud.aiplatform.v1beta1.SetPublisherModelConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetPublisherModelConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches the configs of publisher models.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PublisherModelConfig fetchPublisherModelConfig(
+        com.google.cloud.aiplatform.v1beta1.FetchPublisherModelConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchPublisherModelConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -1111,6 +1304,36 @@ public final class EndpointServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMutateDeployedModelMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets (creates or updates) configs of publisher models. For example, sets
+     * the request/response logging config.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        setPublisherModelConfig(
+            com.google.cloud.aiplatform.v1beta1.SetPublisherModelConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetPublisherModelConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches the configs of publisher models.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.PublisherModelConfig>
+        fetchPublisherModelConfig(
+            com.google.cloud.aiplatform.v1beta1.FetchPublisherModelConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchPublisherModelConfigMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ENDPOINT = 0;
@@ -1122,6 +1345,8 @@ public final class EndpointServiceGrpc {
   private static final int METHODID_DEPLOY_MODEL = 6;
   private static final int METHODID_UNDEPLOY_MODEL = 7;
   private static final int METHODID_MUTATE_DEPLOYED_MODEL = 8;
+  private static final int METHODID_SET_PUBLISHER_MODEL_CONFIG = 9;
+  private static final int METHODID_FETCH_PUBLISHER_MODEL_CONFIG = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1188,6 +1413,18 @@ public final class EndpointServiceGrpc {
           serviceImpl.mutateDeployedModel(
               (com.google.cloud.aiplatform.v1beta1.MutateDeployedModelRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_SET_PUBLISHER_MODEL_CONFIG:
+          serviceImpl.setPublisherModelConfig(
+              (com.google.cloud.aiplatform.v1beta1.SetPublisherModelConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_FETCH_PUBLISHER_MODEL_CONFIG:
+          serviceImpl.fetchPublisherModelConfig(
+              (com.google.cloud.aiplatform.v1beta1.FetchPublisherModelConfigRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.PublisherModelConfig>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1264,6 +1501,20 @@ public final class EndpointServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.aiplatform.v1beta1.MutateDeployedModelRequest,
                     com.google.longrunning.Operation>(service, METHODID_MUTATE_DEPLOYED_MODEL)))
+        .addMethod(
+            getSetPublisherModelConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.SetPublisherModelConfigRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_SET_PUBLISHER_MODEL_CONFIG)))
+        .addMethod(
+            getFetchPublisherModelConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.FetchPublisherModelConfigRequest,
+                    com.google.cloud.aiplatform.v1beta1.PublisherModelConfig>(
+                    service, METHODID_FETCH_PUBLISHER_MODEL_CONFIG)))
         .build();
   }
 
@@ -1324,6 +1575,8 @@ public final class EndpointServiceGrpc {
                       .addMethod(getDeployModelMethod())
                       .addMethod(getUndeployModelMethod())
                       .addMethod(getMutateDeployedModelMethod())
+                      .addMethod(getSetPublisherModelConfigMethod())
+                      .addMethod(getFetchPublisherModelConfigMethod())
                       .build();
         }
       }
