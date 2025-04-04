@@ -1,0 +1,16 @@
+{
+  "api_shortname": "spanneradapter",
+  "name_pretty": "Cloud Spanner Adapter API",
+  "product_documentation": "https://cloud.google.com/spanner",
+  "api_description": "The Cloud Spanner Adapter service allows native drivers of supported database dialects to interact directly with Cloud Spanner by wrapping the underlying wire protocol used by the driver in a gRPC stream.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-spanneradapter/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-spanneradapter",
+  "distribution_name": "com.google.cloud:google-cloud-spanneradapter",
+  "api_id": "spanner.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
