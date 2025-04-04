@@ -58,7 +58,7 @@
   </licenses>
 
   <properties>
-    <graal-sdk.version>24.1.2</graal-sdk.version>
+    <graal-sdk.version>24.2.0</graal-sdk.version>
     <surefire.version>3.5.2</surefire.version>
     <graal-sdk-nativeimage.version>24.1.2</graal-sdk-nativeimage.version>
     <native-maven-plugin.version>0.10.5</native-maven-plugin.version>
