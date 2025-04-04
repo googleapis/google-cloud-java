@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-kmsinventory-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.49.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
+  <version>protobuf-shading-v1</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
   <name>Google KMS Inventory API Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -22,6 +22,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-kmsinventory-parent</site.installationModule>
+    <library.name>kmsinventory</library.name>
   </properties>
 
   <dependencyManagement>
@@ -29,22 +30,22 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-kmsinventory</artifactId>
-        <version>0.49.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
+        <version>protobuf-shading-v1</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-kmsinventory-v1</artifactId>
-        <version>0.49.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-kmsinventory-v1:current} -->
+        <version>protobuf-shading-v1</version><!-- {x-version-update:grpc-google-cloud-kmsinventory-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-kmsinventory-v1</artifactId>
-        <version>0.49.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-kmsinventory-v1:current} -->
+        <version>protobuf-shading-v1</version><!-- {x-version-update:proto-google-cloud-kmsinventory-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-kms-v1</artifactId>
-        <version>0.154.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-kms-v1:current} -->
+        <version>protobuf-shading-v1</version><!-- {x-version-update:proto-google-cloud-kms-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
