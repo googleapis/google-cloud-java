@@ -30,10 +30,12 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import javax.annotation.Generated;
@@ -89,6 +91,15 @@ public class AdaptationClientTest {
             .setName(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
             .addAllPhrases(new ArrayList<PhraseSet.Phrase>())
             .setBoost(93922211)
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockAdaptation.addResponse(expectedResponse);
 
@@ -135,6 +146,15 @@ public class AdaptationClientTest {
             .setName(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
             .addAllPhrases(new ArrayList<PhraseSet.Phrase>())
             .setBoost(93922211)
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockAdaptation.addResponse(expectedResponse);
 
@@ -181,6 +201,15 @@ public class AdaptationClientTest {
             .setName(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
             .addAllPhrases(new ArrayList<PhraseSet.Phrase>())
             .setBoost(93922211)
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockAdaptation.addResponse(expectedResponse);
 
@@ -221,6 +250,15 @@ public class AdaptationClientTest {
             .setName(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
             .addAllPhrases(new ArrayList<PhraseSet.Phrase>())
             .setBoost(93922211)
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockAdaptation.addResponse(expectedResponse);
 
@@ -349,6 +387,15 @@ public class AdaptationClientTest {
             .setName(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
             .addAllPhrases(new ArrayList<PhraseSet.Phrase>())
             .setBoost(93922211)
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockAdaptation.addResponse(expectedResponse);
 
@@ -460,6 +507,15 @@ public class AdaptationClientTest {
             .setName(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
             .setCustomClassId("customClassId1871032322")
             .addAllItems(new ArrayList<CustomClass.ClassItem>())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockAdaptation.addResponse(expectedResponse);
 
@@ -506,6 +562,15 @@ public class AdaptationClientTest {
             .setName(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
             .setCustomClassId("customClassId1871032322")
             .addAllItems(new ArrayList<CustomClass.ClassItem>())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockAdaptation.addResponse(expectedResponse);
 
@@ -552,6 +617,15 @@ public class AdaptationClientTest {
             .setName(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
             .setCustomClassId("customClassId1871032322")
             .addAllItems(new ArrayList<CustomClass.ClassItem>())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockAdaptation.addResponse(expectedResponse);
 
@@ -592,6 +666,15 @@ public class AdaptationClientTest {
             .setName(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
             .setCustomClassId("customClassId1871032322")
             .addAllItems(new ArrayList<CustomClass.ClassItem>())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockAdaptation.addResponse(expectedResponse);
 
@@ -720,6 +803,15 @@ public class AdaptationClientTest {
             .setName(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
             .setCustomClassId("customClassId1871032322")
             .addAllItems(new ArrayList<CustomClass.ClassItem>())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockAdaptation.addResponse(expectedResponse);
 

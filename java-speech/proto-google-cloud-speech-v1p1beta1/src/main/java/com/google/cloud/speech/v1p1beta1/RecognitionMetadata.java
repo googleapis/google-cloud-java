@@ -1294,7 +1294,7 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
    * <code>int64 obfuscated_id = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v1p1beta1.RecognitionMetadata.obfuscated_id is deprecated. See
-   *     google/cloud/speech/v1p1beta1/cloud_speech.proto;l=633
+   *     google/cloud/speech/v1p1beta1/cloud_speech.proto;l=637
    * @return The obfuscatedId.
    */
   @java.lang.Override
@@ -2634,7 +2634,7 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>int64 obfuscated_id = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionMetadata.obfuscated_id is deprecated.
-     *     See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=633
+     *     See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=637
      * @return The obfuscatedId.
      */
     @java.lang.Override
@@ -2653,7 +2653,7 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>int64 obfuscated_id = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionMetadata.obfuscated_id is deprecated.
-     *     See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=633
+     *     See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=637
      * @param value The obfuscatedId to set.
      * @return This builder for chaining.
      */
@@ -2676,7 +2676,7 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
      * <code>int64 obfuscated_id = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionMetadata.obfuscated_id is deprecated.
-     *     See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=633
+     *     See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=637
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

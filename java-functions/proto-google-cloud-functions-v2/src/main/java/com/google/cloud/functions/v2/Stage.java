@@ -92,7 +92,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Artifact Regsitry Stage
+     * Artifact Registry Stage
      * </pre>
      *
      * <code>ARTIFACT_REGISTRY = 1;</code>
@@ -165,7 +165,7 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Artifact Regsitry Stage
+     * Artifact Registry Stage
      * </pre>
      *
      * <code>ARTIFACT_REGISTRY = 1;</code>

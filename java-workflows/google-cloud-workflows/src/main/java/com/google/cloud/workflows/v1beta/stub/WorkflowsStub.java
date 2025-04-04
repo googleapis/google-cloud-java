@@ -16,12 +16,17 @@
 
 package com.google.cloud.workflows.v1beta.stub;
 
+import static com.google.cloud.workflows.v1beta.WorkflowsClient.ListLocationsPagedResponse;
 import static com.google.cloud.workflows.v1beta.WorkflowsClient.ListWorkflowsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.workflows.v1beta.CreateWorkflowRequest;
 import com.google.cloud.workflows.v1beta.DeleteWorkflowRequest;
 import com.google.cloud.workflows.v1beta.GetWorkflowRequest;
@@ -91,6 +96,19 @@ public abstract class WorkflowsStub implements BackgroundResource {
 
   public UnaryCallable<UpdateWorkflowRequest, Operation> updateWorkflowCallable() {
     throw new UnsupportedOperationException("Not implemented: updateWorkflowCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

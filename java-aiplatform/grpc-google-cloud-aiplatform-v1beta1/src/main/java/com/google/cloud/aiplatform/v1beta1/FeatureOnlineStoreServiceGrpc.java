@@ -193,6 +193,59 @@ public final class FeatureOnlineStoreServiceGrpc {
     return getSearchNearestEntitiesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest,
+          com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse>
+      getFeatureViewDirectWriteMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FeatureViewDirectWrite",
+      requestType = com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest,
+          com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse>
+      getFeatureViewDirectWriteMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest,
+            com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse>
+        getFeatureViewDirectWriteMethod;
+    if ((getFeatureViewDirectWriteMethod =
+            FeatureOnlineStoreServiceGrpc.getFeatureViewDirectWriteMethod)
+        == null) {
+      synchronized (FeatureOnlineStoreServiceGrpc.class) {
+        if ((getFeatureViewDirectWriteMethod =
+                FeatureOnlineStoreServiceGrpc.getFeatureViewDirectWriteMethod)
+            == null) {
+          FeatureOnlineStoreServiceGrpc.getFeatureViewDirectWriteMethod =
+              getFeatureViewDirectWriteMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest,
+                          com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FeatureViewDirectWrite"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FeatureOnlineStoreServiceMethodDescriptorSupplier(
+                              "FeatureViewDirectWrite"))
+                      .build();
+        }
+      }
+    }
+    return getFeatureViewDirectWriteMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static FeatureOnlineStoreServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<FeatureOnlineStoreServiceStub> factory =
@@ -294,6 +347,25 @@ public final class FeatureOnlineStoreServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSearchNearestEntitiesMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bidirectional streaming RPC to directly write to feature values in a
+     * feature view. Requests may not have a one-to-one mapping to responses and
+     * responses may be returned out-of-order to reduce latency.
+     * </pre>
+     */
+    default io.grpc.stub.StreamObserver<
+            com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest>
+        featureViewDirectWrite(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse>
+                responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
+          getFeatureViewDirectWriteMethod(), responseObserver);
+    }
   }
 
   /**
@@ -386,6 +458,26 @@ public final class FeatureOnlineStoreServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchNearestEntitiesMethod(), getCallOptions()),
           request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bidirectional streaming RPC to directly write to feature values in a
+     * feature view. Requests may not have a one-to-one mapping to responses and
+     * responses may be returned out-of-order to reduce latency.
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<
+            com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest>
+        featureViewDirectWrite(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse>
+                responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getFeatureViewDirectWriteMethod(), getCallOptions()),
           responseObserver);
     }
   }
@@ -495,6 +587,7 @@ public final class FeatureOnlineStoreServiceGrpc {
   private static final int METHODID_FETCH_FEATURE_VALUES = 0;
   private static final int METHODID_SEARCH_NEAREST_ENTITIES = 1;
   private static final int METHODID_STREAMING_FETCH_FEATURE_VALUES = 2;
+  private static final int METHODID_FEATURE_VIEW_DIRECT_WRITE = 3;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -543,6 +636,12 @@ public final class FeatureOnlineStoreServiceGrpc {
                   (io.grpc.stub.StreamObserver<
                           com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesResponse>)
                       responseObserver);
+        case METHODID_FEATURE_VIEW_DIRECT_WRITE:
+          return (io.grpc.stub.StreamObserver<Req>)
+              serviceImpl.featureViewDirectWrite(
+                  (io.grpc.stub.StreamObserver<
+                          com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse>)
+                      responseObserver);
         default:
           throw new AssertionError();
       }
@@ -572,6 +671,13 @@ public final class FeatureOnlineStoreServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest,
                     com.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesResponse>(
                     service, METHODID_SEARCH_NEAREST_ENTITIES)))
+        .addMethod(
+            getFeatureViewDirectWriteMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest,
+                    com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse>(
+                    service, METHODID_FEATURE_VIEW_DIRECT_WRITE)))
         .build();
   }
 
@@ -626,6 +732,7 @@ public final class FeatureOnlineStoreServiceGrpc {
                       .addMethod(getFetchFeatureValuesMethod())
                       .addMethod(getStreamingFetchFeatureValuesMethod())
                       .addMethod(getSearchNearestEntitiesMethod())
+                      .addMethod(getFeatureViewDirectWriteMethod())
                       .build();
         }
       }
