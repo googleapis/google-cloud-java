@@ -19,9 +19,7 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import static com.google.common.truth.TruthJUnit.assume;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
-import com.google.auth.oauth2.ComputeEngineCredentials;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.test_helpers.env.AbstractTestEnv.ConnectionMode;
@@ -127,9 +125,7 @@ public class DirectPathFallbackIT {
 
     settingsBuilder
         .stubSettings()
-        .setTransportChannelProvider(instrumentedTransportChannelProvider)
-        // Forcefully ignore GOOGLE_APPLICATION_CREDENTIALS
-        .setCredentialsProvider(FixedCredentialsProvider.create(ComputeEngineCredentials.create()));
+        .setTransportChannelProvider(instrumentedTransportChannelProvider);
 
     instrumentedClient = BigtableDataClient.create(settingsBuilder.build());
   }

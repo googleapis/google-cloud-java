@@ -28,6 +28,7 @@ import com.google.cloud.bigtable.data.v2.models.sql.PreparedStatement;
 import com.google.cloud.bigtable.data.v2.models.sql.ResultSet;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
 import com.google.cloud.bigtable.data.v2.models.sql.Struct;
+import com.google.cloud.bigtable.test_helpers.env.AbstractTestEnv;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.protobuf.ByteString;
@@ -59,6 +60,12 @@ public class ExecuteQueryIT {
         .withMessage("ExecuteQuery is not supported on Emulator")
         .that(testEnvRule.env())
         .isNotInstanceOf(EmulatorEnv.class);
+    assume()
+        .withMessage("ExecuteQuery only works over CloudPath")
+        .that(testEnvRule.env().getConnectionMode())
+        .isNoneOf(
+            AbstractTestEnv.ConnectionMode.REQUIRE_DIRECT_PATH,
+            AbstractTestEnv.ConnectionMode.REQUIRE_DIRECT_PATH_IPV4);
 
     tableId = testEnvRule.env().getTableId();
     dataClient = testEnvRule.env().getDataClient();
