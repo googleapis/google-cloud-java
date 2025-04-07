@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-kmsinventory-v1</artifactId>
-  <version>0.49.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-kmsinventory-v1:current} -->
+  <version>protobuf-shaded-jar-v1</version><!-- {x-version-update:grpc-google-cloud-kmsinventory-v1:current} -->
   <name>grpc-google-cloud-kmsinventory-v1</name>
   <description>GRPC library for google-cloud-kmsinventory</description>
   <parent>
@@ -24,18 +24,27 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-protobuf</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.protobuf</groupId>
+          <artifactId>protobuf-java</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
-      <groupId>com.google.protobuf</groupId>
-      <artifactId>protobuf-java</artifactId>
+      <groupId>org.example</groupId>
+      <artifactId>protobuf-api</artifactId>
+      <version>1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
+      <version>protobuf-shaded-jar-v1</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-kmsinventory-v1</artifactId>
+      <version>protobuf-shaded-jar-v1</version>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
