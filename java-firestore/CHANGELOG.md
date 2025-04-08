@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.30.13](https://github.com/googleapis/java-firestore/compare/v3.30.12...v3.30.13) (2025-04-08)
+
+
+### Dependencies
+
+* Update beam.version to v2.64.0 ([#2068](https://github.com/googleapis/java-firestore/issues/2068)) ([22e7b89](https://github.com/googleapis/java-firestore/commit/22e7b89fcc954ace5d1260a95a2405ca49e7c9f7))
+* Update dependency com.diffplug.spotless:spotless-maven-plugin to v2.44.4 ([#2071](https://github.com/googleapis/java-firestore/issues/2071)) ([5ccefcf](https://github.com/googleapis/java-firestore/commit/5ccefcfa15f7c8d8bf33e0fdc04f5bdb95c5a72c))
+* Update opentelemetry.version to v1.49.0 ([#2070](https://github.com/googleapis/java-firestore/issues/2070)) ([23a1809](https://github.com/googleapis/java-firestore/commit/23a18095891f6b0ecb2f6d7a040d8ecf6a0f1720))
+
 ## [3.30.12](https://github.com/googleapis/java-firestore/compare/v3.30.11...v3.30.12) (2025-03-22)
 
 
