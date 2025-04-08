@@ -228,6 +228,48 @@ public interface ExportDataRequestOrBuilder
    */
   com.google.protobuf.ByteString getServiceAccountBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metadata options for the export data.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.TransferMetadataOptions metadata_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the metadataOptions field is set.
+   */
+  boolean hasMetadataOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metadata options for the export data.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.TransferMetadataOptions metadata_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The metadataOptions.
+   */
+  com.google.cloud.parallelstore.v1beta.TransferMetadataOptions getMetadataOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metadata options for the export data.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.TransferMetadataOptions metadata_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.parallelstore.v1beta.TransferMetadataOptionsOrBuilder
+      getMetadataOptionsOrBuilder();
+
   com.google.cloud.parallelstore.v1beta.ExportDataRequest.SourceCase getSourceCase();
 
   com.google.cloud.parallelstore.v1beta.ExportDataRequest.DestinationCase getDestinationCase();

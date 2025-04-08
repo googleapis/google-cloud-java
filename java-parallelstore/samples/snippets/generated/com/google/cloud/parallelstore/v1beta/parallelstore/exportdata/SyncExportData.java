@@ -22,6 +22,7 @@ import com.google.cloud.parallelstore.v1beta.ExportDataResponse;
 import com.google.cloud.parallelstore.v1beta.InstanceName;
 import com.google.cloud.parallelstore.v1beta.ParallelstoreClient;
 import com.google.cloud.parallelstore.v1beta.ServiceAccountName;
+import com.google.cloud.parallelstore.v1beta.TransferMetadataOptions;
 
 public class SyncExportData {
 
@@ -41,6 +42,7 @@ public class SyncExportData {
               .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
               .setRequestId("requestId693933066")
               .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+              .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
               .build();
       ExportDataResponse response = parallelstoreClient.exportDataAsync(request).get();
     }

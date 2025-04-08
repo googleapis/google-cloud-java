@@ -503,7 +503,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=537
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=555
    * @return Whether the partialFailureGcsSink field is set.
    */
   @java.lang.Override
@@ -524,7 +524,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=537
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=555
    * @return The partialFailureGcsSink.
    */
   @java.lang.Override
@@ -576,7 +576,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
-   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=546
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=564
    * @return Whether the partialFailureBigquerySink field is set.
    */
   @java.lang.Override
@@ -602,7 +602,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
-   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=546
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=564
    * @return The partialFailureBigquerySink.
    */
   @java.lang.Override
@@ -776,7 +776,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=565
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=583
    * @return Whether the ragFileChunkingConfig field is set.
    */
   @java.lang.Override
@@ -796,7 +796,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=565
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=583
    * @return The ragFileChunkingConfig.
    */
   @java.lang.Override
@@ -968,6 +968,31 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     return maxEmbeddingRequestsPerMin_;
   }
 
+  public static final int GLOBAL_MAX_EMBEDDING_REQUESTS_PER_MIN_FIELD_NUMBER = 18;
+  private int globalMaxEmbeddingRequestsPerMin_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The max number of queries per minute that the indexing pipeline
+   * job is allowed to make to the embedding model specified in the project.
+   * Please follow the quota usage guideline of the embedding model you use to
+   * set the value properly. If this value is not specified,
+   * max_embedding_requests_per_min will be used by indexing pipeline job as the
+   * global limit.
+   * </pre>
+   *
+   * <code>
+   * int32 global_max_embedding_requests_per_min = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The globalMaxEmbeddingRequestsPerMin.
+   */
+  @java.lang.Override
+  public int getGlobalMaxEmbeddingRequestsPerMin() {
+    return globalMaxEmbeddingRequestsPerMin_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1025,6 +1050,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(16, getRagFileTransformationConfig());
+    }
+    if (globalMaxEmbeddingRequestsPerMin_ != 0) {
+      output.writeInt32(18, globalMaxEmbeddingRequestsPerMin_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1097,6 +1125,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               16, getRagFileTransformationConfig());
     }
+    if (globalMaxEmbeddingRequestsPerMin_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              18, globalMaxEmbeddingRequestsPerMin_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1127,6 +1160,8 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       if (!getRagFileParsingConfig().equals(other.getRagFileParsingConfig())) return false;
     }
     if (getMaxEmbeddingRequestsPerMin() != other.getMaxEmbeddingRequestsPerMin()) return false;
+    if (getGlobalMaxEmbeddingRequestsPerMin() != other.getGlobalMaxEmbeddingRequestsPerMin())
+      return false;
     if (!getImportSourceCase().equals(other.getImportSourceCase())) return false;
     switch (importSourceCase_) {
       case 2:
@@ -1196,6 +1231,8 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + MAX_EMBEDDING_REQUESTS_PER_MIN_FIELD_NUMBER;
     hash = (53 * hash) + getMaxEmbeddingRequestsPerMin();
+    hash = (37 * hash) + GLOBAL_MAX_EMBEDDING_REQUESTS_PER_MIN_FIELD_NUMBER;
+    hash = (53 * hash) + getGlobalMaxEmbeddingRequestsPerMin();
     switch (importSourceCase_) {
       case 2:
         hash = (37 * hash) + GCS_SOURCE_FIELD_NUMBER;
@@ -1438,6 +1475,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         ragFileParsingConfigBuilder_ = null;
       }
       maxEmbeddingRequestsPerMin_ = 0;
+      globalMaxEmbeddingRequestsPerMin_ = 0;
       importSourceCase_ = 0;
       importSource_ = null;
       partialFailureSinkCase_ = 0;
@@ -1505,6 +1543,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.maxEmbeddingRequestsPerMin_ = maxEmbeddingRequestsPerMin_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.globalMaxEmbeddingRequestsPerMin_ = globalMaxEmbeddingRequestsPerMin_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1603,6 +1644,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       if (other.getMaxEmbeddingRequestsPerMin() != 0) {
         setMaxEmbeddingRequestsPerMin(other.getMaxEmbeddingRequestsPerMin());
+      }
+      if (other.getGlobalMaxEmbeddingRequestsPerMin() != 0) {
+        setGlobalMaxEmbeddingRequestsPerMin(other.getGlobalMaxEmbeddingRequestsPerMin());
       }
       switch (other.getImportSourceCase()) {
         case GCS_SOURCE:
@@ -1780,6 +1824,12 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000400;
                 break;
               } // case 130
+            case 144:
+              {
+                globalMaxEmbeddingRequestsPerMin_ = input.readInt32();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 144
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2955,7 +3005,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=537
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=555
      * @return Whether the partialFailureGcsSink field is set.
      */
     @java.lang.Override
@@ -2976,7 +3026,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=537
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=555
      * @return The partialFailureGcsSink.
      */
     @java.lang.Override
@@ -3215,7 +3265,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=546
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=564
      * @return Whether the partialFailureBigquerySink field is set.
      */
     @java.lang.Override
@@ -3242,7 +3292,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=546
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=564
      * @return The partialFailureBigquerySink.
      */
     @java.lang.Override
@@ -3994,7 +4044,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=565
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=583
      * @return Whether the ragFileChunkingConfig field is set.
      */
     @java.lang.Deprecated
@@ -4013,7 +4063,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=565
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=583
      * @return The ragFileChunkingConfig.
      */
     @java.lang.Deprecated
@@ -4691,6 +4741,80 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public Builder clearMaxEmbeddingRequestsPerMin() {
       bitField0_ = (bitField0_ & ~0x00001000);
       maxEmbeddingRequestsPerMin_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int globalMaxEmbeddingRequestsPerMin_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The max number of queries per minute that the indexing pipeline
+     * job is allowed to make to the embedding model specified in the project.
+     * Please follow the quota usage guideline of the embedding model you use to
+     * set the value properly. If this value is not specified,
+     * max_embedding_requests_per_min will be used by indexing pipeline job as the
+     * global limit.
+     * </pre>
+     *
+     * <code>
+     * int32 global_max_embedding_requests_per_min = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The globalMaxEmbeddingRequestsPerMin.
+     */
+    @java.lang.Override
+    public int getGlobalMaxEmbeddingRequestsPerMin() {
+      return globalMaxEmbeddingRequestsPerMin_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The max number of queries per minute that the indexing pipeline
+     * job is allowed to make to the embedding model specified in the project.
+     * Please follow the quota usage guideline of the embedding model you use to
+     * set the value properly. If this value is not specified,
+     * max_embedding_requests_per_min will be used by indexing pipeline job as the
+     * global limit.
+     * </pre>
+     *
+     * <code>
+     * int32 global_max_embedding_requests_per_min = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The globalMaxEmbeddingRequestsPerMin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGlobalMaxEmbeddingRequestsPerMin(int value) {
+
+      globalMaxEmbeddingRequestsPerMin_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The max number of queries per minute that the indexing pipeline
+     * job is allowed to make to the embedding model specified in the project.
+     * Please follow the quota usage guideline of the embedding model you use to
+     * set the value properly. If this value is not specified,
+     * max_embedding_requests_per_min will be used by indexing pipeline job as the
+     * global limit.
+     * </pre>
+     *
+     * <code>
+     * int32 global_max_embedding_requests_per_min = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGlobalMaxEmbeddingRequestsPerMin() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      globalMaxEmbeddingRequestsPerMin_ = 0;
       onChanged();
       return this;
     }

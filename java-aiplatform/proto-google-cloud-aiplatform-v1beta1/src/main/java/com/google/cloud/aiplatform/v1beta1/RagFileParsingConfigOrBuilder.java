@@ -148,7 +148,7 @@ public interface RagFileParsingConfigOrBuilder
    * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=496
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=514
    * @return The useAdvancedPdfParsing.
    */
   @java.lang.Deprecated

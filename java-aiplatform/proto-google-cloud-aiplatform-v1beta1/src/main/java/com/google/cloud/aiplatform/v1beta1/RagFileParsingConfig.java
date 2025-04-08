@@ -675,6 +675,25 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      * @return The maxParsingRequestsPerMin.
      */
     int getMaxParsingRequestsPerMin();
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of requests the job is allowed to make to the Document
+     * AI processor per minute in this project. Consult
+     * https://cloud.google.com/document-ai/quotas and the Quota page for your
+     * project to set an appropriate value here.
+     * If this value is not specified,
+     * max_parsing_requests_per_min will be used by indexing
+     * pipeline as the global limit.
+     * </pre>
+     *
+     * <code>int32 global_max_parsing_requests_per_min = 3;</code>
+     *
+     * @return The globalMaxParsingRequestsPerMin.
+     */
+    int getGlobalMaxParsingRequestsPerMin();
   }
   /**
    *
@@ -803,6 +822,30 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       return maxParsingRequestsPerMin_;
     }
 
+    public static final int GLOBAL_MAX_PARSING_REQUESTS_PER_MIN_FIELD_NUMBER = 3;
+    private int globalMaxParsingRequestsPerMin_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of requests the job is allowed to make to the Document
+     * AI processor per minute in this project. Consult
+     * https://cloud.google.com/document-ai/quotas and the Quota page for your
+     * project to set an appropriate value here.
+     * If this value is not specified,
+     * max_parsing_requests_per_min will be used by indexing
+     * pipeline as the global limit.
+     * </pre>
+     *
+     * <code>int32 global_max_parsing_requests_per_min = 3;</code>
+     *
+     * @return The globalMaxParsingRequestsPerMin.
+     */
+    @java.lang.Override
+    public int getGlobalMaxParsingRequestsPerMin() {
+      return globalMaxParsingRequestsPerMin_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -823,6 +866,9 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       if (maxParsingRequestsPerMin_ != 0) {
         output.writeInt32(2, maxParsingRequestsPerMin_);
       }
+      if (globalMaxParsingRequestsPerMin_ != 0) {
+        output.writeInt32(3, globalMaxParsingRequestsPerMin_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -838,6 +884,11 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       if (maxParsingRequestsPerMin_ != 0) {
         size +=
             com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxParsingRequestsPerMin_);
+      }
+      if (globalMaxParsingRequestsPerMin_ != 0) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt32Size(
+                3, globalMaxParsingRequestsPerMin_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -857,6 +908,8 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
 
       if (!getProcessorName().equals(other.getProcessorName())) return false;
       if (getMaxParsingRequestsPerMin() != other.getMaxParsingRequestsPerMin()) return false;
+      if (getGlobalMaxParsingRequestsPerMin() != other.getGlobalMaxParsingRequestsPerMin())
+        return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -872,6 +925,8 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       hash = (53 * hash) + getProcessorName().hashCode();
       hash = (37 * hash) + MAX_PARSING_REQUESTS_PER_MIN_FIELD_NUMBER;
       hash = (53 * hash) + getMaxParsingRequestsPerMin();
+      hash = (37 * hash) + GLOBAL_MAX_PARSING_REQUESTS_PER_MIN_FIELD_NUMBER;
+      hash = (53 * hash) + getGlobalMaxParsingRequestsPerMin();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1019,6 +1074,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
         bitField0_ = 0;
         processorName_ = "";
         maxParsingRequestsPerMin_ = 0;
+        globalMaxParsingRequestsPerMin_ = 0;
         return this;
       }
 
@@ -1064,6 +1120,9 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.maxParsingRequestsPerMin_ = maxParsingRequestsPerMin_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.globalMaxParsingRequestsPerMin_ = globalMaxParsingRequestsPerMin_;
         }
       }
 
@@ -1127,6 +1186,9 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
         if (other.getMaxParsingRequestsPerMin() != 0) {
           setMaxParsingRequestsPerMin(other.getMaxParsingRequestsPerMin());
         }
+        if (other.getGlobalMaxParsingRequestsPerMin() != 0) {
+          setGlobalMaxParsingRequestsPerMin(other.getGlobalMaxParsingRequestsPerMin());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1165,6 +1227,12 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 16
+              case 24:
+                {
+                  globalMaxParsingRequestsPerMin_ = input.readInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1380,6 +1448,77 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
         return this;
       }
 
+      private int globalMaxParsingRequestsPerMin_;
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of requests the job is allowed to make to the Document
+       * AI processor per minute in this project. Consult
+       * https://cloud.google.com/document-ai/quotas and the Quota page for your
+       * project to set an appropriate value here.
+       * If this value is not specified,
+       * max_parsing_requests_per_min will be used by indexing
+       * pipeline as the global limit.
+       * </pre>
+       *
+       * <code>int32 global_max_parsing_requests_per_min = 3;</code>
+       *
+       * @return The globalMaxParsingRequestsPerMin.
+       */
+      @java.lang.Override
+      public int getGlobalMaxParsingRequestsPerMin() {
+        return globalMaxParsingRequestsPerMin_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of requests the job is allowed to make to the Document
+       * AI processor per minute in this project. Consult
+       * https://cloud.google.com/document-ai/quotas and the Quota page for your
+       * project to set an appropriate value here.
+       * If this value is not specified,
+       * max_parsing_requests_per_min will be used by indexing
+       * pipeline as the global limit.
+       * </pre>
+       *
+       * <code>int32 global_max_parsing_requests_per_min = 3;</code>
+       *
+       * @param value The globalMaxParsingRequestsPerMin to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGlobalMaxParsingRequestsPerMin(int value) {
+
+        globalMaxParsingRequestsPerMin_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of requests the job is allowed to make to the Document
+       * AI processor per minute in this project. Consult
+       * https://cloud.google.com/document-ai/quotas and the Quota page for your
+       * project to set an appropriate value here.
+       * If this value is not specified,
+       * max_parsing_requests_per_min will be used by indexing
+       * pipeline as the global limit.
+       * </pre>
+       *
+       * <code>int32 global_max_parsing_requests_per_min = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGlobalMaxParsingRequestsPerMin() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        globalMaxParsingRequestsPerMin_ = 0;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1498,6 +1637,25 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      * @return The maxParsingRequestsPerMin.
      */
     int getMaxParsingRequestsPerMin();
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of requests the job is allowed to make to the
+     * LLM model per minute in this project. Consult
+     * https://cloud.google.com/vertex-ai/generative-ai/docs/quotas
+     * and your document size to set an appropriate value here.
+     * If this value is not specified,
+     * max_parsing_requests_per_min will be used by indexing pipeline job as the
+     * global limit.
+     * </pre>
+     *
+     * <code>int32 global_max_parsing_requests_per_min = 4;</code>
+     *
+     * @return The globalMaxParsingRequestsPerMin.
+     */
+    int getGlobalMaxParsingRequestsPerMin();
 
     /**
      *
@@ -1648,6 +1806,30 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       return maxParsingRequestsPerMin_;
     }
 
+    public static final int GLOBAL_MAX_PARSING_REQUESTS_PER_MIN_FIELD_NUMBER = 4;
+    private int globalMaxParsingRequestsPerMin_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of requests the job is allowed to make to the
+     * LLM model per minute in this project. Consult
+     * https://cloud.google.com/vertex-ai/generative-ai/docs/quotas
+     * and your document size to set an appropriate value here.
+     * If this value is not specified,
+     * max_parsing_requests_per_min will be used by indexing pipeline job as the
+     * global limit.
+     * </pre>
+     *
+     * <code>int32 global_max_parsing_requests_per_min = 4;</code>
+     *
+     * @return The globalMaxParsingRequestsPerMin.
+     */
+    @java.lang.Override
+    public int getGlobalMaxParsingRequestsPerMin() {
+      return globalMaxParsingRequestsPerMin_;
+    }
+
     public static final int CUSTOM_PARSING_PROMPT_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
@@ -1724,6 +1906,9 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customParsingPrompt_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, customParsingPrompt_);
       }
+      if (globalMaxParsingRequestsPerMin_ != 0) {
+        output.writeInt32(4, globalMaxParsingRequestsPerMin_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1743,6 +1928,11 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customParsingPrompt_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, customParsingPrompt_);
       }
+      if (globalMaxParsingRequestsPerMin_ != 0) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt32Size(
+                4, globalMaxParsingRequestsPerMin_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1761,6 +1951,8 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
 
       if (!getModelName().equals(other.getModelName())) return false;
       if (getMaxParsingRequestsPerMin() != other.getMaxParsingRequestsPerMin()) return false;
+      if (getGlobalMaxParsingRequestsPerMin() != other.getGlobalMaxParsingRequestsPerMin())
+        return false;
       if (!getCustomParsingPrompt().equals(other.getCustomParsingPrompt())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -1777,6 +1969,8 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       hash = (53 * hash) + getModelName().hashCode();
       hash = (37 * hash) + MAX_PARSING_REQUESTS_PER_MIN_FIELD_NUMBER;
       hash = (53 * hash) + getMaxParsingRequestsPerMin();
+      hash = (37 * hash) + GLOBAL_MAX_PARSING_REQUESTS_PER_MIN_FIELD_NUMBER;
+      hash = (53 * hash) + getGlobalMaxParsingRequestsPerMin();
       hash = (37 * hash) + CUSTOM_PARSING_PROMPT_FIELD_NUMBER;
       hash = (53 * hash) + getCustomParsingPrompt().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
@@ -1925,6 +2119,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
         bitField0_ = 0;
         modelName_ = "";
         maxParsingRequestsPerMin_ = 0;
+        globalMaxParsingRequestsPerMin_ = 0;
         customParsingPrompt_ = "";
         return this;
       }
@@ -1972,6 +2167,9 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
           result.maxParsingRequestsPerMin_ = maxParsingRequestsPerMin_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.globalMaxParsingRequestsPerMin_ = globalMaxParsingRequestsPerMin_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.customParsingPrompt_ = customParsingPrompt_;
         }
       }
@@ -2035,9 +2233,12 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
         if (other.getMaxParsingRequestsPerMin() != 0) {
           setMaxParsingRequestsPerMin(other.getMaxParsingRequestsPerMin());
         }
+        if (other.getGlobalMaxParsingRequestsPerMin() != 0) {
+          setGlobalMaxParsingRequestsPerMin(other.getGlobalMaxParsingRequestsPerMin());
+        }
         if (!other.getCustomParsingPrompt().isEmpty()) {
           customParsingPrompt_ = other.customParsingPrompt_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2081,9 +2282,15 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
               case 26:
                 {
                   customParsingPrompt_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 26
+              case 32:
+                {
+                  globalMaxParsingRequestsPerMin_ = input.readInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 32
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2284,6 +2491,77 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
         return this;
       }
 
+      private int globalMaxParsingRequestsPerMin_;
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of requests the job is allowed to make to the
+       * LLM model per minute in this project. Consult
+       * https://cloud.google.com/vertex-ai/generative-ai/docs/quotas
+       * and your document size to set an appropriate value here.
+       * If this value is not specified,
+       * max_parsing_requests_per_min will be used by indexing pipeline job as the
+       * global limit.
+       * </pre>
+       *
+       * <code>int32 global_max_parsing_requests_per_min = 4;</code>
+       *
+       * @return The globalMaxParsingRequestsPerMin.
+       */
+      @java.lang.Override
+      public int getGlobalMaxParsingRequestsPerMin() {
+        return globalMaxParsingRequestsPerMin_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of requests the job is allowed to make to the
+       * LLM model per minute in this project. Consult
+       * https://cloud.google.com/vertex-ai/generative-ai/docs/quotas
+       * and your document size to set an appropriate value here.
+       * If this value is not specified,
+       * max_parsing_requests_per_min will be used by indexing pipeline job as the
+       * global limit.
+       * </pre>
+       *
+       * <code>int32 global_max_parsing_requests_per_min = 4;</code>
+       *
+       * @param value The globalMaxParsingRequestsPerMin to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGlobalMaxParsingRequestsPerMin(int value) {
+
+        globalMaxParsingRequestsPerMin_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of requests the job is allowed to make to the
+       * LLM model per minute in this project. Consult
+       * https://cloud.google.com/vertex-ai/generative-ai/docs/quotas
+       * and your document size to set an appropriate value here.
+       * If this value is not specified,
+       * max_parsing_requests_per_min will be used by indexing pipeline job as the
+       * global limit.
+       * </pre>
+       *
+       * <code>int32 global_max_parsing_requests_per_min = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGlobalMaxParsingRequestsPerMin() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        globalMaxParsingRequestsPerMin_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object customParsingPrompt_ = "";
       /**
        *
@@ -2349,7 +2627,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         customParsingPrompt_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2367,7 +2645,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
        */
       public Builder clearCustomParsingPrompt() {
         customParsingPrompt_ = getDefaultInstance().getCustomParsingPrompt();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -2390,7 +2668,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
         }
         checkByteStringIsUtf8(value);
         customParsingPrompt_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2693,7 +2971,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
    * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=496
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=514
    * @return The useAdvancedPdfParsing.
    */
   @java.lang.Override
@@ -3884,7 +4162,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=496
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=514
      * @return The useAdvancedPdfParsing.
      */
     @java.lang.Override
@@ -3902,7 +4180,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=496
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=514
      * @param value The useAdvancedPdfParsing to set.
      * @return This builder for chaining.
      */
@@ -3924,7 +4202,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=496
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=514
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
