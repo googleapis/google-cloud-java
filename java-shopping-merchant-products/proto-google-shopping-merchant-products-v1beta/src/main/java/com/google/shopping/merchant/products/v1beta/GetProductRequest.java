@@ -74,9 +74,9 @@ public final class GetProductRequest extends com.google.protobuf.GeneratedMessag
    * Required. The name of the product to retrieve.
    * Format: `accounts/{account}/products/{product}`
    * where the last section `product` consists of 4 parts:
-   * channel~content_language~feed_label~offer_id
+   * `channel~content_language~feed_label~offer_id`
    * example for product name is
-   * "accounts/123/products/online~en~US~sku123"
+   * `accounts/123/products/online~en~US~sku123`
    * </pre>
    *
    * <code>
@@ -104,9 +104,9 @@ public final class GetProductRequest extends com.google.protobuf.GeneratedMessag
    * Required. The name of the product to retrieve.
    * Format: `accounts/{account}/products/{product}`
    * where the last section `product` consists of 4 parts:
-   * channel~content_language~feed_label~offer_id
+   * `channel~content_language~feed_label~offer_id`
    * example for product name is
-   * "accounts/123/products/online~en~US~sku123"
+   * `accounts/123/products/online~en~US~sku123`
    * </pre>
    *
    * <code>
@@ -482,9 +482,9 @@ public final class GetProductRequest extends com.google.protobuf.GeneratedMessag
      * Required. The name of the product to retrieve.
      * Format: `accounts/{account}/products/{product}`
      * where the last section `product` consists of 4 parts:
-     * channel~content_language~feed_label~offer_id
+     * `channel~content_language~feed_label~offer_id`
      * example for product name is
-     * "accounts/123/products/online~en~US~sku123"
+     * `accounts/123/products/online~en~US~sku123`
      * </pre>
      *
      * <code>
@@ -511,9 +511,9 @@ public final class GetProductRequest extends com.google.protobuf.GeneratedMessag
      * Required. The name of the product to retrieve.
      * Format: `accounts/{account}/products/{product}`
      * where the last section `product` consists of 4 parts:
-     * channel~content_language~feed_label~offer_id
+     * `channel~content_language~feed_label~offer_id`
      * example for product name is
-     * "accounts/123/products/online~en~US~sku123"
+     * `accounts/123/products/online~en~US~sku123`
      * </pre>
      *
      * <code>
@@ -540,9 +540,9 @@ public final class GetProductRequest extends com.google.protobuf.GeneratedMessag
      * Required. The name of the product to retrieve.
      * Format: `accounts/{account}/products/{product}`
      * where the last section `product` consists of 4 parts:
-     * channel~content_language~feed_label~offer_id
+     * `channel~content_language~feed_label~offer_id`
      * example for product name is
-     * "accounts/123/products/online~en~US~sku123"
+     * `accounts/123/products/online~en~US~sku123`
      * </pre>
      *
      * <code>
@@ -568,9 +568,9 @@ public final class GetProductRequest extends com.google.protobuf.GeneratedMessag
      * Required. The name of the product to retrieve.
      * Format: `accounts/{account}/products/{product}`
      * where the last section `product` consists of 4 parts:
-     * channel~content_language~feed_label~offer_id
+     * `channel~content_language~feed_label~offer_id`
      * example for product name is
-     * "accounts/123/products/online~en~US~sku123"
+     * `accounts/123/products/online~en~US~sku123`
      * </pre>
      *
      * <code>
@@ -592,9 +592,9 @@ public final class GetProductRequest extends com.google.protobuf.GeneratedMessag
      * Required. The name of the product to retrieve.
      * Format: `accounts/{account}/products/{product}`
      * where the last section `product` consists of 4 parts:
-     * channel~content_language~feed_label~offer_id
+     * `channel~content_language~feed_label~offer_id`
      * example for product name is
-     * "accounts/123/products/online~en~US~sku123"
+     * `accounts/123/products/online~en~US~sku123`
      * </pre>
      *
      * <code>

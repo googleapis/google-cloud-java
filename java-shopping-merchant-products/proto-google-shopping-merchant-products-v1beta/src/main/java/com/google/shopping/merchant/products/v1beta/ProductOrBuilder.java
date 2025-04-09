@@ -30,10 +30,10 @@ public interface ProductOrBuilder
    * <pre>
    * The name of the product.
    * Format:
-   * `"{product.name=accounts/{account}/products/{product}}"` where the last
+   * `accounts/{account}/products/{product}` where the last
    * section `product` consists of 4 parts:
-   * channel~content_language~feed_label~offer_id
-   * example for product name is "accounts/123/products/online~en~US~sku123"
+   * `channel~content_language~feed_label~offer_id`
+   * example for product name is `accounts/123/products/online~en~US~sku123`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -47,10 +47,10 @@ public interface ProductOrBuilder
    * <pre>
    * The name of the product.
    * Format:
-   * `"{product.name=accounts/{account}/products/{product}}"` where the last
+   * `accounts/{account}/products/{product}` where the last
    * section `product` consists of 4 parts:
-   * channel~content_language~feed_label~offer_id
-   * example for product name is "accounts/123/products/online~en~US~sku123"
+   * `channel~content_language~feed_label~offer_id`
+   * example for product name is `accounts/123/products/online~en~US~sku123`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -426,4 +426,46 @@ public interface ProductOrBuilder
    * </code>
    */
   com.google.shopping.merchant.products.v1beta.ProductStatusOrBuilder getProductStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The automated discounts information for the product.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1beta.AutomatedDiscounts automated_discounts = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the automatedDiscounts field is set.
+   */
+  boolean hasAutomatedDiscounts();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The automated discounts information for the product.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1beta.AutomatedDiscounts automated_discounts = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The automatedDiscounts.
+   */
+  com.google.shopping.merchant.products.v1beta.AutomatedDiscounts getAutomatedDiscounts();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The automated discounts information for the product.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1beta.AutomatedDiscounts automated_discounts = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1beta.AutomatedDiscountsOrBuilder
+      getAutomatedDiscountsOrBuilder();
 }

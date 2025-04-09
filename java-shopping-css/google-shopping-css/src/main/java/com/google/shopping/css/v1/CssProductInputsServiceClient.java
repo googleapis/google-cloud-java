@@ -436,7 +436,9 @@ public class CssProductInputsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the CSS product input resource to delete. Format:
-   *     accounts/{account}/cssProductInputs/{css_product_input}
+   *     accounts/{account}/cssProductInputs/{css_product_input}, where the last section
+   *     `css_product_input` consists of 3 parts: contentLanguage~feedLabel~offerId. Example:
+   *     accounts/123/cssProductInputs/de~DE~rawProvidedId123
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCssProductInput(CssProductInputName name) {
@@ -469,7 +471,9 @@ public class CssProductInputsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the CSS product input resource to delete. Format:
-   *     accounts/{account}/cssProductInputs/{css_product_input}
+   *     accounts/{account}/cssProductInputs/{css_product_input}, where the last section
+   *     `css_product_input` consists of 3 parts: contentLanguage~feedLabel~offerId. Example:
+   *     accounts/123/cssProductInputs/de~DE~rawProvidedId123
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCssProductInput(String name) {

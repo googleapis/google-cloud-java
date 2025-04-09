@@ -224,7 +224,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
    *
    * Identifiers (`*_ID`) should comply with the
-   * [Lexical structure in Standard SQL]
+   * [Lexical structure in GoogleSQL]
    * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
    * </pre>
    *
@@ -250,7 +250,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
    *
    * Identifiers (`*_ID`) should comply with the
-   * [Lexical structure in Standard SQL]
+   * [Lexical structure in GoogleSQL]
    * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
    * </pre>
    *
@@ -289,7 +289,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
    *
    * Identifiers (`*_ID`) should comply with the
-   * [Lexical structure in Standard SQL]
+   * [Lexical structure in GoogleSQL]
    * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
    * </pre>
    *
@@ -1218,7 +1218,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
      *
      * Identifiers (`*_ID`) should comply with the
-     * [Lexical structure in Standard SQL]
+     * [Lexical structure in GoogleSQL]
      * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
      * </pre>
      *
@@ -1245,7 +1245,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
      *
      * Identifiers (`*_ID`) should comply with the
-     * [Lexical structure in Standard SQL]
+     * [Lexical structure in GoogleSQL]
      * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
      * </pre>
      *
@@ -1285,7 +1285,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
      *
      * Identifiers (`*_ID`) should comply with the
-     * [Lexical structure in Standard SQL]
+     * [Lexical structure in GoogleSQL]
      * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
      * </pre>
      *
@@ -1325,7 +1325,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
      *
      * Identifiers (`*_ID`) should comply with the
-     * [Lexical structure in Standard SQL]
+     * [Lexical structure in GoogleSQL]
      * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
      * </pre>
      *
@@ -1358,7 +1358,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
      *
      * Identifiers (`*_ID`) should comply with the
-     * [Lexical structure in Standard SQL]
+     * [Lexical structure in GoogleSQL]
      * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
      * </pre>
      *
@@ -1389,7 +1389,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
      *
      * Identifiers (`*_ID`) should comply with the
-     * [Lexical structure in Standard SQL]
+     * [Lexical structure in GoogleSQL]
      * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
      * </pre>
      *

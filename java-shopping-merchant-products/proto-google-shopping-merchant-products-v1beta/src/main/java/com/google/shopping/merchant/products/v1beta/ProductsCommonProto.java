@@ -120,6 +120,10 @@ public final class ProductsCommonProto {
       internal_static_google_shopping_merchant_products_v1beta_ProductSustainabilityIncentive_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_products_v1beta_ProductSustainabilityIncentive_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_products_v1beta_AutomatedDiscounts_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_products_v1beta_AutomatedDiscounts_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -363,13 +367,18 @@ public final class ProductsCommonProto {
           + "erchant.products.v1beta.ProductSustainab"
           + "ilityIncentive.TypeH\001\210\001\001\"F\n\004Type\022\024\n\020TYPE"
           + "_UNSPECIFIED\020\000\022\021\n\rEV_TAX_CREDIT\020\001\022\025\n\021EV_"
-          + "PRICE_DISCOUNT\020\002B\007\n\005valueB\007\n\005_type*N\n\022Su"
-          + "bscriptionPeriod\022#\n\037SUBSCRIPTION_PERIOD_"
-          + "UNSPECIFIED\020\000\022\t\n\005MONTH\020\001\022\010\n\004YEAR\020\002B\225\001\n,c"
-          + "om.google.shopping.merchant.products.v1b"
-          + "etaB\023ProductsCommonProtoP\001ZNcloud.google"
-          + ".com/go/shopping/merchant/products/apiv1"
-          + "beta/productspb;productspbb\006proto3"
+          + "PRICE_DISCOUNT\020\002B\007\n\005valueB\007\n\005_type\"\264\001\n\022A"
+          + "utomatedDiscounts\0220\n\013prior_price\030\001 \001(\0132\033"
+          + ".google.shopping.type.Price\022<\n\027prior_pri"
+          + "ce_progressive\030\002 \001(\0132\033.google.shopping.t"
+          + "ype.Price\022.\n\tgad_price\030\003 \001(\0132\033.google.sh"
+          + "opping.type.Price*N\n\022SubscriptionPeriod\022"
+          + "#\n\037SUBSCRIPTION_PERIOD_UNSPECIFIED\020\000\022\t\n\005"
+          + "MONTH\020\001\022\010\n\004YEAR\020\002B\225\001\n,com.google.shoppin"
+          + "g.merchant.products.v1betaB\023ProductsComm"
+          + "onProtoP\001ZNcloud.google.com/go/shopping/"
+          + "merchant/products/apiv1beta/productspb;p"
+          + "roductspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -697,6 +706,14 @@ public final class ProductsCommonProto {
             internal_static_google_shopping_merchant_products_v1beta_ProductSustainabilityIncentive_descriptor,
             new java.lang.String[] {
               "Amount", "Percentage", "Type", "Value",
+            });
+    internal_static_google_shopping_merchant_products_v1beta_AutomatedDiscounts_descriptor =
+        getDescriptor().getMessageTypes().get(21);
+    internal_static_google_shopping_merchant_products_v1beta_AutomatedDiscounts_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_products_v1beta_AutomatedDiscounts_descriptor,
+            new java.lang.String[] {
+              "PriorPrice", "PriorPriceProgressive", "GadPrice",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
