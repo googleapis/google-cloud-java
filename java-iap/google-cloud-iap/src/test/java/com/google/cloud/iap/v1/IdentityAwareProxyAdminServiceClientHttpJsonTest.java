@@ -367,6 +367,57 @@ public class IdentityAwareProxyAdminServiceClientHttpJsonTest {
   }
 
   @Test
+  public void validateIapAttributeExpressionTest() throws Exception {
+    ValidateIapAttributeExpressionResponse expectedResponse =
+        ValidateIapAttributeExpressionResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ValidateIapAttributeExpressionRequest request =
+        ValidateIapAttributeExpressionRequest.newBuilder()
+            .setName("name-3525")
+            .setExpression("expression-1795452264")
+            .build();
+
+    ValidateIapAttributeExpressionResponse actualResponse =
+        client.validateIapAttributeExpression(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void validateIapAttributeExpressionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ValidateIapAttributeExpressionRequest request =
+          ValidateIapAttributeExpressionRequest.newBuilder()
+              .setName("name-3525")
+              .setExpression("expression-1795452264")
+              .build();
+      client.validateIapAttributeExpression(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listTunnelDestGroupsTest() throws Exception {
     TunnelDestGroup responsesElement = TunnelDestGroup.newBuilder().build();
     ListTunnelDestGroupsResponse expectedResponse =

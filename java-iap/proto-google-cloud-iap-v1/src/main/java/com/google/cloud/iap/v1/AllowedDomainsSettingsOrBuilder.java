@@ -28,10 +28,10 @@ public interface AllowedDomainsSettingsOrBuilder
    *
    *
    * <pre>
-   * Configuration for customers to opt in for the feature.
+   * Optional. Configuration for customers to opt in for the feature.
    * </pre>
    *
-   * <code>optional bool enable = 1;</code>
+   * <code>optional bool enable = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the enable field is set.
    */
@@ -40,10 +40,10 @@ public interface AllowedDomainsSettingsOrBuilder
    *
    *
    * <pre>
-   * Configuration for customers to opt in for the feature.
+   * Optional. Configuration for customers to opt in for the feature.
    * </pre>
    *
-   * <code>optional bool enable = 1;</code>
+   * <code>optional bool enable = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The enable.
    */
@@ -53,10 +53,10 @@ public interface AllowedDomainsSettingsOrBuilder
    *
    *
    * <pre>
-   * List of trusted domains.
+   * Optional. List of trusted domains.
    * </pre>
    *
-   * <code>repeated string domains = 2;</code>
+   * <code>repeated string domains = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the domains.
    */
@@ -65,10 +65,10 @@ public interface AllowedDomainsSettingsOrBuilder
    *
    *
    * <pre>
-   * List of trusted domains.
+   * Optional. List of trusted domains.
    * </pre>
    *
-   * <code>repeated string domains = 2;</code>
+   * <code>repeated string domains = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of domains.
    */
@@ -77,10 +77,10 @@ public interface AllowedDomainsSettingsOrBuilder
    *
    *
    * <pre>
-   * List of trusted domains.
+   * Optional. List of trusted domains.
    * </pre>
    *
-   * <code>repeated string domains = 2;</code>
+   * <code>repeated string domains = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The domains at the given index.
@@ -90,10 +90,10 @@ public interface AllowedDomainsSettingsOrBuilder
    *
    *
    * <pre>
-   * List of trusted domains.
+   * Optional. List of trusted domains.
    * </pre>
    *
-   * <code>repeated string domains = 2;</code>
+   * <code>repeated string domains = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the domains at the given index.

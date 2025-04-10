@@ -28,14 +28,11 @@ public interface TunnelDestGroupOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Identifier for the TunnelDestGroup. Must be unique
-   * within the project and contain only lower case letters (a-z) and dashes
-   * (-).
+   * Identifier. Identifier for the TunnelDestGroup. Must be unique within the
+   * project and contain only lower case letters (a-z) and dashes (-).
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -44,14 +41,11 @@ public interface TunnelDestGroupOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Identifier for the TunnelDestGroup. Must be unique
-   * within the project and contain only lower case letters (a-z) and dashes
-   * (-).
+   * Identifier. Identifier for the TunnelDestGroup. Must be unique within the
+   * project and contain only lower case letters (a-z) and dashes (-).
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -61,10 +55,12 @@ public interface TunnelDestGroupOrBuilder
    *
    *
    * <pre>
-   * Unordered list. List of CIDRs that this group applies to.
+   * Optional. Unordered list. List of CIDRs that this group applies to.
    * </pre>
    *
-   * <code>repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   * <code>
+   * repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return A list containing the cidrs.
    */
@@ -73,10 +69,12 @@ public interface TunnelDestGroupOrBuilder
    *
    *
    * <pre>
-   * Unordered list. List of CIDRs that this group applies to.
+   * Optional. Unordered list. List of CIDRs that this group applies to.
    * </pre>
    *
-   * <code>repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   * <code>
+   * repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The count of cidrs.
    */
@@ -85,10 +83,12 @@ public interface TunnelDestGroupOrBuilder
    *
    *
    * <pre>
-   * Unordered list. List of CIDRs that this group applies to.
+   * Optional. Unordered list. List of CIDRs that this group applies to.
    * </pre>
    *
-   * <code>repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   * <code>
+   * repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The cidrs at the given index.
@@ -98,10 +98,12 @@ public interface TunnelDestGroupOrBuilder
    *
    *
    * <pre>
-   * Unordered list. List of CIDRs that this group applies to.
+   * Optional. Unordered list. List of CIDRs that this group applies to.
    * </pre>
    *
-   * <code>repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   * <code>
+   * repeated string cidrs = 2 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the cidrs at the given index.
@@ -112,10 +114,12 @@ public interface TunnelDestGroupOrBuilder
    *
    *
    * <pre>
-   * Unordered list. List of FQDNs that this group applies to.
+   * Optional. Unordered list. List of FQDNs that this group applies to.
    * </pre>
    *
-   * <code>repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   * <code>
+   * repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return A list containing the fqdns.
    */
@@ -124,10 +128,12 @@ public interface TunnelDestGroupOrBuilder
    *
    *
    * <pre>
-   * Unordered list. List of FQDNs that this group applies to.
+   * Optional. Unordered list. List of FQDNs that this group applies to.
    * </pre>
    *
-   * <code>repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   * <code>
+   * repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The count of fqdns.
    */
@@ -136,10 +142,12 @@ public interface TunnelDestGroupOrBuilder
    *
    *
    * <pre>
-   * Unordered list. List of FQDNs that this group applies to.
+   * Optional. Unordered list. List of FQDNs that this group applies to.
    * </pre>
    *
-   * <code>repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   * <code>
+   * repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The fqdns at the given index.
@@ -149,10 +157,12 @@ public interface TunnelDestGroupOrBuilder
    *
    *
    * <pre>
-   * Unordered list. List of FQDNs that this group applies to.
+   * Optional. Unordered list. List of FQDNs that this group applies to.
    * </pre>
    *
-   * <code>repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   * <code>
+   * repeated string fqdns = 3 [(.google.api.field_behavior) = UNORDERED_LIST, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the fqdns at the given index.

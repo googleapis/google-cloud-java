@@ -54,6 +54,8 @@ import com.google.cloud.iap.v1.ListTunnelDestGroupsResponse;
 import com.google.cloud.iap.v1.TunnelDestGroup;
 import com.google.cloud.iap.v1.UpdateIapSettingsRequest;
 import com.google.cloud.iap.v1.UpdateTunnelDestGroupRequest;
+import com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest;
+import com.google.cloud.iap.v1.ValidateIapAttributeExpressionResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -134,6 +136,9 @@ public class IdentityAwareProxyAdminServiceStubSettings
       testIamPermissionsSettings;
   private final UnaryCallSettings<GetIapSettingsRequest, IapSettings> getIapSettingsSettings;
   private final UnaryCallSettings<UpdateIapSettingsRequest, IapSettings> updateIapSettingsSettings;
+  private final UnaryCallSettings<
+          ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+      validateIapAttributeExpressionSettings;
   private final PagedCallSettings<
           ListTunnelDestGroupsRequest,
           ListTunnelDestGroupsResponse,
@@ -235,6 +240,13 @@ public class IdentityAwareProxyAdminServiceStubSettings
   /** Returns the object with the settings used for calls to updateIapSettings. */
   public UnaryCallSettings<UpdateIapSettingsRequest, IapSettings> updateIapSettingsSettings() {
     return updateIapSettingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to validateIapAttributeExpression. */
+  public UnaryCallSettings<
+          ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+      validateIapAttributeExpressionSettings() {
+    return validateIapAttributeExpressionSettings;
   }
 
   /** Returns the object with the settings used for calls to listTunnelDestGroups. */
@@ -387,6 +399,8 @@ public class IdentityAwareProxyAdminServiceStubSettings
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     getIapSettingsSettings = settingsBuilder.getIapSettingsSettings().build();
     updateIapSettingsSettings = settingsBuilder.updateIapSettingsSettings().build();
+    validateIapAttributeExpressionSettings =
+        settingsBuilder.validateIapAttributeExpressionSettings().build();
     listTunnelDestGroupsSettings = settingsBuilder.listTunnelDestGroupsSettings().build();
     createTunnelDestGroupSettings = settingsBuilder.createTunnelDestGroupSettings().build();
     getTunnelDestGroupSettings = settingsBuilder.getTunnelDestGroupSettings().build();
@@ -406,6 +420,9 @@ public class IdentityAwareProxyAdminServiceStubSettings
         getIapSettingsSettings;
     private final UnaryCallSettings.Builder<UpdateIapSettingsRequest, IapSettings>
         updateIapSettingsSettings;
+    private final UnaryCallSettings.Builder<
+            ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+        validateIapAttributeExpressionSettings;
     private final PagedCallSettings.Builder<
             ListTunnelDestGroupsRequest,
             ListTunnelDestGroupsResponse,
@@ -458,6 +475,7 @@ public class IdentityAwareProxyAdminServiceStubSettings
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIapSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateIapSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      validateIapAttributeExpressionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listTunnelDestGroupsSettings =
           PagedCallSettings.newBuilder(LIST_TUNNEL_DEST_GROUPS_PAGE_STR_FACT);
       createTunnelDestGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -472,6 +490,7 @@ public class IdentityAwareProxyAdminServiceStubSettings
               testIamPermissionsSettings,
               getIapSettingsSettings,
               updateIapSettingsSettings,
+              validateIapAttributeExpressionSettings,
               listTunnelDestGroupsSettings,
               createTunnelDestGroupSettings,
               getTunnelDestGroupSettings,
@@ -488,6 +507,8 @@ public class IdentityAwareProxyAdminServiceStubSettings
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       getIapSettingsSettings = settings.getIapSettingsSettings.toBuilder();
       updateIapSettingsSettings = settings.updateIapSettingsSettings.toBuilder();
+      validateIapAttributeExpressionSettings =
+          settings.validateIapAttributeExpressionSettings.toBuilder();
       listTunnelDestGroupsSettings = settings.listTunnelDestGroupsSettings.toBuilder();
       createTunnelDestGroupSettings = settings.createTunnelDestGroupSettings.toBuilder();
       getTunnelDestGroupSettings = settings.getTunnelDestGroupSettings.toBuilder();
@@ -501,6 +522,7 @@ public class IdentityAwareProxyAdminServiceStubSettings
               testIamPermissionsSettings,
               getIapSettingsSettings,
               updateIapSettingsSettings,
+              validateIapAttributeExpressionSettings,
               listTunnelDestGroupsSettings,
               createTunnelDestGroupSettings,
               getTunnelDestGroupSettings,
@@ -555,6 +577,11 @@ public class IdentityAwareProxyAdminServiceStubSettings
 
       builder
           .updateIapSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .validateIapAttributeExpressionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -626,6 +653,13 @@ public class IdentityAwareProxyAdminServiceStubSettings
     public UnaryCallSettings.Builder<UpdateIapSettingsRequest, IapSettings>
         updateIapSettingsSettings() {
       return updateIapSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to validateIapAttributeExpression. */
+    public UnaryCallSettings.Builder<
+            ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+        validateIapAttributeExpressionSettings() {
+      return validateIapAttributeExpressionSettings;
     }
 
     /** Returns the builder for the settings used for calls to listTunnelDestGroups. */

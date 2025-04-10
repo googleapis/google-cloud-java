@@ -85,6 +85,14 @@ public final class Service {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_iap_v1_OAuthSettings_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_iap_v1_WorkforceIdentitySettings_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_iap_v1_WorkforceIdentitySettings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_iap_v1_OAuth2_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_iap_v1_OAuth2_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_iap_v1_ReauthSettings_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_iap_v1_ReauthSettings_fieldAccessorTable;
@@ -108,6 +116,14 @@ public final class Service {
       internal_static_google_cloud_iap_v1_AttributePropagationSettings_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_iap_v1_AttributePropagationSettings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_iap_v1_ValidateIapAttributeExpressionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_iap_v1_ValidateIapAttributeExpressionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_iap_v1_ValidateIapAttributeExpressionResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_iap_v1_ValidateIapAttributeExpressionResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_iap_v1_ListBrandsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -193,70 +209,87 @@ public final class Service {
           + "elDestGroupRequest\022D\n\021tunnel_dest_group\030"
           + "\001 \001(\0132$.google.cloud.iap.v1.TunnelDestGr"
           + "oupB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.p"
-          + "rotobuf.FieldMask\"\304\001\n\017TunnelDestGroup\022\024\n"
-          + "\004name\030\001 \001(\tB\006\340A\002\340A\005\022\022\n\005cidrs\030\002 \003(\tB\003\340A\006\022"
-          + "\022\n\005fqdns\030\003 \003(\tB\003\340A\006:s\352Ap\n\"iap.googleapis"
-          + ".com/TunnelDestGroup\022Jprojects/{project}"
-          + "/iap_tunnel/locations/{location}/destGro"
-          + "ups/{dest_group}\"*\n\025GetIapSettingsReques"
-          + "t\022\021\n\004name\030\001 \001(\tB\003\340A\002\"\210\001\n\030UpdateIapSettin"
-          + "gsRequest\022;\n\014iap_settings\030\001 \001(\0132 .google"
-          + ".cloud.iap.v1.IapSettingsB\003\340A\002\022/\n\013update"
-          + "_mask\030\002 \001(\0132\032.google.protobuf.FieldMask\""
-          + "\246\001\n\013IapSettings\022\021\n\004name\030\001 \001(\tB\003\340A\002\022<\n\017ac"
-          + "cess_settings\030\005 \001(\0132#.google.cloud.iap.v"
-          + "1.AccessSettings\022F\n\024application_settings"
-          + "\030\006 \001(\0132(.google.cloud.iap.v1.Application"
-          + "Settings\"\315\002\n\016AccessSettings\0228\n\rgcip_sett"
-          + "ings\030\001 \001(\0132!.google.cloud.iap.v1.GcipSet"
-          + "tings\0228\n\rcors_settings\030\002 \001(\0132!.google.cl"
-          + "oud.iap.v1.CorsSettings\022:\n\016oauth_setting"
-          + "s\030\003 \001(\0132\".google.cloud.iap.v1.OAuthSetti"
-          + "ngs\022<\n\017reauth_settings\030\006 \001(\0132#.google.cl"
-          + "oud.iap.v1.ReauthSettings\022M\n\030allowed_dom"
-          + "ains_settings\030\007 \001(\0132+.google.cloud.iap.v"
-          + "1.AllowedDomainsSettings\"X\n\014GcipSettings"
-          + "\022\022\n\ntenant_ids\030\001 \003(\t\0224\n\016login_page_uri\030\002"
-          + " \001(\0132\034.google.protobuf.StringValue\"F\n\014Co"
-          + "rsSettings\0226\n\022allow_http_options\030\001 \001(\0132\032"
-          + ".google.protobuf.BoolValue\"_\n\rOAuthSetti"
-          + "ngs\0220\n\nlogin_hint\030\002 \001(\0132\034.google.protobu"
-          + "f.StringValue\022\034\n\024programmatic_clients\030\005 "
-          + "\003(\t\"\356\002\n\016ReauthSettings\022:\n\006method\030\001 \001(\0162*"
-          + ".google.cloud.iap.v1.ReauthSettings.Meth"
-          + "od\022*\n\007max_age\030\002 \001(\0132\031.google.protobuf.Du"
-          + "ration\022C\n\013policy_type\030\003 \001(\0162..google.clo"
-          + "ud.iap.v1.ReauthSettings.PolicyType\"j\n\006M"
-          + "ethod\022\026\n\022METHOD_UNSPECIFIED\020\000\022\t\n\005LOGIN\020\001"
-          + "\022\020\n\010PASSWORD\020\002\032\002\010\001\022\016\n\nSECURE_KEY\020\003\022\033\n\027EN"
-          + "ROLLED_SECOND_FACTORS\020\004\"C\n\nPolicyType\022\033\n"
-          + "\027POLICY_TYPE_UNSPECIFIED\020\000\022\013\n\007MINIMUM\020\001\022"
-          + "\013\n\007DEFAULT\020\002\"I\n\026AllowedDomainsSettings\022\023"
-          + "\n\006enable\030\001 \001(\010H\000\210\001\001\022\017\n\007domains\030\002 \003(\tB\t\n\007"
-          + "_enable\"\261\002\n\023ApplicationSettings\0226\n\014csm_s"
-          + "ettings\030\001 \001(\0132 .google.cloud.iap.v1.CsmS"
-          + "ettings\022R\n\033access_denied_page_settings\030\002"
-          + " \001(\0132-.google.cloud.iap.v1.AccessDeniedP"
-          + "ageSettings\0223\n\rcookie_domain\030\003 \001(\0132\034.goo"
-          + "gle.protobuf.StringValue\022Y\n\036attribute_pr"
-          + "opagation_settings\030\004 \001(\01321.google.cloud."
-          + "iap.v1.AttributePropagationSettings\"@\n\013C"
-          + "smSettings\0221\n\013rctoken_aud\030\001 \001(\0132\034.google"
-          + ".protobuf.StringValue\"\222\002\n\030AccessDeniedPa"
-          + "geSettings\022<\n\026access_denied_page_uri\030\001 \001"
-          + "(\0132\034.google.protobuf.StringValue\022@\n\034gene"
-          + "rate_troubleshooting_uri\030\002 \001(\0132\032.google."
-          + "protobuf.BoolValue\022M\n$remediation_token_"
-          + "generation_enabled\030\003 \001(\0132\032.google.protob"
-          + "uf.BoolValueH\000\210\001\001B\'\n%_remediation_token_"
-          + "generation_enabled\"\242\002\n\034AttributePropagat"
-          + "ionSettings\022\027\n\nexpression\030\001 \001(\tH\000\210\001\001\022_\n\022"
-          + "output_credentials\030\002 \003(\0162C.google.cloud."
-          + "iap.v1.AttributePropagationSettings.Outp"
-          + "utCredentials\022\023\n\006enable\030\003 \001(\010H\001\210\001\001\"Y\n\021Ou"
-          + "tputCredentials\022\"\n\036OUTPUT_CREDENTIALS_UN"
-          + "SPECIFIED\020\000\022\n\n\006HEADER\020\001\022\007\n\003JWT\020\002\022\013\n\007RCTO"
-          + "KEN\020\003B\r\n\013_expressionB\t\n\007_enable\"(\n\021ListB"
+          + "rotobuf.FieldMask\"\307\001\n\017TunnelDestGroup\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\025\n\005cidrs\030\002 \003(\tB\006\340A\006\340A\001\022"
+          + "\025\n\005fqdns\030\003 \003(\tB\006\340A\006\340A\001:s\352Ap\n\"iap.googlea"
+          + "pis.com/TunnelDestGroup\022Jprojects/{proje"
+          + "ct}/iap_tunnel/locations/{location}/dest"
+          + "Groups/{dest_group}\"*\n\025GetIapSettingsReq"
+          + "uest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"\210\001\n\030UpdateIapSet"
+          + "tingsRequest\022;\n\014iap_settings\030\001 \001(\0132 .goo"
+          + "gle.cloud.iap.v1.IapSettingsB\003\340A\002\022/\n\013upd"
+          + "ate_mask\030\002 \001(\0132\032.google.protobuf.FieldMa"
+          + "sk\"\260\001\n\013IapSettings\022\021\n\004name\030\001 \001(\tB\003\340A\002\022A\n"
+          + "\017access_settings\030\005 \001(\0132#.google.cloud.ia"
+          + "p.v1.AccessSettingsB\003\340A\001\022K\n\024application_"
+          + "settings\030\006 \001(\0132(.google.cloud.iap.v1.App"
+          + "licationSettingsB\003\340A\001\"\351\004\n\016AccessSettings"
+          + "\022=\n\rgcip_settings\030\001 \001(\0132!.google.cloud.i"
+          + "ap.v1.GcipSettingsB\003\340A\001\022=\n\rcors_settings"
+          + "\030\002 \001(\0132!.google.cloud.iap.v1.CorsSetting"
+          + "sB\003\340A\001\022?\n\016oauth_settings\030\003 \001(\0132\".google."
+          + "cloud.iap.v1.OAuthSettingsB\003\340A\001\022A\n\017reaut"
+          + "h_settings\030\006 \001(\0132#.google.cloud.iap.v1.R"
+          + "eauthSettingsB\003\340A\001\022R\n\030allowed_domains_se"
+          + "ttings\030\007 \001(\0132+.google.cloud.iap.v1.Allow"
+          + "edDomainsSettingsB\003\340A\001\022X\n\033workforce_iden"
+          + "tity_settings\030\t \001(\0132..google.cloud.iap.v"
+          + "1.WorkforceIdentitySettingsB\003\340A\001\022Q\n\020iden"
+          + "tity_sources\030\n \003(\01622.google.cloud.iap.v1"
+          + ".AccessSettings.IdentitySourceB\003\340A\001\"T\n\016I"
+          + "dentitySource\022\037\n\033IDENTITY_SOURCE_UNSPECI"
+          + "FIED\020\000\022!\n\035WORKFORCE_IDENTITY_FEDERATION\020"
+          + "\003\"]\n\014GcipSettings\022\027\n\ntenant_ids\030\001 \003(\tB\003\340"
+          + "A\001\0224\n\016login_page_uri\030\002 \001(\0132\034.google.prot"
+          + "obuf.StringValue\"F\n\014CorsSettings\0226\n\022allo"
+          + "w_http_options\030\001 \001(\0132\032.google.protobuf.B"
+          + "oolValue\"d\n\rOAuthSettings\0220\n\nlogin_hint\030"
+          + "\002 \001(\0132\034.google.protobuf.StringValue\022!\n\024p"
+          + "rogrammatic_clients\030\005 \003(\tB\003\340A\001\"a\n\031Workfo"
+          + "rceIdentitySettings\022\027\n\017workforce_pools\030\001"
+          + " \003(\t\022+\n\006oauth2\030\002 \001(\0132\033.google.cloud.iap."
+          + "v1.OAuth2\"Z\n\006OAuth2\022\021\n\tclient_id\030\001 \001(\t\022\032"
+          + "\n\rclient_secret\030\002 \001(\tB\003\340A\004\022!\n\024client_sec"
+          + "ret_sha256\030\003 \001(\tB\003\340A\003\"\375\002\n\016ReauthSettings"
+          + "\022?\n\006method\030\001 \001(\0162*.google.cloud.iap.v1.R"
+          + "eauthSettings.MethodB\003\340A\001\022/\n\007max_age\030\002 \001"
+          + "(\0132\031.google.protobuf.DurationB\003\340A\001\022H\n\013po"
+          + "licy_type\030\003 \001(\0162..google.cloud.iap.v1.Re"
+          + "authSettings.PolicyTypeB\003\340A\001\"j\n\006Method\022\026"
+          + "\n\022METHOD_UNSPECIFIED\020\000\022\t\n\005LOGIN\020\001\022\020\n\010PAS"
+          + "SWORD\020\002\032\002\010\001\022\016\n\nSECURE_KEY\020\003\022\033\n\027ENROLLED_"
+          + "SECOND_FACTORS\020\004\"C\n\nPolicyType\022\033\n\027POLICY"
+          + "_TYPE_UNSPECIFIED\020\000\022\013\n\007MINIMUM\020\001\022\013\n\007DEFA"
+          + "ULT\020\002\"S\n\026AllowedDomainsSettings\022\030\n\006enabl"
+          + "e\030\001 \001(\010B\003\340A\001H\000\210\001\001\022\024\n\007domains\030\002 \003(\tB\003\340A\001B"
+          + "\t\n\007_enable\"\300\002\n\023ApplicationSettings\022;\n\014cs"
+          + "m_settings\030\001 \001(\0132 .google.cloud.iap.v1.C"
+          + "smSettingsB\003\340A\001\022W\n\033access_denied_page_se"
+          + "ttings\030\002 \001(\0132-.google.cloud.iap.v1.Acces"
+          + "sDeniedPageSettingsB\003\340A\001\0223\n\rcookie_domai"
+          + "n\030\003 \001(\0132\034.google.protobuf.StringValue\022^\n"
+          + "\036attribute_propagation_settings\030\004 \001(\01321."
+          + "google.cloud.iap.v1.AttributePropagation"
+          + "SettingsB\003\340A\001\"@\n\013CsmSettings\0221\n\013rctoken_"
+          + "aud\030\001 \001(\0132\034.google.protobuf.StringValue\""
+          + "\222\002\n\030AccessDeniedPageSettings\022<\n\026access_d"
+          + "enied_page_uri\030\001 \001(\0132\034.google.protobuf.S"
+          + "tringValue\022@\n\034generate_troubleshooting_u"
+          + "ri\030\002 \001(\0132\032.google.protobuf.BoolValue\022M\n$"
+          + "remediation_token_generation_enabled\030\003 \001"
+          + "(\0132\032.google.protobuf.BoolValueH\000\210\001\001B\'\n%_"
+          + "remediation_token_generation_enabled\"\261\002\n"
+          + "\034AttributePropagationSettings\022\034\n\nexpress"
+          + "ion\030\001 \001(\tB\003\340A\001H\000\210\001\001\022d\n\022output_credential"
+          + "s\030\002 \003(\0162C.google.cloud.iap.v1.AttributeP"
+          + "ropagationSettings.OutputCredentialsB\003\340A"
+          + "\001\022\030\n\006enable\030\003 \001(\010B\003\340A\001H\001\210\001\001\"Y\n\021OutputCre"
+          + "dentials\022\"\n\036OUTPUT_CREDENTIALS_UNSPECIFI"
+          + "ED\020\000\022\n\n\006HEADER\020\001\022\007\n\003JWT\020\002\022\013\n\007RCTOKEN\020\003B\r"
+          + "\n\013_expressionB\t\n\007_enable\"S\n%ValidateIapA"
+          + "ttributeExpressionRequest\022\021\n\004name\030\001 \001(\tB"
+          + "\003\340A\002\022\027\n\nexpression\030\002 \001(\tB\003\340A\002\"(\n&Validat"
+          + "eIapAttributeExpressionResponse\"(\n\021ListB"
           + "randsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\"@\n\022Lis"
           + "tBrandsResponse\022*\n\006brands\030\001 \003(\0132\032.google"
           + ".cloud.iap.v1.Brand\"Y\n\022CreateBrandReques"
@@ -282,7 +315,7 @@ public final class Service {
           + "_title\030\003 \001(\t\022\036\n\021org_internal_only\030\004 \001(\010B"
           + "\003\340A\003\"X\n\030IdentityAwareProxyClient\022\021\n\004name"
           + "\030\001 \001(\tB\003\340A\003\022\023\n\006secret\030\002 \001(\tB\003\340A\003\022\024\n\014disp"
-          + "lay_name\030\003 \001(\t2\300\016\n\036IdentityAwareProxyAdm"
+          + "lay_name\030\003 \001(\t2\217\020\n\036IdentityAwareProxyAdm"
           + "inService\022t\n\014SetIamPolicy\022\".google.iam.v"
           + "1.SetIamPolicyRequest\032\025.google.iam.v1.Po"
           + "licy\")\202\323\344\223\002#\"\036/v1/{resource=**}:setIamPo"
@@ -300,81 +333,86 @@ public final class Service {
           + "oogle.cloud.iap.v1.UpdateIapSettingsRequ"
           + "est\032 .google.cloud.iap.v1.IapSettings\"<\202"
           + "\323\344\223\00262&/v1/{iap_settings.name=**}:iapSet"
-          + "tings:\014iap_settings\022\307\001\n\024ListTunnelDestGr"
-          + "oups\0220.google.cloud.iap.v1.ListTunnelDes"
-          + "tGroupsRequest\0321.google.cloud.iap.v1.Lis"
-          + "tTunnelDestGroupsResponse\"J\332A\006parent\202\323\344\223"
-          + "\002;\0229/v1/{parent=projects/*/iap_tunnel/lo"
-          + "cations/*}/destGroups\022\367\001\n\025CreateTunnelDe"
-          + "stGroup\0221.google.cloud.iap.v1.CreateTunn"
-          + "elDestGroupRequest\032$.google.cloud.iap.v1"
-          + ".TunnelDestGroup\"\204\001\332A-parent,tunnel_dest"
-          + "_group,tunnel_dest_group_id\202\323\344\223\002N\"9/v1/{"
-          + "parent=projects/*/iap_tunnel/locations/*"
-          + "}/destGroups:\021tunnel_dest_group\022\264\001\n\022GetT"
-          + "unnelDestGroup\022..google.cloud.iap.v1.Get"
-          + "TunnelDestGroupRequest\032$.google.cloud.ia"
-          + "p.v1.TunnelDestGroup\"H\332A\004name\202\323\344\223\002;\0229/v1"
-          + "/{name=projects/*/iap_tunnel/locations/*"
-          + "/destGroups/*}\022\254\001\n\025DeleteTunnelDestGroup"
-          + "\0221.google.cloud.iap.v1.DeleteTunnelDestG"
-          + "roupRequest\032\026.google.protobuf.Empty\"H\332A\004"
-          + "name\202\323\344\223\002;*9/v1/{name=projects/*/iap_tun"
-          + "nel/locations/*/destGroups/*}\022\371\001\n\025Update"
-          + "TunnelDestGroup\0221.google.cloud.iap.v1.Up"
-          + "dateTunnelDestGroupRequest\032$.google.clou"
-          + "d.iap.v1.TunnelDestGroup\"\206\001\332A\035tunnel_des"
-          + "t_group,update_mask\202\323\344\223\002`2K/v1/{tunnel_d"
-          + "est_group.name=projects/*/iap_tunnel/loc"
-          + "ations/*/destGroups/*}:\021tunnel_dest_grou"
-          + "p\032F\312A\022iap.googleapis.com\322A.https://www.g"
-          + "oogleapis.com/auth/cloud-platform2\250\014\n\036Id"
-          + "entityAwareProxyOAuthService\022\205\001\n\nListBra"
-          + "nds\022&.google.cloud.iap.v1.ListBrandsRequ"
-          + "est\032\'.google.cloud.iap.v1.ListBrandsResp"
-          + "onse\"&\202\323\344\223\002 \022\036/v1/{parent=projects/*}/br"
-          + "ands\022\201\001\n\013CreateBrand\022\'.google.cloud.iap."
-          + "v1.CreateBrandRequest\032\032.google.cloud.iap"
-          + ".v1.Brand\"-\202\323\344\223\002\'\"\036/v1/{parent=projects/"
-          + "*}/brands:\005brand\022t\n\010GetBrand\022$.google.cl"
-          + "oud.iap.v1.GetBrandRequest\032\032.google.clou"
-          + "d.iap.v1.Brand\"&\202\323\344\223\002 \022\036/v1/{name=projec"
-          + "ts/*/brands/*}\022\354\001\n\036CreateIdentityAwarePr"
-          + "oxyClient\022:.google.cloud.iap.v1.CreateId"
-          + "entityAwareProxyClientRequest\032-.google.c"
-          + "loud.iap.v1.IdentityAwareProxyClient\"_\202\323"
-          + "\344\223\002Y\":/v1/{parent=projects/*/brands/*}/i"
-          + "dentityAwareProxyClients:\033identity_aware"
-          + "_proxy_client\022\332\001\n\035ListIdentityAwareProxy"
-          + "Clients\0229.google.cloud.iap.v1.ListIdenti"
-          + "tyAwareProxyClientsRequest\032:.google.clou"
-          + "d.iap.v1.ListIdentityAwareProxyClientsRe"
-          + "sponse\"B\202\323\344\223\002<\022:/v1/{parent=projects/*/b"
-          + "rands/*}/identityAwareProxyClients\022\311\001\n\033G"
-          + "etIdentityAwareProxyClient\0227.google.clou"
-          + "d.iap.v1.GetIdentityAwareProxyClientRequ"
-          + "est\032-.google.cloud.iap.v1.IdentityAwareP"
-          + "roxyClient\"B\202\323\344\223\002<\022:/v1/{name=projects/*"
-          + "/brands/*/identityAwareProxyClients/*}\022\350"
-          + "\001\n#ResetIdentityAwareProxyClientSecret\022?"
-          + ".google.cloud.iap.v1.ResetIdentityAwareP"
-          + "roxyClientSecretRequest\032-.google.cloud.i"
-          + "ap.v1.IdentityAwareProxyClient\"Q\202\323\344\223\002K\"F"
-          + "/v1/{name=projects/*/brands/*/identityAw"
-          + "areProxyClients/*}:resetSecret:\001*\022\270\001\n\036De"
-          + "leteIdentityAwareProxyClient\022:.google.cl"
-          + "oud.iap.v1.DeleteIdentityAwareProxyClien"
-          + "tRequest\032\026.google.protobuf.Empty\"B\202\323\344\223\002<"
-          + "*:/v1/{name=projects/*/brands/*/identity"
-          + "AwareProxyClients/*}\032F\312A\022iap.googleapis."
-          + "com\322A.https://www.googleapis.com/auth/cl"
-          + "oud-platformB\345\001\n\027com.google.cloud.iap.v1"
-          + "P\001Z)cloud.google.com/go/iap/apiv1/iappb;"
-          + "iappb\252\002\023Google.Cloud.Iap.V1\312\002\023Google\\Clo"
-          + "ud\\Iap\\V1\352\002\026Google::Cloud::Iap::V1\352AW\n!i"
-          + "ap.googleapis.com/TunnelLocation\0222projec"
-          + "ts/{project}/iap_tunnel/locations/{locat"
-          + "ion}b\006proto3"
+          + "tings:\014iap_settings\022\314\001\n\036ValidateIapAttri"
+          + "buteExpression\022:.google.cloud.iap.v1.Val"
+          + "idateIapAttributeExpressionRequest\032;.goo"
+          + "gle.cloud.iap.v1.ValidateIapAttributeExp"
+          + "ressionResponse\"1\202\323\344\223\002+\")/v1/{name=**}:v"
+          + "alidateAttributeExpression\022\307\001\n\024ListTunne"
+          + "lDestGroups\0220.google.cloud.iap.v1.ListTu"
+          + "nnelDestGroupsRequest\0321.google.cloud.iap"
+          + ".v1.ListTunnelDestGroupsResponse\"J\332A\006par"
+          + "ent\202\323\344\223\002;\0229/v1/{parent=projects/*/iap_tu"
+          + "nnel/locations/*}/destGroups\022\367\001\n\025CreateT"
+          + "unnelDestGroup\0221.google.cloud.iap.v1.Cre"
+          + "ateTunnelDestGroupRequest\032$.google.cloud"
+          + ".iap.v1.TunnelDestGroup\"\204\001\332A-parent,tunn"
+          + "el_dest_group,tunnel_dest_group_id\202\323\344\223\002N"
+          + "\"9/v1/{parent=projects/*/iap_tunnel/loca"
+          + "tions/*}/destGroups:\021tunnel_dest_group\022\264"
+          + "\001\n\022GetTunnelDestGroup\022..google.cloud.iap"
+          + ".v1.GetTunnelDestGroupRequest\032$.google.c"
+          + "loud.iap.v1.TunnelDestGroup\"H\332A\004name\202\323\344\223"
+          + "\002;\0229/v1/{name=projects/*/iap_tunnel/loca"
+          + "tions/*/destGroups/*}\022\254\001\n\025DeleteTunnelDe"
+          + "stGroup\0221.google.cloud.iap.v1.DeleteTunn"
+          + "elDestGroupRequest\032\026.google.protobuf.Emp"
+          + "ty\"H\332A\004name\202\323\344\223\002;*9/v1/{name=projects/*/"
+          + "iap_tunnel/locations/*/destGroups/*}\022\371\001\n"
+          + "\025UpdateTunnelDestGroup\0221.google.cloud.ia"
+          + "p.v1.UpdateTunnelDestGroupRequest\032$.goog"
+          + "le.cloud.iap.v1.TunnelDestGroup\"\206\001\332A\035tun"
+          + "nel_dest_group,update_mask\202\323\344\223\002`2K/v1/{t"
+          + "unnel_dest_group.name=projects/*/iap_tun"
+          + "nel/locations/*/destGroups/*}:\021tunnel_de"
+          + "st_group\032F\312A\022iap.googleapis.com\322A.https:"
+          + "//www.googleapis.com/auth/cloud-platform"
+          + "2\250\014\n\036IdentityAwareProxyOAuthService\022\205\001\n\n"
+          + "ListBrands\022&.google.cloud.iap.v1.ListBra"
+          + "ndsRequest\032\'.google.cloud.iap.v1.ListBra"
+          + "ndsResponse\"&\202\323\344\223\002 \022\036/v1/{parent=project"
+          + "s/*}/brands\022\201\001\n\013CreateBrand\022\'.google.clo"
+          + "ud.iap.v1.CreateBrandRequest\032\032.google.cl"
+          + "oud.iap.v1.Brand\"-\202\323\344\223\002\'\"\036/v1/{parent=pr"
+          + "ojects/*}/brands:\005brand\022t\n\010GetBrand\022$.go"
+          + "ogle.cloud.iap.v1.GetBrandRequest\032\032.goog"
+          + "le.cloud.iap.v1.Brand\"&\202\323\344\223\002 \022\036/v1/{name"
+          + "=projects/*/brands/*}\022\354\001\n\036CreateIdentity"
+          + "AwareProxyClient\022:.google.cloud.iap.v1.C"
+          + "reateIdentityAwareProxyClientRequest\032-.g"
+          + "oogle.cloud.iap.v1.IdentityAwareProxyCli"
+          + "ent\"_\202\323\344\223\002Y\":/v1/{parent=projects/*/bran"
+          + "ds/*}/identityAwareProxyClients:\033identit"
+          + "y_aware_proxy_client\022\332\001\n\035ListIdentityAwa"
+          + "reProxyClients\0229.google.cloud.iap.v1.Lis"
+          + "tIdentityAwareProxyClientsRequest\032:.goog"
+          + "le.cloud.iap.v1.ListIdentityAwareProxyCl"
+          + "ientsResponse\"B\202\323\344\223\002<\022:/v1/{parent=proje"
+          + "cts/*/brands/*}/identityAwareProxyClient"
+          + "s\022\311\001\n\033GetIdentityAwareProxyClient\0227.goog"
+          + "le.cloud.iap.v1.GetIdentityAwareProxyCli"
+          + "entRequest\032-.google.cloud.iap.v1.Identit"
+          + "yAwareProxyClient\"B\202\323\344\223\002<\022:/v1/{name=pro"
+          + "jects/*/brands/*/identityAwareProxyClien"
+          + "ts/*}\022\350\001\n#ResetIdentityAwareProxyClientS"
+          + "ecret\022?.google.cloud.iap.v1.ResetIdentit"
+          + "yAwareProxyClientSecretRequest\032-.google."
+          + "cloud.iap.v1.IdentityAwareProxyClient\"Q\202"
+          + "\323\344\223\002K\"F/v1/{name=projects/*/brands/*/ide"
+          + "ntityAwareProxyClients/*}:resetSecret:\001*"
+          + "\022\270\001\n\036DeleteIdentityAwareProxyClient\022:.go"
+          + "ogle.cloud.iap.v1.DeleteIdentityAwarePro"
+          + "xyClientRequest\032\026.google.protobuf.Empty\""
+          + "B\202\323\344\223\002<*:/v1/{name=projects/*/brands/*/i"
+          + "dentityAwareProxyClients/*}\032F\312A\022iap.goog"
+          + "leapis.com\322A.https://www.googleapis.com/"
+          + "auth/cloud-platformB\345\001\n\027com.google.cloud"
+          + ".iap.v1P\001Z)cloud.google.com/go/iap/apiv1"
+          + "/iappb;iappb\252\002\023Google.Cloud.Iap.V1\312\002\023Goo"
+          + "gle\\Cloud\\Iap\\V1\352\002\026Google::Cloud::Iap::V"
+          + "1\352AW\n!iap.googleapis.com/TunnelLocation\022"
+          + "2projects/{project}/iap_tunnel/locations"
+          + "/{location}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -482,6 +520,8 @@ public final class Service {
               "OauthSettings",
               "ReauthSettings",
               "AllowedDomainsSettings",
+              "WorkforceIdentitySettings",
+              "IdentitySources",
             });
     internal_static_google_cloud_iap_v1_GcipSettings_descriptor =
         getDescriptor().getMessageTypes().get(11);
@@ -507,8 +547,24 @@ public final class Service {
             new java.lang.String[] {
               "LoginHint", "ProgrammaticClients",
             });
-    internal_static_google_cloud_iap_v1_ReauthSettings_descriptor =
+    internal_static_google_cloud_iap_v1_WorkforceIdentitySettings_descriptor =
         getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_iap_v1_WorkforceIdentitySettings_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_iap_v1_WorkforceIdentitySettings_descriptor,
+            new java.lang.String[] {
+              "WorkforcePools", "Oauth2",
+            });
+    internal_static_google_cloud_iap_v1_OAuth2_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_iap_v1_OAuth2_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_iap_v1_OAuth2_descriptor,
+            new java.lang.String[] {
+              "ClientId", "ClientSecret", "ClientSecretSha256",
+            });
+    internal_static_google_cloud_iap_v1_ReauthSettings_descriptor =
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_iap_v1_ReauthSettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_iap_v1_ReauthSettings_descriptor,
@@ -516,7 +572,7 @@ public final class Service {
               "Method", "MaxAge", "PolicyType",
             });
     internal_static_google_cloud_iap_v1_AllowedDomainsSettings_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_iap_v1_AllowedDomainsSettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_iap_v1_AllowedDomainsSettings_descriptor,
@@ -524,7 +580,7 @@ public final class Service {
               "Enable", "Domains",
             });
     internal_static_google_cloud_iap_v1_ApplicationSettings_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_iap_v1_ApplicationSettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_iap_v1_ApplicationSettings_descriptor,
@@ -535,7 +591,7 @@ public final class Service {
               "AttributePropagationSettings",
             });
     internal_static_google_cloud_iap_v1_CsmSettings_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_iap_v1_CsmSettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_iap_v1_CsmSettings_descriptor,
@@ -543,7 +599,7 @@ public final class Service {
               "RctokenAud",
             });
     internal_static_google_cloud_iap_v1_AccessDeniedPageSettings_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_iap_v1_AccessDeniedPageSettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_iap_v1_AccessDeniedPageSettings_descriptor,
@@ -553,15 +609,29 @@ public final class Service {
               "RemediationTokenGenerationEnabled",
             });
     internal_static_google_cloud_iap_v1_AttributePropagationSettings_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_iap_v1_AttributePropagationSettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_iap_v1_AttributePropagationSettings_descriptor,
             new java.lang.String[] {
               "Expression", "OutputCredentials", "Enable",
             });
+    internal_static_google_cloud_iap_v1_ValidateIapAttributeExpressionRequest_descriptor =
+        getDescriptor().getMessageTypes().get(22);
+    internal_static_google_cloud_iap_v1_ValidateIapAttributeExpressionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_iap_v1_ValidateIapAttributeExpressionRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Expression",
+            });
+    internal_static_google_cloud_iap_v1_ValidateIapAttributeExpressionResponse_descriptor =
+        getDescriptor().getMessageTypes().get(23);
+    internal_static_google_cloud_iap_v1_ValidateIapAttributeExpressionResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_iap_v1_ValidateIapAttributeExpressionResponse_descriptor,
+            new java.lang.String[] {});
     internal_static_google_cloud_iap_v1_ListBrandsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_iap_v1_ListBrandsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_iap_v1_ListBrandsRequest_descriptor,
@@ -569,7 +639,7 @@ public final class Service {
               "Parent",
             });
     internal_static_google_cloud_iap_v1_ListBrandsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_iap_v1_ListBrandsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_iap_v1_ListBrandsResponse_descriptor,
@@ -577,7 +647,7 @@ public final class Service {
               "Brands",
             });
     internal_static_google_cloud_iap_v1_CreateBrandRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_iap_v1_CreateBrandRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_iap_v1_CreateBrandRequest_descriptor,
@@ -585,7 +655,7 @@ public final class Service {
               "Parent", "Brand",
             });
     internal_static_google_cloud_iap_v1_GetBrandRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_iap_v1_GetBrandRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_iap_v1_GetBrandRequest_descriptor,
@@ -593,7 +663,7 @@ public final class Service {
               "Name",
             });
     internal_static_google_cloud_iap_v1_ListIdentityAwareProxyClientsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_iap_v1_ListIdentityAwareProxyClientsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_iap_v1_ListIdentityAwareProxyClientsRequest_descriptor,
@@ -601,7 +671,7 @@ public final class Service {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_iap_v1_ListIdentityAwareProxyClientsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_iap_v1_ListIdentityAwareProxyClientsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_iap_v1_ListIdentityAwareProxyClientsResponse_descriptor,
@@ -609,7 +679,7 @@ public final class Service {
               "IdentityAwareProxyClients", "NextPageToken",
             });
     internal_static_google_cloud_iap_v1_CreateIdentityAwareProxyClientRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_iap_v1_CreateIdentityAwareProxyClientRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_iap_v1_CreateIdentityAwareProxyClientRequest_descriptor,
@@ -617,7 +687,7 @@ public final class Service {
               "Parent", "IdentityAwareProxyClient",
             });
     internal_static_google_cloud_iap_v1_GetIdentityAwareProxyClientRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_iap_v1_GetIdentityAwareProxyClientRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_iap_v1_GetIdentityAwareProxyClientRequest_descriptor,
@@ -625,7 +695,7 @@ public final class Service {
               "Name",
             });
     internal_static_google_cloud_iap_v1_ResetIdentityAwareProxyClientSecretRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_iap_v1_ResetIdentityAwareProxyClientSecretRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_iap_v1_ResetIdentityAwareProxyClientSecretRequest_descriptor,
@@ -633,7 +703,7 @@ public final class Service {
               "Name",
             });
     internal_static_google_cloud_iap_v1_DeleteIdentityAwareProxyClientRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_iap_v1_DeleteIdentityAwareProxyClientRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_iap_v1_DeleteIdentityAwareProxyClientRequest_descriptor,
@@ -641,7 +711,7 @@ public final class Service {
               "Name",
             });
     internal_static_google_cloud_iap_v1_Brand_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_iap_v1_Brand_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_iap_v1_Brand_descriptor,
@@ -649,7 +719,7 @@ public final class Service {
               "Name", "SupportEmail", "ApplicationTitle", "OrgInternalOnly",
             });
     internal_static_google_cloud_iap_v1_IdentityAwareProxyClient_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_iap_v1_IdentityAwareProxyClient_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_iap_v1_IdentityAwareProxyClient_descriptor,

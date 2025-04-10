@@ -132,10 +132,11 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of OAuth client IDs allowed to programmatically authenticate with IAP.
+   * Optional. List of client ids allowed to use IAP programmatically.
    * </pre>
    *
-   * <code>repeated string programmatic_clients = 5;</code>
+   * <code>repeated string programmatic_clients = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return A list containing the programmaticClients.
    */
@@ -146,10 +147,11 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of OAuth client IDs allowed to programmatically authenticate with IAP.
+   * Optional. List of client ids allowed to use IAP programmatically.
    * </pre>
    *
-   * <code>repeated string programmatic_clients = 5;</code>
+   * <code>repeated string programmatic_clients = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The count of programmaticClients.
    */
@@ -160,10 +162,11 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of OAuth client IDs allowed to programmatically authenticate with IAP.
+   * Optional. List of client ids allowed to use IAP programmatically.
    * </pre>
    *
-   * <code>repeated string programmatic_clients = 5;</code>
+   * <code>repeated string programmatic_clients = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The programmaticClients at the given index.
@@ -175,10 +178,11 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of OAuth client IDs allowed to programmatically authenticate with IAP.
+   * Optional. List of client ids allowed to use IAP programmatically.
    * </pre>
    *
-   * <code>repeated string programmatic_clients = 5;</code>
+   * <code>repeated string programmatic_clients = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the programmaticClients at the given index.
@@ -818,10 +822,11 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of OAuth client IDs allowed to programmatically authenticate with IAP.
+     * Optional. List of client ids allowed to use IAP programmatically.
      * </pre>
      *
-     * <code>repeated string programmatic_clients = 5;</code>
+     * <code>repeated string programmatic_clients = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return A list containing the programmaticClients.
      */
@@ -833,10 +838,11 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of OAuth client IDs allowed to programmatically authenticate with IAP.
+     * Optional. List of client ids allowed to use IAP programmatically.
      * </pre>
      *
-     * <code>repeated string programmatic_clients = 5;</code>
+     * <code>repeated string programmatic_clients = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The count of programmaticClients.
      */
@@ -847,10 +853,11 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of OAuth client IDs allowed to programmatically authenticate with IAP.
+     * Optional. List of client ids allowed to use IAP programmatically.
      * </pre>
      *
-     * <code>repeated string programmatic_clients = 5;</code>
+     * <code>repeated string programmatic_clients = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The programmaticClients at the given index.
@@ -862,10 +869,11 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of OAuth client IDs allowed to programmatically authenticate with IAP.
+     * Optional. List of client ids allowed to use IAP programmatically.
      * </pre>
      *
-     * <code>repeated string programmatic_clients = 5;</code>
+     * <code>repeated string programmatic_clients = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the programmaticClients at the given index.
@@ -877,10 +885,11 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of OAuth client IDs allowed to programmatically authenticate with IAP.
+     * Optional. List of client ids allowed to use IAP programmatically.
      * </pre>
      *
-     * <code>repeated string programmatic_clients = 5;</code>
+     * <code>repeated string programmatic_clients = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The programmaticClients to set.
@@ -900,10 +909,11 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of OAuth client IDs allowed to programmatically authenticate with IAP.
+     * Optional. List of client ids allowed to use IAP programmatically.
      * </pre>
      *
-     * <code>repeated string programmatic_clients = 5;</code>
+     * <code>repeated string programmatic_clients = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The programmaticClients to add.
      * @return This builder for chaining.
@@ -922,10 +932,11 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of OAuth client IDs allowed to programmatically authenticate with IAP.
+     * Optional. List of client ids allowed to use IAP programmatically.
      * </pre>
      *
-     * <code>repeated string programmatic_clients = 5;</code>
+     * <code>repeated string programmatic_clients = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param values The programmaticClients to add.
      * @return This builder for chaining.
@@ -941,10 +952,11 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of OAuth client IDs allowed to programmatically authenticate with IAP.
+     * Optional. List of client ids allowed to use IAP programmatically.
      * </pre>
      *
-     * <code>repeated string programmatic_clients = 5;</code>
+     * <code>repeated string programmatic_clients = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -959,10 +971,11 @@ public final class OAuthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of OAuth client IDs allowed to programmatically authenticate with IAP.
+     * Optional. List of client ids allowed to use IAP programmatically.
      * </pre>
      *
-     * <code>repeated string programmatic_clients = 5;</code>
+     * <code>repeated string programmatic_clients = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes of the programmaticClients to add.
      * @return This builder for chaining.

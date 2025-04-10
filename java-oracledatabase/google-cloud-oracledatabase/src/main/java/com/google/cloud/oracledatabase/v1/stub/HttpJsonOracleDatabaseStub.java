@@ -86,7 +86,10 @@ import com.google.cloud.oracledatabase.v1.ListEntitlementsResponse;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsResponse;
 import com.google.cloud.oracledatabase.v1.OperationMetadata;
+import com.google.cloud.oracledatabase.v1.RestartAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RestoreAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.StartAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.StopAutonomousDatabaseRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -988,6 +991,129 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<StopAutonomousDatabaseRequest, Operation>
+      stopAutonomousDatabaseMethodDescriptor =
+          ApiMethodDescriptor.<StopAutonomousDatabaseRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/StopAutonomousDatabase")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<StopAutonomousDatabaseRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/autonomousDatabases/*}:stop",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StopAutonomousDatabaseRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StopAutonomousDatabaseRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (StopAutonomousDatabaseRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<StartAutonomousDatabaseRequest, Operation>
+      startAutonomousDatabaseMethodDescriptor =
+          ApiMethodDescriptor.<StartAutonomousDatabaseRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/StartAutonomousDatabase")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<StartAutonomousDatabaseRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/autonomousDatabases/*}:start",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StartAutonomousDatabaseRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StartAutonomousDatabaseRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (StartAutonomousDatabaseRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<RestartAutonomousDatabaseRequest, Operation>
+      restartAutonomousDatabaseMethodDescriptor =
+          ApiMethodDescriptor.<RestartAutonomousDatabaseRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/RestartAutonomousDatabase")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RestartAutonomousDatabaseRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/autonomousDatabases/*}:restart",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RestartAutonomousDatabaseRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RestartAutonomousDatabaseRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (RestartAutonomousDatabaseRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1142,6 +1268,21 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<
           ListAutonomousDatabaseBackupsRequest, ListAutonomousDatabaseBackupsPagedResponse>
       listAutonomousDatabaseBackupsPagedCallable;
+  private final UnaryCallable<StopAutonomousDatabaseRequest, Operation>
+      stopAutonomousDatabaseCallable;
+  private final OperationCallable<
+          StopAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      stopAutonomousDatabaseOperationCallable;
+  private final UnaryCallable<StartAutonomousDatabaseRequest, Operation>
+      startAutonomousDatabaseCallable;
+  private final OperationCallable<
+          StartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      startAutonomousDatabaseOperationCallable;
+  private final UnaryCallable<RestartAutonomousDatabaseRequest, Operation>
+      restartAutonomousDatabaseCallable;
+  private final OperationCallable<
+          RestartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      restartAutonomousDatabaseOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1497,6 +1638,42 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<StopAutonomousDatabaseRequest, Operation>
+        stopAutonomousDatabaseTransportSettings =
+            HttpJsonCallSettings.<StopAutonomousDatabaseRequest, Operation>newBuilder()
+                .setMethodDescriptor(stopAutonomousDatabaseMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<StartAutonomousDatabaseRequest, Operation>
+        startAutonomousDatabaseTransportSettings =
+            HttpJsonCallSettings.<StartAutonomousDatabaseRequest, Operation>newBuilder()
+                .setMethodDescriptor(startAutonomousDatabaseMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<RestartAutonomousDatabaseRequest, Operation>
+        restartAutonomousDatabaseTransportSettings =
+            HttpJsonCallSettings.<RestartAutonomousDatabaseRequest, Operation>newBuilder()
+                .setMethodDescriptor(restartAutonomousDatabaseMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1712,6 +1889,39 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
             listAutonomousDatabaseBackupsTransportSettings,
             settings.listAutonomousDatabaseBackupsSettings(),
             clientContext);
+    this.stopAutonomousDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            stopAutonomousDatabaseTransportSettings,
+            settings.stopAutonomousDatabaseSettings(),
+            clientContext);
+    this.stopAutonomousDatabaseOperationCallable =
+        callableFactory.createOperationCallable(
+            stopAutonomousDatabaseTransportSettings,
+            settings.stopAutonomousDatabaseOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.startAutonomousDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            startAutonomousDatabaseTransportSettings,
+            settings.startAutonomousDatabaseSettings(),
+            clientContext);
+    this.startAutonomousDatabaseOperationCallable =
+        callableFactory.createOperationCallable(
+            startAutonomousDatabaseTransportSettings,
+            settings.startAutonomousDatabaseOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.restartAutonomousDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            restartAutonomousDatabaseTransportSettings,
+            settings.restartAutonomousDatabaseSettings(),
+            clientContext);
+    this.restartAutonomousDatabaseOperationCallable =
+        callableFactory.createOperationCallable(
+            restartAutonomousDatabaseTransportSettings,
+            settings.restartAutonomousDatabaseOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1751,6 +1961,9 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
     methodDescriptors.add(listAutonomousDbVersionsMethodDescriptor);
     methodDescriptors.add(listAutonomousDatabaseCharacterSetsMethodDescriptor);
     methodDescriptors.add(listAutonomousDatabaseBackupsMethodDescriptor);
+    methodDescriptors.add(stopAutonomousDatabaseMethodDescriptor);
+    methodDescriptors.add(startAutonomousDatabaseMethodDescriptor);
+    methodDescriptors.add(restartAutonomousDatabaseMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -1999,6 +2212,41 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
           ListAutonomousDatabaseBackupsRequest, ListAutonomousDatabaseBackupsPagedResponse>
       listAutonomousDatabaseBackupsPagedCallable() {
     return listAutonomousDatabaseBackupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<StopAutonomousDatabaseRequest, Operation> stopAutonomousDatabaseCallable() {
+    return stopAutonomousDatabaseCallable;
+  }
+
+  @Override
+  public OperationCallable<StopAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      stopAutonomousDatabaseOperationCallable() {
+    return stopAutonomousDatabaseOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StartAutonomousDatabaseRequest, Operation>
+      startAutonomousDatabaseCallable() {
+    return startAutonomousDatabaseCallable;
+  }
+
+  @Override
+  public OperationCallable<StartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      startAutonomousDatabaseOperationCallable() {
+    return startAutonomousDatabaseOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RestartAutonomousDatabaseRequest, Operation>
+      restartAutonomousDatabaseCallable() {
+    return restartAutonomousDatabaseCallable;
+  }
+
+  @Override
+  public OperationCallable<RestartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      restartAutonomousDatabaseOperationCallable() {
+    return restartAutonomousDatabaseOperationCallable;
   }
 
   @Override

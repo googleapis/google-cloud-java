@@ -220,7 +220,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    *   * `bigquery.dataset.project_id.dataset_id`
    *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
    *
-   * `*_id`s should satisfy the standard SQL rules for identifiers.
+   * `*_id`s should satisfy the GoogleSQL rules for identifiers.
    * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
    * </pre>
    *
@@ -245,7 +245,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    *   * `bigquery.dataset.project_id.dataset_id`
    *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
    *
-   * `*_id`s should satisfy the standard SQL rules for identifiers.
+   * `*_id`s should satisfy the GoogleSQL rules for identifiers.
    * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
    * </pre>
    *
@@ -283,7 +283,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    *   * `bigquery.dataset.project_id.dataset_id`
    *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
    *
-   * `*_id`s should satisfy the standard SQL rules for identifiers.
+   * `*_id`s should satisfy the GoogleSQL rules for identifiers.
    * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
    * </pre>
    *
@@ -916,7 +916,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *   * `bigquery.dataset.project_id.dataset_id`
      *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
      *
-     * `*_id`s should satisfy the standard SQL rules for identifiers.
+     * `*_id`s should satisfy the GoogleSQL rules for identifiers.
      * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
      * </pre>
      *
@@ -942,7 +942,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *   * `bigquery.dataset.project_id.dataset_id`
      *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
      *
-     * `*_id`s should satisfy the standard SQL rules for identifiers.
+     * `*_id`s should satisfy the GoogleSQL rules for identifiers.
      * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
      * </pre>
      *
@@ -981,7 +981,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *   * `bigquery.dataset.project_id.dataset_id`
      *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
      *
-     * `*_id`s should satisfy the standard SQL rules for identifiers.
+     * `*_id`s should satisfy the GoogleSQL rules for identifiers.
      * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
      * </pre>
      *
@@ -1020,7 +1020,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *   * `bigquery.dataset.project_id.dataset_id`
      *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
      *
-     * `*_id`s should satisfy the standard SQL rules for identifiers.
+     * `*_id`s should satisfy the GoogleSQL rules for identifiers.
      * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
      * </pre>
      *
@@ -1052,7 +1052,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *   * `bigquery.dataset.project_id.dataset_id`
      *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
      *
-     * `*_id`s should satisfy the standard SQL rules for identifiers.
+     * `*_id`s should satisfy the GoogleSQL rules for identifiers.
      * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
      * </pre>
      *
@@ -1082,7 +1082,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *   * `bigquery.dataset.project_id.dataset_id`
      *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
      *
-     * `*_id`s should satisfy the standard SQL rules for identifiers.
+     * `*_id`s should satisfy the GoogleSQL rules for identifiers.
      * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
      * </pre>
      *
