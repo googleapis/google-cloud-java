@@ -1903,6 +1903,9 @@
             "GetRagCorpus": {
               "methods": ["getRagCorpus", "getRagCorpus", "getRagCorpus", "getRagCorpusCallable"]
             },
+            "GetRagEngineConfig": {
+              "methods": ["getRagEngineConfig", "getRagEngineConfig", "getRagEngineConfig", "getRagEngineConfigCallable"]
+            },
             "GetRagFile": {
               "methods": ["getRagFile", "getRagFile", "getRagFile", "getRagFileCallable"]
             },
@@ -1926,6 +1929,9 @@
             },
             "UpdateRagCorpus": {
               "methods": ["updateRagCorpusAsync", "updateRagCorpusAsync", "updateRagCorpusOperationCallable", "updateRagCorpusCallable"]
+            },
+            "UpdateRagEngineConfig": {
+              "methods": ["updateRagEngineConfigAsync", "updateRagEngineConfigAsync", "updateRagEngineConfigOperationCallable", "updateRagEngineConfigCallable"]
             },
             "UploadRagFile": {
               "methods": ["uploadRagFile", "uploadRagFile", "uploadRagFile", "uploadRagFileCallable"]

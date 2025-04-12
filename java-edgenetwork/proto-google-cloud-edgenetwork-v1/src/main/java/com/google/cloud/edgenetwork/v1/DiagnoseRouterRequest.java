@@ -23,7 +23,7 @@ package com.google.cloud.edgenetwork.v1;
  *
  *
  * <pre>
- * Message for requesting diagnositcs of a router within a specific zone.
+ * Message for requesting diagnostics of a router within a specific zone.
  * </pre>
  *
  * Protobuf type {@code google.cloud.edgenetwork.v1.DiagnoseRouterRequest}
@@ -282,7 +282,7 @@ public final class DiagnoseRouterRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Message for requesting diagnositcs of a router within a specific zone.
+   * Message for requesting diagnostics of a router within a specific zone.
    * </pre>
    *
    * Protobuf type {@code google.cloud.edgenetwork.v1.DiagnoseRouterRequest}
