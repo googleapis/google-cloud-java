@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.15.2](https://github.com/googleapis/java-shared-config/compare/v1.15.1...v1.15.2) (2025-04-15)
+
+
+### Bug Fixes
+
+* Reintroduce support for GraalVM 17 ([#1010](https://github.com/googleapis/java-shared-config/issues/1010)) ([1906261](https://github.com/googleapis/java-shared-config/commit/19062614fd71a78c9cb88a7ff6f33b196ebba660))
+
+
+### Dependencies
+
+* Update dependency org.graalvm.sdk:graal-sdk to v24.2.0 ([#1005](https://github.com/googleapis/java-shared-config/issues/1005)) ([8186e31](https://github.com/googleapis/java-shared-config/commit/8186e31129eaa35257fd07cd23e8af4f1fc7742e))
+
 ## [1.15.1](https://github.com/googleapis/java-shared-config/compare/v1.15.0...v1.15.1) (2025-03-26)
 
 
