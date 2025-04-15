@@ -96,6 +96,7 @@ public class MetastorePartitionServiceClientTest {
             .setParent(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
             .addAllRequests(new ArrayList<CreateMetastorePartitionRequest>())
             .setSkipExistingPartitions(true)
+            .setTraceId("traceId-1067401920")
             .build();
 
     BatchCreateMetastorePartitionsResponse actualResponse =
@@ -111,6 +112,7 @@ public class MetastorePartitionServiceClientTest {
     Assert.assertEquals(request.getRequestsList(), actualRequest.getRequestsList());
     Assert.assertEquals(
         request.getSkipExistingPartitions(), actualRequest.getSkipExistingPartitions());
+    Assert.assertEquals(request.getTraceId(), actualRequest.getTraceId());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -128,6 +130,7 @@ public class MetastorePartitionServiceClientTest {
               .setParent(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
               .addAllRequests(new ArrayList<CreateMetastorePartitionRequest>())
               .setSkipExistingPartitions(true)
+              .setTraceId("traceId-1067401920")
               .build();
       client.batchCreateMetastorePartitions(request);
       Assert.fail("No exception raised");
@@ -145,6 +148,7 @@ public class MetastorePartitionServiceClientTest {
         BatchDeleteMetastorePartitionsRequest.newBuilder()
             .setParent(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
             .addAllPartitionValues(new ArrayList<MetastorePartitionValues>())
+            .setTraceId("traceId-1067401920")
             .build();
 
     client.batchDeleteMetastorePartitions(request);
@@ -156,6 +160,7 @@ public class MetastorePartitionServiceClientTest {
 
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getPartitionValuesList(), actualRequest.getPartitionValuesList());
+    Assert.assertEquals(request.getTraceId(), actualRequest.getTraceId());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -172,6 +177,7 @@ public class MetastorePartitionServiceClientTest {
           BatchDeleteMetastorePartitionsRequest.newBuilder()
               .setParent(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
               .addAllPartitionValues(new ArrayList<MetastorePartitionValues>())
+              .setTraceId("traceId-1067401920")
               .build();
       client.batchDeleteMetastorePartitions(request);
       Assert.fail("No exception raised");
@@ -192,6 +198,7 @@ public class MetastorePartitionServiceClientTest {
         BatchUpdateMetastorePartitionsRequest.newBuilder()
             .setParent(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
             .addAllRequests(new ArrayList<UpdateMetastorePartitionRequest>())
+            .setTraceId("traceId-1067401920")
             .build();
 
     BatchUpdateMetastorePartitionsResponse actualResponse =
@@ -205,6 +212,7 @@ public class MetastorePartitionServiceClientTest {
 
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getRequestsList(), actualRequest.getRequestsList());
+    Assert.assertEquals(request.getTraceId(), actualRequest.getTraceId());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -221,6 +229,7 @@ public class MetastorePartitionServiceClientTest {
           BatchUpdateMetastorePartitionsRequest.newBuilder()
               .setParent(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
               .addAllRequests(new ArrayList<UpdateMetastorePartitionRequest>())
+              .setTraceId("traceId-1067401920")
               .build();
       client.batchUpdateMetastorePartitions(request);
       Assert.fail("No exception raised");

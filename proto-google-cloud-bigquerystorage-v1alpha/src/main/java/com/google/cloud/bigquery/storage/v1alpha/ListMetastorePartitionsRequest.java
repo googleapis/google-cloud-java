@@ -42,6 +42,7 @@ public final class ListMetastorePartitionsRequest extends com.google.protobuf.Ge
   private ListMetastorePartitionsRequest() {
     parent_ = "";
     filter_ = "";
+    traceId_ = "";
   }
 
   @java.lang.Override
@@ -193,6 +194,65 @@ public final class ListMetastorePartitionsRequest extends com.google.protobuf.Ge
     }
   }
 
+  public static final int TRACE_ID_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object traceId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional trace id to be used for debugging. It is expected that
+   * the client sets the same `trace_id` for all the batches in the same
+   * operation, so that it is possible to tie together the logs to all the
+   * batches in the same operation. Limited to 256 characters. This is expected,
+   * but not required, to be globally unique.
+   * </pre>
+   *
+   * <code>string trace_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The traceId.
+   */
+  @java.lang.Override
+  public java.lang.String getTraceId() {
+    java.lang.Object ref = traceId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      traceId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional trace id to be used for debugging. It is expected that
+   * the client sets the same `trace_id` for all the batches in the same
+   * operation, so that it is possible to tie together the logs to all the
+   * batches in the same operation. Limited to 256 characters. This is expected,
+   * but not required, to be globally unique.
+   * </pre>
+   *
+   * <code>string trace_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for traceId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTraceIdBytes() {
+    java.lang.Object ref = traceId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      traceId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -213,6 +273,9 @@ public final class ListMetastorePartitionsRequest extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filter_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traceId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, traceId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -227,6 +290,9 @@ public final class ListMetastorePartitionsRequest extends com.google.protobuf.Ge
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filter_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traceId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, traceId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -247,6 +313,7 @@ public final class ListMetastorePartitionsRequest extends com.google.protobuf.Ge
 
     if (!getParent().equals(other.getParent())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
+    if (!getTraceId().equals(other.getTraceId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -262,6 +329,8 @@ public final class ListMetastorePartitionsRequest extends com.google.protobuf.Ge
     hash = (53 * hash) + getParent().hashCode();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + TRACE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getTraceId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -407,6 +476,7 @@ public final class ListMetastorePartitionsRequest extends com.google.protobuf.Ge
       bitField0_ = 0;
       parent_ = "";
       filter_ = "";
+      traceId_ = "";
       return this;
     }
 
@@ -452,6 +522,9 @@ public final class ListMetastorePartitionsRequest extends com.google.protobuf.Ge
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.traceId_ = traceId_;
       }
     }
 
@@ -515,6 +588,11 @@ public final class ListMetastorePartitionsRequest extends com.google.protobuf.Ge
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getTraceId().isEmpty()) {
+        traceId_ = other.traceId_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -553,6 +631,12 @@ public final class ListMetastorePartitionsRequest extends com.google.protobuf.Ge
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                traceId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -845,6 +929,132 @@ public final class ListMetastorePartitionsRequest extends com.google.protobuf.Ge
       checkByteStringIsUtf8(value);
       filter_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object traceId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional trace id to be used for debugging. It is expected that
+     * the client sets the same `trace_id` for all the batches in the same
+     * operation, so that it is possible to tie together the logs to all the
+     * batches in the same operation. Limited to 256 characters. This is expected,
+     * but not required, to be globally unique.
+     * </pre>
+     *
+     * <code>string trace_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The traceId.
+     */
+    public java.lang.String getTraceId() {
+      java.lang.Object ref = traceId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        traceId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional trace id to be used for debugging. It is expected that
+     * the client sets the same `trace_id` for all the batches in the same
+     * operation, so that it is possible to tie together the logs to all the
+     * batches in the same operation. Limited to 256 characters. This is expected,
+     * but not required, to be globally unique.
+     * </pre>
+     *
+     * <code>string trace_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for traceId.
+     */
+    public com.google.protobuf.ByteString getTraceIdBytes() {
+      java.lang.Object ref = traceId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        traceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional trace id to be used for debugging. It is expected that
+     * the client sets the same `trace_id` for all the batches in the same
+     * operation, so that it is possible to tie together the logs to all the
+     * batches in the same operation. Limited to 256 characters. This is expected,
+     * but not required, to be globally unique.
+     * </pre>
+     *
+     * <code>string trace_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The traceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTraceId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      traceId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional trace id to be used for debugging. It is expected that
+     * the client sets the same `trace_id` for all the batches in the same
+     * operation, so that it is possible to tie together the logs to all the
+     * batches in the same operation. Limited to 256 characters. This is expected,
+     * but not required, to be globally unique.
+     * </pre>
+     *
+     * <code>string trace_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTraceId() {
+      traceId_ = getDefaultInstance().getTraceId();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional trace id to be used for debugging. It is expected that
+     * the client sets the same `trace_id` for all the batches in the same
+     * operation, so that it is possible to tie together the logs to all the
+     * batches in the same operation. Limited to 256 characters. This is expected,
+     * but not required, to be globally unique.
+     * </pre>
+     *
+     * <code>string trace_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for traceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTraceIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      traceId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -40,6 +40,7 @@
  *           .setParent(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
  *           .addAllRequests(new ArrayList<CreateMetastorePartitionRequest>())
  *           .setSkipExistingPartitions(true)
+ *           .setTraceId("traceId-1067401920")
  *           .build();
  *   BatchCreateMetastorePartitionsResponse response =
  *       metastorePartitionServiceClient.batchCreateMetastorePartitions(request);

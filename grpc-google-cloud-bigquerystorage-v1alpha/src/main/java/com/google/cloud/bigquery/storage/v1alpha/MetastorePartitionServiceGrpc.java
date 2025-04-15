@@ -22,8 +22,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  * <pre>
  * BigQuery Metastore Partition Service API.
- * This service is used for managing metastore partitions in BigQuery metastore.
- * The service supports only batch operations for write.
+ *  This service is used for managing metastore partitions in BigQuery
+ *  metastore. The service supports only batch operations for write.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -362,8 +362,8 @@ public final class MetastorePartitionServiceGrpc {
    *
    * <pre>
    * BigQuery Metastore Partition Service API.
-   * This service is used for managing metastore partitions in BigQuery metastore.
-   * The service supports only batch operations for write.
+   *  This service is used for managing metastore partitions in BigQuery
+   *  metastore. The service supports only batch operations for write.
    * </pre>
    */
   public interface AsyncService {
@@ -458,8 +458,8 @@ public final class MetastorePartitionServiceGrpc {
    *
    * <pre>
    * BigQuery Metastore Partition Service API.
-   * This service is used for managing metastore partitions in BigQuery metastore.
-   * The service supports only batch operations for write.
+   *  This service is used for managing metastore partitions in BigQuery
+   *  metastore. The service supports only batch operations for write.
    * </pre>
    */
   public abstract static class MetastorePartitionServiceImplBase
@@ -476,8 +476,8 @@ public final class MetastorePartitionServiceGrpc {
    *
    * <pre>
    * BigQuery Metastore Partition Service API.
-   * This service is used for managing metastore partitions in BigQuery metastore.
-   * The service supports only batch operations for write.
+   *  This service is used for managing metastore partitions in BigQuery
+   *  metastore. The service supports only batch operations for write.
    * </pre>
    */
   public static final class MetastorePartitionServiceStub
@@ -592,8 +592,8 @@ public final class MetastorePartitionServiceGrpc {
    *
    * <pre>
    * BigQuery Metastore Partition Service API.
-   * This service is used for managing metastore partitions in BigQuery metastore.
-   * The service supports only batch operations for write.
+   *  This service is used for managing metastore partitions in BigQuery
+   *  metastore. The service supports only batch operations for write.
    * </pre>
    */
   public static final class MetastorePartitionServiceBlockingStub
@@ -673,8 +673,8 @@ public final class MetastorePartitionServiceGrpc {
    *
    * <pre>
    * BigQuery Metastore Partition Service API.
-   * This service is used for managing metastore partitions in BigQuery metastore.
-   * The service supports only batch operations for write.
+   *  This service is used for managing metastore partitions in BigQuery
+   *  metastore. The service supports only batch operations for write.
    * </pre>
    */
   public static final class MetastorePartitionServiceFutureStub

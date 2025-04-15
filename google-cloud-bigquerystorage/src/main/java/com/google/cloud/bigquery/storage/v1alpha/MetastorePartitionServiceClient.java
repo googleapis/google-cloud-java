@@ -48,6 +48,7 @@ import javax.annotation.Generated;
  *           .setParent(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
  *           .addAllRequests(new ArrayList<CreateMetastorePartitionRequest>())
  *           .setSkipExistingPartitions(true)
+ *           .setTraceId("traceId-1067401920")
  *           .build();
  *   BatchCreateMetastorePartitionsResponse response =
  *       metastorePartitionServiceClient.batchCreateMetastorePartitions(request);
@@ -251,6 +252,7 @@ public class MetastorePartitionServiceClient implements BackgroundResource {
    *           .setParent(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
    *           .addAllRequests(new ArrayList<CreateMetastorePartitionRequest>())
    *           .setSkipExistingPartitions(true)
+   *           .setTraceId("traceId-1067401920")
    *           .build();
    *   BatchCreateMetastorePartitionsResponse response =
    *       metastorePartitionServiceClient.batchCreateMetastorePartitions(request);
@@ -284,6 +286,7 @@ public class MetastorePartitionServiceClient implements BackgroundResource {
    *           .setParent(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
    *           .addAllRequests(new ArrayList<CreateMetastorePartitionRequest>())
    *           .setSkipExistingPartitions(true)
+   *           .setTraceId("traceId-1067401920")
    *           .build();
    *   ApiFuture<BatchCreateMetastorePartitionsResponse> future =
    *       metastorePartitionServiceClient
@@ -318,6 +321,7 @@ public class MetastorePartitionServiceClient implements BackgroundResource {
    *       BatchDeleteMetastorePartitionsRequest.newBuilder()
    *           .setParent(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
    *           .addAllPartitionValues(new ArrayList<MetastorePartitionValues>())
+   *           .setTraceId("traceId-1067401920")
    *           .build();
    *   metastorePartitionServiceClient.batchDeleteMetastorePartitions(request);
    * }
@@ -348,6 +352,7 @@ public class MetastorePartitionServiceClient implements BackgroundResource {
    *       BatchDeleteMetastorePartitionsRequest.newBuilder()
    *           .setParent(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
    *           .addAllPartitionValues(new ArrayList<MetastorePartitionValues>())
+   *           .setTraceId("traceId-1067401920")
    *           .build();
    *   ApiFuture<Empty> future =
    *       metastorePartitionServiceClient
@@ -381,6 +386,7 @@ public class MetastorePartitionServiceClient implements BackgroundResource {
    *       BatchUpdateMetastorePartitionsRequest.newBuilder()
    *           .setParent(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
    *           .addAllRequests(new ArrayList<UpdateMetastorePartitionRequest>())
+   *           .setTraceId("traceId-1067401920")
    *           .build();
    *   BatchUpdateMetastorePartitionsResponse response =
    *       metastorePartitionServiceClient.batchUpdateMetastorePartitions(request);
@@ -413,6 +419,7 @@ public class MetastorePartitionServiceClient implements BackgroundResource {
    *       BatchUpdateMetastorePartitionsRequest.newBuilder()
    *           .setParent(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
    *           .addAllRequests(new ArrayList<UpdateMetastorePartitionRequest>())
+   *           .setTraceId("traceId-1067401920")
    *           .build();
    *   ApiFuture<BatchUpdateMetastorePartitionsResponse> future =
    *       metastorePartitionServiceClient
@@ -509,6 +516,7 @@ public class MetastorePartitionServiceClient implements BackgroundResource {
    *       ListMetastorePartitionsRequest.newBuilder()
    *           .setParent(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
    *           .setFilter("filter-1274492040")
+   *           .setTraceId("traceId-1067401920")
    *           .build();
    *   ListMetastorePartitionsResponse response =
    *       metastorePartitionServiceClient.listMetastorePartitions(request);
@@ -541,6 +549,7 @@ public class MetastorePartitionServiceClient implements BackgroundResource {
    *       ListMetastorePartitionsRequest.newBuilder()
    *           .setParent(TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString())
    *           .setFilter("filter-1274492040")
+   *           .setTraceId("traceId-1067401920")
    *           .build();
    *   ApiFuture<ListMetastorePartitionsResponse> future =
    *       metastorePartitionServiceClient.listMetastorePartitionsCallable().futureCall(request);

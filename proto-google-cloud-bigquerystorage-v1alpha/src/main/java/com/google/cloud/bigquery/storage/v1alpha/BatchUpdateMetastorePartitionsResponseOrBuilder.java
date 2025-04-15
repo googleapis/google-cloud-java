@@ -29,6 +29,7 @@ public interface BatchUpdateMetastorePartitionsResponseOrBuilder
    *
    * <pre>
    * The list of metastore partitions that have been updated.
+   * A maximum of 900 partitions can be updated in a batch.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.storage.v1alpha.MetastorePartition partitions = 1;</code>
@@ -39,6 +40,7 @@ public interface BatchUpdateMetastorePartitionsResponseOrBuilder
    *
    * <pre>
    * The list of metastore partitions that have been updated.
+   * A maximum of 900 partitions can be updated in a batch.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.storage.v1alpha.MetastorePartition partitions = 1;</code>
@@ -49,6 +51,7 @@ public interface BatchUpdateMetastorePartitionsResponseOrBuilder
    *
    * <pre>
    * The list of metastore partitions that have been updated.
+   * A maximum of 900 partitions can be updated in a batch.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.storage.v1alpha.MetastorePartition partitions = 1;</code>
@@ -59,6 +62,7 @@ public interface BatchUpdateMetastorePartitionsResponseOrBuilder
    *
    * <pre>
    * The list of metastore partitions that have been updated.
+   * A maximum of 900 partitions can be updated in a batch.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.storage.v1alpha.MetastorePartition partitions = 1;</code>
@@ -70,6 +74,7 @@ public interface BatchUpdateMetastorePartitionsResponseOrBuilder
    *
    * <pre>
    * The list of metastore partitions that have been updated.
+   * A maximum of 900 partitions can be updated in a batch.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.storage.v1alpha.MetastorePartition partitions = 1;</code>

@@ -43,6 +43,7 @@ public final class BatchCreateMetastorePartitionsRequest
   private BatchCreateMetastorePartitionsRequest() {
     parent_ = "";
     requests_ = java.util.Collections.emptyList();
+    traceId_ = "";
   }
 
   @java.lang.Override
@@ -223,7 +224,7 @@ public final class BatchCreateMetastorePartitionsRequest
    * add_partitions(..). If the flag is set to false, the server will return
    * ALREADY_EXISTS if any partition already exists. If the flag is set to true,
    * the server will skip existing partitions and insert only the non-existing
-   * partitions.
+   * partitions. A maximum of 900 partitions can be inserted in a batch.
    * </pre>
    *
    * <code>bool skip_existing_partitions = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -233,6 +234,65 @@ public final class BatchCreateMetastorePartitionsRequest
   @java.lang.Override
   public boolean getSkipExistingPartitions() {
     return skipExistingPartitions_;
+  }
+
+  public static final int TRACE_ID_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object traceId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional trace id to be used for debugging. It is expected that
+   * the client sets the same `trace_id` for all the batches in the same
+   * operation, so that it is possible to tie together the logs to all the
+   * batches in the same operation. Limited to 256 characters. This is expected,
+   * but not required, to be globally unique.
+   * </pre>
+   *
+   * <code>string trace_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The traceId.
+   */
+  @java.lang.Override
+  public java.lang.String getTraceId() {
+    java.lang.Object ref = traceId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      traceId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional trace id to be used for debugging. It is expected that
+   * the client sets the same `trace_id` for all the batches in the same
+   * operation, so that it is possible to tie together the logs to all the
+   * batches in the same operation. Limited to 256 characters. This is expected,
+   * but not required, to be globally unique.
+   * </pre>
+   *
+   * <code>string trace_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for traceId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTraceIdBytes() {
+    java.lang.Object ref = traceId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      traceId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -258,6 +318,9 @@ public final class BatchCreateMetastorePartitionsRequest
     if (skipExistingPartitions_ != false) {
       output.writeBool(3, skipExistingPartitions_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traceId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, traceId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -275,6 +338,9 @@ public final class BatchCreateMetastorePartitionsRequest
     }
     if (skipExistingPartitions_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, skipExistingPartitions_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traceId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, traceId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -297,6 +363,7 @@ public final class BatchCreateMetastorePartitionsRequest
     if (!getParent().equals(other.getParent())) return false;
     if (!getRequestsList().equals(other.getRequestsList())) return false;
     if (getSkipExistingPartitions() != other.getSkipExistingPartitions()) return false;
+    if (!getTraceId().equals(other.getTraceId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -316,6 +383,8 @@ public final class BatchCreateMetastorePartitionsRequest
     }
     hash = (37 * hash) + SKIP_EXISTING_PARTITIONS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipExistingPartitions());
+    hash = (37 * hash) + TRACE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getTraceId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -474,6 +543,7 @@ public final class BatchCreateMetastorePartitionsRequest
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       skipExistingPartitions_ = false;
+      traceId_ = "";
       return this;
     }
 
@@ -534,6 +604,9 @@ public final class BatchCreateMetastorePartitionsRequest
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.skipExistingPartitions_ = skipExistingPartitions_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.traceId_ = traceId_;
       }
     }
 
@@ -624,6 +697,11 @@ public final class BatchCreateMetastorePartitionsRequest
       if (other.getSkipExistingPartitions() != false) {
         setSkipExistingPartitions(other.getSkipExistingPartitions());
       }
+      if (!other.getTraceId().isEmpty()) {
+        traceId_ = other.traceId_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -677,6 +755,12 @@ public final class BatchCreateMetastorePartitionsRequest
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 34:
+              {
+                traceId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1247,7 +1331,7 @@ public final class BatchCreateMetastorePartitionsRequest
      * add_partitions(..). If the flag is set to false, the server will return
      * ALREADY_EXISTS if any partition already exists. If the flag is set to true,
      * the server will skip existing partitions and insert only the non-existing
-     * partitions.
+     * partitions. A maximum of 900 partitions can be inserted in a batch.
      * </pre>
      *
      * <code>bool skip_existing_partitions = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1266,7 +1350,7 @@ public final class BatchCreateMetastorePartitionsRequest
      * add_partitions(..). If the flag is set to false, the server will return
      * ALREADY_EXISTS if any partition already exists. If the flag is set to true,
      * the server will skip existing partitions and insert only the non-existing
-     * partitions.
+     * partitions. A maximum of 900 partitions can be inserted in a batch.
      * </pre>
      *
      * <code>bool skip_existing_partitions = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1289,7 +1373,7 @@ public final class BatchCreateMetastorePartitionsRequest
      * add_partitions(..). If the flag is set to false, the server will return
      * ALREADY_EXISTS if any partition already exists. If the flag is set to true,
      * the server will skip existing partitions and insert only the non-existing
-     * partitions.
+     * partitions. A maximum of 900 partitions can be inserted in a batch.
      * </pre>
      *
      * <code>bool skip_existing_partitions = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1299,6 +1383,132 @@ public final class BatchCreateMetastorePartitionsRequest
     public Builder clearSkipExistingPartitions() {
       bitField0_ = (bitField0_ & ~0x00000004);
       skipExistingPartitions_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object traceId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional trace id to be used for debugging. It is expected that
+     * the client sets the same `trace_id` for all the batches in the same
+     * operation, so that it is possible to tie together the logs to all the
+     * batches in the same operation. Limited to 256 characters. This is expected,
+     * but not required, to be globally unique.
+     * </pre>
+     *
+     * <code>string trace_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The traceId.
+     */
+    public java.lang.String getTraceId() {
+      java.lang.Object ref = traceId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        traceId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional trace id to be used for debugging. It is expected that
+     * the client sets the same `trace_id` for all the batches in the same
+     * operation, so that it is possible to tie together the logs to all the
+     * batches in the same operation. Limited to 256 characters. This is expected,
+     * but not required, to be globally unique.
+     * </pre>
+     *
+     * <code>string trace_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for traceId.
+     */
+    public com.google.protobuf.ByteString getTraceIdBytes() {
+      java.lang.Object ref = traceId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        traceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional trace id to be used for debugging. It is expected that
+     * the client sets the same `trace_id` for all the batches in the same
+     * operation, so that it is possible to tie together the logs to all the
+     * batches in the same operation. Limited to 256 characters. This is expected,
+     * but not required, to be globally unique.
+     * </pre>
+     *
+     * <code>string trace_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The traceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTraceId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      traceId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional trace id to be used for debugging. It is expected that
+     * the client sets the same `trace_id` for all the batches in the same
+     * operation, so that it is possible to tie together the logs to all the
+     * batches in the same operation. Limited to 256 characters. This is expected,
+     * but not required, to be globally unique.
+     * </pre>
+     *
+     * <code>string trace_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTraceId() {
+      traceId_ = getDefaultInstance().getTraceId();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional trace id to be used for debugging. It is expected that
+     * the client sets the same `trace_id` for all the batches in the same
+     * operation, so that it is possible to tie together the logs to all the
+     * batches in the same operation. Limited to 256 characters. This is expected,
+     * but not required, to be globally unique.
+     * </pre>
+     *
+     * <code>string trace_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for traceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTraceIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      traceId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

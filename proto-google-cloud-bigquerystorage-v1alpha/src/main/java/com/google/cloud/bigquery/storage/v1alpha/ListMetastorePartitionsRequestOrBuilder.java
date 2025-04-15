@@ -99,4 +99,37 @@ public interface ListMetastorePartitionsRequestOrBuilder
    * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional trace id to be used for debugging. It is expected that
+   * the client sets the same `trace_id` for all the batches in the same
+   * operation, so that it is possible to tie together the logs to all the
+   * batches in the same operation. Limited to 256 characters. This is expected,
+   * but not required, to be globally unique.
+   * </pre>
+   *
+   * <code>string trace_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The traceId.
+   */
+  java.lang.String getTraceId();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional trace id to be used for debugging. It is expected that
+   * the client sets the same `trace_id` for all the batches in the same
+   * operation, so that it is possible to tie together the logs to all the
+   * batches in the same operation. Limited to 256 characters. This is expected,
+   * but not required, to be globally unique.
+   * </pre>
+   *
+   * <code>string trace_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for traceId.
+   */
+  com.google.protobuf.ByteString getTraceIdBytes();
 }
