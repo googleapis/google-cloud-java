@@ -511,6 +511,66 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> StopAutonomousDatabase</td>
+ *      <td><p> Stops an Autonomous Database.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> stopAutonomousDatabaseAsync(StopAutonomousDatabaseRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> stopAutonomousDatabaseAsync(AutonomousDatabaseName name)
+ *           <li><p> stopAutonomousDatabaseAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> stopAutonomousDatabaseOperationCallable()
+ *           <li><p> stopAutonomousDatabaseCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StartAutonomousDatabase</td>
+ *      <td><p> Starts an Autonomous Database.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> startAutonomousDatabaseAsync(StartAutonomousDatabaseRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> startAutonomousDatabaseAsync(AutonomousDatabaseName name)
+ *           <li><p> startAutonomousDatabaseAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> startAutonomousDatabaseOperationCallable()
+ *           <li><p> startAutonomousDatabaseCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RestartAutonomousDatabase</td>
+ *      <td><p> Restarts an Autonomous Database.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> restartAutonomousDatabaseAsync(RestartAutonomousDatabaseRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> restartAutonomousDatabaseAsync(AutonomousDatabaseName name)
+ *           <li><p> restartAutonomousDatabaseAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> restartAutonomousDatabaseOperationCallable()
+ *           <li><p> restartAutonomousDatabaseCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -4288,6 +4348,476 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListAutonomousDatabaseBackupsRequest, ListAutonomousDatabaseBackupsResponse>
       listAutonomousDatabaseBackupsCallable() {
     return stub.listAutonomousDatabaseBackupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   AutonomousDatabaseName name =
+   *       AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+   *   AutonomousDatabase response = oracleDatabaseClient.stopAutonomousDatabaseAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Autonomous Database in the following format:
+   *     projects/{project}/locations/{location}/autonomousDatabases/{autonomous_database}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutonomousDatabase, OperationMetadata> stopAutonomousDatabaseAsync(
+      AutonomousDatabaseName name) {
+    StopAutonomousDatabaseRequest request =
+        StopAutonomousDatabaseRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return stopAutonomousDatabaseAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]").toString();
+   *   AutonomousDatabase response = oracleDatabaseClient.stopAutonomousDatabaseAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Autonomous Database in the following format:
+   *     projects/{project}/locations/{location}/autonomousDatabases/{autonomous_database}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutonomousDatabase, OperationMetadata> stopAutonomousDatabaseAsync(
+      String name) {
+    StopAutonomousDatabaseRequest request =
+        StopAutonomousDatabaseRequest.newBuilder().setName(name).build();
+    return stopAutonomousDatabaseAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   StopAutonomousDatabaseRequest request =
+   *       StopAutonomousDatabaseRequest.newBuilder()
+   *           .setName(
+   *               AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+   *                   .toString())
+   *           .build();
+   *   AutonomousDatabase response = oracleDatabaseClient.stopAutonomousDatabaseAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutonomousDatabase, OperationMetadata> stopAutonomousDatabaseAsync(
+      StopAutonomousDatabaseRequest request) {
+    return stopAutonomousDatabaseOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   StopAutonomousDatabaseRequest request =
+   *       StopAutonomousDatabaseRequest.newBuilder()
+   *           .setName(
+   *               AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<AutonomousDatabase, OperationMetadata> future =
+   *       oracleDatabaseClient.stopAutonomousDatabaseOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AutonomousDatabase response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          StopAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      stopAutonomousDatabaseOperationCallable() {
+    return stub.stopAutonomousDatabaseOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   StopAutonomousDatabaseRequest request =
+   *       StopAutonomousDatabaseRequest.newBuilder()
+   *           .setName(
+   *               AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.stopAutonomousDatabaseCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StopAutonomousDatabaseRequest, Operation>
+      stopAutonomousDatabaseCallable() {
+    return stub.stopAutonomousDatabaseCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   AutonomousDatabaseName name =
+   *       AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+   *   AutonomousDatabase response = oracleDatabaseClient.startAutonomousDatabaseAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Autonomous Database in the following format:
+   *     projects/{project}/locations/{location}/autonomousDatabases/{autonomous_database}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutonomousDatabase, OperationMetadata> startAutonomousDatabaseAsync(
+      AutonomousDatabaseName name) {
+    StartAutonomousDatabaseRequest request =
+        StartAutonomousDatabaseRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return startAutonomousDatabaseAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]").toString();
+   *   AutonomousDatabase response = oracleDatabaseClient.startAutonomousDatabaseAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Autonomous Database in the following format:
+   *     projects/{project}/locations/{location}/autonomousDatabases/{autonomous_database}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutonomousDatabase, OperationMetadata> startAutonomousDatabaseAsync(
+      String name) {
+    StartAutonomousDatabaseRequest request =
+        StartAutonomousDatabaseRequest.newBuilder().setName(name).build();
+    return startAutonomousDatabaseAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   StartAutonomousDatabaseRequest request =
+   *       StartAutonomousDatabaseRequest.newBuilder()
+   *           .setName(
+   *               AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+   *                   .toString())
+   *           .build();
+   *   AutonomousDatabase response =
+   *       oracleDatabaseClient.startAutonomousDatabaseAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutonomousDatabase, OperationMetadata> startAutonomousDatabaseAsync(
+      StartAutonomousDatabaseRequest request) {
+    return startAutonomousDatabaseOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   StartAutonomousDatabaseRequest request =
+   *       StartAutonomousDatabaseRequest.newBuilder()
+   *           .setName(
+   *               AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<AutonomousDatabase, OperationMetadata> future =
+   *       oracleDatabaseClient.startAutonomousDatabaseOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AutonomousDatabase response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          StartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      startAutonomousDatabaseOperationCallable() {
+    return stub.startAutonomousDatabaseOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   StartAutonomousDatabaseRequest request =
+   *       StartAutonomousDatabaseRequest.newBuilder()
+   *           .setName(
+   *               AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.startAutonomousDatabaseCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StartAutonomousDatabaseRequest, Operation>
+      startAutonomousDatabaseCallable() {
+    return stub.startAutonomousDatabaseCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restarts an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   AutonomousDatabaseName name =
+   *       AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+   *   AutonomousDatabase response = oracleDatabaseClient.restartAutonomousDatabaseAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Autonomous Database in the following format:
+   *     projects/{project}/locations/{location}/autonomousDatabases/{autonomous_database}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutonomousDatabase, OperationMetadata>
+      restartAutonomousDatabaseAsync(AutonomousDatabaseName name) {
+    RestartAutonomousDatabaseRequest request =
+        RestartAutonomousDatabaseRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return restartAutonomousDatabaseAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restarts an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]").toString();
+   *   AutonomousDatabase response = oracleDatabaseClient.restartAutonomousDatabaseAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Autonomous Database in the following format:
+   *     projects/{project}/locations/{location}/autonomousDatabases/{autonomous_database}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutonomousDatabase, OperationMetadata>
+      restartAutonomousDatabaseAsync(String name) {
+    RestartAutonomousDatabaseRequest request =
+        RestartAutonomousDatabaseRequest.newBuilder().setName(name).build();
+    return restartAutonomousDatabaseAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restarts an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   RestartAutonomousDatabaseRequest request =
+   *       RestartAutonomousDatabaseRequest.newBuilder()
+   *           .setName(
+   *               AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+   *                   .toString())
+   *           .build();
+   *   AutonomousDatabase response =
+   *       oracleDatabaseClient.restartAutonomousDatabaseAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutonomousDatabase, OperationMetadata>
+      restartAutonomousDatabaseAsync(RestartAutonomousDatabaseRequest request) {
+    return restartAutonomousDatabaseOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restarts an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   RestartAutonomousDatabaseRequest request =
+   *       RestartAutonomousDatabaseRequest.newBuilder()
+   *           .setName(
+   *               AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<AutonomousDatabase, OperationMetadata> future =
+   *       oracleDatabaseClient.restartAutonomousDatabaseOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AutonomousDatabase response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RestartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      restartAutonomousDatabaseOperationCallable() {
+    return stub.restartAutonomousDatabaseOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restarts an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   RestartAutonomousDatabaseRequest request =
+   *       RestartAutonomousDatabaseRequest.newBuilder()
+   *           .setName(
+   *               AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.restartAutonomousDatabaseCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RestartAutonomousDatabaseRequest, Operation>
+      restartAutonomousDatabaseCallable() {
+    return stub.restartAutonomousDatabaseCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

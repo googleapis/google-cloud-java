@@ -125,6 +125,14 @@ public class IdentityAwareProxyAdminServiceSettings
         .updateIapSettingsSettings();
   }
 
+  /** Returns the object with the settings used for calls to validateIapAttributeExpression. */
+  public UnaryCallSettings<
+          ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+      validateIapAttributeExpressionSettings() {
+    return ((IdentityAwareProxyAdminServiceStubSettings) getStubSettings())
+        .validateIapAttributeExpressionSettings();
+  }
+
   /** Returns the object with the settings used for calls to listTunnelDestGroups. */
   public PagedCallSettings<
           ListTunnelDestGroupsRequest,
@@ -300,6 +308,13 @@ public class IdentityAwareProxyAdminServiceSettings
     public UnaryCallSettings.Builder<UpdateIapSettingsRequest, IapSettings>
         updateIapSettingsSettings() {
       return getStubSettingsBuilder().updateIapSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to validateIapAttributeExpression. */
+    public UnaryCallSettings.Builder<
+            ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+        validateIapAttributeExpressionSettings() {
+      return getStubSettingsBuilder().validateIapAttributeExpressionSettings();
     }
 
     /** Returns the builder for the settings used for calls to listTunnelDestGroups. */

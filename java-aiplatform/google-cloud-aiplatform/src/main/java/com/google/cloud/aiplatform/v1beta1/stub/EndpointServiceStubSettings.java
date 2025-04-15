@@ -54,12 +54,16 @@ import com.google.cloud.aiplatform.v1beta1.DeployModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeployModelRequest;
 import com.google.cloud.aiplatform.v1beta1.DeployModelResponse;
 import com.google.cloud.aiplatform.v1beta1.Endpoint;
+import com.google.cloud.aiplatform.v1beta1.FetchPublisherModelConfigRequest;
 import com.google.cloud.aiplatform.v1beta1.GetEndpointRequest;
 import com.google.cloud.aiplatform.v1beta1.ListEndpointsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListEndpointsResponse;
 import com.google.cloud.aiplatform.v1beta1.MutateDeployedModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.MutateDeployedModelRequest;
 import com.google.cloud.aiplatform.v1beta1.MutateDeployedModelResponse;
+import com.google.cloud.aiplatform.v1beta1.PublisherModelConfig;
+import com.google.cloud.aiplatform.v1beta1.SetPublisherModelConfigOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.SetPublisherModelConfigRequest;
 import com.google.cloud.aiplatform.v1beta1.UndeployModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UndeployModelRequest;
 import com.google.cloud.aiplatform.v1beta1.UndeployModelResponse;
@@ -201,6 +205,15 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
           MutateDeployedModelResponse,
           MutateDeployedModelOperationMetadata>
       mutateDeployedModelOperationSettings;
+  private final UnaryCallSettings<SetPublisherModelConfigRequest, Operation>
+      setPublisherModelConfigSettings;
+  private final OperationCallSettings<
+          SetPublisherModelConfigRequest,
+          PublisherModelConfig,
+          SetPublisherModelConfigOperationMetadata>
+      setPublisherModelConfigOperationSettings;
+  private final UnaryCallSettings<FetchPublisherModelConfigRequest, PublisherModelConfig>
+      fetchPublisherModelConfigSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -401,6 +414,27 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     return mutateDeployedModelOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setPublisherModelConfig. */
+  public UnaryCallSettings<SetPublisherModelConfigRequest, Operation>
+      setPublisherModelConfigSettings() {
+    return setPublisherModelConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setPublisherModelConfig. */
+  public OperationCallSettings<
+          SetPublisherModelConfigRequest,
+          PublisherModelConfig,
+          SetPublisherModelConfigOperationMetadata>
+      setPublisherModelConfigOperationSettings() {
+    return setPublisherModelConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchPublisherModelConfig. */
+  public UnaryCallSettings<FetchPublisherModelConfigRequest, PublisherModelConfig>
+      fetchPublisherModelConfigSettings() {
+    return fetchPublisherModelConfigSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -526,6 +560,10 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     mutateDeployedModelSettings = settingsBuilder.mutateDeployedModelSettings().build();
     mutateDeployedModelOperationSettings =
         settingsBuilder.mutateDeployedModelOperationSettings().build();
+    setPublisherModelConfigSettings = settingsBuilder.setPublisherModelConfigSettings().build();
+    setPublisherModelConfigOperationSettings =
+        settingsBuilder.setPublisherModelConfigOperationSettings().build();
+    fetchPublisherModelConfigSettings = settingsBuilder.fetchPublisherModelConfigSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -571,6 +609,15 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
             MutateDeployedModelResponse,
             MutateDeployedModelOperationMetadata>
         mutateDeployedModelOperationSettings;
+    private final UnaryCallSettings.Builder<SetPublisherModelConfigRequest, Operation>
+        setPublisherModelConfigSettings;
+    private final OperationCallSettings.Builder<
+            SetPublisherModelConfigRequest,
+            PublisherModelConfig,
+            SetPublisherModelConfigOperationMetadata>
+        setPublisherModelConfigOperationSettings;
+    private final UnaryCallSettings.Builder<FetchPublisherModelConfigRequest, PublisherModelConfig>
+        fetchPublisherModelConfigSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -631,6 +678,9 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
       undeployModelOperationSettings = OperationCallSettings.newBuilder();
       mutateDeployedModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       mutateDeployedModelOperationSettings = OperationCallSettings.newBuilder();
+      setPublisherModelConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setPublisherModelConfigOperationSettings = OperationCallSettings.newBuilder();
+      fetchPublisherModelConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -648,6 +698,8 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
               deployModelSettings,
               undeployModelSettings,
               mutateDeployedModelSettings,
+              setPublisherModelConfigSettings,
+              fetchPublisherModelConfigSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -676,6 +728,10 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
       mutateDeployedModelSettings = settings.mutateDeployedModelSettings.toBuilder();
       mutateDeployedModelOperationSettings =
           settings.mutateDeployedModelOperationSettings.toBuilder();
+      setPublisherModelConfigSettings = settings.setPublisherModelConfigSettings.toBuilder();
+      setPublisherModelConfigOperationSettings =
+          settings.setPublisherModelConfigOperationSettings.toBuilder();
+      fetchPublisherModelConfigSettings = settings.fetchPublisherModelConfigSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -693,6 +749,8 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
               deployModelSettings,
               undeployModelSettings,
               mutateDeployedModelSettings,
+              setPublisherModelConfigSettings,
+              fetchPublisherModelConfigSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -755,6 +813,16 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
 
       builder
           .mutateDeployedModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setPublisherModelConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchPublisherModelConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -933,6 +1001,31 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .setPublisherModelConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetPublisherModelConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(PublisherModelConfig.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  SetPublisherModelConfigOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1041,6 +1134,27 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
             MutateDeployedModelOperationMetadata>
         mutateDeployedModelOperationSettings() {
       return mutateDeployedModelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setPublisherModelConfig. */
+    public UnaryCallSettings.Builder<SetPublisherModelConfigRequest, Operation>
+        setPublisherModelConfigSettings() {
+      return setPublisherModelConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setPublisherModelConfig. */
+    public OperationCallSettings.Builder<
+            SetPublisherModelConfigRequest,
+            PublisherModelConfig,
+            SetPublisherModelConfigOperationMetadata>
+        setPublisherModelConfigOperationSettings() {
+      return setPublisherModelConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchPublisherModelConfig. */
+    public UnaryCallSettings.Builder<FetchPublisherModelConfigRequest, PublisherModelConfig>
+        fetchPublisherModelConfigSettings() {
+      return fetchPublisherModelConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

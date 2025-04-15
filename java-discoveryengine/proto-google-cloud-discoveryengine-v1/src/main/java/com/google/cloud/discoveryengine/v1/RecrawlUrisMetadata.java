@@ -42,7 +42,9 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
   }
 
   private RecrawlUrisMetadata() {
-    invalidUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    invalidUris3_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    noindexUris11_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    urisNotMatchingTargetSites9_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -165,47 +167,47 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
   public static final int INVALID_URIS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList invalidUris_ =
+  private com.google.protobuf.LazyStringArrayList invalidUris3_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+  // An alternative name is used for field "invalid_uris" because:
+  //     both repeated field "invalid_uris" and singular field "invalid_uris_count" generate the
+  // method "getInvalidUrisCount()"
   /**
    *
    *
    * <pre>
-   * Unique URIs in the request that don't match any TargetSite in the
-   * DataStore, only match TargetSites that haven't been fully indexed, or match
-   * a TargetSite with type EXCLUDE.
+   * Unique URIs in the request that have invalid format. Sample limited to
+   * 1000.
    * </pre>
    *
    * <code>repeated string invalid_uris = 3;</code>
    *
    * @return A list containing the invalidUris.
    */
-  public com.google.protobuf.ProtocolStringList getInvalidUrisList() {
-    return invalidUris_;
+  public com.google.protobuf.ProtocolStringList getInvalidUris3List() {
+    return invalidUris3_;
   }
   /**
    *
    *
    * <pre>
-   * Unique URIs in the request that don't match any TargetSite in the
-   * DataStore, only match TargetSites that haven't been fully indexed, or match
-   * a TargetSite with type EXCLUDE.
+   * Unique URIs in the request that have invalid format. Sample limited to
+   * 1000.
    * </pre>
    *
    * <code>repeated string invalid_uris = 3;</code>
    *
    * @return The count of invalidUris.
    */
-  public int getInvalidUrisCount() {
-    return invalidUris_.size();
+  public int getInvalidUris3Count() {
+    return invalidUris3_.size();
   }
   /**
    *
    *
    * <pre>
-   * Unique URIs in the request that don't match any TargetSite in the
-   * DataStore, only match TargetSites that haven't been fully indexed, or match
-   * a TargetSite with type EXCLUDE.
+   * Unique URIs in the request that have invalid format. Sample limited to
+   * 1000.
    * </pre>
    *
    * <code>repeated string invalid_uris = 3;</code>
@@ -213,16 +215,15 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
    * @param index The index of the element to return.
    * @return The invalidUris at the given index.
    */
-  public java.lang.String getInvalidUris(int index) {
-    return invalidUris_.get(index);
+  public java.lang.String getInvalidUris3(int index) {
+    return invalidUris3_.get(index);
   }
   /**
    *
    *
    * <pre>
-   * Unique URIs in the request that don't match any TargetSite in the
-   * DataStore, only match TargetSites that haven't been fully indexed, or match
-   * a TargetSite with type EXCLUDE.
+   * Unique URIs in the request that have invalid format. Sample limited to
+   * 1000.
    * </pre>
    *
    * <code>repeated string invalid_uris = 3;</code>
@@ -230,8 +231,215 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
    * @param index The index of the value to return.
    * @return The bytes of the invalidUris at the given index.
    */
-  public com.google.protobuf.ByteString getInvalidUrisBytes(int index) {
-    return invalidUris_.getByteString(index);
+  public com.google.protobuf.ByteString getInvalidUris3Bytes(int index) {
+    return invalidUris3_.getByteString(index);
+  }
+
+  public static final int INVALID_URIS_COUNT_FIELD_NUMBER = 8;
+  private int invalidUrisCount8_ = 0;
+  // An alternative name is used for field "invalid_uris_count" because:
+  //     both repeated field "invalid_uris" and singular field "invalid_uris_count" generate the
+  // method "getInvalidUrisCount()"
+  /**
+   *
+   *
+   * <pre>
+   * Total number of unique URIs in the request that have invalid format.
+   * </pre>
+   *
+   * <code>int32 invalid_uris_count = 8;</code>
+   *
+   * @return The invalidUrisCount.
+   */
+  @java.lang.Override
+  public int getInvalidUrisCount8() {
+    return invalidUrisCount8_;
+  }
+
+  public static final int NOINDEX_URIS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList noindexUris11_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  // An alternative name is used for field "noindex_uris" because:
+  //     both repeated field "noindex_uris" and singular field "noindex_uris_count" generate the
+  // method "getNoindexUrisCount()"
+  /**
+   *
+   *
+   * <pre>
+   * URIs that have no index meta tag. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string noindex_uris = 11;</code>
+   *
+   * @return A list containing the noindexUris.
+   */
+  public com.google.protobuf.ProtocolStringList getNoindexUris11List() {
+    return noindexUris11_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URIs that have no index meta tag. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string noindex_uris = 11;</code>
+   *
+   * @return The count of noindexUris.
+   */
+  public int getNoindexUris11Count() {
+    return noindexUris11_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URIs that have no index meta tag. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string noindex_uris = 11;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The noindexUris at the given index.
+   */
+  public java.lang.String getNoindexUris11(int index) {
+    return noindexUris11_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URIs that have no index meta tag. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string noindex_uris = 11;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the noindexUris at the given index.
+   */
+  public com.google.protobuf.ByteString getNoindexUris11Bytes(int index) {
+    return noindexUris11_.getByteString(index);
+  }
+
+  public static final int NOINDEX_URIS_COUNT_FIELD_NUMBER = 12;
+  private int noindexUrisCount12_ = 0;
+  // An alternative name is used for field "noindex_uris_count" because:
+  //     both repeated field "noindex_uris" and singular field "noindex_uris_count" generate the
+  // method "getNoindexUrisCount()"
+  /**
+   *
+   *
+   * <pre>
+   * Total number of URIs that have no index meta tag.
+   * </pre>
+   *
+   * <code>int32 noindex_uris_count = 12;</code>
+   *
+   * @return The noindexUrisCount.
+   */
+  @java.lang.Override
+  public int getNoindexUrisCount12() {
+    return noindexUrisCount12_;
+  }
+
+  public static final int URIS_NOT_MATCHING_TARGET_SITES_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList urisNotMatchingTargetSites9_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  // An alternative name is used for field "uris_not_matching_target_sites" because:
+  //     both repeated field "uris_not_matching_target_sites" and singular field
+  // "uris_not_matching_target_sites_count" generate the method
+  // "getUrisNotMatchingTargetSitesCount()"
+  /**
+   *
+   *
+   * <pre>
+   * Unique URIs in the request that don't match any TargetSite in the
+   * DataStore, only match TargetSites that haven't been fully indexed, or match
+   * a TargetSite with type EXCLUDE. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string uris_not_matching_target_sites = 9;</code>
+   *
+   * @return A list containing the urisNotMatchingTargetSites.
+   */
+  public com.google.protobuf.ProtocolStringList getUrisNotMatchingTargetSites9List() {
+    return urisNotMatchingTargetSites9_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Unique URIs in the request that don't match any TargetSite in the
+   * DataStore, only match TargetSites that haven't been fully indexed, or match
+   * a TargetSite with type EXCLUDE. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string uris_not_matching_target_sites = 9;</code>
+   *
+   * @return The count of urisNotMatchingTargetSites.
+   */
+  public int getUrisNotMatchingTargetSites9Count() {
+    return urisNotMatchingTargetSites9_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Unique URIs in the request that don't match any TargetSite in the
+   * DataStore, only match TargetSites that haven't been fully indexed, or match
+   * a TargetSite with type EXCLUDE. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string uris_not_matching_target_sites = 9;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The urisNotMatchingTargetSites at the given index.
+   */
+  public java.lang.String getUrisNotMatchingTargetSites9(int index) {
+    return urisNotMatchingTargetSites9_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Unique URIs in the request that don't match any TargetSite in the
+   * DataStore, only match TargetSites that haven't been fully indexed, or match
+   * a TargetSite with type EXCLUDE. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string uris_not_matching_target_sites = 9;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the urisNotMatchingTargetSites at the given index.
+   */
+  public com.google.protobuf.ByteString getUrisNotMatchingTargetSites9Bytes(int index) {
+    return urisNotMatchingTargetSites9_.getByteString(index);
+  }
+
+  public static final int URIS_NOT_MATCHING_TARGET_SITES_COUNT_FIELD_NUMBER = 10;
+  private int urisNotMatchingTargetSitesCount10_ = 0;
+  // An alternative name is used for field "uris_not_matching_target_sites_count" because:
+  //     both repeated field "uris_not_matching_target_sites" and singular field
+  // "uris_not_matching_target_sites_count" generate the method
+  // "getUrisNotMatchingTargetSitesCount()"
+  /**
+   *
+   *
+   * <pre>
+   * Total number of URIs that don't match any TargetSites.
+   * </pre>
+   *
+   * <code>int32 uris_not_matching_target_sites_count = 10;</code>
+   *
+   * @return The urisNotMatchingTargetSitesCount.
+   */
+  @java.lang.Override
+  public int getUrisNotMatchingTargetSitesCount10() {
+    return urisNotMatchingTargetSitesCount10_;
   }
 
   public static final int VALID_URIS_COUNT_FIELD_NUMBER = 4;
@@ -327,8 +535,8 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getUpdateTime());
     }
-    for (int i = 0; i < invalidUris_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, invalidUris_.getRaw(i));
+    for (int i = 0; i < invalidUris3_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, invalidUris3_.getRaw(i));
     }
     if (validUrisCount_ != 0) {
       output.writeInt32(4, validUrisCount_);
@@ -341,6 +549,22 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     }
     if (quotaExceededCount_ != 0) {
       output.writeInt32(7, quotaExceededCount_);
+    }
+    if (invalidUrisCount8_ != 0) {
+      output.writeInt32(8, invalidUrisCount8_);
+    }
+    for (int i = 0; i < urisNotMatchingTargetSites9_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 9, urisNotMatchingTargetSites9_.getRaw(i));
+    }
+    if (urisNotMatchingTargetSitesCount10_ != 0) {
+      output.writeInt32(10, urisNotMatchingTargetSitesCount10_);
+    }
+    for (int i = 0; i < noindexUris11_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, noindexUris11_.getRaw(i));
+    }
+    if (noindexUrisCount12_ != 0) {
+      output.writeInt32(12, noindexUrisCount12_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -359,11 +583,11 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     }
     {
       int dataSize = 0;
-      for (int i = 0; i < invalidUris_.size(); i++) {
-        dataSize += computeStringSizeNoTag(invalidUris_.getRaw(i));
+      for (int i = 0; i < invalidUris3_.size(); i++) {
+        dataSize += computeStringSizeNoTag(invalidUris3_.getRaw(i));
       }
       size += dataSize;
-      size += 1 * getInvalidUrisList().size();
+      size += 1 * getInvalidUris3List().size();
     }
     if (validUrisCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, validUrisCount_);
@@ -376,6 +600,33 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     }
     if (quotaExceededCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, quotaExceededCount_);
+    }
+    if (invalidUrisCount8_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, invalidUrisCount8_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < urisNotMatchingTargetSites9_.size(); i++) {
+        dataSize += computeStringSizeNoTag(urisNotMatchingTargetSites9_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getUrisNotMatchingTargetSites9List().size();
+    }
+    if (urisNotMatchingTargetSitesCount10_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              10, urisNotMatchingTargetSitesCount10_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < noindexUris11_.size(); i++) {
+        dataSize += computeStringSizeNoTag(noindexUris11_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getNoindexUris11List().size();
+    }
+    if (noindexUrisCount12_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, noindexUrisCount12_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -401,7 +652,14 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
-    if (!getInvalidUrisList().equals(other.getInvalidUrisList())) return false;
+    if (!getInvalidUris3List().equals(other.getInvalidUris3List())) return false;
+    if (getInvalidUrisCount8() != other.getInvalidUrisCount8()) return false;
+    if (!getNoindexUris11List().equals(other.getNoindexUris11List())) return false;
+    if (getNoindexUrisCount12() != other.getNoindexUrisCount12()) return false;
+    if (!getUrisNotMatchingTargetSites9List().equals(other.getUrisNotMatchingTargetSites9List()))
+      return false;
+    if (getUrisNotMatchingTargetSitesCount10() != other.getUrisNotMatchingTargetSitesCount10())
+      return false;
     if (getValidUrisCount() != other.getValidUrisCount()) return false;
     if (getSuccessCount() != other.getSuccessCount()) return false;
     if (getPendingCount() != other.getPendingCount()) return false;
@@ -425,10 +683,24 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
-    if (getInvalidUrisCount() > 0) {
+    if (getInvalidUris3Count() > 0) {
       hash = (37 * hash) + INVALID_URIS_FIELD_NUMBER;
-      hash = (53 * hash) + getInvalidUrisList().hashCode();
+      hash = (53 * hash) + getInvalidUris3List().hashCode();
     }
+    hash = (37 * hash) + INVALID_URIS_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getInvalidUrisCount8();
+    if (getNoindexUris11Count() > 0) {
+      hash = (37 * hash) + NOINDEX_URIS_FIELD_NUMBER;
+      hash = (53 * hash) + getNoindexUris11List().hashCode();
+    }
+    hash = (37 * hash) + NOINDEX_URIS_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getNoindexUrisCount12();
+    if (getUrisNotMatchingTargetSites9Count() > 0) {
+      hash = (37 * hash) + URIS_NOT_MATCHING_TARGET_SITES_FIELD_NUMBER;
+      hash = (53 * hash) + getUrisNotMatchingTargetSites9List().hashCode();
+    }
+    hash = (37 * hash) + URIS_NOT_MATCHING_TARGET_SITES_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getUrisNotMatchingTargetSitesCount10();
     hash = (37 * hash) + VALID_URIS_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getValidUrisCount();
     hash = (37 * hash) + SUCCESS_COUNT_FIELD_NUMBER;
@@ -600,7 +872,12 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      invalidUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      invalidUris3_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      invalidUrisCount8_ = 0;
+      noindexUris11_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      noindexUrisCount12_ = 0;
+      urisNotMatchingTargetSites9_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      urisNotMatchingTargetSitesCount10_ = 0;
       validUrisCount_ = 0;
       successCount_ = 0;
       pendingCount_ = 0;
@@ -651,19 +928,36 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        invalidUris_.makeImmutable();
-        result.invalidUris_ = invalidUris_;
+        invalidUris3_.makeImmutable();
+        result.invalidUris3_ = invalidUris3_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.validUrisCount_ = validUrisCount_;
+        result.invalidUrisCount8_ = invalidUrisCount8_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.successCount_ = successCount_;
+        noindexUris11_.makeImmutable();
+        result.noindexUris11_ = noindexUris11_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.pendingCount_ = pendingCount_;
+        result.noindexUrisCount12_ = noindexUrisCount12_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        urisNotMatchingTargetSites9_.makeImmutable();
+        result.urisNotMatchingTargetSites9_ = urisNotMatchingTargetSites9_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.urisNotMatchingTargetSitesCount10_ = urisNotMatchingTargetSitesCount10_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.validUrisCount_ = validUrisCount_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.successCount_ = successCount_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.pendingCount_ = pendingCount_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.quotaExceededCount_ = quotaExceededCount_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -721,15 +1015,44 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
-      if (!other.invalidUris_.isEmpty()) {
-        if (invalidUris_.isEmpty()) {
-          invalidUris_ = other.invalidUris_;
+      if (!other.invalidUris3_.isEmpty()) {
+        if (invalidUris3_.isEmpty()) {
+          invalidUris3_ = other.invalidUris3_;
           bitField0_ |= 0x00000004;
         } else {
-          ensureInvalidUrisIsMutable();
-          invalidUris_.addAll(other.invalidUris_);
+          ensureInvalidUris3IsMutable();
+          invalidUris3_.addAll(other.invalidUris3_);
         }
         onChanged();
+      }
+      if (other.getInvalidUrisCount8() != 0) {
+        setInvalidUrisCount8(other.getInvalidUrisCount8());
+      }
+      if (!other.noindexUris11_.isEmpty()) {
+        if (noindexUris11_.isEmpty()) {
+          noindexUris11_ = other.noindexUris11_;
+          bitField0_ |= 0x00000010;
+        } else {
+          ensureNoindexUris11IsMutable();
+          noindexUris11_.addAll(other.noindexUris11_);
+        }
+        onChanged();
+      }
+      if (other.getNoindexUrisCount12() != 0) {
+        setNoindexUrisCount12(other.getNoindexUrisCount12());
+      }
+      if (!other.urisNotMatchingTargetSites9_.isEmpty()) {
+        if (urisNotMatchingTargetSites9_.isEmpty()) {
+          urisNotMatchingTargetSites9_ = other.urisNotMatchingTargetSites9_;
+          bitField0_ |= 0x00000040;
+        } else {
+          ensureUrisNotMatchingTargetSites9IsMutable();
+          urisNotMatchingTargetSites9_.addAll(other.urisNotMatchingTargetSites9_);
+        }
+        onChanged();
+      }
+      if (other.getUrisNotMatchingTargetSitesCount10() != 0) {
+        setUrisNotMatchingTargetSitesCount10(other.getUrisNotMatchingTargetSitesCount10());
       }
       if (other.getValidUrisCount() != 0) {
         setValidUrisCount(other.getValidUrisCount());
@@ -784,34 +1107,66 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
             case 26:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                ensureInvalidUrisIsMutable();
-                invalidUris_.add(s);
+                ensureInvalidUris3IsMutable();
+                invalidUris3_.add(s);
                 break;
               } // case 26
             case 32:
               {
                 validUrisCount_ = input.readInt32();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 32
             case 40:
               {
                 successCount_ = input.readInt32();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 40
             case 48:
               {
                 pendingCount_ = input.readInt32();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 48
             case 56:
               {
                 quotaExceededCount_ = input.readInt32();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 56
+            case 64:
+              {
+                invalidUrisCount8_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 64
+            case 74:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureUrisNotMatchingTargetSites9IsMutable();
+                urisNotMatchingTargetSites9_.add(s);
+                break;
+              } // case 74
+            case 80:
+              {
+                urisNotMatchingTargetSitesCount10_ = input.readInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 80
+            case 90:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureNoindexUris11IsMutable();
+                noindexUris11_.add(s);
+                break;
+              } // case 90
+            case 96:
+              {
+                noindexUrisCount12_ = input.readInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1210,12 +1565,12 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
       return updateTimeBuilder_;
     }
 
-    private com.google.protobuf.LazyStringArrayList invalidUris_ =
+    private com.google.protobuf.LazyStringArrayList invalidUris3_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
-    private void ensureInvalidUrisIsMutable() {
-      if (!invalidUris_.isModifiable()) {
-        invalidUris_ = new com.google.protobuf.LazyStringArrayList(invalidUris_);
+    private void ensureInvalidUris3IsMutable() {
+      if (!invalidUris3_.isModifiable()) {
+        invalidUris3_ = new com.google.protobuf.LazyStringArrayList(invalidUris3_);
       }
       bitField0_ |= 0x00000004;
     }
@@ -1223,42 +1578,39 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Unique URIs in the request that don't match any TargetSite in the
-     * DataStore, only match TargetSites that haven't been fully indexed, or match
-     * a TargetSite with type EXCLUDE.
+     * Unique URIs in the request that have invalid format. Sample limited to
+     * 1000.
      * </pre>
      *
      * <code>repeated string invalid_uris = 3;</code>
      *
      * @return A list containing the invalidUris.
      */
-    public com.google.protobuf.ProtocolStringList getInvalidUrisList() {
-      invalidUris_.makeImmutable();
-      return invalidUris_;
+    public com.google.protobuf.ProtocolStringList getInvalidUris3List() {
+      invalidUris3_.makeImmutable();
+      return invalidUris3_;
     }
     /**
      *
      *
      * <pre>
-     * Unique URIs in the request that don't match any TargetSite in the
-     * DataStore, only match TargetSites that haven't been fully indexed, or match
-     * a TargetSite with type EXCLUDE.
+     * Unique URIs in the request that have invalid format. Sample limited to
+     * 1000.
      * </pre>
      *
      * <code>repeated string invalid_uris = 3;</code>
      *
      * @return The count of invalidUris.
      */
-    public int getInvalidUrisCount() {
-      return invalidUris_.size();
+    public int getInvalidUris3Count() {
+      return invalidUris3_.size();
     }
     /**
      *
      *
      * <pre>
-     * Unique URIs in the request that don't match any TargetSite in the
-     * DataStore, only match TargetSites that haven't been fully indexed, or match
-     * a TargetSite with type EXCLUDE.
+     * Unique URIs in the request that have invalid format. Sample limited to
+     * 1000.
      * </pre>
      *
      * <code>repeated string invalid_uris = 3;</code>
@@ -1266,16 +1618,15 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
      * @param index The index of the element to return.
      * @return The invalidUris at the given index.
      */
-    public java.lang.String getInvalidUris(int index) {
-      return invalidUris_.get(index);
+    public java.lang.String getInvalidUris3(int index) {
+      return invalidUris3_.get(index);
     }
     /**
      *
      *
      * <pre>
-     * Unique URIs in the request that don't match any TargetSite in the
-     * DataStore, only match TargetSites that haven't been fully indexed, or match
-     * a TargetSite with type EXCLUDE.
+     * Unique URIs in the request that have invalid format. Sample limited to
+     * 1000.
      * </pre>
      *
      * <code>repeated string invalid_uris = 3;</code>
@@ -1283,16 +1634,15 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
      * @param index The index of the value to return.
      * @return The bytes of the invalidUris at the given index.
      */
-    public com.google.protobuf.ByteString getInvalidUrisBytes(int index) {
-      return invalidUris_.getByteString(index);
+    public com.google.protobuf.ByteString getInvalidUris3Bytes(int index) {
+      return invalidUris3_.getByteString(index);
     }
     /**
      *
      *
      * <pre>
-     * Unique URIs in the request that don't match any TargetSite in the
-     * DataStore, only match TargetSites that haven't been fully indexed, or match
-     * a TargetSite with type EXCLUDE.
+     * Unique URIs in the request that have invalid format. Sample limited to
+     * 1000.
      * </pre>
      *
      * <code>repeated string invalid_uris = 3;</code>
@@ -1301,12 +1651,12 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
      * @param value The invalidUris to set.
      * @return This builder for chaining.
      */
-    public Builder setInvalidUris(int index, java.lang.String value) {
+    public Builder setInvalidUris3(int index, java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      ensureInvalidUrisIsMutable();
-      invalidUris_.set(index, value);
+      ensureInvalidUris3IsMutable();
+      invalidUris3_.set(index, value);
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
@@ -1315,9 +1665,8 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Unique URIs in the request that don't match any TargetSite in the
-     * DataStore, only match TargetSites that haven't been fully indexed, or match
-     * a TargetSite with type EXCLUDE.
+     * Unique URIs in the request that have invalid format. Sample limited to
+     * 1000.
      * </pre>
      *
      * <code>repeated string invalid_uris = 3;</code>
@@ -1325,12 +1674,12 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
      * @param value The invalidUris to add.
      * @return This builder for chaining.
      */
-    public Builder addInvalidUris(java.lang.String value) {
+    public Builder addInvalidUris3(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      ensureInvalidUrisIsMutable();
-      invalidUris_.add(value);
+      ensureInvalidUris3IsMutable();
+      invalidUris3_.add(value);
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
@@ -1339,9 +1688,8 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Unique URIs in the request that don't match any TargetSite in the
-     * DataStore, only match TargetSites that haven't been fully indexed, or match
-     * a TargetSite with type EXCLUDE.
+     * Unique URIs in the request that have invalid format. Sample limited to
+     * 1000.
      * </pre>
      *
      * <code>repeated string invalid_uris = 3;</code>
@@ -1349,10 +1697,436 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
      * @param values The invalidUris to add.
      * @return This builder for chaining.
      */
-    public Builder addAllInvalidUris(java.lang.Iterable<java.lang.String> values) {
-      ensureInvalidUrisIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, invalidUris_);
+    public Builder addAllInvalidUris3(java.lang.Iterable<java.lang.String> values) {
+      ensureInvalidUris3IsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, invalidUris3_);
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique URIs in the request that have invalid format. Sample limited to
+     * 1000.
+     * </pre>
+     *
+     * <code>repeated string invalid_uris = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInvalidUris3() {
+      invalidUris3_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique URIs in the request that have invalid format. Sample limited to
+     * 1000.
+     * </pre>
+     *
+     * <code>repeated string invalid_uris = 3;</code>
+     *
+     * @param value The bytes of the invalidUris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInvalidUris3Bytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureInvalidUris3IsMutable();
+      invalidUris3_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private int invalidUrisCount8_;
+    /**
+     *
+     *
+     * <pre>
+     * Total number of unique URIs in the request that have invalid format.
+     * </pre>
+     *
+     * <code>int32 invalid_uris_count = 8;</code>
+     *
+     * @return The invalidUrisCount.
+     */
+    @java.lang.Override
+    public int getInvalidUrisCount8() {
+      return invalidUrisCount8_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Total number of unique URIs in the request that have invalid format.
+     * </pre>
+     *
+     * <code>int32 invalid_uris_count = 8;</code>
+     *
+     * @param value The invalidUrisCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInvalidUrisCount8(int value) {
+
+      invalidUrisCount8_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Total number of unique URIs in the request that have invalid format.
+     * </pre>
+     *
+     * <code>int32 invalid_uris_count = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInvalidUrisCount8() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      invalidUrisCount8_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList noindexUris11_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureNoindexUris11IsMutable() {
+      if (!noindexUris11_.isModifiable()) {
+        noindexUris11_ = new com.google.protobuf.LazyStringArrayList(noindexUris11_);
+      }
+      bitField0_ |= 0x00000010;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URIs that have no index meta tag. Sample limited to 1000.
+     * </pre>
+     *
+     * <code>repeated string noindex_uris = 11;</code>
+     *
+     * @return A list containing the noindexUris.
+     */
+    public com.google.protobuf.ProtocolStringList getNoindexUris11List() {
+      noindexUris11_.makeImmutable();
+      return noindexUris11_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URIs that have no index meta tag. Sample limited to 1000.
+     * </pre>
+     *
+     * <code>repeated string noindex_uris = 11;</code>
+     *
+     * @return The count of noindexUris.
+     */
+    public int getNoindexUris11Count() {
+      return noindexUris11_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URIs that have no index meta tag. Sample limited to 1000.
+     * </pre>
+     *
+     * <code>repeated string noindex_uris = 11;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The noindexUris at the given index.
+     */
+    public java.lang.String getNoindexUris11(int index) {
+      return noindexUris11_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URIs that have no index meta tag. Sample limited to 1000.
+     * </pre>
+     *
+     * <code>repeated string noindex_uris = 11;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the noindexUris at the given index.
+     */
+    public com.google.protobuf.ByteString getNoindexUris11Bytes(int index) {
+      return noindexUris11_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URIs that have no index meta tag. Sample limited to 1000.
+     * </pre>
+     *
+     * <code>repeated string noindex_uris = 11;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The noindexUris to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNoindexUris11(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureNoindexUris11IsMutable();
+      noindexUris11_.set(index, value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URIs that have no index meta tag. Sample limited to 1000.
+     * </pre>
+     *
+     * <code>repeated string noindex_uris = 11;</code>
+     *
+     * @param value The noindexUris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addNoindexUris11(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureNoindexUris11IsMutable();
+      noindexUris11_.add(value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URIs that have no index meta tag. Sample limited to 1000.
+     * </pre>
+     *
+     * <code>repeated string noindex_uris = 11;</code>
+     *
+     * @param values The noindexUris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllNoindexUris11(java.lang.Iterable<java.lang.String> values) {
+      ensureNoindexUris11IsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, noindexUris11_);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URIs that have no index meta tag. Sample limited to 1000.
+     * </pre>
+     *
+     * <code>repeated string noindex_uris = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNoindexUris11() {
+      noindexUris11_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URIs that have no index meta tag. Sample limited to 1000.
+     * </pre>
+     *
+     * <code>repeated string noindex_uris = 11;</code>
+     *
+     * @param value The bytes of the noindexUris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addNoindexUris11Bytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureNoindexUris11IsMutable();
+      noindexUris11_.add(value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private int noindexUrisCount12_;
+    /**
+     *
+     *
+     * <pre>
+     * Total number of URIs that have no index meta tag.
+     * </pre>
+     *
+     * <code>int32 noindex_uris_count = 12;</code>
+     *
+     * @return The noindexUrisCount.
+     */
+    @java.lang.Override
+    public int getNoindexUrisCount12() {
+      return noindexUrisCount12_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Total number of URIs that have no index meta tag.
+     * </pre>
+     *
+     * <code>int32 noindex_uris_count = 12;</code>
+     *
+     * @param value The noindexUrisCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNoindexUrisCount12(int value) {
+
+      noindexUrisCount12_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Total number of URIs that have no index meta tag.
+     * </pre>
+     *
+     * <code>int32 noindex_uris_count = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNoindexUrisCount12() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      noindexUrisCount12_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList urisNotMatchingTargetSites9_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureUrisNotMatchingTargetSites9IsMutable() {
+      if (!urisNotMatchingTargetSites9_.isModifiable()) {
+        urisNotMatchingTargetSites9_ =
+            new com.google.protobuf.LazyStringArrayList(urisNotMatchingTargetSites9_);
+      }
+      bitField0_ |= 0x00000040;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique URIs in the request that don't match any TargetSite in the
+     * DataStore, only match TargetSites that haven't been fully indexed, or match
+     * a TargetSite with type EXCLUDE. Sample limited to 1000.
+     * </pre>
+     *
+     * <code>repeated string uris_not_matching_target_sites = 9;</code>
+     *
+     * @return A list containing the urisNotMatchingTargetSites.
+     */
+    public com.google.protobuf.ProtocolStringList getUrisNotMatchingTargetSites9List() {
+      urisNotMatchingTargetSites9_.makeImmutable();
+      return urisNotMatchingTargetSites9_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique URIs in the request that don't match any TargetSite in the
+     * DataStore, only match TargetSites that haven't been fully indexed, or match
+     * a TargetSite with type EXCLUDE. Sample limited to 1000.
+     * </pre>
+     *
+     * <code>repeated string uris_not_matching_target_sites = 9;</code>
+     *
+     * @return The count of urisNotMatchingTargetSites.
+     */
+    public int getUrisNotMatchingTargetSites9Count() {
+      return urisNotMatchingTargetSites9_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique URIs in the request that don't match any TargetSite in the
+     * DataStore, only match TargetSites that haven't been fully indexed, or match
+     * a TargetSite with type EXCLUDE. Sample limited to 1000.
+     * </pre>
+     *
+     * <code>repeated string uris_not_matching_target_sites = 9;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The urisNotMatchingTargetSites at the given index.
+     */
+    public java.lang.String getUrisNotMatchingTargetSites9(int index) {
+      return urisNotMatchingTargetSites9_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique URIs in the request that don't match any TargetSite in the
+     * DataStore, only match TargetSites that haven't been fully indexed, or match
+     * a TargetSite with type EXCLUDE. Sample limited to 1000.
+     * </pre>
+     *
+     * <code>repeated string uris_not_matching_target_sites = 9;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the urisNotMatchingTargetSites at the given index.
+     */
+    public com.google.protobuf.ByteString getUrisNotMatchingTargetSites9Bytes(int index) {
+      return urisNotMatchingTargetSites9_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique URIs in the request that don't match any TargetSite in the
+     * DataStore, only match TargetSites that haven't been fully indexed, or match
+     * a TargetSite with type EXCLUDE. Sample limited to 1000.
+     * </pre>
+     *
+     * <code>repeated string uris_not_matching_target_sites = 9;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The urisNotMatchingTargetSites to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUrisNotMatchingTargetSites9(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUrisNotMatchingTargetSites9IsMutable();
+      urisNotMatchingTargetSites9_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1362,16 +2136,61 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
      * <pre>
      * Unique URIs in the request that don't match any TargetSite in the
      * DataStore, only match TargetSites that haven't been fully indexed, or match
-     * a TargetSite with type EXCLUDE.
+     * a TargetSite with type EXCLUDE. Sample limited to 1000.
      * </pre>
      *
-     * <code>repeated string invalid_uris = 3;</code>
+     * <code>repeated string uris_not_matching_target_sites = 9;</code>
+     *
+     * @param value The urisNotMatchingTargetSites to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUrisNotMatchingTargetSites9(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUrisNotMatchingTargetSites9IsMutable();
+      urisNotMatchingTargetSites9_.add(value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique URIs in the request that don't match any TargetSite in the
+     * DataStore, only match TargetSites that haven't been fully indexed, or match
+     * a TargetSite with type EXCLUDE. Sample limited to 1000.
+     * </pre>
+     *
+     * <code>repeated string uris_not_matching_target_sites = 9;</code>
+     *
+     * @param values The urisNotMatchingTargetSites to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllUrisNotMatchingTargetSites9(java.lang.Iterable<java.lang.String> values) {
+      ensureUrisNotMatchingTargetSites9IsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, urisNotMatchingTargetSites9_);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique URIs in the request that don't match any TargetSite in the
+     * DataStore, only match TargetSites that haven't been fully indexed, or match
+     * a TargetSite with type EXCLUDE. Sample limited to 1000.
+     * </pre>
+     *
+     * <code>repeated string uris_not_matching_target_sites = 9;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearInvalidUris() {
-      invalidUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+    public Builder clearUrisNotMatchingTargetSites9() {
+      urisNotMatchingTargetSites9_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000040);
       ;
       onChanged();
       return this;
@@ -1382,22 +2201,75 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
      * <pre>
      * Unique URIs in the request that don't match any TargetSite in the
      * DataStore, only match TargetSites that haven't been fully indexed, or match
-     * a TargetSite with type EXCLUDE.
+     * a TargetSite with type EXCLUDE. Sample limited to 1000.
      * </pre>
      *
-     * <code>repeated string invalid_uris = 3;</code>
+     * <code>repeated string uris_not_matching_target_sites = 9;</code>
      *
-     * @param value The bytes of the invalidUris to add.
+     * @param value The bytes of the urisNotMatchingTargetSites to add.
      * @return This builder for chaining.
      */
-    public Builder addInvalidUrisBytes(com.google.protobuf.ByteString value) {
+    public Builder addUrisNotMatchingTargetSites9Bytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      ensureInvalidUrisIsMutable();
-      invalidUris_.add(value);
-      bitField0_ |= 0x00000004;
+      ensureUrisNotMatchingTargetSites9IsMutable();
+      urisNotMatchingTargetSites9_.add(value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private int urisNotMatchingTargetSitesCount10_;
+    /**
+     *
+     *
+     * <pre>
+     * Total number of URIs that don't match any TargetSites.
+     * </pre>
+     *
+     * <code>int32 uris_not_matching_target_sites_count = 10;</code>
+     *
+     * @return The urisNotMatchingTargetSitesCount.
+     */
+    @java.lang.Override
+    public int getUrisNotMatchingTargetSitesCount10() {
+      return urisNotMatchingTargetSitesCount10_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Total number of URIs that don't match any TargetSites.
+     * </pre>
+     *
+     * <code>int32 uris_not_matching_target_sites_count = 10;</code>
+     *
+     * @param value The urisNotMatchingTargetSitesCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUrisNotMatchingTargetSitesCount10(int value) {
+
+      urisNotMatchingTargetSitesCount10_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Total number of URIs that don't match any TargetSites.
+     * </pre>
+     *
+     * <code>int32 uris_not_matching_target_sites_count = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUrisNotMatchingTargetSitesCount10() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      urisNotMatchingTargetSitesCount10_ = 0;
       onChanged();
       return this;
     }
@@ -1433,7 +2305,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     public Builder setValidUrisCount(int value) {
 
       validUrisCount_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1449,7 +2321,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearValidUrisCount() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000100);
       validUrisCount_ = 0;
       onChanged();
       return this;
@@ -1486,7 +2358,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     public Builder setSuccessCount(int value) {
 
       successCount_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -1502,7 +2374,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSuccessCount() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000200);
       successCount_ = 0;
       onChanged();
       return this;
@@ -1539,7 +2411,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     public Builder setPendingCount(int value) {
 
       pendingCount_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -1555,7 +2427,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearPendingCount() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000400);
       pendingCount_ = 0;
       onChanged();
       return this;
@@ -1594,7 +2466,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
     public Builder setQuotaExceededCount(int value) {
 
       quotaExceededCount_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -1611,7 +2483,7 @@ public final class RecrawlUrisMetadata extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearQuotaExceededCount() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000800);
       quotaExceededCount_ = 0;
       onChanged();
       return this;

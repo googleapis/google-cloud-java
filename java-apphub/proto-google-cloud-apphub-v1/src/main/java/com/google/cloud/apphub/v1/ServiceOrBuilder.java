@@ -29,7 +29,7 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Identifier. The resource name of a Service. Format:
-   * "projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"
+   * `"projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -42,7 +42,7 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Identifier. The resource name of a Service. Format:
-   * "projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"
+   * `"projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>

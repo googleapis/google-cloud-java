@@ -61,6 +61,10 @@ public final class EndpointProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_PredictRequestResponseLoggingConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_PublisherModelConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_PublisherModelConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_ClientConnectionConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ClientConnectionConfig_fieldAccessorTable;
@@ -164,26 +168,31 @@ public final class EndpointProto {
           + "\035\n\020predict_http_uri\030\001 \001(\tB\003\340A\003\022\035\n\020explai"
           + "n_http_uri\030\002 \001(\tB\003\340A\003\022\034\n\017health_http_uri"
           + "\030\003 \001(\tB\003\340A\003\022\037\n\022service_attachment\030\004 \001(\tB"
-          + "\003\340A\003\"\241\001\n#PredictRequestResponseLoggingCo"
+          + "\003\340A\003\"\364\001\n#PredictRequestResponseLoggingCo"
           + "nfig\022\017\n\007enabled\030\001 \001(\010\022\025\n\rsampling_rate\030\002"
           + " \001(\001\022R\n\024bigquery_destination\030\003 \001(\01324.goo"
           + "gle.cloud.aiplatform.v1beta1.BigQueryDes"
-          + "tination\"N\n\026ClientConnectionConfig\0224\n\021in"
-          + "ference_timeout\030\001 \001(\0132\031.google.protobuf."
-          + "Duration\"5\n\026FasterDeploymentConfig\022\033\n\023fa"
-          + "st_tryout_enabled\030\002 \001(\010\"\367\001\n\016RolloutOptio"
-          + "ns\022\"\n\030max_unavailable_replicas\030\003 \001(\005H\000\022$"
-          + "\n\032max_unavailable_percentage\030\004 \001(\005H\000\022\034\n\022"
-          + "max_surge_replicas\030\005 \001(\005H\001\022\036\n\024max_surge_"
-          + "percentage\030\006 \001(\005H\001\022\037\n\027previous_deployed_"
-          + "model\030\001 \001(\t\022\034\n\017revision_number\030\002 \001(\005B\003\340A"
-          + "\003B\021\n\017max_unavailableB\013\n\tmax_surgeB\344\001\n#co"
-          + "m.google.cloud.aiplatform.v1beta1B\rEndpo"
-          + "intProtoP\001ZCcloud.google.com/go/aiplatfo"
-          + "rm/apiv1beta1/aiplatformpb;aiplatformpb\252"
-          + "\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Goog"
-          + "le\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cl"
-          + "oud::AIPlatform::V1beta1b\006proto3"
+          + "tination\0224\n\'request_response_logging_sch"
+          + "ema_version\030\004 \001(\tB\003\340A\003\022\033\n\023enable_otel_lo"
+          + "gging\030\006 \001(\010\"t\n\024PublisherModelConfig\022\\\n\016l"
+          + "ogging_config\030\003 \001(\0132D.google.cloud.aipla"
+          + "tform.v1beta1.PredictRequestResponseLogg"
+          + "ingConfig\"N\n\026ClientConnectionConfig\0224\n\021i"
+          + "nference_timeout\030\001 \001(\0132\031.google.protobuf"
+          + ".Duration\"5\n\026FasterDeploymentConfig\022\033\n\023f"
+          + "ast_tryout_enabled\030\002 \001(\010\"\367\001\n\016RolloutOpti"
+          + "ons\022\"\n\030max_unavailable_replicas\030\003 \001(\005H\000\022"
+          + "$\n\032max_unavailable_percentage\030\004 \001(\005H\000\022\034\n"
+          + "\022max_surge_replicas\030\005 \001(\005H\001\022\036\n\024max_surge"
+          + "_percentage\030\006 \001(\005H\001\022\037\n\027previous_deployed"
+          + "_model\030\001 \001(\t\022\034\n\017revision_number\030\002 \001(\005B\003\340"
+          + "A\003B\021\n\017max_unavailableB\013\n\tmax_surgeB\344\001\n#c"
+          + "om.google.cloud.aiplatform.v1beta1B\rEndp"
+          + "ointProtoP\001ZCcloud.google.com/go/aiplatf"
+          + "orm/apiv1beta1/aiplatformpb;aiplatformpb"
+          + "\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Goo"
+          + "gle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::C"
+          + "loud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -302,10 +311,22 @@ public final class EndpointProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PredictRequestResponseLoggingConfig_descriptor,
             new java.lang.String[] {
-              "Enabled", "SamplingRate", "BigqueryDestination",
+              "Enabled",
+              "SamplingRate",
+              "BigqueryDestination",
+              "RequestResponseLoggingSchemaVersion",
+              "EnableOtelLogging",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_PublisherModelConfig_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_aiplatform_v1beta1_PublisherModelConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_PublisherModelConfig_descriptor,
+            new java.lang.String[] {
+              "LoggingConfig",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ClientConnectionConfig_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_aiplatform_v1beta1_ClientConnectionConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ClientConnectionConfig_descriptor,
@@ -313,7 +334,7 @@ public final class EndpointProto {
               "InferenceTimeout",
             });
     internal_static_google_cloud_aiplatform_v1beta1_FasterDeploymentConfig_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_aiplatform_v1beta1_FasterDeploymentConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_FasterDeploymentConfig_descriptor,
@@ -321,7 +342,7 @@ public final class EndpointProto {
               "FastTryoutEnabled",
             });
     internal_static_google_cloud_aiplatform_v1beta1_RolloutOptions_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_aiplatform_v1beta1_RolloutOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_RolloutOptions_descriptor,

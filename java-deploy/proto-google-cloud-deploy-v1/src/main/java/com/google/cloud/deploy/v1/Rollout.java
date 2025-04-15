@@ -676,7 +676,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deployment did not complete within the alloted time.
+     * Deployment did not complete within the allotted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>
@@ -773,7 +773,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deployment did not complete within the alloted time.
+     * Deployment did not complete within the allotted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>

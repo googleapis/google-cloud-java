@@ -113,4 +113,29 @@ public interface UserInfoOrBuilder
    * @return The bytes for userAgent.
    */
   com.google.protobuf.ByteString getUserAgentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IANA time zone, e.g. Europe/Budapest.
+   * </pre>
+   *
+   * <code>string time_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The timeZone.
+   */
+  java.lang.String getTimeZone();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IANA time zone, e.g. Europe/Budapest.
+   * </pre>
+   *
+   * <code>string time_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for timeZone.
+   */
+  com.google.protobuf.ByteString getTimeZoneBytes();
 }

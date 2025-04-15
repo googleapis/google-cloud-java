@@ -693,6 +693,33 @@ public interface RepositoryOrBuilder
    */
   boolean getSatisfiesPzi();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The repository endpoint, for example:
+   * `us-docker.pkg.dev/my-proj/my-repo`.
+   * </pre>
+   *
+   * <code>string registry_uri = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The registryUri.
+   */
+  java.lang.String getRegistryUri();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The repository endpoint, for example:
+   * `us-docker.pkg.dev/my-proj/my-repo`.
+   * </pre>
+   *
+   * <code>string registry_uri = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for registryUri.
+   */
+  com.google.protobuf.ByteString getRegistryUriBytes();
+
   com.google.devtools.artifactregistry.v1.Repository.FormatConfigCase getFormatConfigCase();
 
   com.google.devtools.artifactregistry.v1.Repository.ModeConfigCase getModeConfigCase();

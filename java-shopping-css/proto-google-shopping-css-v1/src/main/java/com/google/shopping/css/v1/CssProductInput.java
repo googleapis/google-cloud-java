@@ -81,7 +81,10 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The name of the CSS Product input.
    * Format:
-   * `accounts/{account}/cssProductInputs/{css_product_input}`
+   * `accounts/{account}/cssProductInputs/{css_product_input}`, where the
+   * last section `css_product_input` consists of 3 parts:
+   * contentLanguage~feedLabel~offerId. Example:
+   * accounts/123/cssProductInputs/de~DE~rawProvidedId123
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -106,7 +109,10 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The name of the CSS Product input.
    * Format:
-   * `accounts/{account}/cssProductInputs/{css_product_input}`
+   * `accounts/{account}/cssProductInputs/{css_product_input}`, where the
+   * last section `css_product_input` consists of 3 parts:
+   * contentLanguage~feedLabel~offerId. Example:
+   * accounts/123/cssProductInputs/de~DE~rawProvidedId123
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -385,7 +391,7 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
    * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
    *
    * @deprecated google.shopping.css.v1.CssProductInput.freshness_time is deprecated. See
-   *     google/shopping/css/v1/css_product_inputs.proto;l=139
+   *     google/shopping/css/v1/css_product_inputs.proto;l=142
    * @return Whether the freshnessTime field is set.
    */
   @java.lang.Override
@@ -420,7 +426,7 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
    * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
    *
    * @deprecated google.shopping.css.v1.CssProductInput.freshness_time is deprecated. See
-   *     google/shopping/css/v1/css_product_inputs.proto;l=139
+   *     google/shopping/css/v1/css_product_inputs.proto;l=142
    * @return The freshnessTime.
    */
   @java.lang.Override
@@ -1205,7 +1211,10 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The name of the CSS Product input.
      * Format:
-     * `accounts/{account}/cssProductInputs/{css_product_input}`
+     * `accounts/{account}/cssProductInputs/{css_product_input}`, where the
+     * last section `css_product_input` consists of 3 parts:
+     * contentLanguage~feedLabel~offerId. Example:
+     * accounts/123/cssProductInputs/de~DE~rawProvidedId123
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1229,7 +1238,10 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The name of the CSS Product input.
      * Format:
-     * `accounts/{account}/cssProductInputs/{css_product_input}`
+     * `accounts/{account}/cssProductInputs/{css_product_input}`, where the
+     * last section `css_product_input` consists of 3 parts:
+     * contentLanguage~feedLabel~offerId. Example:
+     * accounts/123/cssProductInputs/de~DE~rawProvidedId123
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1253,7 +1265,10 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The name of the CSS Product input.
      * Format:
-     * `accounts/{account}/cssProductInputs/{css_product_input}`
+     * `accounts/{account}/cssProductInputs/{css_product_input}`, where the
+     * last section `css_product_input` consists of 3 parts:
+     * contentLanguage~feedLabel~offerId. Example:
+     * accounts/123/cssProductInputs/de~DE~rawProvidedId123
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1276,7 +1291,10 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The name of the CSS Product input.
      * Format:
-     * `accounts/{account}/cssProductInputs/{css_product_input}`
+     * `accounts/{account}/cssProductInputs/{css_product_input}`, where the
+     * last section `css_product_input` consists of 3 parts:
+     * contentLanguage~feedLabel~offerId. Example:
+     * accounts/123/cssProductInputs/de~DE~rawProvidedId123
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1295,7 +1313,10 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The name of the CSS Product input.
      * Format:
-     * `accounts/{account}/cssProductInputs/{css_product_input}`
+     * `accounts/{account}/cssProductInputs/{css_product_input}`, where the
+     * last section `css_product_input` consists of 3 parts:
+     * contentLanguage~feedLabel~offerId. Example:
+     * accounts/123/cssProductInputs/de~DE~rawProvidedId123
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1836,7 +1857,7 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
      *
      * @deprecated google.shopping.css.v1.CssProductInput.freshness_time is deprecated. See
-     *     google/shopping/css/v1/css_product_inputs.proto;l=139
+     *     google/shopping/css/v1/css_product_inputs.proto;l=142
      * @return Whether the freshnessTime field is set.
      */
     @java.lang.Deprecated
@@ -1870,7 +1891,7 @@ public final class CssProductInput extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp freshness_time = 6 [deprecated = true];</code>
      *
      * @deprecated google.shopping.css.v1.CssProductInput.freshness_time is deprecated. See
-     *     google/shopping/css/v1/css_product_inputs.proto;l=139
+     *     google/shopping/css/v1/css_product_inputs.proto;l=142
      * @return The freshnessTime.
      */
     @java.lang.Deprecated

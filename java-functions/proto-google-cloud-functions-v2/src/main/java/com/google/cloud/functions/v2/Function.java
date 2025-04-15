@@ -936,7 +936,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+   * Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt function resources.
    *
    * It must match the pattern
@@ -963,7 +963,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+   * Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt function resources.
    *
    * It must match the pattern
@@ -3706,7 +3706,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function resources.
      *
      * It must match the pattern
@@ -3732,7 +3732,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function resources.
      *
      * It must match the pattern
@@ -3758,7 +3758,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function resources.
      *
      * It must match the pattern
@@ -3783,7 +3783,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function resources.
      *
      * It must match the pattern
@@ -3804,7 +3804,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function resources.
      *
      * It must match the pattern

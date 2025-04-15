@@ -203,7 +203,9 @@ public interface EvaluateDatasetRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Autorater config used for evaluation.
+   * Optional. Autorater config used for evaluation. Currently only publisher
+   * Gemini models are supported. Format:
+   * `projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}.`
    * </pre>
    *
    * <code>
@@ -217,7 +219,9 @@ public interface EvaluateDatasetRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Autorater config used for evaluation.
+   * Optional. Autorater config used for evaluation. Currently only publisher
+   * Gemini models are supported. Format:
+   * `projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}.`
    * </pre>
    *
    * <code>
@@ -231,7 +235,9 @@ public interface EvaluateDatasetRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Autorater config used for evaluation.
+   * Optional. Autorater config used for evaluation. Currently only publisher
+   * Gemini models are supported. Format:
+   * `projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}.`
    * </pre>
    *
    * <code>

@@ -271,7 +271,7 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The sorting order of the resources returned. Value should be a comma
-   * separated list of fields. The default sorting oder is ascending.
+   * separated list of fields. The default sorting order is ascending.
    * See https://google.aip.dev/132#ordering.
    * </pre>
    *
@@ -296,7 +296,7 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The sorting order of the resources returned. Value should be a comma
-   * separated list of fields. The default sorting oder is ascending.
+   * separated list of fields. The default sorting order is ascending.
    * See https://google.aip.dev/132#ordering.
    * </pre>
    *
@@ -1194,7 +1194,7 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The sorting order of the resources returned. Value should be a comma
-     * separated list of fields. The default sorting oder is ascending.
+     * separated list of fields. The default sorting order is ascending.
      * See https://google.aip.dev/132#ordering.
      * </pre>
      *
@@ -1218,7 +1218,7 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The sorting order of the resources returned. Value should be a comma
-     * separated list of fields. The default sorting oder is ascending.
+     * separated list of fields. The default sorting order is ascending.
      * See https://google.aip.dev/132#ordering.
      * </pre>
      *
@@ -1242,7 +1242,7 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The sorting order of the resources returned. Value should be a comma
-     * separated list of fields. The default sorting oder is ascending.
+     * separated list of fields. The default sorting order is ascending.
      * See https://google.aip.dev/132#ordering.
      * </pre>
      *
@@ -1265,7 +1265,7 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The sorting order of the resources returned. Value should be a comma
-     * separated list of fields. The default sorting oder is ascending.
+     * separated list of fields. The default sorting order is ascending.
      * See https://google.aip.dev/132#ordering.
      * </pre>
      *
@@ -1284,7 +1284,7 @@ public final class ListFunctionsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The sorting order of the resources returned. Value should be a comma
-     * separated list of fields. The default sorting oder is ascending.
+     * separated list of fields. The default sorting order is ascending.
      * See https://google.aip.dev/132#ordering.
      * </pre>
      *

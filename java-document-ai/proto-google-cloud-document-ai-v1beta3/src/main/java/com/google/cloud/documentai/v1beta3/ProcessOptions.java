@@ -108,6 +108,46 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.documentai.v1beta3.ProcessOptions.LayoutConfig.ChunkingConfigOrBuilder
         getChunkingConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include images in layout parser processor response.
+     * </pre>
+     *
+     * <code>bool return_images = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The returnImages.
+     */
+    boolean getReturnImages();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include bounding boxes in layout parser processor
+     * response.
+     * </pre>
+     *
+     * <code>bool return_bounding_boxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The returnBoundingBoxes.
+     */
+    boolean getReturnBoundingBoxes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to refine PDF layout using LLM.
+     * </pre>
+     *
+     * <code>bool enable_llm_layout_parsing = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableLlmLayoutParsing.
+     */
+    boolean getEnableLlmLayoutParsing();
   }
   /**
    *
@@ -1149,6 +1189,61 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           : chunkingConfig_;
     }
 
+    public static final int RETURN_IMAGES_FIELD_NUMBER = 2;
+    private boolean returnImages_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include images in layout parser processor response.
+     * </pre>
+     *
+     * <code>bool return_images = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The returnImages.
+     */
+    @java.lang.Override
+    public boolean getReturnImages() {
+      return returnImages_;
+    }
+
+    public static final int RETURN_BOUNDING_BOXES_FIELD_NUMBER = 3;
+    private boolean returnBoundingBoxes_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include bounding boxes in layout parser processor
+     * response.
+     * </pre>
+     *
+     * <code>bool return_bounding_boxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The returnBoundingBoxes.
+     */
+    @java.lang.Override
+    public boolean getReturnBoundingBoxes() {
+      return returnBoundingBoxes_;
+    }
+
+    public static final int ENABLE_LLM_LAYOUT_PARSING_FIELD_NUMBER = 5;
+    private boolean enableLlmLayoutParsing_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to refine PDF layout using LLM.
+     * </pre>
+     *
+     * <code>bool enable_llm_layout_parsing = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableLlmLayoutParsing.
+     */
+    @java.lang.Override
+    public boolean getEnableLlmLayoutParsing() {
+      return enableLlmLayoutParsing_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1166,6 +1261,15 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(1, getChunkingConfig());
       }
+      if (returnImages_ != false) {
+        output.writeBool(2, returnImages_);
+      }
+      if (returnBoundingBoxes_ != false) {
+        output.writeBool(3, returnBoundingBoxes_);
+      }
+      if (enableLlmLayoutParsing_ != false) {
+        output.writeBool(5, enableLlmLayoutParsing_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1177,6 +1281,15 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getChunkingConfig());
+      }
+      if (returnImages_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, returnImages_);
+      }
+      if (returnBoundingBoxes_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, returnBoundingBoxes_);
+      }
+      if (enableLlmLayoutParsing_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, enableLlmLayoutParsing_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1198,6 +1311,9 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       if (hasChunkingConfig()) {
         if (!getChunkingConfig().equals(other.getChunkingConfig())) return false;
       }
+      if (getReturnImages() != other.getReturnImages()) return false;
+      if (getReturnBoundingBoxes() != other.getReturnBoundingBoxes()) return false;
+      if (getEnableLlmLayoutParsing() != other.getEnableLlmLayoutParsing()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1213,6 +1329,12 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + CHUNKING_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getChunkingConfig().hashCode();
       }
+      hash = (37 * hash) + RETURN_IMAGES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnImages());
+      hash = (37 * hash) + RETURN_BOUNDING_BOXES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnBoundingBoxes());
+      hash = (37 * hash) + ENABLE_LLM_LAYOUT_PARSING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableLlmLayoutParsing());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1371,6 +1493,9 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           chunkingConfigBuilder_.dispose();
           chunkingConfigBuilder_ = null;
         }
+        returnImages_ = false;
+        returnBoundingBoxes_ = false;
+        enableLlmLayoutParsing_ = false;
         return this;
       }
 
@@ -1414,6 +1539,15 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           result.chunkingConfig_ =
               chunkingConfigBuilder_ == null ? chunkingConfig_ : chunkingConfigBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.returnImages_ = returnImages_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.returnBoundingBoxes_ = returnBoundingBoxes_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.enableLlmLayoutParsing_ = enableLlmLayoutParsing_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1471,6 +1605,15 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         if (other.hasChunkingConfig()) {
           mergeChunkingConfig(other.getChunkingConfig());
         }
+        if (other.getReturnImages() != false) {
+          setReturnImages(other.getReturnImages());
+        }
+        if (other.getReturnBoundingBoxes() != false) {
+          setReturnBoundingBoxes(other.getReturnBoundingBoxes());
+        }
+        if (other.getEnableLlmLayoutParsing() != false) {
+          setEnableLlmLayoutParsing(other.getEnableLlmLayoutParsing());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1504,6 +1647,24 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 16:
+                {
+                  returnImages_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  returnBoundingBoxes_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 40:
+                {
+                  enableLlmLayoutParsing_ = input.readBool();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 40
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1742,6 +1903,168 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           chunkingConfig_ = null;
         }
         return chunkingConfigBuilder_;
+      }
+
+      private boolean returnImages_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include images in layout parser processor response.
+       * </pre>
+       *
+       * <code>bool return_images = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The returnImages.
+       */
+      @java.lang.Override
+      public boolean getReturnImages() {
+        return returnImages_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include images in layout parser processor response.
+       * </pre>
+       *
+       * <code>bool return_images = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The returnImages to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReturnImages(boolean value) {
+
+        returnImages_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include images in layout parser processor response.
+       * </pre>
+       *
+       * <code>bool return_images = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearReturnImages() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        returnImages_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean returnBoundingBoxes_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include bounding boxes in layout parser processor
+       * response.
+       * </pre>
+       *
+       * <code>bool return_bounding_boxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The returnBoundingBoxes.
+       */
+      @java.lang.Override
+      public boolean getReturnBoundingBoxes() {
+        return returnBoundingBoxes_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include bounding boxes in layout parser processor
+       * response.
+       * </pre>
+       *
+       * <code>bool return_bounding_boxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The returnBoundingBoxes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReturnBoundingBoxes(boolean value) {
+
+        returnBoundingBoxes_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to include bounding boxes in layout parser processor
+       * response.
+       * </pre>
+       *
+       * <code>bool return_bounding_boxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearReturnBoundingBoxes() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        returnBoundingBoxes_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableLlmLayoutParsing_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to refine PDF layout using LLM.
+       * </pre>
+       *
+       * <code>bool enable_llm_layout_parsing = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableLlmLayoutParsing.
+       */
+      @java.lang.Override
+      public boolean getEnableLlmLayoutParsing() {
+        return enableLlmLayoutParsing_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to refine PDF layout using LLM.
+       * </pre>
+       *
+       * <code>bool enable_llm_layout_parsing = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enableLlmLayoutParsing to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableLlmLayoutParsing(boolean value) {
+
+        enableLlmLayoutParsing_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to refine PDF layout using LLM.
+       * </pre>
+       *
+       * <code>bool enable_llm_layout_parsing = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableLlmLayoutParsing() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        enableLlmLayoutParsing_ = false;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override

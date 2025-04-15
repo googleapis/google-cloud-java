@@ -255,10 +255,13 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Specs defining dataStores to filter on in a search call and configurations
-   * for those dataStores. This is only considered for engines with multiple
-   * dataStores use case. For single dataStore within an engine, they should
-   * use the specs at the top level.
+   * Specifications that define the specific
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+   * along with configurations for those data stores. This is only considered
+   * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+   * stores. For engines with a single data store, the specs directly under
+   * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
+   * used.
    * </pre>
    *
    * <code>
@@ -271,10 +274,13 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Specs defining dataStores to filter on in a search call and configurations
-   * for those dataStores. This is only considered for engines with multiple
-   * dataStores use case. For single dataStore within an engine, they should
-   * use the specs at the top level.
+   * Specifications that define the specific
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+   * along with configurations for those data stores. This is only considered
+   * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+   * stores. For engines with a single data store, the specs directly under
+   * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
+   * used.
    * </pre>
    *
    * <code>
@@ -286,10 +292,13 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Specs defining dataStores to filter on in a search call and configurations
-   * for those dataStores. This is only considered for engines with multiple
-   * dataStores use case. For single dataStore within an engine, they should
-   * use the specs at the top level.
+   * Specifications that define the specific
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+   * along with configurations for those data stores. This is only considered
+   * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+   * stores. For engines with a single data store, the specs directly under
+   * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
+   * used.
    * </pre>
    *
    * <code>
@@ -301,10 +310,13 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Specs defining dataStores to filter on in a search call and configurations
-   * for those dataStores. This is only considered for engines with multiple
-   * dataStores use case. For single dataStore within an engine, they should
-   * use the specs at the top level.
+   * Specifications that define the specific
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+   * along with configurations for those data stores. This is only considered
+   * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+   * stores. For engines with a single data store, the specs directly under
+   * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
+   * used.
    * </pre>
    *
    * <code>
@@ -317,10 +329,13 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Specs defining dataStores to filter on in a search call and configurations
-   * for those dataStores. This is only considered for engines with multiple
-   * dataStores use case. For single dataStore within an engine, they should
-   * use the specs at the top level.
+   * Specifications that define the specific
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore]s to be searched,
+   * along with configurations for those data stores. This is only considered
+   * for [Engine][google.cloud.discoveryengine.v1.Engine]s with multiple data
+   * stores. For engines with a single data store, the specs directly under
+   * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
+   * used.
    * </pre>
    *
    * <code>
@@ -482,7 +497,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Information about the end user.
-   * Highly recommended for analytics.
+   * Highly recommended for analytics and personalization.
    * [UserInfo.user_agent][google.cloud.discoveryengine.v1.UserInfo.user_agent]
    * is used to deduce `device_type` for analytics.
    * </pre>
@@ -497,7 +512,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Information about the end user.
-   * Highly recommended for analytics.
+   * Highly recommended for analytics and personalization.
    * [UserInfo.user_agent][google.cloud.discoveryengine.v1.UserInfo.user_agent]
    * is used to deduce `device_type` for analytics.
    * </pre>
@@ -512,7 +527,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Information about the end user.
-   * Highly recommended for analytics.
+   * Highly recommended for analytics and personalization.
    * [UserInfo.user_agent][google.cloud.discoveryengine.v1.UserInfo.user_agent]
    * is used to deduce `device_type` for analytics.
    * </pre>
@@ -1178,6 +1193,50 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. Config for display feature, like match highlighting on search
+   * results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.DisplaySpec display_spec = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the displaySpec field is set.
+   */
+  boolean hasDisplaySpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for display feature, like match highlighting on search
+   * results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.DisplaySpec display_spec = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The displaySpec.
+   */
+  com.google.cloud.discoveryengine.v1.SearchRequest.DisplaySpec getDisplaySpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for display feature, like match highlighting on search
+   * results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.DisplaySpec display_spec = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.SearchRequest.DisplaySpecOrBuilder getDisplaySpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The session resource name. Optional.
    *
    * Session allows users to do multi-turn /search API calls or coordination
@@ -1289,4 +1348,87 @@ public interface SearchRequestOrBuilder
    * <code>.google.cloud.discoveryengine.v1.SearchRequest.SessionSpec session_spec = 42;</code>
    */
   com.google.cloud.discoveryengine.v1.SearchRequest.SessionSpecOrBuilder getSessionSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The relevance threshold of the search results.
+   *
+   * Default to Google defined threshold, leveraging a balance of
+   * precision and recall to deliver both highly accurate results and
+   * comprehensive coverage of relevant information.
+   *
+   * This feature is not supported for healthcare search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold relevance_threshold = 44;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for relevanceThreshold.
+   */
+  int getRelevanceThresholdValue();
+  /**
+   *
+   *
+   * <pre>
+   * The relevance threshold of the search results.
+   *
+   * Default to Google defined threshold, leveraging a balance of
+   * precision and recall to deliver both highly accurate results and
+   * comprehensive coverage of relevant information.
+   *
+   * This feature is not supported for healthcare search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold relevance_threshold = 44;
+   * </code>
+   *
+   * @return The relevanceThreshold.
+   */
+  com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold getRelevanceThreshold();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification for returning the relevance score.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceScoreSpec relevance_score_spec = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the relevanceScoreSpec field is set.
+   */
+  boolean hasRelevanceScoreSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification for returning the relevance score.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceScoreSpec relevance_score_spec = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The relevanceScoreSpec.
+   */
+  com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceScoreSpec getRelevanceScoreSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification for returning the relevance score.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.RelevanceScoreSpec relevance_score_spec = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.SearchRequest.RelevanceScoreSpecOrBuilder
+      getRelevanceScoreSpecOrBuilder();
 }

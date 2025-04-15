@@ -145,7 +145,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Answer candidate to check. Can have a maximum length of 1024 characters.
+   * Answer candidate to check. It can have a maximum length of 4096 tokens.
    * </pre>
    *
    * <code>string answer_candidate = 2;</code>
@@ -168,7 +168,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Answer candidate to check. Can have a maximum length of 1024 characters.
+   * Answer candidate to check. It can have a maximum length of 4096 tokens.
    * </pre>
    *
    * <code>string answer_candidate = 2;</code>
@@ -1152,7 +1152,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Answer candidate to check. Can have a maximum length of 1024 characters.
+     * Answer candidate to check. It can have a maximum length of 4096 tokens.
      * </pre>
      *
      * <code>string answer_candidate = 2;</code>
@@ -1174,7 +1174,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Answer candidate to check. Can have a maximum length of 1024 characters.
+     * Answer candidate to check. It can have a maximum length of 4096 tokens.
      * </pre>
      *
      * <code>string answer_candidate = 2;</code>
@@ -1196,7 +1196,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Answer candidate to check. Can have a maximum length of 1024 characters.
+     * Answer candidate to check. It can have a maximum length of 4096 tokens.
      * </pre>
      *
      * <code>string answer_candidate = 2;</code>
@@ -1217,7 +1217,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Answer candidate to check. Can have a maximum length of 1024 characters.
+     * Answer candidate to check. It can have a maximum length of 4096 tokens.
      * </pre>
      *
      * <code>string answer_candidate = 2;</code>
@@ -1234,7 +1234,7 @@ public final class CheckGroundingRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Answer candidate to check. Can have a maximum length of 1024 characters.
+     * Answer candidate to check. It can have a maximum length of 4096 tokens.
      * </pre>
      *
      * <code>string answer_candidate = 2;</code>

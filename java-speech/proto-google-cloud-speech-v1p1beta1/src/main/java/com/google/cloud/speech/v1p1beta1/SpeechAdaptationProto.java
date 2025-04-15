@@ -182,11 +182,11 @@ public final class SpeechAdaptationProto {
           + "uf.Empty\"G\332A\004name\202\323\344\223\002:*8/v1p1beta1/{nam"
           + "e=projects/*/locations/*/customClasses/*"
           + "}\032I\312A\025speech.googleapis.com\322A.https://ww"
-          + "w.googleapis.com/auth/cloud-platformB\200\001\n"
-          + "!com.google.cloud.speech.v1p1beta1B\025Spee"
-          + "chAdaptationProtoP\001Z9cloud.google.com/go"
-          + "/speech/apiv1p1beta1/speechpb;speechpb\370\001"
-          + "\001\242\002\003GCSb\006proto3"
+          + "w.googleapis.com/auth/cloud-platformB}\n!"
+          + "com.google.cloud.speech.v1p1beta1B\025Speec"
+          + "hAdaptationProtoP\001Z9cloud.google.com/go/"
+          + "speech/apiv1p1beta1/speechpb;speechpb\242\002\003"
+          + "GCSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

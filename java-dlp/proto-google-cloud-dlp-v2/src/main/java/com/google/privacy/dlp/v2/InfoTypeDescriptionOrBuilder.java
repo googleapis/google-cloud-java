@@ -327,4 +327,71 @@ public interface InfoTypeDescriptionOrBuilder
    * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 11;</code>
    */
   com.google.privacy.dlp.v2.SensitivityScoreOrBuilder getSensitivityScoreOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * If this field is set, this infoType is a general infoType and these
+   * specific infoTypes are contained within it.
+   * General infoTypes are infoTypes that encompass multiple specific infoTypes.
+   * For example, the "GEOGRAPHIC_DATA" general infoType would have set for this
+   * field "LOCATION", "LOCATION_COORDINATES", and "STREET_ADDRESS".
+   * </pre>
+   *
+   * <code>repeated string specific_info_types = 12;</code>
+   *
+   * @return A list containing the specificInfoTypes.
+   */
+  java.util.List<java.lang.String> getSpecificInfoTypesList();
+  /**
+   *
+   *
+   * <pre>
+   * If this field is set, this infoType is a general infoType and these
+   * specific infoTypes are contained within it.
+   * General infoTypes are infoTypes that encompass multiple specific infoTypes.
+   * For example, the "GEOGRAPHIC_DATA" general infoType would have set for this
+   * field "LOCATION", "LOCATION_COORDINATES", and "STREET_ADDRESS".
+   * </pre>
+   *
+   * <code>repeated string specific_info_types = 12;</code>
+   *
+   * @return The count of specificInfoTypes.
+   */
+  int getSpecificInfoTypesCount();
+  /**
+   *
+   *
+   * <pre>
+   * If this field is set, this infoType is a general infoType and these
+   * specific infoTypes are contained within it.
+   * General infoTypes are infoTypes that encompass multiple specific infoTypes.
+   * For example, the "GEOGRAPHIC_DATA" general infoType would have set for this
+   * field "LOCATION", "LOCATION_COORDINATES", and "STREET_ADDRESS".
+   * </pre>
+   *
+   * <code>repeated string specific_info_types = 12;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The specificInfoTypes at the given index.
+   */
+  java.lang.String getSpecificInfoTypes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * If this field is set, this infoType is a general infoType and these
+   * specific infoTypes are contained within it.
+   * General infoTypes are infoTypes that encompass multiple specific infoTypes.
+   * For example, the "GEOGRAPHIC_DATA" general infoType would have set for this
+   * field "LOCATION", "LOCATION_COORDINATES", and "STREET_ADDRESS".
+   * </pre>
+   *
+   * <code>repeated string specific_info_types = 12;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the specificInfoTypes at the given index.
+   */
+  com.google.protobuf.ByteString getSpecificInfoTypesBytes(int index);
 }

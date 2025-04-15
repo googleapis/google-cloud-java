@@ -46,6 +46,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     organizationDisplayName_ = "";
     state_ = 0;
     subscriberContact_ = "";
+    linkedResources_ = java.util.Collections.emptyList();
+    resourceType_ = 0;
   }
 
   @java.lang.Override
@@ -311,6 +313,74 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getLinkedDatasetBytes();
 
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the Pub/Sub subscription, e.g.
+     * projects/subscriberproject/subscriptions/subscriptions/sub_id
+     * </pre>
+     *
+     * <code>string linked_pubsub_subscription = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the linkedPubsubSubscription field is set.
+     */
+    boolean hasLinkedPubsubSubscription();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the Pub/Sub subscription, e.g.
+     * projects/subscriberproject/subscriptions/subscriptions/sub_id
+     * </pre>
+     *
+     * <code>string linked_pubsub_subscription = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The linkedPubsubSubscription.
+     */
+    java.lang.String getLinkedPubsubSubscription();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the Pub/Sub subscription, e.g.
+     * projects/subscriberproject/subscriptions/subscriptions/sub_id
+     * </pre>
+     *
+     * <code>string linked_pubsub_subscription = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for linkedPubsubSubscription.
+     */
+    com.google.protobuf.ByteString getLinkedPubsubSubscriptionBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Listing for which linked resource is created.
+     * </pre>
+     *
+     * <code>string listing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The listing.
+     */
+    java.lang.String getListing();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Listing for which linked resource is created.
+     * </pre>
+     *
+     * <code>string listing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for listing.
+     */
+    com.google.protobuf.ByteString getListingBytes();
+
     com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource.ReferenceCase
         getReferenceCase();
   }
@@ -333,7 +403,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       super(builder);
     }
 
-    private LinkedResource() {}
+    private LinkedResource() {
+      listing_ = "";
+    }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
@@ -366,6 +438,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       LINKED_DATASET(1),
+      LINKED_PUBSUB_SUBSCRIPTION(3),
       REFERENCE_NOT_SET(0);
       private final int value;
 
@@ -386,6 +459,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         switch (value) {
           case 1:
             return LINKED_DATASET;
+          case 3:
+            return LINKED_PUBSUB_SUBSCRIPTION;
           case 0:
             return REFERENCE_NOT_SET;
           default:
@@ -475,6 +550,133 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int LINKED_PUBSUB_SUBSCRIPTION_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the Pub/Sub subscription, e.g.
+     * projects/subscriberproject/subscriptions/subscriptions/sub_id
+     * </pre>
+     *
+     * <code>string linked_pubsub_subscription = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the linkedPubsubSubscription field is set.
+     */
+    public boolean hasLinkedPubsubSubscription() {
+      return referenceCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the Pub/Sub subscription, e.g.
+     * projects/subscriberproject/subscriptions/subscriptions/sub_id
+     * </pre>
+     *
+     * <code>string linked_pubsub_subscription = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The linkedPubsubSubscription.
+     */
+    public java.lang.String getLinkedPubsubSubscription() {
+      java.lang.Object ref = "";
+      if (referenceCase_ == 3) {
+        ref = reference_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (referenceCase_ == 3) {
+          reference_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the Pub/Sub subscription, e.g.
+     * projects/subscriberproject/subscriptions/subscriptions/sub_id
+     * </pre>
+     *
+     * <code>string linked_pubsub_subscription = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for linkedPubsubSubscription.
+     */
+    public com.google.protobuf.ByteString getLinkedPubsubSubscriptionBytes() {
+      java.lang.Object ref = "";
+      if (referenceCase_ == 3) {
+        ref = reference_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (referenceCase_ == 3) {
+          reference_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LISTING_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object listing_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Listing for which linked resource is created.
+     * </pre>
+     *
+     * <code>string listing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The listing.
+     */
+    @java.lang.Override
+    public java.lang.String getListing() {
+      java.lang.Object ref = listing_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        listing_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Listing for which linked resource is created.
+     * </pre>
+     *
+     * <code>string listing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for listing.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getListingBytes() {
+      java.lang.Object ref = listing_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        listing_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -492,6 +694,12 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       if (referenceCase_ == 1) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, reference_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(listing_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, listing_);
+      }
+      if (referenceCase_ == 3) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, reference_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -503,6 +711,12 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       if (referenceCase_ == 1) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, reference_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(listing_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, listing_);
+      }
+      if (referenceCase_ == 3) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, reference_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -520,10 +734,15 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource other =
           (com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource) obj;
 
+      if (!getListing().equals(other.getListing())) return false;
       if (!getReferenceCase().equals(other.getReferenceCase())) return false;
       switch (referenceCase_) {
         case 1:
           if (!getLinkedDataset().equals(other.getLinkedDataset())) return false;
+          break;
+        case 3:
+          if (!getLinkedPubsubSubscription().equals(other.getLinkedPubsubSubscription()))
+            return false;
           break;
         case 0:
         default:
@@ -539,10 +758,16 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LISTING_FIELD_NUMBER;
+      hash = (53 * hash) + getListing().hashCode();
       switch (referenceCase_) {
         case 1:
           hash = (37 * hash) + LINKED_DATASET_FIELD_NUMBER;
           hash = (53 * hash) + getLinkedDataset().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + LINKED_PUBSUB_SUBSCRIPTION_FIELD_NUMBER;
+          hash = (53 * hash) + getLinkedPubsubSubscription().hashCode();
           break;
         case 0:
         default:
@@ -692,6 +917,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        listing_ = "";
         referenceCase_ = 0;
         reference_ = null;
         return this;
@@ -735,6 +961,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       private void buildPartial0(
           com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.listing_ = listing_;
+        }
       }
 
       private void buildPartialOneofs(
@@ -795,10 +1024,22 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         if (other
             == com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource
                 .getDefaultInstance()) return this;
+        if (!other.getListing().isEmpty()) {
+          listing_ = other.listing_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         switch (other.getReferenceCase()) {
           case LINKED_DATASET:
             {
               referenceCase_ = 1;
+              reference_ = other.reference_;
+              onChanged();
+              break;
+            }
+          case LINKED_PUBSUB_SUBSCRIPTION:
+            {
+              referenceCase_ = 3;
               reference_ = other.reference_;
               onChanged();
               break;
@@ -841,6 +1082,19 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
                   reference_ = s;
                   break;
                 } // case 10
+              case 18:
+                {
+                  listing_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  referenceCase_ = 3;
+                  reference_ = s;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1010,6 +1264,258 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         referenceCase_ = 1;
         reference_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Name of the Pub/Sub subscription, e.g.
+       * projects/subscriberproject/subscriptions/subscriptions/sub_id
+       * </pre>
+       *
+       * <code>string linked_pubsub_subscription = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the linkedPubsubSubscription field is set.
+       */
+      @java.lang.Override
+      public boolean hasLinkedPubsubSubscription() {
+        return referenceCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Name of the Pub/Sub subscription, e.g.
+       * projects/subscriberproject/subscriptions/subscriptions/sub_id
+       * </pre>
+       *
+       * <code>string linked_pubsub_subscription = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The linkedPubsubSubscription.
+       */
+      @java.lang.Override
+      public java.lang.String getLinkedPubsubSubscription() {
+        java.lang.Object ref = "";
+        if (referenceCase_ == 3) {
+          ref = reference_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (referenceCase_ == 3) {
+            reference_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Name of the Pub/Sub subscription, e.g.
+       * projects/subscriberproject/subscriptions/subscriptions/sub_id
+       * </pre>
+       *
+       * <code>string linked_pubsub_subscription = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for linkedPubsubSubscription.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getLinkedPubsubSubscriptionBytes() {
+        java.lang.Object ref = "";
+        if (referenceCase_ == 3) {
+          ref = reference_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (referenceCase_ == 3) {
+            reference_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Name of the Pub/Sub subscription, e.g.
+       * projects/subscriberproject/subscriptions/subscriptions/sub_id
+       * </pre>
+       *
+       * <code>string linked_pubsub_subscription = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The linkedPubsubSubscription to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLinkedPubsubSubscription(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        referenceCase_ = 3;
+        reference_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Name of the Pub/Sub subscription, e.g.
+       * projects/subscriberproject/subscriptions/subscriptions/sub_id
+       * </pre>
+       *
+       * <code>string linked_pubsub_subscription = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLinkedPubsubSubscription() {
+        if (referenceCase_ == 3) {
+          referenceCase_ = 0;
+          reference_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Name of the Pub/Sub subscription, e.g.
+       * projects/subscriberproject/subscriptions/subscriptions/sub_id
+       * </pre>
+       *
+       * <code>string linked_pubsub_subscription = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The bytes for linkedPubsubSubscription to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLinkedPubsubSubscriptionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        referenceCase_ = 3;
+        reference_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object listing_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Listing for which linked resource is created.
+       * </pre>
+       *
+       * <code>string listing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The listing.
+       */
+      public java.lang.String getListing() {
+        java.lang.Object ref = listing_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          listing_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Listing for which linked resource is created.
+       * </pre>
+       *
+       * <code>string listing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for listing.
+       */
+      public com.google.protobuf.ByteString getListingBytes() {
+        java.lang.Object ref = listing_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          listing_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Listing for which linked resource is created.
+       * </pre>
+       *
+       * <code>string listing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The listing to set.
+       * @return This builder for chaining.
+       */
+      public Builder setListing(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        listing_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Listing for which linked resource is created.
+       * </pre>
+       *
+       * <code>string listing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearListing() {
+        listing_ = getDefaultInstance().getListing();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Listing for which linked resource is created.
+       * </pre>
+       *
+       * <code>string listing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for listing to set.
+       * @return This builder for chaining.
+       */
+      public Builder setListingBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        listing_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1794,6 +2300,179 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int LINKED_RESOURCES_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource>
+      linkedResources_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Linked resources created in the subscription. Only contains
+   * values if state = STATE_ACTIVE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource>
+      getLinkedResourcesList() {
+    return linkedResources_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Linked resources created in the subscription. Only contains
+   * values if state = STATE_ACTIVE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResourceOrBuilder>
+      getLinkedResourcesOrBuilderList() {
+    return linkedResources_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Linked resources created in the subscription. Only contains
+   * values if state = STATE_ACTIVE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getLinkedResourcesCount() {
+    return linkedResources_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Linked resources created in the subscription. Only contains
+   * values if state = STATE_ACTIVE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource getLinkedResources(
+      int index) {
+    return linkedResources_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Linked resources created in the subscription. Only contains
+   * values if state = STATE_ACTIVE.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResourceOrBuilder
+      getLinkedResourcesOrBuilder(int index) {
+    return linkedResources_.get(index);
+  }
+
+  public static final int RESOURCE_TYPE_FIELD_NUMBER = 12;
+  private int resourceType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Listing shared asset type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for resourceType.
+   */
+  @java.lang.Override
+  public int getResourceTypeValue() {
+    return resourceType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Listing shared asset type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The resourceType.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.analyticshub.v1.SharedResourceType getResourceType() {
+    com.google.cloud.bigquery.analyticshub.v1.SharedResourceType result =
+        com.google.cloud.bigquery.analyticshub.v1.SharedResourceType.forNumber(resourceType_);
+    return result == null
+        ? com.google.cloud.bigquery.analyticshub.v1.SharedResourceType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int LOG_LINKED_DATASET_QUERY_USER_EMAIL_FIELD_NUMBER = 14;
+  private boolean logLinkedDatasetQueryUserEmail_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. By default, false.
+   * If true, the Subscriber agreed to the email sharing mandate
+   * that is enabled for DataExchange/Listing.
+   * </pre>
+   *
+   * <code>
+   * optional bool log_linked_dataset_query_user_email = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the logLinkedDatasetQueryUserEmail field is set.
+   */
+  @java.lang.Override
+  public boolean hasLogLinkedDatasetQueryUserEmail() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. By default, false.
+   * If true, the Subscriber agreed to the email sharing mandate
+   * that is enabled for DataExchange/Listing.
+   * </pre>
+   *
+   * <code>
+   * optional bool log_linked_dataset_query_user_email = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The logLinkedDatasetQueryUserEmail.
+   */
+  @java.lang.Override
+  public boolean getLogLinkedDatasetQueryUserEmail() {
+    return logLinkedDatasetQueryUserEmail_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1838,6 +2517,18 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationDisplayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, organizationDisplayName_);
+    }
+    for (int i = 0; i < linkedResources_.size(); i++) {
+      output.writeMessage(11, linkedResources_.get(i));
+    }
+    if (resourceType_
+        != com.google.cloud.bigquery.analyticshub.v1.SharedResourceType
+            .SHARED_RESOURCE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(12, resourceType_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(14, logLinkedDatasetQueryUserEmail_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1892,6 +2583,20 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(10, organizationDisplayName_);
     }
+    for (int i = 0; i < linkedResources_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, linkedResources_.get(i));
+    }
+    if (resourceType_
+        != com.google.cloud.bigquery.analyticshub.v1.SharedResourceType
+            .SHARED_RESOURCE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, resourceType_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              14, logLinkedDatasetQueryUserEmail_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1922,6 +2627,14 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     if (state_ != other.state_) return false;
     if (!internalGetLinkedDatasetMap().equals(other.internalGetLinkedDatasetMap())) return false;
     if (!getSubscriberContact().equals(other.getSubscriberContact())) return false;
+    if (!getLinkedResourcesList().equals(other.getLinkedResourcesList())) return false;
+    if (resourceType_ != other.resourceType_) return false;
+    if (hasLogLinkedDatasetQueryUserEmail() != other.hasLogLinkedDatasetQueryUserEmail())
+      return false;
+    if (hasLogLinkedDatasetQueryUserEmail()) {
+      if (getLogLinkedDatasetQueryUserEmail() != other.getLogLinkedDatasetQueryUserEmail())
+        return false;
+    }
     if (!getResourceNameCase().equals(other.getResourceNameCase())) return false;
     switch (resourceNameCase_) {
       case 5:
@@ -1966,6 +2679,18 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SUBSCRIBER_CONTACT_FIELD_NUMBER;
     hash = (53 * hash) + getSubscriberContact().hashCode();
+    if (getLinkedResourcesCount() > 0) {
+      hash = (37 * hash) + LINKED_RESOURCES_FIELD_NUMBER;
+      hash = (53 * hash) + getLinkedResourcesList().hashCode();
+    }
+    hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + resourceType_;
+    if (hasLogLinkedDatasetQueryUserEmail()) {
+      hash = (37 * hash) + LOG_LINKED_DATASET_QUERY_USER_EMAIL_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getLogLinkedDatasetQueryUserEmail());
+    }
     switch (resourceNameCase_) {
       case 5:
         hash = (37 * hash) + LISTING_FIELD_NUMBER;
@@ -2145,6 +2870,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreationTimeFieldBuilder();
         getLastModifyTimeFieldBuilder();
+        getLinkedResourcesFieldBuilder();
       }
     }
 
@@ -2168,6 +2894,15 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       state_ = 0;
       internalGetMutableLinkedDatasetMap().clear();
       subscriberContact_ = "";
+      if (linkedResourcesBuilder_ == null) {
+        linkedResources_ = java.util.Collections.emptyList();
+      } else {
+        linkedResources_ = null;
+        linkedResourcesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000400);
+      resourceType_ = 0;
+      logLinkedDatasetQueryUserEmail_ = false;
       resourceNameCase_ = 0;
       resourceName_ = null;
       return this;
@@ -2197,12 +2932,26 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.analyticshub.v1.Subscription buildPartial() {
       com.google.cloud.bigquery.analyticshub.v1.Subscription result =
           new com.google.cloud.bigquery.analyticshub.v1.Subscription(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.bigquery.analyticshub.v1.Subscription result) {
+      if (linkedResourcesBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)) {
+          linkedResources_ = java.util.Collections.unmodifiableList(linkedResources_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.linkedResources_ = linkedResources_;
+      } else {
+        result.linkedResources_ = linkedResourcesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.bigquery.analyticshub.v1.Subscription result) {
@@ -2236,6 +2985,13 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.subscriberContact_ = subscriberContact_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.resourceType_ = resourceType_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.logLinkedDatasetQueryUserEmail_ = logLinkedDatasetQueryUserEmail_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2321,6 +3077,39 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         subscriberContact_ = other.subscriberContact_;
         bitField0_ |= 0x00000200;
         onChanged();
+      }
+      if (linkedResourcesBuilder_ == null) {
+        if (!other.linkedResources_.isEmpty()) {
+          if (linkedResources_.isEmpty()) {
+            linkedResources_ = other.linkedResources_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureLinkedResourcesIsMutable();
+            linkedResources_.addAll(other.linkedResources_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.linkedResources_.isEmpty()) {
+          if (linkedResourcesBuilder_.isEmpty()) {
+            linkedResourcesBuilder_.dispose();
+            linkedResourcesBuilder_ = null;
+            linkedResources_ = other.linkedResources_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            linkedResourcesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getLinkedResourcesFieldBuilder()
+                    : null;
+          } else {
+            linkedResourcesBuilder_.addAllMessages(other.linkedResources_);
+          }
+        }
+      }
+      if (other.resourceType_ != 0) {
+        setResourceTypeValue(other.getResourceTypeValue());
+      }
+      if (other.hasLogLinkedDatasetQueryUserEmail()) {
+        setLogLinkedDatasetQueryUserEmail(other.getLogLinkedDatasetQueryUserEmail());
       }
       switch (other.getResourceNameCase()) {
         case LISTING:
@@ -2439,6 +3228,33 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 82
+            case 90:
+              {
+                com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource m =
+                    input.readMessage(
+                        com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource
+                            .parser(),
+                        extensionRegistry);
+                if (linkedResourcesBuilder_ == null) {
+                  ensureLinkedResourcesIsMutable();
+                  linkedResources_.add(m);
+                } else {
+                  linkedResourcesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+            case 96:
+              {
+                resourceType_ = input.readEnum();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 96
+            case 112:
+              {
+                logLinkedDatasetQueryUserEmail_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 112
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4012,6 +4828,627 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       subscriberContact_ = value;
       bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource>
+        linkedResources_ = java.util.Collections.emptyList();
+
+    private void ensureLinkedResourcesIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        linkedResources_ =
+            new java.util.ArrayList<
+                com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource>(
+                linkedResources_);
+        bitField0_ |= 0x00000400;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource,
+            com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource.Builder,
+            com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResourceOrBuilder>
+        linkedResourcesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Linked resources created in the subscription. Only contains
+     * values if state = STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource>
+        getLinkedResourcesList() {
+      if (linkedResourcesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(linkedResources_);
+      } else {
+        return linkedResourcesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Linked resources created in the subscription. Only contains
+     * values if state = STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getLinkedResourcesCount() {
+      if (linkedResourcesBuilder_ == null) {
+        return linkedResources_.size();
+      } else {
+        return linkedResourcesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Linked resources created in the subscription. Only contains
+     * values if state = STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource getLinkedResources(
+        int index) {
+      if (linkedResourcesBuilder_ == null) {
+        return linkedResources_.get(index);
+      } else {
+        return linkedResourcesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Linked resources created in the subscription. Only contains
+     * values if state = STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLinkedResources(
+        int index, com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource value) {
+      if (linkedResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLinkedResourcesIsMutable();
+        linkedResources_.set(index, value);
+        onChanged();
+      } else {
+        linkedResourcesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Linked resources created in the subscription. Only contains
+     * values if state = STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLinkedResources(
+        int index,
+        com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource.Builder
+            builderForValue) {
+      if (linkedResourcesBuilder_ == null) {
+        ensureLinkedResourcesIsMutable();
+        linkedResources_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        linkedResourcesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Linked resources created in the subscription. Only contains
+     * values if state = STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addLinkedResources(
+        com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource value) {
+      if (linkedResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLinkedResourcesIsMutable();
+        linkedResources_.add(value);
+        onChanged();
+      } else {
+        linkedResourcesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Linked resources created in the subscription. Only contains
+     * values if state = STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addLinkedResources(
+        int index, com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource value) {
+      if (linkedResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLinkedResourcesIsMutable();
+        linkedResources_.add(index, value);
+        onChanged();
+      } else {
+        linkedResourcesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Linked resources created in the subscription. Only contains
+     * values if state = STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addLinkedResources(
+        com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource.Builder
+            builderForValue) {
+      if (linkedResourcesBuilder_ == null) {
+        ensureLinkedResourcesIsMutable();
+        linkedResources_.add(builderForValue.build());
+        onChanged();
+      } else {
+        linkedResourcesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Linked resources created in the subscription. Only contains
+     * values if state = STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addLinkedResources(
+        int index,
+        com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource.Builder
+            builderForValue) {
+      if (linkedResourcesBuilder_ == null) {
+        ensureLinkedResourcesIsMutable();
+        linkedResources_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        linkedResourcesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Linked resources created in the subscription. Only contains
+     * values if state = STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllLinkedResources(
+        java.lang.Iterable<
+                ? extends com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource>
+            values) {
+      if (linkedResourcesBuilder_ == null) {
+        ensureLinkedResourcesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, linkedResources_);
+        onChanged();
+      } else {
+        linkedResourcesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Linked resources created in the subscription. Only contains
+     * values if state = STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearLinkedResources() {
+      if (linkedResourcesBuilder_ == null) {
+        linkedResources_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        linkedResourcesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Linked resources created in the subscription. Only contains
+     * values if state = STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeLinkedResources(int index) {
+      if (linkedResourcesBuilder_ == null) {
+        ensureLinkedResourcesIsMutable();
+        linkedResources_.remove(index);
+        onChanged();
+      } else {
+        linkedResourcesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Linked resources created in the subscription. Only contains
+     * values if state = STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource.Builder
+        getLinkedResourcesBuilder(int index) {
+      return getLinkedResourcesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Linked resources created in the subscription. Only contains
+     * values if state = STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResourceOrBuilder
+        getLinkedResourcesOrBuilder(int index) {
+      if (linkedResourcesBuilder_ == null) {
+        return linkedResources_.get(index);
+      } else {
+        return linkedResourcesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Linked resources created in the subscription. Only contains
+     * values if state = STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResourceOrBuilder>
+        getLinkedResourcesOrBuilderList() {
+      if (linkedResourcesBuilder_ != null) {
+        return linkedResourcesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(linkedResources_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Linked resources created in the subscription. Only contains
+     * values if state = STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource.Builder
+        addLinkedResourcesBuilder() {
+      return getLinkedResourcesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Linked resources created in the subscription. Only contains
+     * values if state = STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource.Builder
+        addLinkedResourcesBuilder(int index) {
+      return getLinkedResourcesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Linked resources created in the subscription. Only contains
+     * values if state = STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource linked_resources = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource.Builder>
+        getLinkedResourcesBuilderList() {
+      return getLinkedResourcesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource,
+            com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource.Builder,
+            com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResourceOrBuilder>
+        getLinkedResourcesFieldBuilder() {
+      if (linkedResourcesBuilder_ == null) {
+        linkedResourcesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource,
+                com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource.Builder,
+                com.google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResourceOrBuilder>(
+                linkedResources_,
+                ((bitField0_ & 0x00000400) != 0),
+                getParentForChildren(),
+                isClean());
+        linkedResources_ = null;
+      }
+      return linkedResourcesBuilder_;
+    }
+
+    private int resourceType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Listing shared asset type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for resourceType.
+     */
+    @java.lang.Override
+    public int getResourceTypeValue() {
+      return resourceType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Listing shared asset type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for resourceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceTypeValue(int value) {
+      resourceType_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Listing shared asset type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The resourceType.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.analyticshub.v1.SharedResourceType getResourceType() {
+      com.google.cloud.bigquery.analyticshub.v1.SharedResourceType result =
+          com.google.cloud.bigquery.analyticshub.v1.SharedResourceType.forNumber(resourceType_);
+      return result == null
+          ? com.google.cloud.bigquery.analyticshub.v1.SharedResourceType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Listing shared asset type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The resourceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceType(
+        com.google.cloud.bigquery.analyticshub.v1.SharedResourceType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000800;
+      resourceType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Listing shared asset type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceType() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      resourceType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean logLinkedDatasetQueryUserEmail_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. By default, false.
+     * If true, the Subscriber agreed to the email sharing mandate
+     * that is enabled for DataExchange/Listing.
+     * </pre>
+     *
+     * <code>
+     * optional bool log_linked_dataset_query_user_email = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the logLinkedDatasetQueryUserEmail field is set.
+     */
+    @java.lang.Override
+    public boolean hasLogLinkedDatasetQueryUserEmail() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. By default, false.
+     * If true, the Subscriber agreed to the email sharing mandate
+     * that is enabled for DataExchange/Listing.
+     * </pre>
+     *
+     * <code>
+     * optional bool log_linked_dataset_query_user_email = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The logLinkedDatasetQueryUserEmail.
+     */
+    @java.lang.Override
+    public boolean getLogLinkedDatasetQueryUserEmail() {
+      return logLinkedDatasetQueryUserEmail_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. By default, false.
+     * If true, the Subscriber agreed to the email sharing mandate
+     * that is enabled for DataExchange/Listing.
+     * </pre>
+     *
+     * <code>
+     * optional bool log_linked_dataset_query_user_email = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The logLinkedDatasetQueryUserEmail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLogLinkedDatasetQueryUserEmail(boolean value) {
+
+      logLinkedDatasetQueryUserEmail_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. By default, false.
+     * If true, the Subscriber agreed to the email sharing mandate
+     * that is enabled for DataExchange/Listing.
+     * </pre>
+     *
+     * <code>
+     * optional bool log_linked_dataset_query_user_email = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLogLinkedDatasetQueryUserEmail() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      logLinkedDatasetQueryUserEmail_ = false;
       onChanged();
       return this;
     }

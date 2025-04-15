@@ -125,6 +125,16 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * <code>ACCOUNT_SUSPENDED = 4;</code>
      */
     ACCOUNT_SUSPENDED(4),
+    /**
+     *
+     *
+     * <pre>
+     * Entitlement is not approved in private marketplace.
+     * </pre>
+     *
+     * <code>NOT_APPROVED_IN_PRIVATE_MARKETPLACE = 5;</code>
+     */
+    NOT_APPROVED_IN_PRIVATE_MARKETPLACE(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -178,6 +188,16 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * <code>ACCOUNT_SUSPENDED = 4;</code>
      */
     public static final int ACCOUNT_SUSPENDED_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Entitlement is not approved in private marketplace.
+     * </pre>
+     *
+     * <code>NOT_APPROVED_IN_PRIVATE_MARKETPLACE = 5;</code>
+     */
+    public static final int NOT_APPROVED_IN_PRIVATE_MARKETPLACE_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -213,6 +233,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
           return ACTIVE;
         case 4:
           return ACCOUNT_SUSPENDED;
+        case 5:
+          return NOT_APPROVED_IN_PRIVATE_MARKETPLACE;
         default:
           return null;
       }

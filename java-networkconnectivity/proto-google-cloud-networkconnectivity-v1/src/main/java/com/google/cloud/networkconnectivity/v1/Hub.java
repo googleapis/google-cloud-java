@@ -359,10 +359,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of the hub.
+   * Optional. An optional description of the hub.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -382,10 +382,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of the hub.
+   * Optional. An optional description of the hub.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -835,10 +835,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Whether Private Service Connect transitivity is enabled for the
-   * hub. If true, Private Service Connect endpoints in VPC spokes attached to
-   * the hub are made accessible to other VPC spokes attached to the hub.
-   * The default value is false.
+   * Optional. Whether Private Service Connect connection propagation is enabled
+   * for the hub. If true, Private Service Connect endpoints in VPC spokes
+   * attached to the hub are made accessible to other VPC spokes attached to the
+   * hub. The default value is false.
    * </pre>
    *
    * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -853,10 +853,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Whether Private Service Connect transitivity is enabled for the
-   * hub. If true, Private Service Connect endpoints in VPC spokes attached to
-   * the hub are made accessible to other VPC spokes attached to the hub.
-   * The default value is false.
+   * Optional. Whether Private Service Connect connection propagation is enabled
+   * for the hub. If true, Private Service Connect endpoints in VPC spokes
+   * attached to the hub are made accessible to other VPC spokes attached to the
+   * hub. The default value is false.
    * </pre>
    *
    * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2345,10 +2345,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of the hub.
+     * Optional. An optional description of the hub.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -2367,10 +2367,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of the hub.
+     * Optional. An optional description of the hub.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -2389,10 +2389,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of the hub.
+     * Optional. An optional description of the hub.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2410,10 +2410,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of the hub.
+     * Optional. An optional description of the hub.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2427,10 +2427,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of the hub.
+     * Optional. An optional description of the hub.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -3774,10 +3774,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Whether Private Service Connect transitivity is enabled for the
-     * hub. If true, Private Service Connect endpoints in VPC spokes attached to
-     * the hub are made accessible to other VPC spokes attached to the hub.
-     * The default value is false.
+     * Optional. Whether Private Service Connect connection propagation is enabled
+     * for the hub. If true, Private Service Connect endpoints in VPC spokes
+     * attached to the hub are made accessible to other VPC spokes attached to the
+     * hub. The default value is false.
      * </pre>
      *
      * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3792,10 +3792,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Whether Private Service Connect transitivity is enabled for the
-     * hub. If true, Private Service Connect endpoints in VPC spokes attached to
-     * the hub are made accessible to other VPC spokes attached to the hub.
-     * The default value is false.
+     * Optional. Whether Private Service Connect connection propagation is enabled
+     * for the hub. If true, Private Service Connect endpoints in VPC spokes
+     * attached to the hub are made accessible to other VPC spokes attached to the
+     * hub. The default value is false.
      * </pre>
      *
      * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3810,10 +3810,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Whether Private Service Connect transitivity is enabled for the
-     * hub. If true, Private Service Connect endpoints in VPC spokes attached to
-     * the hub are made accessible to other VPC spokes attached to the hub.
-     * The default value is false.
+     * Optional. Whether Private Service Connect connection propagation is enabled
+     * for the hub. If true, Private Service Connect endpoints in VPC spokes
+     * attached to the hub are made accessible to other VPC spokes attached to the
+     * hub. The default value is false.
      * </pre>
      *
      * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3832,10 +3832,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Whether Private Service Connect transitivity is enabled for the
-     * hub. If true, Private Service Connect endpoints in VPC spokes attached to
-     * the hub are made accessible to other VPC spokes attached to the hub.
-     * The default value is false.
+     * Optional. Whether Private Service Connect connection propagation is enabled
+     * for the hub. If true, Private Service Connect endpoints in VPC spokes
+     * attached to the hub are made accessible to other VPC spokes attached to the
+     * hub. The default value is false.
      * </pre>
      *
      * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>

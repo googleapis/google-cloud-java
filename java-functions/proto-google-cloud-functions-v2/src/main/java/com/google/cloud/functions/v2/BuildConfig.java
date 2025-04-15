@@ -830,17 +830,26 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    * Docker Registry to use for this deployment. This configuration is only
    * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
    * Registry.
+   * Deprecated: As of March 2025, `CONTAINER_REGISTRY` option is no longer
+   * available in response to Container Registry's deprecation:
+   * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+   * Please use Artifact Registry instead, which is the default choice.
    *
    * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
    * If `docker_repository` field is specified, this field should either be left
    * unspecified or set to `ARTIFACT_REGISTRY`.
    * </pre>
    *
-   * <code>.google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10;</code>
+   * <code>
+   * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.functions.v2.BuildConfig.docker_registry is deprecated. See
+   *     google/cloud/functions/v2/functions.proto;l=525
    * @return The enum numeric value on the wire for dockerRegistry.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getDockerRegistryValue() {
     return dockerRegistry_;
   }
@@ -851,17 +860,26 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    * Docker Registry to use for this deployment. This configuration is only
    * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
    * Registry.
+   * Deprecated: As of March 2025, `CONTAINER_REGISTRY` option is no longer
+   * available in response to Container Registry's deprecation:
+   * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+   * Please use Artifact Registry instead, which is the default choice.
    *
    * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
    * If `docker_repository` field is specified, this field should either be left
    * unspecified or set to `ARTIFACT_REGISTRY`.
    * </pre>
    *
-   * <code>.google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10;</code>
+   * <code>
+   * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.functions.v2.BuildConfig.docker_registry is deprecated. See
+   *     google/cloud/functions/v2/functions.proto;l=525
    * @return The dockerRegistry.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.functions.v2.BuildConfig.DockerRegistry getDockerRegistry() {
     com.google.cloud.functions.v2.BuildConfig.DockerRegistry result =
         com.google.cloud.functions.v2.BuildConfig.DockerRegistry.forNumber(dockerRegistry_);
@@ -886,9 +904,6 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * It must match the pattern
    * `projects/{project}/locations/{location}/repositories/{repository}`.
-   *
-   * Cross-project repositories are not supported.
-   * Cross-location repositories are not supported.
    * Repository format must be 'DOCKER'.
    * </pre>
    *
@@ -920,9 +935,6 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * It must match the pattern
    * `projects/{project}/locations/{location}/repositories/{repository}`.
-   *
-   * Cross-project repositories are not supported.
-   * Cross-location repositories are not supported.
    * Repository format must be 'DOCKER'.
    * </pre>
    *
@@ -3159,17 +3171,26 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * Docker Registry to use for this deployment. This configuration is only
      * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
      * Registry.
+     * Deprecated: As of March 2025, `CONTAINER_REGISTRY` option is no longer
+     * available in response to Container Registry's deprecation:
+     * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+     * Please use Artifact Registry instead, which is the default choice.
      *
      * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
      * If `docker_repository` field is specified, this field should either be left
      * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
-     * <code>.google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10;</code>
+     * <code>
+     * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.functions.v2.BuildConfig.docker_registry is deprecated. See
+     *     google/cloud/functions/v2/functions.proto;l=525
      * @return The enum numeric value on the wire for dockerRegistry.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getDockerRegistryValue() {
       return dockerRegistry_;
     }
@@ -3180,17 +3201,26 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * Docker Registry to use for this deployment. This configuration is only
      * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
      * Registry.
+     * Deprecated: As of March 2025, `CONTAINER_REGISTRY` option is no longer
+     * available in response to Container Registry's deprecation:
+     * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+     * Please use Artifact Registry instead, which is the default choice.
      *
      * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
      * If `docker_repository` field is specified, this field should either be left
      * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
-     * <code>.google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10;</code>
+     * <code>
+     * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.functions.v2.BuildConfig.docker_registry is deprecated. See
+     *     google/cloud/functions/v2/functions.proto;l=525
      * @param value The enum numeric value on the wire for dockerRegistry to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setDockerRegistryValue(int value) {
       dockerRegistry_ = value;
       bitField0_ |= 0x00000200;
@@ -3204,17 +3234,26 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * Docker Registry to use for this deployment. This configuration is only
      * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
      * Registry.
+     * Deprecated: As of March 2025, `CONTAINER_REGISTRY` option is no longer
+     * available in response to Container Registry's deprecation:
+     * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+     * Please use Artifact Registry instead, which is the default choice.
      *
      * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
      * If `docker_repository` field is specified, this field should either be left
      * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
-     * <code>.google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10;</code>
+     * <code>
+     * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.functions.v2.BuildConfig.docker_registry is deprecated. See
+     *     google/cloud/functions/v2/functions.proto;l=525
      * @return The dockerRegistry.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.functions.v2.BuildConfig.DockerRegistry getDockerRegistry() {
       com.google.cloud.functions.v2.BuildConfig.DockerRegistry result =
           com.google.cloud.functions.v2.BuildConfig.DockerRegistry.forNumber(dockerRegistry_);
@@ -3229,17 +3268,26 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * Docker Registry to use for this deployment. This configuration is only
      * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
      * Registry.
+     * Deprecated: As of March 2025, `CONTAINER_REGISTRY` option is no longer
+     * available in response to Container Registry's deprecation:
+     * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+     * Please use Artifact Registry instead, which is the default choice.
      *
      * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
      * If `docker_repository` field is specified, this field should either be left
      * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
-     * <code>.google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10;</code>
+     * <code>
+     * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.functions.v2.BuildConfig.docker_registry is deprecated. See
+     *     google/cloud/functions/v2/functions.proto;l=525
      * @param value The dockerRegistry to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setDockerRegistry(
         com.google.cloud.functions.v2.BuildConfig.DockerRegistry value) {
       if (value == null) {
@@ -3257,16 +3305,25 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * Docker Registry to use for this deployment. This configuration is only
      * applicable to 1st Gen functions, 2nd Gen functions can only use Artifact
      * Registry.
+     * Deprecated: As of March 2025, `CONTAINER_REGISTRY` option is no longer
+     * available in response to Container Registry's deprecation:
+     * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+     * Please use Artifact Registry instead, which is the default choice.
      *
      * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
      * If `docker_repository` field is specified, this field should either be left
      * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
-     * <code>.google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10;</code>
+     * <code>
+     * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.functions.v2.BuildConfig.docker_registry is deprecated. See
+     *     google/cloud/functions/v2/functions.proto;l=525
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearDockerRegistry() {
       bitField0_ = (bitField0_ & ~0x00000200);
       dockerRegistry_ = 0;
@@ -3287,9 +3344,6 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
-     *
-     * Cross-project repositories are not supported.
-     * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.
      * </pre>
      *
@@ -3320,9 +3374,6 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
-     *
-     * Cross-project repositories are not supported.
-     * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.
      * </pre>
      *
@@ -3353,9 +3404,6 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
-     *
-     * Cross-project repositories are not supported.
-     * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.
      * </pre>
      *
@@ -3385,9 +3433,6 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
-     *
-     * Cross-project repositories are not supported.
-     * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.
      * </pre>
      *
@@ -3413,9 +3458,6 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * It must match the pattern
      * `projects/{project}/locations/{location}/repositories/{repository}`.
-     *
-     * Cross-project repositories are not supported.
-     * Cross-location repositories are not supported.
      * Repository format must be 'DOCKER'.
      * </pre>
      *

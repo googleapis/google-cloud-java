@@ -708,7 +708,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *     [parent][google.cloud.discoveryengine.v1.CreateDocumentRequest.parent]. Otherwise, an
    *     `ALREADY_EXISTS` error is returned.
    *     <p>This field must conform to [RFC-1034](https://tools.ietf.org/html/rfc1034) standard with
-   *     a length limit of 63 characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
+   *     a length limit of 128 characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Document createDocument(BranchName parent, Document document, String documentId) {
@@ -758,7 +758,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *     [parent][google.cloud.discoveryengine.v1.CreateDocumentRequest.parent]. Otherwise, an
    *     `ALREADY_EXISTS` error is returned.
    *     <p>This field must conform to [RFC-1034](https://tools.ietf.org/html/rfc1034) standard with
-   *     a length limit of 63 characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
+   *     a length limit of 128 characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Document createDocument(String parent, Document document, String documentId) {
@@ -1093,6 +1093,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setAutoGenerateIds(true)
    *           .setIdField("idField1629396127")
+   *           .setForceRefreshContent(true)
    *           .build();
    *   ImportDocumentsResponse response = documentServiceClient.importDocumentsAsync(request).get();
    * }
@@ -1133,6 +1134,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setAutoGenerateIds(true)
    *           .setIdField("idField1629396127")
+   *           .setForceRefreshContent(true)
    *           .build();
    *   OperationFuture<ImportDocumentsResponse, ImportDocumentsMetadata> future =
    *       documentServiceClient.importDocumentsOperationCallable().futureCall(request);
@@ -1174,6 +1176,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setAutoGenerateIds(true)
    *           .setIdField("idField1629396127")
+   *           .setForceRefreshContent(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       documentServiceClient.importDocumentsCallable().futureCall(request);

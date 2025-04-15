@@ -180,7 +180,7 @@ public final class RedisClusterInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of a Redis Cluster network in format
+   * URI of the network containing the Redis Cluster endpoints in format
    * "projects/{project_id}/global/networks/{network_id}".
    * </pre>
    *
@@ -204,7 +204,7 @@ public final class RedisClusterInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of a Redis Cluster network in format
+   * URI of the network containing the Redis Cluster endpoints in format
    * "projects/{project_id}/global/networks/{network_id}".
    * </pre>
    *
@@ -1069,7 +1069,7 @@ public final class RedisClusterInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Redis Cluster network in format
+     * URI of the network containing the Redis Cluster endpoints in format
      * "projects/{project_id}/global/networks/{network_id}".
      * </pre>
      *
@@ -1092,7 +1092,7 @@ public final class RedisClusterInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Redis Cluster network in format
+     * URI of the network containing the Redis Cluster endpoints in format
      * "projects/{project_id}/global/networks/{network_id}".
      * </pre>
      *
@@ -1115,7 +1115,7 @@ public final class RedisClusterInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Redis Cluster network in format
+     * URI of the network containing the Redis Cluster endpoints in format
      * "projects/{project_id}/global/networks/{network_id}".
      * </pre>
      *
@@ -1137,7 +1137,7 @@ public final class RedisClusterInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Redis Cluster network in format
+     * URI of the network containing the Redis Cluster endpoints in format
      * "projects/{project_id}/global/networks/{network_id}".
      * </pre>
      *
@@ -1155,7 +1155,7 @@ public final class RedisClusterInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Redis Cluster network in format
+     * URI of the network containing the Redis Cluster endpoints in format
      * "projects/{project_id}/global/networks/{network_id}".
      * </pre>
      *

@@ -41,8 +41,12 @@ import com.google.cloud.discoveryengine.v1.BatchCreateTargetSitesResponse;
 import com.google.cloud.discoveryengine.v1.BatchVerifyTargetSitesMetadata;
 import com.google.cloud.discoveryengine.v1.BatchVerifyTargetSitesRequest;
 import com.google.cloud.discoveryengine.v1.BatchVerifyTargetSitesResponse;
+import com.google.cloud.discoveryengine.v1.CreateSitemapMetadata;
+import com.google.cloud.discoveryengine.v1.CreateSitemapRequest;
 import com.google.cloud.discoveryengine.v1.CreateTargetSiteMetadata;
 import com.google.cloud.discoveryengine.v1.CreateTargetSiteRequest;
+import com.google.cloud.discoveryengine.v1.DeleteSitemapMetadata;
+import com.google.cloud.discoveryengine.v1.DeleteSitemapRequest;
 import com.google.cloud.discoveryengine.v1.DeleteTargetSiteMetadata;
 import com.google.cloud.discoveryengine.v1.DeleteTargetSiteRequest;
 import com.google.cloud.discoveryengine.v1.DisableAdvancedSiteSearchMetadata;
@@ -53,6 +57,8 @@ import com.google.cloud.discoveryengine.v1.EnableAdvancedSiteSearchRequest;
 import com.google.cloud.discoveryengine.v1.EnableAdvancedSiteSearchResponse;
 import com.google.cloud.discoveryengine.v1.FetchDomainVerificationStatusRequest;
 import com.google.cloud.discoveryengine.v1.FetchDomainVerificationStatusResponse;
+import com.google.cloud.discoveryengine.v1.FetchSitemapsRequest;
+import com.google.cloud.discoveryengine.v1.FetchSitemapsResponse;
 import com.google.cloud.discoveryengine.v1.GetSiteSearchEngineRequest;
 import com.google.cloud.discoveryengine.v1.GetTargetSiteRequest;
 import com.google.cloud.discoveryengine.v1.ListTargetSitesRequest;
@@ -61,6 +67,7 @@ import com.google.cloud.discoveryengine.v1.RecrawlUrisMetadata;
 import com.google.cloud.discoveryengine.v1.RecrawlUrisRequest;
 import com.google.cloud.discoveryengine.v1.RecrawlUrisResponse;
 import com.google.cloud.discoveryengine.v1.SiteSearchEngine;
+import com.google.cloud.discoveryengine.v1.Sitemap;
 import com.google.cloud.discoveryengine.v1.TargetSite;
 import com.google.cloud.discoveryengine.v1.UpdateTargetSiteMetadata;
 import com.google.cloud.discoveryengine.v1.UpdateTargetSiteRequest;
@@ -86,12 +93,15 @@ import javax.annotation.Generated;
 public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
+          .add(CreateSitemapMetadata.getDescriptor())
           .add(DisableAdvancedSiteSearchResponse.getDescriptor())
           .add(RecrawlUrisMetadata.getDescriptor())
+          .add(Sitemap.getDescriptor())
           .add(EnableAdvancedSiteSearchResponse.getDescriptor())
           .add(DeleteTargetSiteMetadata.getDescriptor())
           .add(BatchVerifyTargetSitesMetadata.getDescriptor())
           .add(TargetSite.getDescriptor())
+          .add(DeleteSitemapMetadata.getDescriptor())
           .add(RecrawlUrisResponse.getDescriptor())
           .add(DisableAdvancedSiteSearchMetadata.getDescriptor())
           .add(BatchCreateTargetSitesResponse.getDescriptor())
@@ -386,6 +396,127 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateSitemapRequest, Operation>
+      createSitemapMethodDescriptor =
+          ApiMethodDescriptor.<CreateSitemapRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.SiteSearchEngineService/CreateSitemap")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateSitemapRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/dataStores/*/siteSearchEngine}/sitemaps",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSitemapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine}/sitemaps")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSitemapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("sitemap", request.getSitemap(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateSitemapRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteSitemapRequest, Operation>
+      deleteSitemapMethodDescriptor =
+          ApiMethodDescriptor.<DeleteSitemapRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.SiteSearchEngineService/DeleteSitemap")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteSitemapRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/dataStores/*/siteSearchEngine/sitemaps/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSitemapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine/sitemaps/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSitemapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteSitemapRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<FetchSitemapsRequest, FetchSitemapsResponse>
+      fetchSitemapsMethodDescriptor =
+          ApiMethodDescriptor.<FetchSitemapsRequest, FetchSitemapsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.SiteSearchEngineService/FetchSitemaps")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchSitemapsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/dataStores/*/siteSearchEngine}/sitemaps:fetch",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchSitemapsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine}/sitemaps:fetch")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchSitemapsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "matcher", request.getMatcher());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchSitemapsResponse>newBuilder()
+                      .setDefaultInstance(FetchSitemapsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<EnableAdvancedSiteSearchRequest, Operation>
       enableAdvancedSiteSearchMethodDescriptor =
           ApiMethodDescriptor.<EnableAdvancedSiteSearchRequest, Operation>newBuilder()
@@ -633,6 +764,13 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
       listTargetSitesCallable;
   private final UnaryCallable<ListTargetSitesRequest, ListTargetSitesPagedResponse>
       listTargetSitesPagedCallable;
+  private final UnaryCallable<CreateSitemapRequest, Operation> createSitemapCallable;
+  private final OperationCallable<CreateSitemapRequest, Sitemap, CreateSitemapMetadata>
+      createSitemapOperationCallable;
+  private final UnaryCallable<DeleteSitemapRequest, Operation> deleteSitemapCallable;
+  private final OperationCallable<DeleteSitemapRequest, Empty, DeleteSitemapMetadata>
+      deleteSitemapOperationCallable;
+  private final UnaryCallable<FetchSitemapsRequest, FetchSitemapsResponse> fetchSitemapsCallable;
   private final UnaryCallable<EnableAdvancedSiteSearchRequest, Operation>
       enableAdvancedSiteSearchCallable;
   private final OperationCallable<
@@ -968,6 +1106,40 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<CreateSitemapRequest, Operation> createSitemapTransportSettings =
+        HttpJsonCallSettings.<CreateSitemapRequest, Operation>newBuilder()
+            .setMethodDescriptor(createSitemapMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteSitemapRequest, Operation> deleteSitemapTransportSettings =
+        HttpJsonCallSettings.<DeleteSitemapRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteSitemapMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<FetchSitemapsRequest, FetchSitemapsResponse>
+        fetchSitemapsTransportSettings =
+            HttpJsonCallSettings.<FetchSitemapsRequest, FetchSitemapsResponse>newBuilder()
+                .setMethodDescriptor(fetchSitemapsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<EnableAdvancedSiteSearchRequest, Operation>
         enableAdvancedSiteSearchTransportSettings =
             HttpJsonCallSettings.<EnableAdvancedSiteSearchRequest, Operation>newBuilder()
@@ -1086,6 +1258,27 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
     this.listTargetSitesPagedCallable =
         callableFactory.createPagedCallable(
             listTargetSitesTransportSettings, settings.listTargetSitesSettings(), clientContext);
+    this.createSitemapCallable =
+        callableFactory.createUnaryCallable(
+            createSitemapTransportSettings, settings.createSitemapSettings(), clientContext);
+    this.createSitemapOperationCallable =
+        callableFactory.createOperationCallable(
+            createSitemapTransportSettings,
+            settings.createSitemapOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteSitemapCallable =
+        callableFactory.createUnaryCallable(
+            deleteSitemapTransportSettings, settings.deleteSitemapSettings(), clientContext);
+    this.deleteSitemapOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteSitemapTransportSettings,
+            settings.deleteSitemapOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.fetchSitemapsCallable =
+        callableFactory.createUnaryCallable(
+            fetchSitemapsTransportSettings, settings.fetchSitemapsSettings(), clientContext);
     this.enableAdvancedSiteSearchCallable =
         callableFactory.createUnaryCallable(
             enableAdvancedSiteSearchTransportSettings,
@@ -1153,6 +1346,9 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
     methodDescriptors.add(updateTargetSiteMethodDescriptor);
     methodDescriptors.add(deleteTargetSiteMethodDescriptor);
     methodDescriptors.add(listTargetSitesMethodDescriptor);
+    methodDescriptors.add(createSitemapMethodDescriptor);
+    methodDescriptors.add(deleteSitemapMethodDescriptor);
+    methodDescriptors.add(fetchSitemapsMethodDescriptor);
     methodDescriptors.add(enableAdvancedSiteSearchMethodDescriptor);
     methodDescriptors.add(disableAdvancedSiteSearchMethodDescriptor);
     methodDescriptors.add(recrawlUrisMethodDescriptor);
@@ -1231,6 +1427,33 @@ public class HttpJsonSiteSearchEngineServiceStub extends SiteSearchEngineService
   public UnaryCallable<ListTargetSitesRequest, ListTargetSitesPagedResponse>
       listTargetSitesPagedCallable() {
     return listTargetSitesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSitemapRequest, Operation> createSitemapCallable() {
+    return createSitemapCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateSitemapRequest, Sitemap, CreateSitemapMetadata>
+      createSitemapOperationCallable() {
+    return createSitemapOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSitemapRequest, Operation> deleteSitemapCallable() {
+    return deleteSitemapCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSitemapRequest, Empty, DeleteSitemapMetadata>
+      deleteSitemapOperationCallable() {
+    return deleteSitemapOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchSitemapsRequest, FetchSitemapsResponse> fetchSitemapsCallable() {
+    return fetchSitemapsCallable;
   }
 
   @Override

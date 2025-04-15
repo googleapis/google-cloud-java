@@ -65,6 +65,10 @@ option (google.api.resource_definition) = {
   type: "run.googleapis.com/Job"
   pattern: "projects/{project}/locations/{location}/jobs/{job}"
 };
+option (google.api.resource_definition) = {
+  type: "run.googleapis.com/Revision"
+  pattern: "projects/{project}/locations/{location}/revisions/{revision}"
+};
 
 // CloudDeploy service creates and manages Continuous Delivery operations
 // on Google Cloud Platform via Skaffold (https://skaffold.dev).
@@ -800,8 +804,8 @@ message KubernetesConfig {
       // Optional. Whether to propagate the Kubernetes Service to the route
       // destination clusters. The Service will always be deployed to the Target
       // cluster even if the HTTPRoute is not. This option may be used to
-      // facilitiate successful DNS lookup in the route destination clusters.
-      // Can only be set to true if destinations are specified.
+      // facilitate successful DNS lookup in the route destination clusters. Can
+      // only be set to true if destinations are specified.
       bool propagate_service = 2 [(google.api.field_behavior) = OPTIONAL];
     }
 
@@ -2332,8 +2336,8 @@ message Release {
       VERIFICATION_CONFIG_NOT_FOUND = 4;
 
       // The render operation did not complete successfully because the custom
-      // action required for predeploy or postdeploy was not found in the
-      // Skaffold configuration. See failure_message for additional details.
+      // action(s) required for Rollout jobs were not found in the Skaffold
+      // configuration. See failure_message for additional details.
       CUSTOM_ACTION_NOT_FOUND = 5;
 
       // Release failed during rendering because the release configuration is
@@ -2717,11 +2721,12 @@ message TargetArtifact {
     string artifact_uri = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
   }
 
-  // Output only. File path of the resolved Skaffold configuration relative to
-  // the URI.
+  // Output only. File path of the resolved Skaffold configuration for the
+  // stable phase, relative to the URI.
   string skaffold_config_path = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. File path of the rendered manifest relative to the URI.
+  // Output only. File path of the rendered manifest relative to the URI for the
+  // stable phase.
   string manifest_path = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. Map from the phase ID to the phase artifacts for the `Target`.
@@ -2945,7 +2950,7 @@ message Rollout {
     // logs.
     EXECUTION_FAILED = 2;
 
-    // Deployment did not complete within the alloted time.
+    // Deployment did not complete within the allotted time.
     DEADLINE_EXCEEDED = 3;
 
     // Release is in a failed state.
@@ -3367,7 +3372,7 @@ message ListRolloutsRequest {
   string order_by = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// ListRolloutsResponse is the response object reutrned by `ListRollouts`.
+// ListRolloutsResponse is the response object returned by `ListRollouts`.
 message ListRolloutsResponse {
   // The `Rollout` objects.
   repeated Rollout rollouts = 1;
@@ -3733,7 +3738,7 @@ message DeployJobRun {
     // logs.
     EXECUTION_FAILED = 2;
 
-    // The deploy job run did not complete within the alloted time.
+    // The deploy job run did not complete within the allotted time.
     DEADLINE_EXCEEDED = 3;
 
     // There were missing resources in the runtime environment required for a
@@ -3788,7 +3793,7 @@ message VerifyJobRun {
     // logs.
     EXECUTION_FAILED = 2;
 
-    // The verify job run did not complete within the alloted time.
+    // The verify job run did not complete within the allotted time.
     DEADLINE_EXCEEDED = 3;
 
     // No Skaffold verify configuration was found.
@@ -3841,7 +3846,7 @@ message PredeployJobRun {
     // logs.
     EXECUTION_FAILED = 2;
 
-    // The predeploy job run did not complete within the alloted time.
+    // The predeploy job run did not complete within the allotted time.
     DEADLINE_EXCEEDED = 3;
 
     // Cloud Build failed to fulfill Cloud Deploy's request. See failure_message
@@ -3884,7 +3889,7 @@ message PostdeployJobRun {
     // logs.
     EXECUTION_FAILED = 2;
 
-    // The postdeploy job run did not complete within the alloted time.
+    // The postdeploy job run did not complete within the allotted time.
     DEADLINE_EXCEEDED = 3;
 
     // Cloud Build failed to fulfill Cloud Deploy's request. See failure_message

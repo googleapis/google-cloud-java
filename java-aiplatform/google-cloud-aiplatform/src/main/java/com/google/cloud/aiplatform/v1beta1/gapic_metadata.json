@@ -10,6 +10,12 @@
         "grpc": {
           "libraryClient": "DatasetServiceClient",
           "rpcs": {
+            "AssembleData": {
+              "methods": ["assembleDataAsync", "assembleDataOperationCallable", "assembleDataCallable"]
+            },
+            "AssessData": {
+              "methods": ["assessDataAsync", "assessDataOperationCallable", "assessDataCallable"]
+            },
             "CreateDataset": {
               "methods": ["createDatasetAsync", "createDatasetAsync", "createDatasetAsync", "createDatasetOperationCallable", "createDatasetCallable"]
             },
@@ -142,6 +148,9 @@
             "DeployModel": {
               "methods": ["deployModelAsync", "deployModelAsync", "deployModelAsync", "deployModelOperationCallable", "deployModelCallable"]
             },
+            "FetchPublisherModelConfig": {
+              "methods": ["fetchPublisherModelConfig", "fetchPublisherModelConfig", "fetchPublisherModelConfig", "fetchPublisherModelConfigCallable"]
+            },
             "GetEndpoint": {
               "methods": ["getEndpoint", "getEndpoint", "getEndpoint", "getEndpointCallable"]
             },
@@ -162,6 +171,9 @@
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "SetPublisherModelConfig": {
+              "methods": ["setPublisherModelConfigAsync", "setPublisherModelConfigAsync", "setPublisherModelConfigAsync", "setPublisherModelConfigOperationCallable", "setPublisherModelConfigCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
@@ -204,6 +216,57 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ExampleStoreService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ExampleStoreServiceClient",
+          "rpcs": {
+            "CreateExampleStore": {
+              "methods": ["createExampleStoreAsync", "createExampleStoreAsync", "createExampleStoreAsync", "createExampleStoreOperationCallable", "createExampleStoreCallable"]
+            },
+            "DeleteExampleStore": {
+              "methods": ["deleteExampleStoreAsync", "deleteExampleStoreAsync", "deleteExampleStoreAsync", "deleteExampleStoreOperationCallable", "deleteExampleStoreCallable"]
+            },
+            "FetchExamples": {
+              "methods": ["fetchExamples", "fetchExamplesPagedCallable", "fetchExamplesCallable"]
+            },
+            "GetExampleStore": {
+              "methods": ["getExampleStore", "getExampleStore", "getExampleStore", "getExampleStoreCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListExampleStores": {
+              "methods": ["listExampleStores", "listExampleStores", "listExampleStores", "listExampleStoresPagedCallable", "listExampleStoresCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RemoveExamples": {
+              "methods": ["removeExamples", "removeExamplesCallable"]
+            },
+            "SearchExamples": {
+              "methods": ["searchExamples", "searchExamplesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateExampleStore": {
+              "methods": ["updateExampleStoreAsync", "updateExampleStoreAsync", "updateExampleStoreOperationCallable", "updateExampleStoreCallable"]
+            },
+            "UpsertExamples": {
+              "methods": ["upsertExamples", "upsertExamplesCallable"]
             }
           }
         }
@@ -346,6 +409,9 @@
         "grpc": {
           "libraryClient": "FeatureOnlineStoreServiceClient",
           "rpcs": {
+            "FeatureViewDirectWrite": {
+              "methods": ["featureViewDirectWriteCallable"]
+            },
             "FetchFeatureValues": {
               "methods": ["fetchFeatureValues", "fetchFeatureValues", "fetchFeatureValues", "fetchFeatureValuesCallable"]
             },
@@ -1093,6 +1159,9 @@
             "DeployPublisherModel": {
               "methods": ["deployPublisherModelAsync", "deployPublisherModelOperationCallable", "deployPublisherModelCallable"]
             },
+            "ExportPublisherModel": {
+              "methods": ["exportPublisherModelAsync", "exportPublisherModelOperationCallable", "exportPublisherModelCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },
@@ -1613,6 +1682,51 @@
         }
       }
     },
+    "SessionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SessionServiceClient",
+          "rpcs": {
+            "AppendEvent": {
+              "methods": ["appendEvent", "appendEvent", "appendEvent", "appendEventCallable"]
+            },
+            "CreateSession": {
+              "methods": ["createSessionAsync", "createSessionAsync", "createSessionAsync", "createSessionAsync", "createSessionOperationCallable", "createSessionCallable"]
+            },
+            "DeleteSession": {
+              "methods": ["deleteSessionAsync", "deleteSessionAsync", "deleteSessionAsync", "deleteSessionOperationCallable", "deleteSessionCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetSession": {
+              "methods": ["getSession", "getSession", "getSession", "getSessionCallable"]
+            },
+            "ListEvents": {
+              "methods": ["listEvents", "listEvents", "listEvents", "listEventsPagedCallable", "listEventsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListSessions": {
+              "methods": ["listSessions", "listSessions", "listSessions", "listSessions", "listSessionsPagedCallable", "listSessionsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateSession": {
+              "methods": ["updateSession", "updateSession", "updateSessionCallable"]
+            }
+          }
+        }
+      }
+    },
     "SpecialistPoolService": {
       "clients": {
         "grpc": {
@@ -1789,6 +1903,9 @@
             "GetRagCorpus": {
               "methods": ["getRagCorpus", "getRagCorpus", "getRagCorpus", "getRagCorpusCallable"]
             },
+            "GetRagEngineConfig": {
+              "methods": ["getRagEngineConfig", "getRagEngineConfig", "getRagEngineConfig", "getRagEngineConfigCallable"]
+            },
             "GetRagFile": {
               "methods": ["getRagFile", "getRagFile", "getRagFile", "getRagFileCallable"]
             },
@@ -1812,6 +1929,9 @@
             },
             "UpdateRagCorpus": {
               "methods": ["updateRagCorpusAsync", "updateRagCorpusAsync", "updateRagCorpusOperationCallable", "updateRagCorpusCallable"]
+            },
+            "UpdateRagEngineConfig": {
+              "methods": ["updateRagEngineConfigAsync", "updateRagEngineConfigAsync", "updateRagEngineConfigOperationCallable", "updateRagEngineConfigCallable"]
             },
             "UploadRagFile": {
               "methods": ["uploadRagFile", "uploadRagFile", "uploadRagFile", "uploadRagFileCallable"]

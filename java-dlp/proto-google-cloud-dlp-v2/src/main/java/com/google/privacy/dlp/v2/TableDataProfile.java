@@ -51,6 +51,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     otherInfoTypes_ = java.util.Collections.emptyList();
     encryptionStatus_ = 0;
     resourceVisibility_ = 0;
+    tags_ = java.util.Collections.emptyList();
     relatedResources_ = java.util.Collections.emptyList();
   }
 
@@ -1491,6 +1492,136 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
+  public static final int SAMPLE_FINDINGS_TABLE_FIELD_NUMBER = 37;
+  private com.google.privacy.dlp.v2.BigQueryTable sampleFindingsTable_;
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery table to which the sample findings are written.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 37;</code>
+   *
+   * @return Whether the sampleFindingsTable field is set.
+   */
+  @java.lang.Override
+  public boolean hasSampleFindingsTable() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery table to which the sample findings are written.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 37;</code>
+   *
+   * @return The sampleFindingsTable.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.BigQueryTable getSampleFindingsTable() {
+    return sampleFindingsTable_ == null
+        ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
+        : sampleFindingsTable_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery table to which the sample findings are written.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 37;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getSampleFindingsTableOrBuilder() {
+    return sampleFindingsTable_ == null
+        ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
+        : sampleFindingsTable_;
+  }
+
+  public static final int TAGS_FIELD_NUMBER = 39;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.privacy.dlp.v2.Tag> tags_;
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the table, including any tags attached during
+   * profiling. Because tags are attached to Cloud SQL instances rather than
+   * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.privacy.dlp.v2.Tag> getTagsList() {
+    return tags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the table, including any tags attached during
+   * profiling. Because tags are attached to Cloud SQL instances rather than
+   * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.privacy.dlp.v2.TagOrBuilder> getTagsOrBuilderList() {
+    return tags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the table, including any tags attached during
+   * profiling. Because tags are attached to Cloud SQL instances rather than
+   * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+   */
+  @java.lang.Override
+  public int getTagsCount() {
+    return tags_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the table, including any tags attached during
+   * profiling. Because tags are attached to Cloud SQL instances rather than
+   * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.Tag getTags(int index) {
+    return tags_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the table, including any tags attached during
+   * profiling. Because tags are attached to Cloud SQL instances rather than
+   * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.TagOrBuilder getTagsOrBuilder(int index) {
+    return tags_.get(index);
+  }
+
   public static final int RELATED_RESOURCES_FIELD_NUMBER = 41;
 
   @SuppressWarnings("serial")
@@ -1657,6 +1788,12 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(36, getDataSourceType());
     }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(37, getSampleFindingsTable());
+    }
+    for (int i = 0; i < tags_.size(); i++) {
+      output.writeMessage(39, tags_.get(i));
+    }
     for (int i = 0; i < relatedResources_.size(); i++) {
       output.writeMessage(41, relatedResources_.get(i));
     }
@@ -1759,6 +1896,13 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(36, getDataSourceType());
     }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(37, getSampleFindingsTable());
+    }
+    for (int i = 0; i < tags_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(39, tags_.get(i));
+    }
     for (int i = 0; i < relatedResources_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(41, relatedResources_.get(i));
@@ -1832,6 +1976,11 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
+    if (hasSampleFindingsTable() != other.hasSampleFindingsTable()) return false;
+    if (hasSampleFindingsTable()) {
+      if (!getSampleFindingsTable().equals(other.getSampleFindingsTable())) return false;
+    }
+    if (!getTagsList().equals(other.getTagsList())) return false;
     if (!getRelatedResourcesList().equals(other.getRelatedResourcesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1919,6 +2068,14 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasSampleFindingsTable()) {
+      hash = (37 * hash) + SAMPLE_FINDINGS_TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getSampleFindingsTable().hashCode();
+    }
+    if (getTagsCount() > 0) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getTagsList().hashCode();
     }
     if (getRelatedResourcesCount() > 0) {
       hash = (37 * hash) + RELATED_RESOURCES_FIELD_NUMBER;
@@ -2097,6 +2254,8 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         getExpirationTimeFieldBuilder();
         getProfileLastGeneratedFieldBuilder();
         getCreateTimeFieldBuilder();
+        getSampleFindingsTableFieldBuilder();
+        getTagsFieldBuilder();
         getRelatedResourcesFieldBuilder();
       }
     }
@@ -2179,13 +2338,25 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
+      sampleFindingsTable_ = null;
+      if (sampleFindingsTableBuilder_ != null) {
+        sampleFindingsTableBuilder_.dispose();
+        sampleFindingsTableBuilder_ = null;
+      }
+      if (tagsBuilder_ == null) {
+        tags_ = java.util.Collections.emptyList();
+      } else {
+        tags_ = null;
+        tagsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x08000000);
       if (relatedResourcesBuilder_ == null) {
         relatedResources_ = java.util.Collections.emptyList();
       } else {
         relatedResources_ = null;
         relatedResourcesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       return this;
     }
 
@@ -2240,10 +2411,19 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       } else {
         result.otherInfoTypes_ = otherInfoTypesBuilder_.build();
       }
+      if (tagsBuilder_ == null) {
+        if (((bitField0_ & 0x08000000) != 0)) {
+          tags_ = java.util.Collections.unmodifiableList(tags_);
+          bitField0_ = (bitField0_ & ~0x08000000);
+        }
+        result.tags_ = tags_;
+      } else {
+        result.tags_ = tagsBuilder_.build();
+      }
       if (relatedResourcesBuilder_ == null) {
-        if (((bitField0_ & 0x04000000) != 0)) {
+        if (((bitField0_ & 0x10000000) != 0)) {
           relatedResources_ = java.util.Collections.unmodifiableList(relatedResources_);
-          bitField0_ = (bitField0_ & ~0x04000000);
+          bitField0_ = (bitField0_ & ~0x10000000);
         }
         result.relatedResources_ = relatedResources_;
       } else {
@@ -2345,6 +2525,13 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x02000000) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.sampleFindingsTable_ =
+            sampleFindingsTableBuilder_ == null
+                ? sampleFindingsTable_
+                : sampleFindingsTableBuilder_.build();
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2533,11 +2720,41 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
+      if (other.hasSampleFindingsTable()) {
+        mergeSampleFindingsTable(other.getSampleFindingsTable());
+      }
+      if (tagsBuilder_ == null) {
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x08000000);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.tags_.isEmpty()) {
+          if (tagsBuilder_.isEmpty()) {
+            tagsBuilder_.dispose();
+            tagsBuilder_ = null;
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x08000000);
+            tagsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getTagsFieldBuilder()
+                    : null;
+          } else {
+            tagsBuilder_.addAllMessages(other.tags_);
+          }
+        }
+      }
       if (relatedResourcesBuilder_ == null) {
         if (!other.relatedResources_.isEmpty()) {
           if (relatedResources_.isEmpty()) {
             relatedResources_ = other.relatedResources_;
-            bitField0_ = (bitField0_ & ~0x04000000);
+            bitField0_ = (bitField0_ & ~0x10000000);
           } else {
             ensureRelatedResourcesIsMutable();
             relatedResources_.addAll(other.relatedResources_);
@@ -2550,7 +2767,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
             relatedResourcesBuilder_.dispose();
             relatedResourcesBuilder_ = null;
             relatedResources_ = other.relatedResources_;
-            bitField0_ = (bitField0_ & ~0x04000000);
+            bitField0_ = (bitField0_ & ~0x10000000);
             relatedResourcesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRelatedResourcesFieldBuilder()
@@ -2765,6 +2982,25 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 290
+            case 298:
+              {
+                input.readMessage(
+                    getSampleFindingsTableFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 298
+            case 314:
+              {
+                com.google.privacy.dlp.v2.Tag m =
+                    input.readMessage(com.google.privacy.dlp.v2.Tag.parser(), extensionRegistry);
+                if (tagsBuilder_ == null) {
+                  ensureTagsIsMutable();
+                  tags_.add(m);
+                } else {
+                  tagsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 314
             case 330:
               {
                 com.google.privacy.dlp.v2.RelatedResource m =
@@ -6613,14 +6849,579 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       return createTimeBuilder_;
     }
 
+    private com.google.privacy.dlp.v2.BigQueryTable sampleFindingsTable_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.BigQueryTable,
+            com.google.privacy.dlp.v2.BigQueryTable.Builder,
+            com.google.privacy.dlp.v2.BigQueryTableOrBuilder>
+        sampleFindingsTableBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery table to which the sample findings are written.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 37;</code>
+     *
+     * @return Whether the sampleFindingsTable field is set.
+     */
+    public boolean hasSampleFindingsTable() {
+      return ((bitField0_ & 0x04000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery table to which the sample findings are written.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 37;</code>
+     *
+     * @return The sampleFindingsTable.
+     */
+    public com.google.privacy.dlp.v2.BigQueryTable getSampleFindingsTable() {
+      if (sampleFindingsTableBuilder_ == null) {
+        return sampleFindingsTable_ == null
+            ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
+            : sampleFindingsTable_;
+      } else {
+        return sampleFindingsTableBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery table to which the sample findings are written.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 37;</code>
+     */
+    public Builder setSampleFindingsTable(com.google.privacy.dlp.v2.BigQueryTable value) {
+      if (sampleFindingsTableBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sampleFindingsTable_ = value;
+      } else {
+        sampleFindingsTableBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery table to which the sample findings are written.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 37;</code>
+     */
+    public Builder setSampleFindingsTable(
+        com.google.privacy.dlp.v2.BigQueryTable.Builder builderForValue) {
+      if (sampleFindingsTableBuilder_ == null) {
+        sampleFindingsTable_ = builderForValue.build();
+      } else {
+        sampleFindingsTableBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery table to which the sample findings are written.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 37;</code>
+     */
+    public Builder mergeSampleFindingsTable(com.google.privacy.dlp.v2.BigQueryTable value) {
+      if (sampleFindingsTableBuilder_ == null) {
+        if (((bitField0_ & 0x04000000) != 0)
+            && sampleFindingsTable_ != null
+            && sampleFindingsTable_
+                != com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()) {
+          getSampleFindingsTableBuilder().mergeFrom(value);
+        } else {
+          sampleFindingsTable_ = value;
+        }
+      } else {
+        sampleFindingsTableBuilder_.mergeFrom(value);
+      }
+      if (sampleFindingsTable_ != null) {
+        bitField0_ |= 0x04000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery table to which the sample findings are written.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 37;</code>
+     */
+    public Builder clearSampleFindingsTable() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      sampleFindingsTable_ = null;
+      if (sampleFindingsTableBuilder_ != null) {
+        sampleFindingsTableBuilder_.dispose();
+        sampleFindingsTableBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery table to which the sample findings are written.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 37;</code>
+     */
+    public com.google.privacy.dlp.v2.BigQueryTable.Builder getSampleFindingsTableBuilder() {
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return getSampleFindingsTableFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery table to which the sample findings are written.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 37;</code>
+     */
+    public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getSampleFindingsTableOrBuilder() {
+      if (sampleFindingsTableBuilder_ != null) {
+        return sampleFindingsTableBuilder_.getMessageOrBuilder();
+      } else {
+        return sampleFindingsTable_ == null
+            ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
+            : sampleFindingsTable_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery table to which the sample findings are written.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 37;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.BigQueryTable,
+            com.google.privacy.dlp.v2.BigQueryTable.Builder,
+            com.google.privacy.dlp.v2.BigQueryTableOrBuilder>
+        getSampleFindingsTableFieldBuilder() {
+      if (sampleFindingsTableBuilder_ == null) {
+        sampleFindingsTableBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.BigQueryTable,
+                com.google.privacy.dlp.v2.BigQueryTable.Builder,
+                com.google.privacy.dlp.v2.BigQueryTableOrBuilder>(
+                getSampleFindingsTable(), getParentForChildren(), isClean());
+        sampleFindingsTable_ = null;
+      }
+      return sampleFindingsTableBuilder_;
+    }
+
+    private java.util.List<com.google.privacy.dlp.v2.Tag> tags_ = java.util.Collections.emptyList();
+
+    private void ensureTagsIsMutable() {
+      if (!((bitField0_ & 0x08000000) != 0)) {
+        tags_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Tag>(tags_);
+        bitField0_ |= 0x08000000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.Tag,
+            com.google.privacy.dlp.v2.Tag.Builder,
+            com.google.privacy.dlp.v2.TagOrBuilder>
+        tagsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The tags attached to the table, including any tags attached during
+     * profiling. Because tags are attached to Cloud SQL instances rather than
+     * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.Tag> getTagsList() {
+      if (tagsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(tags_);
+      } else {
+        return tagsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags attached to the table, including any tags attached during
+     * profiling. Because tags are attached to Cloud SQL instances rather than
+     * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+     */
+    public int getTagsCount() {
+      if (tagsBuilder_ == null) {
+        return tags_.size();
+      } else {
+        return tagsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags attached to the table, including any tags attached during
+     * profiling. Because tags are attached to Cloud SQL instances rather than
+     * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+     */
+    public com.google.privacy.dlp.v2.Tag getTags(int index) {
+      if (tagsBuilder_ == null) {
+        return tags_.get(index);
+      } else {
+        return tagsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags attached to the table, including any tags attached during
+     * profiling. Because tags are attached to Cloud SQL instances rather than
+     * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+     */
+    public Builder setTags(int index, com.google.privacy.dlp.v2.Tag value) {
+      if (tagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+      } else {
+        tagsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags attached to the table, including any tags attached during
+     * profiling. Because tags are attached to Cloud SQL instances rather than
+     * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+     */
+    public Builder setTags(int index, com.google.privacy.dlp.v2.Tag.Builder builderForValue) {
+      if (tagsBuilder_ == null) {
+        ensureTagsIsMutable();
+        tags_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        tagsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags attached to the table, including any tags attached during
+     * profiling. Because tags are attached to Cloud SQL instances rather than
+     * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+     */
+    public Builder addTags(com.google.privacy.dlp.v2.Tag value) {
+      if (tagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+      } else {
+        tagsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags attached to the table, including any tags attached during
+     * profiling. Because tags are attached to Cloud SQL instances rather than
+     * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+     */
+    public Builder addTags(int index, com.google.privacy.dlp.v2.Tag value) {
+      if (tagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagsIsMutable();
+        tags_.add(index, value);
+        onChanged();
+      } else {
+        tagsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags attached to the table, including any tags attached during
+     * profiling. Because tags are attached to Cloud SQL instances rather than
+     * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+     */
+    public Builder addTags(com.google.privacy.dlp.v2.Tag.Builder builderForValue) {
+      if (tagsBuilder_ == null) {
+        ensureTagsIsMutable();
+        tags_.add(builderForValue.build());
+        onChanged();
+      } else {
+        tagsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags attached to the table, including any tags attached during
+     * profiling. Because tags are attached to Cloud SQL instances rather than
+     * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+     */
+    public Builder addTags(int index, com.google.privacy.dlp.v2.Tag.Builder builderForValue) {
+      if (tagsBuilder_ == null) {
+        ensureTagsIsMutable();
+        tags_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        tagsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags attached to the table, including any tags attached during
+     * profiling. Because tags are attached to Cloud SQL instances rather than
+     * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+     */
+    public Builder addAllTags(java.lang.Iterable<? extends com.google.privacy.dlp.v2.Tag> values) {
+      if (tagsBuilder_ == null) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+        onChanged();
+      } else {
+        tagsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags attached to the table, including any tags attached during
+     * profiling. Because tags are attached to Cloud SQL instances rather than
+     * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+     */
+    public Builder clearTags() {
+      if (tagsBuilder_ == null) {
+        tags_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x08000000);
+        onChanged();
+      } else {
+        tagsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags attached to the table, including any tags attached during
+     * profiling. Because tags are attached to Cloud SQL instances rather than
+     * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+     */
+    public Builder removeTags(int index) {
+      if (tagsBuilder_ == null) {
+        ensureTagsIsMutable();
+        tags_.remove(index);
+        onChanged();
+      } else {
+        tagsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags attached to the table, including any tags attached during
+     * profiling. Because tags are attached to Cloud SQL instances rather than
+     * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+     */
+    public com.google.privacy.dlp.v2.Tag.Builder getTagsBuilder(int index) {
+      return getTagsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags attached to the table, including any tags attached during
+     * profiling. Because tags are attached to Cloud SQL instances rather than
+     * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+     */
+    public com.google.privacy.dlp.v2.TagOrBuilder getTagsOrBuilder(int index) {
+      if (tagsBuilder_ == null) {
+        return tags_.get(index);
+      } else {
+        return tagsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags attached to the table, including any tags attached during
+     * profiling. Because tags are attached to Cloud SQL instances rather than
+     * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+     */
+    public java.util.List<? extends com.google.privacy.dlp.v2.TagOrBuilder> getTagsOrBuilderList() {
+      if (tagsBuilder_ != null) {
+        return tagsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(tags_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags attached to the table, including any tags attached during
+     * profiling. Because tags are attached to Cloud SQL instances rather than
+     * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+     */
+    public com.google.privacy.dlp.v2.Tag.Builder addTagsBuilder() {
+      return getTagsFieldBuilder().addBuilder(com.google.privacy.dlp.v2.Tag.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags attached to the table, including any tags attached during
+     * profiling. Because tags are attached to Cloud SQL instances rather than
+     * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+     */
+    public com.google.privacy.dlp.v2.Tag.Builder addTagsBuilder(int index) {
+      return getTagsFieldBuilder()
+          .addBuilder(index, com.google.privacy.dlp.v2.Tag.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags attached to the table, including any tags attached during
+     * profiling. Because tags are attached to Cloud SQL instances rather than
+     * Cloud SQL tables, this field is empty for Cloud SQL table profiles.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Tag tags = 39;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.Tag.Builder> getTagsBuilderList() {
+      return getTagsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.Tag,
+            com.google.privacy.dlp.v2.Tag.Builder,
+            com.google.privacy.dlp.v2.TagOrBuilder>
+        getTagsFieldBuilder() {
+      if (tagsBuilder_ == null) {
+        tagsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.Tag,
+                com.google.privacy.dlp.v2.Tag.Builder,
+                com.google.privacy.dlp.v2.TagOrBuilder>(
+                tags_, ((bitField0_ & 0x08000000) != 0), getParentForChildren(), isClean());
+        tags_ = null;
+      }
+      return tagsBuilder_;
+    }
+
     private java.util.List<com.google.privacy.dlp.v2.RelatedResource> relatedResources_ =
         java.util.Collections.emptyList();
 
     private void ensureRelatedResourcesIsMutable() {
-      if (!((bitField0_ & 0x04000000) != 0)) {
+      if (!((bitField0_ & 0x10000000) != 0)) {
         relatedResources_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.RelatedResource>(relatedResources_);
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x10000000;
       }
     }
 
@@ -6836,7 +7637,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     public Builder clearRelatedResources() {
       if (relatedResourcesBuilder_ == null) {
         relatedResources_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x04000000);
+        bitField0_ = (bitField0_ & ~0x10000000);
         onChanged();
       } else {
         relatedResourcesBuilder_.clear();
@@ -6960,7 +7761,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
                 com.google.privacy.dlp.v2.RelatedResource.Builder,
                 com.google.privacy.dlp.v2.RelatedResourceOrBuilder>(
                 relatedResources_,
-                ((bitField0_ & 0x04000000) != 0),
+                ((bitField0_ & 0x10000000) != 0),
                 getParentForChildren(),
                 isClean());
         relatedResources_ = null;

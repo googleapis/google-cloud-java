@@ -28,11 +28,11 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Required. Shared dataset i.e. BigQuery dataset source.
+   * Shared dataset i.e. BigQuery dataset source.
    * </pre>
    *
    * <code>
-   * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6;
    * </code>
    *
    * @return Whether the bigqueryDataset field is set.
@@ -42,11 +42,11 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Required. Shared dataset i.e. BigQuery dataset source.
+   * Shared dataset i.e. BigQuery dataset source.
    * </pre>
    *
    * <code>
-   * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6;
    * </code>
    *
    * @return The bigqueryDataset.
@@ -56,15 +56,54 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Required. Shared dataset i.e. BigQuery dataset source.
+   * Shared dataset i.e. BigQuery dataset source.
    * </pre>
    *
    * <code>
-   * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource bigquery_dataset = 6;
    * </code>
    */
   com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSourceOrBuilder
       getBigqueryDatasetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic source.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource pubsub_topic = 16;
+   * </code>
+   *
+   * @return Whether the pubsubTopic field is set.
+   */
+  boolean hasPubsubTopic();
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic source.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource pubsub_topic = 16;
+   * </code>
+   *
+   * @return The pubsubTopic.
+   */
+  com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource getPubsubTopic();
+  /**
+   *
+   *
+   * <pre>
+   * Pub/Sub topic source.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource pubsub_topic = 16;
+   * </code>
+   */
+  com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSourceOrBuilder
+      getPubsubTopicOrBuilder();
 
   /**
    *
@@ -528,6 +567,66 @@ public interface ListingOrBuilder
    * @return The discoveryType.
    */
   com.google.cloud.bigquery.analyticshub.v1.DiscoveryType getDiscoveryType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Listing shared asset type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for resourceType.
+   */
+  int getResourceTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Listing shared asset type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.SharedResourceType resource_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The resourceType.
+   */
+  com.google.cloud.bigquery.analyticshub.v1.SharedResourceType getResourceType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. By default, false.
+   * If true, the Listing has an email sharing mandate enabled.
+   * </pre>
+   *
+   * <code>
+   * optional bool log_linked_dataset_query_user_email = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the logLinkedDatasetQueryUserEmail field is set.
+   */
+  boolean hasLogLinkedDatasetQueryUserEmail();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. By default, false.
+   * If true, the Listing has an email sharing mandate enabled.
+   * </pre>
+   *
+   * <code>
+   * optional bool log_linked_dataset_query_user_email = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The logLinkedDatasetQueryUserEmail.
+   */
+  boolean getLogLinkedDatasetQueryUserEmail();
 
   com.google.cloud.bigquery.analyticshub.v1.Listing.SourceCase getSourceCase();
 }

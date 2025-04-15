@@ -265,7 +265,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
    *
    * <pre>
    * Identifier. The resource name of a ServiceProjectAttachment. Format:
-   * "projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."
+   * `"projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -289,7 +289,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
    *
    * <pre>
    * Identifier. The resource name of a ServiceProjectAttachment. Format:
-   * "projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."
+   * `"projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -317,9 +317,9 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Immutable. Service project name in the format: "projects/abc" or
-   * "projects/123". As input, project name with either project id or number are
-   * accepted. As output, this field will contain project number.
+   * Required. Immutable. Service project name in the format: `"projects/abc"`
+   * or `"projects/123"`. As input, project name with either project id or
+   * number are accepted. As output, this field will contain project number.
    * </pre>
    *
    * <code>
@@ -344,9 +344,9 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Immutable. Service project name in the format: "projects/abc" or
-   * "projects/123". As input, project name with either project id or number are
-   * accepted. As output, this field will contain project number.
+   * Required. Immutable. Service project name in the format: `"projects/abc"`
+   * or `"projects/123"`. As input, project name with either project id or
+   * number are accepted. As output, this field will contain project number.
    * </pre>
    *
    * <code>
@@ -984,7 +984,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
      *
      * <pre>
      * Identifier. The resource name of a ServiceProjectAttachment. Format:
-     * "projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."
+     * `"projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1007,7 +1007,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
      *
      * <pre>
      * Identifier. The resource name of a ServiceProjectAttachment. Format:
-     * "projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."
+     * `"projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1030,7 +1030,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
      *
      * <pre>
      * Identifier. The resource name of a ServiceProjectAttachment. Format:
-     * "projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."
+     * `"projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1052,7 +1052,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
      *
      * <pre>
      * Identifier. The resource name of a ServiceProjectAttachment. Format:
-     * "projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."
+     * `"projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1070,7 +1070,7 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
      *
      * <pre>
      * Identifier. The resource name of a ServiceProjectAttachment. Format:
-     * "projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."
+     * `"projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1094,9 +1094,9 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Immutable. Service project name in the format: "projects/abc" or
-     * "projects/123". As input, project name with either project id or number are
-     * accepted. As output, this field will contain project number.
+     * Required. Immutable. Service project name in the format: `"projects/abc"`
+     * or `"projects/123"`. As input, project name with either project id or
+     * number are accepted. As output, this field will contain project number.
      * </pre>
      *
      * <code>
@@ -1120,9 +1120,9 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Immutable. Service project name in the format: "projects/abc" or
-     * "projects/123". As input, project name with either project id or number are
-     * accepted. As output, this field will contain project number.
+     * Required. Immutable. Service project name in the format: `"projects/abc"`
+     * or `"projects/123"`. As input, project name with either project id or
+     * number are accepted. As output, this field will contain project number.
      * </pre>
      *
      * <code>
@@ -1146,9 +1146,9 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Immutable. Service project name in the format: "projects/abc" or
-     * "projects/123". As input, project name with either project id or number are
-     * accepted. As output, this field will contain project number.
+     * Required. Immutable. Service project name in the format: `"projects/abc"`
+     * or `"projects/123"`. As input, project name with either project id or
+     * number are accepted. As output, this field will contain project number.
      * </pre>
      *
      * <code>
@@ -1171,9 +1171,9 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Immutable. Service project name in the format: "projects/abc" or
-     * "projects/123". As input, project name with either project id or number are
-     * accepted. As output, this field will contain project number.
+     * Required. Immutable. Service project name in the format: `"projects/abc"`
+     * or `"projects/123"`. As input, project name with either project id or
+     * number are accepted. As output, this field will contain project number.
      * </pre>
      *
      * <code>
@@ -1192,9 +1192,9 @@ public final class ServiceProjectAttachment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Immutable. Service project name in the format: "projects/abc" or
-     * "projects/123". As input, project name with either project id or number are
-     * accepted. As output, this field will contain project number.
+     * Required. Immutable. Service project name in the format: `"projects/abc"`
+     * or `"projects/123"`. As input, project name with either project id or
+     * number are accepted. As output, this field will contain project number.
      * </pre>
      *
      * <code>

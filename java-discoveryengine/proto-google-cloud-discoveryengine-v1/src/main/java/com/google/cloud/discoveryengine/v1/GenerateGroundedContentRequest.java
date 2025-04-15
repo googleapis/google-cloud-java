@@ -239,6 +239,31 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
+     * If specified, custom value for the seed will be used.
+     * </pre>
+     *
+     * <code>optional int32 seed = 12;</code>
+     *
+     * @return Whether the seed field is set.
+     */
+    boolean hasSeed();
+    /**
+     *
+     *
+     * <pre>
+     * If specified, custom value for the seed will be used.
+     * </pre>
+     *
+     * <code>optional int32 seed = 12;</code>
+     *
+     * @return The seed.
+     */
+    int getSeed();
+
+    /**
+     *
+     *
+     * <pre>
      * If specified, custom value for presence penalty will be used.
      * </pre>
      *
@@ -570,6 +595,39 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
       return frequencyPenalty_;
     }
 
+    public static final int SEED_FIELD_NUMBER = 12;
+    private int seed_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * If specified, custom value for the seed will be used.
+     * </pre>
+     *
+     * <code>optional int32 seed = 12;</code>
+     *
+     * @return Whether the seed field is set.
+     */
+    @java.lang.Override
+    public boolean hasSeed() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, custom value for the seed will be used.
+     * </pre>
+     *
+     * <code>optional int32 seed = 12;</code>
+     *
+     * @return The seed.
+     */
+    @java.lang.Override
+    public int getSeed() {
+      return seed_;
+    }
+
     public static final int PRESENCE_PENALTY_FIELD_NUMBER = 9;
     private float presencePenalty_ = 0F;
     /**
@@ -585,7 +643,7 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      */
     @java.lang.Override
     public boolean hasPresencePenalty() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -618,7 +676,7 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      */
     @java.lang.Override
     public boolean hasMaxOutputTokens() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -668,11 +726,14 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
       if (((bitField0_ & 0x00000008) != 0)) {
         output.writeFloat(8, frequencyPenalty_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         output.writeFloat(9, presencePenalty_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         output.writeInt32(10, maxOutputTokens_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        output.writeInt32(12, seed_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -701,11 +762,14 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(8, frequencyPenalty_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(9, presencePenalty_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(10, maxOutputTokens_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, seed_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -746,6 +810,10 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         if (java.lang.Float.floatToIntBits(getFrequencyPenalty())
             != java.lang.Float.floatToIntBits(other.getFrequencyPenalty())) return false;
       }
+      if (hasSeed() != other.hasSeed()) return false;
+      if (hasSeed()) {
+        if (getSeed() != other.getSeed()) return false;
+      }
       if (hasPresencePenalty() != other.hasPresencePenalty()) return false;
       if (hasPresencePenalty()) {
         if (java.lang.Float.floatToIntBits(getPresencePenalty())
@@ -785,6 +853,10 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
       if (hasFrequencyPenalty()) {
         hash = (37 * hash) + FREQUENCY_PENALTY_FIELD_NUMBER;
         hash = (53 * hash) + java.lang.Float.floatToIntBits(getFrequencyPenalty());
+      }
+      if (hasSeed()) {
+        hash = (37 * hash) + SEED_FIELD_NUMBER;
+        hash = (53 * hash) + getSeed();
       }
       if (hasPresencePenalty()) {
         hash = (37 * hash) + PRESENCE_PENALTY_FIELD_NUMBER;
@@ -953,6 +1025,7 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         topP_ = 0F;
         topK_ = 0;
         frequencyPenalty_ = 0F;
+        seed_ = 0;
         presencePenalty_ = 0F;
         maxOutputTokens_ = 0;
         return this;
@@ -1023,12 +1096,16 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
           to_bitField0_ |= 0x00000008;
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.presencePenalty_ = presencePenalty_;
+          result.seed_ = seed_;
           to_bitField0_ |= 0x00000010;
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.maxOutputTokens_ = maxOutputTokens_;
+          result.presencePenalty_ = presencePenalty_;
           to_bitField0_ |= 0x00000020;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.maxOutputTokens_ = maxOutputTokens_;
+          to_bitField0_ |= 0x00000040;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1109,6 +1186,9 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         if (other.hasFrequencyPenalty()) {
           setFrequencyPenalty(other.getFrequencyPenalty());
         }
+        if (other.hasSeed()) {
+          setSeed(other.getSeed());
+        }
         if (other.hasPresencePenalty()) {
           setPresencePenalty(other.getPresencePenalty());
         }
@@ -1180,15 +1260,21 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
               case 77:
                 {
                   presencePenalty_ = input.readFloat();
-                  bitField0_ |= 0x00000040;
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 77
               case 80:
                 {
                   maxOutputTokens_ = input.readInt32();
-                  bitField0_ |= 0x00000080;
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 80
+              case 96:
+                {
+                  seed_ = input.readInt32();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 96
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1697,6 +1783,74 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         return this;
       }
 
+      private int seed_;
+      /**
+       *
+       *
+       * <pre>
+       * If specified, custom value for the seed will be used.
+       * </pre>
+       *
+       * <code>optional int32 seed = 12;</code>
+       *
+       * @return Whether the seed field is set.
+       */
+      @java.lang.Override
+      public boolean hasSeed() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If specified, custom value for the seed will be used.
+       * </pre>
+       *
+       * <code>optional int32 seed = 12;</code>
+       *
+       * @return The seed.
+       */
+      @java.lang.Override
+      public int getSeed() {
+        return seed_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If specified, custom value for the seed will be used.
+       * </pre>
+       *
+       * <code>optional int32 seed = 12;</code>
+       *
+       * @param value The seed to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSeed(int value) {
+
+        seed_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If specified, custom value for the seed will be used.
+       * </pre>
+       *
+       * <code>optional int32 seed = 12;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSeed() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        seed_ = 0;
+        onChanged();
+        return this;
+      }
+
       private float presencePenalty_;
       /**
        *
@@ -1711,7 +1865,7 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
        */
       @java.lang.Override
       public boolean hasPresencePenalty() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
        *
@@ -1743,7 +1897,7 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
       public Builder setPresencePenalty(float value) {
 
         presencePenalty_ = value;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1759,7 +1913,7 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
        * @return This builder for chaining.
        */
       public Builder clearPresencePenalty() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         presencePenalty_ = 0F;
         onChanged();
         return this;
@@ -1779,7 +1933,7 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
        */
       @java.lang.Override
       public boolean hasMaxOutputTokens() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
        *
@@ -1811,7 +1965,7 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
       public Builder setMaxOutputTokens(int value) {
 
         maxOutputTokens_ = value;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1827,7 +1981,7 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
        * @return This builder for chaining.
        */
       public Builder clearMaxOutputTokens() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         maxOutputTokens_ = 0;
         onChanged();
         return this;
@@ -3963,6 +4117,51 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
     com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
             .GoogleSearchSourceOrBuilder
         getGoogleSearchSourceOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, grounding is performed with enterprise web retrieval.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource enterprise_web_retrieval_source = 8;
+     * </code>
+     *
+     * @return Whether the enterpriseWebRetrievalSource field is set.
+     */
+    boolean hasEnterpriseWebRetrievalSource();
+    /**
+     *
+     *
+     * <pre>
+     * If set, grounding is performed with enterprise web retrieval.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource enterprise_web_retrieval_source = 8;
+     * </code>
+     *
+     * @return The enterpriseWebRetrievalSource.
+     */
+    com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+            .EnterpriseWebRetrievalSource
+        getEnterpriseWebRetrievalSource();
+    /**
+     *
+     *
+     * <pre>
+     * If set, grounding is performed with enterprise web retrieval.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource enterprise_web_retrieval_source = 8;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+            .EnterpriseWebRetrievalSourceOrBuilder
+        getEnterpriseWebRetrievalSourceOrBuilder();
 
     com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.SourceCase
         getSourceCase();
@@ -7636,6 +7835,498 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
       }
     }
 
+    public interface EnterpriseWebRetrievalSourceOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource)
+        com.google.protobuf.MessageOrBuilder {}
+    /**
+     *
+     *
+     * <pre>
+     * Params for using enterprise web retrieval as grounding source.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource}
+     */
+    public static final class EnterpriseWebRetrievalSource
+        extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource)
+        EnterpriseWebRetrievalSourceOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use EnterpriseWebRetrievalSource.newBuilder() to construct.
+      private EnterpriseWebRetrievalSource(
+          com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private EnterpriseWebRetrievalSource() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new EnterpriseWebRetrievalSource();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_EnterpriseWebRetrievalSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_EnterpriseWebRetrievalSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                    .EnterpriseWebRetrievalSource.class,
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                    .EnterpriseWebRetrievalSource.Builder.class);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                .EnterpriseWebRetrievalSource)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                .EnterpriseWebRetrievalSource
+            other =
+                (com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                        .EnterpriseWebRetrievalSource)
+                    obj;
+
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+              .GroundingSource.EnterpriseWebRetrievalSource
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+              .GroundingSource.EnterpriseWebRetrievalSource
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+              .GroundingSource.EnterpriseWebRetrievalSource
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+              .GroundingSource.EnterpriseWebRetrievalSource
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+              .GroundingSource.EnterpriseWebRetrievalSource
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+              .GroundingSource.EnterpriseWebRetrievalSource
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+              .GroundingSource.EnterpriseWebRetrievalSource
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+              .GroundingSource.EnterpriseWebRetrievalSource
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+              .GroundingSource.EnterpriseWebRetrievalSource
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+              .GroundingSource.EnterpriseWebRetrievalSource
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+              .GroundingSource.EnterpriseWebRetrievalSource
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+              .GroundingSource.EnterpriseWebRetrievalSource
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                  .EnterpriseWebRetrievalSource
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Params for using enterprise web retrieval as grounding source.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource)
+          com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+              .EnterpriseWebRetrievalSourceOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_EnterpriseWebRetrievalSource_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_EnterpriseWebRetrievalSource_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                      .EnterpriseWebRetrievalSource.class,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                      .EnterpriseWebRetrievalSource.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_EnterpriseWebRetrievalSource_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                .EnterpriseWebRetrievalSource
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+              .EnterpriseWebRetrievalSource.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                .EnterpriseWebRetrievalSource
+            build() {
+          com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                  .EnterpriseWebRetrievalSource
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                .EnterpriseWebRetrievalSource
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                  .EnterpriseWebRetrievalSource
+              result =
+                  new com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+                      .GroundingSource.EnterpriseWebRetrievalSource(this);
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                  .EnterpriseWebRetrievalSource) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                        .EnterpriseWebRetrievalSource)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                    .EnterpriseWebRetrievalSource
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                  .EnterpriseWebRetrievalSource.getDefaultInstance()) return this;
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource)
+      private static final com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+              .GroundingSource.EnterpriseWebRetrievalSource
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                .EnterpriseWebRetrievalSource();
+      }
+
+      public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+              .GroundingSource.EnterpriseWebRetrievalSource
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<EnterpriseWebRetrievalSource> PARSER =
+          new com.google.protobuf.AbstractParser<EnterpriseWebRetrievalSource>() {
+            @java.lang.Override
+            public EnterpriseWebRetrievalSource parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<EnterpriseWebRetrievalSource> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<EnterpriseWebRetrievalSource> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+              .EnterpriseWebRetrievalSource
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int sourceCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -7648,6 +8339,7 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
       INLINE_SOURCE(1),
       SEARCH_SOURCE(2),
       GOOGLE_SEARCH_SOURCE(3),
+      ENTERPRISE_WEB_RETRIEVAL_SOURCE(8),
       SOURCE_NOT_SET(0);
       private final int value;
 
@@ -7672,6 +8364,8 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
             return SEARCH_SOURCE;
           case 3:
             return GOOGLE_SEARCH_SOURCE;
+          case 8:
+            return ENTERPRISE_WEB_RETRIEVAL_SOURCE;
           case 0:
             return SOURCE_NOT_SET;
           default:
@@ -7889,6 +8583,73 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
           .GoogleSearchSource.getDefaultInstance();
     }
 
+    public static final int ENTERPRISE_WEB_RETRIEVAL_SOURCE_FIELD_NUMBER = 8;
+    /**
+     *
+     *
+     * <pre>
+     * If set, grounding is performed with enterprise web retrieval.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource enterprise_web_retrieval_source = 8;
+     * </code>
+     *
+     * @return Whether the enterpriseWebRetrievalSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnterpriseWebRetrievalSource() {
+      return sourceCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, grounding is performed with enterprise web retrieval.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource enterprise_web_retrieval_source = 8;
+     * </code>
+     *
+     * @return The enterpriseWebRetrievalSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+            .EnterpriseWebRetrievalSource
+        getEnterpriseWebRetrievalSource() {
+      if (sourceCase_ == 8) {
+        return (com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                .EnterpriseWebRetrievalSource)
+            source_;
+      }
+      return com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+          .EnterpriseWebRetrievalSource.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, grounding is performed with enterprise web retrieval.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource enterprise_web_retrieval_source = 8;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+            .EnterpriseWebRetrievalSourceOrBuilder
+        getEnterpriseWebRetrievalSourceOrBuilder() {
+      if (sourceCase_ == 8) {
+        return (com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                .EnterpriseWebRetrievalSource)
+            source_;
+      }
+      return com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+          .EnterpriseWebRetrievalSource.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -7924,6 +8685,13 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
                     .GoogleSearchSource)
                 source_);
       }
+      if (sourceCase_ == 8) {
+        output.writeMessage(
+            8,
+            (com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                    .EnterpriseWebRetrievalSource)
+                source_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -7957,6 +8725,14 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
                         .GoogleSearchSource)
                     source_);
       }
+      if (sourceCase_ == 8) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                8,
+                (com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                        .EnterpriseWebRetrievalSource)
+                    source_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -7986,6 +8762,10 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         case 3:
           if (!getGoogleSearchSource().equals(other.getGoogleSearchSource())) return false;
           break;
+        case 8:
+          if (!getEnterpriseWebRetrievalSource().equals(other.getEnterpriseWebRetrievalSource()))
+            return false;
+          break;
         case 0:
         default:
       }
@@ -8012,6 +8792,10 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         case 3:
           hash = (37 * hash) + GOOGLE_SEARCH_SOURCE_FIELD_NUMBER;
           hash = (53 * hash) + getGoogleSearchSource().hashCode();
+          break;
+        case 8:
+          hash = (37 * hash) + ENTERPRISE_WEB_RETRIEVAL_SOURCE_FIELD_NUMBER;
+          hash = (53 * hash) + getEnterpriseWebRetrievalSource().hashCode();
           break;
         case 0:
         default:
@@ -8179,6 +8963,9 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         if (googleSearchSourceBuilder_ != null) {
           googleSearchSourceBuilder_.clear();
         }
+        if (enterpriseWebRetrievalSourceBuilder_ != null) {
+          enterpriseWebRetrievalSourceBuilder_.clear();
+        }
         sourceCase_ = 0;
         source_ = null;
         return this;
@@ -8241,6 +9028,9 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         }
         if (sourceCase_ == 3 && googleSearchSourceBuilder_ != null) {
           result.source_ = googleSearchSourceBuilder_.build();
+        }
+        if (sourceCase_ == 8 && enterpriseWebRetrievalSourceBuilder_ != null) {
+          result.source_ = enterpriseWebRetrievalSourceBuilder_.build();
         }
       }
 
@@ -8315,6 +9105,11 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
               mergeGoogleSearchSource(other.getGoogleSearchSource());
               break;
             }
+          case ENTERPRISE_WEB_RETRIEVAL_SOURCE:
+            {
+              mergeEnterpriseWebRetrievalSource(other.getEnterpriseWebRetrievalSource());
+              break;
+            }
           case SOURCE_NOT_SET:
             {
               break;
@@ -8365,6 +9160,14 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
                   sourceCase_ = 3;
                   break;
                 } // case 26
+              case 66:
+                {
+                  input.readMessage(
+                      getEnterpriseWebRetrievalSourceFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  sourceCase_ = 8;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9194,6 +9997,272 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         sourceCase_ = 3;
         onChanged();
         return googleSearchSourceBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                  .EnterpriseWebRetrievalSource,
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                  .EnterpriseWebRetrievalSource.Builder,
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                  .EnterpriseWebRetrievalSourceOrBuilder>
+          enterpriseWebRetrievalSourceBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * If set, grounding is performed with enterprise web retrieval.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource enterprise_web_retrieval_source = 8;
+       * </code>
+       *
+       * @return Whether the enterpriseWebRetrievalSource field is set.
+       */
+      @java.lang.Override
+      public boolean hasEnterpriseWebRetrievalSource() {
+        return sourceCase_ == 8;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, grounding is performed with enterprise web retrieval.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource enterprise_web_retrieval_source = 8;
+       * </code>
+       *
+       * @return The enterpriseWebRetrievalSource.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+              .EnterpriseWebRetrievalSource
+          getEnterpriseWebRetrievalSource() {
+        if (enterpriseWebRetrievalSourceBuilder_ == null) {
+          if (sourceCase_ == 8) {
+            return (com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+                    .GroundingSource.EnterpriseWebRetrievalSource)
+                source_;
+          }
+          return com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+              .EnterpriseWebRetrievalSource.getDefaultInstance();
+        } else {
+          if (sourceCase_ == 8) {
+            return enterpriseWebRetrievalSourceBuilder_.getMessage();
+          }
+          return com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+              .EnterpriseWebRetrievalSource.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, grounding is performed with enterprise web retrieval.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource enterprise_web_retrieval_source = 8;
+       * </code>
+       */
+      public Builder setEnterpriseWebRetrievalSource(
+          com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                  .EnterpriseWebRetrievalSource
+              value) {
+        if (enterpriseWebRetrievalSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          source_ = value;
+          onChanged();
+        } else {
+          enterpriseWebRetrievalSourceBuilder_.setMessage(value);
+        }
+        sourceCase_ = 8;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, grounding is performed with enterprise web retrieval.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource enterprise_web_retrieval_source = 8;
+       * </code>
+       */
+      public Builder setEnterpriseWebRetrievalSource(
+          com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                  .EnterpriseWebRetrievalSource.Builder
+              builderForValue) {
+        if (enterpriseWebRetrievalSourceBuilder_ == null) {
+          source_ = builderForValue.build();
+          onChanged();
+        } else {
+          enterpriseWebRetrievalSourceBuilder_.setMessage(builderForValue.build());
+        }
+        sourceCase_ = 8;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, grounding is performed with enterprise web retrieval.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource enterprise_web_retrieval_source = 8;
+       * </code>
+       */
+      public Builder mergeEnterpriseWebRetrievalSource(
+          com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                  .EnterpriseWebRetrievalSource
+              value) {
+        if (enterpriseWebRetrievalSourceBuilder_ == null) {
+          if (sourceCase_ == 8
+              && source_
+                  != com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+                      .GroundingSource.EnterpriseWebRetrievalSource.getDefaultInstance()) {
+            source_ =
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                    .EnterpriseWebRetrievalSource.newBuilder(
+                        (com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+                                .GroundingSource.EnterpriseWebRetrievalSource)
+                            source_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            source_ = value;
+          }
+          onChanged();
+        } else {
+          if (sourceCase_ == 8) {
+            enterpriseWebRetrievalSourceBuilder_.mergeFrom(value);
+          } else {
+            enterpriseWebRetrievalSourceBuilder_.setMessage(value);
+          }
+        }
+        sourceCase_ = 8;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, grounding is performed with enterprise web retrieval.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource enterprise_web_retrieval_source = 8;
+       * </code>
+       */
+      public Builder clearEnterpriseWebRetrievalSource() {
+        if (enterpriseWebRetrievalSourceBuilder_ == null) {
+          if (sourceCase_ == 8) {
+            sourceCase_ = 0;
+            source_ = null;
+            onChanged();
+          }
+        } else {
+          if (sourceCase_ == 8) {
+            sourceCase_ = 0;
+            source_ = null;
+          }
+          enterpriseWebRetrievalSourceBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, grounding is performed with enterprise web retrieval.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource enterprise_web_retrieval_source = 8;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+              .EnterpriseWebRetrievalSource.Builder
+          getEnterpriseWebRetrievalSourceBuilder() {
+        return getEnterpriseWebRetrievalSourceFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, grounding is performed with enterprise web retrieval.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource enterprise_web_retrieval_source = 8;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+              .EnterpriseWebRetrievalSourceOrBuilder
+          getEnterpriseWebRetrievalSourceOrBuilder() {
+        if ((sourceCase_ == 8) && (enterpriseWebRetrievalSourceBuilder_ != null)) {
+          return enterpriseWebRetrievalSourceBuilder_.getMessageOrBuilder();
+        } else {
+          if (sourceCase_ == 8) {
+            return (com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+                    .GroundingSource.EnterpriseWebRetrievalSource)
+                source_;
+          }
+          return com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+              .EnterpriseWebRetrievalSource.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, grounding is performed with enterprise web retrieval.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource enterprise_web_retrieval_source = 8;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                  .EnterpriseWebRetrievalSource,
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                  .EnterpriseWebRetrievalSource.Builder,
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                  .EnterpriseWebRetrievalSourceOrBuilder>
+          getEnterpriseWebRetrievalSourceFieldBuilder() {
+        if (enterpriseWebRetrievalSourceBuilder_ == null) {
+          if (!(sourceCase_ == 8)) {
+            source_ =
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                    .EnterpriseWebRetrievalSource.getDefaultInstance();
+          }
+          enterpriseWebRetrievalSourceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                      .EnterpriseWebRetrievalSource,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                      .EnterpriseWebRetrievalSource.Builder,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                      .EnterpriseWebRetrievalSourceOrBuilder>(
+                  (com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
+                          .GroundingSource.EnterpriseWebRetrievalSource)
+                      source_,
+                  getParentForChildren(),
+                  isClean());
+          source_ = null;
+        }
+        sourceCase_ = 8;
+        onChanged();
+        return enterpriseWebRetrievalSourceBuilder_;
       }
 
       @java.lang.Override
@@ -10542,8 +11611,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
    * For single-turn queries, this is a single instance. For multi-turn queries,
    * this is a repeated field that contains conversation history + latest
    * request.
-   *
-   * Only a single-turn query is supported currently.
    * </pre>
    *
    * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;</code>
@@ -10562,8 +11629,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
    * For single-turn queries, this is a single instance. For multi-turn queries,
    * this is a repeated field that contains conversation history + latest
    * request.
-   *
-   * Only a single-turn query is supported currently.
    * </pre>
    *
    * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;</code>
@@ -10583,8 +11648,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
    * For single-turn queries, this is a single instance. For multi-turn queries,
    * this is a repeated field that contains conversation history + latest
    * request.
-   *
-   * Only a single-turn query is supported currently.
    * </pre>
    *
    * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;</code>
@@ -10602,8 +11665,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
    * For single-turn queries, this is a single instance. For multi-turn queries,
    * this is a repeated field that contains conversation history + latest
    * request.
-   *
-   * Only a single-turn query is supported currently.
    * </pre>
    *
    * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;</code>
@@ -10621,8 +11682,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
    * For single-turn queries, this is a single instance. For multi-turn queries,
    * this is a repeated field that contains conversation history + latest
    * request.
-   *
-   * Only a single-turn query is supported currently.
    * </pre>
    *
    * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;</code>
@@ -11901,8 +12960,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * For single-turn queries, this is a single instance. For multi-turn queries,
      * this is a repeated field that contains conversation history + latest
      * request.
-     *
-     * Only a single-turn query is supported currently.
      * </pre>
      *
      * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;
@@ -11925,8 +12982,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * For single-turn queries, this is a single instance. For multi-turn queries,
      * this is a repeated field that contains conversation history + latest
      * request.
-     *
-     * Only a single-turn query is supported currently.
      * </pre>
      *
      * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;
@@ -11948,8 +13003,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * For single-turn queries, this is a single instance. For multi-turn queries,
      * this is a repeated field that contains conversation history + latest
      * request.
-     *
-     * Only a single-turn query is supported currently.
      * </pre>
      *
      * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;
@@ -11971,8 +13024,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * For single-turn queries, this is a single instance. For multi-turn queries,
      * this is a repeated field that contains conversation history + latest
      * request.
-     *
-     * Only a single-turn query is supported currently.
      * </pre>
      *
      * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;
@@ -12001,8 +13052,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * For single-turn queries, this is a single instance. For multi-turn queries,
      * this is a repeated field that contains conversation history + latest
      * request.
-     *
-     * Only a single-turn query is supported currently.
      * </pre>
      *
      * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;
@@ -12029,8 +13078,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * For single-turn queries, this is a single instance. For multi-turn queries,
      * this is a repeated field that contains conversation history + latest
      * request.
-     *
-     * Only a single-turn query is supported currently.
      * </pre>
      *
      * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;
@@ -12059,8 +13106,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * For single-turn queries, this is a single instance. For multi-turn queries,
      * this is a repeated field that contains conversation history + latest
      * request.
-     *
-     * Only a single-turn query is supported currently.
      * </pre>
      *
      * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;
@@ -12089,8 +13134,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * For single-turn queries, this is a single instance. For multi-turn queries,
      * this is a repeated field that contains conversation history + latest
      * request.
-     *
-     * Only a single-turn query is supported currently.
      * </pre>
      *
      * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;
@@ -12116,8 +13159,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * For single-turn queries, this is a single instance. For multi-turn queries,
      * this is a repeated field that contains conversation history + latest
      * request.
-     *
-     * Only a single-turn query is supported currently.
      * </pre>
      *
      * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;
@@ -12144,8 +13185,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * For single-turn queries, this is a single instance. For multi-turn queries,
      * this is a repeated field that contains conversation history + latest
      * request.
-     *
-     * Only a single-turn query is supported currently.
      * </pre>
      *
      * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;
@@ -12172,8 +13211,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * For single-turn queries, this is a single instance. For multi-turn queries,
      * this is a repeated field that contains conversation history + latest
      * request.
-     *
-     * Only a single-turn query is supported currently.
      * </pre>
      *
      * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;
@@ -12198,8 +13235,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * For single-turn queries, this is a single instance. For multi-turn queries,
      * this is a repeated field that contains conversation history + latest
      * request.
-     *
-     * Only a single-turn query is supported currently.
      * </pre>
      *
      * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;
@@ -12224,8 +13259,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * For single-turn queries, this is a single instance. For multi-turn queries,
      * this is a repeated field that contains conversation history + latest
      * request.
-     *
-     * Only a single-turn query is supported currently.
      * </pre>
      *
      * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;
@@ -12244,8 +13277,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * For single-turn queries, this is a single instance. For multi-turn queries,
      * this is a repeated field that contains conversation history + latest
      * request.
-     *
-     * Only a single-turn query is supported currently.
      * </pre>
      *
      * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;
@@ -12268,8 +13299,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * For single-turn queries, this is a single instance. For multi-turn queries,
      * this is a repeated field that contains conversation history + latest
      * request.
-     *
-     * Only a single-turn query is supported currently.
      * </pre>
      *
      * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;
@@ -12293,8 +13322,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * For single-turn queries, this is a single instance. For multi-turn queries,
      * this is a repeated field that contains conversation history + latest
      * request.
-     *
-     * Only a single-turn query is supported currently.
      * </pre>
      *
      * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;
@@ -12315,8 +13342,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * For single-turn queries, this is a single instance. For multi-turn queries,
      * this is a repeated field that contains conversation history + latest
      * request.
-     *
-     * Only a single-turn query is supported currently.
      * </pre>
      *
      * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;
@@ -12338,8 +13363,6 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * For single-turn queries, this is a single instance. For multi-turn queries,
      * this is a repeated field that contains conversation history + latest
      * request.
-     *
-     * Only a single-turn query is supported currently.
      * </pre>
      *
      * <code>repeated .google.cloud.discoveryengine.v1.GroundedGenerationContent contents = 2;

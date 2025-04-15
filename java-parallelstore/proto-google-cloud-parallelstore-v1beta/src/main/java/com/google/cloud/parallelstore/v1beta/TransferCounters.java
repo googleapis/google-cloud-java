@@ -175,6 +175,42 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     return bytesCopied_;
   }
 
+  public static final int OBJECTS_FAILED_FIELD_NUMBER = 7;
+  private long objectsFailed_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Objects that are failed to write to the data destination.
+   * </pre>
+   *
+   * <code>int64 objects_failed = 7;</code>
+   *
+   * @return The objectsFailed.
+   */
+  @java.lang.Override
+  public long getObjectsFailed() {
+    return objectsFailed_;
+  }
+
+  public static final int BYTES_FAILED_FIELD_NUMBER = 8;
+  private long bytesFailed_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Bytes that are failed to write to the data destination.
+   * </pre>
+   *
+   * <code>int64 bytes_failed = 8;</code>
+   *
+   * @return The bytesFailed.
+   */
+  @java.lang.Override
+  public long getBytesFailed() {
+    return bytesFailed_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -207,6 +243,12 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     if (bytesCopied_ != 0L) {
       output.writeInt64(6, bytesCopied_);
     }
+    if (objectsFailed_ != 0L) {
+      output.writeInt64(7, objectsFailed_);
+    }
+    if (bytesFailed_ != 0L) {
+      output.writeInt64(8, bytesFailed_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -234,6 +276,12 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     if (bytesCopied_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, bytesCopied_);
     }
+    if (objectsFailed_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(7, objectsFailed_);
+    }
+    if (bytesFailed_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(8, bytesFailed_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -256,6 +304,8 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     if (getBytesSkipped() != other.getBytesSkipped()) return false;
     if (getObjectsCopied() != other.getObjectsCopied()) return false;
     if (getBytesCopied() != other.getBytesCopied()) return false;
+    if (getObjectsFailed() != other.getObjectsFailed()) return false;
+    if (getBytesFailed() != other.getBytesFailed()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -279,6 +329,10 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getObjectsCopied());
     hash = (37 * hash) + BYTES_COPIED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getBytesCopied());
+    hash = (37 * hash) + OBJECTS_FAILED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getObjectsFailed());
+    hash = (37 * hash) + BYTES_FAILED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getBytesFailed());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -425,6 +479,8 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
       bytesSkipped_ = 0L;
       objectsCopied_ = 0L;
       bytesCopied_ = 0L;
+      objectsFailed_ = 0L;
+      bytesFailed_ = 0L;
       return this;
     }
 
@@ -478,6 +534,12 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.bytesCopied_ = bytesCopied_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.objectsFailed_ = objectsFailed_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.bytesFailed_ = bytesFailed_;
       }
     }
 
@@ -545,6 +607,12 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
       if (other.getBytesCopied() != 0L) {
         setBytesCopied(other.getBytesCopied());
       }
+      if (other.getObjectsFailed() != 0L) {
+        setObjectsFailed(other.getObjectsFailed());
+      }
+      if (other.getBytesFailed() != 0L) {
+        setBytesFailed(other.getBytesFailed());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -607,6 +675,18 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+            case 56:
+              {
+                objectsFailed_ = input.readInt64();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+            case 64:
+              {
+                bytesFailed_ = input.readInt64();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -958,6 +1038,112 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
     public Builder clearBytesCopied() {
       bitField0_ = (bitField0_ & ~0x00000020);
       bytesCopied_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long objectsFailed_;
+    /**
+     *
+     *
+     * <pre>
+     * Objects that are failed to write to the data destination.
+     * </pre>
+     *
+     * <code>int64 objects_failed = 7;</code>
+     *
+     * @return The objectsFailed.
+     */
+    @java.lang.Override
+    public long getObjectsFailed() {
+      return objectsFailed_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Objects that are failed to write to the data destination.
+     * </pre>
+     *
+     * <code>int64 objects_failed = 7;</code>
+     *
+     * @param value The objectsFailed to set.
+     * @return This builder for chaining.
+     */
+    public Builder setObjectsFailed(long value) {
+
+      objectsFailed_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Objects that are failed to write to the data destination.
+     * </pre>
+     *
+     * <code>int64 objects_failed = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearObjectsFailed() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      objectsFailed_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long bytesFailed_;
+    /**
+     *
+     *
+     * <pre>
+     * Bytes that are failed to write to the data destination.
+     * </pre>
+     *
+     * <code>int64 bytes_failed = 8;</code>
+     *
+     * @return The bytesFailed.
+     */
+    @java.lang.Override
+    public long getBytesFailed() {
+      return bytesFailed_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bytes that are failed to write to the data destination.
+     * </pre>
+     *
+     * <code>int64 bytes_failed = 8;</code>
+     *
+     * @param value The bytesFailed to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBytesFailed(long value) {
+
+      bytesFailed_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bytes that are failed to write to the data destination.
+     * </pre>
+     *
+     * <code>int64 bytes_failed = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBytesFailed() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      bytesFailed_ = 0L;
       onChanged();
       return this;
     }

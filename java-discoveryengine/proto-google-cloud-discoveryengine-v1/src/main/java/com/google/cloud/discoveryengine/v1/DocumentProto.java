@@ -54,7 +54,7 @@ public final class DocumentProto {
           + "1\032\037google/api/field_behavior.proto\032\031goog"
           + "le/api/resource.proto\032\034google/protobuf/s"
           + "truct.proto\032\037google/protobuf/timestamp.p"
-          + "roto\032\027google/rpc/status.proto\"\200\007\n\010Docume"
+          + "roto\032\027google/rpc/status.proto\"\237\007\n\010Docume"
           + "nt\022.\n\013struct_data\030\004 \001(\0132\027.google.protobu"
           + "f.StructH\000\022\023\n\tjson_data\030\005 \001(\tH\000\022\021\n\004name\030"
           + "\001 \001(\tB\003\340A\005\022\017\n\002id\030\002 \001(\tB\003\340A\005\022\021\n\tschema_id"
@@ -67,23 +67,24 @@ public final class DocumentProto {
           + "oogle.cloud.discoveryengine.v1.Document."
           + "IndexStatusB\003\340A\003\032K\n\007Content\022\023\n\traw_bytes"
           + "\030\002 \001(\014H\000\022\r\n\003uri\030\003 \001(\tH\000\022\021\n\tmime_type\030\001 \001"
-          + "(\tB\t\n\007content\032h\n\013IndexStatus\022.\n\nindex_ti"
-          + "me\030\001 \001(\0132\032.google.protobuf.Timestamp\022)\n\r"
-          + "error_samples\030\002 \003(\0132\022.google.rpc.Status:"
-          + "\226\002\352A\222\002\n\'discoveryengine.googleapis.com/D"
-          + "ocument\022fprojects/{project}/locations/{l"
-          + "ocation}/dataStores/{data_store}/branche"
-          + "s/{branch}/documents/{document}\022\177project"
-          + "s/{project}/locations/{location}/collect"
-          + "ions/{collection}/dataStores/{data_store"
-          + "}/branches/{branch}/documents/{document}"
-          + "B\006\n\004dataB\200\002\n#com.google.cloud.discoverye"
-          + "ngine.v1B\rDocumentProtoP\001ZMcloud.google."
-          + "com/go/discoveryengine/apiv1/discoveryen"
-          + "ginepb;discoveryenginepb\242\002\017DISCOVERYENGI"
-          + "NE\252\002\037Google.Cloud.DiscoveryEngine.V1\312\002\037G"
-          + "oogle\\Cloud\\DiscoveryEngine\\V1\352\002\"Google:"
-          + ":Cloud::DiscoveryEngine::V1b\006proto3"
+          + "(\tB\t\n\007content\032\206\001\n\013IndexStatus\022.\n\nindex_t"
+          + "ime\030\001 \001(\0132\032.google.protobuf.Timestamp\022)\n"
+          + "\rerror_samples\030\002 \003(\0132\022.google.rpc.Status"
+          + "\022\034\n\017pending_message\030\003 \001(\tB\003\340A\005:\226\002\352A\222\002\n\'d"
+          + "iscoveryengine.googleapis.com/Document\022f"
+          + "projects/{project}/locations/{location}/"
+          + "dataStores/{data_store}/branches/{branch"
+          + "}/documents/{document}\022\177projects/{projec"
+          + "t}/locations/{location}/collections/{col"
+          + "lection}/dataStores/{data_store}/branche"
+          + "s/{branch}/documents/{document}B\006\n\004dataB"
+          + "\200\002\n#com.google.cloud.discoveryengine.v1B"
+          + "\rDocumentProtoP\001ZMcloud.google.com/go/di"
+          + "scoveryengine/apiv1/discoveryenginepb;di"
+          + "scoveryenginepb\242\002\017DISCOVERYENGINE\252\002\037Goog"
+          + "le.Cloud.DiscoveryEngine.V1\312\002\037Google\\Clo"
+          + "ud\\DiscoveryEngine\\V1\352\002\"Google::Cloud::D"
+          + "iscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -127,7 +128,7 @@ public final class DocumentProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_Document_IndexStatus_descriptor,
             new java.lang.String[] {
-              "IndexTime", "ErrorSamples",
+              "IndexTime", "ErrorSamples", "PendingMessage",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

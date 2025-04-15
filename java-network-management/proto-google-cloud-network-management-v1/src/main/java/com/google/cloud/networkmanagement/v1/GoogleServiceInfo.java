@@ -157,6 +157,17 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
      * <code>GOOGLE_API_VPC_SC = 6;</code>
      */
     GOOGLE_API_VPC_SC(6),
+    /**
+     *
+     *
+     * <pre>
+     * Google API via Serverless VPC Access.
+     * https://cloud.google.com/vpc/docs/serverless-vpc-access
+     * </pre>
+     *
+     * <code>SERVERLESS_VPC_ACCESS = 7;</code>
+     */
+    SERVERLESS_VPC_ACCESS(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -239,6 +250,17 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
      * <code>GOOGLE_API_VPC_SC = 6;</code>
      */
     public static final int GOOGLE_API_VPC_SC_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Google API via Serverless VPC Access.
+     * https://cloud.google.com/vpc/docs/serverless-vpc-access
+     * </pre>
+     *
+     * <code>SERVERLESS_VPC_ACCESS = 7;</code>
+     */
+    public static final int SERVERLESS_VPC_ACCESS_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -278,6 +300,8 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
           return GOOGLE_API_PSC;
         case 6:
           return GOOGLE_API_VPC_SC;
+        case 7:
+          return SERVERLESS_VPC_ACCESS;
         default:
           return null;
       }

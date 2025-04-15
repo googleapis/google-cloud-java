@@ -1222,32 +1222,50 @@ public interface CloudFunctionOrBuilder
    *
    * <pre>
    * Docker Registry to use for this deployment.
+   * As of March 2025, `CONTAINER_REGISTRY` option is no longer
+   * available in response to Container Registry's deprecation:
+   * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+   * Please use Artifact Registry instead, which is the default choice.
    *
    * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
    * If `docker_repository` field is specified, this field should either be left
    * unspecified or set to `ARTIFACT_REGISTRY`.
    * </pre>
    *
-   * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+   * <code>
+   * .google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.functions.v1.CloudFunction.docker_registry is deprecated. See
+   *     google/cloud/functions/v1/functions.proto;l=486
    * @return The enum numeric value on the wire for dockerRegistry.
    */
+  @java.lang.Deprecated
   int getDockerRegistryValue();
   /**
    *
    *
    * <pre>
    * Docker Registry to use for this deployment.
+   * As of March 2025, `CONTAINER_REGISTRY` option is no longer
+   * available in response to Container Registry's deprecation:
+   * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+   * Please use Artifact Registry instead, which is the default choice.
    *
    * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
    * If `docker_repository` field is specified, this field should either be left
    * unspecified or set to `ARTIFACT_REGISTRY`.
    * </pre>
    *
-   * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+   * <code>
+   * .google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.functions.v1.CloudFunction.docker_registry is deprecated. See
+   *     google/cloud/functions/v1/functions.proto;l=486
    * @return The dockerRegistry.
    */
+  @java.lang.Deprecated
   com.google.cloud.functions.v1.CloudFunction.DockerRegistry getDockerRegistry();
 
   /**

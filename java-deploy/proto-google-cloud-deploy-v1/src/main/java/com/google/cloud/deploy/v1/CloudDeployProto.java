@@ -2057,7 +2057,7 @@ public final class CloudDeployProto {
           + "ns/*/deliveryPipelines/*/automationRuns/"
           + "*}:cancel:\001*\032N\312A\032clouddeploy.googleapis."
           + "com\322A.https://www.googleapis.com/auth/cl"
-          + "oud-platformB\215\007\n\032com.google.cloud.deploy"
+          + "oud-platformB\353\007\n\032com.google.cloud.deploy"
           + ".v1B\020CloudDeployProtoP\001Z2cloud.google.co"
           + "m/go/deploy/apiv1/deploypb;deploypb\352AY\n\037"
           + "cloudbuild.googleapis.com/Build\0226project"
@@ -2080,7 +2080,9 @@ public final class CloudDeployProto {
           + "ject}/locations/{location}/services/{ser"
           + "vice}\352AL\n\026run.googleapis.com/Job\0222projec"
           + "ts/{project}/locations/{location}/jobs/{"
-          + "job}b\006proto3"
+          + "job}\352A[\n\033run.googleapis.com/Revision\022<pr"
+          + "ojects/{project}/locations/{location}/re"
+          + "visions/{revision}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

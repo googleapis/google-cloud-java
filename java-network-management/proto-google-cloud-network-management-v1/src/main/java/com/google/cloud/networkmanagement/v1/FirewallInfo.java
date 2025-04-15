@@ -192,6 +192,17 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>TRACKING_STATE = 101;</code>
      */
     TRACKING_STATE(101),
+    /**
+     *
+     *
+     * <pre>
+     * Firewall analysis was skipped due to executing Connectivity Test in the
+     * BypassFirewallChecks mode
+     * </pre>
+     *
+     * <code>ANALYSIS_SKIPPED = 102;</code>
+     */
+    ANALYSIS_SKIPPED(102),
     UNRECOGNIZED(-1),
     ;
 
@@ -304,6 +315,17 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>TRACKING_STATE = 101;</code>
      */
     public static final int TRACKING_STATE_VALUE = 101;
+    /**
+     *
+     *
+     * <pre>
+     * Firewall analysis was skipped due to executing Connectivity Test in the
+     * BypassFirewallChecks mode
+     * </pre>
+     *
+     * <code>ANALYSIS_SKIPPED = 102;</code>
+     */
+    public static final int ANALYSIS_SKIPPED_VALUE = 102;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -347,6 +369,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
           return UNSUPPORTED_FIREWALL_POLICY_RULE;
         case 101:
           return TRACKING_STATE;
+        case 102:
+          return ANALYSIS_SKIPPED;
         default:
           return null;
       }

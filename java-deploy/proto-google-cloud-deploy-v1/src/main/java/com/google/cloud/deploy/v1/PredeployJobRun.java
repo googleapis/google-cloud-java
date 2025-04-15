@@ -112,7 +112,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The predeploy job run did not complete within the alloted time.
+     * The predeploy job run did not complete within the allotted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>
@@ -169,7 +169,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The predeploy job run did not complete within the alloted time.
+     * The predeploy job run did not complete within the allotted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>

@@ -254,7 +254,7 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of policy in the case of hierarchial policies.
+   * Type of policy in the case of hierarchical policies.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.iap.v1.ReauthSettings.PolicyType}
@@ -416,10 +416,12 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Reauth method requested.
+   * Optional. Reauth method requested.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.ReauthSettings.Method method = 1;</code>
+   * <code>
+   * .google.cloud.iap.v1.ReauthSettings.Method method = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for method.
    */
@@ -431,10 +433,12 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Reauth method requested.
+   * Optional. Reauth method requested.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.ReauthSettings.Method method = 1;</code>
+   * <code>
+   * .google.cloud.iap.v1.ReauthSettings.Method method = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The method.
    */
@@ -451,11 +455,11 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Reauth session lifetime, how long before a user has to reauthenticate
-   * again.
+   * Optional. Reauth session lifetime, how long before a user has to
+   * reauthenticate again.
    * </pre>
    *
-   * <code>.google.protobuf.Duration max_age = 2;</code>
+   * <code>.google.protobuf.Duration max_age = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the maxAge field is set.
    */
@@ -467,11 +471,11 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Reauth session lifetime, how long before a user has to reauthenticate
-   * again.
+   * Optional. Reauth session lifetime, how long before a user has to
+   * reauthenticate again.
    * </pre>
    *
-   * <code>.google.protobuf.Duration max_age = 2;</code>
+   * <code>.google.protobuf.Duration max_age = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The maxAge.
    */
@@ -483,11 +487,11 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Reauth session lifetime, how long before a user has to reauthenticate
-   * again.
+   * Optional. Reauth session lifetime, how long before a user has to
+   * reauthenticate again.
    * </pre>
    *
-   * <code>.google.protobuf.Duration max_age = 2;</code>
+   * <code>.google.protobuf.Duration max_age = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getMaxAgeOrBuilder() {
@@ -500,11 +504,14 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * How IAP determines the effective policy in cases of hierarchial policies.
-   * Policies are merged from higher in the hierarchy to lower in the hierarchy.
+   * Optional. How IAP determines the effective policy in cases of hierarchical
+   * policies. Policies are merged from higher in the hierarchy to lower in the
+   * hierarchy.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.ReauthSettings.PolicyType policy_type = 3;</code>
+   * <code>
+   * .google.cloud.iap.v1.ReauthSettings.PolicyType policy_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for policyType.
    */
@@ -516,11 +523,14 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * How IAP determines the effective policy in cases of hierarchial policies.
-   * Policies are merged from higher in the hierarchy to lower in the hierarchy.
+   * Optional. How IAP determines the effective policy in cases of hierarchical
+   * policies. Policies are merged from higher in the hierarchy to lower in the
+   * hierarchy.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.ReauthSettings.PolicyType policy_type = 3;</code>
+   * <code>
+   * .google.cloud.iap.v1.ReauthSettings.PolicyType policy_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The policyType.
    */
@@ -941,10 +951,12 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reauth method requested.
+     * Optional. Reauth method requested.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings.Method method = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings.Method method = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for method.
      */
@@ -956,10 +968,12 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reauth method requested.
+     * Optional. Reauth method requested.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings.Method method = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings.Method method = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for method to set.
      * @return This builder for chaining.
@@ -974,10 +988,12 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reauth method requested.
+     * Optional. Reauth method requested.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings.Method method = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings.Method method = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The method.
      */
@@ -991,10 +1007,12 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reauth method requested.
+     * Optional. Reauth method requested.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings.Method method = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings.Method method = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The method to set.
      * @return This builder for chaining.
@@ -1012,10 +1030,12 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reauth method requested.
+     * Optional. Reauth method requested.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings.Method method = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings.Method method = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1036,11 +1056,11 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reauth session lifetime, how long before a user has to reauthenticate
-     * again.
+     * Optional. Reauth session lifetime, how long before a user has to
+     * reauthenticate again.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_age = 2;</code>
+     * <code>.google.protobuf.Duration max_age = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the maxAge field is set.
      */
@@ -1051,11 +1071,11 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reauth session lifetime, how long before a user has to reauthenticate
-     * again.
+     * Optional. Reauth session lifetime, how long before a user has to
+     * reauthenticate again.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_age = 2;</code>
+     * <code>.google.protobuf.Duration max_age = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The maxAge.
      */
@@ -1070,11 +1090,11 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reauth session lifetime, how long before a user has to reauthenticate
-     * again.
+     * Optional. Reauth session lifetime, how long before a user has to
+     * reauthenticate again.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_age = 2;</code>
+     * <code>.google.protobuf.Duration max_age = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMaxAge(com.google.protobuf.Duration value) {
       if (maxAgeBuilder_ == null) {
@@ -1093,11 +1113,11 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reauth session lifetime, how long before a user has to reauthenticate
-     * again.
+     * Optional. Reauth session lifetime, how long before a user has to
+     * reauthenticate again.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_age = 2;</code>
+     * <code>.google.protobuf.Duration max_age = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMaxAge(com.google.protobuf.Duration.Builder builderForValue) {
       if (maxAgeBuilder_ == null) {
@@ -1113,11 +1133,11 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reauth session lifetime, how long before a user has to reauthenticate
-     * again.
+     * Optional. Reauth session lifetime, how long before a user has to
+     * reauthenticate again.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_age = 2;</code>
+     * <code>.google.protobuf.Duration max_age = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeMaxAge(com.google.protobuf.Duration value) {
       if (maxAgeBuilder_ == null) {
@@ -1141,11 +1161,11 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reauth session lifetime, how long before a user has to reauthenticate
-     * again.
+     * Optional. Reauth session lifetime, how long before a user has to
+     * reauthenticate again.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_age = 2;</code>
+     * <code>.google.protobuf.Duration max_age = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearMaxAge() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1161,11 +1181,11 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reauth session lifetime, how long before a user has to reauthenticate
-     * again.
+     * Optional. Reauth session lifetime, how long before a user has to
+     * reauthenticate again.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_age = 2;</code>
+     * <code>.google.protobuf.Duration max_age = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.Duration.Builder getMaxAgeBuilder() {
       bitField0_ |= 0x00000002;
@@ -1176,11 +1196,11 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reauth session lifetime, how long before a user has to reauthenticate
-     * again.
+     * Optional. Reauth session lifetime, how long before a user has to
+     * reauthenticate again.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_age = 2;</code>
+     * <code>.google.protobuf.Duration max_age = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.DurationOrBuilder getMaxAgeOrBuilder() {
       if (maxAgeBuilder_ != null) {
@@ -1193,11 +1213,11 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reauth session lifetime, how long before a user has to reauthenticate
-     * again.
+     * Optional. Reauth session lifetime, how long before a user has to
+     * reauthenticate again.
      * </pre>
      *
-     * <code>.google.protobuf.Duration max_age = 2;</code>
+     * <code>.google.protobuf.Duration max_age = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -1221,11 +1241,14 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * How IAP determines the effective policy in cases of hierarchial policies.
-     * Policies are merged from higher in the hierarchy to lower in the hierarchy.
+     * Optional. How IAP determines the effective policy in cases of hierarchical
+     * policies. Policies are merged from higher in the hierarchy to lower in the
+     * hierarchy.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings.PolicyType policy_type = 3;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings.PolicyType policy_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for policyType.
      */
@@ -1237,11 +1260,14 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * How IAP determines the effective policy in cases of hierarchial policies.
-     * Policies are merged from higher in the hierarchy to lower in the hierarchy.
+     * Optional. How IAP determines the effective policy in cases of hierarchical
+     * policies. Policies are merged from higher in the hierarchy to lower in the
+     * hierarchy.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings.PolicyType policy_type = 3;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings.PolicyType policy_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for policyType to set.
      * @return This builder for chaining.
@@ -1256,11 +1282,14 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * How IAP determines the effective policy in cases of hierarchial policies.
-     * Policies are merged from higher in the hierarchy to lower in the hierarchy.
+     * Optional. How IAP determines the effective policy in cases of hierarchical
+     * policies. Policies are merged from higher in the hierarchy to lower in the
+     * hierarchy.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings.PolicyType policy_type = 3;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings.PolicyType policy_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The policyType.
      */
@@ -1276,11 +1305,14 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * How IAP determines the effective policy in cases of hierarchial policies.
-     * Policies are merged from higher in the hierarchy to lower in the hierarchy.
+     * Optional. How IAP determines the effective policy in cases of hierarchical
+     * policies. Policies are merged from higher in the hierarchy to lower in the
+     * hierarchy.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings.PolicyType policy_type = 3;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings.PolicyType policy_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The policyType to set.
      * @return This builder for chaining.
@@ -1298,11 +1330,14 @@ public final class ReauthSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * How IAP determines the effective policy in cases of hierarchial policies.
-     * Policies are merged from higher in the hierarchy to lower in the hierarchy.
+     * Optional. How IAP determines the effective policy in cases of hierarchical
+     * policies. Policies are merged from higher in the hierarchy to lower in the
+     * hierarchy.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings.PolicyType policy_type = 3;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings.PolicyType policy_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */

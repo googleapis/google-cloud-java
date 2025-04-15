@@ -32,6 +32,14 @@ public final class EnvVarProto {
       internal_static_google_cloud_aiplatform_v1beta1_EnvVar_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_EnvVar_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_SecretRef_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_SecretRef_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_SecretEnvVar_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_SecretEnvVar_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -45,12 +53,16 @@ public final class EnvVarProto {
           + "r.proto\022\037google.cloud.aiplatform.v1beta1"
           + "\032\037google/api/field_behavior.proto\"/\n\006Env"
           + "Var\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\022\n\005value\030\002 \001(\tB\003\340"
-          + "A\002B\342\001\n#com.google.cloud.aiplatform.v1bet"
-          + "a1B\013EnvVarProtoP\001ZCcloud.google.com/go/a"
-          + "iplatform/apiv1beta1/aiplatformpb;aiplat"
-          + "formpb\252\002\037Google.Cloud.AIPlatform.V1Beta1"
-          + "\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goo"
-          + "gle::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "A\002\"1\n\tSecretRef\022\023\n\006secret\030\001 \001(\tB\003\340A\002\022\017\n\007"
+          + "version\030\002 \001(\t\"f\n\014SecretEnvVar\022\021\n\004name\030\001 "
+          + "\001(\tB\003\340A\002\022C\n\nsecret_ref\030\002 \001(\0132*.google.cl"
+          + "oud.aiplatform.v1beta1.SecretRefB\003\340A\002B\342\001"
+          + "\n#com.google.cloud.aiplatform.v1beta1B\013E"
+          + "nvVarProtoP\001ZCcloud.google.com/go/aiplat"
+          + "form/apiv1beta1/aiplatformpb;aiplatformp"
+          + "b\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Go"
+          + "ogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::"
+          + "Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -65,6 +77,22 @@ public final class EnvVarProto {
             internal_static_google_cloud_aiplatform_v1beta1_EnvVar_descriptor,
             new java.lang.String[] {
               "Name", "Value",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_SecretRef_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_SecretRef_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_SecretRef_descriptor,
+            new java.lang.String[] {
+              "Secret", "Version",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_SecretEnvVar_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_aiplatform_v1beta1_SecretEnvVar_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_SecretEnvVar_descriptor,
+            new java.lang.String[] {
+              "Name", "SecretRef",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

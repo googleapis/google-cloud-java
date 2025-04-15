@@ -132,4 +132,29 @@ public interface DeployOperationMetadataOrBuilder
    * @return The projectNumber.
    */
   long getProjectNumber();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The model id to be used at query time.
+   * </pre>
+   *
+   * <code>string model_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The modelId.
+   */
+  java.lang.String getModelId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The model id to be used at query time.
+   * </pre>
+   *
+   * <code>string model_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for modelId.
+   */
+  com.google.protobuf.ByteString getModelIdBytes();
 }

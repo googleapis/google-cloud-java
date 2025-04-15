@@ -53,6 +53,12 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.Annotation;
 import com.google.cloud.aiplatform.v1beta1.AnnotationSpec;
+import com.google.cloud.aiplatform.v1beta1.AssembleDataOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.AssembleDataRequest;
+import com.google.cloud.aiplatform.v1beta1.AssembleDataResponse;
+import com.google.cloud.aiplatform.v1beta1.AssessDataOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.AssessDataRequest;
+import com.google.cloud.aiplatform.v1beta1.AssessDataResponse;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetVersionOperationMetadata;
@@ -251,6 +257,14 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
   private final PagedCallSettings<
           ListAnnotationsRequest, ListAnnotationsResponse, ListAnnotationsPagedResponse>
       listAnnotationsSettings;
+  private final UnaryCallSettings<AssessDataRequest, Operation> assessDataSettings;
+  private final OperationCallSettings<
+          AssessDataRequest, AssessDataResponse, AssessDataOperationMetadata>
+      assessDataOperationSettings;
+  private final UnaryCallSettings<AssembleDataRequest, Operation> assembleDataSettings;
+  private final OperationCallSettings<
+          AssembleDataRequest, AssembleDataResponse, AssembleDataOperationMetadata>
+      assembleDataOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -795,6 +809,29 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     return listAnnotationsSettings;
   }
 
+  /** Returns the object with the settings used for calls to assessData. */
+  public UnaryCallSettings<AssessDataRequest, Operation> assessDataSettings() {
+    return assessDataSettings;
+  }
+
+  /** Returns the object with the settings used for calls to assessData. */
+  public OperationCallSettings<AssessDataRequest, AssessDataResponse, AssessDataOperationMetadata>
+      assessDataOperationSettings() {
+    return assessDataOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to assembleData. */
+  public UnaryCallSettings<AssembleDataRequest, Operation> assembleDataSettings() {
+    return assembleDataSettings;
+  }
+
+  /** Returns the object with the settings used for calls to assembleData. */
+  public OperationCallSettings<
+          AssembleDataRequest, AssembleDataResponse, AssembleDataOperationMetadata>
+      assembleDataOperationSettings() {
+    return assembleDataOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -933,6 +970,10 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     deleteSavedQueryOperationSettings = settingsBuilder.deleteSavedQueryOperationSettings().build();
     getAnnotationSpecSettings = settingsBuilder.getAnnotationSpecSettings().build();
     listAnnotationsSettings = settingsBuilder.listAnnotationsSettings().build();
+    assessDataSettings = settingsBuilder.assessDataSettings().build();
+    assessDataOperationSettings = settingsBuilder.assessDataOperationSettings().build();
+    assembleDataSettings = settingsBuilder.assembleDataSettings().build();
+    assembleDataOperationSettings = settingsBuilder.assembleDataOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -1007,6 +1048,14 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     private final PagedCallSettings.Builder<
             ListAnnotationsRequest, ListAnnotationsResponse, ListAnnotationsPagedResponse>
         listAnnotationsSettings;
+    private final UnaryCallSettings.Builder<AssessDataRequest, Operation> assessDataSettings;
+    private final OperationCallSettings.Builder<
+            AssessDataRequest, AssessDataResponse, AssessDataOperationMetadata>
+        assessDataOperationSettings;
+    private final UnaryCallSettings.Builder<AssembleDataRequest, Operation> assembleDataSettings;
+    private final OperationCallSettings.Builder<
+            AssembleDataRequest, AssembleDataResponse, AssembleDataOperationMetadata>
+        assembleDataOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1080,6 +1129,10 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
       deleteSavedQueryOperationSettings = OperationCallSettings.newBuilder();
       getAnnotationSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAnnotationsSettings = PagedCallSettings.newBuilder(LIST_ANNOTATIONS_PAGE_STR_FACT);
+      assessDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      assessDataOperationSettings = OperationCallSettings.newBuilder();
+      assembleDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      assembleDataOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1107,6 +1160,8 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
               deleteSavedQuerySettings,
               getAnnotationSpecSettings,
               listAnnotationsSettings,
+              assessDataSettings,
+              assembleDataSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1148,6 +1203,10 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
       deleteSavedQueryOperationSettings = settings.deleteSavedQueryOperationSettings.toBuilder();
       getAnnotationSpecSettings = settings.getAnnotationSpecSettings.toBuilder();
       listAnnotationsSettings = settings.listAnnotationsSettings.toBuilder();
+      assessDataSettings = settings.assessDataSettings.toBuilder();
+      assessDataOperationSettings = settings.assessDataOperationSettings.toBuilder();
+      assembleDataSettings = settings.assembleDataSettings.toBuilder();
+      assembleDataOperationSettings = settings.assembleDataOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -1175,6 +1234,8 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
               deleteSavedQuerySettings,
               getAnnotationSpecSettings,
               listAnnotationsSettings,
+              assessDataSettings,
+              assembleDataSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1289,6 +1350,16 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
           .listAnnotationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .assessDataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .assembleDataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listLocationsSettings()
@@ -1510,6 +1581,55 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .assessDataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<AssessDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AssessDataResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  AssessDataOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .assembleDataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AssembleDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AssembleDataResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  AssembleDataOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1696,6 +1816,30 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
             ListAnnotationsRequest, ListAnnotationsResponse, ListAnnotationsPagedResponse>
         listAnnotationsSettings() {
       return listAnnotationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to assessData. */
+    public UnaryCallSettings.Builder<AssessDataRequest, Operation> assessDataSettings() {
+      return assessDataSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to assessData. */
+    public OperationCallSettings.Builder<
+            AssessDataRequest, AssessDataResponse, AssessDataOperationMetadata>
+        assessDataOperationSettings() {
+      return assessDataOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to assembleData. */
+    public UnaryCallSettings.Builder<AssembleDataRequest, Operation> assembleDataSettings() {
+      return assembleDataSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to assembleData. */
+    public OperationCallSettings.Builder<
+            AssembleDataRequest, AssembleDataResponse, AssembleDataOperationMetadata>
+        assembleDataOperationSettings() {
+      return assembleDataOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

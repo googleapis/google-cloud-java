@@ -227,11 +227,11 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. Configurations of the ReasoningEngine
+   * Optional. Configurations of the ReasoningEngine
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the spec field is set.
@@ -244,11 +244,11 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. Configurations of the ReasoningEngine
+   * Optional. Configurations of the ReasoningEngine
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The spec.
@@ -263,11 +263,11 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. Configurations of the ReasoningEngine
+   * Optional. Configurations of the ReasoningEngine
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -1280,11 +1280,11 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Configurations of the ReasoningEngine
+     * Optional. Configurations of the ReasoningEngine
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the spec field is set.
@@ -1296,11 +1296,11 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Configurations of the ReasoningEngine
+     * Optional. Configurations of the ReasoningEngine
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The spec.
@@ -1318,11 +1318,11 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Configurations of the ReasoningEngine
+     * Optional. Configurations of the ReasoningEngine
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setSpec(com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec value) {
@@ -1342,11 +1342,11 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Configurations of the ReasoningEngine
+     * Optional. Configurations of the ReasoningEngine
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setSpec(
@@ -1364,11 +1364,11 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Configurations of the ReasoningEngine
+     * Optional. Configurations of the ReasoningEngine
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeSpec(com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec value) {
@@ -1394,11 +1394,11 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Configurations of the ReasoningEngine
+     * Optional. Configurations of the ReasoningEngine
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearSpec() {
@@ -1415,11 +1415,11 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Configurations of the ReasoningEngine
+     * Optional. Configurations of the ReasoningEngine
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.Builder getSpecBuilder() {
@@ -1431,11 +1431,11 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Configurations of the ReasoningEngine
+     * Optional. Configurations of the ReasoningEngine
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpecOrBuilder getSpecOrBuilder() {
@@ -1451,11 +1451,11 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Configurations of the ReasoningEngine
+     * Optional. Configurations of the ReasoningEngine
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec spec = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

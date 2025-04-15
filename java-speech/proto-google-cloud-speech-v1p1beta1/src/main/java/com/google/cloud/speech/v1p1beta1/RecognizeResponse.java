@@ -265,6 +265,25 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
     return requestId_;
   }
 
+  public static final int USING_LEGACY_MODELS_FIELD_NUMBER = 9;
+  private boolean usingLegacyModels_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether request used legacy asr models (was not automatically migrated to
+   * use conformer models).
+   * </pre>
+   *
+   * <code>bool using_legacy_models = 9;</code>
+   *
+   * @return The usingLegacyModels.
+   */
+  @java.lang.Override
+  public boolean getUsingLegacyModels() {
+    return usingLegacyModels_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -291,6 +310,9 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
     if (requestId_ != 0L) {
       output.writeInt64(8, requestId_);
     }
+    if (usingLegacyModels_ != false) {
+      output.writeBool(9, usingLegacyModels_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -312,6 +334,9 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
     }
     if (requestId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(8, requestId_);
+    }
+    if (usingLegacyModels_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, usingLegacyModels_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -339,6 +364,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       if (!getSpeechAdaptationInfo().equals(other.getSpeechAdaptationInfo())) return false;
     }
     if (getRequestId() != other.getRequestId()) return false;
+    if (getUsingLegacyModels() != other.getUsingLegacyModels()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -364,6 +390,8 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
     }
     hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRequestId());
+    hash = (37 * hash) + USING_LEGACY_MODELS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUsingLegacyModels());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -534,6 +562,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
         speechAdaptationInfoBuilder_ = null;
       }
       requestId_ = 0L;
+      usingLegacyModels_ = false;
       return this;
     }
 
@@ -599,6 +628,9 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.usingLegacyModels_ = usingLegacyModels_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -685,6 +717,9 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       if (other.getRequestId() != 0L) {
         setRequestId(other.getRequestId());
       }
+      if (other.getUsingLegacyModels() != false) {
+        setUsingLegacyModels(other.getUsingLegacyModels());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -744,6 +779,12 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000008;
                 break;
               } // case 64
+            case 72:
+              {
+                usingLegacyModels_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1574,6 +1615,62 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
     public Builder clearRequestId() {
       bitField0_ = (bitField0_ & ~0x00000008);
       requestId_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private boolean usingLegacyModels_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether request used legacy asr models (was not automatically migrated to
+     * use conformer models).
+     * </pre>
+     *
+     * <code>bool using_legacy_models = 9;</code>
+     *
+     * @return The usingLegacyModels.
+     */
+    @java.lang.Override
+    public boolean getUsingLegacyModels() {
+      return usingLegacyModels_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether request used legacy asr models (was not automatically migrated to
+     * use conformer models).
+     * </pre>
+     *
+     * <code>bool using_legacy_models = 9;</code>
+     *
+     * @param value The usingLegacyModels to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsingLegacyModels(boolean value) {
+
+      usingLegacyModels_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether request used legacy asr models (was not automatically migrated to
+     * use conformer models).
+     * </pre>
+     *
+     * <code>bool using_legacy_models = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUsingLegacyModels() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      usingLegacyModels_ = false;
       onChanged();
       return this;
     }

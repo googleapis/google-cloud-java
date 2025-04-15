@@ -130,7 +130,7 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+   * Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt function source code objects in intermediate Cloud Storage
    * buckets. When you generate an upload url and upload your source code, it
    * gets copied to an intermediate Cloud Storage bucket. The source code is
@@ -167,7 +167,7 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+   * Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt function source code objects in intermediate Cloud Storage
    * buckets. When you generate an upload url and upload your source code, it
    * gets copied to an intermediate Cloud Storage bucket. The source code is
@@ -759,7 +759,7 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function source code objects in intermediate Cloud Storage
      * buckets. When you generate an upload url and upload your source code, it
      * gets copied to an intermediate Cloud Storage bucket. The source code is
@@ -795,7 +795,7 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function source code objects in intermediate Cloud Storage
      * buckets. When you generate an upload url and upload your source code, it
      * gets copied to an intermediate Cloud Storage bucket. The source code is
@@ -831,7 +831,7 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function source code objects in intermediate Cloud Storage
      * buckets. When you generate an upload url and upload your source code, it
      * gets copied to an intermediate Cloud Storage bucket. The source code is
@@ -866,7 +866,7 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function source code objects in intermediate Cloud Storage
      * buckets. When you generate an upload url and upload your source code, it
      * gets copied to an intermediate Cloud Storage bucket. The source code is
@@ -897,7 +897,7 @@ public final class GenerateUploadUrlRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+     * Resource name of a KMS crypto key (managed by the user) used to
      * encrypt/decrypt function source code objects in intermediate Cloud Storage
      * buckets. When you generate an upload url and upload your source code, it
      * gets copied to an intermediate Cloud Storage bucket. The source code is

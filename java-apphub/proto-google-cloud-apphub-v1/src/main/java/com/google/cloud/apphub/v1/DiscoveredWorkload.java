@@ -76,7 +76,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Identifier. The resource name of the discovered workload. Format:
-   * "projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"
+   * `"projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -100,7 +100,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Identifier. The resource name of the discovered workload. Format:
-   * "projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"
+   * `"projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -672,7 +672,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Identifier. The resource name of the discovered workload. Format:
-     * "projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"
+     * `"projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -695,7 +695,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Identifier. The resource name of the discovered workload. Format:
-     * "projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"
+     * `"projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -718,7 +718,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Identifier. The resource name of the discovered workload. Format:
-     * "projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"
+     * `"projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -740,7 +740,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Identifier. The resource name of the discovered workload. Format:
-     * "projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"
+     * `"projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -758,7 +758,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Identifier. The resource name of the discovered workload. Format:
-     * "projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"
+     * `"projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
