@@ -98,6 +98,36 @@
         }
       }
     },
+    "CmekService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CmekServiceClient",
+          "rpcs": {
+            "CreateEncryptionConfig": {
+              "methods": ["createEncryptionConfigAsync", "createEncryptionConfigAsync", "createEncryptionConfigAsync", "createEncryptionConfigOperationCallable", "createEncryptionConfigCallable"]
+            },
+            "DeleteEncryptionConfig": {
+              "methods": ["deleteEncryptionConfigAsync", "deleteEncryptionConfigAsync", "deleteEncryptionConfigAsync", "deleteEncryptionConfigOperationCallable", "deleteEncryptionConfigCallable"]
+            },
+            "GetEncryptionConfig": {
+              "methods": ["getEncryptionConfig", "getEncryptionConfig", "getEncryptionConfig", "getEncryptionConfigCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListEncryptionConfigs": {
+              "methods": ["listEncryptionConfigs", "listEncryptionConfigs", "listEncryptionConfigs", "listEncryptionConfigsPagedCallable", "listEncryptionConfigsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateEncryptionConfig": {
+              "methods": ["updateEncryptionConfigAsync", "updateEncryptionConfigAsync", "updateEncryptionConfigOperationCallable", "updateEncryptionConfigCallable"]
+            }
+          }
+        }
+      }
+    },
     "ContentService": {
       "clients": {
         "grpc": {

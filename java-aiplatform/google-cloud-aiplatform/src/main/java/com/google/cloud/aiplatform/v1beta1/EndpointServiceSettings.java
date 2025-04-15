@@ -217,6 +217,28 @@ public class EndpointServiceSettings extends ClientSettings<EndpointServiceSetti
     return ((EndpointServiceStubSettings) getStubSettings()).mutateDeployedModelOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to setPublisherModelConfig. */
+  public UnaryCallSettings<SetPublisherModelConfigRequest, Operation>
+      setPublisherModelConfigSettings() {
+    return ((EndpointServiceStubSettings) getStubSettings()).setPublisherModelConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setPublisherModelConfig. */
+  public OperationCallSettings<
+          SetPublisherModelConfigRequest,
+          PublisherModelConfig,
+          SetPublisherModelConfigOperationMetadata>
+      setPublisherModelConfigOperationSettings() {
+    return ((EndpointServiceStubSettings) getStubSettings())
+        .setPublisherModelConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchPublisherModelConfig. */
+  public UnaryCallSettings<FetchPublisherModelConfigRequest, PublisherModelConfig>
+      fetchPublisherModelConfigSettings() {
+    return ((EndpointServiceStubSettings) getStubSettings()).fetchPublisherModelConfigSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -430,6 +452,27 @@ public class EndpointServiceSettings extends ClientSettings<EndpointServiceSetti
             MutateDeployedModelOperationMetadata>
         mutateDeployedModelOperationSettings() {
       return getStubSettingsBuilder().mutateDeployedModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setPublisherModelConfig. */
+    public UnaryCallSettings.Builder<SetPublisherModelConfigRequest, Operation>
+        setPublisherModelConfigSettings() {
+      return getStubSettingsBuilder().setPublisherModelConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setPublisherModelConfig. */
+    public OperationCallSettings.Builder<
+            SetPublisherModelConfigRequest,
+            PublisherModelConfig,
+            SetPublisherModelConfigOperationMetadata>
+        setPublisherModelConfigOperationSettings() {
+      return getStubSettingsBuilder().setPublisherModelConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchPublisherModelConfig. */
+    public UnaryCallSettings.Builder<FetchPublisherModelConfigRequest, PublisherModelConfig>
+        fetchPublisherModelConfigSettings() {
+      return getStubSettingsBuilder().fetchPublisherModelConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

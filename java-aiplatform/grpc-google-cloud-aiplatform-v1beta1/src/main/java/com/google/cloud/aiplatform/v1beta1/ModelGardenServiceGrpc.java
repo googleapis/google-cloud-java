@@ -225,6 +225,55 @@ public final class ModelGardenServiceGrpc {
     return getDeployPublisherModelMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest,
+          com.google.longrunning.Operation>
+      getExportPublisherModelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportPublisherModel",
+      requestType = com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest,
+          com.google.longrunning.Operation>
+      getExportPublisherModelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest,
+            com.google.longrunning.Operation>
+        getExportPublisherModelMethod;
+    if ((getExportPublisherModelMethod = ModelGardenServiceGrpc.getExportPublisherModelMethod)
+        == null) {
+      synchronized (ModelGardenServiceGrpc.class) {
+        if ((getExportPublisherModelMethod = ModelGardenServiceGrpc.getExportPublisherModelMethod)
+            == null) {
+          ModelGardenServiceGrpc.getExportPublisherModelMethod =
+              getExportPublisherModelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ExportPublisherModel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ModelGardenServiceMethodDescriptorSupplier("ExportPublisherModel"))
+                      .build();
+        }
+      }
+    }
+    return getExportPublisherModelMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ModelGardenServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ModelGardenServiceStub> factory =
@@ -332,6 +381,20 @@ public final class ModelGardenServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeployPublisherModelMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a publisher model to a user provided Google Cloud Storage bucket.
+     * </pre>
+     */
+    default void exportPublisherModel(
+        com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportPublisherModelMethod(), responseObserver);
+    }
   }
 
   /**
@@ -433,6 +496,22 @@ public final class ModelGardenServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a publisher model to a user provided Google Cloud Storage bucket.
+     * </pre>
+     */
+    public void exportPublisherModel(
+        com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportPublisherModelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -506,6 +585,19 @@ public final class ModelGardenServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeployPublisherModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a publisher model to a user provided Google Cloud Storage bucket.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportPublisherModel(
+        com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportPublisherModelMethod(), getCallOptions(), request);
     }
   }
 
@@ -584,12 +676,27 @@ public final class ModelGardenServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeployPublisherModelMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a publisher model to a user provided Google Cloud Storage bucket.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportPublisherModel(
+            com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportPublisherModelMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_PUBLISHER_MODEL = 0;
   private static final int METHODID_LIST_PUBLISHER_MODELS = 1;
   private static final int METHODID_DEPLOY = 2;
   private static final int METHODID_DEPLOY_PUBLISHER_MODEL = 3;
+  private static final int METHODID_EXPORT_PUBLISHER_MODEL = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -629,6 +736,11 @@ public final class ModelGardenServiceGrpc {
         case METHODID_DEPLOY_PUBLISHER_MODEL:
           serviceImpl.deployPublisherModel(
               (com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXPORT_PUBLISHER_MODEL:
+          serviceImpl.exportPublisherModel(
+              (com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -675,6 +787,12 @@ public final class ModelGardenServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest,
                     com.google.longrunning.Operation>(service, METHODID_DEPLOY_PUBLISHER_MODEL)))
+        .addMethod(
+            getExportPublisherModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_PUBLISHER_MODEL)))
         .build();
   }
 
@@ -730,6 +848,7 @@ public final class ModelGardenServiceGrpc {
                       .addMethod(getListPublisherModelsMethod())
                       .addMethod(getDeployMethod())
                       .addMethod(getDeployPublisherModelMethod())
+                      .addMethod(getExportPublisherModelMethod())
                       .build();
         }
       }

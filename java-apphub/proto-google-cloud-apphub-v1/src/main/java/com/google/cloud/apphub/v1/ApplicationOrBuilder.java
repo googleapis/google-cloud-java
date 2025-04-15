@@ -29,7 +29,7 @@ public interface ApplicationOrBuilder
    *
    * <pre>
    * Identifier. The resource name of an Application. Format:
-   * "projects/{host-project-id}/locations/{location}/applications/{application-id}"
+   * `"projects/{host-project-id}/locations/{location}/applications/{application-id}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -42,7 +42,7 @@ public interface ApplicationOrBuilder
    *
    * <pre>
    * Identifier. The resource name of an Application. Format:
-   * "projects/{host-project-id}/locations/{location}/applications/{application-id}"
+   * `"projects/{host-project-id}/locations/{location}/applications/{application-id}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>

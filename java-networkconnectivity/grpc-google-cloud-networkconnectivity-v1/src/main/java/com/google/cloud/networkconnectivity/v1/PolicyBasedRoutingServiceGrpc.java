@@ -301,7 +301,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Lists PolicyBasedRoutes in a given project and location.
+     * Lists policy-based routes in a given project and location.
      * </pre>
      */
     default void listPolicyBasedRoutes(
@@ -317,7 +317,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single PolicyBasedRoute.
+     * Gets details of a single policy-based route.
      * </pre>
      */
     default void getPolicyBasedRoute(
@@ -332,7 +332,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new PolicyBasedRoute in a given project and location.
+     * Creates a new policy-based route in a given project and location.
      * </pre>
      */
     default void createPolicyBasedRoute(
@@ -346,7 +346,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a single PolicyBasedRoute.
+     * Deletes a single policy-based route.
      * </pre>
      */
     default void deletePolicyBasedRoute(
@@ -399,7 +399,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Lists PolicyBasedRoutes in a given project and location.
+     * Lists policy-based routes in a given project and location.
      * </pre>
      */
     public void listPolicyBasedRoutes(
@@ -417,7 +417,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single PolicyBasedRoute.
+     * Gets details of a single policy-based route.
      * </pre>
      */
     public void getPolicyBasedRoute(
@@ -434,7 +434,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new PolicyBasedRoute in a given project and location.
+     * Creates a new policy-based route in a given project and location.
      * </pre>
      */
     public void createPolicyBasedRoute(
@@ -450,7 +450,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a single PolicyBasedRoute.
+     * Deletes a single policy-based route.
      * </pre>
      */
     public void deletePolicyBasedRoute(
@@ -488,7 +488,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Lists PolicyBasedRoutes in a given project and location.
+     * Lists policy-based routes in a given project and location.
      * </pre>
      */
     public com.google.cloud.networkconnectivity.v1.ListPolicyBasedRoutesResponse
@@ -502,7 +502,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single PolicyBasedRoute.
+     * Gets details of a single policy-based route.
      * </pre>
      */
     public com.google.cloud.networkconnectivity.v1.PolicyBasedRoute getPolicyBasedRoute(
@@ -515,7 +515,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new PolicyBasedRoute in a given project and location.
+     * Creates a new policy-based route in a given project and location.
      * </pre>
      */
     public com.google.longrunning.Operation createPolicyBasedRoute(
@@ -528,7 +528,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a single PolicyBasedRoute.
+     * Deletes a single policy-based route.
      * </pre>
      */
     public com.google.longrunning.Operation deletePolicyBasedRoute(
@@ -564,7 +564,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Lists PolicyBasedRoutes in a given project and location.
+     * Lists policy-based routes in a given project and location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -579,7 +579,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single PolicyBasedRoute.
+     * Gets details of a single policy-based route.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -594,7 +594,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new PolicyBasedRoute in a given project and location.
+     * Creates a new policy-based route in a given project and location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -608,7 +608,7 @@ public final class PolicyBasedRoutingServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a single PolicyBasedRoute.
+     * Deletes a single policy-based route.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

@@ -218,13 +218,23 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Opus encoded audio frames in WebM container
-     * ([OggOpus](https://wiki.xiph.org/OggOpus)). `sample_rate_hertz` must be
-     * one of 8000, 12000, 16000, 24000, or 48000.
+     * ([WebM](https://www.webmproject.org/docs/container/)).
+     * `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000, or 48000.
      * </pre>
      *
      * <code>WEBM_OPUS = 9;</code>
      */
     WEBM_OPUS(9),
+    /**
+     *
+     *
+     * <pre>
+     * 8-bit samples that compand 13-bit audio samples using G.711 PCMU/a-law.
+     * </pre>
+     *
+     * <code>ALAW = 10;</code>
+     */
+    ALAW(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -345,13 +355,23 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Opus encoded audio frames in WebM container
-     * ([OggOpus](https://wiki.xiph.org/OggOpus)). `sample_rate_hertz` must be
-     * one of 8000, 12000, 16000, 24000, or 48000.
+     * ([WebM](https://www.webmproject.org/docs/container/)).
+     * `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000, or 48000.
      * </pre>
      *
      * <code>WEBM_OPUS = 9;</code>
      */
     public static final int WEBM_OPUS_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * 8-bit samples that compand 13-bit audio samples using G.711 PCMU/a-law.
+     * </pre>
+     *
+     * <code>ALAW = 10;</code>
+     */
+    public static final int ALAW_VALUE = 10;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -397,6 +417,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
           return MP3;
         case 9:
           return WEBM_OPUS;
+        case 10:
+          return ALAW;
         default:
           return null;
       }
@@ -850,13 +872,14 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Use transcription normalization to automatically replace parts of the
-   * transcript with phrases of your choosing. For StreamingRecognize, this
+   * Optional. Use transcription normalization to automatically replace parts of
+   * the transcript with phrases of your choosing. For StreamingRecognize, this
    * normalization only applies to stable partial transcripts (stability &gt; 0.8)
    * and final transcripts.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+   * <code>
+   * .google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the transcriptNormalization field is set.
@@ -869,13 +892,14 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Use transcription normalization to automatically replace parts of the
-   * transcript with phrases of your choosing. For StreamingRecognize, this
+   * Optional. Use transcription normalization to automatically replace parts of
+   * the transcript with phrases of your choosing. For StreamingRecognize, this
    * normalization only applies to stable partial transcripts (stability &gt; 0.8)
    * and final transcripts.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+   * <code>
+   * .google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The transcriptNormalization.
@@ -890,13 +914,14 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Use transcription normalization to automatically replace parts of the
-   * transcript with phrases of your choosing. For StreamingRecognize, this
+   * Optional. Use transcription normalization to automatically replace parts of
+   * the transcript with phrases of your choosing. For StreamingRecognize, this
    * normalization only applies to stable partial transcripts (stability &gt; 0.8)
    * and final transcripts.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+   * <code>
+   * .google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -1198,15 +1223,15 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * If 'true', enables speaker detection for each recognized word in
-   * the top alternative of the recognition result using a speaker_tag provided
-   * in the WordInfo.
+   * the top alternative of the recognition result using a speaker_label
+   * provided in the WordInfo.
    * Note: Use diarization_config instead.
    * </pre>
    *
    * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
-   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=401
+   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=405
    * @return The enableSpeakerDiarization.
    */
   @java.lang.Override
@@ -1229,7 +1254,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
-   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=406
+   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=410
    * @return The diarizationSpeakerCount.
    */
   @java.lang.Override
@@ -3611,13 +3636,14 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Use transcription normalization to automatically replace parts of the
-     * transcript with phrases of your choosing. For StreamingRecognize, this
+     * Optional. Use transcription normalization to automatically replace parts of
+     * the transcript with phrases of your choosing. For StreamingRecognize, this
      * normalization only applies to stable partial transcripts (stability &gt; 0.8)
      * and final transcripts.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+     * <code>
+     * .google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the transcriptNormalization field is set.
@@ -3629,13 +3655,14 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Use transcription normalization to automatically replace parts of the
-     * transcript with phrases of your choosing. For StreamingRecognize, this
+     * Optional. Use transcription normalization to automatically replace parts of
+     * the transcript with phrases of your choosing. For StreamingRecognize, this
      * normalization only applies to stable partial transcripts (stability &gt; 0.8)
      * and final transcripts.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+     * <code>
+     * .google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The transcriptNormalization.
@@ -3653,13 +3680,14 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Use transcription normalization to automatically replace parts of the
-     * transcript with phrases of your choosing. For StreamingRecognize, this
+     * Optional. Use transcription normalization to automatically replace parts of
+     * the transcript with phrases of your choosing. For StreamingRecognize, this
      * normalization only applies to stable partial transcripts (stability &gt; 0.8)
      * and final transcripts.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+     * <code>
+     * .google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setTranscriptNormalization(
@@ -3680,13 +3708,14 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Use transcription normalization to automatically replace parts of the
-     * transcript with phrases of your choosing. For StreamingRecognize, this
+     * Optional. Use transcription normalization to automatically replace parts of
+     * the transcript with phrases of your choosing. For StreamingRecognize, this
      * normalization only applies to stable partial transcripts (stability &gt; 0.8)
      * and final transcripts.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+     * <code>
+     * .google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setTranscriptNormalization(
@@ -3704,13 +3733,14 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Use transcription normalization to automatically replace parts of the
-     * transcript with phrases of your choosing. For StreamingRecognize, this
+     * Optional. Use transcription normalization to automatically replace parts of
+     * the transcript with phrases of your choosing. For StreamingRecognize, this
      * normalization only applies to stable partial transcripts (stability &gt; 0.8)
      * and final transcripts.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+     * <code>
+     * .google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeTranscriptNormalization(
@@ -3737,13 +3767,14 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Use transcription normalization to automatically replace parts of the
-     * transcript with phrases of your choosing. For StreamingRecognize, this
+     * Optional. Use transcription normalization to automatically replace parts of
+     * the transcript with phrases of your choosing. For StreamingRecognize, this
      * normalization only applies to stable partial transcripts (stability &gt; 0.8)
      * and final transcripts.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+     * <code>
+     * .google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearTranscriptNormalization() {
@@ -3760,13 +3791,14 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Use transcription normalization to automatically replace parts of the
-     * transcript with phrases of your choosing. For StreamingRecognize, this
+     * Optional. Use transcription normalization to automatically replace parts of
+     * the transcript with phrases of your choosing. For StreamingRecognize, this
      * normalization only applies to stable partial transcripts (stability &gt; 0.8)
      * and final transcripts.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+     * <code>
+     * .google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Builder
@@ -3779,13 +3811,14 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Use transcription normalization to automatically replace parts of the
-     * transcript with phrases of your choosing. For StreamingRecognize, this
+     * Optional. Use transcription normalization to automatically replace parts of
+     * the transcript with phrases of your choosing. For StreamingRecognize, this
      * normalization only applies to stable partial transcripts (stability &gt; 0.8)
      * and final transcripts.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+     * <code>
+     * .google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.speech.v1p1beta1.TranscriptNormalizationOrBuilder
@@ -3802,13 +3835,14 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Use transcription normalization to automatically replace parts of the
-     * transcript with phrases of your choosing. For StreamingRecognize, this
+     * Optional. Use transcription normalization to automatically replace parts of
+     * the transcript with phrases of your choosing. For StreamingRecognize, this
      * normalization only applies to stable partial transcripts (stability &gt; 0.8)
      * and final transcripts.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+     * <code>
+     * .google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -4910,15 +4944,15 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * If 'true', enables speaker detection for each recognized word in
-     * the top alternative of the recognition result using a speaker_tag provided
-     * in the WordInfo.
+     * the top alternative of the recognition result using a speaker_label
+     * provided in the WordInfo.
      * Note: Use diarization_config instead.
      * </pre>
      *
      * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=401
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=405
      * @return The enableSpeakerDiarization.
      */
     @java.lang.Override
@@ -4931,15 +4965,15 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * If 'true', enables speaker detection for each recognized word in
-     * the top alternative of the recognition result using a speaker_tag provided
-     * in the WordInfo.
+     * the top alternative of the recognition result using a speaker_label
+     * provided in the WordInfo.
      * Note: Use diarization_config instead.
      * </pre>
      *
      * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=401
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=405
      * @param value The enableSpeakerDiarization to set.
      * @return This builder for chaining.
      */
@@ -4956,15 +4990,15 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * If 'true', enables speaker detection for each recognized word in
-     * the top alternative of the recognition result using a speaker_tag provided
-     * in the WordInfo.
+     * the top alternative of the recognition result using a speaker_label
+     * provided in the WordInfo.
      * Note: Use diarization_config instead.
      * </pre>
      *
      * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=401
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=405
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4988,7 +5022,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=406
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=410
      * @return The diarizationSpeakerCount.
      */
     @java.lang.Override
@@ -5008,7 +5042,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=406
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=410
      * @param value The diarizationSpeakerCount to set.
      * @return This builder for chaining.
      */
@@ -5032,7 +5066,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=406
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=410
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

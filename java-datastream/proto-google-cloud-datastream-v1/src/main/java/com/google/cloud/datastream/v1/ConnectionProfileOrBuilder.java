@@ -216,6 +216,56 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  boolean hasSatisfiesPzi();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
    * Oracle ConnectionProfile configuration.
    * </pre>
    *
@@ -421,6 +471,41 @@ public interface ConnectionProfileOrBuilder
    * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
    */
   com.google.cloud.datastream.v1.SqlServerProfileOrBuilder getSqlServerProfileOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
+   *
+   * @return Whether the salesforceProfile field is set.
+   */
+  boolean hasSalesforceProfile();
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
+   *
+   * @return The salesforceProfile.
+   */
+  com.google.cloud.datastream.v1.SalesforceProfile getSalesforceProfile();
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
+   */
+  com.google.cloud.datastream.v1.SalesforceProfileOrBuilder getSalesforceProfileOrBuilder();
 
   /**
    *

@@ -476,6 +476,17 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>UNSUPPORTED_GOOGLE_MANAGED_PROJECT_CONFIG = 31;</code>
      */
     UNSUPPORTED_GOOGLE_MANAGED_PROJECT_CONFIG(31),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the source endpoint is a Cloud Run revision with direct
+     * VPC access enabled, but there are no reserved serverless IP ranges.
+     * </pre>
+     *
+     * <code>NO_SERVERLESS_IP_RANGES = 37;</code>
+     */
+    NO_SERVERLESS_IP_RANGES(37),
     UNRECOGNIZED(-1),
     ;
 
@@ -871,6 +882,17 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>UNSUPPORTED_GOOGLE_MANAGED_PROJECT_CONFIG = 31;</code>
      */
     public static final int UNSUPPORTED_GOOGLE_MANAGED_PROJECT_CONFIG_VALUE = 31;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the source endpoint is a Cloud Run revision with direct
+     * VPC access enabled, but there are no reserved serverless IP ranges.
+     * </pre>
+     *
+     * <code>NO_SERVERLESS_IP_RANGES = 37;</code>
+     */
+    public static final int NO_SERVERLESS_IP_RANGES_VALUE = 37;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -968,6 +990,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
           return UNKNOWN_ISSUE_IN_GOOGLE_MANAGED_PROJECT;
         case 31:
           return UNSUPPORTED_GOOGLE_MANAGED_PROJECT_CONFIG;
+        case 37:
+          return NO_SERVERLESS_IP_RANGES;
         default:
           return null;
       }

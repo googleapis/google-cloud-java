@@ -325,11 +325,13 @@
  *           .setSafeSearch(true)
  *           .putAllUserLabels(new HashMap<String, String>())
  *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+ *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
  *           .setSession(
  *               SessionName.ofProjectLocationDataStoreSessionName(
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
  *                   .toString())
  *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+ *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
@@ -358,6 +360,28 @@
  *                   .toString())
  *           .build();
  *   ListCustomModelsResponse response = searchTuningServiceClient.listCustomModels(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ServingConfigServiceClient =======================
+ *
+ * <p>Service Description: Service for operations related to
+ * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig].
+ *
+ * <p>Sample for ServingConfigServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ServingConfigServiceClient servingConfigServiceClient =
+ *     ServingConfigServiceClient.create()) {
+ *   ServingConfig servingConfig = ServingConfig.newBuilder().build();
+ *   FieldMask updateMask = FieldMask.newBuilder().build();
+ *   ServingConfig response =
+ *       servingConfigServiceClient.updateServingConfig(servingConfig, updateMask);
  * }
  * }</pre>
  *

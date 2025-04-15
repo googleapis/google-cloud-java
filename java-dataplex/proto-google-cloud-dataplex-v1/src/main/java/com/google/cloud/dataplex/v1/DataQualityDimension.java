@@ -72,12 +72,11 @@ public final class DataQualityDimension extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The dimension name a rule belongs to. Supported dimensions are
-   * ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS",
-   * "FRESHNESS", "VOLUME"]
+   * Optional. The dimension name a rule belongs to. Custom dimension name is
+   * supported with all uppercase letters and maximum length of 30 characters.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -97,12 +96,11 @@ public final class DataQualityDimension extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The dimension name a rule belongs to. Supported dimensions are
-   * ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS",
-   * "FRESHNESS", "VOLUME"]
+   * Optional. The dimension name a rule belongs to. Custom dimension name is
+   * supported with all uppercase letters and maximum length of 30 characters.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -467,12 +465,11 @@ public final class DataQualityDimension extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dimension name a rule belongs to. Supported dimensions are
-     * ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS",
-     * "FRESHNESS", "VOLUME"]
+     * Optional. The dimension name a rule belongs to. Custom dimension name is
+     * supported with all uppercase letters and maximum length of 30 characters.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The name.
      */
@@ -491,12 +488,11 @@ public final class DataQualityDimension extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dimension name a rule belongs to. Supported dimensions are
-     * ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS",
-     * "FRESHNESS", "VOLUME"]
+     * Optional. The dimension name a rule belongs to. Custom dimension name is
+     * supported with all uppercase letters and maximum length of 30 characters.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for name.
      */
@@ -515,12 +511,11 @@ public final class DataQualityDimension extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dimension name a rule belongs to. Supported dimensions are
-     * ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS",
-     * "FRESHNESS", "VOLUME"]
+     * Optional. The dimension name a rule belongs to. Custom dimension name is
+     * supported with all uppercase letters and maximum length of 30 characters.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -538,12 +533,11 @@ public final class DataQualityDimension extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dimension name a rule belongs to. Supported dimensions are
-     * ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS",
-     * "FRESHNESS", "VOLUME"]
+     * Optional. The dimension name a rule belongs to. Custom dimension name is
+     * supported with all uppercase letters and maximum length of 30 characters.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -557,12 +551,11 @@ public final class DataQualityDimension extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The dimension name a rule belongs to. Supported dimensions are
-     * ["COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS",
-     * "FRESHNESS", "VOLUME"]
+     * Optional. The dimension name a rule belongs to. Custom dimension name is
+     * supported with all uppercase letters and maximum length of 30 characters.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

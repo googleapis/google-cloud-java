@@ -203,6 +203,8 @@ public class DatastreamClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -255,6 +257,8 @@ public class DatastreamClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -307,6 +311,8 @@ public class DatastreamClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -367,6 +373,8 @@ public class DatastreamClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -427,6 +435,8 @@ public class DatastreamClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -445,6 +455,8 @@ public class DatastreamClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -484,6 +496,8 @@ public class DatastreamClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .setDisplayName("displayName1714148973")
+              .setSatisfiesPzs(true)
+              .setSatisfiesPzi(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateConnectionProfileAsync(connectionProfile, updateMask).get();
@@ -748,6 +762,8 @@ public class DatastreamClientHttpJsonTest {
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
             .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -801,6 +817,8 @@ public class DatastreamClientHttpJsonTest {
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
             .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -854,6 +872,8 @@ public class DatastreamClientHttpJsonTest {
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
             .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -916,6 +936,8 @@ public class DatastreamClientHttpJsonTest {
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
             .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -978,6 +1000,8 @@ public class DatastreamClientHttpJsonTest {
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
             .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -999,6 +1023,8 @@ public class DatastreamClientHttpJsonTest {
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
             .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1040,6 +1066,8 @@ public class DatastreamClientHttpJsonTest {
               .addAllErrors(new ArrayList<Error>())
               .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
               .setLastRecoveryTime(Timestamp.newBuilder().build())
+              .setSatisfiesPzs(true)
+              .setSatisfiesPzi(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateStreamAsync(stream, updateMask).get();
@@ -1152,6 +1180,8 @@ public class DatastreamClientHttpJsonTest {
             .addAllErrors(new ArrayList<Error>())
             .setCustomerManagedEncryptionKey("customerManagedEncryptionKey-709617797")
             .setLastRecoveryTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1756,6 +1786,8 @@ public class DatastreamClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setError(Error.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1818,6 +1850,8 @@ public class DatastreamClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setError(Error.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1880,6 +1914,8 @@ public class DatastreamClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setError(Error.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -1934,6 +1970,8 @@ public class DatastreamClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setError(Error.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setVpcPeeringConfig(VpcPeeringConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);

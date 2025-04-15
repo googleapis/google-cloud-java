@@ -23,11 +23,10 @@ package com.google.cloud.networkconnectivity.v1;
  *
  *
  * <pre>
- * Policy Based Routes (PBR) are more powerful routes that allows GCP customers
- * to route their L4 network traffic based on not just destination IP, but also
- * source IP, protocol and more. A PBR always take precedence when it conflicts
- * with other types of routes.
- * Next id: 22
+ * Policy-based routes route L4 network traffic based on not just destination IP
+ * address, but also source IP address, protocol, and more. If a policy-based
+ * route conflicts with other types of routes, the policy-based route always
+ * takes precedence.
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkconnectivity.v1.PolicyBasedRoute}
@@ -109,9 +108,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Use the routes from the default routing tables (system-generated routes,
-     * custom routes, peering route) to determine the next hop. This will
-     * effectively exclude matching packets being applied on other PBRs with a
-     * lower priority.
+     * custom routes, peering route) to determine the next hop. This effectively
+     * excludes matching packets being applied on other PBRs with a lower
+     * priority.
      * </pre>
      *
      * <code>DEFAULT_ROUTING = 1;</code>
@@ -135,9 +134,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Use the routes from the default routing tables (system-generated routes,
-     * custom routes, peering route) to determine the next hop. This will
-     * effectively exclude matching packets being applied on other PBRs with a
-     * lower priority.
+     * custom routes, peering route) to determine the next hop. This effectively
+     * excludes matching packets being applied on other PBRs with a lower
+     * priority.
      * </pre>
      *
      * <code>DEFAULT_ROUTING = 1;</code>
@@ -236,9 +235,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A list of VM instance tags to which this policy based route
-     * applies to. VM instances that have ANY of tags specified here will
-     * install this PBR.
+     * Optional. A list of VM instance tags that this policy-based route applies
+     * to. VM instances that have ANY of tags specified here installs this PBR.
      * </pre>
      *
      * <code>repeated string tags = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -250,9 +248,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A list of VM instance tags to which this policy based route
-     * applies to. VM instances that have ANY of tags specified here will
-     * install this PBR.
+     * Optional. A list of VM instance tags that this policy-based route applies
+     * to. VM instances that have ANY of tags specified here installs this PBR.
      * </pre>
      *
      * <code>repeated string tags = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -264,9 +261,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A list of VM instance tags to which this policy based route
-     * applies to. VM instances that have ANY of tags specified here will
-     * install this PBR.
+     * Optional. A list of VM instance tags that this policy-based route applies
+     * to. VM instances that have ANY of tags specified here installs this PBR.
      * </pre>
      *
      * <code>repeated string tags = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -279,9 +275,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A list of VM instance tags to which this policy based route
-     * applies to. VM instances that have ANY of tags specified here will
-     * install this PBR.
+     * Optional. A list of VM instance tags that this policy-based route applies
+     * to. VM instances that have ANY of tags specified here installs this PBR.
      * </pre>
      *
      * <code>repeated string tags = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -295,7 +290,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * VM instances to which this policy based route applies to.
+   * VM instances that this policy-based route applies to.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.PolicyBasedRoute.VirtualMachine}
@@ -345,9 +340,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A list of VM instance tags to which this policy based route
-     * applies to. VM instances that have ANY of tags specified here will
-     * install this PBR.
+     * Optional. A list of VM instance tags that this policy-based route applies
+     * to. VM instances that have ANY of tags specified here installs this PBR.
      * </pre>
      *
      * <code>repeated string tags = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -361,9 +355,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A list of VM instance tags to which this policy based route
-     * applies to. VM instances that have ANY of tags specified here will
-     * install this PBR.
+     * Optional. A list of VM instance tags that this policy-based route applies
+     * to. VM instances that have ANY of tags specified here installs this PBR.
      * </pre>
      *
      * <code>repeated string tags = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -377,9 +370,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A list of VM instance tags to which this policy based route
-     * applies to. VM instances that have ANY of tags specified here will
-     * install this PBR.
+     * Optional. A list of VM instance tags that this policy-based route applies
+     * to. VM instances that have ANY of tags specified here installs this PBR.
      * </pre>
      *
      * <code>repeated string tags = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -394,9 +386,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A list of VM instance tags to which this policy based route
-     * applies to. VM instances that have ANY of tags specified here will
-     * install this PBR.
+     * Optional. A list of VM instance tags that this policy-based route applies
+     * to. VM instances that have ANY of tags specified here installs this PBR.
      * </pre>
      *
      * <code>repeated string tags = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -582,7 +573,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * VM instances to which this policy based route applies to.
+     * VM instances that this policy-based route applies to.
      * </pre>
      *
      * Protobuf type {@code google.cloud.networkconnectivity.v1.PolicyBasedRoute.VirtualMachine}
@@ -795,9 +786,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. A list of VM instance tags to which this policy based route
-       * applies to. VM instances that have ANY of tags specified here will
-       * install this PBR.
+       * Optional. A list of VM instance tags that this policy-based route applies
+       * to. VM instances that have ANY of tags specified here installs this PBR.
        * </pre>
        *
        * <code>repeated string tags = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -812,9 +802,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. A list of VM instance tags to which this policy based route
-       * applies to. VM instances that have ANY of tags specified here will
-       * install this PBR.
+       * Optional. A list of VM instance tags that this policy-based route applies
+       * to. VM instances that have ANY of tags specified here installs this PBR.
        * </pre>
        *
        * <code>repeated string tags = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -828,9 +817,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. A list of VM instance tags to which this policy based route
-       * applies to. VM instances that have ANY of tags specified here will
-       * install this PBR.
+       * Optional. A list of VM instance tags that this policy-based route applies
+       * to. VM instances that have ANY of tags specified here installs this PBR.
        * </pre>
        *
        * <code>repeated string tags = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -845,9 +833,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. A list of VM instance tags to which this policy based route
-       * applies to. VM instances that have ANY of tags specified here will
-       * install this PBR.
+       * Optional. A list of VM instance tags that this policy-based route applies
+       * to. VM instances that have ANY of tags specified here installs this PBR.
        * </pre>
        *
        * <code>repeated string tags = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -862,9 +849,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. A list of VM instance tags to which this policy based route
-       * applies to. VM instances that have ANY of tags specified here will
-       * install this PBR.
+       * Optional. A list of VM instance tags that this policy-based route applies
+       * to. VM instances that have ANY of tags specified here installs this PBR.
        * </pre>
        *
        * <code>repeated string tags = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -887,9 +873,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. A list of VM instance tags to which this policy based route
-       * applies to. VM instances that have ANY of tags specified here will
-       * install this PBR.
+       * Optional. A list of VM instance tags that this policy-based route applies
+       * to. VM instances that have ANY of tags specified here installs this PBR.
        * </pre>
        *
        * <code>repeated string tags = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -911,9 +896,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. A list of VM instance tags to which this policy based route
-       * applies to. VM instances that have ANY of tags specified here will
-       * install this PBR.
+       * Optional. A list of VM instance tags that this policy-based route applies
+       * to. VM instances that have ANY of tags specified here installs this PBR.
        * </pre>
        *
        * <code>repeated string tags = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -932,9 +916,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. A list of VM instance tags to which this policy based route
-       * applies to. VM instances that have ANY of tags specified here will
-       * install this PBR.
+       * Optional. A list of VM instance tags that this policy-based route applies
+       * to. VM instances that have ANY of tags specified here installs this PBR.
        * </pre>
        *
        * <code>repeated string tags = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -952,9 +935,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. A list of VM instance tags to which this policy based route
-       * applies to. VM instances that have ANY of tags specified here will
-       * install this PBR.
+       * Optional. A list of VM instance tags that this policy-based route applies
+       * to. VM instances that have ANY of tags specified here installs this PBR.
        * </pre>
        *
        * <code>repeated string tags = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1051,7 +1033,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Cloud region to install this policy based route on interconnect
+     * Optional. Cloud region to install this policy-based route on interconnect
      * attachment. Use `all` to install it on all interconnect attachments.
      * </pre>
      *
@@ -1064,7 +1046,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Cloud region to install this policy based route on interconnect
+     * Optional. Cloud region to install this policy-based route on interconnect
      * attachment. Use `all` to install it on all interconnect attachments.
      * </pre>
      *
@@ -1078,7 +1060,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * InterconnectAttachment to which this route applies to.
+   * InterconnectAttachment that this route applies to.
    * </pre>
    *
    * Protobuf type {@code
@@ -1128,7 +1110,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Cloud region to install this policy based route on interconnect
+     * Optional. Cloud region to install this policy-based route on interconnect
      * attachment. Use `all` to install it on all interconnect attachments.
      * </pre>
      *
@@ -1152,7 +1134,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Cloud region to install this policy based route on interconnect
+     * Optional. Cloud region to install this policy-based route on interconnect
      * attachment. Use `all` to install it on all interconnect attachments.
      * </pre>
      *
@@ -1346,7 +1328,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * InterconnectAttachment to which this route applies to.
+     * InterconnectAttachment that this route applies to.
      * </pre>
      *
      * Protobuf type {@code
@@ -1550,7 +1532,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Cloud region to install this policy based route on interconnect
+       * Optional. Cloud region to install this policy-based route on interconnect
        * attachment. Use `all` to install it on all interconnect attachments.
        * </pre>
        *
@@ -1573,7 +1555,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Cloud region to install this policy based route on interconnect
+       * Optional. Cloud region to install this policy-based route on interconnect
        * attachment. Use `all` to install it on all interconnect attachments.
        * </pre>
        *
@@ -1596,7 +1578,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Cloud region to install this policy based route on interconnect
+       * Optional. Cloud region to install this policy-based route on interconnect
        * attachment. Use `all` to install it on all interconnect attachments.
        * </pre>
        *
@@ -1618,7 +1600,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Cloud region to install this policy based route on interconnect
+       * Optional. Cloud region to install this policy-based route on interconnect
        * attachment. Use `all` to install it on all interconnect attachments.
        * </pre>
        *
@@ -1636,7 +1618,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Cloud region to install this policy based route on interconnect
+       * Optional. Cloud region to install this policy-based route on interconnect
        * attachment. Use `all` to install it on all interconnect attachments.
        * </pre>
        *
@@ -1734,7 +1716,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The IP protocol that this policy based route applies to. Valid
+     * Optional. The IP protocol that this policy-based route applies to. Valid
      * values are 'TCP', 'UDP', and 'ALL'. Default is 'ALL'.
      * </pre>
      *
@@ -1747,7 +1729,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The IP protocol that this policy based route applies to. Valid
+     * Optional. The IP protocol that this policy-based route applies to. Valid
      * values are 'TCP', 'UDP', and 'ALL'. Default is 'ALL'.
      * </pre>
      *
@@ -1761,7 +1743,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The source IP range of outgoing packets that this policy based
+     * Optional. The source IP range of outgoing packets that this policy-based
      * route applies to. Default is "0.0.0.0/0" if protocol version is IPv4.
      * </pre>
      *
@@ -1774,7 +1756,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The source IP range of outgoing packets that this policy based
+     * Optional. The source IP range of outgoing packets that this policy-based
      * route applies to. Default is "0.0.0.0/0" if protocol version is IPv4.
      * </pre>
      *
@@ -1788,9 +1770,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The destination IP range of outgoing packets that this policy
-     * based route applies to. Default is "0.0.0.0/0" if protocol version is
-     * IPv4.
+     * Optional. The destination IP range of outgoing packets that this
+     * policy-based route applies to. Default is "0.0.0.0/0" if protocol version
+     * is IPv4.
      * </pre>
      *
      * <code>string dest_range = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1802,9 +1784,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The destination IP range of outgoing packets that this policy
-     * based route applies to. Default is "0.0.0.0/0" if protocol version is
-     * IPv4.
+     * Optional. The destination IP range of outgoing packets that this
+     * policy-based route applies to. Default is "0.0.0.0/0" if protocol version
+     * is IPv4.
      * </pre>
      *
      * <code>string dest_range = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1817,8 +1799,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Internet protocol versions this policy based route applies to.
-     * For this version, only IPV4 is supported.
+     * Required. Internet protocol versions this policy-based route applies to.
+     * For this version, only IPV4 is supported. IPV6 is supported in preview.
      * </pre>
      *
      * <code>
@@ -1832,8 +1814,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Internet protocol versions this policy based route applies to.
-     * For this version, only IPV4 is supported.
+     * Required. Internet protocol versions this policy-based route applies to.
+     * For this version, only IPV4 is supported. IPV6 is supported in preview.
      * </pre>
      *
      * <code>
@@ -2041,7 +2023,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The IP protocol that this policy based route applies to. Valid
+     * Optional. The IP protocol that this policy-based route applies to. Valid
      * values are 'TCP', 'UDP', and 'ALL'. Default is 'ALL'.
      * </pre>
      *
@@ -2065,7 +2047,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The IP protocol that this policy based route applies to. Valid
+     * Optional. The IP protocol that this policy-based route applies to. Valid
      * values are 'TCP', 'UDP', and 'ALL'. Default is 'ALL'.
      * </pre>
      *
@@ -2094,7 +2076,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The source IP range of outgoing packets that this policy based
+     * Optional. The source IP range of outgoing packets that this policy-based
      * route applies to. Default is "0.0.0.0/0" if protocol version is IPv4.
      * </pre>
      *
@@ -2118,7 +2100,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The source IP range of outgoing packets that this policy based
+     * Optional. The source IP range of outgoing packets that this policy-based
      * route applies to. Default is "0.0.0.0/0" if protocol version is IPv4.
      * </pre>
      *
@@ -2147,9 +2129,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The destination IP range of outgoing packets that this policy
-     * based route applies to. Default is "0.0.0.0/0" if protocol version is
-     * IPv4.
+     * Optional. The destination IP range of outgoing packets that this
+     * policy-based route applies to. Default is "0.0.0.0/0" if protocol version
+     * is IPv4.
      * </pre>
      *
      * <code>string dest_range = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2172,9 +2154,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The destination IP range of outgoing packets that this policy
-     * based route applies to. Default is "0.0.0.0/0" if protocol version is
-     * IPv4.
+     * Optional. The destination IP range of outgoing packets that this
+     * policy-based route applies to. Default is "0.0.0.0/0" if protocol version
+     * is IPv4.
      * </pre>
      *
      * <code>string dest_range = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2200,8 +2182,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Internet protocol versions this policy based route applies to.
-     * For this version, only IPV4 is supported.
+     * Required. Internet protocol versions this policy-based route applies to.
+     * For this version, only IPV4 is supported. IPV6 is supported in preview.
      * </pre>
      *
      * <code>
@@ -2218,8 +2200,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Internet protocol versions this policy based route applies to.
-     * For this version, only IPV4 is supported.
+     * Required. Internet protocol versions this policy-based route applies to.
+     * For this version, only IPV4 is supported. IPV6 is supported in preview.
      * </pre>
      *
      * <code>
@@ -2674,7 +2656,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The IP protocol that this policy based route applies to. Valid
+       * Optional. The IP protocol that this policy-based route applies to. Valid
        * values are 'TCP', 'UDP', and 'ALL'. Default is 'ALL'.
        * </pre>
        *
@@ -2697,7 +2679,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The IP protocol that this policy based route applies to. Valid
+       * Optional. The IP protocol that this policy-based route applies to. Valid
        * values are 'TCP', 'UDP', and 'ALL'. Default is 'ALL'.
        * </pre>
        *
@@ -2720,7 +2702,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The IP protocol that this policy based route applies to. Valid
+       * Optional. The IP protocol that this policy-based route applies to. Valid
        * values are 'TCP', 'UDP', and 'ALL'. Default is 'ALL'.
        * </pre>
        *
@@ -2742,7 +2724,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The IP protocol that this policy based route applies to. Valid
+       * Optional. The IP protocol that this policy-based route applies to. Valid
        * values are 'TCP', 'UDP', and 'ALL'. Default is 'ALL'.
        * </pre>
        *
@@ -2760,7 +2742,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The IP protocol that this policy based route applies to. Valid
+       * Optional. The IP protocol that this policy-based route applies to. Valid
        * values are 'TCP', 'UDP', and 'ALL'. Default is 'ALL'.
        * </pre>
        *
@@ -2785,7 +2767,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The source IP range of outgoing packets that this policy based
+       * Optional. The source IP range of outgoing packets that this policy-based
        * route applies to. Default is "0.0.0.0/0" if protocol version is IPv4.
        * </pre>
        *
@@ -2808,7 +2790,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The source IP range of outgoing packets that this policy based
+       * Optional. The source IP range of outgoing packets that this policy-based
        * route applies to. Default is "0.0.0.0/0" if protocol version is IPv4.
        * </pre>
        *
@@ -2831,7 +2813,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The source IP range of outgoing packets that this policy based
+       * Optional. The source IP range of outgoing packets that this policy-based
        * route applies to. Default is "0.0.0.0/0" if protocol version is IPv4.
        * </pre>
        *
@@ -2853,7 +2835,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The source IP range of outgoing packets that this policy based
+       * Optional. The source IP range of outgoing packets that this policy-based
        * route applies to. Default is "0.0.0.0/0" if protocol version is IPv4.
        * </pre>
        *
@@ -2871,7 +2853,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The source IP range of outgoing packets that this policy based
+       * Optional. The source IP range of outgoing packets that this policy-based
        * route applies to. Default is "0.0.0.0/0" if protocol version is IPv4.
        * </pre>
        *
@@ -2896,9 +2878,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The destination IP range of outgoing packets that this policy
-       * based route applies to. Default is "0.0.0.0/0" if protocol version is
-       * IPv4.
+       * Optional. The destination IP range of outgoing packets that this
+       * policy-based route applies to. Default is "0.0.0.0/0" if protocol version
+       * is IPv4.
        * </pre>
        *
        * <code>string dest_range = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2920,9 +2902,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The destination IP range of outgoing packets that this policy
-       * based route applies to. Default is "0.0.0.0/0" if protocol version is
-       * IPv4.
+       * Optional. The destination IP range of outgoing packets that this
+       * policy-based route applies to. Default is "0.0.0.0/0" if protocol version
+       * is IPv4.
        * </pre>
        *
        * <code>string dest_range = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2944,9 +2926,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The destination IP range of outgoing packets that this policy
-       * based route applies to. Default is "0.0.0.0/0" if protocol version is
-       * IPv4.
+       * Optional. The destination IP range of outgoing packets that this
+       * policy-based route applies to. Default is "0.0.0.0/0" if protocol version
+       * is IPv4.
        * </pre>
        *
        * <code>string dest_range = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2967,9 +2949,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The destination IP range of outgoing packets that this policy
-       * based route applies to. Default is "0.0.0.0/0" if protocol version is
-       * IPv4.
+       * Optional. The destination IP range of outgoing packets that this
+       * policy-based route applies to. Default is "0.0.0.0/0" if protocol version
+       * is IPv4.
        * </pre>
        *
        * <code>string dest_range = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2986,9 +2968,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The destination IP range of outgoing packets that this policy
-       * based route applies to. Default is "0.0.0.0/0" if protocol version is
-       * IPv4.
+       * Optional. The destination IP range of outgoing packets that this
+       * policy-based route applies to. Default is "0.0.0.0/0" if protocol version
+       * is IPv4.
        * </pre>
        *
        * <code>string dest_range = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3012,8 +2994,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Internet protocol versions this policy based route applies to.
-       * For this version, only IPV4 is supported.
+       * Required. Internet protocol versions this policy-based route applies to.
+       * For this version, only IPV4 is supported. IPV6 is supported in preview.
        * </pre>
        *
        * <code>
@@ -3030,8 +3012,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Internet protocol versions this policy based route applies to.
-       * For this version, only IPV4 is supported.
+       * Required. Internet protocol versions this policy-based route applies to.
+       * For this version, only IPV4 is supported. IPV6 is supported in preview.
        * </pre>
        *
        * <code>
@@ -3051,8 +3033,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Internet protocol versions this policy based route applies to.
-       * For this version, only IPV4 is supported.
+       * Required. Internet protocol versions this policy-based route applies to.
+       * For this version, only IPV4 is supported. IPV6 is supported in preview.
        * </pre>
        *
        * <code>
@@ -3076,8 +3058,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Internet protocol versions this policy based route applies to.
-       * For this version, only IPV4 is supported.
+       * Required. Internet protocol versions this policy-based route applies to.
+       * For this version, only IPV4 is supported. IPV6 is supported in preview.
        * </pre>
        *
        * <code>
@@ -3101,8 +3083,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Internet protocol versions this policy based route applies to.
-       * For this version, only IPV4 is supported.
+       * Required. Internet protocol versions this policy-based route applies to.
+       * For this version, only IPV4 is supported. IPV6 is supported in preview.
        * </pre>
        *
        * <code>
@@ -3388,7 +3370,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Warning code for Policy Based Routing. Expect to add values in the
+     * Warning code for policy-based routing. Expect to add values in the
      * future.
      * </pre>
      *
@@ -3409,9 +3391,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The policy based route is not active and functioning. Common causes are
-       * the dependent network was deleted or the resource project was turned
-       * off.
+       * The policy-based route is not active and functioning. Common causes are
+       * that the dependent network was deleted or the resource project was
+       * turned off.
        * </pre>
        *
        * <code>RESOURCE_NOT_ACTIVE = 1;</code>
@@ -3421,7 +3403,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The policy based route is being modified (e.g. created/deleted) at this
+       * The policy-based route is being modified (e.g. created/deleted) at this
        * time.
        * </pre>
        *
@@ -3445,9 +3427,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The policy based route is not active and functioning. Common causes are
-       * the dependent network was deleted or the resource project was turned
-       * off.
+       * The policy-based route is not active and functioning. Common causes are
+       * that the dependent network was deleted or the resource project was
+       * turned off.
        * </pre>
        *
        * <code>RESOURCE_NOT_ACTIVE = 1;</code>
@@ -3457,7 +3439,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The policy based route is being modified (e.g. created/deleted) at this
+       * The policy-based route is being modified (e.g. created/deleted) at this
        * time.
        * </pre>
        *
@@ -4788,7 +4770,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. VM instances to which this policy based route applies to.
+   * Optional. VM instances that this policy-based route applies to.
    * </pre>
    *
    * <code>
@@ -4805,7 +4787,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. VM instances to which this policy based route applies to.
+   * Optional. VM instances that this policy-based route applies to.
    * </pre>
    *
    * <code>
@@ -4827,7 +4809,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. VM instances to which this policy based route applies to.
+   * Optional. VM instances that this policy-based route applies to.
    * </pre>
    *
    * <code>
@@ -4849,7 +4831,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The interconnect attachments to which this route applies to.
+   * Optional. The interconnect attachments that this policy-based route
+   * applies to.
    * </pre>
    *
    * <code>
@@ -4866,7 +4849,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The interconnect attachments to which this route applies to.
+   * Optional. The interconnect attachments that this policy-based route
+   * applies to.
    * </pre>
    *
    * <code>
@@ -4889,7 +4873,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The interconnect attachments to which this route applies to.
+   * Optional. The interconnect attachments that this policy-based route
+   * applies to.
    * </pre>
    *
    * <code>
@@ -4912,9 +4897,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The IP of a global access enabled L4 ILB that should be the
-   * next hop to handle matching packets. For this version, only
-   * next_hop_ilb_ip is supported.
+   * Optional. The IP address of a global-access-enabled L4 ILB that is the
+   * next hop for matching packets. For this version, only nextHopIlbIp is
+   * supported.
    * </pre>
    *
    * <code>string next_hop_ilb_ip = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4928,9 +4913,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The IP of a global access enabled L4 ILB that should be the
-   * next hop to handle matching packets. For this version, only
-   * next_hop_ilb_ip is supported.
+   * Optional. The IP address of a global-access-enabled L4 ILB that is the
+   * next hop for matching packets. For this version, only nextHopIlbIp is
+   * supported.
    * </pre>
    *
    * <code>string next_hop_ilb_ip = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4957,9 +4942,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The IP of a global access enabled L4 ILB that should be the
-   * next hop to handle matching packets. For this version, only
-   * next_hop_ilb_ip is supported.
+   * Optional. The IP address of a global-access-enabled L4 ILB that is the
+   * next hop for matching packets. For this version, only nextHopIlbIp is
+   * supported.
    * </pre>
    *
    * <code>string next_hop_ilb_ip = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5108,7 +5093,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Time when the PolicyBasedRoute was created.
+   * Output only. Time when the policy-based route was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5124,7 +5109,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Time when the PolicyBasedRoute was created.
+   * Output only. Time when the policy-based route was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5140,7 +5125,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Time when the PolicyBasedRoute was created.
+   * Output only. Time when the policy-based route was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5157,7 +5142,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Time when the PolicyBasedRoute was updated.
+   * Output only. Time when the policy-based route was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5173,7 +5158,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Time when the PolicyBasedRoute was updated.
+   * Output only. Time when the policy-based route was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5189,7 +5174,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Time when the PolicyBasedRoute was updated.
+   * Output only. Time when the policy-based route was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5363,8 +5348,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Fully-qualified URL of the network that this route applies to.
-   * e.g. projects/my-project/global/networks/my-network.
+   * Required. Fully-qualified URL of the network that this route applies to,
+   * for example: projects/my-project/global/networks/my-network.
    * </pre>
    *
    * <code>
@@ -5389,8 +5374,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Fully-qualified URL of the network that this route applies to.
-   * e.g. projects/my-project/global/networks/my-network.
+   * Required. Fully-qualified URL of the network that this route applies to,
+   * for example: projects/my-project/global/networks/my-network.
    * </pre>
    *
    * <code>
@@ -5475,9 +5460,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The priority of this policy based route. Priority is used to
-   * break ties in cases where there are more than one matching policy based
-   * routes found. In cases where multiple policy based routes are matched, the
+   * Optional. The priority of this policy-based route. Priority is used to
+   * break ties in cases where there are more than one matching policy-based
+   * routes found. In cases where multiple policy-based routes are matched, the
    * one with the lowest-numbered priority value wins. The default value is
    * 1000. The priority value must be from 1 to 65535, inclusive.
    * </pre>
@@ -5641,7 +5626,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Type of this resource. Always
-   * networkconnectivity#policyBasedRoute for Policy Based Route resources.
+   * networkconnectivity#policyBasedRoute for policy-based Route resources.
    * </pre>
    *
    * <code>string kind = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5665,7 +5650,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Type of this resource. Always
-   * networkconnectivity#policyBasedRoute for Policy Based Route resources.
+   * networkconnectivity#policyBasedRoute for policy-based Route resources.
    * </pre>
    *
    * <code>string kind = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6046,11 +6031,10 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Policy Based Routes (PBR) are more powerful routes that allows GCP customers
-   * to route their L4 network traffic based on not just destination IP, but also
-   * source IP, protocol and more. A PBR always take precedence when it conflicts
-   * with other types of routes.
-   * Next id: 22
+   * Policy-based routes route L4 network traffic based on not just destination IP
+   * address, but also source IP address, protocol, and more. If a policy-based
+   * route conflicts with other types of routes, the policy-based route always
+   * takes precedence.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.PolicyBasedRoute}
@@ -6596,7 +6580,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. VM instances to which this policy based route applies to.
+     * Optional. VM instances that this policy-based route applies to.
      * </pre>
      *
      * <code>
@@ -6613,7 +6597,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. VM instances to which this policy based route applies to.
+     * Optional. VM instances that this policy-based route applies to.
      * </pre>
      *
      * <code>
@@ -6643,7 +6627,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. VM instances to which this policy based route applies to.
+     * Optional. VM instances that this policy-based route applies to.
      * </pre>
      *
      * <code>
@@ -6668,7 +6652,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. VM instances to which this policy based route applies to.
+     * Optional. VM instances that this policy-based route applies to.
      * </pre>
      *
      * <code>
@@ -6691,7 +6675,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. VM instances to which this policy based route applies to.
+     * Optional. VM instances that this policy-based route applies to.
      * </pre>
      *
      * <code>
@@ -6729,7 +6713,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. VM instances to which this policy based route applies to.
+     * Optional. VM instances that this policy-based route applies to.
      * </pre>
      *
      * <code>
@@ -6756,7 +6740,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. VM instances to which this policy based route applies to.
+     * Optional. VM instances that this policy-based route applies to.
      * </pre>
      *
      * <code>
@@ -6771,7 +6755,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. VM instances to which this policy based route applies to.
+     * Optional. VM instances that this policy-based route applies to.
      * </pre>
      *
      * <code>
@@ -6795,7 +6779,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. VM instances to which this policy based route applies to.
+     * Optional. VM instances that this policy-based route applies to.
      * </pre>
      *
      * <code>
@@ -6838,7 +6822,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The interconnect attachments to which this route applies to.
+     * Optional. The interconnect attachments that this policy-based route
+     * applies to.
      * </pre>
      *
      * <code>
@@ -6855,7 +6840,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The interconnect attachments to which this route applies to.
+     * Optional. The interconnect attachments that this policy-based route
+     * applies to.
      * </pre>
      *
      * <code>
@@ -6886,7 +6872,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The interconnect attachments to which this route applies to.
+     * Optional. The interconnect attachments that this policy-based route
+     * applies to.
      * </pre>
      *
      * <code>
@@ -6911,7 +6898,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The interconnect attachments to which this route applies to.
+     * Optional. The interconnect attachments that this policy-based route
+     * applies to.
      * </pre>
      *
      * <code>
@@ -6934,7 +6922,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The interconnect attachments to which this route applies to.
+     * Optional. The interconnect attachments that this policy-based route
+     * applies to.
      * </pre>
      *
      * <code>
@@ -6974,7 +6963,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The interconnect attachments to which this route applies to.
+     * Optional. The interconnect attachments that this policy-based route
+     * applies to.
      * </pre>
      *
      * <code>
@@ -7001,7 +6991,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The interconnect attachments to which this route applies to.
+     * Optional. The interconnect attachments that this policy-based route
+     * applies to.
      * </pre>
      *
      * <code>
@@ -7016,7 +7007,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The interconnect attachments to which this route applies to.
+     * Optional. The interconnect attachments that this policy-based route
+     * applies to.
      * </pre>
      *
      * <code>
@@ -7041,7 +7033,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The interconnect attachments to which this route applies to.
+     * Optional. The interconnect attachments that this policy-based route
+     * applies to.
      * </pre>
      *
      * <code>
@@ -7082,9 +7075,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The IP of a global access enabled L4 ILB that should be the
-     * next hop to handle matching packets. For this version, only
-     * next_hop_ilb_ip is supported.
+     * Optional. The IP address of a global-access-enabled L4 ILB that is the
+     * next hop for matching packets. For this version, only nextHopIlbIp is
+     * supported.
      * </pre>
      *
      * <code>string next_hop_ilb_ip = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7099,9 +7092,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The IP of a global access enabled L4 ILB that should be the
-     * next hop to handle matching packets. For this version, only
-     * next_hop_ilb_ip is supported.
+     * Optional. The IP address of a global-access-enabled L4 ILB that is the
+     * next hop for matching packets. For this version, only nextHopIlbIp is
+     * supported.
      * </pre>
      *
      * <code>string next_hop_ilb_ip = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7129,9 +7122,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The IP of a global access enabled L4 ILB that should be the
-     * next hop to handle matching packets. For this version, only
-     * next_hop_ilb_ip is supported.
+     * Optional. The IP address of a global-access-enabled L4 ILB that is the
+     * next hop for matching packets. For this version, only nextHopIlbIp is
+     * supported.
      * </pre>
      *
      * <code>string next_hop_ilb_ip = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7159,9 +7152,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The IP of a global access enabled L4 ILB that should be the
-     * next hop to handle matching packets. For this version, only
-     * next_hop_ilb_ip is supported.
+     * Optional. The IP address of a global-access-enabled L4 ILB that is the
+     * next hop for matching packets. For this version, only nextHopIlbIp is
+     * supported.
      * </pre>
      *
      * <code>string next_hop_ilb_ip = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7182,9 +7175,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The IP of a global access enabled L4 ILB that should be the
-     * next hop to handle matching packets. For this version, only
-     * next_hop_ilb_ip is supported.
+     * Optional. The IP address of a global-access-enabled L4 ILB that is the
+     * next hop for matching packets. For this version, only nextHopIlbIp is
+     * supported.
      * </pre>
      *
      * <code>string next_hop_ilb_ip = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7203,9 +7196,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The IP of a global access enabled L4 ILB that should be the
-     * next hop to handle matching packets. For this version, only
-     * next_hop_ilb_ip is supported.
+     * Optional. The IP address of a global-access-enabled L4 ILB that is the
+     * next hop for matching packets. For this version, only nextHopIlbIp is
+     * supported.
      * </pre>
      *
      * <code>string next_hop_ilb_ip = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7481,7 +7474,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the PolicyBasedRoute was created.
+     * Output only. Time when the policy-based route was created.
      * </pre>
      *
      * <code>
@@ -7497,7 +7490,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the PolicyBasedRoute was created.
+     * Output only. Time when the policy-based route was created.
      * </pre>
      *
      * <code>
@@ -7519,7 +7512,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the PolicyBasedRoute was created.
+     * Output only. Time when the policy-based route was created.
      * </pre>
      *
      * <code>
@@ -7543,7 +7536,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the PolicyBasedRoute was created.
+     * Output only. Time when the policy-based route was created.
      * </pre>
      *
      * <code>
@@ -7564,7 +7557,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the PolicyBasedRoute was created.
+     * Output only. Time when the policy-based route was created.
      * </pre>
      *
      * <code>
@@ -7593,7 +7586,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the PolicyBasedRoute was created.
+     * Output only. Time when the policy-based route was created.
      * </pre>
      *
      * <code>
@@ -7614,7 +7607,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the PolicyBasedRoute was created.
+     * Output only. Time when the policy-based route was created.
      * </pre>
      *
      * <code>
@@ -7630,7 +7623,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the PolicyBasedRoute was created.
+     * Output only. Time when the policy-based route was created.
      * </pre>
      *
      * <code>
@@ -7650,7 +7643,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the PolicyBasedRoute was created.
+     * Output only. Time when the policy-based route was created.
      * </pre>
      *
      * <code>
@@ -7684,7 +7677,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the PolicyBasedRoute was updated.
+     * Output only. Time when the policy-based route was updated.
      * </pre>
      *
      * <code>
@@ -7700,7 +7693,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the PolicyBasedRoute was updated.
+     * Output only. Time when the policy-based route was updated.
      * </pre>
      *
      * <code>
@@ -7722,7 +7715,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the PolicyBasedRoute was updated.
+     * Output only. Time when the policy-based route was updated.
      * </pre>
      *
      * <code>
@@ -7746,7 +7739,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the PolicyBasedRoute was updated.
+     * Output only. Time when the policy-based route was updated.
      * </pre>
      *
      * <code>
@@ -7767,7 +7760,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the PolicyBasedRoute was updated.
+     * Output only. Time when the policy-based route was updated.
      * </pre>
      *
      * <code>
@@ -7796,7 +7789,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the PolicyBasedRoute was updated.
+     * Output only. Time when the policy-based route was updated.
      * </pre>
      *
      * <code>
@@ -7817,7 +7810,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the PolicyBasedRoute was updated.
+     * Output only. Time when the policy-based route was updated.
      * </pre>
      *
      * <code>
@@ -7833,7 +7826,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the PolicyBasedRoute was updated.
+     * Output only. Time when the policy-based route was updated.
      * </pre>
      *
      * <code>
@@ -7853,7 +7846,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the PolicyBasedRoute was updated.
+     * Output only. Time when the policy-based route was updated.
      * </pre>
      *
      * <code>
@@ -8156,8 +8149,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Fully-qualified URL of the network that this route applies to.
-     * e.g. projects/my-project/global/networks/my-network.
+     * Required. Fully-qualified URL of the network that this route applies to,
+     * for example: projects/my-project/global/networks/my-network.
      * </pre>
      *
      * <code>
@@ -8181,8 +8174,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Fully-qualified URL of the network that this route applies to.
-     * e.g. projects/my-project/global/networks/my-network.
+     * Required. Fully-qualified URL of the network that this route applies to,
+     * for example: projects/my-project/global/networks/my-network.
      * </pre>
      *
      * <code>
@@ -8206,8 +8199,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Fully-qualified URL of the network that this route applies to.
-     * e.g. projects/my-project/global/networks/my-network.
+     * Required. Fully-qualified URL of the network that this route applies to,
+     * for example: projects/my-project/global/networks/my-network.
      * </pre>
      *
      * <code>
@@ -8230,8 +8223,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Fully-qualified URL of the network that this route applies to.
-     * e.g. projects/my-project/global/networks/my-network.
+     * Required. Fully-qualified URL of the network that this route applies to,
+     * for example: projects/my-project/global/networks/my-network.
      * </pre>
      *
      * <code>
@@ -8250,8 +8243,8 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Fully-qualified URL of the network that this route applies to.
-     * e.g. projects/my-project/global/networks/my-network.
+     * Required. Fully-qualified URL of the network that this route applies to,
+     * for example: projects/my-project/global/networks/my-network.
      * </pre>
      *
      * <code>
@@ -8487,9 +8480,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The priority of this policy based route. Priority is used to
-     * break ties in cases where there are more than one matching policy based
-     * routes found. In cases where multiple policy based routes are matched, the
+     * Optional. The priority of this policy-based route. Priority is used to
+     * break ties in cases where there are more than one matching policy-based
+     * routes found. In cases where multiple policy-based routes are matched, the
      * one with the lowest-numbered priority value wins. The default value is
      * 1000. The priority value must be from 1 to 65535, inclusive.
      * </pre>
@@ -8506,9 +8499,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The priority of this policy based route. Priority is used to
-     * break ties in cases where there are more than one matching policy based
-     * routes found. In cases where multiple policy based routes are matched, the
+     * Optional. The priority of this policy-based route. Priority is used to
+     * break ties in cases where there are more than one matching policy-based
+     * routes found. In cases where multiple policy-based routes are matched, the
      * one with the lowest-numbered priority value wins. The default value is
      * 1000. The priority value must be from 1 to 65535, inclusive.
      * </pre>
@@ -8529,9 +8522,9 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The priority of this policy based route. Priority is used to
-     * break ties in cases where there are more than one matching policy based
-     * routes found. In cases where multiple policy based routes are matched, the
+     * Optional. The priority of this policy-based route. Priority is used to
+     * break ties in cases where there are more than one matching policy-based
+     * routes found. In cases where multiple policy-based routes are matched, the
      * one with the lowest-numbered priority value wins. The default value is
      * 1000. The priority value must be from 1 to 65535, inclusive.
      * </pre>
@@ -9084,7 +9077,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Type of this resource. Always
-     * networkconnectivity#policyBasedRoute for Policy Based Route resources.
+     * networkconnectivity#policyBasedRoute for policy-based Route resources.
      * </pre>
      *
      * <code>string kind = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9107,7 +9100,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Type of this resource. Always
-     * networkconnectivity#policyBasedRoute for Policy Based Route resources.
+     * networkconnectivity#policyBasedRoute for policy-based Route resources.
      * </pre>
      *
      * <code>string kind = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9130,7 +9123,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Type of this resource. Always
-     * networkconnectivity#policyBasedRoute for Policy Based Route resources.
+     * networkconnectivity#policyBasedRoute for policy-based Route resources.
      * </pre>
      *
      * <code>string kind = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9152,7 +9145,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Type of this resource. Always
-     * networkconnectivity#policyBasedRoute for Policy Based Route resources.
+     * networkconnectivity#policyBasedRoute for policy-based Route resources.
      * </pre>
      *
      * <code>string kind = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9170,7 +9163,7 @@ public final class PolicyBasedRoute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Type of this resource. Always
-     * networkconnectivity#policyBasedRoute for Policy Based Route resources.
+     * networkconnectivity#policyBasedRoute for policy-based Route resources.
      * </pre>
      *
      * <code>string kind = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -254,6 +254,43 @@ public interface DocumentInfoOrBuilder
    */
   boolean getJoined();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The conversion value associated with this Document.
+   * Must be set if
+   * [UserEvent.event_type][google.cloud.discoveryengine.v1.UserEvent.event_type]
+   * is "conversion".
+   *
+   * For example, a value of 1000 signifies that 1000 seconds were spent viewing
+   * a Document for the `watch` conversion type.
+   * </pre>
+   *
+   * <code>optional float conversion_value = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the conversionValue field is set.
+   */
+  boolean hasConversionValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The conversion value associated with this Document.
+   * Must be set if
+   * [UserEvent.event_type][google.cloud.discoveryengine.v1.UserEvent.event_type]
+   * is "conversion".
+   *
+   * For example, a value of 1000 signifies that 1000 seconds were spent viewing
+   * a Document for the `watch` conversion type.
+   * </pre>
+   *
+   * <code>optional float conversion_value = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The conversionValue.
+   */
+  float getConversionValue();
+
   com.google.cloud.discoveryengine.v1.DocumentInfo.DocumentDescriptorCase
       getDocumentDescriptorCase();
 }

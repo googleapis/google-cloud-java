@@ -74,7 +74,10 @@ import com.google.cloud.oracledatabase.v1.ListEntitlementsResponse;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsResponse;
 import com.google.cloud.oracledatabase.v1.OperationMetadata;
+import com.google.cloud.oracledatabase.v1.RestartAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RestoreAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.StartAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.StopAutonomousDatabaseRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
@@ -310,6 +313,38 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
       listAutonomousDatabaseBackupsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listAutonomousDatabaseBackupsCallable()");
+  }
+
+  public OperationCallable<StopAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      stopAutonomousDatabaseOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: stopAutonomousDatabaseOperationCallable()");
+  }
+
+  public UnaryCallable<StopAutonomousDatabaseRequest, Operation> stopAutonomousDatabaseCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopAutonomousDatabaseCallable()");
+  }
+
+  public OperationCallable<StartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      startAutonomousDatabaseOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: startAutonomousDatabaseOperationCallable()");
+  }
+
+  public UnaryCallable<StartAutonomousDatabaseRequest, Operation>
+      startAutonomousDatabaseCallable() {
+    throw new UnsupportedOperationException("Not implemented: startAutonomousDatabaseCallable()");
+  }
+
+  public OperationCallable<RestartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      restartAutonomousDatabaseOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: restartAutonomousDatabaseOperationCallable()");
+  }
+
+  public UnaryCallable<RestartAutonomousDatabaseRequest, Operation>
+      restartAutonomousDatabaseCallable() {
+    throw new UnsupportedOperationException("Not implemented: restartAutonomousDatabaseCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

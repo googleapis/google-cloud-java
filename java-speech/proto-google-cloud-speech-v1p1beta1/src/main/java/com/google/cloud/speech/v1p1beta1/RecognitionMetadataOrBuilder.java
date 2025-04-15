@@ -227,7 +227,7 @@ public interface RecognitionMetadataOrBuilder
    * <code>int64 obfuscated_id = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v1p1beta1.RecognitionMetadata.obfuscated_id is deprecated. See
-   *     google/cloud/speech/v1p1beta1/cloud_speech.proto;l=633
+   *     google/cloud/speech/v1p1beta1/cloud_speech.proto;l=637
    * @return The obfuscatedId.
    */
   @java.lang.Deprecated

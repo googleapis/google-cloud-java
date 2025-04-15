@@ -70,8 +70,8 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The format of the audio byte stream.
-   * For now, streaming only supports PCM and OGG_OPUS. All other encodings
-   * will return an error.
+   * Streaming supports PCM, ALAW, MULAW and OGG_OPUS. All other encodings
+   * return an error.
    * </pre>
    *
    * <code>
@@ -89,8 +89,8 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The format of the audio byte stream.
-   * For now, streaming only supports PCM and OGG_OPUS. All other encodings
-   * will return an error.
+   * Streaming supports PCM, ALAW, MULAW and OGG_OPUS. All other encodings
+   * return an error.
    * </pre>
    *
    * <code>
@@ -124,6 +124,29 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
     return sampleRateHertz_;
   }
 
+  public static final int SPEAKING_RATE_FIELD_NUMBER = 3;
+  private double speakingRate_ = 0D;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Speaking rate/speed, in the range [0.25, 2.0]. 1.0 is
+   * the normal native speed supported by the specific voice. 2.0 is twice as
+   * fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0
+   * speed. Any other values &lt; 0.25 or &gt; 2.0 will return an error.
+   * </pre>
+   *
+   * <code>
+   * double speaking_rate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speakingRate.
+   */
+  @java.lang.Override
+  public double getSpeakingRate() {
+    return speakingRate_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -145,6 +168,9 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
     if (sampleRateHertz_ != 0) {
       output.writeInt32(2, sampleRateHertz_);
     }
+    if (java.lang.Double.doubleToRawLongBits(speakingRate_) != 0) {
+      output.writeDouble(3, speakingRate_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -160,6 +186,9 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
     }
     if (sampleRateHertz_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, sampleRateHertz_);
+    }
+    if (java.lang.Double.doubleToRawLongBits(speakingRate_) != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, speakingRate_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -179,6 +208,8 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
 
     if (audioEncoding_ != other.audioEncoding_) return false;
     if (getSampleRateHertz() != other.getSampleRateHertz()) return false;
+    if (java.lang.Double.doubleToLongBits(getSpeakingRate())
+        != java.lang.Double.doubleToLongBits(other.getSpeakingRate())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -194,6 +225,11 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + audioEncoding_;
     hash = (37 * hash) + SAMPLE_RATE_HERTZ_FIELD_NUMBER;
     hash = (53 * hash) + getSampleRateHertz();
+    hash = (37 * hash) + SPEAKING_RATE_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(
+                java.lang.Double.doubleToLongBits(getSpeakingRate()));
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -336,6 +372,7 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
       bitField0_ = 0;
       audioEncoding_ = 0;
       sampleRateHertz_ = 0;
+      speakingRate_ = 0D;
       return this;
     }
 
@@ -377,6 +414,9 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.sampleRateHertz_ = sampleRateHertz_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.speakingRate_ = speakingRate_;
       }
     }
 
@@ -432,6 +472,9 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
       if (other.getSampleRateHertz() != 0) {
         setSampleRateHertz(other.getSampleRateHertz());
       }
+      if (other.getSpeakingRate() != 0D) {
+        setSpeakingRate(other.getSpeakingRate());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -470,6 +513,12 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 25:
+              {
+                speakingRate_ = input.readDouble();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 25
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -495,8 +544,8 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The format of the audio byte stream.
-     * For now, streaming only supports PCM and OGG_OPUS. All other encodings
-     * will return an error.
+     * Streaming supports PCM, ALAW, MULAW and OGG_OPUS. All other encodings
+     * return an error.
      * </pre>
      *
      * <code>
@@ -514,8 +563,8 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The format of the audio byte stream.
-     * For now, streaming only supports PCM and OGG_OPUS. All other encodings
-     * will return an error.
+     * Streaming supports PCM, ALAW, MULAW and OGG_OPUS. All other encodings
+     * return an error.
      * </pre>
      *
      * <code>
@@ -536,8 +585,8 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The format of the audio byte stream.
-     * For now, streaming only supports PCM and OGG_OPUS. All other encodings
-     * will return an error.
+     * Streaming supports PCM, ALAW, MULAW and OGG_OPUS. All other encodings
+     * return an error.
      * </pre>
      *
      * <code>
@@ -557,8 +606,8 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The format of the audio byte stream.
-     * For now, streaming only supports PCM and OGG_OPUS. All other encodings
-     * will return an error.
+     * Streaming supports PCM, ALAW, MULAW and OGG_OPUS. All other encodings
+     * return an error.
      * </pre>
      *
      * <code>
@@ -582,8 +631,8 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The format of the audio byte stream.
-     * For now, streaming only supports PCM and OGG_OPUS. All other encodings
-     * will return an error.
+     * Streaming supports PCM, ALAW, MULAW and OGG_OPUS. All other encodings
+     * return an error.
      * </pre>
      *
      * <code>
@@ -648,6 +697,74 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
     public Builder clearSampleRateHertz() {
       bitField0_ = (bitField0_ & ~0x00000002);
       sampleRateHertz_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private double speakingRate_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Speaking rate/speed, in the range [0.25, 2.0]. 1.0 is
+     * the normal native speed supported by the specific voice. 2.0 is twice as
+     * fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0
+     * speed. Any other values &lt; 0.25 or &gt; 2.0 will return an error.
+     * </pre>
+     *
+     * <code>
+     * double speaking_rate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The speakingRate.
+     */
+    @java.lang.Override
+    public double getSpeakingRate() {
+      return speakingRate_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Speaking rate/speed, in the range [0.25, 2.0]. 1.0 is
+     * the normal native speed supported by the specific voice. 2.0 is twice as
+     * fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0
+     * speed. Any other values &lt; 0.25 or &gt; 2.0 will return an error.
+     * </pre>
+     *
+     * <code>
+     * double speaking_rate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The speakingRate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpeakingRate(double value) {
+
+      speakingRate_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Speaking rate/speed, in the range [0.25, 2.0]. 1.0 is
+     * the normal native speed supported by the specific voice. 2.0 is twice as
+     * fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0
+     * speed. Any other values &lt; 0.25 or &gt; 2.0 will return an error.
+     * </pre>
+     *
+     * <code>
+     * double speaking_rate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSpeakingRate() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      speakingRate_ = 0D;
       onChanged();
       return this;
     }

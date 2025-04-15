@@ -365,9 +365,21 @@ public final class EvaluationServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_PointwiseMetricSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_CustomOutputFormatConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_CustomOutputFormatConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_PointwiseMetricResult_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_PointwiseMetricResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_CustomOutput_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_CustomOutput_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_RawOutput_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_RawOutput_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_PairwiseMetricInput_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -497,6 +509,26 @@ public final class EvaluationServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_MetricxResult_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingInput_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingInput_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingInstance_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingInstance_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_RubricCritiqueResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_RubricCritiqueResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_TrajectoryExactMatchInput_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_TrajectoryExactMatchInput_fieldAccessorTable;
@@ -624,6 +656,18 @@ public final class EvaluationServiceProto {
       internal_static_google_cloud_aiplatform_v1beta1_ToolCall_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ToolCall_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ContentMap_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ContentMap_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ContentMap_Contents_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ContentMap_Contents_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ContentMap_ValuesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ContentMap_ValuesEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -638,694 +682,742 @@ public final class EvaluationServiceProto {
           + "orm.v1beta1\032\034google/api/annotations.prot"
           + "o\032\027google/api/client.proto\032\037google/api/f"
           + "ield_behavior.proto\032\031google/api/resource"
-          + ".proto\032(google/cloud/aiplatform/v1beta1/"
-          + "io.proto\032/google/cloud/aiplatform/v1beta"
-          + "1/operation.proto\032#google/longrunning/op"
-          + "erations.proto\"w\n EvaluateDatasetOperati"
-          + "onMetadata\022S\n\020generic_metadata\030\001 \001(\01329.g"
-          + "oogle.cloud.aiplatform.v1beta1.GenericOp"
-          + "erationMetadata\"`\n\027EvaluateDatasetRespon"
-          + "se\022E\n\013output_info\030\003 \001(\0132+.google.cloud.a"
-          + "iplatform.v1beta1.OutputInfoB\003\340A\003\"D\n\nOut"
-          + "putInfo\022#\n\024gcs_output_directory\030\001 \001(\tB\003\340"
-          + "A\003H\000B\021\n\017output_location\"\372\002\n\026EvaluateData"
-          + "setRequest\022;\n\010location\030\001 \001(\tB)\340A\002\372A#\n!lo"
-          + "cations.googleapis.com/Location\022H\n\007datas"
-          + "et\030\002 \001(\01322.google.cloud.aiplatform.v1bet"
-          + "a1.EvaluationDatasetB\003\340A\002\022=\n\007metrics\030\003 \003"
-          + "(\0132\'.google.cloud.aiplatform.v1beta1.Met"
-          + "ricB\003\340A\002\022I\n\routput_config\030\004 \001(\0132-.google"
-          + ".cloud.aiplatform.v1beta1.OutputConfigB\003"
-          + "\340A\002\022O\n\020autorater_config\030\005 \001(\01320.google.c"
-          + "loud.aiplatform.v1beta1.AutoraterConfigB"
-          + "\003\340A\001\"i\n\014OutputConfig\022J\n\017gcs_destination\030"
-          + "\001 \001(\0132/.google.cloud.aiplatform.v1beta1."
-          + "GcsDestinationH\000B\r\n\013destination\"\310\005\n\006Metr"
-          + "ic\022U\n\025pointwise_metric_spec\030\002 \001(\01324.goog"
-          + "le.cloud.aiplatform.v1beta1.PointwiseMet"
-          + "ricSpecH\000\022S\n\024pairwise_metric_spec\030\003 \001(\0132"
-          + "3.google.cloud.aiplatform.v1beta1.Pairwi"
-          + "seMetricSpecH\000\022K\n\020exact_match_spec\030\004 \001(\013"
-          + "2/.google.cloud.aiplatform.v1beta1.Exact"
-          + "MatchSpecH\000\022>\n\tbleu_spec\030\005 \001(\0132).google."
-          + "cloud.aiplatform.v1beta1.BleuSpecH\000\022@\n\nr"
-          + "ouge_spec\030\006 \001(\0132*.google.cloud.aiplatfor"
-          + "m.v1beta1.RougeSpecH\000\022[\n\023aggregation_met"
-          + "rics\030\001 \003(\01629.google.cloud.aiplatform.v1b"
-          + "eta1.Metric.AggregationMetricB\003\340A\001\"\326\001\n\021A"
-          + "ggregationMetric\022\"\n\036AGGREGATION_METRIC_U"
-          + "NSPECIFIED\020\000\022\013\n\007AVERAGE\020\001\022\010\n\004MODE\020\002\022\026\n\022S"
-          + "TANDARD_DEVIATION\020\003\022\014\n\010VARIANCE\020\004\022\013\n\007MIN"
-          + "IMUM\020\005\022\013\n\007MAXIMUM\020\006\022\n\n\006MEDIAN\020\007\022\022\n\016PERCE"
-          + "NTILE_P90\020\010\022\022\n\016PERCENTILE_P95\020\t\022\022\n\016PERCE"
-          + "NTILE_P99\020\nB\r\n\013metric_spec\"\253\001\n\021Evaluatio"
-          + "nDataset\022@\n\ngcs_source\030\001 \001(\0132*.google.cl"
-          + "oud.aiplatform.v1beta1.GcsSourceH\000\022J\n\017bi"
-          + "gquery_source\030\002 \001(\0132/.google.cloud.aipla"
-          + "tform.v1beta1.BigQuerySourceH\000B\010\n\006source"
-          + "\"\225\001\n\017AutoraterConfig\022 \n\016sampling_count\030\001"
-          + " \001(\005B\003\340A\001H\000\210\001\001\022\036\n\014flip_enabled\030\002 \001(\010B\003\340A"
-          + "\001H\001\210\001\001\022\034\n\017autorater_model\030\003 \001(\tB\003\340A\001B\021\n\017"
-          + "_sampling_countB\017\n\r_flip_enabled\"\207\030\n\030Eva"
-          + "luateInstancesRequest\022M\n\021exact_match_inp"
-          + "ut\030\002 \001(\01320.google.cloud.aiplatform.v1bet"
-          + "a1.ExactMatchInputH\000\022@\n\nbleu_input\030\003 \001(\013"
-          + "2*.google.cloud.aiplatform.v1beta1.BleuI"
-          + "nputH\000\022B\n\013rouge_input\030\004 \001(\0132+.google.clo"
-          + "ud.aiplatform.v1beta1.RougeInputH\000\022F\n\rfl"
-          + "uency_input\030\005 \001(\0132-.google.cloud.aiplatf"
-          + "orm.v1beta1.FluencyInputH\000\022J\n\017coherence_"
-          + "input\030\006 \001(\0132/.google.cloud.aiplatform.v1"
-          + "beta1.CoherenceInputH\000\022D\n\014safety_input\030\010"
-          + " \001(\0132,.google.cloud.aiplatform.v1beta1.S"
-          + "afetyInputH\000\022P\n\022groundedness_input\030\t \001(\013"
-          + "22.google.cloud.aiplatform.v1beta1.Groun"
-          + "dednessInputH\000\022N\n\021fulfillment_input\030\014 \001("
-          + "\01321.google.cloud.aiplatform.v1beta1.Fulf"
-          + "illmentInputH\000\022a\n\033summarization_quality_"
-          + "input\030\007 \001(\0132:.google.cloud.aiplatform.v1"
-          + "beta1.SummarizationQualityInputH\000\022r\n$pai"
-          + "rwise_summarization_quality_input\030\027 \001(\0132"
-          + "B.google.cloud.aiplatform.v1beta1.Pairwi"
-          + "seSummarizationQualityInputH\000\022i\n\037summari"
-          + "zation_helpfulness_input\030\016 \001(\0132>.google."
-          + "cloud.aiplatform.v1beta1.SummarizationHe"
-          + "lpfulnessInputH\000\022e\n\035summarization_verbos"
-          + "ity_input\030\017 \001(\0132<.google.cloud.aiplatfor"
-          + "m.v1beta1.SummarizationVerbosityInputH\000\022"
-          + "j\n question_answering_quality_input\030\n \001("
-          + "\0132>.google.cloud.aiplatform.v1beta1.Ques"
-          + "tionAnsweringQualityInputH\000\022{\n)pairwise_"
-          + "question_answering_quality_input\030\030 \001(\0132F"
-          + ".google.cloud.aiplatform.v1beta1.Pairwis"
-          + "eQuestionAnsweringQualityInputH\000\022n\n\"ques"
-          + "tion_answering_relevance_input\030\020 \001(\0132@.g"
-          + "oogle.cloud.aiplatform.v1beta1.QuestionA"
-          + "nsweringRelevanceInputH\000\022r\n$question_ans"
-          + "wering_helpfulness_input\030\021 \001(\0132B.google."
-          + "cloud.aiplatform.v1beta1.QuestionAnsweri"
-          + "ngHelpfulnessInputH\000\022r\n$question_answeri"
-          + "ng_correctness_input\030\022 \001(\0132B.google.clou"
-          + "d.aiplatform.v1beta1.QuestionAnsweringCo"
-          + "rrectnessInputH\000\022W\n\026pointwise_metric_inp"
-          + "ut\030\034 \001(\01325.google.cloud.aiplatform.v1bet"
-          + "a1.PointwiseMetricInputH\000\022U\n\025pairwise_me"
-          + "tric_input\030\035 \001(\01324.google.cloud.aiplatfo"
-          + "rm.v1beta1.PairwiseMetricInputH\000\022T\n\025tool"
-          + "_call_valid_input\030\023 \001(\01323.google.cloud.a"
-          + "iplatform.v1beta1.ToolCallValidInputH\000\022T"
-          + "\n\025tool_name_match_input\030\024 \001(\01323.google.c"
-          + "loud.aiplatform.v1beta1.ToolNameMatchInp"
-          + "utH\000\022e\n\036tool_parameter_key_match_input\030\025"
-          + " \001(\0132;.google.cloud.aiplatform.v1beta1.T"
-          + "oolParameterKeyMatchInputH\000\022c\n\035tool_para"
-          + "meter_kv_match_input\030\026 \001(\0132:.google.clou"
-          + "d.aiplatform.v1beta1.ToolParameterKVMatc"
-          + "hInputH\000\022B\n\013comet_input\030\037 \001(\0132+.google.c"
-          + "loud.aiplatform.v1beta1.CometInputH\000\022F\n\r"
-          + "metricx_input\030  \001(\0132-.google.cloud.aipla"
-          + "tform.v1beta1.MetricxInputH\000\022b\n\034trajecto"
-          + "ry_exact_match_input\030! \001(\0132:.google.clou"
-          + "d.aiplatform.v1beta1.TrajectoryExactMatc"
-          + "hInputH\000\022g\n\037trajectory_in_order_match_in"
-          + "put\030\" \001(\0132<.google.cloud.aiplatform.v1be"
-          + "ta1.TrajectoryInOrderMatchInputH\000\022i\n tra"
-          + "jectory_any_order_match_input\030# \001(\0132=.go"
-          + "ogle.cloud.aiplatform.v1beta1.Trajectory"
-          + "AnyOrderMatchInputH\000\022_\n\032trajectory_preci"
-          + "sion_input\030% \001(\01329.google.cloud.aiplatfo"
-          + "rm.v1beta1.TrajectoryPrecisionInputH\000\022Y\n"
-          + "\027trajectory_recall_input\030& \001(\01326.google."
-          + "cloud.aiplatform.v1beta1.TrajectoryRecal"
-          + "lInputH\000\022i\n trajectory_single_tool_use_i"
-          + "nput\030\' \001(\0132=.google.cloud.aiplatform.v1b"
-          + "eta1.TrajectorySingleToolUseInputH\000\022;\n\010l"
-          + "ocation\030\001 \001(\tB)\340A\002\372A#\n!locations.googlea"
-          + "pis.com/Location\022O\n\020autorater_config\030\036 \001"
-          + "(\01320.google.cloud.aiplatform.v1beta1.Aut"
-          + "oraterConfigB\003\340A\001B\017\n\rmetric_inputs\"\327\027\n\031E"
-          + "valuateInstancesResponse\022Q\n\023exact_match_"
-          + "results\030\001 \001(\01322.google.cloud.aiplatform."
-          + "v1beta1.ExactMatchResultsH\000\022D\n\014bleu_resu"
-          + "lts\030\002 \001(\0132,.google.cloud.aiplatform.v1be"
-          + "ta1.BleuResultsH\000\022F\n\rrouge_results\030\003 \001(\013"
-          + "2-.google.cloud.aiplatform.v1beta1.Rouge"
-          + "ResultsH\000\022H\n\016fluency_result\030\004 \001(\0132..goog"
-          + "le.cloud.aiplatform.v1beta1.FluencyResul"
-          + "tH\000\022L\n\020coherence_result\030\005 \001(\01320.google.c"
-          + "loud.aiplatform.v1beta1.CoherenceResultH"
-          + "\000\022F\n\rsafety_result\030\007 \001(\0132-.google.cloud."
-          + "aiplatform.v1beta1.SafetyResultH\000\022R\n\023gro"
-          + "undedness_result\030\010 \001(\01323.google.cloud.ai"
-          + "platform.v1beta1.GroundednessResultH\000\022P\n"
-          + "\022fulfillment_result\030\013 \001(\01322.google.cloud"
-          + ".aiplatform.v1beta1.FulfillmentResultH\000\022"
-          + "c\n\034summarization_quality_result\030\006 \001(\0132;."
+          + ".proto\032-google/cloud/aiplatform/v1beta1/"
+          + "content.proto\032(google/cloud/aiplatform/v"
+          + "1beta1/io.proto\032/google/cloud/aiplatform"
+          + "/v1beta1/operation.proto\032#google/longrun"
+          + "ning/operations.proto\"w\n EvaluateDataset"
+          + "OperationMetadata\022S\n\020generic_metadata\030\001 "
+          + "\001(\01329.google.cloud.aiplatform.v1beta1.Ge"
+          + "nericOperationMetadata\"`\n\027EvaluateDatase"
+          + "tResponse\022E\n\013output_info\030\003 \001(\0132+.google."
+          + "cloud.aiplatform.v1beta1.OutputInfoB\003\340A\003"
+          + "\"D\n\nOutputInfo\022#\n\024gcs_output_directory\030\001"
+          + " \001(\tB\003\340A\003H\000B\021\n\017output_location\"\372\002\n\026Evalu"
+          + "ateDatasetRequest\022;\n\010location\030\001 \001(\tB)\340A\002"
+          + "\372A#\n!locations.googleapis.com/Location\022H"
+          + "\n\007dataset\030\002 \001(\01322.google.cloud.aiplatfor"
+          + "m.v1beta1.EvaluationDatasetB\003\340A\002\022=\n\007metr"
+          + "ics\030\003 \003(\0132\'.google.cloud.aiplatform.v1be"
+          + "ta1.MetricB\003\340A\002\022I\n\routput_config\030\004 \001(\0132-"
+          + ".google.cloud.aiplatform.v1beta1.OutputC"
+          + "onfigB\003\340A\002\022O\n\020autorater_config\030\005 \001(\01320.g"
+          + "oogle.cloud.aiplatform.v1beta1.Autorater"
+          + "ConfigB\003\340A\001\"i\n\014OutputConfig\022J\n\017gcs_desti"
+          + "nation\030\001 \001(\0132/.google.cloud.aiplatform.v"
+          + "1beta1.GcsDestinationH\000B\r\n\013destination\"\310"
+          + "\005\n\006Metric\022U\n\025pointwise_metric_spec\030\002 \001(\013"
+          + "24.google.cloud.aiplatform.v1beta1.Point"
+          + "wiseMetricSpecH\000\022S\n\024pairwise_metric_spec"
+          + "\030\003 \001(\01323.google.cloud.aiplatform.v1beta1"
+          + ".PairwiseMetricSpecH\000\022K\n\020exact_match_spe"
+          + "c\030\004 \001(\0132/.google.cloud.aiplatform.v1beta"
+          + "1.ExactMatchSpecH\000\022>\n\tbleu_spec\030\005 \001(\0132)."
+          + "google.cloud.aiplatform.v1beta1.BleuSpec"
+          + "H\000\022@\n\nrouge_spec\030\006 \001(\0132*.google.cloud.ai"
+          + "platform.v1beta1.RougeSpecH\000\022[\n\023aggregat"
+          + "ion_metrics\030\001 \003(\01629.google.cloud.aiplatf"
+          + "orm.v1beta1.Metric.AggregationMetricB\003\340A"
+          + "\001\"\326\001\n\021AggregationMetric\022\"\n\036AGGREGATION_M"
+          + "ETRIC_UNSPECIFIED\020\000\022\013\n\007AVERAGE\020\001\022\010\n\004MODE"
+          + "\020\002\022\026\n\022STANDARD_DEVIATION\020\003\022\014\n\010VARIANCE\020\004"
+          + "\022\013\n\007MINIMUM\020\005\022\013\n\007MAXIMUM\020\006\022\n\n\006MEDIAN\020\007\022\022"
+          + "\n\016PERCENTILE_P90\020\010\022\022\n\016PERCENTILE_P95\020\t\022\022"
+          + "\n\016PERCENTILE_P99\020\nB\r\n\013metric_spec\"\253\001\n\021Ev"
+          + "aluationDataset\022@\n\ngcs_source\030\001 \001(\0132*.go"
+          + "ogle.cloud.aiplatform.v1beta1.GcsSourceH"
+          + "\000\022J\n\017bigquery_source\030\002 \001(\0132/.google.clou"
+          + "d.aiplatform.v1beta1.BigQuerySourceH\000B\010\n"
+          + "\006source\"\225\001\n\017AutoraterConfig\022 \n\016sampling_"
+          + "count\030\001 \001(\005B\003\340A\001H\000\210\001\001\022\036\n\014flip_enabled\030\002 "
+          + "\001(\010B\003\340A\001H\001\210\001\001\022\034\n\017autorater_model\030\003 \001(\tB\003"
+          + "\340A\001B\021\n\017_sampling_countB\017\n\r_flip_enabled\""
+          + "\202\031\n\030EvaluateInstancesRequest\022M\n\021exact_ma"
+          + "tch_input\030\002 \001(\01320.google.cloud.aiplatfor"
+          + "m.v1beta1.ExactMatchInputH\000\022@\n\nbleu_inpu"
+          + "t\030\003 \001(\0132*.google.cloud.aiplatform.v1beta"
+          + "1.BleuInputH\000\022B\n\013rouge_input\030\004 \001(\0132+.goo"
+          + "gle.cloud.aiplatform.v1beta1.RougeInputH"
+          + "\000\022F\n\rfluency_input\030\005 \001(\0132-.google.cloud."
+          + "aiplatform.v1beta1.FluencyInputH\000\022J\n\017coh"
+          + "erence_input\030\006 \001(\0132/.google.cloud.aiplat"
+          + "form.v1beta1.CoherenceInputH\000\022D\n\014safety_"
+          + "input\030\010 \001(\0132,.google.cloud.aiplatform.v1"
+          + "beta1.SafetyInputH\000\022P\n\022groundedness_inpu"
+          + "t\030\t \001(\01322.google.cloud.aiplatform.v1beta"
+          + "1.GroundednessInputH\000\022N\n\021fulfillment_inp"
+          + "ut\030\014 \001(\01321.google.cloud.aiplatform.v1bet"
+          + "a1.FulfillmentInputH\000\022a\n\033summarization_q"
+          + "uality_input\030\007 \001(\0132:.google.cloud.aiplat"
+          + "form.v1beta1.SummarizationQualityInputH\000"
+          + "\022r\n$pairwise_summarization_quality_input"
+          + "\030\027 \001(\0132B.google.cloud.aiplatform.v1beta1"
+          + ".PairwiseSummarizationQualityInputH\000\022i\n\037"
+          + "summarization_helpfulness_input\030\016 \001(\0132>."
           + "google.cloud.aiplatform.v1beta1.Summariz"
-          + "ationQualityResultH\000\022t\n%pairwise_summari"
-          + "zation_quality_result\030\026 \001(\0132C.google.clo"
-          + "ud.aiplatform.v1beta1.PairwiseSummarizat"
-          + "ionQualityResultH\000\022k\n summarization_help"
-          + "fulness_result\030\r \001(\0132?.google.cloud.aipl"
-          + "atform.v1beta1.SummarizationHelpfulnessR"
-          + "esultH\000\022g\n\036summarization_verbosity_resul"
-          + "t\030\016 \001(\0132=.google.cloud.aiplatform.v1beta"
-          + "1.SummarizationVerbosityResultH\000\022l\n!ques"
-          + "tion_answering_quality_result\030\t \001(\0132?.go"
-          + "ogle.cloud.aiplatform.v1beta1.QuestionAn"
-          + "sweringQualityResultH\000\022}\n*pairwise_quest"
-          + "ion_answering_quality_result\030\027 \001(\0132G.goo"
-          + "gle.cloud.aiplatform.v1beta1.PairwiseQue"
-          + "stionAnsweringQualityResultH\000\022p\n#questio"
-          + "n_answering_relevance_result\030\017 \001(\0132A.goo"
-          + "gle.cloud.aiplatform.v1beta1.QuestionAns"
-          + "weringRelevanceResultH\000\022t\n%question_answ"
-          + "ering_helpfulness_result\030\020 \001(\0132C.google."
-          + "cloud.aiplatform.v1beta1.QuestionAnsweri"
-          + "ngHelpfulnessResultH\000\022t\n%question_answer"
-          + "ing_correctness_result\030\021 \001(\0132C.google.cl"
-          + "oud.aiplatform.v1beta1.QuestionAnswering"
-          + "CorrectnessResultH\000\022Y\n\027pointwise_metric_"
-          + "result\030\033 \001(\01326.google.cloud.aiplatform.v"
-          + "1beta1.PointwiseMetricResultH\000\022W\n\026pairwi"
-          + "se_metric_result\030\034 \001(\01325.google.cloud.ai"
-          + "platform.v1beta1.PairwiseMetricResultH\000\022"
-          + "X\n\027tool_call_valid_results\030\022 \001(\01325.googl"
-          + "e.cloud.aiplatform.v1beta1.ToolCallValid"
-          + "ResultsH\000\022X\n\027tool_name_match_results\030\023 \001"
+          + "ationHelpfulnessInputH\000\022e\n\035summarization"
+          + "_verbosity_input\030\017 \001(\0132<.google.cloud.ai"
+          + "platform.v1beta1.SummarizationVerbosityI"
+          + "nputH\000\022j\n question_answering_quality_inp"
+          + "ut\030\n \001(\0132>.google.cloud.aiplatform.v1bet"
+          + "a1.QuestionAnsweringQualityInputH\000\022{\n)pa"
+          + "irwise_question_answering_quality_input\030"
+          + "\030 \001(\0132F.google.cloud.aiplatform.v1beta1."
+          + "PairwiseQuestionAnsweringQualityInputH\000\022"
+          + "n\n\"question_answering_relevance_input\030\020 "
+          + "\001(\0132@.google.cloud.aiplatform.v1beta1.Qu"
+          + "estionAnsweringRelevanceInputH\000\022r\n$quest"
+          + "ion_answering_helpfulness_input\030\021 \001(\0132B."
+          + "google.cloud.aiplatform.v1beta1.Question"
+          + "AnsweringHelpfulnessInputH\000\022r\n$question_"
+          + "answering_correctness_input\030\022 \001(\0132B.goog"
+          + "le.cloud.aiplatform.v1beta1.QuestionAnsw"
+          + "eringCorrectnessInputH\000\022W\n\026pointwise_met"
+          + "ric_input\030\034 \001(\01325.google.cloud.aiplatfor"
+          + "m.v1beta1.PointwiseMetricInputH\000\022U\n\025pair"
+          + "wise_metric_input\030\035 \001(\01324.google.cloud.a"
+          + "iplatform.v1beta1.PairwiseMetricInputH\000\022"
+          + "T\n\025tool_call_valid_input\030\023 \001(\01323.google."
+          + "cloud.aiplatform.v1beta1.ToolCallValidIn"
+          + "putH\000\022T\n\025tool_name_match_input\030\024 \001(\01323.g"
+          + "oogle.cloud.aiplatform.v1beta1.ToolNameM"
+          + "atchInputH\000\022e\n\036tool_parameter_key_match_"
+          + "input\030\025 \001(\0132;.google.cloud.aiplatform.v1"
+          + "beta1.ToolParameterKeyMatchInputH\000\022c\n\035to"
+          + "ol_parameter_kv_match_input\030\026 \001(\0132:.goog"
+          + "le.cloud.aiplatform.v1beta1.ToolParamete"
+          + "rKVMatchInputH\000\022B\n\013comet_input\030\037 \001(\0132+.g"
+          + "oogle.cloud.aiplatform.v1beta1.CometInpu"
+          + "tH\000\022F\n\rmetricx_input\030  \001(\0132-.google.clou"
+          + "d.aiplatform.v1beta1.MetricxInputH\000\022b\n\034t"
+          + "rajectory_exact_match_input\030! \001(\0132:.goog"
+          + "le.cloud.aiplatform.v1beta1.TrajectoryEx"
+          + "actMatchInputH\000\022g\n\037trajectory_in_order_m"
+          + "atch_input\030\" \001(\0132<.google.cloud.aiplatfo"
+          + "rm.v1beta1.TrajectoryInOrderMatchInputH\000"
+          + "\022i\n trajectory_any_order_match_input\030# \001"
+          + "(\0132=.google.cloud.aiplatform.v1beta1.Tra"
+          + "jectoryAnyOrderMatchInputH\000\022_\n\032trajector"
+          + "y_precision_input\030% \001(\01329.google.cloud.a"
+          + "iplatform.v1beta1.TrajectoryPrecisionInp"
+          + "utH\000\022Y\n\027trajectory_recall_input\030& \001(\01326."
+          + "google.cloud.aiplatform.v1beta1.Trajecto"
+          + "ryRecallInputH\000\022i\n trajectory_single_too"
+          + "l_use_input\030\' \001(\0132=.google.cloud.aiplatf"
+          + "orm.v1beta1.TrajectorySingleToolUseInput"
+          + "H\000\022y\n(rubric_based_instruction_following"
+          + "_input\030( \001(\0132E.google.cloud.aiplatform.v"
+          + "1beta1.RubricBasedInstructionFollowingIn"
+          + "putH\000\022;\n\010location\030\001 \001(\tB)\340A\002\372A#\n!locatio"
+          + "ns.googleapis.com/Location\022O\n\020autorater_"
+          + "config\030\036 \001(\01320.google.cloud.aiplatform.v"
+          + "1beta1.AutoraterConfigB\003\340A\001B\017\n\rmetric_in"
+          + "puts\"\324\030\n\031EvaluateInstancesResponse\022Q\n\023ex"
+          + "act_match_results\030\001 \001(\01322.google.cloud.a"
+          + "iplatform.v1beta1.ExactMatchResultsH\000\022D\n"
+          + "\014bleu_results\030\002 \001(\0132,.google.cloud.aipla"
+          + "tform.v1beta1.BleuResultsH\000\022F\n\rrouge_res"
+          + "ults\030\003 \001(\0132-.google.cloud.aiplatform.v1b"
+          + "eta1.RougeResultsH\000\022H\n\016fluency_result\030\004 "
+          + "\001(\0132..google.cloud.aiplatform.v1beta1.Fl"
+          + "uencyResultH\000\022L\n\020coherence_result\030\005 \001(\0132"
+          + "0.google.cloud.aiplatform.v1beta1.Cohere"
+          + "nceResultH\000\022F\n\rsafety_result\030\007 \001(\0132-.goo"
+          + "gle.cloud.aiplatform.v1beta1.SafetyResul"
+          + "tH\000\022R\n\023groundedness_result\030\010 \001(\01323.googl"
+          + "e.cloud.aiplatform.v1beta1.GroundednessR"
+          + "esultH\000\022P\n\022fulfillment_result\030\013 \001(\01322.go"
+          + "ogle.cloud.aiplatform.v1beta1.Fulfillmen"
+          + "tResultH\000\022c\n\034summarization_quality_resul"
+          + "t\030\006 \001(\0132;.google.cloud.aiplatform.v1beta"
+          + "1.SummarizationQualityResultH\000\022t\n%pairwi"
+          + "se_summarization_quality_result\030\026 \001(\0132C."
+          + "google.cloud.aiplatform.v1beta1.Pairwise"
+          + "SummarizationQualityResultH\000\022k\n summariz"
+          + "ation_helpfulness_result\030\r \001(\0132?.google."
+          + "cloud.aiplatform.v1beta1.SummarizationHe"
+          + "lpfulnessResultH\000\022g\n\036summarization_verbo"
+          + "sity_result\030\016 \001(\0132=.google.cloud.aiplatf"
+          + "orm.v1beta1.SummarizationVerbosityResult"
+          + "H\000\022l\n!question_answering_quality_result\030"
+          + "\t \001(\0132?.google.cloud.aiplatform.v1beta1."
+          + "QuestionAnsweringQualityResultH\000\022}\n*pair"
+          + "wise_question_answering_quality_result\030\027"
+          + " \001(\0132G.google.cloud.aiplatform.v1beta1.P"
+          + "airwiseQuestionAnsweringQualityResultH\000\022"
+          + "p\n#question_answering_relevance_result\030\017"
+          + " \001(\0132A.google.cloud.aiplatform.v1beta1.Q"
+          + "uestionAnsweringRelevanceResultH\000\022t\n%que"
+          + "stion_answering_helpfulness_result\030\020 \001(\013"
+          + "2C.google.cloud.aiplatform.v1beta1.Quest"
+          + "ionAnsweringHelpfulnessResultH\000\022t\n%quest"
+          + "ion_answering_correctness_result\030\021 \001(\0132C"
+          + ".google.cloud.aiplatform.v1beta1.Questio"
+          + "nAnsweringCorrectnessResultH\000\022Y\n\027pointwi"
+          + "se_metric_result\030\033 \001(\01326.google.cloud.ai"
+          + "platform.v1beta1.PointwiseMetricResultH\000"
+          + "\022W\n\026pairwise_metric_result\030\034 \001(\01325.googl"
+          + "e.cloud.aiplatform.v1beta1.PairwiseMetri"
+          + "cResultH\000\022X\n\027tool_call_valid_results\030\022 \001"
           + "(\01325.google.cloud.aiplatform.v1beta1.Too"
-          + "lNameMatchResultsH\000\022i\n tool_parameter_ke"
-          + "y_match_results\030\024 \001(\0132=.google.cloud.aip"
-          + "latform.v1beta1.ToolParameterKeyMatchRes"
-          + "ultsH\000\022g\n\037tool_parameter_kv_match_result"
-          + "s\030\025 \001(\0132<.google.cloud.aiplatform.v1beta"
-          + "1.ToolParameterKVMatchResultsH\000\022D\n\014comet"
-          + "_result\030\035 \001(\0132,.google.cloud.aiplatform."
-          + "v1beta1.CometResultH\000\022H\n\016metricx_result\030"
-          + "\036 \001(\0132..google.cloud.aiplatform.v1beta1."
-          + "MetricxResultH\000\022f\n\036trajectory_exact_matc"
-          + "h_results\030\037 \001(\0132<.google.cloud.aiplatfor"
-          + "m.v1beta1.TrajectoryExactMatchResultsH\000\022"
-          + "k\n!trajectory_in_order_match_results\030  \001"
-          + "(\0132>.google.cloud.aiplatform.v1beta1.Tra"
-          + "jectoryInOrderMatchResultsH\000\022m\n\"trajecto"
-          + "ry_any_order_match_results\030! \001(\0132?.googl"
-          + "e.cloud.aiplatform.v1beta1.TrajectoryAny"
-          + "OrderMatchResultsH\000\022c\n\034trajectory_precis"
-          + "ion_results\030# \001(\0132;.google.cloud.aiplatf"
-          + "orm.v1beta1.TrajectoryPrecisionResultsH\000"
-          + "\022]\n\031trajectory_recall_results\030$ \001(\01328.go"
-          + "ogle.cloud.aiplatform.v1beta1.Trajectory"
-          + "RecallResultsH\000\022m\n\"trajectory_single_too"
-          + "l_use_results\030% \001(\0132?.google.cloud.aipla"
-          + "tform.v1beta1.TrajectorySingleToolUseRes"
-          + "ultsH\000B\024\n\022evaluation_results\"\251\001\n\017ExactMa"
-          + "tchInput\022I\n\013metric_spec\030\001 \001(\0132/.google.c"
-          + "loud.aiplatform.v1beta1.ExactMatchSpecB\003"
-          + "\340A\002\022K\n\tinstances\030\002 \003(\01323.google.cloud.ai"
-          + "platform.v1beta1.ExactMatchInstanceB\003\340A\002"
-          + "\"l\n\022ExactMatchInstance\022\034\n\nprediction\030\001 \001"
-          + "(\tB\003\340A\002H\000\210\001\001\022\033\n\treference\030\002 \001(\tB\003\340A\002H\001\210\001"
-          + "\001B\r\n\013_predictionB\014\n\n_reference\"\020\n\016ExactM"
-          + "atchSpec\"s\n\021ExactMatchResults\022^\n\031exact_m"
-          + "atch_metric_values\030\001 \003(\01326.google.cloud."
-          + "aiplatform.v1beta1.ExactMatchMetricValue"
-          + "B\003\340A\003\":\n\025ExactMatchMetricValue\022\027\n\005score\030"
-          + "\001 \001(\002B\003\340A\003H\000\210\001\001B\010\n\006_score\"\227\001\n\tBleuInput\022"
-          + "C\n\013metric_spec\030\001 \001(\0132).google.cloud.aipl"
-          + "atform.v1beta1.BleuSpecB\003\340A\002\022E\n\tinstance"
-          + "s\030\002 \003(\0132-.google.cloud.aiplatform.v1beta"
-          + "1.BleuInstanceB\003\340A\002\"f\n\014BleuInstance\022\034\n\np"
-          + "rediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\033\n\treference\030\002"
-          + " \001(\tB\003\340A\002H\001\210\001\001B\r\n\013_predictionB\014\n\n_refere"
-          + "nce\",\n\010BleuSpec\022 \n\023use_effective_order\030\001"
-          + " \001(\010B\003\340A\001\"`\n\013BleuResults\022Q\n\022bleu_metric_"
-          + "values\030\001 \003(\01320.google.cloud.aiplatform.v"
-          + "1beta1.BleuMetricValueB\003\340A\003\"4\n\017BleuMetri"
-          + "cValue\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001B\010\n\006_scor"
-          + "e\"\232\001\n\nRougeInput\022D\n\013metric_spec\030\001 \001(\0132*."
-          + "google.cloud.aiplatform.v1beta1.RougeSpe"
-          + "cB\003\340A\002\022F\n\tinstances\030\002 \003(\0132..google.cloud"
-          + ".aiplatform.v1beta1.RougeInstanceB\003\340A\002\"g"
-          + "\n\rRougeInstance\022\034\n\nprediction\030\001 \001(\tB\003\340A\002"
-          + "H\000\210\001\001\022\033\n\treference\030\002 \001(\tB\003\340A\002H\001\210\001\001B\r\n\013_p"
-          + "redictionB\014\n\n_reference\"\\\n\tRougeSpec\022\027\n\n"
-          + "rouge_type\030\001 \001(\tB\003\340A\001\022\030\n\013use_stemmer\030\002 \001"
-          + "(\010B\003\340A\001\022\034\n\017split_summaries\030\003 \001(\010B\003\340A\001\"c\n"
-          + "\014RougeResults\022S\n\023rouge_metric_values\030\001 \003"
-          + "(\01321.google.cloud.aiplatform.v1beta1.Rou"
-          + "geMetricValueB\003\340A\003\"5\n\020RougeMetricValue\022\027"
-          + "\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001B\010\n\006_score\"\245\001\n\016Co"
-          + "herenceInput\022H\n\013metric_spec\030\001 \001(\0132..goog"
-          + "le.cloud.aiplatform.v1beta1.CoherenceSpe"
-          + "cB\003\340A\002\022I\n\010instance\030\002 \001(\01322.google.cloud."
-          + "aiplatform.v1beta1.CoherenceInstanceB\003\340A"
-          + "\002\"@\n\021CoherenceInstance\022\034\n\nprediction\030\001 \001"
-          + "(\tB\003\340A\002H\000\210\001\001B\r\n\013_prediction\"%\n\rCoherence"
-          + "Spec\022\024\n\007version\030\001 \001(\005B\003\340A\001\"{\n\017CoherenceR"
-          + "esult\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001\022\030\n\013explan"
-          + "ation\030\002 \001(\tB\003\340A\003\022\034\n\nconfidence\030\003 \001(\002B\003\340A"
-          + "\003H\001\210\001\001B\010\n\006_scoreB\r\n\013_confidence\"\237\001\n\014Flue"
-          + "ncyInput\022F\n\013metric_spec\030\001 \001(\0132,.google.c"
-          + "loud.aiplatform.v1beta1.FluencySpecB\003\340A\002"
-          + "\022G\n\010instance\030\002 \001(\01320.google.cloud.aiplat"
-          + "form.v1beta1.FluencyInstanceB\003\340A\002\">\n\017Flu"
-          + "encyInstance\022\034\n\nprediction\030\001 \001(\tB\003\340A\002H\000\210"
-          + "\001\001B\r\n\013_prediction\"#\n\013FluencySpec\022\024\n\007vers"
-          + "ion\030\001 \001(\005B\003\340A\001\"y\n\rFluencyResult\022\027\n\005score"
-          + "\030\001 \001(\002B\003\340A\003H\000\210\001\001\022\030\n\013explanation\030\002 \001(\tB\003\340"
-          + "A\003\022\034\n\nconfidence\030\003 \001(\002B\003\340A\003H\001\210\001\001B\010\n\006_sco"
-          + "reB\r\n\013_confidence\"\234\001\n\013SafetyInput\022E\n\013met"
-          + "ric_spec\030\001 \001(\0132+.google.cloud.aiplatform"
-          + ".v1beta1.SafetySpecB\003\340A\002\022F\n\010instance\030\002 \001"
-          + "(\0132/.google.cloud.aiplatform.v1beta1.Saf"
-          + "etyInstanceB\003\340A\002\"=\n\016SafetyInstance\022\034\n\npr"
-          + "ediction\030\001 \001(\tB\003\340A\002H\000\210\001\001B\r\n\013_prediction\""
-          + "\"\n\nSafetySpec\022\024\n\007version\030\001 \001(\005B\003\340A\001\"x\n\014S"
-          + "afetyResult\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001\022\030\n\013"
-          + "explanation\030\002 \001(\tB\003\340A\003\022\034\n\nconfidence\030\003 \001"
-          + "(\002B\003\340A\003H\001\210\001\001B\010\n\006_scoreB\r\n\013_confidence\"\256\001"
-          + "\n\021GroundednessInput\022K\n\013metric_spec\030\001 \001(\013"
-          + "21.google.cloud.aiplatform.v1beta1.Groun"
-          + "dednessSpecB\003\340A\002\022L\n\010instance\030\002 \001(\01325.goo"
-          + "gle.cloud.aiplatform.v1beta1.Groundednes"
-          + "sInstanceB\003\340A\002\"j\n\024GroundednessInstance\022\034"
-          + "\n\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\031\n\007context\030"
-          + "\002 \001(\tB\003\340A\002H\001\210\001\001B\r\n\013_predictionB\n\n\010_conte"
-          + "xt\"(\n\020GroundednessSpec\022\024\n\007version\030\001 \001(\005B"
-          + "\003\340A\001\"~\n\022GroundednessResult\022\027\n\005score\030\001 \001("
-          + "\002B\003\340A\003H\000\210\001\001\022\030\n\013explanation\030\002 \001(\tB\003\340A\003\022\034\n"
-          + "\nconfidence\030\003 \001(\002B\003\340A\003H\001\210\001\001B\010\n\006_scoreB\r\n"
-          + "\013_confidence\"\253\001\n\020FulfillmentInput\022J\n\013met"
-          + "ric_spec\030\001 \001(\01320.google.cloud.aiplatform"
-          + ".v1beta1.FulfillmentSpecB\003\340A\002\022K\n\010instanc"
-          + "e\030\002 \001(\01324.google.cloud.aiplatform.v1beta"
-          + "1.FulfillmentInstanceB\003\340A\002\"q\n\023Fulfillmen"
-          + "tInstance\022\034\n\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022"
-          + "\035\n\013instruction\030\002 \001(\tB\003\340A\002H\001\210\001\001B\r\n\013_predi"
-          + "ctionB\016\n\014_instruction\"\'\n\017FulfillmentSpec"
-          + "\022\024\n\007version\030\001 \001(\005B\003\340A\001\"}\n\021FulfillmentRes"
-          + "ult\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001\022\030\n\013explanat"
-          + "ion\030\002 \001(\tB\003\340A\003\022\034\n\nconfidence\030\003 \001(\002B\003\340A\003H"
-          + "\001\210\001\001B\010\n\006_scoreB\r\n\013_confidence\"\306\001\n\031Summar"
-          + "izationQualityInput\022S\n\013metric_spec\030\001 \001(\013"
-          + "29.google.cloud.aiplatform.v1beta1.Summa"
-          + "rizationQualitySpecB\003\340A\002\022T\n\010instance\030\002 \001"
-          + "(\0132=.google.cloud.aiplatform.v1beta1.Sum"
-          + "marizationQualityInstanceB\003\340A\002\"\314\001\n\034Summa"
-          + "rizationQualityInstance\022\034\n\nprediction\030\001 "
-          + "\001(\tB\003\340A\002H\000\210\001\001\022\033\n\treference\030\002 \001(\tB\003\340A\001H\001\210"
-          + "\001\001\022\031\n\007context\030\003 \001(\tB\003\340A\002H\002\210\001\001\022\035\n\013instruc"
-          + "tion\030\004 \001(\tB\003\340A\002H\003\210\001\001B\r\n\013_predictionB\014\n\n_"
-          + "referenceB\n\n\010_contextB\016\n\014_instruction\"L\n"
-          + "\030SummarizationQualitySpec\022\032\n\ruse_referen"
-          + "ce\030\001 \001(\010B\003\340A\001\022\024\n\007version\030\002 \001(\005B\003\340A\001\"\206\001\n\032"
-          + "SummarizationQualityResult\022\027\n\005score\030\001 \001("
-          + "\002B\003\340A\003H\000\210\001\001\022\030\n\013explanation\030\002 \001(\tB\003\340A\003\022\034\n"
-          + "\nconfidence\030\003 \001(\002B\003\340A\003H\001\210\001\001B\010\n\006_scoreB\r\n"
-          + "\013_confidence\"\336\001\n!PairwiseSummarizationQu"
-          + "alityInput\022[\n\013metric_spec\030\001 \001(\0132A.google"
-          + ".cloud.aiplatform.v1beta1.PairwiseSummar"
-          + "izationQualitySpecB\003\340A\002\022\\\n\010instance\030\002 \001("
-          + "\0132E.google.cloud.aiplatform.v1beta1.Pair"
-          + "wiseSummarizationQualityInstanceB\003\340A\002\"\223\002"
-          + "\n$PairwiseSummarizationQualityInstance\022\034"
-          + "\n\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022%\n\023baseline"
-          + "_prediction\030\002 \001(\tB\003\340A\002H\001\210\001\001\022\033\n\treference"
-          + "\030\003 \001(\tB\003\340A\001H\002\210\001\001\022\031\n\007context\030\004 \001(\tB\003\340A\002H\003"
-          + "\210\001\001\022\035\n\013instruction\030\005 \001(\tB\003\340A\002H\004\210\001\001B\r\n\013_p"
-          + "redictionB\026\n\024_baseline_predictionB\014\n\n_re"
-          + "ferenceB\n\n\010_contextB\016\n\014_instruction\"T\n P"
-          + "airwiseSummarizationQualitySpec\022\032\n\ruse_r"
-          + "eference\030\001 \001(\010B\003\340A\001\022\024\n\007version\030\002 \001(\005B\003\340A"
-          + "\001\"\272\001\n\"PairwiseSummarizationQualityResult"
-          + "\022M\n\017pairwise_choice\030\001 \001(\0162/.google.cloud"
-          + ".aiplatform.v1beta1.PairwiseChoiceB\003\340A\003\022"
-          + "\030\n\013explanation\030\002 \001(\tB\003\340A\003\022\034\n\nconfidence\030"
-          + "\003 \001(\002B\003\340A\003H\000\210\001\001B\r\n\013_confidence\"\322\001\n\035Summa"
-          + "rizationHelpfulnessInput\022W\n\013metric_spec\030"
-          + "\001 \001(\0132=.google.cloud.aiplatform.v1beta1."
-          + "SummarizationHelpfulnessSpecB\003\340A\002\022X\n\010ins"
-          + "tance\030\002 \001(\0132A.google.cloud.aiplatform.v1"
-          + "beta1.SummarizationHelpfulnessInstanceB\003"
-          + "\340A\002\"\320\001\n SummarizationHelpfulnessInstance"
-          + "\022\034\n\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\033\n\trefere"
-          + "nce\030\002 \001(\tB\003\340A\001H\001\210\001\001\022\031\n\007context\030\003 \001(\tB\003\340A"
-          + "\002H\002\210\001\001\022\035\n\013instruction\030\004 \001(\tB\003\340A\001H\003\210\001\001B\r\n"
-          + "\013_predictionB\014\n\n_referenceB\n\n\010_contextB\016"
-          + "\n\014_instruction\"P\n\034SummarizationHelpfulne"
-          + "ssSpec\022\032\n\ruse_reference\030\001 \001(\010B\003\340A\001\022\024\n\007ve"
-          + "rsion\030\002 \001(\005B\003\340A\001\"\212\001\n\036SummarizationHelpfu"
-          + "lnessResult\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001\022\030\n\013"
-          + "explanation\030\002 \001(\tB\003\340A\003\022\034\n\nconfidence\030\003 \001"
-          + "(\002B\003\340A\003H\001\210\001\001B\010\n\006_scoreB\r\n\013_confidence\"\314\001"
-          + "\n\033SummarizationVerbosityInput\022U\n\013metric_"
-          + "spec\030\001 \001(\0132;.google.cloud.aiplatform.v1b"
-          + "eta1.SummarizationVerbositySpecB\003\340A\002\022V\n\010"
-          + "instance\030\002 \001(\0132?.google.cloud.aiplatform"
-          + ".v1beta1.SummarizationVerbosityInstanceB"
-          + "\003\340A\002\"\316\001\n\036SummarizationVerbosityInstance\022"
-          + "\034\n\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\033\n\treferen"
-          + "ce\030\002 \001(\tB\003\340A\001H\001\210\001\001\022\031\n\007context\030\003 \001(\tB\003\340A\002"
-          + "H\002\210\001\001\022\035\n\013instruction\030\004 \001(\tB\003\340A\001H\003\210\001\001B\r\n\013"
-          + "_predictionB\014\n\n_referenceB\n\n\010_contextB\016\n"
-          + "\014_instruction\"N\n\032SummarizationVerbosityS"
-          + "pec\022\032\n\ruse_reference\030\001 \001(\010B\003\340A\001\022\024\n\007versi"
-          + "on\030\002 \001(\005B\003\340A\001\"\210\001\n\034SummarizationVerbosity"
+          + "lCallValidResultsH\000\022X\n\027tool_name_match_r"
+          + "esults\030\023 \001(\01325.google.cloud.aiplatform.v"
+          + "1beta1.ToolNameMatchResultsH\000\022i\n tool_pa"
+          + "rameter_key_match_results\030\024 \001(\0132=.google"
+          + ".cloud.aiplatform.v1beta1.ToolParameterK"
+          + "eyMatchResultsH\000\022g\n\037tool_parameter_kv_ma"
+          + "tch_results\030\025 \001(\0132<.google.cloud.aiplatf"
+          + "orm.v1beta1.ToolParameterKVMatchResultsH"
+          + "\000\022D\n\014comet_result\030\035 \001(\0132,.google.cloud.a"
+          + "iplatform.v1beta1.CometResultH\000\022H\n\016metri"
+          + "cx_result\030\036 \001(\0132..google.cloud.aiplatfor"
+          + "m.v1beta1.MetricxResultH\000\022f\n\036trajectory_"
+          + "exact_match_results\030\037 \001(\0132<.google.cloud"
+          + ".aiplatform.v1beta1.TrajectoryExactMatch"
+          + "ResultsH\000\022k\n!trajectory_in_order_match_r"
+          + "esults\030  \001(\0132>.google.cloud.aiplatform.v"
+          + "1beta1.TrajectoryInOrderMatchResultsH\000\022m"
+          + "\n\"trajectory_any_order_match_results\030! \001"
+          + "(\0132?.google.cloud.aiplatform.v1beta1.Tra"
+          + "jectoryAnyOrderMatchResultsH\000\022c\n\034traject"
+          + "ory_precision_results\030# \001(\0132;.google.clo"
+          + "ud.aiplatform.v1beta1.TrajectoryPrecisio"
+          + "nResultsH\000\022]\n\031trajectory_recall_results\030"
+          + "$ \001(\01328.google.cloud.aiplatform.v1beta1."
+          + "TrajectoryRecallResultsH\000\022m\n\"trajectory_"
+          + "single_tool_use_results\030% \001(\0132?.google.c"
+          + "loud.aiplatform.v1beta1.TrajectorySingle"
+          + "ToolUseResultsH\000\022{\n)rubric_based_instruc"
+          + "tion_following_result\030& \001(\0132F.google.clo"
+          + "ud.aiplatform.v1beta1.RubricBasedInstruc"
+          + "tionFollowingResultH\000B\024\n\022evaluation_resu"
+          + "lts\"\251\001\n\017ExactMatchInput\022I\n\013metric_spec\030\001"
+          + " \001(\0132/.google.cloud.aiplatform.v1beta1.E"
+          + "xactMatchSpecB\003\340A\002\022K\n\tinstances\030\002 \003(\01323."
+          + "google.cloud.aiplatform.v1beta1.ExactMat"
+          + "chInstanceB\003\340A\002\"l\n\022ExactMatchInstance\022\034\n"
+          + "\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\033\n\treference"
+          + "\030\002 \001(\tB\003\340A\002H\001\210\001\001B\r\n\013_predictionB\014\n\n_refe"
+          + "rence\"\020\n\016ExactMatchSpec\"s\n\021ExactMatchRes"
+          + "ults\022^\n\031exact_match_metric_values\030\001 \003(\0132"
+          + "6.google.cloud.aiplatform.v1beta1.ExactM"
+          + "atchMetricValueB\003\340A\003\":\n\025ExactMatchMetric"
+          + "Value\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001B\010\n\006_score"
+          + "\"\227\001\n\tBleuInput\022C\n\013metric_spec\030\001 \001(\0132).go"
+          + "ogle.cloud.aiplatform.v1beta1.BleuSpecB\003"
+          + "\340A\002\022E\n\tinstances\030\002 \003(\0132-.google.cloud.ai"
+          + "platform.v1beta1.BleuInstanceB\003\340A\002\"f\n\014Bl"
+          + "euInstance\022\034\n\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001"
+          + "\022\033\n\treference\030\002 \001(\tB\003\340A\002H\001\210\001\001B\r\n\013_predic"
+          + "tionB\014\n\n_reference\",\n\010BleuSpec\022 \n\023use_ef"
+          + "fective_order\030\001 \001(\010B\003\340A\001\"`\n\013BleuResults\022"
+          + "Q\n\022bleu_metric_values\030\001 \003(\01320.google.clo"
+          + "ud.aiplatform.v1beta1.BleuMetricValueB\003\340"
+          + "A\003\"4\n\017BleuMetricValue\022\027\n\005score\030\001 \001(\002B\003\340A"
+          + "\003H\000\210\001\001B\010\n\006_score\"\232\001\n\nRougeInput\022D\n\013metri"
+          + "c_spec\030\001 \001(\0132*.google.cloud.aiplatform.v"
+          + "1beta1.RougeSpecB\003\340A\002\022F\n\tinstances\030\002 \003(\013"
+          + "2..google.cloud.aiplatform.v1beta1.Rouge"
+          + "InstanceB\003\340A\002\"g\n\rRougeInstance\022\034\n\npredic"
+          + "tion\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\033\n\treference\030\002 \001(\tB"
+          + "\003\340A\002H\001\210\001\001B\r\n\013_predictionB\014\n\n_reference\"\\"
+          + "\n\tRougeSpec\022\027\n\nrouge_type\030\001 \001(\tB\003\340A\001\022\030\n\013"
+          + "use_stemmer\030\002 \001(\010B\003\340A\001\022\034\n\017split_summarie"
+          + "s\030\003 \001(\010B\003\340A\001\"c\n\014RougeResults\022S\n\023rouge_me"
+          + "tric_values\030\001 \003(\01321.google.cloud.aiplatf"
+          + "orm.v1beta1.RougeMetricValueB\003\340A\003\"5\n\020Rou"
+          + "geMetricValue\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001B\010"
+          + "\n\006_score\"\245\001\n\016CoherenceInput\022H\n\013metric_sp"
+          + "ec\030\001 \001(\0132..google.cloud.aiplatform.v1bet"
+          + "a1.CoherenceSpecB\003\340A\002\022I\n\010instance\030\002 \001(\0132"
+          + "2.google.cloud.aiplatform.v1beta1.Cohere"
+          + "nceInstanceB\003\340A\002\"@\n\021CoherenceInstance\022\034\n"
+          + "\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001B\r\n\013_predicti"
+          + "on\"%\n\rCoherenceSpec\022\024\n\007version\030\001 \001(\005B\003\340A"
+          + "\001\"{\n\017CoherenceResult\022\027\n\005score\030\001 \001(\002B\003\340A\003"
+          + "H\000\210\001\001\022\030\n\013explanation\030\002 \001(\tB\003\340A\003\022\034\n\nconfi"
+          + "dence\030\003 \001(\002B\003\340A\003H\001\210\001\001B\010\n\006_scoreB\r\n\013_conf"
+          + "idence\"\237\001\n\014FluencyInput\022F\n\013metric_spec\030\001"
+          + " \001(\0132,.google.cloud.aiplatform.v1beta1.F"
+          + "luencySpecB\003\340A\002\022G\n\010instance\030\002 \001(\01320.goog"
+          + "le.cloud.aiplatform.v1beta1.FluencyInsta"
+          + "nceB\003\340A\002\">\n\017FluencyInstance\022\034\n\npredictio"
+          + "n\030\001 \001(\tB\003\340A\002H\000\210\001\001B\r\n\013_prediction\"#\n\013Flue"
+          + "ncySpec\022\024\n\007version\030\001 \001(\005B\003\340A\001\"y\n\rFluency"
           + "Result\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001\022\030\n\013expla"
           + "nation\030\002 \001(\tB\003\340A\003\022\034\n\nconfidence\030\003 \001(\002B\003\340"
-          + "A\003H\001\210\001\001B\010\n\006_scoreB\r\n\013_confidence\"\322\001\n\035Que"
-          + "stionAnsweringQualityInput\022W\n\013metric_spe"
-          + "c\030\001 \001(\0132=.google.cloud.aiplatform.v1beta"
-          + "1.QuestionAnsweringQualitySpecB\003\340A\002\022X\n\010i"
-          + "nstance\030\002 \001(\0132A.google.cloud.aiplatform."
-          + "v1beta1.QuestionAnsweringQualityInstance"
-          + "B\003\340A\002\"\320\001\n QuestionAnsweringQualityInstan"
-          + "ce\022\034\n\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\033\n\trefe"
-          + "rence\030\002 \001(\tB\003\340A\001H\001\210\001\001\022\031\n\007context\030\003 \001(\tB\003"
-          + "\340A\002H\002\210\001\001\022\035\n\013instruction\030\004 \001(\tB\003\340A\002H\003\210\001\001B"
-          + "\r\n\013_predictionB\014\n\n_referenceB\n\n\010_context"
-          + "B\016\n\014_instruction\"P\n\034QuestionAnsweringQua"
-          + "litySpec\022\032\n\ruse_reference\030\001 \001(\010B\003\340A\001\022\024\n\007"
-          + "version\030\002 \001(\005B\003\340A\001\"\212\001\n\036QuestionAnswering"
-          + "QualityResult\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001\022\030"
-          + "\n\013explanation\030\002 \001(\tB\003\340A\003\022\034\n\nconfidence\030\003"
-          + " \001(\002B\003\340A\003H\001\210\001\001B\010\n\006_scoreB\r\n\013_confidence\""
-          + "\352\001\n%PairwiseQuestionAnsweringQualityInpu"
-          + "t\022_\n\013metric_spec\030\001 \001(\0132E.google.cloud.ai"
-          + "platform.v1beta1.PairwiseQuestionAnsweri"
-          + "ngQualitySpecB\003\340A\002\022`\n\010instance\030\002 \001(\0132I.g"
-          + "oogle.cloud.aiplatform.v1beta1.PairwiseQ"
-          + "uestionAnsweringQualityInstanceB\003\340A\002\"\227\002\n"
-          + "(PairwiseQuestionAnsweringQualityInstanc"
-          + "e\022\034\n\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022%\n\023basel"
-          + "ine_prediction\030\002 \001(\tB\003\340A\002H\001\210\001\001\022\033\n\trefere"
-          + "nce\030\003 \001(\tB\003\340A\001H\002\210\001\001\022\031\n\007context\030\004 \001(\tB\003\340A"
-          + "\002H\003\210\001\001\022\035\n\013instruction\030\005 \001(\tB\003\340A\002H\004\210\001\001B\r\n"
-          + "\013_predictionB\026\n\024_baseline_predictionB\014\n\n"
-          + "_referenceB\n\n\010_contextB\016\n\014_instruction\"X"
-          + "\n$PairwiseQuestionAnsweringQualitySpec\022\032"
-          + "\n\ruse_reference\030\001 \001(\010B\003\340A\001\022\024\n\007version\030\002 "
-          + "\001(\005B\003\340A\001\"\276\001\n&PairwiseQuestionAnsweringQu"
-          + "alityResult\022M\n\017pairwise_choice\030\001 \001(\0162/.g"
-          + "oogle.cloud.aiplatform.v1beta1.PairwiseC"
-          + "hoiceB\003\340A\003\022\030\n\013explanation\030\002 \001(\tB\003\340A\003\022\034\n\n"
-          + "confidence\030\003 \001(\002B\003\340A\003H\000\210\001\001B\r\n\013_confidenc"
-          + "e\"\330\001\n\037QuestionAnsweringRelevanceInput\022Y\n"
-          + "\013metric_spec\030\001 \001(\0132?.google.cloud.aiplat",
-      "form.v1beta1.QuestionAnsweringRelevanceS"
-          + "pecB\003\340A\002\022Z\n\010instance\030\002 \001(\0132C.google.clou"
-          + "d.aiplatform.v1beta1.QuestionAnsweringRe"
-          + "levanceInstanceB\003\340A\002\"\322\001\n\"QuestionAnsweri"
-          + "ngRelevanceInstance\022\034\n\nprediction\030\001 \001(\tB"
-          + "\003\340A\002H\000\210\001\001\022\033\n\treference\030\002 \001(\tB\003\340A\001H\001\210\001\001\022\031"
-          + "\n\007context\030\003 \001(\tB\003\340A\001H\002\210\001\001\022\035\n\013instruction"
-          + "\030\004 \001(\tB\003\340A\002H\003\210\001\001B\r\n\013_predictionB\014\n\n_refe"
-          + "renceB\n\n\010_contextB\016\n\014_instruction\"R\n\036Que"
-          + "stionAnsweringRelevanceSpec\022\032\n\ruse_refer"
-          + "ence\030\001 \001(\010B\003\340A\001\022\024\n\007version\030\002 \001(\005B\003\340A\001\"\214\001"
-          + "\n QuestionAnsweringRelevanceResult\022\027\n\005sc"
-          + "ore\030\001 \001(\002B\003\340A\003H\000\210\001\001\022\030\n\013explanation\030\002 \001(\t"
-          + "B\003\340A\003\022\034\n\nconfidence\030\003 \001(\002B\003\340A\003H\001\210\001\001B\010\n\006_"
-          + "scoreB\r\n\013_confidence\"\336\001\n!QuestionAnsweri"
-          + "ngHelpfulnessInput\022[\n\013metric_spec\030\001 \001(\0132"
-          + "A.google.cloud.aiplatform.v1beta1.Questi"
-          + "onAnsweringHelpfulnessSpecB\003\340A\002\022\\\n\010insta"
-          + "nce\030\002 \001(\0132E.google.cloud.aiplatform.v1be"
-          + "ta1.QuestionAnsweringHelpfulnessInstance"
-          + "B\003\340A\002\"\324\001\n$QuestionAnsweringHelpfulnessIn"
-          + "stance\022\034\n\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\033\n\t"
-          + "reference\030\002 \001(\tB\003\340A\001H\001\210\001\001\022\031\n\007context\030\003 \001"
-          + "(\tB\003\340A\001H\002\210\001\001\022\035\n\013instruction\030\004 \001(\tB\003\340A\002H\003"
-          + "\210\001\001B\r\n\013_predictionB\014\n\n_referenceB\n\n\010_con"
-          + "textB\016\n\014_instruction\"T\n QuestionAnswerin"
-          + "gHelpfulnessSpec\022\032\n\ruse_reference\030\001 \001(\010B"
-          + "\003\340A\001\022\024\n\007version\030\002 \001(\005B\003\340A\001\"\216\001\n\"QuestionA"
-          + "nsweringHelpfulnessResult\022\027\n\005score\030\001 \001(\002"
-          + "B\003\340A\003H\000\210\001\001\022\030\n\013explanation\030\002 \001(\tB\003\340A\003\022\034\n\n"
-          + "confidence\030\003 \001(\002B\003\340A\003H\001\210\001\001B\010\n\006_scoreB\r\n\013"
-          + "_confidence\"\336\001\n!QuestionAnsweringCorrect"
-          + "nessInput\022[\n\013metric_spec\030\001 \001(\0132A.google."
-          + "cloud.aiplatform.v1beta1.QuestionAnsweri"
-          + "ngCorrectnessSpecB\003\340A\002\022\\\n\010instance\030\002 \001(\013"
-          + "2E.google.cloud.aiplatform.v1beta1.Quest"
-          + "ionAnsweringCorrectnessInstanceB\003\340A\002\"\324\001\n"
-          + "$QuestionAnsweringCorrectnessInstance\022\034\n"
-          + "\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\033\n\treference"
-          + "\030\002 \001(\tB\003\340A\001H\001\210\001\001\022\031\n\007context\030\003 \001(\tB\003\340A\001H\002"
-          + "\210\001\001\022\035\n\013instruction\030\004 \001(\tB\003\340A\002H\003\210\001\001B\r\n\013_p"
-          + "redictionB\014\n\n_referenceB\n\n\010_contextB\016\n\014_"
-          + "instruction\"T\n QuestionAnsweringCorrectn"
-          + "essSpec\022\032\n\ruse_reference\030\001 \001(\010B\003\340A\001\022\024\n\007v"
-          + "ersion\030\002 \001(\005B\003\340A\001\"\216\001\n\"QuestionAnsweringC"
-          + "orrectnessResult\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001"
-          + "\001\022\030\n\013explanation\030\002 \001(\tB\003\340A\003\022\034\n\nconfidenc"
-          + "e\030\003 \001(\002B\003\340A\003H\001\210\001\001B\010\n\006_scoreB\r\n\013_confiden"
-          + "ce\"\267\001\n\024PointwiseMetricInput\022N\n\013metric_sp"
-          + "ec\030\001 \001(\01324.google.cloud.aiplatform.v1bet"
-          + "a1.PointwiseMetricSpecB\003\340A\002\022O\n\010instance\030"
-          + "\002 \001(\01328.google.cloud.aiplatform.v1beta1."
-          + "PointwiseMetricInstanceB\003\340A\002\">\n\027Pointwis"
-          + "eMetricInstance\022\027\n\rjson_instance\030\001 \001(\tH\000"
-          + "B\n\n\010instance\"\227\001\n\023PointwiseMetricSpec\022(\n\026"
-          + "metric_prompt_template\030\001 \001(\tB\003\340A\002H\000\210\001\001\022$"
-          + "\n\022system_instruction\030\002 \001(\tB\003\340A\001H\001\210\001\001B\031\n\027"
-          + "_metric_prompt_templateB\025\n\023_system_instr"
-          + "uction\"T\n\025PointwiseMetricResult\022\027\n\005score"
+          + "A\003H\001\210\001\001B\010\n\006_scoreB\r\n\013_confidence\"\234\001\n\013Saf"
+          + "etyInput\022E\n\013metric_spec\030\001 \001(\0132+.google.c"
+          + "loud.aiplatform.v1beta1.SafetySpecB\003\340A\002\022"
+          + "F\n\010instance\030\002 \001(\0132/.google.cloud.aiplatf"
+          + "orm.v1beta1.SafetyInstanceB\003\340A\002\"=\n\016Safet"
+          + "yInstance\022\034\n\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001B"
+          + "\r\n\013_prediction\"\"\n\nSafetySpec\022\024\n\007version\030"
+          + "\001 \001(\005B\003\340A\001\"x\n\014SafetyResult\022\027\n\005score\030\001 \001("
+          + "\002B\003\340A\003H\000\210\001\001\022\030\n\013explanation\030\002 \001(\tB\003\340A\003\022\034\n"
+          + "\nconfidence\030\003 \001(\002B\003\340A\003H\001\210\001\001B\010\n\006_scoreB\r\n"
+          + "\013_confidence\"\256\001\n\021GroundednessInput\022K\n\013me"
+          + "tric_spec\030\001 \001(\01321.google.cloud.aiplatfor"
+          + "m.v1beta1.GroundednessSpecB\003\340A\002\022L\n\010insta"
+          + "nce\030\002 \001(\01325.google.cloud.aiplatform.v1be"
+          + "ta1.GroundednessInstanceB\003\340A\002\"j\n\024Grounde"
+          + "dnessInstance\022\034\n\nprediction\030\001 \001(\tB\003\340A\002H\000"
+          + "\210\001\001\022\031\n\007context\030\002 \001(\tB\003\340A\002H\001\210\001\001B\r\n\013_predi"
+          + "ctionB\n\n\010_context\"(\n\020GroundednessSpec\022\024\n"
+          + "\007version\030\001 \001(\005B\003\340A\001\"~\n\022GroundednessResul"
+          + "t\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001\022\030\n\013explanatio"
+          + "n\030\002 \001(\tB\003\340A\003\022\034\n\nconfidence\030\003 \001(\002B\003\340A\003H\001\210"
+          + "\001\001B\010\n\006_scoreB\r\n\013_confidence\"\253\001\n\020Fulfillm"
+          + "entInput\022J\n\013metric_spec\030\001 \001(\01320.google.c"
+          + "loud.aiplatform.v1beta1.FulfillmentSpecB"
+          + "\003\340A\002\022K\n\010instance\030\002 \001(\01324.google.cloud.ai"
+          + "platform.v1beta1.FulfillmentInstanceB\003\340A"
+          + "\002\"q\n\023FulfillmentInstance\022\034\n\nprediction\030\001"
+          + " \001(\tB\003\340A\002H\000\210\001\001\022\035\n\013instruction\030\002 \001(\tB\003\340A\002"
+          + "H\001\210\001\001B\r\n\013_predictionB\016\n\014_instruction\"\'\n\017"
+          + "FulfillmentSpec\022\024\n\007version\030\001 \001(\005B\003\340A\001\"}\n"
+          + "\021FulfillmentResult\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000"
+          + "\210\001\001\022\030\n\013explanation\030\002 \001(\tB\003\340A\003\022\034\n\nconfide"
+          + "nce\030\003 \001(\002B\003\340A\003H\001\210\001\001B\010\n\006_scoreB\r\n\013_confid"
+          + "ence\"\306\001\n\031SummarizationQualityInput\022S\n\013me"
+          + "tric_spec\030\001 \001(\01329.google.cloud.aiplatfor"
+          + "m.v1beta1.SummarizationQualitySpecB\003\340A\002\022"
+          + "T\n\010instance\030\002 \001(\0132=.google.cloud.aiplatf"
+          + "orm.v1beta1.SummarizationQualityInstance"
+          + "B\003\340A\002\"\314\001\n\034SummarizationQualityInstance\022\034"
+          + "\n\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\033\n\treferenc"
+          + "e\030\002 \001(\tB\003\340A\001H\001\210\001\001\022\031\n\007context\030\003 \001(\tB\003\340A\002H"
+          + "\002\210\001\001\022\035\n\013instruction\030\004 \001(\tB\003\340A\002H\003\210\001\001B\r\n\013_"
+          + "predictionB\014\n\n_referenceB\n\n\010_contextB\016\n\014"
+          + "_instruction\"L\n\030SummarizationQualitySpec"
+          + "\022\032\n\ruse_reference\030\001 \001(\010B\003\340A\001\022\024\n\007version\030"
+          + "\002 \001(\005B\003\340A\001\"\206\001\n\032SummarizationQualityResul"
+          + "t\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001\022\030\n\013explanatio"
+          + "n\030\002 \001(\tB\003\340A\003\022\034\n\nconfidence\030\003 \001(\002B\003\340A\003H\001\210"
+          + "\001\001B\010\n\006_scoreB\r\n\013_confidence\"\336\001\n!Pairwise"
+          + "SummarizationQualityInput\022[\n\013metric_spec"
+          + "\030\001 \001(\0132A.google.cloud.aiplatform.v1beta1"
+          + ".PairwiseSummarizationQualitySpecB\003\340A\002\022\\"
+          + "\n\010instance\030\002 \001(\0132E.google.cloud.aiplatfo"
+          + "rm.v1beta1.PairwiseSummarizationQualityI"
+          + "nstanceB\003\340A\002\"\223\002\n$PairwiseSummarizationQu"
+          + "alityInstance\022\034\n\nprediction\030\001 \001(\tB\003\340A\002H\000"
+          + "\210\001\001\022%\n\023baseline_prediction\030\002 \001(\tB\003\340A\002H\001\210"
+          + "\001\001\022\033\n\treference\030\003 \001(\tB\003\340A\001H\002\210\001\001\022\031\n\007conte"
+          + "xt\030\004 \001(\tB\003\340A\002H\003\210\001\001\022\035\n\013instruction\030\005 \001(\tB"
+          + "\003\340A\002H\004\210\001\001B\r\n\013_predictionB\026\n\024_baseline_pr"
+          + "edictionB\014\n\n_referenceB\n\n\010_contextB\016\n\014_i"
+          + "nstruction\"T\n PairwiseSummarizationQuali"
+          + "tySpec\022\032\n\ruse_reference\030\001 \001(\010B\003\340A\001\022\024\n\007ve"
+          + "rsion\030\002 \001(\005B\003\340A\001\"\272\001\n\"PairwiseSummarizati"
+          + "onQualityResult\022M\n\017pairwise_choice\030\001 \001(\016"
+          + "2/.google.cloud.aiplatform.v1beta1.Pairw"
+          + "iseChoiceB\003\340A\003\022\030\n\013explanation\030\002 \001(\tB\003\340A\003"
+          + "\022\034\n\nconfidence\030\003 \001(\002B\003\340A\003H\000\210\001\001B\r\n\013_confi"
+          + "dence\"\322\001\n\035SummarizationHelpfulnessInput\022"
+          + "W\n\013metric_spec\030\001 \001(\0132=.google.cloud.aipl"
+          + "atform.v1beta1.SummarizationHelpfulnessS"
+          + "pecB\003\340A\002\022X\n\010instance\030\002 \001(\0132A.google.clou"
+          + "d.aiplatform.v1beta1.SummarizationHelpfu"
+          + "lnessInstanceB\003\340A\002\"\320\001\n SummarizationHelp"
+          + "fulnessInstance\022\034\n\nprediction\030\001 \001(\tB\003\340A\002"
+          + "H\000\210\001\001\022\033\n\treference\030\002 \001(\tB\003\340A\001H\001\210\001\001\022\031\n\007co"
+          + "ntext\030\003 \001(\tB\003\340A\002H\002\210\001\001\022\035\n\013instruction\030\004 \001"
+          + "(\tB\003\340A\001H\003\210\001\001B\r\n\013_predictionB\014\n\n_referenc"
+          + "eB\n\n\010_contextB\016\n\014_instruction\"P\n\034Summari"
+          + "zationHelpfulnessSpec\022\032\n\ruse_reference\030\001"
+          + " \001(\010B\003\340A\001\022\024\n\007version\030\002 \001(\005B\003\340A\001\"\212\001\n\036Summ"
+          + "arizationHelpfulnessResult\022\027\n\005score\030\001 \001("
+          + "\002B\003\340A\003H\000\210\001\001\022\030\n\013explanation\030\002 \001(\tB\003\340A\003\022\034\n"
+          + "\nconfidence\030\003 \001(\002B\003\340A\003H\001\210\001\001B\010\n\006_scoreB\r\n"
+          + "\013_confidence\"\314\001\n\033SummarizationVerbosityI"
+          + "nput\022U\n\013metric_spec\030\001 \001(\0132;.google.cloud"
+          + ".aiplatform.v1beta1.SummarizationVerbosi"
+          + "tySpecB\003\340A\002\022V\n\010instance\030\002 \001(\0132?.google.c"
+          + "loud.aiplatform.v1beta1.SummarizationVer"
+          + "bosityInstanceB\003\340A\002\"\316\001\n\036SummarizationVer"
+          + "bosityInstance\022\034\n\nprediction\030\001 \001(\tB\003\340A\002H"
+          + "\000\210\001\001\022\033\n\treference\030\002 \001(\tB\003\340A\001H\001\210\001\001\022\031\n\007con"
+          + "text\030\003 \001(\tB\003\340A\002H\002\210\001\001\022\035\n\013instruction\030\004 \001("
+          + "\tB\003\340A\001H\003\210\001\001B\r\n\013_predictionB\014\n\n_reference"
+          + "B\n\n\010_contextB\016\n\014_instruction\"N\n\032Summariz"
+          + "ationVerbositySpec\022\032\n\ruse_reference\030\001 \001("
+          + "\010B\003\340A\001\022\024\n\007version\030\002 \001(\005B\003\340A\001\"\210\001\n\034Summari"
+          + "zationVerbosityResult\022\027\n\005score\030\001 \001(\002B\003\340A"
+          + "\003H\000\210\001\001\022\030\n\013explanation\030\002 \001(\tB\003\340A\003\022\034\n\nconf"
+          + "idence\030\003 \001(\002B\003\340A\003H\001\210\001\001B\010\n\006_scoreB\r\n\013_con"
+          + "fidence\"\322\001\n\035QuestionAnsweringQualityInpu"
+          + "t\022W\n\013metric_spec\030\001 \001(\0132=.google.cloud.ai"
+          + "platform.v1beta1.QuestionAnsweringQualit"
+          + "ySpecB\003\340A\002\022X\n\010instance\030\002 \001(\0132A.google.cl"
+          + "oud.aiplatform.v1beta1.QuestionAnswering"
+          + "QualityInstanceB\003\340A\002\"\320\001\n QuestionAnsweri"
+          + "ngQualityInstance\022\034\n\nprediction\030\001 \001(\tB\003\340"
+          + "A\002H\000\210\001\001\022\033\n\treference\030\002 \001(\tB\003\340A\001H\001\210\001\001\022\031\n\007"
+          + "context\030\003 \001(\tB\003\340A\002H\002\210\001\001\022\035\n\013instruction\030\004"
+          + " \001(\tB\003\340A\002H\003\210\001\001B\r\n\013_predictionB\014\n\n_refere"
+          + "nceB\n\n\010_contextB\016\n\014_instruction\"P\n\034Quest"
+          + "ionAnsweringQualitySpec\022\032\n\ruse_reference"
+          + "\030\001 \001(\010B\003\340A\001\022\024\n\007version\030\002 \001(\005B\003\340A\001\"\212\001\n\036Qu"
+          + "estionAnsweringQualityResult\022\027\n\005score\030\001 "
+          + "\001(\002B\003\340A\003H\000\210\001\001\022\030\n\013explanation\030\002 \001(\tB\003\340A\003\022"
+          + "\034\n\nconfidence\030\003 \001(\002B\003\340A\003H\001\210\001\001B\010\n\006_scoreB"
+          + "\r\n\013_confidence\"\352\001\n%PairwiseQuestionAnswe"
+          + "ringQualityInput\022_\n\013metric_spec\030\001 \001(\0132E."
+          + "google.cloud.aiplatform.v1beta1.Pairwise"
+          + "QuestionAnsweringQualitySpecB\003\340A\002\022`\n\010ins"
+          + "tance\030\002 \001(\0132I.google.cloud.aiplatform.v1"
+          + "beta1.PairwiseQuestionAnsweringQualityIn"
+          + "stanceB\003\340A\002\"\227\002\n(PairwiseQuestionAnswerin"
+          + "gQualityInstance\022\034\n\nprediction\030\001 \001(\tB\003\340A"
+          + "\002H\000\210\001\001\022%\n\023baseline_prediction\030\002 \001(\tB\003\340A\002"
+          + "H\001\210\001\001\022\033\n\treference\030\003 \001(\tB\003\340A\001H\002\210\001\001\022\031\n\007co"
+          + "ntext\030\004 \001(\tB\003\340A\002H\003\210\001\001\022\035\n\013instruction\030\005 \001"
+          + "(\tB\003\340A\002H\004\210\001\001B\r\n\013_predictionB\026\n\024_baseline"
+          + "_predictionB\014\n\n_referenceB\n\n\010_contextB\016\n"
+          + "\014_instruction\"X\n$PairwiseQuestionAnsweri"
+          + "ngQualitySpec\022\032\n\ruse_reference\030\001 \001(\010B\003\340A",
+      "\001\022\024\n\007version\030\002 \001(\005B\003\340A\001\"\276\001\n&PairwiseQues"
+          + "tionAnsweringQualityResult\022M\n\017pairwise_c"
+          + "hoice\030\001 \001(\0162/.google.cloud.aiplatform.v1"
+          + "beta1.PairwiseChoiceB\003\340A\003\022\030\n\013explanation"
+          + "\030\002 \001(\tB\003\340A\003\022\034\n\nconfidence\030\003 \001(\002B\003\340A\003H\000\210\001"
+          + "\001B\r\n\013_confidence\"\330\001\n\037QuestionAnsweringRe"
+          + "levanceInput\022Y\n\013metric_spec\030\001 \001(\0132?.goog"
+          + "le.cloud.aiplatform.v1beta1.QuestionAnsw"
+          + "eringRelevanceSpecB\003\340A\002\022Z\n\010instance\030\002 \001("
+          + "\0132C.google.cloud.aiplatform.v1beta1.Ques"
+          + "tionAnsweringRelevanceInstanceB\003\340A\002\"\322\001\n\""
+          + "QuestionAnsweringRelevanceInstance\022\034\n\npr"
+          + "ediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\033\n\treference\030\002 "
+          + "\001(\tB\003\340A\001H\001\210\001\001\022\031\n\007context\030\003 \001(\tB\003\340A\001H\002\210\001\001"
+          + "\022\035\n\013instruction\030\004 \001(\tB\003\340A\002H\003\210\001\001B\r\n\013_pred"
+          + "ictionB\014\n\n_referenceB\n\n\010_contextB\016\n\014_ins"
+          + "truction\"R\n\036QuestionAnsweringRelevanceSp"
+          + "ec\022\032\n\ruse_reference\030\001 \001(\010B\003\340A\001\022\024\n\007versio"
+          + "n\030\002 \001(\005B\003\340A\001\"\214\001\n QuestionAnsweringReleva"
+          + "nceResult\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001\022\030\n\013ex"
+          + "planation\030\002 \001(\tB\003\340A\003\022\034\n\nconfidence\030\003 \001(\002"
+          + "B\003\340A\003H\001\210\001\001B\010\n\006_scoreB\r\n\013_confidence\"\336\001\n!"
+          + "QuestionAnsweringHelpfulnessInput\022[\n\013met"
+          + "ric_spec\030\001 \001(\0132A.google.cloud.aiplatform"
+          + ".v1beta1.QuestionAnsweringHelpfulnessSpe"
+          + "cB\003\340A\002\022\\\n\010instance\030\002 \001(\0132E.google.cloud."
+          + "aiplatform.v1beta1.QuestionAnsweringHelp"
+          + "fulnessInstanceB\003\340A\002\"\324\001\n$QuestionAnsweri"
+          + "ngHelpfulnessInstance\022\034\n\nprediction\030\001 \001("
+          + "\tB\003\340A\002H\000\210\001\001\022\033\n\treference\030\002 \001(\tB\003\340A\001H\001\210\001\001"
+          + "\022\031\n\007context\030\003 \001(\tB\003\340A\001H\002\210\001\001\022\035\n\013instructi"
+          + "on\030\004 \001(\tB\003\340A\002H\003\210\001\001B\r\n\013_predictionB\014\n\n_re"
+          + "ferenceB\n\n\010_contextB\016\n\014_instruction\"T\n Q"
+          + "uestionAnsweringHelpfulnessSpec\022\032\n\ruse_r"
+          + "eference\030\001 \001(\010B\003\340A\001\022\024\n\007version\030\002 \001(\005B\003\340A"
+          + "\001\"\216\001\n\"QuestionAnsweringHelpfulnessResult"
+          + "\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001\022\030\n\013explanation"
+          + "\030\002 \001(\tB\003\340A\003\022\034\n\nconfidence\030\003 \001(\002B\003\340A\003H\001\210\001"
+          + "\001B\010\n\006_scoreB\r\n\013_confidence\"\336\001\n!QuestionA"
+          + "nsweringCorrectnessInput\022[\n\013metric_spec\030"
+          + "\001 \001(\0132A.google.cloud.aiplatform.v1beta1."
+          + "QuestionAnsweringCorrectnessSpecB\003\340A\002\022\\\n"
+          + "\010instance\030\002 \001(\0132E.google.cloud.aiplatfor"
+          + "m.v1beta1.QuestionAnsweringCorrectnessIn"
+          + "stanceB\003\340A\002\"\324\001\n$QuestionAnsweringCorrect"
+          + "nessInstance\022\034\n\nprediction\030\001 \001(\tB\003\340A\002H\000\210"
+          + "\001\001\022\033\n\treference\030\002 \001(\tB\003\340A\001H\001\210\001\001\022\031\n\007conte"
+          + "xt\030\003 \001(\tB\003\340A\001H\002\210\001\001\022\035\n\013instruction\030\004 \001(\tB"
+          + "\003\340A\002H\003\210\001\001B\r\n\013_predictionB\014\n\n_referenceB\n"
+          + "\n\010_contextB\016\n\014_instruction\"T\n QuestionAn"
+          + "sweringCorrectnessSpec\022\032\n\ruse_reference\030"
+          + "\001 \001(\010B\003\340A\001\022\024\n\007version\030\002 \001(\005B\003\340A\001\"\216\001\n\"Que"
+          + "stionAnsweringCorrectnessResult\022\027\n\005score"
           + "\030\001 \001(\002B\003\340A\003H\000\210\001\001\022\030\n\013explanation\030\002 \001(\tB\003\340"
-          + "A\003B\010\n\006_score\"\264\001\n\023PairwiseMetricInput\022M\n\013"
-          + "metric_spec\030\001 \001(\01323.google.cloud.aiplatf"
-          + "orm.v1beta1.PairwiseMetricSpecB\003\340A\002\022N\n\010i"
-          + "nstance\030\002 \001(\01327.google.cloud.aiplatform."
-          + "v1beta1.PairwiseMetricInstanceB\003\340A\002\"=\n\026P"
-          + "airwiseMetricInstance\022\027\n\rjson_instance\030\001"
-          + " \001(\tH\000B\n\n\010instance\"\355\001\n\022PairwiseMetricSpe"
-          + "c\022(\n\026metric_prompt_template\030\001 \001(\tB\003\340A\002H\000"
-          + "\210\001\001\022*\n\035candidate_response_field_name\030\002 \001"
-          + "(\tB\003\340A\001\022)\n\034baseline_response_field_name\030"
-          + "\003 \001(\tB\003\340A\001\022$\n\022system_instruction\030\004 \001(\tB\003"
-          + "\340A\001H\001\210\001\001B\031\n\027_metric_prompt_templateB\025\n\023_"
-          + "system_instruction\"\177\n\024PairwiseMetricResu"
-          + "lt\022M\n\017pairwise_choice\030\001 \001(\0162/.google.clo"
-          + "ud.aiplatform.v1beta1.PairwiseChoiceB\003\340A"
-          + "\003\022\030\n\013explanation\030\002 \001(\tB\003\340A\003\"\262\001\n\022ToolCall"
-          + "ValidInput\022L\n\013metric_spec\030\001 \001(\01322.google"
-          + ".cloud.aiplatform.v1beta1.ToolCallValidS"
-          + "pecB\003\340A\002\022N\n\tinstances\030\002 \003(\01326.google.clo"
-          + "ud.aiplatform.v1beta1.ToolCallValidInsta"
-          + "nceB\003\340A\002\"\023\n\021ToolCallValidSpec\"o\n\025ToolCal"
-          + "lValidInstance\022\034\n\nprediction\030\001 \001(\tB\003\340A\002H"
-          + "\000\210\001\001\022\033\n\treference\030\002 \001(\tB\003\340A\002H\001\210\001\001B\r\n\013_pr"
-          + "edictionB\014\n\n_reference\"}\n\024ToolCallValidR"
-          + "esults\022e\n\035tool_call_valid_metric_values\030"
-          + "\001 \003(\01329.google.cloud.aiplatform.v1beta1."
-          + "ToolCallValidMetricValueB\003\340A\003\"=\n\030ToolCal"
-          + "lValidMetricValue\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210"
-          + "\001\001B\010\n\006_score\"\262\001\n\022ToolNameMatchInput\022L\n\013m"
-          + "etric_spec\030\001 \001(\01322.google.cloud.aiplatfo"
-          + "rm.v1beta1.ToolNameMatchSpecB\003\340A\002\022N\n\tins"
-          + "tances\030\002 \003(\01326.google.cloud.aiplatform.v"
-          + "1beta1.ToolNameMatchInstanceB\003\340A\002\"\023\n\021Too"
-          + "lNameMatchSpec\"o\n\025ToolNameMatchInstance\022"
-          + "\034\n\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\033\n\treferen"
-          + "ce\030\002 \001(\tB\003\340A\002H\001\210\001\001B\r\n\013_predictionB\014\n\n_re"
-          + "ference\"}\n\024ToolNameMatchResults\022e\n\035tool_"
-          + "name_match_metric_values\030\001 \003(\01329.google."
-          + "cloud.aiplatform.v1beta1.ToolNameMatchMe"
-          + "tricValueB\003\340A\003\"=\n\030ToolNameMatchMetricVal"
-          + "ue\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001B\010\n\006_score\"\312\001"
-          + "\n\032ToolParameterKeyMatchInput\022T\n\013metric_s"
-          + "pec\030\001 \001(\0132:.google.cloud.aiplatform.v1be"
-          + "ta1.ToolParameterKeyMatchSpecB\003\340A\002\022V\n\tin"
-          + "stances\030\002 \003(\0132>.google.cloud.aiplatform."
-          + "v1beta1.ToolParameterKeyMatchInstanceB\003\340"
-          + "A\002\"\033\n\031ToolParameterKeyMatchSpec\"w\n\035ToolP"
-          + "arameterKeyMatchInstance\022\034\n\nprediction\030\001"
-          + " \001(\tB\003\340A\002H\000\210\001\001\022\033\n\treference\030\002 \001(\tB\003\340A\002H\001"
-          + "\210\001\001B\r\n\013_predictionB\014\n\n_reference\"\226\001\n\034Too"
-          + "lParameterKeyMatchResults\022v\n&tool_parame"
-          + "ter_key_match_metric_values\030\001 \003(\0132A.goog"
-          + "le.cloud.aiplatform.v1beta1.ToolParamete"
-          + "rKeyMatchMetricValueB\003\340A\003\"E\n ToolParamet"
-          + "erKeyMatchMetricValue\022\027\n\005score\030\001 \001(\002B\003\340A"
-          + "\003H\000\210\001\001B\010\n\006_score\"\307\001\n\031ToolParameterKVMatc"
-          + "hInput\022S\n\013metric_spec\030\001 \001(\01329.google.clo"
-          + "ud.aiplatform.v1beta1.ToolParameterKVMat"
-          + "chSpecB\003\340A\002\022U\n\tinstances\030\002 \003(\0132=.google."
-          + "cloud.aiplatform.v1beta1.ToolParameterKV"
-          + "MatchInstanceB\003\340A\002\"@\n\030ToolParameterKVMat"
-          + "chSpec\022$\n\027use_strict_string_match\030\001 \001(\010B"
-          + "\003\340A\001\"v\n\034ToolParameterKVMatchInstance\022\034\n\n"
-          + "prediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\033\n\treference\030"
-          + "\002 \001(\tB\003\340A\002H\001\210\001\001B\r\n\013_predictionB\014\n\n_refer"
-          + "ence\"\223\001\n\033ToolParameterKVMatchResults\022t\n%"
-          + "tool_parameter_kv_match_metric_values\030\001 "
-          + "\003(\0132@.google.cloud.aiplatform.v1beta1.To"
-          + "olParameterKVMatchMetricValueB\003\340A\003\"D\n\037To"
-          + "olParameterKVMatchMetricValue\022\027\n\005score\030\001"
-          + " \001(\002B\003\340A\003H\000\210\001\001B\010\n\006_score\"\231\001\n\nCometInput\022"
-          + "D\n\013metric_spec\030\001 \001(\0132*.google.cloud.aipl"
-          + "atform.v1beta1.CometSpecB\003\340A\002\022E\n\010instanc"
-          + "e\030\002 \001(\0132..google.cloud.aiplatform.v1beta"
-          + "1.CometInstanceB\003\340A\002\"\354\001\n\tCometSpec\022R\n\007ve"
-          + "rsion\030\001 \001(\01627.google.cloud.aiplatform.v1"
-          + "beta1.CometSpec.CometVersionB\003\340A\002H\000\210\001\001\022\034"
-          + "\n\017source_language\030\002 \001(\tB\003\340A\001\022\034\n\017target_l"
-          + "anguage\030\003 \001(\tB\003\340A\001\"C\n\014CometVersion\022\035\n\031CO"
-          + "MET_VERSION_UNSPECIFIED\020\000\022\024\n\020COMET_22_SR"
-          + "C_REF\020\002B\n\n\010_version\"\214\001\n\rCometInstance\022\034\n"
+          + "A\003\022\034\n\nconfidence\030\003 \001(\002B\003\340A\003H\001\210\001\001B\010\n\006_sco"
+          + "reB\r\n\013_confidence\"\267\001\n\024PointwiseMetricInp"
+          + "ut\022N\n\013metric_spec\030\001 \001(\01324.google.cloud.a"
+          + "iplatform.v1beta1.PointwiseMetricSpecB\003\340"
+          + "A\002\022O\n\010instance\030\002 \001(\01328.google.cloud.aipl"
+          + "atform.v1beta1.PointwiseMetricInstanceB\003"
+          + "\340A\002\"\213\001\n\027PointwiseMetricInstance\022\027\n\rjson_"
+          + "instance\030\001 \001(\tH\000\022K\n\024content_map_instance"
+          + "\030\002 \001(\0132+.google.cloud.aiplatform.v1beta1"
+          + ".ContentMapH\000B\n\n\010instance\"\374\001\n\023PointwiseM"
+          + "etricSpec\022(\n\026metric_prompt_template\030\001 \001("
+          + "\tB\003\340A\002H\000\210\001\001\022$\n\022system_instruction\030\002 \001(\tB"
+          + "\003\340A\001H\001\210\001\001\022c\n\033custom_output_format_config"
+          + "\030\003 \001(\01329.google.cloud.aiplatform.v1beta1"
+          + ".CustomOutputFormatConfigB\003\340A\001B\031\n\027_metri"
+          + "c_prompt_templateB\025\n\023_system_instruction"
+          + "\"[\n\030CustomOutputFormatConfig\022 \n\021return_r"
+          + "aw_output\030\001 \001(\010B\003\340A\001H\000B\035\n\033custom_output_"
+          + "format_config\"\237\001\n\025PointwiseMetricResult\022"
+          + "\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001\022\030\n\013explanation\030"
+          + "\002 \001(\tB\003\340A\003\022I\n\rcustom_output\030\003 \001(\0132-.goog"
+          + "le.cloud.aiplatform.v1beta1.CustomOutput"
+          + "B\003\340A\003B\010\n\006_score\"g\n\014CustomOutput\022F\n\013raw_o"
+          + "utputs\030\001 \001(\0132*.google.cloud.aiplatform.v"
+          + "1beta1.RawOutputB\003\340A\003H\000B\017\n\rcustom_output"
+          + "\"$\n\tRawOutput\022\027\n\nraw_output\030\001 \003(\tB\003\340A\003\"\264"
+          + "\001\n\023PairwiseMetricInput\022M\n\013metric_spec\030\001 "
+          + "\001(\01323.google.cloud.aiplatform.v1beta1.Pa"
+          + "irwiseMetricSpecB\003\340A\002\022N\n\010instance\030\002 \001(\0132"
+          + "7.google.cloud.aiplatform.v1beta1.Pairwi"
+          + "seMetricInstanceB\003\340A\002\"\212\001\n\026PairwiseMetric"
+          + "Instance\022\027\n\rjson_instance\030\001 \001(\tH\000\022K\n\024con"
+          + "tent_map_instance\030\002 \001(\0132+.google.cloud.a"
+          + "iplatform.v1beta1.ContentMapH\000B\n\n\010instan"
+          + "ce\"\322\002\n\022PairwiseMetricSpec\022(\n\026metric_prom"
+          + "pt_template\030\001 \001(\tB\003\340A\002H\000\210\001\001\022*\n\035candidate"
+          + "_response_field_name\030\002 \001(\tB\003\340A\001\022)\n\034basel"
+          + "ine_response_field_name\030\003 \001(\tB\003\340A\001\022$\n\022sy"
+          + "stem_instruction\030\004 \001(\tB\003\340A\001H\001\210\001\001\022c\n\033cust"
+          + "om_output_format_config\030\005 \001(\01329.google.c"
+          + "loud.aiplatform.v1beta1.CustomOutputForm"
+          + "atConfigB\003\340A\001B\031\n\027_metric_prompt_template"
+          + "B\025\n\023_system_instruction\"\312\001\n\024PairwiseMetr"
+          + "icResult\022M\n\017pairwise_choice\030\001 \001(\0162/.goog"
+          + "le.cloud.aiplatform.v1beta1.PairwiseChoi"
+          + "ceB\003\340A\003\022\030\n\013explanation\030\002 \001(\tB\003\340A\003\022I\n\rcus"
+          + "tom_output\030\003 \001(\0132-.google.cloud.aiplatfo"
+          + "rm.v1beta1.CustomOutputB\003\340A\003\"\262\001\n\022ToolCal"
+          + "lValidInput\022L\n\013metric_spec\030\001 \001(\01322.googl"
+          + "e.cloud.aiplatform.v1beta1.ToolCallValid"
+          + "SpecB\003\340A\002\022N\n\tinstances\030\002 \003(\01326.google.cl"
+          + "oud.aiplatform.v1beta1.ToolCallValidInst"
+          + "anceB\003\340A\002\"\023\n\021ToolCallValidSpec\"o\n\025ToolCa"
+          + "llValidInstance\022\034\n\nprediction\030\001 \001(\tB\003\340A\002"
+          + "H\000\210\001\001\022\033\n\treference\030\002 \001(\tB\003\340A\002H\001\210\001\001B\r\n\013_p"
+          + "redictionB\014\n\n_reference\"}\n\024ToolCallValid"
+          + "Results\022e\n\035tool_call_valid_metric_values"
+          + "\030\001 \003(\01329.google.cloud.aiplatform.v1beta1"
+          + ".ToolCallValidMetricValueB\003\340A\003\"=\n\030ToolCa"
+          + "llValidMetricValue\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000"
+          + "\210\001\001B\010\n\006_score\"\262\001\n\022ToolNameMatchInput\022L\n\013"
+          + "metric_spec\030\001 \001(\01322.google.cloud.aiplatf"
+          + "orm.v1beta1.ToolNameMatchSpecB\003\340A\002\022N\n\tin"
+          + "stances\030\002 \003(\01326.google.cloud.aiplatform."
+          + "v1beta1.ToolNameMatchInstanceB\003\340A\002\"\023\n\021To"
+          + "olNameMatchSpec\"o\n\025ToolNameMatchInstance"
+          + "\022\034\n\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\033\n\trefere"
+          + "nce\030\002 \001(\tB\003\340A\002H\001\210\001\001B\r\n\013_predictionB\014\n\n_r"
+          + "eference\"}\n\024ToolNameMatchResults\022e\n\035tool"
+          + "_name_match_metric_values\030\001 \003(\01329.google"
+          + ".cloud.aiplatform.v1beta1.ToolNameMatchM"
+          + "etricValueB\003\340A\003\"=\n\030ToolNameMatchMetricVa"
+          + "lue\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001B\010\n\006_score\"\312"
+          + "\001\n\032ToolParameterKeyMatchInput\022T\n\013metric_"
+          + "spec\030\001 \001(\0132:.google.cloud.aiplatform.v1b"
+          + "eta1.ToolParameterKeyMatchSpecB\003\340A\002\022V\n\ti"
+          + "nstances\030\002 \003(\0132>.google.cloud.aiplatform"
+          + ".v1beta1.ToolParameterKeyMatchInstanceB\003"
+          + "\340A\002\"\033\n\031ToolParameterKeyMatchSpec\"w\n\035Tool"
+          + "ParameterKeyMatchInstance\022\034\n\nprediction\030"
+          + "\001 \001(\tB\003\340A\002H\000\210\001\001\022\033\n\treference\030\002 \001(\tB\003\340A\002H"
+          + "\001\210\001\001B\r\n\013_predictionB\014\n\n_reference\"\226\001\n\034To"
+          + "olParameterKeyMatchResults\022v\n&tool_param"
+          + "eter_key_match_metric_values\030\001 \003(\0132A.goo"
+          + "gle.cloud.aiplatform.v1beta1.ToolParamet"
+          + "erKeyMatchMetricValueB\003\340A\003\"E\n ToolParame"
+          + "terKeyMatchMetricValue\022\027\n\005score\030\001 \001(\002B\003\340"
+          + "A\003H\000\210\001\001B\010\n\006_score\"\307\001\n\031ToolParameterKVMat"
+          + "chInput\022S\n\013metric_spec\030\001 \001(\01329.google.cl"
+          + "oud.aiplatform.v1beta1.ToolParameterKVMa"
+          + "tchSpecB\003\340A\002\022U\n\tinstances\030\002 \003(\0132=.google"
+          + ".cloud.aiplatform.v1beta1.ToolParameterK"
+          + "VMatchInstanceB\003\340A\002\"@\n\030ToolParameterKVMa"
+          + "tchSpec\022$\n\027use_strict_string_match\030\001 \001(\010"
+          + "B\003\340A\001\"v\n\034ToolParameterKVMatchInstance\022\034\n"
           + "\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\033\n\treference"
-          + "\030\002 \001(\tB\003\340A\001H\001\210\001\001\022\030\n\006source\030\003 \001(\tB\003\340A\001H\002\210"
-          + "\001\001B\r\n\013_predictionB\014\n\n_referenceB\t\n\007_sour"
-          + "ce\"0\n\013CometResult\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210"
-          + "\001\001B\010\n\006_score\"\237\001\n\014MetricxInput\022F\n\013metric_"
-          + "spec\030\001 \001(\0132,.google.cloud.aiplatform.v1b"
-          + "eta1.MetricxSpecB\003\340A\002\022G\n\010instance\030\002 \001(\0132"
-          + "0.google.cloud.aiplatform.v1beta1.Metric"
-          + "xInstanceB\003\340A\002\"\240\002\n\013MetricxSpec\022V\n\007versio"
-          + "n\030\001 \001(\0162;.google.cloud.aiplatform.v1beta"
-          + "1.MetricxSpec.MetricxVersionB\003\340A\002H\000\210\001\001\022\034"
-          + "\n\017source_language\030\002 \001(\tB\003\340A\001\022\034\n\017target_l"
-          + "anguage\030\003 \001(\tB\003\340A\001\"q\n\016MetricxVersion\022\037\n\033"
-          + "METRICX_VERSION_UNSPECIFIED\020\000\022\022\n\016METRICX"
-          + "_24_REF\020\001\022\022\n\016METRICX_24_SRC\020\002\022\026\n\022METRICX"
-          + "_24_SRC_REF\020\003B\n\n\010_version\"\216\001\n\017MetricxIns"
-          + "tance\022\034\n\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\033\n\tr"
-          + "eference\030\002 \001(\tB\003\340A\001H\001\210\001\001\022\030\n\006source\030\003 \001(\t"
-          + "B\003\340A\001H\002\210\001\001B\r\n\013_predictionB\014\n\n_referenceB"
-          + "\t\n\007_source\"2\n\rMetricxResult\022\027\n\005score\030\001 \001"
-          + "(\002B\003\340A\003H\000\210\001\001B\010\n\006_score\"\307\001\n\031TrajectoryExa"
-          + "ctMatchInput\022S\n\013metric_spec\030\001 \001(\01329.goog"
-          + "le.cloud.aiplatform.v1beta1.TrajectoryEx"
-          + "actMatchSpecB\003\340A\002\022U\n\tinstances\030\002 \003(\0132=.g"
+          + "\030\002 \001(\tB\003\340A\002H\001\210\001\001B\r\n\013_predictionB\014\n\n_refe"
+          + "rence\"\223\001\n\033ToolParameterKVMatchResults\022t\n"
+          + "%tool_parameter_kv_match_metric_values\030\001"
+          + " \003(\0132@.google.cloud.aiplatform.v1beta1.T"
+          + "oolParameterKVMatchMetricValueB\003\340A\003\"D\n\037T"
+          + "oolParameterKVMatchMetricValue\022\027\n\005score\030"
+          + "\001 \001(\002B\003\340A\003H\000\210\001\001B\010\n\006_score\"\231\001\n\nCometInput"
+          + "\022D\n\013metric_spec\030\001 \001(\0132*.google.cloud.aip"
+          + "latform.v1beta1.CometSpecB\003\340A\002\022E\n\010instan"
+          + "ce\030\002 \001(\0132..google.cloud.aiplatform.v1bet"
+          + "a1.CometInstanceB\003\340A\002\"\354\001\n\tCometSpec\022R\n\007v"
+          + "ersion\030\001 \001(\01627.google.cloud.aiplatform.v"
+          + "1beta1.CometSpec.CometVersionB\003\340A\002H\000\210\001\001\022"
+          + "\034\n\017source_language\030\002 \001(\tB\003\340A\001\022\034\n\017target_"
+          + "language\030\003 \001(\tB\003\340A\001\"C\n\014CometVersion\022\035\n\031C"
+          + "OMET_VERSION_UNSPECIFIED\020\000\022\024\n\020COMET_22_S"
+          + "RC_REF\020\002B\n\n\010_version\"\214\001\n\rCometInstance\022\034"
+          + "\n\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\033\n\treferenc"
+          + "e\030\002 \001(\tB\003\340A\001H\001\210\001\001\022\030\n\006source\030\003 \001(\tB\003\340A\001H\002"
+          + "\210\001\001B\r\n\013_predictionB\014\n\n_referenceB\t\n\007_sou"
+          + "rce\"0\n\013CometResult\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000"
+          + "\210\001\001B\010\n\006_score\"\237\001\n\014MetricxInput\022F\n\013metric"
+          + "_spec\030\001 \001(\0132,.google.cloud.aiplatform.v1"
+          + "beta1.MetricxSpecB\003\340A\002\022G\n\010instance\030\002 \001(\013"
+          + "20.google.cloud.aiplatform.v1beta1.Metri"
+          + "cxInstanceB\003\340A\002\"\240\002\n\013MetricxSpec\022V\n\007versi"
+          + "on\030\001 \001(\0162;.google.cloud.aiplatform.v1bet"
+          + "a1.MetricxSpec.MetricxVersionB\003\340A\002H\000\210\001\001\022"
+          + "\034\n\017source_language\030\002 \001(\tB\003\340A\001\022\034\n\017target_"
+          + "language\030\003 \001(\tB\003\340A\001\"q\n\016MetricxVersion\022\037\n"
+          + "\033METRICX_VERSION_UNSPECIFIED\020\000\022\022\n\016METRIC"
+          + "X_24_REF\020\001\022\022\n\016METRICX_24_SRC\020\002\022\026\n\022METRIC"
+          + "X_24_SRC_REF\020\003B\n\n\010_version\"\216\001\n\017MetricxIn"
+          + "stance\022\034\n\nprediction\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\033\n\t"
+          + "reference\030\002 \001(\tB\003\340A\001H\001\210\001\001\022\030\n\006source\030\003 \001("
+          + "\tB\003\340A\001H\002\210\001\001B\r\n\013_predictionB\014\n\n_reference"
+          + "B\t\n\007_source\"2\n\rMetricxResult\022\027\n\005score\030\001 "
+          + "\001(\002B\003\340A\003H\000\210\001\001B\010\n\006_score\"\347\001\n$RubricBasedI"
+          + "nstructionFollowingInput\022^\n\013metric_spec\030"
+          + "\001 \001(\0132D.google.cloud.aiplatform.v1beta1."
+          + "RubricBasedInstructionFollowingSpecB\003\340A\002"
+          + "\022_\n\010instance\030\002 \001(\0132H.google.cloud.aiplat"
+          + "form.v1beta1.RubricBasedInstructionFollo"
+          + "wingInstanceB\003\340A\002\"S\n\'RubricBasedInstruct"
+          + "ionFollowingInstance\022\034\n\rjson_instance\030\001 "
+          + "\001(\tB\003\340A\002H\000B\n\n\010instance\"%\n#RubricBasedIns"
+          + "tructionFollowingSpec\"\247\001\n%RubricBasedIns"
+          + "tructionFollowingResult\022\027\n\005score\030\001 \001(\002B\003"
+          + "\340A\003H\000\210\001\001\022[\n\027rubric_critique_results\030\002 \003("
+          + "\01325.google.cloud.aiplatform.v1beta1.Rubr"
+          + "icCritiqueResultB\003\340A\003B\010\n\006_score\"A\n\024Rubri"
+          + "cCritiqueResult\022\023\n\006rubric\030\001 \001(\tB\003\340A\003\022\024\n\007"
+          + "verdict\030\002 \001(\010B\003\340A\003\"\307\001\n\031TrajectoryExactMa"
+          + "tchInput\022S\n\013metric_spec\030\001 \001(\01329.google.c"
+          + "loud.aiplatform.v1beta1.TrajectoryExactM"
+          + "atchSpecB\003\340A\002\022U\n\tinstances\030\002 \003(\0132=.googl"
+          + "e.cloud.aiplatform.v1beta1.TrajectoryExa"
+          + "ctMatchInstanceB\003\340A\002\"\032\n\030TrajectoryExactM"
+          + "atchSpec\"\372\001\n\034TrajectoryExactMatchInstanc"
+          + "e\022S\n\024predicted_trajectory\030\001 \001(\0132+.google"
+          + ".cloud.aiplatform.v1beta1.TrajectoryB\003\340A"
+          + "\002H\000\210\001\001\022S\n\024reference_trajectory\030\002 \001(\0132+.g"
           + "oogle.cloud.aiplatform.v1beta1.Trajector"
-          + "yExactMatchInstanceB\003\340A\002\"\032\n\030TrajectoryEx"
-          + "actMatchSpec\"\372\001\n\034TrajectoryExactMatchIns"
-          + "tance\022S\n\024predicted_trajectory\030\001 \001(\0132+.go"
-          + "ogle.cloud.aiplatform.v1beta1.Trajectory"
-          + "B\003\340A\002H\000\210\001\001\022S\n\024reference_trajectory\030\002 \001(\013"
-          + "2+.google.cloud.aiplatform.v1beta1.Traje"
-          + "ctoryB\003\340A\002H\001\210\001\001B\027\n\025_predicted_trajectory"
-          + "B\027\n\025_reference_trajectory\"\222\001\n\033Trajectory"
-          + "ExactMatchResults\022s\n$trajectory_exact_ma"
-          + "tch_metric_values\030\001 \003(\0132@.google.cloud.a"
-          + "iplatform.v1beta1.TrajectoryExactMatchMe"
-          + "tricValueB\003\340A\003\"D\n\037TrajectoryExactMatchMe"
-          + "tricValue\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001B\010\n\006_s"
-          + "core\"\315\001\n\033TrajectoryInOrderMatchInput\022U\n\013"
-          + "metric_spec\030\001 \001(\0132;.google.cloud.aiplatf"
-          + "orm.v1beta1.TrajectoryInOrderMatchSpecB\003"
-          + "\340A\002\022W\n\tinstances\030\002 \003(\0132?.google.cloud.ai"
-          + "platform.v1beta1.TrajectoryInOrderMatchI"
-          + "nstanceB\003\340A\002\"\034\n\032TrajectoryInOrderMatchSp"
-          + "ec\"\374\001\n\036TrajectoryInOrderMatchInstance\022S\n"
-          + "\024predicted_trajectory\030\001 \001(\0132+.google.clo"
-          + "ud.aiplatform.v1beta1.TrajectoryB\003\340A\002H\000\210"
-          + "\001\001\022S\n\024reference_trajectory\030\002 \001(\0132+.googl"
-          + "e.cloud.aiplatform.v1beta1.TrajectoryB\003\340"
-          + "A\002H\001\210\001\001B\027\n\025_predicted_trajectoryB\027\n\025_ref"
-          + "erence_trajectory\"\231\001\n\035TrajectoryInOrderM"
-          + "atchResults\022x\n\'trajectory_in_order_match"
-          + "_metric_values\030\001 \003(\0132B.google.cloud.aipl"
-          + "atform.v1beta1.TrajectoryInOrderMatchMet"
-          + "ricValueB\003\340A\003\"F\n!TrajectoryInOrderMatchM"
-          + "etricValue\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001B\010\n\006_"
-          + "score\"\320\001\n\034TrajectoryAnyOrderMatchInput\022V"
-          + "\n\013metric_spec\030\001 \001(\0132<.google.cloud.aipla"
-          + "tform.v1beta1.TrajectoryAnyOrderMatchSpe"
-          + "cB\003\340A\002\022X\n\tinstances\030\002 \003(\0132@.google.cloud"
-          + ".aiplatform.v1beta1.TrajectoryAnyOrderMa"
-          + "tchInstanceB\003\340A\002\"\035\n\033TrajectoryAnyOrderMa"
-          + "tchSpec\"\375\001\n\037TrajectoryAnyOrderMatchInsta"
-          + "nce\022S\n\024predicted_trajectory\030\001 \001(\0132+.goog"
-          + "le.cloud.aiplatform.v1beta1.TrajectoryB\003"
-          + "\340A\002H\000\210\001\001\022S\n\024reference_trajectory\030\002 \001(\0132+"
-          + ".google.cloud.aiplatform.v1beta1.Traject"
-          + "oryB\003\340A\002H\001\210\001\001B\027\n\025_predicted_trajectoryB\027"
-          + "\n\025_reference_trajectory\"\234\001\n\036TrajectoryAn"
-          + "yOrderMatchResults\022z\n(trajectory_any_ord"
-          + "er_match_metric_values\030\001 \003(\0132C.google.cl"
-          + "oud.aiplatform.v1beta1.TrajectoryAnyOrde"
-          + "rMatchMetricValueB\003\340A\003\"G\n\"TrajectoryAnyO"
-          + "rderMatchMetricValue\022\027\n\005score\030\001 \001(\002B\003\340A\003"
-          + "H\000\210\001\001B\010\n\006_score\"\304\001\n\030TrajectoryPrecisionI"
-          + "nput\022R\n\013metric_spec\030\001 \001(\01328.google.cloud"
-          + ".aiplatform.v1beta1.TrajectoryPrecisionS"
-          + "pecB\003\340A\002\022T\n\tinstances\030\002 \003(\0132<.google.clo"
-          + "ud.aiplatform.v1beta1.TrajectoryPrecisio"
-          + "nInstanceB\003\340A\002\"\031\n\027TrajectoryPrecisionSpe"
-          + "c\"\371\001\n\033TrajectoryPrecisionInstance\022S\n\024pre"
+          + "yB\003\340A\002H\001\210\001\001B\027\n\025_predicted_trajectoryB\027\n\025"
+          + "_reference_trajectory\"\222\001\n\033TrajectoryExac"
+          + "tMatchResults\022s\n$trajectory_exact_match_"
+          + "metric_values\030\001 \003(\0132@.google.cloud.aipla"
+          + "tform.v1beta1.TrajectoryExactMatchMetric"
+          + "ValueB\003\340A\003\"D\n\037TrajectoryExactMatchMetric"
+          + "Value\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001B\010\n\006_score"
+          + "\"\315\001\n\033TrajectoryInOrderMatchInput\022U\n\013metr"
+          + "ic_spec\030\001 \001(\0132;.google.cloud.aiplatform."
+          + "v1beta1.TrajectoryInOrderMatchSpecB\003\340A\002\022"
+          + "W\n\tinstances\030\002 \003(\0132?.google.cloud.aiplat"
+          + "form.v1beta1.TrajectoryInOrderMatchInsta"
+          + "nceB\003\340A\002\"\034\n\032TrajectoryInOrderMatchSpec\"\374"
+          + "\001\n\036TrajectoryInOrderMatchInstance\022S\n\024pre"
           + "dicted_trajectory\030\001 \001(\0132+.google.cloud.a"
           + "iplatform.v1beta1.TrajectoryB\003\340A\002H\000\210\001\001\022S"
           + "\n\024reference_trajectory\030\002 \001(\0132+.google.cl"
           + "oud.aiplatform.v1beta1.TrajectoryB\003\340A\002H\001"
           + "\210\001\001B\027\n\025_predicted_trajectoryB\027\n\025_referen"
-          + "ce_trajectory\"\216\001\n\032TrajectoryPrecisionRes"
-          + "ults\022p\n\"trajectory_precision_metric_valu"
-          + "es\030\001 \003(\0132?.google.cloud.aiplatform.v1bet"
-          + "a1.TrajectoryPrecisionMetricValueB\003\340A\003\"C"
-          + "\n\036TrajectoryPrecisionMetricValue\022\027\n\005scor"
-          + "e\030\001 \001(\002B\003\340A\003H\000\210\001\001B\010\n\006_score\"\273\001\n\025Trajecto"
-          + "ryRecallInput\022O\n\013metric_spec\030\001 \001(\01325.goo"
-          + "gle.cloud.aiplatform.v1beta1.TrajectoryR"
-          + "ecallSpecB\003\340A\002\022Q\n\tinstances\030\002 \003(\01329.goog"
-          + "le.cloud.aiplatform.v1beta1.TrajectoryRe"
-          + "callInstanceB\003\340A\002\"\026\n\024TrajectoryRecallSpe"
-          + "c\"\366\001\n\030TrajectoryRecallInstance\022S\n\024predic"
-          + "ted_trajectory\030\001 \001(\0132+.google.cloud.aipl"
-          + "atform.v1beta1.TrajectoryB\003\340A\002H\000\210\001\001\022S\n\024r"
-          + "eference_trajectory\030\002 \001(\0132+.google.cloud"
-          + ".aiplatform.v1beta1.TrajectoryB\003\340A\002H\001\210\001\001"
-          + "B\027\n\025_predicted_trajectoryB\027\n\025_reference_"
-          + "trajectory\"\205\001\n\027TrajectoryRecallResults\022j"
-          + "\n\037trajectory_recall_metric_values\030\001 \003(\0132"
-          + "<.google.cloud.aiplatform.v1beta1.Trajec"
-          + "toryRecallMetricValueB\003\340A\003\"@\n\033Trajectory"
-          + "RecallMetricValue\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210"
-          + "\001\001B\010\n\006_score\"\320\001\n\034TrajectorySingleToolUse"
-          + "Input\022V\n\013metric_spec\030\001 \001(\0132<.google.clou"
-          + "d.aiplatform.v1beta1.TrajectorySingleToo"
-          + "lUseSpecB\003\340A\002\022X\n\tinstances\030\002 \003(\0132@.googl"
-          + "e.cloud.aiplatform.v1beta1.TrajectorySin"
-          + "gleToolUseInstanceB\003\340A\002\"H\n\033TrajectorySin"
-          + "gleToolUseSpec\022\033\n\ttool_name\030\001 \001(\tB\003\340A\002H\000"
-          + "\210\001\001B\014\n\n_tool_name\"\217\001\n\037TrajectorySingleTo"
-          + "olUseInstance\022S\n\024predicted_trajectory\030\001 "
-          + "\001(\0132+.google.cloud.aiplatform.v1beta1.Tr"
-          + "ajectoryB\003\340A\002H\000\210\001\001B\027\n\025_predicted_traject"
-          + "ory\"\234\001\n\036TrajectorySingleToolUseResults\022z"
-          + "\n(trajectory_single_tool_use_metric_valu"
-          + "es\030\001 \003(\0132C.google.cloud.aiplatform.v1bet"
-          + "a1.TrajectorySingleToolUseMetricValueB\003\340"
-          + "A\003\"G\n\"TrajectorySingleToolUseMetricValue"
-          + "\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001B\010\n\006_score\"P\n\nT"
-          + "rajectory\022B\n\ntool_calls\030\001 \003(\0132).google.c"
-          + "loud.aiplatform.v1beta1.ToolCallB\003\340A\002\"b\n"
-          + "\010ToolCall\022\033\n\ttool_name\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\034"
-          + "\n\ntool_input\030\002 \001(\tB\003\340A\001H\001\210\001\001B\014\n\n_tool_na"
-          + "meB\r\n\013_tool_input*W\n\016PairwiseChoice\022\037\n\033P"
-          + "AIRWISE_CHOICE_UNSPECIFIED\020\000\022\014\n\010BASELINE"
-          + "\020\001\022\r\n\tCANDIDATE\020\002\022\007\n\003TIE\020\0032\252\004\n\021Evaluatio"
-          + "nService\022\323\001\n\021EvaluateInstances\0229.google."
-          + "cloud.aiplatform.v1beta1.EvaluateInstanc"
-          + "esRequest\032:.google.cloud.aiplatform.v1be"
-          + "ta1.EvaluateInstancesResponse\"G\202\323\344\223\002A\"</"
-          + "v1beta1/{location=projects/*/locations/*"
-          + "}:evaluateInstances:\001*\022\357\001\n\017EvaluateDatas"
-          + "et\0227.google.cloud.aiplatform.v1beta1.Eva"
-          + "luateDatasetRequest\032\035.google.longrunning"
-          + ".Operation\"\203\001\312A;\n\027EvaluateDatasetRespons"
-          + "e\022 EvaluateDatasetOperationMetadata\202\323\344\223\002"
-          + "?\":/v1beta1/{location=projects/*/locatio"
-          + "ns/*}:evaluateDataset:\001*\032M\312A\031aiplatform."
-          + "googleapis.com\322A.https://www.googleapis."
-          + "com/auth/cloud-platformB\355\001\n#com.google.c"
-          + "loud.aiplatform.v1beta1B\026EvaluationServi"
-          + "ceProtoP\001ZCcloud.google.com/go/aiplatfor"
-          + "m/apiv1beta1/aiplatformpb;aiplatformpb\252\002"
-          + "\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Googl"
-          + "e\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Clo"
-          + "ud::AIPlatform::V1beta1b\006proto3"
+          + "ce_trajectory\"\231\001\n\035TrajectoryInOrderMatch"
+          + "Results\022x\n\'trajectory_in_order_match_met"
+          + "ric_values\030\001 \003(\0132B.google.cloud.aiplatfo"
+          + "rm.v1beta1.TrajectoryInOrderMatchMetricV"
+          + "alueB\003\340A\003\"F\n!TrajectoryInOrderMatchMetri"
+          + "cValue\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001B\010\n\006_scor"
+          + "e\"\320\001\n\034TrajectoryAnyOrderMatchInput\022V\n\013me"
+          + "tric_spec\030\001 \001(\0132<.google.cloud.aiplatfor"
+          + "m.v1beta1.TrajectoryAnyOrderMatchSpecB\003\340"
+          + "A\002\022X\n\tinstances\030\002 \003(\0132@.google.cloud.aip"
+          + "latform.v1beta1.TrajectoryAnyOrderMatchI"
+          + "nstanceB\003\340A\002\"\035\n\033TrajectoryAnyOrderMatchS"
+          + "pec\"\375\001\n\037TrajectoryAnyOrderMatchInstance\022"
+          + "S\n\024predicted_trajectory\030\001 \001(\0132+.google.c"
+          + "loud.aiplatform.v1beta1.TrajectoryB\003\340A\002H"
+          + "\000\210\001\001\022S\n\024reference_trajectory\030\002 \001(\0132+.goo"
+          + "gle.cloud.aiplatform.v1beta1.TrajectoryB"
+          + "\003\340A\002H\001\210\001\001B\027\n\025_predicted_trajectoryB\027\n\025_r"
+          + "eference_trajectory\"\234\001\n\036TrajectoryAnyOrd"
+          + "erMatchResults\022z\n(trajectory_any_order_m"
+          + "atch_metric_values\030\001 \003(\0132C.google.cloud."
+          + "aiplatform.v1beta1.TrajectoryAnyOrderMat"
+          + "chMetricValueB\003\340A\003\"G\n\"TrajectoryAnyOrder"
+          + "MatchMetricValue\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001"
+          + "\001B\010\n\006_score\"\304\001\n\030TrajectoryPrecisionInput"
+          + "\022R\n\013metric_spec\030\001 \001(\01328.google.cloud.aip"
+          + "latform.v1beta1.TrajectoryPrecisionSpecB"
+          + "\003\340A\002\022T\n\tinstances\030\002 \003(\0132<.google.cloud.a"
+          + "iplatform.v1beta1.TrajectoryPrecisionIns"
+          + "tanceB\003\340A\002\"\031\n\027TrajectoryPrecisionSpec\"\371\001"
+          + "\n\033TrajectoryPrecisionInstance\022S\n\024predict"
+          + "ed_trajectory\030\001 \001(\0132+.google.cloud.aipla"
+          + "tform.v1beta1.TrajectoryB\003\340A\002H\000\210\001\001\022S\n\024re"
+          + "ference_trajectory\030\002 \001(\0132+.google.cloud."
+          + "aiplatform.v1beta1.TrajectoryB\003\340A\002H\001\210\001\001B"
+          + "\027\n\025_predicted_trajectoryB\027\n\025_reference_t"
+          + "rajectory\"\216\001\n\032TrajectoryPrecisionResults"
+          + "\022p\n\"trajectory_precision_metric_values\030\001"
+          + " \003(\0132?.google.cloud.aiplatform.v1beta1.T"
+          + "rajectoryPrecisionMetricValueB\003\340A\003\"C\n\036Tr"
+          + "ajectoryPrecisionMetricValue\022\027\n\005score\030\001 "
+          + "\001(\002B\003\340A\003H\000\210\001\001B\010\n\006_score\"\273\001\n\025TrajectoryRe"
+          + "callInput\022O\n\013metric_spec\030\001 \001(\01325.google."
+          + "cloud.aiplatform.v1beta1.TrajectoryRecal"
+          + "lSpecB\003\340A\002\022Q\n\tinstances\030\002 \003(\01329.google.c"
+          + "loud.aiplatform.v1beta1.TrajectoryRecall"
+          + "InstanceB\003\340A\002\"\026\n\024TrajectoryRecallSpec\"\366\001"
+          + "\n\030TrajectoryRecallInstance\022S\n\024predicted_"
+          + "trajectory\030\001 \001(\0132+.google.cloud.aiplatfo"
+          + "rm.v1beta1.TrajectoryB\003\340A\002H\000\210\001\001\022S\n\024refer"
+          + "ence_trajectory\030\002 \001(\0132+.google.cloud.aip"
+          + "latform.v1beta1.TrajectoryB\003\340A\002H\001\210\001\001B\027\n\025"
+          + "_predicted_trajectoryB\027\n\025_reference_traj"
+          + "ectory\"\205\001\n\027TrajectoryRecallResults\022j\n\037tr"
+          + "ajectory_recall_metric_values\030\001 \003(\0132<.go"
+          + "ogle.cloud.aiplatform.v1beta1.Trajectory"
+          + "RecallMetricValueB\003\340A\003\"@\n\033TrajectoryReca"
+          + "llMetricValue\022\027\n\005score\030\001 \001(\002B\003\340A\003H\000\210\001\001B\010"
+          + "\n\006_score\"\320\001\n\034TrajectorySingleToolUseInpu"
+          + "t\022V\n\013metric_spec\030\001 \001(\0132<.google.cloud.ai"
+          + "platform.v1beta1.TrajectorySingleToolUse"
+          + "SpecB\003\340A\002\022X\n\tinstances\030\002 \003(\0132@.google.cl"
+          + "oud.aiplatform.v1beta1.TrajectorySingleT"
+          + "oolUseInstanceB\003\340A\002\"H\n\033TrajectorySingleT"
+          + "oolUseSpec\022\033\n\ttool_name\030\001 \001(\tB\003\340A\002H\000\210\001\001B"
+          + "\014\n\n_tool_name\"\217\001\n\037TrajectorySingleToolUs"
+          + "eInstance\022S\n\024predicted_trajectory\030\001 \001(\0132"
+          + "+.google.cloud.aiplatform.v1beta1.Trajec"
+          + "toryB\003\340A\002H\000\210\001\001B\027\n\025_predicted_trajectory\""
+          + "\234\001\n\036TrajectorySingleToolUseResults\022z\n(tr"
+          + "ajectory_single_tool_use_metric_values\030\001"
+          + " \003(\0132C.google.cloud.aiplatform.v1beta1.T"
+          + "rajectorySingleToolUseMetricValueB\003\340A\003\"G"
+          + "\n\"TrajectorySingleToolUseMetricValue\022\027\n\005"
+          + "score\030\001 \001(\002B\003\340A\003H\000\210\001\001B\010\n\006_score\"P\n\nTraje"
+          + "ctory\022B\n\ntool_calls\030\001 \003(\0132).google.cloud"
+          + ".aiplatform.v1beta1.ToolCallB\003\340A\002\"b\n\010Too"
+          + "lCall\022\033\n\ttool_name\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\034\n\nto"
+          + "ol_input\030\002 \001(\tB\003\340A\001H\001\210\001\001B\014\n\n_tool_nameB\r"
+          + "\n\013_tool_input\"\214\002\n\nContentMap\022L\n\006values\030\001"
+          + " \003(\01327.google.cloud.aiplatform.v1beta1.C"
+          + "ontentMap.ValuesEntryB\003\340A\001\032K\n\010Contents\022?"
+          + "\n\010contents\030\001 \003(\0132(.google.cloud.aiplatfo"
+          + "rm.v1beta1.ContentB\003\340A\001\032c\n\013ValuesEntry\022\013"
+          + "\n\003key\030\001 \001(\t\022C\n\005value\030\002 \001(\01324.google.clou"
+          + "d.aiplatform.v1beta1.ContentMap.Contents"
+          + ":\0028\001*W\n\016PairwiseChoice\022\037\n\033PAIRWISE_CHOIC"
+          + "E_UNSPECIFIED\020\000\022\014\n\010BASELINE\020\001\022\r\n\tCANDIDA"
+          + "TE\020\002\022\007\n\003TIE\020\0032\252\004\n\021EvaluationService\022\323\001\n\021"
+          + "EvaluateInstances\0229.google.cloud.aiplatf"
+          + "orm.v1beta1.EvaluateInstancesRequest\032:.g"
+          + "oogle.cloud.aiplatform.v1beta1.EvaluateI"
+          + "nstancesResponse\"G\202\323\344\223\002A\"</v1beta1/{loca"
+          + "tion=projects/*/locations/*}:evaluateIns"
+          + "tances:\001*\022\357\001\n\017EvaluateDataset\0227.google.c"
+          + "loud.aiplatform.v1beta1.EvaluateDatasetR"
+          + "equest\032\035.google.longrunning.Operation\"\203\001"
+          + "\312A;\n\027EvaluateDatasetResponse\022 EvaluateDa"
+          + "tasetOperationMetadata\202\323\344\223\002?\":/v1beta1/{"
+          + "location=projects/*/locations/*}:evaluat"
+          + "eDataset:\001*\032M\312A\031aiplatform.googleapis.co"
+          + "m\322A.https://www.googleapis.com/auth/clou"
+          + "d-platformB\355\001\n#com.google.cloud.aiplatfo"
+          + "rm.v1beta1B\026EvaluationServiceProtoP\001ZCcl"
+          + "oud.google.com/go/aiplatform/apiv1beta1/"
+          + "aiplatformpb;aiplatformpb\252\002\037Google.Cloud"
+          + ".AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPla"
+          + "tform\\V1beta1\352\002\"Google::Cloud::AIPlatfor"
+          + "m::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1335,6 +1427,7 @@ public final class EvaluationServiceProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.ContentProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.IoProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.OperationProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
@@ -1446,6 +1539,7 @@ public final class EvaluationServiceProto {
               "TrajectoryPrecisionInput",
               "TrajectoryRecallInput",
               "TrajectorySingleToolUseInput",
+              "RubricBasedInstructionFollowingInput",
               "Location",
               "AutoraterConfig",
               "MetricInputs",
@@ -1487,6 +1581,7 @@ public final class EvaluationServiceProto {
               "TrajectoryPrecisionResults",
               "TrajectoryRecallResults",
               "TrajectorySingleToolUseResults",
+              "RubricBasedInstructionFollowingResult",
               "EvaluationResults",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ExactMatchInput_descriptor =
@@ -2069,7 +2164,7 @@ public final class EvaluationServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PointwiseMetricInstance_descriptor,
             new java.lang.String[] {
-              "JsonInstance", "Instance",
+              "JsonInstance", "ContentMapInstance", "Instance",
             });
     internal_static_google_cloud_aiplatform_v1beta1_PointwiseMetricSpec_descriptor =
         getDescriptor().getMessageTypes().get(83);
@@ -2077,18 +2172,42 @@ public final class EvaluationServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PointwiseMetricSpec_descriptor,
             new java.lang.String[] {
-              "MetricPromptTemplate", "SystemInstruction",
+              "MetricPromptTemplate", "SystemInstruction", "CustomOutputFormatConfig",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_CustomOutputFormatConfig_descriptor =
+        getDescriptor().getMessageTypes().get(84);
+    internal_static_google_cloud_aiplatform_v1beta1_CustomOutputFormatConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_CustomOutputFormatConfig_descriptor,
+            new java.lang.String[] {
+              "ReturnRawOutput", "CustomOutputFormatConfig",
             });
     internal_static_google_cloud_aiplatform_v1beta1_PointwiseMetricResult_descriptor =
-        getDescriptor().getMessageTypes().get(84);
+        getDescriptor().getMessageTypes().get(85);
     internal_static_google_cloud_aiplatform_v1beta1_PointwiseMetricResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PointwiseMetricResult_descriptor,
             new java.lang.String[] {
-              "Score", "Explanation",
+              "Score", "Explanation", "CustomOutput",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_CustomOutput_descriptor =
+        getDescriptor().getMessageTypes().get(86);
+    internal_static_google_cloud_aiplatform_v1beta1_CustomOutput_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_CustomOutput_descriptor,
+            new java.lang.String[] {
+              "RawOutputs", "CustomOutput",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_RawOutput_descriptor =
+        getDescriptor().getMessageTypes().get(87);
+    internal_static_google_cloud_aiplatform_v1beta1_RawOutput_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_RawOutput_descriptor,
+            new java.lang.String[] {
+              "RawOutput",
             });
     internal_static_google_cloud_aiplatform_v1beta1_PairwiseMetricInput_descriptor =
-        getDescriptor().getMessageTypes().get(85);
+        getDescriptor().getMessageTypes().get(88);
     internal_static_google_cloud_aiplatform_v1beta1_PairwiseMetricInput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PairwiseMetricInput_descriptor,
@@ -2096,15 +2215,15 @@ public final class EvaluationServiceProto {
               "MetricSpec", "Instance",
             });
     internal_static_google_cloud_aiplatform_v1beta1_PairwiseMetricInstance_descriptor =
-        getDescriptor().getMessageTypes().get(86);
+        getDescriptor().getMessageTypes().get(89);
     internal_static_google_cloud_aiplatform_v1beta1_PairwiseMetricInstance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PairwiseMetricInstance_descriptor,
             new java.lang.String[] {
-              "JsonInstance", "Instance",
+              "JsonInstance", "ContentMapInstance", "Instance",
             });
     internal_static_google_cloud_aiplatform_v1beta1_PairwiseMetricSpec_descriptor =
-        getDescriptor().getMessageTypes().get(87);
+        getDescriptor().getMessageTypes().get(90);
     internal_static_google_cloud_aiplatform_v1beta1_PairwiseMetricSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PairwiseMetricSpec_descriptor,
@@ -2113,17 +2232,18 @@ public final class EvaluationServiceProto {
               "CandidateResponseFieldName",
               "BaselineResponseFieldName",
               "SystemInstruction",
+              "CustomOutputFormatConfig",
             });
     internal_static_google_cloud_aiplatform_v1beta1_PairwiseMetricResult_descriptor =
-        getDescriptor().getMessageTypes().get(88);
+        getDescriptor().getMessageTypes().get(91);
     internal_static_google_cloud_aiplatform_v1beta1_PairwiseMetricResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PairwiseMetricResult_descriptor,
             new java.lang.String[] {
-              "PairwiseChoice", "Explanation",
+              "PairwiseChoice", "Explanation", "CustomOutput",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolCallValidInput_descriptor =
-        getDescriptor().getMessageTypes().get(89);
+        getDescriptor().getMessageTypes().get(92);
     internal_static_google_cloud_aiplatform_v1beta1_ToolCallValidInput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolCallValidInput_descriptor,
@@ -2131,13 +2251,13 @@ public final class EvaluationServiceProto {
               "MetricSpec", "Instances",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolCallValidSpec_descriptor =
-        getDescriptor().getMessageTypes().get(90);
+        getDescriptor().getMessageTypes().get(93);
     internal_static_google_cloud_aiplatform_v1beta1_ToolCallValidSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolCallValidSpec_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_aiplatform_v1beta1_ToolCallValidInstance_descriptor =
-        getDescriptor().getMessageTypes().get(91);
+        getDescriptor().getMessageTypes().get(94);
     internal_static_google_cloud_aiplatform_v1beta1_ToolCallValidInstance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolCallValidInstance_descriptor,
@@ -2145,7 +2265,7 @@ public final class EvaluationServiceProto {
               "Prediction", "Reference",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolCallValidResults_descriptor =
-        getDescriptor().getMessageTypes().get(92);
+        getDescriptor().getMessageTypes().get(95);
     internal_static_google_cloud_aiplatform_v1beta1_ToolCallValidResults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolCallValidResults_descriptor,
@@ -2153,7 +2273,7 @@ public final class EvaluationServiceProto {
               "ToolCallValidMetricValues",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolCallValidMetricValue_descriptor =
-        getDescriptor().getMessageTypes().get(93);
+        getDescriptor().getMessageTypes().get(96);
     internal_static_google_cloud_aiplatform_v1beta1_ToolCallValidMetricValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolCallValidMetricValue_descriptor,
@@ -2161,7 +2281,7 @@ public final class EvaluationServiceProto {
               "Score",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolNameMatchInput_descriptor =
-        getDescriptor().getMessageTypes().get(94);
+        getDescriptor().getMessageTypes().get(97);
     internal_static_google_cloud_aiplatform_v1beta1_ToolNameMatchInput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolNameMatchInput_descriptor,
@@ -2169,13 +2289,13 @@ public final class EvaluationServiceProto {
               "MetricSpec", "Instances",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolNameMatchSpec_descriptor =
-        getDescriptor().getMessageTypes().get(95);
+        getDescriptor().getMessageTypes().get(98);
     internal_static_google_cloud_aiplatform_v1beta1_ToolNameMatchSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolNameMatchSpec_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_aiplatform_v1beta1_ToolNameMatchInstance_descriptor =
-        getDescriptor().getMessageTypes().get(96);
+        getDescriptor().getMessageTypes().get(99);
     internal_static_google_cloud_aiplatform_v1beta1_ToolNameMatchInstance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolNameMatchInstance_descriptor,
@@ -2183,7 +2303,7 @@ public final class EvaluationServiceProto {
               "Prediction", "Reference",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolNameMatchResults_descriptor =
-        getDescriptor().getMessageTypes().get(97);
+        getDescriptor().getMessageTypes().get(100);
     internal_static_google_cloud_aiplatform_v1beta1_ToolNameMatchResults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolNameMatchResults_descriptor,
@@ -2191,7 +2311,7 @@ public final class EvaluationServiceProto {
               "ToolNameMatchMetricValues",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolNameMatchMetricValue_descriptor =
-        getDescriptor().getMessageTypes().get(98);
+        getDescriptor().getMessageTypes().get(101);
     internal_static_google_cloud_aiplatform_v1beta1_ToolNameMatchMetricValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolNameMatchMetricValue_descriptor,
@@ -2199,7 +2319,7 @@ public final class EvaluationServiceProto {
               "Score",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKeyMatchInput_descriptor =
-        getDescriptor().getMessageTypes().get(99);
+        getDescriptor().getMessageTypes().get(102);
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKeyMatchInput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKeyMatchInput_descriptor,
@@ -2207,13 +2327,13 @@ public final class EvaluationServiceProto {
               "MetricSpec", "Instances",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKeyMatchSpec_descriptor =
-        getDescriptor().getMessageTypes().get(100);
+        getDescriptor().getMessageTypes().get(103);
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKeyMatchSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKeyMatchSpec_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKeyMatchInstance_descriptor =
-        getDescriptor().getMessageTypes().get(101);
+        getDescriptor().getMessageTypes().get(104);
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKeyMatchInstance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKeyMatchInstance_descriptor,
@@ -2221,7 +2341,7 @@ public final class EvaluationServiceProto {
               "Prediction", "Reference",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKeyMatchResults_descriptor =
-        getDescriptor().getMessageTypes().get(102);
+        getDescriptor().getMessageTypes().get(105);
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKeyMatchResults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKeyMatchResults_descriptor,
@@ -2229,7 +2349,7 @@ public final class EvaluationServiceProto {
               "ToolParameterKeyMatchMetricValues",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKeyMatchMetricValue_descriptor =
-        getDescriptor().getMessageTypes().get(103);
+        getDescriptor().getMessageTypes().get(106);
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKeyMatchMetricValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKeyMatchMetricValue_descriptor,
@@ -2237,7 +2357,7 @@ public final class EvaluationServiceProto {
               "Score",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKVMatchInput_descriptor =
-        getDescriptor().getMessageTypes().get(104);
+        getDescriptor().getMessageTypes().get(107);
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKVMatchInput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKVMatchInput_descriptor,
@@ -2245,7 +2365,7 @@ public final class EvaluationServiceProto {
               "MetricSpec", "Instances",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKVMatchSpec_descriptor =
-        getDescriptor().getMessageTypes().get(105);
+        getDescriptor().getMessageTypes().get(108);
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKVMatchSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKVMatchSpec_descriptor,
@@ -2253,7 +2373,7 @@ public final class EvaluationServiceProto {
               "UseStrictStringMatch",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKVMatchInstance_descriptor =
-        getDescriptor().getMessageTypes().get(106);
+        getDescriptor().getMessageTypes().get(109);
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKVMatchInstance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKVMatchInstance_descriptor,
@@ -2261,7 +2381,7 @@ public final class EvaluationServiceProto {
               "Prediction", "Reference",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKVMatchResults_descriptor =
-        getDescriptor().getMessageTypes().get(107);
+        getDescriptor().getMessageTypes().get(110);
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKVMatchResults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKVMatchResults_descriptor,
@@ -2269,7 +2389,7 @@ public final class EvaluationServiceProto {
               "ToolParameterKvMatchMetricValues",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKVMatchMetricValue_descriptor =
-        getDescriptor().getMessageTypes().get(108);
+        getDescriptor().getMessageTypes().get(111);
     internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKVMatchMetricValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolParameterKVMatchMetricValue_descriptor,
@@ -2277,7 +2397,7 @@ public final class EvaluationServiceProto {
               "Score",
             });
     internal_static_google_cloud_aiplatform_v1beta1_CometInput_descriptor =
-        getDescriptor().getMessageTypes().get(109);
+        getDescriptor().getMessageTypes().get(112);
     internal_static_google_cloud_aiplatform_v1beta1_CometInput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CometInput_descriptor,
@@ -2285,7 +2405,7 @@ public final class EvaluationServiceProto {
               "MetricSpec", "Instance",
             });
     internal_static_google_cloud_aiplatform_v1beta1_CometSpec_descriptor =
-        getDescriptor().getMessageTypes().get(110);
+        getDescriptor().getMessageTypes().get(113);
     internal_static_google_cloud_aiplatform_v1beta1_CometSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CometSpec_descriptor,
@@ -2293,7 +2413,7 @@ public final class EvaluationServiceProto {
               "Version", "SourceLanguage", "TargetLanguage",
             });
     internal_static_google_cloud_aiplatform_v1beta1_CometInstance_descriptor =
-        getDescriptor().getMessageTypes().get(111);
+        getDescriptor().getMessageTypes().get(114);
     internal_static_google_cloud_aiplatform_v1beta1_CometInstance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CometInstance_descriptor,
@@ -2301,7 +2421,7 @@ public final class EvaluationServiceProto {
               "Prediction", "Reference", "Source",
             });
     internal_static_google_cloud_aiplatform_v1beta1_CometResult_descriptor =
-        getDescriptor().getMessageTypes().get(112);
+        getDescriptor().getMessageTypes().get(115);
     internal_static_google_cloud_aiplatform_v1beta1_CometResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CometResult_descriptor,
@@ -2309,7 +2429,7 @@ public final class EvaluationServiceProto {
               "Score",
             });
     internal_static_google_cloud_aiplatform_v1beta1_MetricxInput_descriptor =
-        getDescriptor().getMessageTypes().get(113);
+        getDescriptor().getMessageTypes().get(116);
     internal_static_google_cloud_aiplatform_v1beta1_MetricxInput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_MetricxInput_descriptor,
@@ -2317,7 +2437,7 @@ public final class EvaluationServiceProto {
               "MetricSpec", "Instance",
             });
     internal_static_google_cloud_aiplatform_v1beta1_MetricxSpec_descriptor =
-        getDescriptor().getMessageTypes().get(114);
+        getDescriptor().getMessageTypes().get(117);
     internal_static_google_cloud_aiplatform_v1beta1_MetricxSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_MetricxSpec_descriptor,
@@ -2325,7 +2445,7 @@ public final class EvaluationServiceProto {
               "Version", "SourceLanguage", "TargetLanguage",
             });
     internal_static_google_cloud_aiplatform_v1beta1_MetricxInstance_descriptor =
-        getDescriptor().getMessageTypes().get(115);
+        getDescriptor().getMessageTypes().get(118);
     internal_static_google_cloud_aiplatform_v1beta1_MetricxInstance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_MetricxInstance_descriptor,
@@ -2333,15 +2453,53 @@ public final class EvaluationServiceProto {
               "Prediction", "Reference", "Source",
             });
     internal_static_google_cloud_aiplatform_v1beta1_MetricxResult_descriptor =
-        getDescriptor().getMessageTypes().get(116);
+        getDescriptor().getMessageTypes().get(119);
     internal_static_google_cloud_aiplatform_v1beta1_MetricxResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_MetricxResult_descriptor,
             new java.lang.String[] {
               "Score",
             });
+    internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingInput_descriptor =
+        getDescriptor().getMessageTypes().get(120);
+    internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingInput_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingInput_descriptor,
+            new java.lang.String[] {
+              "MetricSpec", "Instance",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingInstance_descriptor =
+        getDescriptor().getMessageTypes().get(121);
+    internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingInstance_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingInstance_descriptor,
+            new java.lang.String[] {
+              "JsonInstance", "Instance",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingSpec_descriptor =
+        getDescriptor().getMessageTypes().get(122);
+    internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingSpec_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingResult_descriptor =
+        getDescriptor().getMessageTypes().get(123);
+    internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_RubricBasedInstructionFollowingResult_descriptor,
+            new java.lang.String[] {
+              "Score", "RubricCritiqueResults",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_RubricCritiqueResult_descriptor =
+        getDescriptor().getMessageTypes().get(124);
+    internal_static_google_cloud_aiplatform_v1beta1_RubricCritiqueResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_RubricCritiqueResult_descriptor,
+            new java.lang.String[] {
+              "Rubric", "Verdict",
+            });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryExactMatchInput_descriptor =
-        getDescriptor().getMessageTypes().get(117);
+        getDescriptor().getMessageTypes().get(125);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryExactMatchInput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryExactMatchInput_descriptor,
@@ -2349,13 +2507,13 @@ public final class EvaluationServiceProto {
               "MetricSpec", "Instances",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryExactMatchSpec_descriptor =
-        getDescriptor().getMessageTypes().get(118);
+        getDescriptor().getMessageTypes().get(126);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryExactMatchSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryExactMatchSpec_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryExactMatchInstance_descriptor =
-        getDescriptor().getMessageTypes().get(119);
+        getDescriptor().getMessageTypes().get(127);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryExactMatchInstance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryExactMatchInstance_descriptor,
@@ -2363,7 +2521,7 @@ public final class EvaluationServiceProto {
               "PredictedTrajectory", "ReferenceTrajectory",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryExactMatchResults_descriptor =
-        getDescriptor().getMessageTypes().get(120);
+        getDescriptor().getMessageTypes().get(128);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryExactMatchResults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryExactMatchResults_descriptor,
@@ -2371,7 +2529,7 @@ public final class EvaluationServiceProto {
               "TrajectoryExactMatchMetricValues",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryExactMatchMetricValue_descriptor =
-        getDescriptor().getMessageTypes().get(121);
+        getDescriptor().getMessageTypes().get(129);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryExactMatchMetricValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryExactMatchMetricValue_descriptor,
@@ -2379,7 +2537,7 @@ public final class EvaluationServiceProto {
               "Score",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryInOrderMatchInput_descriptor =
-        getDescriptor().getMessageTypes().get(122);
+        getDescriptor().getMessageTypes().get(130);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryInOrderMatchInput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryInOrderMatchInput_descriptor,
@@ -2387,13 +2545,13 @@ public final class EvaluationServiceProto {
               "MetricSpec", "Instances",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryInOrderMatchSpec_descriptor =
-        getDescriptor().getMessageTypes().get(123);
+        getDescriptor().getMessageTypes().get(131);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryInOrderMatchSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryInOrderMatchSpec_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryInOrderMatchInstance_descriptor =
-        getDescriptor().getMessageTypes().get(124);
+        getDescriptor().getMessageTypes().get(132);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryInOrderMatchInstance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryInOrderMatchInstance_descriptor,
@@ -2401,7 +2559,7 @@ public final class EvaluationServiceProto {
               "PredictedTrajectory", "ReferenceTrajectory",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryInOrderMatchResults_descriptor =
-        getDescriptor().getMessageTypes().get(125);
+        getDescriptor().getMessageTypes().get(133);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryInOrderMatchResults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryInOrderMatchResults_descriptor,
@@ -2409,7 +2567,7 @@ public final class EvaluationServiceProto {
               "TrajectoryInOrderMatchMetricValues",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryInOrderMatchMetricValue_descriptor =
-        getDescriptor().getMessageTypes().get(126);
+        getDescriptor().getMessageTypes().get(134);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryInOrderMatchMetricValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryInOrderMatchMetricValue_descriptor,
@@ -2417,7 +2575,7 @@ public final class EvaluationServiceProto {
               "Score",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryAnyOrderMatchInput_descriptor =
-        getDescriptor().getMessageTypes().get(127);
+        getDescriptor().getMessageTypes().get(135);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryAnyOrderMatchInput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryAnyOrderMatchInput_descriptor,
@@ -2425,13 +2583,13 @@ public final class EvaluationServiceProto {
               "MetricSpec", "Instances",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryAnyOrderMatchSpec_descriptor =
-        getDescriptor().getMessageTypes().get(128);
+        getDescriptor().getMessageTypes().get(136);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryAnyOrderMatchSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryAnyOrderMatchSpec_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryAnyOrderMatchInstance_descriptor =
-        getDescriptor().getMessageTypes().get(129);
+        getDescriptor().getMessageTypes().get(137);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryAnyOrderMatchInstance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryAnyOrderMatchInstance_descriptor,
@@ -2439,7 +2597,7 @@ public final class EvaluationServiceProto {
               "PredictedTrajectory", "ReferenceTrajectory",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryAnyOrderMatchResults_descriptor =
-        getDescriptor().getMessageTypes().get(130);
+        getDescriptor().getMessageTypes().get(138);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryAnyOrderMatchResults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryAnyOrderMatchResults_descriptor,
@@ -2447,7 +2605,7 @@ public final class EvaluationServiceProto {
               "TrajectoryAnyOrderMatchMetricValues",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryAnyOrderMatchMetricValue_descriptor =
-        getDescriptor().getMessageTypes().get(131);
+        getDescriptor().getMessageTypes().get(139);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryAnyOrderMatchMetricValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryAnyOrderMatchMetricValue_descriptor,
@@ -2455,7 +2613,7 @@ public final class EvaluationServiceProto {
               "Score",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryPrecisionInput_descriptor =
-        getDescriptor().getMessageTypes().get(132);
+        getDescriptor().getMessageTypes().get(140);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryPrecisionInput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryPrecisionInput_descriptor,
@@ -2463,13 +2621,13 @@ public final class EvaluationServiceProto {
               "MetricSpec", "Instances",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryPrecisionSpec_descriptor =
-        getDescriptor().getMessageTypes().get(133);
+        getDescriptor().getMessageTypes().get(141);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryPrecisionSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryPrecisionSpec_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryPrecisionInstance_descriptor =
-        getDescriptor().getMessageTypes().get(134);
+        getDescriptor().getMessageTypes().get(142);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryPrecisionInstance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryPrecisionInstance_descriptor,
@@ -2477,7 +2635,7 @@ public final class EvaluationServiceProto {
               "PredictedTrajectory", "ReferenceTrajectory",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryPrecisionResults_descriptor =
-        getDescriptor().getMessageTypes().get(135);
+        getDescriptor().getMessageTypes().get(143);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryPrecisionResults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryPrecisionResults_descriptor,
@@ -2485,7 +2643,7 @@ public final class EvaluationServiceProto {
               "TrajectoryPrecisionMetricValues",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryPrecisionMetricValue_descriptor =
-        getDescriptor().getMessageTypes().get(136);
+        getDescriptor().getMessageTypes().get(144);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryPrecisionMetricValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryPrecisionMetricValue_descriptor,
@@ -2493,7 +2651,7 @@ public final class EvaluationServiceProto {
               "Score",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryRecallInput_descriptor =
-        getDescriptor().getMessageTypes().get(137);
+        getDescriptor().getMessageTypes().get(145);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryRecallInput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryRecallInput_descriptor,
@@ -2501,13 +2659,13 @@ public final class EvaluationServiceProto {
               "MetricSpec", "Instances",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryRecallSpec_descriptor =
-        getDescriptor().getMessageTypes().get(138);
+        getDescriptor().getMessageTypes().get(146);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryRecallSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryRecallSpec_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryRecallInstance_descriptor =
-        getDescriptor().getMessageTypes().get(139);
+        getDescriptor().getMessageTypes().get(147);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryRecallInstance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryRecallInstance_descriptor,
@@ -2515,7 +2673,7 @@ public final class EvaluationServiceProto {
               "PredictedTrajectory", "ReferenceTrajectory",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryRecallResults_descriptor =
-        getDescriptor().getMessageTypes().get(140);
+        getDescriptor().getMessageTypes().get(148);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryRecallResults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryRecallResults_descriptor,
@@ -2523,7 +2681,7 @@ public final class EvaluationServiceProto {
               "TrajectoryRecallMetricValues",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryRecallMetricValue_descriptor =
-        getDescriptor().getMessageTypes().get(141);
+        getDescriptor().getMessageTypes().get(149);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectoryRecallMetricValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectoryRecallMetricValue_descriptor,
@@ -2531,7 +2689,7 @@ public final class EvaluationServiceProto {
               "Score",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectorySingleToolUseInput_descriptor =
-        getDescriptor().getMessageTypes().get(142);
+        getDescriptor().getMessageTypes().get(150);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectorySingleToolUseInput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectorySingleToolUseInput_descriptor,
@@ -2539,7 +2697,7 @@ public final class EvaluationServiceProto {
               "MetricSpec", "Instances",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectorySingleToolUseSpec_descriptor =
-        getDescriptor().getMessageTypes().get(143);
+        getDescriptor().getMessageTypes().get(151);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectorySingleToolUseSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectorySingleToolUseSpec_descriptor,
@@ -2547,7 +2705,7 @@ public final class EvaluationServiceProto {
               "ToolName",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectorySingleToolUseInstance_descriptor =
-        getDescriptor().getMessageTypes().get(144);
+        getDescriptor().getMessageTypes().get(152);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectorySingleToolUseInstance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectorySingleToolUseInstance_descriptor,
@@ -2555,7 +2713,7 @@ public final class EvaluationServiceProto {
               "PredictedTrajectory",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectorySingleToolUseResults_descriptor =
-        getDescriptor().getMessageTypes().get(145);
+        getDescriptor().getMessageTypes().get(153);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectorySingleToolUseResults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectorySingleToolUseResults_descriptor,
@@ -2563,7 +2721,7 @@ public final class EvaluationServiceProto {
               "TrajectorySingleToolUseMetricValues",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TrajectorySingleToolUseMetricValue_descriptor =
-        getDescriptor().getMessageTypes().get(146);
+        getDescriptor().getMessageTypes().get(154);
     internal_static_google_cloud_aiplatform_v1beta1_TrajectorySingleToolUseMetricValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_TrajectorySingleToolUseMetricValue_descriptor,
@@ -2571,7 +2729,7 @@ public final class EvaluationServiceProto {
               "Score",
             });
     internal_static_google_cloud_aiplatform_v1beta1_Trajectory_descriptor =
-        getDescriptor().getMessageTypes().get(147);
+        getDescriptor().getMessageTypes().get(155);
     internal_static_google_cloud_aiplatform_v1beta1_Trajectory_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_Trajectory_descriptor,
@@ -2579,12 +2737,40 @@ public final class EvaluationServiceProto {
               "ToolCalls",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolCall_descriptor =
-        getDescriptor().getMessageTypes().get(148);
+        getDescriptor().getMessageTypes().get(156);
     internal_static_google_cloud_aiplatform_v1beta1_ToolCall_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolCall_descriptor,
             new java.lang.String[] {
               "ToolName", "ToolInput",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ContentMap_descriptor =
+        getDescriptor().getMessageTypes().get(157);
+    internal_static_google_cloud_aiplatform_v1beta1_ContentMap_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ContentMap_descriptor,
+            new java.lang.String[] {
+              "Values",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ContentMap_Contents_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ContentMap_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_ContentMap_Contents_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ContentMap_Contents_descriptor,
+            new java.lang.String[] {
+              "Contents",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ContentMap_ValuesEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ContentMap_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_ContentMap_ValuesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ContentMap_ValuesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -2600,6 +2786,7 @@ public final class EvaluationServiceProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.ContentProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.IoProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.OperationProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();

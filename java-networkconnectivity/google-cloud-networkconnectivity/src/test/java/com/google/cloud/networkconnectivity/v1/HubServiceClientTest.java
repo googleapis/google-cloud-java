@@ -857,6 +857,8 @@ public class HubServiceClientTest {
             .setState(State.forNumber(0))
             .addAllReasons(new ArrayList<Spoke.StateReason>())
             .setSpokeType(SpokeType.forNumber(0))
+            .setEtag("etag3123477")
+            .addAllFieldPathsPendingUpdate(new ArrayList<String>())
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -910,6 +912,8 @@ public class HubServiceClientTest {
             .setState(State.forNumber(0))
             .addAllReasons(new ArrayList<Spoke.StateReason>())
             .setSpokeType(SpokeType.forNumber(0))
+            .setEtag("etag3123477")
+            .addAllFieldPathsPendingUpdate(new ArrayList<String>())
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -963,6 +967,8 @@ public class HubServiceClientTest {
             .setState(State.forNumber(0))
             .addAllReasons(new ArrayList<Spoke.StateReason>())
             .setSpokeType(SpokeType.forNumber(0))
+            .setEtag("etag3123477")
+            .addAllFieldPathsPendingUpdate(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1030,6 +1036,8 @@ public class HubServiceClientTest {
             .setState(State.forNumber(0))
             .addAllReasons(new ArrayList<Spoke.StateReason>())
             .setSpokeType(SpokeType.forNumber(0))
+            .setEtag("etag3123477")
+            .addAllFieldPathsPendingUpdate(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1097,6 +1105,8 @@ public class HubServiceClientTest {
             .setState(State.forNumber(0))
             .addAllReasons(new ArrayList<Spoke.StateReason>())
             .setSpokeType(SpokeType.forNumber(0))
+            .setEtag("etag3123477")
+            .addAllFieldPathsPendingUpdate(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1509,6 +1519,414 @@ public class HubServiceClientTest {
       String name = "name3373707";
       String spokeUri = "spokeUri-1839330496";
       client.acceptHubSpokeAsync(name, spokeUri).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void acceptSpokeUpdateTest() throws Exception {
+    AcceptSpokeUpdateResponse expectedResponse =
+        AcceptSpokeUpdateResponse.newBuilder().setSpoke(Spoke.newBuilder().build()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("acceptSpokeUpdateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockHubService.addResponse(resultOperation);
+
+    HubName name = HubName.of("[PROJECT]", "[HUB]");
+    SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+    String spokeEtag = "spokeEtag-1185145407";
+
+    AcceptSpokeUpdateResponse actualResponse =
+        client.acceptSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AcceptSpokeUpdateRequest actualRequest = ((AcceptSpokeUpdateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(spokeUri.toString(), actualRequest.getSpokeUri());
+    Assert.assertEquals(spokeEtag, actualRequest.getSpokeEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void acceptSpokeUpdateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      HubName name = HubName.of("[PROJECT]", "[HUB]");
+      SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+      String spokeEtag = "spokeEtag-1185145407";
+      client.acceptSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void acceptSpokeUpdateTest2() throws Exception {
+    AcceptSpokeUpdateResponse expectedResponse =
+        AcceptSpokeUpdateResponse.newBuilder().setSpoke(Spoke.newBuilder().build()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("acceptSpokeUpdateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockHubService.addResponse(resultOperation);
+
+    HubName name = HubName.of("[PROJECT]", "[HUB]");
+    String spokeUri = "spokeUri-1839330496";
+    String spokeEtag = "spokeEtag-1185145407";
+
+    AcceptSpokeUpdateResponse actualResponse =
+        client.acceptSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AcceptSpokeUpdateRequest actualRequest = ((AcceptSpokeUpdateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(spokeUri, actualRequest.getSpokeUri());
+    Assert.assertEquals(spokeEtag, actualRequest.getSpokeEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void acceptSpokeUpdateExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      HubName name = HubName.of("[PROJECT]", "[HUB]");
+      String spokeUri = "spokeUri-1839330496";
+      String spokeEtag = "spokeEtag-1185145407";
+      client.acceptSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void acceptSpokeUpdateTest3() throws Exception {
+    AcceptSpokeUpdateResponse expectedResponse =
+        AcceptSpokeUpdateResponse.newBuilder().setSpoke(Spoke.newBuilder().build()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("acceptSpokeUpdateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockHubService.addResponse(resultOperation);
+
+    String name = "name3373707";
+    SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+    String spokeEtag = "spokeEtag-1185145407";
+
+    AcceptSpokeUpdateResponse actualResponse =
+        client.acceptSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AcceptSpokeUpdateRequest actualRequest = ((AcceptSpokeUpdateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(spokeUri.toString(), actualRequest.getSpokeUri());
+    Assert.assertEquals(spokeEtag, actualRequest.getSpokeEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void acceptSpokeUpdateExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+      String spokeEtag = "spokeEtag-1185145407";
+      client.acceptSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void acceptSpokeUpdateTest4() throws Exception {
+    AcceptSpokeUpdateResponse expectedResponse =
+        AcceptSpokeUpdateResponse.newBuilder().setSpoke(Spoke.newBuilder().build()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("acceptSpokeUpdateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockHubService.addResponse(resultOperation);
+
+    String name = "name3373707";
+    String spokeUri = "spokeUri-1839330496";
+    String spokeEtag = "spokeEtag-1185145407";
+
+    AcceptSpokeUpdateResponse actualResponse =
+        client.acceptSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AcceptSpokeUpdateRequest actualRequest = ((AcceptSpokeUpdateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(spokeUri, actualRequest.getSpokeUri());
+    Assert.assertEquals(spokeEtag, actualRequest.getSpokeEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void acceptSpokeUpdateExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String spokeUri = "spokeUri-1839330496";
+      String spokeEtag = "spokeEtag-1185145407";
+      client.acceptSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void rejectSpokeUpdateTest() throws Exception {
+    RejectSpokeUpdateResponse expectedResponse =
+        RejectSpokeUpdateResponse.newBuilder().setSpoke(Spoke.newBuilder().build()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rejectSpokeUpdateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockHubService.addResponse(resultOperation);
+
+    HubName name = HubName.of("[PROJECT]", "[HUB]");
+    SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+    String spokeEtag = "spokeEtag-1185145407";
+
+    RejectSpokeUpdateResponse actualResponse =
+        client.rejectSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RejectSpokeUpdateRequest actualRequest = ((RejectSpokeUpdateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(spokeUri.toString(), actualRequest.getSpokeUri());
+    Assert.assertEquals(spokeEtag, actualRequest.getSpokeEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rejectSpokeUpdateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      HubName name = HubName.of("[PROJECT]", "[HUB]");
+      SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+      String spokeEtag = "spokeEtag-1185145407";
+      client.rejectSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void rejectSpokeUpdateTest2() throws Exception {
+    RejectSpokeUpdateResponse expectedResponse =
+        RejectSpokeUpdateResponse.newBuilder().setSpoke(Spoke.newBuilder().build()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rejectSpokeUpdateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockHubService.addResponse(resultOperation);
+
+    HubName name = HubName.of("[PROJECT]", "[HUB]");
+    String spokeUri = "spokeUri-1839330496";
+    String spokeEtag = "spokeEtag-1185145407";
+
+    RejectSpokeUpdateResponse actualResponse =
+        client.rejectSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RejectSpokeUpdateRequest actualRequest = ((RejectSpokeUpdateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(spokeUri, actualRequest.getSpokeUri());
+    Assert.assertEquals(spokeEtag, actualRequest.getSpokeEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rejectSpokeUpdateExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      HubName name = HubName.of("[PROJECT]", "[HUB]");
+      String spokeUri = "spokeUri-1839330496";
+      String spokeEtag = "spokeEtag-1185145407";
+      client.rejectSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void rejectSpokeUpdateTest3() throws Exception {
+    RejectSpokeUpdateResponse expectedResponse =
+        RejectSpokeUpdateResponse.newBuilder().setSpoke(Spoke.newBuilder().build()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rejectSpokeUpdateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockHubService.addResponse(resultOperation);
+
+    String name = "name3373707";
+    SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+    String spokeEtag = "spokeEtag-1185145407";
+
+    RejectSpokeUpdateResponse actualResponse =
+        client.rejectSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RejectSpokeUpdateRequest actualRequest = ((RejectSpokeUpdateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(spokeUri.toString(), actualRequest.getSpokeUri());
+    Assert.assertEquals(spokeEtag, actualRequest.getSpokeEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rejectSpokeUpdateExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+      String spokeEtag = "spokeEtag-1185145407";
+      client.rejectSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void rejectSpokeUpdateTest4() throws Exception {
+    RejectSpokeUpdateResponse expectedResponse =
+        RejectSpokeUpdateResponse.newBuilder().setSpoke(Spoke.newBuilder().build()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rejectSpokeUpdateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockHubService.addResponse(resultOperation);
+
+    String name = "name3373707";
+    String spokeUri = "spokeUri-1839330496";
+    String spokeEtag = "spokeEtag-1185145407";
+
+    RejectSpokeUpdateResponse actualResponse =
+        client.rejectSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RejectSpokeUpdateRequest actualRequest = ((RejectSpokeUpdateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(spokeUri, actualRequest.getSpokeUri());
+    Assert.assertEquals(spokeEtag, actualRequest.getSpokeEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rejectSpokeUpdateExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String spokeUri = "spokeUri-1839330496";
+      String spokeEtag = "spokeEtag-1185145407";
+      client.rejectSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

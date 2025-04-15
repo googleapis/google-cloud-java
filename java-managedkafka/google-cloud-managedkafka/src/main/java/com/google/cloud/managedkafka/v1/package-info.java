@@ -37,6 +37,26 @@
  *   Cluster response = managedKafkaClient.getCluster(name);
  * }
  * }</pre>
+ *
+ * <p>======================= ManagedKafkaConnectClient =======================
+ *
+ * <p>Service Description: The service that a client application uses to manage Apache Kafka Connect
+ * clusters and connectors.
+ *
+ * <p>Sample for ManagedKafkaConnectClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ManagedKafkaConnectClient managedKafkaConnectClient = ManagedKafkaConnectClient.create()) {
+ *   ConnectClusterName name =
+ *       ConnectClusterName.of("[PROJECT]", "[LOCATION]", "[CONNECT_CLUSTER]");
+ *   ConnectCluster response = managedKafkaConnectClient.getConnectCluster(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.managedkafka.v1;

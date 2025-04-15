@@ -202,7 +202,7 @@ public interface WorkloadsConfigOrBuilder
    * Optional. Resources used by Airflow DAG processors.
    *
    * This field is supported for Cloud Composer environments in versions
-   * composer-3.*.*-airflow-*.*.* and newer.
+   * composer-3-airflow-*.*.*-build.* and newer.
    * </pre>
    *
    * <code>
@@ -219,7 +219,7 @@ public interface WorkloadsConfigOrBuilder
    * Optional. Resources used by Airflow DAG processors.
    *
    * This field is supported for Cloud Composer environments in versions
-   * composer-3.*.*-airflow-*.*.* and newer.
+   * composer-3-airflow-*.*.*-build.* and newer.
    * </pre>
    *
    * <code>
@@ -237,7 +237,7 @@ public interface WorkloadsConfigOrBuilder
    * Optional. Resources used by Airflow DAG processors.
    *
    * This field is supported for Cloud Composer environments in versions
-   * composer-3.*.*-airflow-*.*.* and newer.
+   * composer-3-airflow-*.*.*-build.* and newer.
    * </pre>
    *
    * <code>

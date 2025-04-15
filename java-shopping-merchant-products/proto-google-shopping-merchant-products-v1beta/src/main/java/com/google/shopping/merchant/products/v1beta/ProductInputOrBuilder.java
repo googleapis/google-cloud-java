@@ -29,8 +29,7 @@ public interface ProductInputOrBuilder
    *
    * <pre>
    * Identifier. The name of the product input.
-   * Format:
-   * `"{productinput.name=accounts/{account}/productInputs/{productinput}}"`
+   * Format: accounts/{account}/productInputs/{productinput}
    * where the last section `productinput` consists of 4 parts:
    * channel~content_language~feed_label~offer_id
    * example for product input name is
@@ -47,8 +46,7 @@ public interface ProductInputOrBuilder
    *
    * <pre>
    * Identifier. The name of the product input.
-   * Format:
-   * `"{productinput.name=accounts/{account}/productInputs/{productinput}}"`
+   * Format: accounts/{account}/productInputs/{productinput}
    * where the last section `productinput` consists of 4 parts:
    * channel~content_language~feed_label~offer_id
    * example for product input name is
@@ -94,13 +92,13 @@ public interface ProductInputOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The
+   * Immutable. The
    * [channel](https://support.google.com/merchants/answer/7361332) of the
    * product.
    * </pre>
    *
    * <code>
-   * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for channel.
@@ -110,13 +108,13 @@ public interface ProductInputOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The
+   * Immutable. The
    * [channel](https://support.google.com/merchants/answer/7361332) of the
    * product.
    * </pre>
    *
    * <code>
-   * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The channel.

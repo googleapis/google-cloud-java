@@ -85,6 +85,7 @@ public class UserEventServiceClientHttpJsonTest {
     UserEvent expectedResponse =
         UserEvent.newBuilder()
             .setEventType("eventType31430900")
+            .setConversionType("conversionType989646192")
             .setUserPseudoId("userPseudoId-1155274652")
             .setEngine(
                 EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
@@ -108,6 +109,7 @@ public class UserEventServiceClientHttpJsonTest {
             .addAllPromotionIds(new ArrayList<String>())
             .putAllAttributes(new HashMap<String, CustomAttribute>())
             .setMediaInfo(MediaInfo.newBuilder().build())
+            .addAllPanels(new ArrayList<PanelInfo>())
             .build();
     mockService.addResponse(expectedResponse);
 

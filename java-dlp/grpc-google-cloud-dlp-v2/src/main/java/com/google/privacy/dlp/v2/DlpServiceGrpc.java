@@ -2653,6 +2653,8 @@ public final class DlpServiceGrpc {
      * When no InfoTypes or CustomInfoTypes are specified in this request, the
      * system will automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     * Only the first frame of each multiframe image is redacted. Metadata and
+     * other frames are omitted in the response.
      * </pre>
      */
     default void redactImage(
@@ -3622,6 +3624,8 @@ public final class DlpServiceGrpc {
      * When no InfoTypes or CustomInfoTypes are specified in this request, the
      * system will automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     * Only the first frame of each multiframe image is redacted. Metadata and
+     * other frames are omitted in the response.
      * </pre>
      */
     public void redactImage(
@@ -4677,6 +4681,8 @@ public final class DlpServiceGrpc {
      * When no InfoTypes or CustomInfoTypes are specified in this request, the
      * system will automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     * Only the first frame of each multiframe image is redacted. Metadata and
+     * other frames are omitted in the response.
      * </pre>
      */
     public com.google.privacy.dlp.v2.RedactImageResponse redactImage(
@@ -5549,6 +5555,8 @@ public final class DlpServiceGrpc {
      * When no InfoTypes or CustomInfoTypes are specified in this request, the
      * system will automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     * Only the first frame of each multiframe image is redacted. Metadata and
+     * other frames are omitted in the response.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

@@ -41,6 +41,7 @@ public class SyncDeleteReasoningEngine {
               .setName(
                   ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
                       .toString())
+              .setForce(true)
               .build();
       reasoningEngineServiceClient.deleteReasoningEngineAsync(request).get();
     }

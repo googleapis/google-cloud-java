@@ -28,10 +28,12 @@ public interface DataQualityRuleResultOrBuilder
    *
    *
    * <pre>
-   * The rule specified in the DataQualitySpec, as is.
+   * Output only. The rule specified in the DataQualitySpec, as is.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityRule rule = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the rule field is set.
    */
@@ -40,10 +42,12 @@ public interface DataQualityRuleResultOrBuilder
    *
    *
    * <pre>
-   * The rule specified in the DataQualitySpec, as is.
+   * Output only. The rule specified in the DataQualitySpec, as is.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityRule rule = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The rule.
    */
@@ -52,10 +56,12 @@ public interface DataQualityRuleResultOrBuilder
    *
    *
    * <pre>
-   * The rule specified in the DataQualitySpec, as is.
+   * Output only. The rule specified in the DataQualitySpec, as is.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityRule rule = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataplex.v1.DataQualityRuleOrBuilder getRuleOrBuilder();
 
@@ -63,10 +69,10 @@ public interface DataQualityRuleResultOrBuilder
    *
    *
    * <pre>
-   * Whether the rule passed or failed.
+   * Output only. Whether the rule passed or failed.
    * </pre>
    *
-   * <code>bool passed = 7;</code>
+   * <code>bool passed = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The passed.
    */
@@ -76,7 +82,7 @@ public interface DataQualityRuleResultOrBuilder
    *
    *
    * <pre>
-   * The number of rows a rule was evaluated against.
+   * Output only. The number of rows a rule was evaluated against.
    *
    * This field is only valid for row-level type rules.
    *
@@ -90,7 +96,7 @@ public interface DataQualityRuleResultOrBuilder
    * This field is not set for rule SqlAssertion.
    * </pre>
    *
-   * <code>int64 evaluated_count = 9;</code>
+   * <code>int64 evaluated_count = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The evaluatedCount.
    */
@@ -100,10 +106,14 @@ public interface DataQualityRuleResultOrBuilder
    *
    *
    * <pre>
+   * Output only. The number of rows which passed a rule evaluation.
+   *
+   * This field is only valid for row-level type rules.
+   *
    * This field is not set for rule SqlAssertion.
    * </pre>
    *
-   * <code>int64 passed_count = 8;</code>
+   * <code>int64 passed_count = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The passedCount.
    */
@@ -113,10 +123,10 @@ public interface DataQualityRuleResultOrBuilder
    *
    *
    * <pre>
-   * The number of rows with null values in the specified column.
+   * Output only. The number of rows with null values in the specified column.
    * </pre>
    *
-   * <code>int64 null_count = 5;</code>
+   * <code>int64 null_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The nullCount.
    */
@@ -126,12 +136,12 @@ public interface DataQualityRuleResultOrBuilder
    *
    *
    * <pre>
-   * The ratio of **passed_count / evaluated_count**.
+   * Output only. The ratio of **passed_count / evaluated_count**.
    *
    * This field is only valid for row-level type rules.
    * </pre>
    *
-   * <code>double pass_ratio = 6;</code>
+   * <code>double pass_ratio = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The passRatio.
    */
@@ -141,12 +151,12 @@ public interface DataQualityRuleResultOrBuilder
    *
    *
    * <pre>
-   * The query to find rows that did not pass this rule.
+   * Output only. The query to find rows that did not pass this rule.
    *
    * This field is only valid for row-level type rules.
    * </pre>
    *
-   * <code>string failing_rows_query = 10;</code>
+   * <code>string failing_rows_query = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The failingRowsQuery.
    */
@@ -155,12 +165,12 @@ public interface DataQualityRuleResultOrBuilder
    *
    *
    * <pre>
-   * The query to find rows that did not pass this rule.
+   * Output only. The query to find rows that did not pass this rule.
    *
    * This field is only valid for row-level type rules.
    * </pre>
    *
-   * <code>string failing_rows_query = 10;</code>
+   * <code>string failing_rows_query = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for failingRowsQuery.
    */

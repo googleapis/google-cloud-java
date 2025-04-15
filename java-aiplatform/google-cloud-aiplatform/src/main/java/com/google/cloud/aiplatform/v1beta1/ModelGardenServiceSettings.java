@@ -175,6 +175,21 @@ public class ModelGardenServiceSettings extends ClientSettings<ModelGardenServic
         .deployPublisherModelOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to exportPublisherModel. */
+  public UnaryCallSettings<ExportPublisherModelRequest, Operation> exportPublisherModelSettings() {
+    return ((ModelGardenServiceStubSettings) getStubSettings()).exportPublisherModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportPublisherModel. */
+  public OperationCallSettings<
+          ExportPublisherModelRequest,
+          ExportPublisherModelResponse,
+          ExportPublisherModelOperationMetadata>
+      exportPublisherModelOperationSettings() {
+    return ((ModelGardenServiceStubSettings) getStubSettings())
+        .exportPublisherModelOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -347,6 +362,21 @@ public class ModelGardenServiceSettings extends ClientSettings<ModelGardenServic
             DeployPublisherModelOperationMetadata>
         deployPublisherModelOperationSettings() {
       return getStubSettingsBuilder().deployPublisherModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportPublisherModel. */
+    public UnaryCallSettings.Builder<ExportPublisherModelRequest, Operation>
+        exportPublisherModelSettings() {
+      return getStubSettingsBuilder().exportPublisherModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportPublisherModel. */
+    public OperationCallSettings.Builder<
+            ExportPublisherModelRequest,
+            ExportPublisherModelResponse,
+            ExportPublisherModelOperationMetadata>
+        exportPublisherModelOperationSettings() {
+      return getStubSettingsBuilder().exportPublisherModelOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

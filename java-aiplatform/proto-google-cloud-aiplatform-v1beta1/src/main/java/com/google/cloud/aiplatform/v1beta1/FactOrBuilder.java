@@ -182,7 +182,7 @@ public interface FactOrBuilder
    * <code>optional double vector_distance = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Fact.vector_distance is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=314
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=318
    * @return Whether the vectorDistance field is set.
    */
   @java.lang.Deprecated
@@ -197,7 +197,7 @@ public interface FactOrBuilder
    * <code>optional double vector_distance = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Fact.vector_distance is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=314
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=318
    * @return The vectorDistance.
    */
   @java.lang.Deprecated
@@ -241,4 +241,39 @@ public interface FactOrBuilder
    * @return The score.
    */
   double getScore();
+
+  /**
+   *
+   *
+   * <pre>
+   * If present, chunk properties.
+   * </pre>
+   *
+   * <code>optional .google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+   *
+   * @return Whether the chunk field is set.
+   */
+  boolean hasChunk();
+  /**
+   *
+   *
+   * <pre>
+   * If present, chunk properties.
+   * </pre>
+   *
+   * <code>optional .google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+   *
+   * @return The chunk.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagChunk getChunk();
+  /**
+   *
+   *
+   * <pre>
+   * If present, chunk properties.
+   * </pre>
+   *
+   * <code>optional .google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder getChunkOrBuilder();
 }

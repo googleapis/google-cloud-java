@@ -267,4 +267,46 @@ public class MockVertexRagDataServiceImpl extends VertexRagDataServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void updateRagEngineConfig(
+      UpdateRagEngineConfigRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateRagEngineConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getRagEngineConfig(
+      GetRagEngineConfigRequest request, StreamObserver<RagEngineConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RagEngineConfig) {
+      requests.add(request);
+      responseObserver.onNext(((RagEngineConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRagEngineConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RagEngineConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

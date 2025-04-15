@@ -53,10 +53,12 @@ public interface IapSettingsOrBuilder
    *
    *
    * <pre>
-   * Top level wrapper for all access related setting in IAP
+   * Optional. Top level wrapper for all access related setting in IAP
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AccessSettings access_settings = 5;</code>
+   * <code>
+   * .google.cloud.iap.v1.AccessSettings access_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the accessSettings field is set.
    */
@@ -65,10 +67,12 @@ public interface IapSettingsOrBuilder
    *
    *
    * <pre>
-   * Top level wrapper for all access related setting in IAP
+   * Optional. Top level wrapper for all access related setting in IAP
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AccessSettings access_settings = 5;</code>
+   * <code>
+   * .google.cloud.iap.v1.AccessSettings access_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The accessSettings.
    */
@@ -77,10 +81,12 @@ public interface IapSettingsOrBuilder
    *
    *
    * <pre>
-   * Top level wrapper for all access related setting in IAP
+   * Optional. Top level wrapper for all access related setting in IAP
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AccessSettings access_settings = 5;</code>
+   * <code>
+   * .google.cloud.iap.v1.AccessSettings access_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.iap.v1.AccessSettingsOrBuilder getAccessSettingsOrBuilder();
 
@@ -88,10 +94,12 @@ public interface IapSettingsOrBuilder
    *
    *
    * <pre>
-   * Top level wrapper for all application related settings in IAP
+   * Optional. Top level wrapper for all application related settings in IAP
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.ApplicationSettings application_settings = 6;</code>
+   * <code>
+   * .google.cloud.iap.v1.ApplicationSettings application_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the applicationSettings field is set.
    */
@@ -100,10 +108,12 @@ public interface IapSettingsOrBuilder
    *
    *
    * <pre>
-   * Top level wrapper for all application related settings in IAP
+   * Optional. Top level wrapper for all application related settings in IAP
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.ApplicationSettings application_settings = 6;</code>
+   * <code>
+   * .google.cloud.iap.v1.ApplicationSettings application_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The applicationSettings.
    */
@@ -112,10 +122,12 @@ public interface IapSettingsOrBuilder
    *
    *
    * <pre>
-   * Top level wrapper for all application related settings in IAP
+   * Optional. Top level wrapper for all application related settings in IAP
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.ApplicationSettings application_settings = 6;</code>
+   * <code>
+   * .google.cloud.iap.v1.ApplicationSettings application_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.iap.v1.ApplicationSettingsOrBuilder getApplicationSettingsOrBuilder();
 }

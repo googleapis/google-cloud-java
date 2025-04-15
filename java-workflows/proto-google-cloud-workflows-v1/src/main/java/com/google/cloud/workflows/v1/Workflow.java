@@ -46,6 +46,10 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     serviceAccount_ = "";
     cryptoKeyName_ = "";
     callLogLevel_ = 0;
+    executionHistoryLevel_ = 0;
+    allKmsKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    allKmsKeysVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    cryptoKeyVersion_ = "";
   }
 
   @java.lang.Override
@@ -68,6 +72,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
         return internalGetLabels();
       case 14:
         return internalGetUserEnvVars();
+      case 19:
+        return internalGetTags();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -1435,7 +1441,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the workflow.
-   * Format: projects/{project}/locations/{location}/workflows/{workflow}
+   * Format: projects/{project}/locations/{location}/workflows/{workflow}.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1459,7 +1466,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the workflow.
-   * Format: projects/{project}/locations/{location}/workflows/{workflow}
+   * Format: projects/{project}/locations/{location}/workflows/{workflow}.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1488,7 +1496,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Description of the workflow provided by the user.
-   * Must be at most 1000 unicode characters long.
+   * Must be at most 1000 Unicode characters long.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -1512,7 +1521,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Description of the workflow provided by the user.
-   * Must be at most 1000 unicode characters long.
+   * Must be at most 1000 Unicode characters long.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -1649,6 +1659,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The timestamp for when the workflow was created.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1665,6 +1676,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The timestamp for when the workflow was created.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1681,6 +1693,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The timestamp for when the workflow was created.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1698,6 +1711,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The timestamp for when the workflow was last updated.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1714,6 +1728,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The timestamp for when the workflow was last updated.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1730,6 +1745,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The timestamp for when the workflow was last updated.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1834,6 +1850,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    * than 63 characters and can only contain lowercase letters, numeric
    * characters, underscores, and dashes. Label keys must start with a letter.
    * International characters are allowed.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -1860,6 +1877,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    * than 63 characters and can only contain lowercase letters, numeric
    * characters, underscores, and dashes. Label keys must start with a letter.
    * International characters are allowed.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -1877,6 +1895,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    * than 63 characters and can only contain lowercase letters, numeric
    * characters, underscores, and dashes. Label keys must start with a letter.
    * International characters are allowed.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -1901,6 +1920,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    * than 63 characters and can only contain lowercase letters, numeric
    * characters, underscores, and dashes. Label keys must start with a letter.
    * International characters are allowed.
+   * This is a workflow-wide field and is not tied to a specific revision.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -2277,8 +2297,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. User-defined environment variables associated with this workflow
    * revision. This map has a maximum length of 20. Each string can take up to
-   * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
-   * “WORKFLOWS".
+   * 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or
+   * "WORKFLOWS".
    * </pre>
    *
    * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
@@ -2303,8 +2323,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. User-defined environment variables associated with this workflow
    * revision. This map has a maximum length of 20. Each string can take up to
-   * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
-   * “WORKFLOWS".
+   * 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or
+   * "WORKFLOWS".
    * </pre>
    *
    * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
@@ -2320,8 +2340,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. User-defined environment variables associated with this workflow
    * revision. This map has a maximum length of 20. Each string can take up to
-   * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
-   * “WORKFLOWS".
+   * 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or
+   * "WORKFLOWS".
    * </pre>
    *
    * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
@@ -2344,8 +2364,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. User-defined environment variables associated with this workflow
    * revision. This map has a maximum length of 20. Each string can take up to
-   * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
-   * “WORKFLOWS".
+   * 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or
+   * "WORKFLOWS".
    * </pre>
    *
    * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
@@ -2357,6 +2377,372 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetUserEnvVars().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int EXECUTION_HISTORY_LEVEL_FIELD_NUMBER = 15;
+  private int executionHistoryLevel_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the execution history level to apply to this workflow.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.v1.ExecutionHistoryLevel execution_history_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for executionHistoryLevel.
+   */
+  @java.lang.Override
+  public int getExecutionHistoryLevelValue() {
+    return executionHistoryLevel_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the execution history level to apply to this workflow.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.v1.ExecutionHistoryLevel execution_history_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The executionHistoryLevel.
+   */
+  @java.lang.Override
+  public com.google.cloud.workflows.v1.ExecutionHistoryLevel getExecutionHistoryLevel() {
+    com.google.cloud.workflows.v1.ExecutionHistoryLevel result =
+        com.google.cloud.workflows.v1.ExecutionHistoryLevel.forNumber(executionHistoryLevel_);
+    return result == null
+        ? com.google.cloud.workflows.v1.ExecutionHistoryLevel.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int ALL_KMS_KEYS_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList allKmsKeys_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
+   * data associated with the workflow.
+   * </pre>
+   *
+   * <code>
+   * repeated string all_kms_keys = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the allKmsKeys.
+   */
+  public com.google.protobuf.ProtocolStringList getAllKmsKeysList() {
+    return allKmsKeys_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
+   * data associated with the workflow.
+   * </pre>
+   *
+   * <code>
+   * repeated string all_kms_keys = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of allKmsKeys.
+   */
+  public int getAllKmsKeysCount() {
+    return allKmsKeys_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
+   * data associated with the workflow.
+   * </pre>
+   *
+   * <code>
+   * repeated string all_kms_keys = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The allKmsKeys at the given index.
+   */
+  public java.lang.String getAllKmsKeys(int index) {
+    return allKmsKeys_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
+   * data associated with the workflow.
+   * </pre>
+   *
+   * <code>
+   * repeated string all_kms_keys = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the allKmsKeys at the given index.
+   */
+  public com.google.protobuf.ByteString getAllKmsKeysBytes(int index) {
+    return allKmsKeys_.getByteString(index);
+  }
+
+  public static final int ALL_KMS_KEYS_VERSIONS_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList allKmsKeysVersions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of all KMS crypto key versions used to encrypt or
+   * decrypt the data associated with the workflow.
+   * </pre>
+   *
+   * <code>
+   * repeated string all_kms_keys_versions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the allKmsKeysVersions.
+   */
+  public com.google.protobuf.ProtocolStringList getAllKmsKeysVersionsList() {
+    return allKmsKeysVersions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of all KMS crypto key versions used to encrypt or
+   * decrypt the data associated with the workflow.
+   * </pre>
+   *
+   * <code>
+   * repeated string all_kms_keys_versions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of allKmsKeysVersions.
+   */
+  public int getAllKmsKeysVersionsCount() {
+    return allKmsKeysVersions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of all KMS crypto key versions used to encrypt or
+   * decrypt the data associated with the workflow.
+   * </pre>
+   *
+   * <code>
+   * repeated string all_kms_keys_versions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The allKmsKeysVersions at the given index.
+   */
+  public java.lang.String getAllKmsKeysVersions(int index) {
+    return allKmsKeysVersions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of all KMS crypto key versions used to encrypt or
+   * decrypt the data associated with the workflow.
+   * </pre>
+   *
+   * <code>
+   * repeated string all_kms_keys_versions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the allKmsKeysVersions at the given index.
+   */
+  public com.google.protobuf.ByteString getAllKmsKeysVersionsBytes(int index) {
+    return allKmsKeysVersions_.getByteString(index);
+  }
+
+  public static final int CRYPTO_KEY_VERSION_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cryptoKeyVersion_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of a KMS crypto key version used to encrypt
+   * or decrypt the data associated with the workflow.
+   *
+   * Format:
+   * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}/cryptoKeyVersions/{cryptoKeyVersion}
+   * </pre>
+   *
+   * <code>
+   * string crypto_key_version = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The cryptoKeyVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getCryptoKeyVersion() {
+    java.lang.Object ref = cryptoKeyVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cryptoKeyVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of a KMS crypto key version used to encrypt
+   * or decrypt the data associated with the workflow.
+   *
+   * Format:
+   * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}/cryptoKeyVersions/{cryptoKeyVersion}
+   * </pre>
+   *
+   * <code>
+   * string crypto_key_version = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for cryptoKeyVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCryptoKeyVersionBytes() {
+    java.lang.Object ref = cryptoKeyVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cryptoKeyVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TAGS_FIELD_NUMBER = 19;
+
+  private static final class TagsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.workflows.v1.WorkflowsProto
+                .internal_static_google_cloud_workflows_v1_Workflow_TagsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+    if (tags_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+    }
+    return tags_;
+  }
+
+  public int getTagsCount() {
+    return internalGetTags().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tags associated with this workflow.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 19 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsTags(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetTags().getMap().containsKey(key);
+  }
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getTags() {
+    return getTagsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tags associated with this workflow.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 19 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+    return internalGetTags().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tags associated with this workflow.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 19 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tags associated with this workflow.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 19 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getTagsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -2419,6 +2805,22 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetUserEnvVars(), UserEnvVarsDefaultEntryHolder.defaultEntry, 14);
+    if (executionHistoryLevel_
+        != com.google.cloud.workflows.v1.ExecutionHistoryLevel.EXECUTION_HISTORY_LEVEL_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(15, executionHistoryLevel_);
+    }
+    for (int i = 0; i < allKmsKeys_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, allKmsKeys_.getRaw(i));
+    }
+    for (int i = 0; i < allKmsKeysVersions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, allKmsKeysVersions_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoKeyVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, cryptoKeyVersion_);
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 19);
     getUnknownFields().writeTo(output);
   }
 
@@ -2486,6 +2888,40 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, userEnvVars__);
     }
+    if (executionHistoryLevel_
+        != com.google.cloud.workflows.v1.ExecutionHistoryLevel.EXECUTION_HISTORY_LEVEL_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, executionHistoryLevel_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < allKmsKeys_.size(); i++) {
+        dataSize += computeStringSizeNoTag(allKmsKeys_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getAllKmsKeysList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < allKmsKeysVersions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(allKmsKeysVersions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getAllKmsKeysVersionsList().size();
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoKeyVersion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, cryptoKeyVersion_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetTags().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+          TagsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, tags__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2526,6 +2962,11 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     }
     if (callLogLevel_ != other.callLogLevel_) return false;
     if (!internalGetUserEnvVars().equals(other.internalGetUserEnvVars())) return false;
+    if (executionHistoryLevel_ != other.executionHistoryLevel_) return false;
+    if (!getAllKmsKeysList().equals(other.getAllKmsKeysList())) return false;
+    if (!getAllKmsKeysVersionsList().equals(other.getAllKmsKeysVersionsList())) return false;
+    if (!getCryptoKeyVersion().equals(other.getCryptoKeyVersion())) return false;
+    if (!internalGetTags().equals(other.internalGetTags())) return false;
     if (!getSourceCodeCase().equals(other.getSourceCodeCase())) return false;
     switch (sourceCodeCase_) {
       case 10:
@@ -2582,6 +3023,22 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetUserEnvVars().getMap().isEmpty()) {
       hash = (37 * hash) + USER_ENV_VARS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetUserEnvVars().hashCode();
+    }
+    hash = (37 * hash) + EXECUTION_HISTORY_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + executionHistoryLevel_;
+    if (getAllKmsKeysCount() > 0) {
+      hash = (37 * hash) + ALL_KMS_KEYS_FIELD_NUMBER;
+      hash = (53 * hash) + getAllKmsKeysList().hashCode();
+    }
+    if (getAllKmsKeysVersionsCount() > 0) {
+      hash = (37 * hash) + ALL_KMS_KEYS_VERSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getAllKmsKeysVersionsList().hashCode();
+    }
+    hash = (37 * hash) + CRYPTO_KEY_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getCryptoKeyVersion().hashCode();
+    if (!internalGetTags().getMap().isEmpty()) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetTags().hashCode();
     }
     switch (sourceCodeCase_) {
       case 10:
@@ -2717,6 +3174,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
           return internalGetLabels();
         case 14:
           return internalGetUserEnvVars();
+        case 19:
+          return internalGetTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2730,6 +3189,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
           return internalGetMutableLabels();
         case 14:
           return internalGetMutableUserEnvVars();
+        case 19:
+          return internalGetMutableTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2797,6 +3258,11 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       }
       callLogLevel_ = 0;
       internalGetMutableUserEnvVars().clear();
+      executionHistoryLevel_ = 0;
+      allKmsKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      allKmsKeysVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      cryptoKeyVersion_ = "";
+      internalGetMutableTags().clear();
       sourceCodeCase_ = 0;
       sourceCode_ = null;
       return this;
@@ -2884,6 +3350,24 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.userEnvVars_ = internalGetUserEnvVars();
         result.userEnvVars_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.executionHistoryLevel_ = executionHistoryLevel_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        allKmsKeys_.makeImmutable();
+        result.allKmsKeys_ = allKmsKeys_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        allKmsKeysVersions_.makeImmutable();
+        result.allKmsKeysVersions_ = allKmsKeysVersions_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.cryptoKeyVersion_ = cryptoKeyVersion_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.tags_ = internalGetTags();
+        result.tags_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2985,6 +3469,36 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableUserEnvVars().mergeFrom(other.internalGetUserEnvVars());
       bitField0_ |= 0x00002000;
+      if (other.executionHistoryLevel_ != 0) {
+        setExecutionHistoryLevelValue(other.getExecutionHistoryLevelValue());
+      }
+      if (!other.allKmsKeys_.isEmpty()) {
+        if (allKmsKeys_.isEmpty()) {
+          allKmsKeys_ = other.allKmsKeys_;
+          bitField0_ |= 0x00008000;
+        } else {
+          ensureAllKmsKeysIsMutable();
+          allKmsKeys_.addAll(other.allKmsKeys_);
+        }
+        onChanged();
+      }
+      if (!other.allKmsKeysVersions_.isEmpty()) {
+        if (allKmsKeysVersions_.isEmpty()) {
+          allKmsKeysVersions_ = other.allKmsKeysVersions_;
+          bitField0_ |= 0x00010000;
+        } else {
+          ensureAllKmsKeysVersionsIsMutable();
+          allKmsKeysVersions_.addAll(other.allKmsKeysVersions_);
+        }
+        onChanged();
+      }
+      if (!other.getCryptoKeyVersion().isEmpty()) {
+        cryptoKeyVersion_ = other.cryptoKeyVersion_;
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      internalGetMutableTags().mergeFrom(other.internalGetTags());
+      bitField0_ |= 0x00040000;
       switch (other.getSourceCodeCase()) {
         case SOURCE_CONTENTS:
           {
@@ -3122,6 +3636,41 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00002000;
                 break;
               } // case 114
+            case 120:
+              {
+                executionHistoryLevel_ = input.readEnum();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 120
+            case 130:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAllKmsKeysIsMutable();
+                allKmsKeys_.add(s);
+                break;
+              } // case 130
+            case 138:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAllKmsKeysVersionsIsMutable();
+                allKmsKeysVersions_.add(s);
+                break;
+              } // case 138
+            case 146:
+              {
+                cryptoKeyVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 146
+            case 154:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+                    input.readMessage(
+                        TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3161,7 +3710,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the workflow.
-     * Format: projects/{project}/locations/{location}/workflows/{workflow}
+     * Format: projects/{project}/locations/{location}/workflows/{workflow}.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3184,7 +3734,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the workflow.
-     * Format: projects/{project}/locations/{location}/workflows/{workflow}
+     * Format: projects/{project}/locations/{location}/workflows/{workflow}.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3207,7 +3758,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the workflow.
-     * Format: projects/{project}/locations/{location}/workflows/{workflow}
+     * Format: projects/{project}/locations/{location}/workflows/{workflow}.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3229,7 +3781,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the workflow.
-     * Format: projects/{project}/locations/{location}/workflows/{workflow}
+     * Format: projects/{project}/locations/{location}/workflows/{workflow}.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3247,7 +3800,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the workflow.
-     * Format: projects/{project}/locations/{location}/workflows/{workflow}
+     * Format: projects/{project}/locations/{location}/workflows/{workflow}.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3272,7 +3826,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Description of the workflow provided by the user.
-     * Must be at most 1000 unicode characters long.
+     * Must be at most 1000 Unicode characters long.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -3295,7 +3850,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Description of the workflow provided by the user.
-     * Must be at most 1000 unicode characters long.
+     * Must be at most 1000 Unicode characters long.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -3318,7 +3874,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Description of the workflow provided by the user.
-     * Must be at most 1000 unicode characters long.
+     * Must be at most 1000 Unicode characters long.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -3340,7 +3897,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Description of the workflow provided by the user.
-     * Must be at most 1000 unicode characters long.
+     * Must be at most 1000 Unicode characters long.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -3358,7 +3916,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Description of the workflow provided by the user.
-     * Must be at most 1000 unicode characters long.
+     * Must be at most 1000 Unicode characters long.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -3644,6 +4203,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp for when the workflow was created.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>
@@ -3660,6 +4220,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp for when the workflow was created.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>
@@ -3682,6 +4243,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp for when the workflow was created.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>
@@ -3706,6 +4268,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp for when the workflow was created.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>
@@ -3727,6 +4290,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp for when the workflow was created.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>
@@ -3756,6 +4320,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp for when the workflow was created.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>
@@ -3777,6 +4342,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp for when the workflow was created.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>
@@ -3793,6 +4359,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp for when the workflow was created.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>
@@ -3813,6 +4380,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp for when the workflow was created.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>
@@ -3847,6 +4415,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp for when the workflow was last updated.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>
@@ -3863,6 +4432,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp for when the workflow was last updated.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>
@@ -3885,6 +4455,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp for when the workflow was last updated.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>
@@ -3909,6 +4480,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp for when the workflow was last updated.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>
@@ -3930,6 +4502,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp for when the workflow was last updated.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>
@@ -3959,6 +4532,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp for when the workflow was last updated.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>
@@ -3980,6 +4554,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp for when the workflow was last updated.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>
@@ -3996,6 +4571,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp for when the workflow was last updated.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>
@@ -4016,6 +4592,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The timestamp for when the workflow was last updated.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>
@@ -4285,6 +4862,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * than 63 characters and can only contain lowercase letters, numeric
      * characters, underscores, and dashes. Label keys must start with a letter.
      * International characters are allowed.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -4311,6 +4889,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * than 63 characters and can only contain lowercase letters, numeric
      * characters, underscores, and dashes. Label keys must start with a letter.
      * International characters are allowed.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -4328,6 +4907,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * than 63 characters and can only contain lowercase letters, numeric
      * characters, underscores, and dashes. Label keys must start with a letter.
      * International characters are allowed.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -4352,6 +4932,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * than 63 characters and can only contain lowercase letters, numeric
      * characters, underscores, and dashes. Label keys must start with a letter.
      * International characters are allowed.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -4382,6 +4963,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * than 63 characters and can only contain lowercase letters, numeric
      * characters, underscores, and dashes. Label keys must start with a letter.
      * International characters are allowed.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -4408,6 +4990,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * than 63 characters and can only contain lowercase letters, numeric
      * characters, underscores, and dashes. Label keys must start with a letter.
      * International characters are allowed.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -4432,6 +5015,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * than 63 characters and can only contain lowercase letters, numeric
      * characters, underscores, and dashes. Label keys must start with a letter.
      * International characters are allowed.
+     * This is a workflow-wide field and is not tied to a specific revision.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -5277,8 +5861,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. User-defined environment variables associated with this workflow
      * revision. This map has a maximum length of 20. Each string can take up to
-     * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
-     * “WORKFLOWS".
+     * 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or
+     * "WORKFLOWS".
      * </pre>
      *
      * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
@@ -5303,8 +5887,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. User-defined environment variables associated with this workflow
      * revision. This map has a maximum length of 20. Each string can take up to
-     * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
-     * “WORKFLOWS".
+     * 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or
+     * "WORKFLOWS".
      * </pre>
      *
      * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
@@ -5320,8 +5904,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. User-defined environment variables associated with this workflow
      * revision. This map has a maximum length of 20. Each string can take up to
-     * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
-     * “WORKFLOWS".
+     * 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or
+     * "WORKFLOWS".
      * </pre>
      *
      * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
@@ -5344,8 +5928,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. User-defined environment variables associated with this workflow
      * revision. This map has a maximum length of 20. Each string can take up to
-     * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
-     * “WORKFLOWS".
+     * 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or
+     * "WORKFLOWS".
      * </pre>
      *
      * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
@@ -5374,8 +5958,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. User-defined environment variables associated with this workflow
      * revision. This map has a maximum length of 20. Each string can take up to
-     * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
-     * “WORKFLOWS".
+     * 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or
+     * "WORKFLOWS".
      * </pre>
      *
      * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
@@ -5400,8 +5984,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. User-defined environment variables associated with this workflow
      * revision. This map has a maximum length of 20. Each string can take up to
-     * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
-     * “WORKFLOWS".
+     * 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or
+     * "WORKFLOWS".
      * </pre>
      *
      * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
@@ -5424,8 +6008,8 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. User-defined environment variables associated with this workflow
      * revision. This map has a maximum length of 20. Each string can take up to
-     * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
-     * “WORKFLOWS".
+     * 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or
+     * "WORKFLOWS".
      * </pre>
      *
      * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
@@ -5434,6 +6018,824 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllUserEnvVars(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableUserEnvVars().getMutableMap().putAll(values);
       bitField0_ |= 0x00002000;
+      return this;
+    }
+
+    private int executionHistoryLevel_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the execution history level to apply to this workflow.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.ExecutionHistoryLevel execution_history_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for executionHistoryLevel.
+     */
+    @java.lang.Override
+    public int getExecutionHistoryLevelValue() {
+      return executionHistoryLevel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the execution history level to apply to this workflow.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.ExecutionHistoryLevel execution_history_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for executionHistoryLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExecutionHistoryLevelValue(int value) {
+      executionHistoryLevel_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the execution history level to apply to this workflow.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.ExecutionHistoryLevel execution_history_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The executionHistoryLevel.
+     */
+    @java.lang.Override
+    public com.google.cloud.workflows.v1.ExecutionHistoryLevel getExecutionHistoryLevel() {
+      com.google.cloud.workflows.v1.ExecutionHistoryLevel result =
+          com.google.cloud.workflows.v1.ExecutionHistoryLevel.forNumber(executionHistoryLevel_);
+      return result == null
+          ? com.google.cloud.workflows.v1.ExecutionHistoryLevel.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the execution history level to apply to this workflow.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.ExecutionHistoryLevel execution_history_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The executionHistoryLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExecutionHistoryLevel(
+        com.google.cloud.workflows.v1.ExecutionHistoryLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00004000;
+      executionHistoryLevel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Describes the execution history level to apply to this workflow.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workflows.v1.ExecutionHistoryLevel execution_history_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExecutionHistoryLevel() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      executionHistoryLevel_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList allKmsKeys_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureAllKmsKeysIsMutable() {
+      if (!allKmsKeys_.isModifiable()) {
+        allKmsKeys_ = new com.google.protobuf.LazyStringArrayList(allKmsKeys_);
+      }
+      bitField0_ |= 0x00008000;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
+     * data associated with the workflow.
+     * </pre>
+     *
+     * <code>
+     * repeated string all_kms_keys = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the allKmsKeys.
+     */
+    public com.google.protobuf.ProtocolStringList getAllKmsKeysList() {
+      allKmsKeys_.makeImmutable();
+      return allKmsKeys_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
+     * data associated with the workflow.
+     * </pre>
+     *
+     * <code>
+     * repeated string all_kms_keys = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of allKmsKeys.
+     */
+    public int getAllKmsKeysCount() {
+      return allKmsKeys_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
+     * data associated with the workflow.
+     * </pre>
+     *
+     * <code>
+     * repeated string all_kms_keys = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The allKmsKeys at the given index.
+     */
+    public java.lang.String getAllKmsKeys(int index) {
+      return allKmsKeys_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
+     * data associated with the workflow.
+     * </pre>
+     *
+     * <code>
+     * repeated string all_kms_keys = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the allKmsKeys at the given index.
+     */
+    public com.google.protobuf.ByteString getAllKmsKeysBytes(int index) {
+      return allKmsKeys_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
+     * data associated with the workflow.
+     * </pre>
+     *
+     * <code>
+     * repeated string all_kms_keys = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The allKmsKeys to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllKmsKeys(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAllKmsKeysIsMutable();
+      allKmsKeys_.set(index, value);
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
+     * data associated with the workflow.
+     * </pre>
+     *
+     * <code>
+     * repeated string all_kms_keys = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The allKmsKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllKmsKeys(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAllKmsKeysIsMutable();
+      allKmsKeys_.add(value);
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
+     * data associated with the workflow.
+     * </pre>
+     *
+     * <code>
+     * repeated string all_kms_keys = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The allKmsKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAllKmsKeys(java.lang.Iterable<java.lang.String> values) {
+      ensureAllKmsKeysIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allKmsKeys_);
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
+     * data associated with the workflow.
+     * </pre>
+     *
+     * <code>
+     * repeated string all_kms_keys = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllKmsKeys() {
+      allKmsKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00008000);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
+     * data associated with the workflow.
+     * </pre>
+     *
+     * <code>
+     * repeated string all_kms_keys = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the allKmsKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllKmsKeysBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAllKmsKeysIsMutable();
+      allKmsKeys_.add(value);
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList allKmsKeysVersions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureAllKmsKeysVersionsIsMutable() {
+      if (!allKmsKeysVersions_.isModifiable()) {
+        allKmsKeysVersions_ = new com.google.protobuf.LazyStringArrayList(allKmsKeysVersions_);
+      }
+      bitField0_ |= 0x00010000;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of all KMS crypto key versions used to encrypt or
+     * decrypt the data associated with the workflow.
+     * </pre>
+     *
+     * <code>
+     * repeated string all_kms_keys_versions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the allKmsKeysVersions.
+     */
+    public com.google.protobuf.ProtocolStringList getAllKmsKeysVersionsList() {
+      allKmsKeysVersions_.makeImmutable();
+      return allKmsKeysVersions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of all KMS crypto key versions used to encrypt or
+     * decrypt the data associated with the workflow.
+     * </pre>
+     *
+     * <code>
+     * repeated string all_kms_keys_versions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of allKmsKeysVersions.
+     */
+    public int getAllKmsKeysVersionsCount() {
+      return allKmsKeysVersions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of all KMS crypto key versions used to encrypt or
+     * decrypt the data associated with the workflow.
+     * </pre>
+     *
+     * <code>
+     * repeated string all_kms_keys_versions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The allKmsKeysVersions at the given index.
+     */
+    public java.lang.String getAllKmsKeysVersions(int index) {
+      return allKmsKeysVersions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of all KMS crypto key versions used to encrypt or
+     * decrypt the data associated with the workflow.
+     * </pre>
+     *
+     * <code>
+     * repeated string all_kms_keys_versions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the allKmsKeysVersions at the given index.
+     */
+    public com.google.protobuf.ByteString getAllKmsKeysVersionsBytes(int index) {
+      return allKmsKeysVersions_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of all KMS crypto key versions used to encrypt or
+     * decrypt the data associated with the workflow.
+     * </pre>
+     *
+     * <code>
+     * repeated string all_kms_keys_versions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The allKmsKeysVersions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllKmsKeysVersions(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAllKmsKeysVersionsIsMutable();
+      allKmsKeysVersions_.set(index, value);
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of all KMS crypto key versions used to encrypt or
+     * decrypt the data associated with the workflow.
+     * </pre>
+     *
+     * <code>
+     * repeated string all_kms_keys_versions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The allKmsKeysVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllKmsKeysVersions(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAllKmsKeysVersionsIsMutable();
+      allKmsKeysVersions_.add(value);
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of all KMS crypto key versions used to encrypt or
+     * decrypt the data associated with the workflow.
+     * </pre>
+     *
+     * <code>
+     * repeated string all_kms_keys_versions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The allKmsKeysVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAllKmsKeysVersions(java.lang.Iterable<java.lang.String> values) {
+      ensureAllKmsKeysVersionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allKmsKeysVersions_);
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of all KMS crypto key versions used to encrypt or
+     * decrypt the data associated with the workflow.
+     * </pre>
+     *
+     * <code>
+     * repeated string all_kms_keys_versions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllKmsKeysVersions() {
+      allKmsKeysVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of all KMS crypto key versions used to encrypt or
+     * decrypt the data associated with the workflow.
+     * </pre>
+     *
+     * <code>
+     * repeated string all_kms_keys_versions = 17 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the allKmsKeysVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllKmsKeysVersionsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAllKmsKeysVersionsIsMutable();
+      allKmsKeysVersions_.add(value);
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object cryptoKeyVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of a KMS crypto key version used to encrypt
+     * or decrypt the data associated with the workflow.
+     *
+     * Format:
+     * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}/cryptoKeyVersions/{cryptoKeyVersion}
+     * </pre>
+     *
+     * <code>
+     * string crypto_key_version = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The cryptoKeyVersion.
+     */
+    public java.lang.String getCryptoKeyVersion() {
+      java.lang.Object ref = cryptoKeyVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cryptoKeyVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of a KMS crypto key version used to encrypt
+     * or decrypt the data associated with the workflow.
+     *
+     * Format:
+     * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}/cryptoKeyVersions/{cryptoKeyVersion}
+     * </pre>
+     *
+     * <code>
+     * string crypto_key_version = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for cryptoKeyVersion.
+     */
+    public com.google.protobuf.ByteString getCryptoKeyVersionBytes() {
+      java.lang.Object ref = cryptoKeyVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cryptoKeyVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of a KMS crypto key version used to encrypt
+     * or decrypt the data associated with the workflow.
+     *
+     * Format:
+     * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}/cryptoKeyVersions/{cryptoKeyVersion}
+     * </pre>
+     *
+     * <code>
+     * string crypto_key_version = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The cryptoKeyVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCryptoKeyVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      cryptoKeyVersion_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of a KMS crypto key version used to encrypt
+     * or decrypt the data associated with the workflow.
+     *
+     * Format:
+     * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}/cryptoKeyVersions/{cryptoKeyVersion}
+     * </pre>
+     *
+     * <code>
+     * string crypto_key_version = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCryptoKeyVersion() {
+      cryptoKeyVersion_ = getDefaultInstance().getCryptoKeyVersion();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of a KMS crypto key version used to encrypt
+     * or decrypt the data associated with the workflow.
+     *
+     * Format:
+     * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}/cryptoKeyVersions/{cryptoKeyVersion}
+     * </pre>
+     *
+     * <code>
+     * string crypto_key_version = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for cryptoKeyVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCryptoKeyVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      cryptoKeyVersion_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+      if (tags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      return tags_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableTags() {
+      if (tags_ == null) {
+        tags_ = com.google.protobuf.MapField.newMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      if (!tags_.isMutable()) {
+        tags_ = tags_.copy();
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return tags_;
+    }
+
+    public int getTagsCount() {
+      return internalGetTags().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tags associated with this workflow.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 19 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetTags().getMap().containsKey(key);
+    }
+    /** Use {@link #getTagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getTags() {
+      return getTagsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tags associated with this workflow.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 19 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+      return internalGetTags().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tags associated with this workflow.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 19 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tags associated with this workflow.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 19 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getTagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearTags() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      internalGetMutableTags().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tags associated with this workflow.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 19 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableTags().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
+      bitField0_ |= 0x00040000;
+      return internalGetMutableTags().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tags associated with this workflow.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 19 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putTags(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableTags().getMutableMap().put(key, value);
+      bitField0_ |= 0x00040000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tags associated with this workflow.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 19 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllTags(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableTags().getMutableMap().putAll(values);
+      bitField0_ |= 0x00040000;
       return this;
     }
 

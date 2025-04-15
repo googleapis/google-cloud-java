@@ -376,6 +376,28 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Forwarding state: for packets originating from a serverless endpoint
+     * forwarded through Direct VPC egress.
+     * </pre>
+     *
+     * <code>DIRECT_VPC_EGRESS_CONNECTION = 35;</code>
+     */
+    DIRECT_VPC_EGRESS_CONNECTION(35),
+    /**
+     *
+     *
+     * <pre>
+     * Forwarding state: for packets originating from a serverless endpoint
+     * forwarded through public (external) connectivity.
+     * </pre>
+     *
+     * <code>SERVERLESS_EXTERNAL_CONNECTION = 36;</code>
+     */
+    SERVERLESS_EXTERNAL_CONNECTION(36),
+    /**
+     *
+     *
+     * <pre>
      * Transition state: packet header translated.
      * </pre>
      *
@@ -745,6 +767,28 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Forwarding state: for packets originating from a serverless endpoint
+     * forwarded through Direct VPC egress.
+     * </pre>
+     *
+     * <code>DIRECT_VPC_EGRESS_CONNECTION = 35;</code>
+     */
+    public static final int DIRECT_VPC_EGRESS_CONNECTION_VALUE = 35;
+    /**
+     *
+     *
+     * <pre>
+     * Forwarding state: for packets originating from a serverless endpoint
+     * forwarded through public (external) connectivity.
+     * </pre>
+     *
+     * <code>SERVERLESS_EXTERNAL_CONNECTION = 36;</code>
+     */
+    public static final int SERVERLESS_EXTERNAL_CONNECTION_VALUE = 36;
+    /**
+     *
+     *
+     * <pre>
      * Transition state: packet header translated.
      * </pre>
      *
@@ -893,6 +937,10 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return ARRIVE_AT_VPN_TUNNEL;
         case 24:
           return ARRIVE_AT_VPC_CONNECTOR;
+        case 35:
+          return DIRECT_VPC_EGRESS_CONNECTION;
+        case 36:
+          return SERVERLESS_EXTERNAL_CONNECTION;
         case 14:
           return NAT;
         case 15:
@@ -978,6 +1026,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     VPN_GATEWAY(10),
     VPN_TUNNEL(11),
     VPC_CONNECTOR(21),
+    DIRECT_VPC_EGRESS_CONNECTION(33),
+    SERVERLESS_EXTERNAL_CONNECTION(34),
     DELIVER(12),
     FORWARD(13),
     ABORT(14),
@@ -1033,6 +1083,10 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return VPN_TUNNEL;
         case 21:
           return VPC_CONNECTOR;
+        case 33:
+          return DIRECT_VPC_EGRESS_CONNECTION;
+        case 34:
+          return SERVERLESS_EXTERNAL_CONNECTION;
         case 12:
           return DELIVER;
         case 13:
@@ -1714,6 +1768,130 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo.getDefaultInstance();
   }
 
+  public static final int DIRECT_VPC_EGRESS_CONNECTION_FIELD_NUMBER = 33;
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a serverless direct VPC egress connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo direct_vpc_egress_connection = 33;
+   * </code>
+   *
+   * @return Whether the directVpcEgressConnection field is set.
+   */
+  @java.lang.Override
+  public boolean hasDirectVpcEgressConnection() {
+    return stepInfoCase_ == 33;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a serverless direct VPC egress connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo direct_vpc_egress_connection = 33;
+   * </code>
+   *
+   * @return The directVpcEgressConnection.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo
+      getDirectVpcEgressConnection() {
+    if (stepInfoCase_ == 33) {
+      return (com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a serverless direct VPC egress connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo direct_vpc_egress_connection = 33;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfoOrBuilder
+      getDirectVpcEgressConnectionOrBuilder() {
+    if (stepInfoCase_ == 33) {
+      return (com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo
+        .getDefaultInstance();
+  }
+
+  public static final int SERVERLESS_EXTERNAL_CONNECTION_FIELD_NUMBER = 34;
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a serverless public (external) connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo serverless_external_connection = 34;
+   * </code>
+   *
+   * @return Whether the serverlessExternalConnection field is set.
+   */
+  @java.lang.Override
+  public boolean hasServerlessExternalConnection() {
+    return stepInfoCase_ == 34;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a serverless public (external) connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo serverless_external_connection = 34;
+   * </code>
+   *
+   * @return The serverlessExternalConnection.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo
+      getServerlessExternalConnection() {
+    if (stepInfoCase_ == 34) {
+      return (com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo)
+          stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a serverless public (external) connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo serverless_external_connection = 34;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfoOrBuilder
+      getServerlessExternalConnectionOrBuilder() {
+    if (stepInfoCase_ == 34) {
+      return (com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo)
+          stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo
+        .getDefaultInstance();
+  }
+
   public static final int DELIVER_FIELD_NUMBER = 12;
   /**
    *
@@ -1932,7 +2110,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=258
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=272
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Override
@@ -1953,7 +2131,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=258
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=272
    * @return The loadBalancer.
    */
   @java.lang.Override
@@ -2801,6 +2979,15 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           31, (com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo) stepInfo_);
     }
+    if (stepInfoCase_ == 33) {
+      output.writeMessage(
+          33, (com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 34) {
+      output.writeMessage(
+          34,
+          (com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo) stepInfo_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2958,6 +3145,19 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               31, (com.google.cloud.networkmanagement.v1beta1.RedisClusterInfo) stepInfo_);
     }
+    if (stepInfoCase_ == 33) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              33,
+              (com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 34) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              34,
+              (com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo)
+                  stepInfo_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3006,6 +3206,14 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         break;
       case 21:
         if (!getVpcConnector().equals(other.getVpcConnector())) return false;
+        break;
+      case 33:
+        if (!getDirectVpcEgressConnection().equals(other.getDirectVpcEgressConnection()))
+          return false;
+        break;
+      case 34:
+        if (!getServerlessExternalConnection().equals(other.getServerlessExternalConnection()))
+          return false;
         break;
       case 12:
         if (!getDeliver().equals(other.getDeliver())) return false;
@@ -3119,6 +3327,14 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       case 21:
         hash = (37 * hash) + VPC_CONNECTOR_FIELD_NUMBER;
         hash = (53 * hash) + getVpcConnector().hashCode();
+        break;
+      case 33:
+        hash = (37 * hash) + DIRECT_VPC_EGRESS_CONNECTION_FIELD_NUMBER;
+        hash = (53 * hash) + getDirectVpcEgressConnection().hashCode();
+        break;
+      case 34:
+        hash = (37 * hash) + SERVERLESS_EXTERNAL_CONNECTION_FIELD_NUMBER;
+        hash = (53 * hash) + getServerlessExternalConnection().hashCode();
         break;
       case 12:
         hash = (37 * hash) + DELIVER_FIELD_NUMBER;
@@ -3335,6 +3551,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bitField1_ = 0;
       description_ = "";
       state_ = 0;
       causesDrop_ = false;
@@ -3365,6 +3582,12 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       if (vpcConnectorBuilder_ != null) {
         vpcConnectorBuilder_.clear();
+      }
+      if (directVpcEgressConnectionBuilder_ != null) {
+        directVpcEgressConnectionBuilder_.clear();
+      }
+      if (serverlessExternalConnectionBuilder_ != null) {
+        serverlessExternalConnectionBuilder_.clear();
       }
       if (deliverBuilder_ != null) {
         deliverBuilder_.clear();
@@ -3452,6 +3675,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      if (bitField1_ != 0) {
+        buildPartial1(result);
+      }
       buildPartialOneofs(result);
       onBuilt();
       return result;
@@ -3471,6 +3697,10 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.projectId_ = projectId_;
       }
+    }
+
+    private void buildPartial1(com.google.cloud.networkmanagement.v1beta1.Step result) {
+      int from_bitField1_ = bitField1_;
     }
 
     private void buildPartialOneofs(com.google.cloud.networkmanagement.v1beta1.Step result) {
@@ -3502,6 +3732,12 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       if (stepInfoCase_ == 21 && vpcConnectorBuilder_ != null) {
         result.stepInfo_ = vpcConnectorBuilder_.build();
+      }
+      if (stepInfoCase_ == 33 && directVpcEgressConnectionBuilder_ != null) {
+        result.stepInfo_ = directVpcEgressConnectionBuilder_.build();
+      }
+      if (stepInfoCase_ == 34 && serverlessExternalConnectionBuilder_ != null) {
+        result.stepInfo_ = serverlessExternalConnectionBuilder_.build();
       }
       if (stepInfoCase_ == 12 && deliverBuilder_ != null) {
         result.stepInfo_ = deliverBuilder_.build();
@@ -3665,6 +3901,16 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         case VPC_CONNECTOR:
           {
             mergeVpcConnector(other.getVpcConnector());
+            break;
+          }
+        case DIRECT_VPC_EGRESS_CONNECTION:
+          {
+            mergeDirectVpcEgressConnection(other.getDirectVpcEgressConnection());
+            break;
+          }
+        case SERVERLESS_EXTERNAL_CONNECTION:
+          {
+            mergeServerlessExternalConnection(other.getServerlessExternalConnection());
             break;
           }
         case DELIVER:
@@ -3978,6 +4224,20 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
                 stepInfoCase_ = 31;
                 break;
               } // case 250
+            case 266:
+              {
+                input.readMessage(
+                    getDirectVpcEgressConnectionFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 33;
+                break;
+              } // case 266
+            case 274:
+              {
+                input.readMessage(
+                    getServerlessExternalConnectionFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 34;
+                break;
+              } // case 274
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4010,6 +4270,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+    private int bitField1_;
 
     private java.lang.Object description_ = "";
     /**
@@ -6309,6 +6570,496 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo,
+            com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfoOrBuilder>
+        directVpcEgressConnectionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a serverless direct VPC egress connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo direct_vpc_egress_connection = 33;
+     * </code>
+     *
+     * @return Whether the directVpcEgressConnection field is set.
+     */
+    @java.lang.Override
+    public boolean hasDirectVpcEgressConnection() {
+      return stepInfoCase_ == 33;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a serverless direct VPC egress connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo direct_vpc_egress_connection = 33;
+     * </code>
+     *
+     * @return The directVpcEgressConnection.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo
+        getDirectVpcEgressConnection() {
+      if (directVpcEgressConnectionBuilder_ == null) {
+        if (stepInfoCase_ == 33) {
+          return (com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo)
+              stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo
+            .getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 33) {
+          return directVpcEgressConnectionBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a serverless direct VPC egress connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo direct_vpc_egress_connection = 33;
+     * </code>
+     */
+    public Builder setDirectVpcEgressConnection(
+        com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo value) {
+      if (directVpcEgressConnectionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        directVpcEgressConnectionBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 33;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a serverless direct VPC egress connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo direct_vpc_egress_connection = 33;
+     * </code>
+     */
+    public Builder setDirectVpcEgressConnection(
+        com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo.Builder
+            builderForValue) {
+      if (directVpcEgressConnectionBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        directVpcEgressConnectionBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 33;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a serverless direct VPC egress connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo direct_vpc_egress_connection = 33;
+     * </code>
+     */
+    public Builder mergeDirectVpcEgressConnection(
+        com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo value) {
+      if (directVpcEgressConnectionBuilder_ == null) {
+        if (stepInfoCase_ == 33
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo)
+                          stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 33) {
+          directVpcEgressConnectionBuilder_.mergeFrom(value);
+        } else {
+          directVpcEgressConnectionBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 33;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a serverless direct VPC egress connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo direct_vpc_egress_connection = 33;
+     * </code>
+     */
+    public Builder clearDirectVpcEgressConnection() {
+      if (directVpcEgressConnectionBuilder_ == null) {
+        if (stepInfoCase_ == 33) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 33) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        directVpcEgressConnectionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a serverless direct VPC egress connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo direct_vpc_egress_connection = 33;
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo.Builder
+        getDirectVpcEgressConnectionBuilder() {
+      return getDirectVpcEgressConnectionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a serverless direct VPC egress connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo direct_vpc_egress_connection = 33;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfoOrBuilder
+        getDirectVpcEgressConnectionOrBuilder() {
+      if ((stepInfoCase_ == 33) && (directVpcEgressConnectionBuilder_ != null)) {
+        return directVpcEgressConnectionBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 33) {
+          return (com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo)
+              stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a serverless direct VPC egress connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo direct_vpc_egress_connection = 33;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo,
+            com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfoOrBuilder>
+        getDirectVpcEgressConnectionFieldBuilder() {
+      if (directVpcEgressConnectionBuilder_ == null) {
+        if (!(stepInfoCase_ == 33)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo
+                  .getDefaultInstance();
+        }
+        directVpcEgressConnectionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo,
+                com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo.Builder,
+                com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1beta1.DirectVpcEgressConnectionInfo)
+                    stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 33;
+      onChanged();
+      return directVpcEgressConnectionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo,
+            com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfoOrBuilder>
+        serverlessExternalConnectionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a serverless public (external) connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo serverless_external_connection = 34;
+     * </code>
+     *
+     * @return Whether the serverlessExternalConnection field is set.
+     */
+    @java.lang.Override
+    public boolean hasServerlessExternalConnection() {
+      return stepInfoCase_ == 34;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a serverless public (external) connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo serverless_external_connection = 34;
+     * </code>
+     *
+     * @return The serverlessExternalConnection.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo
+        getServerlessExternalConnection() {
+      if (serverlessExternalConnectionBuilder_ == null) {
+        if (stepInfoCase_ == 34) {
+          return (com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo)
+              stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo
+            .getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 34) {
+          return serverlessExternalConnectionBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a serverless public (external) connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo serverless_external_connection = 34;
+     * </code>
+     */
+    public Builder setServerlessExternalConnection(
+        com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo value) {
+      if (serverlessExternalConnectionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        serverlessExternalConnectionBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 34;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a serverless public (external) connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo serverless_external_connection = 34;
+     * </code>
+     */
+    public Builder setServerlessExternalConnection(
+        com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo.Builder
+            builderForValue) {
+      if (serverlessExternalConnectionBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        serverlessExternalConnectionBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 34;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a serverless public (external) connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo serverless_external_connection = 34;
+     * </code>
+     */
+    public Builder mergeServerlessExternalConnection(
+        com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo value) {
+      if (serverlessExternalConnectionBuilder_ == null) {
+        if (stepInfoCase_ == 34
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo
+                  .newBuilder(
+                      (com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo)
+                          stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 34) {
+          serverlessExternalConnectionBuilder_.mergeFrom(value);
+        } else {
+          serverlessExternalConnectionBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 34;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a serverless public (external) connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo serverless_external_connection = 34;
+     * </code>
+     */
+    public Builder clearServerlessExternalConnection() {
+      if (serverlessExternalConnectionBuilder_ == null) {
+        if (stepInfoCase_ == 34) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 34) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        serverlessExternalConnectionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a serverless public (external) connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo serverless_external_connection = 34;
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo.Builder
+        getServerlessExternalConnectionBuilder() {
+      return getServerlessExternalConnectionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a serverless public (external) connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo serverless_external_connection = 34;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfoOrBuilder
+        getServerlessExternalConnectionOrBuilder() {
+      if ((stepInfoCase_ == 34) && (serverlessExternalConnectionBuilder_ != null)) {
+        return serverlessExternalConnectionBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 34) {
+          return (com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo)
+              stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a serverless public (external) connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo serverless_external_connection = 34;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo,
+            com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfoOrBuilder>
+        getServerlessExternalConnectionFieldBuilder() {
+      if (serverlessExternalConnectionBuilder_ == null) {
+        if (!(stepInfoCase_ == 34)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo
+                  .getDefaultInstance();
+        }
+        serverlessExternalConnectionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo,
+                com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo.Builder,
+                com.google.cloud.networkmanagement.v1beta1
+                    .ServerlessExternalConnectionInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo)
+                    stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 34;
+      onChanged();
+      return serverlessExternalConnectionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.networkmanagement.v1beta1.DeliverInfo,
             com.google.cloud.networkmanagement.v1beta1.DeliverInfo.Builder,
             com.google.cloud.networkmanagement.v1beta1.DeliverInfoOrBuilder>
@@ -7166,7 +7917,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=258
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=272
      * @return Whether the loadBalancer field is set.
      */
     @java.lang.Override
@@ -7187,7 +7938,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=258
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=272
      * @return The loadBalancer.
      */
     @java.lang.Override

@@ -96,7 +96,7 @@ public interface RenderParameterVersionResponseOrBuilder
    * <pre>
    * Output only. Server generated rendered version of the user provided payload
    * data (ParameterVersionPayload) which has substitutions of all (if any)
-   * references to a SecretManager SecretVersion resources. This substituion
+   * references to a SecretManager SecretVersion resources. This substitution
    * only works for a Parameter which is in JSON or YAML format.
    * </pre>
    *

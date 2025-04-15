@@ -37,6 +37,10 @@ public final class ProductInputsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_products_v1beta_InsertProductInputRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_products_v1beta_UpdateProductInputRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_products_v1beta_UpdateProductInputRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_shopping_merchant_products_v1beta_DeleteProductInputRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_products_v1beta_DeleteProductInputRequest_fieldAccessorTable;
@@ -55,47 +59,60 @@ public final class ProductInputsProto {
           + "otations.proto\032\027google/api/client.proto\032"
           + "\037google/api/field_behavior.proto\032\031google"
           + "/api/resource.proto\032\033google/protobuf/emp"
-          + "ty.proto\032>google/shopping/merchant/produ"
-          + "cts/v1beta/products_common.proto\032 google"
-          + "/shopping/type/types.proto\"\232\004\n\014ProductIn"
-          + "put\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\024\n\007product\030\002 \001(\tB"
-          + "\003\340A\003\022B\n\007channel\030\003 \001(\0162).google.shopping."
-          + "type.Channel.ChannelEnumB\006\340A\002\340A\005\022\030\n\010offe"
-          + "r_id\030\004 \001(\tB\006\340A\002\340A\005\022 \n\020content_language\030\005"
-          + " \001(\tB\006\340A\002\340A\005\022\032\n\nfeed_label\030\006 \001(\tB\006\340A\002\340A\005"
-          + "\022 \n\016version_number\030\007 \001(\003B\003\340A\001H\000\210\001\001\022M\n\nat"
-          + "tributes\030\010 \001(\01324.google.shopping.merchan"
-          + "t.products.v1beta.AttributesB\003\340A\001\022E\n\021cus"
-          + "tom_attributes\030\t \003(\0132%.google.shopping.t"
-          + "ype.CustomAttributeB\003\340A\001:z\352Aw\n\'merchanta"
-          + "pi.googleapis.com/ProductInput\022/accounts"
-          + "/{account}/productInputs/{productinput}*"
-          + "\rproductInputs2\014productInputB\021\n\017_version"
-          + "_number\"\305\001\n\031InsertProductInputRequest\022:\n"
-          + "\006parent\030\001 \001(\tB*\340A\002\372A$\022\"merchantapi.googl"
-          + "eapis.com/Product\022R\n\rproduct_input\030\002 \001(\013"
-          + "26.google.shopping.merchant.products.v1b"
-          + "eta.ProductInputB\003\340A\002\022\030\n\013data_source\030\003 \001"
-          + "(\tB\003\340A\002\"t\n\031DeleteProductInputRequest\022=\n\004"
-          + "name\030\001 \001(\tB/\340A\002\372A)\n\'merchantapi.googleap"
-          + "is.com/ProductInput\022\030\n\013data_source\030\002 \001(\t"
-          + "B\003\340A\0022\374\003\n\024ProductInputsService\022\343\001\n\022Inser"
-          + "tProductInput\022C.google.shopping.merchant"
-          + ".products.v1beta.InsertProductInputReque"
-          + "st\0326.google.shopping.merchant.products.v"
-          + "1beta.ProductInput\"P\202\323\344\223\002J\"9/products/v1"
-          + "beta/{parent=accounts/*}/productInputs:i"
-          + "nsert:\rproduct_input\022\264\001\n\022DeleteProductIn"
-          + "put\022C.google.shopping.merchant.products."
-          + "v1beta.DeleteProductInputRequest\032\026.googl"
-          + "e.protobuf.Empty\"A\332A\004name\202\323\344\223\0024*2/produc"
-          + "ts/v1beta/{name=accounts/*/productInputs"
-          + "/*}\032G\312A\032merchantapi.googleapis.com\322A\'htt"
-          + "ps://www.googleapis.com/auth/contentB\224\001\n"
-          + ",com.google.shopping.merchant.products.v"
-          + "1betaB\022ProductInputsProtoP\001ZNcloud.googl"
-          + "e.com/go/shopping/merchant/products/apiv"
-          + "1beta/productspb;productspbb\006proto3"
+          + "ty.proto\032 google/protobuf/field_mask.pro"
+          + "to\032>google/shopping/merchant/products/v1"
+          + "beta/products_common.proto\032 google/shopp"
+          + "ing/type/types.proto\"\227\004\n\014ProductInput\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\024\n\007product\030\002 \001(\tB\003\340A\003\022?"
+          + "\n\007channel\030\003 \001(\0162).google.shopping.type.C"
+          + "hannel.ChannelEnumB\003\340A\005\022\030\n\010offer_id\030\004 \001("
+          + "\tB\006\340A\002\340A\005\022 \n\020content_language\030\005 \001(\tB\006\340A\002"
+          + "\340A\005\022\032\n\nfeed_label\030\006 \001(\tB\006\340A\002\340A\005\022 \n\016versi"
+          + "on_number\030\007 \001(\003B\003\340A\001H\000\210\001\001\022M\n\nattributes\030"
+          + "\010 \001(\01324.google.shopping.merchant.product"
+          + "s.v1beta.AttributesB\003\340A\001\022E\n\021custom_attri"
+          + "butes\030\t \003(\0132%.google.shopping.type.Custo"
+          + "mAttributeB\003\340A\001:z\352Aw\n\'merchantapi.google"
+          + "apis.com/ProductInput\022/accounts/{account"
+          + "}/productInputs/{productinput}*\rproductI"
+          + "nputs2\014productInputB\021\n\017_version_number\"\305"
+          + "\001\n\031InsertProductInputRequest\022:\n\006parent\030\001"
+          + " \001(\tB*\340A\002\372A$\022\"merchantapi.googleapis.com"
+          + "/Product\022R\n\rproduct_input\030\002 \001(\01326.google"
+          + ".shopping.merchant.products.v1beta.Produ"
+          + "ctInputB\003\340A\002\022\030\n\013data_source\030\003 \001(\tB\003\340A\002\"\277"
+          + "\001\n\031UpdateProductInputRequest\022R\n\rproduct_"
+          + "input\030\001 \001(\01326.google.shopping.merchant.p"
+          + "roducts.v1beta.ProductInputB\003\340A\002\0224\n\013upda"
+          + "te_mask\030\002 \001(\0132\032.google.protobuf.FieldMas"
+          + "kB\003\340A\001\022\030\n\013data_source\030\003 \001(\tB\003\340A\002\"t\n\031Dele"
+          + "teProductInputRequest\022=\n\004name\030\001 \001(\tB/\340A\002"
+          + "\372A)\n\'merchantapi.googleapis.com/ProductI"
+          + "nput\022\030\n\013data_source\030\002 \001(\tB\003\340A\0022\205\006\n\024Produ"
+          + "ctInputsService\022\343\001\n\022InsertProductInput\022C"
+          + ".google.shopping.merchant.products.v1bet"
+          + "a.InsertProductInputRequest\0326.google.sho"
+          + "pping.merchant.products.v1beta.ProductIn"
+          + "put\"P\202\323\344\223\002J\"9/products/v1beta/{parent=ac"
+          + "counts/*}/productInputs:insert:\rproduct_"
+          + "input\022\206\002\n\022UpdateProductInput\022C.google.sh"
+          + "opping.merchant.products.v1beta.UpdatePr"
+          + "oductInputRequest\0326.google.shopping.merc"
+          + "hant.products.v1beta.ProductInput\"s\332A\031pr"
+          + "oduct_input,update_mask\202\323\344\223\002Q2@/products"
+          + "/v1beta/{product_input.name=accounts/*/p"
+          + "roductInputs/*}:\rproduct_input\022\264\001\n\022Delet"
+          + "eProductInput\022C.google.shopping.merchant"
+          + ".products.v1beta.DeleteProductInputReque"
+          + "st\032\026.google.protobuf.Empty\"A\332A\004name\202\323\344\223\002"
+          + "4*2/products/v1beta/{name=accounts/*/pro"
+          + "ductInputs/*}\032G\312A\032merchantapi.googleapis"
+          + ".com\322A\'https://www.googleapis.com/auth/c"
+          + "ontentB\224\001\n,com.google.shopping.merchant."
+          + "products.v1betaB\022ProductInputsProtoP\001ZNc"
+          + "loud.google.com/go/shopping/merchant/pro"
+          + "ducts/apiv1beta/productspb;productspbb\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -106,6 +123,7 @@ public final class ProductInputsProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.shopping.merchant.products.v1beta.ProductsCommonProto.getDescriptor(),
               com.google.shopping.type.TypesProto.getDescriptor(),
             });
@@ -133,8 +151,16 @@ public final class ProductInputsProto {
             new java.lang.String[] {
               "Parent", "ProductInput", "DataSource",
             });
-    internal_static_google_shopping_merchant_products_v1beta_DeleteProductInputRequest_descriptor =
+    internal_static_google_shopping_merchant_products_v1beta_UpdateProductInputRequest_descriptor =
         getDescriptor().getMessageTypes().get(2);
+    internal_static_google_shopping_merchant_products_v1beta_UpdateProductInputRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_products_v1beta_UpdateProductInputRequest_descriptor,
+            new java.lang.String[] {
+              "ProductInput", "UpdateMask", "DataSource",
+            });
+    internal_static_google_shopping_merchant_products_v1beta_DeleteProductInputRequest_descriptor =
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_shopping_merchant_products_v1beta_DeleteProductInputRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_products_v1beta_DeleteProductInputRequest_descriptor,
@@ -157,6 +183,7 @@ public final class ProductInputsProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.shopping.merchant.products.v1beta.ProductsCommonProto.getDescriptor();
     com.google.shopping.type.TypesProto.getDescriptor();
   }

@@ -2017,10 +2017,10 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Overall data quality result -- `true` if all rules passed.
+   * Output only. Overall data quality result -- `true` if all rules passed.
    * </pre>
    *
-   * <code>bool passed = 5;</code>
+   * <code>bool passed = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The passed.
    */
@@ -2074,13 +2074,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of results at the dimension level.
+   * Output only. A list of results at the dimension level.
    *
    * A dimension will have a corresponding `DataQualityDimensionResult` if and
    * only if there is at least one rule with the 'dimension' field set to it.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.dataplex.v1.DataQualityDimensionResult>
@@ -2091,13 +2093,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of results at the dimension level.
+   * Output only. A list of results at the dimension level.
    *
    * A dimension will have a corresponding `DataQualityDimensionResult` if and
    * only if there is at least one rule with the 'dimension' field set to it.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder>
@@ -2108,13 +2112,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of results at the dimension level.
+   * Output only. A list of results at the dimension level.
    *
    * A dimension will have a corresponding `DataQualityDimensionResult` if and
    * only if there is at least one rule with the 'dimension' field set to it.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public int getDimensionsCount() {
@@ -2124,13 +2130,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of results at the dimension level.
+   * Output only. A list of results at the dimension level.
    *
    * A dimension will have a corresponding `DataQualityDimensionResult` if and
    * only if there is at least one rule with the 'dimension' field set to it.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.DataQualityDimensionResult getDimensions(int index) {
@@ -2140,13 +2148,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of results at the dimension level.
+   * Output only. A list of results at the dimension level.
    *
    * A dimension will have a corresponding `DataQualityDimensionResult` if and
    * only if there is at least one rule with the 'dimension' field set to it.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder getDimensionsOrBuilder(
@@ -2259,10 +2269,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of all the rules in a job, and their results.
+   * Output only. A list of all the rules in a job, and their results.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.dataplex.v1.DataQualityRuleResult> getRulesList() {
@@ -2272,10 +2284,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of all the rules in a job, and their results.
+   * Output only. A list of all the rules in a job, and their results.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.dataplex.v1.DataQualityRuleResultOrBuilder>
@@ -2286,10 +2300,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of all the rules in a job, and their results.
+   * Output only. A list of all the rules in a job, and their results.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public int getRulesCount() {
@@ -2299,10 +2315,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of all the rules in a job, and their results.
+   * Output only. A list of all the rules in a job, and their results.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.DataQualityRuleResult getRules(int index) {
@@ -2312,10 +2330,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of all the rules in a job, and their results.
+   * Output only. A list of all the rules in a job, and their results.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.DataQualityRuleResultOrBuilder getRulesOrBuilder(int index) {
@@ -2328,10 +2348,10 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The count of rows processed.
+   * Output only. The count of rows processed.
    * </pre>
    *
-   * <code>int64 row_count = 4;</code>
+   * <code>int64 row_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The rowCount.
    */
@@ -2346,10 +2366,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The data scanned for this result.
+   * Output only. The data scanned for this result.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.ScannedData scanned_data = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the scannedData field is set.
    */
@@ -2361,10 +2383,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The data scanned for this result.
+   * Output only. The data scanned for this result.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.ScannedData scanned_data = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The scannedData.
    */
@@ -2378,10 +2402,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The data scanned for this result.
+   * Output only. The data scanned for this result.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.ScannedData scanned_data = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.ScannedDataOrBuilder getScannedDataOrBuilder() {
@@ -3137,10 +3163,10 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Overall data quality result -- `true` if all rules passed.
+     * Output only. Overall data quality result -- `true` if all rules passed.
      * </pre>
      *
-     * <code>bool passed = 5;</code>
+     * <code>bool passed = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The passed.
      */
@@ -3152,10 +3178,10 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Overall data quality result -- `true` if all rules passed.
+     * Output only. Overall data quality result -- `true` if all rules passed.
      * </pre>
      *
-     * <code>bool passed = 5;</code>
+     * <code>bool passed = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The passed to set.
      * @return This builder for chaining.
@@ -3171,10 +3197,10 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Overall data quality result -- `true` if all rules passed.
+     * Output only. Overall data quality result -- `true` if all rules passed.
      * </pre>
      *
-     * <code>bool passed = 5;</code>
+     * <code>bool passed = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -3283,13 +3309,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension level.
+     * Output only. A list of results at the dimension level.
      *
      * A dimension will have a corresponding `DataQualityDimensionResult` if and
      * only if there is at least one rule with the 'dimension' field set to it.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataplex.v1.DataQualityDimensionResult>
         getDimensionsList() {
@@ -3303,13 +3331,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension level.
+     * Output only. A list of results at the dimension level.
      *
      * A dimension will have a corresponding `DataQualityDimensionResult` if and
      * only if there is at least one rule with the 'dimension' field set to it.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getDimensionsCount() {
       if (dimensionsBuilder_ == null) {
@@ -3322,13 +3352,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension level.
+     * Output only. A list of results at the dimension level.
      *
      * A dimension will have a corresponding `DataQualityDimensionResult` if and
      * only if there is at least one rule with the 'dimension' field set to it.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataplex.v1.DataQualityDimensionResult getDimensions(int index) {
       if (dimensionsBuilder_ == null) {
@@ -3341,13 +3373,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension level.
+     * Output only. A list of results at the dimension level.
      *
      * A dimension will have a corresponding `DataQualityDimensionResult` if and
      * only if there is at least one rule with the 'dimension' field set to it.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setDimensions(
         int index, com.google.cloud.dataplex.v1.DataQualityDimensionResult value) {
@@ -3367,13 +3401,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension level.
+     * Output only. A list of results at the dimension level.
      *
      * A dimension will have a corresponding `DataQualityDimensionResult` if and
      * only if there is at least one rule with the 'dimension' field set to it.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setDimensions(
         int index,
@@ -3391,13 +3427,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension level.
+     * Output only. A list of results at the dimension level.
      *
      * A dimension will have a corresponding `DataQualityDimensionResult` if and
      * only if there is at least one rule with the 'dimension' field set to it.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addDimensions(com.google.cloud.dataplex.v1.DataQualityDimensionResult value) {
       if (dimensionsBuilder_ == null) {
@@ -3416,13 +3454,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension level.
+     * Output only. A list of results at the dimension level.
      *
      * A dimension will have a corresponding `DataQualityDimensionResult` if and
      * only if there is at least one rule with the 'dimension' field set to it.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addDimensions(
         int index, com.google.cloud.dataplex.v1.DataQualityDimensionResult value) {
@@ -3442,13 +3482,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension level.
+     * Output only. A list of results at the dimension level.
      *
      * A dimension will have a corresponding `DataQualityDimensionResult` if and
      * only if there is at least one rule with the 'dimension' field set to it.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addDimensions(
         com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder builderForValue) {
@@ -3465,13 +3507,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension level.
+     * Output only. A list of results at the dimension level.
      *
      * A dimension will have a corresponding `DataQualityDimensionResult` if and
      * only if there is at least one rule with the 'dimension' field set to it.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addDimensions(
         int index,
@@ -3489,13 +3533,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension level.
+     * Output only. A list of results at the dimension level.
      *
      * A dimension will have a corresponding `DataQualityDimensionResult` if and
      * only if there is at least one rule with the 'dimension' field set to it.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllDimensions(
         java.lang.Iterable<? extends com.google.cloud.dataplex.v1.DataQualityDimensionResult>
@@ -3513,13 +3559,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension level.
+     * Output only. A list of results at the dimension level.
      *
      * A dimension will have a corresponding `DataQualityDimensionResult` if and
      * only if there is at least one rule with the 'dimension' field set to it.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearDimensions() {
       if (dimensionsBuilder_ == null) {
@@ -3535,13 +3583,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension level.
+     * Output only. A list of results at the dimension level.
      *
      * A dimension will have a corresponding `DataQualityDimensionResult` if and
      * only if there is at least one rule with the 'dimension' field set to it.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeDimensions(int index) {
       if (dimensionsBuilder_ == null) {
@@ -3557,13 +3607,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension level.
+     * Output only. A list of results at the dimension level.
      *
      * A dimension will have a corresponding `DataQualityDimensionResult` if and
      * only if there is at least one rule with the 'dimension' field set to it.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder getDimensionsBuilder(
         int index) {
@@ -3573,13 +3625,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension level.
+     * Output only. A list of results at the dimension level.
      *
      * A dimension will have a corresponding `DataQualityDimensionResult` if and
      * only if there is at least one rule with the 'dimension' field set to it.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder getDimensionsOrBuilder(
         int index) {
@@ -3593,13 +3647,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension level.
+     * Output only. A list of results at the dimension level.
      *
      * A dimension will have a corresponding `DataQualityDimensionResult` if and
      * only if there is at least one rule with the 'dimension' field set to it.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<
             ? extends com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder>
@@ -3614,13 +3670,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension level.
+     * Output only. A list of results at the dimension level.
      *
      * A dimension will have a corresponding `DataQualityDimensionResult` if and
      * only if there is at least one rule with the 'dimension' field set to it.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder addDimensionsBuilder() {
       return getDimensionsFieldBuilder()
@@ -3630,13 +3688,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension level.
+     * Output only. A list of results at the dimension level.
      *
      * A dimension will have a corresponding `DataQualityDimensionResult` if and
      * only if there is at least one rule with the 'dimension' field set to it.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder addDimensionsBuilder(
         int index) {
@@ -3648,13 +3708,15 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of results at the dimension level.
+     * Output only. A list of results at the dimension level.
      *
      * A dimension will have a corresponding `DataQualityDimensionResult` if and
      * only if there is at least one rule with the 'dimension' field set to it.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder>
         getDimensionsBuilderList() {
@@ -4146,10 +4208,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of all the rules in a job, and their results.
+     * Output only. A list of all the rules in a job, and their results.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataplex.v1.DataQualityRuleResult> getRulesList() {
       if (rulesBuilder_ == null) {
@@ -4162,10 +4226,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of all the rules in a job, and their results.
+     * Output only. A list of all the rules in a job, and their results.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getRulesCount() {
       if (rulesBuilder_ == null) {
@@ -4178,10 +4244,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of all the rules in a job, and their results.
+     * Output only. A list of all the rules in a job, and their results.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataplex.v1.DataQualityRuleResult getRules(int index) {
       if (rulesBuilder_ == null) {
@@ -4194,10 +4262,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of all the rules in a job, and their results.
+     * Output only. A list of all the rules in a job, and their results.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setRules(int index, com.google.cloud.dataplex.v1.DataQualityRuleResult value) {
       if (rulesBuilder_ == null) {
@@ -4216,10 +4286,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of all the rules in a job, and their results.
+     * Output only. A list of all the rules in a job, and their results.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setRules(
         int index, com.google.cloud.dataplex.v1.DataQualityRuleResult.Builder builderForValue) {
@@ -4236,10 +4308,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of all the rules in a job, and their results.
+     * Output only. A list of all the rules in a job, and their results.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addRules(com.google.cloud.dataplex.v1.DataQualityRuleResult value) {
       if (rulesBuilder_ == null) {
@@ -4258,10 +4332,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of all the rules in a job, and their results.
+     * Output only. A list of all the rules in a job, and their results.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addRules(int index, com.google.cloud.dataplex.v1.DataQualityRuleResult value) {
       if (rulesBuilder_ == null) {
@@ -4280,10 +4356,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of all the rules in a job, and their results.
+     * Output only. A list of all the rules in a job, and their results.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addRules(
         com.google.cloud.dataplex.v1.DataQualityRuleResult.Builder builderForValue) {
@@ -4300,10 +4378,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of all the rules in a job, and their results.
+     * Output only. A list of all the rules in a job, and their results.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addRules(
         int index, com.google.cloud.dataplex.v1.DataQualityRuleResult.Builder builderForValue) {
@@ -4320,10 +4400,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of all the rules in a job, and their results.
+     * Output only. A list of all the rules in a job, and their results.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllRules(
         java.lang.Iterable<? extends com.google.cloud.dataplex.v1.DataQualityRuleResult> values) {
@@ -4340,10 +4422,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of all the rules in a job, and their results.
+     * Output only. A list of all the rules in a job, and their results.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
@@ -4359,10 +4443,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of all the rules in a job, and their results.
+     * Output only. A list of all the rules in a job, and their results.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeRules(int index) {
       if (rulesBuilder_ == null) {
@@ -4378,10 +4464,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of all the rules in a job, and their results.
+     * Output only. A list of all the rules in a job, and their results.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataplex.v1.DataQualityRuleResult.Builder getRulesBuilder(int index) {
       return getRulesFieldBuilder().getBuilder(index);
@@ -4390,10 +4478,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of all the rules in a job, and their results.
+     * Output only. A list of all the rules in a job, and their results.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataplex.v1.DataQualityRuleResultOrBuilder getRulesOrBuilder(
         int index) {
@@ -4407,10 +4497,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of all the rules in a job, and their results.
+     * Output only. A list of all the rules in a job, and their results.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dataplex.v1.DataQualityRuleResultOrBuilder>
         getRulesOrBuilderList() {
@@ -4424,10 +4516,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of all the rules in a job, and their results.
+     * Output only. A list of all the rules in a job, and their results.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataplex.v1.DataQualityRuleResult.Builder addRulesBuilder() {
       return getRulesFieldBuilder()
@@ -4437,10 +4531,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of all the rules in a job, and their results.
+     * Output only. A list of all the rules in a job, and their results.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataplex.v1.DataQualityRuleResult.Builder addRulesBuilder(int index) {
       return getRulesFieldBuilder()
@@ -4451,10 +4547,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of all the rules in a job, and their results.
+     * Output only. A list of all the rules in a job, and their results.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataplex.v1.DataQualityRuleResult.Builder>
         getRulesBuilderList() {
@@ -4483,10 +4581,10 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The count of rows processed.
+     * Output only. The count of rows processed.
      * </pre>
      *
-     * <code>int64 row_count = 4;</code>
+     * <code>int64 row_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The rowCount.
      */
@@ -4498,10 +4596,10 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The count of rows processed.
+     * Output only. The count of rows processed.
      * </pre>
      *
-     * <code>int64 row_count = 4;</code>
+     * <code>int64 row_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The rowCount to set.
      * @return This builder for chaining.
@@ -4517,10 +4615,10 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The count of rows processed.
+     * Output only. The count of rows processed.
      * </pre>
      *
-     * <code>int64 row_count = 4;</code>
+     * <code>int64 row_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -4541,10 +4639,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The data scanned for this result.
+     * Output only. The data scanned for this result.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.ScannedData scanned_data = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the scannedData field is set.
      */
@@ -4555,10 +4655,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The data scanned for this result.
+     * Output only. The data scanned for this result.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.ScannedData scanned_data = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The scannedData.
      */
@@ -4575,10 +4677,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The data scanned for this result.
+     * Output only. The data scanned for this result.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.ScannedData scanned_data = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setScannedData(com.google.cloud.dataplex.v1.ScannedData value) {
       if (scannedDataBuilder_ == null) {
@@ -4597,10 +4701,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The data scanned for this result.
+     * Output only. The data scanned for this result.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.ScannedData scanned_data = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setScannedData(
         com.google.cloud.dataplex.v1.ScannedData.Builder builderForValue) {
@@ -4617,10 +4723,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The data scanned for this result.
+     * Output only. The data scanned for this result.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.ScannedData scanned_data = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeScannedData(com.google.cloud.dataplex.v1.ScannedData value) {
       if (scannedDataBuilder_ == null) {
@@ -4644,10 +4752,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The data scanned for this result.
+     * Output only. The data scanned for this result.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.ScannedData scanned_data = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearScannedData() {
       bitField0_ = (bitField0_ & ~0x00000040);
@@ -4663,10 +4773,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The data scanned for this result.
+     * Output only. The data scanned for this result.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.ScannedData scanned_data = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataplex.v1.ScannedData.Builder getScannedDataBuilder() {
       bitField0_ |= 0x00000040;
@@ -4677,10 +4789,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The data scanned for this result.
+     * Output only. The data scanned for this result.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.ScannedData scanned_data = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataplex.v1.ScannedDataOrBuilder getScannedDataOrBuilder() {
       if (scannedDataBuilder_ != null) {
@@ -4695,10 +4809,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The data scanned for this result.
+     * Output only. The data scanned for this result.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.ScannedData scanned_data = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataplex.v1.ScannedData,
