@@ -795,6 +795,21 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/developerconnect/v1
   requires_billing: true
+- api_shortname: devicestreaming
+  name_pretty: Device Streaming API
+  product_documentation: https://cloud.google.com/device-streaming/docs
+  api_description: The Cloud API for device streaming usage.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-devicestreaming/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-devicestreaming
+  api_id: devicestreaming.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/devicestreaming/v1
+  requires_billing: true
 - api_shortname: dialogflow
   name_pretty: Dialogflow API
   product_documentation: https://cloud.google.com/dialogflow-enterprise/
