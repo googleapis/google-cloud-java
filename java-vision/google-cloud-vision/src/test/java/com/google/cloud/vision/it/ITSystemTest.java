@@ -437,7 +437,7 @@ public class ITSystemTest {
         requestAnnotatedImage("wakeupcat.jpg", Type.SAFE_SEARCH_DETECTION, false);
     SafeSearchAnnotation annotation = res.getSafeSearchAnnotation();
     assertEquals(Likelihood.VERY_UNLIKELY, annotation.getAdult());
-    assertEquals(Likelihood.VERY_UNLIKELY, annotation.getRacy());
+    assertEquals(Likelihood.UNLIKELY, annotation.getRacy());
   }
 
   @Test
@@ -457,7 +457,7 @@ public class ITSystemTest {
         requestAnnotatedImage("label/wakeupcat.jpg", Type.SAFE_SEARCH_DETECTION, true);
     SafeSearchAnnotation annotation = res.getSafeSearchAnnotation();
     assertEquals(Likelihood.VERY_UNLIKELY, annotation.getAdult());
-    assertEquals(Likelihood.VERY_UNLIKELY, annotation.getRacy());
+    assertEquals(Likelihood.UNLIKELY, annotation.getRacy());
   }
 
   @Test

@@ -46,8 +46,7 @@
  *
  * <p>======================= ProductsServiceClient =======================
  *
- * <p>Service Description: Service to use Product resource. This service works for products with
- * online channel only.
+ * <p>Service Description: Service to use Product resource.
  *
  * <p>Sample for ProductsServiceClient:
  *

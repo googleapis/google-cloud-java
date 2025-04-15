@@ -924,6 +924,92 @@ public final class DatasetServiceGrpc {
     return getListAnnotationsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.AssessDataRequest, com.google.longrunning.Operation>
+      getAssessDataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AssessData",
+      requestType = com.google.cloud.aiplatform.v1beta1.AssessDataRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.AssessDataRequest, com.google.longrunning.Operation>
+      getAssessDataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.AssessDataRequest, com.google.longrunning.Operation>
+        getAssessDataMethod;
+    if ((getAssessDataMethod = DatasetServiceGrpc.getAssessDataMethod) == null) {
+      synchronized (DatasetServiceGrpc.class) {
+        if ((getAssessDataMethod = DatasetServiceGrpc.getAssessDataMethod) == null) {
+          DatasetServiceGrpc.getAssessDataMethod =
+              getAssessDataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.AssessDataRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AssessData"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.AssessDataRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new DatasetServiceMethodDescriptorSupplier("AssessData"))
+                      .build();
+        }
+      }
+    }
+    return getAssessDataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.AssembleDataRequest, com.google.longrunning.Operation>
+      getAssembleDataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AssembleData",
+      requestType = com.google.cloud.aiplatform.v1beta1.AssembleDataRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.AssembleDataRequest, com.google.longrunning.Operation>
+      getAssembleDataMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.AssembleDataRequest,
+            com.google.longrunning.Operation>
+        getAssembleDataMethod;
+    if ((getAssembleDataMethod = DatasetServiceGrpc.getAssembleDataMethod) == null) {
+      synchronized (DatasetServiceGrpc.class) {
+        if ((getAssembleDataMethod = DatasetServiceGrpc.getAssembleDataMethod) == null) {
+          DatasetServiceGrpc.getAssembleDataMethod =
+              getAssembleDataMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.AssembleDataRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AssembleData"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.AssembleDataRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatasetServiceMethodDescriptorSupplier("AssembleData"))
+                      .build();
+        }
+      }
+    }
+    return getAssembleDataMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DatasetServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DatasetServiceStub> factory =
@@ -1235,7 +1321,7 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
-     * Lists Annotations belongs to a dataitem
+     * Lists Annotations belongs to a dataitem.
      * </pre>
      */
     default void listAnnotations(
@@ -1244,6 +1330,35 @@ public final class DatasetServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListAnnotationsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Assesses the state or validity of the dataset with respect to a given use
+     * case.
+     * </pre>
+     */
+    default void assessData(
+        com.google.cloud.aiplatform.v1beta1.AssessDataRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAssessDataMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Assembles each row of a multimodal dataset and writes the result into a
+     * BigQuery table.
+     * </pre>
+     */
+    default void assembleData(
+        com.google.cloud.aiplatform.v1beta1.AssembleDataRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAssembleDataMethod(), responseObserver);
     }
   }
 
@@ -1575,7 +1690,7 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
-     * Lists Annotations belongs to a dataitem
+     * Lists Annotations belongs to a dataitem.
      * </pre>
      */
     public void listAnnotations(
@@ -1584,6 +1699,38 @@ public final class DatasetServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListAnnotationsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Assesses the state or validity of the dataset with respect to a given use
+     * case.
+     * </pre>
+     */
+    public void assessData(
+        com.google.cloud.aiplatform.v1beta1.AssessDataRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAssessDataMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Assembles each row of a multimodal dataset and writes the result into a
+     * BigQuery table.
+     * </pre>
+     */
+    public void assembleData(
+        com.google.cloud.aiplatform.v1beta1.AssembleDataRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAssembleDataMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1846,13 +1993,41 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
-     * Lists Annotations belongs to a dataitem
+     * Lists Annotations belongs to a dataitem.
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListAnnotationsResponse listAnnotations(
         com.google.cloud.aiplatform.v1beta1.ListAnnotationsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListAnnotationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Assesses the state or validity of the dataset with respect to a given use
+     * case.
+     * </pre>
+     */
+    public com.google.longrunning.Operation assessData(
+        com.google.cloud.aiplatform.v1beta1.AssessDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAssessDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Assembles each row of a multimodal dataset and writes the result into a
+     * BigQuery table.
+     * </pre>
+     */
+    public com.google.longrunning.Operation assembleData(
+        com.google.cloud.aiplatform.v1beta1.AssembleDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAssembleDataMethod(), getCallOptions(), request);
     }
   }
 
@@ -2128,7 +2303,7 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
-     * Lists Annotations belongs to a dataitem
+     * Lists Annotations belongs to a dataitem.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2136,6 +2311,34 @@ public final class DatasetServiceGrpc {
         listAnnotations(com.google.cloud.aiplatform.v1beta1.ListAnnotationsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAnnotationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Assesses the state or validity of the dataset with respect to a given use
+     * case.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        assessData(com.google.cloud.aiplatform.v1beta1.AssessDataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAssessDataMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Assembles each row of a multimodal dataset and writes the result into a
+     * BigQuery table.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        assembleData(com.google.cloud.aiplatform.v1beta1.AssembleDataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAssembleDataMethod(), getCallOptions()), request);
     }
   }
 
@@ -2158,6 +2361,8 @@ public final class DatasetServiceGrpc {
   private static final int METHODID_DELETE_SAVED_QUERY = 16;
   private static final int METHODID_GET_ANNOTATION_SPEC = 17;
   private static final int METHODID_LIST_ANNOTATIONS = 18;
+  private static final int METHODID_ASSESS_DATA = 19;
+  private static final int METHODID_ASSEMBLE_DATA = 20;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2287,6 +2492,16 @@ public final class DatasetServiceGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.aiplatform.v1beta1.ListAnnotationsResponse>)
                   responseObserver);
+          break;
+        case METHODID_ASSESS_DATA:
+          serviceImpl.assessData(
+              (com.google.cloud.aiplatform.v1beta1.AssessDataRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_ASSEMBLE_DATA:
+          serviceImpl.assembleData(
+              (com.google.cloud.aiplatform.v1beta1.AssembleDataRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2429,6 +2644,18 @@ public final class DatasetServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.ListAnnotationsRequest,
                     com.google.cloud.aiplatform.v1beta1.ListAnnotationsResponse>(
                     service, METHODID_LIST_ANNOTATIONS)))
+        .addMethod(
+            getAssessDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.AssessDataRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ASSESS_DATA)))
+        .addMethod(
+            getAssembleDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.AssembleDataRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ASSEMBLE_DATA)))
         .build();
   }
 
@@ -2499,6 +2726,8 @@ public final class DatasetServiceGrpc {
                       .addMethod(getDeleteSavedQueryMethod())
                       .addMethod(getGetAnnotationSpecMethod())
                       .addMethod(getListAnnotationsMethod())
+                      .addMethod(getAssessDataMethod())
+                      .addMethod(getAssembleDataMethod())
                       .build();
         }
       }

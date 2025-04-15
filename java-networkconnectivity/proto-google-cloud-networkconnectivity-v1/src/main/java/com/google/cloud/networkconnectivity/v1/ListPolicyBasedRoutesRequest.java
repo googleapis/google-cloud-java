@@ -23,7 +23,9 @@ package com.google.cloud.networkconnectivity.v1;
  *
  *
  * <pre>
- * Request for [PolicyBasedRouting.ListPolicyBasedRoutes][] method.
+ * Request for
+ * [PolicyBasedRoutingService.ListPolicyBasedRoutes][google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.ListPolicyBasedRoutes]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkconnectivity.v1.ListPolicyBasedRoutesRequest}
@@ -493,7 +495,9 @@ public final class ListPolicyBasedRoutesRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Request for [PolicyBasedRouting.ListPolicyBasedRoutes][] method.
+   * Request for
+   * [PolicyBasedRoutingService.ListPolicyBasedRoutes][google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.ListPolicyBasedRoutes]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.ListPolicyBasedRoutesRequest}

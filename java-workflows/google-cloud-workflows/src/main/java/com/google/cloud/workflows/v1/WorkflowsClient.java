@@ -172,6 +172,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListWorkflowRevisions</td>
+ *      <td><p> Lists revisions for a given workflow.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listWorkflowRevisions(ListWorkflowRevisionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listWorkflowRevisionsPagedCallable()
+ *           <li><p> listWorkflowRevisionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -1075,6 +1090,112 @@ public class WorkflowsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists revisions for a given workflow.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   ListWorkflowRevisionsRequest request =
+   *       ListWorkflowRevisionsRequest.newBuilder()
+   *           .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Workflow element : workflowsClient.listWorkflowRevisions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListWorkflowRevisionsPagedResponse listWorkflowRevisions(
+      ListWorkflowRevisionsRequest request) {
+    return listWorkflowRevisionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists revisions for a given workflow.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   ListWorkflowRevisionsRequest request =
+   *       ListWorkflowRevisionsRequest.newBuilder()
+   *           .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Workflow> future =
+   *       workflowsClient.listWorkflowRevisionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Workflow element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListWorkflowRevisionsRequest, ListWorkflowRevisionsPagedResponse>
+      listWorkflowRevisionsPagedCallable() {
+    return stub.listWorkflowRevisionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists revisions for a given workflow.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   ListWorkflowRevisionsRequest request =
+   *       ListWorkflowRevisionsRequest.newBuilder()
+   *           .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListWorkflowRevisionsResponse response =
+   *         workflowsClient.listWorkflowRevisionsCallable().call(request);
+   *     for (Workflow element : response.getWorkflowsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse>
+      listWorkflowRevisionsCallable() {
+    return stub.listWorkflowRevisionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -1330,6 +1451,86 @@ public class WorkflowsClient implements BackgroundResource {
     protected ListWorkflowsFixedSizeCollection createCollection(
         List<ListWorkflowsPage> pages, int collectionSize) {
       return new ListWorkflowsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListWorkflowRevisionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListWorkflowRevisionsRequest,
+          ListWorkflowRevisionsResponse,
+          Workflow,
+          ListWorkflowRevisionsPage,
+          ListWorkflowRevisionsFixedSizeCollection> {
+
+    public static ApiFuture<ListWorkflowRevisionsPagedResponse> createAsync(
+        PageContext<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse, Workflow> context,
+        ApiFuture<ListWorkflowRevisionsResponse> futureResponse) {
+      ApiFuture<ListWorkflowRevisionsPage> futurePage =
+          ListWorkflowRevisionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListWorkflowRevisionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListWorkflowRevisionsPagedResponse(ListWorkflowRevisionsPage page) {
+      super(page, ListWorkflowRevisionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListWorkflowRevisionsPage
+      extends AbstractPage<
+          ListWorkflowRevisionsRequest,
+          ListWorkflowRevisionsResponse,
+          Workflow,
+          ListWorkflowRevisionsPage> {
+
+    private ListWorkflowRevisionsPage(
+        PageContext<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse, Workflow> context,
+        ListWorkflowRevisionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListWorkflowRevisionsPage createEmptyPage() {
+      return new ListWorkflowRevisionsPage(null, null);
+    }
+
+    @Override
+    protected ListWorkflowRevisionsPage createPage(
+        PageContext<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse, Workflow> context,
+        ListWorkflowRevisionsResponse response) {
+      return new ListWorkflowRevisionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListWorkflowRevisionsPage> createPageAsync(
+        PageContext<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse, Workflow> context,
+        ApiFuture<ListWorkflowRevisionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListWorkflowRevisionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListWorkflowRevisionsRequest,
+          ListWorkflowRevisionsResponse,
+          Workflow,
+          ListWorkflowRevisionsPage,
+          ListWorkflowRevisionsFixedSizeCollection> {
+
+    private ListWorkflowRevisionsFixedSizeCollection(
+        List<ListWorkflowRevisionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListWorkflowRevisionsFixedSizeCollection createEmptyCollection() {
+      return new ListWorkflowRevisionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListWorkflowRevisionsFixedSizeCollection createCollection(
+        List<ListWorkflowRevisionsPage> pages, int collectionSize) {
+      return new ListWorkflowRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }
 

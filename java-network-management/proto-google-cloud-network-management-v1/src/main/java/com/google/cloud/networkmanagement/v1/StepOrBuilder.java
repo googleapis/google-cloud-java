@@ -440,6 +440,92 @@ public interface StepOrBuilder
    *
    *
    * <pre>
+   * Display information of a serverless direct VPC egress connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.DirectVpcEgressConnectionInfo direct_vpc_egress_connection = 33;
+   * </code>
+   *
+   * @return Whether the directVpcEgressConnection field is set.
+   */
+  boolean hasDirectVpcEgressConnection();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a serverless direct VPC egress connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.DirectVpcEgressConnectionInfo direct_vpc_egress_connection = 33;
+   * </code>
+   *
+   * @return The directVpcEgressConnection.
+   */
+  com.google.cloud.networkmanagement.v1.DirectVpcEgressConnectionInfo
+      getDirectVpcEgressConnection();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a serverless direct VPC egress connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.DirectVpcEgressConnectionInfo direct_vpc_egress_connection = 33;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1.DirectVpcEgressConnectionInfoOrBuilder
+      getDirectVpcEgressConnectionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a serverless public (external) connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.ServerlessExternalConnectionInfo serverless_external_connection = 34;
+   * </code>
+   *
+   * @return Whether the serverlessExternalConnection field is set.
+   */
+  boolean hasServerlessExternalConnection();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a serverless public (external) connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.ServerlessExternalConnectionInfo serverless_external_connection = 34;
+   * </code>
+   *
+   * @return The serverlessExternalConnection.
+   */
+  com.google.cloud.networkmanagement.v1.ServerlessExternalConnectionInfo
+      getServerlessExternalConnection();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a serverless public (external) connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.ServerlessExternalConnectionInfo serverless_external_connection = 34;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1.ServerlessExternalConnectionInfoOrBuilder
+      getServerlessExternalConnectionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Display information of the final state "deliver" and reason.
    * </pre>
    *
@@ -589,7 +675,7 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=254
+   *     google/cloud/networkmanagement/v1/trace.proto;l=272
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Deprecated
@@ -607,7 +693,7 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=254
+   *     google/cloud/networkmanagement/v1/trace.proto;l=272
    * @return The loadBalancer.
    */
   @java.lang.Deprecated

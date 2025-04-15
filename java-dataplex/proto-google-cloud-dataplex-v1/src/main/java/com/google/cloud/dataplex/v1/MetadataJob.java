@@ -107,6 +107,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPORT = 1;</code>
      */
     IMPORT(1),
+    /**
+     *
+     *
+     * <pre>
+     * Export job type.
+     * </pre>
+     *
+     * <code>EXPORT = 2;</code>
+     */
+    EXPORT(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -130,6 +140,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPORT = 1;</code>
      */
     public static final int IMPORT_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Export job type.
+     * </pre>
+     *
+     * <code>EXPORT = 2;</code>
+     */
+    public static final int EXPORT_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -159,6 +179,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           return TYPE_UNSPECIFIED;
         case 1:
           return IMPORT;
+        case 2:
+          return EXPORT;
         default:
           return null;
       }
@@ -1513,6 +1535,756 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.cloud.dataplex.v1.MetadataJob.ImportJobResult getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ExportJobResultOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.MetadataJob.ExportJobResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of entries that have been exported.
+     * </pre>
+     *
+     * <code>int64 exported_entries = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The exportedEntries.
+     */
+    long getExportedEntries();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The error message if the export job failed.
+     * </pre>
+     *
+     * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The errorMessage.
+     */
+    java.lang.String getErrorMessage();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The error message if the export job failed.
+     * </pre>
+     *
+     * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for errorMessage.
+     */
+    com.google.protobuf.ByteString getErrorMessageBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Export Job Results. The result is based on the snapshot at the time when
+   * the job is created.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.MetadataJob.ExportJobResult}
+   */
+  public static final class ExportJobResult extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.MetadataJob.ExportJobResult)
+      ExportJobResultOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ExportJobResult.newBuilder() to construct.
+    private ExportJobResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ExportJobResult() {
+      errorMessage_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ExportJobResult();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.CatalogProto
+          .internal_static_google_cloud_dataplex_v1_MetadataJob_ExportJobResult_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.CatalogProto
+          .internal_static_google_cloud_dataplex_v1_MetadataJob_ExportJobResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.class,
+              com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.Builder.class);
+    }
+
+    public static final int EXPORTED_ENTRIES_FIELD_NUMBER = 1;
+    private long exportedEntries_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of entries that have been exported.
+     * </pre>
+     *
+     * <code>int64 exported_entries = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The exportedEntries.
+     */
+    @java.lang.Override
+    public long getExportedEntries() {
+      return exportedEntries_;
+    }
+
+    public static final int ERROR_MESSAGE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object errorMessage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The error message if the export job failed.
+     * </pre>
+     *
+     * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The errorMessage.
+     */
+    @java.lang.Override
+    public java.lang.String getErrorMessage() {
+      java.lang.Object ref = errorMessage_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        errorMessage_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The error message if the export job failed.
+     * </pre>
+     *
+     * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for errorMessage.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getErrorMessageBytes() {
+      java.lang.Object ref = errorMessage_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        errorMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (exportedEntries_ != 0L) {
+        output.writeInt64(1, exportedEntries_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorMessage_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (exportedEntries_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, exportedEntries_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorMessage_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult other =
+          (com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult) obj;
+
+      if (getExportedEntries() != other.getExportedEntries()) return false;
+      if (!getErrorMessage().equals(other.getErrorMessage())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + EXPORTED_ENTRIES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getExportedEntries());
+      hash = (37 * hash) + ERROR_MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getErrorMessage().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Export Job Results. The result is based on the snapshot at the time when
+     * the job is created.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.MetadataJob.ExportJobResult}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.MetadataJob.ExportJobResult)
+        com.google.cloud.dataplex.v1.MetadataJob.ExportJobResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.CatalogProto
+            .internal_static_google_cloud_dataplex_v1_MetadataJob_ExportJobResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.CatalogProto
+            .internal_static_google_cloud_dataplex_v1_MetadataJob_ExportJobResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.class,
+                com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        exportedEntries_ = 0L;
+        errorMessage_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.CatalogProto
+            .internal_static_google_cloud_dataplex_v1_MetadataJob_ExportJobResult_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult build() {
+        com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult buildPartial() {
+        com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult result =
+            new com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.exportedEntries_ = exportedEntries_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.errorMessage_ = errorMessage_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult) {
+          return mergeFrom((com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult other) {
+        if (other == com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.getDefaultInstance())
+          return this;
+        if (other.getExportedEntries() != 0L) {
+          setExportedEntries(other.getExportedEntries());
+        }
+        if (!other.getErrorMessage().isEmpty()) {
+          errorMessage_ = other.errorMessage_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  exportedEntries_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  errorMessage_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long exportedEntries_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of entries that have been exported.
+       * </pre>
+       *
+       * <code>int64 exported_entries = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The exportedEntries.
+       */
+      @java.lang.Override
+      public long getExportedEntries() {
+        return exportedEntries_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of entries that have been exported.
+       * </pre>
+       *
+       * <code>int64 exported_entries = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The exportedEntries to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExportedEntries(long value) {
+
+        exportedEntries_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of entries that have been exported.
+       * </pre>
+       *
+       * <code>int64 exported_entries = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExportedEntries() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        exportedEntries_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object errorMessage_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The error message if the export job failed.
+       * </pre>
+       *
+       * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The errorMessage.
+       */
+      public java.lang.String getErrorMessage() {
+        java.lang.Object ref = errorMessage_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          errorMessage_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The error message if the export job failed.
+       * </pre>
+       *
+       * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for errorMessage.
+       */
+      public com.google.protobuf.ByteString getErrorMessageBytes() {
+        java.lang.Object ref = errorMessage_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          errorMessage_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The error message if the export job failed.
+       * </pre>
+       *
+       * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The errorMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorMessage(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        errorMessage_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The error message if the export job failed.
+       * </pre>
+       *
+       * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearErrorMessage() {
+        errorMessage_ = getDefaultInstance().getErrorMessage();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The error message if the export job failed.
+       * </pre>
+       *
+       * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for errorMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorMessageBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        errorMessage_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.MetadataJob.ExportJobResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.MetadataJob.ExportJobResult)
+    private static final com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult();
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ExportJobResult> PARSER =
+        new com.google.protobuf.AbstractParser<ExportJobResult>() {
+          @java.lang.Override
+          public ExportJobResult parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ExportJobResult> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ExportJobResult> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -6161,6 +6933,3281 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ExportJobSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.MetadataJob.ExportJobSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Selects the entries to be exported by this job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope scope = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the scope field is set.
+     */
+    boolean hasScope();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Selects the entries to be exported by this job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope scope = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The scope.
+     */
+    com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope getScope();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Selects the entries to be exported by this job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope scope = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScopeOrBuilder
+        getScopeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The root path of the exported metadata.
+     * Must be in the format: "gs://&lt;bucket_id&gt;"
+     * Or specify a customized prefix after the bucket:
+     * "gs://&lt;bucket_id&gt;/&lt;folder1&gt;/&lt;folder2&gt;/.../".
+     * The length limit of the customized prefix is 128 characters.
+     * The bucket must be in the same VPC-SC perimeter with the job.
+     * </pre>
+     *
+     * <code>string output_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The outputPath.
+     */
+    java.lang.String getOutputPath();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The root path of the exported metadata.
+     * Must be in the format: "gs://&lt;bucket_id&gt;"
+     * Or specify a customized prefix after the bucket:
+     * "gs://&lt;bucket_id&gt;/&lt;folder1&gt;/&lt;folder2&gt;/.../".
+     * The length limit of the customized prefix is 128 characters.
+     * The bucket must be in the same VPC-SC perimeter with the job.
+     * </pre>
+     *
+     * <code>string output_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for outputPath.
+     */
+    com.google.protobuf.ByteString getOutputPathBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Export job specification.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.MetadataJob.ExportJobSpec}
+   */
+  public static final class ExportJobSpec extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.MetadataJob.ExportJobSpec)
+      ExportJobSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ExportJobSpec.newBuilder() to construct.
+    private ExportJobSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ExportJobSpec() {
+      outputPath_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ExportJobSpec();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.CatalogProto
+          .internal_static_google_cloud_dataplex_v1_MetadataJob_ExportJobSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.CatalogProto
+          .internal_static_google_cloud_dataplex_v1_MetadataJob_ExportJobSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.class,
+              com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.Builder.class);
+    }
+
+    public interface ExportJobScopeOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicating if it is an organization level export job.
+       * - When set to true, exports all entries from entry groups and projects
+       * sharing the same organization id of the Metadata Job. Only projects and
+       * entry groups in the VPC-SC perimeter will be exported. The projects and
+       * entry groups are ignored.
+       * - When set to false, one of the projects or entry groups must be
+       * specified.
+       * - Default to false.
+       * </pre>
+       *
+       * <code>bool organization_level = 1;</code>
+       *
+       * @return The organizationLevel.
+       */
+      boolean getOrganizationLevel();
+
+      /**
+       *
+       *
+       * <pre>
+       * The projects that are in the scope of the export job. Can either be
+       * project numbers or project IDs. If specified, only the entries from the
+       * specified projects will be exported. The projects must be in the same
+       * organization and in the VPC-SC perimeter. Either projects or
+       * entry_groups can be specified when organization_level_export is set to
+       * false.
+       * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+       * </pre>
+       *
+       * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return A list containing the projects.
+       */
+      java.util.List<java.lang.String> getProjectsList();
+      /**
+       *
+       *
+       * <pre>
+       * The projects that are in the scope of the export job. Can either be
+       * project numbers or project IDs. If specified, only the entries from the
+       * specified projects will be exported. The projects must be in the same
+       * organization and in the VPC-SC perimeter. Either projects or
+       * entry_groups can be specified when organization_level_export is set to
+       * false.
+       * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+       * </pre>
+       *
+       * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The count of projects.
+       */
+      int getProjectsCount();
+      /**
+       *
+       *
+       * <pre>
+       * The projects that are in the scope of the export job. Can either be
+       * project numbers or project IDs. If specified, only the entries from the
+       * specified projects will be exported. The projects must be in the same
+       * organization and in the VPC-SC perimeter. Either projects or
+       * entry_groups can be specified when organization_level_export is set to
+       * false.
+       * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+       * </pre>
+       *
+       * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the element to return.
+       * @return The projects at the given index.
+       */
+      java.lang.String getProjects(int index);
+      /**
+       *
+       *
+       * <pre>
+       * The projects that are in the scope of the export job. Can either be
+       * project numbers or project IDs. If specified, only the entries from the
+       * specified projects will be exported. The projects must be in the same
+       * organization and in the VPC-SC perimeter. Either projects or
+       * entry_groups can be specified when organization_level_export is set to
+       * false.
+       * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+       * </pre>
+       *
+       * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the projects at the given index.
+       */
+      com.google.protobuf.ByteString getProjectsBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * The entry groups that are in scope for the export job. Optional. If
+       * specified, only entries in the specified entry groups will be exported
+       * by the job. Must be in the VPC-SC perimeter of the job. The location of
+       * the entry groups must be the same as the job. Either projects or
+       * entry_groups can be specified when organization_level_export is set to
+       * false. Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return A list containing the entryGroups.
+       */
+      java.util.List<java.lang.String> getEntryGroupsList();
+      /**
+       *
+       *
+       * <pre>
+       * The entry groups that are in scope for the export job. Optional. If
+       * specified, only entries in the specified entry groups will be exported
+       * by the job. Must be in the VPC-SC perimeter of the job. The location of
+       * the entry groups must be the same as the job. Either projects or
+       * entry_groups can be specified when organization_level_export is set to
+       * false. Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The count of entryGroups.
+       */
+      int getEntryGroupsCount();
+      /**
+       *
+       *
+       * <pre>
+       * The entry groups that are in scope for the export job. Optional. If
+       * specified, only entries in the specified entry groups will be exported
+       * by the job. Must be in the VPC-SC perimeter of the job. The location of
+       * the entry groups must be the same as the job. Either projects or
+       * entry_groups can be specified when organization_level_export is set to
+       * false. Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the element to return.
+       * @return The entryGroups at the given index.
+       */
+      java.lang.String getEntryGroups(int index);
+      /**
+       *
+       *
+       * <pre>
+       * The entry groups that are in scope for the export job. Optional. If
+       * specified, only entries in the specified entry groups will be exported
+       * by the job. Must be in the VPC-SC perimeter of the job. The location of
+       * the entry groups must be the same as the job. Either projects or
+       * entry_groups can be specified when organization_level_export is set to
+       * false. Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the entryGroups at the given index.
+       */
+      com.google.protobuf.ByteString getEntryGroupsBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * If specified, only entries of the specified types will be
+       * affected by the job.
+       * Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return A list containing the entryTypes.
+       */
+      java.util.List<java.lang.String> getEntryTypesList();
+      /**
+       *
+       *
+       * <pre>
+       * If specified, only entries of the specified types will be
+       * affected by the job.
+       * Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The count of entryTypes.
+       */
+      int getEntryTypesCount();
+      /**
+       *
+       *
+       * <pre>
+       * If specified, only entries of the specified types will be
+       * affected by the job.
+       * Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the element to return.
+       * @return The entryTypes at the given index.
+       */
+      java.lang.String getEntryTypes(int index);
+      /**
+       *
+       *
+       * <pre>
+       * If specified, only entries of the specified types will be
+       * affected by the job.
+       * Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the entryTypes at the given index.
+       */
+      com.google.protobuf.ByteString getEntryTypesBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * The aspect types that are in scope for the export job.
+       * Optional. If specified, only aspects of the specified types will be
+       * affected by the job.
+       * Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return A list containing the aspectTypes.
+       */
+      java.util.List<java.lang.String> getAspectTypesList();
+      /**
+       *
+       *
+       * <pre>
+       * The aspect types that are in scope for the export job.
+       * Optional. If specified, only aspects of the specified types will be
+       * affected by the job.
+       * Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The count of aspectTypes.
+       */
+      int getAspectTypesCount();
+      /**
+       *
+       *
+       * <pre>
+       * The aspect types that are in scope for the export job.
+       * Optional. If specified, only aspects of the specified types will be
+       * affected by the job.
+       * Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the element to return.
+       * @return The aspectTypes at the given index.
+       */
+      java.lang.String getAspectTypes(int index);
+      /**
+       *
+       *
+       * <pre>
+       * The aspect types that are in scope for the export job.
+       * Optional. If specified, only aspects of the specified types will be
+       * affected by the job.
+       * Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the aspectTypes at the given index.
+       */
+      com.google.protobuf.ByteString getAspectTypesBytes(int index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Scope of the export job.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope}
+     */
+    public static final class ExportJobScope extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope)
+        ExportJobScopeOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use ExportJobScope.newBuilder() to construct.
+      private ExportJobScope(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ExportJobScope() {
+        projects_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        entryGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        entryTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        aspectTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ExportJobScope();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.CatalogProto
+            .internal_static_google_cloud_dataplex_v1_MetadataJob_ExportJobSpec_ExportJobScope_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.CatalogProto
+            .internal_static_google_cloud_dataplex_v1_MetadataJob_ExportJobSpec_ExportJobScope_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope.class,
+                com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope.Builder
+                    .class);
+      }
+
+      public static final int ORGANIZATION_LEVEL_FIELD_NUMBER = 1;
+      private boolean organizationLevel_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * Indicating if it is an organization level export job.
+       * - When set to true, exports all entries from entry groups and projects
+       * sharing the same organization id of the Metadata Job. Only projects and
+       * entry groups in the VPC-SC perimeter will be exported. The projects and
+       * entry groups are ignored.
+       * - When set to false, one of the projects or entry groups must be
+       * specified.
+       * - Default to false.
+       * </pre>
+       *
+       * <code>bool organization_level = 1;</code>
+       *
+       * @return The organizationLevel.
+       */
+      @java.lang.Override
+      public boolean getOrganizationLevel() {
+        return organizationLevel_;
+      }
+
+      public static final int PROJECTS_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList projects_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * The projects that are in the scope of the export job. Can either be
+       * project numbers or project IDs. If specified, only the entries from the
+       * specified projects will be exported. The projects must be in the same
+       * organization and in the VPC-SC perimeter. Either projects or
+       * entry_groups can be specified when organization_level_export is set to
+       * false.
+       * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+       * </pre>
+       *
+       * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return A list containing the projects.
+       */
+      public com.google.protobuf.ProtocolStringList getProjectsList() {
+        return projects_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The projects that are in the scope of the export job. Can either be
+       * project numbers or project IDs. If specified, only the entries from the
+       * specified projects will be exported. The projects must be in the same
+       * organization and in the VPC-SC perimeter. Either projects or
+       * entry_groups can be specified when organization_level_export is set to
+       * false.
+       * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+       * </pre>
+       *
+       * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The count of projects.
+       */
+      public int getProjectsCount() {
+        return projects_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The projects that are in the scope of the export job. Can either be
+       * project numbers or project IDs. If specified, only the entries from the
+       * specified projects will be exported. The projects must be in the same
+       * organization and in the VPC-SC perimeter. Either projects or
+       * entry_groups can be specified when organization_level_export is set to
+       * false.
+       * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+       * </pre>
+       *
+       * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the element to return.
+       * @return The projects at the given index.
+       */
+      public java.lang.String getProjects(int index) {
+        return projects_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The projects that are in the scope of the export job. Can either be
+       * project numbers or project IDs. If specified, only the entries from the
+       * specified projects will be exported. The projects must be in the same
+       * organization and in the VPC-SC perimeter. Either projects or
+       * entry_groups can be specified when organization_level_export is set to
+       * false.
+       * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+       * </pre>
+       *
+       * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the projects at the given index.
+       */
+      public com.google.protobuf.ByteString getProjectsBytes(int index) {
+        return projects_.getByteString(index);
+      }
+
+      public static final int ENTRY_GROUPS_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList entryGroups_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * The entry groups that are in scope for the export job. Optional. If
+       * specified, only entries in the specified entry groups will be exported
+       * by the job. Must be in the VPC-SC perimeter of the job. The location of
+       * the entry groups must be the same as the job. Either projects or
+       * entry_groups can be specified when organization_level_export is set to
+       * false. Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return A list containing the entryGroups.
+       */
+      public com.google.protobuf.ProtocolStringList getEntryGroupsList() {
+        return entryGroups_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The entry groups that are in scope for the export job. Optional. If
+       * specified, only entries in the specified entry groups will be exported
+       * by the job. Must be in the VPC-SC perimeter of the job. The location of
+       * the entry groups must be the same as the job. Either projects or
+       * entry_groups can be specified when organization_level_export is set to
+       * false. Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The count of entryGroups.
+       */
+      public int getEntryGroupsCount() {
+        return entryGroups_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The entry groups that are in scope for the export job. Optional. If
+       * specified, only entries in the specified entry groups will be exported
+       * by the job. Must be in the VPC-SC perimeter of the job. The location of
+       * the entry groups must be the same as the job. Either projects or
+       * entry_groups can be specified when organization_level_export is set to
+       * false. Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the element to return.
+       * @return The entryGroups at the given index.
+       */
+      public java.lang.String getEntryGroups(int index) {
+        return entryGroups_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The entry groups that are in scope for the export job. Optional. If
+       * specified, only entries in the specified entry groups will be exported
+       * by the job. Must be in the VPC-SC perimeter of the job. The location of
+       * the entry groups must be the same as the job. Either projects or
+       * entry_groups can be specified when organization_level_export is set to
+       * false. Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the entryGroups at the given index.
+       */
+      public com.google.protobuf.ByteString getEntryGroupsBytes(int index) {
+        return entryGroups_.getByteString(index);
+      }
+
+      public static final int ENTRY_TYPES_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList entryTypes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * If specified, only entries of the specified types will be
+       * affected by the job.
+       * Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return A list containing the entryTypes.
+       */
+      public com.google.protobuf.ProtocolStringList getEntryTypesList() {
+        return entryTypes_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If specified, only entries of the specified types will be
+       * affected by the job.
+       * Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The count of entryTypes.
+       */
+      public int getEntryTypesCount() {
+        return entryTypes_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If specified, only entries of the specified types will be
+       * affected by the job.
+       * Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the element to return.
+       * @return The entryTypes at the given index.
+       */
+      public java.lang.String getEntryTypes(int index) {
+        return entryTypes_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If specified, only entries of the specified types will be
+       * affected by the job.
+       * Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the entryTypes at the given index.
+       */
+      public com.google.protobuf.ByteString getEntryTypesBytes(int index) {
+        return entryTypes_.getByteString(index);
+      }
+
+      public static final int ASPECT_TYPES_FIELD_NUMBER = 5;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList aspectTypes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * The aspect types that are in scope for the export job.
+       * Optional. If specified, only aspects of the specified types will be
+       * affected by the job.
+       * Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return A list containing the aspectTypes.
+       */
+      public com.google.protobuf.ProtocolStringList getAspectTypesList() {
+        return aspectTypes_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The aspect types that are in scope for the export job.
+       * Optional. If specified, only aspects of the specified types will be
+       * affected by the job.
+       * Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The count of aspectTypes.
+       */
+      public int getAspectTypesCount() {
+        return aspectTypes_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The aspect types that are in scope for the export job.
+       * Optional. If specified, only aspects of the specified types will be
+       * affected by the job.
+       * Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the element to return.
+       * @return The aspectTypes at the given index.
+       */
+      public java.lang.String getAspectTypes(int index) {
+        return aspectTypes_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The aspect types that are in scope for the export job.
+       * Optional. If specified, only aspects of the specified types will be
+       * affected by the job.
+       * Must follow the format:
+       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+       * </pre>
+       *
+       * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the aspectTypes at the given index.
+       */
+      public com.google.protobuf.ByteString getAspectTypesBytes(int index) {
+        return aspectTypes_.getByteString(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (organizationLevel_ != false) {
+          output.writeBool(1, organizationLevel_);
+        }
+        for (int i = 0; i < projects_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projects_.getRaw(i));
+        }
+        for (int i = 0; i < entryGroups_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, entryGroups_.getRaw(i));
+        }
+        for (int i = 0; i < entryTypes_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, entryTypes_.getRaw(i));
+        }
+        for (int i = 0; i < aspectTypes_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, aspectTypes_.getRaw(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (organizationLevel_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, organizationLevel_);
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < projects_.size(); i++) {
+            dataSize += computeStringSizeNoTag(projects_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getProjectsList().size();
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < entryGroups_.size(); i++) {
+            dataSize += computeStringSizeNoTag(entryGroups_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getEntryGroupsList().size();
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < entryTypes_.size(); i++) {
+            dataSize += computeStringSizeNoTag(entryTypes_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getEntryTypesList().size();
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < aspectTypes_.size(); i++) {
+            dataSize += computeStringSizeNoTag(aspectTypes_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getAspectTypesList().size();
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope other =
+            (com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope) obj;
+
+        if (getOrganizationLevel() != other.getOrganizationLevel()) return false;
+        if (!getProjectsList().equals(other.getProjectsList())) return false;
+        if (!getEntryGroupsList().equals(other.getEntryGroupsList())) return false;
+        if (!getEntryTypesList().equals(other.getEntryTypesList())) return false;
+        if (!getAspectTypesList().equals(other.getAspectTypesList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + ORGANIZATION_LEVEL_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOrganizationLevel());
+        if (getProjectsCount() > 0) {
+          hash = (37 * hash) + PROJECTS_FIELD_NUMBER;
+          hash = (53 * hash) + getProjectsList().hashCode();
+        }
+        if (getEntryGroupsCount() > 0) {
+          hash = (37 * hash) + ENTRY_GROUPS_FIELD_NUMBER;
+          hash = (53 * hash) + getEntryGroupsList().hashCode();
+        }
+        if (getEntryTypesCount() > 0) {
+          hash = (37 * hash) + ENTRY_TYPES_FIELD_NUMBER;
+          hash = (53 * hash) + getEntryTypesList().hashCode();
+        }
+        if (getAspectTypesCount() > 0) {
+          hash = (37 * hash) + ASPECT_TYPES_FIELD_NUMBER;
+          hash = (53 * hash) + getAspectTypesList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Scope of the export job.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope)
+          com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScopeOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataplex.v1.CatalogProto
+              .internal_static_google_cloud_dataplex_v1_MetadataJob_ExportJobSpec_ExportJobScope_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataplex.v1.CatalogProto
+              .internal_static_google_cloud_dataplex_v1_MetadataJob_ExportJobSpec_ExportJobScope_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope.class,
+                  com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          organizationLevel_ = false;
+          projects_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          entryGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          entryTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          aspectTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dataplex.v1.CatalogProto
+              .internal_static_google_cloud_dataplex_v1_MetadataJob_ExportJobSpec_ExportJobScope_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope
+            getDefaultInstanceForType() {
+          return com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope build() {
+          com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope
+            buildPartial() {
+          com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope result =
+              new com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.organizationLevel_ = organizationLevel_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            projects_.makeImmutable();
+            result.projects_ = projects_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            entryGroups_.makeImmutable();
+            result.entryGroups_ = entryGroups_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            entryTypes_.makeImmutable();
+            result.entryTypes_ = entryTypes_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            aspectTypes_.makeImmutable();
+            result.aspectTypes_ = aspectTypes_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope) {
+            return mergeFrom(
+                (com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope other) {
+          if (other
+              == com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope
+                  .getDefaultInstance()) return this;
+          if (other.getOrganizationLevel() != false) {
+            setOrganizationLevel(other.getOrganizationLevel());
+          }
+          if (!other.projects_.isEmpty()) {
+            if (projects_.isEmpty()) {
+              projects_ = other.projects_;
+              bitField0_ |= 0x00000002;
+            } else {
+              ensureProjectsIsMutable();
+              projects_.addAll(other.projects_);
+            }
+            onChanged();
+          }
+          if (!other.entryGroups_.isEmpty()) {
+            if (entryGroups_.isEmpty()) {
+              entryGroups_ = other.entryGroups_;
+              bitField0_ |= 0x00000004;
+            } else {
+              ensureEntryGroupsIsMutable();
+              entryGroups_.addAll(other.entryGroups_);
+            }
+            onChanged();
+          }
+          if (!other.entryTypes_.isEmpty()) {
+            if (entryTypes_.isEmpty()) {
+              entryTypes_ = other.entryTypes_;
+              bitField0_ |= 0x00000008;
+            } else {
+              ensureEntryTypesIsMutable();
+              entryTypes_.addAll(other.entryTypes_);
+            }
+            onChanged();
+          }
+          if (!other.aspectTypes_.isEmpty()) {
+            if (aspectTypes_.isEmpty()) {
+              aspectTypes_ = other.aspectTypes_;
+              bitField0_ |= 0x00000010;
+            } else {
+              ensureAspectTypesIsMutable();
+              aspectTypes_.addAll(other.aspectTypes_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    organizationLevel_ = input.readBool();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 18:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureProjectsIsMutable();
+                    projects_.add(s);
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureEntryGroupsIsMutable();
+                    entryGroups_.add(s);
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureEntryTypesIsMutable();
+                    entryTypes_.add(s);
+                    break;
+                  } // case 34
+                case 42:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureAspectTypesIsMutable();
+                    aspectTypes_.add(s);
+                    break;
+                  } // case 42
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private boolean organizationLevel_;
+        /**
+         *
+         *
+         * <pre>
+         * Indicating if it is an organization level export job.
+         * - When set to true, exports all entries from entry groups and projects
+         * sharing the same organization id of the Metadata Job. Only projects and
+         * entry groups in the VPC-SC perimeter will be exported. The projects and
+         * entry groups are ignored.
+         * - When set to false, one of the projects or entry groups must be
+         * specified.
+         * - Default to false.
+         * </pre>
+         *
+         * <code>bool organization_level = 1;</code>
+         *
+         * @return The organizationLevel.
+         */
+        @java.lang.Override
+        public boolean getOrganizationLevel() {
+          return organizationLevel_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Indicating if it is an organization level export job.
+         * - When set to true, exports all entries from entry groups and projects
+         * sharing the same organization id of the Metadata Job. Only projects and
+         * entry groups in the VPC-SC perimeter will be exported. The projects and
+         * entry groups are ignored.
+         * - When set to false, one of the projects or entry groups must be
+         * specified.
+         * - Default to false.
+         * </pre>
+         *
+         * <code>bool organization_level = 1;</code>
+         *
+         * @param value The organizationLevel to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOrganizationLevel(boolean value) {
+
+          organizationLevel_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Indicating if it is an organization level export job.
+         * - When set to true, exports all entries from entry groups and projects
+         * sharing the same organization id of the Metadata Job. Only projects and
+         * entry groups in the VPC-SC perimeter will be exported. The projects and
+         * entry groups are ignored.
+         * - When set to false, one of the projects or entry groups must be
+         * specified.
+         * - Default to false.
+         * </pre>
+         *
+         * <code>bool organization_level = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearOrganizationLevel() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          organizationLevel_ = false;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList projects_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureProjectsIsMutable() {
+          if (!projects_.isModifiable()) {
+            projects_ = new com.google.protobuf.LazyStringArrayList(projects_);
+          }
+          bitField0_ |= 0x00000002;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The projects that are in the scope of the export job. Can either be
+         * project numbers or project IDs. If specified, only the entries from the
+         * specified projects will be exported. The projects must be in the same
+         * organization and in the VPC-SC perimeter. Either projects or
+         * entry_groups can be specified when organization_level_export is set to
+         * false.
+         * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+         * </pre>
+         *
+         * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return A list containing the projects.
+         */
+        public com.google.protobuf.ProtocolStringList getProjectsList() {
+          projects_.makeImmutable();
+          return projects_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The projects that are in the scope of the export job. Can either be
+         * project numbers or project IDs. If specified, only the entries from the
+         * specified projects will be exported. The projects must be in the same
+         * organization and in the VPC-SC perimeter. Either projects or
+         * entry_groups can be specified when organization_level_export is set to
+         * false.
+         * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+         * </pre>
+         *
+         * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return The count of projects.
+         */
+        public int getProjectsCount() {
+          return projects_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The projects that are in the scope of the export job. Can either be
+         * project numbers or project IDs. If specified, only the entries from the
+         * specified projects will be exported. The projects must be in the same
+         * organization and in the VPC-SC perimeter. Either projects or
+         * entry_groups can be specified when organization_level_export is set to
+         * false.
+         * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+         * </pre>
+         *
+         * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param index The index of the element to return.
+         * @return The projects at the given index.
+         */
+        public java.lang.String getProjects(int index) {
+          return projects_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The projects that are in the scope of the export job. Can either be
+         * project numbers or project IDs. If specified, only the entries from the
+         * specified projects will be exported. The projects must be in the same
+         * organization and in the VPC-SC perimeter. Either projects or
+         * entry_groups can be specified when organization_level_export is set to
+         * false.
+         * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+         * </pre>
+         *
+         * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the projects at the given index.
+         */
+        public com.google.protobuf.ByteString getProjectsBytes(int index) {
+          return projects_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The projects that are in the scope of the export job. Can either be
+         * project numbers or project IDs. If specified, only the entries from the
+         * specified projects will be exported. The projects must be in the same
+         * organization and in the VPC-SC perimeter. Either projects or
+         * entry_groups can be specified when organization_level_export is set to
+         * false.
+         * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+         * </pre>
+         *
+         * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The projects to set.
+         * @return This builder for chaining.
+         */
+        public Builder setProjects(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.set(index, value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The projects that are in the scope of the export job. Can either be
+         * project numbers or project IDs. If specified, only the entries from the
+         * specified projects will be exported. The projects must be in the same
+         * organization and in the VPC-SC perimeter. Either projects or
+         * entry_groups can be specified when organization_level_export is set to
+         * false.
+         * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+         * </pre>
+         *
+         * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param value The projects to add.
+         * @return This builder for chaining.
+         */
+        public Builder addProjects(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectsIsMutable();
+          projects_.add(value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The projects that are in the scope of the export job. Can either be
+         * project numbers or project IDs. If specified, only the entries from the
+         * specified projects will be exported. The projects must be in the same
+         * organization and in the VPC-SC perimeter. Either projects or
+         * entry_groups can be specified when organization_level_export is set to
+         * false.
+         * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+         * </pre>
+         *
+         * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param values The projects to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllProjects(java.lang.Iterable<java.lang.String> values) {
+          ensureProjectsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, projects_);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The projects that are in the scope of the export job. Can either be
+         * project numbers or project IDs. If specified, only the entries from the
+         * specified projects will be exported. The projects must be in the same
+         * organization and in the VPC-SC perimeter. Either projects or
+         * entry_groups can be specified when organization_level_export is set to
+         * false.
+         * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+         * </pre>
+         *
+         * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearProjects() {
+          projects_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The projects that are in the scope of the export job. Can either be
+         * project numbers or project IDs. If specified, only the entries from the
+         * specified projects will be exported. The projects must be in the same
+         * organization and in the VPC-SC perimeter. Either projects or
+         * entry_groups can be specified when organization_level_export is set to
+         * false.
+         * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+         * </pre>
+         *
+         * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param value The bytes of the projects to add.
+         * @return This builder for chaining.
+         */
+        public Builder addProjectsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureProjectsIsMutable();
+          projects_.add(value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList entryGroups_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureEntryGroupsIsMutable() {
+          if (!entryGroups_.isModifiable()) {
+            entryGroups_ = new com.google.protobuf.LazyStringArrayList(entryGroups_);
+          }
+          bitField0_ |= 0x00000004;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The entry groups that are in scope for the export job. Optional. If
+         * specified, only entries in the specified entry groups will be exported
+         * by the job. Must be in the VPC-SC perimeter of the job. The location of
+         * the entry groups must be the same as the job. Either projects or
+         * entry_groups can be specified when organization_level_export is set to
+         * false. Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return A list containing the entryGroups.
+         */
+        public com.google.protobuf.ProtocolStringList getEntryGroupsList() {
+          entryGroups_.makeImmutable();
+          return entryGroups_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The entry groups that are in scope for the export job. Optional. If
+         * specified, only entries in the specified entry groups will be exported
+         * by the job. Must be in the VPC-SC perimeter of the job. The location of
+         * the entry groups must be the same as the job. Either projects or
+         * entry_groups can be specified when organization_level_export is set to
+         * false. Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return The count of entryGroups.
+         */
+        public int getEntryGroupsCount() {
+          return entryGroups_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The entry groups that are in scope for the export job. Optional. If
+         * specified, only entries in the specified entry groups will be exported
+         * by the job. Must be in the VPC-SC perimeter of the job. The location of
+         * the entry groups must be the same as the job. Either projects or
+         * entry_groups can be specified when organization_level_export is set to
+         * false. Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param index The index of the element to return.
+         * @return The entryGroups at the given index.
+         */
+        public java.lang.String getEntryGroups(int index) {
+          return entryGroups_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The entry groups that are in scope for the export job. Optional. If
+         * specified, only entries in the specified entry groups will be exported
+         * by the job. Must be in the VPC-SC perimeter of the job. The location of
+         * the entry groups must be the same as the job. Either projects or
+         * entry_groups can be specified when organization_level_export is set to
+         * false. Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the entryGroups at the given index.
+         */
+        public com.google.protobuf.ByteString getEntryGroupsBytes(int index) {
+          return entryGroups_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The entry groups that are in scope for the export job. Optional. If
+         * specified, only entries in the specified entry groups will be exported
+         * by the job. Must be in the VPC-SC perimeter of the job. The location of
+         * the entry groups must be the same as the job. Either projects or
+         * entry_groups can be specified when organization_level_export is set to
+         * false. Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The entryGroups to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEntryGroups(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEntryGroupsIsMutable();
+          entryGroups_.set(index, value);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The entry groups that are in scope for the export job. Optional. If
+         * specified, only entries in the specified entry groups will be exported
+         * by the job. Must be in the VPC-SC perimeter of the job. The location of
+         * the entry groups must be the same as the job. Either projects or
+         * entry_groups can be specified when organization_level_export is set to
+         * false. Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param value The entryGroups to add.
+         * @return This builder for chaining.
+         */
+        public Builder addEntryGroups(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEntryGroupsIsMutable();
+          entryGroups_.add(value);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The entry groups that are in scope for the export job. Optional. If
+         * specified, only entries in the specified entry groups will be exported
+         * by the job. Must be in the VPC-SC perimeter of the job. The location of
+         * the entry groups must be the same as the job. Either projects or
+         * entry_groups can be specified when organization_level_export is set to
+         * false. Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param values The entryGroups to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllEntryGroups(java.lang.Iterable<java.lang.String> values) {
+          ensureEntryGroupsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, entryGroups_);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The entry groups that are in scope for the export job. Optional. If
+         * specified, only entries in the specified entry groups will be exported
+         * by the job. Must be in the VPC-SC perimeter of the job. The location of
+         * the entry groups must be the same as the job. Either projects or
+         * entry_groups can be specified when organization_level_export is set to
+         * false. Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEntryGroups() {
+          entryGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The entry groups that are in scope for the export job. Optional. If
+         * specified, only entries in the specified entry groups will be exported
+         * by the job. Must be in the VPC-SC perimeter of the job. The location of
+         * the entry groups must be the same as the job. Either projects or
+         * entry_groups can be specified when organization_level_export is set to
+         * false. Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param value The bytes of the entryGroups to add.
+         * @return This builder for chaining.
+         */
+        public Builder addEntryGroupsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureEntryGroupsIsMutable();
+          entryGroups_.add(value);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList entryTypes_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureEntryTypesIsMutable() {
+          if (!entryTypes_.isModifiable()) {
+            entryTypes_ = new com.google.protobuf.LazyStringArrayList(entryTypes_);
+          }
+          bitField0_ |= 0x00000008;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, only entries of the specified types will be
+         * affected by the job.
+         * Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return A list containing the entryTypes.
+         */
+        public com.google.protobuf.ProtocolStringList getEntryTypesList() {
+          entryTypes_.makeImmutable();
+          return entryTypes_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, only entries of the specified types will be
+         * affected by the job.
+         * Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return The count of entryTypes.
+         */
+        public int getEntryTypesCount() {
+          return entryTypes_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, only entries of the specified types will be
+         * affected by the job.
+         * Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param index The index of the element to return.
+         * @return The entryTypes at the given index.
+         */
+        public java.lang.String getEntryTypes(int index) {
+          return entryTypes_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, only entries of the specified types will be
+         * affected by the job.
+         * Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the entryTypes at the given index.
+         */
+        public com.google.protobuf.ByteString getEntryTypesBytes(int index) {
+          return entryTypes_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, only entries of the specified types will be
+         * affected by the job.
+         * Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The entryTypes to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEntryTypes(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEntryTypesIsMutable();
+          entryTypes_.set(index, value);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, only entries of the specified types will be
+         * affected by the job.
+         * Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param value The entryTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addEntryTypes(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEntryTypesIsMutable();
+          entryTypes_.add(value);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, only entries of the specified types will be
+         * affected by the job.
+         * Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param values The entryTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllEntryTypes(java.lang.Iterable<java.lang.String> values) {
+          ensureEntryTypesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, entryTypes_);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, only entries of the specified types will be
+         * affected by the job.
+         * Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEntryTypes() {
+          entryTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, only entries of the specified types will be
+         * affected by the job.
+         * Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param value The bytes of the entryTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addEntryTypesBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureEntryTypesIsMutable();
+          entryTypes_.add(value);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList aspectTypes_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureAspectTypesIsMutable() {
+          if (!aspectTypes_.isModifiable()) {
+            aspectTypes_ = new com.google.protobuf.LazyStringArrayList(aspectTypes_);
+          }
+          bitField0_ |= 0x00000010;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The aspect types that are in scope for the export job.
+         * Optional. If specified, only aspects of the specified types will be
+         * affected by the job.
+         * Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return A list containing the aspectTypes.
+         */
+        public com.google.protobuf.ProtocolStringList getAspectTypesList() {
+          aspectTypes_.makeImmutable();
+          return aspectTypes_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The aspect types that are in scope for the export job.
+         * Optional. If specified, only aspects of the specified types will be
+         * affected by the job.
+         * Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return The count of aspectTypes.
+         */
+        public int getAspectTypesCount() {
+          return aspectTypes_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The aspect types that are in scope for the export job.
+         * Optional. If specified, only aspects of the specified types will be
+         * affected by the job.
+         * Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param index The index of the element to return.
+         * @return The aspectTypes at the given index.
+         */
+        public java.lang.String getAspectTypes(int index) {
+          return aspectTypes_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The aspect types that are in scope for the export job.
+         * Optional. If specified, only aspects of the specified types will be
+         * affected by the job.
+         * Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the aspectTypes at the given index.
+         */
+        public com.google.protobuf.ByteString getAspectTypesBytes(int index) {
+          return aspectTypes_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The aspect types that are in scope for the export job.
+         * Optional. If specified, only aspects of the specified types will be
+         * affected by the job.
+         * Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The aspectTypes to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAspectTypes(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAspectTypesIsMutable();
+          aspectTypes_.set(index, value);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The aspect types that are in scope for the export job.
+         * Optional. If specified, only aspects of the specified types will be
+         * affected by the job.
+         * Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param value The aspectTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAspectTypes(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAspectTypesIsMutable();
+          aspectTypes_.add(value);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The aspect types that are in scope for the export job.
+         * Optional. If specified, only aspects of the specified types will be
+         * affected by the job.
+         * Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param values The aspectTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllAspectTypes(java.lang.Iterable<java.lang.String> values) {
+          ensureAspectTypesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, aspectTypes_);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The aspect types that are in scope for the export job.
+         * Optional. If specified, only aspects of the specified types will be
+         * affected by the job.
+         * Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearAspectTypes() {
+          aspectTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The aspect types that are in scope for the export job.
+         * Optional. If specified, only aspects of the specified types will be
+         * affected by the job.
+         * Must follow the format:
+         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+         * </pre>
+         *
+         * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
+         *
+         * @param value The bytes of the aspectTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAspectTypesBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureAspectTypesIsMutable();
+          aspectTypes_.add(value);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope)
+      private static final com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope();
+      }
+
+      public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ExportJobScope> PARSER =
+          new com.google.protobuf.AbstractParser<ExportJobScope>() {
+            @java.lang.Override
+            public ExportJobScope parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ExportJobScope> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ExportJobScope> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int SCOPE_FIELD_NUMBER = 2;
+    private com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope scope_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Selects the entries to be exported by this job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope scope = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the scope field is set.
+     */
+    @java.lang.Override
+    public boolean hasScope() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Selects the entries to be exported by this job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope scope = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The scope.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope getScope() {
+      return scope_ == null
+          ? com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope
+              .getDefaultInstance()
+          : scope_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Selects the entries to be exported by this job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope scope = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScopeOrBuilder
+        getScopeOrBuilder() {
+      return scope_ == null
+          ? com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope
+              .getDefaultInstance()
+          : scope_;
+    }
+
+    public static final int OUTPUT_PATH_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object outputPath_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The root path of the exported metadata.
+     * Must be in the format: "gs://&lt;bucket_id&gt;"
+     * Or specify a customized prefix after the bucket:
+     * "gs://&lt;bucket_id&gt;/&lt;folder1&gt;/&lt;folder2&gt;/.../".
+     * The length limit of the customized prefix is 128 characters.
+     * The bucket must be in the same VPC-SC perimeter with the job.
+     * </pre>
+     *
+     * <code>string output_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The outputPath.
+     */
+    @java.lang.Override
+    public java.lang.String getOutputPath() {
+      java.lang.Object ref = outputPath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        outputPath_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The root path of the exported metadata.
+     * Must be in the format: "gs://&lt;bucket_id&gt;"
+     * Or specify a customized prefix after the bucket:
+     * "gs://&lt;bucket_id&gt;/&lt;folder1&gt;/&lt;folder2&gt;/.../".
+     * The length limit of the customized prefix is 128 characters.
+     * The bucket must be in the same VPC-SC perimeter with the job.
+     * </pre>
+     *
+     * <code>string output_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for outputPath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getOutputPathBytes() {
+      java.lang.Object ref = outputPath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        outputPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getScope());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputPath_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, outputPath_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getScope());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputPath_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, outputPath_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec other =
+          (com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec) obj;
+
+      if (hasScope() != other.hasScope()) return false;
+      if (hasScope()) {
+        if (!getScope().equals(other.getScope())) return false;
+      }
+      if (!getOutputPath().equals(other.getOutputPath())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasScope()) {
+        hash = (37 * hash) + SCOPE_FIELD_NUMBER;
+        hash = (53 * hash) + getScope().hashCode();
+      }
+      hash = (37 * hash) + OUTPUT_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputPath().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Export job specification.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.MetadataJob.ExportJobSpec}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.MetadataJob.ExportJobSpec)
+        com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.CatalogProto
+            .internal_static_google_cloud_dataplex_v1_MetadataJob_ExportJobSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.CatalogProto
+            .internal_static_google_cloud_dataplex_v1_MetadataJob_ExportJobSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.class,
+                com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getScopeFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        scope_ = null;
+        if (scopeBuilder_ != null) {
+          scopeBuilder_.dispose();
+          scopeBuilder_ = null;
+        }
+        outputPath_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.CatalogProto
+            .internal_static_google_cloud_dataplex_v1_MetadataJob_ExportJobSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec build() {
+        com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec buildPartial() {
+        com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec result =
+            new com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.scope_ = scopeBuilder_ == null ? scope_ : scopeBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.outputPath_ = outputPath_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec) {
+          return mergeFrom((com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec other) {
+        if (other == com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.getDefaultInstance())
+          return this;
+        if (other.hasScope()) {
+          mergeScope(other.getScope());
+        }
+        if (!other.getOutputPath().isEmpty()) {
+          outputPath_ = other.outputPath_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18:
+                {
+                  input.readMessage(getScopeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  outputPath_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope scope_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope,
+              com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope.Builder,
+              com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScopeOrBuilder>
+          scopeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Selects the entries to be exported by this job.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope scope = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the scope field is set.
+       */
+      public boolean hasScope() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Selects the entries to be exported by this job.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope scope = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The scope.
+       */
+      public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope getScope() {
+        if (scopeBuilder_ == null) {
+          return scope_ == null
+              ? com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope
+                  .getDefaultInstance()
+              : scope_;
+        } else {
+          return scopeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Selects the entries to be exported by this job.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope scope = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setScope(
+          com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope value) {
+        if (scopeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          scope_ = value;
+        } else {
+          scopeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Selects the entries to be exported by this job.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope scope = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setScope(
+          com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope.Builder
+              builderForValue) {
+        if (scopeBuilder_ == null) {
+          scope_ = builderForValue.build();
+        } else {
+          scopeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Selects the entries to be exported by this job.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope scope = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder mergeScope(
+          com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope value) {
+        if (scopeBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && scope_ != null
+              && scope_
+                  != com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope
+                      .getDefaultInstance()) {
+            getScopeBuilder().mergeFrom(value);
+          } else {
+            scope_ = value;
+          }
+        } else {
+          scopeBuilder_.mergeFrom(value);
+        }
+        if (scope_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Selects the entries to be exported by this job.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope scope = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearScope() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        scope_ = null;
+        if (scopeBuilder_ != null) {
+          scopeBuilder_.dispose();
+          scopeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Selects the entries to be exported by this job.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope scope = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope.Builder
+          getScopeBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getScopeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Selects the entries to be exported by this job.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope scope = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScopeOrBuilder
+          getScopeOrBuilder() {
+        if (scopeBuilder_ != null) {
+          return scopeBuilder_.getMessageOrBuilder();
+        } else {
+          return scope_ == null
+              ? com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope
+                  .getDefaultInstance()
+              : scope_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Selects the entries to be exported by this job.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope scope = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope,
+              com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope.Builder,
+              com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScopeOrBuilder>
+          getScopeFieldBuilder() {
+        if (scopeBuilder_ == null) {
+          scopeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope,
+                  com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope.Builder,
+                  com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScopeOrBuilder>(
+                  getScope(), getParentForChildren(), isClean());
+          scope_ = null;
+        }
+        return scopeBuilder_;
+      }
+
+      private java.lang.Object outputPath_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The root path of the exported metadata.
+       * Must be in the format: "gs://&lt;bucket_id&gt;"
+       * Or specify a customized prefix after the bucket:
+       * "gs://&lt;bucket_id&gt;/&lt;folder1&gt;/&lt;folder2&gt;/.../".
+       * The length limit of the customized prefix is 128 characters.
+       * The bucket must be in the same VPC-SC perimeter with the job.
+       * </pre>
+       *
+       * <code>string output_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The outputPath.
+       */
+      public java.lang.String getOutputPath() {
+        java.lang.Object ref = outputPath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          outputPath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The root path of the exported metadata.
+       * Must be in the format: "gs://&lt;bucket_id&gt;"
+       * Or specify a customized prefix after the bucket:
+       * "gs://&lt;bucket_id&gt;/&lt;folder1&gt;/&lt;folder2&gt;/.../".
+       * The length limit of the customized prefix is 128 characters.
+       * The bucket must be in the same VPC-SC perimeter with the job.
+       * </pre>
+       *
+       * <code>string output_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for outputPath.
+       */
+      public com.google.protobuf.ByteString getOutputPathBytes() {
+        java.lang.Object ref = outputPath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          outputPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The root path of the exported metadata.
+       * Must be in the format: "gs://&lt;bucket_id&gt;"
+       * Or specify a customized prefix after the bucket:
+       * "gs://&lt;bucket_id&gt;/&lt;folder1&gt;/&lt;folder2&gt;/.../".
+       * The length limit of the customized prefix is 128 characters.
+       * The bucket must be in the same VPC-SC perimeter with the job.
+       * </pre>
+       *
+       * <code>string output_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The outputPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOutputPath(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputPath_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The root path of the exported metadata.
+       * Must be in the format: "gs://&lt;bucket_id&gt;"
+       * Or specify a customized prefix after the bucket:
+       * "gs://&lt;bucket_id&gt;/&lt;folder1&gt;/&lt;folder2&gt;/.../".
+       * The length limit of the customized prefix is 128 characters.
+       * The bucket must be in the same VPC-SC perimeter with the job.
+       * </pre>
+       *
+       * <code>string output_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOutputPath() {
+        outputPath_ = getDefaultInstance().getOutputPath();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The root path of the exported metadata.
+       * Must be in the format: "gs://&lt;bucket_id&gt;"
+       * Or specify a customized prefix after the bucket:
+       * "gs://&lt;bucket_id&gt;/&lt;folder1&gt;/&lt;folder2&gt;/.../".
+       * The length limit of the customized prefix is 128 characters.
+       * The bucket must be in the same VPC-SC perimeter with the job.
+       * </pre>
+       *
+       * <code>string output_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for outputPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOutputPathBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        outputPath_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.MetadataJob.ExportJobSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.MetadataJob.ExportJobSpec)
+    private static final com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec();
+    }
+
+    public static com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ExportJobSpec> PARSER =
+        new com.google.protobuf.AbstractParser<ExportJobSpec>() {
+          @java.lang.Override
+          public ExportJobSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ExportJobSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ExportJobSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface StatusOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.MetadataJob.Status)
@@ -7726,6 +11773,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     IMPORT_SPEC(100),
+    EXPORT_SPEC(101),
     SPEC_NOT_SET(0);
     private final int value;
 
@@ -7746,6 +11794,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 100:
           return IMPORT_SPEC;
+        case 101:
+          return EXPORT_SPEC;
         case 0:
           return SPEC_NOT_SET;
         default:
@@ -7772,6 +11822,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     IMPORT_RESULT(200),
+    EXPORT_RESULT(201),
     RESULT_NOT_SET(0);
     private final int value;
 
@@ -7792,6 +11843,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 200:
           return IMPORT_RESULT;
+        case 201:
+          return EXPORT_RESULT;
         case 0:
           return RESULT_NOT_SET;
         default:
@@ -8216,6 +12269,57 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec.getDefaultInstance();
   }
 
+  public static final int EXPORT_SPEC_FIELD_NUMBER = 101;
+  /**
+   *
+   *
+   * <pre>
+   * Export job specification.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec export_spec = 101;</code>
+   *
+   * @return Whether the exportSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasExportSpec() {
+    return specCase_ == 101;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Export job specification.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec export_spec = 101;</code>
+   *
+   * @return The exportSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec getExportSpec() {
+    if (specCase_ == 101) {
+      return (com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec) spec_;
+    }
+    return com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Export job specification.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec export_spec = 101;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpecOrBuilder getExportSpecOrBuilder() {
+    if (specCase_ == 101) {
+      return (com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec) spec_;
+    }
+    return com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.getDefaultInstance();
+  }
+
   public static final int IMPORT_RESULT_FIELD_NUMBER = 200;
   /**
    *
@@ -8272,6 +12376,64 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.dataplex.v1.MetadataJob.ImportJobResult) result_;
     }
     return com.google.cloud.dataplex.v1.MetadataJob.ImportJobResult.getDefaultInstance();
+  }
+
+  public static final int EXPORT_RESULT_FIELD_NUMBER = 201;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Export job result.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.MetadataJob.ExportJobResult export_result = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the exportResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasExportResult() {
+    return resultCase_ == 201;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Export job result.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.MetadataJob.ExportJobResult export_result = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The exportResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult getExportResult() {
+    if (resultCase_ == 201) {
+      return (com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult) result_;
+    }
+    return com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Export job result.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.MetadataJob.ExportJobResult export_result = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.MetadataJob.ExportJobResultOrBuilder
+      getExportResultOrBuilder() {
+    if (resultCase_ == 201) {
+      return (com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult) result_;
+    }
+    return com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.getDefaultInstance();
   }
 
   public static final int STATUS_FIELD_NUMBER = 7;
@@ -8367,8 +12529,14 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     if (specCase_ == 100) {
       output.writeMessage(100, (com.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec) spec_);
     }
+    if (specCase_ == 101) {
+      output.writeMessage(101, (com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec) spec_);
+    }
     if (resultCase_ == 200) {
       output.writeMessage(200, (com.google.cloud.dataplex.v1.MetadataJob.ImportJobResult) result_);
+    }
+    if (resultCase_ == 201) {
+      output.writeMessage(201, (com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult) result_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -8412,10 +12580,20 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               100, (com.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec) spec_);
     }
+    if (specCase_ == 101) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              101, (com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec) spec_);
+    }
     if (resultCase_ == 200) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               200, (com.google.cloud.dataplex.v1.MetadataJob.ImportJobResult) result_);
+    }
+    if (resultCase_ == 201) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              201, (com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult) result_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -8453,6 +12631,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       case 100:
         if (!getImportSpec().equals(other.getImportSpec())) return false;
         break;
+      case 101:
+        if (!getExportSpec().equals(other.getExportSpec())) return false;
+        break;
       case 0:
       default:
     }
@@ -8460,6 +12641,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     switch (resultCase_) {
       case 200:
         if (!getImportResult().equals(other.getImportResult())) return false;
+        break;
+      case 201:
+        if (!getExportResult().equals(other.getExportResult())) return false;
         break;
       case 0:
       default:
@@ -8502,6 +12686,10 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + IMPORT_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getImportSpec().hashCode();
         break;
+      case 101:
+        hash = (37 * hash) + EXPORT_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getExportSpec().hashCode();
+        break;
       case 0:
       default:
     }
@@ -8509,6 +12697,10 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       case 200:
         hash = (37 * hash) + IMPORT_RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getImportResult().hashCode();
+        break;
+      case 201:
+        hash = (37 * hash) + EXPORT_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getExportResult().hashCode();
         break;
       case 0:
       default:
@@ -8702,8 +12894,14 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       if (importSpecBuilder_ != null) {
         importSpecBuilder_.clear();
       }
+      if (exportSpecBuilder_ != null) {
+        exportSpecBuilder_.clear();
+      }
       if (importResultBuilder_ != null) {
         importResultBuilder_.clear();
+      }
+      if (exportResultBuilder_ != null) {
+        exportResultBuilder_.clear();
       }
       status_ = null;
       if (statusBuilder_ != null) {
@@ -8773,7 +12971,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.type_ = type_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
@@ -8786,10 +12984,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       if (specCase_ == 100 && importSpecBuilder_ != null) {
         result.spec_ = importSpecBuilder_.build();
       }
+      if (specCase_ == 101 && exportSpecBuilder_ != null) {
+        result.spec_ = exportSpecBuilder_.build();
+      }
       result.resultCase_ = resultCase_;
       result.result_ = this.result_;
       if (resultCase_ == 200 && importResultBuilder_ != null) {
         result.result_ = importResultBuilder_.build();
+      }
+      if (resultCase_ == 201 && exportResultBuilder_ != null) {
+        result.result_ = exportResultBuilder_.build();
       }
     }
 
@@ -8868,6 +13072,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
             mergeImportSpec(other.getImportSpec());
             break;
           }
+        case EXPORT_SPEC:
+          {
+            mergeExportSpec(other.getExportSpec());
+            break;
+          }
         case SPEC_NOT_SET:
           {
             break;
@@ -8877,6 +13086,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         case IMPORT_RESULT:
           {
             mergeImportResult(other.getImportResult());
+            break;
+          }
+        case EXPORT_RESULT:
+          {
+            mergeExportResult(other.getExportResult());
             break;
           }
         case RESULT_NOT_SET:
@@ -8955,7 +13169,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 58
             case 802:
@@ -8964,12 +13178,24 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
                 specCase_ = 100;
                 break;
               } // case 802
+            case 810:
+              {
+                input.readMessage(getExportSpecFieldBuilder().getBuilder(), extensionRegistry);
+                specCase_ = 101;
+                break;
+              } // case 810
             case 1602:
               {
                 input.readMessage(getImportResultFieldBuilder().getBuilder(), extensionRegistry);
                 resultCase_ = 200;
                 break;
               } // case 1602
+            case 1610:
+              {
+                input.readMessage(getExportResultFieldBuilder().getBuilder(), extensionRegistry);
+                resultCase_ = 201;
+                break;
+              } // case 1610
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10150,6 +14376,217 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec,
+            com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.Builder,
+            com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpecOrBuilder>
+        exportSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Export job specification.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec export_spec = 101;</code>
+     *
+     * @return Whether the exportSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasExportSpec() {
+      return specCase_ == 101;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Export job specification.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec export_spec = 101;</code>
+     *
+     * @return The exportSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec getExportSpec() {
+      if (exportSpecBuilder_ == null) {
+        if (specCase_ == 101) {
+          return (com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec) spec_;
+        }
+        return com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.getDefaultInstance();
+      } else {
+        if (specCase_ == 101) {
+          return exportSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Export job specification.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec export_spec = 101;</code>
+     */
+    public Builder setExportSpec(com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec value) {
+      if (exportSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spec_ = value;
+        onChanged();
+      } else {
+        exportSpecBuilder_.setMessage(value);
+      }
+      specCase_ = 101;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Export job specification.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec export_spec = 101;</code>
+     */
+    public Builder setExportSpec(
+        com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.Builder builderForValue) {
+      if (exportSpecBuilder_ == null) {
+        spec_ = builderForValue.build();
+        onChanged();
+      } else {
+        exportSpecBuilder_.setMessage(builderForValue.build());
+      }
+      specCase_ = 101;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Export job specification.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec export_spec = 101;</code>
+     */
+    public Builder mergeExportSpec(com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec value) {
+      if (exportSpecBuilder_ == null) {
+        if (specCase_ == 101
+            && spec_
+                != com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.getDefaultInstance()) {
+          spec_ =
+              com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.newBuilder(
+                      (com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec) spec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          spec_ = value;
+        }
+        onChanged();
+      } else {
+        if (specCase_ == 101) {
+          exportSpecBuilder_.mergeFrom(value);
+        } else {
+          exportSpecBuilder_.setMessage(value);
+        }
+      }
+      specCase_ = 101;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Export job specification.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec export_spec = 101;</code>
+     */
+    public Builder clearExportSpec() {
+      if (exportSpecBuilder_ == null) {
+        if (specCase_ == 101) {
+          specCase_ = 0;
+          spec_ = null;
+          onChanged();
+        }
+      } else {
+        if (specCase_ == 101) {
+          specCase_ = 0;
+          spec_ = null;
+        }
+        exportSpecBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Export job specification.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec export_spec = 101;</code>
+     */
+    public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.Builder getExportSpecBuilder() {
+      return getExportSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Export job specification.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec export_spec = 101;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpecOrBuilder
+        getExportSpecOrBuilder() {
+      if ((specCase_ == 101) && (exportSpecBuilder_ != null)) {
+        return exportSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (specCase_ == 101) {
+          return (com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec) spec_;
+        }
+        return com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Export job specification.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec export_spec = 101;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec,
+            com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.Builder,
+            com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpecOrBuilder>
+        getExportSpecFieldBuilder() {
+      if (exportSpecBuilder_ == null) {
+        if (!(specCase_ == 101)) {
+          spec_ = com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.getDefaultInstance();
+        }
+        exportSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec,
+                com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.Builder,
+                com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpecOrBuilder>(
+                (com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec) spec_,
+                getParentForChildren(),
+                isClean());
+        spec_ = null;
+      }
+      specCase_ = 101;
+      onChanged();
+      return exportSpecBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataplex.v1.MetadataJob.ImportJobResult,
             com.google.cloud.dataplex.v1.MetadataJob.ImportJobResult.Builder,
             com.google.cloud.dataplex.v1.MetadataJob.ImportJobResultOrBuilder>
@@ -10380,6 +14817,237 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       return importResultBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult,
+            com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.Builder,
+            com.google.cloud.dataplex.v1.MetadataJob.ExportJobResultOrBuilder>
+        exportResultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Export job result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.MetadataJob.ExportJobResult export_result = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the exportResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasExportResult() {
+      return resultCase_ == 201;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Export job result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.MetadataJob.ExportJobResult export_result = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The exportResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult getExportResult() {
+      if (exportResultBuilder_ == null) {
+        if (resultCase_ == 201) {
+          return (com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult) result_;
+        }
+        return com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.getDefaultInstance();
+      } else {
+        if (resultCase_ == 201) {
+          return exportResultBuilder_.getMessage();
+        }
+        return com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Export job result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.MetadataJob.ExportJobResult export_result = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExportResult(com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult value) {
+      if (exportResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        result_ = value;
+        onChanged();
+      } else {
+        exportResultBuilder_.setMessage(value);
+      }
+      resultCase_ = 201;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Export job result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.MetadataJob.ExportJobResult export_result = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExportResult(
+        com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.Builder builderForValue) {
+      if (exportResultBuilder_ == null) {
+        result_ = builderForValue.build();
+        onChanged();
+      } else {
+        exportResultBuilder_.setMessage(builderForValue.build());
+      }
+      resultCase_ = 201;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Export job result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.MetadataJob.ExportJobResult export_result = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeExportResult(
+        com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult value) {
+      if (exportResultBuilder_ == null) {
+        if (resultCase_ == 201
+            && result_
+                != com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.getDefaultInstance()) {
+          result_ =
+              com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.newBuilder(
+                      (com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult) result_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          result_ = value;
+        }
+        onChanged();
+      } else {
+        if (resultCase_ == 201) {
+          exportResultBuilder_.mergeFrom(value);
+        } else {
+          exportResultBuilder_.setMessage(value);
+        }
+      }
+      resultCase_ = 201;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Export job result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.MetadataJob.ExportJobResult export_result = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearExportResult() {
+      if (exportResultBuilder_ == null) {
+        if (resultCase_ == 201) {
+          resultCase_ = 0;
+          result_ = null;
+          onChanged();
+        }
+      } else {
+        if (resultCase_ == 201) {
+          resultCase_ = 0;
+          result_ = null;
+        }
+        exportResultBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Export job result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.MetadataJob.ExportJobResult export_result = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.Builder
+        getExportResultBuilder() {
+      return getExportResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Export job result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.MetadataJob.ExportJobResult export_result = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.MetadataJob.ExportJobResultOrBuilder
+        getExportResultOrBuilder() {
+      if ((resultCase_ == 201) && (exportResultBuilder_ != null)) {
+        return exportResultBuilder_.getMessageOrBuilder();
+      } else {
+        if (resultCase_ == 201) {
+          return (com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult) result_;
+        }
+        return com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Export job result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.MetadataJob.ExportJobResult export_result = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult,
+            com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.Builder,
+            com.google.cloud.dataplex.v1.MetadataJob.ExportJobResultOrBuilder>
+        getExportResultFieldBuilder() {
+      if (exportResultBuilder_ == null) {
+        if (!(resultCase_ == 201)) {
+          result_ = com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.getDefaultInstance();
+        }
+        exportResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult,
+                com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult.Builder,
+                com.google.cloud.dataplex.v1.MetadataJob.ExportJobResultOrBuilder>(
+                (com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult) result_,
+                getParentForChildren(),
+                isClean());
+        result_ = null;
+      }
+      resultCase_ = 201;
+      onChanged();
+      return exportResultBuilder_;
+    }
+
     private com.google.cloud.dataplex.v1.MetadataJob.Status status_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataplex.v1.MetadataJob.Status,
@@ -10400,7 +15068,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -10444,7 +15112,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         statusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -10466,7 +15134,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -10483,7 +15151,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStatus(com.google.cloud.dataplex.v1.MetadataJob.Status value) {
       if (statusBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && status_ != null
             && status_ != com.google.cloud.dataplex.v1.MetadataJob.Status.getDefaultInstance()) {
           getStatusBuilder().mergeFrom(value);
@@ -10494,7 +15162,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
         statusBuilder_.mergeFrom(value);
       }
       if (status_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -10511,7 +15179,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       status_ = null;
       if (statusBuilder_ != null) {
         statusBuilder_.dispose();
@@ -10532,7 +15200,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.dataplex.v1.MetadataJob.Status.Builder getStatusBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }

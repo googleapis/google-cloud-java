@@ -107,4 +107,30 @@ public interface TransferCountersOrBuilder
    * @return The bytesCopied.
    */
   long getBytesCopied();
+
+  /**
+   *
+   *
+   * <pre>
+   * Objects that are failed to write to the data destination.
+   * </pre>
+   *
+   * <code>int64 objects_failed = 7;</code>
+   *
+   * @return The objectsFailed.
+   */
+  long getObjectsFailed();
+
+  /**
+   *
+   *
+   * <pre>
+   * Bytes that are failed to write to the data destination.
+   * </pre>
+   *
+   * <code>int64 bytes_failed = 8;</code>
+   *
+   * @return The bytesFailed.
+   */
+  long getBytesFailed();
 }

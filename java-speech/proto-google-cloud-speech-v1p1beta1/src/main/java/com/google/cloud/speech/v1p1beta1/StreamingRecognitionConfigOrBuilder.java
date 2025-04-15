@@ -85,8 +85,9 @@ public interface StreamingRecognitionConfigOrBuilder
    * `true`.
    *
    * The `single_utterance` field can only be used with specified models,
-   * otherwise an error is thrown. The `model` field in [`RecognitionConfig`][]
-   * must be set to:
+   * otherwise an error is thrown. The `model` field in
+   * [RecognitionConfig][google.cloud.speech.v1p1beta1.RecognitionConfig] must
+   * be set to:
    *
    * * `command_and_search`
    * * `phone_call` AND additional field `useEnhanced`=`true`

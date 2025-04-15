@@ -23,7 +23,7 @@
               "methods": ["searchUris", "searchUris", "searchUrisCallable"]
             },
             "SubmitUri": {
-              "methods": ["submitUriAsync", "submitUriOperationCallable", "submitUriCallable"]
+              "methods": ["submitUriAsync", "submitUriAsync", "submitUriAsync", "submitUriOperationCallable", "submitUriCallable"]
             }
           }
         }

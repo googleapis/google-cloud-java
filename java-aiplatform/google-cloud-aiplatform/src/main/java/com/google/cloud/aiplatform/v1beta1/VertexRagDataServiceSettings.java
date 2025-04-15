@@ -216,6 +216,26 @@ public class VertexRagDataServiceSettings extends ClientSettings<VertexRagDataSe
     return ((VertexRagDataServiceStubSettings) getStubSettings()).deleteRagFileOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateRagEngineConfig. */
+  public UnaryCallSettings<UpdateRagEngineConfigRequest, Operation>
+      updateRagEngineConfigSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).updateRagEngineConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateRagEngineConfig. */
+  public OperationCallSettings<
+          UpdateRagEngineConfigRequest, RagEngineConfig, UpdateRagEngineConfigOperationMetadata>
+      updateRagEngineConfigOperationSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings())
+        .updateRagEngineConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getRagEngineConfig. */
+  public UnaryCallSettings<GetRagEngineConfigRequest, RagEngineConfig>
+      getRagEngineConfigSettings() {
+    return ((VertexRagDataServiceStubSettings) getStubSettings()).getRagEngineConfigSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -426,6 +446,25 @@ public class VertexRagDataServiceSettings extends ClientSettings<VertexRagDataSe
     public OperationCallSettings.Builder<DeleteRagFileRequest, Empty, DeleteOperationMetadata>
         deleteRagFileOperationSettings() {
       return getStubSettingsBuilder().deleteRagFileOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateRagEngineConfig. */
+    public UnaryCallSettings.Builder<UpdateRagEngineConfigRequest, Operation>
+        updateRagEngineConfigSettings() {
+      return getStubSettingsBuilder().updateRagEngineConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateRagEngineConfig. */
+    public OperationCallSettings.Builder<
+            UpdateRagEngineConfigRequest, RagEngineConfig, UpdateRagEngineConfigOperationMetadata>
+        updateRagEngineConfigOperationSettings() {
+      return getStubSettingsBuilder().updateRagEngineConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getRagEngineConfig. */
+    public UnaryCallSettings.Builder<GetRagEngineConfigRequest, RagEngineConfig>
+        getRagEngineConfigSettings() {
+      return getStubSettingsBuilder().getRagEngineConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

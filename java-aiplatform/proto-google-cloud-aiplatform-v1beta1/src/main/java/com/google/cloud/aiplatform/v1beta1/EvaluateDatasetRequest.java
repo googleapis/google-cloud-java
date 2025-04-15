@@ -321,7 +321,9 @@ public final class EvaluateDatasetRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. Autorater config used for evaluation.
+   * Optional. Autorater config used for evaluation. Currently only publisher
+   * Gemini models are supported. Format:
+   * `projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}.`
    * </pre>
    *
    * <code>
@@ -338,7 +340,9 @@ public final class EvaluateDatasetRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. Autorater config used for evaluation.
+   * Optional. Autorater config used for evaluation. Currently only publisher
+   * Gemini models are supported. Format:
+   * `projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}.`
    * </pre>
    *
    * <code>
@@ -357,7 +361,9 @@ public final class EvaluateDatasetRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. Autorater config used for evaluation.
+   * Optional. Autorater config used for evaluation. Currently only publisher
+   * Gemini models are supported. Format:
+   * `projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}.`
    * </pre>
    *
    * <code>
@@ -1825,7 +1831,9 @@ public final class EvaluateDatasetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Autorater config used for evaluation.
+     * Optional. Autorater config used for evaluation. Currently only publisher
+     * Gemini models are supported. Format:
+     * `projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}.`
      * </pre>
      *
      * <code>
@@ -1841,7 +1849,9 @@ public final class EvaluateDatasetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Autorater config used for evaluation.
+     * Optional. Autorater config used for evaluation. Currently only publisher
+     * Gemini models are supported. Format:
+     * `projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}.`
      * </pre>
      *
      * <code>
@@ -1863,7 +1873,9 @@ public final class EvaluateDatasetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Autorater config used for evaluation.
+     * Optional. Autorater config used for evaluation. Currently only publisher
+     * Gemini models are supported. Format:
+     * `projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}.`
      * </pre>
      *
      * <code>
@@ -1887,7 +1899,9 @@ public final class EvaluateDatasetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Autorater config used for evaluation.
+     * Optional. Autorater config used for evaluation. Currently only publisher
+     * Gemini models are supported. Format:
+     * `projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}.`
      * </pre>
      *
      * <code>
@@ -1909,7 +1923,9 @@ public final class EvaluateDatasetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Autorater config used for evaluation.
+     * Optional. Autorater config used for evaluation. Currently only publisher
+     * Gemini models are supported. Format:
+     * `projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}.`
      * </pre>
      *
      * <code>
@@ -1939,7 +1955,9 @@ public final class EvaluateDatasetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Autorater config used for evaluation.
+     * Optional. Autorater config used for evaluation. Currently only publisher
+     * Gemini models are supported. Format:
+     * `projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}.`
      * </pre>
      *
      * <code>
@@ -1960,7 +1978,9 @@ public final class EvaluateDatasetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Autorater config used for evaluation.
+     * Optional. Autorater config used for evaluation. Currently only publisher
+     * Gemini models are supported. Format:
+     * `projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}.`
      * </pre>
      *
      * <code>
@@ -1976,7 +1996,9 @@ public final class EvaluateDatasetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Autorater config used for evaluation.
+     * Optional. Autorater config used for evaluation. Currently only publisher
+     * Gemini models are supported. Format:
+     * `projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}.`
      * </pre>
      *
      * <code>
@@ -1997,7 +2019,9 @@ public final class EvaluateDatasetRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Autorater config used for evaluation.
+     * Optional. Autorater config used for evaluation. Currently only publisher
+     * Gemini models are supported. Format:
+     * `projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}.`
      * </pre>
      *
      * <code>

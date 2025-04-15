@@ -56,6 +56,10 @@ public final class DataDiscoveryProto {
       internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_BigQueryPublishing_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_BigQueryPublishing_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_ScanStatistics_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_ScanStatistics_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -94,19 +98,29 @@ public final class DataDiscoveryProto {
           + "\004 \001(\010B\003\340A\001\022\022\n\005quote\030\005 \001(\tB\003\340A\001\032J\n\013JsonOp"
           + "tions\022\025\n\010encoding\030\001 \001(\tB\003\340A\001\022$\n\027type_inf"
           + "erence_disabled\030\002 \001(\010B\003\340A\001B\021\n\017resource_c"
-          + "onfig\"\311\001\n\023DataDiscoveryResult\022b\n\023bigquer"
+          + "onfig\"\267\004\n\023DataDiscoveryResult\022b\n\023bigquer"
           + "y_publishing\030\001 \001(\0132@.google.cloud.datapl"
           + "ex.v1.DataDiscoveryResult.BigQueryPublis"
-          + "hingB\003\340A\003\032N\n\022BigQueryPublishing\0228\n\007datas"
-          + "et\030\001 \001(\tB\'\340A\003\372A!\n\037bigquery.googleapis.co"
-          + "m/DatasetB\254\002\n\034com.google.cloud.dataplex."
-          + "v1B\022DataDiscoveryProtoP\001Z8cloud.google.c"
-          + "om/go/dataplex/apiv1/dataplexpb;dataplex"
-          + "pb\352AH\n\037bigquery.googleapis.com/Dataset\022%"
-          + "projects/{project}/datasets/{dataset}\352Ap"
-          + "\n,bigqueryconnection.googleapis.com/Conn"
-          + "ection\022@projects/{project}/locations/{lo"
-          + "cation}/connections/{connection}b\006proto3"
+          + "hingB\003\340A\003\022Z\n\017scan_statistics\030\002 \001(\0132<.goo"
+          + "gle.cloud.dataplex.v1.DataDiscoveryResul"
+          + "t.ScanStatisticsB\003\340A\003\032e\n\022BigQueryPublish"
+          + "ing\0228\n\007dataset\030\001 \001(\tB\'\340A\003\372A!\n\037bigquery.g"
+          + "oogleapis.com/Dataset\022\025\n\010location\030\002 \001(\tB"
+          + "\003\340A\003\032\370\001\n\016ScanStatistics\022\032\n\022scanned_file_"
+          + "count\030\001 \001(\005\022\034\n\024data_processed_bytes\030\002 \001("
+          + "\003\022\026\n\016files_excluded\030\003 \001(\005\022\026\n\016tables_crea"
+          + "ted\030\004 \001(\005\022\026\n\016tables_deleted\030\005 \001(\005\022\026\n\016tab"
+          + "les_updated\030\006 \001(\005\022\030\n\020filesets_created\030\007 "
+          + "\001(\005\022\030\n\020filesets_deleted\030\010 \001(\005\022\030\n\020fileset"
+          + "s_updated\030\t \001(\005B\254\002\n\034com.google.cloud.dat"
+          + "aplex.v1B\022DataDiscoveryProtoP\001Z8cloud.go"
+          + "ogle.com/go/dataplex/apiv1/dataplexpb;da"
+          + "taplexpb\352AH\n\037bigquery.googleapis.com/Dat"
+          + "aset\022%projects/{project}/datasets/{datas"
+          + "et}\352Ap\n,bigqueryconnection.googleapis.co"
+          + "m/Connection\022@projects/{project}/locatio"
+          + "ns/{location}/connections/{connection}b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -169,7 +183,7 @@ public final class DataDiscoveryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_descriptor,
             new java.lang.String[] {
-              "BigqueryPublishing",
+              "BigqueryPublishing", "ScanStatistics",
             });
     internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_BigQueryPublishing_descriptor =
         internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_descriptor
@@ -179,7 +193,25 @@ public final class DataDiscoveryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_BigQueryPublishing_descriptor,
             new java.lang.String[] {
-              "Dataset",
+              "Dataset", "Location",
+            });
+    internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_ScanStatistics_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_ScanStatistics_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_ScanStatistics_descriptor,
+            new java.lang.String[] {
+              "ScannedFileCount",
+              "DataProcessedBytes",
+              "FilesExcluded",
+              "TablesCreated",
+              "TablesDeleted",
+              "TablesUpdated",
+              "FilesetsCreated",
+              "FilesetsDeleted",
+              "FilesetsUpdated",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

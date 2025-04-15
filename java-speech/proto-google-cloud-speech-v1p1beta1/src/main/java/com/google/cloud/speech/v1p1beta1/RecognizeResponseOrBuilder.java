@@ -165,4 +165,18 @@ public interface RecognizeResponseOrBuilder
    * @return The requestId.
    */
   long getRequestId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether request used legacy asr models (was not automatically migrated to
+   * use conformer models).
+   * </pre>
+   *
+   * <code>bool using_legacy_models = 9;</code>
+   *
+   * @return The usingLegacyModels.
+   */
+  boolean getUsingLegacyModels();
 }

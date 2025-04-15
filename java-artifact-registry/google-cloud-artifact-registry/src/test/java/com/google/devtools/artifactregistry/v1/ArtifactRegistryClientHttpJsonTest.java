@@ -1123,6 +1123,7 @@ public class ArtifactRegistryClientHttpJsonTest {
                 Repository.VulnerabilityScanningConfig.newBuilder().build())
             .setDisallowUnspecifiedMode(true)
             .setSatisfiesPzi(true)
+            .setRegistryUri("registryUri-2121082897")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1180,6 +1181,7 @@ public class ArtifactRegistryClientHttpJsonTest {
                 Repository.VulnerabilityScanningConfig.newBuilder().build())
             .setDisallowUnspecifiedMode(true)
             .setSatisfiesPzi(true)
+            .setRegistryUri("registryUri-2121082897")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1237,6 +1239,7 @@ public class ArtifactRegistryClientHttpJsonTest {
                 Repository.VulnerabilityScanningConfig.newBuilder().build())
             .setDisallowUnspecifiedMode(true)
             .setSatisfiesPzi(true)
+            .setRegistryUri("registryUri-2121082897")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1304,6 +1307,7 @@ public class ArtifactRegistryClientHttpJsonTest {
                 Repository.VulnerabilityScanningConfig.newBuilder().build())
             .setDisallowUnspecifiedMode(true)
             .setSatisfiesPzi(true)
+            .setRegistryUri("registryUri-2121082897")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1371,6 +1375,7 @@ public class ArtifactRegistryClientHttpJsonTest {
                 Repository.VulnerabilityScanningConfig.newBuilder().build())
             .setDisallowUnspecifiedMode(true)
             .setSatisfiesPzi(true)
+            .setRegistryUri("registryUri-2121082897")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1390,6 +1395,7 @@ public class ArtifactRegistryClientHttpJsonTest {
                 Repository.VulnerabilityScanningConfig.newBuilder().build())
             .setDisallowUnspecifiedMode(true)
             .setSatisfiesPzi(true)
+            .setRegistryUri("registryUri-2121082897")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1435,6 +1441,7 @@ public class ArtifactRegistryClientHttpJsonTest {
                   Repository.VulnerabilityScanningConfig.newBuilder().build())
               .setDisallowUnspecifiedMode(true)
               .setSatisfiesPzi(true)
+              .setRegistryUri("registryUri-2121082897")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateRepository(repository, updateMask);

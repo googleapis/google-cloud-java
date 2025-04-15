@@ -1004,6 +1004,7 @@ public class ArtifactRegistryClientTest {
                 Repository.VulnerabilityScanningConfig.newBuilder().build())
             .setDisallowUnspecifiedMode(true)
             .setSatisfiesPzi(true)
+            .setRegistryUri("registryUri-2121082897")
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
@@ -1055,6 +1056,7 @@ public class ArtifactRegistryClientTest {
                 Repository.VulnerabilityScanningConfig.newBuilder().build())
             .setDisallowUnspecifiedMode(true)
             .setSatisfiesPzi(true)
+            .setRegistryUri("registryUri-2121082897")
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
@@ -1106,6 +1108,7 @@ public class ArtifactRegistryClientTest {
                 Repository.VulnerabilityScanningConfig.newBuilder().build())
             .setDisallowUnspecifiedMode(true)
             .setSatisfiesPzi(true)
+            .setRegistryUri("registryUri-2121082897")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1172,6 +1175,7 @@ public class ArtifactRegistryClientTest {
                 Repository.VulnerabilityScanningConfig.newBuilder().build())
             .setDisallowUnspecifiedMode(true)
             .setSatisfiesPzi(true)
+            .setRegistryUri("registryUri-2121082897")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1238,6 +1242,7 @@ public class ArtifactRegistryClientTest {
                 Repository.VulnerabilityScanningConfig.newBuilder().build())
             .setDisallowUnspecifiedMode(true)
             .setSatisfiesPzi(true)
+            .setRegistryUri("registryUri-2121082897")
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 

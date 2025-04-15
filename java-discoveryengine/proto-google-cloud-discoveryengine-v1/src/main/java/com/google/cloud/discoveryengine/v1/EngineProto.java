@@ -66,7 +66,7 @@ public final class EngineProto {
           + "\037google/api/field_behavior.proto\032\031google"
           + "/api/resource.proto\032,google/cloud/discov"
           + "eryengine/v1/common.proto\032\037google/protob"
-          + "uf/timestamp.proto\"\203\013\n\006Engine\022V\n\022chat_en"
+          + "uf/timestamp.proto\"\244\013\n\006Engine\022V\n\022chat_en"
           + "gine_config\030\013 \001(\01328.google.cloud.discove"
           + "ryengine.v1.Engine.ChatEngineConfigH\000\022Z\n"
           + "\024search_engine_config\030\r \001(\0132:.google.clo"
@@ -88,27 +88,28 @@ public final class EngineProto {
           + "ineConfig\022@\n\013search_tier\030\001 \001(\0162+.google."
           + "cloud.discoveryengine.v1.SearchTier\022D\n\016s"
           + "earch_add_ons\030\002 \003(\0162,.google.cloud.disco"
-          + "veryengine.v1.SearchAddOn\032\223\002\n\020ChatEngine"
+          + "veryengine.v1.SearchAddOn\032\264\002\n\020ChatEngine"
           + "Config\022k\n\025agent_creation_config\030\001 \001(\0132L."
           + "google.cloud.discoveryengine.v1.Engine.C"
           + "hatEngineConfig.AgentCreationConfig\022 \n\030d"
-          + "ialogflow_agent_to_link\030\002 \001(\t\032p\n\023AgentCr"
-          + "eationConfig\022\020\n\010business\030\001 \001(\t\022\035\n\025defaul"
-          + "t_language_code\030\002 \001(\t\022\026\n\ttime_zone\030\003 \001(\t"
-          + "B\003\340A\002\022\020\n\010location\030\004 \001(\t\032$\n\014CommonConfig\022"
-          + "\024\n\014company_name\030\001 \001(\t\032.\n\022ChatEngineMetad"
-          + "ata\022\030\n\020dialogflow_agent\030\001 \001(\t:}\352Az\n%disc"
-          + "overyengine.googleapis.com/Engine\022Qproje"
-          + "cts/{project}/locations/{location}/colle"
-          + "ctions/{collection}/engines/{engine}B\017\n\r"
-          + "engine_configB\021\n\017engine_metadataB\376\001\n#com"
-          + ".google.cloud.discoveryengine.v1B\013Engine"
-          + "ProtoP\001ZMcloud.google.com/go/discoveryen"
-          + "gine/apiv1/discoveryenginepb;discoveryen"
-          + "ginepb\242\002\017DISCOVERYENGINE\252\002\037Google.Cloud."
-          + "DiscoveryEngine.V1\312\002\037Google\\Cloud\\Discov"
-          + "eryEngine\\V1\352\002\"Google::Cloud::DiscoveryE"
-          + "ngine::V1b\006proto3"
+          + "ialogflow_agent_to_link\030\002 \001(\t\022\037\n\022allow_c"
+          + "ross_region\030\003 \001(\010B\003\340A\001\032p\n\023AgentCreationC"
+          + "onfig\022\020\n\010business\030\001 \001(\t\022\035\n\025default_langu"
+          + "age_code\030\002 \001(\t\022\026\n\ttime_zone\030\003 \001(\tB\003\340A\002\022\020"
+          + "\n\010location\030\004 \001(\t\032$\n\014CommonConfig\022\024\n\014comp"
+          + "any_name\030\001 \001(\t\032.\n\022ChatEngineMetadata\022\030\n\020"
+          + "dialogflow_agent\030\001 \001(\t:}\352Az\n%discoveryen"
+          + "gine.googleapis.com/Engine\022Qprojects/{pr"
+          + "oject}/locations/{location}/collections/"
+          + "{collection}/engines/{engine}B\017\n\rengine_"
+          + "configB\021\n\017engine_metadataB\376\001\n#com.google"
+          + ".cloud.discoveryengine.v1B\013EngineProtoP\001"
+          + "ZMcloud.google.com/go/discoveryengine/ap"
+          + "iv1/discoveryenginepb;discoveryenginepb\242"
+          + "\002\017DISCOVERYENGINE\252\002\037Google.Cloud.Discove"
+          + "ryEngine.V1\312\002\037Google\\Cloud\\DiscoveryEngi"
+          + "ne\\V1\352\002\"Google::Cloud::DiscoveryEngine::"
+          + "V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -154,7 +155,7 @@ public final class EngineProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_Engine_ChatEngineConfig_descriptor,
             new java.lang.String[] {
-              "AgentCreationConfig", "DialogflowAgentToLink",
+              "AgentCreationConfig", "DialogflowAgentToLink", "AllowCrossRegion",
             });
     internal_static_google_cloud_discoveryengine_v1_Engine_ChatEngineConfig_AgentCreationConfig_descriptor =
         internal_static_google_cloud_discoveryengine_v1_Engine_ChatEngineConfig_descriptor

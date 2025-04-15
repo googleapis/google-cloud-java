@@ -23,7 +23,9 @@ package com.google.cloud.networkconnectivity.v1;
  *
  *
  * <pre>
- * Request for [PolicyBasedRouting.CreatePolicyBasedRoute][] method.
+ * Request for
+ * [PolicyBasedRoutingService.CreatePolicyBasedRoute][google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.CreatePolicyBasedRoute]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkconnectivity.v1.CreatePolicyBasedRouteRequest}
@@ -129,7 +131,14 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. Unique id for the Policy Based Route to create.
+   * Required. Unique id for the policy-based route to create. Provided by the
+   * client when the resource is created. The name must comply with
+   * https://google.aip.dev/122#resource-id-segments. Specifically, the name
+   * must be 1-63 characters long and match the regular expression
+   * [a-z]([a-z0-9-]*[a-z0-9])?. The first character must be a lowercase letter,
+   * and all following characters (except for the last character) must be a
+   * dash, lowercase letter, or digit. The last character must be a lowercase
+   * letter or digit.
    * </pre>
    *
    * <code>string policy_based_route_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -152,7 +161,14 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. Unique id for the Policy Based Route to create.
+   * Required. Unique id for the policy-based route to create. Provided by the
+   * client when the resource is created. The name must comply with
+   * https://google.aip.dev/122#resource-id-segments. Specifically, the name
+   * must be 1-63 characters long and match the regular expression
+   * [a-z]([a-z0-9-]*[a-z0-9])?. The first character must be a lowercase letter,
+   * and all following characters (except for the last character) must be a
+   * dash, lowercase letter, or digit. The last character must be a lowercase
+   * letter or digit.
    * </pre>
    *
    * <code>string policy_based_route_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -178,7 +194,7 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. Initial values for a new Policy Based Route.
+   * Required. Initial values for a new policy-based route.
    * </pre>
    *
    * <code>
@@ -195,7 +211,7 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. Initial values for a new Policy Based Route.
+   * Required. Initial values for a new policy-based route.
    * </pre>
    *
    * <code>
@@ -214,7 +230,7 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. Initial values for a new Policy Based Route.
+   * Required. Initial values for a new policy-based route.
    * </pre>
    *
    * <code>
@@ -238,15 +254,15 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Optional. An optional request ID to identify requests. Specify a unique
-   * request ID so that if you must retry your request, the server will know to
-   * ignore the request if it has already been completed. The server will
-   * guarantee that for at least 60 minutes since the first request.
+   * request ID so that if you must retry your request, the server knows to
+   * ignore the request if it has already been completed. The server guarantees
+   * that for at least 60 minutes since the first request.
    *
    * For example, consider a situation where you make an initial request and
    * the request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
-   * was received, and if so, will ignore the second request. This prevents
-   * clients from accidentally creating duplicate commitments.
+   * was received, and if so, ignores the second request. This prevents clients
+   * from accidentally creating duplicate commitments.
    *
    * The request ID must be a valid UUID with the exception that zero UUID is
    * not supported (00000000-0000-0000-0000-000000000000).
@@ -273,15 +289,15 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Optional. An optional request ID to identify requests. Specify a unique
-   * request ID so that if you must retry your request, the server will know to
-   * ignore the request if it has already been completed. The server will
-   * guarantee that for at least 60 minutes since the first request.
+   * request ID so that if you must retry your request, the server knows to
+   * ignore the request if it has already been completed. The server guarantees
+   * that for at least 60 minutes since the first request.
    *
    * For example, consider a situation where you make an initial request and
    * the request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
-   * was received, and if so, will ignore the second request. This prevents
-   * clients from accidentally creating duplicate commitments.
+   * was received, and if so, ignores the second request. This prevents clients
+   * from accidentally creating duplicate commitments.
    *
    * The request ID must be a valid UUID with the exception that zero UUID is
    * not supported (00000000-0000-0000-0000-000000000000).
@@ -501,7 +517,9 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Request for [PolicyBasedRouting.CreatePolicyBasedRoute][] method.
+   * Request for
+   * [PolicyBasedRoutingService.CreatePolicyBasedRoute][google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.CreatePolicyBasedRoute]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.CreatePolicyBasedRouteRequest}
@@ -869,7 +887,14 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Unique id for the Policy Based Route to create.
+     * Required. Unique id for the policy-based route to create. Provided by the
+     * client when the resource is created. The name must comply with
+     * https://google.aip.dev/122#resource-id-segments. Specifically, the name
+     * must be 1-63 characters long and match the regular expression
+     * [a-z]([a-z0-9-]*[a-z0-9])?. The first character must be a lowercase letter,
+     * and all following characters (except for the last character) must be a
+     * dash, lowercase letter, or digit. The last character must be a lowercase
+     * letter or digit.
      * </pre>
      *
      * <code>string policy_based_route_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -891,7 +916,14 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Unique id for the Policy Based Route to create.
+     * Required. Unique id for the policy-based route to create. Provided by the
+     * client when the resource is created. The name must comply with
+     * https://google.aip.dev/122#resource-id-segments. Specifically, the name
+     * must be 1-63 characters long and match the regular expression
+     * [a-z]([a-z0-9-]*[a-z0-9])?. The first character must be a lowercase letter,
+     * and all following characters (except for the last character) must be a
+     * dash, lowercase letter, or digit. The last character must be a lowercase
+     * letter or digit.
      * </pre>
      *
      * <code>string policy_based_route_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -913,7 +945,14 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Unique id for the Policy Based Route to create.
+     * Required. Unique id for the policy-based route to create. Provided by the
+     * client when the resource is created. The name must comply with
+     * https://google.aip.dev/122#resource-id-segments. Specifically, the name
+     * must be 1-63 characters long and match the regular expression
+     * [a-z]([a-z0-9-]*[a-z0-9])?. The first character must be a lowercase letter,
+     * and all following characters (except for the last character) must be a
+     * dash, lowercase letter, or digit. The last character must be a lowercase
+     * letter or digit.
      * </pre>
      *
      * <code>string policy_based_route_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -934,7 +973,14 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Unique id for the Policy Based Route to create.
+     * Required. Unique id for the policy-based route to create. Provided by the
+     * client when the resource is created. The name must comply with
+     * https://google.aip.dev/122#resource-id-segments. Specifically, the name
+     * must be 1-63 characters long and match the regular expression
+     * [a-z]([a-z0-9-]*[a-z0-9])?. The first character must be a lowercase letter,
+     * and all following characters (except for the last character) must be a
+     * dash, lowercase letter, or digit. The last character must be a lowercase
+     * letter or digit.
      * </pre>
      *
      * <code>string policy_based_route_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -951,7 +997,14 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Unique id for the Policy Based Route to create.
+     * Required. Unique id for the policy-based route to create. Provided by the
+     * client when the resource is created. The name must comply with
+     * https://google.aip.dev/122#resource-id-segments. Specifically, the name
+     * must be 1-63 characters long and match the regular expression
+     * [a-z]([a-z0-9-]*[a-z0-9])?. The first character must be a lowercase letter,
+     * and all following characters (except for the last character) must be a
+     * dash, lowercase letter, or digit. The last character must be a lowercase
+     * letter or digit.
      * </pre>
      *
      * <code>string policy_based_route_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -980,7 +1033,7 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Initial values for a new Policy Based Route.
+     * Required. Initial values for a new policy-based route.
      * </pre>
      *
      * <code>
@@ -996,7 +1049,7 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Initial values for a new Policy Based Route.
+     * Required. Initial values for a new policy-based route.
      * </pre>
      *
      * <code>
@@ -1018,7 +1071,7 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Initial values for a new Policy Based Route.
+     * Required. Initial values for a new policy-based route.
      * </pre>
      *
      * <code>
@@ -1043,7 +1096,7 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Initial values for a new Policy Based Route.
+     * Required. Initial values for a new policy-based route.
      * </pre>
      *
      * <code>
@@ -1065,7 +1118,7 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Initial values for a new Policy Based Route.
+     * Required. Initial values for a new policy-based route.
      * </pre>
      *
      * <code>
@@ -1096,7 +1149,7 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Initial values for a new Policy Based Route.
+     * Required. Initial values for a new policy-based route.
      * </pre>
      *
      * <code>
@@ -1117,7 +1170,7 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Initial values for a new Policy Based Route.
+     * Required. Initial values for a new policy-based route.
      * </pre>
      *
      * <code>
@@ -1134,7 +1187,7 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Initial values for a new Policy Based Route.
+     * Required. Initial values for a new policy-based route.
      * </pre>
      *
      * <code>
@@ -1155,7 +1208,7 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Initial values for a new Policy Based Route.
+     * Required. Initial values for a new policy-based route.
      * </pre>
      *
      * <code>
@@ -1185,15 +1238,15 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Optional. An optional request ID to identify requests. Specify a unique
-     * request ID so that if you must retry your request, the server will know to
-     * ignore the request if it has already been completed. The server will
-     * guarantee that for at least 60 minutes since the first request.
+     * request ID so that if you must retry your request, the server knows to
+     * ignore the request if it has already been completed. The server guarantees
+     * that for at least 60 minutes since the first request.
      *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
-     * was received, and if so, will ignore the second request. This prevents
-     * clients from accidentally creating duplicate commitments.
+     * was received, and if so, ignores the second request. This prevents clients
+     * from accidentally creating duplicate commitments.
      *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
@@ -1219,15 +1272,15 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Optional. An optional request ID to identify requests. Specify a unique
-     * request ID so that if you must retry your request, the server will know to
-     * ignore the request if it has already been completed. The server will
-     * guarantee that for at least 60 minutes since the first request.
+     * request ID so that if you must retry your request, the server knows to
+     * ignore the request if it has already been completed. The server guarantees
+     * that for at least 60 minutes since the first request.
      *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
-     * was received, and if so, will ignore the second request. This prevents
-     * clients from accidentally creating duplicate commitments.
+     * was received, and if so, ignores the second request. This prevents clients
+     * from accidentally creating duplicate commitments.
      *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
@@ -1253,15 +1306,15 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Optional. An optional request ID to identify requests. Specify a unique
-     * request ID so that if you must retry your request, the server will know to
-     * ignore the request if it has already been completed. The server will
-     * guarantee that for at least 60 minutes since the first request.
+     * request ID so that if you must retry your request, the server knows to
+     * ignore the request if it has already been completed. The server guarantees
+     * that for at least 60 minutes since the first request.
      *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
-     * was received, and if so, will ignore the second request. This prevents
-     * clients from accidentally creating duplicate commitments.
+     * was received, and if so, ignores the second request. This prevents clients
+     * from accidentally creating duplicate commitments.
      *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
@@ -1286,15 +1339,15 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Optional. An optional request ID to identify requests. Specify a unique
-     * request ID so that if you must retry your request, the server will know to
-     * ignore the request if it has already been completed. The server will
-     * guarantee that for at least 60 minutes since the first request.
+     * request ID so that if you must retry your request, the server knows to
+     * ignore the request if it has already been completed. The server guarantees
+     * that for at least 60 minutes since the first request.
      *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
-     * was received, and if so, will ignore the second request. This prevents
-     * clients from accidentally creating duplicate commitments.
+     * was received, and if so, ignores the second request. This prevents clients
+     * from accidentally creating duplicate commitments.
      *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).
@@ -1315,15 +1368,15 @@ public final class CreatePolicyBasedRouteRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Optional. An optional request ID to identify requests. Specify a unique
-     * request ID so that if you must retry your request, the server will know to
-     * ignore the request if it has already been completed. The server will
-     * guarantee that for at least 60 minutes since the first request.
+     * request ID so that if you must retry your request, the server knows to
+     * ignore the request if it has already been completed. The server guarantees
+     * that for at least 60 minutes since the first request.
      *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
-     * was received, and if so, will ignore the second request. This prevents
-     * clients from accidentally creating duplicate commitments.
+     * was received, and if so, ignores the second request. This prevents clients
+     * from accidentally creating duplicate commitments.
      *
      * The request ID must be a valid UUID with the exception that zero UUID is
      * not supported (00000000-0000-0000-0000-000000000000).

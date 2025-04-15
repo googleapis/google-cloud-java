@@ -70,9 +70,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The BigQuery dataset to publish to. It takes the form
-     * `projects/{project_id}/datasets/{dataset_id}`.
-     * If not set, the service creates a default publishing dataset.
+     * Output only. The BigQuery dataset the discovered tables are published to.
      * </pre>
      *
      * <code>
@@ -86,9 +84,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The BigQuery dataset to publish to. It takes the form
-     * `projects/{project_id}/datasets/{dataset_id}`.
-     * If not set, the service creates a default publishing dataset.
+     * Output only. The BigQuery dataset the discovered tables are published to.
      * </pre>
      *
      * <code>
@@ -98,6 +94,31 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
      * @return The bytes for dataset.
      */
     com.google.protobuf.ByteString getDatasetBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The location of the BigQuery publishing dataset.
+     * </pre>
+     *
+     * <code>string location = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The location.
+     */
+    java.lang.String getLocation();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The location of the BigQuery publishing dataset.
+     * </pre>
+     *
+     * <code>string location = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for location.
+     */
+    com.google.protobuf.ByteString getLocationBytes();
   }
   /**
    *
@@ -120,6 +141,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
 
     private BigQueryPublishing() {
       dataset_ = "";
+      location_ = "";
     }
 
     @java.lang.Override
@@ -151,9 +173,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The BigQuery dataset to publish to. It takes the form
-     * `projects/{project_id}/datasets/{dataset_id}`.
-     * If not set, the service creates a default publishing dataset.
+     * Output only. The BigQuery dataset the discovered tables are published to.
      * </pre>
      *
      * <code>
@@ -178,9 +198,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The BigQuery dataset to publish to. It takes the form
-     * `projects/{project_id}/datasets/{dataset_id}`.
-     * If not set, the service creates a default publishing dataset.
+     * Output only. The BigQuery dataset the discovered tables are published to.
      * </pre>
      *
      * <code>
@@ -196,6 +214,57 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         dataset_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LOCATION_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object location_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The location of the BigQuery publishing dataset.
+     * </pre>
+     *
+     * <code>string location = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The location.
+     */
+    @java.lang.Override
+    public java.lang.String getLocation() {
+      java.lang.Object ref = location_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        location_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The location of the BigQuery publishing dataset.
+     * </pre>
+     *
+     * <code>string location = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for location.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getLocationBytes() {
+      java.lang.Object ref = location_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        location_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -219,6 +288,9 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataset_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dataset_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, location_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -230,6 +302,9 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataset_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dataset_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, location_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -248,6 +323,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
           (com.google.cloud.dataplex.v1.DataDiscoveryResult.BigQueryPublishing) obj;
 
       if (!getDataset().equals(other.getDataset())) return false;
+      if (!getLocation().equals(other.getLocation())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -261,6 +337,8 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DATASET_FIELD_NUMBER;
       hash = (53 * hash) + getDataset().hashCode();
+      hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getLocation().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -406,6 +484,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         super.clear();
         bitField0_ = 0;
         dataset_ = "";
+        location_ = "";
         return this;
       }
 
@@ -447,6 +526,9 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.dataset_ = dataset_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.location_ = location_;
         }
       }
 
@@ -506,6 +588,11 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (!other.getLocation().isEmpty()) {
+          location_ = other.location_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -538,6 +625,12 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 18:
+                {
+                  location_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -562,9 +655,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Output only. The BigQuery dataset to publish to. It takes the form
-       * `projects/{project_id}/datasets/{dataset_id}`.
-       * If not set, the service creates a default publishing dataset.
+       * Output only. The BigQuery dataset the discovered tables are published to.
        * </pre>
        *
        * <code>
@@ -588,9 +679,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Output only. The BigQuery dataset to publish to. It takes the form
-       * `projects/{project_id}/datasets/{dataset_id}`.
-       * If not set, the service creates a default publishing dataset.
+       * Output only. The BigQuery dataset the discovered tables are published to.
        * </pre>
        *
        * <code>
@@ -614,9 +703,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Output only. The BigQuery dataset to publish to. It takes the form
-       * `projects/{project_id}/datasets/{dataset_id}`.
-       * If not set, the service creates a default publishing dataset.
+       * Output only. The BigQuery dataset the discovered tables are published to.
        * </pre>
        *
        * <code>
@@ -639,9 +726,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Output only. The BigQuery dataset to publish to. It takes the form
-       * `projects/{project_id}/datasets/{dataset_id}`.
-       * If not set, the service creates a default publishing dataset.
+       * Output only. The BigQuery dataset the discovered tables are published to.
        * </pre>
        *
        * <code>
@@ -660,9 +745,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Output only. The BigQuery dataset to publish to. It takes the form
-       * `projects/{project_id}/datasets/{dataset_id}`.
-       * If not set, the service creates a default publishing dataset.
+       * Output only. The BigQuery dataset the discovered tables are published to.
        * </pre>
        *
        * <code>
@@ -679,6 +762,112 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         checkByteStringIsUtf8(value);
         dataset_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object location_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The location of the BigQuery publishing dataset.
+       * </pre>
+       *
+       * <code>string location = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The location.
+       */
+      public java.lang.String getLocation() {
+        java.lang.Object ref = location_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          location_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The location of the BigQuery publishing dataset.
+       * </pre>
+       *
+       * <code>string location = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for location.
+       */
+      public com.google.protobuf.ByteString getLocationBytes() {
+        java.lang.Object ref = location_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          location_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The location of the BigQuery publishing dataset.
+       * </pre>
+       *
+       * <code>string location = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The location to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLocation(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        location_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The location of the BigQuery publishing dataset.
+       * </pre>
+       *
+       * <code>string location = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLocation() {
+        location_ = getDefaultInstance().getLocation();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The location of the BigQuery publishing dataset.
+       * </pre>
+       *
+       * <code>string location = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for location to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLocationBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        location_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -750,6 +939,1403 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public interface ScanStatisticsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of files scanned.
+     * </pre>
+     *
+     * <code>int32 scanned_file_count = 1;</code>
+     *
+     * @return The scannedFileCount.
+     */
+    int getScannedFileCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The data processed in bytes.
+     * </pre>
+     *
+     * <code>int64 data_processed_bytes = 2;</code>
+     *
+     * @return The dataProcessedBytes.
+     */
+    long getDataProcessedBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of files excluded.
+     * </pre>
+     *
+     * <code>int32 files_excluded = 3;</code>
+     *
+     * @return The filesExcluded.
+     */
+    int getFilesExcluded();
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of tables created.
+     * </pre>
+     *
+     * <code>int32 tables_created = 4;</code>
+     *
+     * @return The tablesCreated.
+     */
+    int getTablesCreated();
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of tables deleted.
+     * </pre>
+     *
+     * <code>int32 tables_deleted = 5;</code>
+     *
+     * @return The tablesDeleted.
+     */
+    int getTablesDeleted();
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of tables updated.
+     * </pre>
+     *
+     * <code>int32 tables_updated = 6;</code>
+     *
+     * @return The tablesUpdated.
+     */
+    int getTablesUpdated();
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of filesets created.
+     * </pre>
+     *
+     * <code>int32 filesets_created = 7;</code>
+     *
+     * @return The filesetsCreated.
+     */
+    int getFilesetsCreated();
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of filesets deleted.
+     * </pre>
+     *
+     * <code>int32 filesets_deleted = 8;</code>
+     *
+     * @return The filesetsDeleted.
+     */
+    int getFilesetsDeleted();
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of filesets updated.
+     * </pre>
+     *
+     * <code>int32 filesets_updated = 9;</code>
+     *
+     * @return The filesetsUpdated.
+     */
+    int getFilesetsUpdated();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Statistics of the DataDiscoveryScan.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics}
+   */
+  public static final class ScanStatistics extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics)
+      ScanStatisticsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ScanStatistics.newBuilder() to construct.
+    private ScanStatistics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ScanStatistics() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ScanStatistics();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.DataDiscoveryProto
+          .internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_ScanStatistics_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.DataDiscoveryProto
+          .internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_ScanStatistics_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics.class,
+              com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics.Builder.class);
+    }
+
+    public static final int SCANNED_FILE_COUNT_FIELD_NUMBER = 1;
+    private int scannedFileCount_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The number of files scanned.
+     * </pre>
+     *
+     * <code>int32 scanned_file_count = 1;</code>
+     *
+     * @return The scannedFileCount.
+     */
+    @java.lang.Override
+    public int getScannedFileCount() {
+      return scannedFileCount_;
+    }
+
+    public static final int DATA_PROCESSED_BYTES_FIELD_NUMBER = 2;
+    private long dataProcessedBytes_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * The data processed in bytes.
+     * </pre>
+     *
+     * <code>int64 data_processed_bytes = 2;</code>
+     *
+     * @return The dataProcessedBytes.
+     */
+    @java.lang.Override
+    public long getDataProcessedBytes() {
+      return dataProcessedBytes_;
+    }
+
+    public static final int FILES_EXCLUDED_FIELD_NUMBER = 3;
+    private int filesExcluded_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The number of files excluded.
+     * </pre>
+     *
+     * <code>int32 files_excluded = 3;</code>
+     *
+     * @return The filesExcluded.
+     */
+    @java.lang.Override
+    public int getFilesExcluded() {
+      return filesExcluded_;
+    }
+
+    public static final int TABLES_CREATED_FIELD_NUMBER = 4;
+    private int tablesCreated_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The number of tables created.
+     * </pre>
+     *
+     * <code>int32 tables_created = 4;</code>
+     *
+     * @return The tablesCreated.
+     */
+    @java.lang.Override
+    public int getTablesCreated() {
+      return tablesCreated_;
+    }
+
+    public static final int TABLES_DELETED_FIELD_NUMBER = 5;
+    private int tablesDeleted_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The number of tables deleted.
+     * </pre>
+     *
+     * <code>int32 tables_deleted = 5;</code>
+     *
+     * @return The tablesDeleted.
+     */
+    @java.lang.Override
+    public int getTablesDeleted() {
+      return tablesDeleted_;
+    }
+
+    public static final int TABLES_UPDATED_FIELD_NUMBER = 6;
+    private int tablesUpdated_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The number of tables updated.
+     * </pre>
+     *
+     * <code>int32 tables_updated = 6;</code>
+     *
+     * @return The tablesUpdated.
+     */
+    @java.lang.Override
+    public int getTablesUpdated() {
+      return tablesUpdated_;
+    }
+
+    public static final int FILESETS_CREATED_FIELD_NUMBER = 7;
+    private int filesetsCreated_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The number of filesets created.
+     * </pre>
+     *
+     * <code>int32 filesets_created = 7;</code>
+     *
+     * @return The filesetsCreated.
+     */
+    @java.lang.Override
+    public int getFilesetsCreated() {
+      return filesetsCreated_;
+    }
+
+    public static final int FILESETS_DELETED_FIELD_NUMBER = 8;
+    private int filesetsDeleted_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The number of filesets deleted.
+     * </pre>
+     *
+     * <code>int32 filesets_deleted = 8;</code>
+     *
+     * @return The filesetsDeleted.
+     */
+    @java.lang.Override
+    public int getFilesetsDeleted() {
+      return filesetsDeleted_;
+    }
+
+    public static final int FILESETS_UPDATED_FIELD_NUMBER = 9;
+    private int filesetsUpdated_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The number of filesets updated.
+     * </pre>
+     *
+     * <code>int32 filesets_updated = 9;</code>
+     *
+     * @return The filesetsUpdated.
+     */
+    @java.lang.Override
+    public int getFilesetsUpdated() {
+      return filesetsUpdated_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (scannedFileCount_ != 0) {
+        output.writeInt32(1, scannedFileCount_);
+      }
+      if (dataProcessedBytes_ != 0L) {
+        output.writeInt64(2, dataProcessedBytes_);
+      }
+      if (filesExcluded_ != 0) {
+        output.writeInt32(3, filesExcluded_);
+      }
+      if (tablesCreated_ != 0) {
+        output.writeInt32(4, tablesCreated_);
+      }
+      if (tablesDeleted_ != 0) {
+        output.writeInt32(5, tablesDeleted_);
+      }
+      if (tablesUpdated_ != 0) {
+        output.writeInt32(6, tablesUpdated_);
+      }
+      if (filesetsCreated_ != 0) {
+        output.writeInt32(7, filesetsCreated_);
+      }
+      if (filesetsDeleted_ != 0) {
+        output.writeInt32(8, filesetsDeleted_);
+      }
+      if (filesetsUpdated_ != 0) {
+        output.writeInt32(9, filesetsUpdated_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (scannedFileCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, scannedFileCount_);
+      }
+      if (dataProcessedBytes_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, dataProcessedBytes_);
+      }
+      if (filesExcluded_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, filesExcluded_);
+      }
+      if (tablesCreated_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, tablesCreated_);
+      }
+      if (tablesDeleted_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, tablesDeleted_);
+      }
+      if (tablesUpdated_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, tablesUpdated_);
+      }
+      if (filesetsCreated_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, filesetsCreated_);
+      }
+      if (filesetsDeleted_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, filesetsDeleted_);
+      }
+      if (filesetsUpdated_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(9, filesetsUpdated_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics other =
+          (com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics) obj;
+
+      if (getScannedFileCount() != other.getScannedFileCount()) return false;
+      if (getDataProcessedBytes() != other.getDataProcessedBytes()) return false;
+      if (getFilesExcluded() != other.getFilesExcluded()) return false;
+      if (getTablesCreated() != other.getTablesCreated()) return false;
+      if (getTablesDeleted() != other.getTablesDeleted()) return false;
+      if (getTablesUpdated() != other.getTablesUpdated()) return false;
+      if (getFilesetsCreated() != other.getFilesetsCreated()) return false;
+      if (getFilesetsDeleted() != other.getFilesetsDeleted()) return false;
+      if (getFilesetsUpdated() != other.getFilesetsUpdated()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SCANNED_FILE_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getScannedFileCount();
+      hash = (37 * hash) + DATA_PROCESSED_BYTES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDataProcessedBytes());
+      hash = (37 * hash) + FILES_EXCLUDED_FIELD_NUMBER;
+      hash = (53 * hash) + getFilesExcluded();
+      hash = (37 * hash) + TABLES_CREATED_FIELD_NUMBER;
+      hash = (53 * hash) + getTablesCreated();
+      hash = (37 * hash) + TABLES_DELETED_FIELD_NUMBER;
+      hash = (53 * hash) + getTablesDeleted();
+      hash = (37 * hash) + TABLES_UPDATED_FIELD_NUMBER;
+      hash = (53 * hash) + getTablesUpdated();
+      hash = (37 * hash) + FILESETS_CREATED_FIELD_NUMBER;
+      hash = (53 * hash) + getFilesetsCreated();
+      hash = (37 * hash) + FILESETS_DELETED_FIELD_NUMBER;
+      hash = (53 * hash) + getFilesetsDeleted();
+      hash = (37 * hash) + FILESETS_UPDATED_FIELD_NUMBER;
+      hash = (53 * hash) + getFilesetsUpdated();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Statistics of the DataDiscoveryScan.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics)
+        com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatisticsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataDiscoveryProto
+            .internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_ScanStatistics_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataDiscoveryProto
+            .internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_ScanStatistics_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics.class,
+                com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        scannedFileCount_ = 0;
+        dataProcessedBytes_ = 0L;
+        filesExcluded_ = 0;
+        tablesCreated_ = 0;
+        tablesDeleted_ = 0;
+        tablesUpdated_ = 0;
+        filesetsCreated_ = 0;
+        filesetsDeleted_ = 0;
+        filesetsUpdated_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.DataDiscoveryProto
+            .internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_ScanStatistics_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics
+          getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics build() {
+        com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics buildPartial() {
+        com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics result =
+            new com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.scannedFileCount_ = scannedFileCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.dataProcessedBytes_ = dataProcessedBytes_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.filesExcluded_ = filesExcluded_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.tablesCreated_ = tablesCreated_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.tablesDeleted_ = tablesDeleted_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.tablesUpdated_ = tablesUpdated_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.filesetsCreated_ = filesetsCreated_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.filesetsDeleted_ = filesetsDeleted_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.filesetsUpdated_ = filesetsUpdated_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics) {
+          return mergeFrom((com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics other) {
+        if (other
+            == com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics.getDefaultInstance())
+          return this;
+        if (other.getScannedFileCount() != 0) {
+          setScannedFileCount(other.getScannedFileCount());
+        }
+        if (other.getDataProcessedBytes() != 0L) {
+          setDataProcessedBytes(other.getDataProcessedBytes());
+        }
+        if (other.getFilesExcluded() != 0) {
+          setFilesExcluded(other.getFilesExcluded());
+        }
+        if (other.getTablesCreated() != 0) {
+          setTablesCreated(other.getTablesCreated());
+        }
+        if (other.getTablesDeleted() != 0) {
+          setTablesDeleted(other.getTablesDeleted());
+        }
+        if (other.getTablesUpdated() != 0) {
+          setTablesUpdated(other.getTablesUpdated());
+        }
+        if (other.getFilesetsCreated() != 0) {
+          setFilesetsCreated(other.getFilesetsCreated());
+        }
+        if (other.getFilesetsDeleted() != 0) {
+          setFilesetsDeleted(other.getFilesetsDeleted());
+        }
+        if (other.getFilesetsUpdated() != 0) {
+          setFilesetsUpdated(other.getFilesetsUpdated());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  scannedFileCount_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  dataProcessedBytes_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  filesExcluded_ = input.readInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 32:
+                {
+                  tablesCreated_ = input.readInt32();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              case 40:
+                {
+                  tablesDeleted_ = input.readInt32();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
+              case 48:
+                {
+                  tablesUpdated_ = input.readInt32();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 48
+              case 56:
+                {
+                  filesetsCreated_ = input.readInt32();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 56
+              case 64:
+                {
+                  filesetsDeleted_ = input.readInt32();
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 64
+              case 72:
+                {
+                  filesetsUpdated_ = input.readInt32();
+                  bitField0_ |= 0x00000100;
+                  break;
+                } // case 72
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int scannedFileCount_;
+      /**
+       *
+       *
+       * <pre>
+       * The number of files scanned.
+       * </pre>
+       *
+       * <code>int32 scanned_file_count = 1;</code>
+       *
+       * @return The scannedFileCount.
+       */
+      @java.lang.Override
+      public int getScannedFileCount() {
+        return scannedFileCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of files scanned.
+       * </pre>
+       *
+       * <code>int32 scanned_file_count = 1;</code>
+       *
+       * @param value The scannedFileCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScannedFileCount(int value) {
+
+        scannedFileCount_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of files scanned.
+       * </pre>
+       *
+       * <code>int32 scanned_file_count = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearScannedFileCount() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        scannedFileCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long dataProcessedBytes_;
+      /**
+       *
+       *
+       * <pre>
+       * The data processed in bytes.
+       * </pre>
+       *
+       * <code>int64 data_processed_bytes = 2;</code>
+       *
+       * @return The dataProcessedBytes.
+       */
+      @java.lang.Override
+      public long getDataProcessedBytes() {
+        return dataProcessedBytes_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The data processed in bytes.
+       * </pre>
+       *
+       * <code>int64 data_processed_bytes = 2;</code>
+       *
+       * @param value The dataProcessedBytes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDataProcessedBytes(long value) {
+
+        dataProcessedBytes_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The data processed in bytes.
+       * </pre>
+       *
+       * <code>int64 data_processed_bytes = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDataProcessedBytes() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        dataProcessedBytes_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int filesExcluded_;
+      /**
+       *
+       *
+       * <pre>
+       * The number of files excluded.
+       * </pre>
+       *
+       * <code>int32 files_excluded = 3;</code>
+       *
+       * @return The filesExcluded.
+       */
+      @java.lang.Override
+      public int getFilesExcluded() {
+        return filesExcluded_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of files excluded.
+       * </pre>
+       *
+       * <code>int32 files_excluded = 3;</code>
+       *
+       * @param value The filesExcluded to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilesExcluded(int value) {
+
+        filesExcluded_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of files excluded.
+       * </pre>
+       *
+       * <code>int32 files_excluded = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFilesExcluded() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        filesExcluded_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int tablesCreated_;
+      /**
+       *
+       *
+       * <pre>
+       * The number of tables created.
+       * </pre>
+       *
+       * <code>int32 tables_created = 4;</code>
+       *
+       * @return The tablesCreated.
+       */
+      @java.lang.Override
+      public int getTablesCreated() {
+        return tablesCreated_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of tables created.
+       * </pre>
+       *
+       * <code>int32 tables_created = 4;</code>
+       *
+       * @param value The tablesCreated to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTablesCreated(int value) {
+
+        tablesCreated_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of tables created.
+       * </pre>
+       *
+       * <code>int32 tables_created = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTablesCreated() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        tablesCreated_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int tablesDeleted_;
+      /**
+       *
+       *
+       * <pre>
+       * The number of tables deleted.
+       * </pre>
+       *
+       * <code>int32 tables_deleted = 5;</code>
+       *
+       * @return The tablesDeleted.
+       */
+      @java.lang.Override
+      public int getTablesDeleted() {
+        return tablesDeleted_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of tables deleted.
+       * </pre>
+       *
+       * <code>int32 tables_deleted = 5;</code>
+       *
+       * @param value The tablesDeleted to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTablesDeleted(int value) {
+
+        tablesDeleted_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of tables deleted.
+       * </pre>
+       *
+       * <code>int32 tables_deleted = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTablesDeleted() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        tablesDeleted_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int tablesUpdated_;
+      /**
+       *
+       *
+       * <pre>
+       * The number of tables updated.
+       * </pre>
+       *
+       * <code>int32 tables_updated = 6;</code>
+       *
+       * @return The tablesUpdated.
+       */
+      @java.lang.Override
+      public int getTablesUpdated() {
+        return tablesUpdated_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of tables updated.
+       * </pre>
+       *
+       * <code>int32 tables_updated = 6;</code>
+       *
+       * @param value The tablesUpdated to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTablesUpdated(int value) {
+
+        tablesUpdated_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of tables updated.
+       * </pre>
+       *
+       * <code>int32 tables_updated = 6;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTablesUpdated() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        tablesUpdated_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int filesetsCreated_;
+      /**
+       *
+       *
+       * <pre>
+       * The number of filesets created.
+       * </pre>
+       *
+       * <code>int32 filesets_created = 7;</code>
+       *
+       * @return The filesetsCreated.
+       */
+      @java.lang.Override
+      public int getFilesetsCreated() {
+        return filesetsCreated_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of filesets created.
+       * </pre>
+       *
+       * <code>int32 filesets_created = 7;</code>
+       *
+       * @param value The filesetsCreated to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilesetsCreated(int value) {
+
+        filesetsCreated_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of filesets created.
+       * </pre>
+       *
+       * <code>int32 filesets_created = 7;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFilesetsCreated() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        filesetsCreated_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int filesetsDeleted_;
+      /**
+       *
+       *
+       * <pre>
+       * The number of filesets deleted.
+       * </pre>
+       *
+       * <code>int32 filesets_deleted = 8;</code>
+       *
+       * @return The filesetsDeleted.
+       */
+      @java.lang.Override
+      public int getFilesetsDeleted() {
+        return filesetsDeleted_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of filesets deleted.
+       * </pre>
+       *
+       * <code>int32 filesets_deleted = 8;</code>
+       *
+       * @param value The filesetsDeleted to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilesetsDeleted(int value) {
+
+        filesetsDeleted_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of filesets deleted.
+       * </pre>
+       *
+       * <code>int32 filesets_deleted = 8;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFilesetsDeleted() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        filesetsDeleted_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int filesetsUpdated_;
+      /**
+       *
+       *
+       * <pre>
+       * The number of filesets updated.
+       * </pre>
+       *
+       * <code>int32 filesets_updated = 9;</code>
+       *
+       * @return The filesetsUpdated.
+       */
+      @java.lang.Override
+      public int getFilesetsUpdated() {
+        return filesetsUpdated_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of filesets updated.
+       * </pre>
+       *
+       * <code>int32 filesets_updated = 9;</code>
+       *
+       * @param value The filesetsUpdated to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilesetsUpdated(int value) {
+
+        filesetsUpdated_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The number of filesets updated.
+       * </pre>
+       *
+       * <code>int32 filesets_updated = 9;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFilesetsUpdated() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        filesetsUpdated_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics)
+    private static final com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics();
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ScanStatistics> PARSER =
+        new com.google.protobuf.AbstractParser<ScanStatistics>() {
+          @java.lang.Override
+          public ScanStatistics parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ScanStatistics> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ScanStatistics> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int BIGQUERY_PUBLISHING_FIELD_NUMBER = 1;
   private com.google.cloud.dataplex.v1.DataDiscoveryResult.BigQueryPublishing bigqueryPublishing_;
@@ -809,6 +2395,63 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         : bigqueryPublishing_;
   }
 
+  public static final int SCAN_STATISTICS_FIELD_NUMBER = 2;
+  private com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics scanStatistics_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics of the DataDiscoveryScan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics scan_statistics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the scanStatistics field is set.
+   */
+  @java.lang.Override
+  public boolean hasScanStatistics() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics of the DataDiscoveryScan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics scan_statistics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The scanStatistics.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics getScanStatistics() {
+    return scanStatistics_ == null
+        ? com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics.getDefaultInstance()
+        : scanStatistics_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Statistics of the DataDiscoveryScan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics scan_statistics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatisticsOrBuilder
+      getScanStatisticsOrBuilder() {
+    return scanStatistics_ == null
+        ? com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics.getDefaultInstance()
+        : scanStatistics_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -826,6 +2469,9 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getBigqueryPublishing());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(2, getScanStatistics());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -837,6 +2483,9 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getBigqueryPublishing());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getScanStatistics());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -858,6 +2507,10 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
     if (hasBigqueryPublishing()) {
       if (!getBigqueryPublishing().equals(other.getBigqueryPublishing())) return false;
     }
+    if (hasScanStatistics() != other.hasScanStatistics()) return false;
+    if (hasScanStatistics()) {
+      if (!getScanStatistics().equals(other.getScanStatistics())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -872,6 +2525,10 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
     if (hasBigqueryPublishing()) {
       hash = (37 * hash) + BIGQUERY_PUBLISHING_FIELD_NUMBER;
       hash = (53 * hash) + getBigqueryPublishing().hashCode();
+    }
+    if (hasScanStatistics()) {
+      hash = (37 * hash) + SCAN_STATISTICS_FIELD_NUMBER;
+      hash = (53 * hash) + getScanStatistics().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1014,6 +2671,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getBigqueryPublishingFieldBuilder();
+        getScanStatisticsFieldBuilder();
       }
     }
 
@@ -1025,6 +2683,11 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       if (bigqueryPublishingBuilder_ != null) {
         bigqueryPublishingBuilder_.dispose();
         bigqueryPublishingBuilder_ = null;
+      }
+      scanStatistics_ = null;
+      if (scanStatisticsBuilder_ != null) {
+        scanStatisticsBuilder_.dispose();
+        scanStatisticsBuilder_ = null;
       }
       return this;
     }
@@ -1069,6 +2732,11 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
                 ? bigqueryPublishing_
                 : bigqueryPublishingBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.scanStatistics_ =
+            scanStatisticsBuilder_ == null ? scanStatistics_ : scanStatisticsBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1122,6 +2790,9 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       if (other.hasBigqueryPublishing()) {
         mergeBigqueryPublishing(other.getBigqueryPublishing());
       }
+      if (other.hasScanStatistics()) {
+        mergeScanStatistics(other.getScanStatistics());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1155,6 +2826,12 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(getScanStatisticsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1386,6 +3063,216 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         bigqueryPublishing_ = null;
       }
       return bigqueryPublishingBuilder_;
+    }
+
+    private com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics scanStatistics_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics,
+            com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics.Builder,
+            com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatisticsOrBuilder>
+        scanStatisticsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics of the DataDiscoveryScan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics scan_statistics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the scanStatistics field is set.
+     */
+    public boolean hasScanStatistics() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics of the DataDiscoveryScan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics scan_statistics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The scanStatistics.
+     */
+    public com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics getScanStatistics() {
+      if (scanStatisticsBuilder_ == null) {
+        return scanStatistics_ == null
+            ? com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics.getDefaultInstance()
+            : scanStatistics_;
+      } else {
+        return scanStatisticsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics of the DataDiscoveryScan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics scan_statistics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setScanStatistics(
+        com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics value) {
+      if (scanStatisticsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        scanStatistics_ = value;
+      } else {
+        scanStatisticsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics of the DataDiscoveryScan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics scan_statistics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setScanStatistics(
+        com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics.Builder builderForValue) {
+      if (scanStatisticsBuilder_ == null) {
+        scanStatistics_ = builderForValue.build();
+      } else {
+        scanStatisticsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics of the DataDiscoveryScan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics scan_statistics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeScanStatistics(
+        com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics value) {
+      if (scanStatisticsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && scanStatistics_ != null
+            && scanStatistics_
+                != com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics
+                    .getDefaultInstance()) {
+          getScanStatisticsBuilder().mergeFrom(value);
+        } else {
+          scanStatistics_ = value;
+        }
+      } else {
+        scanStatisticsBuilder_.mergeFrom(value);
+      }
+      if (scanStatistics_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics of the DataDiscoveryScan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics scan_statistics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearScanStatistics() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      scanStatistics_ = null;
+      if (scanStatisticsBuilder_ != null) {
+        scanStatisticsBuilder_.dispose();
+        scanStatisticsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics of the DataDiscoveryScan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics scan_statistics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics.Builder
+        getScanStatisticsBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getScanStatisticsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics of the DataDiscoveryScan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics scan_statistics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatisticsOrBuilder
+        getScanStatisticsOrBuilder() {
+      if (scanStatisticsBuilder_ != null) {
+        return scanStatisticsBuilder_.getMessageOrBuilder();
+      } else {
+        return scanStatistics_ == null
+            ? com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics.getDefaultInstance()
+            : scanStatistics_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Statistics of the DataDiscoveryScan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics scan_statistics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics,
+            com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics.Builder,
+            com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatisticsOrBuilder>
+        getScanStatisticsFieldBuilder() {
+      if (scanStatisticsBuilder_ == null) {
+        scanStatisticsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics,
+                com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics.Builder,
+                com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatisticsOrBuilder>(
+                getScanStatistics(), getParentForChildren(), isClean());
+        scanStatistics_ = null;
+      }
+      return scanStatisticsBuilder_;
     }
 
     @java.lang.Override

@@ -3773,17 +3773,26 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Docker Registry to use for this deployment.
+   * As of March 2025, `CONTAINER_REGISTRY` option is no longer
+   * available in response to Container Registry's deprecation:
+   * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+   * Please use Artifact Registry instead, which is the default choice.
    *
    * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
    * If `docker_repository` field is specified, this field should either be left
    * unspecified or set to `ARTIFACT_REGISTRY`.
    * </pre>
    *
-   * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+   * <code>
+   * .google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.functions.v1.CloudFunction.docker_registry is deprecated. See
+   *     google/cloud/functions/v1/functions.proto;l=486
    * @return The enum numeric value on the wire for dockerRegistry.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getDockerRegistryValue() {
     return dockerRegistry_;
   }
@@ -3792,17 +3801,26 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Docker Registry to use for this deployment.
+   * As of March 2025, `CONTAINER_REGISTRY` option is no longer
+   * available in response to Container Registry's deprecation:
+   * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+   * Please use Artifact Registry instead, which is the default choice.
    *
    * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
    * If `docker_repository` field is specified, this field should either be left
    * unspecified or set to `ARTIFACT_REGISTRY`.
    * </pre>
    *
-   * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+   * <code>
+   * .google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.functions.v1.CloudFunction.docker_registry is deprecated. See
+   *     google/cloud/functions/v1/functions.proto;l=486
    * @return The dockerRegistry.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.functions.v1.CloudFunction.DockerRegistry getDockerRegistry() {
     com.google.cloud.functions.v1.CloudFunction.DockerRegistry result =
         com.google.cloud.functions.v1.CloudFunction.DockerRegistry.forNumber(dockerRegistry_);
@@ -10419,17 +10437,26 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Docker Registry to use for this deployment.
+     * As of March 2025, `CONTAINER_REGISTRY` option is no longer
+     * available in response to Container Registry's deprecation:
+     * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+     * Please use Artifact Registry instead, which is the default choice.
      *
      * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
      * If `docker_repository` field is specified, this field should either be left
      * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
-     * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+     * <code>
+     * .google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.functions.v1.CloudFunction.docker_registry is deprecated. See
+     *     google/cloud/functions/v1/functions.proto;l=486
      * @return The enum numeric value on the wire for dockerRegistry.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getDockerRegistryValue() {
       return dockerRegistry_;
     }
@@ -10438,17 +10465,26 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Docker Registry to use for this deployment.
+     * As of March 2025, `CONTAINER_REGISTRY` option is no longer
+     * available in response to Container Registry's deprecation:
+     * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+     * Please use Artifact Registry instead, which is the default choice.
      *
      * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
      * If `docker_repository` field is specified, this field should either be left
      * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
-     * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+     * <code>
+     * .google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.functions.v1.CloudFunction.docker_registry is deprecated. See
+     *     google/cloud/functions/v1/functions.proto;l=486
      * @param value The enum numeric value on the wire for dockerRegistry to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setDockerRegistryValue(int value) {
       dockerRegistry_ = value;
       bitField1_ |= 0x00000001;
@@ -10460,17 +10496,26 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Docker Registry to use for this deployment.
+     * As of March 2025, `CONTAINER_REGISTRY` option is no longer
+     * available in response to Container Registry's deprecation:
+     * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+     * Please use Artifact Registry instead, which is the default choice.
      *
      * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
      * If `docker_repository` field is specified, this field should either be left
      * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
-     * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+     * <code>
+     * .google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.functions.v1.CloudFunction.docker_registry is deprecated. See
+     *     google/cloud/functions/v1/functions.proto;l=486
      * @return The dockerRegistry.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.functions.v1.CloudFunction.DockerRegistry getDockerRegistry() {
       com.google.cloud.functions.v1.CloudFunction.DockerRegistry result =
           com.google.cloud.functions.v1.CloudFunction.DockerRegistry.forNumber(dockerRegistry_);
@@ -10483,17 +10528,26 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Docker Registry to use for this deployment.
+     * As of March 2025, `CONTAINER_REGISTRY` option is no longer
+     * available in response to Container Registry's deprecation:
+     * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+     * Please use Artifact Registry instead, which is the default choice.
      *
      * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
      * If `docker_repository` field is specified, this field should either be left
      * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
-     * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+     * <code>
+     * .google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.functions.v1.CloudFunction.docker_registry is deprecated. See
+     *     google/cloud/functions/v1/functions.proto;l=486
      * @param value The dockerRegistry to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setDockerRegistry(
         com.google.cloud.functions.v1.CloudFunction.DockerRegistry value) {
       if (value == null) {
@@ -10509,16 +10563,25 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Docker Registry to use for this deployment.
+     * As of March 2025, `CONTAINER_REGISTRY` option is no longer
+     * available in response to Container Registry's deprecation:
+     * https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+     * Please use Artifact Registry instead, which is the default choice.
      *
      * If unspecified, it defaults to `ARTIFACT_REGISTRY`.
      * If `docker_repository` field is specified, this field should either be left
      * unspecified or set to `ARTIFACT_REGISTRY`.
      * </pre>
      *
-     * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+     * <code>
+     * .google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.functions.v1.CloudFunction.docker_registry is deprecated. See
+     *     google/cloud/functions/v1/functions.proto;l=486
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearDockerRegistry() {
       bitField1_ = (bitField1_ & ~0x00000001);
       dockerRegistry_ = 0;

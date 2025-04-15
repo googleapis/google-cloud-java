@@ -257,4 +257,53 @@ public interface ParameterOrBuilder
    * </code>
    */
   com.google.iam.v1.ResourcePolicyMemberOrBuilder getPolicyMemberOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * Parameter Versions. If not set, the default Google-managed encryption key
+   * will be used. Cloud KMS CryptoKeys must reside in the same location as the
+   * Parameter. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the kmsKey field is set.
+   */
+  boolean hasKmsKey();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * Parameter Versions. If not set, the default Google-managed encryption key
+   * will be used. Cloud KMS CryptoKeys must reside in the same location as the
+   * Parameter. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The kmsKey.
+   */
+  java.lang.String getKmsKey();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * Parameter Versions. If not set, the default Google-managed encryption key
+   * will be used. Cloud KMS CryptoKeys must reside in the same location as the
+   * Parameter. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for kmsKey.
+   */
+  com.google.protobuf.ByteString getKmsKeyBytes();
 }

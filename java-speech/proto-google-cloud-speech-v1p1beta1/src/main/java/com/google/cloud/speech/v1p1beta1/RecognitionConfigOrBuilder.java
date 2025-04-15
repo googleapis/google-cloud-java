@@ -328,13 +328,14 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * Use transcription normalization to automatically replace parts of the
-   * transcript with phrases of your choosing. For StreamingRecognize, this
+   * Optional. Use transcription normalization to automatically replace parts of
+   * the transcript with phrases of your choosing. For StreamingRecognize, this
    * normalization only applies to stable partial transcripts (stability &gt; 0.8)
    * and final transcripts.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+   * <code>
+   * .google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the transcriptNormalization field is set.
@@ -344,13 +345,14 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * Use transcription normalization to automatically replace parts of the
-   * transcript with phrases of your choosing. For StreamingRecognize, this
+   * Optional. Use transcription normalization to automatically replace parts of
+   * the transcript with phrases of your choosing. For StreamingRecognize, this
    * normalization only applies to stable partial transcripts (stability &gt; 0.8)
    * and final transcripts.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+   * <code>
+   * .google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The transcriptNormalization.
@@ -360,13 +362,14 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
-   * Use transcription normalization to automatically replace parts of the
-   * transcript with phrases of your choosing. For StreamingRecognize, this
+   * Optional. Use transcription normalization to automatically replace parts of
+   * the transcript with phrases of your choosing. For StreamingRecognize, this
    * normalization only applies to stable partial transcripts (stability &gt; 0.8)
    * and final transcripts.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24;
+   * <code>
+   * .google.cloud.speech.v1p1beta1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.speech.v1p1beta1.TranscriptNormalizationOrBuilder
@@ -596,15 +599,15 @@ public interface RecognitionConfigOrBuilder
    *
    * <pre>
    * If 'true', enables speaker detection for each recognized word in
-   * the top alternative of the recognition result using a speaker_tag provided
-   * in the WordInfo.
+   * the top alternative of the recognition result using a speaker_label
+   * provided in the WordInfo.
    * Note: Use diarization_config instead.
    * </pre>
    *
    * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
-   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=401
+   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=405
    * @return The enableSpeakerDiarization.
    */
   @java.lang.Deprecated
@@ -622,7 +625,7 @@ public interface RecognitionConfigOrBuilder
    * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
-   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=406
+   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=410
    * @return The diarizationSpeakerCount.
    */
   @java.lang.Deprecated

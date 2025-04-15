@@ -138,4 +138,41 @@ public class MockFeatureOnlineStoreServiceImpl extends FeatureOnlineStoreService
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public StreamObserver<FeatureViewDirectWriteRequest> featureViewDirectWrite(
+      final StreamObserver<FeatureViewDirectWriteResponse> responseObserver) {
+    StreamObserver<FeatureViewDirectWriteRequest> requestObserver =
+        new StreamObserver<FeatureViewDirectWriteRequest>() {
+          @Override
+          public void onNext(FeatureViewDirectWriteRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
+            if (response instanceof FeatureViewDirectWriteResponse) {
+              responseObserver.onNext(((FeatureViewDirectWriteResponse) response));
+            } else if (response instanceof Exception) {
+              responseObserver.onError(((Exception) response));
+            } else {
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method FeatureViewDirectWrite, expected %s or %s",
+                          response == null ? "null" : response.getClass().getName(),
+                          FeatureViewDirectWriteResponse.class.getName(),
+                          Exception.class.getName())));
+            }
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            responseObserver.onError(t);
+          }
+
+          @Override
+          public void onCompleted() {
+            responseObserver.onCompleted();
+          }
+        };
+    return requestObserver;
+  }
 }

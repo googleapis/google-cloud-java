@@ -54,7 +54,8 @@ public interface BatchDeleteVersionsRequestOrBuilder
    *
    * <pre>
    * Required. The names of the versions to delete.
-   * A maximum of 10000 versions can be deleted in a batch.
+   * The maximum number of versions deleted per batch is determined by the
+   * service and is dependent on the available resources in the region.
    * </pre>
    *
    * <code>
@@ -69,7 +70,8 @@ public interface BatchDeleteVersionsRequestOrBuilder
    *
    * <pre>
    * Required. The names of the versions to delete.
-   * A maximum of 10000 versions can be deleted in a batch.
+   * The maximum number of versions deleted per batch is determined by the
+   * service and is dependent on the available resources in the region.
    * </pre>
    *
    * <code>
@@ -84,7 +86,8 @@ public interface BatchDeleteVersionsRequestOrBuilder
    *
    * <pre>
    * Required. The names of the versions to delete.
-   * A maximum of 10000 versions can be deleted in a batch.
+   * The maximum number of versions deleted per batch is determined by the
+   * service and is dependent on the available resources in the region.
    * </pre>
    *
    * <code>
@@ -100,7 +103,8 @@ public interface BatchDeleteVersionsRequestOrBuilder
    *
    * <pre>
    * Required. The names of the versions to delete.
-   * A maximum of 10000 versions can be deleted in a batch.
+   * The maximum number of versions deleted per batch is determined by the
+   * service and is dependent on the available resources in the region.
    * </pre>
    *
    * <code>

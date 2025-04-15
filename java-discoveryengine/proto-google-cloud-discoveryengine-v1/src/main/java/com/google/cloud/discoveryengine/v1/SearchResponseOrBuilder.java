@@ -406,4 +406,68 @@ public interface SearchResponseOrBuilder
    * <code>.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo session_info = 19;</code>
    */
   com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfoOrBuilder getSessionInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1.SearchLinkPromotion>
+      getSearchLinkPromotionsList();
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.SearchLinkPromotion getSearchLinkPromotions(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  int getSearchLinkPromotionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.discoveryengine.v1.SearchLinkPromotionOrBuilder>
+      getSearchLinkPromotionsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.SearchLinkPromotionOrBuilder getSearchLinkPromotionsOrBuilder(
+      int index);
 }

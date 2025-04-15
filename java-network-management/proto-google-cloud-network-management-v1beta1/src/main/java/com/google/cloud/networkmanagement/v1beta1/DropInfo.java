@@ -350,6 +350,18 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Matching ingress firewall rules by network tags for packets sent via
+     * serverless VPC direct egress is unsupported. Behavior is undefined.
+     * https://cloud.google.com/run/docs/configuring/vpc-direct-vpc#limitations
+     * </pre>
+     *
+     * <code>INGRESS_FIREWALL_TAGS_UNSUPPORTED_BY_DIRECT_VPC_EGRESS = 85;</code>
+     */
+    INGRESS_FIREWALL_TAGS_UNSUPPORTED_BY_DIRECT_VPC_EGRESS(85),
+    /**
+     *
+     *
+     * <pre>
      * Packet is sent from or to a Compute Engine instance that is not in a
      * running state.
      * </pre>
@@ -997,6 +1009,39 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PRIVATE_NAT_TO_PSC_ENDPOINT_UNSUPPORTED = 83;</code>
      */
     PRIVATE_NAT_TO_PSC_ENDPOINT_UNSUPPORTED(83),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is sent to the PSC port mapping service, but its destination port
+     * does not match any port mapping rules.
+     * </pre>
+     *
+     * <code>PSC_PORT_MAPPING_PORT_MISMATCH = 86;</code>
+     */
+    PSC_PORT_MAPPING_PORT_MISMATCH(86),
+    /**
+     *
+     *
+     * <pre>
+     * Sending packets directly to the PSC port mapping service without going
+     * through the PSC connection is not supported.
+     * </pre>
+     *
+     * <code>PSC_PORT_MAPPING_WITHOUT_PSC_CONNECTION_UNSUPPORTED = 87;</code>
+     */
+    PSC_PORT_MAPPING_WITHOUT_PSC_CONNECTION_UNSUPPORTED(87),
+    /**
+     *
+     *
+     * <pre>
+     * Packet with destination IP address within the reserved NAT64 range is
+     * dropped due to matching a route of an unsupported type.
+     * </pre>
+     *
+     * <code>UNSUPPORTED_ROUTE_MATCHED_FOR_NAT64_DESTINATION = 88;</code>
+     */
+    UNSUPPORTED_ROUTE_MATCHED_FOR_NAT64_DESTINATION(88),
     UNRECOGNIZED(-1),
     ;
 
@@ -1269,6 +1314,18 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>FIREWALL_BLOCKING_LOAD_BALANCER_BACKEND_HEALTH_CHECK = 13;</code>
      */
     public static final int FIREWALL_BLOCKING_LOAD_BALANCER_BACKEND_HEALTH_CHECK_VALUE = 13;
+    /**
+     *
+     *
+     * <pre>
+     * Matching ingress firewall rules by network tags for packets sent via
+     * serverless VPC direct egress is unsupported. Behavior is undefined.
+     * https://cloud.google.com/run/docs/configuring/vpc-direct-vpc#limitations
+     * </pre>
+     *
+     * <code>INGRESS_FIREWALL_TAGS_UNSUPPORTED_BY_DIRECT_VPC_EGRESS = 85;</code>
+     */
+    public static final int INGRESS_FIREWALL_TAGS_UNSUPPORTED_BY_DIRECT_VPC_EGRESS_VALUE = 85;
     /**
      *
      *
@@ -1920,6 +1977,39 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PRIVATE_NAT_TO_PSC_ENDPOINT_UNSUPPORTED = 83;</code>
      */
     public static final int PRIVATE_NAT_TO_PSC_ENDPOINT_UNSUPPORTED_VALUE = 83;
+    /**
+     *
+     *
+     * <pre>
+     * Packet is sent to the PSC port mapping service, but its destination port
+     * does not match any port mapping rules.
+     * </pre>
+     *
+     * <code>PSC_PORT_MAPPING_PORT_MISMATCH = 86;</code>
+     */
+    public static final int PSC_PORT_MAPPING_PORT_MISMATCH_VALUE = 86;
+    /**
+     *
+     *
+     * <pre>
+     * Sending packets directly to the PSC port mapping service without going
+     * through the PSC connection is not supported.
+     * </pre>
+     *
+     * <code>PSC_PORT_MAPPING_WITHOUT_PSC_CONNECTION_UNSUPPORTED = 87;</code>
+     */
+    public static final int PSC_PORT_MAPPING_WITHOUT_PSC_CONNECTION_UNSUPPORTED_VALUE = 87;
+    /**
+     *
+     *
+     * <pre>
+     * Packet with destination IP address within the reserved NAT64 range is
+     * dropped due to matching a route of an unsupported type.
+     * </pre>
+     *
+     * <code>UNSUPPORTED_ROUTE_MATCHED_FOR_NAT64_DESTINATION = 88;</code>
+     */
+    public static final int UNSUPPORTED_ROUTE_MATCHED_FOR_NAT64_DESTINATION_VALUE = 88;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1995,6 +2085,8 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
           return FORWARDING_RULE_NO_INSTANCES;
         case 13:
           return FIREWALL_BLOCKING_LOAD_BALANCER_BACKEND_HEALTH_CHECK;
+        case 85:
+          return INGRESS_FIREWALL_TAGS_UNSUPPORTED_BY_DIRECT_VPC_EGRESS;
         case 14:
           return INSTANCE_NOT_RUNNING;
         case 27:
@@ -2113,6 +2205,12 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
           return NO_KNOWN_ROUTE_FROM_PEERED_NETWORK_TO_DESTINATION;
         case 83:
           return PRIVATE_NAT_TO_PSC_ENDPOINT_UNSUPPORTED;
+        case 86:
+          return PSC_PORT_MAPPING_PORT_MISMATCH;
+        case 87:
+          return PSC_PORT_MAPPING_WITHOUT_PSC_CONNECTION_UNSUPPORTED;
+        case 88:
+          return UNSUPPORTED_ROUTE_MATCHED_FOR_NAT64_DESTINATION;
         default:
           return null;
       }

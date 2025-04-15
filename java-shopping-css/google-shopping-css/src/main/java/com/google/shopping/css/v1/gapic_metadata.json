@@ -76,6 +76,18 @@
           }
         }
       }
+    },
+    "QuotaService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "QuotaServiceClient",
+          "rpcs": {
+            "ListQuotaGroups": {
+              "methods": ["listQuotaGroups", "listQuotaGroups", "listQuotaGroups", "listQuotaGroupsPagedCallable", "listQuotaGroupsCallable"]
+            }
+          }
+        }
+      }
     }
   }
 }

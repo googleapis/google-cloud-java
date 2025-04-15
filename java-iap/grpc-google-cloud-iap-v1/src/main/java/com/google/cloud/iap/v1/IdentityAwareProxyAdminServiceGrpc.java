@@ -261,6 +261,59 @@ public final class IdentityAwareProxyAdminServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest,
+          com.google.cloud.iap.v1.ValidateIapAttributeExpressionResponse>
+      getValidateIapAttributeExpressionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ValidateIapAttributeExpression",
+      requestType = com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest.class,
+      responseType = com.google.cloud.iap.v1.ValidateIapAttributeExpressionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest,
+          com.google.cloud.iap.v1.ValidateIapAttributeExpressionResponse>
+      getValidateIapAttributeExpressionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest,
+            com.google.cloud.iap.v1.ValidateIapAttributeExpressionResponse>
+        getValidateIapAttributeExpressionMethod;
+    if ((getValidateIapAttributeExpressionMethod =
+            IdentityAwareProxyAdminServiceGrpc.getValidateIapAttributeExpressionMethod)
+        == null) {
+      synchronized (IdentityAwareProxyAdminServiceGrpc.class) {
+        if ((getValidateIapAttributeExpressionMethod =
+                IdentityAwareProxyAdminServiceGrpc.getValidateIapAttributeExpressionMethod)
+            == null) {
+          IdentityAwareProxyAdminServiceGrpc.getValidateIapAttributeExpressionMethod =
+              getValidateIapAttributeExpressionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest,
+                          com.google.cloud.iap.v1.ValidateIapAttributeExpressionResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ValidateIapAttributeExpression"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.iap.v1.ValidateIapAttributeExpressionResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new IdentityAwareProxyAdminServiceMethodDescriptorSupplier(
+                              "ValidateIapAttributeExpression"))
+                      .build();
+        }
+      }
+    }
+    return getValidateIapAttributeExpressionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.iap.v1.ListTunnelDestGroupsRequest,
           com.google.cloud.iap.v1.ListTunnelDestGroupsResponse>
       getListTunnelDestGroupsMethod;
@@ -653,6 +706,21 @@ public final class IdentityAwareProxyAdminServiceGrpc {
      *
      *
      * <pre>
+     * Validates that a given CEL expression conforms to IAP restrictions.
+     * </pre>
+     */
+    default void validateIapAttributeExpression(
+        com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.iap.v1.ValidateIapAttributeExpressionResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getValidateIapAttributeExpressionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the existing TunnelDestGroups. To group across all locations, use a
      * `-` as the location ID. For example:
      * `/v1/projects/123/iap_tunnel/locations/-/destGroups`
@@ -854,6 +922,23 @@ public final class IdentityAwareProxyAdminServiceGrpc {
      *
      *
      * <pre>
+     * Validates that a given CEL expression conforms to IAP restrictions.
+     * </pre>
+     */
+    public void validateIapAttributeExpression(
+        com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.iap.v1.ValidateIapAttributeExpressionResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getValidateIapAttributeExpressionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the existing TunnelDestGroups. To group across all locations, use a
      * `-` as the location ID. For example:
      * `/v1/projects/123/iap_tunnel/locations/-/destGroups`
@@ -1031,6 +1116,20 @@ public final class IdentityAwareProxyAdminServiceGrpc {
      *
      *
      * <pre>
+     * Validates that a given CEL expression conforms to IAP restrictions.
+     * </pre>
+     */
+    public com.google.cloud.iap.v1.ValidateIapAttributeExpressionResponse
+        validateIapAttributeExpression(
+            com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getValidateIapAttributeExpressionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the existing TunnelDestGroups. To group across all locations, use a
      * `-` as the location ID. For example:
      * `/v1/projects/123/iap_tunnel/locations/-/destGroups`
@@ -1196,6 +1295,22 @@ public final class IdentityAwareProxyAdminServiceGrpc {
      *
      *
      * <pre>
+     * Validates that a given CEL expression conforms to IAP restrictions.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.iap.v1.ValidateIapAttributeExpressionResponse>
+        validateIapAttributeExpression(
+            com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getValidateIapAttributeExpressionMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the existing TunnelDestGroups. To group across all locations, use a
      * `-` as the location ID. For example:
      * `/v1/projects/123/iap_tunnel/locations/-/destGroups`
@@ -1269,11 +1384,12 @@ public final class IdentityAwareProxyAdminServiceGrpc {
   private static final int METHODID_TEST_IAM_PERMISSIONS = 2;
   private static final int METHODID_GET_IAP_SETTINGS = 3;
   private static final int METHODID_UPDATE_IAP_SETTINGS = 4;
-  private static final int METHODID_LIST_TUNNEL_DEST_GROUPS = 5;
-  private static final int METHODID_CREATE_TUNNEL_DEST_GROUP = 6;
-  private static final int METHODID_GET_TUNNEL_DEST_GROUP = 7;
-  private static final int METHODID_DELETE_TUNNEL_DEST_GROUP = 8;
-  private static final int METHODID_UPDATE_TUNNEL_DEST_GROUP = 9;
+  private static final int METHODID_VALIDATE_IAP_ATTRIBUTE_EXPRESSION = 5;
+  private static final int METHODID_LIST_TUNNEL_DEST_GROUPS = 6;
+  private static final int METHODID_CREATE_TUNNEL_DEST_GROUP = 7;
+  private static final int METHODID_GET_TUNNEL_DEST_GROUP = 8;
+  private static final int METHODID_DELETE_TUNNEL_DEST_GROUP = 9;
+  private static final int METHODID_UPDATE_TUNNEL_DEST_GROUP = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1317,6 +1433,13 @@ public final class IdentityAwareProxyAdminServiceGrpc {
           serviceImpl.updateIapSettings(
               (com.google.cloud.iap.v1.UpdateIapSettingsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.iap.v1.IapSettings>) responseObserver);
+          break;
+        case METHODID_VALIDATE_IAP_ATTRIBUTE_EXPRESSION:
+          serviceImpl.validateIapAttributeExpression(
+              (com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.iap.v1.ValidateIapAttributeExpressionResponse>)
+                  responseObserver);
           break;
         case METHODID_LIST_TUNNEL_DEST_GROUPS:
           serviceImpl.listTunnelDestGroups(
@@ -1394,6 +1517,13 @@ public final class IdentityAwareProxyAdminServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.iap.v1.UpdateIapSettingsRequest,
                     com.google.cloud.iap.v1.IapSettings>(service, METHODID_UPDATE_IAP_SETTINGS)))
+        .addMethod(
+            getValidateIapAttributeExpressionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest,
+                    com.google.cloud.iap.v1.ValidateIapAttributeExpressionResponse>(
+                    service, METHODID_VALIDATE_IAP_ATTRIBUTE_EXPRESSION)))
         .addMethod(
             getListTunnelDestGroupsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1485,6 +1615,7 @@ public final class IdentityAwareProxyAdminServiceGrpc {
                       .addMethod(getTestIamPermissionsMethod())
                       .addMethod(getGetIapSettingsMethod())
                       .addMethod(getUpdateIapSettingsMethod())
+                      .addMethod(getValidateIapAttributeExpressionMethod())
                       .addMethod(getListTunnelDestGroupsMethod())
                       .addMethod(getCreateTunnelDestGroupMethod())
                       .addMethod(getGetTunnelDestGroupMethod())

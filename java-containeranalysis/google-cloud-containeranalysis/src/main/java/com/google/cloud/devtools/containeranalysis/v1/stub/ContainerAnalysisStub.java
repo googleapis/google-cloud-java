@@ -18,6 +18,8 @@ package com.google.cloud.devtools.containeranalysis.v1.stub;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.containeranalysis.v1.ExportSBOMRequest;
+import com.google.containeranalysis.v1.ExportSBOMResponse;
 import com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest;
 import com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -53,6 +55,10 @@ public abstract class ContainerAnalysisStub implements BackgroundResource {
       getVulnerabilityOccurrencesSummaryCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: getVulnerabilityOccurrencesSummaryCallable()");
+  }
+
+  public UnaryCallable<ExportSBOMRequest, ExportSBOMResponse> exportSBOMCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportSBOMCallable()");
   }
 
   @Override

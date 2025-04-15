@@ -125,10 +125,10 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Whether the dimension passed or failed.
+   * Output only. Whether the dimension passed or failed.
    * </pre>
    *
-   * <code>bool passed = 3;</code>
+   * <code>bool passed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The passed.
    */
@@ -802,10 +802,10 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Whether the dimension passed or failed.
+     * Output only. Whether the dimension passed or failed.
      * </pre>
      *
-     * <code>bool passed = 3;</code>
+     * <code>bool passed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The passed.
      */
@@ -817,10 +817,10 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Whether the dimension passed or failed.
+     * Output only. Whether the dimension passed or failed.
      * </pre>
      *
-     * <code>bool passed = 3;</code>
+     * <code>bool passed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The passed to set.
      * @return This builder for chaining.
@@ -836,10 +836,10 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Whether the dimension passed or failed.
+     * Output only. Whether the dimension passed or failed.
      * </pre>
      *
-     * <code>bool passed = 3;</code>
+     * <code>bool passed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */

@@ -89,7 +89,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * IPA. (e.g. apple -&gt; ˈæpəl )
+     * IPA, such as apple -&gt; ˈæpəl.
      * https://en.wikipedia.org/wiki/International_Phonetic_Alphabet
      * </pre>
      *
@@ -100,7 +100,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * X-SAMPA (e.g. apple -&gt; "{p&#64;l" )
+     * X-SAMPA, such as apple -&gt; "{p&#64;l".
      * https://en.wikipedia.org/wiki/X-SAMPA
      * </pre>
      *
@@ -124,7 +124,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * IPA. (e.g. apple -&gt; ˈæpəl )
+     * IPA, such as apple -&gt; ˈæpəl.
      * https://en.wikipedia.org/wiki/International_Phonetic_Alphabet
      * </pre>
      *
@@ -135,7 +135,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * X-SAMPA (e.g. apple -&gt; "{p&#64;l" )
+     * X-SAMPA, such as apple -&gt; "{p&#64;l".
      * https://en.wikipedia.org/wiki/X-SAMPA
      * </pre>
      *
@@ -239,9 +239,9 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The phrase to which the customization will be applied.
-   * The phrase can be multiple words (in the case of proper nouns etc), but
-   * should not span to a whole sentence.
+   * The phrase to which the customization is applied.
+   * The phrase can be multiple words, such as proper nouns, but shouldn't span
+   * the length of the sentence.
    * </pre>
    *
    * <code>optional string phrase = 1;</code>
@@ -256,9 +256,9 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The phrase to which the customization will be applied.
-   * The phrase can be multiple words (in the case of proper nouns etc), but
-   * should not span to a whole sentence.
+   * The phrase to which the customization is applied.
+   * The phrase can be multiple words, such as proper nouns, but shouldn't span
+   * the length of the sentence.
    * </pre>
    *
    * <code>optional string phrase = 1;</code>
@@ -281,9 +281,9 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The phrase to which the customization will be applied.
-   * The phrase can be multiple words (in the case of proper nouns etc), but
-   * should not span to a whole sentence.
+   * The phrase to which the customization is applied.
+   * The phrase can be multiple words, such as proper nouns, but shouldn't span
+   * the length of the sentence.
    * </pre>
    *
    * <code>optional string phrase = 1;</code>
@@ -846,9 +846,9 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The phrase to which the customization will be applied.
-     * The phrase can be multiple words (in the case of proper nouns etc), but
-     * should not span to a whole sentence.
+     * The phrase to which the customization is applied.
+     * The phrase can be multiple words, such as proper nouns, but shouldn't span
+     * the length of the sentence.
      * </pre>
      *
      * <code>optional string phrase = 1;</code>
@@ -862,9 +862,9 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The phrase to which the customization will be applied.
-     * The phrase can be multiple words (in the case of proper nouns etc), but
-     * should not span to a whole sentence.
+     * The phrase to which the customization is applied.
+     * The phrase can be multiple words, such as proper nouns, but shouldn't span
+     * the length of the sentence.
      * </pre>
      *
      * <code>optional string phrase = 1;</code>
@@ -886,9 +886,9 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The phrase to which the customization will be applied.
-     * The phrase can be multiple words (in the case of proper nouns etc), but
-     * should not span to a whole sentence.
+     * The phrase to which the customization is applied.
+     * The phrase can be multiple words, such as proper nouns, but shouldn't span
+     * the length of the sentence.
      * </pre>
      *
      * <code>optional string phrase = 1;</code>
@@ -910,9 +910,9 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The phrase to which the customization will be applied.
-     * The phrase can be multiple words (in the case of proper nouns etc), but
-     * should not span to a whole sentence.
+     * The phrase to which the customization is applied.
+     * The phrase can be multiple words, such as proper nouns, but shouldn't span
+     * the length of the sentence.
      * </pre>
      *
      * <code>optional string phrase = 1;</code>
@@ -933,9 +933,9 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The phrase to which the customization will be applied.
-     * The phrase can be multiple words (in the case of proper nouns etc), but
-     * should not span to a whole sentence.
+     * The phrase to which the customization is applied.
+     * The phrase can be multiple words, such as proper nouns, but shouldn't span
+     * the length of the sentence.
      * </pre>
      *
      * <code>optional string phrase = 1;</code>
@@ -952,9 +952,9 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The phrase to which the customization will be applied.
-     * The phrase can be multiple words (in the case of proper nouns etc), but
-     * should not span to a whole sentence.
+     * The phrase to which the customization is applied.
+     * The phrase can be multiple words, such as proper nouns, but shouldn't span
+     * the length of the sentence.
      * </pre>
      *
      * <code>optional string phrase = 1;</code>

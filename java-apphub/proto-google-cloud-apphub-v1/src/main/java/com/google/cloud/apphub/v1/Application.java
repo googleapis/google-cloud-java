@@ -23,7 +23,7 @@ package com.google.cloud.apphub.v1;
  *
  *
  * <pre>
- * Application defines the governance boundary for App Hub Entities that
+ * Application defines the governance boundary for App Hub entities that
  * perform a logical end-to-end business function.
  * App Hub supports application level IAM permission to align with governance
  * requirements.
@@ -259,7 +259,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. The resource name of an Application. Format:
-   * "projects/{host-project-id}/locations/{location}/applications/{application-id}"
+   * `"projects/{host-project-id}/locations/{location}/applications/{application-id}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -283,7 +283,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. The resource name of an Application. Format:
-   * "projects/{host-project-id}/locations/{location}/applications/{application-id}"
+   * `"projects/{host-project-id}/locations/{location}/applications/{application-id}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -968,7 +968,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Application defines the governance boundary for App Hub Entities that
+   * Application defines the governance boundary for App Hub entities that
    * perform a logical end-to-end business function.
    * App Hub supports application level IAM permission to align with governance
    * requirements.
@@ -1299,7 +1299,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of an Application. Format:
-     * "projects/{host-project-id}/locations/{location}/applications/{application-id}"
+     * `"projects/{host-project-id}/locations/{location}/applications/{application-id}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1322,7 +1322,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of an Application. Format:
-     * "projects/{host-project-id}/locations/{location}/applications/{application-id}"
+     * `"projects/{host-project-id}/locations/{location}/applications/{application-id}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1345,7 +1345,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of an Application. Format:
-     * "projects/{host-project-id}/locations/{location}/applications/{application-id}"
+     * `"projects/{host-project-id}/locations/{location}/applications/{application-id}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1367,7 +1367,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of an Application. Format:
-     * "projects/{host-project-id}/locations/{location}/applications/{application-id}"
+     * `"projects/{host-project-id}/locations/{location}/applications/{application-id}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1385,7 +1385,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The resource name of an Application. Format:
-     * "projects/{host-project-id}/locations/{location}/applications/{application-id}"
+     * `"projects/{host-project-id}/locations/{location}/applications/{application-id}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>

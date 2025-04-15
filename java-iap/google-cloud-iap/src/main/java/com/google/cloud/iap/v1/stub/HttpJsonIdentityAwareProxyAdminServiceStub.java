@@ -40,6 +40,8 @@ import com.google.cloud.iap.v1.ListTunnelDestGroupsResponse;
 import com.google.cloud.iap.v1.TunnelDestGroup;
 import com.google.cloud.iap.v1.UpdateIapSettingsRequest;
 import com.google.cloud.iap.v1.UpdateTunnelDestGroupRequest;
+import com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest;
+import com.google.cloud.iap.v1.ValidateIapAttributeExpressionResponse;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -253,6 +255,46 @@ public class HttpJsonIdentityAwareProxyAdminServiceStub extends IdentityAwarePro
               .build();
 
   private static final ApiMethodDescriptor<
+          ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+      validateIapAttributeExpressionMethodDescriptor =
+          ApiMethodDescriptor
+              .<ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.iap.v1.IdentityAwareProxyAdminService/ValidateIapAttributeExpression")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ValidateIapAttributeExpressionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=**}:validateAttributeExpression",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ValidateIapAttributeExpressionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ValidateIapAttributeExpressionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "expression", request.getExpression());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ValidateIapAttributeExpressionResponse>newBuilder()
+                      .setDefaultInstance(
+                          ValidateIapAttributeExpressionResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
           ListTunnelDestGroupsRequest, ListTunnelDestGroupsResponse>
       listTunnelDestGroupsMethodDescriptor =
           ApiMethodDescriptor
@@ -449,6 +491,9 @@ public class HttpJsonIdentityAwareProxyAdminServiceStub extends IdentityAwarePro
       testIamPermissionsCallable;
   private final UnaryCallable<GetIapSettingsRequest, IapSettings> getIapSettingsCallable;
   private final UnaryCallable<UpdateIapSettingsRequest, IapSettings> updateIapSettingsCallable;
+  private final UnaryCallable<
+          ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+      validateIapAttributeExpressionCallable;
   private final UnaryCallable<ListTunnelDestGroupsRequest, ListTunnelDestGroupsResponse>
       listTunnelDestGroupsCallable;
   private final UnaryCallable<ListTunnelDestGroupsRequest, ListTunnelDestGroupsPagedResponse>
@@ -563,6 +608,21 @@ public class HttpJsonIdentityAwareProxyAdminServiceStub extends IdentityAwarePro
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<
+            ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+        validateIapAttributeExpressionTransportSettings =
+            HttpJsonCallSettings
+                .<ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+                    newBuilder()
+                .setMethodDescriptor(validateIapAttributeExpressionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListTunnelDestGroupsRequest, ListTunnelDestGroupsResponse>
         listTunnelDestGroupsTransportSettings =
             HttpJsonCallSettings
@@ -646,6 +706,11 @@ public class HttpJsonIdentityAwareProxyAdminServiceStub extends IdentityAwarePro
             updateIapSettingsTransportSettings,
             settings.updateIapSettingsSettings(),
             clientContext);
+    this.validateIapAttributeExpressionCallable =
+        callableFactory.createUnaryCallable(
+            validateIapAttributeExpressionTransportSettings,
+            settings.validateIapAttributeExpressionSettings(),
+            clientContext);
     this.listTunnelDestGroupsCallable =
         callableFactory.createUnaryCallable(
             listTunnelDestGroupsTransportSettings,
@@ -689,6 +754,7 @@ public class HttpJsonIdentityAwareProxyAdminServiceStub extends IdentityAwarePro
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(getIapSettingsMethodDescriptor);
     methodDescriptors.add(updateIapSettingsMethodDescriptor);
+    methodDescriptors.add(validateIapAttributeExpressionMethodDescriptor);
     methodDescriptors.add(listTunnelDestGroupsMethodDescriptor);
     methodDescriptors.add(createTunnelDestGroupMethodDescriptor);
     methodDescriptors.add(getTunnelDestGroupMethodDescriptor);
@@ -721,6 +787,13 @@ public class HttpJsonIdentityAwareProxyAdminServiceStub extends IdentityAwarePro
   @Override
   public UnaryCallable<UpdateIapSettingsRequest, IapSettings> updateIapSettingsCallable() {
     return updateIapSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+      validateIapAttributeExpressionCallable() {
+    return validateIapAttributeExpressionCallable;
   }
 
   @Override

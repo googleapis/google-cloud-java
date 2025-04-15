@@ -44,6 +44,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     kmsKeyName_ = "";
     mode_ = 0;
+    registryUri_ = "";
   }
 
   @java.lang.Override
@@ -5038,6 +5039,59 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzi_;
   }
 
+  public static final int REGISTRY_URI_FIELD_NUMBER = 26;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object registryUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The repository endpoint, for example:
+   * `us-docker.pkg.dev/my-proj/my-repo`.
+   * </pre>
+   *
+   * <code>string registry_uri = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The registryUri.
+   */
+  @java.lang.Override
+  public java.lang.String getRegistryUri() {
+    java.lang.Object ref = registryUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      registryUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The repository endpoint, for example:
+   * `us-docker.pkg.dev/my-proj/my-repo`.
+   * </pre>
+   *
+   * <code>string registry_uri = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for registryUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRegistryUriBytes() {
+    java.lang.Object ref = registryUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      registryUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5116,6 +5170,9 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
     if (satisfiesPzi_ != false) {
       output.writeBool(22, satisfiesPzi_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(registryUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 26, registryUri_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -5217,6 +5274,9 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzi_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(22, satisfiesPzi_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(registryUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, registryUri_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5258,6 +5318,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
     if (getDisallowUnspecifiedMode() != other.getDisallowUnspecifiedMode()) return false;
     if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
+    if (!getRegistryUri().equals(other.getRegistryUri())) return false;
     if (!getFormatConfigCase().equals(other.getFormatConfigCase())) return false;
     switch (formatConfigCase_) {
       case 9:
@@ -5331,6 +5392,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisallowUnspecifiedMode());
     hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
+    hash = (37 * hash) + REGISTRY_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getRegistryUri().hashCode();
     switch (formatConfigCase_) {
       case 9:
         hash = (37 * hash) + MAVEN_CONFIG_FIELD_NUMBER;
@@ -5570,6 +5633,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       disallowUnspecifiedMode_ = false;
       satisfiesPzi_ = false;
+      registryUri_ = "";
       formatConfigCase_ = 0;
       formatConfig_ = null;
       modeConfigCase_ = 0;
@@ -5664,6 +5728,9 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.satisfiesPzi_ = satisfiesPzi_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.registryUri_ = registryUri_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5781,6 +5848,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getSatisfiesPzi() != false) {
         setSatisfiesPzi(other.getSatisfiesPzi());
+      }
+      if (!other.getRegistryUri().isEmpty()) {
+        registryUri_ = other.registryUri_;
+        bitField0_ |= 0x00080000;
+        onChanged();
       }
       switch (other.getFormatConfigCase()) {
         case MAVEN_CONFIG:
@@ -5971,6 +6043,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00040000;
                 break;
               } // case 176
+            case 210:
+              {
+                registryUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 210
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8911,6 +8989,117 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSatisfiesPzi() {
       bitField0_ = (bitField0_ & ~0x00040000);
       satisfiesPzi_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object registryUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The repository endpoint, for example:
+     * `us-docker.pkg.dev/my-proj/my-repo`.
+     * </pre>
+     *
+     * <code>string registry_uri = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The registryUri.
+     */
+    public java.lang.String getRegistryUri() {
+      java.lang.Object ref = registryUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        registryUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The repository endpoint, for example:
+     * `us-docker.pkg.dev/my-proj/my-repo`.
+     * </pre>
+     *
+     * <code>string registry_uri = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for registryUri.
+     */
+    public com.google.protobuf.ByteString getRegistryUriBytes() {
+      java.lang.Object ref = registryUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        registryUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The repository endpoint, for example:
+     * `us-docker.pkg.dev/my-proj/my-repo`.
+     * </pre>
+     *
+     * <code>string registry_uri = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The registryUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegistryUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      registryUri_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The repository endpoint, for example:
+     * `us-docker.pkg.dev/my-proj/my-repo`.
+     * </pre>
+     *
+     * <code>string registry_uri = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRegistryUri() {
+      registryUri_ = getDefaultInstance().getRegistryUri();
+      bitField0_ = (bitField0_ & ~0x00080000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The repository endpoint, for example:
+     * `us-docker.pkg.dev/my-proj/my-repo`.
+     * </pre>
+     *
+     * <code>string registry_uri = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for registryUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegistryUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      registryUri_ = value;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }

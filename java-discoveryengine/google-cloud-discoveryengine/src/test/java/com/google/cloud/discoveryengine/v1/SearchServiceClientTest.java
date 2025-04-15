@@ -127,11 +127,13 @@ public class SearchServiceClientTest {
             .setSafeSearch(true)
             .putAllUserLabels(new HashMap<String, String>())
             .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+            .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
             .setSession(
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
             .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+            .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -170,8 +172,11 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getSafeSearch(), actualRequest.getSafeSearch());
     Assert.assertEquals(request.getUserLabelsMap(), actualRequest.getUserLabelsMap());
     Assert.assertEquals(request.getSearchAsYouTypeSpec(), actualRequest.getSearchAsYouTypeSpec());
+    Assert.assertEquals(request.getDisplaySpec(), actualRequest.getDisplaySpec());
     Assert.assertEquals(request.getSession(), actualRequest.getSession());
     Assert.assertEquals(request.getSessionSpec(), actualRequest.getSessionSpec());
+    Assert.assertEquals(request.getRelevanceThreshold(), actualRequest.getRelevanceThreshold());
+    Assert.assertEquals(request.getRelevanceScoreSpec(), actualRequest.getRelevanceScoreSpec());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -216,11 +221,13 @@ public class SearchServiceClientTest {
               .setSafeSearch(true)
               .putAllUserLabels(new HashMap<String, String>())
               .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+              .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
               .setSession(
                   SessionName.ofProjectLocationDataStoreSessionName(
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+              .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
               .build();
       client.search(request);
       Assert.fail("No exception raised");
@@ -271,11 +278,13 @@ public class SearchServiceClientTest {
             .setSafeSearch(true)
             .putAllUserLabels(new HashMap<String, String>())
             .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+            .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
             .setSession(
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
             .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+            .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
             .build();
 
     SearchLitePagedResponse pagedListResponse = client.searchLite(request);
@@ -314,8 +323,11 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getSafeSearch(), actualRequest.getSafeSearch());
     Assert.assertEquals(request.getUserLabelsMap(), actualRequest.getUserLabelsMap());
     Assert.assertEquals(request.getSearchAsYouTypeSpec(), actualRequest.getSearchAsYouTypeSpec());
+    Assert.assertEquals(request.getDisplaySpec(), actualRequest.getDisplaySpec());
     Assert.assertEquals(request.getSession(), actualRequest.getSession());
     Assert.assertEquals(request.getSessionSpec(), actualRequest.getSessionSpec());
+    Assert.assertEquals(request.getRelevanceThreshold(), actualRequest.getRelevanceThreshold());
+    Assert.assertEquals(request.getRelevanceScoreSpec(), actualRequest.getRelevanceScoreSpec());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -360,11 +372,13 @@ public class SearchServiceClientTest {
               .setSafeSearch(true)
               .putAllUserLabels(new HashMap<String, String>())
               .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+              .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
               .setSession(
                   SessionName.ofProjectLocationDataStoreSessionName(
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+              .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
               .build();
       client.searchLite(request);
       Assert.fail("No exception raised");

@@ -69,10 +69,10 @@ public interface DataQualityDimensionResultOrBuilder
    *
    *
    * <pre>
-   * Whether the dimension passed or failed.
+   * Output only. Whether the dimension passed or failed.
    * </pre>
    *
-   * <code>bool passed = 3;</code>
+   * <code>bool passed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The passed.
    */
