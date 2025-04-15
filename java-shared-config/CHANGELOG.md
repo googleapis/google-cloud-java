@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.3](https://github.com/googleapis/java-shared-config/compare/v1.15.2...v1.15.3) (2025-04-15)
+
+
+### Bug Fixes
+
+* Reintroduce support for GraalVM 17 ([75879e3](https://github.com/googleapis/java-shared-config/commit/75879e39eae3f119a40524d6ac8d22af8b8407d5))
+
 ## [1.15.2](https://github.com/googleapis/java-shared-config/compare/v1.15.1...v1.15.2) (2025-04-15)
 
 
